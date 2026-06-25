@@ -433,7 +433,7 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 | Feridas e Queimaduras | 12 | 9 | 75,0% | ❌ | 🟡 | ❌ | — |
 | Saúde do Adolescente | 11 | 11 | 100% | ❌ | ❌ | ❌ | — |
 | Processamento de Artigos e Produtos de Saúde | 9 | 5 | 55,6% | ❌ | 🟡 | ❌ | — |
-| Farmacodinâmica e Farmacocinética | 6 | 4 | 66,7% | ❌ | 🟡 | ❌ | — |
+| Farmacodinâmica e Farmacocinética | 6 | 4 | 66,7% | ❌ | ✅ 4/4 | ❌ | Moldes purple (`adme-journey-rail`, `pk-pd-reference-board`, `farmaco-vf-juggle-tap`, `farmaco-trap`) |
 | Doenças Respiratórias Crônicas (Asma, DPOC) | 2 | 2 | 100% | ❌ | 🟡 | ❌ | — |
 | Outras Doenças… Transmissíveis | 1 | 1 | 100% | ❌ | ❌ | ❌ | — |
 | Enfermagem em Central de Material e Esterilização (CME) | 43 | 17 | 39,5% | ❌ | 🟡 | ❌ | — |

@@ -1,0 +1,32 @@
+{
+  "lote": "historia-enfermagem-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-24",
+  "subtopico": "História da Enfermagem",
+  "cluster": "Ética COFEN + legislação + marcos históricos",
+  "total": 8,
+  "status": "validated",
+  "anchor_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+  "golden_reference": "examples/questao-premium-cpcon-historia-enfermagem-nightingale.json",
+  "guideline": "lib/guidelines/historiaEnfermagem.ts",
+  "slugs": [
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+    "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+    "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+    "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+    "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+    "idcap-enfermagem-historia-da-enfermagem-1775331667969-3"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=historia-enfermagem-g01 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/historia-enfermagem-g01/questions/",
+    "2. Âncora VF: examples/questao-premium-cpcon-historia-enfermagem-nightingale.json",
+    "3. npm run validate:goldens -- --lote=historia-enfermagem-g01 --strict",
+    "4. npm run catalog:apply-lote -- --lote=historia-enfermagem-g01 --dry-run",
+    "5. Apply só quando usuário pedir"
+  ],
+  "next_lote": "historia-enfermagem-g02 — saúde pública + humanização + teorias (8 slugs)"
+}

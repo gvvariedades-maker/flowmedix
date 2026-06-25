@@ -661,6 +661,83 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('via-vf-juggle-tap');
   });
 
+  it('Farmacodinâmica e Farmacocinética: concept_map adme-journey-rail no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Farmacodinâmica e Farmacocinética' },
+        items: [
+          { label: 'Farmacocinética', detail: 'ADME', icon: 'Pill' },
+          { label: 'Farmacodinâmica', detail: 'ação no organismo', icon: 'Zap' },
+        ],
+      },
+      {
+        questionSlug: 'funcamp-farmaco-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('adme-journey-rail');
+  });
+
+  it('Farmacodinâmica e Farmacocinética: golden_rule pk-pd-reference-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Farmacodinâmica e Farmacocinética' },
+        rows: [
+          { label: 'Farmacocinética', value: 'ADME' },
+          { label: 'Gabarito', value: 'I e II, apenas', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'funcamp-farmaco-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('pk-pd-reference-board');
+  });
+
+  it('Farmacodinâmica e Farmacocinética: logic_flow farmaco-vf-juggle-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Farmacodinâmica e Farmacocinética' },
+        steps: ['Julgar I', 'Julgar II', 'Marcar B'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'funcamp-farmaco-1',
+        slideIndex: 2,
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('farmaco-vf-juggle-tap');
+  });
+
+  it('Farmacodinâmica e Farmacocinética: danger_zone farmaco-trap com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Farmacodinâmica e Farmacocinética' },
+        content: 'Pegadinhas',
+        items: [
+          {
+            label: 'Meia-vida = eliminação total',
+            detail: '100% na III',
+            correct: 'Queda de 50% da concentração plasmática',
+          },
+        ],
+      },
+      {
+        questionSlug: 'funcamp-farmaco-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('farmaco-trap');
+    expect(result.bulletStyle).toBe('x_icon');
+    expect(result.dangerRevealMode).toBe('tap');
+  });
+
   it('Cálculo de Medicamentos: concept_map dose-equivalence-rail no molde', () => {
     const result = resolveSlidePresentation(
       {
@@ -1032,6 +1109,164 @@ describe('slidePresentation — molde por subtópico', () => {
       },
     );
     expect(result.layoutVariant).toBe('dressing-choice-arena');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
+  it('Feridas e Queimaduras: concept_map burn-depth-layer-deck no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Feridas e Queimaduras' },
+        items: [
+          { label: '1º grau', detail: 'Eritema sem bolha — epiderme' },
+          { label: '2º profundo', detail: 'Bolhas — derme reticular' },
+          { label: 'Gabarito', detail: 'Letra C: I e III' },
+        ],
+      },
+      {
+        questionSlug: 'idecan-feridas-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('burn-depth-layer-deck');
+  });
+
+  it('Feridas e Queimaduras: golden_rule burn-rule-nine-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Feridas e Queimaduras' },
+        content: 'Regra dos 9',
+        rows: [
+          { label: 'Cabeça adulto', value: '9% SCQ', emphasis: 'highlight' },
+          { label: 'Cabeça criança', value: '18% SCQ — pegadinha', emphasis: 'alert' },
+        ],
+      },
+      {
+        questionSlug: 'idecan-feridas-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('burn-rule-nine-board');
+  });
+
+  it('Feridas e Queimaduras: logic_flow burn-triage-tap-flow no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Feridas e Queimaduras' },
+        steps: ['Garantir segurança', 'Resfriar com água morna', 'Estimar SCQ', 'Profilaxia tétano'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'idecan-feridas-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('burn-triage-tap-flow');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Feridas e Queimaduras: danger_zone burn-trap-arena com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Feridas e Queimaduras' },
+        content: 'Pegadinhas',
+        items: [
+          {
+            label: 'Gelo direto',
+            detail: 'Resfriar rápido parece lógico',
+            correct: 'Água corrente morna 15–20 min',
+          },
+        ],
+      },
+      {
+        questionSlug: 'idecan-feridas-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('burn-trap-arena');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
+  it('Enfermagem do Trabalho: concept_map nr32-annex-deck no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Enfermagem do Trabalho' },
+        items: [
+          { label: 'NR-32', detail: 'Segurança em serviços de saúde' },
+          { label: 'Risco biológico', detail: 'Anexo I — material biológico' },
+          { label: 'Vacina HB', detail: 'Prevenção ocupacional' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-trabalho-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('nr32-annex-deck');
+  });
+
+  it('Enfermagem do Trabalho: golden_rule trabalho-nr32-reference-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Enfermagem do Trabalho' },
+        content: 'NOTIFICAR',
+        rows: [
+          { label: 'NR-32', value: 'Segurança em serviços de saúde', emphasis: 'highlight' },
+          { label: 'Perfuro sem seguimento', value: 'Falso — exige notificação', emphasis: 'alert' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-trabalho-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('trabalho-nr32-reference-board');
+  });
+
+  it('Enfermagem do Trabalho: logic_flow trabalho-vf-juggle-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Enfermagem do Trabalho' },
+        steps: ['I: NR-32 verdadeira', 'II: vacina HB verdadeira', 'III: perfuro falsa', 'Letra B'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-trabalho-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('trabalho-vf-juggle-tap');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Enfermagem do Trabalho: danger_zone trabalho-pep-trap-arena com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Enfermagem do Trabalho' },
+        content: 'PEGADINHAS — TRABALHO',
+        items: [
+          {
+            label: 'Só lavar e voltar',
+            detail: 'III ignora PEP e notificação',
+            correct: 'Notificar e seguir protocolo de exposição',
+          },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-trabalho-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('trabalho-pep-trap-arena');
     expect(result.dangerRevealMode).toBe('tap');
     expect(result.bulletStyle).toBe('x_icon');
   });

@@ -15,10 +15,13 @@ import { DangerZoneNormReveal } from './DangerZoneNormReveal';
 import { DangerZoneScopeTrap } from './DangerZoneScopeTrap';
 import { DangerZoneRouteTrap } from './DangerZoneRouteTrap';
 import { DangerZoneDoseTrap } from './DangerZoneDoseTrap';
+import { DangerZoneFarmacoTrap } from './DangerZoneFarmacoTrap';
 import { DangerZoneCatheterArena } from './DangerZoneCatheterArena';
 import { DangerZoneLabPrepTrap } from './DangerZoneLabPrepTrap';
 import { DangerZoneLabSpecimenArena } from './DangerZoneLabSpecimenArena';
 import { DangerZoneDressingChoiceArena } from './DangerZoneDressingChoiceArena';
+import { DangerZoneBurnTrapArena } from './DangerZoneBurnTrapArena';
+import { DangerZoneTrabalhoPepTrapArena } from './DangerZoneTrabalhoPepTrapArena';
 import { DangerZonePniTrapChips } from './DangerZonePniTrapChips';
 import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
 import { DangerZoneAdolescentConsentGate } from './DangerZoneAdolescentConsentGate';
@@ -321,6 +324,28 @@ export const DangerZone = ({
     );
   }
 
+  if (explicitVariant === 'burn-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneBurnTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'trabalho-pep-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneTrabalhoPepTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
   if (explicitVariant === 'pni-trap-chips' && items && items.length > 0) {
     return (
       <DangerZonePniTrapChips
@@ -432,6 +457,18 @@ export const DangerZone = ({
   if (explicitVariant === 'dose-trap' && items && items.length > 0) {
     return (
       <DangerZoneDoseTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'farmaco-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneFarmacoTrap
         content={content}
         items={items}
         theme={theme}

@@ -1,0 +1,27 @@
+{
+  "lote": "processamento-g01",
+  "exported_at": "2026-06-24T22:08:28.481Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+      "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+      "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+      "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+      "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+      "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+      "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+      "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4"
+    ]
+  },
+  "slugs": [
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4"
+  ]
+}

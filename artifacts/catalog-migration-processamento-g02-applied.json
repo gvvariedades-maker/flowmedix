@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-06-24T22:14:30.556Z",
+  "lote": "processamento-g02",
+  "mode": "apply",
+  "total_files": 10,
+  "ok": 10,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+    "ibade-enfermagem-processo-de-enfermagem-1780005137458-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

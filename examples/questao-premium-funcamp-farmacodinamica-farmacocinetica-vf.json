@@ -4,9 +4,27 @@
     "prova": "TEnf",
     "orgao": "UNICAMP",
     "ano": "2024",
-    "cargo_header": "Técnico de Enfermagem",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Farmacodinâmica e Farmacocinética"
+    "subtopico": "Farmacodinâmica e Farmacocinética",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-24",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "Farmacologia básica — ADME, dinâmica, meia-vida",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "farmaco-adme",
+        "tier": "B",
+        "issuer": "Literatura farmacológica / COFEN",
+        "title": "Conceitos de farmacocinética (ADME) e farmacodinâmica",
+        "year": 2018,
+        "covers": ["ADME", "farmacodinâmica", "meia-vida", "concentração plasmática"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre farmacocinética e farmacodinâmica, analise as afirmativas.\n\nI - Farmacocinética estuda o que o organismo faz com o fármaco: absorção, distribuição, metabolismo e excreção.\nII - Farmacodinâmica estuda o que o fármaco faz no organismo: mecanismo de ação e efeito terapêutico ou adverso.\nIII - A meia-vida de um medicamento corresponde ao tempo necessário para o organismo eliminar 100% da dose administrada.\n\nÉ CORRETO o que se afirma em:",
@@ -40,7 +58,7 @@
         { "label": "Farmacocinética", "value": "O que o organismo faz com o fármaco (ADME)", "badge": "ok" },
         { "label": "Farmacodinâmica", "value": "O que o fármaco faz no organismo", "badge": "ok" },
         { "label": "Meia-vida", "value": "Queda de 50% da concentração — não 100%", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+        { "label": "Gabarito", "value": "I e II, apenas → B", "badge": "hot" }
       ],
       "footer_rule": "III troca 50% por 100% — pegadinha numérica clássica"
     },
@@ -52,7 +70,8 @@
         "I: definição de farmacocinética (ADME) → verdadeira.",
         "II: definição de farmacodinâmica → verdadeira.",
         "III: meia-vida = eliminar 100% → falsa.",
-        "Gabarito: I e II → letra B.",
+        "Verdadeiras: I e II apenas.",
+        "Combinação → letra B.",
         "Fixação: meia-vida sempre é redução pela metade da concentração."
       ],
       "footer_rule": "Separar definições antes de olhar alternativas"
@@ -63,9 +82,26 @@
       "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
       "content": "PEGADINHAS — FARMACOLOGIA",
       "items": [
-        { "label": "Trocar cinética e dinâmica", "detail": "I e II estão corretas justamente porque não se invertem.", "correct": "Cinética = ADME; dinâmica = ação no organismo." },
-        { "label": "Meia-vida = eliminação total", "detail": "100% na III é o erro que derruba D e C.", "correct": "Meia-vida: queda de 50% da concentração plasmática." },
-        { "label": "Confundir com dose de ataque", "detail": "Dose de ataque e manutenção são condutas — não definem meia-vida.", "correct": "Meia-vida é conceito farmacocinético." }
+        {
+          "label": "Letra A — I apenas",
+          "detail": "Omite II, que também define corretamente a farmacodinâmica.",
+          "correct": "II é verdadeira — dinâmica = ação no organismo."
+        },
+        {
+          "label": "Letra C — II e III",
+          "detail": "Inclui III falsa (100%) e exclui I verdadeira.",
+          "correct": "III erra meia-vida; I (ADME) também é verdadeira."
+        },
+        {
+          "label": "Letra D — I, II e III",
+          "detail": "Aceita a pegadinha numérica da III.",
+          "correct": "Meia-vida = queda de 50% da concentração plasmática."
+        },
+        {
+          "label": "Letra E — III apenas",
+          "detail": "Só a afirmativa falsa — meia-vida como eliminação total.",
+          "correct": "III troca 50% por 100% — única falsa entre as três."
+        }
       ],
       "footer_rule": "Em farmaco, definição trocada ou 50%→100% são os erros mais frequentes"
     }

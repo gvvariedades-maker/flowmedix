@@ -6,7 +6,25 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Processamento de Artigos e Produtos de Saúde"
+    "subtopico": "Processamento de Artigos e Produtos de Saúde",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-24",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "Anvisa RDC 15/2012 — pré-limpeza e classificação Spaulding",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anvisa-rdc15",
+        "tier": "A",
+        "issuer": "Anvisa",
+        "title": "RDC 15/2012 — reprocessamento de produtos para saúde",
+        "year": 2012,
+        "covers": ["pré-limpeza", "autoclave", "artigo crítico", "esterilização"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre o processamento de produtos para saúde, analise as afirmativas.\n\nI - A pré-limpeza deve ser realizada o mais breve possível após o uso, ainda no local de utilização, para evitar secagem do material biológico.\nII - A esterilização por autoclave utiliza vapor sob pressão para destruir microrganismos, incluindo esporos, em artigos termoestáveis.\nIII - Artigos classificados como críticos podem ser reprocessados com apenas desinfecção de baixo nível, sem necessidade de esterilização.\n\nÉ CORRETO o que se afirma em:",

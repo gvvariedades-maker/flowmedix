@@ -20,6 +20,7 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'scope-trap' ||
     layoutVariant === 'route-trap' ||
     layoutVariant === 'dose-trap' ||
+    layoutVariant === 'farmaco-trap' ||
     layoutVariant === 'catheter-danger-arena' ||
     layoutVariant === 'lab-prep-trap' ||
     layoutVariant === 'lab-specimen-arena' ||
@@ -28,6 +29,8 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'pni-trap-chips' ||
     layoutVariant === 'ist-trap-chips' ||
     layoutVariant === 'adolescent-consent-gate' ||
+    layoutVariant === 'burn-trap-arena' ||
+    layoutVariant === 'trabalho-pep-trap-arena' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }

@@ -1,6 +1,14 @@
 import type { GoldenRuleRow } from '@/components/slides/variants/GoldenRule';
 
-export type SoftLensHintProfile = 'calc' | 'via' | 'ist' | 'sae' | 'adolescent' | 'none';
+export type SoftLensHintProfile =
+  | 'calc'
+  | 'via'
+  | 'ist'
+  | 'sae'
+  | 'adolescent'
+  | 'farmaco'
+  | 'trabalho'
+  | 'none';
 
 const CALC_FORBIDDEN = /u-100|gotas|microgota|insulina|20-60-3|gts\/min/i;
 
@@ -44,6 +52,10 @@ function inferExamHintByProfile(row: GoldenRuleRow, profile: SoftLensHintProfile
       return inferSaeExamHint(row);
     case 'adolescent':
       return inferAdolescentExamHint(row);
+    case 'farmaco':
+      return inferFarmacoExamHint(row);
+    case 'trabalho':
+      return inferTrabalhoExamHint(row);
     default:
       return neutralExamHint(row);
   }
@@ -159,6 +171,55 @@ function inferAdolescentExamHint(row: GoldenRuleRow): string {
   return neutralExamHint(row);
 }
 
+function inferFarmacoExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/farmacocinética|farmacocinetica|cinética|cinetica|\badme\b/.test(text)) {
+    return 'Cinética = o organismo processa o fármaco (absorção, distribuição, metabolismo, excreção).';
+  }
+  if (/farmacodinâmica|farmacodinamica|dinâmica|dinamica|mecanismo/.test(text)) {
+    return 'Dinâmica = o fármaco age no organismo — mecanismo de ação e efeito terapêutico ou adverso.';
+  }
+  if (/meia-vida|meia vida|50%|100%|eliminar/.test(text)) {
+    return 'Pegadinha clássica: meia-vida é queda de 50% da concentração — nunca eliminação total (100%).';
+  }
+  if (/gabarito|i e ii|resposta final|verdadeira/.test(text)) {
+    return 'Gabarito: marque só as definições corretas — III costuma errar a meia-vida.';
+  }
+  if (/^i\b|^ii\b|^iii\b/.test(text) || /afirmativa/.test(text)) {
+    return 'Julgue cada afirmativa pela definição — não misture cinética com dinâmica.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferTrabalhoExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/nr-?32|norma regulamentadora/.test(text)) {
+    return 'NR-32 cobre todos os trabalhadores em serviços de saúde — não só médicos ou enfermeiros.';
+  }
+  if (/vacina|hepatite|influenza/.test(text)) {
+    return 'Vacinação ocupacional é estratégia clássica de prevenção — hepatite B é a mais cobrada.';
+  }
+  if (/perfuro|material biológico|pós-exposição|pos-exposicao|pep/.test(text)) {
+    return 'Pegadinha clássica: lavar não basta — notificar, exames e profilaxia são obrigatórios.';
+  }
+  if (/epi|equipamento de proteção|equipamento de protecao/.test(text)) {
+    return 'EPI é fornecido pelo empregador quando o risco não é eliminado na fonte — não é opcional.';
+  }
+  if (/cat\b|comunicação de acidente|comunicacao de acidente/.test(text)) {
+    return 'Acidente com material biológico = acidente de trabalho — CAT em até 1 dia útil.';
+  }
+  if (/ergonôm|ergonom|ler|dort|levantamento/.test(text)) {
+    return 'NR-32 inclui risco ergonômico — levantamento manual e postura inadequada são cobrados.';
+  }
+  if (/gabarito|i e ii|resposta final|verdadeira/.test(text)) {
+    return 'Gabarito: marque só as afirmativas corretas — III costuma minimizar acidente ocupacional.';
+  }
+  if (/^i\b|^ii\b|^iii\b/.test(text) || /afirmativa/.test(text)) {
+    return 'Julgue cada afirmativa pela NR-32 e protocolo de exposição — não misture com biossegurança genérica.';
+  }
+  return neutralExamHint(row);
+}
+
 function inferSaeExamHint(row: GoldenRuleRow): string {
   const text = `${row.label} ${row.value}`.toLowerCase();
   if (/anotação|diagnóstico|nanda|nic|noc|sae/.test(text)) {
@@ -192,6 +253,12 @@ function inferFixationByProfile(
     }
     if (profile === 'adolescent') {
       return 'Fixe escuta, sigilo ponderado e pré-natal antes das combinações A–E.';
+    }
+    if (profile === 'farmaco') {
+      return 'Fixe cinética (ADME), dinâmica (ação) e meia-vida (50%) antes das combinações A–E.';
+    }
+    if (profile === 'trabalho') {
+      return 'Fixe NR-32, vacina ocupacional e fluxo pós-exposição antes das combinações A–E.';
     }
     return 'Decore primeiro — item central cobrado nesta prova.';
   }

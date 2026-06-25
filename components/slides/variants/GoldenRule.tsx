@@ -14,7 +14,10 @@ import { GoldenRuleIstReferenceBoard } from './GoldenRuleIstReferenceBoard';
 import { GoldenRuleSaeReferenceBoard } from './GoldenRuleSaeReferenceBoard';
 import { GoldenRuleSondaMeasurementBoard } from './GoldenRuleSondaMeasurementBoard';
 import { GoldenRuleViaReferenceBoard } from './GoldenRuleViaReferenceBoard';
+import { GoldenRulePkPdReferenceBoard } from './GoldenRulePkPdReferenceBoard';
+import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
+import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
@@ -302,6 +305,24 @@ export const GoldenRule = ({
   if (variant === 'via-reference-board' && rows && rows.length > 0) {
     return (
       <GoldenRuleViaReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'pk-pd-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePkPdReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'burn-rule-nine-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleBurnRuleNineBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'trabalho-nr32-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleTrabalhoNr32ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

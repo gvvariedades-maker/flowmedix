@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref Cajazeiras",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Feridas e Queimaduras",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-24",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "MS — Regra dos 9 (Wallace); atendimento inicial às queimaduras",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-regra-9",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Atendimento inicial ao queimado — estimativa de SCQ e resfriamento",
+        "year": 2016,
+        "url": "https://www.gov.br/saude/",
+        "covers": ["regra dos 9", "SCQ adulto e criança", "resfriamento com água corrente", "encaminhamento"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre a regra dos nove na estimativa da superfície corporal queimada (SCQ) e o atendimento inicial, analise as afirmativas.\n\nI - No adulto, cada membro superior (braço completo) corresponde a 9% da SCQ.\nII - Na criança, cabeça e pescoço correspondem a 18% da SCQ.\nIII - O resfriamento imediato da área queimada deve ser feito com gelo aplicado diretamente sobre a pele por, no mínimo, 30 minutos.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "SCQ — regra dos 9 na prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "items": [
+        {
+          "label": "Membro superior — adulto",
+          "detail": "Braço + antebraço + mão = 9% da SCQ. I está correta.",
+          "icon": "Hand"
+        },
+        {
+          "label": "Cabeça — criança",
+          "detail": "Cabeça e pescoço = 18% na criança (no adulto é 9%). II está correta.",
+          "icon": "Baby"
+        },
+        {
+          "label": "Tronco anterior",
+          "detail": "Adulto e criança: tórax + abdome anterior = 18% da SCQ.",
+          "icon": "User"
+        },
+        {
+          "label": "Membro inferior — adulto",
+          "detail": "Coxa + perna + pé = 18% cada. Na criança cada perna ≈ 14%.",
+          "icon": "Footprints"
+        },
+        {
+          "label": "Palma da mão",
+          "detail": "Superfície palmar (incluindo dedos) ≈ 1% da SCQ — truque de prova quando não há diagrama.",
+          "icon": "Ruler"
+        },
+        {
+          "label": "Pegadinha da III",
+          "detail": "Gelo direto por 30 min é conduta errada — resfriar com água corrente morna 15–20 min.",
+          "icon": "Snowflake"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra B: I e II, apenas — III invalida C, D e E.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Adulto: cabeça 9% · Criança: cabeça 18% · Nunca gelo direto"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Regra dos 9 — referência SCQ",
+      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "content": "REGRA DOS 9 — DECORE",
+      "rows": [
+        {
+          "label": "Cabeça e pescoço — adulto",
+          "value": "9% da SCQ",
+          "badge": "ok"
+        },
+        {
+          "label": "Cabeça e pescoço — criança",
+          "value": "18% da SCQ — pegadinha clássica",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Membro superior",
+          "value": "9% cada (I verdadeira)",
+          "badge": "ok"
+        },
+        {
+          "label": "Membro inferior — adulto",
+          "value": "18% cada perna inteira",
+          "badge": "ok"
+        },
+        {
+          "label": "Membro inferior — criança",
+          "value": "≈ 14% cada perna",
+          "emphasis": "highlight",
+          "badge": "ok"
+        },
+        {
+          "label": "Tronco anterior",
+          "value": "18% (tórax + abdome)",
+          "badge": "ok"
+        },
+        {
+          "label": "Tronco posterior",
+          "value": "18% (dorso + nádegas)",
+          "badge": "ok"
+        },
+        {
+          "label": "Resfriamento",
+          "value": "Água corrente morna 15–20 min — III falsa (gelo)",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Resposta final",
+          "value": "I e II, apenas → letra B",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Some os segmentos queimados · adulto ≠ criança na cabeça e pernas"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "steps": [
+        "Garantir segurança — afastar fonte térmica e proteger equipe antes de estimar SCQ.",
+        "Resfriar com água corrente morna por 15–20 min (não gelo, não manteiga, não pomada).",
+        "Remover anéis, relógios e roupas sintéticas que retêm calor — sem arrancar aderidos.",
+        "Julgar I: membro superior adulto = 9% SCQ → verdadeira.",
+        "Julgar II: cabeça e pescoço na criança = 18% SCQ → verdadeira.",
+        "Julgar III: gelo direto por 30 min → falsa (agrava lesão e causa vasoconstrição).",
+        "Estimar SCQ total: somar segmentos queimados pela regra dos 9 (ou palma = 1%).",
+        "Avaliar profilaxia antitetânica conforme esquema vacinal e tipo de ferida.",
+        "Encaminhar a centro de queimados se SCQ elevada, face/mãos/genital ou queimadura elétrica/química.",
+        "Montar conjunto verdadeiro: I e II apenas.",
+        "Eliminar alternativas com III (C, D, E) ou sem I (A).",
+        "Marcar letra B.",
+        "Fixação: regra dos 9 muda cabeça e pernas entre adulto e criança."
+      ],
+      "footer_rule": "Triagem: segurança → resfriar → SCQ → tétano → encaminhar → gabarito"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "content": "PEGADINHAS — SCQ E RESFRIAMENTO",
+      "items": [
+        {
+          "label": "Letra A — I apenas",
+          "detail": "Omite II, que acerta a proporção da cabeça na criança (18%).",
+          "correct": "II também é verdadeira — cabeça/pescoço pediátrico = 18% SCQ."
+        },
+        {
+          "label": "Letra C — II e III",
+          "detail": "Inclui III falsa sobre gelo prolongado na pele.",
+          "correct": "Resfriamento é com água corrente morna — gelo direto é contraindicado."
+        },
+        {
+          "label": "Letra D — I, II e III",
+          "detail": "Aceita gelo por 30 min como conduta inicial correta.",
+          "correct": "III erra: gelo causa vasoconstrição e agrava dano tecidual."
+        },
+        {
+          "label": "Letra E — III apenas",
+          "detail": "Só a afirmativa falsa — gelo direto por meia hora.",
+          "correct": "III é a única falsa; I (9% membro sup.) e II (18% cabeça criança) são verdadeiras."
+        },
+        {
+          "label": "Cabeça 9% na criança",
+          "detail": "Memorizar só o percentual do adulto e aplicar à criança.",
+          "correct": "Criança: cabeça + pescoço = 18%; adulto = 9%."
+        },
+        {
+          "label": "Perna 18% na criança",
+          "detail": "Usar o percentual do adulto para membro inferior pediátrico.",
+          "correct": "Cada perna na criança ≈ 14% SCQ; no adulto = 18%."
+        },
+        {
+          "label": "Gelo acelera resfriamento",
+          "detail": "Parece lógico esfriar o mais rápido possível com gelo ou compressa gelada.",
+          "correct": "Água corrente morna 15–20 min — gelo direto prolongado piora a queimadura."
+        }
+      ],
+      "footer_rule": "III falsa elimina C, D e E — gabarito B (I e II)"
+    }
+  ]
+}

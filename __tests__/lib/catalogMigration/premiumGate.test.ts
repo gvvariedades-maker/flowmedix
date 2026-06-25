@@ -37,6 +37,7 @@ describe('isPremiumSubtopico', () => {
   it('reconhece subtópico com molde bespoke', () => {
     expect(isPremiumSubtopico('Vias de Administração')).toBe(true);
     expect(isPremiumSubtopico('Curativos e Manejo de Feridas')).toBe(true);
+    expect(isPremiumSubtopico('Enfermagem do Trabalho')).toBe(true);
   });
 
   it('subtópico genérico não dispara contrato premium', () => {

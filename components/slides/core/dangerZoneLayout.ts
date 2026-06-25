@@ -19,6 +19,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'scope-trap',
   'route-trap',
   'dose-trap',
+  'farmaco-trap',
   'catheter-danger-arena',
   'lab-prep-trap',
   'lab-specimen-arena',
@@ -27,6 +28,8 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'pni-trap-chips',
   'ist-trap-chips',
   'adolescent-consent-gate',
+  'burn-trap-arena',
+  'trabalho-pep-trap-arena',
 ]);
 
 /**
@@ -54,6 +57,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'scope-trap') return 'scope-trap';
   if (explicitVariant === 'route-trap') return 'route-trap';
   if (explicitVariant === 'dose-trap') return 'dose-trap';
+  if (explicitVariant === 'farmaco-trap') return 'farmaco-trap';
   if (explicitVariant === 'catheter-danger-arena') return 'catheter-danger-arena';
   if (explicitVariant === 'lab-prep-trap') return 'lab-prep-trap';
   if (explicitVariant === 'lab-specimen-arena') return 'lab-specimen-arena';
@@ -62,6 +66,8 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'pni-trap-chips') return 'pni-trap-chips';
   if (explicitVariant === 'ist-trap-chips') return 'ist-trap-chips';
   if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
+  if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
+  if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -84,6 +90,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'dose-trap') {
       return 'dose-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'farmaco-trap') {
+      return 'farmaco-trap';
     }
     if (!explicitVariant && fallbackVariant === 'catheter-danger-arena') {
       return 'catheter-danger-arena';
@@ -108,6 +117,12 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'adolescent-consent-gate') {
       return 'adolescent-consent-gate';
+    }
+    if (!explicitVariant && fallbackVariant === 'burn-trap-arena') {
+      return 'burn-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'trabalho-pep-trap-arena') {
+      return 'trabalho-pep-trap-arena';
     }
     return 'compare';
   }

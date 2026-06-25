@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-25T00:57:11.098Z",
+  "lote": "enfermagem-do-trabalho-g02",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+    "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+    "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+    "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

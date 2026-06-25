@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-24T23:28:55.616Z",
+  "lote": "farmacodinamica-e-farmacocinetica-g01",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1521
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1522
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-8",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1523
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 2191
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 2106
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2122
+    }
+  ]
+}

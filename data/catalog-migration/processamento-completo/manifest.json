@@ -1,0 +1,30 @@
+{
+  "lote": "processamento-completo",
+  "exported_at": "2026-06-24T22:07:50.135Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Processamento de Artigos e Produtos de Saúde",
+    "limit": 200,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+    "ibade-enfermagem-processo-de-enfermagem-1780005137458-7",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0"
+  ]
+}

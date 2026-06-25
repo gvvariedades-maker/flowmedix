@@ -1,0 +1,31 @@
+{
+  "lote": "processamento-g02",
+  "exported_at": "2026-06-24T22:11:21.465Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+      "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+      "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+      "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+      "ibade-enfermagem-processo-de-enfermagem-1780005137458-7",
+      "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+      "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+      "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
+      "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
+      "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0"
+    ]
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+    "ibade-enfermagem-processo-de-enfermagem-1780005137458-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0"
+  ]
+}

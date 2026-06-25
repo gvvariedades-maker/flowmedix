@@ -127,7 +127,7 @@ O `meta.subtopico` do JSON é usado para resolver automaticamente o design compl
 
 | Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
 |---|---|---|---|---|---|
-| Farmacodinâmica e Farmacocinética | purple | molecular | minimal | cards | list |
+| Farmacodinâmica e Farmacocinética | purple | adme-journey-rail | pk-pd-reference-board | farmaco-vf-juggle-tap | farmaco-trap |
 | Cálculo de Administração de Medicamentos e Infusões | blue | stack | minimal | vertical | compact |
 | Vias de Administração | emerald | grid | compact | horizontal | cards |
 | Cuidados na Administração de Medicamentos | teal | grid | compact | horizontal | cards |
@@ -144,7 +144,7 @@ O `meta.subtopico` do JSON é usado para resolver automaticamente o design compl
 | Coleta de Exames Laboratoriais | sky | grid | compact | horizontal | compact |
 | Mobilização e Posicionamento do Paciente | teal | grid | compact | horizontal | compact |
 | Procedimentos Diversos | emerald | grid | compact | horizontal | cards |
-| Feridas e Queimaduras | orange | morphological | banner | cards | cards |
+| Feridas e Queimaduras | orange | burn-depth-layer-deck | burn-rule-nine-board | burn-triage-tap-flow | burn-trap-arena |
 
 ### 6.4 Biossegurança e Controle de Infecção
 

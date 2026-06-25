@@ -25,7 +25,10 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'sae-reference-board',
   'sonda-measurement-board',
   'via-reference-board',
+  'pk-pd-reference-board',
   'adolescent-sigilo-spectrum',
+  'burn-rule-nine-board',
+  'trabalho-nr32-reference-board',
 ]);
 
 /**
@@ -63,7 +66,10 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'ist-reference-board') return 'ist-reference-board';
   if (explicitVariant === 'sae-reference-board') return 'sae-reference-board';
   if (explicitVariant === 'via-reference-board') return 'via-reference-board';
+  if (explicitVariant === 'pk-pd-reference-board') return 'pk-pd-reference-board';
   if (explicitVariant === 'adolescent-sigilo-spectrum') return 'adolescent-sigilo-spectrum';
+  if (explicitVariant === 'burn-rule-nine-board') return 'burn-rule-nine-board';
+  if (explicitVariant === 'trabalho-nr32-reference-board') return 'trabalho-nr32-reference-board';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

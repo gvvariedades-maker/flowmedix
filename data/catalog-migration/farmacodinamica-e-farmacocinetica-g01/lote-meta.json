@@ -1,0 +1,35 @@
+{
+  "lote": "farmacodinamica-e-farmacocinetica-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-24",
+  "subtopico": "Farmacodinâmica e Farmacocinética",
+  "cluster": "PK/PD definições · meia-vida · 1ª passagem · insulinas · IBP/diazepam clínico",
+  "total": 5,
+  "status": "applied",
+  "anchor_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+  "golden_reference": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+  "guideline": null,
+  "slugs": [
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+    "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+    "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1"
+  ],
+  "excluded": [
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-8",
+      "reason": "Conteúdo central = contraste radiológico (reclassificar para Procedimentos Diversos / Cuidados na Administração)"
+    }
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=farmacodinamica-e-farmacocinetica-g01 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/farmacodinamica-e-farmacocinetica-g01/questions/",
+    "2. Âncora VF: examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+    "3. npm run validate:goldens -- --lote=farmacodinamica-e-farmacocinetica-g01 --strict",
+    "4. npm run catalog:apply-lote -- --lote=farmacodinamica-e-farmacocinetica-g01 --dry-run",
+    "5. Apply só quando usuário pedir"
+  ],
+  "notes": "Export completo por subtopico retornou 25 slugs — maioria mis-tagged no DB (urgências, SAE, vias). g01 = núcleo PK/PD curado."
+}

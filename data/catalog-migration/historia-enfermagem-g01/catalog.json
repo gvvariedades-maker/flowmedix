@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-24T22:10:48.254Z",
+  "lote": "historia-enfermagem-g01",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 1
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 3365
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 178
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 179
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 3556
+    },
+    {
+      "modulo_slug": "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBEC",
+      "avant_codigo": 180
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 3
+    }
+  ]
+}

@@ -16,7 +16,10 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'sae-decision-tap',
   'sonda-decision-tap',
   'via-vf-juggle-tap',
+  'farmaco-vf-juggle-tap',
   'adolescent-vf-weave-tap',
+  'burn-triage-tap-flow',
+  'trabalho-vf-juggle-tap',
 ]);
 
 const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
@@ -31,7 +34,10 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'sae-decision-tap',
   'sonda-decision-tap',
   'via-vf-juggle-tap',
+  'farmaco-vf-juggle-tap',
   'adolescent-vf-weave-tap',
+  'burn-triage-tap-flow',
+  'trabalho-vf-juggle-tap',
 ]);
 
 /**

@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-25T00:18:16.871Z",
+  "lote": "enfermagem-do-trabalho-g02",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1832
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1833
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1834
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4110
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1836
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1837
+    }
+  ]
+}

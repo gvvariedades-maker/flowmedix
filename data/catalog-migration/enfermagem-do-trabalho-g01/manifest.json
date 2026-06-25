@@ -1,0 +1,27 @@
+{
+  "lote": "enfermagem-do-trabalho-g01",
+  "exported_at": "2026-06-25T00:15:21.760Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "avancasp-enfermagem-enfermagem-do-trabalho-1778967789485-7",
+      "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+      "copese-ufpi-geral-enfermagem-do-trabalho-1777103554284-3",
+      "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+      "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-7",
+      "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-8",
+      "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-2",
+      "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3"
+    ]
+  },
+  "slugs": [
+    "avancasp-enfermagem-enfermagem-do-trabalho-1778967789485-7",
+    "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+    "copese-ufpi-geral-enfermagem-do-trabalho-1777103554284-3",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-7",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-8",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-2",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3"
+  ]
+}

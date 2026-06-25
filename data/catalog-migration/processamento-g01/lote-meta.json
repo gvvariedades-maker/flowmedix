@@ -1,0 +1,33 @@
+{
+  "lote": "processamento-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-24",
+  "subtopico": "Processamento de Artigos e Produtos de Saúde",
+  "cluster": "Classificação Spaulding + limpeza/esterilização + SAL",
+  "cluster_pct": 44.4,
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+  "golden_reference": "examples/questao-premium-cpcon-processamento-artigos-prelimpeza-vf.json",
+  "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",
+  "slugs": [
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=processamento-g01 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/processamento-g01/questions/",
+    "2. Âncoras: idecan-3076-7 (classificação) + CPCON pré-limpeza V/F",
+    "3. npm run validate:goldens -- --lote=processamento-g01 --strict",
+    "4. npm run catalog:apply-lote -- --lote=processamento-g01 --dry-run",
+    "5. apply só quando usuário pedir"
+  ],
+  "next_lote": "processamento-g02 — concluído (10 slugs)"
+}

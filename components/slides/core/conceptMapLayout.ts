@@ -23,14 +23,17 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'sus-legal-pillars',
   'sus-art4-orbit',
   'absorption-speed-rail',
+  'adme-journey-rail',
   'dose-equivalence-rail',
   'oxygen-protocol-deck',
   'iv-care-orbit',
   'morphing-timeline',
   'lab-specimen-chain',
   'wound-stage-tissue-deck',
+  'burn-depth-layer-deck',
   'ist-risk-routes-deck',
   'adolescent-privacy-curtain',
+  'nr32-annex-deck',
 ]);
 
 function countConceptItems(slide?: {

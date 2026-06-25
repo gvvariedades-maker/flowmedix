@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-24T22:08:28.481Z",
+  "lote": "processamento-g01",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1570
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1571
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1572
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5112
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4328
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 4852
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 5050
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5037
+    }
+  ]
+}

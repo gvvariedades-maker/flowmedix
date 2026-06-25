@@ -1,0 +1,27 @@
+{
+  "lote": "historia-enfermagem-g01",
+  "exported_at": "2026-06-24T22:10:48.254Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+      "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+      "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+      "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+      "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+      "idcap-enfermagem-historia-da-enfermagem-1775331667969-3"
+    ]
+  },
+  "slugs": [
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+    "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+    "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+    "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+    "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+    "idcap-enfermagem-historia-da-enfermagem-1775331667969-3"
+  ]
+}

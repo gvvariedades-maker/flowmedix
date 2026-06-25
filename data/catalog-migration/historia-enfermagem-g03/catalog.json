@@ -1,0 +1,21 @@
+{
+  "exported_at": "2026-06-24T22:21:50.206Z",
+  "lote": "historia-enfermagem-g03",
+  "total": 2,
+  "entries": [
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 205
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 181
+    }
+  ]
+}

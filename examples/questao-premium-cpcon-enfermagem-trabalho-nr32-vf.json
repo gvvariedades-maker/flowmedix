@@ -6,7 +6,26 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Enfermagem do Trabalho"
+    "subtopico": "Enfermagem do Trabalho",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-24",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "NR-32 MTE — segurança em serviços de saúde; protocolo MS pós-exposição",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "enfermagem-trabalho-nr32",
+        "tier": "A",
+        "issuer": "Ministério do Trabalho / MS",
+        "title": "NR-32 — Segurança e Saúde no Trabalho em Serviços de Saúde",
+        "year": 2022,
+        "url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadoras/norma-regulamentadora-no-32-nr-32",
+        "covers": ["risco biológico", "vacina hepatite B", "EPI", "pós-exposição ocupacional"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre enfermagem do trabalho e NR-32, analise as afirmativas.\n\nI - A NR-32 estabelece diretrizes de segurança e saúde para trabalhadores em serviços de saúde, incluindo prevenção de riscos biológicos.\nII - A vacinação do trabalhador da saúde contra hepatite B integra estratégias de prevenção ocupacional quando indicada no calendário.\nIII - Exposição ocupacional a material biológico perfurocortante não exige notificação nem seguimento, bastando lavar o local e retornar ao trabalho.\n\nÉ CORRETO o que se afirma em:",
@@ -24,8 +43,9 @@
       "slide_title": "Saúde do trabalhador",
       "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem do Trabalho" },
       "items": [
-        { "label": "NR-32", "detail": "Segurança em serviços de saúde — riscos biológicos, químicos, ergonômicos.", "icon": "FileText" },
-        { "label": "Hepatite B", "detail": "Vacinação ocupacional recomendada para trabalhadores da saúde.", "icon": "Syringe" },
+        { "label": "NR-32", "detail": "Segurança em serviços de saúde — riscos biológicos, químicos, ergonômicos e de acidentes.", "icon": "FileText" },
+        { "label": "Risco biológico", "detail": "Anexo I — material biológico, perfurocortante, fluidos corporais.", "icon": "Biohazard" },
+        { "label": "Vacina hepatite B", "detail": "Prevenção ocupacional recomendada para trabalhadores da saúde.", "icon": "Syringe" },
         { "label": "Acidente perfurocortante", "detail": "Notificar, avaliar fonte, exames e profilaxia conforme protocolo.", "icon": "AlertTriangle" },
         { "label": "EPI", "detail": "Fornecido pelo empregador conforme risco da função.", "icon": "HardHat" }
       ],

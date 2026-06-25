@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-24T22:14:51.449Z",
+  "lote": "historia-enfermagem-g02",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1515
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1517
+    },
+    {
+      "modulo_slug": "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1724
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 5
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 182
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4419
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 207
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 377
+    }
+  ]
+}

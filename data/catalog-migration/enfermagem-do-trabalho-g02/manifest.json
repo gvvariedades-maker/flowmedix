@@ -1,0 +1,23 @@
+{
+  "lote": "enfermagem-do-trabalho-g02",
+  "exported_at": "2026-06-25T00:18:16.871Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+      "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+      "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+      "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+      "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+      "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1"
+    ]
+  },
+  "slugs": [
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+    "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+    "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+    "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1"
+  ]
+}

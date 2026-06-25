@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-23",
+  "updated_at": "2026-06-24",
   "description": "Resolver pacote handcraft golden-v1 Trilho A a partir do nome canônico do subtópico (CLAUDE.md §9).",
   "pacotes": {
     "Assistência Perioperatória (Inclui SRPA)": {
@@ -56,13 +56,86 @@
       "total_slugs": 16,
       "anchor_glob": "examples/questao-premium-*-saude-adolescente-*.json",
       "guideline": "lib/guidelines/saudeAdolescente.ts"
+    },
+    "História da Enfermagem": {
+      "pacote_prefix": "historia-enfermagem",
+      "manifest": "data/catalog-migration/historia-enfermagem-completo/manifest.json",
+      "readme": "data/catalog-migration/historia-enfermagem-completo/README.md",
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "historia-enfermagem-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 18,
+      "anchor_glob": "examples/questao-premium-*-historia-enfermagem-*.json",
+      "guideline": "lib/guidelines/historiaEnfermagem.ts"
+    },
+    "Processamento de Artigos e Produtos de Saúde": {
+      "pacote_prefix": "processamento",
+      "manifest": "data/catalog-migration/processamento-completo/manifest.json",
+      "readme": null,
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "processamento-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 18,
+      "anchor_glob": "examples/questao-premium-*-processamento-*.json",
+      "guideline": "lib/guidelines/cme.ts"
+    },
+    "Farmacodinâmica e Farmacocinética": {
+      "pacote_prefix": "farmacodinamica-e-farmacocinetica",
+      "manifest": "data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g01/lote-meta.json",
+      "readme": null,
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "farmacodinamica-e-farmacocinetica-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 5,
+      "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json",
+      "guideline": null
+    },
+    "Feridas e Queimaduras": {
+      "pacote_prefix": "feridas-e-queimaduras",
+      "manifest": "data/catalog-migration/feridas-e-queimaduras-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/feridas-e-queimaduras-g01/lote-meta.json",
+      "readme": null,
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "feridas-e-queimaduras-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 8,
+      "anchor_glob": "examples/questao-premium-*-feridas-queimaduras-*.json",
+      "guideline": "lib/guidelines/deepeningPlan.ts"
+    },
+    "Enfermagem do Trabalho": {
+      "pacote_prefix": "enfermagem-do-trabalho",
+      "manifest": "data/catalog-migration/enfermagem-do-trabalho-lote-01/manifest.json",
+      "handcraft_meta": "data/catalog-migration/enfermagem-do-trabalho-g01/lote-meta.json",
+      "readme": null,
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "enfermagem-do-trabalho-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 14,
+      "anchor_glob": "examples/questao-premium-*-enfermagem-trabalho-*.json",
+      "guideline": "lib/guidelines/enfermagemTrabalho.ts"
     }
   },
   "subtopicos_canonicos": [
+    "História da Enfermagem",
     "Assistência Perioperatória (Inclui SRPA)",
     "Enfermagem em Central de Material e Esterilização (CME)",
     "Saúde Mental",
-    "Saúde do Adolescente"
+    "Saúde do Adolescente",
+    "Processamento de Artigos e Produtos de Saúde",
+    "Farmacodinâmica e Farmacocinética",
+    "Feridas e Queimaduras",
+    "Enfermagem do Trabalho"
   ],
   "fallback_novo_pacote": {
     "when": "subtópico não está em pacotes",

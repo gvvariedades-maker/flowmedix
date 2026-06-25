@@ -13,14 +13,17 @@ import { SaeResponsibilityMatrix } from '../variants/SaeResponsibilityMatrix';
 import { SusLegalPillarsConceptMap } from '../variants/SusLegalPillarsConceptMap';
 import { SusArt4OrbitConceptMap } from '../variants/SusArt4OrbitConceptMap';
 import { AbsorptionSpeedRailConceptMap } from '../variants/AbsorptionSpeedRailConceptMap';
+import { AdmeJourneyRailConceptMap } from '../variants/AdmeJourneyRailConceptMap';
 import { DoseEquivalenceRailConceptMap } from '../variants/DoseEquivalenceRailConceptMap';
 import { OxygenProtocolDeckConceptMap } from '../variants/OxygenProtocolDeckConceptMap';
 import { IvCareOrbitConceptMap } from '../variants/IvCareOrbitConceptMap';
 import { MorphingTimelineConceptMap } from '../variants/MorphingTimelineConceptMap';
 import { LabSpecimenChainConceptMap } from '../variants/LabSpecimenChainConceptMap';
 import { WoundStageTissueDeckConceptMap } from '../variants/WoundStageTissueDeckConceptMap';
+import { BurnDepthLayerDeckConceptMap } from '../variants/BurnDepthLayerDeckConceptMap';
 import { IstRiskRoutesDeckConceptMap } from '../variants/IstRiskRoutesDeckConceptMap';
 import { AdolescentPrivacyCurtainConceptMap } from '../variants/AdolescentPrivacyCurtainConceptMap';
+import { Nr32AnnexDeckConceptMap } from '../variants/Nr32AnnexDeckConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -126,6 +129,9 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'absorption-speed-rail') {
         return <AbsorptionSpeedRailConceptMap concepts={getConcepts()} theme={theme} />;
       }
+      if (layoutVariant === 'adme-journey-rail') {
+        return <AdmeJourneyRailConceptMap concepts={getConcepts()} theme={theme} />;
+      }
       if (layoutVariant === 'dose-equivalence-rail') {
         return <DoseEquivalenceRailConceptMap concepts={getConcepts()} theme={theme} />;
       }
@@ -174,12 +180,30 @@ export const NeuroSlideHub = ({
           />
         );
       }
+      if (layoutVariant === 'burn-depth-layer-deck') {
+        return (
+          <BurnDepthLayerDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
       if (layoutVariant === 'ist-risk-routes-deck') {
         return <IstRiskRoutesDeckConceptMap concepts={getConcepts()} theme={theme} />;
       }
       if (layoutVariant === 'adolescent-privacy-curtain') {
         return (
           <AdolescentPrivacyCurtainConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'nr32-annex-deck') {
+        return (
+          <Nr32AnnexDeckConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}

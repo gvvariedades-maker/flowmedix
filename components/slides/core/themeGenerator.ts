@@ -188,11 +188,11 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // FARMACOLOGIA E MEDICAMENTOS
   // ============================================================
 
-  // ---- Farmacodinâmica e Farmacocinética ----
-  'farmacodinâmica e farmacocinética': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
-  'farmacodinâmica': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
-  'farmacocinética': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
-  'farmacologia': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
+  // ---- Farmacodinâmica e Farmacocinética (golden: adme-journey-rail · pk-pd-reference-board · farmaco-vf-juggle-tap · farmaco-trap) ----
+  'farmacodinâmica e farmacocinética': { template: 'purple', conceptMap: 'adme-journey-rail', goldenRule: 'pk-pd-reference-board', logicFlow: 'farmaco-vf-juggle-tap', dangerZone: 'farmaco-trap' },
+  'farmacodinâmica': { template: 'purple', conceptMap: 'adme-journey-rail', goldenRule: 'pk-pd-reference-board', logicFlow: 'farmaco-vf-juggle-tap', dangerZone: 'farmaco-trap' },
+  'farmacocinética': { template: 'purple', conceptMap: 'adme-journey-rail', goldenRule: 'pk-pd-reference-board', logicFlow: 'farmaco-vf-juggle-tap', dangerZone: 'farmaco-trap' },
+  'farmacologia': { template: 'purple', conceptMap: 'adme-journey-rail', goldenRule: 'pk-pd-reference-board', logicFlow: 'farmaco-vf-juggle-tap', dangerZone: 'farmaco-trap' },
 
   // ---- Cálculo de Medicamentos ----
   // ---- Cálculos (golden: dose-equivalence-rail · soft-lens-board · dose-calc-tap · dose-trap) ----
@@ -229,9 +229,10 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'curativos e manejo de feridas': { template: 'orange', conceptMap: 'wound-stage-tissue-deck', goldenRule: 'dressing-match-matrix', logicFlow: 'wound-prep-tap-flow', dangerZone: 'dressing-choice-arena' },
   'curativos': { template: 'orange', conceptMap: 'wound-stage-tissue-deck', goldenRule: 'dressing-match-matrix', logicFlow: 'wound-prep-tap-flow', dangerZone: 'dressing-choice-arena' },
   'manejo de feridas': { template: 'orange', conceptMap: 'wound-stage-tissue-deck', goldenRule: 'dressing-match-matrix', logicFlow: 'wound-prep-tap-flow', dangerZone: 'dressing-choice-arena' },
-  'feridas e queimaduras': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
-  'feridas': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
-  'queimaduras': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Feridas e Queimaduras (golden: burn-rule-nine-board · burn-triage-tap-flow · burn-trap-arena) ----
+  'feridas e queimaduras': { template: 'orange', conceptMap: 'burn-depth-layer-deck', goldenRule: 'burn-rule-nine-board', logicFlow: 'burn-triage-tap-flow', dangerZone: 'burn-trap-arena' },
+  'feridas': { template: 'orange', conceptMap: 'burn-depth-layer-deck', goldenRule: 'burn-rule-nine-board', logicFlow: 'burn-triage-tap-flow', dangerZone: 'burn-trap-arena' },
+  'queimaduras': { template: 'orange', conceptMap: 'burn-depth-layer-deck', goldenRule: 'burn-rule-nine-board', logicFlow: 'burn-triage-tap-flow', dangerZone: 'burn-trap-arena' },
 
   // ---- Punção Venosa / Cateteres ----
   'punção venosa e cuidados com cateteres': { template: 'indigo', conceptMap: 'morphing-timeline', goldenRule: 'iv-bundle-mesh-reveal', logicFlow: 'iv-care-soft-stack', dangerZone: 'catheter-danger-arena' },
@@ -357,8 +358,14 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // SAÚDE DO TRABALHADOR
   // ============================================================
 
-  // ---- Enfermagem do Trabalho ----
-  'enfermagem do trabalho': { template: 'amber', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Enfermagem do Trabalho (golden: nr32-annex-deck · trabalho-nr32-reference-board · trabalho-vf-juggle-tap · trabalho-pep-trap-arena) ----
+  'enfermagem do trabalho': {
+    template: 'amber',
+    conceptMap: 'nr32-annex-deck',
+    goldenRule: 'trabalho-nr32-reference-board',
+    logicFlow: 'trabalho-vf-juggle-tap',
+    dangerZone: 'trabalho-pep-trap-arena',
+  },
 
   // ============================================================
   // SAÚDE MENTAL

@@ -6,7 +6,26 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "História da Enfermagem"
+    "subtopico": "História da Enfermagem",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-24",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "COFEN — CEPE + historiografia (Nightingale, SUS)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "historia-enfermagem-cofen",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Código de Ética + marcos históricos da enfermagem",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br/",
+        "covers": ["Florence Nightingale", "Código de Ética COFEN", "enfermagem brasileira pré-SUS"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre a história da enfermagem, analise as afirmativas.\n\nI - Florence Nightingale é considerada a fundadora da enfermagem moderna por sistematizar cuidados, higiene e observação clínica durante a Guerra da Crimeia.\nII - O Código de Ética dos Profissionais de Enfermagem no Brasil é norma do COFEN e orienta a conduta ética da categoria.\nIII - A enfermagem brasileira surgiu apenas após a criação do Sistema Único de Saúde (SUS), em 1988.\n\nÉ CORRETO o que se afirma em:",

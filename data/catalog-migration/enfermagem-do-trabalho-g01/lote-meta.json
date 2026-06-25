@@ -1,0 +1,33 @@
+{
+  "lote": "enfermagem-do-trabalho-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-24",
+  "subtopico": "Enfermagem do Trabalho",
+  "cluster": "NR-32 · ergonomia · riscos · PCMSO · perfurocortante",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+  "golden_reference": "examples/questao-premium-cpcon-enfermagem-trabalho-nr32-vf.json",
+  "guideline": "lib/guidelines/enfermagemTrabalho.ts",
+  "moldes": "nr32-annex-deck · trabalho-nr32-reference-board · trabalho-vf-juggle-tap · trabalho-pep-trap-arena",
+  "slugs": [
+    "avancasp-enfermagem-enfermagem-do-trabalho-1778967789485-7",
+    "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+    "copese-ufpi-geral-enfermagem-do-trabalho-1777103554284-3",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-7",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-8",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-2",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=enfermagem-do-trabalho-g01 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/enfermagem-do-trabalho-g01/questions/",
+    "2. Âncora VF: examples/questao-premium-cpcon-enfermagem-trabalho-nr32-vf.json",
+    "3. npm run validate:goldens -- --lote=enfermagem-do-trabalho-g01 --strict",
+    "4. npm run catalog:apply-lote -- --lote=enfermagem-do-trabalho-g01 --dry-run",
+    "5. Apply só quando usuário pedir"
+  ],
+  "next_lote": "enfermagem-do-trabalho-g02 — 6 slugs restantes (fechamento do subtópico)"
+}

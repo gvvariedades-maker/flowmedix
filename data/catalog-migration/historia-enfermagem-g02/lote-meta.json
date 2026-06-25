@@ -1,0 +1,31 @@
+{
+  "lote": "historia-enfermagem-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-24",
+  "subtopico": "História da Enfermagem",
+  "cluster": "Saúde pública + humanização + teorias clássicas",
+  "total": 8,
+  "status": "validated",
+  "anchor_slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+  "golden_reference": "examples/questao-premium-cpcon-historia-enfermagem-nightingale.json",
+  "guideline": "lib/guidelines/historiaEnfermagem.ts",
+  "slugs": [
+    "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+    "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+    "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+    "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+    "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+    "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+    "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=historia-enfermagem-g02 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/historia-enfermagem-g02/questions/",
+    "2. npm run validate:goldens -- --lote=historia-enfermagem-g02 --strict",
+    "3. npm run catalog:apply-lote -- --lote=historia-enfermagem-g02 --dry-run",
+    "4. Apply só quando usuário pedir"
+  ],
+  "next_lote": "historia-enfermagem-g03 — Wanda Horta (2 slugs finais)"
+}

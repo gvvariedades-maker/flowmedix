@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-06-24T22:22:38.040Z",
+  "lote": "historia-enfermagem-g03",
+  "mode": "dry-run",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "lote": "historia-enfermagem-g02",
+  "exported_at": "2026-06-24T22:14:51.449Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+      "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+      "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+      "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+      "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+      "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1"
+    ]
+  },
+  "slugs": [
+    "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+    "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+    "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+    "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+    "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+    "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+    "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1"
+  ]
+}

@@ -18,10 +18,13 @@ import { LogicFlowStepLadder } from './LogicFlowStepLadder';
 import { LogicFlowSoftStack } from './LogicFlowSoftStack';
 import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
 import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
+import { LogicFlowBurnTriageTapFlow } from './LogicFlowBurnTriageTapFlow';
+import { LogicFlowTrabalhoVfJuggleTap } from './LogicFlowTrabalhoVfJuggleTap';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
 import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
 import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
 import { LogicFlowViaVfJuggleTap } from './LogicFlowViaVfJuggleTap';
+import { LogicFlowFarmacoVfJuggleTap } from './LogicFlowFarmacoVfJuggleTap';
 import { LogicFlowAdolescentVfWeaveTap } from './LogicFlowAdolescentVfWeaveTap';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
@@ -174,6 +177,14 @@ export const LogicFlow = ({
     return <LogicFlowWoundPrepTapFlow steps={steps} theme={theme} />;
   }
 
+  if (variant === 'burn-triage-tap-flow') {
+    return <LogicFlowBurnTriageTapFlow steps={steps} theme={theme} />;
+  }
+
+  if (variant === 'trabalho-vf-juggle-tap') {
+    return <LogicFlowTrabalhoVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+  }
+
   if (variant === 'pni-vf-juggle-tap') {
     return <LogicFlowPniVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
   }
@@ -191,6 +202,10 @@ export const LogicFlow = ({
 
   if (variant === 'via-vf-juggle-tap') {
     return <LogicFlowViaVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+  }
+
+  if (variant === 'farmaco-vf-juggle-tap') {
+    return <LogicFlowFarmacoVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
   }
 
   if (variant === 'adolescent-vf-weave-tap') {

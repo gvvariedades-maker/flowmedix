@@ -1,0 +1,19 @@
+{
+  "lote": "feridas-e-queimaduras-completo",
+  "exported_at": "2026-06-24T00:00:00.000Z",
+  "source": "supabase-curated",
+  "filters": {
+    "subtopico": "Feridas e Queimaduras",
+    "note": "Lista curada — exclui mis-tags curativos/urgências do export bruto"
+  },
+  "slugs": [
+    "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",
+    "idib-enfermagem-feridas-e-queimaduras-1778934936220-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-1",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-7",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-8",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-9"
+  ]
+}

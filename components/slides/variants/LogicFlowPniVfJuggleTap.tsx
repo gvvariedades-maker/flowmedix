@@ -8,12 +8,14 @@ import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import { parsePniVfStep, type ParsedPniVfStep } from '@/lib/slides/pniSlideUtils';
 
-export type VfJuggleAccent = 'pni' | 'ist' | 'via';
+export type VfJuggleAccent = 'pni' | 'ist' | 'via' | 'farmaco' | 'trabalho';
 
 const STRATEGY_CHIP_LABEL: Record<VfJuggleAccent, string> = {
   pni: 'ESTRATÉGIA PNI',
   ist: 'ESTRATÉGIA IST',
   via: 'ESTRATÉGIA VIAS',
+  farmaco: 'ESTRATÉGIA FARMACO',
+  trabalho: 'ESTRATÉGIA NR-32',
 };
 
 const VF_JUGGLE_ACCENTS: Record<
@@ -70,6 +72,32 @@ const VF_JUGGLE_ACCENTS: Record<
     footerSummary: 'border-emerald-200/70 bg-emerald-50/80 text-emerald-900/80',
     stepTitle: 'text-emerald-900',
     letterChip: 'from-emerald-500 to-teal-600 shadow-emerald-300/40',
+  },
+  farmaco: {
+    chipLabel: 'V/F FARMACO',
+    chip: 'border-violet-200/80 text-violet-900',
+    card: 'border-violet-200/80 from-white via-violet-50/40 to-white',
+    dotActive: 'bg-violet-500',
+    dotRevealed: 'bg-purple-400',
+    btnNext: 'from-violet-500 to-purple-600 shadow-violet-300/40',
+    btnReveal: 'from-violet-500 to-purple-600 shadow-violet-300/40',
+    btnSummary: 'from-violet-500 to-purple-600',
+    footerSummary: 'border-violet-200/70 bg-violet-50/80 text-violet-900/80',
+    stepTitle: 'text-violet-900',
+    letterChip: 'from-violet-500 to-purple-600 shadow-violet-300/40',
+  },
+  trabalho: {
+    chipLabel: 'V/F NR-32',
+    chip: 'border-amber-200/80 text-amber-900',
+    card: 'border-amber-200/80 from-white via-amber-50/40 to-white',
+    dotActive: 'bg-amber-500',
+    dotRevealed: 'bg-orange-400',
+    btnNext: 'from-amber-500 to-orange-600 shadow-amber-300/40',
+    btnReveal: 'from-amber-500 to-orange-600 shadow-amber-300/40',
+    btnSummary: 'from-amber-500 to-orange-600',
+    footerSummary: 'border-amber-200/70 bg-amber-50/80 text-amber-900/80',
+    stepTitle: 'text-amber-900',
+    letterChip: 'from-amber-500 to-orange-600 shadow-amber-300/40',
   },
 };
 

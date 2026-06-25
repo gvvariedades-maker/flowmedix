@@ -154,6 +154,7 @@ export function resolveSlidePresentation(
       layoutVariant === 'scope-trap' ||
       layoutVariant === 'route-trap' ||
       layoutVariant === 'dose-trap' ||
+      layoutVariant === 'farmaco-trap' ||
       layoutVariant === 'catheter-danger-arena' ||
       layoutVariant === 'lab-prep-trap' ||
       layoutVariant === 'lab-specimen-arena' ||
@@ -161,7 +162,9 @@ export function resolveSlidePresentation(
       layoutVariant === 'vitals-classify-arena' ||
       layoutVariant === 'pni-trap-chips' ||
       layoutVariant === 'ist-trap-chips' ||
-      layoutVariant === 'adolescent-consent-gate')
+      layoutVariant === 'adolescent-consent-gate' ||
+      layoutVariant === 'burn-trap-arena' ||
+      layoutVariant === 'trabalho-pep-trap-arena')
       ? 'x_icon'
       : 'numbered');
 

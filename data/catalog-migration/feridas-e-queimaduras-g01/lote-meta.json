@@ -1,0 +1,50 @@
+{
+  "lote": "feridas-e-queimaduras-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-24",
+  "subtopico": "Feridas e Queimaduras",
+  "cluster": "Graus · SCQ/regra dos 9 · atendimento inicial · cicatrização · classificação de feridas",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
+  "golden_reference": "examples/questao-premium-idecan-feridas-queimaduras-grau-vf.json",
+  "guideline": "lib/guidelines/deepeningPlan.ts",
+  "slugs": [
+    "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",
+    "idib-enfermagem-feridas-e-queimaduras-1778934936220-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-1",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-7",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-8",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-9"
+  ],
+  "excluded": [
+    {
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+      "reason": "Conteúdo central = SF aquecido em curativo — subtópico Curativos e Manejo de Feridas"
+    },
+    {
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+      "reason": "Carvão ativado com prata C/E — Curativos e Manejo de Feridas"
+    },
+    {
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+      "reason": "Alginato C/E — Curativos e Manejo de Feridas"
+    },
+    {
+      "slug": "quadrix-enfermagem-feridas-e-queimaduras-1780001297464-4",
+      "reason": "Definição de LPP — Mobilização e Posicionamento / Curativos"
+    }
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=feridas-e-queimaduras-g01 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/feridas-e-queimaduras-g01/questions/",
+    "2. Âncoras: examples/questao-premium-idecan-feridas-queimaduras-grau-vf.json + cpcon-scq-vf.json",
+    "3. npm run validate:goldens -- --lote=feridas-e-queimaduras-g01 --strict",
+    "4. npm run catalog:apply-lote -- --lote=feridas-e-queimaduras-g01 --dry-run",
+    "5. Apply só quando usuário pedir"
+  ],
+  "notes": "Export por subtopico retornou 26 slugs — maioria mis-tagged (curativos, urgências). g01 = núcleo queimaduras/feridas curado (8 slugs)."
+}
