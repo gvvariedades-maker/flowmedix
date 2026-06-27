@@ -20,7 +20,7 @@ describe('buildMenuSections', () => {
 
   it('NAV_SECTION_DEFS expõe title em cada item para tooltip do menu', () => {
     const items = NAV_SECTION_DEFS.flatMap((s) => s.items);
-    expect(items).toHaveLength(8);
+    expect(items).toHaveLength(9);
     for (const item of items) {
       expect(item.title.trim().length).toBeGreaterThan(0);
     }

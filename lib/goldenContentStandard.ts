@@ -519,7 +519,8 @@ function lintSlidePackage(slides: SlideLike[], q: QuestaoLike, family?: GoldenFa
 
   if (family === 'vf') {
     const hasRoman =
-      /julgar\s+I\b|afirmativa\s+I\b|\bI\s*[-–]/i.test(fullText) || /II|III|IV/.test(fullText);
+      /julgar\s+i\b|afirmativa\s+i\b|\bi\s*[-–:]/.test(fullText) ||
+      /\bii\b|\biii\b|\biv\b/.test(fullText);
     if (!hasRoman) {
       issues.push({
         code: 'vf_roman',

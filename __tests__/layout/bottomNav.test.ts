@@ -47,7 +47,7 @@ describe('BottomNav', () => {
   it('DashboardShell repassa drawerOpen e welcomeOpen', () => {
     const shell = readFileSync(shellPath, 'utf8');
     expect(shell).toContain('drawerOpen={mobileMenuOpen}');
-    expect(shell).toContain('welcomeOpen={estudoReversoWelcome.isOpen}');
+    expect(shell).toContain('welcomeOpen={onboardingOnAccess.isOpen || estudoReversoWelcome.isOpen}');
   });
 
   it('sincroniza altura via useBottomNavHeightSync no nav inline do flex shell', () => {

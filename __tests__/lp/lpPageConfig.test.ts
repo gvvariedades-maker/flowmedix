@@ -1,10 +1,12 @@
 import { LpPageAdminCreateSchema, LpPageConfigSchema } from '@/lib/validations';
 import { EMPTY_LP_CONFIG } from '@/lib/lp/formDefaults';
 
-describe('LpPageConfigSchema', () => {
-  it('aceita config mínima válida derivada do default', () => {
+const validWalkthrough = { imagens: ['/lp/walkthrough/01.png'] };
+
+describe('LpPageConfigSchema', () => {  it('aceita config mínima válida derivada do default', () => {
     const sample = {
       ...EMPTY_LP_CONFIG,
+      walkthrough: validWalkthrough,
       concurso: {
         ...EMPTY_LP_CONFIG.concurso,
         cidade: 'Recife',
@@ -40,6 +42,7 @@ describe('LpPageAdminCreateSchema', () => {
       internal_name: 'Recife',
       config: LpPageConfigSchema.parse({
         ...EMPTY_LP_CONFIG,
+        walkthrough: validWalkthrough,
         concurso: {
           ...EMPTY_LP_CONFIG.concurso,
           cidade: 'Recife',
