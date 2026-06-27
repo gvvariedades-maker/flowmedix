@@ -3,7 +3,12 @@ import {
   getFamilyVisualSlideProfile,
   type FamilySlideType,
 } from '@/lib/catalogMigration/familyLayoutProfile';
-import { calculateLayoutVariant, hasSubtopicCanonicalDesign } from './themeGenerator';
+import { shouldApplySubtopicMold } from '@/lib/slides/moldAffinity';
+import {
+  calculateLayoutVariantFromType,
+  getLayoutVariantBySubtopic,
+  hasSubtopicCanonicalDesign,
+} from './themeGenerator';
 import {
   resolveConceptMapLayoutVariant,
   type ConceptMapItemLike,
@@ -71,12 +76,23 @@ export function resolveSlidePresentation(
 ): ResolvedSlidePresentation {
   const slideType = slide.type;
   const subtopico = slide.meta?.subtopico?.trim();
-  const useSubtopicMold = hasSubtopicCanonicalDesign(subtopico);
-  const subtopicFallback = calculateLayoutVariant(slide);
+  const hasSubtopicDesign = hasSubtopicCanonicalDesign(subtopico);
+  const subtopicVariant =
+    subtopico && slideType
+      ? getLayoutVariantBySubtopic(subtopico, slideType, slide)
+      : calculateLayoutVariantFromType(slideType ?? '', slide);
   const explicitLayoutVariant = presentationContext?.jsonLayoutVariant;
 
+  const affinityCtx = {
+    slideType,
+    familyId: presentationContext?.familyId,
+    subtopico,
+  };
+  const subtopicMoldApplies =
+    hasSubtopicDesign && shouldApplySubtopicMold(subtopicVariant, slide, affinityCtx);
+
   const rotationCtx: LayoutRotationContext | undefined =
-    !useSubtopicMold && presentationContext?.questionSlug
+    !subtopicMoldApplies && presentationContext?.questionSlug
       ? {
           slug: presentationContext.questionSlug,
           slideIndex: presentationContext.slideIndex,
@@ -91,10 +107,11 @@ export function resolveSlidePresentation(
       ? getFamilyVisualSlideProfile(presentationContext.familyId, familySlide)
       : undefined;
 
-  const rotationAnchor = useSubtopicMold
-    ? subtopicFallback
-    : (familyVisual?.anchor ?? subtopicFallback);
-  const familyPool = useSubtopicMold ? undefined : familyVisual?.pool;
+  const semanticFallback = calculateLayoutVariantFromType(slideType ?? '', slide);
+  const rotationAnchor = subtopicMoldApplies
+    ? subtopicVariant
+    : (familyVisual?.anchor ?? semanticFallback);
+  const familyPool = subtopicMoldApplies ? undefined : familyVisual?.pool;
 
   let layoutVariant = explicitLayoutVariant || rotationAnchor;
 

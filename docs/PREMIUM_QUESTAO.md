@@ -20,7 +20,7 @@ Use este arquivo quando alguém perguntar “o que é premium?”. Ele **define 
 
 **No dia a dia**, “questão premium” = **L2 no mínimo**.
 
-**“Pacote premium fechado”** (subtópico como Curativos ou Imunização) = L3 em todo o catálogo do subtópico + golden(s) + builder + migração — ver [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md).
+**“Pacote premium fechado”** = 100% slugs handcraft golden-v1 — ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md) e [`handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json).
 
 ```text
 L1  Estrutural     →  toda questão AVANT
@@ -77,7 +77,7 @@ Além de L1:
 | Interação nova | `logic_flow` com `reveal_mode: "tap"` (conteúdo novo) |
 | Golden recomendado | `meta.content_standard: "golden-v1"`, `family`, `sources`, `content_review` — ver [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) |
 
-O **hybrid genérico** (`upgradePremiumHybrid` com placeholders) é **transição** — não conta como L2.
+O **hybrid genérico** e conteúdo via **builder legado** não contam como L2 golden-v1 — re-handcraft pendente. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
 
 **Alinhamento enunciado ↔ slides (L2 semântico):** além de zero stub, o estudo reverso deve usar vocabulário e gabarito **desta** prova — não de outro tema do subtópico (ex.: “bundle CVC” numa questão EXCETO). O gate estrutural (`premiumGate`) não cobre isso; use cluster report + gate semântico + amostra no player — ver [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) § Qualidade por ramos.
 
@@ -106,7 +106,7 @@ Quando `isPremiumSubtopico(meta.subtopico)` é verdadeiro — subtópico com ao 
 - Chokepoint de escrita: `applyLoteToSupabase` com `premiumGate: true`
 - Presença de molde: [`__tests__/slidePresentationSubtopicMold.test.ts`](../__tests__/slidePresentationSubtopicMold.test.ts)
 
-**Wiring visual:** [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) · [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md)
+**Wiring visual:** [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) · [`MOLD_AFFINITY_RESOLVER.md`](MOLD_AFFINITY_RESOLVER.md) · [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md)
 
 ---
 

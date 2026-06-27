@@ -1,0 +1,508 @@
+/**
+ * Resolução de moldes premium (L3) por afinidade de conteúdo.
+ *
+ * Regra: molde bespoke do subtópico só aplica quando o texto do slide
+ * combina com o ramo pedagógico — senão cai para família + rotação por slug.
+ *
+ * @see docs/MOLD_AFFINITY_RESOLVER.md
+ */
+import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
+
+function normalizeKey(str: string): string {
+  return str
+    .toLowerCase()
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ');
+}
+
+/** Variantes genéricas — não exigem afinidade temática. */
+export const GENERIC_LAYOUT_VARIANTS = new Set<string>([
+  'center',
+  'compact',
+  'minimal',
+  'banner',
+  'grid',
+  'morphological',
+  'molecular',
+  'bridge',
+  'stack',
+  'cards',
+  'list',
+  'vertical',
+  'horizontal',
+  'compare',
+  'reference_table',
+]);
+
+export function isBespokeLayoutVariant(variant: string | undefined): boolean {
+  return Boolean(variant) && !GENERIC_LAYOUT_VARIANTS.has(variant);
+}
+
+export type MoldAffinitySlide = {
+  type?: string;
+  content?: string;
+  footer_rule?: string;
+  items?: Array<{ label?: string; detail?: string; correct?: string; title?: string }>;
+  rows?: Array<{ label?: string; value?: string }>;
+  steps?: unknown[];
+  concepts?: unknown[];
+};
+
+export type MoldAffinityContext = {
+  slideType?: string;
+  familyId?: FamilyId;
+  subtopico?: string;
+};
+
+type MoldAffinityRule = {
+  /** Fragmentos do subtópico canônico (normalizados) — molde “de casa”. */
+  homeSubtopicFragments?: string[];
+  /** Famílias que nunca usam este molde. */
+  blockFamilies?: FamilyId[];
+  /** Se bater, rejeita o molde (mesmo no subtópico de casa). */
+  blockPatterns?: RegExp[];
+  /** Termos que confirmam o ramo — obrigatórios fora do subtópico de casa. */
+  positivePatterns?: RegExp[];
+  minPositive?: number;
+  /**
+   * Moldes adolescente: no subtópico de casa, aplica por padrão
+   * salvo blockPatterns / blockFamilies.
+   */
+  adolescentEthicsMold?: boolean;
+};
+
+/** Conteúdo antropométrico / escore Z — não usar moldes de sigilo adolescente. */
+const NUTRITION_ANTHROPOMETRY_BLOCK: RegExp[] = [
+  /escore\s*z|score\s*z|\bz\s*[<>≤≥]|desvio[\s-]?padr[aã]o/i,
+  /\bimc\b|índice de massa|eutrofi|sobrepeso|obesidade|magreza/i,
+  /antropometr|pondero[\s-]?estatur|caderneta do adolescente|curvas?\s*oms/i,
+  /classifica[cç][aã]o nutricional|estatura muito baixa/i,
+];
+
+const ADOLESCENT_ETHICS_POSITIVE: RegExp[] = [
+  /sigilo|confidencial|quebra de sigilo|quebrar sigilo/i,
+  /escuta qualificada|privacidade|acolhimento|v[ií]nculo/i,
+  /gravidez|gestante|gesta[cç][aã]o|pr[eé][\s-]?natal/i,
+  /\bcaps\b|aten[cç][aã]o psicossocial/i,
+  /contracep|orienta[cç][aã]o sexual|viol[eê]ncia sexual|abuso sexual/i,
+  /autonomia|consentimento|respons[aá]vel legal/i,
+  /espa[cç]o do adolescente/i,
+];
+
+const ADOLESCENT_VARIANTS = new Set([
+  'adolescent-privacy-curtain',
+  'adolescent-sigilo-spectrum',
+  'adolescent-vf-weave-tap',
+  'adolescent-consent-gate',
+]);
+
+function subtopicoMatchesFragments(subtopico: string | undefined, fragments: string[]): boolean {
+  if (!subtopico?.trim() || fragments.length === 0) return false;
+  const key = normalizeKey(subtopico);
+  return fragments.some((f) => key.includes(normalizeKey(f)));
+}
+
+function countPatternMatches(corpus: string, patterns: RegExp[]): number {
+  return patterns.reduce((n, p) => (p.test(corpus) ? n + 1 : n), 0);
+}
+
+/** Extrai texto pesquisável do slide (labels, steps, rows…). */
+export function collectSlideTextCorpus(slide: MoldAffinitySlide): string {
+  const parts: string[] = [];
+
+  if (typeof slide.content === 'string') parts.push(slide.content);
+  if (typeof slide.footer_rule === 'string') parts.push(slide.footer_rule);
+
+  if (Array.isArray(slide.items)) {
+    for (const item of slide.items) {
+      if (item?.label) parts.push(item.label);
+      if (item?.detail) parts.push(item.detail);
+      if (item?.correct) parts.push(item.correct);
+      if (item?.title) parts.push(item.title);
+    }
+  }
+
+  if (Array.isArray(slide.rows)) {
+    for (const row of slide.rows) {
+      if (row?.label) parts.push(row.label);
+      if (row?.value) parts.push(row.value);
+    }
+  }
+
+  if (Array.isArray(slide.steps)) {
+    for (const step of slide.steps) {
+      if (typeof step === 'string') parts.push(step);
+    }
+  }
+
+  return parts.join(' ');
+}
+
+/**
+ * Registry de afinidade por molde bespoke.
+ * Moldes ausentes → pass (compatibilidade com lotes legados).
+ */
+const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
+  // ---- Saúde do Adolescente (ramo ético — bloqueia nutrição/Z) ----
+  'adolescent-privacy-curtain': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: NUTRITION_ANTHROPOMETRY_BLOCK,
+    positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+    adolescentEthicsMold: true,
+  },
+  'adolescent-sigilo-spectrum': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: NUTRITION_ANTHROPOMETRY_BLOCK,
+    positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+    adolescentEthicsMold: true,
+  },
+  'adolescent-vf-weave-tap': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc', 'legis'],
+    blockPatterns: NUTRITION_ANTHROPOMETRY_BLOCK,
+    positivePatterns: [
+      ...ADOLESCENT_ETHICS_POSITIVE,
+      /afirmativa\s+[IIVX]+|julgar\s+[IIVX]+|\bI\b.*(?:verdadeira|falsa)/i,
+    ],
+    adolescentEthicsMold: true,
+  },
+  'adolescent-consent-gate': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: NUTRITION_ANTHROPOMETRY_BLOCK,
+    positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+    adolescentEthicsMold: true,
+  },
+
+  // ---- Sinais vitais ----
+  'vitals-panel': {
+    homeSubtopicFragments: ['sinais vitais', 'verificacao de sinais vitais'],
+    positivePatterns: [
+      /sinais vitais|\bfc\b|freq[uê]ncia card[ií]aca|press[aã]o arterial|\bpa\b|\bfr\b|spo2|temperatura|taquicard|bradicard|pulso/i,
+    ],
+  },
+  'vitals-reference-board': {
+    homeSubtopicFragments: ['sinais vitais', 'verificacao de sinais vitais'],
+    positivePatterns: [
+      /sinais vitais|\bfc\b|freq[uê]ncia card[ií]aca|press[aã]o arterial|\bpa\b|\bfr\b|spo2|temperatura|taquicard|bradicard/i,
+    ],
+  },
+  'vitals-translate-tap': {
+    homeSubtopicFragments: ['sinais vitais', 'verificacao de sinais vitais'],
+    positivePatterns: [/sinais vitais|\bfc\b|press[aã]o|temperatura|spo2/i],
+  },
+  'vitals-classify-arena': {
+    homeSubtopicFragments: ['sinais vitais', 'verificacao de sinais vitais'],
+    positivePatterns: [/sinais vitais|\bfc\b|press[aã]o|temperatura|taquicard|bradicard/i],
+  },
+
+  // ---- Sondas ----
+  'procedure-protocol': {
+    homeSubtopicFragments: ['sonda', 'manejo de sondas'],
+    positivePatterns: [/sonda|nasog[aá]strica|nasoenteral|\bnex\b|bal[aã]o|gastrostomia|jejunostomia/i],
+  },
+  'sonda-measurement-board': {
+    homeSubtopicFragments: ['sonda', 'manejo de sondas'],
+    positivePatterns: [/sonda|\bnex\b|nariz|xifoide|medi[cç][aã]o/i],
+  },
+  'sonda-decision-tap': {
+    homeSubtopicFragments: ['sonda', 'manejo de sondas'],
+    positivePatterns: [/sonda|nasog[aá]strica|instala[cç][aã]o/i],
+  },
+
+  // ---- Imunização / PNI ----
+  'pni-rules-deck': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    positivePatterns: [/vacina|imuniz|pni|calend[aá]rio|dose|refor[cç]o|intervalo/i],
+  },
+  'pni-interval-matrix': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    positivePatterns: [/vacina|imuniz|pni|dose|intervalo|refor[cç]o/i],
+  },
+  'pni-vf-juggle-tap': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    positivePatterns: [/vacina|imuniz|pni/i],
+  },
+  'pni-trap-chips': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    positivePatterns: [/vacina|imuniz|pni/i],
+  },
+
+  // ---- ISTs ----
+  'ist-risk-routes-deck': {
+    homeSubtopicFragments: ['ists', 'infecoes sexualmente transmissiveis'],
+    positivePatterns: [/ist\b|hiv|s[ií]filis|hepatite|transmiss[aã]o sexual|preservativo/i],
+  },
+  'ist-reference-board': {
+    homeSubtopicFragments: ['ists', 'infecoes sexualmente transmissiveis'],
+    positivePatterns: [/ist\b|hiv|s[ií]filis|hepatite/i],
+  },
+  'ist-vf-juggle-tap': {
+    homeSubtopicFragments: ['ists', 'infecoes sexualmente transmissiveis'],
+    positivePatterns: [/ist\b|hiv|s[ií]filis/i],
+  },
+  'ist-trap-chips': {
+    homeSubtopicFragments: ['ists', 'infecoes sexualmente transmissiveis'],
+    positivePatterns: [/ist\b|hiv|s[ií]filis/i],
+  },
+
+  // ---- Farmacologia ----
+  'adme-journey-rail': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    positivePatterns: [/adme|farmacocin[eé]tica|farmacodin[aâ]mica|absor[cç][aã]o|metabolismo|excre[cç][aã]o|meia[\s-]?vida/i],
+  },
+  'pk-pd-reference-board': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    positivePatterns: [/farmacocin[eé]tica|farmacodin[aâ]mica|pk|pd|meia[\s-]?vida|biodisponibilidade/i],
+  },
+  'farmaco-vf-juggle-tap': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    positivePatterns: [/farmac|medicamento|dose|via\b/i],
+  },
+  'farmaco-trap': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    positivePatterns: [/farmac|medicamento/i],
+  },
+
+  // ---- Cálculos ----
+  'dose-equivalence-rail': {
+    homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
+    positivePatterns: [/dose|gota|ml\b|mg\b|equival[eê]ncia|dilui[cç][aã]o|infus[aã]o|prescri[cç][aã]o/i],
+  },
+  'soft-lens-board': {
+    homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
+    positivePatterns: [/dose|gota|ml\b|mg\b|equival[eê]ncia|dilui[cç][aã]o|regra de tr[eê]s/i],
+  },
+  'dose-calc-tap': {
+    homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
+    positivePatterns: [/dose|calcule|ml\b|mg\b|gota/i],
+  },
+  'dose-trap': {
+    homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
+    positivePatterns: [/dose|ml\b|mg\b/i],
+  },
+
+  // ---- Vias ----
+  'absorption-speed-rail': {
+    homeSubtopicFragments: ['vias de administracao'],
+    positivePatterns: [/via\b|subcut[aâ]nea|intramuscular|intravenosa|oral|absor[cç][aã]o|velocidade/i],
+  },
+  'via-reference-board': {
+    homeSubtopicFragments: ['vias de administracao'],
+    positivePatterns: [/via\b|subcut[aâ]nea|intramuscular|intravenosa|oral/i],
+  },
+  'via-vf-juggle-tap': {
+    homeSubtopicFragments: ['vias de administracao'],
+    positivePatterns: [/via\b|administra[cç][aã]o/i],
+  },
+  'route-trap': {
+    homeSubtopicFragments: ['vias de administracao'],
+    positivePatterns: [/via\b|subcut[aâ]nea|intramuscular|intravenosa/i],
+  },
+
+  // ---- SAE ----
+  'sae-responsibility-matrix': {
+    homeSubtopicFragments: ['processo de enfermagem', 'sae'],
+    positivePatterns: [/sae|processo de enfermagem|diagn[oó]stico|interven[cç][aã]o|nanda|nic|noc|anota[cç][aã]o/i],
+  },
+  'sae-reference-board': {
+    homeSubtopicFragments: ['processo de enfermagem', 'sae'],
+    positivePatterns: [/sae|processo de enfermagem|diagn[oó]stico|nanda/i],
+  },
+  'sae-decision-tap': {
+    homeSubtopicFragments: ['processo de enfermagem', 'sae'],
+    positivePatterns: [/sae|processo de enfermagem|diagn[oó]stico/i],
+  },
+  'norm-reveal': {
+    homeSubtopicFragments: ['processo de enfermagem', 'sae'],
+    positivePatterns: [/sae|processo de enfermagem|diagn[oó]stico|nanda/i],
+  },
+
+  // ---- Oxigenoterapia ----
+  'oxygen-protocol-deck': {
+    homeSubtopicFragments: ['oxigenoterapia', 'cuidados respiratorios'],
+    positivePatterns: [/oxigen|o2\b|cat[eé]ter nasal|m[aá]scara|ventila[cç][aã]o|spo2|hipoxemia/i],
+  },
+  'oxygen-rule-carousel': {
+    homeSubtopicFragments: ['oxigenoterapia', 'cuidados respiratorios'],
+    positivePatterns: [/oxigen|o2\b|fluxo|litro/i],
+  },
+  'oxygen-step-ladder': {
+    homeSubtopicFragments: ['oxigenoterapia', 'cuidados respiratorios'],
+    positivePatterns: [/oxigen|o2\b/i],
+  },
+
+  // ---- Curativos ----
+  'wound-stage-tissue-deck': {
+    homeSubtopicFragments: ['curativos', 'manejo de feridas'],
+    positivePatterns: [/ferida|curativo|les[aã]o|tecido|granula[cç][aã]o|necrose|exsudato/i],
+  },
+  'dressing-match-matrix': {
+    homeSubtopicFragments: ['curativos', 'manejo de feridas'],
+    positivePatterns: [/ferida|curativo|les[aã]o|pomada|gaze/i],
+  },
+  'wound-prep-tap-flow': {
+    homeSubtopicFragments: ['curativos', 'manejo de feridas'],
+    positivePatterns: [/ferida|curativo|les[aã]o/i],
+  },
+  'dressing-choice-arena': {
+    homeSubtopicFragments: ['curativos', 'manejo de feridas'],
+    positivePatterns: [/ferida|curativo|les[aã]o/i],
+  },
+
+  // ---- Queimaduras ----
+  'burn-depth-layer-deck': {
+    homeSubtopicFragments: ['queimaduras', 'feridas e queimaduras'],
+    positivePatterns: [/queimadura|grau\b|espessura|superficial|profunda/i],
+  },
+  'burn-rule-nine-board': {
+    homeSubtopicFragments: ['queimaduras', 'feridas e queimaduras'],
+    positivePatterns: [/queimadura|regra dos 9|superf[ií]cie corporal/i],
+  },
+  'burn-triage-tap-flow': {
+    homeSubtopicFragments: ['queimaduras', 'feridas e queimaduras'],
+    positivePatterns: [/queimadura/i],
+  },
+  'burn-trap-arena': {
+    homeSubtopicFragments: ['queimaduras', 'feridas e queimaduras'],
+    positivePatterns: [/queimadura/i],
+  },
+
+  // ---- Punção / IV ----
+  'morphing-timeline': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/cateter|pun[cç][aã]o|venosa|dispositivo|acesso vascular|equipo/i],
+  },
+  'iv-bundle-mesh-reveal': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/cateter|pun[cç][aã]o|venosa|bundle|higiene das m[aã]os/i],
+  },
+  'iv-care-soft-stack': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/cateter|pun[cç][aã]o|venosa/i],
+  },
+  'catheter-danger-arena': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/cateter|pun[cç][aã]o|venosa/i],
+  },
+
+  // ---- Laboratório ----
+  'lab-specimen-chain': {
+    homeSubtopicFragments: ['coleta de exames', 'exames laboratoriais'],
+    positivePatterns: [/coleta|exame|amostra|tubo|jejum|laborat[oó]rio/i],
+  },
+  'lab-prep-lens-board': {
+    homeSubtopicFragments: ['coleta de exames', 'exames laboratoriais'],
+    positivePatterns: [/coleta|exame|amostra|jejum/i],
+  },
+  'lab-vf-soft-stack': {
+    homeSubtopicFragments: ['coleta de exames', 'exames laboratoriais'],
+    positivePatterns: [/coleta|exame|amostra/i],
+  },
+  'lab-specimen-arena': {
+    homeSubtopicFragments: ['coleta de exames', 'exames laboratoriais'],
+    positivePatterns: [/coleta|exame|amostra/i],
+  },
+  'lab-prep-trap': {
+    homeSubtopicFragments: ['coleta de exames', 'exames laboratoriais'],
+    positivePatterns: [/coleta|exame|amostra/i],
+  },
+
+  // ---- Promoção SUS ----
+  'sus-art4-orbit': {
+    homeSubtopicFragments: ['promocao a saude', 'prevencao de agravos'],
+    positivePatterns: [/art\.?\s*4|promo[cç][aã]o|preven[cç][aã]o|sus\b|princ[ií]pio/i],
+  },
+  'scope-trap': {
+    homeSubtopicFragments: ['promocao a saude', 'prevencao de agravos'],
+    positivePatterns: [/promo[cç][aã]o|preven[cç][aã]o|sus\b/i],
+  },
+
+  // ---- Enfermagem do trabalho / NR-32 ----
+  'nr32-annex-deck': {
+    homeSubtopicFragments: ['enfermagem do trabalho'],
+    positivePatterns: [/nr[\s-]?32|biológico|risco ocupacional|epi\b|vacina|hepatite|hiv/i],
+  },
+  'trabalho-nr32-reference-board': {
+    homeSubtopicFragments: ['enfermagem do trabalho'],
+    positivePatterns: [/nr[\s-]?32|biológico|risco ocupacional|epi\b/i],
+  },
+  'trabalho-vf-juggle-tap': {
+    homeSubtopicFragments: ['enfermagem do trabalho'],
+    positivePatterns: [/nr[\s-]?32|trabalho|ocupacional/i],
+  },
+  'trabalho-pep-trap-arena': {
+    homeSubtopicFragments: ['enfermagem do trabalho'],
+    positivePatterns: [/nr[\s-]?32|pep\b|profilaxia|acidente/i],
+  },
+};
+
+function isOnHomeSubtopic(
+  rule: MoldAffinityRule,
+  subtopico: string | undefined,
+): boolean {
+  return subtopicoMatchesFragments(subtopico, rule.homeSubtopicFragments ?? []);
+}
+
+/**
+ * Retorna true se o molde bespoke combina com o conteúdo do slide.
+ * Variantes genéricas sempre passam.
+ */
+export function bespokeMoldHasContentAffinity(
+  variant: string,
+  slide: MoldAffinitySlide,
+  ctx: MoldAffinityContext = {},
+): boolean {
+  if (!isBespokeLayoutVariant(variant)) return true;
+
+  const rule = MOLD_AFFINITY_RULES[variant];
+  const corpus = collectSlideTextCorpus(slide);
+
+  if (ctx.familyId && rule?.blockFamilies?.includes(ctx.familyId)) {
+    return false;
+  }
+
+  if (ADOLESCENT_VARIANTS.has(variant) && ctx.familyId === 'calc') {
+    return false;
+  }
+
+  if (rule?.blockPatterns?.some((p) => p.test(corpus))) {
+    return false;
+  }
+
+  const onHome = rule ? isOnHomeSubtopic(rule, ctx.subtopico) : false;
+
+  if (rule?.adolescentEthicsMold && onHome) {
+    return true;
+  }
+
+  if (onHome && !rule?.adolescentEthicsMold) {
+    return true;
+  }
+
+  if (!rule) return true;
+
+  if (rule.positivePatterns?.length) {
+    const hits = countPatternMatches(corpus, rule.positivePatterns);
+    return hits >= (rule.minPositive ?? 1);
+  }
+
+  return true;
+}
+
+/**
+ * Decide se o fallback do subtópico deve ser usado para este slide.
+ */
+export function shouldApplySubtopicMold(
+  subtopicoVariant: string | undefined,
+  slide: MoldAffinitySlide,
+  ctx: MoldAffinityContext = {},
+): boolean {
+  if (!subtopicoVariant) return false;
+  if (!isBespokeLayoutVariant(subtopicoVariant)) return true;
+  return bespokeMoldHasContentAffinity(subtopicoVariant, slide, ctx);
+}

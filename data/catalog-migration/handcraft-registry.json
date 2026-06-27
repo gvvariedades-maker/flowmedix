@@ -1,151 +1,440 @@
 {
-  "version": 1,
-  "updated_at": "2026-06-24",
-  "description": "Resolver pacote handcraft golden-v1 Trilho A a partir do nome canônico do subtópico (CLAUDE.md §9).",
+
+  "version": 2,
+
+  "updated_at": "2026-06-27",
+
+  "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
+
+  "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
+
+  "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
+
   "pacotes": {
+
     "Assistência Perioperatória (Inclui SRPA)": {
+
       "pacote_prefix": "perioperatoria",
+
       "manifest": "data/catalog-migration/perioperatoria-completo/manifest.json",
+
       "handcraft_meta": "data/catalog-migration/perioperatoria-completo/handcraft-meta.json",
+
       "readme": "data/catalog-migration/perioperatoria-completo/README.md",
+
       "cluster_command": "npm run cluster:perioperatoria",
+
       "cluster_report": "artifacts/perioperatoria-topic-cluster-report.json",
+
       "lote_pattern": "perioperatoria-g{NN}",
+
       "lote_size": 8,
+
       "status": "applied",
+
       "total_slugs": 68,
+
+      "handcraft_applied": 68,
+
       "anchor_glob": "examples/questao-premium-*-perioperatoria-*.json",
+
       "guideline": null
+
     },
+
     "Enfermagem em Central de Material e Esterilização (CME)": {
+
       "pacote_prefix": "cme",
+
       "manifest": "data/catalog-migration/cme-completo/manifest.json",
-      "readme": null,
+
+      "handcraft_meta": "data/catalog-migration/cme-g05/lote-meta.json",
+
+      "readme": "data/catalog-migration/cme-completo/README.md",
+
       "cluster_command": "npm run cluster:cme",
+
       "cluster_report": "artifacts/cme-topic-cluster-report.json",
+
       "lote_pattern": "cme-g{NN}",
+
       "lote_size": 8,
-      "status": "in_progress",
+
+      "status": "applied",
+
       "total_slugs": 35,
+
+      "handcraft_applied": 35,
+
       "anchor_glob": "examples/questao-premium-*-cme-*.json",
+
       "guideline": "lib/guidelines/cme.ts"
+
     },
+
     "Saúde Mental": {
+
       "pacote_prefix": "saude-mental",
+
       "manifest": "data/catalog-migration/saude-mental-completo/manifest.json",
-      "readme": null,
+
+      "handcraft_meta": "data/catalog-migration/saude-mental-micro-07-goldens/manifest.json",
+
+      "readme": "data/catalog-migration/saude-mental-completo/README.md",
+
       "cluster_command": "npm run cluster:saude-mental",
+
       "cluster_report": "artifacts/saude-mental-topic-cluster-report.json",
+
       "lote_pattern": "saude-mental-micro-{NN}-goldens",
+
       "lote_size": 4,
-      "status": "in_progress",
+
+      "status": "applied",
+
       "total_slugs": 37,
+
+      "handcraft_applied": 37,
+
       "anchor_glob": "examples/questao-premium-*-saude-mental*.json",
+
       "guideline": "lib/guidelines/saudeMental.ts"
+
     },
+
     "Saúde do Adolescente": {
+
       "pacote_prefix": "saude-adolescente",
+
       "manifest": "data/catalog-migration/saude-adolescente-completo/manifest.json",
+
       "handcraft_meta": "data/catalog-migration/saude-adolescente-completo/handcraft-meta.json",
+
       "readme": "data/catalog-migration/saude-adolescente-completo/README.md",
+
       "cluster_command": null,
+
       "cluster_report": null,
+
       "lote_pattern": "saude-adolescente-g{NN}",
+
       "lote_size": 8,
+
       "status": "applied",
+
       "total_slugs": 16,
+
+      "handcraft_applied": 16,
+
       "anchor_glob": "examples/questao-premium-*-saude-adolescente-*.json",
+
       "guideline": "lib/guidelines/saudeAdolescente.ts"
+
     },
+
     "História da Enfermagem": {
+
       "pacote_prefix": "historia-enfermagem",
+
       "manifest": "data/catalog-migration/historia-enfermagem-completo/manifest.json",
+
       "readme": "data/catalog-migration/historia-enfermagem-completo/README.md",
+
       "cluster_command": null,
+
       "cluster_report": null,
+
       "lote_pattern": "historia-enfermagem-g{NN}",
+
       "lote_size": 8,
+
       "status": "applied",
+
       "total_slugs": 18,
+
+      "handcraft_applied": 18,
+
       "anchor_glob": "examples/questao-premium-*-historia-enfermagem-*.json",
+
       "guideline": "lib/guidelines/historiaEnfermagem.ts"
+
     },
+
     "Processamento de Artigos e Produtos de Saúde": {
+
       "pacote_prefix": "processamento",
+
       "manifest": "data/catalog-migration/processamento-completo/manifest.json",
+
       "readme": null,
+
       "cluster_command": null,
+
       "cluster_report": null,
+
       "lote_pattern": "processamento-g{NN}",
+
       "lote_size": 8,
+
       "status": "applied",
+
       "total_slugs": 18,
+
+      "handcraft_applied": 18,
+
       "anchor_glob": "examples/questao-premium-*-processamento-*.json",
+
       "guideline": "lib/guidelines/cme.ts"
+
     },
+
     "Farmacodinâmica e Farmacocinética": {
+
       "pacote_prefix": "farmacodinamica-e-farmacocinetica",
+
       "manifest": "data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/manifest.json",
+
       "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g01/lote-meta.json",
+
       "readme": null,
+
       "cluster_command": null,
+
       "cluster_report": null,
+
       "lote_pattern": "farmacodinamica-e-farmacocinetica-g{NN}",
+
       "lote_size": 8,
+
       "status": "applied",
+
       "total_slugs": 5,
+
+      "handcraft_applied": 5,
+
       "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json",
+
       "guideline": null
+
     },
+
     "Feridas e Queimaduras": {
+
       "pacote_prefix": "feridas-e-queimaduras",
+
       "manifest": "data/catalog-migration/feridas-e-queimaduras-completo/manifest.json",
+
       "handcraft_meta": "data/catalog-migration/feridas-e-queimaduras-g01/lote-meta.json",
+
       "readme": null,
+
       "cluster_command": null,
+
       "cluster_report": null,
+
       "lote_pattern": "feridas-e-queimaduras-g{NN}",
+
       "lote_size": 8,
+
       "status": "applied",
+
       "total_slugs": 8,
+
+      "handcraft_applied": 8,
+
       "anchor_glob": "examples/questao-premium-*-feridas-queimaduras-*.json",
+
       "guideline": "lib/guidelines/deepeningPlan.ts"
+
     },
+
     "Enfermagem do Trabalho": {
+
       "pacote_prefix": "enfermagem-do-trabalho",
+
       "manifest": "data/catalog-migration/enfermagem-do-trabalho-lote-01/manifest.json",
+
       "handcraft_meta": "data/catalog-migration/enfermagem-do-trabalho-g01/lote-meta.json",
+
       "readme": null,
+
       "cluster_command": null,
+
       "cluster_report": null,
+
       "lote_pattern": "enfermagem-do-trabalho-g{NN}",
+
       "lote_size": 8,
+
       "status": "applied",
+
       "total_slugs": 14,
+
+      "handcraft_applied": 14,
+
       "anchor_glob": "examples/questao-premium-*-enfermagem-trabalho-*.json",
+
       "guideline": "lib/guidelines/enfermagemTrabalho.ts"
+
+    },
+
+    "Doenças Respiratórias Crônicas (Asma, DPOC)": {
+
+      "pacote_prefix": "respiratorio-cronico",
+
+      "manifest": "data/catalog-migration/respiratorio-cronico-completo/manifest.json",
+
+      "handcraft_meta": "data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json",
+
+      "readme": null,
+
+      "cluster_command": null,
+
+      "cluster_report": null,
+
+      "lote_pattern": "respiratorio-cronico-g{NN}",
+
+      "lote_size": 8,
+
+      "status": "applied",
+
+      "total_slugs": 10,
+
+      "handcraft_applied": 10,
+
+      "anchor_glob": "examples/questao-premium-*-respiratorio-*.json",
+
+      "guideline": "lib/guidelines/respiratorioCronico.ts"
+
     }
+
   },
+
   "subtopicos_canonicos": [
+
     "História da Enfermagem",
-    "Assistência Perioperatória (Inclui SRPA)",
-    "Enfermagem em Central de Material e Esterilização (CME)",
-    "Saúde Mental",
-    "Saúde do Adolescente",
-    "Processamento de Artigos e Produtos de Saúde",
+
+    "Noções de Anatomia",
+
+    "Noções de Fisiologia",
+
+    "Processo de Enfermagem",
+
     "Farmacodinâmica e Farmacocinética",
+
+    "Cálculo de Administração de Medicamentos e Infusões",
+
+    "Vias de Administração",
+
+    "Cuidados na Administração de Medicamentos",
+
+    "Verificação de Sinais Vitais",
+
+    "Instalação e Manejo de Sondas",
+
+    "Oxigenoterapia e Cuidados Respiratórios",
+
+    "Curativos e Manejo de Feridas",
+
+    "Punção Venosa e Cuidados com Cateteres",
+
+    "Coleta de Exames Laboratoriais",
+
+    "Mobilização e Posicionamento do Paciente",
+
+    "Procedimentos Diversos",
+
     "Feridas e Queimaduras",
-    "Enfermagem do Trabalho"
+
+    "Processamento de Artigos e Produtos de Saúde",
+
+    "Enfermagem em Central de Material e Esterilização (CME)",
+
+    "Medidas de Prevenção e Precaução de Contato",
+
+    "Infecções no Contexto da Biossegurança",
+
+    "Segurança do Paciente",
+
+    "Epidemiologia e Vigilância Epidemiológica",
+
+    "Promoção à Saúde e Prevenção de Agravos",
+
+    "Imunização",
+
+    "Atenção Básica / Saúde da Família",
+
+    "Infecções Sexualmente Transmissíveis (ISTs)",
+
+    "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+
+    "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+
+    "Doenças Parasitárias e Zoonoses",
+
+    "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+
+    "Questões Mescladas e Outras Doenças Agudas",
+
+    "Doenças Respiratórias Crônicas (Asma, DPOC)",
+
+    "Assistência Perioperatória (Inclui SRPA)",
+
+    "Enfermagem em Centro Cirúrgico",
+
+    "Urgências e Emergências",
+
+    "Enfermagem do Trabalho",
+
+    "Saúde Mental",
+
+    "Saúde da Criança",
+
+    "Saúde do Adolescente",
+
+    "Saúde da Mulher"
+
   ],
+
+  "legacy_builder_subtopicos": [
+
+    "Curativos e Manejo de Feridas",
+
+    "Imunização",
+
+    "Verificação de Sinais Vitais",
+
+    "Vias de Administração",
+
+    "Urgências e Emergências",
+
+    "Punção Venosa e Cuidados com Cateteres",
+
+    "Processo de Enfermagem"
+
+  ],
+
   "fallback_novo_pacote": {
+
     "when": "subtópico não está em pacotes",
+
     "steps": [
+
       "Confirmar nome exato em CLAUDE.md §9",
-      "npm run catalog:export-lote -- --lote=<slug>-completo --subtopico=\"Nome\" --limit=200",
-      "Se >70 slugs: parar e propor Trilho B (âncoras + builder); se ≤70: Trilho A",
-      "Criar entrada em handcraft-registry.json",
-      "Seguir docs/GOLDEN_HANDCRAFT_MODEL.md §3b e perioperatoria-completo/README.md como molde"
+
+      "npm run catalog:export-lote -- --lote=<slug>-completo --subtopico=\"Nome\" --limit=10000",
+
+      "Criar entrada em handcraft-registry.json (pacote_prefix, manifest, lote_pattern, lote_size: 8)",
+
+      "Seguir docs/GOLDEN_HANDCRAFT_MODEL.md e perioperatoria-completo/README.md como molde",
+
+      "Handcraft em lotes g01, g02… até esgotar manifest — sem catalog:upgrade-premium"
+
     ],
+
     "slugify_hint": "minúsculas, sem acentos, hífens (ex.: saude-da-crianca)"
+
   }
+
 }
+

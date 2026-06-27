@@ -6,7 +6,7 @@
   "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
   "cluster": "Cauda longa — preparo leftovers + indicadores + infraestrutura",
   "total": 9,
-  "status": "validated",
+  "status": "applied",
   "anchor_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
   "golden_reference": "examples/questao-premium-idecan-cme-indicador-quimico-classe1.json",
   "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",

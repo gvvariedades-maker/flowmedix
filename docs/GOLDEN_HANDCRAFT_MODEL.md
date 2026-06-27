@@ -1,22 +1,31 @@
-# Modelo Golden Handcraft — Âncora + Escala
+# Modelo Golden Handcraft — Runbook único
 
-**Runbook operacional** para elevar o catálogo AVANT (~5.180 questões) ao padrão `golden-v1` com conteúdo **específico por questão** (L2), sem depender de hybrid genérico.
+**Runbook operacional** para elevar o catálogo AVANT (~5.180 questões) ao padrão `golden-v1` com conteúdo **específico por questão** (L2).
 
-Complementa (não substitui):
-- [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) — **prompt de conversa nova** (`Handcraft: <subtópico>`)
+> **Decisão de produto (2026-06-27):** único trilho de produção = handcraft por slug. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
+
+Complementa:
+- [`TAXONOMIA_MODEL.md`](TAXONOMIA_MODEL.md) — **classificar subtópico antes** do handcraft (`Classify:`)
+- [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) — prompt de conversa nova (`Handcraft: <subtópico>`)
 - [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) — gramática de slots e gates de lint
-- [`GOLDEN_ROLLOUT_CATALOGO.md`](GOLDEN_ROLLOUT_CATALOGO.md) — programa catálogo inteiro + decisões de arquitetura
-- [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) — moldes bespoke, builder, migração em lote
+- [`GOLDEN_ROLLOUT_CATALOGO.md`](GOLDEN_ROLLOUT_CATALOGO.md) — programa catálogo inteiro
 - [`.cursor/rules/avant-agent-json.mdc`](../.cursor/rules/avant-agent-json.mdc) — contrato JSON no Laboratório
 
-**Pilots de referência (2026-06):**
-| Subtópico | Questões (DB) | Modo | Status |
-|-----------|---------------|------|--------|
-| **Assistência Perioperatória (Inclui SRPA)** | 68 | **Trilho A** handcraft total | **Fechado** — ver [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) |
-| Saúde Mental | 37 | Âncoras + micro-lotes handcraft | Em rollout — `examples/` (11 âncoras) |
-| CME | 35 | Trilho A por cluster | Em rollout — `cme-g01`…`g05` |
+**Subtópicos fechados (handcraft):**
+| Subtópico | Slugs | Status |
+|-----------|-------|--------|
+| Assistência Perioperatória (Inclui SRPA) | 68 | **Fechado** — [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | 10 | **Fechado** |
+| Saúde do Adolescente | 16 | **Fechado** |
+| História da Enfermagem | 18 | **Fechado** |
+| Processamento de Artigos e Produtos de Saúde | 18 | **Fechado** |
+| Farmacodinâmica e Farmacocinética | 5 | **Fechado** |
+| Feridas e Queimaduras | 8 | **Fechado** |
+| Enfermagem do Trabalho | 14 | **Fechado** |
+| CME | 35 | **Fechado** — [`cme-completo/README.md`](../data/catalog-migration/cme-completo/README.md) |
+| Saúde Mental | 37 | **Fechado** — [`saude-mental-completo/README.md`](../data/catalog-migration/saude-mental-completo/README.md) |
 
-Cluster perioperatória: `npm run cluster:perioperatoria` · 6 âncoras de estilo em `examples/questao-premium-*-perioperatoria-*.json`.
+Registry: [`data/catalog-migration/handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json).
 
 ---
 
@@ -25,78 +34,69 @@ Cluster perioperatória: `npm run cluster:perioperatoria` · 6 âncoras de estil
 | Princípio | Regra |
 |-----------|--------|
 | **Cada card ensina esta prova** | Slides citam letras, termos do enunciado e alternativa correta — nunca texto reciclável entre questões |
-| **Âncora por ramo, não por subtópico inteiro** | 1 golden-v1 ≈ 1 **ramo pedagógico** (EXCETO flebite, SRPA/Aldrete, pré-op…), não 1 JSON para 500 questões |
-| **Handcraft onde importa** | IA/agente redige goldens; builder **imita a gramática** da âncora para escalar (subtópicos grandes) |
-| **Não aplicar hybrid cego** | `catalog:upgrade-premium` sem builder dedicado gera L1 com `concept_map` stub — **não** fecha L2 |
-| **Validar antes do DB** | `npm run validate:goldens` + amostra no player ≥5% antes de `catalog:apply-lote --apply` |
+| **Âncora por ramo** | 1 golden em `examples/` ≈ 1 **ramo pedagógico** (estilo/referência) — não substitui o JSON por slug |
+| **Handcraft por slug** | Todo slug do catálogo recebe JSON próprio em `data/catalog-migration/<lote>/questions/` |
+| **Sem hybrid / builder / IA em lote** | Proibido `catalog:upgrade-premium`, `ai:generate` como produção |
+| **Validar antes do DB** | `npm run validate:goldens --strict` + amostra no player ≥5% antes de `catalog:apply-lote --apply` |
 
-> **Limite de escala:** handcraft **integral** (1 JSON por slug) só é viável para subtópicos **≤ ~70 questões**. Acima disso: âncoras handcraft + builder golden-compliant ou handcraft em lotes por ramo.
+**Escala:** subtópicos grandes (Sinais Vitais ~654, Imunização ~577…) fecham em **múltiplos lotes** `g01`…`gNN` (8 slugs/lote), não via builder.
 
 ---
 
-## 2. Os dois trilhos de produção
+## 2. Pipeline único
 
 ```text
                     ┌─────────────────────────────────────┐
                     │  Fase 0: export + cluster (1b)      │
                     └─────────────────┬───────────────────┘
                                       │
-              ┌───────────────────────┴───────────────────────┐
-              │                                               │
-     Trilho A — Catálogo pequeno                    Trilho B — Catálogo grande
-     (≤ ~70 slugs)                                 (> ~70 slugs)
-              │                                               │
-     Handcraft golden-v1                           Âncoras handcraft (6–12 ramos)
-     para CADA slug em                            + builder dedicado que emite
-     examples/ ou lote-goldens/                    golden-v1 (futuro) ou handcraft
-              │                                    em lotes por cluster
-              │                                               │
-              └───────────────────────┬───────────────────────┘
-                                      ▼
-                    ┌─────────────────────────────────────┐
-                    │  validate:goldens + player 5%       │
-                    │  → apply-lote (premium gate)        │
+                    ┌─────────────────▼───────────────────┐
+                    │  Âncoras de estilo (1 por ramo)     │
+                    │  examples/questao-premium-*.json    │
+                    └─────────────────┬───────────────────┘
+                                      │
+                    ┌─────────────────▼───────────────────┐
+                    │  Handcraft golden-v1 por slug       │
+                    │  data/catalog-migration/<lote>/     │
+                    └─────────────────┬───────────────────┘
+                                      │
+                    ┌─────────────────▼───────────────────┐
+                    │  validate:goldens --lote --strict     │
+                    │  → piloto player 5%                 │
+                    │  → apply-lote --apply               │
                     └─────────────────────────────────────┘
 ```
 
-| Trilho | Quando | Entrega |
-|--------|--------|---------|
-| **A — Handcraft total** | Subtópico pequeno; sem builder maduro; alto valor pedagógico | N arquivos `examples/questao-premium-*.json` ou `data/catalog-migration/<lote>-goldens/questions/*.json` |
-| **B — Âncora + escala** | Imunização, Sinais Vitais, Vias… (já têm builder) | Âncoras em `examples/` + `upgradePremium<Pacote>.ts` + lotes |
-| **Híbrido (piloto)** | Subtópico médio (ex.: Perioperatória 68) | Fase 1: âncoras por ramo → Fase 2: handcraft slug a slug nos ramos maiores → builder depois |
-
-**Subtópicos já “Completo” no repo (builder):** Curativos, Imunização — **não** refazer handcraft; usar como referência de gramática.
+| Usar | Não usar |
+|------|----------|
+| `catalog:export-lote` → handcraft → `validate:goldens --lote --strict` → `apply-lote` | `npm run ai:generate` |
+| JSON em `data/catalog-migration/<lote>/questions/<slug>.json` | `catalog:upgrade-premium` (legado) |
+| `lote-meta.json` + registry | Apply com saída de builder/hybrid |
 
 ---
 
-## 3. Runbook por subtópico (handcraft)
+## 3. Runbook por subtópico
 
-Ordem **obrigatória** — igual ao [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md), com ênfase em conteúdo L2:
+Ordem **obrigatória**:
 
 ### Fase 0 — Escopo
 
 1. Confirmar nome **canônico** do subtópico (`CLAUDE.md` §9).
-2. Exportar catálogo:
+2. Verificar [`handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json); se ausente, criar entrada.
+3. Exportar catálogo:
    ```bash
-   npm run catalog:export-lote -- --lote=<pacote>-completo --subtopico="Nome Exato" --limit=200
+   npm run catalog:export-lote -- --lote=<pacote>-completo --subtopico="Nome Exato" --limit=10000
    ```
-3. Contar slugs em `data/catalog-migration/<pacote>-completo/manifest.json`.
-4. Decidir trilho A ou B (§2).
+4. Contar slugs em `data/catalog-migration/<pacote>-completo/manifest.json`.
 
-### Fase 1b — Cluster pedagógico
+### Fase 1b — Cluster pedagógico (recomendado)
 
-1. Criar ou reutilizar `scripts/cluster-<pacote>-topics.ts` (copiar de [`cluster-perioperatoria-topics.ts`](../scripts/cluster-perioperatoria-topics.ts) ou [`cluster-saude-mental-topics.ts`](../scripts/cluster-saude-mental-topics.ts)).
+1. Criar ou reutilizar `scripts/cluster-<pacote>-topics.ts`.
 2. Mapear `GOLDEN_BY_CLUSTER` → arquivo em `examples/`.
-3. Rodar:
-   ```bash
-   npm run cluster:<pacote>
-   # ou: npm run cluster:perioperatoria
-   ```
-4. Ler `artifacts/<pacote>-topic-cluster-report.json`:
-   - `cluster_decisions`: `novo_ramo` → criar âncora; `coberto` → já tem golden; `cauda_longa` → absorver ou L2-shallow.
-   - `stub_total` / `contract_fail_total` — baseline antes da migração.
+3. Rodar `npm run cluster:<pacote>`.
+4. Ler `artifacts/<pacote>-topic-cluster-report.json`.
 
-**Regra de bolso (ramo):** volume ≥ **10%** do subtópico **ou** ≥ **5 questões** com tema semântico coeso → **1 golden âncora**.
+**Regra de bolso (ramo):** volume ≥ **10%** do subtópico **ou** ≥ **5 questões** com tema coeso → **1 golden âncora de estilo**.
 
 ### Fase 1 — Golden âncora (1 ramo)
 
@@ -104,70 +104,46 @@ Para cada ramo `novo_ramo` ou piloto prioritário:
 
 1. Escolher **1 questão real** do cluster (`sample_slugs[0]`).
 2. Copiar [`examples/_TEMPLATE-golden-v1.json`](../examples/_TEMPLATE-golden-v1.json).
-3. Preencher seguindo §4 e [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) §5–7b.
-4. Validar:
-   ```bash
-   npm run validate:goldens
-   npm test -- golden-content-standard
-   ```
+3. Preencher seguindo §4 e [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md).
+4. Validar: `npm run validate:goldens` + `npm test -- golden-content-standard`.
 5. Registrar no cluster script em `GOLDEN_BY_CLUSTER`.
-6. Preview no Laboratório (`/admin/laboratorio`) — import JSON.
 
-### Fase 1c — Handcraft por questão (trilho A ou ramo a ramo)
+### Fase 1c — Handcraft por questão
 
-Para **cada slug** do ramo (ou do subtópico inteiro se pequeno):
+Para **cada slug** do subtópico (lotes de 8):
 
 | Passo | Ação |
 |-------|------|
-| 1 | Ler `data/catalog-migration/<lote>/questions/<slug>.json` — **não** inventar enunciado |
-| 2 | `meta` da prova + `content_standard: "golden-v1"` + `family` (`classifyFamily`) |
-| 3 | `sources[]` tier A/B — todo número normativo com `covers` |
-| 4 | 4 slides **planos** — sem `template` / `layout_variant` salvo override |
-| 5 | `danger_zone.items[].correct` — **uma justificativa distinta por letra errada** |
-| 6 | `logic_flow`: estratégia em `steps` (strings), `reveal_mode: "tap"` — **não** copiar texto das options |
-| 7 | `npm run validate:goldens -- --only=<nome-arquivo>` |
-| 8 | Opcional: salvar em `data/catalog-migration/<pacote>-goldens/questions/<slug>.json` para apply |
-
-**Nome do arquivo:** `questao-premium-<banca>-<subtopico-recorte>.json` em `examples/` (âncora) ou `<slug>.json` no lote (catálogo).
+| 1 | Ler export — **não** inventar enunciado |
+| 2 | `meta.content_standard: "golden-v1"` + `family` + `sources[]` |
+| 3 | 4 slides **planos** — sem `template` / `layout_variant` |
+| 4 | `danger_zone.items[].correct` — **justificativa distinta por distrator** |
+| 5 | `logic_flow`: `reveal_mode: "tap"`, steps em strings |
+| 6 | `npm run validate:goldens -- --lote=<lote> --strict` |
+| 7 | Salvar em `data/catalog-migration/<pacote>-gNN/questions/<slug>.json` |
 
 ### Fase 4 — Piloto player
 
-- 2–3 slugs por ramo forte em `/estudar/[slug]`.
-- Gerar mapa: `scripts/generate-<pacote>-links.ts` → `artifacts/<pacote>-links.html`.
-- Checklist humana: enunciado ↔ slides; gabarito ↔ `danger_zone.correct`; sem vocabulário de outro tema.
+- 2–3 slugs por lote em `/estudar/[slug]`.
+- Checklist: enunciado ↔ slides; gabarito ↔ `danger_zone.correct`; sem vocabulário de outro tema.
 
 ### Fase 5 — Apply (só após piloto OK)
 
 ```bash
-# JSONs já no lote (upgrade ou cópia dos goldens)
-npm run catalog:apply-lote -- --lote=<pacote>-goldens --dry-run
-npm run catalog:apply-lote -- --lote=<pacote>-goldens --apply
+npm run catalog:apply-lote -- --lote=<pacote>-gNN --dry-run
+npm run catalog:apply-lote -- --lote=<pacote>-gNN --apply
 ```
-
-**Não** usar `--apply` com saída de `catalog:upgrade-premium --force` se o subtópico não tiver builder dedicado — o hybrid passa `premiumGate` estrutural mas **falha** L2 (stubs, justificativas genéricas).
 
 Relatório: `artifacts/catalog-migration-<lote>-applied.json`.
 
-### Fase 3b — Trilho A: handcraft total **sem hybrid**
-
-Para subtópicos **≤ ~70 slugs** (ex.: Perioperatória 68, CME 35), é possível fechar **100% golden-v1** sem builder e sem IA em lote:
-
-| Usar | Não usar |
-|------|----------|
-| `catalog:export-lote` → handcraft no Cursor → `validate:goldens --lote --strict` → `apply-lote` | `npm run ai:generate` |
-| JSON em `data/catalog-migration/<lote>/questions/<slug>.json` | `catalog:upgrade-premium` (hybrid genérico) |
-| `lote-meta.json` + README do pacote | Apply com saída de builder não golden-compliant |
-
-**Ordem por lote** (8–10 slugs por vez reduz retrabalho de validação):
+**Ordem por lote:**
 
 ```text
 export-lote → handcraft N JSONs → validate:goldens --lote=X --strict
 → apply-lote --dry-run → amostra player → apply-lote --apply
 ```
 
-**Caso fechado:** Perioperatória — 9 lotes (`perioperatoria-g01`…`g09`), 68 questões, apply 2026-06-23. Documentação operacional: [`data/catalog-migration/perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md).
-
-Modelo de `lote-meta.json` rico: [`data/catalog-migration/cme-g01/lote-meta.json`](../data/catalog-migration/cme-g01/lote-meta.json).
+**Referência:** Perioperatória — 9 lotes, 68 questões — [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md).
 
 ---
 
@@ -199,19 +175,10 @@ Modelo de `lote-meta.json` rico: [`data/catalog-migration/cme-g01/lote-meta.json
 
 | Slide | Obrigatório | Proibido |
 |-------|-------------|----------|
-| `concept_map` | ≥3 `items` com `icon` Lucide; ENQUADRAMENTO + gabarito | Texto genérico "conceito central", "[IA]" |
-| `golden_rule` | `content` e/ou `rows[]` com gabarito na última linha | Frase única copiada do gabarito em todas as questões |
-| `logic_flow` | `reveal_mode: "tap"`, ≥3 `steps` string | Steps que são cópia literal das alternativas |
-| `danger_zone` | `content` + `items[].correct` por distrator | Mesma frase em dois `correct`; letra ≠ `is_correct` |
-
-### Famílias especiais
-
-| `family` | `danger_zone` | `logic_flow` |
-|----------|---------------|--------------|
-| `vf` | Ensinar por afirmativa I–IV, não só por letra | Julgar I → II → III → combinar |
-| `certo_errado` | Pegadinhas da afirmativa única | Critério → norma → C/E |
-| `calc` | Passo de erro de unidade/conta | Dados → fórmula → resultado |
-| `protocolo` | Ordem errada vs protocolo | Sequência oficial |
+| `concept_map` | ≥3 `items` com `icon` Lucide | Texto genérico "conceito central", "[IA]" |
+| `golden_rule` | `content` e/ou `rows[]` com gabarito | Frase única copiada do gabarito em todas as questões |
+| `logic_flow` | `reveal_mode: "tap"`, ≥3 `steps` string | Steps que copiam literalmente as alternativas |
+| `danger_zone` | `content` + `items[].correct` por distrator | Mesma frase em dois `correct` |
 
 Detalhe: [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) §6–7b.
 
@@ -223,11 +190,9 @@ Detalhe: [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) §6–7b.
 |------|------------------|-----------------|
 | Zod + forma | `QuestaoCompletaSchema` | Sim |
 | Stub / molde | `premiumGate` em `applyLote` | Sim |
-| Golden-v1 lint | `lintGoldenContent` (`validate:goldens`) | Warn hoje; **error** ao fechar subtópico |
+| Golden-v1 lint | `lintGoldenContent` (`validate:goldens --strict`) | Sim (modo strict) |
 | Contrato L2 | `detectDuplicateDangerJustifications`, `detectSlideTopicDrift` | Warn na auditoria |
-| Gabarito | `gabarito_mismatch` | Warn — tratar como **blocker** manual |
-
-Códigos completos: [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) §7b · implementação [`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts).
+| Gabarito | `gabarito_mismatch` | Blocker manual |
 
 ---
 
@@ -235,98 +200,69 @@ Códigos completos: [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) �
 
 | Artefato | Caminho |
 |----------|---------|
-| Export catálogo | `data/catalog-migration/<lote>-completo/questions/*.json` |
+| Export catálogo | `data/catalog-migration/<pacote>-completo/questions/*.json` |
 | Cluster report | `artifacts/<pacote>-topic-cluster-report.json` |
-| Goldens âncora | `examples/questao-premium-*.json` |
-| Goldens por slug (apply) | `data/catalog-migration/<pacote>-goldens/questions/<slug>.json` |
-| Links player | `artifacts/<pacote>-links.html` |
+| Goldens âncora (estilo) | `examples/questao-premium-*.json` |
+| Handcraft por slug | `data/catalog-migration/<pacote>-gNN/questions/<slug>.json` |
+| Progresso | `data/catalog-migration/handcraft-registry.json` |
 | Apply report | `artifacts/catalog-migration-<lote>-applied.json` |
 
 ---
 
-## 7. Scripts npm (catálogo)
+## 7. Scripts npm
 
 | Comando | Função |
 |---------|--------|
 | `npm run catalog:export-lote` | Supabase → `data/catalog-migration/{lote}/` |
-| `npm run cluster:perioperatoria` | Cluster perioperatória (replicar para outros pacotes) |
-| `npm run validate:goldens` | Lint golden-v1 em `examples/questao-premium-*.json` |
-| `npm run validate:goldens -- --lote=<lote> --strict` | Lint golden-v1 dos JSONs do lote (handcraft) — **obrigatório antes do apply** |
-| `npm run catalog:apply-lote` | Grava `conteudo_json` no Supabase (`--dry-run` \| `--apply`) |
+| `npm run validate:goldens -- --lote=<lote> --strict` | Lint golden-v1 — **obrigatório antes do apply** |
+| `npm run catalog:apply-lote` | Grava `conteudo_json` no Supabase |
 | `npm test -- golden-content-standard` | Regressão dos gates |
 
-> Rodar via **`npm run`** — evitar `npx tsx` no Windows (cold start instável).
-
-**Template de novo cluster:** copiar [`scripts/cluster-perioperatoria-topics.ts`](../scripts/cluster-perioperatoria-topics.ts), ajustar `inferBuilderTopic`, `refinePedagogicalCluster`, `GOLDEN_BY_CLUSTER`, registrar em `package.json` como `cluster:<pacote>`.
+> Rodar via **`npm run`** — evitar `npx tsx` no Windows.
 
 ---
 
-## 8. Anti-padrões (lições dos pilots)
+## 8. Anti-padrões
 
-| Erro | O que aconteceu | Correção |
-|------|-----------------|----------|
-| Apply com hybrid `--force` | SM: 37/37 OK estrutural, ~21 com conteúdo genérico | Só apply com JSON golden-v1 ou builder dedicado |
-| 1 builder SM-4 para todo subtópico | RAPS caiu em “de-escalada” (`contenção` na alternativa) | `isCriseAnchor` só com âncora no **enunciado**; cluster antes do builder |
-| 1 golden por subtópico | Punção: drift ~75% com 1 IPCS | 1 golden **por ramo** ≥10% |
-| `danger_zone.correct` igual em todas as letras | Gate `danger_duplicate_justifications` | Cada distrator com **por que é errado nesta prova** |
-| Sem `sources[].year` | `validate:goldens` falha | Ano ≥ 1990 em toda source tier A/B |
-| Handcraft 5.180 de uma vez | Invável | Trilho B ou subtópicos pequenos primeiro |
-
----
-
-## 9. Ordem sugerida no catálogo (pós-pilots)
-
-1. ~~**Perioperatória** (68)~~ — **fechado** Trilho A handcraft ([README](../data/catalog-migration/perioperatoria-completo/README.md)).
-2. **CME** (35) — Trilho A por cluster (`cme-g01`…`g05`).
-3. **Saúde Mental** (37) — âncoras + micro-lotes handcraft.
-4. **Processo de Enfermagem** (34) — builder SAE existe; refinar para golden-v1 ou handcraft.
-5. **Segurança do Paciente** (67) — âncora CESGRANRIO; handcraft ou builder.
-6. **Roadmap volume** — Vias, Urgências, Sinais Vitais: âncoras novas + builders existentes.
-
-Matriz viva: [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) · programa: [`GOLDEN_ROLLOUT_CATALOGO.md`](GOLDEN_ROLLOUT_CATALOGO.md).
+| Erro | Correção |
+|------|----------|
+| Apply com hybrid/builder | Só apply com JSON handcraft golden-v1 |
+| 1 golden por subtópico inteiro | 1 âncora **por ramo**; 1 JSON **por slug** |
+| `danger_zone.correct` igual em todas as letras | Cada distrator com **por que é errado nesta prova** |
+| Sem `sources[].year` | Ano ≥ 1990 em toda source tier A/B |
+| Tentar escalar via builder | Dividir em lotes `g01`…`gNN`; handcraft slug a slug |
 
 ---
 
-## 10. Definition of Done — handcraft fechado
+## 9. Ordem sugerida no catálogo
 
-Um ramo (ou subtópico pequeno) está **handcraft-fechado** quando:
+**Onda 1 — Fechar pequenos / em andamento:** subtópicos ≤40 slugs pendentes (CME e Saúde Mental **fechados**).
 
-- [ ] 100% dos slugs do escopo têm `meta.content_standard: "golden-v1"`
-- [ ] 100% passam `npm run validate:goldens` (0 falhas)
-- [ ] `danger_duplicate_justifications` = 0 no cluster pós-migração
-- [ ] `slide_topic_drift` ≈ 0 (sem vocabulário de outro tema)
+**Onda 2 — Médios (50–200):** Coleta, Oxigenoterapia, Punção, ISTs, Cálculos, CC, etc.
+
+**Onda 3 — Grandes (re-handcraft do legado builder):** Sinais Vitais (~654), Imunização (~577), Vias (~256), Urgências (~283), Cuidados na Administração (~267).
+
+Matriz viva: [`handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json).
+
+---
+
+## 10. Definition of Done — subtópico fechado
+
+- [ ] 100% dos slugs com `meta.content_standard: "golden-v1"`
+- [ ] 100% passam `validate:goldens --strict` (0 falhas)
+- [ ] `danger_duplicate_justifications` = 0
+- [ ] `slide_topic_drift` ≈ 0
 - [ ] Amostra humana ≥5% aprovada no player
 - [ ] `catalog:apply-lote --apply` com relatório 0 failed
-- [ ] Âncoras listadas em `GOLDEN_BY_CLUSTER` do cluster script
-
----
-
-## 11. Referência rápida — perioperatória
-
-**Pacote fechado (68/68):** [`data/catalog-migration/perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) · lotes `perioperatoria-g01`…`g09` · links `artifacts/perioperatoria-g*-links.html`.
-
-### Âncoras de estilo (Fase 1)
-
-| Ramo | Golden âncora |
-|------|----------------|
-| SRPA / CPD (C/E) | `questao-premium-idecan-srpa-curativo-cpd-ce.json` |
-| SRPA / Aldrete | `questao-premium-idecan-perioperatoria-aldrete-srpa.json` |
-| SRPA / técnico | `questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json` |
-| Pré-operatório | `questao-premium-avancasp-perioperatoria-pre-operatorio.json` |
-| ISC classificação | `questao-premium-furb-perioperatoria-isc-classificacao.json` |
-| Cirurgia segura / CDC | `questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json` |
-
-Saúde Mental: ver `examples/questao-premium-*saude-mental*.json` (11 âncoras) + `artifacts/saude-mental-topic-cluster-report.json`.
+- [ ] Registry: `status: applied`, `pending_slugs: []`
 
 ---
 
 ## Resumo executivo
 
-O **modelo golden handcraft** não é “escrever 5.180 JSONs à mão de uma vez”. É:
-
 1. **Cluster** o catálogo em ramos pedagógicos.
-2. **Âncora** golden-v1 por ramo (IA + revisão + `validate:goldens`).
-3. **Handcraft por slug** nos subtópicos pequenos ou **builder** que imita a âncora nos grandes.
-4. **Piloto** no player → **apply** só com L2 validado.
+2. **Âncora** golden-v1 por ramo (estilo em `examples/`).
+3. **Handcraft** golden-v1 **por slug** em lotes de 8.
+4. **Piloto** no player → **apply** só com strict OK.
 
 Use este documento como **procedimento padrão** para toda questão que ainda não está em golden-v1 no AVANT.

@@ -1270,4 +1270,97 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.dangerRevealMode).toBe('tap');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  describe('Saúde do Adolescente — afinidade (IBAM escore Z)', () => {
+    const subtopico = 'Saúde do Adolescente';
+    const slug = 'ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0';
+
+    it('golden_rule calc com rows Z → reference_table (não sigilo-spectrum)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          content: 'CLASSIFICAÇÃO NUTRICIONAL — ESCORE Z DO IMC (5–19 ANOS)',
+          rows: [
+            { label: 'Magreza', value: 'Z < −2' },
+            { label: 'Sobrepeso', value: '+1 < Z ≤ +2 — letra A', emphasis: 'highlight' },
+            { label: 'Gabarito', value: 'Letra A' },
+          ],
+          footer_rule: 'Sobrepeso: +1 a +2 + orientação de alimentação e atividade física',
+        },
+        {
+          questionSlug: slug,
+          slideIndex: 1,
+          familyId: 'calc',
+        },
+      );
+      expect(result.layoutVariant).toBe('reference_table');
+    });
+
+    it('concept_map nutricional → morphological/grid (não privacy-curtain)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico },
+          items: [
+            { label: 'Ferramenta', detail: 'Caderneta do Adolescente + curvas OMS', icon: 'BarChart3' },
+            { label: 'Escore Z', detail: 'Desvios-padrão em relação à mediana', icon: 'TrendingUp' },
+            { label: 'Sobrepeso', detail: 'IMC com Z entre +1 e +2', icon: 'Apple' },
+            { label: 'Conduta', detail: 'Orientar estilo de vida', icon: 'HeartPulse' },
+          ],
+        },
+        {
+          questionSlug: slug,
+          slideIndex: 0,
+          familyId: 'calc',
+        },
+      );
+      expect(['bridge', 'grid', 'molecular', 'morphological', 'stack']).toContain(result.layoutVariant);
+      expect(result.layoutVariant).not.toBe('adolescent-privacy-curtain');
+    });
+
+    it('danger_zone com correct → compare (não consent-gate)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'PEGADINHAS — ESCORE Z',
+          items: [
+            {
+              label: 'Letra B',
+              detail: 'Rotula obesidade grave',
+              correct: 'Z entre +2 e +3 indica obesidade',
+            },
+          ],
+        },
+        {
+          questionSlug: slug,
+          slideIndex: 3,
+          familyId: 'calc',
+        },
+      );
+      expect(result.layoutVariant).toBe('compare');
+      expect(result.layoutVariant).not.toBe('adolescent-consent-gate');
+    });
+
+    it('questão de sigilo mantém moldes adolescente', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          content: 'SIGILO NA ADOLESCÊNCIA',
+          rows: [
+            { label: 'Privacidade', value: 'Consulta com escuta — protegido' },
+            { label: 'Gabarito', value: 'Letra B', emphasis: 'success' },
+          ],
+        },
+        {
+          questionSlug: 'idecan-adolescente-sigilo-1',
+          slideIndex: 1,
+          familyId: 'vf',
+        },
+      );
+      expect(result.layoutVariant).toBe('adolescent-sigilo-spectrum');
+    });
+  });
 });
