@@ -1,97 +1,94 @@
 # Resolver de moldes por afinidade de conteúdo
 
-**Status:** implementado em `lib/slides/moldAffinity.ts` + `components/slides/core/slidePresentation.ts`  
-**Data:** 2026-06-27
+**Status:** `lib/slides/moldAffinity.ts` · `lib/slides/pedagogicalBranch.ts` · `lib/slides/moldSlotFit.ts` · `components/slides/core/slidePresentation.ts`  
+**Data:** 2026-06-27 (v2 — ramo pedagógico + fallback runtime)
 
 ## Problema
 
-Subtópicos canônicos (41) são **buckets amplos**. O `SUBTOPIC_DESIGN_MAP` atribuía **um molde L3 fixo** a todo card do subtópico — inclusive quando o ramo pedagógico da questão era outro (ex.: escore Z em Saúde do Adolescente recebendo `adolescent-sigilo-spectrum`).
-
-O handcraft golden-v1 (L2) estava correto; o player (L3) distorcia a experiência.
+Subtópicos canônicos (41) são **buckets amplos**. Um molde L3 fixo por subtópico distorce questões de **outro ramo** (ex.: escore Z ou puberdade em Saúde do Adolescente recebendo moldes de sigilo).
 
 ## Princípio: conteúdo vence mapa
-
-Nova prioridade em `resolveSlidePresentation`:
 
 ```text
 1. layout_variant explícito no JSON
 2. Estrutura semântica (rows → tabela; correct[] → compare)
-3. meta.family + rotação por slug (FAMILY_VISUAL_PROFILE)
-4. Molde bespoke do subtópico — somente se passar afinidade
-5. Fallback semântico (calculateLayoutVariantFromType)
+3. meta.pedagogical_branch → BRANCH_DESIGN_MAP (quando existir)
+4. meta.family + rotação por slug (FAMILY_VISUAL_PROFILE)
+5. Molde bespoke do subtópico/ramo — somente se afinidade + slots > 0
+6. Fallback semântico (calculateLayoutVariantFromType)
+7. Runtime: se molde bespoke ficaria com 0 slots → fallback automático (família/genérico)
 ```
 
-## API
+## Camadas novas (v2)
 
-| Função | Uso |
-|--------|-----|
-| `isBespokeLayoutVariant(v)` | Distingue molde premium de layout genérico |
-| `collectSlideTextCorpus(slide)` | Texto agregado para matching |
-| `bespokeMoldHasContentAffinity(variant, slide, ctx)` | O molde combina com este slide? |
-| `shouldApplySubtopicMold(variant, slide, ctx)` | Aplica regra acima + variantes genéricas sempre OK |
+| Módulo | Função |
+|--------|--------|
+| `pedagogicalBranch.ts` | `inferPedagogicalBranch`, `BRANCH_DESIGN_MAP`, `getPresentationDesign` |
+| `moldSlotFit.ts` | `countMoldInteractiveSlots`, `bespokeMoldHasRenderableSlots` |
+| `detectMoldL3Mismatch.ts` | Gate L3 na escrita (`premiumGate`) |
+| `slidePresentation.ts` | `enrichPresentationContext`, `moldFallback` |
 
-Contexto (`MoldAffinityContext`):
+### meta.pedagogical_branch (opcional)
 
-- `subtopico` — nome canônico
-- `familyId` — `meta.family` (`calc`, `vf`, …)
-- `slideType` — `concept_map`, `golden_rule`, …
+```json
+"meta": {
+  "subtopico": "Saúde do Adolescente",
+  "family": "certo_errado",
+  "pedagogical_branch": "adolescente_desenvolvimento"
+}
+```
 
-## Regras de afinidade
+Se omitido, o player infere pelo enunciado + slides. Valores adolescente:
 
-Registry em `MOLD_AFFINITY_RULES`:
+| Ramo | Molde L3 |
+|------|----------|
+| `adolescente_etica_sigilo` | `adolescent-*` |
+| `adolescente_antropometria` | genérico (`morphological`, `reference_table`, …) |
+| `adolescente_desenvolvimento` | genérico |
+| `adolescente_saude_mental` | genérico |
+| `adolescente_generico` | genérico |
+
+## Regras de afinidade (`MOLD_AFFINITY_RULES`)
 
 | Campo | Efeito |
 |-------|--------|
 | `homeSubtopicFragments` | Subtópico “de casa” do molde |
-| `blockFamilies` | Famílias que nunca usam o molde (`calc` × moldes adolescente) |
-| `blockPatterns` | Rejeita se o corpus bater (ex.: escore Z, IMC) |
-| `positivePatterns` | Obrigatório **fora** do subtópico de casa |
-| `adolescentEthicsMold` | No subtópico adolescente, aplica por padrão salvo `block*` |
+| `blockFamilies` | Famílias que nunca usam o molde |
+| `blockPatterns` | Rejeita se o corpus bater (Z-score, puberdade, …) |
+| `positivePatterns` | **Obrigatório** para moldes `adolescent-*` |
+| `pedagogicalBranch` (ctx) | Se ≠ `adolescente_etica_sigilo`, rejeita moldes adolescente |
 
-### Saúde do Adolescente (caso piloto)
+**Removido:** `adolescentEthicsMold` (auto-apply no subtópico) — causava 0/0 pilares em puberdade.
 
-Moldes `adolescent-*`:
+## Gate premium (escrita)
 
-- **Aplicam** em questões de sigilo, gravidez, CAPS, escuta…
-- **Não aplicam** quando o slide fala de escore Z, IMC, antropometria ou `family: calc`
+`auditPremiumQuestao` chama `detectMoldL3Mismatch`:
 
-### Demais subtópicos premium
-
-Moldes com `homeSubtopicFragments` (Sondas, SV, PNI, ISTs, …):
-
-- No subtópico de casa → aplica salvo `blockPatterns`
-- Fora do subtópico de casa → exige `positivePatterns`
-
-Moldes **sem** entrada no registry → pass (compatibilidade legado).
-
-## Variedade visual (evitar monotonia)
-
-Quando o molde bespoke **não** aplica:
-
-- Reativa `familyPool` + `pickRotatedLayoutVariant` por slug
-- Mantém `template` de cor do subtópico no `themeGenerator`
-- L2 continua único por questão
+- `mold_l3_zero_slots` → **error** (conteúdo incompatível com molde)
+- `mold_l3_affinity_rejected` → **warn** (player usa fallback)
+- `pedagogical_branch_inferred` → **warn** (prefira declarar no handcraft)
 
 ## Testes
 
 ```bash
-npm test -- moldAffinity
-npm test -- slidePresentationSubtopicMold
-npm test -- slidePresentationFamily
+npm test -- moldAffinity pedagogicalBranch moldSlotFit slidePresentationSubtopicMold
 ```
 
-Caso de regressão: IBAM `ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0` — `golden_rule` → `reference_table`, não `adolescent-sigilo-spectrum`.
+Regressões:
 
-## Estender o registry
+- IBAM escore Z → `reference_table`, não `adolescent-sigilo-spectrum`
+- IGEDUC puberdade → `morphological`, não `adolescent-privacy-curtain`
+- Sigilo/gravidez → mantém `adolescent-*`
 
-Ao criar molde bespoke novo (`VARIANT_MOLDS.md`):
+## Estender a outros subtópicos
 
-1. Adicionar entrada em `MOLD_AFFINITY_RULES`
-2. Definir `homeSubtopicFragments` + `positivePatterns` OU `blockPatterns`
-3. Teste em `__tests__/moldAffinity.test.ts`
+1. Cluster em ramos (`GOLDEN_HANDCRAFT_MODEL.md` fase 1b)
+2. Entrada em `BRANCH_DESIGN_MAP`
+3. Regras em `MOLD_AFFINITY_RULES` para moldes bespoke do ramo
+4. Testes em `__tests__/pedagogicalBranch.test.ts` + `slidePresentationSubtopicMold.test.ts`
 
 ## Referências
 
 - [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — L2 vs L3
-- [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) — quando criar molde bespoke
-- [`lib/catalogMigration/familyLayoutProfile.ts`](../lib/catalogMigration/familyLayoutProfile.ts) — famílias pedagógicas
+- [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) — cluster por ramo
+- [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) — criar molde bespoke

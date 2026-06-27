@@ -3,7 +3,14 @@ import {
   getFamilyVisualSlideProfile,
   type FamilySlideType,
 } from '@/lib/catalogMigration/familyLayoutProfile';
-import { shouldApplySubtopicMold } from '@/lib/slides/moldAffinity';
+import { shouldApplySubtopicMold, isBespokeLayoutVariant } from '@/lib/slides/moldAffinity';
+import { bespokeMoldHasRenderableSlots } from '@/lib/slides/moldSlotFit';
+import {
+  getLayoutVariantForBranch,
+  getPresentationDesign,
+  resolvePedagogicalBranch,
+  type PedagogicalBranchId,
+} from '@/lib/slides/pedagogicalBranch';
 import {
   calculateLayoutVariantFromType,
   getLayoutVariantBySubtopic,
@@ -36,6 +43,8 @@ export type ResolvedSlidePresentation = {
   bulletStyle: DangerZoneBulletStyle;
   slideTitle?: string;
   rows?: GoldenRuleRow[];
+  /** true quando molde bespoke foi rejeitado e caiu em família/genérico */
+  moldFallback?: boolean;
 };
 
 export type SlidePresentationContext = {
@@ -44,6 +53,10 @@ export type SlidePresentationContext = {
   jsonLayoutVariant?: string;
   /** Família pedagógica (7 goldens) — âncora visual + pool de rotação por slug. */
   familyId?: FamilyId;
+  /** Ramo pedagógico explícito ou inferido (L2.5). */
+  pedagogicalBranch?: PedagogicalBranchId;
+  /** Enunciado — usado na inferência de ramo quando necessário. */
+  instruction?: string;
 };
 
 const FAMILY_SLIDE_TYPE_MAP: Record<string, FamilySlideType> = {
@@ -58,38 +71,66 @@ function familySlideKey(slideType: string | undefined): FamilySlideType | null {
   return FAMILY_SLIDE_TYPE_MAP[slideType] ?? null;
 }
 
-/** Resolve layout, interação e título para um slide NeuroSlide. */
-export function resolveSlidePresentation(
-  slide: {
-    type?: string;
-    layout_variant?: string;
-    items?: unknown[];
-    concepts?: unknown[];
-    steps?: unknown[];
-    rows?: GoldenRuleRow[];
-    bullet_style?: DangerZoneBulletStyle;
-    reveal_mode?: LogicFlowRevealMode;
-    slide_title?: string;
-    meta?: { subtopico?: string; topico?: string };
-  },
-  presentationContext?: SlidePresentationContext,
+type SlideInput = {
+  type?: string;
+  layout_variant?: string;
+  items?: unknown[];
+  concepts?: unknown[];
+  steps?: unknown[];
+  rows?: GoldenRuleRow[];
+  bullet_style?: DangerZoneBulletStyle;
+  reveal_mode?: LogicFlowRevealMode;
+  slide_title?: string;
+  meta?: { subtopico?: string; topico?: string };
+};
+
+function resolveSubtopicVariant(
+  subtopico: string | undefined,
+  slideType: string,
+  slide: SlideInput,
+  branch?: PedagogicalBranchId,
+): string {
+  if (subtopico && branch) {
+    const fromBranch = getLayoutVariantForBranch(subtopico, slideType, branch);
+    if (fromBranch) return fromBranch;
+  }
+  if (subtopico) {
+    return getLayoutVariantBySubtopic(subtopico, slideType, slide);
+  }
+  return calculateLayoutVariantFromType(slideType, slide);
+}
+
+function hasPresentationDesign(subtopico: string | undefined, branch?: PedagogicalBranchId): boolean {
+  if (!subtopico?.trim()) return false;
+  if (getPresentationDesign(subtopico, branch)) return true;
+  return hasSubtopicCanonicalDesign(subtopico);
+}
+
+function resolveCore(
+  slide: SlideInput,
+  presentationContext: SlidePresentationContext | undefined,
+  options: { forceGenericMold: boolean },
 ): ResolvedSlidePresentation {
   const slideType = slide.type;
   const subtopico = slide.meta?.subtopico?.trim();
-  const hasSubtopicDesign = hasSubtopicCanonicalDesign(subtopico);
-  const subtopicVariant =
-    subtopico && slideType
-      ? getLayoutVariantBySubtopic(subtopico, slideType, slide)
-      : calculateLayoutVariantFromType(slideType ?? '', slide);
+  const branch = presentationContext?.pedagogicalBranch;
+  const hasDesign = hasPresentationDesign(subtopico, branch);
+  const subtopicVariant = resolveSubtopicVariant(subtopico, slideType ?? '', slide, branch);
   const explicitLayoutVariant = presentationContext?.jsonLayoutVariant;
 
   const affinityCtx = {
     slideType,
     familyId: presentationContext?.familyId,
     subtopico,
+    pedagogicalBranch: branch,
   };
+
   const subtopicMoldApplies =
-    hasSubtopicDesign && shouldApplySubtopicMold(subtopicVariant, slide, affinityCtx);
+    !options.forceGenericMold &&
+    hasDesign &&
+    shouldApplySubtopicMold(subtopicVariant, slide, affinityCtx) &&
+    (!isBespokeLayoutVariant(subtopicVariant) ||
+      bespokeMoldHasRenderableSlots(subtopicVariant, slide));
 
   const rotationCtx: LayoutRotationContext | undefined =
     !subtopicMoldApplies && presentationContext?.questionSlug
@@ -99,9 +140,7 @@ export function resolveSlidePresentation(
         }
       : undefined;
 
-  const familySlide = presentationContext?.familyId
-    ? familySlideKey(slideType)
-    : null;
+  const familySlide = presentationContext?.familyId ? familySlideKey(slideType) : null;
   const familyVisual =
     presentationContext?.familyId && familySlide
       ? getFamilyVisualSlideProfile(presentationContext.familyId, familySlide)
@@ -159,7 +198,11 @@ export function resolveSlidePresentation(
   const revealMode = resolveLogicFlowRevealMode(steps.length, slide.reveal_mode);
   const dangerRevealMode =
     slideType === 'danger_zone'
-      ? resolveDangerZoneRevealMode(layoutVariant, slide.items as DangerZoneItemLike[] | undefined, slide.reveal_mode)
+      ? resolveDangerZoneRevealMode(
+          layoutVariant,
+          slide.items as DangerZoneItemLike[] | undefined,
+          slide.reveal_mode,
+        )
       : 'auto';
   const bulletStyle: DangerZoneBulletStyle =
     slide.bullet_style ??
@@ -197,5 +240,45 @@ export function resolveSlidePresentation(
     bulletStyle,
     slideTitle: resolveSlideTitle(slide),
     rows,
+    moldFallback: options.forceGenericMold,
+  };
+}
+
+/** Resolve layout, interação e título para um slide NeuroSlide. */
+export function resolveSlidePresentation(
+  slide: SlideInput,
+  presentationContext?: SlidePresentationContext,
+): ResolvedSlidePresentation {
+  const first = resolveCore(slide, presentationContext, { forceGenericMold: false });
+
+  if (
+    isBespokeLayoutVariant(first.layoutVariant) &&
+    !bespokeMoldHasRenderableSlots(first.layoutVariant, slide)
+  ) {
+    const fallback = resolveCore(slide, presentationContext, { forceGenericMold: true });
+    return { ...fallback, moldFallback: true };
+  }
+
+  return first;
+}
+
+/** Enriquece contexto com ramo pedagógico inferido ou explícito em meta. */
+export function enrichPresentationContext(
+  base: SlidePresentationContext,
+  meta?: { subtopico?: string; pedagogical_branch?: string },
+  instruction?: string,
+  allSlides?: SlideInput[],
+): SlidePresentationContext {
+  const branch = resolvePedagogicalBranch(
+    meta?.subtopico,
+    instruction ?? '',
+    allSlides ?? [],
+    meta?.pedagogical_branch,
+    base.familyId,
+  );
+  return {
+    ...base,
+    pedagogicalBranch: branch,
+    instruction,
   };
 }

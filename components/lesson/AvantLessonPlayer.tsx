@@ -2156,6 +2156,8 @@ export default function AvantLessonPlayer({
                           questionSlug={moduloSlug || activeDados.modulo_slug}
                           slideIndex={slideAtual}
                           questionFamilyId={questionFamilyId}
+                          questionInstruction={activeDados.question_data?.instruction}
+                          questionSlides={slidesSource}
                           shellContext={{
                             slideIndex: slideAtual,
                             totalSlides,

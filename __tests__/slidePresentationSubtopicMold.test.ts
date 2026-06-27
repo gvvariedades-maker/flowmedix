@@ -1350,7 +1350,7 @@ describe('slidePresentation — molde por subtópico', () => {
           meta: { subtopico },
           content: 'SIGILO NA ADOLESCÊNCIA',
           rows: [
-            { label: 'Privacidade', value: 'Consulta com escuta — protegido' },
+            { label: 'Privacidade', value: 'Consulta com escuta qualificada — protegido por sigilo' },
             { label: 'Gabarito', value: 'Letra B', emphasis: 'success' },
           ],
         },
@@ -1358,9 +1358,36 @@ describe('slidePresentation — molde por subtópico', () => {
           questionSlug: 'idecan-adolescente-sigilo-1',
           slideIndex: 1,
           familyId: 'vf',
+          pedagogicalBranch: 'adolescente_etica_sigilo',
         },
       );
       expect(result.layoutVariant).toBe('adolescent-sigilo-spectrum');
+    });
+
+    it('puberdade (IGEDUC) → concept_map genérico, não privacy-curtain', () => {
+      const instruction =
+        'Julgue o item subsequente. O período da adolescência é marcado por intensa metamorfose física e psicossocial, sendo comuns as disfunções hormonais nos adolescentes. Por exemplo, considera-se atraso na puberdade em meninas quando não se observa nenhum desenvolvimento das mamas dos 12 aos 13 anos e, nos meninos, quando nenhuma hipertrofia dos testículos é observada até os 13-14 anos de idade.';
+
+      const result = resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico },
+          items: [
+            { label: 'Puberdade', detail: 'Marcos: mamas 12–13 anos (meninas)', icon: 'User' },
+            { label: 'Meninos', detail: 'Hipertrofia testicular 13–14 anos', icon: 'User' },
+            { label: 'Atraso', detail: 'Ausência de sinais no intervalo esperado', icon: 'AlertTriangle' },
+          ],
+        },
+        {
+          questionSlug: 'nao-informado-geral-saude-do-adolescente-1777104229064-0',
+          slideIndex: 0,
+          familyId: 'certo_errado',
+          instruction,
+          pedagogicalBranch: 'adolescente_desenvolvimento',
+        },
+      );
+      expect(result.layoutVariant).not.toBe('adolescent-privacy-curtain');
+      expect(['bridge', 'grid', 'molecular', 'morphological', 'stack']).toContain(result.layoutVariant);
     });
   });
 });

@@ -30,7 +30,7 @@ import { LogicFlow } from '../variants/LogicFlow';
 import { SyllableScanner } from '../variants/SyllableScanner';
 import { VersusArena } from '../variants/VersusArena';
 import { getThemeForSlide } from './themeGenerator';
-import { resolveSlidePresentation, type SlidePresentationContext } from './slidePresentation';
+import { resolveSlidePresentation, enrichPresentationContext, type SlidePresentationContext } from './slidePresentation';
 import type { FamilyId } from './questionFamily';
 import type { ThemeColors } from './themeGenerator';
 import {
@@ -52,6 +52,8 @@ export const NeuroSlideHub = ({
   slideIndex,
   jsonLayoutVariant,
   questionFamilyId,
+  questionInstruction,
+  questionSlides,
 }: {
   slide: any;
   questionHash: string;
@@ -59,16 +61,23 @@ export const NeuroSlideHub = ({
   slideIndex?: number;
   jsonLayoutVariant?: string;
   questionFamilyId?: FamilyId;
+  questionInstruction?: string;
+  questionSlides?: unknown[];
 }) => {
   // Sistema híbrido: prioriza subject, fallback para hash com variações únicas
   const theme = getThemeForSlide(slide, questionHash, slideIndex);
 
-  const presentationContext: SlidePresentationContext = {
-    questionSlug: questionSlug ?? questionHash,
-    slideIndex,
-    jsonLayoutVariant,
-    familyId: questionFamilyId,
-  };
+  const presentationContext: SlidePresentationContext = enrichPresentationContext(
+    {
+      questionSlug: questionSlug ?? questionHash,
+      slideIndex,
+      jsonLayoutVariant,
+      familyId: questionFamilyId,
+    },
+    slide.meta,
+    questionInstruction,
+    questionSlides as { type?: string; items?: unknown[]; meta?: { subtopico?: string } }[] | undefined,
+  );
 
   const {
     layoutVariant,
@@ -284,6 +293,8 @@ export default function NeuroSlide({
   shellContext,
   standalone = false,
   questionFamilyId,
+  questionInstruction,
+  questionSlides,
 }: {
   data: any;
   questionHash?: string;
@@ -294,19 +305,37 @@ export default function NeuroSlide({
   standalone?: boolean;
   /** Família pedagógica (7 goldens) — âncora visual no player. */
   questionFamilyId?: FamilyId;
+  /** Enunciado completo — inferência de ramo pedagógico L2.5. */
+  questionInstruction?: string;
+  /** Todos os slides da questão — inferência de ramo. */
+  questionSlides?: unknown[];
 }) {
   const safeData = useMemo(() => normalizeReverseStudySlide(data ?? {}) as any, [data]);
   const hashSource = questionHash || safeData.id || JSON.stringify(safeData).substring(0, 50) || 'default';
   const slugSource = questionSlug || safeData.id || hashSource;
 
   const presentationContext: SlidePresentationContext = useMemo(
-    () => ({
-      questionSlug: slugSource,
+    () =>
+      enrichPresentationContext(
+        {
+          questionSlug: slugSource,
+          slideIndex,
+          jsonLayoutVariant: safeData.layout_variant,
+          familyId: questionFamilyId,
+        },
+        safeData.meta,
+        questionInstruction,
+        questionSlides as { type?: string; items?: unknown[]; meta?: { subtopico?: string } }[] | undefined,
+      ),
+    [
+      slugSource,
       slideIndex,
-      jsonLayoutVariant: safeData.layout_variant,
-      familyId: questionFamilyId,
-    }),
-    [slugSource, slideIndex, safeData.layout_variant, questionFamilyId],
+      safeData.layout_variant,
+      safeData.meta,
+      questionFamilyId,
+      questionInstruction,
+      questionSlides,
+    ],
   );
 
   const normalizedData = useMemo(() => {
@@ -414,6 +443,8 @@ export default function NeuroSlide({
         slideIndex={slideIndex}
         jsonLayoutVariant={safeData.layout_variant}
         questionFamilyId={questionFamilyId}
+        questionInstruction={questionInstruction}
+        questionSlides={questionSlides}
       />
     );
   } else {

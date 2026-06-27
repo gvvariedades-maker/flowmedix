@@ -55,6 +55,7 @@ export type MoldAffinityContext = {
   slideType?: string;
   familyId?: FamilyId;
   subtopico?: string;
+  pedagogicalBranch?: string;
 };
 
 type MoldAffinityRule = {
@@ -64,14 +65,9 @@ type MoldAffinityRule = {
   blockFamilies?: FamilyId[];
   /** Se bater, rejeita o molde (mesmo no subtópico de casa). */
   blockPatterns?: RegExp[];
-  /** Termos que confirmam o ramo — obrigatórios fora do subtópico de casa. */
+  /** Termos que confirmam o ramo — obrigatórios para moldes adolescente e fora do subtópico de casa. */
   positivePatterns?: RegExp[];
   minPositive?: number;
-  /**
-   * Moldes adolescente: no subtópico de casa, aplica por padrão
-   * salvo blockPatterns / blockFamilies.
-   */
-  adolescentEthicsMold?: boolean;
 };
 
 /** Conteúdo antropométrico / escore Z — não usar moldes de sigilo adolescente. */
@@ -90,6 +86,19 @@ const ADOLESCENT_ETHICS_POSITIVE: RegExp[] = [
   /contracep|orienta[cç][aã]o sexual|viol[eê]ncia sexual|abuso sexual/i,
   /autonomia|consentimento|respons[aá]vel legal/i,
   /espa[cç]o do adolescente/i,
+];
+
+/** Desenvolvimento puberal / fisiologia — não usar moldes de ética adolescente. */
+const ADOLESCENT_DEVELOPMENT_BLOCK: RegExp[] = [
+  /puberdade|puberal|metamorfose f[ií]sica|maturidade sexual/i,
+  /horm[oô]nio|disfun[cç][aã]o hormonal|desenvolvimento das mamas|hipertrofia dos test[ií]culo/i,
+  /menarca|espermarquia|estadiamento de tanner|\btanner\b/i,
+  /atraso na puberdade|12 aos 13 anos|13-14 anos/i,
+];
+
+const ADOLESCENT_ETHICS_BLOCK: RegExp[] = [
+  ...NUTRITION_ANTHROPOMETRY_BLOCK,
+  ...ADOLESCENT_DEVELOPMENT_BLOCK,
 ];
 
 const ADOLESCENT_VARIANTS = new Set([
@@ -154,33 +163,29 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
   'adolescent-privacy-curtain': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
-    blockPatterns: NUTRITION_ANTHROPOMETRY_BLOCK,
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
-    adolescentEthicsMold: true,
   },
   'adolescent-sigilo-spectrum': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
-    blockPatterns: NUTRITION_ANTHROPOMETRY_BLOCK,
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
-    adolescentEthicsMold: true,
   },
   'adolescent-vf-weave-tap': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc', 'legis'],
-    blockPatterns: NUTRITION_ANTHROPOMETRY_BLOCK,
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: [
       ...ADOLESCENT_ETHICS_POSITIVE,
       /afirmativa\s+[IIVX]+|julgar\s+[IIVX]+|\bI\b.*(?:verdadeira|falsa)/i,
     ],
-    adolescentEthicsMold: true,
   },
   'adolescent-consent-gate': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
-    blockPatterns: NUTRITION_ANTHROPOMETRY_BLOCK,
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
-    adolescentEthicsMold: true,
   },
 
   // ---- Sinais vitais ----
@@ -479,24 +484,27 @@ export function bespokeMoldHasContentAffinity(
     return false;
   }
 
-  const onHome = rule ? isOnHomeSubtopic(rule, ctx.subtopico) : false;
-
-  if (rule?.adolescentEthicsMold && onHome) {
-    return true;
-  }
-
-  if (onHome && !rule?.adolescentEthicsMold) {
-    return true;
-  }
-
-  if (!rule) return true;
-
-  if (rule.positivePatterns?.length) {
+  if (ADOLESCENT_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'adolescente_etica_sigilo') {
+      return false;
+    }
+    if (!rule?.positivePatterns?.length) return false;
     const hits = countPatternMatches(corpus, rule.positivePatterns);
     return hits >= (rule.minPositive ?? 1);
   }
 
-  return true;
+  const onHome = rule ? isOnHomeSubtopic(rule, ctx.subtopico) : false;
+
+  if (rule?.positivePatterns?.length) {
+    const hits = countPatternMatches(corpus, rule.positivePatterns);
+    if (hits >= (rule.minPositive ?? 1)) return true;
+  }
+
+  if (onHome) return true;
+
+  if (!rule) return true;
+
+  return false;
 }
 
 /**

@@ -152,7 +152,7 @@ export const getThemeStyles = (subject: string): string => {
 // MAPEAMENTO SUBTÓPICO → TEMPLATE + PACOTE DE LAYOUT VARIANTS
 // Usado como fallback automático quando o JSON não especifica template
 // ============================================================================
-interface SubtopicDesign {
+export interface SubtopicDesign {
   template: string;              // tema (nome ou tID)
   conceptMap: string;            // layout_variant para concept_map
   goldenRule: string;            // layout_variant para golden_rule

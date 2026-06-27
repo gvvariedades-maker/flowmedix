@@ -54,8 +54,25 @@ describe('moldAffinity', () => {
         bespokeMoldHasContentAffinity('adolescent-sigilo-spectrum', ethicsSlide, {
           familyId: 'vf',
           subtopico,
+          pedagogicalBranch: 'adolescente_etica_sigilo',
         }),
       ).toBe(true);
+    });
+
+    it('rejeita adolescent-privacy-curtain para puberdade sem vocabulário de ética', () => {
+      const slide = {
+        items: [
+          { label: 'Puberdade', detail: 'Marcos de desenvolvimento das mamas' },
+          { label: 'Hormônios', detail: 'Metamorfose física na adolescência' },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-privacy-curtain', slide, {
+          familyId: 'certo_errado',
+          subtopico: 'Saúde do Adolescente',
+          pedagogicalBranch: 'adolescente_desenvolvimento',
+        }),
+      ).toBe(false);
     });
   });
 

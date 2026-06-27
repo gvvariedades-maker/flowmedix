@@ -152,6 +152,8 @@ export const QuestaoMetaSchema = z.object({
   family: GoldenFamilySchema.optional(),
   content_review: ContentReviewSchema.optional(),
   sources: z.array(ContentSourceSchema).max(12).optional(),
+  /** Ramo pedagógico L2.5 — define molde L3 quando o subtópico é bucket amplo. */
+  pedagogical_branch: z.string().trim().max(80).optional(),
 });
 
 export const QuestaoOptionSchema = z.object({

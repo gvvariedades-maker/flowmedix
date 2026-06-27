@@ -15,6 +15,8 @@ import {
   detectSlideTopicDrift,
   hasInstructionArtifacts,
 } from '@/lib/catalogMigration/slideContract';
+import { detectMoldL3Mismatch } from '@/lib/slides/detectMoldL3Mismatch';
+import { resolvePedagogicalBranch } from '@/lib/slides/pedagogicalBranch';
 
 export type PremiumGateSeverity = 'error' | 'warn';
 
@@ -28,7 +30,12 @@ export type PremiumGateIssue = {
 type SlideLike = Record<string, unknown>;
 
 type QuestaoLike = {
-  meta?: { subtopico?: string; topico?: string } & Record<string, unknown>;
+  meta?: {
+    subtopico?: string;
+    topico?: string;
+    family?: import('@/lib/catalogMigration/classifyFamily').FamilyId;
+    pedagogical_branch?: string;
+  } & Record<string, unknown>;
   question_data?: { instruction?: string; options?: { id?: string; is_correct?: boolean }[] };
   reverse_study_slides?: unknown;
   study_slides?: unknown;
@@ -239,6 +246,32 @@ export function auditPremiumQuestao(payload: QuestaoLike): PremiumGateIssue[] {
       severity: 'warn',
       slideType: 'danger_zone',
       message: `Letra em danger_zone (${gabaritoCheck.parsed}) ≠ gabarito da questão (${gabaritoCheck.expected}).`,
+    });
+  }
+
+  const familyId = payload.meta?.family;
+  const branch = resolvePedagogicalBranch(
+    subtopico,
+    instruction,
+    slides as import('@/lib/slides/moldAffinity').MoldAffinitySlide[],
+    payload.meta?.pedagogical_branch,
+    familyId,
+  );
+
+  if (subtopico && isPremiumSubtopico(subtopico) && branch && !payload.meta?.pedagogical_branch?.trim()) {
+    issues.push({
+      code: 'pedagogical_branch_inferred',
+      severity: 'warn',
+      message: `Ramo pedagógico inferido: "${branch}" — considere meta.pedagogical_branch no handcraft.`,
+    });
+  }
+
+  for (const fit of detectMoldL3Mismatch(payload, { familyId, pedagogicalBranch: branch })) {
+    issues.push({
+      code: fit.code,
+      severity: fit.code === 'mold_l3_zero_slots' ? 'error' : 'warn',
+      slideType: fit.slideType,
+      message: fit.message,
     });
   }
 

@@ -108,6 +108,21 @@ Quando `isPremiumSubtopico(meta.subtopico)` é verdadeiro — subtópico com ao 
 
 **Wiring visual:** [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) · [`MOLD_AFFINITY_RESOLVER.md`](MOLD_AFFINITY_RESOLVER.md) · [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md)
 
+### L2.5 — Ramo pedagógico (afinidade de molde)
+
+O subtópico canônico (`meta.subtopico`) é **bucket**; o **ramo** define qual pacote L3 o player aplica. Sem ramo explícito, o resolver infere a partir do enunciado + slides.
+
+| Campo | Uso |
+|-------|-----|
+| `meta.pedagogical_branch` | Opcional — força ramo (`adolescente_etica_sigilo`, `adolescente_desenvolvimento`, …) |
+| Inferência automática | `lib/slides/pedagogicalBranch.ts` — padrões no corpus da questão |
+| Afinidade + slots | `moldAffinity` + `moldSlotFit` — rejeita molde sem fit semântico ou com 0 slots |
+| Fallback runtime | `slidePresentation` — se molde bespoke não renderiza, cai em layout genérico |
+
+**Gate na escrita:** `detectMoldL3Mismatch` em [`premiumGate.ts`](../lib/catalogMigration/premiumGate.ts) — warn em `mold_l3_zero_slots` / `mold_l3_runtime_fallback`; erro bloqueante só em zero slots quando o subtópico exige molde.
+
+**Exemplo:** questão de puberdade em Saúde do Adolescente → ramo `adolescente_desenvolvimento` → `morphological` / `compare`, **não** cortinas de sigilo (0/0 pilares).
+
 ---
 
 ## Cartão de bolso (agentes e Laboratório)
