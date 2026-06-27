@@ -44,8 +44,8 @@ export type MoldAffinitySlide = {
   type?: string;
   content?: string;
   footer_rule?: string;
-  items?: Array<{ label?: string; detail?: string; correct?: string; title?: string }>;
-  rows?: Array<{ label?: string; value?: string }>;
+  items?: unknown[];
+  rows?: unknown[];
   steps?: unknown[];
   concepts?: unknown[];
 };
@@ -116,18 +116,22 @@ export function collectSlideTextCorpus(slide: MoldAffinitySlide): string {
   if (typeof slide.footer_rule === 'string') parts.push(slide.footer_rule);
 
   if (Array.isArray(slide.items)) {
-    for (const item of slide.items) {
-      if (item?.label) parts.push(item.label);
-      if (item?.detail) parts.push(item.detail);
-      if (item?.correct) parts.push(item.correct);
-      if (item?.title) parts.push(item.title);
+    for (const raw of slide.items) {
+      if (!raw || typeof raw !== 'object') continue;
+      const item = raw as Record<string, unknown>;
+      if (item.label != null) parts.push(String(item.label));
+      if (item.detail != null) parts.push(String(item.detail));
+      if (item.correct != null) parts.push(String(item.correct));
+      if (item.title != null) parts.push(String(item.title));
     }
   }
 
   if (Array.isArray(slide.rows)) {
-    for (const row of slide.rows) {
-      if (row?.label) parts.push(row.label);
-      if (row?.value) parts.push(row.value);
+    for (const raw of slide.rows) {
+      if (!raw || typeof raw !== 'object') continue;
+      const row = raw as Record<string, unknown>;
+      if (row.label != null) parts.push(String(row.label));
+      if (row.value != null) parts.push(String(row.value));
     }
   }
 
