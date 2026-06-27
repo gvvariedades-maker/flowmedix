@@ -37,7 +37,8 @@ export const GENERIC_LAYOUT_VARIANTS = new Set<string>([
 ]);
 
 export function isBespokeLayoutVariant(variant: string | undefined): boolean {
-  return Boolean(variant) && !GENERIC_LAYOUT_VARIANTS.has(variant);
+  if (!variant) return false;
+  return !GENERIC_LAYOUT_VARIANTS.has(variant);
 }
 
 export type MoldAffinitySlide = {
