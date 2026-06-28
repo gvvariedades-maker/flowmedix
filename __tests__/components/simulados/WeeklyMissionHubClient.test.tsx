@@ -39,6 +39,7 @@ const baseData = {
   ],
   semanas_consecutivas: 2,
   weekly_evolution: null,
+  entitlement: { allowed: true as const, tier: 'pro' as const },
 };
 
 describe('WeeklyMissionHubClient', () => {

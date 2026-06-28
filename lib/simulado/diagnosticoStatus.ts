@@ -1,5 +1,3 @@
-import { unstable_cache } from 'next/cache';
-import { CACHE_CONFIG } from '@/lib/cache';
 import { getUserPreferencesOnboarding } from '@/lib/onboarding/preferences';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
@@ -79,28 +77,4 @@ export async function getDiagnosticoSimuladoCardState(
     has_open_session: openSession != null,
     session: openSession ? mapDiagnosticoSession(openSession) : null,
   };
-}
-
-/** Cache USER 2 min para o card na vitrine `/estudar`. */
-export async function getDiagnosticoSimuladoCardStateCached(
-  userId: string,
-): Promise<DiagnosticoSimuladoCardState> {
-  if (!userId) {
-    return {
-      show_card: false,
-      onboarding_completed: false,
-      diagnostico_completed: false,
-      has_open_session: false,
-      session: null,
-    };
-  }
-
-  return unstable_cache(
-    () => getDiagnosticoSimuladoCardState(userId),
-    [`diagnostico-card-${userId}`],
-    {
-      revalidate: CACHE_CONFIG.USER.revalidate,
-      tags: [...CACHE_CONFIG.USER.tags, 'simulado', `user-${userId}`],
-    },
-  )();
 }

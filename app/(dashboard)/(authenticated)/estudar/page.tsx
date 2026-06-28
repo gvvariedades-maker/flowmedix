@@ -11,7 +11,7 @@ import {
   vitrineFacetsQueryKey,
   vitrineListQueryKey,
 } from '@/lib/vitrine/parseListQuery';
-import { getDiagnosticoSimuladoCardStateCached } from '@/lib/simulado/diagnosticoStatus';
+import { getDiagnosticoSimuladoCardStateCached } from '@/lib/simulado/diagnosticoStatusCached';
 import VitrineCatalogStatsSection from '@/components/vitrine/VitrineCatalogStatsSection';
 import VitrineCatalogStatsSkeleton from '@/components/vitrine/VitrineCatalogStatsSkeleton';
 import VitrineClient from '@/components/vitrine/VitrineClient';
