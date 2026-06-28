@@ -30,6 +30,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'adolescent-consent-gate',
   'burn-trap-arena',
   'trabalho-pep-trap-arena',
+  'respiratorio-spo2-trap-arena',
 ]);
 
 /**
@@ -68,6 +69,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
   if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
   if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
+  if (explicitVariant === 'respiratorio-spo2-trap-arena') return 'respiratorio-spo2-trap-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -123,6 +125,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'trabalho-pep-trap-arena') {
       return 'trabalho-pep-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'respiratorio-spo2-trap-arena') {
+      return 'respiratorio-spo2-trap-arena';
     }
     return 'compare';
   }

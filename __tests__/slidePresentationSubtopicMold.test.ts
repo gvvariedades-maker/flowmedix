@@ -1271,6 +1271,87 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.bulletStyle).toBe('x_icon');
   });
 
+  it('Doenças Respiratórias Crônicas: concept_map respiratorio-asma-dpoc-duel-deck no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Doenças Respiratórias Crônicas (Asma, DPOC)' },
+        items: [
+          { label: 'DPOC descompensada', detail: 'SpO₂ 86% com musculatura acessória', icon: 'Activity' },
+          { label: 'Asma na APS', detail: 'Educação sobre inalador de resgate', icon: 'Wind' },
+          { label: 'GABARITO', detail: 'Letra C — O₂ titulado', icon: 'CheckCircle' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-dpoc-1',
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('respiratorio-asma-dpoc-duel-deck');
+  });
+
+  it('Doenças Respiratórias Crônicas: golden_rule respiratorio-spo2-reference-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Doenças Respiratórias Crônicas (Asma, DPOC)' },
+        content: 'SpO₂ — alvos na prova',
+        rows: [
+          { label: 'DPOC retentor', value: 'Alvo 88–92%', emphasis: 'success' },
+          { label: 'Pegadinha', value: 'Forçar ≥95% em DPOC', emphasis: 'alert' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-dpoc-1',
+        slideIndex: 1,
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('respiratorio-spo2-reference-board');
+  });
+
+  it('Doenças Respiratórias Crônicas: logic_flow respiratorio-vf-juggle-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Doenças Respiratórias Crônicas (Asma, DPOC)' },
+        steps: ['I — DPOC: SpO₂ alvo 88–92%', 'II — Asma: beta-2 de resgate', 'Marcar letra B'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-dpoc-1',
+        slideIndex: 2,
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('respiratorio-vf-juggle-tap');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Doenças Respiratórias Crônicas: danger_zone respiratorio-spo2-trap-arena com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Doenças Respiratórias Crônicas (Asma, DPOC)' },
+        content: 'PEGADINHAS — SpO₂ NA DPOC',
+        items: [
+          {
+            label: 'Máscara não reinalante em todo DPOC',
+            detail: 'Alto fluxo sem titulação',
+            correct: 'DPOC: O₂ titulado em baixo fluxo — alvo 88–92%',
+          },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-dpoc-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('respiratorio-spo2-trap-arena');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
   describe('Saúde do Adolescente — afinidade (IBAM escore Z)', () => {
     const subtopico = 'Saúde do Adolescente';
     const slug = 'ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0';

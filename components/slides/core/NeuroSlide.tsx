@@ -24,6 +24,7 @@ import { BurnDepthLayerDeckConceptMap } from '../variants/BurnDepthLayerDeckConc
 import { IstRiskRoutesDeckConceptMap } from '../variants/IstRiskRoutesDeckConceptMap';
 import { AdolescentPrivacyCurtainConceptMap } from '../variants/AdolescentPrivacyCurtainConceptMap';
 import { Nr32AnnexDeckConceptMap } from '../variants/Nr32AnnexDeckConceptMap';
+import { RespiratorioAsmaDpocDuelDeckConceptMap } from '../variants/RespiratorioAsmaDpocDuelDeckConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -217,6 +218,15 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'nr32-annex-deck') {
         return (
           <Nr32AnnexDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'respiratorio-asma-dpoc-duel-deck') {
+        return (
+          <RespiratorioAsmaDpocDuelDeckConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}

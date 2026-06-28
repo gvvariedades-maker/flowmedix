@@ -34,6 +34,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'ist-risk-routes-deck',
   'adolescent-privacy-curtain',
   'nr32-annex-deck',
+  'respiratorio-asma-dpoc-duel-deck',
 ]);
 
 function countConceptItems(slide?: {

@@ -15,6 +15,8 @@ export const RESPIRATORIO_PEAK_FLOW_GOLDEN_FILE =
   'questao-premium-fgv-respiratorio-peak-flow-zonas-vf.json';
 export const RESPIRATORIO_CORTICOIDE_GOLDEN_FILE =
   'questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json';
+export const RESPIRATORIO_ESPACADOR_GOLDEN_FILE =
+  'questao-premium-idecan-respiratorio-espacador-inalador-conceito.json';
 export const RESPIRATORIO_CRISE_EXCETO_GOLDEN_FILE =
   'questao-premium-vunesp-respiratorio-crise-asmatica-exceto.json';
 export const RESPIRATORIO_EXACERBACAO_GOLDEN_FILE =
@@ -130,15 +132,15 @@ export function inferRespiratorioCronicoTopic(
 ): string {
   const blob = `${instruction} ${options.map((o) => o.text).join(' ')}`.toLowerCase();
   if (/peak flow|pfe\b|zona verde|zona amarela|zona vermelha/.test(blob)) return 'Peak flow';
-  if (/espaçador|espacador|inalador pressurizado|apneia inspiratória|apneia inspiratoria/.test(blob)) {
-    return 'Espaçador e inalador';
-  }
   if (
     /corticoide inalat|controlador|uso regular.*corticoide|salbutamol.*assintom|manutenção da asma|manutencao da asma/.test(
       blob,
     )
   ) {
     return 'Corticoide inalatório × resgate';
+  }
+  if (/espaçador|espacador|inalador pressurizado|apneia inspiratória|apneia inspiratoria/.test(blob)) {
+    return 'Espaçador e inalador';
   }
   if (
     /spo2|sp o2|saturação|saturacao|88.?92|98.?100|fio2|fi o2|oxigênio titulado|oxigenio titulado|retenção de co2|retencao de co2|hipercapnia/.test(
@@ -350,7 +352,7 @@ export function respiratorioCronicoGoldenReferenceForInput(
   if (topic === 'Corticoide inalatório × resgate') return RESPIRATORIO_CORTICOIDE_GOLDEN_FILE;
   if (topic === 'Crise asmática') return RESPIRATORIO_CRISE_EXCETO_GOLDEN_FILE;
   if (topic === 'Exacerbação DPOC') return RESPIRATORIO_EXACERBACAO_GOLDEN_FILE;
-  if (topic === 'Espaçador e inalador') return RESPIRATORIO_CORTICOIDE_GOLDEN_FILE;
+  if (topic === 'Espaçador e inalador') return RESPIRATORIO_ESPACADOR_GOLDEN_FILE;
   if (topic === 'O₂ titulado / SpO₂ alvo' || topic === 'Asma × DPOC — diferenciação') {
     return RESPIRATORIO_DPOC_VF_GOLDEN_FILE;
   }

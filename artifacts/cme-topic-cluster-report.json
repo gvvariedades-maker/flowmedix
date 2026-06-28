@@ -3,7 +3,7 @@
   "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
   "lote": "cme-completo",
   "total": 35,
-  "trilho": "A — handcraft total (≤70 slugs)",
+  "trilho": "handcraft golden-v1 por slug",
   "existing_goldens_examples": [
     "questao-premium-idecan-cme-areas-esterilizacao-vf.json",
     "questao-premium-idecan-cme-areas-esterilizacao-vf.json"

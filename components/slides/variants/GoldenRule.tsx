@@ -18,6 +18,7 @@ import { GoldenRulePkPdReferenceBoard } from './GoldenRulePkPdReferenceBoard';
 import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
 import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
+import { GoldenRuleRespiratorioSpo2ReferenceBoard } from './GoldenRuleRespiratorioSpo2ReferenceBoard';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
@@ -323,6 +324,12 @@ export const GoldenRule = ({
   if (variant === 'trabalho-nr32-reference-board' && rows && rows.length > 0) {
     return (
       <GoldenRuleTrabalhoNr32ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'respiratorio-spo2-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleRespiratorioSpo2ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

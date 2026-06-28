@@ -5,14 +5,164 @@
   "limit": 10000,
   "inference_source": "heuristic",
   "summary": {
-    "scanned": 1,
-    "inferred": 1,
+    "scanned": 21,
+    "inferred": 21,
     "errors": 0,
     "keep_current": 1,
     "same_subtopico": 1,
-    "applicable": 0
+    "applicable": 20
   },
   "proposals": [
+    {
+      "modulo_slug": "apice-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103554284-2",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-7",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-0",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103502990-6",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-7",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-5",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-7",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcm-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-6",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-1",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776578199777-0",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776580999967-0",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-2",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-3",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1780066992037-7",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
     {
       "modulo_slug": "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
       "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
@@ -22,7 +172,57 @@
       "rationale": "Heurística: sem padrão dominante — manter bucket",
       "applicable": false,
       "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103471372-5",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-8",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581030438-0",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
     }
   ],
-  "generated_at": "2026-06-16T08:43:45.482Z"
+  "generated_at": "2026-06-27T19:11:55.074Z"
 }

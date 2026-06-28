@@ -34,6 +34,7 @@
     "setup:webhook": "bash scripts/setup-webhook.sh",
     "capture:tutorial": "tsx scripts/capture-tutorial-screens.ts",
     "capture:landing-neuroslides": "tsx scripts/capture-landing-neuroslides.ts",
+    "capture:hero-mockups": "playwright test e2e/capture-hero-mockups.spec.ts --project=chromium",
     "copy:tutorial-assets": "powershell -ExecutionPolicy Bypass -File scripts/copy-user-tutorial-assets.ps1",
     "scale:dataset": "tsx scripts/generate-synthetic-dataset.ts",
     "perf:smoke": "tsx scripts/perf-smoke.ts",

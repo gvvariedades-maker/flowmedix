@@ -1,0 +1,60 @@
+{
+  "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "trilho": "A",
+  "total_slugs": 10,
+  "handcraft_applied": 10,
+  "lote_size": 8,
+  "lote_pattern": "respiratorio-cronico-g{NN}",
+  "anchor_glob": "examples/questao-premium-*-respiratorio-*.json",
+  "guideline": "lib/guidelines/respiratorioCronico.ts",
+  "status": "applied",
+  "applied_at": "2026-06-27",
+  "builder_note": "Legado upgrade-premium híbrido (2026-06-23) substituído por handcraft golden-v1 em todos os slugs.",
+  "clusters": [
+    "Espaçador e inalador — técnica MDI",
+    "Oximetria de pulso / SpO₂",
+    "O₂ titulado na DPOC (APS/emergência)",
+    "Dispositivos de oxigenoterapia (Venturi)",
+    "Asma na APS — educação terapêutica",
+    "Espirometria VEF1/CVF",
+    "Semiologia pediátrica — sibilos",
+    "Semiologia respiratória V/F",
+    "DPOC na UBS — papel do técnico"
+  ],
+  "anchor_goldens": [
+    "questao-premium-idecan-respiratorio-espacador-inalador-conceito.json",
+    "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json",
+    "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json",
+    "questao-premium-fgv-respiratorio-peak-flow-zonas-vf.json",
+    "questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf.json",
+    "questao-premium-vunesp-respiratorio-crise-asmatica-exceto.json"
+  ],
+  "lotas_aplicados": [
+    {
+      "lote": "respiratorio-cronico-micro-01-goldens",
+      "mode": "handcraft-golden-v1",
+      "applied_at": "2026-06-27",
+      "cluster": "Espaçador e inalador",
+      "slugs": [
+        "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7"
+      ]
+    },
+    {
+      "lote": "respiratorio-cronico-g01",
+      "mode": "handcraft-golden-v1",
+      "applied_at": "2026-06-27",
+      "slugs": [
+        "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+        "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+        "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+        "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+        "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+        "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+        "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+        "univali-enfermagem-processo-de-enfermagem-1780010600919-9"
+      ]
+    }
+  ],
+  "pending_slugs": []
+}

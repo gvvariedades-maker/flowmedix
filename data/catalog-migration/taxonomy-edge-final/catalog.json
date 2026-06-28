@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-27T19:53:56.099Z",
+  "lote": "taxonomy-edge-final",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4688
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 5104
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1692
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4070
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1520
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1766
+    }
+  ]
+}

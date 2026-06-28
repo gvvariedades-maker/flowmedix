@@ -13,7 +13,7 @@ const LandingHome = dynamic(() => import('@/components/landing/LandingHomeClient
   ssr: true,
   loading: () => (
     <div
-      className="flex min-h-screen items-center justify-center bg-[#010409] text-sm font-medium text-slate-500"
+      className="flex min-h-screen items-center justify-center bg-[#f1f5f9] text-sm font-medium text-slate-500"
       aria-busy="true"
     >
       Carregando…
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'AVANT — Estudo Reverso para Técnico em Enfermagem',
+    title: 'AVANT — Estudo reverso para Técnico em Enfermagem',
     description:
-      'A plataforma que transforma cada questão errada em aprendizado real. Foco total em concursos de Técnico em Enfermagem.',
+      'O único método que transforma cada erro em aprendizado real — feito exclusivamente para Técnico em Enfermagem.',
     url: getAbsoluteUrl('/'),
     siteName: 'AVANT',
     locale: 'pt_BR',

@@ -20,6 +20,7 @@ import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
 import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
 import { LogicFlowBurnTriageTapFlow } from './LogicFlowBurnTriageTapFlow';
 import { LogicFlowTrabalhoVfJuggleTap } from './LogicFlowTrabalhoVfJuggleTap';
+import { LogicFlowRespiratorioVfJuggleTap } from './LogicFlowRespiratorioVfJuggleTap';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
 import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
 import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
@@ -183,6 +184,10 @@ export const LogicFlow = ({
 
   if (variant === 'trabalho-vf-juggle-tap') {
     return <LogicFlowTrabalhoVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+  }
+
+  if (variant === 'respiratorio-vf-juggle-tap') {
+    return <LogicFlowRespiratorioVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
   }
 
   if (variant === 'pni-vf-juggle-tap') {

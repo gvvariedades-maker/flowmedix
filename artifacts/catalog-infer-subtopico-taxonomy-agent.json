@@ -1,0 +1,2268 @@
+{
+  "generated_at": "2026-06-27T19:21:47.744Z",
+  "mode": "apply",
+  "bucket": "taxonomy-agent-pending",
+  "min_confidence_apply": 0.85,
+  "limit": null,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 225,
+    "inferred": 225,
+    "errors": 0,
+    "keep_current": 119,
+    "same_subtopico": 119,
+    "applicable": 106
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Aferição/interpretação de sinais vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Agente: Curativos e pele integra",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-5",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+      "from": "Processo de Enfermagem",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Slug auditoria/gestão da qualidade — segurança do paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-9",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Aferição/interpretação de sinais vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563650975-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563679414-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-8",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-9",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968906156-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Cálculo de medicação/infusão",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-seguranca-do-paciente-1777102918981-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Agente: conteúdo NSP em bucket SAE — mover para Segurança do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-semiologia-em-enfermagem-1779563537258-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Agente: Slug semiologia — semiologia/SV",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1779563443877-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Cálculo de medicação/infusão",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-3",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Agente: Slug semiologia — semiologia/SV",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-processo-de-enfermagem-1776056158507-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-0",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Agente: DCNT/prevenção/promoção (habitos, rastreamento)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-complementares-1779423306557-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1776056129848-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-9",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-2",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Agente: Slug semiologia — semiologia/SV",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-3",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Agente: Slug semiologia — semiologia/SV",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-3",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Agente: Tema central: nutrição/dietas/promoção alimentar",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Acesso venoso/cateter",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Reação/intercorrência em transfusão — conduta urgente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-8",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Agente: DCNT/prevenção/promoção (habitos, rastreamento)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Agente: Tema central: nutrição/dietas/promoção alimentar",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Agente: Slug semiologia — semiologia/SV",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1776056021381-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-complementares-1779563674260-8",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-laboratoriais-1779563559434-1",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-seguranca-do-paciente-1777102742836-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-5",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776056173194-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-3",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Agente: Slug semiologia — semiologia/SV",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "from": "Segurança do Paciente",
+      "suggested": "História da Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Agente: Auditoria/ gestão com foco ético-profissional — História/COFEN",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-seguranca-do-paciente-1777102678563-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Agente: Cuidados na administração de medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563655698-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563668619-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563679414-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563685104-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-9",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Imunização/vacinas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Aferição/interpretação de sinais vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-seguranca-do-paciente-1779563436357-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Agente: Cuidados na administração de medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-seguranca-do-paciente-1777102821787-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056149404-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-4",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-seguranca-do-paciente-1777102821787-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-seguranca-do-paciente-1777102918981-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779563225798-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-exames-laboratoriais-1779563559434-8",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-seguranca-do-paciente-1777102918981-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-2",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Asma/DPOC",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501921356-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-seguranca-do-paciente-1779563436357-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563613404-0",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-seguranca-do-paciente-1777102742836-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: higiene/conforto — mobilização e cuidados gerais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Slug DCNT metabólica/cardiovascular — prevenção/promoção (enunciado típico)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug oncologia — cuidado específico sem subtópico canônico — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1778712242196-2",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1779563685104-2",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-laboratoriais-1778712242196-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-fisiologia-1780066909125-0",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-homem-1780067036141-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Agente: Slug ciclo de vida específico — promoção/cuidado preventivo",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Agente: Slug ciclo de vida específico — promoção/cuidado preventivo",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712242196-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Agente: Curativos e pele integra",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1780066924385-0",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug autoimune/reumatologia — DCNT mescladas — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-8",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Aferição/interpretação de sinais vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-6",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Agente: DCNT/prevenção/promoção (habitos, rastreamento)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-7",
+      "from": "Processo de Enfermagem",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Agente: Slug ciclo de vida específico — promoção/cuidado preventivo",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Slug auditoria/gestão da qualidade — segurança do paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: APS/ESF",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Agente: Slug semiologia — semiologia/SV",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1776056140199-7",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-coleta-de-exames-laboratoriais-1779563272300-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563613404-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1776056140199-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Agente: Tema central: nutrição/dietas/promoção alimentar",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Cálculo de medicação/infusão",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-4",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-8",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-1",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Aferição/interpretação de sinais vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005320352-9",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1776056149404-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779563272300-6",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Agente: DCNT/prevenção/promoção (habitos, rastreamento)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102678563-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Agente: DCNT/prevenção/promoção (habitos, rastreamento)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-9",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Aferição/interpretação de sinais vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+      "from": "Segurança do Paciente",
+      "suggested": "História da Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Agente: Auditoria/ gestão com foco ético-profissional — História/COFEN",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Slug auditoria/gestão da qualidade — segurança do paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-exames-complementares-1779563679414-4",
+      "from": "Processo de Enfermagem",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-exames-laboratoriais-1779563559434-6",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-1",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Agente: DCNT/prevenção/promoção (habitos, rastreamento)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-8",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Agente: DCNT/prevenção/promoção (habitos, rastreamento)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-nocoes-de-fisiologia-1775501802332-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779269315587-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-1",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448291915-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: Anatomia",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-seguranca-do-paciente-1779563467322-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-7",
+      "from": "Processo de Enfermagem",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: APS/ESF",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Agente: DCNT/prevenção/promoção (habitos, rastreamento)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563674260-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-processo-de-enfermagem-1776055865890-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Agente: Tema central: nutrição/dietas/promoção alimentar",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-0",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Agente: Slug exames complementares/laboratoriais — coleta e exames",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003637054-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Acesso venoso/cateter",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Slug auditoria/gestão da qualidade — segurança do paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Slug auditoria/gestão da qualidade — segurança do paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Slug auditoria/gestão da qualidade — segurança do paciente — já no bucket correto",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Agente: Slug auditoria/gestão da qualidade — segurança do paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Agente: Slug nutrição aplicada — promoção/prevenção nutricional",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: enunciado ancorado em SAE/NANDA — permanece em Processo de Enfermagem",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-9",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Agente: higiene/conforto — mobilização e cuidados gerais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Agente: tema central de segurança do paciente — permanece",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.6,
+      "keep_current": true,
+      "rationale": "Agente: tema ambíguo — manter bucket atual (revisão manual opcional)",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ]
+}

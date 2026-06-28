@@ -5,7 +5,7 @@ import {
 } from '@/lib/admin/groupErrorReports';
 import type { ErrorReportRow } from '@/lib/admin/errorReports';
 
-function makeReport(partial: Partial<ErrorReportRow> & Pick<ErrorReportRow, 'id' | 'description'>): ErrorReportRow {
+function makeReport(partial: Partial<ErrorReportRow> & Pick<ErrorReportRow, 'id'>): ErrorReportRow {
   return {
     user_id: 'user-1',
     created_at: '2026-06-01T10:00:00.000Z',
@@ -18,6 +18,7 @@ function makeReport(partial: Partial<ErrorReportRow> & Pick<ErrorReportRow, 'id'
     status: 'novo',
     priority: 'p2',
     severity: null,
+    description: 'Reporte de teste',
     metadata: {},
     admin_notes: null,
     resolved_at: null,

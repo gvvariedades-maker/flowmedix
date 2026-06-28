@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-27",
+  "description": "Programa Taxonomia — classificar questões no subtópico canônico correto antes do handcraft.",
+  "runbook": "docs/TAXONOMIA_MODEL.md",
+  "conversa": "docs/TAXONOMIA_CONVERSA.md",
+  "canonical_count": 41,
+  "catch_all_buckets": [
+    "Procedimentos Diversos",
+    "Questões Mescladas e Outras Doenças Agudas",
+    "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+    "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+    "Processo de Enfermagem",
+    "Segurança do Paciente"
+  ],
+  "priority_infer_order": [
+    "Procedimentos Diversos",
+    "Questões Mescladas e Outras Doenças Agudas",
+    "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+    "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+    "Processo de Enfermagem",
+    "Segurança do Paciente"
+  ],
+  "confidence_tiers": {
+    "green_auto_apply": 0.9,
+    "yellow_review": 0.7,
+    "red_manual": 0.0
+  },
+  "commands": {
+    "inventory": "npm run audit:subtopico-inventory",
+    "normalize_legacy": "npm run catalog:reclassify-subtopico -- --dry-run",
+    "infer_bucket": "npm run catalog:infer-subtopico -- --subtopico=\"<bucket>\" --dry-run",
+    "agent_classify": "npm run taxonomy:agent-classify -- --dry-run",
+    "agent_apply": "npm run taxonomy:agent-classify -- --apply --min-confidence=0.85",
+    "apply_infer": "npm run catalog:infer-subtopico -- --from-report=artifacts/catalog-infer-subtopico-<slug>.json --apply --min-confidence=0.85",
+    "sync_meta": "npm run catalog:reclassify-subtopico -- --apply --sync-meta"
+  },
+  "artifacts": {
+    "inventory": "artifacts/subtopico-inventory-audit.json",
+    "mismatches_csv": "artifacts/subtopico-inventory-mismatches.csv",
+    "infer_report_pattern": "artifacts/catalog-infer-subtopico-{bucket-slug}.json",
+    "agent_report": "artifacts/catalog-infer-subtopico-taxonomy-agent.json"
+  },
+  "batches": {
+    "taxonomy-agent-pending": {
+      "date": "2026-06-27",
+      "source": "cursor-agent",
+      "scanned": 225,
+      "applied": 106,
+      "kept_catch_all": 119,
+      "min_confidence": 0.85
+    },
+    "taxonomy-agent-deep": {
+      "date": "2026-06-27",
+      "source": "cursor-agent-deep",
+      "scanned": 126,
+      "applied": 24,
+      "kept_catch_all": 102,
+      "min_confidence": 0.85
+    },
+    "taxonomy-edge-final": {
+      "date": "2026-06-27",
+      "source": "manual-edge-review",
+      "applied": 5,
+      "kept": 2,
+      "decisions": "artifacts/taxonomy-edge-final-decisions.json"
+    }
+  },
+  "handcraft_prerequisite": "docs/DECISAO_TRILHO_A_UNICO.md — taxonomia estável antes de handcraft por slug"
+}

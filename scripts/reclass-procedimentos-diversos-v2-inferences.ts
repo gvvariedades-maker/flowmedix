@@ -72,13 +72,6 @@ const ROWS: InferRow[] = [
     rationale: 'Multidisciplinaridade vs interdisciplinaridade em equipe — tema de gestão sem subtópico canônico específico.',
   },
   {
-    modulo_slug: 'objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4',
-    suggested_subtopico: 'Procedimentos Diversos',
-    confidence: 0.92,
-    keep_current: true,
-    rationale: 'Cookies de navegador (TI) — importação atípica sem subtópico clínico; permanece no catch-all.',
-  },
-  {
     modulo_slug: 'ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-5',
     suggested_subtopico: 'Procedimentos Diversos',
     confidence: 0.91,

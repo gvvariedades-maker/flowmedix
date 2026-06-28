@@ -22,6 +22,7 @@ import { DangerZoneLabSpecimenArena } from './DangerZoneLabSpecimenArena';
 import { DangerZoneDressingChoiceArena } from './DangerZoneDressingChoiceArena';
 import { DangerZoneBurnTrapArena } from './DangerZoneBurnTrapArena';
 import { DangerZoneTrabalhoPepTrapArena } from './DangerZoneTrabalhoPepTrapArena';
+import { DangerZoneRespiratorioSpo2TrapArena } from './DangerZoneRespiratorioSpo2TrapArena';
 import { DangerZonePniTrapChips } from './DangerZonePniTrapChips';
 import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
 import { DangerZoneAdolescentConsentGate } from './DangerZoneAdolescentConsentGate';
@@ -338,6 +339,17 @@ export const DangerZone = ({
   if (explicitVariant === 'trabalho-pep-trap-arena' && items && items.length > 0) {
     return (
       <DangerZoneTrabalhoPepTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'respiratorio-spo2-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneRespiratorioSpo2TrapArena
         content={content}
         items={items}
         theme={theme}

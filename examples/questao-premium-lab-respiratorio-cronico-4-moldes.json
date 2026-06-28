@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "banca": "LAB PREVIEW",
+    "prova": "Tec Enf",
+    "orgao": "Local",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-28",
+      "reviewer": "lab-preview",
+      "guideline_snapshot": "PCDT MS — Asma e DPOC (oxigenoterapia titulada, SpO₂ 88–92%)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pcdt-asma-dpoc-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "PCDT — Asma e DPOC",
+        "year": 2024,
+        "covers": ["SpO₂ 88-92%", "O₂ titulado", "asma resgate", "DPOC"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre asma e DPOC na atenção básica, analise as afirmativas.\n\nI - Na DPOC descompensada com hipoxemia, o técnico monitora SpO₂ e comunica a equipe para oxigenoterapia titulada em baixo fluxo.\nII - Na crise de asma, o broncodilatador beta-2 de resgate faz parte da conduta inicial, com orientação sobre técnica inalatória e espaçador.\nIII - Em todo paciente com DPOC, a meta de oxigenoterapia é sempre atingir SpO₂ de 98 a 100%, independentemente do risco de hiperóxia.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Preview · Duel Deck Asma × DPOC",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)" },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "Prova separa DPOC (crônica, O₂ titulado) de asma (reversível, resgate beta-2).",
+          "icon": "Target"
+        },
+        {
+          "label": "DPOC descompensada",
+          "detail": "SpO₂ baixa, FR elevada e musculatura acessória — monitorar e escalar O₂ titulado.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Asma na APS",
+          "detail": "Crise com broncoespasmo — inalador de resgate e educação com espaçador.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Monitor SpO₂",
+          "detail": "Oximetria de pulso na exacerbação — comunicar hipoxemia à equipe.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "GABARITO — letra B",
+          "detail": "I e II verdadeiras; III falsa (hiperóxia no DPOC retentor).",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Duel deck: trilhos Asma · DPOC · Monitor · Crise · Educação"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Preview · SpO₂ Reference Board",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)" },
+      "content": "SPO₂ — ALVOS NA PROVA",
+      "rows": [
+        { "label": "DPOC retentor", "value": "Alvo SpO₂ 88–92%", "emphasis": "success", "badge": "ok" },
+        { "label": "O₂ titulado", "value": "Baixo fluxo + monitorização", "emphasis": "highlight", "badge": "hot" },
+        { "label": "Asma — resgate", "value": "Beta-2 na crise + técnica inalatória", "badge": "ok" },
+        { "label": "Pegadinha III", "value": "Forçar SpO₂ ≥95% em todo DPOC", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "Letra B — I e II apenas", "badge": "hot" }
+      ],
+      "footer_rule": "Toque cada lente — perfil respiratorio (SpO₂ / O₂ / asma)"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Preview · V/F Juggle Tap",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)" },
+      "steps": [
+        "Afirmativa I — DPOC com SpO₂ monitorada e O₂ titulado: verdadeira.",
+        "Afirmativa II — asma: beta-2 de resgate e espaçador na APS: verdadeira.",
+        "Afirmativa III — SpO₂ 98–100% sempre no DPOC: falsa.",
+        "Eliminar C, D e E — sobra letra B.",
+        "Marcar letra B e fixar: retentor ≠ alvo de paciente sem retenção."
+      ],
+      "footer_rule": "Juggle cyan — avance passo a passo (reveal_mode tap)"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Preview · SpO₂ Trap Arena",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)" },
+      "content": "PEGADINHAS — ASMA × DPOC",
+      "items": [
+        {
+          "label": "Máscara não reinalante em todo DPOC",
+          "detail": "Alto fluxo sem titulação na exacerbação.",
+          "correct": "DPOC: O₂ titulado em baixo fluxo — alvo SpO₂ 88–92% no retentor."
+        },
+        {
+          "label": "Suspender beta-2 na crise de asma",
+          "detail": "Confundir manutenção com resgate.",
+          "correct": "Asma: broncodilatador de resgate na crise — orientar espaçador/inalador."
+        },
+        {
+          "label": "Alta sem avaliar dispneia",
+          "detail": "Ignorar sinais de exacerbação na UBS.",
+          "correct": "Exacerbação: reconhecer FR, SpO₂ e musculatura acessória — escalar, não alta cega."
+        }
+      ],
+      "footer_rule": "Trap arena — toque cada eixo (SpO₂ · O₂ · resgate · dispositivo)"
+    }
+  ]
+}

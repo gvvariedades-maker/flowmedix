@@ -1,13 +1,13 @@
 # GOLDEN Content Standard v1
 
-Padrão canônico de **conteúdo pedagógico** para goldens (`examples/questao-premium-*.json`) e alinhamento dos **builders** em escala.
+Padrão canônico de **conteúdo pedagógico** para handcraft golden-v1 (`examples/` e `data/catalog-migration/`).
 
 **Complementa (não substitui):**
+- [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md) — decisão de produto
 - [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — definição canônica L1/L2/L3
 - [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) — famílias e anti-repetição
-- [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) — moldes, builder, migração
-- [`GOLDEN_ROLLOUT_CATALOGO.md`](GOLDEN_ROLLOUT_CATALOGO.md) — programa "catálogo inteiro em golden-v1"
-- [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) — runbook operacional âncora + handcraft (escala catálogo)
+- [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) — runbook operacional handcraft
+- [`GOLDEN_ROLLOUT_CATALOGO.md`](GOLDEN_ROLLOUT_CATALOGO.md) — programa catálogo inteiro
 - [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) — visual automático por subtópico
 
 **Implementação:** [`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts) · [`lib/guidelines/`](../lib/guidelines/) · gate [`__tests__/golden-content-standard.test.ts`](../__tests__/golden-content-standard.test.ts)
@@ -178,18 +178,19 @@ A extração de gabarito lê **campos estruturados** (não JSON concatenado), ev
 
 ---
 
-## 8. Builders (escala)
+## 8. Builders (legado — não usar em produção nova)
 
-| Aspecto | Golden manual | Builder |
-|---------|---------------|---------|
-| Procedimento | [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | Mesmo doc §2 trilho B + este §8 |
-| Gramática de slots | 100% | 100% |
-| Fontes | `meta.sources[]` por revisão | Só `lib/guidelines/*` versionado |
-| Especificidade | Total | Alternativas/romanos reais; 0 stub |
-| `content_standard` | `golden-v1` no meta | **Não** obrigatório no v1 |
-| Revisão | Item a item | Amostra ~5% + gates Zod/anti-stub |
+> **Decisão 2026-06-27:** produção = handcraft por slug. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
 
-Builders **não inventam** número normativo — consultam `GUIDELINE_TABLES` em [`lib/guidelines/index.ts`](../lib/guidelines/index.ts) **ou** corpus clínico codificado no builder dedicado (prioridade e trilhos: [`FONTE_NORMATIVA_AVANT.md`](FONTE_NORMATIVA_AVANT.md)).
+| Aspecto | Handcraft (produção) | Builder (legado) |
+|---------|----------------------|------------------|
+| Procedimento | [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | Deprecado — re-handcraft |
+| Gramática de slots | 100% | 100% (quando existia) |
+| Fontes | `meta.sources[]` por revisão | `lib/guidelines/*` ou strings embutidas |
+| `content_standard` | `golden-v1` obrigatório | Não emitia golden-v1 |
+| Revisão | Item a item | Amostra ~5% |
+
+Handcraft **não inventa** número normativo — exige `meta.sources` tier A/B com `covers` adequado.
 
 ---
 

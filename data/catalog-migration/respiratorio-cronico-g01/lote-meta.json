@@ -1,0 +1,25 @@
+{
+  "lote": "respiratorio-cronico-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-27",
+  "applied_at": "2026-06-27",
+  "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "total": 9,
+  "status": "applied",
+  "parent": "data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json",
+  "manifest": "data/catalog-migration/respiratorio-cronico-completo/manifest.json",
+  "validate_command": "npm run validate:goldens -- --lote=respiratorio-cronico-g01 --strict",
+  "handcraft_script": "scripts/handcraft-respiratorio-cronico-g01.ts",
+  "slugs": [
+    "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+    "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+    "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+    "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+    "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-9"
+  ]
+}

@@ -6,21 +6,35 @@ import { useState } from 'react';
 import { useProCheckout } from '@/components/pro/useProCheckout';
 import { cn } from '@/lib/utils';
 
+const brandCtaSizes = {
+  default: 'min-h-11 px-6 py-3.5 text-sm',
+  lg: 'min-h-12 px-8 py-4 text-lg',
+} as const;
+
+const outlineCtaSizes = {
+  default: 'min-h-11 px-6 py-3.5 text-sm',
+  lg: 'min-h-12 px-8 py-4 text-lg',
+} as const;
+
 export function BrandCta({
   children,
   className,
   onClick,
   disabled,
   href,
+  size = 'default',
 }: {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
   href?: string;
+  size?: keyof typeof brandCtaSizes;
 }) {
-  const base =
-    'inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-[#8fe020] px-6 py-3.5 text-sm font-black tracking-wide text-[#1a2e05] shadow-[0_8px_24px_rgba(143,224,32,0.35)] transition-all hover:bg-[#9ef028] hover:shadow-[0_12px_32px_rgba(143,224,32,0.4)] disabled:cursor-not-allowed disabled:opacity-60';
+  const base = cn(
+    'inline-flex items-center justify-center gap-2 rounded-full bg-[#8fe020] font-black tracking-wide text-[#1a2e05] shadow-[0_8px_24px_rgba(143,224,32,0.35)] transition-all hover:bg-[#9ef028] hover:shadow-[0_12px_32px_rgba(143,224,32,0.4)] disabled:cursor-not-allowed disabled:opacity-60',
+    brandCtaSizes[size],
+  );
 
   if (href) {
     return (
@@ -43,15 +57,25 @@ export function OutlineCta({
   href,
   onClick,
   disabled,
+  size = 'default',
+  variant = 'default',
 }: {
   children: React.ReactNode;
   className?: string;
   href?: string;
   onClick?: () => void;
   disabled?: boolean;
+  size?: keyof typeof outlineCtaSizes;
+  /** `header` = borda slate-300 para nav sticky */
+  variant?: 'default' | 'header';
 }) {
-  const base =
-    'inline-flex min-h-11 items-center justify-center gap-2 rounded-2xl border-2 border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 shadow-sm transition-all hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60';
+  const base = cn(
+    'inline-flex items-center justify-center gap-2 rounded-full border-2 bg-white font-bold shadow-sm transition-all disabled:cursor-not-allowed disabled:opacity-60',
+    variant === 'header'
+      ? 'border-slate-300 text-slate-700 hover:border-slate-400 hover:bg-slate-50'
+      : 'border-slate-200 text-slate-800 hover:border-slate-300 hover:bg-slate-50',
+    outlineCtaSizes[size],
+  );
 
   if (href) {
     return (

@@ -1,10 +1,10 @@
-# Fonte normativa AVANT — Golden × Builder × Guideline
+# Fonte normativa AVANT — Handcraft × Guideline × Legado
 
-Governança de **onde vive a verdade clínica/normativa** no AVANT: três artefatos que se complementam, mas **não** são três rollouts paralelos com a mesma prioridade.
+Governança de **onde vive a verdade clínica/normativa** no AVANT.
 
-**Leitura rápida:** produção em escala = **golden + builder**; guideline = biblioteca auxiliar (IA, factcheck, transição). **Guideline não é pré-requisito do builder.**
+> **Decisão (2026-06-27):** produção premium = **handcraft golden-v1 por slug**. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
 
-Relacionados: [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) · [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) · [`GUIDELINE_DEEPENING_PLAN.md`](GUIDELINE_DEEPENING_PLAN.md)
+Relacionados: [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) · [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) · [`GUIDELINE_DEEPENING_PLAN.md`](GUIDELINE_DEEPENING_PLAN.md)
 
 ---
 
@@ -12,29 +12,26 @@ Relacionados: [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) · [`
 
 | Artefato | Onde | Função |
 |----------|------|--------|
-| **Golden** | `examples/questao-premium-*.json` | Barra de qualidade pedagógica; revisão clínica item a item; `meta.sources`, `content_review` |
-| **Builder** | `lib/catalogMigration/upgradePremium<Pacote>.ts` | Escala migração em lote; slides a partir do enunciado + família |
-| **Guideline** | `lib/guidelines/*.ts` | Tabelas versionadas de fatos normativos; IA (`promptBuilder`), `runFactCheck`, `enrichGoldenMeta` |
+| **Handcraft golden-v1** | `data/catalog-migration/<lote>/questions/*.json` | **Produção** — conteúdo específico por slug |
+| **Golden âncora** | `examples/questao-premium-*.json` | Estilo/referência por ramo pedagógico |
+| **Guideline** | `lib/guidelines/*.ts` | Referência normativa para o agente; IA/factcheck auxiliar |
 
 ```mermaid
 flowchart TB
-  subgraph prod [Trilho A — Produção premium]
-    G[Golden examples]
-    B[upgradePremium builder]
-    M[Moldes 4/4]
-    L[Lote catálogo]
-    G --> B --> L
-    M --> L
+  subgraph prod [Produção — handcraft golden-v1]
+    E[examples/ âncoras de estilo]
+    H[Handcraft por slug]
+    V[validate:goldens --strict]
+    A[apply-lote]
+    E --> H --> V --> A
   end
-  subgraph aux [Trilho B — Transição / IA]
+  subgraph aux [Auxiliar]
     GL[lib/guidelines]
     IA[slideGenerator + factCheck]
-    H[upgradePremiumHybrid stub]
     GL --> IA
-    GL --> H
   end
-  B -.->|ideal: importar| GL
-  G -.->|referência clínica| B
+  GL -.->|referência| H
+  E -.->|estilo| H
 ```
 
 ---
@@ -43,100 +40,63 @@ flowchart TB
 
 ```text
 Para escalar o catálogo premium:
-  1. Golden(s) por ramo forte (V/F, CE, interpretação…)
-  2. Builder dedicado integrado em upgradePremiumHybrid
-  3. Moldes bespoke + lote sem stubs
+  1. Export + cluster (opcional)
+  2. Âncora golden-v1 por ramo forte (examples/)
+  3. Handcraft golden-v1 por slug em lotes gNN
+  4. validate:goldens --strict → apply-lote
 
-Guideline aprofundada NÃO bloqueia passos 1–3.
+Guideline aprofundada NÃO bloqueia handcraft.
+Builder/hybrid NÃO são caminho de produção.
 ```
 
-O hybrid genérico com stubs `[IA]` é **transição** — ver [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md). O fechamento do subtópico é o **pacote premium**, não `gap_entries = 0` na guideline.
+---
+
+## 3. Matriz handcraft × guideline × legado
+
+| Pergunta | Handcraft | Golden âncora | Guideline | Builder (legado) |
+|----------|-----------|---------------|-----------|------------------|
+| Produção atual? | **Sim** | Referência de estilo | Auxiliar | Não — re-handcraft pendente |
+| Escala catálogo? | Lotes g01…gNN | 1 por ramo | Não | ~~Sim~~ deprecado |
+| Revisão clínica? | **Por slug** | Por âncora | Na extração | Amostra ~5% |
+| Números normativos | `meta.sources` + slides | Idem | `GuidelineEntry.value` | Strings no builder |
+| Factcheck automático? | Lint golden-v1 | Lint golden-v1 | `runFactCheck` | Testes Jest |
 
 ---
 
-## 3. Matriz builder × guideline × golden
+## 4. Legado — builder e hybrid (não usar em produção nova)
 
-| Pergunta | Golden | Builder | Guideline |
-|----------|--------|---------|-----------|
-| Quem valida no Laboratório? | Sim (`golden-v1` lint) | Via lote / testes Jest | Não diretamente |
-| Escala centenas de slugs? | Não (manual) | **Sim** | Não (corpus estático) |
-| Revisão clínica humana? | **Obrigatória** | Amostra ~5% pós-lote | Recomendada na extração |
-| Números normativos (dose, intervalo, SV) | `meta.sources` + slides | Lógica do builder | `GuidelineEntry.value` |
-| Factcheck automático? | Lint golden-v1 | Indireto (testes) | **`runFactCheck`** |
-| Obrigatório antes do builder? | **Recomendado** (1+ por ramo) | — | **Não** |
+O repositório mantém `lib/catalogMigration/upgradePremium*.ts` e `upgradePremiumHybrid.ts` para:
 
-### Quem consome o quê (código)
+- Conteúdo já migrado antes da decisão (Imunização, Curativos, Sinais Vitais…)
+- Testes de regressão
 
-| Consumidor | Golden | Builder | Guideline |
-|------------|--------|---------|-----------|
-| `catalog:upgrade-premium` / apply-lote | Referência no router | **Fonte dos slides** | Não importa hoje* |
-| Laboratório / write spec | Validação | — | — |
-| `slideGenerator` (IA) | — | — | **Prompt + factcheck** |
-| `enrichGoldenMeta` | Preenche `meta.sources` | — | Sim |
+**Política:** subtópicos legado entram na fila de **re-handcraft** até `handcraft_applied === total_slugs` no registry.
 
-\* *Estado atual (2026): builders dedicados como `upgradePremiumImunizacao.ts` embutem strings clínicas sem importar `lib/guidelines/`. Meta de evolução: builder importar guideline — ver §6.*
+**Proibido:** `catalog:upgrade-premium`, `ai:generate` para novos lotes de catálogo.
 
 ---
 
-## 4. Dois trilhos por subtópico
+## 5. Ordem de trabalho (handcraft)
 
-### Trilho A — Produção (builder fechado)
-
-**Quando:** subtópico com entrada em [`upgradePremiumDedicatedRouter.ts`](../lib/catalogMigration/upgradePremiumDedicatedRouter.ts).
-
-**DoD:** checklist do pacote premium (golden + moldes + builder + lote, 0 stub).
-
-**Guideline:** opcional. Se existir, usar para IA e para **sincronizar** números — não manter duas verdades (builder × `pni.ts`).
-
-Builders dedicados atuais (router): Sinais Vitais, Imunização, Curativos, Punção, Coleta, Vias, Urgências, Oxigenoterapia, ISTs, Cálculo, SAE (Processo de Enfermagem), Sondas.
-
-### Trilho B — Transição (sem builder)
-
-**Quando:** catálogo ainda no hybrid ou geração só via Laboratório/IA.
-
-**DoD temporário:** guideline mapeada + factcheck; **ou** golden manual pontual.
-
-**Guideline:** substitui o builder até o pacote fechar. Ver workflow em [`GUIDELINE_DEEPENING_PLAN.md`](GUIDELINE_DEEPENING_PLAN.md).
-
----
-
-## 5. Ordem de trabalho recomendada
-
-| # | Entregável | Trilho A | Trilho B |
-|---|------------|----------|----------|
-| 1 | Golden(s) `examples/questao-premium-*.json` | Obrigatório | Recomendado |
-| 2 | `upgradePremium<Pacote>.ts` + testes | Obrigatório | — |
-| 3 | Moldes 4/4 + `SUBTOPIC_DESIGN_MAP` | Obrigatório | — |
-| 4 | Piloto 3–5 slugs + lote | Obrigatório | — |
-| 5 | `lib/guidelines/<pacote>.ts` | Opcional (sync pós-builder) | Se usar IA/hybrid |
-| 6 | `update:guideline-status` | Se criou/atualizou tabela | Se criou tabela |
-
-**Proibido como processo:** exigir guideline aprofundada (`target_merged_entries`, extração tier A completa) **antes** de iniciar golden ou builder no trilho A.
+| # | Entregável | Obrigatório |
+|---|------------|-------------|
+| 1 | Export `*-completo/manifest.json` | Sim |
+| 2 | Cluster + âncoras `examples/` | Recomendado |
+| 3 | Handcraft JSON por slug | Sim |
+| 4 | `validate:goldens --lote --strict` | Sim |
+| 5 | Piloto player + `apply-lote` | Sim |
+| 6 | `lib/guidelines/<pacote>.ts` | Opcional (referência) |
 
 ---
 
 ## 6. Uma verdade — evitar duplicação
 
-Hoje é possível o mesmo fato normativo existir em:
-
-- strings no builder (ex.: intervalos PNI em `upgradePremiumImunizacao.ts`);
-- entries em `lib/guidelines/pni.ts`;
-- slides do golden em `examples/`.
-
-Isso gera **drift** (builder atualizado, guideline desatualizada, ou o contrário).
-
-### Política alvo
-
 | Situação | Fonte canônica |
 |----------|----------------|
-| Subtópico com builder dedicado | **Builder** (produção); guideline **derivada ou importada** pelo builder |
-| Golden manual sem builder | **Golden** + `meta.sources` |
-| Geração IA sem builder | **Guideline** (`GUIDELINE_TABLES`) |
-| Conflito builder × guideline | Builder/lote vence para catálogo; abrir issue para alinhar guideline |
-
-### Evolução desejada (não bloqueante)
-
-Refatorar builders para **importar** `getGuidelineForSubtopico()` / entries por `id`, em vez de literais soltos — uma manutenção, dois consumidores (lote + IA).
+| Questão em produção (pós-handcraft) | JSON handcraft + `meta.sources` |
+| Estilo por ramo | Golden âncora em `examples/` |
+| Referência normativa para agente | Guideline (tier A/B) |
+| Conteúdo legado builder | **Temporário** — substituir por handcraft |
 
 ---
 
@@ -144,30 +104,27 @@ Refatorar builders para **importar** `getGuidelineForSubtopico()` / entries por 
 
 | Camada | Regra |
 |--------|--------|
-| Golden manual | Só com `meta.sources` tier A/B; lint `golden-v1` |
-| Builder dedicado | Números da prova (enunciado/alternativas) + corpus clínico codificado no builder **ou** guideline importada |
-| Builder hybrid / IA | **Não** inventar — `promptBuilder` restringe à GUIDELINE; `runFactCheck` audita |
-| Sem guideline (factcheck) | `runFactCheck` não viola (modo conceitual) — não é licença para inventar em produção |
-
-Ver [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) §2 (eixo Fonte) e §8 (Builders).
+| Handcraft golden-v1 | Só com `meta.sources` tier A/B; lint `golden-v1` strict |
+| Golden âncora | Idem |
+| Guideline / IA | Referência + factcheck — **não** produção de catálogo |
+| Builder legado | Não estender — re-handcraft |
 
 ---
 
 ## 8. Checklist rápido por subtópico
 
-### Fechou pacote premium (trilho A)?
+### Fechou handcraft?
 
-- [ ] Golden(s) validados + revisão clínica
-- [ ] Builder em `upgradePremiumDedicatedRouter`
-- [ ] Moldes 4/4 wired
-- [ ] Lote piloto ≥90% zod, 0 stub
-- [ ] *(Opcional)* Guideline alinhada ao builder (sem duplicar strings)
+- [ ] 100% slugs com `content_standard: "golden-v1"`
+- [ ] `validate:goldens --strict` 0 falhas
+- [ ] Registry `status: applied`
+- [ ] Amostra ≥5% no player
 
-### Ainda no hybrid (trilho B)?
+### Ainda legado builder/hybrid?
 
-- [ ] Guideline em `SUBTOPICO_GUIDELINE_IDS` **ou** golden pontual
-- [ ] Se IA: factcheck sem violações em amostra
-- [ ] Roadmap: builder dedicado (saída do trilho B)
+- [ ] Listar em `legacy_builder_subtopicos`
+- [ ] Planejar lotes gNN de re-handcraft
+- [ ] **Não** declarar fechado até handcraft completo
 
 ---
 
@@ -175,16 +132,14 @@ Ver [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) §2 (eixo Fonte) 
 
 | Arquivo | Papel |
 |---------|--------|
-| [`lib/catalogMigration/upgradePremiumDedicatedRouter.ts`](../lib/catalogMigration/upgradePremiumDedicatedRouter.ts) | Roteamento builder → golden de referência |
-| [`lib/catalogMigration/upgradePremiumHybrid.ts`](../lib/catalogMigration/upgradePremiumHybrid.ts) | Fallback hybrid + stubs |
-| [`lib/guidelines/index.ts`](../lib/guidelines/index.ts) | `GUIDELINE_TABLES`, `SUBTOPICO_GUIDELINE_IDS` |
-| [`lib/guidelines/deepeningPlan.ts`](../lib/guidelines/deepeningPlan.ts) | Metas de aprofundamento (trilho B / IA) |
-| [`lib/ai/factCheck.ts`](../lib/ai/factCheck.ts) | Auditoria número+unidade vs guideline |
-| [`lib/ai/enrichGoldenMeta.ts`](../lib/ai/enrichGoldenMeta.ts) | `meta.sources` a partir de guidelines |
+| [`data/catalog-migration/handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json) | Progresso handcraft |
 | [`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts) | Lint golden-v1 |
+| [`lib/guidelines/index.ts`](../lib/guidelines/index.ts) | Referência normativa |
+| [`lib/catalogMigration/upgradePremiumHybrid.ts`](../lib/catalogMigration/upgradePremiumHybrid.ts) | **Legado** — hybrid + stubs |
+| [`lib/catalogMigration/upgradePremiumDedicatedRouter.ts`](../lib/catalogMigration/upgradePremiumDedicatedRouter.ts) | **Legado** — builders |
 
 ---
 
 ## 10. Resumo em uma frase
 
-**Golden define a barra, builder escala o catálogo, guideline apoia IA e factcheck — e guideline não precisa existir antes do builder no caminho premium.**
+**Handcraft golden-v1 por slug é a produção; golden âncora guia o estilo; guideline apoia referência e factcheck — builder/hybrid são legado a substituir.**

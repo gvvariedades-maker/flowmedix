@@ -1,0 +1,1575 @@
+{
+  "exported_at": "2026-06-27T19:20:13.072Z",
+  "lote": "taxonomy-agent-pending",
+  "total": 224,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2814
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3314
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-9",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2318
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2858
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563650975-7",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3297
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563679414-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3326
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-8",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3306
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-9",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3307
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 771
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968906156-4",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 2081
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-semiologia-em-enfermagem-1779563537258-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 3171
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2496
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-complementares-1779423306557-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 2864
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 711
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4503
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-complementares-1779563674260-8",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3325
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563655698-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3298
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563668619-3",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3311
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563679414-5",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3330
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563685104-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3332
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4688
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 5104
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-6",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 409
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779563225798-5",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 3007
+    },
+    {
+      "modulo_slug": "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 738
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-4",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 137
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-5",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 138
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-6",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 139
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-2",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 142
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-3",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 143
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 144
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501921356-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 145
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1561
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1692
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1778712242196-2",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1586
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1779563685104-2",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 3333
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-laboratoriais-1778712242196-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1585
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5182
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-homem-1780067036141-6",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5178
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1801
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3359
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 743
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-6",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4525
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3370
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 2907
+    },
+    {
+      "modulo_slug": "nao-informado-geral-nocoes-de-fisiologia-1775501802332-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 140
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779269315587-7",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2326
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563674260-7",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3324
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4070
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3379
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 705
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-9",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 4161
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 237
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 256
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4148
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3347
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 720
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4644
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 4178
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 4179
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COPESE-UFT",
+      "avant_codigo": 222
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 4955
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-processo-de-enfermagem-1776056158507-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 257
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 247
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1776056129848-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 233
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4888
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4895
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4661
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4663
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1776056021381-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 214
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 1946
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 186
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 188
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 189
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776056173194-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 264
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4698
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4699
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 5103
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056149404-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEPES COPEVE-UFAL",
+      "avant_codigo": 250
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEPES COPEVE-UFAL",
+      "avant_codigo": 265
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEPES COPEVE-UFAL",
+      "avant_codigo": 268
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5075
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1799
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1798
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1776056140199-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 246
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 5086
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1776056140199-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 241
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 242
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 243
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4418
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005320352-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4577
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4599
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1776056149404-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 253
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4531
+    },
+    {
+      "modulo_slug": "itame-enfermagem-exames-complementares-1779563679414-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 3329
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448291915-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 45
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 275
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 276
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-processo-de-enfermagem-1776055865890-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UFMT",
+      "avant_codigo": 185
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 171
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3340
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3341
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 255
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 218
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 710
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-3",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3121
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 4767
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 765
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-2",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAURGS",
+      "avant_codigo": 3182
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-3",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAURGS",
+      "avant_codigo": 3183
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-3",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4492
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-8",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4190
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 3104
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-laboratoriais-1779563559434-1",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3205
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3583
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 760
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-3",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 3156
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-9",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4696
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-exames-laboratoriais-1779563559434-8",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 3212
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563613404-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3224
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 766
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1645
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-fisiologia-1780066909125-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5115
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1520
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5179
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1780066924385-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5122
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1766
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-6",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1768
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 745
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3090
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-coleta-de-exames-laboratoriais-1779563272300-5",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 3026
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563613404-7",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 3231
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 2369
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-1",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4431
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779563272300-6",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3027
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-7",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2170
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 727
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-5",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2010
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-9",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4528
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-exames-laboratoriais-1779563559434-6",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3210
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 1270
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-1",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 4976
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-8",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 5013
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-4",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 4791
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-1",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3225
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 764
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "SC TREINAMENTOS",
+      "avant_codigo": 3579
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3290
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3596
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3634
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 648
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3337
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2847
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4610
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3357
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4287
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4297
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4335
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5028
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5034
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 4678
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-seguranca-do-paciente-1777102918981-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "COM EXAM PREF BAURU",
+      "avant_codigo": 734
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 737
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1779563443877-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3048
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 4763
+    },
+    {
+      "modulo_slug": "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 702
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FADESP",
+      "avant_codigo": 696
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 4907
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4234
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4278
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 3348
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAURGS",
+      "avant_codigo": 3045
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAURGS",
+      "avant_codigo": 3046
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCM",
+      "avant_codigo": 3050
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4500
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-seguranca-do-paciente-1777102742836-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 664
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCEPE",
+      "avant_codigo": 3344
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-seguranca-do-paciente-1777102678563-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCEPE",
+      "avant_codigo": 643
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 646
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 647
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-seguranca-do-paciente-1779563436357-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3041
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-seguranca-do-paciente-1777102821787-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 697
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-seguranca-do-paciente-1777102821787-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNTEF",
+      "avant_codigo": 701
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5060
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5080
+    },
+    {
+      "modulo_slug": "furb-enfermagem-seguranca-do-paciente-1777102918981-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 736
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-seguranca-do-paciente-1777102918981-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 729
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-seguranca-do-paciente-1779563436357-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 3040
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-seguranca-do-paciente-1777102742836-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 660
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1579
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712242196-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1584
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3362
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4933
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 752
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 3052
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 5085
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 4624
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 662
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 663
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 3364
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3361
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102678563-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 642
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4518
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3351
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 4770
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 661
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 733
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3374
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3377
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 686
+    },
+    {
+      "modulo_slug": "omni-enfermagem-seguranca-do-paciente-1779563467322-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3067
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UFMT",
+      "avant_codigo": 3346
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UFMT",
+      "avant_codigo": 3373
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3336
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3378
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003637054-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4369
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 698
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 699
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 700
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3369
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 703
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3058
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3059
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1762
+    }
+  ]
+}

@@ -12,11 +12,15 @@ ou anexe este arquivo (`@docs/HANDCRAFT_CONVERSA.md`) após editar **só** a lin
 SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
 ```
 
+**Decisão de produto:** único trilho de produção = handcraft golden-v1 por slug. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
+
+**Pré-requisito:** subtópico estável (taxonomia). Se o bucket ainda tem drift, use `Classify: <subtópico>` — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md).
+
 ---
 
 ## Instruções para o agente (não pedir confirmação — executar)
 
-O usuário informou o subtópico. **Modo fixo:** Trilho A handcraft golden-v1.
+O usuário informou o subtópico. **Modo fixo:** handcraft golden-v1 por slug.
 
 ### Proibido
 
@@ -28,13 +32,13 @@ O usuário informou o subtópico. **Modo fixo:** Trilho A handcraft golden-v1.
 
 1. Ler [`data/catalog-migration/handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json).
 2. Match **exato** do subtópico (nome canônico `CLAUDE.md` §9).
-3. Se não existir: seguir `fallback_novo_pacote` no registry e propor export + trilho antes de handcraft em massa.
+3. Se não existir: seguir `fallback_novo_pacote` no registry (export + criar entrada + handcraft em lotes).
 
 ### Ler antes de handcraft
 
 | Arquivo | Quando |
 |---------|--------|
-| [`docs/GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) §3b | Sempre |
+| [`docs/GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | Sempre |
 | [`docs/GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) | Sempre |
 | [`examples/_TEMPLATE-golden-v1.json`](../examples/_TEMPLATE-golden-v1.json) | Sempre |
 | `readme` do pacote no registry | Se existir |
@@ -47,7 +51,7 @@ O usuário informou o subtópico. **Modo fixo:** Trilho A handcraft golden-v1.
 1. Listar `data/catalog-migration/<pacote_prefix>-g*/lote-meta.json` (ou `saude-mental-micro-*-goldens`).
 2. Último com `status: applied` → próximo lote = NN+1.
 3. Se nenhum lote: criar `<pacote_prefix>-g01` com primeiros N slugs do `manifest` (`lote_size` no registry).
-4. Se pacote `status: applied` (ex. perioperatória): perguntar se é reparo pontual ou novo subtópico.
+4. Se pacote `status: applied`: perguntar se é reparo pontual ou novo subtópico.
 
 ### Pipeline por lote (repetir até esgotar manifest)
 

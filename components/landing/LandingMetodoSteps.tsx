@@ -3,7 +3,10 @@
 import dynamic from 'next/dynamic';
 import type { LucideIcon } from 'lucide-react';
 import { Brain, CalendarDays, ClipboardCheck, FileQuestion } from 'lucide-react';
-import { SectionLabel } from '@/components/landing/lp-ui';
+import { motion } from 'framer-motion';
+import { BrandCta, SectionLabel } from '@/components/landing/lp-ui';
+import { LANDING_METODO } from '@/lib/marketing/landingCopy';
+import { landingFadeUp } from '@/lib/marketing/landingMotion';
 import { LandingGabaritoPreview } from '@/components/marketing/LandingGabaritoPreview';
 import { LandingPlanoDiarioPreview } from '@/components/marketing/LandingPlanoDiarioPreview';
 import { cn } from '@/lib/utils';
@@ -45,21 +48,21 @@ const STEPS: MetodoStep[] = [
   {
     n: '01',
     title: 'Questão real de concurso',
-    text: 'Formato exato da banca para Técnico em Enfermagem — não teoria de enfermeiro.',
+    text: 'Formato exato da banca para Técnico — não teoria de enfermeiro. Filtre por banca, ano e órgão.',
     icon: FileQuestion,
     preview: 'question',
   },
   {
     n: '02',
     title: 'Gabarito + diagnóstico',
-    text: 'Saiba se errou por conceito, interpretação ou pegadinha — antes de seguir.',
+    text: "Saiba se errou por conceito, interpretação ou pegadinha. Não é só 'alternativa B correta'.",
     icon: ClipboardCheck,
     preview: 'gabarito',
   },
   {
     n: '03',
     title: 'NeuroSlides',
-    text: 'Mapa mental, regra de ouro, fluxo lógico e zona de perigo — visual e direto.',
+    text: 'Mapa mental, regra de ouro, fluxo lógico, zona de perigo. 4 telas que fixam o conceito antes de você fechar o app.',
     icon: Brain,
     preview: 'neuroslide',
     slideIndex: 0,
@@ -67,7 +70,7 @@ const STEPS: MetodoStep[] = [
   {
     n: '04',
     title: 'Revisão no momento certo',
-    text: 'Plano diário e revisão espaçada — sem planilha, sem adivinhar o que revisar.',
+    text: 'Plano diário automático com revisão espaçada. Sem planilha. Sem decisão manual de quando revisar.',
     icon: CalendarDays,
     preview: 'plano',
   },
@@ -112,20 +115,23 @@ export function LandingMetodoSteps() {
     <section id="metodo" className="bg-white px-4 py-16 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="text-center sm:text-left">
-          <SectionLabel>Como o AVANT funciona</SectionLabel>
+          <SectionLabel>{LANDING_METODO.label}</SectionLabel>
           <h2 className="text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
-            Simples como 1, 2, 3, 4
+            {LANDING_METODO.h2}
           </h2>
-          <p className="mt-3 max-w-2xl text-base text-slate-600">
-            Questão real, gabarito com diagnóstico, NeuroSlides e revisão no ritmo certo — tudo no mesmo fluxo.
-          </p>
+          <p className="mt-3 max-w-2xl text-base text-slate-600">{LANDING_METODO.sub}</p>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {STEPS.map((step) => (
-            <article
+          {STEPS.map((step, i) => (
+            <motion.article
               key={step.n}
               className="card-elevated-lg flex flex-col overflow-hidden rounded-3xl border-slate-200/80"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-40px' }}
+              variants={landingFadeUp}
+              custom={i}
             >
               <div className="p-6 pb-4">
                 <div className="flex items-start gap-4">
@@ -142,8 +148,14 @@ export function LandingMetodoSteps() {
               <div className="mt-auto border-t border-slate-100">
                 <StepPreview step={step} />
               </div>
-            </article>
+            </motion.article>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center sm:justify-start">
+          <BrandCta href="/register" size="lg">
+            {LANDING_METODO.ctaFooter}
+          </BrandCta>
         </div>
       </div>
     </section>

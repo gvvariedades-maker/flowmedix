@@ -1,7 +1,7 @@
-# História da Enfermagem — handcraft golden-v1 (Trilho A)
+# História da Enfermagem — handcraft golden-v1 (fechado)
 
 **Subtópico:** História da Enfermagem  
-**Modo:** Trilho A — handcraft total (18 slugs)  
+**Modo:** Handcraft total (18 slugs)  
 **Status:** **applied** — g01 + g02 + g03 (**18/18** slugs no Supabase)
 
 Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../../docs/GOLDEN_HANDCRAFT_MODEL.md) · [`docs/HANDCRAFT_CONVERSA.md`](../../../docs/HANDCRAFT_CONVERSA.md)

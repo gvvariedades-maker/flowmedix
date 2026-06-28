@@ -29,6 +29,7 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'adolescent-sigilo-spectrum',
   'burn-rule-nine-board',
   'trabalho-nr32-reference-board',
+  'respiratorio-spo2-reference-board',
 ]);
 
 /**
@@ -70,6 +71,7 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'adolescent-sigilo-spectrum') return 'adolescent-sigilo-spectrum';
   if (explicitVariant === 'burn-rule-nine-board') return 'burn-rule-nine-board';
   if (explicitVariant === 'trabalho-nr32-reference-board') return 'trabalho-nr32-reference-board';
+  if (explicitVariant === 'respiratorio-spo2-reference-board') return 'respiratorio-spo2-reference-board';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

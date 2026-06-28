@@ -1,7 +1,7 @@
-# Saúde do Adolescente — handcraft golden-v1 (Trilho A)
+# Saúde do Adolescente — handcraft golden-v1 (fechado)
 
 **Subtópico:** Saúde do Adolescente  
-**Modo:** Trilho A — handcraft total (≤16 slugs)  
+**Modo:** Handcraft total (16 slugs)  
 **Status:** applied — g01 + g02 (16/16 slugs no catálogo)
 
 Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../../docs/GOLDEN_HANDCRAFT_MODEL.md) · [`docs/HANDCRAFT_CONVERSA.md`](../../../docs/HANDCRAFT_CONVERSA.md)

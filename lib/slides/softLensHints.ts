@@ -8,6 +8,7 @@ export type SoftLensHintProfile =
   | 'adolescent'
   | 'farmaco'
   | 'trabalho'
+  | 'respiratorio'
   | 'none';
 
 const CALC_FORBIDDEN = /u-100|gotas|microgota|insulina|20-60-3|gts\/min/i;
@@ -56,6 +57,8 @@ function inferExamHintByProfile(row: GoldenRuleRow, profile: SoftLensHintProfile
       return inferFarmacoExamHint(row);
     case 'trabalho':
       return inferTrabalhoExamHint(row);
+    case 'respiratorio':
+      return inferRespiratorioExamHint(row);
     default:
       return neutralExamHint(row);
   }
@@ -191,6 +194,35 @@ function inferFarmacoExamHint(row: GoldenRuleRow): string {
   return neutralExamHint(row);
 }
 
+function inferRespiratorioExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/88.?92|spo2|sato2|retentor|hipercapnia/.test(text)) {
+    return 'Pegadinha clássica DPOC: alvo 88–92% — não forçar ≥95% como em paciente sem retenção crônica.';
+  }
+  if (/\bdpoc\b|enfisema|bronquite cr[oô]nica/.test(text)) {
+    return 'DPOC: O₂ titulado em baixo fluxo — hiperóxia indiscriminada é erro frequente em prova.';
+  }
+  if (/\basma\b|beta[\s-]?2|salbutamol|resgate|broncoespasmo/.test(text)) {
+    return 'Asma: broncodilatador de resgate na crise — não confundir com corticoide de manutenção.';
+  }
+  if (/gasometria|pao2|paco2|arterial/.test(text)) {
+    return 'Oximetria de pulso ≠ gasometria — SpO₂ não mede PaO₂/PaCO₂ diretamente.';
+  }
+  if (/espacador|espaçador|inalador|pico de fluxo|peak flow/.test(text)) {
+    return 'Técnica inalatória e dispositivos são cobrados na APS — espaçador melhora deposição.';
+  }
+  if (/tabag|cessa[cç][aã]o/.test(text)) {
+    return 'Tabagismo ativo piora asma e DPOC — orientação faz parte do cuidado na atenção básica.';
+  }
+  if (/gabarito|i e ii|resposta final|verdadeira/.test(text)) {
+    return 'Gabarito: marque só as afirmativas corretas — III costuma inverter alvo de SpO₂ ou técnica de O₂.';
+  }
+  if (/^i\b|^ii\b|^iii\b/.test(text) || /afirmativa/.test(text)) {
+    return 'Julgue cada afirmativa pelo PCDT — separe asma (resgate) de DPOC (O₂ titulado).';
+  }
+  return neutralExamHint(row);
+}
+
 function inferTrabalhoExamHint(row: GoldenRuleRow): string {
   const text = `${row.label} ${row.value}`.toLowerCase();
   if (/nr-?32|norma regulamentadora/.test(text)) {
@@ -259,6 +291,9 @@ function inferFixationByProfile(
     }
     if (profile === 'trabalho') {
       return 'Fixe NR-32, vacina ocupacional e fluxo pós-exposição antes das combinações A–E.';
+    }
+    if (profile === 'respiratorio') {
+      return 'Fixe SpO₂ 88–92% (DPOC), O₂ titulado e resgate asma antes das combinações A–E.';
     }
     return 'Decore primeiro — item central cobrado nesta prova.';
   }

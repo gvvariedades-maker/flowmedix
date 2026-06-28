@@ -86,6 +86,10 @@ interface AdolescentPrivacyCurtainConceptMapProps {
   footerRule?: string;
 }
 
+function curtainSlidesAside(curtain: AdolescentCurtain): boolean {
+  return curtain === 'escuta' || curtain === 'sigilo' || curtain === 'acompanhamento';
+}
+
 export function AdolescentPrivacyCurtainConceptMap({
   concepts,
   theme,
@@ -93,6 +97,7 @@ export function AdolescentPrivacyCurtainConceptMap({
 }: AdolescentPrivacyCurtainConceptMapProps) {
   const prefersReducedMotion = useReducedMotion();
   const [openCurtains, setOpenCurtains] = useState<Set<AdolescentCurtain>>(() => new Set());
+  const [revealOrder, setRevealOrder] = useState<AdolescentCurtain[]>([]);
 
   const curtainMap = useMemo(() => {
     const map = new Map<AdolescentCurtain, PrivacyCurtainConcept>();
@@ -118,19 +123,34 @@ export function AdolescentPrivacyCurtainConceptMap({
     return [...ordered, ...extras];
   }, [curtainMap]);
 
-  const toggleCurtain = useCallback((curtain: AdolescentCurtain) => {
-    setOpenCurtains((prev) => {
-      const next = new Set(prev);
-      if (next.has(curtain)) next.delete(curtain);
-      else next.add(curtain);
-      return next;
-    });
-  }, []);
+  const toggleCurtain = useCallback(
+    (curtain: AdolescentCurtain) => {
+      setOpenCurtains((prev) => {
+        const next = new Set(prev);
+        if (next.has(curtain)) {
+          if (!curtainSlidesAside(curtain)) return prev;
+          const curtainIndex = activeCurtains.indexOf(curtain);
+          const hasLaterOpen = activeCurtains
+            .slice(curtainIndex + 1)
+            .some((c) => prev.has(c));
+          if (hasLaterOpen) return prev;
+          next.delete(curtain);
+          setRevealOrder((order) => order.filter((c) => c !== curtain));
+          return next;
+        }
 
-  const focused =
-    activeCurtains.find((c) => openCurtains.has(c)) ??
-    activeCurtains[0] ??
-    null;
+        const nextExpected = activeCurtains.find((c) => !prev.has(c));
+        if (curtain !== nextExpected) return prev;
+
+        next.add(curtain);
+        setRevealOrder((order) => [...order, curtain]);
+        return next;
+      });
+    },
+    [activeCurtains],
+  );
+
+  const focused = revealOrder[revealOrder.length - 1] ?? null;
   const focusedConcept = focused ? curtainMap.get(focused) : concepts[0];
   const revealedCount = openCurtains.size;
   const totalCurtains = activeCurtains.length;
@@ -152,7 +172,7 @@ export function AdolescentPrivacyCurtainConceptMap({
             Toque nas faixas coloridas da consulta
           </p>
           <p className="font-body text-xs leading-relaxed text-sky-800/85">
-            Cada cortina (Escuta, Sigilo, Prevenção…) revela um pilar no card abaixo.
+            Puxe cada cortina na ordem (Escuta → Sigilo → Prevenção…) — o pilar aparece no card abaixo.
           </p>
           <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-sky-600">
             {revealedCount}/{totalCurtains} pilares revelados
@@ -191,30 +211,41 @@ export function AdolescentPrivacyCurtainConceptMap({
                       ? 'translate-y-[88%]'
                       : 'translate-y-0'
                     : isOpen
-                      ? 'scale-95 opacity-0 pointer-events-none'
-                      : 'scale-100 opacity-100';
+                      ? 'scale-95'
+                      : 'scale-100';
 
             const isNextHint = !isOpen && curtain === nextToOpen;
+            const isClickable = isOpen ? curtainSlidesAside(curtain) : curtain === nextToOpen;
+            const shouldFadeWhenOpen = isOpen && !curtainSlidesAside(curtain);
+            const stackZIndex = isOpen
+              ? 12 + index
+              : curtain === nextToOpen
+                ? 30 + activeCurtains.length
+                : 10 + index;
 
             return (
               <motion.button
                 key={curtain}
                 type="button"
                 initial={prefersReducedMotion ? false : { opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.08 * index }}
+                animate={{ opacity: shouldFadeWhenOpen ? 0 : 1 }}
+                transition={{ delay: prefersReducedMotion ? 0 : 0.08 * index }}
                 onClick={() => toggleCurtain(curtain)}
                 aria-expanded={isOpen}
+                aria-disabled={!isClickable}
                 aria-label={
                   isOpen
                     ? `Fechar cortina ${adolescentCurtainLabel(curtain)}`
                     : `Puxar cortina ${adolescentCurtainLabel(curtain)} — ${concept.title}`
                 }
-                className={`absolute ${meta.position} ${meta.edge} z-10 min-h-[44px] min-w-[44px] cursor-pointer overflow-hidden bg-gradient-to-br ${meta.gradient} shadow-lg transition-transform duration-500 ease-out ${pullOffset} ${
+                style={{ zIndex: stackZIndex }}
+                className={`absolute ${meta.position} ${meta.edge} min-h-[44px] min-w-[44px] overflow-hidden bg-gradient-to-br ${meta.gradient} shadow-lg transition-transform duration-500 ease-out ${pullOffset} ${
+                  isClickable ? 'cursor-pointer' : 'pointer-events-none cursor-default'
+                } ${
                   isNextHint && !prefersReducedMotion
                     ? 'ring-2 ring-white ring-offset-2 ring-offset-sky-100 animate-pulse'
                     : ''
-                } ${!isOpen ? 'hover:brightness-105' : ''}`}
+                } ${!isOpen && isClickable ? 'hover:brightness-105' : ''}`}
               >
                 <div className="flex h-full flex-col justify-between p-3">
                   <span

@@ -1,0 +1,16 @@
+{
+  "lote": "taxonomy-edge-final",
+  "exported_at": "2026-06-27T19:53:56.099Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/taxonomy-edge-final/manifest.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+    "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+    "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+    "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+    "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4"
+  ]
+}

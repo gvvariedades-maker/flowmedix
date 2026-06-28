@@ -226,13 +226,6 @@ const PROC_DIV: InferRow[] = [
     rationale: 'Avaliação abrangente da dor — etapa do processo de enfermagem (avaliação).',
   },
   {
-    modulo_slug: 'objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4',
-    suggested_subtopico: 'Procedimentos Diversos',
-    confidence: 0.88,
-    keep_current: true,
-    rationale: 'Cookies de navegador — importação atípica sem subtópico clínico; manter.',
-  },
-  {
     modulo_slug: 'ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-5',
     suggested_subtopico: 'Procedimentos Diversos',
     confidence: 0.89,

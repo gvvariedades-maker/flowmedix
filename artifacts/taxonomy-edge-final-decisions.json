@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-06-27T20:05:00.000Z",
+  "source": "manual-edge-review",
+  "decisions": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "from": "Procedimentos Diversos",
+      "to": "Segurança do Paciente",
+      "rationale": "Quarto para radiofármacos — blindagem, radiação, segurança do paciente/ambiente"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+      "from": "Procedimentos Diversos",
+      "to": "Verificação de Sinais Vitais",
+      "rationale": "Preparo e posicionamento de eletrodos para ECG — monitorização cardíaca/SV"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+      "from": "Procedimentos Diversos",
+      "to": "Cuidados na Administração de Medicamentos",
+      "rationale": "Higiene oral durante quimioterápico — cuidado na administração/oncológico"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "to": "Processo de Enfermagem",
+      "rationale": "Cuidados ao diabético hospitalizado — monitorar glicemia, registrar no prontuário (SAE)"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "from": "Procedimentos Diversos",
+      "to": "Processo de Enfermagem",
+      "rationale": "Conduta profissional, orientação ao paciente e registro pós-procedimento (PE)"
+    }
+  ],
+  "kept": [
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4",
+      "subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "rationale": "Artrite reumatoide — DCNT mescladas é o destino correto (sem ramo autoimune)"
+    }
+  ]
+}

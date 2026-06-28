@@ -224,7 +224,8 @@ function resolveCore(
       layoutVariant === 'ist-trap-chips' ||
       layoutVariant === 'adolescent-consent-gate' ||
       layoutVariant === 'burn-trap-arena' ||
-      layoutVariant === 'trabalho-pep-trap-arena')
+      layoutVariant === 'trabalho-pep-trap-arena' ||
+      layoutVariant === 'respiratorio-spo2-trap-arena')
       ? 'x_icon'
       : 'numbered');
 

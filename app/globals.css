@@ -803,3 +803,13 @@ html[data-theme='editorial'] input.input-editorial:-internal-autofill-selected {
     opacity: 1;
   }
 }
+
+/* Captura Playwright → public/mockups/ (dev/hero-mockups) */
+html[data-hero-capture='1'] *,
+html[data-hero-capture='1'] *::before,
+html[data-hero-capture='1'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-delay: 0s !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}

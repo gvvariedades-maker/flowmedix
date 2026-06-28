@@ -1,11 +1,9 @@
 {
   "lote": "saude-adolescente-completo",
-  "exported_at": "2026-06-23T18:59:55.833Z",
+  "exported_at": "2026-06-28T03:11:10.211Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Saúde do Adolescente",
-    "limit": 200,
-    "exclude_count": 0
+    "from_manifest": "data/catalog-migration/saude-adolescente-completo/manifest.json"
   },
   "slugs": [
     "agirh-enfermagem-saude-do-adolescente-1777104229064-4",

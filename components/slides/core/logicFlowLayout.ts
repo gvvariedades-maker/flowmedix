@@ -20,6 +20,7 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'adolescent-vf-weave-tap',
   'burn-triage-tap-flow',
   'trabalho-vf-juggle-tap',
+  'respiratorio-vf-juggle-tap',
 ]);
 
 const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
@@ -38,6 +39,7 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'adolescent-vf-weave-tap',
   'burn-triage-tap-flow',
   'trabalho-vf-juggle-tap',
+  'respiratorio-vf-juggle-tap',
 ]);
 
 /**

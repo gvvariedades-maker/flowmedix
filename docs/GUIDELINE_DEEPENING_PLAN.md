@@ -147,7 +147,7 @@ Aprofundamento máximo = extração literal tier A por tema do edital, não só 
 
 ## Relação com pacote premium
 
-Aprofundamento de guideline é **trilho B** (transição / IA / factcheck). Não substitui nem precede o pacote premium (golden + builder + moldes). Ver [`FONTE_NORMATIVA_AVANT.md`](FONTE_NORMATIVA_AVANT.md).
+Aprofundamento de guideline é **auxiliar** (referência para handcraft / factcheck IA). Não substitui handcraft golden-v1 por slug. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md) e [`FONTE_NORMATIVA_AVANT.md`](FONTE_NORMATIVA_AVANT.md).
 
 ## Referências
 

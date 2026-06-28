@@ -1,0 +1,29 @@
+{
+  "lote": "respiratorio-cronico-g01",
+  "exported_at": "2026-06-27T17:31:04.037Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "univali-enfermagem-processo-de-enfermagem-1780010600919-9"
+    ]
+  },
+  "slugs": [
+    "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+    "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+    "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+    "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+    "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-9"
+  ]
+}

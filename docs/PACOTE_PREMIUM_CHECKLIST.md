@@ -1,25 +1,63 @@
 # Pacote Premium — Runbook, checklist e roadmap AVANT
 
-**Fonte principal de *como fechar* um subtópico premium** — estrutura para todas as questões; pacote completo por subtópico em rollout.
+> **Decisão 2026-06-27:** único trilho de produção = **handcraft golden-v1 por slug**. Runbook canônico: [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) · ADR: [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md). Builder/hybrid = **legado** (re-handcraft pendente).
+
+**Fonte principal de *como fechar* um subtópico premium** — estrutura para todas as questões; handcraft por subtópico em rollout.
 
 | Doc | Papel |
 |-----|--------|
-| **Este arquivo (§ Runbook)** | Procedimento Fases 0–6, ordem, erros, comandos |
-| [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) | Definição L1/L2/L3 (o que é premium) |
-| [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) | Profundidade na criação de **um** molde (Fase 2) |
-| [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) | Receitas por família (`classifyFamily`) |
+| [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md) | ADR — handcraft único |
+| [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | **Runbook operacional** handcraft por slug |
+| [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) | Prompt `Handcraft: <subtópico>` |
+| **Este arquivo** | Checklist histórico, moldes, matriz, legado builder |
+| [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) | Definição L1/L2/L3 |
 | [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) | Gramática golden-v1 + fontes |
-| [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | **Runbook handcraft** — âncora, Trilho A sem hybrid, escala catálogo, apply |
-| [`perioperatoria-completo/README.md`](data/catalog-migration/perioperatoria-completo/README.md) | **Caso fechado** — 68/68 handcraft golden-v1 (referência operacional) |
+| [`data/catalog-migration/handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json) | Progresso por subtópico |
 
 Regra Cursor (índice curto): [`.cursor/rules/avant-premium-pacote.mdc`](../.cursor/rules/avant-premium-pacote.mdc).  
-Gate automatizado: [`__tests__/premium-no-stub.test.ts`](../__tests__/premium-no-stub.test.ts).  
-Fonte normativa: [`FONTE_NORMATIVA_AVANT.md`](FONTE_NORMATIVA_AVANT.md).  
-Pacotes **Completo** de referência: **Curativos e Manejo de Feridas**, **Imunização**.
+Progresso handcraft: [`handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json).  
+Pacote **fechado** de referência: [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md).
 
 ---
 
-## Runbook (comece aqui)
+## Runbook handcraft (comece aqui)
+
+**Procedimento canônico:** [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) §3.
+
+### Cartão de bolso — entregas handcraft
+
+| # | Entrega |
+|---|---------|
+| 1 | Export `*-completo/manifest.json` |
+| 2 | Âncoras de estilo em `examples/` (1 por ramo ≥10%) |
+| 3 | Handcraft JSON por slug em lotes `g01`…`gNN` |
+| 4 | `validate:goldens --lote --strict` 0 falhas |
+| 5 | Piloto ≥5% no player + `catalog:apply-lote --apply` |
+| 6 | Registry: `status: applied`, `handcraft_applied === total_slugs` |
+
+### Ordem obrigatória (handcraft)
+
+```text
+Fase 0   export + registry
+   ↓
+Fase 1b  cluster de ramos (recomendado)
+   ↓
+Fase 1   golden âncora por ramo (examples/)
+   ↓
+Fase 1c  handcraft por slug (lotes de 8)
+   ↓
+Fase 4   piloto player
+   ↓
+Fase 5   apply-lote --apply
+   ↓
+Fase 6   registry + auditoria
+```
+
+> **Legado (não usar em produção nova):** runbook builder Fases 2–3 abaixo — mantido para referência de moldes e subtópicos já migrados via `upgradePremium*.ts`.
+
+---
+
+## Runbook legado builder (referência histórica)
 
 ### Cartão de bolso — 6 entregas do pacote
 
@@ -63,19 +101,26 @@ Fase 6   testes + audit + cluster (drift ≈ 0) + amostra ~5%
 
 **Declarar “Completo” só com gate estrutural** — `premiumGate` valida forma (`rows`, `correct`, `tap`), não se o slide ensina **esta** prova. Um subtópico pode ter 100% sem stub e ainda exibir vocabulário de outro tema (ex.: “bundle CVC” numa questão EXCETO). Use o **cluster report** + gate semântico + amostra no player (§ Qualidade por ramos).
 
-### Critério “Completo” na matriz
+### Critério “Completo” na matriz (pós-decisão handcraft)
 
-Marcar subtópico como **Completo** só quando **todas** as condições abaixo forem verdadeiras:
+Marcar subtópico como **Completo** só quando:
 
-1. **100%** das questões em produção passam `premiumGate` estrutural (stub + contrato de molde).
-2. **Cluster report:** `drift_total` ≈ **0** (ou justificado); ramos ≥10% do catálogo têm **golden + perfil ancorado** no builder.
-3. **Amostra humana** no player: 2–3 slugs **por ramo forte** — enunciado ↔ slide 4 coerentes.
-4. Não basta ter builder no repo sem os ramos mapeados.
+1. **100%** slugs handcraft com `meta.content_standard: "golden-v1"`.
+2. **100%** passam `validate:goldens --strict`.
+3. Registry: `status: applied`, `handcraft_applied === total_slugs`.
+4. Amostra humana ≥5% no player aprovada.
 
-- **Referência sólida:** Curativos e Imunização — golden(s) por ramo + moldes + builder + migração + auditoria.
-- **Caso de estudo (2026-06-22):** Punção Venosa — gate estrutural 110/110 OK, mas cluster revelou **~75% drift** (1 golden IPCS para ~5 ramos pedagógicos). Status: **revisão de ramos pendente** — ver § Caso Punção.
+> **Legado builder:** subtópicos Imunização/Curativos/Sinais Vitais com `premiumGate` OK **não** contam como fechados até re-handcraft. Ver `legacy_builder_subtopicos` no registry.
 
----
+### Critério legado builder (referência histórica)
+
+Válido apenas para subtópicos migrados antes de 2026-06-27:
+
+1. **100%** passam `premiumGate` estrutural.
+2. **Cluster report:** `drift_total` ≈ 0; ramos ≥10% com golden + perfil no builder.
+3. Amostra humana 2–3 slugs por ramo forte.
+
+Subtópicos legado: Imunização, Curativos, Sinais Vitais — **re-handcraft pendente**.
 
 ## Qualidade pedagógica por ramos (padrão transversal)
 
@@ -425,7 +470,7 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 | Infecções no Contexto da Biossegurança | 38 | 35 | 92,1% | ❌ | 🟡 | ❌ | — |
 | Procedimentos Diversos | 36 | 31 | 86,1% | ❌ | ❌ | ❌ | — |
 | Outras Questões… Crônicas Não Transmissíveis | 36 | 23 | 63,9% | ❌ | ❌ | ❌ | — |
-| **Assistência Perioperatória (Inclui SRPA)** | **68** | **68** | **100%** | ✅ 6 âncoras | ✅ handcraft | ✅ | **Trilho A fechado** — [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) |
+| **Assistência Perioperatória (Inclui SRPA)** | **68** | **68** | **100%** | ✅ 6 âncoras | ✅ handcraft | ✅ | **Handcraft fechado** — [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) |
 | Enfermagem do Trabalho | 22 | 20 | 90,9% | ❌ | ❌ | ❌ | — |
 | Saúde Mental | 21 | 16 | 76,2% | ❌ | ❌ | ❌ | — |
 | História da Enfermagem | 20 | 19 | 95,0% | ❌ | 🟡 | ❌ | — |
@@ -441,7 +486,7 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 > Atualizar esta matriz após cada pacote concluído ou nova auditoria Supabase.  
 > **Imunização (2026-06-16):** pacote fechado no repo — moldes PNI 4/4, `upgradePremiumImunizacao.ts`, migração em lote (~577 slugs, 0 stub nos lotes builder); % premium da linha reflete apply concluído (re-auditar Supabase para métricas globais do catálogo).  
 > **Sinais Vitais (2026-06-18):** pacote fechado no repo — moldes 4/4, `upgradePremiumSinais.ts`, hybrid integrado, migração builder (lotes 01–08 + parser-fix); `sinais-remaining-slugs.json` vazio; re-auditar Supabase para % global.  
-> **Perioperatória (2026-06-23):** **68/68 golden-v1 handcraft** (Trilho A, sem hybrid) — lotes `perioperatoria-g01`…`g09`, apply concluído; ver [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) e [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) §3b.
+> **Perioperatória (2026-06-23):** **68/68 golden-v1 handcraft** — lotes `perioperatoria-g01`…`g09`, apply concluído; ver [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) e [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md).
 
 ---
 
@@ -480,15 +525,27 @@ Ordem por **impacto** (volume × gap de stub), com dados de produção 2026-06-1
 
 ## Comandos de migração
 
-**Piloto (Fase 4):** `--limit=5` · **Escala (Fase 5):** `--limit=50`
+### Handcraft (produção)
 
 ```bash
-npm run catalog:export-lote -- --lote=<pacote>-lote-01 --subtopico="<Subtópico>" --limit=5
+npm run catalog:export-lote -- --lote=<pacote>-g01 --slugs=slug1,slug2,...
+# handcraft em data/catalog-migration/<pacote>-g01/questions/
+npm run validate:goldens -- --lote=<pacote>-g01 --strict
+npm run catalog:apply-lote -- --lote=<pacote>-g01 --dry-run
+npm run catalog:apply-lote -- --lote=<pacote>-g01 --apply
+```
+
+Ver [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) §3 e §7.
+
+### Legado builder (não usar em produção nova)
+
+```bash
+npm run catalog:export-lote -- --lote=<pacote>-lote-01 --subtopico="<Subtópico>" --limit=50
 npm run catalog:upgrade-premium -- --lote=<pacote>-lote-01 --write --force
 npm run catalog:apply-lote -- --lote=<pacote>-lote-01 --apply
 ```
 
-Lotes seguintes: `--exclude-manifest=artifacts/...` e/ou `data/catalog-migration/.../manifest.json`.
+Deprecado — ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
 
 **Apply:** `premiumGate: true` por padrão ([`premiumGate.ts`](../lib/catalogMigration/premiumGate.ts)). Use `--allow-generic` apenas em exceção documentada.
 
@@ -502,7 +559,7 @@ Marcadores em `PREMIUM_STUB_MARKERS` (`upgradePremiumHybrid.ts`): placeholders `
 
 - Goldens em `examples/questao-premium-*.json` **devem** passar no teste.
 - Conteúdo de produção premium **não** deve conter esses marcadores nos slides.
-- Hybrid genérico é aceitável apenas como **transição** documentada até o builder dedicado existir.
+- Hybrid genérico e builder **não** são caminho de produção — re-handcraft obrigatório. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
 
 ---
 

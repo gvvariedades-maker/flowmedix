@@ -8,7 +8,7 @@ import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import { parsePniVfStep, type ParsedPniVfStep } from '@/lib/slides/pniSlideUtils';
 
-export type VfJuggleAccent = 'pni' | 'ist' | 'via' | 'farmaco' | 'trabalho';
+export type VfJuggleAccent = 'pni' | 'ist' | 'via' | 'farmaco' | 'trabalho' | 'respiratorio';
 
 const STRATEGY_CHIP_LABEL: Record<VfJuggleAccent, string> = {
   pni: 'ESTRATÉGIA PNI',
@@ -16,6 +16,7 @@ const STRATEGY_CHIP_LABEL: Record<VfJuggleAccent, string> = {
   via: 'ESTRATÉGIA VIAS',
   farmaco: 'ESTRATÉGIA FARMACO',
   trabalho: 'ESTRATÉGIA NR-32',
+  respiratorio: 'ESTRATÉGIA ASMA/DPOC',
 };
 
 const VF_JUGGLE_ACCENTS: Record<
@@ -98,6 +99,19 @@ const VF_JUGGLE_ACCENTS: Record<
     footerSummary: 'border-amber-200/70 bg-amber-50/80 text-amber-900/80',
     stepTitle: 'text-amber-900',
     letterChip: 'from-amber-500 to-orange-600 shadow-amber-300/40',
+  },
+  respiratorio: {
+    chipLabel: 'V/F ASMA/DPOC',
+    chip: 'border-cyan-200/80 text-cyan-900',
+    card: 'border-cyan-200/80 from-white via-cyan-50/40 to-white',
+    dotActive: 'bg-cyan-500',
+    dotRevealed: 'bg-teal-400',
+    btnNext: 'from-cyan-500 to-teal-600 shadow-cyan-300/40',
+    btnReveal: 'from-cyan-500 to-teal-600 shadow-cyan-300/40',
+    btnSummary: 'from-cyan-500 to-teal-600',
+    footerSummary: 'border-cyan-200/70 bg-cyan-50/80 text-cyan-900/80',
+    stepTitle: 'text-cyan-900',
+    letterChip: 'from-cyan-500 to-teal-600 shadow-cyan-300/40',
   },
 };
 

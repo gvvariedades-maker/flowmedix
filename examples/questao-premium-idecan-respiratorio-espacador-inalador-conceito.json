@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "Tec Enf",
+    "orgao": "Geral",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-27",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "PCDT MS — Asma (técnica inalatória com espaçador e monitorização de SpO₂)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pcdt-asma-inalacao",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo Clínico e Diretrizes Terapêuticas — Asma",
+        "year": 2021,
+        "url": "https://www.gov.br/saude/",
+        "covers": ["técnica inalatória", "espaçador valvulado", "broncodilatador inalatório", "monitorização"]
+      },
+      {
+        "id": "sbpt-asma-espacador",
+        "tier": "B",
+        "issuer": "SBPT",
+        "title": "Diretrizes Brasileiras de Asma — uso de inalador doseado e espaçador",
+        "year": 2020,
+        "url": "https://sbpt.org.br/",
+        "covers": ["exalação completa", "apneia inspiratória", "higiene do espaçador"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Em um paciente com asma grave em uso de broncodilatadores inalatórios e suplementação de oxigênio, avalie as condutas do Técnico de Enfermagem segundo as diretrizes brasileiras atuais e assinale a opção correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Executar a nebulização com fluxo mínimo de 8 L/min, misturando broncodilatador e soro fisiológico em proporções fixas, sem intervalos inspiratórios.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Ajustar a FiO₂ de modo empírico, desconsiderando o monitoramento da saturação, pois a meta principal é a broncodilatação.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Recomendar inspiração rápida e forçada durante o uso de máscaras de oxigênio, pois o alto fluxo garante maior deposição do fármaco.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Limpar o espaçador apenas com água corrente e secar ao sol, dispensando a higienização com detergente neutro ou sua substituição periódica.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Utilizar inalador pressurizado com espaçador, orientando exalação completa antes do jato, seguida de apneia inspiratória de pelo menos 10 segundos.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Asma grave — técnica inalatória",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "Asma grave com broncodilatador inalatório e O₂ — a banca separa técnica do MDI, monitorização e higiene do espaçador.",
+          "icon": "Target"
+        },
+        {
+          "label": "MDI + espaçador",
+          "detail": "Spray doseado com câmara de expansão melhora deposição pulmonar na asma.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Sequência correta",
+          "detail": "Exalar completamente → disparar o jato → apneia inspiratória ≥10 s.",
+          "icon": "ListOrdered"
+        },
+        {
+          "label": "O₂ suplementar",
+          "detail": "Titular e monitorar SpO₂ — broncodilatação não dispensa oximetria.",
+          "icon": "Activity"
+        },
+        {
+          "label": "GABARITO — letra E",
+          "detail": "Técnica inalatória com espaçador conforme diretrizes brasileiras de asma.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Exalar → jato → apneia ≥10 s; SpO₂ sempre monitorada"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Inalador com espaçador — referência",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "content": "INALADOR COM ESPAÇADOR — TÉCNICA",
+      "rows": [
+        { "label": "Sequência", "value": "Exalar → disparar → apneia inspiratória ≥10 s", "badge": "ok" },
+        { "label": "Espaçador", "value": "Melhora deposição do spray doseado", "badge": "ok" },
+        { "label": "Higiene", "value": "Detergente neutro + substituição periódica", "badge": "ok" },
+        { "label": "SpO₂", "value": "Monitorar durante O₂ — não ajuste empírico de FiO₂", "badge": "warn" },
+        { "label": "Nebulização", "value": "Fluxo e técnica conforme protocolo — não fixar 8 L/min sem critério", "badge": "warn" },
+        { "label": "Gabarito", "value": "Letra E", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "Técnica inalatória antes de julgar fluxo de O₂ ou nebulização"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "steps": [
+        "Identificar cenário: asma grave, broncodilatador inalatório e oxigênio suplementar.",
+        "Lembrar: enfermagem ensina técnica inalatória correta e monitora SpO₂.",
+        "Eliminar A: nebulização exige fluxo e técnica adequados — não proporções fixas empíricas.",
+        "Eliminar B: FiO₂ empírica sem SpO₂ ignora monitorização obrigatória.",
+        "Eliminar C: inspiração rápida/forçada com máscara de O₂ não melhora deposição do fármaco.",
+        "Eliminar D: espaçador exige detergente neutro e troca periódica — não só água e sol.",
+        "Escolher E: MDI + espaçador com exalação, jato e apneia inspiratória ≥10 s.",
+        "Marcar letra E.",
+        "Fixação: exalar → jato → apneia; SpO₂ monitorada com O₂."
+      ],
+      "footer_rule": "Spray doseado + espaçador: sequência e higiene fecham a prova"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "content": "PEGADINHAS — TÉCNICA INALATÓRIA NA ASMA",
+      "items": [
+        {
+          "label": "Letra A — nebulização 8 L/min fixa",
+          "detail": "Parece técnica padronizada, mas ignora fluxo adequado e pausa inspiratória.",
+          "correct": "Nebulização segue protocolo de fluxo e técnica — não misturar broncodilatador e soro em proporção fixa sem critério."
+        },
+        {
+          "label": "Letra B — FiO₂ empírica sem SpO₂",
+          "detail": "Prioriza broncodilatação e esquece oximetria na asma com O₂.",
+          "correct": "Oxigenoterapia exige monitorização de SpO₂ — titular FiO₂ conforme saturação e prescrição."
+        },
+        {
+          "label": "Letra C — inspiração rápida e forçada",
+          "detail": "Confunde alto fluxo de O₂ com deposição do medicamento inalatório.",
+          "correct": "Com espaçador, inspiração lenta e profunda após o jato — não inspiração forçada com máscara de O₂."
+        },
+        {
+          "label": "Letra D — higiene só com água e sol",
+          "detail": "Minimiza cuidado com dispositivo reutilizável.",
+          "correct": "Espaçador: lavar com detergente neutro, enxaguar e secar à sombra; substituir periodicamente."
+        }
+      ],
+      "footer_rule": "MDI + espaçador: técnica, SpO₂ e higiene — três eixos da questão"
+    }
+  ]
+}

@@ -1,0 +1,940 @@
+{
+  "mode": "apply",
+  "bucket": "Segurança do Paciente",
+  "min_confidence_apply": 0.85,
+  "limit": 10000,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 92,
+    "inferred": 92,
+    "errors": 0,
+    "keep_current": 73,
+    "same_subtopico": 73,
+    "applicable": 19,
+    "applied": 19
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-seguranca-do-paciente-1777102861438-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (O2): enunciado indica Oxigenoterapia e Cuidados Respiratórios",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-seguranca-do-paciente-1777102918981-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1779563443877-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-seguranca-do-paciente-1779563436357-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-seguranca-do-paciente-1777102742836-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-seguranca-do-paciente-1777102678563-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-seguranca-do-paciente-1779563436357-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-seguranca-do-paciente-1777102821787-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-seguranca-do-paciente-1777102821787-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-seguranca-do-paciente-1777102918981-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-seguranca-do-paciente-1777102918981-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-seguranca-do-paciente-1779563436357-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-seguranca-do-paciente-1777102742836-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712242196-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-seguranca-do-paciente-1778934900821-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-seguranca-do-paciente-1777102918981-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (mulher): enunciado indica Saúde da Mulher",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011915153-9",
+      "from": "Segurança do Paciente",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-9",
+      "from": "Segurança do Paciente",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102678563-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102936764-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-seguranca-do-paciente-1778967789485-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-seguranca-do-paciente-1779563467322-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-6",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003637054-8",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-seguranca-do-paciente-1779563443877-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-4",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (NSP): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-5",
+      "from": "Segurança do Paciente",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (acesso venoso): enunciado indica Punção Venosa e Cuidados com Cateteres",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ],
+  "generated_at": "2026-06-27T19:14:52.908Z",
+  "apply_errors": []
+}

@@ -327,11 +327,35 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'outras doenças e questões mescladas sobre doenças transmissíveis': { template: 'teal', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
   'questões mescladas e outras doenças agudas': { template: 'sky', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Doenças Respiratórias Crônicas ----
-  'doenças respiratórias crônicas (asma, dpoc)': { template: 'cyan', conceptMap: 'bridge', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
-  'doenças respiratórias crônicas': { template: 'cyan', conceptMap: 'bridge', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
-  'asma': { template: 'cyan', conceptMap: 'bridge', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
-  'dpoc': { template: 'cyan', conceptMap: 'bridge', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
+  // ---- Doenças Respiratórias Crônicas (golden: respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena) ----
+  'doenças respiratórias crônicas (asma, dpoc)': {
+    template: 'cyan',
+    conceptMap: 'respiratorio-asma-dpoc-duel-deck',
+    goldenRule: 'respiratorio-spo2-reference-board',
+    logicFlow: 'respiratorio-vf-juggle-tap',
+    dangerZone: 'respiratorio-spo2-trap-arena',
+  },
+  'doenças respiratórias crônicas': {
+    template: 'cyan',
+    conceptMap: 'respiratorio-asma-dpoc-duel-deck',
+    goldenRule: 'respiratorio-spo2-reference-board',
+    logicFlow: 'respiratorio-vf-juggle-tap',
+    dangerZone: 'respiratorio-spo2-trap-arena',
+  },
+  'asma': {
+    template: 'cyan',
+    conceptMap: 'respiratorio-asma-dpoc-duel-deck',
+    goldenRule: 'respiratorio-spo2-reference-board',
+    logicFlow: 'respiratorio-vf-juggle-tap',
+    dangerZone: 'respiratorio-spo2-trap-arena',
+  },
+  'dpoc': {
+    template: 'cyan',
+    conceptMap: 'respiratorio-asma-dpoc-duel-deck',
+    goldenRule: 'respiratorio-spo2-reference-board',
+    logicFlow: 'respiratorio-vf-juggle-tap',
+    dangerZone: 'respiratorio-spo2-trap-arena',
+  },
 
   // ============================================================
   // ESPECIALIDADES CIRÚRGICAS E CRÍTICAS

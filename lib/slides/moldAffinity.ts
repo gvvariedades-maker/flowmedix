@@ -476,6 +476,24 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['enfermagem do trabalho'],
     positivePatterns: [/nr[\s-]?32|pep\b|profilaxia|acidente/i],
   },
+
+  // ---- Doenças Respiratórias Crônicas ----
+  'respiratorio-asma-dpoc-duel-deck': {
+    homeSubtopicFragments: ['doencas respiratorias cronicas', 'asma', 'dpoc'],
+    positivePatterns: [/\basma\b|\bdpoc\b|spo2|oxigen|inalador|broncoespasmo|tabag/i],
+  },
+  'respiratorio-spo2-reference-board': {
+    homeSubtopicFragments: ['doencas respiratorias cronicas', 'asma', 'dpoc'],
+    positivePatterns: [/\basma\b|\bdpoc\b|spo2|88.?92|oxigen|gasometria/i],
+  },
+  'respiratorio-vf-juggle-tap': {
+    homeSubtopicFragments: ['doencas respiratorias cronicas', 'asma', 'dpoc'],
+    positivePatterns: [/\basma\b|\bdpoc\b|spo2|oxigen|afirmativa|verdadeira|falsa/i],
+  },
+  'respiratorio-spo2-trap-arena': {
+    homeSubtopicFragments: ['doencas respiratorias cronicas', 'asma', 'dpoc'],
+    positivePatterns: [/\basma\b|\bdpoc\b|spo2|88.?92|oxigen|hiperoxia|titulad/i],
+  },
 };
 
 function isOnHomeSubtopic(

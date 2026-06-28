@@ -4,7 +4,7 @@
   "gemini": false,
   "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
   "exported_count": 35,
-  "trilho": "A — handcraft total (≤70 slugs)",
+  "trilho": "handcraft golden-v1 por slug",
   "golden_reference": "examples/questao-premium-idecan-cme-areas-esterilizacao-vf.json",
   "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",
   "status": "exported",

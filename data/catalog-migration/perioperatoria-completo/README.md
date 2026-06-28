@@ -1,10 +1,10 @@
 # Assistência Perioperatória — handcraft golden-v1 (fechado)
 
 **Subtópico:** Assistência Perioperatória (Inclui SRPA)  
-**Modo:** Trilho A — handcraft total (1 JSON golden-v1 por slug)  
+**Modo:** Handcraft golden-v1 total (1 JSON por slug)  
 **Status:** 68/68 handcraft · apply g01–g09 OK (2026-06-23)
 
-Runbook geral: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../../docs/GOLDEN_HANDCRAFT_MODEL.md) · §3b (sem hybrid).
+Runbook geral: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../../docs/GOLDEN_HANDCRAFT_MODEL.md) · ADR: [`docs/DECISAO_TRILHO_A_UNICO.md`](../../../docs/DECISAO_TRILHO_A_UNICO.md).
 
 **Nova conversa (outro subtópico):** envie `Handcraft: <subtópico canônico>` — ver [`docs/HANDCRAFT_CONVERSA.md`](../../../docs/HANDCRAFT_CONVERSA.md).
 
@@ -24,7 +24,7 @@ Cada questão foi reescrita no Cursor com 4 slides planos, `meta.sources`, `cont
 
 ---
 
-## Pipeline por lote (repetir em outros subtópicos ≤ ~70 slugs)
+## Pipeline por lote (repetir em qualquer subtópico)
 
 ```bash
 # 1. Export do Supabase (slugs do manifest ou lista explícita)

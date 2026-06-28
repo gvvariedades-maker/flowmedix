@@ -49,7 +49,7 @@ export type InferProposalRow = {
   keep_current: boolean;
   rationale: string;
   applicable: boolean;
-  source?: 'gemini' | 'heuristic';
+  source?: 'gemini' | 'heuristic' | 'agent';
   error?: string;
 };
 
@@ -59,7 +59,7 @@ export type InferReport = {
   bucket: string;
   min_confidence_apply: number;
   limit: number | null;
-  inference_source: 'gemini' | 'heuristic' | 'mixed';
+  inference_source: 'gemini' | 'heuristic' | 'mixed' | 'agent';
   summary: {
     scanned: number;
     inferred: number;
