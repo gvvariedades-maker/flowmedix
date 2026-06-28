@@ -5,11 +5,12 @@ describe('l3MoldGapCatalog', () => {
   const subtopico = 'Saúde do Adolescente';
   const generic = formatMoldPackage(ADOLESCENTE_GENERIC_DESIGN);
 
-  it('violência sexual → molde_inedito + ramo proposto', () => {
+  it('violência sexual → ok_generico com ramo violencia_protecao', () => {
     const r = resolveClusterIdeal(subtopico, 'Violência sexual e indicadores', 4, 25, generic);
     expect(r.branch_id).toBe('adolescente_violencia_protecao');
-    expect(r.branch_implemented).toBe(false);
-    expect(r.decision).toBe('molde_inedito');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('ok_generico');
+    expect(r.ideal_mold_package).toContain('genérico');
   });
 
   it('gravidez → ok_existente adolescent-*', () => {

@@ -28,6 +28,17 @@ describe('pedagogicalBranch', () => {
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('adolescente_etica_sigilo');
   });
 
+  it('infere adolescente_violencia_protecao para violência sexual (não sigilo)', () => {
+    const instruction =
+      'Em relação à violência sexual em crianças e adolescentes, é correto afirmar: notificação compulsória e rede de proteção.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('adolescente_violencia_protecao');
+    const design = getPresentationDesign(subtopico, 'adolescente_violencia_protecao');
+    expect(design?.conceptMap).toBe('morphological');
+    expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_violencia_protecao')).toBe(
+      'morphological',
+    );
+  });
+
   it('ramo desenvolvimento usa layout genérico no concept_map', () => {
     const design = getPresentationDesign(subtopico, 'adolescente_desenvolvimento');
     expect(design?.conceptMap).toBe('morphological');

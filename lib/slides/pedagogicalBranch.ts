@@ -13,6 +13,7 @@ export type PedagogicalBranchId =
   | 'adolescente_antropometria'
   | 'adolescente_desenvolvimento'
   | 'adolescente_saude_mental'
+  | 'adolescente_violencia_protecao'
   | 'adolescente_generico'
   // CME
   | 'cme_preparo_limpeza'
@@ -115,6 +116,7 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     adolescente_antropometria: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
   },
   adolescente: {
@@ -122,6 +124,7 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     adolescente_antropometria: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
   },
   'central de material e esterilizacao': {
@@ -191,8 +194,16 @@ const ADOLESCENT_ETHICS: RegExp[] = [
   /escuta qualificada|privacidade|acolhimento|v[ií]nculo/i,
   /gravidez|gestante|gesta[cç][aã]o|pr[eé][\s-]?natal/i,
   /\bcaps\b|aten[cç][aã]o psicossocial/i,
-  /contracep|orienta[cç][aã]o sexual|viol[eê]ncia sexual|abuso sexual/i,
+  /contracep|orienta[cç][aã]o sexual/i,
   /autonomia|consentimento|respons[aá]vel legal/i,
+];
+
+/** Violência / rede de proteção — não usar moldes de sigilo em consulta. */
+const ADOLESCENT_VIOLENCE: RegExp[] = [
+  /viol[eê]ncia sexual|abuso sexual|agressor|denunciar.*abusador/i,
+  /notifica[cç][aã]o compuls[oó]ria.*viol|agravo.*notifica[cç]/i,
+  /rede de prote[cç][aã]o|conselho tutelar|ind[ií]cios? de viol[eê]ncia/i,
+  /viol[eê]ncia.*crian[cç]a|viol[eê]ncia.*adolescente|espa[cç]o.*viol[eê]ncia sexual/i,
 ];
 
 const ADOLESCENT_DEVELOPMENT: RegExp[] = [
@@ -266,6 +277,9 @@ function branchMapKey(subtopico: string): string | undefined {
 function inferAdolescentBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   if (familyId === 'calc' || countPatternMatches(corpus, NUTRITION_ANTHROPOMETRY) > 0) {
     return 'adolescente_antropometria';
+  }
+  if (countPatternMatches(corpus, ADOLESCENT_VIOLENCE) > 0) {
+    return 'adolescente_violencia_protecao';
   }
   if (countPatternMatches(corpus, ADOLESCENT_ETHICS) > 0) {
     return 'adolescente_etica_sigilo';

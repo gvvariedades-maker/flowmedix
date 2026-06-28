@@ -55,20 +55,17 @@ export function packageUsesBespoke(design?: SubtopicDesign): boolean {
 
 const ADOLESCENT_ETHICS = 'adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)';
 const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
-const ADOLESCENT_VIOLENCE_PROPOSED =
-  'adolescent-violence-network-tap · adolescent-notification-matrix · vertical · compare (inédito — proposta)';
 
 const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
   'saude do adolescente': [
     {
       pattern: /viol[eê]ncia sexual|indicadores.*viol/i,
       branch_id: 'adolescente_violencia_protecao',
-      branch_implemented: false,
-      ideal_mold_package: ADOLESCENT_VIOLENCE_PROPOSED,
-      base_decision: 'molde_inedito',
-      inedito_if_volume: true,
+      branch_implemented: true,
+      ideal_mold_package: ADOLESCENT_GENERIC,
+      base_decision: 'ok_generico',
       rationale:
-        'Cluster epidemiológico/notificação — metáfora de rede de proteção, não sigilo em consulta.',
+        'Violência/rede de proteção — layouts genéricos (sem moldes adolescent-* de sigilo em consulta).',
     },
     {
       pattern: /gravidez|pr[eé][\s-]?natal|riscos gestacion/i,
