@@ -38,7 +38,7 @@ Subtópicos canônicos (41) são **buckets amplos**. Um molde L3 fixo por subtó
 }
 ```
 
-Se omitido, o player infere pelo enunciado + slides.
+Se omitido, o player infere pelo enunciado + slides. **`meta.pedagogical_branch` da questão** é lido no player (`questionMeta` → `enrichPresentationContext`); slide pode sobrescrever.
 
 **Saúde do Adolescente**
 

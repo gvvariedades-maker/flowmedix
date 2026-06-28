@@ -265,15 +265,20 @@ export function resolveSlidePresentation(
 /** Enriquece contexto com ramo pedagógico inferido ou explícito em meta. */
 export function enrichPresentationContext(
   base: SlidePresentationContext,
-  meta?: { subtopico?: string; pedagogical_branch?: string },
+  slideMeta?: { subtopico?: string; pedagogical_branch?: string },
   instruction?: string,
   allSlides?: SlideInput[],
+  questionMeta?: { subtopico?: string; pedagogical_branch?: string },
 ): SlidePresentationContext {
+  const subtopico = slideMeta?.subtopico?.trim() || questionMeta?.subtopico?.trim();
+  const explicitBranch =
+    slideMeta?.pedagogical_branch?.trim() || questionMeta?.pedagogical_branch?.trim() || undefined;
+
   const branch = resolvePedagogicalBranch(
-    meta?.subtopico,
+    subtopico,
     instruction ?? '',
     allSlides ?? [],
-    meta?.pedagogical_branch,
+    explicitBranch,
     base.familyId,
   );
   return {

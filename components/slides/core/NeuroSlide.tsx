@@ -54,6 +54,7 @@ export const NeuroSlideHub = ({
   questionFamilyId,
   questionInstruction,
   questionSlides,
+  questionMeta,
 }: {
   slide: any;
   questionHash: string;
@@ -63,6 +64,8 @@ export const NeuroSlideHub = ({
   questionFamilyId?: FamilyId;
   questionInstruction?: string;
   questionSlides?: unknown[];
+  /** meta da questão — pedagogical_branch e subtopico canônico (L2.5). */
+  questionMeta?: { subtopico?: string; pedagogical_branch?: string };
 }) => {
   // Sistema híbrido: prioriza subject, fallback para hash com variações únicas
   const theme = getThemeForSlide(slide, questionHash, slideIndex);
@@ -77,6 +80,7 @@ export const NeuroSlideHub = ({
     slide.meta,
     questionInstruction,
     questionSlides as { type?: string; items?: unknown[]; meta?: { subtopico?: string } }[] | undefined,
+    questionMeta,
   );
 
   const {
@@ -295,6 +299,7 @@ export default function NeuroSlide({
   questionFamilyId,
   questionInstruction,
   questionSlides,
+  questionMeta,
 }: {
   data: any;
   questionHash?: string;
@@ -309,6 +314,8 @@ export default function NeuroSlide({
   questionInstruction?: string;
   /** Todos os slides da questão — inferência de ramo. */
   questionSlides?: unknown[];
+  /** meta da questão — pedagogical_branch e subtopico canônico (L2.5). */
+  questionMeta?: { subtopico?: string; pedagogical_branch?: string };
 }) {
   const safeData = useMemo(() => normalizeReverseStudySlide(data ?? {}) as any, [data]);
   const hashSource = questionHash || safeData.id || JSON.stringify(safeData).substring(0, 50) || 'default';
@@ -326,6 +333,7 @@ export default function NeuroSlide({
         safeData.meta,
         questionInstruction,
         questionSlides as { type?: string; items?: unknown[]; meta?: { subtopico?: string } }[] | undefined,
+        questionMeta,
       ),
     [
       slugSource,
@@ -335,6 +343,7 @@ export default function NeuroSlide({
       questionFamilyId,
       questionInstruction,
       questionSlides,
+      questionMeta,
     ],
   );
 
@@ -445,6 +454,7 @@ export default function NeuroSlide({
         questionFamilyId={questionFamilyId}
         questionInstruction={questionInstruction}
         questionSlides={questionSlides}
+        questionMeta={questionMeta}
       />
     );
   } else {

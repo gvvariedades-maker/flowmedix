@@ -1165,6 +1165,14 @@ export default function AvantLessonPlayer({
     ],
   );
 
+  const questionMeta = useMemo(
+    () => ({
+      subtopico: activeDados.meta?.subtopico,
+      pedagogical_branch: activeDados.meta?.pedagogical_branch,
+    }),
+    [activeDados.meta?.subtopico, activeDados.meta?.pedagogical_branch],
+  );
+
   const questionZoomContentKey = `${moduloSlug ?? questionHash}-${etapa}`;
   const showQuestionZoom = etapa === 'pergunta' || etapa === 'gabarito';
 
@@ -2158,6 +2166,7 @@ export default function AvantLessonPlayer({
                           questionFamilyId={questionFamilyId}
                           questionInstruction={activeDados.question_data?.instruction}
                           questionSlides={slidesSource}
+                          questionMeta={questionMeta}
                           shellContext={{
                             slideIndex: slideAtual,
                             totalSlides,

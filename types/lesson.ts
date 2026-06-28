@@ -168,6 +168,8 @@ export interface LessonMeta {
   cargo_header?: string;
   topico: string; // Tópico principal (ex: "Fundamentos de Enfermagem - SAE")
   subtopico?: string; // Subtópico (ex: "História da Enfermagem")
+  /** Ramo pedagógico L2.5 — define molde L3 quando o subtópico é bucket amplo. */
+  pedagogical_branch?: string;
 }
 
 // ============================================================================

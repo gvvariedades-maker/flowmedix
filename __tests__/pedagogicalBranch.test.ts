@@ -3,6 +3,7 @@ import {
   getPresentationDesign,
   getLayoutVariantForBranch,
 } from '@/lib/slides/pedagogicalBranch';
+import { enrichPresentationContext } from '@/components/slides/core/slidePresentation';
 
 describe('pedagogicalBranch', () => {
   const subtopico = 'Saúde do Adolescente';
@@ -91,5 +92,33 @@ describe('pedagogicalBranch — Sondas', () => {
   it('infere sonda_medicao_nex para medição NEX', () => {
     const instruction = 'Medição da sonda: distância nariz–orelha–xifoide (NEX).';
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sonda_medicao_nex');
+  });
+});
+
+describe('enrichPresentationContext — meta da questão', () => {
+  const subtopico = 'Saúde do Adolescente';
+  const puberdadeInstruction =
+    'Julgue o item. A adolescência é marcada por metamorfose física. Atraso na puberdade: mamas 12-13 anos.';
+
+  it('usa pedagogical_branch da questão quando slide.meta não tem', () => {
+    const ctx = enrichPresentationContext(
+      { questionSlug: 'igeduc-puberdade', familyId: 'certo_errado' },
+      { subtopico },
+      puberdadeInstruction,
+      [],
+      { subtopico, pedagogical_branch: 'adolescente_desenvolvimento' },
+    );
+    expect(ctx.pedagogicalBranch).toBe('adolescente_desenvolvimento');
+  });
+
+  it('slide.meta.pedagogical_branch vence o da questão', () => {
+    const ctx = enrichPresentationContext(
+      { questionSlug: 'override-test' },
+      { subtopico, pedagogical_branch: 'adolescente_etica_sigilo' },
+      puberdadeInstruction,
+      [],
+      { subtopico, pedagogical_branch: 'adolescente_desenvolvimento' },
+    );
+    expect(ctx.pedagogicalBranch).toBe('adolescente_etica_sigilo');
   });
 });
