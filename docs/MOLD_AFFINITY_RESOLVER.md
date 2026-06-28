@@ -62,6 +62,14 @@ Preencher em lote handcraft:
 npm run catalog:patch-pedagogical-branch -- --lote=saude-adolescente-completo
 ```
 
+**Mapeamento L3 (quantos moldes inéditos?):**
+
+```bash
+npm run audit:l3-mold-gap
+```
+
+Saída: `artifacts/l3-mold-gap-audit.json` + `artifacts/l3-mold-gap-audit.md` — matriz cluster × decisão (`ok_existente` | `ok_generico` | `ramo_novo` | `molde_inedito`).
+
 ## Regras de afinidade (`MOLD_AFFINITY_RULES`)
 
 | Campo | Efeito |

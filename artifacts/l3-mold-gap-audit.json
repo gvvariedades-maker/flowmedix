@@ -1,0 +1,3025 @@
+{
+  "generated_at": "2026-06-28T01:34:46.156Z",
+  "summary": {
+    "cluster_rows": 50,
+    "slug_rows": 243,
+    "by_decision": {
+      "ok_existente": 6,
+      "ok_generico": 26,
+      "ramo_novo": 13,
+      "molde_inedito": 5
+    },
+    "inedito_packages_proposed": 5,
+    "ramo_novo_count": 13,
+    "slug_mismatch_total": 14
+  },
+  "inedito_candidates": [
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Pré-operatório / preparo",
+      "branch_id": "perioperatorio_pre_operatorio",
+      "slug_count": 21,
+      "ideal_mold_package": "procedure-protocol · reference_table · vertical · compare (genérico ou inédito checklist)",
+      "rationale": "Pré-op com golden âncora — genérico ou checklist inédito se volume sustentar."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Pós-operatório / cuidados",
+      "branch_id": "perioperatorio_pos_operatorio",
+      "slug_count": 14,
+      "ideal_mold_package": "morphological · reference_table · vertical · compare — ou pacote SRPA/aldrete inédito",
+      "rationale": "SRPA/aldrete — candidato forte a molde espacial (escore, fases)."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Protocolo / sequência",
+      "branch_id": "perioperatorio_protocolo",
+      "slug_count": 13,
+      "ideal_mold_package": "procedure-protocol · reference_table · vertical · compare (inédito checklist WHO)",
+      "rationale": "Protocolo/sequência — checklist interativo repetível."
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "cluster_label": "Autoclave e métodos de esterilização",
+      "branch_id": "cme_autoclave_metodos",
+      "slug_count": 10,
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico) — ou pacote inédito parâmetros/ciclo",
+      "rationale": "Parâmetros de ciclo — tabela pode bastar; molde inédito só se interação espacial repetir em provas."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Violência sexual e indicadores",
+      "branch_id": "adolescente_violencia_protecao",
+      "slug_count": 2,
+      "ideal_mold_package": "adolescent-violence-network-tap · adolescent-notification-matrix · vertical · compare (inédito — proposta)",
+      "rationale": "Cluster epidemiológico/notificação — metáfora de rede de proteção, não sigilo em consulta."
+    }
+  ],
+  "clusters": [
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Pré-operatório / preparo",
+      "slug_count": 21,
+      "pct": 30.9,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+        "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003137298-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "perioperatorio_pre_operatorio",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "procedure-protocol · reference_table · vertical · compare (genérico ou inédito checklist)",
+      "decision": "molde_inedito",
+      "rationale": "Pré-op com golden âncora — genérico ou checklist inédito se volume sustentar."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Pós-operatório / cuidados",
+      "slug_count": 14,
+      "pct": 20.6,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+        "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+        "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+        "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+        "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "perioperatorio_pos_operatorio",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare — ou pacote SRPA/aldrete inédito",
+      "decision": "molde_inedito",
+      "rationale": "SRPA/aldrete — candidato forte a molde espacial (escore, fases)."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Protocolo / sequência",
+      "slug_count": 13,
+      "pct": 19.1,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+        "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+        "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
+        "ibade-enfermagem-processo-de-enfermagem-1780005128081-9",
+        "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "perioperatorio_protocolo",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "procedure-protocol · reference_table · vertical · compare (inédito checklist WHO)",
+      "decision": "molde_inedito",
+      "rationale": "Protocolo/sequência — checklist interativo repetível."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Certo ou errado",
+      "slug_count": 9,
+      "pct": 13.2,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-1",
+        "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
+        "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-3",
+        "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-4",
+        "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "perioperatorio_vf",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "V/F — genérico."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Default — sem âncora temática",
+      "slug_count": 4,
+      "pct": 5.9,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+        "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-4",
+        "instituto-darwin-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-2",
+        "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "ISC / classificação e prevenção",
+      "slug_count": 2,
+      "pct": 2.9,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "furb-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-7",
+        "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "perioperatorio_isc",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "wound-stage-tissue-deck · reference_table · vertical · compare (reusar curativos?)",
+      "decision": "ramo_novo",
+      "rationale": "ISC — reutilizar moldes de curativos/feridas se afinidade OK."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Fases perioperatórias",
+      "slug_count": 2,
+      "pct": 2.9,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+        "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "SRPA / atribuição do técnico",
+      "slug_count": 1,
+      "pct": 1.5,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "consulplan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "perioperatorio_pos_operatorio",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare — ou pacote SRPA/aldrete inédito",
+      "decision": "ramo_novo",
+      "rationale": "SRPA/aldrete — candidato forte a molde espacial (escore, fases)."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "SRPA / CPD e atribuição (C/E)",
+      "slug_count": 1,
+      "pct": 1.5,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "perioperatorio_pos_operatorio",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare — ou pacote SRPA/aldrete inédito",
+      "decision": "ramo_novo",
+      "rationale": "SRPA/aldrete — candidato forte a molde espacial (escore, fases)."
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "cluster_label": "Centro cirúrgico / asséptica",
+      "slug_count": 1,
+      "pct": 1.5,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "cluster_label": "Preparo e limpeza de instrumentais",
+      "slug_count": 12,
+      "pct": 34.3,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+        "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cme_preparo_limpeza",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "bridge · minimal · cards · list (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Preparo/limpeza — conceito sequencial sem molde bespoke obrigatório."
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "cluster_label": "Autoclave e métodos de esterilização",
+      "slug_count": 10,
+      "pct": 28.6,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+        "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+        "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cme_autoclave_metodos",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico) — ou pacote inédito parâmetros/ciclo",
+      "decision": "molde_inedito",
+      "rationale": "Parâmetros de ciclo — tabela pode bastar; molde inédito só se interação espacial repetir em provas."
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "cluster_label": "Processamento e esterilização — conceito",
+      "slug_count": 4,
+      "pct": 11.4,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-5",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cme_processamento_conceito",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "bridge · minimal · cards · list (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Conceito CME — genérico."
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "cluster_label": "Certo ou errado",
+      "slug_count": 4,
+      "pct": 11.4,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+        "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cme_vf_ce",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "V/F e C/E — compare + tap."
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "cluster_label": "INCORRETA / EXCETO",
+      "slug_count": 3,
+      "pct": 8.6,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cme_generico",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "bridge · minimal · cards · list (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Absorver em genérico compare."
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "cluster_label": "Indicadores químicos e biológicos",
+      "slug_count": 1,
+      "pct": 2.9,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cme_autoclave_metodos",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Cauda longa — tabela de referência."
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "cluster_label": "CME — conceito geral",
+      "slug_count": 1,
+      "pct": 2.9,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cme_processamento_conceito",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "bridge · minimal · cards · list (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Conceito CME — genérico."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Depressão / epidemiologia",
+      "slug_count": 5,
+      "pct": 13.5,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+        "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+        "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+        "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+        "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_depressao",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Depressão/epidemiologia — genérico."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Dependência química / álcool",
+      "slug_count": 3,
+      "pct": 8.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+        "idib-enfermagem-dependencia-quimica-1778934936220-3",
+        "imparh-enfermagem-dependencia-quimica-1778968028412-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_dependencia_tabagismo",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Dependência/tabagismo — genérico."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Esquizofrenia / psicofármacos",
+      "slug_count": 3,
+      "pct": 8.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_generico",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Psicofármacos — genérico."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "RAPS / Reforma Psiquiátrica / SRT",
+      "slug_count": 3,
+      "pct": 8.1,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+        "igeduc-enfermagem-saude-mental-1780001362784-4",
+        "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_raps_legis",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Legislação/RAPS — tabela + compare."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Tabagismo / PNCT",
+      "slug_count": 3,
+      "pct": 8.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+        "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+        "unifil-enfermagem-dependencia-quimica-1778967935713-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_dependencia_tabagismo",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Dependência/tabagismo — genérico."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Sono / epilepsia",
+      "slug_count": 3,
+      "pct": 8.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+        "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+        "vunesp-enfermagem-saude-mental-1780001362784-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Crise / agitação / de-escalada",
+      "slug_count": 2,
+      "pct": 5.4,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+        "idecan-enfermagem-enfermagem-em-uti-1778712381105-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_crise_caps",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke parcial)",
+      "decision": "ok_existente",
+      "rationale": "Crise/CAPS — moldes SAE já wired."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Acolhimento / biopsicossocial na APS",
+      "slug_count": 2,
+      "pct": 5.4,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+        "univali-enfermagem-teorias-em-enfermagem-1776055843703-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_aps_acolhimento",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "APS/acolhimento — genérico."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "CAPS / acolhimento em crise",
+      "slug_count": 2,
+      "pct": 5.4,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+        "ibade-enfermagem-processo-de-enfermagem-1780005128081-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_crise_caps",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke parcial)",
+      "decision": "ok_existente",
+      "rationale": "Crise/CAPS — moldes SAE já wired."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Redução de danos / entrevista motivacional",
+      "slug_count": 2,
+      "pct": 5.4,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "idecan-enfermagem-saude-mental-1778712418722-2",
+        "vunesp-enfermagem-dependencia-quimica-1778967935713-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_dependencia_tabagismo",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Dependência/tabagismo — genérico."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Certo ou errado",
+      "slug_count": 2,
+      "pct": 5.4,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+        "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Default — sem âncora temática",
+      "slug_count": 1,
+      "pct": 2.7,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "SRT / Reforma Psiquiátrica (dispositivo)",
+      "slug_count": 1,
+      "pct": 2.7,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_raps_legis",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Legislação/RAPS — tabela + compare."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Risco suicida / sinais de alerta",
+      "slug_count": 1,
+      "pct": 2.7,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Agitação / crise / contenção (EXCETO)",
+      "slug_count": 1,
+      "pct": 2.7,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "fundatec-enfermagem-dependencia-quimica-1778967935713-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_crise_caps",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke parcial)",
+      "decision": "ok_existente",
+      "rationale": "Crise/CAPS — moldes SAE já wired."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "EXCETO — conduta / conceito",
+      "slug_count": 1,
+      "pct": 2.7,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "idecan-enfermagem-saude-mental-1780067024707-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "Demência / Alzheimer",
+      "slug_count": 1,
+      "pct": 2.7,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "cluster_label": "CAPS / dispositivo de rede",
+      "slug_count": 1,
+      "pct": 2.7,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "selecon-enfermagem-processo-de-enfermagem-1780009322055-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "mental_crise_caps",
+      "branch_implemented": true,
+      "current_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "ideal_mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke parcial)",
+      "decision": "ok_existente",
+      "rationale": "Crise/CAPS — moldes SAE já wired."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Gravidez / pré-natal / riscos",
+      "slug_count": 2,
+      "pct": 12.5,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "adolescente_etica_sigilo",
+      "branch_implemented": true,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "Gravidez na adolescência — moldes adolescent-* já desenhados para sigilo/escuta."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Escuta, sigilo e ética (V/F)",
+      "slug_count": 2,
+      "pct": 12.5,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "adolescente_etica_sigilo",
+      "branch_implemented": true,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "V/F e ética do cuidado — pacote adolescent-*."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Violência sexual e indicadores",
+      "slug_count": 2,
+      "pct": 12.5,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "adolescente_violencia_protecao",
+      "branch_implemented": false,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "adolescent-violence-network-tap · adolescent-notification-matrix · vertical · compare (inédito — proposta)",
+      "decision": "molde_inedito",
+      "rationale": "Cluster epidemiológico/notificação — metáfora de rede de proteção, não sigilo em consulta."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Transtornos alimentares / imagem corporal",
+      "slug_count": 2,
+      "pct": 12.5,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "adolescente_saude_mental",
+      "branch_implemented": true,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Saúde mental alimentar — compare + tabela bastam."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Diretrizes MS adolescente (EXCETO)",
+      "slug_count": 2,
+      "pct": 12.5,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "adolescente_generico",
+      "branch_implemented": true,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "EXCETO/diretrizes — layout genérico premium."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Saúde bucal / promoção",
+      "slug_count": 2,
+      "pct": 12.5,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "adolescente_generico",
+      "branch_implemented": true,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Promoção/bucal — sem metáfora espacial fixa."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Espaçador e inalador — técnica MDI",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Oximetria de pulso / SpO₂",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "O₂ titulado na DPOC (APS/emergência)",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Dispositivos de oxigenoterapia (Venturi)",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Asma na APS — educação terapêutica",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Espirometria VEF1/CVF",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Semiologia pediátrica — sibilos",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Semiologia respiratória V/F",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "DPOC na UBS — papel do técnico",
+      "slug_count": 1,
+      "pct": 10,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · center · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    }
+  ],
+  "slugs": [
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_generico",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_generico",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-5",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_processamento_conceito",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_generico",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_preparo_limpeza",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_generico",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_generico",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_preparo_limpeza",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_vf_ce",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_vf_ce",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_vf_ce",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_generico",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_generico",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_preparo_limpeza",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_generico",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-7",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-4",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_preparo_limpeza",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_preparo_limpeza",
+      "mold_package": "bridge · minimal · cards · list (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_vf_ce",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4",
+      "lote": "cme-completo",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "inferred_branch": "cme_autoclave_metodos",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-7",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-0",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-vias-de-administracao-1778968687469-6",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0",
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-1",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-8",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-1",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-6",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibam-enfermagem-curativos-e-manejo-de-feridas-1779344779828-0",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269228428-6",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269228428-7",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-0",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-7",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-8",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-9",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-feridas-e-queimaduras-1778934936220-2",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-3",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-semiologia-em-enfermagem-1779563531989-8",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-5",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-1",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344813448-5",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-7",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-1",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-2",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-4",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-2",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-2",
+      "lote": "feridas-e-queimaduras-completo",
+      "subtopico": "Feridas e Queimaduras",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6",
+      "lote": "historia-enfermagem-completo",
+      "subtopico": "História da Enfermagem",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-9",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-3",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-4",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-4",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "consulplan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-7",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-8",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-3",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-6",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005128081-9",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-3",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-6",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-enfermagem-em-centro-cirurgico-1778934918280-8",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-assistencia-perioperatoria-inclui-srpa-1780001148264-7",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-geral-assistencia-perioperatoria-inclui-srpa-1777103789613-0",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-darwin-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-2",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-4",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-0",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6",
+      "lote": "perioperatoria-completo",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-7",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0",
+      "lote": "processamento-completo",
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "certo_errado",
+      "inferred_branch": "adolescente_etica_sigilo",
+      "declared_branch": "adolescente_etica_sigilo",
+      "mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "conceito",
+      "inferred_branch": "adolescente_antropometria",
+      "declared_branch": "adolescente_antropometria",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-6",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "conceito",
+      "inferred_branch": "adolescente_etica_sigilo",
+      "declared_branch": "adolescente_etica_sigilo",
+      "mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "legis",
+      "inferred_branch": "adolescente_etica_sigilo",
+      "declared_branch": "adolescente_etica_sigilo",
+      "mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "mold_mismatch_count": 3,
+      "mold_issues": [
+        "mold_l3_affinity_rejected",
+        "mold_l3_affinity_rejected",
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "conceito",
+      "inferred_branch": "adolescente_antropometria",
+      "declared_branch": "adolescente_antropometria",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "conceito",
+      "inferred_branch": "adolescente_etica_sigilo",
+      "declared_branch": "adolescente_etica_sigilo",
+      "mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "mold_mismatch_count": 2,
+      "mold_issues": [
+        "mold_l3_affinity_rejected",
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "conceito",
+      "inferred_branch": "adolescente_antropometria",
+      "declared_branch": "adolescente_antropometria",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "conceito",
+      "inferred_branch": "adolescente_etica_sigilo",
+      "declared_branch": "adolescente_etica_sigilo",
+      "mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "calc",
+      "inferred_branch": "adolescente_antropometria",
+      "declared_branch": "adolescente_antropometria",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ideap-enfermagem-saude-do-adolescente-1777104229064-2",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "vf",
+      "inferred_branch": "adolescente_generico",
+      "declared_branch": "adolescente_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "protocolo",
+      "inferred_branch": "adolescente_etica_sigilo",
+      "declared_branch": "adolescente_etica_sigilo",
+      "mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "conceito",
+      "inferred_branch": "adolescente_etica_sigilo",
+      "declared_branch": "adolescente_etica_sigilo",
+      "mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "conceito",
+      "inferred_branch": "adolescente_antropometria",
+      "declared_branch": "adolescente_antropometria",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "protocolo",
+      "inferred_branch": "adolescente_generico",
+      "declared_branch": "adolescente_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "legis",
+      "inferred_branch": "adolescente_etica_sigilo",
+      "declared_branch": "adolescente_etica_sigilo",
+      "mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "mold_mismatch_count": 1,
+      "mold_issues": [
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+      "lote": "saude-adolescente-completo",
+      "subtopico": "Saúde do Adolescente",
+      "family": "certo_errado",
+      "inferred_branch": "adolescente_desenvolvimento",
+      "declared_branch": "adolescente_desenvolvimento",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_depressao",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_aps_acolhimento",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_raps_legis",
+      "mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_raps_legis",
+      "mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 1,
+      "mold_issues": [
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_raps_legis",
+      "mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 1,
+      "mold_issues": [
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_dependencia_tabagismo",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-dependencia-quimica-1778967935713-7",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005128081-8",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_dependencia_tabagismo",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-uti-1778712381105-8",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_raps_legis",
+      "mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-saude-mental-1780067024707-2",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_depressao",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-dependencia-quimica-1778934936220-3",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 2,
+      "mold_issues": [
+        "mold_l3_affinity_rejected",
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-mental-1780001362784-4",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_raps_legis",
+      "mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "imparh-enfermagem-dependencia-quimica-1778968028412-0",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 1,
+      "mold_issues": [
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_raps_legis",
+      "mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 1,
+      "mold_issues": [
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_crise_caps",
+      "mold_package": "morphological · center · sae-decision-tap · norm-reveal (bespoke)",
+      "mold_mismatch_count": 2,
+      "mold_issues": [
+        "mold_l3_affinity_rejected",
+        "mold_l3_affinity_rejected"
+      ]
+    },
+    {
+      "slug": "unifil-enfermagem-dependencia-quimica-1778967935713-8",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_dependencia_tabagismo",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_generico",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-dependencia-quimica-1778967935713-4",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_raps_legis",
+      "mold_package": "bridge · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_depressao",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-mental-1780001362784-5",
+      "lote": "saude-mental-completo",
+      "subtopico": "Saúde Mental",
+      "inferred_branch": "mental_aps_acolhimento",
+      "mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    }
+  ]
+}

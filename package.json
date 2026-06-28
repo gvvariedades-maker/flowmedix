@@ -43,6 +43,7 @@
     "validate:goldens": "tsx scripts/validate-goldens.ts",
     "catalog:audit": "tsx scripts/catalog-content-audit-cli.ts",
     "audit:premium-catalog": "tsx scripts/audit-premium-catalog.ts",
+    "audit:l3-mold-gap": "tsx scripts/audit-l3-mold-gap.ts",
     "audit:premium-supabase": "tsx scripts/audit-premium-supabase.ts",
     "seed:guideline-registry": "tsx scripts/seed-subtopico-guideline-registry.ts",
     "refresh:guideline-counts": "tsx scripts/refresh-subtopico-guideline-counts.ts",
