@@ -5,6 +5,8 @@
  * Suporta o padrão "Extreme 3D Glass" com emojis e glassmorphism.
  */
 
+import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
+
 // ============================================================================
 // SLIDE ITEM (Componente base do NeuroSlide)
 // ============================================================================
@@ -169,7 +171,7 @@ export interface LessonMeta {
   topico: string; // Tópico principal (ex: "Fundamentos de Enfermagem - SAE")
   subtopico?: string; // Subtópico (ex: "História da Enfermagem")
   /** Família de questão (golden-v1) — prioriza resolução de molde L3. */
-  family?: string;
+  family?: FamilyId;
   /** Ramo pedagógico L2.5 — define molde L3 quando o subtópico é bucket amplo. */
   pedagogical_branch?: string;
 }
