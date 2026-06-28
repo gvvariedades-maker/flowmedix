@@ -5,15 +5,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Activity } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { resolveLucideIcon } from '../core/lucideIcon';
+import {
+  inferAdmeConceptKind,
+  type PkSlot,
+} from '@/lib/slides/admeJourneyRailUtils';
 
 export interface PkPdConcept {
   icon: string;
   title: string;
   description: string;
 }
-
-type PkSlot = 'cinetica' | 'dinamica' | 'meia-vida' | 'adme';
-type ConceptKind = PkSlot | 'compare' | 'exam' | 'mnemonic';
 
 const PK_SLOTS: {
   id: PkSlot;
@@ -85,28 +86,16 @@ const PK_SLOTS: {
   },
 ];
 
-function inferConceptKind(title: string, description: string): ConceptKind {
-  const text = `${title} ${description}`.toLowerCase();
-  if (/mnemônico|mnemonico|cinética =|cinetica =|corpo processa/.test(text)) return 'mnemonic';
-  if (/comparativo|cinética ×|cinetica x|pk.*pd/.test(text)) return 'compare';
-  if (/gabarito|pegadinha|banca|prova/.test(text)) return 'exam';
-  if (/meia-vida|meia vida|t½|t1\/2|50%|eliminar 100/.test(text)) return 'meia-vida';
-  if (/absorção|distribuição|metabolismo|excreção|\badme\b/.test(text)) return 'adme';
-  if (/farmacodinâmica|farmacodinamica|dinâmica|dinamica|mecanismo|receptor|efeito/.test(text)) {
-    return 'dinamica';
-  }
-  if (/farmacocinética|farmacocinetica|cinética|cinetica/.test(text)) return 'cinetica';
-  return 'cinetica';
-}
-
 interface AdmeJourneyRailConceptMapProps {
   concepts: PkPdConcept[];
   theme: ThemeColors;
+  footerRule?: string;
 }
 
 export const AdmeJourneyRailConceptMap = ({
   concepts,
   theme,
+  footerRule,
 }: AdmeJourneyRailConceptMapProps) => {
   const [selected, setSelected] = useState<PkSlot>('cinetica');
 
@@ -120,7 +109,7 @@ export const AdmeJourneyRailConceptMap = ({
     const sharedItems: { kind: 'compare' | 'exam' | 'mnemonic'; concept: PkPdConcept }[] = [];
 
     for (const concept of concepts) {
-      const kind = inferConceptKind(concept.title, concept.description);
+      const kind = inferAdmeConceptKind(concept.title, concept.description);
       if (kind === 'compare' || kind === 'exam' || kind === 'mnemonic') {
         sharedItems.push({ kind, concept });
       } else {
@@ -180,6 +169,29 @@ export const AdmeJourneyRailConceptMap = ({
 
     return sections;
   }, [activeConcepts, compareConcept, examConcept, mnemonicConcept, selected]);
+
+  const examTipText = useMemo(() => {
+    if (examConcept?.description?.trim() && selected === 'meia-vida') {
+      return examConcept.description;
+    }
+    if (mnemonicConcept?.description?.trim() && (selected === 'cinetica' || selected === 'dinamica')) {
+      return mnemonicConcept.description;
+    }
+    if (activeConcepts.length > 0) {
+      return activeSlot.examTip;
+    }
+    if (footerRule?.trim()) {
+      return footerRule;
+    }
+    return '';
+  }, [
+    activeConcepts.length,
+    activeSlot.examTip,
+    examConcept?.description,
+    footerRule,
+    mnemonicConcept?.description,
+    selected,
+  ]);
 
   return (
     <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-4">
@@ -302,24 +314,26 @@ export const AdmeJourneyRailConceptMap = ({
                   </p>
                 )}
 
-                <div
-                  className={`mt-1 rounded-xl border px-3.5 py-3 shadow-sm ${
-                    selected === 'meia-vida'
-                      ? 'border-fuchsia-300/80 bg-fuchsia-50/90'
-                      : 'border-violet-200/80 bg-violet-50/80'
-                  }`}
-                >
-                  <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-slate-600">
-                    Dica de prova
-                  </p>
-                  <p
-                    className={`mt-1 font-body text-sm font-semibold leading-relaxed ${
-                      selected === 'meia-vida' ? 'text-fuchsia-950' : 'text-violet-950'
+                {examTipText ? (
+                  <div
+                    className={`mt-1 rounded-xl border px-3.5 py-3 shadow-sm ${
+                      selected === 'meia-vida'
+                        ? 'border-fuchsia-300/80 bg-fuchsia-50/90'
+                        : 'border-violet-200/80 bg-violet-50/80'
                     }`}
                   >
-                    {activeSlot.examTip}
-                  </p>
-                </div>
+                    <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-slate-600">
+                      Dica de prova
+                    </p>
+                    <p
+                      className={`mt-1 font-body text-sm font-semibold leading-relaxed ${
+                        selected === 'meia-vida' ? 'text-fuchsia-950' : 'text-violet-950'
+                      }`}
+                    >
+                      {examTipText}
+                    </p>
+                  </div>
+                ) : null}
               </div>
             </motion.div>
           </AnimatePresence>

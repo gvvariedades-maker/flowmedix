@@ -166,3 +166,125 @@ describe('auditPremiumQuestao — golden de referência', () => {
     expect(premiumGateErrors(viasGolden)).toHaveLength(0);
   });
 });
+
+describe('auditPremiumQuestao — gate L3 write blockers', () => {
+  const farmacoSubtopico = 'Farmacodinâmica e Farmacocinética';
+
+  function omeprazolGolden(withBranch: boolean) {
+    const instruction =
+      'Em um paciente hospitalizado por úlcera péptica grave, que recebe Omeprazol na forma endovenosa, avalie as condutas e marque a opção adequada.';
+    return {
+      meta: {
+        topico: 'Enfermagem',
+        subtopico: farmacoSubtopico,
+        content_standard: 'golden-v1',
+        family: 'protocolo',
+        ...(withBranch ? { pedagogical_branch: 'farmaco_clinico_protocolo' } : {}),
+      },
+      question_data: {
+        instruction,
+        options: [
+          { id: 'A', text: 'Suspender IBP', is_correct: false },
+          { id: 'B', text: 'Titular infusão com monitorização de pH', is_correct: true },
+        ],
+      },
+      reverse_study_slides: [
+        {
+          type: 'concept_map',
+          meta: { subtopico: farmacoSubtopico },
+          items: [
+            { label: 'Cenário', detail: 'Úlcera grave — IBP EV', icon: 'Hospital' },
+            { label: 'Farmacodinâmica', detail: 'Inibe bomba de prótons', icon: 'Zap' },
+            { label: 'Monitorização', detail: 'pH gástrico guia infusão', icon: 'Activity' },
+          ],
+        },
+        {
+          type: 'golden_rule',
+          meta: { subtopico: farmacoSubtopico },
+          rows: [{ label: 'Conduta', value: 'Titular infusão com pH' }],
+        },
+        {
+          type: 'logic_flow',
+          reveal_mode: 'tap',
+          meta: { subtopico: farmacoSubtopico },
+          steps: ['Cenário clínico', 'IBP EV', 'Letra B'],
+        },
+        {
+          type: 'danger_zone',
+          meta: { subtopico: farmacoSubtopico },
+          content: 'Pegadinhas',
+          items: [{ label: 'Letra A', detail: 'Suspender', correct: 'Manter titulação' }],
+        },
+      ],
+    };
+  }
+
+  it('golden omeprazol com pedagogical_branch correto → 0 errors L3', () => {
+    const errs = premiumGateErrors(omeprazolGolden(true));
+    expect(errs.filter((e) => e.code.startsWith('mold_l3_'))).toHaveLength(0);
+  });
+
+  it('golden-v1 farmaco VF com slides clínicos sem branch → mold_l3_unresolved_bespoke', () => {
+    const q = omeprazolGolden(false);
+    q.meta.family = 'vf';
+    q.question_data.instruction =
+      'I - Farmacocinética é ADME. II - Farmacodinâmica é efeito no organismo. III - Meia-vida elimina 100%. Assinale a correta.';
+    const errs = premiumGateErrors(q);
+    expect(errs.some((e) => e.code === 'mold_l3_unresolved_bespoke')).toBe(true);
+  });
+
+  it('adolescente puberdade com branch etica_sigilo declarado erroneamente → declared_branch_conflict', () => {
+    const instruction =
+      'Julgue o item. A adolescência é marcada por metamorfose física. Atraso na puberdade: mamas 12-13 anos.';
+    const q = {
+      meta: {
+        banca: 'IGEDUC',
+        topico: 'Enfermagem',
+        subtopico: 'Saúde do Adolescente',
+        content_standard: 'golden-v1',
+        family: 'certo_errado',
+        pedagogical_branch: 'adolescente_etica_sigilo',
+      },
+      question_data: {
+        instruction,
+        options: [{ id: 'C', text: 'Certo', is_correct: true }],
+      },
+      reverse_study_slides: [
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Saúde do Adolescente' },
+          items: [
+            { label: 'Puberdade', detail: 'Marcos 12–13 anos', icon: 'User' },
+            { label: 'Meninos', detail: 'Testículos 13–14', icon: 'User' },
+            { label: 'Atraso', detail: 'Ausência de sinais', icon: 'AlertTriangle' },
+          ],
+        },
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Saúde do Adolescente' },
+          rows: [{ label: 'Marco', value: '12–13 anos' }],
+        },
+        {
+          type: 'logic_flow',
+          reveal_mode: 'tap',
+          meta: { subtopico: 'Saúde do Adolescente' },
+          steps: ['Puberdade', 'Certo'],
+        },
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Saúde do Adolescente' },
+          content: 'x',
+          items: [{ label: 'A', detail: 'y', correct: 'z' }],
+        },
+      ],
+    };
+    const errs = premiumGateErrors(q);
+    expect(
+      errs.some(
+        (e) =>
+          e.code === 'mold_l3_declared_branch_conflict' ||
+          e.code === 'mold_l3_unresolved_bespoke',
+      ),
+    ).toBe(true);
+  });
+});

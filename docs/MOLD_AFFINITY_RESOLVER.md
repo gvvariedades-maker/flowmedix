@@ -26,6 +26,8 @@ Subtópicos canônicos (41) são **buckets amplos**. Um molde L3 fixo por subtó
 | `pedagogicalBranch.ts` | `inferPedagogicalBranch`, `BRANCH_DESIGN_MAP`, `getPresentationDesign` |
 | `moldSlotFit.ts` | `countMoldInteractiveSlots`, `bespokeMoldHasRenderableSlots` |
 | `detectMoldL3Mismatch.ts` | Gate L3 na escrita (`premiumGate`) |
+| `detectMoldL3WriteBlockers.ts` | Bloqueios L3 fase A/B na escrita |
+| `patchPedagogicalMeta.ts` | Backfill `meta.family` + `meta.pedagogical_branch` |
 | `slidePresentation.ts` | `enrichPresentationContext`, `moldFallback` |
 
 ### meta.pedagogical_branch (opcional)
@@ -84,11 +86,64 @@ Saída: `artifacts/l3-mold-gap-audit.json` + `artifacts/l3-mold-gap-audit.md` �
 
 ## Gate premium (escrita)
 
-`auditPremiumQuestao` chama `detectMoldL3Mismatch`:
+`auditPremiumQuestao` chama `detectMoldL3Mismatch` + `detectMoldL3WriteBlockers`:
 
-- `mold_l3_zero_slots` → **error** (conteúdo incompatível com molde)
-- `mold_l3_affinity_rejected` → **warn** (player usa fallback)
-- `pedagogical_branch_inferred` → **warn** (prefira declarar no handcraft)
+| Código | Severidade | Fase |
+|--------|------------|------|
+| `mold_l3_zero_slots` | **error** | A |
+| `mold_l3_declared_branch_conflict` | **error** | A — `meta.pedagogical_branch` declarado ≠ molde que o player renderiza |
+| `mold_l3_unresolved_bespoke` | **error** | B — só `content_standard: golden-v1` ou com `pedagogical_branch` declarado |
+| `mold_l3_affinity_rejected` | **warn** | catálogo pré-backfill sem branch declarado |
+| `mold_l3_runtime_fallback` | **warn** | idem |
+| `pedagogical_branch_inferred` | **warn** | prefira declarar no handcraft |
+
+### Rollout do gate
+
+| Fase | Escopo do error | Quando |
+|------|-----------------|--------|
+| A | `mold_l3_zero_slots` + `mold_l3_declared_branch_conflict` | Imediato |
+| B | `mold_l3_unresolved_bespoke` em golden-v1 / com branch declarado | Após backfill do subtópico |
+| C | `mold_l3_unresolved_bespoke` em todo `isPremiumSubtopico` | Após backfill global |
+
+## Backfill Supabase (`meta.pedagogical_branch`)
+
+Módulo: `lib/catalogMigration/patchPedagogicalMeta.ts` · CLI: `scripts/catalog-patch-pedagogical-branch.ts`
+
+```bash
+# Dry-run por subtópico (só premium)
+npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=Farmacodin --only-premium --dry-run
+
+# Aplicar após revisar artifacts/patch-pedagogical-branch-slugs.jsonl
+npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=Farmacodin --only-premium --apply
+
+# Corrigir branch declarado errado (ex. Adolescente)
+npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=Adolescente --force-branch --only-premium --apply
+```
+
+Flags: `--only-golden-v1` · `--force-family` · `--force-branch` · `--no-infer-family`
+
+Critério de aceite pós-apply: `post_mismatch` vazio ou só `mold_l3_runtime_fallback`; zero `mold_l3_zero_slots`.
+
+Auditoria no catálogo vivo:
+
+```bash
+npm run audit:l3-mold-gap -- --from-supabase --subtopico=Adolescente
+```
+
+Saída inclui `slug_mismatch_by_subtopico` no relatório JSON/MD.
+
+## Matriz P0–P3 (rollout por subtópico)
+
+| Prioridade | Subtópico | Molde de casa | Ramos | Status |
+|------------|-----------|---------------|-------|--------|
+| P0 | Farmacodinâmica e Farmacocinética | `adme-journey-rail` | `farmaco_pk_pd_vf` · `farmaco_clinico_protocolo` · `farmaco_generico` | **branch_implemented** — backfill + gate B |
+| P1 | Imunização | `pni-rules-deck` | `imunizacao_vf_intervalos` · `imunizacao_calendario` · `imunizacao_generico` | **branch_implemented** |
+| P1 | Vias de Administração | `absorption-speed-rail` | `via_vf_absorcao` · `via_tecnica_admin` · `via_generico` | **branch_implemented** |
+| P1 | Cálculo de Medicamentos | `dose-equivalence-rail` | `calc_dose_equivalencia` · `calc_conceito` · `calc_generico` | **branch_implemented** |
+| P2 | ISTs, Sinais Vitais, Oxigenoterapia, Curativos, Punção, Lab, Resp. crônico, Trabalho/NR32 | respectivos bespoke | 2–3 ramos/cluster | pendente |
+| P3 | Assistência Perioperatória | genérico | `perioperatorio_*` em `l3MoldGapCatalog` | `branch_implemented: false` — código antes do backfill |
+
+Subtópicos com layout **genérico** (bridge/morphological) — não exigem ramos; só backfill de `family` se golden-v1.
 
 ## Testes
 

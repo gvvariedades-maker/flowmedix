@@ -16,6 +16,7 @@ import {
   hasInstructionArtifacts,
 } from '@/lib/catalogMigration/slideContract';
 import { detectMoldL3Mismatch } from '@/lib/slides/detectMoldL3Mismatch';
+import { detectMoldL3WriteBlockers } from '@/lib/slides/detectMoldL3WriteBlockers';
 import { resolvePedagogicalBranch } from '@/lib/slides/pedagogicalBranch';
 
 export type PremiumGateSeverity = 'error' | 'warn';
@@ -267,11 +268,26 @@ export function auditPremiumQuestao(payload: QuestaoLike): PremiumGateIssue[] {
   }
 
   for (const fit of detectMoldL3Mismatch(payload, { familyId, pedagogicalBranch: branch })) {
+    const declared = Boolean(payload.meta?.pedagogical_branch?.trim());
+    const isLegacyCatalog = !declared && fit.code !== 'mold_l3_zero_slots';
     issues.push({
       code: fit.code,
-      severity: fit.code === 'mold_l3_zero_slots' ? 'error' : 'warn',
+      severity: fit.code === 'mold_l3_zero_slots' ? 'error' : isLegacyCatalog ? 'warn' : 'warn',
       slideType: fit.slideType,
       message: fit.message,
+    });
+  }
+
+  const strictL3 =
+    payload.meta?.content_standard === 'golden-v1' ||
+    Boolean(payload.meta?.pedagogical_branch?.trim());
+
+  for (const block of detectMoldL3WriteBlockers(payload, { strictL3, phaseA: true })) {
+    issues.push({
+      code: block.code,
+      severity: 'error',
+      slideType: block.slideType,
+      message: block.message,
     });
   }
 

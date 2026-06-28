@@ -1188,6 +1188,7 @@ export default function AvantLessonPlayer({
           is_correct: option.is_correct ?? false,
         })),
         textFragment: activeDados.question_data?.text_fragment,
+        metaFamily: activeDados.meta?.family,
       }),
     [
       activeDados.question_data?.instruction,
@@ -1195,6 +1196,7 @@ export default function AvantLessonPlayer({
       activeDados.question_data?.text_fragment,
       activeDados.meta?.subtopico,
       activeDados.meta?.topico,
+      activeDados.meta?.family,
     ],
   );
 

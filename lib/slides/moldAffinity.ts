@@ -117,6 +117,34 @@ const SONDA_BESPOKE_VARIANTS = new Set([
   'trap-reveal',
 ]);
 
+const FARMACO_VF_VARIANTS = new Set([
+  'adme-journey-rail',
+  'pk-pd-reference-board',
+  'farmaco-vf-juggle-tap',
+  'farmaco-trap',
+]);
+
+const PNI_VF_VARIANTS = new Set([
+  'pni-rules-deck',
+  'pni-interval-matrix',
+  'pni-vf-juggle-tap',
+  'pni-trap-chips',
+]);
+
+const VIA_VF_VARIANTS = new Set([
+  'absorption-speed-rail',
+  'via-reference-board',
+  'via-vf-juggle-tap',
+  'route-trap',
+]);
+
+const CALC_DOSE_VARIANTS = new Set([
+  'dose-equivalence-rail',
+  'soft-lens-board',
+  'dose-calc-tap',
+  'dose-trap',
+]);
+
 function subtopicoMatchesFragments(subtopico: string | undefined, fragments: string[]): boolean {
   if (!subtopico?.trim() || fragments.length === 0) return false;
   const key = normalizeKey(subtopico);
@@ -236,19 +264,33 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
   // ---- Imunização / PNI ----
   'pni-rules-deck': {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
-    positivePatterns: [/vacina|imuniz|pni|calend[aá]rio|dose|refor[cç]o|intervalo/i],
+    blockFamilies: ['protocolo', 'calc', 'legis', 'text_fragment'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /intervalo|refor[cç]o|dose.*vacina|calend[aá]rio.*pni/i,
+    ],
+    minPositive: 1,
   },
   'pni-interval-matrix': {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
-    positivePatterns: [/vacina|imuniz|pni|dose|intervalo|refor[cç]o/i],
+    blockFamilies: ['protocolo', 'calc', 'legis', 'text_fragment'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /vacina|imuniz|pni|dose|intervalo|refor[cç]o/i,
+    ],
+    minPositive: 1,
   },
   'pni-vf-juggle-tap': {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
-    positivePatterns: [/vacina|imuniz|pni/i],
+    blockFamilies: ['protocolo', 'calc', 'legis', 'text_fragment'],
+    positivePatterns: [/\b(i|ii|iii)\s*[-–—]/i, /vacina|imuniz|pni/i],
+    minPositive: 1,
   },
   'pni-trap-chips': {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
-    positivePatterns: [/vacina|imuniz|pni/i],
+    blockFamilies: ['protocolo', 'calc', 'legis', 'text_fragment'],
+    positivePatterns: [/vacina|imuniz|pni|intervalo/i],
+    minPositive: 1,
   },
 
   // ---- ISTs ----
@@ -272,55 +314,95 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
   // ---- Farmacologia ----
   'adme-journey-rail': {
     homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
-    positivePatterns: [/adme|farmacocin[eé]tica|farmacodin[aâ]mica|absor[cç][aã]o|metabolismo|excre[cç][aã]o|meia[\s-]?vida/i],
+    blockFamilies: ['protocolo', 'calc', 'legis', 'conceito', 'text_fragment', 'certo_errado'],
+    blockPatterns: [
+      /cen[aá]rio|monitoriza[cç][aã]o|infus[aã]o contínua|ph g[aá]stric|úlcera p[eé]ptica/i,
+    ],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /meia[\s-]?vida|t½|t1\/2|\badme\b/i,
+      /farmacocin[eé]tica.*farmacodin[aâ]mica|corpo.*f[aá]rmaco.*f[aá]rmaco.*corpo/i,
+    ],
+    minPositive: 1,
   },
   'pk-pd-reference-board': {
     homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
-    positivePatterns: [/farmacocin[eé]tica|farmacodin[aâ]mica|pk|pd|meia[\s-]?vida|biodisponibilidade/i],
+    blockFamilies: ['protocolo', 'calc', 'legis', 'conceito', 'text_fragment', 'certo_errado'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /farmacocin[eé]tica|farmacodin[aâ]mica|pk|pd|meia[\s-]?vida|biodisponibilidade/i,
+    ],
+    minPositive: 1,
   },
   'farmaco-vf-juggle-tap': {
     homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
-    positivePatterns: [/farmac|medicamento|dose|via\b/i],
+    blockFamilies: ['protocolo', 'calc', 'legis', 'conceito', 'text_fragment', 'certo_errado'],
+    positivePatterns: [/\b(i|ii|iii)\s*[-–—]/i, /afirmativa|verdadeira|falsa|julgue/i],
+    minPositive: 1,
   },
   'farmaco-trap': {
     homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
-    positivePatterns: [/farmac|medicamento/i],
+    blockFamilies: ['protocolo', 'calc', 'legis', 'conceito', 'text_fragment', 'certo_errado'],
+    positivePatterns: [/farmac|medicamento|meia[\s-]?vida|50%|100%/i],
+    minPositive: 1,
   },
 
   // ---- Cálculos ----
   'dose-equivalence-rail': {
     homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
-    positivePatterns: [/dose|gota|ml\b|mg\b|equival[eê]ncia|dilui[cç][aã]o|infus[aã]o|prescri[cç][aã]o/i],
+    blockFamilies: ['vf', 'certo_errado', 'legis', 'protocolo', 'text_fragment'],
+    positivePatterns: [/dose|gota|ml\b|mg\b|equival[eê]ncia|dilui[cç][aã]o|calcule|regra de tr[eê]s/i],
+    minPositive: 1,
   },
   'soft-lens-board': {
     homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
+    blockFamilies: ['vf', 'certo_errado', 'legis', 'protocolo', 'text_fragment'],
     positivePatterns: [/dose|gota|ml\b|mg\b|equival[eê]ncia|dilui[cç][aã]o|regra de tr[eê]s/i],
+    minPositive: 1,
   },
   'dose-calc-tap': {
     homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
+    blockFamilies: ['vf', 'certo_errado', 'legis', 'protocolo', 'text_fragment'],
     positivePatterns: [/dose|calcule|ml\b|mg\b|gota/i],
+    minPositive: 1,
   },
   'dose-trap': {
     homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
+    blockFamilies: ['vf', 'certo_errado', 'legis', 'protocolo', 'text_fragment'],
     positivePatterns: [/dose|ml\b|mg\b/i],
+    minPositive: 1,
   },
 
   // ---- Vias ----
   'absorption-speed-rail': {
     homeSubtopicFragments: ['vias de administracao'],
-    positivePatterns: [/via\b|subcut[aâ]nea|intramuscular|intravenosa|oral|absor[cç][aã]o|velocidade/i],
+    blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /absor[cç][aã]o|biodisponibilidade|velocidade.*absor/i,
+    ],
+    minPositive: 1,
   },
   'via-reference-board': {
     homeSubtopicFragments: ['vias de administracao'],
-    positivePatterns: [/via\b|subcut[aâ]nea|intramuscular|intravenosa|oral/i],
+    blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /via\b|subcut[aâ]nea|intramuscular|intravenosa|oral/i,
+    ],
+    minPositive: 1,
   },
   'via-vf-juggle-tap': {
     homeSubtopicFragments: ['vias de administracao'],
-    positivePatterns: [/via\b|administra[cç][aã]o/i],
+    blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
+    positivePatterns: [/\b(i|ii|iii)\s*[-–—]/i, /via\b|absor[cç][aã]o/i],
+    minPositive: 1,
   },
   'route-trap': {
     homeSubtopicFragments: ['vias de administracao'],
+    blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
     positivePatterns: [/via\b|subcut[aâ]nea|intramuscular|intravenosa/i],
+    minPositive: 1,
   },
 
   // ---- SAE ----
@@ -570,6 +652,30 @@ export function bespokeMoldHasContentAffinity(
 
   if (SONDA_BESPOKE_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch === 'sonda_generico') {
+      return false;
+    }
+  }
+
+  if (FARMACO_VF_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'farmaco_pk_pd_vf') {
+      return false;
+    }
+  }
+
+  if (PNI_VF_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_vf_intervalos') {
+      return false;
+    }
+  }
+
+  if (VIA_VF_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'via_vf_absorcao') {
+      return false;
+    }
+  }
+
+  if (CALC_DOSE_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'calc_dose_equivalencia') {
       return false;
     }
   }

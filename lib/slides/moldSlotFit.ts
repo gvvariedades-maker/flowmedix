@@ -7,6 +7,7 @@ import {
   isBespokeLayoutVariant,
   type MoldAffinitySlide,
 } from '@/lib/slides/moldAffinity';
+import { conceptItemsFromSlide, countAdmeJourneyRailPkSlots } from '@/lib/slides/admeJourneyRailUtils';
 
 const ADOLESCENT_CURTAIN_SLOTS: AdolescentCurtain[] = [
   'escuta',
@@ -76,6 +77,11 @@ export function countMoldInteractiveSlots(variant: string, slide: MoldAffinitySl
       return Array.isArray(slide.steps) ? slide.steps.length : 0;
     case 'adolescent-consent-gate':
       return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
+    case 'adme-journey-rail': {
+      const concepts = conceptItemsFromSlide(slide);
+      const pkSlots = countAdmeJourneyRailPkSlots(concepts);
+      return pkSlots >= 2 ? pkSlots : 0;
+    }
     default:
       return countGenericInteractiveSlots(slide);
   }

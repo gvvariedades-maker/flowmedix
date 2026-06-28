@@ -4,17 +4,25 @@
  *
  *   npm run audit:l3-mold-gap
  *   npm run audit:l3-mold-gap -- --lote=saude-adolescente-completo
+ *   npm run audit:l3-mold-gap -- --from-supabase
+ *   npm run audit:l3-mold-gap -- --from-supabase --subtopico=Adolescente
  */
+import { loadEnvConfig } from '@next/env';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-import { parseArg } from '@/lib/catalogMigration/cliArgs';
+loadEnvConfig(process.cwd());
+
+import { hasFlag, parseArg } from '@/lib/catalogMigration/cliArgs';
 import { buildL3MoldGapReport, printL3MoldGapSummary } from '@/lib/slides/l3MoldGapAudit';
 
-function main() {
+async function main() {
   const extraLote = parseArg('lote');
-  const report = buildL3MoldGapReport({
+  const subtopico = parseArg('subtopico');
+  const report = await buildL3MoldGapReport({
     extraLotes: extraLote ? [extraLote] : undefined,
+    fromSupabase: hasFlag('from-supabase'),
+    subtopicoFilter: subtopico,
   });
 
   printL3MoldGapSummary(report);
@@ -31,8 +39,9 @@ function main() {
   console.log(`[audit:l3-mold-gap] resumo=${outMd}`);
 }
 
-function renderMarkdownSummary(report: ReturnType<typeof buildL3MoldGapReport>): string {
+function renderMarkdownSummary(report: Awaited<ReturnType<typeof buildL3MoldGapReport>>): string {
   const s = report.summary;
+  const sourceLabel = s.source === 'supabase' ? 'Supabase (vivo)' : 'lotes locais';
   const lines: string[] = [
     '# Auditoria L3 — gap de moldes',
     '',
@@ -42,8 +51,9 @@ function renderMarkdownSummary(report: ReturnType<typeof buildL3MoldGapReport>):
     '',
     `| Métrica | Valor |`,
     `|---------|-------|`,
+    `| Fonte slugs | ${sourceLabel} |`,
     `| Clusters mapeados | ${s.cluster_rows} |`,
-    `| Slugs auditados (local) | ${s.slug_rows} |`,
+    `| Slugs auditados | ${s.slug_rows} |`,
     `| ok_existente | ${s.by_decision.ok_existente} |`,
     `| ok_generico | ${s.by_decision.ok_generico} |`,
     `| ramo_novo | ${s.by_decision.ramo_novo} |`,
@@ -52,6 +62,18 @@ function renderMarkdownSummary(report: ReturnType<typeof buildL3MoldGapReport>):
     `| Slugs com mismatch L3 | ${s.slug_mismatch_total} |`,
     '',
   ];
+
+  if (s.slug_mismatch_by_subtopico && Object.keys(s.slug_mismatch_by_subtopico).length > 0) {
+    lines.push('## Mismatch por subtópico', '');
+    lines.push('| Subtópico | Slugs com mismatch |');
+    lines.push('|-----------|-------------------|');
+    for (const [sub, count] of Object.entries(s.slug_mismatch_by_subtopico).sort(
+      (a, b) => b[1] - a[1],
+    )) {
+      lines.push(`| ${sub} | ${count} |`);
+    }
+    lines.push('');
+  }
 
   if (report.inedito_candidates.length > 0) {
     lines.push('## Candidatos a molde inédito (pacote de 4 variantes)', '');
@@ -80,11 +102,14 @@ function renderMarkdownSummary(report: ReturnType<typeof buildL3MoldGapReport>):
       byBranch[b] = (byBranch[b] ?? 0) + 1;
     }
     for (const [branch, count] of Object.entries(byBranch).sort((a, b) => b[1] - a[1])) {
-      lines.push(`- \`${branch}\`: ${count} slug(s)`);
+      lines.push(`- \`${branch}\`: ${count}`);
     }
   }
 
   return lines.join('\n');
 }
 
-main();
+main().catch((err) => {
+  console.error('[audit:l3-mold-gap]', err);
+  process.exitCode = 1;
+});

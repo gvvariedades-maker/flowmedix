@@ -144,7 +144,7 @@ export const NeuroSlideHub = ({
         return <AbsorptionSpeedRailConceptMap concepts={getConcepts()} theme={theme} />;
       }
       if (layoutVariant === 'adme-journey-rail') {
-        return <AdmeJourneyRailConceptMap concepts={getConcepts()} theme={theme} />;
+        return <AdmeJourneyRailConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />;
       }
       if (layoutVariant === 'dose-equivalence-rail') {
         return <DoseEquivalenceRailConceptMap concepts={getConcepts()} theme={theme} />;

@@ -51,6 +51,9 @@ export type L3MoldGapSummary = {
   inedito_packages_proposed: number;
   ramo_novo_count: number;
   slug_mismatch_total: number;
+  /** Contagem de slugs com mismatch por subtópico (modo Supabase ou local). */
+  slug_mismatch_by_subtopico?: Record<string, number>;
+  source?: 'local' | 'supabase' | 'mixed';
 };
 
 export type L3MoldGapAuditReport = {
@@ -247,9 +250,60 @@ function listCompletoLotes(): string[] {
 export type BuildL3MoldGapReportOptions = {
   registryPath?: string;
   extraLotes?: string[];
+  fromSupabase?: boolean;
+  subtopicoFilter?: string;
 };
 
-export function buildL3MoldGapReport(options: BuildL3MoldGapReportOptions = {}): L3MoldGapAuditReport {
+const SUPABASE_PAGE_SIZE = 200;
+
+export async function scanSupabaseForL3Audit(
+  subtopicoFilter?: string,
+): Promise<L3MoldGapSlugRow[]> {
+  const { createServerSupabase } = await import('@/lib/supabase/server');
+  const supabase = await createServerSupabase();
+  const filter = subtopicoFilter?.trim().toLowerCase();
+  const rows: L3MoldGapSlugRow[] = [];
+  let offset = 0;
+
+  while (true) {
+    const { data, error } = await supabase
+      .from('modulos_estudo')
+      .select('modulo_slug, titulo_aula, conteudo_json')
+      .order('modulo_slug', { ascending: true })
+      .range(offset, offset + SUPABASE_PAGE_SIZE - 1);
+
+    if (error) throw new Error(`Falha ao ler modulos_estudo: ${error.message}`);
+    const batch = data ?? [];
+    if (batch.length === 0) break;
+
+    for (const row of batch) {
+      const payload = (row.conteudo_json ?? {}) as QuestaoPayload;
+      const subtopico = payload.meta?.subtopico ?? row.titulo_aula ?? '';
+      if (filter && !subtopico.toLowerCase().includes(filter)) continue;
+
+      rows.push(auditQuestaoPayload(row.modulo_slug, 'supabase', payload));
+    }
+
+    offset += SUPABASE_PAGE_SIZE;
+    if (batch.length < SUPABASE_PAGE_SIZE) break;
+  }
+
+  return rows;
+}
+
+function mismatchBySubtopico(slugs: L3MoldGapSlugRow[]): Record<string, number> {
+  const out: Record<string, number> = {};
+  for (const row of slugs) {
+    if (row.mold_mismatch_count <= 0) continue;
+    const key = row.subtopico ?? '—';
+    out[key] = (out[key] ?? 0) + 1;
+  }
+  return out;
+}
+
+export async function buildL3MoldGapReport(
+  options: BuildL3MoldGapReportOptions = {},
+): Promise<L3MoldGapAuditReport> {
   const root = process.cwd();
   const registryPath =
     options.registryPath ?? resolve(root, 'data/catalog-migration/handcraft-registry.json');
@@ -301,8 +355,12 @@ export function buildL3MoldGapReport(options: BuildL3MoldGapReportOptions = {}):
     'perioperatoria-completo',
   ]);
 
-  for (const lote of lotesToScan) {
-    slugs.push(...scanLoteQuestions(lote));
+  if (options.fromSupabase) {
+    slugs.push(...(await scanSupabaseForL3Audit(options.subtopicoFilter)));
+  } else {
+    for (const lote of lotesToScan) {
+      slugs.push(...scanLoteQuestions(lote));
+    }
   }
 
   const by_decision: Record<L3MoldGapDecision, number> = {
@@ -338,6 +396,8 @@ export function buildL3MoldGapReport(options: BuildL3MoldGapReportOptions = {}):
       inedito_packages_proposed: uniqueIneditoPackages,
       ramo_novo_count: by_decision.ramo_novo,
       slug_mismatch_total: slugs.reduce((n, s) => n + s.mold_mismatch_count, 0),
+      slug_mismatch_by_subtopico: mismatchBySubtopico(slugs),
+      source: options.fromSupabase ? 'supabase' : 'local',
     },
     inedito_candidates,
     clusters,

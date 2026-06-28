@@ -1,4 +1,7 @@
-import { resolveSlidePresentation } from '@/components/slides/core/slidePresentation';
+import {
+  enrichPresentationContext,
+  resolveSlidePresentation,
+} from '@/components/slides/core/slidePresentation';
 
 describe('slidePresentation — molde por subtópico', () => {
   it('Sondas: molde canônico vence família vf (concept_map procedure-protocol)', () => {
@@ -731,11 +734,38 @@ describe('slidePresentation — molde por subtópico', () => {
       {
         questionSlug: 'funcamp-farmaco-1',
         familyId: 'vf',
+        pedagogicalBranch: 'farmaco_pk_pd_vf',
       },
     );
     expect(result.layoutVariant).toBe('farmaco-trap');
     expect(result.bulletStyle).toBe('x_icon');
     expect(result.dangerRevealMode).toBe('tap');
+  });
+
+  it('Farmacodinâmica clínico (omeprazol): concept_map não usa adme-journey-rail', () => {
+    const instruction =
+      'Em um paciente hospitalizado por úlcera péptica grave, que recebe Omeprazol na forma endovenosa, avalie as condutas farmacológicas e marque a opção adequada.';
+    const slide = {
+      type: 'concept_map' as const,
+      meta: { subtopico: 'Farmacodinâmica e Farmacocinética' },
+      items: [
+        { label: 'Cenário', detail: 'Úlcera grave — IBP endovenoso', icon: 'Hospital' },
+        { label: 'Farmacodinâmica', detail: 'Inibe bomba de prótons → reduz HCl', icon: 'Zap' },
+        { label: 'Monitorização', detail: 'pH gástrico guia infusão contínua', icon: 'Activity' },
+        { label: 'Gabarito', detail: 'Letra B — titular infusão com monitorização de pH', icon: 'CheckCircle' },
+      ],
+    };
+    const ctx = enrichPresentationContext(
+      { questionSlug: 'idecan-omeprazol-1', familyId: 'protocolo' },
+      slide.meta,
+      instruction,
+      [slide],
+      { subtopico: 'Farmacodinâmica e Farmacocinética' },
+    );
+    expect(ctx.pedagogicalBranch).toBe('farmaco_clinico_protocolo');
+    const result = resolveSlidePresentation(slide, ctx);
+    expect(result.layoutVariant).not.toBe('adme-journey-rail');
+    expect(['morphological', 'bridge', 'grid', 'molecular']).toContain(result.layoutVariant);
   });
 
   it('Cálculo de Medicamentos: concept_map dose-equivalence-rail no molde', () => {

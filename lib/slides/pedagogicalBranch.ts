@@ -31,7 +31,23 @@ export type PedagogicalBranchId =
   // Sondas
   | 'sonda_instalacao_protocolo'
   | 'sonda_medicao_nex'
-  | 'sonda_generico';
+  | 'sonda_generico'
+  // Farmacodinâmica e Farmacocinética
+  | 'farmaco_pk_pd_vf'
+  | 'farmaco_clinico_protocolo'
+  | 'farmaco_generico'
+  // Imunização
+  | 'imunizacao_vf_intervalos'
+  | 'imunizacao_calendario'
+  | 'imunizacao_generico'
+  // Vias de Administração
+  | 'via_vf_absorcao'
+  | 'via_tecnica_admin'
+  | 'via_generico'
+  // Cálculo de Medicamentos
+  | 'calc_dose_equivalencia'
+  | 'calc_conceito'
+  | 'calc_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -106,6 +122,96 @@ const SONDA_GENERIC: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Pacote VF PK/PD — trilho adme-journey-rail (âncora FUNCAMP). */
+const FARMACO_VF_MOLD: SubtopicDesign = {
+  template: 'purple',
+  conceptMap: 'adme-journey-rail',
+  goldenRule: 'pk-pd-reference-board',
+  logicFlow: 'farmaco-vf-juggle-tap',
+  dangerZone: 'farmaco-trap',
+};
+
+/** MCQ clínico — droga, via, infusão (omeprazol, antibiótico EV…). */
+const FARMACO_CLINICO_MOLD: SubtopicDesign = {
+  template: 'purple',
+  conceptMap: 'morphological',
+  goldenRule: 'banner',
+  logicFlow: 'cards',
+  dangerZone: 'compare',
+};
+
+const FARMACO_GENERIC_MOLD: SubtopicDesign = {
+  template: 'purple',
+  conceptMap: 'morphological',
+  goldenRule: 'center',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+const IMUNIZACAO_VF_MOLD: SubtopicDesign = {
+  template: 'lime',
+  conceptMap: 'pni-rules-deck',
+  goldenRule: 'pni-interval-matrix',
+  logicFlow: 'pni-vf-juggle-tap',
+  dangerZone: 'pni-trap-chips',
+};
+
+const IMUNIZACAO_CALENDARIO_MOLD: SubtopicDesign = {
+  template: 'lime',
+  conceptMap: 'morphological',
+  goldenRule: 'pni-interval-matrix',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+const IMUNIZACAO_GENERIC_MOLD: SubtopicDesign = {
+  template: 'lime',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+const VIA_VF_MOLD: SubtopicDesign = {
+  template: 'emerald',
+  conceptMap: 'absorption-speed-rail',
+  goldenRule: 'via-reference-board',
+  logicFlow: 'via-vf-juggle-tap',
+  dangerZone: 'route-trap',
+};
+
+const VIA_TECNICA_MOLD: SubtopicDesign = {
+  template: 'emerald',
+  conceptMap: 'morphological',
+  goldenRule: 'banner',
+  logicFlow: 'cards',
+  dangerZone: 'compare',
+};
+
+const VIA_GENERIC_MOLD: SubtopicDesign = {
+  template: 'emerald',
+  conceptMap: 'morphological',
+  goldenRule: 'center',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+const CALC_DOSE_MOLD: SubtopicDesign = {
+  template: 'blue',
+  conceptMap: 'dose-equivalence-rail',
+  goldenRule: 'soft-lens-board',
+  logicFlow: 'dose-calc-tap',
+  dangerZone: 'dose-trap',
+};
+
+const CALC_GENERIC_MOLD: SubtopicDesign = {
+  template: 'blue',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'horizontal',
+  dangerZone: 'compare',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -166,6 +272,61 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     sonda_instalacao_protocolo: SONDA_BESPOKE,
     sonda_medicao_nex: SONDA_BESPOKE,
     sonda_generico: SONDA_GENERIC,
+  },
+  'farmacodinamica e farmacocinetica': {
+    farmaco_pk_pd_vf: FARMACO_VF_MOLD,
+    farmaco_clinico_protocolo: FARMACO_CLINICO_MOLD,
+    farmaco_generico: FARMACO_GENERIC_MOLD,
+  },
+  farmacodinamica: {
+    farmaco_pk_pd_vf: FARMACO_VF_MOLD,
+    farmaco_clinico_protocolo: FARMACO_CLINICO_MOLD,
+    farmaco_generico: FARMACO_GENERIC_MOLD,
+  },
+  farmacocinetica: {
+    farmaco_pk_pd_vf: FARMACO_VF_MOLD,
+    farmaco_clinico_protocolo: FARMACO_CLINICO_MOLD,
+    farmaco_generico: FARMACO_GENERIC_MOLD,
+  },
+  farmacologia: {
+    farmaco_pk_pd_vf: FARMACO_VF_MOLD,
+    farmaco_clinico_protocolo: FARMACO_CLINICO_MOLD,
+    farmaco_generico: FARMACO_GENERIC_MOLD,
+  },
+  imunizacao: {
+    imunizacao_vf_intervalos: IMUNIZACAO_VF_MOLD,
+    imunizacao_calendario: IMUNIZACAO_CALENDARIO_MOLD,
+    imunizacao_generico: IMUNIZACAO_GENERIC_MOLD,
+  },
+  vacinacao: {
+    imunizacao_vf_intervalos: IMUNIZACAO_VF_MOLD,
+    imunizacao_calendario: IMUNIZACAO_CALENDARIO_MOLD,
+    imunizacao_generico: IMUNIZACAO_GENERIC_MOLD,
+  },
+  'vias de administracao': {
+    via_vf_absorcao: VIA_VF_MOLD,
+    via_tecnica_admin: VIA_TECNICA_MOLD,
+    via_generico: VIA_GENERIC_MOLD,
+  },
+  'calculo de administracao de medicamentos e infusoes': {
+    calc_dose_equivalencia: CALC_DOSE_MOLD,
+    calc_conceito: CALC_GENERIC_MOLD,
+    calc_generico: CALC_GENERIC_MOLD,
+  },
+  'calculo de administracao de medicamentos': {
+    calc_dose_equivalencia: CALC_DOSE_MOLD,
+    calc_conceito: CALC_GENERIC_MOLD,
+    calc_generico: CALC_GENERIC_MOLD,
+  },
+  'calculos de enfermagem': {
+    calc_dose_equivalencia: CALC_DOSE_MOLD,
+    calc_conceito: CALC_GENERIC_MOLD,
+    calc_generico: CALC_GENERIC_MOLD,
+  },
+  dosagens: {
+    calc_dose_equivalencia: CALC_DOSE_MOLD,
+    calc_conceito: CALC_GENERIC_MOLD,
+    calc_generico: CALC_GENERIC_MOLD,
   },
 };
 
@@ -265,6 +426,43 @@ const SONDA_INSTALACAO: RegExp[] = [
   /instala[cç][aã]o|fixa[cç][aã]o|nasog[aá]strica|nasoenteral|bal[aã]o|gastrostomia|jejunostomia/i,
 ];
 
+const FARMACO_VF: RegExp[] = [
+  /\b(i|ii|iii)\s*[-–—]/i,
+  /afirmativa|verdadeira.*falsa|julgue os itens|correto o que se afirma/i,
+  /meia[\s-]?vida|t½|t1\/2|\badme\b/i,
+  /farmacocin[eé]tica.*farmacodin[aâ]mica|corpo.*f[aá]rmaco/i,
+];
+
+const FARMACO_CLINICO: RegExp[] = [
+  /hospitaliz|úlcera|infus[aã]o contínua|monitoriz|ph g[aá]stric|titulad/i,
+  /omeprazol|antibi[oó]tic|endovenos|fentanil|meropenem|insulina|anest[eé]sico local/i,
+  /administra[cç][aã]o correta|conduta.*enfermagem.*medicamento/i,
+];
+
+const IMUNIZACAO_VF: RegExp[] = [
+  /\b(i|ii|iii)\s*[-–—]/i,
+  /afirmativa|verdadeira.*falsa|julgue os itens/i,
+  /intervalo|refor[cç]o|dose.*vacina/i,
+];
+
+const IMUNIZACAO_CALENDARIO: RegExp[] = [
+  /calend[aá]rio|pni\b|esquema vacinal|idade.*dose|refor[cç]o|bcg|tr[ií]plice|hexa|penta/i,
+];
+
+const VIA_VF: RegExp[] = [
+  /\b(i|ii|iii)\s*[-–—]/i,
+  /absor[cç][aã]o|biodisponibilidade|via.*intramuscular|via.*subcut[aâ]nea/i,
+];
+
+const VIA_TECNICA: RegExp[] = [
+  /t[eé]cnica|administra[cç][aã]o|ângulo|m[uú]sculo|deltoide|ventrogluteo|pun[cç][aã]o/i,
+];
+
+const CALC_DOSE: RegExp[] = [
+  /calcul|gota|ml\b|mg\b|equival[eê]ncia|dilui[cç][aã]o|regra de tr[eê]s|gts\/min|ml\/h/i,
+  /quantos?\s+ml|quantas?\s+gotas|prescri[cç][aã]o.*dose/i,
+];
+
 function branchMapKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
   const matches = Object.keys(BRANCH_DESIGN_MAP).filter(
@@ -272,6 +470,12 @@ function branchMapKey(subtopico: string): string | undefined {
   );
   if (matches.length === 0) return undefined;
   return matches.sort((a, b) => b.length - a.length)[0];
+}
+
+/** true quando o subtópico tem ramos L2.5 em BRANCH_DESIGN_MAP (elegível a backfill). */
+export function hasSubtopicBranchDesign(subtopico: string | undefined): boolean {
+  if (!subtopico?.trim()) return false;
+  return branchMapKey(subtopico) !== undefined;
 }
 
 function inferAdolescentBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
@@ -338,6 +542,58 @@ function inferSondaBranch(corpus: string): PedagogicalBranchId {
   return 'sonda_generico';
 }
 
+function inferFarmacoBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  const isVf =
+    familyId === 'vf' ||
+    (countPatternMatches(corpus, FARMACO_VF) >= 2 &&
+      /\b(i|ii|iii)\s*[-–—]/i.test(corpus));
+  if (isVf) return 'farmaco_pk_pd_vf';
+
+  const isClinical =
+    familyId === 'protocolo' ||
+    (familyId !== 'vf' && countPatternMatches(corpus, FARMACO_CLINICO) > 0);
+  if (isClinical) return 'farmaco_clinico_protocolo';
+
+  return 'farmaco_generico';
+}
+
+function inferImunizacaoBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  const isVf =
+    familyId === 'vf' ||
+    familyId === 'certo_errado' ||
+    (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, IMUNIZACAO_VF) >= 1);
+  if (isVf) return 'imunizacao_vf_intervalos';
+
+  if (countPatternMatches(corpus, IMUNIZACAO_CALENDARIO) > 0) {
+    return 'imunizacao_calendario';
+  }
+
+  return 'imunizacao_generico';
+}
+
+function inferViaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  const isVf =
+    familyId === 'vf' ||
+    (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, VIA_VF) >= 1);
+  if (isVf) return 'via_vf_absorcao';
+
+  if (countPatternMatches(corpus, VIA_TECNICA) > 0) {
+    return 'via_tecnica_admin';
+  }
+
+  return 'via_generico';
+}
+
+function inferCalcBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  if (familyId === 'calc' || countPatternMatches(corpus, CALC_DOSE) > 0) {
+    return 'calc_dose_equivalencia';
+  }
+  if (familyId === 'conceito' || /conceito|defini[cç][aã]o/i.test(corpus)) {
+    return 'calc_conceito';
+  }
+  return 'calc_generico';
+}
+
 function inferBranchForBucket(
   mapKey: string,
   corpus: string,
@@ -354,6 +610,26 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('sonda')) {
     return inferSondaBranch(corpus);
+  }
+  if (
+    mapKey.includes('farmacodinamica') ||
+    mapKey.includes('farmacocinetica') ||
+    mapKey.includes('farmacologia')
+  ) {
+    return inferFarmacoBranch(corpus, familyId);
+  }
+  if (mapKey.includes('imunizacao') || mapKey.includes('vacinacao')) {
+    return inferImunizacaoBranch(corpus, familyId);
+  }
+  if (mapKey.includes('vias de administracao')) {
+    return inferViaBranch(corpus, familyId);
+  }
+  if (
+    mapKey.includes('calculo de administracao') ||
+    mapKey.includes('calculos de enfermagem') ||
+    mapKey === 'dosagens'
+  ) {
+    return inferCalcBranch(corpus, familyId);
   }
   return undefined;
 }

@@ -272,6 +272,60 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Instalação — pacote sondas.',
     },
   ],
+  imunizacao: [
+    {
+      pattern: /\b(i|ii|iii)\s*[-–—]|intervalo|refor[cç]o/i,
+      branch_id: 'imunizacao_vf_intervalos',
+      branch_implemented: true,
+      ideal_mold_package: 'pni-rules-deck · pni-interval-matrix · pni-vf-juggle-tap · pni-trap-chips (bespoke)',
+      base_decision: 'ok_existente',
+      rationale: 'VF de intervalos PNI — pacote pni-*.',
+    },
+    {
+      pattern: /calend[aá]rio|esquema|idade.*dose|bcg|penta/i,
+      branch_id: 'imunizacao_calendario',
+      branch_implemented: true,
+      ideal_mold_package: 'morphological · pni-interval-matrix · vertical · compare (genérico)',
+      base_decision: 'ok_generico',
+      rationale: 'Calendário/esquema — tabela de intervalos.',
+    },
+  ],
+  'vias de administracao': [
+    {
+      pattern: /\b(i|ii|iii)\s*[-–—]|absor[cç][aã]o|biodisponibilidade/i,
+      branch_id: 'via_vf_absorcao',
+      branch_implemented: true,
+      ideal_mold_package: 'absorption-speed-rail · via-reference-board · via-vf-juggle-tap · route-trap (bespoke)',
+      base_decision: 'ok_existente',
+      rationale: 'VF absorção/velocidade — trilho vias.',
+    },
+    {
+      pattern: /t[eé]cnica|ângulo|m[uú]sculo|pun[cç][aã]o|administra[cç][aã]o/i,
+      branch_id: 'via_tecnica_admin',
+      branch_implemented: true,
+      ideal_mold_package: 'morphological · banner · cards · compare (genérico)',
+      base_decision: 'ok_generico',
+      rationale: 'Técnica de aplicação — genérico.',
+    },
+  ],
+  calculo: [
+    {
+      pattern: /calcul|gota|ml\b|mg\b|equival[eê]ncia|regra de tr[eê]s/i,
+      branch_id: 'calc_dose_equivalencia',
+      branch_implemented: true,
+      ideal_mold_package: 'dose-equivalence-rail · soft-lens-board · dose-calc-tap · dose-trap (bespoke)',
+      base_decision: 'ok_existente',
+      rationale: 'Cálculo numérico — trilho dose.',
+    },
+    {
+      pattern: /conceito|defini[cç][aã]o/i,
+      branch_id: 'calc_conceito',
+      branch_implemented: true,
+      ideal_mold_package: 'morphological · reference_table · horizontal · compare (genérico)',
+      base_decision: 'ok_generico',
+      rationale: 'Conceito sem conta — genérico.',
+    },
+  ],
 };
 
 function subtopicKey(subtopico: string): string | undefined {
@@ -282,6 +336,10 @@ function subtopicKey(subtopico: string): string | undefined {
   if (key.includes('saude mental') || key.includes('psiquiatria')) return 'saude mental';
   if (key.includes('perioperator') || key.includes('srpa')) return 'perioperatoria';
   if (key.includes('sonda')) return 'sondas';
+  if (key.includes('imunizacao') || key.includes('vacinacao')) return 'imunizacao';
+  if (key.includes('vias de administracao')) return 'vias de administracao';
+  if (key.includes('calculo') || key.includes('dosagens')) return 'calculo';
+  if (key.includes('farmacodinamica') || key.includes('farmacocinetica')) return 'farmacologia';
   return undefined;
 }
 
