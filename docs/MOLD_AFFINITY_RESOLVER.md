@@ -38,15 +38,29 @@ Subtópicos canônicos (41) são **buckets amplos**. Um molde L3 fixo por subtó
 }
 ```
 
-Se omitido, o player infere pelo enunciado + slides. Valores adolescente:
+Se omitido, o player infere pelo enunciado + slides.
+
+**Saúde do Adolescente**
 
 | Ramo | Molde L3 |
 |------|----------|
 | `adolescente_etica_sigilo` | `adolescent-*` |
-| `adolescente_antropometria` | genérico (`morphological`, `reference_table`, …) |
+| `adolescente_antropometria` | genérico |
 | `adolescente_desenvolvimento` | genérico |
 | `adolescente_saude_mental` | genérico |
 | `adolescente_generico` | genérico |
+
+**CME** — `cme_preparo_limpeza` · `cme_autoclave_metodos` (tabela) · `cme_processamento_conceito` · `cme_vf_ce` · `cme_generico`
+
+**Saúde Mental** — `mental_raps_legis` (legis/tabela) · `mental_crise_caps` (`sae-decision-tap` + `norm-reveal`) · `mental_dependencia_tabagismo` · `mental_depressao` · `mental_aps_acolhimento` · `mental_generico`
+
+**Sondas** — `sonda_instalacao_protocolo` · `sonda_medicao_nex` (bespoke) · `sonda_generico`
+
+Preencher em lote handcraft:
+
+```bash
+npm run catalog:patch-pedagogical-branch -- --lote=saude-adolescente-completo
+```
 
 ## Regras de afinidade (`MOLD_AFFINITY_RULES`)
 
@@ -56,7 +70,7 @@ Se omitido, o player infere pelo enunciado + slides. Valores adolescente:
 | `blockFamilies` | Famílias que nunca usam o molde |
 | `blockPatterns` | Rejeita se o corpus bater (Z-score, puberdade, …) |
 | `positivePatterns` | **Obrigatório** para moldes `adolescent-*` |
-| `pedagogicalBranch` (ctx) | Se ≠ `adolescente_etica_sigilo`, rejeita moldes adolescente |
+| `pedagogicalBranch` (ctx) | Se ≠ ramo do molde, rejeita (adolescente, mental SAE, sondas genérico) |
 
 **Removido:** `adolescentEthicsMold` (auto-apply no subtópico) — causava 0/0 pilares em puberdade.
 

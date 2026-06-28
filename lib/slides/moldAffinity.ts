@@ -108,6 +108,15 @@ const ADOLESCENT_VARIANTS = new Set([
   'adolescent-consent-gate',
 ]);
 
+const MENTAL_SAE_VARIANTS = new Set(['sae-decision-tap', 'norm-reveal']);
+
+const SONDA_BESPOKE_VARIANTS = new Set([
+  'procedure-protocol',
+  'sonda-measurement-board',
+  'sonda-decision-tap',
+  'trap-reveal',
+]);
+
 function subtopicoMatchesFragments(subtopico: string | undefined, fragments: string[]): boolean {
   if (!subtopico?.trim() || fragments.length === 0) return false;
   const key = normalizeKey(subtopico);
@@ -324,12 +333,30 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     positivePatterns: [/sae|processo de enfermagem|diagn[oó]stico|nanda/i],
   },
   'sae-decision-tap': {
-    homeSubtopicFragments: ['processo de enfermagem', 'sae'],
-    positivePatterns: [/sae|processo de enfermagem|diagn[oó]stico/i],
+    homeSubtopicFragments: [
+      'processo de enfermagem',
+      'sae',
+      'saude mental',
+      'saúde mental',
+      'psiquiatria',
+    ],
+    positivePatterns: [
+      /sae|processo de enfermagem|diagn[oó]stico/i,
+      /caps|crise|agita[cç][aã]o|suic[ií]dio|psicose|transtorno mental/i,
+    ],
   },
   'norm-reveal': {
-    homeSubtopicFragments: ['processo de enfermagem', 'sae'],
-    positivePatterns: [/sae|processo de enfermagem|diagn[oó]stico|nanda/i],
+    homeSubtopicFragments: [
+      'processo de enfermagem',
+      'sae',
+      'saude mental',
+      'saúde mental',
+      'psiquiatria',
+    ],
+    positivePatterns: [
+      /sae|processo de enfermagem|diagn[oó]stico|nanda/i,
+      /caps|crise|agita[cç][aã]o|suic[ií]dio|norma|conduta/i,
+    ],
   },
 
   // ---- Oxigenoterapia ----
@@ -484,6 +511,8 @@ export function bespokeMoldHasContentAffinity(
     return false;
   }
 
+  const onHome = rule ? isOnHomeSubtopic(rule, ctx.subtopico) : false;
+
   if (ADOLESCENT_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'adolescente_etica_sigilo') {
       return false;
@@ -493,7 +522,39 @@ export function bespokeMoldHasContentAffinity(
     return hits >= (rule.minPositive ?? 1);
   }
 
-  const onHome = rule ? isOnHomeSubtopic(rule, ctx.subtopico) : false;
+  if (MENTAL_SAE_VARIANTS.has(variant)) {
+    const isMentalSubtopic = subtopicoMatchesFragments(ctx.subtopico, [
+      'saude mental',
+      'saúde mental',
+      'psiquiatria',
+    ]);
+    const isSaeSubtopic = subtopicoMatchesFragments(ctx.subtopico, [
+      'processo de enfermagem',
+      'sae',
+    ]);
+
+    if (isSaeSubtopic && !isMentalSubtopic) {
+      if (onHome) return true;
+      if (rule?.positivePatterns?.length) {
+        const hits = countPatternMatches(corpus, rule.positivePatterns);
+        return hits >= (rule.minPositive ?? 1);
+      }
+      return true;
+    }
+
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'mental_crise_caps') {
+      return false;
+    }
+    if (!rule?.positivePatterns?.length) return false;
+    const hits = countPatternMatches(corpus, rule.positivePatterns);
+    return hits >= (rule.minPositive ?? 1);
+  }
+
+  if (SONDA_BESPOKE_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch === 'sonda_generico') {
+      return false;
+    }
+  }
 
   if (rule?.positivePatterns?.length) {
     const hits = countPatternMatches(corpus, rule.positivePatterns);

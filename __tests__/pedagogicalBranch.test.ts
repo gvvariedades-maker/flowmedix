@@ -41,3 +41,55 @@ describe('pedagogicalBranch', () => {
     );
   });
 });
+
+describe('pedagogicalBranch — CME', () => {
+  const subtopico = 'Enfermagem em Central de Material e Esterilização (CME)';
+
+  it('infere cme_autoclave_metodos para autoclave', () => {
+    const instruction = 'Parâmetros de autoclave: vapor saturado, temperatura e pressão do ciclo de esterilização.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('cme_autoclave_metodos');
+    expect(getLayoutVariantForBranch(subtopico, 'golden_rule', 'cme_autoclave_metodos')).toBe(
+      'reference_table',
+    );
+  });
+
+  it('infere cme_preparo_limpeza para limpeza', () => {
+    const instruction = 'Preparo e limpeza de instrumentais com pré-secagem antes da esterilização.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('cme_preparo_limpeza');
+  });
+});
+
+describe('pedagogicalBranch — Saúde Mental', () => {
+  const subtopico = 'Saúde Mental';
+
+  it('infere mental_raps_legis para RAPS', () => {
+    const instruction = 'Componentes da RAPS e Reforma Psiquiátrica conforme Portaria 3.088/2011.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('mental_raps_legis');
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'mental_raps_legis')).toBe('vertical');
+  });
+
+  it('infere mental_crise_caps e usa sae-decision-tap', () => {
+    const instruction = 'Manejo da crise e agitação psicomotora no CAPS com contenção quando indicada.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('mental_crise_caps');
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'mental_crise_caps')).toBe(
+      'sae-decision-tap',
+    );
+  });
+});
+
+describe('pedagogicalBranch — Sondas', () => {
+  const subtopico = 'Instalação e Manejo de Sondas';
+
+  it('infere sonda_instalacao_protocolo para instalação', () => {
+    const instruction = 'Instalação de sonda nasogástrica com fixação adequada.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sonda_instalacao_protocolo');
+    expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'sonda_instalacao_protocolo')).toBe(
+      'procedure-protocol',
+    );
+  });
+
+  it('infere sonda_medicao_nex para medição NEX', () => {
+    const instruction = 'Medição da sonda: distância nariz–orelha–xifoide (NEX).';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sonda_medicao_nex');
+  });
+});
