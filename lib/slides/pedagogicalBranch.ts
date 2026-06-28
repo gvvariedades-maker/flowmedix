@@ -550,8 +550,7 @@ function inferFarmacoBranch(corpus: string, familyId?: FamilyId): PedagogicalBra
   if (isVf) return 'farmaco_pk_pd_vf';
 
   const isClinical =
-    familyId === 'protocolo' ||
-    (familyId !== 'vf' && countPatternMatches(corpus, FARMACO_CLINICO) > 0);
+    familyId === 'protocolo' || countPatternMatches(corpus, FARMACO_CLINICO) > 0;
   if (isClinical) return 'farmaco_clinico_protocolo';
 
   return 'farmaco_generico';
