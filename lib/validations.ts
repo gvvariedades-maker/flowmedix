@@ -1064,7 +1064,23 @@ export const AdminErrorReportListQuerySchema = z.object({
   q: z.string().trim().max(300).optional(),
   from: z.string().datetime('from deve estar em formato ISO-8601').optional(),
   to: z.string().datetime('to deve estar em formato ISO-8601').optional(),
+  group_by_slug: z
+    .enum(['true', 'false', '1', '0'])
+    .optional()
+    .transform((value) => value === 'true' || value === '1'),
 });
+
+export const AdminErrorReportBulkPatchSchema = z
+  .object({
+    report_ids: z.array(z.string().uuid('ID de report inválido')).min(1).max(200),
+    status: ErrorReportStatusSchema.optional(),
+    priority: ErrorReportPrioritySchema.optional(),
+    admin_notes: z.string().trim().max(5000).optional(),
+  })
+  .refine(
+    (data) => data.status !== undefined || data.priority !== undefined || data.admin_notes !== undefined,
+    { message: 'Informe ao menos um campo para atualização (status, priority, admin_notes)' },
+  );
 
 export const AdminErrorReportPatchSchema = z
   .object({
@@ -1102,6 +1118,7 @@ export type ErrorReportPriorityInput = z.infer<typeof ErrorReportPrioritySchema>
 export type ErrorReportCreateInput = z.infer<typeof ErrorReportCreateSchema>;
 export type AdminErrorReportListQueryInput = z.infer<typeof AdminErrorReportListQuerySchema>;
 export type AdminErrorReportPatchInput = z.infer<typeof AdminErrorReportPatchSchema>;
+export type AdminErrorReportBulkPatchInput = z.infer<typeof AdminErrorReportBulkPatchSchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
 export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;

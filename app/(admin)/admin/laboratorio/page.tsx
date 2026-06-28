@@ -25,6 +25,8 @@ import {
   LaboratorioAiGeneratePanel,
 } from '@/components/admin/LaboratorioAiGeneratePanel';
 import { LaboratorioReviewQueuePanel } from '@/components/admin/LaboratorioReviewQueuePanel';
+import { LaboratorioErrorReportsPanel } from '@/components/admin/LaboratorioErrorReportsPanel';
+import type { ErrorReportRow } from '@/lib/admin/errorReports';
 import type { ReviewQueueItem } from '@/lib/admin/reviewQueue';
 import type { AiGenerateResult } from '@/lib/ai/labGenerateClient';
 import type { QuestaoCompleta } from '@/types/lesson';
@@ -96,6 +98,7 @@ export default function AvantLaboratory() {
   const [concursoAtivoId, setConcursoAtivoId] = useState('');
   const [lastAiResult, setLastAiResult] = useState<AiGenerateResult | null>(null);
   const [activeQueueItem, setActiveQueueItem] = useState<ReviewQueueItem | null>(null);
+  const [activeErrorReport, setActiveErrorReport] = useState<ErrorReportRow | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -310,8 +313,21 @@ export default function AvantLaboratory() {
     setTimeout(() => setToast(null), 4000);
   };
 
+  const handleLoadFromErrorReport = (json: string, slug: string, report: ErrorReportRow) => {
+    setActiveErrorReport(report);
+    setActiveQueueItem(null);
+    setLastAiResult(null);
+    setJsonInput(json);
+    setToast({
+      message: `🚩 Reporte: ${slug} — ${report.description.slice(0, 80)}${report.description.length > 80 ? '…' : ''}`,
+      type: 'success',
+    });
+    setTimeout(() => setToast(null), 5000);
+  };
+
   const handleAiGenerated = (json: string, result: AiGenerateResult) => {
     setActiveQueueItem(null);
+    setActiveErrorReport(null);
     setLastAiResult(result);
     if (json) {
       setJsonInput(json);
@@ -650,6 +666,10 @@ export default function AvantLaboratory() {
                 onLoadQuestao={handleLoadFromQueue}
                 disabled={saving}
               />
+              <LaboratorioErrorReportsPanel
+                onLoadQuestao={handleLoadFromErrorReport}
+                disabled={saving}
+              />
               <LaboratorioAiGeneratePanel
                 onGenerated={handleAiGenerated}
                 disabled={saving}
@@ -661,6 +681,15 @@ export default function AvantLaboratory() {
           {activeQueueItem && !isBatchMode && (
             <div className="rounded-xl border border-indigo-200 bg-indigo-50 px-3 py-2 text-[10px] text-indigo-900">
               Revisando da fila: <strong>{activeQueueItem.modulo_slug}</strong>
+            </div>
+          )}
+
+          {activeErrorReport && !isBatchMode && (
+            <div className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-[10px] text-rose-900">
+              Triagem de reporte: <strong>{activeErrorReport.modulo_slug ?? '—'}</strong>
+              {' — '}
+              {activeErrorReport.description.slice(0, 120)}
+              {activeErrorReport.description.length > 120 ? '…' : ''}
             </div>
           )}
 

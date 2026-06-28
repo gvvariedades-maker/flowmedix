@@ -85,6 +85,7 @@ import { EstudoReversoHost } from '@/components/lesson/EstudoReversoFullscreenPo
 import { supabase } from '@/lib/supabase/client';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import { ReportErrorDialog } from '@/components/report/ReportErrorDialog';
+import { buildLessonErrorReportMetadata } from '@/lib/lesson/errorReportMetadata';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
 import type { GabaritoTentativa } from '@/lib/estudar/questionPayload';
 import { 
@@ -1144,6 +1145,38 @@ export default function AvantLessonPlayer({
     activeDados.modulo_slug || '',
   ].filter(Boolean).join('-') || JSON.stringify(activeDados).substring(0, 100);
 
+  const lessonErrorReportMetadata = useMemo(
+    () =>
+      buildLessonErrorReportMetadata({
+        etapa,
+        slideAtual,
+        totalSlides,
+        questionHash,
+        selecionada,
+        gabarito,
+        meta: {
+          topico: meta.topico,
+          subtopico: meta.subtopico,
+          banca: meta.banca,
+          ano: meta.ano,
+        },
+        currentSlide,
+      }),
+    [
+      etapa,
+      slideAtual,
+      totalSlides,
+      questionHash,
+      selecionada,
+      gabarito,
+      meta.topico,
+      meta.subtopico,
+      meta.banca,
+      meta.ano,
+      currentSlide,
+    ],
+  );
+
   const questionFamilyId = useMemo(
     () =>
       resolveQuestionFamilyId({
@@ -1349,15 +1382,7 @@ export default function AvantLessonPlayer({
           <ReportErrorDialog
             contextType="lesson"
             moduloSlug={moduloSlug || activeDados.modulo_slug}
-            metadata={{
-              etapa,
-              slide_atual: slideAtual,
-              total_slides: totalSlides,
-              question_hash: questionHash,
-              alternativa_selecionada: selecionada,
-              acertou: gabarito?.acertou ?? null,
-              opcao_correta_id: gabarito?.opcaoCorretaId ?? null,
-            }}
+            metadata={lessonErrorReportMetadata}
             triggerLabel="Reportar erro"
             triggerClassName="min-h-[44px] min-w-[44px] h-11 w-11 px-0 sm:h-9 sm:min-h-0 sm:min-w-0 sm:w-auto sm:px-3 text-xs font-semibold"
           />
@@ -2054,6 +2079,17 @@ export default function AvantLessonPlayer({
                     </div>
                     <EstudoReversoSlideZoomToolbar />
                   </div>
+
+                  <ReportErrorDialog
+                    contextType="lesson"
+                    moduloSlug={moduloSlug || activeDados.modulo_slug}
+                    metadata={lessonErrorReportMetadata}
+                    defaultCategory="slides"
+                    title="Reportar problema neste slide"
+                    description="Descreva o que está errado neste NeuroSlide (texto cortado, passo que não avança, conteúdo confuso…)."
+                    triggerLabel="Reportar erro no slide"
+                    triggerClassName="flex h-11 min-h-[44px] w-11 min-w-[44px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-colors hover:bg-slate-50 sm:h-9 sm:min-h-0 sm:min-w-0 sm:w-auto sm:px-3"
+                  />
                   
                   <button
                     ref={fecharEstudoRef}

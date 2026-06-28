@@ -533,6 +533,22 @@ export default function AdminMaster() {
           </Link>
         </section>
 
+        <section className="bg-white p-6 sm:p-8 rounded-[32px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2 className="font-black italic uppercase text-lg text-slate-900">Triagem de reportes</h2>
+            <p className="text-slate-500 text-sm mt-1">
+              Feedback de alunos sobre questões e NeuroSlides — priorize slugs mais reportados no Laboratório.
+            </p>
+          </div>
+          <Link
+            href="/admin/laboratorio"
+            className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-rose-600 text-white font-black uppercase italic text-xs hover:bg-rose-700 transition-all"
+          >
+            Abrir no Laboratório
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </section>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* BLOCO 1: INSERÇÃO EM LOTE */}

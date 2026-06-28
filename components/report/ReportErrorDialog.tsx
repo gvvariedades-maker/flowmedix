@@ -36,6 +36,8 @@ type ReportErrorDialogProps = {
   triggerLabel?: string;
   title?: string;
   description?: string;
+  /** Categoria pré-selecionada ao abrir o modal (ex.: `slides` no estudo reverso). */
+  defaultCategory?: ErrorReportCategoryInput;
   onSuccess?: (reportId?: string) => void;
 };
 
@@ -56,12 +58,13 @@ export function ReportErrorDialog({
   triggerLabel = 'Reportar erro',
   title = 'Reportar problema nesta questão',
   description = 'Descreva rapidamente o que está errado para o time corrigir.',
+  defaultCategory = 'outro',
   onSuccess,
 }: ReportErrorDialogProps) {
   const { addToast } = useToast();
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [category, setCategory] = useState<ErrorReportCategoryInput>('outro');
+  const [category, setCategory] = useState<ErrorReportCategoryInput>(defaultCategory);
   const [details, setDetails] = useState('');
   const [inlineError, setInlineError] = useState<string | null>(null);
 
@@ -97,7 +100,7 @@ export function ReportErrorDialog({
   }, [open, submitting]);
 
   const resetForm = () => {
-    setCategory('outro');
+    setCategory(defaultCategory);
     setDetails('');
     setInlineError(null);
   };

@@ -80,6 +80,49 @@ describe('GET /api/admin/error-reports', () => {
     expect(body.error).toBe('Parâmetros inválidos');
   });
 
+  it('lista reports agrupados por slug quando group_by_slug=1', async () => {
+    const dbResult = {
+      data: [
+        { id: 'r1', modulo_slug: 'questao-a', created_at: '2026-06-01T10:00:00.000Z', status: 'novo', category: 'slides', priority: 'p2' },
+        { id: 'r2', modulo_slug: 'questao-a', created_at: '2026-06-02T10:00:00.000Z', status: 'novo', category: 'gabarito', priority: 'p1' },
+        { id: 'r3', modulo_slug: 'questao-b', created_at: '2026-06-03T10:00:00.000Z', status: 'novo', category: 'outro', priority: 'p2' },
+      ],
+      error: null,
+    };
+    const getBuilder = {
+      select: jest.fn().mockReturnThis(),
+      order: jest.fn().mockReturnThis(),
+      limit: jest.fn().mockResolvedValue(dbResult),
+      eq: jest.fn().mockReturnThis(),
+      gte: jest.fn().mockReturnThis(),
+      lte: jest.fn().mockReturnThis(),
+      or: jest.fn().mockReturnThis(),
+    };
+    const from = jest.fn().mockReturnValue(getBuilder);
+
+    mockRequireAdminApi.mockResolvedValue({
+      admin: { from },
+      user: { id: 'admin-id' },
+      email: 'admin@avant.com',
+    });
+
+    const request = new NextRequest(
+      'https://avant.test/api/admin/error-reports?page=1&page_size=10&group_by_slug=1&status=novo',
+      { method: 'GET' },
+    );
+
+    const response = await GET(request);
+    const body = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(body.grouped).toBe(true);
+    expect(body.groups).toHaveLength(2);
+    expect(body.groups[0].modulo_slug).toBe('questao-a');
+    expect(body.groups[0].count).toBe(2);
+    expect(getBuilder.limit).toHaveBeenCalledWith(5000);
+    expect(getBuilder.range).toBeUndefined();
+  });
+
   it('lista reports com filtros e paginação', async () => {
     const dbResult = {
       data: [{ id: 'r1', status: 'novo', priority: 'p2' }],
