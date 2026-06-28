@@ -1,5 +1,5 @@
 import type { ErrorReportCategoryInput, ErrorReportPriorityInput } from '@/lib/validations';
-import type { ErrorReportRow } from '@/lib/admin/errorReports';
+import type { ErrorReportRow } from '@/lib/admin/errorReportTypes';
 
 const PRIORITY_RANK: Record<ErrorReportPriorityInput, number> = {
   p0: 0,

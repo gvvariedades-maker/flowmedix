@@ -106,7 +106,7 @@ export function LaboratorioErrorReportsPanel({
   const selectedReport = useMemo(() => {
     if (!selectedGroup) return null;
     if (selectedReportId) {
-      return selectedGroup.reports.find((r) => r.id === selectedReportId) ?? selectedGroup.latest_report;
+      return selectedGroup.reports.find((r: ErrorReportRow) => r.id === selectedReportId) ?? selectedGroup.latest_report;
     }
     return selectedGroup.latest_report;
   }, [selectedGroup, selectedReportId]);
