@@ -118,7 +118,9 @@ function defaultSubtopicMoldPackage(subtopico: string): string {
   return formatMoldPackage(design);
 }
 
-function clusterEntries(report: ClusterReportFile): ClusterReportFile['cluster_decisions'] {
+type ClusterEntry = NonNullable<ClusterReportFile['cluster_decisions']>[number];
+
+function clusterEntries(report: ClusterReportFile): ClusterEntry[] {
   return report.cluster_decisions ?? report.pedagogical_clusters ?? [];
 }
 
