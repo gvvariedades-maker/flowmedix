@@ -145,6 +145,18 @@ const CALC_DOSE_VARIANTS = new Set([
   'dose-trap',
 ]);
 
+const RESPIRATORIO_BESPOKE_VARIANTS = new Set([
+  'respiratorio-asma-dpoc-duel-deck',
+  'respiratorio-spo2-reference-board',
+  'respiratorio-vf-juggle-tap',
+  'respiratorio-spo2-trap-arena',
+]);
+
+const RESPIRATORIO_BESPOKE_BRANCHES = new Set([
+  'respiratorio_vf_asma_dpoc',
+  'respiratorio_dpoc_oxigenio',
+]);
+
 function subtopicoMatchesFragments(subtopico: string | undefined, fragments: string[]): boolean {
   if (!subtopico?.trim() || fragments.length === 0) return false;
   const key = normalizeKey(subtopico);
@@ -676,6 +688,15 @@ export function bespokeMoldHasContentAffinity(
 
   if (CALC_DOSE_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'calc_dose_equivalencia') {
+      return false;
+    }
+  }
+
+  if (RESPIRATORIO_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !RESPIRATORIO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
       return false;
     }
   }

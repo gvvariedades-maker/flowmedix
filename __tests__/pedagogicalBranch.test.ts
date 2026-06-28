@@ -210,4 +210,44 @@ describe('enrichPresentationContext — meta da questão', () => {
       'calc_conceito',
     );
   });
+
+  const respSubtopico = 'Doenças Respiratórias Crônicas (Asma, DPOC)';
+
+  it('infere respiratorio_vf_asma_dpoc para assertivas I/II/III', () => {
+    const instruction =
+      'I - Na DPOC, o alvo de SpO₂ é 88–92% em retentores. II - Asma usa beta-2 de resgate. III - Oxigênio alto fluxo é rotina na asma leve. Assinale a correta.';
+    expect(inferPedagogicalBranch(respSubtopico, instruction, [], 'vf')).toBe(
+      'respiratorio_vf_asma_dpoc',
+    );
+    const design = getPresentationDesign(respSubtopico, 'respiratorio_vf_asma_dpoc');
+    expect(design?.conceptMap).toBe('respiratorio-asma-dpoc-duel-deck');
+  });
+
+  it('infere respiratorio_dpoc_oxigenio para O₂ titulado DPOC', () => {
+    const instruction =
+      'Paciente com DPOC descompensada, SpO₂ 86%. Qual a conduta de oxigenoterapia titulada conforme protocolo?';
+    expect(inferPedagogicalBranch(respSubtopico, instruction, [], 'protocolo')).toBe(
+      'respiratorio_dpoc_oxigenio',
+    );
+    const design = getPresentationDesign(respSubtopico, 'respiratorio_dpoc_oxigenio');
+    expect(design?.goldenRule).toBe('respiratorio-spo2-reference-board');
+  });
+
+  it('infere respiratorio_asma_crise para comando EXCETO na crise', () => {
+    const instruction =
+      'Adolescente com sibilância e dispneia na crise asmática. São cuidados imediatos, EXCETO:';
+    expect(inferPedagogicalBranch(respSubtopico, instruction, [], 'conceito')).toBe(
+      'respiratorio_asma_crise',
+    );
+    const design = getPresentationDesign(respSubtopico, 'respiratorio_asma_crise');
+    expect(design?.dangerZone).toBe('compare');
+  });
+
+  it('infere respiratorio_tecnica_inalador para espaçador e MDI', () => {
+    const instruction =
+      'Sobre a técnica correta de uso do inalador com espaçador (MDI), assinale a alternativa correta.';
+    expect(inferPedagogicalBranch(respSubtopico, instruction, [], 'conceito')).toBe(
+      'respiratorio_tecnica_inalador',
+    );
+  });
 });

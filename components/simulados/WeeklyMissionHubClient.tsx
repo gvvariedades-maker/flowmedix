@@ -11,7 +11,9 @@ import {
   Target,
   TrendingUp,
 } from 'lucide-react';
+import type { WeeklyMissionEntitlement } from '@/lib/freemium/weeklyMissionEntitlement';
 import { WeeklySimuladoMissionCard } from '@/components/vitrine/WeeklySimuladoMissionCard';
+import { WeeklyMissionFreemiumPanel } from '@/components/simulados/WeeklyMissionFreemiumPanel';
 import { WeeklyMissionEvolutionPanel } from '@/components/simulados/WeeklyMissionEvolution';
 import { PageHeader } from '@/components/ui/page-header';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
@@ -55,8 +57,12 @@ export function WeeklyMissionHubClient({ initialData }: WeeklyMissionHubClientPr
   const { pageBottomPadding } = useDashboardBottomInset('default');
   const [mission, setMission] = useState<WeeklySimuladoMission>(initialData.mission);
 
-  const { history, semanas_consecutivas, weekly_evolution } = initialData;
+  const { history, semanas_consecutivas, weekly_evolution, entitlement } = initialData;
   const isCurrentInHistory = history.some((item) => item.id === mission.session_id);
+  const showFreemiumPanel =
+    !entitlement.allowed &&
+    mission.status === 'ausente' &&
+    !mission.session_id;
 
   return (
     <div className="bg-background">
@@ -86,7 +92,15 @@ export function WeeklyMissionHubClient({ initialData }: WeeklyMissionHubClientPr
           pageBottomPadding,
         )}
       >
-        <WeeklySimuladoMissionCard mission={mission} onMissionUpdate={setMission} />
+        {showFreemiumPanel && !entitlement.allowed ? (
+          <WeeklyMissionFreemiumPanel entitlement={entitlement} />
+        ) : (
+          <WeeklySimuladoMissionCard
+            mission={mission}
+            onMissionUpdate={setMission}
+            entitlement={entitlement}
+          />
+        )}
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="card-elevated-lg flex items-start gap-3 p-5">

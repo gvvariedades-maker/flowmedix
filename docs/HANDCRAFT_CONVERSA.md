@@ -6,6 +6,19 @@ Use em **conversa nova** de uma destas formas:
 Handcraft: Enfermagem em Central de Material e Esterilização (CME)
 ```
 
+**Uma questão** (reparo pontual):
+
+```text
+Handcraft: Doenças Respiratórias Crônicas (Asma, DPOC)
+Slug: objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1
+```
+
+O trigger curto `Handcraft:` expande automaticamente o briefing completo via playbook (`lib/catalogMigration/handcraftPlaybook.ts`). Pré-visualizar:
+
+```bash
+npm run handcraft:brief -- --subtopico="Doenças Respiratórias Crônicas (Asma, DPOC)"
+```
+
 ou anexe este arquivo (`@docs/HANDCRAFT_CONVERSA.md`) após editar **só** a linha abaixo:
 
 ```text
@@ -32,7 +45,8 @@ O usuário informou o subtópico. **Modo fixo:** handcraft golden-v1 por slug.
 
 1. Ler [`data/catalog-migration/handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json).
 2. Match **exato** do subtópico (nome canônico `CLAUDE.md` §9).
-3. Se não existir: seguir `fallback_novo_pacote` no registry (export + criar entrada + handcraft em lotes).
+3. Carregar **playbook** (`handcraft_playbook` ou `handcraft-playbooks/<pacote_prefix>.json`) — ver [`handcraft-playbooks/README.md`](../data/catalog-migration/handcraft-playbooks/README.md).
+4. Se não existir pacote: seguir `fallback_novo_pacote` no registry (export + criar entrada + handcraft em lotes).
 
 ### Ler antes de handcraft
 
@@ -40,6 +54,7 @@ O usuário informou o subtópico. **Modo fixo:** handcraft golden-v1 por slug.
 |---------|--------|
 | [`docs/GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | Sempre |
 | [`docs/GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) | Sempre |
+| [`docs/MOLD_AFFINITY_RESOLVER.md`](MOLD_AFFINITY_RESOLVER.md) | Subtópico com ramos L3 (tabela P0–P2) |
 | [`examples/_TEMPLATE-golden-v1.json`](../examples/_TEMPLATE-golden-v1.json) | Sempre |
 | `readme` do pacote no registry | Se existir |
 | `anchor_glob` do pacote (1–2 exemplos em `examples/`) | Estilo do ramo |
@@ -58,7 +73,9 @@ O usuário informou o subtópico. **Modo fixo:** handcraft golden-v1 por slug.
 ```bash
 npm run catalog:export-lote -- --lote=<lote> --slugs=...
 # handcraft: data/catalog-migration/<lote>/questions/<slug>.json
+# Por slug: inferir ramo → declarar meta.pedagogical_branch → JSON A1+A2+A3 (ver skill avant-json-template § L2.5+L3)
 npm run validate:goldens -- --lote=<lote> --strict
+npm run audit:questao-readiness -- --lote=<lote>
 npm run catalog:apply-lote -- --lote=<lote> --dry-run
 # apply só quando usuário pedir:
 npm run catalog:apply-lote -- --lote=<lote> --apply
@@ -69,16 +86,30 @@ Usar **`npm run`** no Windows (não `npx tsx`).
 ### Contrato JSON (resumo)
 
 - `meta.content_standard: "golden-v1"` + `family` + `content_review` + `sources[]` (`year` numérico)
+- **`meta.pedagogical_branch`** — obrigatório quando o subtópico tem ramos L3 (`BRANCH_DESIGN_MAP`); tabela completa na skill `.cursor/skills/avant-json-template/SKILL.md` § L2.5+L3
 - 4 slides planos; sem `template` / `layout_variant`
 - `logic_flow`: `reveal_mode: "tap"`; V/F → “Julgar I, II, III…”
 - `danger_zone.items[].correct`: **distinto** por distrator; EXCETO/INCORRETA conforme regra do pacote premium
+- Conteúdo alinhado ao **pacote L3 do ramo** (bespoke vs genérico) — não copiar moldes de outro cluster
+
+### Handcraft por slug (A1+A2+A3 num prompt)
+
+1. Ler export do slug (enunciado + gabarito reais).
+2. Identificar **ramo** (`pedagogical_branch`) pelo cluster/enunciado.
+3. Abrir golden âncora do mesmo ramo em `examples/`.
+4. Gerar JSON com L1+L2+L3 declarados.
+5. Validar:
+   ```bash
+   npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json
+   ```
+6. Corrigir até `[READY]`; só então incluir no lote para `validate:goldens --strict`.
 
 ### Entregáveis por lote
 
-- JSONs handcraft em `questions/`
+- JSONs handcraft em `questions/` (cada um com `pedagogical_branch` quando aplicável)
 - `lote-meta.json` (modelo: `cme-g01/lote-meta.json` ou `perioperatoria-g01/lote-meta.json`)
 - `artifacts/<lote>-links.html` (opcional, para revisão no player)
-- Resumo: slugs feitos, gabaritos, validate strict OK, dry-run OK
+- Resumo: slugs feitos, gabaritos, **audit:questao-readiness OK**, validate strict OK, dry-run OK
 
 ### Referência de pacote fechado
 

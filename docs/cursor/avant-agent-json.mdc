@@ -37,9 +37,23 @@ Ao gerar ou editar JSON de questão para o Laboratório ou `QuestaoCompletaSchem
 
 Subtópicos mapeados em `themeGenerator.ts` disparam layouts bespoke (`sus-art4-orbit`, `absorption-speed-rail`, `route-trap`, etc.) **sem** `layout_variant` no JSON. Ao gerar conteúdo para esses subtópicos, seguir o **contrato de texto** em `docs/VARIANT_MOLDS.md` §6 (palavras-gatilho para a UI inferir slots).
 
+## GOLDEN Content Standard v1 (handcraft)
+
+- `meta.content_standard: "golden-v1"`, `meta.family`, `meta.content_review`, `meta.sources[]`
+- Gramática de slots: `docs/GOLDEN_CONTENT_STANDARD.md`
+
+## L2.5 + L3 — ramo pedagógico (handcraft)
+
+- Declarar **`meta.pedagogical_branch`** quando o subtópico tem ramos em `BRANCH_DESIGN_MAP` (Adolescente, CME, Saúde Mental, Sondas, Farmacodinâmica, Imunização, Vias, Cálculo, Resp. Crônicas).
+- **`meta.family`** coerente com a prova; ramo define pacote L3 — **não** enviar `template` / `layout_variant`.
+- Tabela ramo × molde: skill `avant-json-template` § L2.5+L3.
+- Validar: `npm run audit:questao-readiness -- --file=<path>` → `[READY]`.
+
 ## Referência
 
 - `docs/VARIANT_MOLDS.md` — construir/replicar moldes interativos + contrato de conteúdo
+- `docs/MOLD_AFFINITY_RESOLVER.md` — ramos L3, gate B
+- `docs/HANDCRAFT_CONVERSA.md` — handcraft por slug (A1+A2+A3)
 - `docs/PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md` — famílias pedagógicas, visual premium, evidências UX
 - `docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md` (inclui seção 12 — cabeçalho da questão)
 - `docs/AVANT_AGENT_SOURCES.md`

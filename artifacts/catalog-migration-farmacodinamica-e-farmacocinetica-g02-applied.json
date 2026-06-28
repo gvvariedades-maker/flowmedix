@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-28T17:51:22.782Z",
+  "lote": "farmacodinamica-e-farmacocinetica-g02",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

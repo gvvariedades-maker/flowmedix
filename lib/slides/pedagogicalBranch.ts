@@ -47,7 +47,13 @@ export type PedagogicalBranchId =
   // Cálculo de Medicamentos
   | 'calc_dose_equivalencia'
   | 'calc_conceito'
-  | 'calc_generico';
+  | 'calc_generico'
+  // Doenças Respiratórias Crônicas
+  | 'respiratorio_vf_asma_dpoc'
+  | 'respiratorio_dpoc_oxigenio'
+  | 'respiratorio_asma_crise'
+  | 'respiratorio_tecnica_inalador'
+  | 'respiratorio_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -212,6 +218,50 @@ const CALC_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Pacote VF asma/DPOC — trilho respiratorio-* (âncora CPCON DPOC SpO₂). */
+const RESPIRATORIO_VF_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'respiratorio-asma-dpoc-duel-deck',
+  goldenRule: 'respiratorio-spo2-reference-board',
+  logicFlow: 'respiratorio-vf-juggle-tap',
+  dangerZone: 'respiratorio-spo2-trap-arena',
+};
+
+/** O₂ titulado / SpO₂ alvo DPOC — mesmo pacote bespoke (golden spo2-reference-board). */
+const RESPIRATORIO_DPOC_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'respiratorio-asma-dpoc-duel-deck',
+  goldenRule: 'respiratorio-spo2-reference-board',
+  logicFlow: 'cards',
+  dangerZone: 'respiratorio-spo2-trap-arena',
+};
+
+/** Crise asmática / EXCETO — compare + cards (sem duel-deck). */
+const RESPIRATORIO_CRISE_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'morphological',
+  goldenRule: 'banner',
+  logicFlow: 'cards',
+  dangerZone: 'compare',
+};
+
+/** Técnica MDI, espaçador, peak flow — tabela de referência. */
+const RESPIRATORIO_TECNICA_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'cards',
+  dangerZone: 'compare',
+};
+
+const RESPIRATORIO_GENERIC_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'morphological',
+  goldenRule: 'center',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -327,6 +377,34 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     calc_dose_equivalencia: CALC_DOSE_MOLD,
     calc_conceito: CALC_GENERIC_MOLD,
     calc_generico: CALC_GENERIC_MOLD,
+  },
+  'doencas respiratorias cronicas (asma, dpoc)': {
+    respiratorio_vf_asma_dpoc: RESPIRATORIO_VF_MOLD,
+    respiratorio_dpoc_oxigenio: RESPIRATORIO_DPOC_MOLD,
+    respiratorio_asma_crise: RESPIRATORIO_CRISE_MOLD,
+    respiratorio_tecnica_inalador: RESPIRATORIO_TECNICA_MOLD,
+    respiratorio_generico: RESPIRATORIO_GENERIC_MOLD,
+  },
+  'doencas respiratorias cronicas': {
+    respiratorio_vf_asma_dpoc: RESPIRATORIO_VF_MOLD,
+    respiratorio_dpoc_oxigenio: RESPIRATORIO_DPOC_MOLD,
+    respiratorio_asma_crise: RESPIRATORIO_CRISE_MOLD,
+    respiratorio_tecnica_inalador: RESPIRATORIO_TECNICA_MOLD,
+    respiratorio_generico: RESPIRATORIO_GENERIC_MOLD,
+  },
+  asma: {
+    respiratorio_vf_asma_dpoc: RESPIRATORIO_VF_MOLD,
+    respiratorio_dpoc_oxigenio: RESPIRATORIO_DPOC_MOLD,
+    respiratorio_asma_crise: RESPIRATORIO_CRISE_MOLD,
+    respiratorio_tecnica_inalador: RESPIRATORIO_TECNICA_MOLD,
+    respiratorio_generico: RESPIRATORIO_GENERIC_MOLD,
+  },
+  dpoc: {
+    respiratorio_vf_asma_dpoc: RESPIRATORIO_VF_MOLD,
+    respiratorio_dpoc_oxigenio: RESPIRATORIO_DPOC_MOLD,
+    respiratorio_asma_crise: RESPIRATORIO_CRISE_MOLD,
+    respiratorio_tecnica_inalador: RESPIRATORIO_TECNICA_MOLD,
+    respiratorio_generico: RESPIRATORIO_GENERIC_MOLD,
   },
 };
 
@@ -463,6 +541,26 @@ const CALC_DOSE: RegExp[] = [
   /quantos?\s+ml|quantas?\s+gotas|prescri[cç][aã]o.*dose/i,
 ];
 
+const RESP_VF: RegExp[] = [
+  /\b(i|ii|iii)\s*[-–—]/i,
+  /afirmativa|verdadeira.*falsa|julgue os itens|correto o que se afirma/i,
+  /semiologia respirat/i,
+];
+
+const RESP_CRISE: RegExp[] = [
+  /\bexceto\b/i,
+  /crise asm[aá]tica|broncoespasmo|sibil[aâ]ncia|beta[\s-]?2|salbutamol|inalador de resgate/i,
+];
+
+const RESP_TECNICA: RegExp[] = [
+  /espacador|espaçador|inalador|mdi\b|aerossol|t[eé]cnica.*inala|pico de fluxo|peak flow|corticoide inalat/i,
+];
+
+const RESP_DPOC: RegExp[] = [
+  /\bdpoc\b|enfisema|bronquite cr[oô]nica|retentor|hipercapnia|88.?92|oxigen.*titulad|spo2|saturac/i,
+  /venturi|cat[eé]ter nasal|oxigenoterapia/i,
+];
+
 function branchMapKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
   const matches = Object.keys(BRANCH_DESIGN_MAP).filter(
@@ -593,6 +691,28 @@ function inferCalcBranch(corpus: string, familyId?: FamilyId): PedagogicalBranch
   return 'calc_generico';
 }
 
+function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  const isVf =
+    familyId === 'vf' ||
+    (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, RESP_VF) >= 1);
+  if (isVf) return 'respiratorio_vf_asma_dpoc';
+
+  const isCrise =
+    /\bexceto\b/i.test(corpus) ||
+    (familyId === 'certo_errado' && countPatternMatches(corpus, RESP_CRISE) >= 1) ||
+    countPatternMatches(corpus, RESP_CRISE) >= 2;
+  if (isCrise) return 'respiratorio_asma_crise';
+
+  if (countPatternMatches(corpus, RESP_TECNICA) > 0) {
+    return 'respiratorio_tecnica_inalador';
+  }
+
+  const isDpoc = familyId === 'protocolo' || countPatternMatches(corpus, RESP_DPOC) > 0;
+  if (isDpoc) return 'respiratorio_dpoc_oxigenio';
+
+  return 'respiratorio_generico';
+}
+
 function inferBranchForBucket(
   mapKey: string,
   corpus: string,
@@ -629,6 +749,13 @@ function inferBranchForBucket(
     mapKey === 'dosagens'
   ) {
     return inferCalcBranch(corpus, familyId);
+  }
+  if (
+    mapKey.includes('respiratorias cronicas') ||
+    mapKey === 'asma' ||
+    mapKey === 'dpoc'
+  ) {
+    return inferRespiratorioBranch(corpus, familyId);
   }
   return undefined;
 }

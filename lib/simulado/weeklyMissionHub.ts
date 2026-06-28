@@ -5,6 +5,8 @@ import type {
   WeeklyMissionEvolution,
   WeeklySimuladoMission,
 } from '@/lib/simulado/types';
+import type { WeeklyMissionEntitlement } from '@/lib/freemium/weeklyMissionEntitlement';
+import { getWeeklyMissionEntitlement } from '@/lib/freemium/weeklyMissionEntitlement';
 import { loadWeeklyMissionEvolution } from '@/lib/simulado/weeklyEvolution';
 import {
   getWeeklySimuladoMission,
@@ -32,6 +34,7 @@ export type WeeklyMissionHubData = {
   history: WeeklyMissionHistoryItem[];
   semanas_consecutivas: number;
   weekly_evolution: WeeklyMissionEvolution | null;
+  entitlement: WeeklyMissionEntitlement;
 };
 
 type WeeklySessionRow = {
@@ -73,11 +76,15 @@ function mapWeeklyHistoryRow(
 export async function loadWeeklyMissionHubData(
   supabase: SupabaseClient,
   userId: string,
+  userEmail?: string | null,
 ): Promise<WeeklyMissionHubData | null> {
-  const missionResult = await getWeeklySimuladoMission({
-    userId,
-    autoGenerate: false,
-  });
+  const [missionResult, entitlement] = await Promise.all([
+    getWeeklySimuladoMission({
+      userId,
+      autoGenerate: false,
+    }),
+    getWeeklyMissionEntitlement(userId, userEmail, supabase),
+  ]);
 
   if (!missionResult) return null;
 
@@ -134,5 +141,6 @@ export async function loadWeeklyMissionHubData(
     history: history.filter((item) => item.id !== mission.session_id),
     semanas_consecutivas,
     weekly_evolution,
+    entitlement,
   };
 }

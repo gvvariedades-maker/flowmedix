@@ -2,11 +2,11 @@ import { redirect } from 'next/navigation';
 import { WeeklyMissionHubClient } from '@/components/simulados/WeeklyMissionHubClient';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { getIsoWeekInfo, WEEKLY_SIMULADO_DEFAULT_QUANTIDADE } from '@/lib/simulado/weeklySimulado';
-import { loadWeeklyMissionHubData } from '@/lib/simulado/weeklyMissionHub';
+import { loadWeeklyMissionHubData, type WeeklyMissionHubData } from '@/lib/simulado/weeklyMissionHub';
 import { logger } from '@/lib/logger';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 
-function e2eHubData() {
+function e2eHubData(): WeeklyMissionHubData {
   const week = getIsoWeekInfo();
   return {
     mission: {
@@ -24,6 +24,7 @@ function e2eHubData() {
     history: [],
     semanas_consecutivas: 0,
     weekly_evolution: null,
+    entitlement: { allowed: true as const, tier: 'pro' as const },
   };
 }
 
@@ -39,7 +40,11 @@ export default async function MissaoSemanalPage() {
 
   try {
     const supabase = await createSupabaseServerClient();
-    const hub = await loadWeeklyMissionHubData(supabase, session.user.id);
+    const hub = await loadWeeklyMissionHubData(
+      supabase,
+      session.user.id,
+      session.user.email,
+    );
 
     if (!hub) {
       return (

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Loader2, ChevronDown, Sparkles } from 'lucide-react';
-import { useState } from 'react';
+import { useState, type ComponentPropsWithoutRef } from 'react';
 import { useProCheckout } from '@/components/pro/useProCheckout';
 import { cn } from '@/lib/utils';
 
@@ -23,6 +23,7 @@ export function BrandCta({
   disabled,
   href,
   size = 'default',
+  ...rest
 }: {
   children: React.ReactNode;
   className?: string;
@@ -30,7 +31,7 @@ export function BrandCta({
   disabled?: boolean;
   href?: string;
   size?: keyof typeof brandCtaSizes;
-}) {
+} & Omit<ComponentPropsWithoutRef<'button'>, 'onClick' | 'disabled' | 'children' | 'className'>) {
   const base = cn(
     'inline-flex items-center justify-center gap-2 rounded-full bg-[#8fe020] font-black tracking-wide text-[#1a2e05] shadow-[0_8px_24px_rgba(143,224,32,0.35)] transition-all hover:bg-[#9ef028] hover:shadow-[0_12px_32px_rgba(143,224,32,0.4)] disabled:cursor-not-allowed disabled:opacity-60',
     brandCtaSizes[size],
@@ -45,7 +46,7 @@ export function BrandCta({
   }
 
   return (
-    <button type="button" onClick={onClick} disabled={disabled} className={cn(base, className)}>
+    <button type="button" onClick={onClick} disabled={disabled} className={cn(base, className)} {...rest}>
       {children}
     </button>
   );

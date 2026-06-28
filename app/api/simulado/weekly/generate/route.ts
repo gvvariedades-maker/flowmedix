@@ -61,8 +61,20 @@ async function handleGenerate(request: NextRequest) {
   try {
     const result = await createWeeklySimuladoSession({
       userId: targetUserId,
+      userEmail: auth.user.email,
       quantidade,
     });
+
+    if (result.reason === 'freemium_locked' && result.entitlement && !result.entitlement.allowed) {
+      return NextResponse.json(
+        {
+          error: 'Missão semanal indisponível no plano gratuito',
+          code: result.entitlement.reason,
+          entitlement: result.entitlement,
+        },
+        { status: 402 },
+      );
+    }
 
     if (result.reason === 'empty_pool') {
       return NextResponse.json(

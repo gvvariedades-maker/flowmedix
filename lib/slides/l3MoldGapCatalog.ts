@@ -326,6 +326,42 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Conceito sem conta — genérico.',
     },
   ],
+  respiratorio: [
+    {
+      pattern: /\b(i|ii|iii)\s*[-–—]|semiologia respirat/i,
+      branch_id: 'respiratorio_vf_asma_dpoc',
+      branch_implemented: true,
+      ideal_mold_package:
+        'respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)',
+      base_decision: 'ok_existente',
+      rationale: 'VF asma/DPOC — pacote respiratorio-*.',
+    },
+    {
+      pattern: /spo2|o2 titulad|88.?92|dpoc|venturi/i,
+      branch_id: 'respiratorio_dpoc_oxigenio',
+      branch_implemented: true,
+      ideal_mold_package:
+        'respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)',
+      base_decision: 'ok_existente',
+      rationale: 'O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap.',
+    },
+    {
+      pattern: /\bexceto\b|crise asm[aá]tica|broncoespasmo/i,
+      branch_id: 'respiratorio_asma_crise',
+      branch_implemented: true,
+      ideal_mold_package: 'morphological · banner · cards · compare (genérico)',
+      base_decision: 'ok_generico',
+      rationale: 'Crise asmática / EXCETO — compare sem duel-deck.',
+    },
+    {
+      pattern: /espacador|inalador|mdi|peak flow|pico de fluxo/i,
+      branch_id: 'respiratorio_tecnica_inalador',
+      branch_implemented: true,
+      ideal_mold_package: 'morphological · reference_table · cards · compare (genérico)',
+      base_decision: 'ok_generico',
+      rationale: 'Técnica MDI/espaçador — tabela de referência.',
+    },
+  ],
 };
 
 function subtopicKey(subtopico: string): string | undefined {
@@ -340,6 +376,8 @@ function subtopicKey(subtopico: string): string | undefined {
   if (key.includes('vias de administracao')) return 'vias de administracao';
   if (key.includes('calculo') || key.includes('dosagens')) return 'calculo';
   if (key.includes('farmacodinamica') || key.includes('farmacocinetica')) return 'farmacologia';
+  if (key.includes('respiratorias cronicas') || key.includes('asma') || key === 'dpoc')
+    return 'respiratorio';
   return undefined;
 }
 
@@ -435,5 +473,22 @@ export function implementedBranchIds(): PedagogicalBranchId[] {
     'sonda_instalacao_protocolo',
     'sonda_medicao_nex',
     'sonda_generico',
+    'farmaco_pk_pd_vf',
+    'farmaco_clinico_protocolo',
+    'farmaco_generico',
+    'imunizacao_vf_intervalos',
+    'imunizacao_calendario',
+    'imunizacao_generico',
+    'via_vf_absorcao',
+    'via_tecnica_admin',
+    'via_generico',
+    'calc_dose_equivalencia',
+    'calc_conceito',
+    'calc_generico',
+    'respiratorio_vf_asma_dpoc',
+    'respiratorio_dpoc_oxigenio',
+    'respiratorio_asma_crise',
+    'respiratorio_tecnica_inalador',
+    'respiratorio_generico',
   ];
 }

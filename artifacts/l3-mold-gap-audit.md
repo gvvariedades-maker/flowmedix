@@ -1,19 +1,20 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-06-28T01:34:46.156Z
+Gerado em: 2026-06-28T20:13:07.040Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
+| Fonte slugs | Supabase (vivo) |
 | Clusters mapeados | 50 |
-| Slugs auditados (local) | 243 |
+| Slugs auditados | 13 |
 | ok_existente | 6 |
-| ok_generico | 26 |
+| ok_generico | 27 |
 | ramo_novo | 13 |
-| molde_inedito | 5 |
-| Pacotes inéditos únicos | 5 |
-| Slugs com mismatch L3 | 14 |
+| molde_inedito | 4 |
+| Pacotes inéditos únicos | 4 |
+| Slugs com mismatch L3 | 0 |
 
 ## Candidatos a molde inédito (pacote de 4 variantes)
 
@@ -36,11 +37,6 @@ Gerado em: 2026-06-28T01:34:46.156Z
 - **Slugs:** 10 · **Ramo:** `cme_autoclave_metodos`
 - **Pacote proposto:** morphological · reference_table · vertical · compare (genérico) — ou pacote inédito parâmetros/ciclo
 - Parâmetros de ciclo — tabela pode bastar; molde inédito só se interação espacial repetir em provas.
-
-### Saúde do Adolescente — Violência sexual e indicadores
-- **Slugs:** 2 · **Ramo:** `adolescente_violencia_protecao`
-- **Pacote proposto:** adolescent-violence-network-tap · adolescent-notification-matrix · vertical · compare (inédito — proposta)
-- Cluster epidemiológico/notificação — metáfora de rede de proteção, não sigilo em consulta.
 
 ## Matriz por cluster
 
@@ -83,7 +79,7 @@ Gerado em: 2026-06-28T01:34:46.156Z
 | Saúde Mental | CAPS / dispositivo de rede | 1 | 2.7% | ok_existente | `mental_crise_caps` | morphological · center · sae-decision-tap · norm-reveal (bes… |
 | Saúde do Adolescente | Gravidez / pré-natal / riscos | 2 | 12.5% | ok_existente | `adolescente_etica_sigilo` | adolescent-privacy-curtain · adolescent-sigilo-spectrum · ad… |
 | Saúde do Adolescente | Escuta, sigilo e ética (V/F) | 2 | 12.5% | ok_existente | `adolescente_etica_sigilo` | adolescent-privacy-curtain · adolescent-sigilo-spectrum · ad… |
-| Saúde do Adolescente | Violência sexual e indicadores | 2 | 12.5% | molde_inedito | `adolescente_violencia_protecao` | adolescent-violence-network-tap · adolescent-notification-ma… |
+| Saúde do Adolescente | Violência sexual e indicadores | 2 | 12.5% | ok_generico | `adolescente_violencia_protecao` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Transtornos alimentares / imagem corporal | 2 | 12.5% | ok_generico | `adolescente_saude_mental` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Diretrizes MS adolescente (EXCETO) | 2 | 12.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Saúde bucal / promoção | 2 | 12.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
@@ -99,19 +95,4 @@ Gerado em: 2026-06-28T01:34:46.156Z
 
 ## Slugs (amostra com branch inferido)
 
-- `—`: 155 slug(s)
-- `cme_autoclave_metodos`: 17 slug(s)
-- `mental_crise_caps`: 12 slug(s)
-- `mental_generico`: 10 slug(s)
-- `cme_generico`: 8 slug(s)
-- `adolescente_etica_sigilo`: 8 slug(s)
-- `mental_raps_legis`: 7 slug(s)
-- `cme_preparo_limpeza`: 5 slug(s)
-- `adolescente_antropometria`: 5 slug(s)
-- `cme_vf_ce`: 4 slug(s)
-- `mental_depressao`: 3 slug(s)
-- `mental_dependencia_tabagismo`: 3 slug(s)
-- `adolescente_generico`: 2 slug(s)
-- `mental_aps_acolhimento`: 2 slug(s)
-- `cme_processamento_conceito`: 1 slug(s)
-- `adolescente_desenvolvimento`: 1 slug(s)
+- `—`: 13

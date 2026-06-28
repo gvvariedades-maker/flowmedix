@@ -10,6 +10,11 @@ import {
   type UserDeclaredPreferences,
 } from '@/lib/recommendations';
 import { createServerSupabase } from '@/lib/supabase/server';
+import {
+  assertCanStartWeeklyMission,
+  isEligibleForAutomaticWeeklyGeneration,
+  type WeeklyMissionEntitlement,
+} from '@/lib/freemium/weeklyMissionEntitlement';
 import { getWeeklyOrdinalFromMap, loadWeeklySessionOrdinals } from '@/lib/simulado/weeklyOrdinal';
 import type { WeeklySimuladoMission } from '@/lib/simulado/types';
 import {
@@ -324,16 +329,20 @@ export async function mapSessionToWeeklyMission(
 
 export async function createWeeklySimuladoSession(params: {
   userId: string;
+  userEmail?: string | null;
   quantidade?: number;
   isAdmin?: boolean;
   isoYear?: number;
   isoWeek?: number;
   supabase?: SupabaseClient;
+  /** Cron/lote: ignora gate freemium (chamador deve filtrar elegíveis). */
+  bypassFreemiumGate?: boolean;
 }): Promise<{
   created: boolean;
   session: WeeklySessionRow | null;
   mission: WeeklySimuladoMission | null;
-  reason?: 'already_exists' | 'empty_pool' | 'insert_failed';
+  reason?: 'already_exists' | 'empty_pool' | 'insert_failed' | 'freemium_locked';
+  entitlement?: WeeklyMissionEntitlement;
 }> {
   const supabase = params.supabase ?? (await createServerSupabase());
   const weekInfo = getIsoWeekInfo();
@@ -354,6 +363,23 @@ export async function createWeeklySimuladoSession(params: {
       ),
     );
     return { created: false, session: existing, mission, reason: 'already_exists' };
+  }
+
+  if (!params.bypassFreemiumGate) {
+    const entitlement = await assertCanStartWeeklyMission(
+      params.userId,
+      params.userEmail,
+      supabase,
+    );
+    if (!entitlement.allowed) {
+      return {
+        created: false,
+        session: null,
+        mission: null,
+        reason: 'freemium_locked',
+        entitlement,
+      };
+    }
   }
 
   const { pool, foco_principal } = await buildWeeklySimuladoPool({
@@ -549,10 +575,17 @@ export async function generateWeeklySimuladosBatch(params: {
 
   for (const userId of userIds) {
     try {
+      const eligible = await isEligibleForAutomaticWeeklyGeneration(userId);
+      if (!eligible) {
+        skipped += 1;
+        continue;
+      }
+
       const result = await createWeeklySimuladoSession({
         userId,
         quantidade: params.quantidade,
         supabase: params.supabase,
+        bypassFreemiumGate: true,
       });
 
       if (result.created) {

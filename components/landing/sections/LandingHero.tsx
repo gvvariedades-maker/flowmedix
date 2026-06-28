@@ -72,7 +72,7 @@ export function LandingHero() {
               {LANDING_HERO.ctaPrimary}
               <ArrowRight size={18} aria-hidden />
             </BrandCta>
-            <OutlineCta href="#metodo" size="lg" className="w-full sm:w-auto">
+            <OutlineCta href="#demo" size="lg" className="w-full sm:w-auto">
               {LANDING_HERO.ctaSecondary}
             </OutlineCta>
           </div>

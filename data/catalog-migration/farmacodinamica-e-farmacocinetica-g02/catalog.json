@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-28T17:42:36.460Z",
+  "lote": "farmacodinamica-e-farmacocinetica-g02",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4727
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4729
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 5101
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4422
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 1503
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3516
+    }
+  ]
+}

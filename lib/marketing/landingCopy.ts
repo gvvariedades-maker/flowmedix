@@ -1,6 +1,9 @@
 import {
   FREEMIUM_PLAN_LIMITS_COMPACT,
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
+  FREEMIUM_SIMULADO_DAILY_LIMIT,
+  FREEMIUM_SIMULADOS_PERSONALIZADOS_COMPACT,
+  FREEMIUM_SIMULADOS_PERSONALIZADOS_DESCRIPTION,
 } from '@/lib/freemium/constants';
 
 /** Preço mensal AVANT Pro (Stripe). */
@@ -30,8 +33,7 @@ export const LANDING_TRUST_CHIPS = [
   'Mais de 5.000 questões reais',
   'EBSERH e prefeituras',
   'Só para Técnico em Enfermagem',
-  'NeuroSlides após cada questão',
-  `${FREEMIUM_PLAN_LIMITS_COMPACT} · sem cartão`,
+  FREEMIUM_SIMULADOS_PERSONALIZADOS_COMPACT,
 ] as const;
 
 export const LANDING_PROBLEMA = {
@@ -63,14 +65,14 @@ export const LANDING_COMPARATIVO = {
     'Você lê tudo sem saber o que a banca cobra para o seu cargo',
     'Sem feedback real — só acerto ou erro',
     'Revisão manual — você decide (ou esquece) quando revisar',
-    'Sem diagnóstico — não sabe por que errou',
+    'Sem diagnóstico longitudinal — não sabe se evoluiu',
   ] as const,
   avantItems: [
     'Questões no formato exato da banca para Técnico em Enfermagem',
     'Você estuda o que a sua banca cobra — filtrado por banca/ano/órgão',
     'Gabarito com diagnóstico: foi conceito, interpretação ou pegadinha?',
     'Revisão espaçada automática no momento certo — sem planilha',
-    'NeuroSlide visual após cada questão — o conceito fixa',
+    'Simulado semanal personalizado com evolução por disciplina',
   ] as const,
 } as const;
 
@@ -118,6 +120,28 @@ export const LANDING_NEUROSLIDES = {
   ] as const,
 } as const;
 
+export const LANDING_MISSAO_SEMANAL = {
+  label: 'Seu piloto semanal',
+  h2: 'Dois simulados grátis. Depois, um toda semana no Pro.',
+  sub: 'Avaliação personalizada com base no seu perfil e desempenho — não é lista genérica de questões.',
+  bullets: [
+    {
+      title: '1º simulado ao entrar',
+      text: 'Linha de base do seu nível por disciplina — simulado diagnóstico personalizado.',
+    },
+    {
+      title: '2º na 1ª semana',
+      text: 'Veja evolução lado a lado: o que melhorou e o que ainda derruba na prova.',
+    },
+    {
+      title: 'Pro — toda semana',
+      text: 'Missão nova toda semana, streak de consistência, histórico e foco adaptativo.',
+    },
+  ] as const,
+  microcopy: 'Cada missão é única — não pode ser refeita',
+  cta: 'Começar meu 1º simulado grátis',
+} as const;
+
 export const LANDING_RECURSOS = {
   label: 'Recursos que viram resultado',
   h2: 'Tudo para sair do estudo aleatório',
@@ -135,17 +159,24 @@ export const LANDING_RECURSOS = {
       text: 'Acompanhe evolução e padrões de erro por assunto. Veja onde a banca te derruba.',
     },
     {
+      title: 'Missão da semana',
+      text: 'Simulado semanal personalizado com evolução por disciplina — seu GPS de progresso.',
+    },
+    {
       title: 'Plano diário',
       text: 'Revise no ritmo certo — revisão espaçada automática, sem planilha manual.',
     },
   ] as const,
   proParagraph:
-    'No plano Pro você também tem: cadernos personalizados, simulados ilimitados, analytics de progresso avançado, desempenho em simulados, missão semanal e biblioteca de NeuroSlides por assunto.',
+    'No plano Pro você desbloqueia: missão semanal contínua, simulados ilimitados, cadernos personalizados, analytics avançado e biblioteca de NeuroSlides por assunto.',
 } as const;
 
 export const LANDING_AUTORIDADE = {
+  name: 'Técnico AVANT',
+  role: 'Técnico em Enfermagem · 10+ aprovações em vaga',
   text: 'Desenvolvido por um Técnico em Enfermagem aprovado em mais de 10 concursos dentro das vagas — um método que transforma erro em aprendizado real, não apenas gabarito.',
   sub: "Técnico para técnico. Não 'equipe de especialistas'.",
+  initials: 'TA',
 } as const;
 
 export const LANDING_PRICING = {
@@ -156,6 +187,7 @@ export const LANDING_PRICING = {
   proTitle: 'AVANT Pro inclui:',
   proBenefits: [
     'Questões ilimitadas todo dia',
+    'Missão semanal ilimitada + streak',
     'Simulados ilimitados',
     'NeuroSlides após cada questão',
     'Plano diário automático',
@@ -176,7 +208,15 @@ export function landingFaqItems(): { q: string; a: string }[] {
   return [
     {
       q: 'Tem plano gratuito?',
-      a: `Sim. ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}, sem cartão de crédito. O Pro é R$ ${LANDING_PRECO_PRO}/mês, cancelável quando quiser.`,
+      a: `Sim. ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}, além de ${FREEMIUM_SIMULADOS_PERSONALIZADOS_DESCRIPTION}. Sem cartão de crédito. O Pro é R$ ${LANDING_PRECO_PRO}/mês, cancelável quando quiser.`,
+    },
+    {
+      q: 'Quantos simulados tenho no grátis?',
+      a: `${FREEMIUM_SIMULADOS_PERSONALIZADOS_DESCRIPTION}. Depois disso, a missão semanal contínua é benefício do Pro. Você ainda tem ${FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado livre por dia no plano gratuito.`,
+    },
+    {
+      q: 'O que é a Missão da Semana?',
+      a: 'É um simulado personalizado com base no seu perfil e desempenho. Você recebe foco adaptativo, deadline até domingo e comparativo de evolução por disciplina. Cada missão é única — não pode ser refeita.',
     },
     {
       q: 'O que é Estudo Reverso?',
@@ -192,7 +232,7 @@ export function landingFaqItems(): { q: string; a: string }[] {
     },
     {
       q: 'O que acontece depois do cadastro?',
-      a: 'Você cai direto na vitrine de questões. Uma questão já mostra o método completo: gabarito, diagnóstico e 4 NeuroSlides. Sem tutorial longo.',
+      a: 'Você faz seu simulado diagnóstico personalizado, estuda com estudo reverso na vitrine e, após 7 dias, recebe sua 2ª missão para ver evolução. Sem tutorial longo.',
     },
   ];
 }
@@ -216,5 +256,6 @@ export const LANDING_FOOTER = {
 
 export const LANDING_HEADER = {
   ctaFree: 'Começar grátis',
-  ctaPro: 'Assinar Pro',
+  ctaPlans: 'Ver planos',
+  navMissao: 'Missão semanal',
 } as const;

@@ -76,6 +76,43 @@ describe('moldAffinity', () => {
     });
   });
 
+  describe('Doenças Respiratórias Crônicas — ramo pedagógico', () => {
+    const subtopico = 'Doenças Respiratórias Crônicas (Asma, DPOC)';
+
+    it('rejeita respiratorio-duel-deck quando ramo é crise EXCETO', () => {
+      const slide = {
+        items: [
+          { label: 'Crise', detail: 'Broncoespasmo e sibilância' },
+          { label: 'EXCETO', detail: 'Conduta inadequada' },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('respiratorio-asma-dpoc-duel-deck', slide, {
+          subtopico,
+          pedagogicalBranch: 'respiratorio_asma_crise',
+        }),
+      ).toBe(false);
+    });
+
+    it('aceita respiratorio-spo2-trap-arena para ramo dpoc_oxigenio', () => {
+      const slide = {
+        items: [
+          {
+            label: 'Hiperoxia',
+            detail: 'Forçar SpO₂ ≥95% em DPOC',
+            correct: 'Titular O₂ — alvo 88–92%',
+          },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('respiratorio-spo2-trap-arena', slide, {
+          subtopico,
+          pedagogicalBranch: 'respiratorio_dpoc_oxigenio',
+        }),
+      ).toBe(true);
+    });
+  });
+
   describe('subtópico de casa — sondas', () => {
     it('aceita procedure-protocol no subtópico de sondas mesmo com labels genéricos', () => {
       expect(

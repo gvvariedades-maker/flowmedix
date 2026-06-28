@@ -9,17 +9,23 @@ import { landingDemoQuestao } from '@/lib/landingDemoQuestao';
 const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonPlayer'), {
   ssr: false,
   loading: () => (
-    <div className="flex min-h-[420px] items-center justify-center rounded-2xl border border-white/10 bg-[#010409] text-sm font-medium text-slate-400">
+    <div className="flex min-h-[min(60vh,520px)] items-center justify-center rounded-2xl border border-white/10 bg-[#010409] text-sm font-medium text-slate-400">
       Carregando demo…
     </div>
   ),
 });
 
-export function DemoInterativa({ embedded = false }: { embedded?: boolean }) {
+type DemoInterativaProps = {
+  embedded?: boolean;
+  /** Oculta CTA duplicado quando o capítulo pai já tem um. */
+  showCta?: boolean;
+};
+
+export function DemoInterativa({ embedded = false, showCta = true }: DemoInterativaProps) {
   const player = (
     <>
       <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#010409] shadow-2xl shadow-black/40">
-        <div className="relative flex min-h-[70vh] flex-col px-3 py-3 sm:px-4 md:px-6 md:py-6">
+        <div className="relative flex min-h-[min(55vh,480px)] flex-col px-3 py-3 sm:min-h-[min(60vh,520px)] sm:px-4 md:px-6 md:py-6 lg:min-h-[min(65vh,560px)]">
           <AvantLessonPlayer
             dados={landingDemoQuestao}
             mode="preview"
@@ -28,35 +34,40 @@ export function DemoInterativa({ embedded = false }: { embedded?: boolean }) {
         </div>
       </div>
 
-      <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        <Link
-          href="/register"
-          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#8fe020] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-[#8fe020]/20 transition-all hover:scale-[1.02] hover:bg-[#a8f53c]"
-        >
-          Testar grátis agora
-          <ArrowRight size={18} />
-        </Link>
-        <p className="text-center text-sm font-medium text-slate-400 sm:text-left">
-          {FREEMIUM_PLAN_LIMITS_COMPACT} após cadastro · sem cartão
-        </p>
-      </div>
+      {showCta ? (
+        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <Link
+            href="/register"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#8fe020] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-[#8fe020]/20 transition-all hover:scale-[1.02] hover:bg-[#a8f53c]"
+          >
+            Testar grátis agora
+            <ArrowRight size={18} />
+          </Link>
+          <p className="text-center text-sm font-medium text-slate-400 sm:text-left">
+            {FREEMIUM_PLAN_LIMITS_COMPACT} após cadastro · sem cartão
+          </p>
+        </div>
+      ) : null}
     </>
   );
 
   if (embedded) {
-    return <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">{player}</div>;
+    return <div className="mx-auto max-w-6xl">{player}</div>;
   }
 
   return (
     <section className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-cyan-300">Demo interativa</p>
+          <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-cyan-300">
+            Demo interativa
+          </p>
           <h2 className="mb-4 text-3xl font-[1000] tracking-tight text-white sm:text-4xl">
             Experimente uma questão real antes de criar conta.
           </h2>
           <p className="text-base font-medium leading-relaxed text-slate-400 sm:text-lg">
-            O mesmo player do app: responda, veja o gabarito e percorra os NeuroSlides de estudo reverso.
+            O mesmo player do app: responda, veja o gabarito e percorra os NeuroSlides de estudo
+            reverso.
           </p>
         </div>
         {player}

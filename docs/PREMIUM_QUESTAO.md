@@ -165,6 +165,10 @@ SE subtópico tem molde bespoke (L3):
 # Gate anti-stub (L2) + goldens em examples/
 npm test -- premium-no-stub
 
+# Checklist A1–A3 por slug ou subtópico (100% pronto automatizado)
+npm run audit:questao-readiness -- --file=examples/questao-premium-....json
+npm run audit:questao-readiness -- --from-supabase --subtopico="Nome Canônico"
+
 # Builder de um pacote + hybrid
 npm test -- upgradePremium
 

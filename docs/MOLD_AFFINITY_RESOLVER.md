@@ -140,7 +140,8 @@ Saída inclui `slug_mismatch_by_subtopico` no relatório JSON/MD.
 | P1 | Imunização | `pni-rules-deck` | `imunizacao_vf_intervalos` · `imunizacao_calendario` · `imunizacao_generico` | **branch_implemented** |
 | P1 | Vias de Administração | `absorption-speed-rail` | `via_vf_absorcao` · `via_tecnica_admin` · `via_generico` | **branch_implemented** |
 | P1 | Cálculo de Medicamentos | `dose-equivalence-rail` | `calc_dose_equivalencia` · `calc_conceito` · `calc_generico` | **branch_implemented** |
-| P2 | ISTs, Sinais Vitais, Oxigenoterapia, Curativos, Punção, Lab, Resp. crônico, Trabalho/NR32 | respectivos bespoke | 2–3 ramos/cluster | pendente |
+| P2 | Doenças Respiratórias Crônicas | `respiratorio-asma-dpoc-duel-deck` | `respiratorio_vf_asma_dpoc` · `respiratorio_dpoc_oxigenio` · `respiratorio_asma_crise` · `respiratorio_tecnica_inalador` · `respiratorio_generico` | **branch_implemented** — backfill + gate B |
+| P2 | ISTs, Sinais Vitais, Oxigenoterapia, Curativos, Punção, Lab, Trabalho/NR32 | respectivos bespoke | 2–3 ramos/cluster | pendente |
 | P3 | Assistência Perioperatória | genérico | `perioperatorio_*` em `l3MoldGapCatalog` | `branch_implemented: false` — código antes do backfill |
 
 Subtópicos com layout **genérico** (bridge/morphological) — não exigem ramos; só backfill de `family` se golden-v1.

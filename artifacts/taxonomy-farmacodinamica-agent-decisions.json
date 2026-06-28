@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-06-28T17:00:00.000Z",
+  "source": "cursor-agent-classify",
+  "bucket": "Farmacodinâmica e Farmacocinética",
+  "reviewed_by": "agent-enunciado-central",
+  "notes": "Gemini 503 em 10/25; heurística com falsos positivos (IST, sondas, curativos). Revisão manual por enunciado. g01 handcraft preservado.",
+  "summary": {
+    "total": 25,
+    "keep_farmacodinamica": 12,
+    "reclassify": 13,
+    "expected_vitrine_after_apply": 12
+  },
+  "keep": [
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "rationale": "Biodisponibilidade e metabolismo de 1ª passagem — núcleo PK/PD (g01 handcraft)",
+      "tier": "green",
+      "g01": true
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "rationale": "Efeitos farmacológicos do fentanil e eventos adversos em paciente crítico — farmacodinâmica",
+      "tier": "green"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "rationale": "Meropenem — neurotoxicidade, clearance renal, acúmulo — farmacocinética/farmacodinâmica",
+      "tier": "green"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "rationale": "Classificação de agentes farmacológicos — anestésico local vs outras classes",
+      "tier": "green"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "rationale": "VF distribuição × farmacodinâmica × princípio ativo — âncora PK/PD (g01)",
+      "tier": "green",
+      "g01": true
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "rationale": "Omeprazol EV — condutas farmacológicas, infusão e pH (g01 handcraft)",
+      "tier": "green",
+      "g01": true
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "rationale": "Farmacologia do diazepam — mecanismo e perfil farmacológico (g01)",
+      "tier": "green",
+      "g01": true
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "rationale": "Fármaco para angina — mecanismo/perfusão miocárdica — farmacodinâmica",
+      "tier": "green"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "rationale": "Definição de farmacologia e fármacos — conceito central PK/PD",
+      "tier": "green"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "rationale": "Farmacovigilância vs farmacocinética/dinâmica — conceitos farmacológicos",
+      "tier": "green"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "rationale": "Perfil de ação das insulinas (ultrarrápida × rápida) — farmacodinâmica (g01)",
+      "tier": "green",
+      "g01": true
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+      "rationale": "Duplicata da questão insulinas QUADRIX — mesmo núcleo PK/PD; manter até dedupe",
+      "tier": "yellow",
+      "duplicate_of": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1"
+    }
+  ],
+  "reclassify": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-7",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Cuidados na Administração de Medicamentos",
+      "rationale": "C/E sobre responsabilidade do técnico no preparo e administração de medicamentos",
+      "tier": "green",
+      "confidence": 0.95
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Vias de Administração",
+      "rationale": "Velocidade de início por via parenteral — EXCETO sobre vias de administração",
+      "tier": "green",
+      "confidence": 0.92
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Cuidados na Administração de Medicamentos",
+      "rationale": "Identificar classe (anticoagulante) para administração segura — cuidados na medicação",
+      "tier": "green",
+      "confidence": 0.9
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Cuidados na Administração de Medicamentos",
+      "rationale": "V/F cuidados de enfermagem na aplicação de insulina (rodízio, geladeira, ângulos)",
+      "tier": "green",
+      "confidence": 0.95
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Urgências e Emergências",
+      "rationale": "Choque séptico refratário — vasopressina + noradrenalina na UTI",
+      "tier": "green",
+      "confidence": 0.95
+    },
+    {
+      "modulo_slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-0",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Cuidados na Administração de Medicamentos",
+      "rationale": "Vancomicina — tempo mínimo de infusão IV para evitar reação",
+      "tier": "green",
+      "confidence": 0.93
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-vias-de-administracao-1778968687469-6",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Cuidados na Administração de Medicamentos",
+      "rationale": "Apresentação farmacêutica líquida — forma/preparo, não PK/PD",
+      "tier": "green",
+      "confidence": 0.88
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Urgências e Emergências",
+      "rationale": "PCR com suspeita de overdose opioide — naloxona na reanimação",
+      "tier": "green",
+      "confidence": 0.95
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Vias de Administração",
+      "rationale": "Via de administração da penicilina benzatina",
+      "tier": "green",
+      "confidence": 0.98
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Urgências e Emergências",
+      "rationale": "Medicamento no suporte avançado de vida / RCP",
+      "tier": "green",
+      "confidence": 0.95
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Urgências e Emergências",
+      "rationale": "Manejo farmacológico da PCR — vasopressores e antiarrítmicos",
+      "tier": "green",
+      "confidence": 0.95
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Urgências e Emergências",
+      "rationale": "Intoxicação por opioide — antagonista (naloxona) na emergência",
+      "tier": "green",
+      "confidence": 0.95
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "to": "Urgências e Emergências",
+      "rationale": "Adrenalina na PCR — intervalo entre doses",
+      "tier": "green",
+      "confidence": 0.96
+    }
+  ]
+}

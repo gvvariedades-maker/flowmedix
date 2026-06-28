@@ -17,6 +17,23 @@ export const FREEMIUM_PLAN_LIMITS_COMPACT = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIM
 /** Frase completa para FAQ, assinatura, paywall e telas de configuração. */
 export const FREEMIUM_PLAN_LIMITS_DESCRIPTION = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão de estudo reverso e ${FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado grátis por dia`;
 
+/** Simulados personalizados no grátis: diagnóstico na entrada + 1 missão semanal após 7 dias. */
+export const FREEMIUM_SIMULADOS_PERSONALIZADOS_TOTAL = 2;
+
+/** Missões semanais (`origem: weekly`) permitidas no plano gratuito (após período de espera). */
+export const FREEMIUM_FREE_WEEKLY_MISSIONS = 1;
+
+/** Dias após o cadastro para liberar a 1ª missão semanal gratuita. */
+export const FREEMIUM_WEEKLY_UNLOCK_DAYS = 7;
+
+/** Copy curta para pricing/LP. */
+export const FREEMIUM_SIMULADOS_PERSONALIZADOS_COMPACT =
+  '2 simulados personalizados (entrada + 1ª semana)';
+
+/** Copy completa para FAQ e paywall. */
+export const FREEMIUM_SIMULADOS_PERSONALIZADOS_DESCRIPTION =
+  '1 simulado diagnóstico ao entrar e 1 missão semanal personalizada após 7 dias de cadastro';
+
 export type AssertCanAnswerResult =
   | { allowed: true }
   | { allowed: false; resetEm: string };

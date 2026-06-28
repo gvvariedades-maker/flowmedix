@@ -194,7 +194,7 @@
 
       "manifest": "data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/manifest.json",
 
-      "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g01/lote-meta.json",
+      "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g02/lote-meta.json",
 
       "readme": null,
 
@@ -208,9 +208,9 @@
 
       "status": "applied",
 
-      "total_slugs": 5,
+      "total_slugs": 12,
 
-      "handcraft_applied": 5,
+      "handcraft_applied": 12,
 
       "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json",
 
@@ -303,6 +303,8 @@
       "handcraft_applied": 10,
 
       "anchor_glob": "examples/questao-premium-*-respiratorio-*.json",
+
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/respiratorio-cronico.json",
 
       "guideline": "lib/guidelines/respiratorioCronico.ts"
 

@@ -19,9 +19,26 @@ export {
   FREEMIUM_SIMULADO_DAILY_LIMIT,
   FREEMIUM_PLAN_LIMITS_COMPACT,
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
+  FREEMIUM_SIMULADOS_PERSONALIZADOS_TOTAL,
+  FREEMIUM_FREE_WEEKLY_MISSIONS,
+  FREEMIUM_WEEKLY_UNLOCK_DAYS,
+  FREEMIUM_SIMULADOS_PERSONALIZADOS_COMPACT,
+  FREEMIUM_SIMULADOS_PERSONALIZADOS_DESCRIPTION,
   getFreemiumDayBounds,
   toFreemiumTimezoneYmd,
 } from '@/lib/freemium/constants';
+
+export type {
+  WeeklyMissionEntitlement,
+  WeeklyMissionBlockReason,
+} from '@/lib/freemium/weeklyMissionEntitlement';
+export {
+  assertCanStartWeeklyMission,
+  getWeeklyMissionEntitlement,
+  countWeeklyMissionsForUser,
+  isEligibleForAutomaticWeeklyGeneration,
+  weeklyMissionBlockMessage,
+} from '@/lib/freemium/weeklyMissionEntitlement';
 
 export type GeralMatriculaSnapshot = {
   origem: ConcursoMatriculaOrigem;

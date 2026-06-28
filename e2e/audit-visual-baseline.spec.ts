@@ -73,6 +73,8 @@ async function showNeuroSlides(page: Page) {
 async function captureStaticPages(page: Page, prefix: 'desktop' | 'mobile') {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
   await expectLandingHeroVisible(page);
+  await expect(page.getByTestId('landing-product-chapter')).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByTestId('landing-missao-semanal')).toBeVisible({ timeout: 30_000 });
   await snap(page, `T1-landing-${prefix}.png`, prefix === 'desktop');
 
   await page.goto('/login', { waitUntil: 'domcontentloaded' });

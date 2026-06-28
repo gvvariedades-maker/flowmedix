@@ -7,10 +7,13 @@ import { cn } from '@/lib/utils';
 import type { WeeklySimuladoMission } from '@/lib/simulado/types';
 import { generateWeeklySimulado } from '@/lib/simulado/client';
 import { weeklySimuladoAlunoTitulo } from '@/lib/simulado/weeklyDisplayTitle';
+import type { WeeklyMissionEntitlement } from '@/lib/freemium/weeklyMissionEntitlement';
+import { weeklyMissionBlockMessage } from '@/lib/freemium/weeklyMissionEntitlement';
 
 export type WeeklySimuladoMissionCardProps = {
   mission: WeeklySimuladoMission;
   onMissionUpdate?: (mission: WeeklySimuladoMission) => void;
+  entitlement?: WeeklyMissionEntitlement;
 };
 
 function formatWeekDeadline(isoDate: string): string {
@@ -52,6 +55,7 @@ function statusBadgeClass(status: WeeklySimuladoMission['status']): string {
 export function WeeklySimuladoMissionCard({
   mission,
   onMissionUpdate,
+  entitlement,
 }: WeeklySimuladoMissionCardProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -82,6 +86,12 @@ export function WeeklySimuladoMissionCard({
   const isReady = mission.status !== 'ausente' && mission.session_id != null;
   const isCompleted = mission.status === 'concluido';
   const tituloAluno = weeklySimuladoAlunoTitulo(mission.weekly_ordinal);
+  const generateBlocked =
+    entitlement != null && !entitlement.allowed && !isReady;
+  const blockMessage =
+    entitlement != null && !entitlement.allowed
+      ? weeklyMissionBlockMessage(entitlement)
+      : null;
 
   return (
     <section
@@ -154,7 +164,8 @@ export function WeeklySimuladoMissionCard({
             <button
               type="button"
               onClick={() => void handleGenerate()}
-              disabled={loading}
+              disabled={loading || generateBlocked}
+              title={generateBlocked ? blockMessage ?? undefined : undefined}
               className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-black uppercase tracking-wide text-slate-950 transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-70"
             >
               {loading ? (

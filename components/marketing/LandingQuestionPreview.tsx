@@ -2,6 +2,7 @@
 
 import { Scissors } from 'lucide-react';
 import { landingDemoQuestao } from '@/lib/landingDemoQuestao';
+import { LandingDemoJourneyChip } from '@/components/marketing/LandingDemoJourneyChip';
 import {
   buildQuestionExamDetailLine,
   buildQuestionHeaderChips,
@@ -31,6 +32,7 @@ export function LandingQuestionPreview({ className }: { className?: string }) {
       className={cn('pointer-events-none flex min-h-[420px] select-none flex-col bg-white', className)}
       aria-hidden
     >
+      <LandingDemoJourneyChip />
       <div className="flex items-center justify-between gap-2 border-b border-slate-200 px-3 py-2">
         <span className="text-[10px] font-semibold text-slate-500">Vitrine</span>
         <span className="rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-[9px] font-semibold tabular-nums text-slate-600">

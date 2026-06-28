@@ -2,9 +2,10 @@
 
 import dynamic from 'next/dynamic';
 import type { LucideIcon } from 'lucide-react';
-import { Brain, CalendarDays, ClipboardCheck, FileQuestion } from 'lucide-react';
+import { ArrowRight, Brain, CalendarDays, ClipboardCheck, FileQuestion } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BrandCta, SectionLabel } from '@/components/landing/lp-ui';
+import { LANDING_DEMO_JOURNEY_LABEL } from '@/lib/marketing/landingDemoPreview';
 import { LANDING_METODO } from '@/lib/marketing/landingCopy';
 import { landingFadeUp } from '@/lib/marketing/landingMotion';
 import { LandingGabaritoPreview } from '@/components/marketing/LandingGabaritoPreview';
@@ -19,17 +20,17 @@ const LandingQuestionPreview = dynamic(
   { ssr: false, loading: () => <PreviewSkeleton /> },
 );
 
-const LandingNeuroSlideLive = dynamic(
+const LandingNeuroSlideCarousel = dynamic(
   () =>
-    import('@/components/marketing/LandingNeuroSlideLive').then((m) => ({
-      default: m.LandingNeuroSlideLive,
+    import('@/components/marketing/LandingNeuroSlideCarousel').then((m) => ({
+      default: m.LandingNeuroSlideCarousel,
     })),
   { ssr: false, loading: () => <PreviewSkeleton /> },
 );
 
 function PreviewSkeleton() {
   return (
-    <div className="flex h-full min-h-[200px] items-center justify-center bg-slate-50 text-xs text-slate-400">
+    <div className="flex h-full min-h-[220px] items-center justify-center bg-slate-50 text-xs text-slate-400">
       Carregando…
     </div>
   );
@@ -41,7 +42,6 @@ type MetodoStep = {
   text: string;
   icon: LucideIcon;
   preview: 'question' | 'gabarito' | 'neuroslide' | 'plano';
-  slideIndex?: number;
 };
 
 const STEPS: MetodoStep[] = [
@@ -65,7 +65,6 @@ const STEPS: MetodoStep[] = [
     text: 'Mapa mental, regra de ouro, fluxo lógico, zona de perigo. 4 telas que fixam o conceito antes de você fechar o app.',
     icon: Brain,
     preview: 'neuroslide',
-    slideIndex: 0,
   },
   {
     n: '04',
@@ -76,14 +75,28 @@ const STEPS: MetodoStep[] = [
   },
 ];
 
+function previewFrameClass(preview: MetodoStep['preview']) {
+  switch (preview) {
+    case 'question':
+      return 'h-[min(340px,52vw)] sm:h-[320px]';
+    case 'neuroslide':
+      return 'h-[min(380px,58vw)] sm:h-[360px]';
+    case 'gabarito':
+    case 'plano':
+      return 'h-[min(320px,48vw)] sm:h-[300px]';
+    default:
+      return 'h-[280px]';
+  }
+}
+
 function StepPreview({ step }: { step: MetodoStep }) {
-  const frameClass = 'h-[min(280px,42vw)] overflow-hidden bg-slate-50 sm:h-[260px]';
+  const frameClass = cn('overflow-hidden bg-slate-50', previewFrameClass(step.preview));
 
   switch (step.preview) {
     case 'question':
       return (
-        <div className={cn(frameClass, 'origin-top scale-[0.92] sm:scale-[0.88]')}>
-          <LandingQuestionPreview className="min-h-0" />
+        <div className={cn(frameClass, 'origin-top scale-[0.98]')}>
+          <LandingQuestionPreview className="min-h-0 h-full" />
         </div>
       );
     case 'gabarito':
@@ -94,14 +107,14 @@ function StepPreview({ step }: { step: MetodoStep }) {
       );
     case 'neuroslide':
       return (
-        <div className={cn(frameClass, 'bg-[#f8fafc]')}>
-          <LandingNeuroSlideLive slideIndex={step.slideIndex ?? 0} />
+        <div className={frameClass}>
+          <LandingNeuroSlideCarousel className="h-full" />
         </div>
       );
     case 'plano':
       return (
         <div className={frameClass}>
-          <LandingPlanoDiarioPreview className="h-full" />
+          <LandingPlanoDiarioPreview className="h-full overflow-y-auto" />
         </div>
       );
     default:
@@ -109,7 +122,7 @@ function StepPreview({ step }: { step: MetodoStep }) {
   }
 }
 
-/** Seção "Simples como 1, 2, 3, 4" com previews ao vivo do app. */
+/** Seção "Simples como 1, 2, 3, 4" — mesma questão demo em cada preview. */
 export function LandingMetodoSteps() {
   return (
     <section id="metodo" className="bg-white px-4 py-16 sm:px-6 sm:py-20">
@@ -120,6 +133,10 @@ export function LandingMetodoSteps() {
             {LANDING_METODO.h2}
           </h2>
           <p className="mt-3 max-w-2xl text-base text-slate-600">{LANDING_METODO.sub}</p>
+          <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#8fe020]/40 bg-[#8fe020]/10 px-4 py-2 text-xs font-bold text-[#3d6b0f]">
+            <ArrowRight size={14} aria-hidden />
+            Do enunciado ao plano — {LANDING_DEMO_JOURNEY_LABEL}
+          </p>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -133,20 +150,18 @@ export function LandingMetodoSteps() {
               variants={landingFadeUp}
               custom={i}
             >
-              <div className="p-6 pb-4">
-                <div className="flex items-start gap-4">
-                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#8fe020] bg-[#8fe020]/10 text-sm font-black text-[#3d6b0f]">
+              <StepPreview step={step} />
+              <div className="border-t border-slate-100 p-5 sm:p-6">
+                <div className="flex items-start gap-3">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#8fe020] bg-[#8fe020]/10 text-xs font-black text-[#3d6b0f]">
                     {step.n}
                   </span>
                   <div className="min-w-0">
-                    <h3 className="text-lg font-black text-slate-900">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.text}</p>
-                    <step.icon className="mt-3 text-[#3d6b0f]" size={18} aria-hidden />
+                    <h3 className="text-base font-black text-slate-900 sm:text-lg">{step.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{step.text}</p>
+                    <step.icon className="mt-2.5 text-[#3d6b0f]" size={16} aria-hidden />
                   </div>
                 </div>
-              </div>
-              <div className="mt-auto border-t border-slate-100">
-                <StepPreview step={step} />
               </div>
             </motion.article>
           ))}

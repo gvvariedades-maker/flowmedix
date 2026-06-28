@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "pacote_prefix": "respiratorio-cronico",
+  "scope_default": "subtopico_repair_l3",
+  "anchor_glob": "examples/questao-premium-*-respiratorio-*.json",
+  "guideline": "lib/guidelines/respiratorioCronico.ts",
+  "handcraft_meta": "data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json",
+  "repair_lote_pattern": "respiratorio-cronico-repair-l3-g{NN}",
+  "slug_selection": "Supabase: meta.pedagogical_branch ausente OU npm run audit:questao-readiness --from-supabase retorna FAIL",
+  "clusters": [
+    "Espaçador e inalador — técnica MDI",
+    "Oximetria de pulso / SpO₂",
+    "O₂ titulado na DPOC (APS/emergência)",
+    "Dispositivos de oxigenoterapia (Venturi)",
+    "Asma na APS — educação terapêutica",
+    "Espirometria VEF1/CVF",
+    "Semiologia pediátrica — sibilos",
+    "Semiologia respiratória V/F",
+    "DPOC na UBS — papel do técnico"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "respiratorio_vf_asma_dpoc",
+      "when": "I/II/III, semiologia respiratória V/F, afirmativas asma/DPOC",
+      "mold": "respiratorio-* bespoke (duel-deck, spo2-board, vf-juggle, trap-arena)",
+      "anchors": [
+        "examples/questao-premium-fgv-respiratorio-peak-flow-zonas-vf.json",
+        "examples/questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf.json"
+      ]
+    },
+    {
+      "id": "respiratorio_dpoc_oxigenio",
+      "when": "SpO₂, O₂ titulado, alvo 88–92%, Venturi, DPOC descompensada",
+      "mold": "bespoke spo2-reference-board + trap-arena",
+      "anchors": ["examples/questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json"]
+    },
+    {
+      "id": "respiratorio_asma_crise",
+      "when": "EXCETO, crise asmática, broncoespasmo, sibilância",
+      "mold": "genérico morphological · banner · cards · compare",
+      "anchors": ["examples/questao-premium-vunesp-respiratorio-crise-asmatica-exceto.json"]
+    },
+    {
+      "id": "respiratorio_tecnica_inalador",
+      "when": "MDI, espaçador, peak flow, corticoide inalatório, técnica",
+      "mold": "genérico + golden_rule rows",
+      "anchors": [
+        "examples/questao-premium-idecan-respiratorio-espacador-inalador-conceito.json",
+        "examples/questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json"
+      ]
+    },
+    {
+      "id": "respiratorio_generico",
+      "when": "Demais — sem fit claro nos ramos acima",
+      "mold": "genérico morphological · center · vertical · compare",
+      "anchors": []
+    }
+  ],
+  "modes": {
+    "subtopico_repair_l3": {
+      "first_lote": "respiratorio-cronico-repair-l3-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --lote=<lote>",
+        "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"Doenças Respiratórias Crônicas (Asma, DPOC)\" --only-premium --apply"
+      ]
+    },
+    "single_slug": {
+      "lote_dir": "data/catalog-migration/respiratorio-cronico-repair-l3-g01/questions",
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json"
+      ]
+    }
+  }
+}

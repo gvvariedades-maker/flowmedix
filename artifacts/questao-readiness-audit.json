@@ -1,0 +1,57 @@
+{
+  "strict": true,
+  "scanned": 1,
+  "results": [
+    {
+      "slug": "questao-premium-vunesp-respiratorio-crise-asmatica-exceto",
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A3": false,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: E).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A3",
+          "code": "pedagogical_branch_inferred",
+          "message": "Ramo pedagógico inferido: \"respiratorio_asma_crise\" — considere meta.pedagogical_branch no handcraft.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A3",
+          "code": "l3_branch_undeclared",
+          "message": "meta.pedagogical_branch ausente (inferido: respiratorio_asma_crise)",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "inferred_branch": "respiratorio_asma_crise"
+    }
+  ]
+}

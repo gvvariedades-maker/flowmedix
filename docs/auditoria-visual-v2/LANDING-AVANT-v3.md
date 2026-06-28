@@ -51,7 +51,32 @@ Narrativa Estudei (método, passos, pricing claro) + identidade AVANT (lima `#8f
 
 ---
 
-## Arquitetura de seções (ordem sugerida)
+## Arquitetura de seções (ordem v4 — jun/2026)
+
+```
+Header — CTA primário "Começar grátis", secundário "Ver planos", âncora Missão semanal
+→ Hero
+→ Trust strip (4 chips, inclui 2 simulados personalizados)
+→ Problema
+→ Comparativo (inclui evolução semanal × apostila)
+→ Demo interativa (antes do método)
+→ Método 01–04
+→ Missão da semana (#missao-semanal) — preview hub + funil 2 simulados grátis
+→ NeuroSlides
+→ Recursos (missão como card)
+→ Autoridade (iniciais + credencial)
+→ Pricing (grátis: 2 simulados + limites diários)
+→ FAQ + CTA final + sticky mobile
+```
+
+### Freemium na LP
+
+- Grátis: `FREEMIUM_SIMULADOS_PERSONALIZADOS_DESCRIPTION` (diagnóstico + missão D+7)
+- Pro: missão semanal contínua, streak, histórico completo
+
+---
+
+## Arquitetura de seções (ordem sugerida v3 — legado)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

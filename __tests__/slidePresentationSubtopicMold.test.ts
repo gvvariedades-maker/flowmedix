@@ -606,7 +606,8 @@ describe('slidePresentation — molde por subtópico', () => {
       },
       {
         questionSlug: 'vunesp-sc-1',
-        familyId: 'text_fragment',
+        familyId: 'vf',
+        pedagogicalBranch: 'via_vf_absorcao',
       },
     );
     expect(result.layoutVariant).toBe('absorption-speed-rail');
@@ -622,7 +623,8 @@ describe('slidePresentation — molde por subtópico', () => {
       },
       {
         questionSlug: 'vunesp-sc-1',
-        familyId: 'text_fragment',
+        familyId: 'vf',
+        pedagogicalBranch: 'via_vf_absorcao',
       },
     );
     expect(result.layoutVariant).toBe('route-trap');
@@ -1380,6 +1382,29 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('respiratorio-spo2-trap-arena');
     expect(result.dangerRevealMode).toBe('tap');
     expect(result.bulletStyle).toBe('x_icon');
+  });
+
+  it('Doenças Respiratórias Crônicas: ramo crise EXCETO → compare genérico (não duel-deck)', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Doenças Respiratórias Crônicas (Asma, DPOC)' },
+        content: 'PEGADINHAS — CRISE ASMÁTICA',
+        items: [
+          {
+            label: 'Restringir hidratação',
+            detail: 'Conduta inventada na crise',
+            correct: 'Manter hidratação e monitorizar SpO₂',
+          },
+        ],
+      },
+      {
+        questionSlug: 'vunesp-asma-exceto',
+        familyId: 'conceito',
+        pedagogicalBranch: 'respiratorio_asma_crise',
+      },
+    );
+    expect(result.layoutVariant).toBe('compare');
   });
 
   describe('Saúde do Adolescente — afinidade (IBAM escore Z)', () => {

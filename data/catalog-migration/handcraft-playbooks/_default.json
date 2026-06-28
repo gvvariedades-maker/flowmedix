@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "scope_default": "subtopico_handcraft",
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Subtópico inteiro — handcraft golden-v1 A1+A2+A3",
+      "steps": [
+        "Exportar catálogo se manifest ausente ou desatualizado",
+        "Cluster report se existir cluster_command no registry",
+        "Handcraft em lotes de lote_size (padrão 8)",
+        "validate:goldens --strict + audit:questao-readiness por lote",
+        "apply-lote --dry-run; apply só com pedido explícito do usuário"
+      ]
+    },
+    "single_slug": {
+      "label": "Uma questão — reparo ou atualização L3",
+      "steps": [
+        "Buscar JSON no Supabase pelo modulo_slug",
+        "Handcraft A1+A2+A3 com pedagogical_branch se subtópico tem ramos L3",
+        "audit:questao-readiness --file até READY",
+        "apply pontual só com pedido explícito"
+      ]
+    },
+    "subtopico_repair_l3": {
+      "label": "Reparo L3 — pedagogical_branch + audit FAIL",
+      "steps": [
+        "audit:questao-readiness --from-supabase --subtopico para listar FAIL",
+        "Lote repair-l3-gNN com slugs pendentes",
+        "patch-pedagogical-branch --apply após handcraft"
+      ]
+    }
+  },
+  "pedagogical_branches_note": "Se subtópico tem BRANCH_DESIGN_MAP, ver .cursor/skills/avant-json-template/SKILL.md § L2.5+L3",
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path>",
+    "per_lote": "npm run audit:questao-readiness -- --lote=<lote>",
+    "per_subtopico_supabase": "npm run audit:questao-readiness -- --from-supabase --subtopico=\"<canônico>\""
+  }
+}

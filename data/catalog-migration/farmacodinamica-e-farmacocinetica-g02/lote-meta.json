@@ -1,0 +1,39 @@
+{
+  "lote": "farmacodinamica-e-farmacocinetica-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-28",
+  "subtopico": "Farmacodinâmica e Farmacocinética",
+  "cluster": "opioides UTI · meropenem PK · anestésico local · angina nitrato · absorção oral · farmacovigilância",
+  "total": 7,
+  "status": "applied",
+  "anchor_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+  "golden_reference": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+  "guideline": null,
+  "slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+    "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3"
+  ],
+  "dedupe": [
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+      "canonical_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "action": "golden_cloned_from_g01"
+    }
+  ],
+  "excluded": [],
+  "prerequisite": "Classify 2026-06-28 — bucket estabilizado em 12 slugs",
+  "validate_command": "npm run validate:goldens -- --lote=farmacodinamica-e-farmacocinetica-g02 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/farmacodinamica-e-farmacocinetica-g02/questions/",
+    "2. npm run validate:goldens -- --lote=farmacodinamica-e-farmacocinetica-g02 --strict",
+    "3. npm run catalog:apply-lote -- --lote=farmacodinamica-e-farmacocinetica-g02 --dry-run",
+    "4. Apply só quando usuário pedir"
+  ],
+  "notes": "g02 = 7 slugs pós-taxonomia (6 handcraft + 1 duplicata QUADRIX clonada do g01)."
+}

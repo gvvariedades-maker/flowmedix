@@ -6,10 +6,10 @@ import { BrandCta, OutlineCta } from '@/components/landing/lp-ui';
 import { LANDING_HEADER } from '@/lib/marketing/landingCopy';
 
 type LandingHeaderProps = {
-  onProClick: () => void;
+  onPlansClick: () => void;
 };
 
-export function LandingHeader({ onProClick }: LandingHeaderProps) {
+export function LandingHeader({ onPlansClick }: LandingHeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f1f5f9]/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
@@ -21,6 +21,12 @@ export function LandingHeader({ onProClick }: LandingHeaderProps) {
           >
             Concursos
           </Link>
+          <a
+            href="#missao-semanal"
+            className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900"
+          >
+            {LANDING_HEADER.navMissao}
+          </a>
           <Link
             href="/blog"
             className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 hover:text-slate-900"
@@ -35,11 +41,15 @@ export function LandingHeader({ onProClick }: LandingHeaderProps) {
           </Link>
         </nav>
         <div className="flex shrink-0 items-center gap-2">
-          <OutlineCta href="/register" variant="header" className="hidden px-4 py-2.5 text-xs sm:inline-flex">
-            {LANDING_HEADER.ctaFree}
+          <OutlineCta
+            onClick={onPlansClick}
+            variant="header"
+            className="hidden px-4 py-2.5 text-xs sm:inline-flex"
+          >
+            {LANDING_HEADER.ctaPlans}
           </OutlineCta>
-          <BrandCta onClick={onProClick} className="px-4 py-2.5 text-xs sm:text-sm">
-            {LANDING_HEADER.ctaPro}
+          <BrandCta href="/register" className="px-4 py-2.5 text-xs sm:text-sm" data-analytics="lp-header-cta">
+            {LANDING_HEADER.ctaFree}
           </BrandCta>
         </div>
       </div>

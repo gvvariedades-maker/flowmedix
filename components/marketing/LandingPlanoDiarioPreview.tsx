@@ -1,32 +1,33 @@
 'use client';
 
 import { CalendarDays, CheckCircle2, Clock } from 'lucide-react';
+import { LANDING_DEMO_PLAN_ITEMS } from '@/lib/marketing/landingDemoPreview';
+import { LandingDemoJourneyChip } from '@/components/marketing/LandingDemoJourneyChip';
 import { cn } from '@/lib/utils';
 
-const TODAY_ITEMS = [
-  { label: 'Revisar: Cálculo de medicamentos', done: true },
-  { label: 'Nova questão: Oxigenoterapia', done: false },
-  { label: 'Simulado parcial — 10 questões', done: false },
-] as const;
+const DONE_COUNT = LANDING_DEMO_PLAN_ITEMS.filter((item) => item.done).length;
+const TOTAL_COUNT = LANDING_DEMO_PLAN_ITEMS.length;
 
-/** Preview estático do plano diário editorial. */
+/** Preview estático do plano diário — itens ligados à questão demo + missão semanal. */
 export function LandingPlanoDiarioPreview({ className }: { className?: string }) {
   return (
     <div
-      className={cn('pointer-events-none select-none bg-[#f8fafc] p-4', className)}
+      className={cn('pointer-events-none flex select-none flex-col bg-[#f8fafc]', className)}
       aria-hidden
     >
+      <LandingDemoJourneyChip />
+      <div className="flex-1 p-4">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <CalendarDays className="text-[#3d6b0f]" size={16} aria-hidden />
           <p className="text-xs font-black text-slate-900">Plano de hoje</p>
         </div>
         <span className="rounded-full bg-[#8fe020]/15 px-2 py-0.5 text-[9px] font-bold text-[#3d6b0f]">
-          1/3 feito
+          {DONE_COUNT}/{TOTAL_COUNT} feito
         </span>
       </div>
       <ul className="space-y-2">
-        {TODAY_ITEMS.map((item) => (
+        {LANDING_DEMO_PLAN_ITEMS.map((item) => (
           <li
             key={item.label}
             className={cn(
@@ -51,7 +52,11 @@ export function LandingPlanoDiarioPreview({ className }: { className?: string })
         ))}
       </ul>
       <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-200">
-        <div className="h-full w-1/3 rounded-full bg-[#22c55e]" />
+        <div
+          className="h-full rounded-full bg-[#22c55e] transition-all"
+          style={{ width: `${(DONE_COUNT / TOTAL_COUNT) * 100}%` }}
+        />
+      </div>
       </div>
     </div>
   );
