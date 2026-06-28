@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-06-28T19:57:04.615Z",
+  "mode": "apply",
+  "lines": [
+    {
+      "slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Vias de Administração",
+      "branch_before": "farmaco_generico",
+      "branch_after": "via_generico",
+      "applied": true
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Vias de Administração",
+      "branch_before": "farmaco_generico",
+      "branch_after": "via_generico",
+      "applied": true
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Processo de Enfermagem",
+      "branch_before": "farmaco_clinico_protocolo",
+      "applied": true
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Processo de Enfermagem",
+      "branch_before": "farmaco_clinico_protocolo",
+      "applied": true
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Processo de Enfermagem",
+      "branch_before": "farmaco_clinico_protocolo",
+      "applied": true
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Processo de Enfermagem",
+      "branch_before": "farmaco_generico",
+      "applied": true
+    },
+    {
+      "slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "branch_before": "farmaco_pk_pd_vf",
+      "applied": true
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "branch_before": "farmaco_clinico_protocolo",
+      "applied": true
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "branch_before": "farmaco_clinico_protocolo",
+      "applied": true
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Epidemiologia e Vigilância Epidemiológica",
+      "branch_before": "farmaco_generico",
+      "applied": true
+    },
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Farmacodinâmica e Farmacocinética",
+      "branch_before": "farmaco_clinico_protocolo",
+      "branch_after": "farmaco_clinico_protocolo",
+      "applied": true
+    },
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "subtopico_before": "Farmacodinâmica e Farmacocinética",
+      "subtopico_after": "Farmacodinâmica e Farmacocinética",
+      "branch_before": "farmaco_generico",
+      "branch_after": "farmaco_generico",
+      "applied": true
+    }
+  ]
+}
