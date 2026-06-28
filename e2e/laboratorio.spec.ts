@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { WRITE_SPEC_TEST_QUESTION } from '../lib/questaoSpec/testFixtures';
 
 /**
  * Preenche o editor de JSON do Laboratório de forma robusta.
@@ -6,12 +7,35 @@ import { test, expect, type Page } from '@playwright/test';
  * pode ser descartado (o valor não "pega"). Reescrevemos até o value persistir.
  */
 async function fillJsonEditor(page: Page, content: string) {
-  const jsonInput = page.locator('textarea').first();
+  const jsonInput = page.getByRole('textbox', {
+    name: /Use Abrir JSON, Colar JSON ou digite/i,
+  });
+  await jsonInput.scrollIntoViewIfNeeded();
   await expect(jsonInput).toBeVisible({ timeout: 15_000 });
   await expect(async () => {
     await jsonInput.fill(content);
     await expect(jsonInput).toHaveValue(content, { timeout: 2_000 });
   }).toPass({ timeout: 15_000 });
+}
+
+async function expectJsonValidBadge(page: Page) {
+  await expect(async () => {
+    await expect(
+      page.locator('span.text-green-600').filter({ hasText: 'Válido' }),
+    ).toBeVisible({ timeout: 2_000 });
+  }).toPass({ timeout: 20_000 });
+}
+
+async function openTemplatesModal(page: Page) {
+  const templatesButton = page.getByTestId('lab-templates-open');
+  await templatesButton.scrollIntoViewIfNeeded();
+  await expect(async () => {
+    await templatesButton.click();
+    await expect(page.getByTestId('lab-templates-modal')).toBeVisible({ timeout: 2_000 });
+  }).toPass({ timeout: 20_000 });
+  await expect(page.getByRole('heading', { name: 'Selecionar Template' })).toBeVisible({
+    timeout: 15_000,
+  });
 }
 
 /**
@@ -26,77 +50,44 @@ async function fillJsonEditor(page: Page, content: string) {
  * 6. Publicar
  */
 
-const validQuestionJSON = {
-  meta: {
-    banca: 'EBSERH',
-    ano: '2024',
-    orgao: 'Hospital',
-    prova: 'Técnico de Enfermagem',
-    topico: 'Fundamentos de Enfermagem',
-    subtopico: 'SAE',
-  },
-  question_data: {
-    instruction: 'Identifique a etapa da SAE descrita no enunciado.',
-    text_fragment: '',
-    options: [
-      { id: 'A', text: 'Coleta de dados.', is_correct: false },
-      { id: 'B', text: 'Diagnóstico de Enfermagem.', is_correct: false },
-      { id: 'C', text: 'Planejamento da assistência.', is_correct: true },
-      { id: 'D', text: 'Implementação.', is_correct: false },
-      { id: 'E', text: 'Avaliação.', is_correct: false },
-    ],
-  },
-  reverse_study_slides: [
-    {
-      type: 'concept_map',
-      subject: 'Fundamentos de Enfermagem',
-      items: [
-        {
-          icon: 'FileSearch',
-          label: 'Coleta de Dados',
-          detail: 'Histórico e exame físico do paciente',
-        },
-      ],
-    },
-  ],
-};
+const validQuestionJSON = WRITE_SPEC_TEST_QUESTION;
 
 test.describe('Laboratório Admin', () => {
+  test.describe.configure({ mode: 'serial' });
+  test.use({ viewport: { width: 1440, height: 900 } });
+
   test.beforeEach(async ({ page }) => {
     await page.goto('/admin/laboratorio', { waitUntil: 'domcontentloaded' });
-    await expect(page.getByText('Payload Input')).toBeVisible({ timeout: 15000 });
+    await page.waitForLoadState('networkidle');
+    const payloadLabel = page.getByText('Payload Input');
+    await payloadLabel.scrollIntoViewIfNeeded();
+    await expect(payloadLabel).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByTestId('lab-templates-open')).toBeVisible({ timeout: 15_000 });
   });
 
   test('deve carregar a página do laboratório', async ({ page }) => {
-    // Verificar elementos principais
-    await expect(page.locator('text=AVANT')).toBeVisible();
-    await expect(page.locator('text=Payload Input')).toBeVisible();
-    await expect(page.locator('text=Aguardando Injeção')).toBeVisible();
+    await expect(page.getByText('AVANT', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Payload Input')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Aguardando Injeção' })).toBeVisible();
   });
 
   test('deve mostrar botão de templates', async ({ page }) => {
-    const templatesButton = page.locator('button:has-text("Templates")');
-    await expect(templatesButton).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Templates' })).toBeVisible();
   });
 
   test('deve abrir seletor de templates ao clicar', async ({ page }) => {
-    // Clicar no botão Templates
-    await page.click('button:has-text("Templates")');
-    
-    // Verificar se modal abriu
-    await expect(page.locator('text=Selecionar Template')).toBeVisible();
-    await expect(page.locator('h3:has-text("Fundamentos de Enfermagem")').first()).toBeVisible();
+    await openTemplatesModal(page);
+    await expect(page.getByRole('heading', { name: 'Fundamentos de Enfermagem' })).toBeVisible();
   });
 
   test('deve carregar template ao selecionar', async ({ page }) => {
-    // Abrir templates
-    await page.click('button:has-text("Templates")');
-    
-    // Selecionar template
-    await page.click('button:has-text("Usar Template")');
+    await openTemplatesModal(page);
+    await page.getByRole('button', { name: 'Usar Template' }).first().click();
     
     // Verificar se JSON foi preenchido
-    const jsonInput = page.locator('textarea').first();
+    const jsonInput = page.getByRole('textbox', {
+      name: /Use Abrir JSON, Colar JSON ou digite/i,
+    });
     const jsonContent = await jsonInput.inputValue();
     
     expect(jsonContent).toContain('"banca"');
@@ -105,56 +96,47 @@ test.describe('Laboratório Admin', () => {
   });
 
   test('deve validar JSON em tempo real', async ({ page }) => {
-    // Colar JSON válido
     await fillJsonEditor(page, JSON.stringify(validQuestionJSON, null, 2));
-    
-    // Aguardar validação
-    await page.waitForTimeout(1000);
-    
-    // Verificar badge de válido
-    await expect(page.locator('text=Válido')).toBeVisible({ timeout: 5000 });
+    await expectJsonValidBadge(page);
   });
 
   test('deve mostrar erros de validação', async ({ page }) => {
-    // Colar JSON inválido (sem banca)
-    const invalidJSON = { ...validQuestionJSON, meta: { ...validQuestionJSON.meta } };
-    delete (invalidJSON.meta as Partial<typeof invalidJSON.meta>).banca;
-    
+    const invalidJSON = {
+      meta: { banca: 'EBSERH', topico: '' },
+      question_data: { instruction: 'Teste', options: [] },
+    };
+
     await fillJsonEditor(page, JSON.stringify(invalidJSON, null, 2));
-    
-    // Aguardar validação
-    await page.waitForTimeout(1000);
-    
-    // Verificar se erros aparecem (heading único do ValidationErrorsPanel)
-    await expect(page.getByRole('heading', { name: /Erros? Encontrado/ })).toBeVisible({ timeout: 10000 });
+
+    const errorHeading = page.getByRole('heading', {
+      name: /Erro(s)? Encontrado(s)?/i,
+    });
+    await errorHeading.scrollIntoViewIfNeeded();
+    await expect(errorHeading).toBeVisible({ timeout: 15_000 });
   });
 
   test('deve mostrar preview quando JSON é válido', async ({ page }) => {
-    // Colar JSON válido
     await fillJsonEditor(page, JSON.stringify(validQuestionJSON, null, 2));
-    
-    // Aguardar validação e preview
-    await page.waitForTimeout(2000);
-    
-    // Verificar se preview apareceu (não deve mais mostrar "Aguardando Injeção")
-    const waitingMessage = page.locator('text=Aguardando Injeção');
-    await expect(waitingMessage).not.toBeVisible({ timeout: 5000 });
-    
-    // Verificar se preview está visível
-    const previewArea = page.locator('[class*="Preview"]').or(page.locator('text=Preview'));
-    // Se não encontrar pelo texto, verifica pela estrutura
-    const previewContainer = page.locator('div').filter({ hasText: /EBSERH|Fundamentos de Enfermagem/ }).first();
-    await expect(previewContainer).toBeVisible({ timeout: 5000 });
+    await expectJsonValidBadge(page);
+
+    await expect(page.getByRole('heading', { name: 'Aguardando Injeção' })).not.toBeVisible({
+      timeout: 15_000,
+    });
+
+    await expect(
+      page
+        .locator('[data-testid="lesson-scroll-body"]')
+        .getByText(/história da enfermagem/i)
+        .first(),
+    ).toBeVisible({ timeout: 15_000 });
   });
 
   test('deve habilitar publicar quando JSON é válido', async ({ page }) => {
     await fillJsonEditor(page, JSON.stringify(validQuestionJSON, null, 2));
+    await expectJsonValidBadge(page);
 
-    await page.waitForTimeout(2000);
-
-    // Laboratório: fluxo de saída é "Publicar" (não há botão "Exportar")
     const publishButton = page.getByRole('button', { name: /^Publicar$/ });
-    await expect(publishButton).toBeEnabled({ timeout: 5000 });
+    await expect(publishButton).toBeEnabled({ timeout: 15_000 });
   });
 
   test('deve exibir ação para abrir JSON do arquivo', async ({ page }) => {
@@ -201,8 +183,8 @@ test.describe('Laboratório Admin', () => {
 
     await fillJsonEditor(page, invalidJSON);
 
-    await expect(page.getByText(/Erros Encontrados|Erro Encontrado/)).toBeVisible({
-      timeout: 10000,
+    await expect(page.getByRole('heading', { name: /Erro(s)? Encontrado/i })).toBeVisible({
+      timeout: 15_000,
     });
 
     // Gutter marca linhas com data-error (JsonEditorWithHighlight + errorLines do Zod)

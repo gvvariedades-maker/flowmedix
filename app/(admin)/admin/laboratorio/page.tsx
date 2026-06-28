@@ -530,6 +530,7 @@ export default function AvantLaboratory() {
             />
             <button
               type="button"
+              data-testid="lab-templates-open"
               onClick={() => setShowTemplateSelector(true)}
               className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest bg-violet-50 text-violet-700 hover:bg-violet-100 border border-violet-200 transition-all active:scale-95"
             >
@@ -961,7 +962,10 @@ export default function AvantLaboratory() {
 
       {/* Template Selector Modal */}
       {showTemplateSelector && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+        <div
+          data-testid="lab-templates-modal"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4"
+        >
           <div className="max-w-4xl w-full max-h-[90vh] overflow-auto">
             <TemplateSelector
               onSelectTemplate={(question: QuestaoCompleta) => {

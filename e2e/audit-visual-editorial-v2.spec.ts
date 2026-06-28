@@ -19,6 +19,8 @@ import {
   gotoVitrineE2e,
   vitrineStableLocalStorageInitScript,
 } from './helpers/vitrineE2e';
+import { expectLandingHeroVisible } from './helpers/landingE2e';
+import { expectGabaritoCorreto } from './helpers/playerE2e';
 
 const BANCA_QUERY = encodeURIComponent(E2E_ESTUDAR_BANCA);
 
@@ -62,7 +64,7 @@ async function openPlayer(page: Page) {
 
 async function captureStaticPages(page: Page, prefix: 'desktop' | 'mobile') {
   await page.goto('/', { waitUntil: 'domcontentloaded' });
-  await expect(page.getByText(/O AVANT foi feito para você/i)).toBeVisible({ timeout: 30_000 });
+  await expectLandingHeroVisible(page);
   await snap(page, `T1-landing-${prefix}.png`, prefix === 'desktop');
 
   await page.goto('/login', { waitUntil: 'domcontentloaded' });
@@ -106,7 +108,7 @@ test.describe('Auditoria visual — AVANT Editorial v2 desktop', () => {
 
     await page.getByRole('radio', { name: /Alternativa A:/i }).click();
     await page.getByRole('button', { name: 'Confirmar Resposta' }).click();
-    await expect(page.getByText('Resposta Correta')).toBeVisible({ timeout: 30_000 });
+    await expectGabaritoCorreto(page, 30_000);
     await snap(page, 'T6-feedback-desktop.png');
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
@@ -144,7 +146,7 @@ test.describe('Auditoria visual — AVANT Editorial v2 mobile', () => {
 
     await page.getByRole('radio', { name: /Alternativa A:/i }).click();
     await page.getByRole('button', { name: 'Confirmar Resposta' }).click();
-    await expect(page.getByText('Resposta Correta')).toBeVisible({ timeout: 30_000 });
+    await expectGabaritoCorreto(page, 30_000);
     await snap(page, 'T6-feedback-mobile.png');
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();

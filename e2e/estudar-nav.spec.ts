@@ -11,6 +11,11 @@ import {
   dismissWelcomeIfVisible,
   waitVitrineListReady,
 } from './helpers/vitrineE2e';
+import {
+  expectGabaritoCorreto,
+  expectGabaritoIncorreto,
+  openQuestionTextZoomPopover,
+} from './helpers/playerE2e';
 
 const BANCA_QUERY = encodeURIComponent(E2E_ESTUDAR_BANCA);
 const SLUG_1_URL = new RegExp(`/estudar/${E2E_ESTUDAR_SLUG_1}.*banca=${BANCA_QUERY}`);
@@ -143,12 +148,12 @@ async function selecionarAlternativaB(page: Page) {
 
 async function confirmarRespostaEGabarito(page: Page) {
   await page.getByRole('button', { name: 'Confirmar Resposta' }).click();
-  await expect(page.getByText('Resposta Correta')).toBeVisible({ timeout: 15_000 });
+  await expectGabaritoCorreto(page);
 }
 
 async function confirmarRespostaIncorreta(page: Page) {
   await page.getByRole('button', { name: 'Confirmar Resposta' }).click();
-  await expect(page.getByText('Resposta Incorreta')).toBeVisible({ timeout: 15_000 });
+  await expectGabaritoIncorreto(page);
 }
 
 async function expectNavButtonsReady(page: Page, opts: { requireProxima?: boolean } = {}) {
@@ -467,6 +472,7 @@ test.describe('Estudar — immersive inline mobile (rota #5)', () => {
 
   test('toolbar zoom A+/A− visível no player imersivo', async ({ page }) => {
     await abrirQuestao1Direto(page);
+    await openQuestionTextZoomPopover(page);
     await expect(page.getByRole('button', { name: 'Aumentar texto' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Diminuir texto' })).toBeVisible();
   });
