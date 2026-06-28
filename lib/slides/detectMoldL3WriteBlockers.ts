@@ -111,7 +111,7 @@ export function detectMoldL3WriteBlockers(
       },
       slide.meta,
       instruction,
-      slides,
+      slides as Parameters<typeof enrichPresentationContext>[3],
       questionMeta,
     );
 
