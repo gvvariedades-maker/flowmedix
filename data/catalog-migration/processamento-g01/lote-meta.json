@@ -25,9 +25,17 @@
   "workflow": [
     "1. Handcraft golden-v1 em data/catalog-migration/processamento-g01/questions/",
     "2. Âncoras: idecan-3076-7 (classificação) + CPCON pré-limpeza V/F",
-    "3. npm run validate:goldens -- --lote=processamento-g01 --strict",
+    "3. npm run catalog:preflight -- --lote=processamento-g01",
     "4. npm run catalog:apply-lote -- --lote=processamento-g01 --dry-run",
-    "5. apply só quando usuário pedir"
+    "5. npm run audit:anchor-review -- --lote=processamento-g01",
+    "6. apply só quando usuário pedir"
   ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/processamento-g01.json"
+  },
   "next_lote": "processamento-g02 — concluído (10 slugs)"
 }

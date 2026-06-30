@@ -1,0 +1,54 @@
+{
+  "lote": "infeccoes-biosseguranca-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-30",
+  "subtopico": "Infecções no Contexto da Biossegurança",
+  "cluster": "ICECE higiene/transporte + IDECAN piúria/IH/cateter periférico",
+  "cluster_pct": 32,
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-8",
+  "golden_reference": "examples/questao-premium-idib-umirim-itu-cateter-exceto.json",
+  "guideline": "ANVISA RDC 7/2010 · OMS 5 momentos higiene das mãos · MS precauções",
+  "slugs": [
+    "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-8",
+    "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-9",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-5",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-6",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-2",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-4"
+  ],
+  "duplicate_pairs": [
+    [
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-2"
+    ],
+    [
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-5",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3"
+    ],
+    [
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-6",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-4"
+    ]
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=infeccoes-biosseguranca-g02 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/infeccoes-biosseguranca-g02/questions/",
+    "2. npm run audit:questao-readiness -- --lote=infeccoes-biosseguranca-g02",
+    "3. npm run validate:goldens -- --lote=infeccoes-biosseguranca-g02 --strict",
+    "4. npm run catalog:apply-lote -- --lote=infeccoes-biosseguranca-g02 --dry-run",
+    "5. apply só com 'pode aplicar' do usuário"
+  ],
+  "prev_lote": "infeccoes-biosseguranca-g01",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/infeccoes-biosseguranca-g02.json"
+  }
+}

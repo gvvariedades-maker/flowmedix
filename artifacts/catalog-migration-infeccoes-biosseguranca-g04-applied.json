@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-30T12:32:44.829Z",
+  "lote": "infeccoes-biosseguranca-g04",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

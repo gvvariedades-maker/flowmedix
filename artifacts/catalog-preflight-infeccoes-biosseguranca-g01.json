@@ -1,0 +1,74 @@
+{
+  "lote": "infeccoes-biosseguranca-g01",
+  "generated_at": "2026-06-30T15:08:07.328Z",
+  "strict": true,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "ameosc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

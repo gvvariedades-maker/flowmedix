@@ -1,0 +1,74 @@
+{
+  "lote": "infeccoes-biosseguranca-g03",
+  "generated_at": "2026-06-30T15:08:14.301Z",
+  "strict": true,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-06-29T23:41:38.817Z",
+  "lote": "enfermagem-do-trabalho-g05",
+  "mode": "apply",
+  "total_files": 4,
+  "ok": 4,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-5",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

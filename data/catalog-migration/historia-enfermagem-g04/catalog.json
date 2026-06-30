@@ -1,0 +1,21 @@
+{
+  "exported_at": "2026-06-29T12:26:22.725Z",
+  "lote": "historia-enfermagem-g04",
+  "total": 2,
+  "entries": [
+    {
+      "modulo_slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCEPE",
+      "avant_codigo": 3344
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3351
+    }
+  ]
+}

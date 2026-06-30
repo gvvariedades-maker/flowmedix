@@ -55,6 +55,7 @@ export function packageUsesBespoke(design?: SubtopicDesign): boolean {
 
 const ADOLESCENT_ETHICS = 'adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)';
 const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const SP_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
 
 const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
   'saude do adolescente': [
@@ -362,6 +363,64 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Técnica MDI/espaçador — tabela de referência.',
     },
   ],
+  'seguranca do paciente': [
+    {
+      pattern: /identificac|dois identificador|pulseira/i,
+      branch_id: 'sp_identificacao',
+      branch_implemented: true,
+      ideal_mold_package: SP_GENERIC,
+      base_decision: 'ok_existente',
+      rationale: 'Identificação segura — golden CESGRANRIO + reference_table + compare.',
+    },
+    {
+      pattern: /queda|morse|grades da cama/i,
+      branch_id: 'sp_prevencao_quedas',
+      branch_implemented: true,
+      ideal_mold_package: SP_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Prevenção de quedas — escala/protocolo; compare + rows bastam.',
+    },
+    {
+      pattern: /evento adverso|incidente|pnsp|portaria.*529|near miss/i,
+      branch_id: 'sp_eventos_adversos',
+      branch_implemented: true,
+      ideal_mold_package: SP_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'PNSP / 4 grupos de incidente — compare + tabela de definições.',
+    },
+    {
+      pattern: /metas internacionais|jci|joint commission/i,
+      branch_id: 'sp_metas_internacionais',
+      branch_implemented: true,
+      ideal_mold_package: SP_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: '6 metas JCI/OMS — reference_table rows + tap no logic_flow.',
+    },
+    {
+      pattern: /v\/f|assertivas|certo ou errado/i,
+      branch_id: 'sp_generico',
+      branch_implemented: true,
+      ideal_mold_package: SP_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'V/F e C/E — compare + tap genérico.',
+    },
+    {
+      pattern: /incorreta|exceto/i,
+      branch_id: 'sp_generico',
+      branch_implemented: true,
+      ideal_mold_package: SP_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'EXCETO — danger_zone compare sem molde bespoke.',
+    },
+    {
+      pattern: /drift|reclassificar/i,
+      branch_id: 'sp_generico',
+      branch_implemented: true,
+      ideal_mold_package: SP_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Drift taxonômico — reclassificar antes de handcraft; layout genérico interim.',
+    },
+  ],
 };
 
 function subtopicKey(subtopico: string): string | undefined {
@@ -378,6 +437,7 @@ function subtopicKey(subtopico: string): string | undefined {
   if (key.includes('farmacodinamica') || key.includes('farmacocinetica')) return 'farmacologia';
   if (key.includes('respiratorias cronicas') || key.includes('asma') || key === 'dpoc')
     return 'respiratorio';
+  if (key.includes('seguranca do paciente')) return 'seguranca do paciente';
   return undefined;
 }
 
@@ -490,5 +550,10 @@ export function implementedBranchIds(): PedagogicalBranchId[] {
     'respiratorio_asma_crise',
     'respiratorio_tecnica_inalador',
     'respiratorio_generico',
+    'sp_identificacao',
+    'sp_prevencao_quedas',
+    'sp_eventos_adversos',
+    'sp_metas_internacionais',
+    'sp_generico',
   ];
 }

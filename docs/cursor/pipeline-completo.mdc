@@ -1,0 +1,65 @@
+---
+description: Ativa o pipeline handcraft + qualidade vendável quando o usuário enviar "Pipeline completo:" seguido do subtópico canônico, ou anexar docs/PIPELINE_COMPLETO_CONVERSA.md
+alwaysApply: false
+---
+
+# Pipeline completo — handcraft + vendável (uma conversa)
+
+> **Escopo:** 1 subtópico = 1 pacote (todos lotes `g*`, todos slugs). Não usar para os 41 subtópicos numa conversa.
+
+Quando a mensagem começar com **`Pipeline completo:`** (ou anexar `docs/PIPELINE_COMPLETO_CONVERSA.md`), executar **sem pedir modo**:
+
+## 1. Resolver trigger
+
+- Formato: `Pipeline completo: <subtópico canônico>` (`CLAUDE.md` §9)
+- Opcional: `Slug: <modulo-slug>` (reparo pontual antes da Fase 2)
+- Modificadores: `Só qualidade` (pular Fase 1 se `applied`) | `Só handcraft` (não promover)
+
+Runbook: [`docs/PIPELINE_COMPLETO_CONVERSA.md`](../PIPELINE_COMPLETO_CONVERSA.md)
+
+## 2. Decidir fase inicial
+
+| Registry | Começar em |
+|----------|------------|
+| `handcraft_applied < total_slugs` | **Fase 1** handcraft |
+| `applied` 100%, `production_status` ≠ `production_ready` | **Fase 2** qualidade |
+| `production_status: production_ready` | **Fase 3** health ou relatório |
+| `Só handcraft` no trigger | Parar após Fase 1 |
+
+## 3. Fase 1 — Handcraft
+
+Seguir [`docs/HANDCRAFT_CONVERSA.md`](../HANDCRAFT_CONVERSA.md) + playbook (`handcraftPlaybook.ts`).
+
+- Skill `avant-json-template` § L2.5+L3
+- Proibido: `ai:generate`, `catalog:upgrade-premium`
+- `--apply` só se usuário escrever **`pode aplicar`**
+- Gate: `status: applied`, `handcraft_applied === total_slugs`
+
+## 4. Fase 2 — Qualidade + `--promote`
+
+Seguir Parte A de [`docs/QUALITY_VENDAVEL_CONVERSA.md`](../QUALITY_VENDAVEL_CONVERSA.md):
+
+1. `reconcile:handcraft-manifest`
+2. `catalog:preflight` em cada `g*`
+3. `audit:handcraft-dod` + `slug-alignment --strict` + `numeric-factcheck`
+4. `audit:anchor-review` + revisor B (L6) em cada `g*`
+5. `visual-mold-regression`
+6. `audit:subtopico-quality -- --subtopico="..." --promote`
+
+Gate: `production_status: production_ready` = **VENDÁVEL**
+
+## 5. Fase 3 — Opcional
+
+`audit:subtopico-health` se pedido ou já vendável.
+
+## 6. Proibido
+
+- Segundo `--promote` rotineiro pós-venda
+- Declarar vendável sem promote PASS
+- Apply sem autorização explícita
+
+## 7. Encerramento
+
+Reportar: `applied` | `technical_ready` | `production_ready` | `blockers[]`
+
+Artefatos: `artifacts/subtopico-quality/<pacote>.json`

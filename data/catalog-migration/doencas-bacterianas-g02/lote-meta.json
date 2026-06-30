@@ -1,0 +1,41 @@
+{
+  "lote": "doencas-bacterianas-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-30",
+  "applied_at": "2026-06-30",
+  "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0",
+  "golden_reference": "examples/questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json",
+  "guideline": null,
+  "parent": "data/catalog-migration/doencas-bacterianas-completo/manifest.json",
+  "manifest": "data/catalog-migration/doencas-bacterianas-completo/manifest.json",
+  "validate_command": "npm run validate:goldens -- --lote=doencas-bacterianas-g02 --strict",
+  "slugs": [
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+    "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+    "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-2",
+    "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2",
+    "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-3",
+    "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0"
+  ],
+  "clusters": [
+    "Tuberculose — controle, TDO e vigilância",
+    "Coqueluche",
+    "Meningite bacteriana",
+    "Hanseníase — APS",
+    "Agente etiológico",
+    "Bactérias do trato gastrointestinal"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/doencas-bacterianas-g02.json"
+  }
+}

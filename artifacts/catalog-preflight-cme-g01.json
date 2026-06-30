@@ -1,0 +1,58 @@
+{
+  "lote": "cme-g01",
+  "generated_at": "2026-06-29T23:49:05.342Z",
+  "strict": true,
+  "total": 6,
+  "passed": 6,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

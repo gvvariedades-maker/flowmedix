@@ -1,0 +1,27 @@
+{
+  "lote": "enfermagem-do-trabalho-g04",
+  "exported_at": "2026-06-29T00:00:00.000Z",
+  "source": "lote-meta",
+  "filters": {
+    "slugs": [
+      "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+      "fgv-enfermagem-processo-de-enfermagem-1780002110600-3",
+      "fgv-enfermagem-processo-de-enfermagem-1780002110600-5",
+      "fgv-enfermagem-processo-de-enfermagem-1780002110600-6",
+      "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+      "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9"
+    ]
+  },
+  "slugs": [
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-3",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-5",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-6",
+    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+    "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9"
+  ]
+}

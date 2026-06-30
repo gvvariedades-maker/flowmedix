@@ -1,0 +1,58 @@
+{
+  "lote": "enfermagem-do-trabalho-g02",
+  "generated_at": "2026-06-29T23:22:14.922Z",
+  "strict": true,
+  "total": 6,
+  "passed": 6,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-06-30T15:47:26.955Z",
+  "mode": "apply",
+  "bucket": "Segurança do Paciente",
+  "min_confidence_apply": 0.85,
+  "limit": null,
+  "inference_source": "agent",
+  "notes": "Consolidação faixa-d (2026-06-16) + cluster drift L3. Apenas mudanças com confiança ≥0,90 e tema fora de NSP.",
+  "summary": {
+    "scanned": 62,
+    "inferred": 3,
+    "errors": 0,
+    "keep_current": 59,
+    "same_subtopico": 59,
+    "applicable": 3,
+    "applied": 3
+  },
+  "proposals": [
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Evolução do paciente e resposta às prescrições — documentação assistencial (PE), não NSP.",
+      "applicable": true,
+      "source": "agent",
+      "tier": "green"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+      "from": "Segurança do Paciente",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Registro em prontuário e comunicação documental — núcleo do PE.",
+      "applicable": true,
+      "source": "agent",
+      "tier": "green"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+      "from": "Segurança do Paciente",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Prontuário médico — sigilo e registro (PE).",
+      "applicable": true,
+      "source": "agent",
+      "tier": "green"
+    }
+  ],
+  "yellow_review": [
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.8,
+      "rationale": "Gestão de estoque/materiais — possível saída; faixa-d manteve em SP (0,92).",
+      "action": "manter em SP até revisão"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.85,
+      "rationale": "Quarto para radiofármacos — infraestrutura, não NSP típico.",
+      "action": "revisar manualmente"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.75,
+      "rationale": "Estilos de liderança — gestão; sem subtópico admin canônico.",
+      "action": "manter em SP (catch-all)"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.82,
+      "rationale": "Provisão de materiais — overlap processamento.",
+      "action": "revisar se mover"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.88,
+      "rationale": "Trabalho em equipe — transversal; manter no bucket.",
+      "action": "manter"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.88,
+      "rationale": "Triagem/fluxo em urgência — segurança do paciente na classificação de risco.",
+      "action": "manter"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.87,
+      "rationale": "Trabalho em equipe no cuidado — transversal.",
+      "action": "manter"
+    }
+  ],
+  "keep_in_bucket_rationale": "22 slugs com slug-path auditoria/PE mas enunciado NSP (quedas, metas OMS, eventos, consentimento, transporte seguro) — revisão faixa-d confirmou permanência.",
+  "apply_errors": []
+}

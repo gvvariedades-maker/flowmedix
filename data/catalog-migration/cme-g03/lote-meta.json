@@ -25,5 +25,12 @@
     "4. npm run catalog:apply-lote -- --lote=cme-g03 --apply"
   ],
   "prev_lote": "cme-g02 (validated 10/10)",
-  "next_lote": "cme-g04 — Certo ou errado + INCORRETA (7 slugs restantes)"
+  "next_lote": "cme-g04 — Certo ou errado + INCORRETA (7 slugs restantes)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cme-g03.json"
+  }
 }

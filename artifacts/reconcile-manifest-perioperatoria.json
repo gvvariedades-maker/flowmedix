@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-06-29T23:50:46.367Z",
+  "pacote_prefix": "perioperatoria",
+  "lotes": [
+    {
+      "lote": "perioperatoria-g01",
+      "count": 8
+    },
+    {
+      "lote": "perioperatoria-g02",
+      "count": 8
+    },
+    {
+      "lote": "perioperatoria-g03",
+      "count": 8
+    },
+    {
+      "lote": "perioperatoria-g04",
+      "count": 8
+    },
+    {
+      "lote": "perioperatoria-g05",
+      "count": 8
+    },
+    {
+      "lote": "perioperatoria-g06",
+      "count": 8
+    },
+    {
+      "lote": "perioperatoria-g07",
+      "count": 8
+    },
+    {
+      "lote": "perioperatoria-g08",
+      "count": 8
+    },
+    {
+      "lote": "perioperatoria-g09",
+      "count": 4
+    }
+  ],
+  "union_count": 68,
+  "registry_total_slugs": 68,
+  "match": true,
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+    "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+    "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003137298-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+    "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-1",
+    "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
+    "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-3",
+    "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-4",
+    "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+    "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-4",
+    "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+    "consulplan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-1",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
+    "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
+    "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
+    "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
+    "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
+    "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+    "furb-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-7",
+    "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
+    "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
+    "ibade-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-8",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-3",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-6",
+    "ibade-enfermagem-processo-de-enfermagem-1780005128081-9",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-1",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-3",
+    "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-6",
+    "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+    "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-2",
+    "idib-enfermagem-enfermagem-em-centro-cirurgico-1778934918280-8",
+    "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+    "igeduc-enfermagem-assistencia-perioperatoria-inclui-srpa-1780001148264-7",
+    "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-2",
+    "igeduc-geral-assistencia-perioperatoria-inclui-srpa-1777103789613-0",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+    "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+    "instituto-darwin-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-2",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+    "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+    "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+    "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+    "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0",
+    "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+    "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5",
+    "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1",
+    "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+    "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-4",
+    "unifil-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-0",
+    "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+    "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6"
+  ]
+}

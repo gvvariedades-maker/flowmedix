@@ -1,0 +1,74 @@
+{
+  "lote": "infeccoes-biosseguranca-g02",
+  "generated_at": "2026-06-30T15:08:11.238Z",
+  "strict": true,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

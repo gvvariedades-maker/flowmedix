@@ -1,0 +1,26 @@
+{
+  "lote": "historia-enfermagem-g03",
+  "generated_at": "2026-06-29T23:45:31.092Z",
+  "strict": true,
+  "total": 2,
+  "passed": 2,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

@@ -22,5 +22,13 @@
   "artifacts": {
     "links": "artifacts/perioperatoria-g07-links.html",
     "applied": "artifacts/catalog-migration-perioperatoria-g07-applied.json"
+  },
+  "anchor_slug": "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-2",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/perioperatoria-g07.json"
   }
 }

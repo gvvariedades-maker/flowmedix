@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-06-29T23:34:37.214Z",
+  "subtopico": "Farmacodinâmica e Farmacocinética",
+  "pacote_prefix": "farmacodinamica-e-farmacocinetica",
+  "production_status_before": "none",
+  "technical_ready": true,
+  "production_ready": true,
+  "can_sell": true,
+  "continuous_eligible": true,
+  "ship_gate": {
+    "ok": true,
+    "blockers": []
+  },
+  "monitoring": {
+    "deprecated": true,
+    "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
+    "sessions_30d": 424
+  },
+  "layers": {
+    "L1": {
+      "pass": true,
+      "detail": "handcraft-dod PASS"
+    },
+    "L2": {
+      "pass": true,
+      "detail": "alignment OK (12 slugs)"
+    },
+    "L2b": {
+      "pass": true,
+      "detail": "numeric factcheck OK"
+    },
+    "L3": {
+      "pass": true,
+      "detail": "L1 preflight 12/12 — g01+g02 alignment e numeric OK; branches farmaco_*"
+    },
+    "L4": {
+      "pass": true,
+      "detail": "capture cirúrgico — warn only (não bloqueia ship)"
+    },
+    "L5": {
+      "pass": true,
+      "detail": "content health OK"
+    },
+    "L6": {
+      "pass": true,
+      "detail": "all 2 lotes anchor pass"
+    }
+  },
+  "lote_stats": [
+    {
+      "lote": "farmacodinamica-e-farmacocinetica-g01",
+      "scanned": 5,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "farmacodinamica-e-farmacocinetica-g02",
+      "scanned": 7,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    }
+  ],
+  "content_health": {
+    "subtopico": "Farmacodinâmica e Farmacocinética",
+    "sessions_30d": 424,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 2,
+      "p3": 0,
+      "total": 2
+    },
+    "report_rate_pct": 0.47,
+    "top_reported_slugs": [
+      {
+        "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
+        "count": 1
+      },
+      {
+        "slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
+        "count": 1
+      }
+    ],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 424,
+      "open_p1": 0,
+      "report_rate_pct": 0.47
+    },
+    "pass": true,
+    "blockers": []
+  },
+  "blockers": []
+}

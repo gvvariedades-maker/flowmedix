@@ -1,0 +1,1007 @@
+{
+  "generated_at": "2026-06-30T15:49:34.635Z",
+  "subtopico": "Segurança do Paciente",
+  "lote": "seguranca-do-paciente-completo",
+  "total": 59,
+  "drift_total": 22,
+  "drift_pct": 37.3,
+  "goldens_needed": 2,
+  "existing_goldens_examples": [
+    "questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
+    "questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json"
+  ],
+  "family_counts": {
+    "conceito": 48,
+    "protocolo": 8,
+    "certo_errado": 3
+  },
+  "premium_status_counts": {
+    "hybrid_ok": 45,
+    "stub": 14
+  },
+  "stub_total": 14,
+  "contract_fail_total": 56,
+  "cluster_decisions": [
+    {
+      "cluster": "DRIFT — auditoria/gestão",
+      "count": 16,
+      "pct": 27.1,
+      "slide_contract_failures": 14,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+        "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+        "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+        "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+        "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4"
+      ],
+      "decision": "reclassificar",
+      "branch_id_proposed": null
+    },
+    {
+      "cluster": "Prevenção de quedas",
+      "count": 11,
+      "pct": 18.6,
+      "slide_contract_failures": 11,
+      "instruction_artifacts": 1,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+        "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+        "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+        "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+        "funcern-enfermagem-seguranca-do-paciente-1777102678563-5"
+      ],
+      "decision": "novo_ramo",
+      "branch_id_proposed": "sp_prevencao_quedas"
+    },
+    {
+      "cluster": "Eventos adversos e incidentes",
+      "count": 9,
+      "pct": 15.3,
+      "slide_contract_failures": 9,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "com-exam-pref-bauru-enfermagem-seguranca-do-paciente-1777102918981-5",
+        "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-8",
+        "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+        "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+        "furb-enfermagem-seguranca-do-paciente-1777102918981-7"
+      ],
+      "decision": "novo_ramo",
+      "branch_id_proposed": "sp_eventos_adversos"
+    },
+    {
+      "cluster": "Identificação do paciente",
+      "count": 7,
+      "pct": 11.9,
+      "slide_contract_failures": 7,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2",
+        "fgv-enfermagem-seguranca-do-paciente-1777102742836-4",
+        "ibade-enfermagem-seguranca-do-paciente-1779563436357-1",
+        "idecan-enfermagem-seguranca-do-paciente-1778712220716-5",
+        "imparh-enfermagem-seguranca-do-paciente-1777102936764-6"
+      ],
+      "decision": "coberto",
+      "branch_id_proposed": "sp_identificacao"
+    },
+    {
+      "cluster": "DRIFT — processo de enfermagem",
+      "count": 6,
+      "pct": 10.2,
+      "slide_contract_failures": 6,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+        "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7"
+      ],
+      "decision": "reclassificar",
+      "branch_id_proposed": null
+    },
+    {
+      "cluster": "Segurança do paciente — conceito geral",
+      "count": 2,
+      "pct": 3.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+        "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6"
+      ],
+      "decision": "cauda_longa",
+      "branch_id_proposed": "seguranca_do_paciente_conceito_geral"
+    },
+    {
+      "cluster": "Metas internacionais JCI/OMS",
+      "count": 2,
+      "pct": 3.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 1,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+        "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2"
+      ],
+      "decision": "cauda_longa",
+      "branch_id_proposed": "sp_metas_internacionais"
+    },
+    {
+      "cluster": "Segurança na medicação",
+      "count": 1,
+      "pct": 1.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0"
+      ],
+      "decision": "cauda_longa",
+      "branch_id_proposed": "seguranca_na_medicacao"
+    },
+    {
+      "cluster": "Segurança do paciente — conceito",
+      "count": 1,
+      "pct": 1.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "imparh-enfermagem-seguranca-do-paciente-1779563443877-5"
+      ],
+      "decision": "cauda_longa",
+      "branch_id_proposed": "seguranca_do_paciente_conceito"
+    },
+    {
+      "cluster": "Cultura de segurança",
+      "count": 1,
+      "pct": 1.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2"
+      ],
+      "decision": "cauda_longa",
+      "branch_id_proposed": "cultura_de_seguranca"
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 1,
+      "pct": 1.7,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9"
+      ],
+      "decision": "cauda_longa",
+      "branch_id_proposed": "certo_ou_errado"
+    },
+    {
+      "cluster": "Higienização das mãos",
+      "count": 1,
+      "pct": 1.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1"
+      ],
+      "decision": "cauda_longa",
+      "branch_id_proposed": "higienizacao_das_maos"
+    },
+    {
+      "cluster": "Humanização e cuidado",
+      "count": 1,
+      "pct": 1.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3"
+      ],
+      "decision": "cauda_longa",
+      "branch_id_proposed": "humanizacao_e_cuidado"
+    }
+  ],
+  "rows": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+      "banca": "Adm&Tec",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "Segurança do paciente — conceito geral",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Preencha as lacunas na seguinte declaração sobre o atendimento e internação domiciliares: Para garantir a segurança e ef"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+      "banca": "Amauc",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "No ambiente hospitalar, a gestão eficiente dos recursos materiais é crucial para a qualidade do atendimento. Assinale a "
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2",
+      "banca": "Ameosc",
+      "family": "conceito",
+      "builder_topic": "Identificação do paciente",
+      "pedagogical_cluster": "Identificação do paciente",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A segurança do paciente diz respeito ao direito de toda pessoa receber cuidados de saúde sem sofrer danos evitáveis. Sob"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Trata-se de um documento que se refere ao direito do paciente em aceitar ou rejeitar o tratamento oferecido pela enferme"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "É uma medida importante para a prevenção de quedas em pacientes hospitalizados:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — processo de enfermagem",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Durante o transporte intra-hospitalar, é importante:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito",
+      "pedagogical_cluster": "DRIFT — processo de enfermagem",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "No transporte intra-hospitalar, o principal cuidado é:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — processo de enfermagem",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Após decidir transportar um paciente entre unidades, recomenda-se:"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-seguranca-do-paciente-1777102918981-5",
+      "banca": "Com Exam Pref Bauru",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A segurança do paciente é definida como a redução, a um mínimo aceitável, do risco de dano desnecessário associado à ate"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "banca": "Cotec Fadenor",
+      "family": "conceito",
+      "builder_topic": "Segurança na medicação",
+      "pedagogical_cluster": "Segurança na medicação",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A enfermagem, por ser uma profissão fortemente dependente de informações precisas e oportunas para executar a grande var"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-8",
+      "banca": "CPCON UEPB",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Sobre a Política Nacional de Segurança do Paciente, é CORRETO afirmar:"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "banca": "Educa Pb",
+      "family": "protocolo",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "No contexto da segurança do paciente, especialmente na prevenção de quedas e lesões em ambiente hospitalar, analise os i"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+      "banca": "Facet",
+      "family": "conceito",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A prevenção de quedas é uma importante medida de segurança do paciente, especialmente em unidades de saúde que atendem i"
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+      "banca": "Fadesp",
+      "family": "protocolo",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": true,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Para o Ministério da Saúde (2023), o protocolo de prevenção de quedas tem como finalidade reduzir a ocorrência de queda "
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+      "banca": "Fau Unicentro",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — processo de enfermagem",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Assinale a alternativa que descreve doenças \"iatrogênicas\"."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7",
+      "banca": "Fau Unicentro",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "DRIFT — processo de enfermagem",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Considerando a classificação dos danos segundo a gravidade, assinale a alternativa que corresponde ao \"dano que causa re"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+      "banca": "Fauel",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Sobre a qualidade no atendimento em saúde, leia a frase a seguir e, depois, assinale a alternativa que preenche CORRETAM"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6",
+      "banca": "Faurgs",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "Segurança do paciente — conceito geral",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Uma das estratégias empregadas para criar sistemas mais seguros no cuidado em saúde nas organizações consiste em"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+      "banca": "Fcm",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Sobre segurança do paciente é correto afirmar que o evento adverso é o incidente que"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-seguranca-do-paciente-1777102742836-4",
+      "banca": "FGV",
+      "family": "protocolo",
+      "builder_topic": "Identificação do paciente",
+      "pedagogical_cluster": "Identificação do paciente",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Com base no protocolo de identificação do paciente do Ministério da Saúde, analise as afirmativas a seguir e assinale V "
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-5",
+      "banca": "FUNCERN",
+      "family": "protocolo",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O Programa Nacional de Segurança do Paciente (PNSP) foi criado em 2013 para contribuir com a qualificação do cuidado em "
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-6",
+      "banca": "FUNCERN",
+      "family": "conceito",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O processo de envelhecimento, em algumas situações, pode ocasionar a diminuição do equilíbrio e alterações cognitivas na"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "banca": "Fundatec",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — processo de enfermagem",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Um quarto destinado à internação de paciente para administração de radiofármacos deve possuir, EXCETO:"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-seguranca-do-paciente-1777102821787-1",
+      "banca": "Fundep",
+      "family": "conceito",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A segurança do paciente é um conjunto de ações que visam reduzir o risco de danos aos pacientes durante os cuidados de s"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+      "banca": "Furb",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A segurança do paciente constitui um dos pilares fundamentais da qualidade em saúde, sendo definida como a redução do ri"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-seguranca-do-paciente-1777102918981-7",
+      "banca": "Furb",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Os NSPs, previstos na Portaria MS/GM n.o 529/2013 e na RDC n.o 36/2013/Anvisa, são instâncias que devem ser criadas nos "
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-seguranca-do-paciente-1779563436357-1",
+      "banca": "Ibade",
+      "family": "conceito",
+      "builder_topic": "Identificação do paciente",
+      "pedagogical_cluster": "Identificação do paciente",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A segurança do paciente é um conjunto de ações para evitar, prevenir e minimizar consequências ou danos evitáveis por cu"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-seguranca-do-paciente-1777102742836-0",
+      "banca": "Idcap",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O Técnico de Enfermagem, na sua prática de trabalho, deve valer-se de algumas terminologias para melhor comunicação com "
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-5",
+      "banca": "IDECAN",
+      "family": "protocolo",
+      "builder_topic": "Identificação do paciente",
+      "pedagogical_cluster": "Identificação do paciente",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A segurança do paciente é um dos principais desafios nos serviços de saúde, exigindo a adoção de protocolos para minimiz"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+      "banca": "Igeduc",
+      "family": "certo_errado",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O tipo de líder autocrático é o lider que se caracteriza pelo trabalho em conjunto ou participativo. Ele permite ao grup"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+      "banca": "Igeduc",
+      "family": "certo_errado",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Julgue o item a seguir. Em relação ao gerenciamento de recursos materiais, denomina-se provisão o levantamento das neces"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-6",
+      "banca": "Imparh",
+      "family": "conceito",
+      "builder_topic": "Identificação do paciente",
+      "pedagogical_cluster": "Identificação do paciente",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Incidentes são eventos ou circunstâncias que poderiam resultar ou resultaram em dano desnecessário ao paciente. Há 4 gru"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-5",
+      "banca": "Imparh",
+      "family": "protocolo",
+      "builder_topic": "Segurança do paciente — conceito",
+      "pedagogical_cluster": "Segurança do paciente — conceito",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A qualidade da assistência prestada pela enfermagem tem sido afetada pelas dificuldades que o processo do cuidar apresen"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+      "banca": "INAZ do Pará",
+      "family": "conceito",
+      "builder_topic": "Cultura de segurança",
+      "pedagogical_cluster": "Cultura de segurança",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A evolução clínica descrita sugere risco de deterioração clínica. No contexto da cultura de segurança do paciente, é COR"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+      "banca": "Instituto Access",
+      "family": "conceito",
+      "builder_topic": "Metas internacionais JCI/OMS",
+      "pedagogical_cluster": "Metas internacionais JCI/OMS",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A JCI e a OMS estabeleceram seis metas internacionais de segurança do paciente, com o objetivo de promover melhorias esp"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
+      "banca": "Instituto Consulpam",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O atendimento ao público, seja no setor público ou privado, é de fundamental importância para manutenção de uma boa rela"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
+      "banca": "Instituto Consulplan",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Angariar recursos, definir a que destiná-los, traçar estratégias e fixar metas são atividades inerentes ao contexto de p"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102678563-1",
+      "banca": "Instituto Consulplan",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "De acordo com a Portaria no 529, de 1o de abril de 2013, que institui o Programa Nacional de Segurança do Paciente (PNSP"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
+      "banca": "Instituto Ibed",
+      "family": "certo_errado",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Em um paciente idoso hospitalizado, a elevação das grades da cama é uma medida isolada e suficiente para garantir a prev"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+      "banca": "Instituto Verbena",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O trabalho em equipe é baseado na relação recíproca entre as intervenções técnicas e interação dos agentes. Quando cada "
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-3",
+      "banca": "Instituto Verbena",
+      "family": "conceito",
+      "builder_topic": "Identificação do paciente",
+      "pedagogical_cluster": "Identificação do paciente",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Ao realizar a admissão de um paciente em uma unidade de saúde, o técnico em enfermagem deve adotar práticas que promovam"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1",
+      "banca": "Instituto Verbena",
+      "family": "conceito",
+      "builder_topic": "Higienização das mãos",
+      "pedagogical_cluster": "Higienização das mãos",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Observe a imagem a seguir. Disponível em: <https://safety4me.com/us/conheca-as-metas-de-seguranca-parte-ii-higienizacao-"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+      "banca": "Instituto Verbena",
+      "family": "conceito",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Queda é uma ocorrência comum em idosos e pode causar fraturas graves, hematoma subdural, incapacidade e até morte. Para "
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
+      "banca": "Ivin",
+      "family": "conceito",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "É um instrumento utilizado na gestão dos serviços de saúde, que possibilita a distribuição de profissionais de enfermage"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-1",
+      "banca": "Objetiva Concursos",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "De acordo com DOCHTERMAN, sobre a proteção dos direitos do paciente, assinalar a alternativa CORRETA:"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+      "banca": "Objetiva Concursos",
+      "family": "protocolo",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A incidência de queda é um dos mais sensíveis indicadores de qualidade e segurança do paciente, porque demonstra como os"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-seguranca-do-paciente-1779563467322-2",
+      "banca": "Omni",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Na assistência, a probabilidade de um incidente ocorrer denomina-se:"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-6",
+      "banca": "Ufmt",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O processo de trabalho em saúde e enfermagem é composto por"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
+      "banca": "Ufmt",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O processo de gerenciamento envolve quatro funções:"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-5",
+      "banca": "Unesc",
+      "family": "conceito",
+      "builder_topic": "Humanização e cuidado",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Os princípios da qualidade no atendimento em enfermagem envolvem práticas que garantem o cuidado centrado no paciente. Q"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
+      "banca": "Unifil",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Assinale a alternativa que completa adequadamente a lacuna do texto a seguir: \"A manutenção dos equipamentos tem como ob"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003637054-8",
+      "banca": "Unifil",
+      "family": "conceito",
+      "builder_topic": "Identificação do paciente",
+      "pedagogical_cluster": "Identificação do paciente",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "As seis metas internacionais de segurança do paciente foram estabelecidas pela Joint Commission International (JCI), em "
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+      "banca": "Univali",
+      "family": "conceito",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Ana, Auxiliar de Enfermagem, precisa transportar um paciente com histórico de quedas para outro setor do hospital. Consi"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-4",
+      "banca": "Univali",
+      "family": "conceito",
+      "builder_topic": "Eventos adversos e incidentes",
+      "pedagogical_cluster": "Eventos adversos e incidentes",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Maria, Auxiliar de Enfermagem, presencia um colega administrando um medicamento errado a um paciente. Assustada, ela não"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
+      "banca": "VUNESP",
+      "family": "protocolo",
+      "builder_topic": "Identificação do paciente",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Os treinamentos das equipes de enfermagem devem ser feitos periodicamente, em um processo contínuo e permanente. Para re"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Segurança do paciente — conceito geral",
+      "pedagogical_cluster": "DRIFT — auditoria/gestão",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Segundo Laccort e Oliveira, o \"trabalho em equipe é uma ferramenta do processo de trabalho em saúde e requer de todos os"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Prevenção de quedas",
+      "pedagogical_cluster": "Prevenção de quedas",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Um paciente adulto é admitido na unidade de internação, procedente do Pronto-Socorro, portando uma pulseira indicativa d"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Metas internacionais JCI/OMS",
+      "pedagogical_cluster": "Metas internacionais JCI/OMS",
+      "has_instruction_artifacts": true,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "\"Com todas as tecnologias e medicamentos desenvolvidos no tratamento de doenças, expomos os pacientes aos mais diversos "
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Humanização e cuidado",
+      "pedagogical_cluster": "Humanização e cuidado",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A humanização na enfermagem é um processo importante para os profissionais que atuam diretamente com o paciente. Em rela"
+    }
+  ]
+}

@@ -50,8 +50,37 @@ npm run handcraft:brief -- --subtopico="Doenças Respiratórias Crônicas (Asma,
    (Opcional se o arquivo seguir o nome `<pacote_prefix>.json`.)
 4. Testar: `npm run handcraft:brief -- --subtopico="Nome Exato"`
 
+## Mapeamento L3 (antes do 1º lote — recomendado)
+
+Subtópico novo ou sem cluster / auditoria L3:
+
+```text
+Mapeamento L3: Punção Venosa e Cuidados com Cateteres
+```
+
+Rule: `.cursor/rules/l3-mapeamento.mdc`  
+Doc: `docs/L3_MAPEAMENTO_CONVERSA.md`
+
+## Qualidade vendável (após handcraft fechado)
+
+Quando `status: applied` e o objetivo é **vender** o pacote (L1–L6):
+
+```text
+Qualidade vendável: Enfermagem em Central de Material e Esterilização (CME)
+```
+
+**Pipeline completo** (handcraft + qualidade + `--promote` na mesma conversa):
+
+```text
+Pipeline completo: Enfermagem em Central de Material e Esterilização (CME)
+```
+
+Rules: `.cursor/rules/quality-vendavel.mdc` · `.cursor/rules/pipeline-completo.mdc`  
+Docs: `docs/QUALITY_VENDAVEL_CONVERSA.md` · `docs/PIPELINE_COMPLETO_CONVERSA.md`
+
 ## Referências
 
-- `docs/HANDCRAFT_CONVERSA.md` — runbook geral
+- `docs/HANDCRAFT_CONVERSA.md` — runbook handcraft
+- `docs/QUALITY_VENDAVEL_CONVERSA.md` — runbook vendável
 - `.cursor/skills/avant-json-template/SKILL.md` § L2.5+L3 — tabela global de ramos
-- `lib/catalogMigration/handcraftPlaybook.ts` — resolver
+- `lib/catalogMigration/handcraftPlaybook.ts` — resolver handcraft

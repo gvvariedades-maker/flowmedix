@@ -1,0 +1,15 @@
+{
+  "lote": "historia-enfermagem-g04",
+  "exported_at": "2026-06-29T12:26:22.725Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1"
+    ]
+  },
+  "slugs": [
+    "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+    "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "lote": "doencas-bacterianas-g03",
+  "exported_at": "2026-06-30T12:00:10.028Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+      "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+      "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+      "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+      "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+      "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+      "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
+      "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8"
+    ]
+  },
+  "slugs": [
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+    "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
+    "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8"
+  ]
+}

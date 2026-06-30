@@ -29,6 +29,8 @@ SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
 
 **Pré-requisito:** subtópico estável (taxonomia). Se o bucket ainda tem drift, use `Classify: <subtópico>` — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md).
 
+**Recomendado antes do 1º lote** (subtópico novo ou sem cluster/L3 audit): `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md).
+
 ---
 
 ## Instruções para o agente (não pedir confirmação — executar)
@@ -114,3 +116,21 @@ Usar **`npm run`** no Windows (não `npx tsx`).
 ### Referência de pacote fechado
 
 [`data/catalog-migration/perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md)
+
+### Próximo passo — vendável
+
+Quando `handcraft_applied === total_slugs` e `status: applied`:
+
+**Conversa nova (só qualidade):**
+
+```text
+Qualidade vendável: <mesmo subtópico canônico>
+```
+
+**Mesma conversa (handcraft + qualidade + promote):**
+
+```text
+Pipeline completo: <mesmo subtópico canônico>
+```
+
+Ver [`QUALITY_VENDAVEL_CONVERSA.md`](QUALITY_VENDAVEL_CONVERSA.md), [`PIPELINE_COMPLETO_CONVERSA.md`](PIPELINE_COMPLETO_CONVERSA.md) e ADR [`DECISAO_QUALITY_HIBRIDA.md`](DECISAO_QUALITY_HIBRIDA.md).

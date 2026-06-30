@@ -1,0 +1,34 @@
+{
+  "lote": "enfermagem-do-trabalho-g05",
+  "generated_at": "2026-06-29T23:23:13.722Z",
+  "strict": true,
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

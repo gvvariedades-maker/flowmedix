@@ -22,5 +22,12 @@
     "4. Apply g01+g02+g03 quando usuário pedir"
   ],
   "next_lote": null,
-  "pacote_status": "handcraft_complete — 18/18 slugs"
+  "pacote_status": "handcraft_complete — 18/18 slugs",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/historia-enfermagem-g03.json"
+  }
 }

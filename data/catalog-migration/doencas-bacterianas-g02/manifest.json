@@ -1,0 +1,27 @@
+{
+  "lote": "doencas-bacterianas-g02",
+  "exported_at": "2026-06-30T11:54:09.890Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+      "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+      "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+      "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+      "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-2",
+      "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2",
+      "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-3",
+      "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0"
+    ]
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+    "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+    "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-2",
+    "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2",
+    "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-3",
+    "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0"
+  ]
+}

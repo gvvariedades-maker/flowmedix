@@ -22,5 +22,13 @@
   "artifacts": {
     "links": "artifacts/perioperatoria-g06-links.html",
     "applied": "artifacts/catalog-migration-perioperatoria-g06-applied.json"
+  },
+  "anchor_slug": "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/perioperatoria-g06.json"
   }
 }

@@ -251,3 +251,34 @@ describe('enrichPresentationContext — meta da questão', () => {
     );
   });
 });
+
+describe('pedagogicalBranch — Segurança do Paciente', () => {
+  const subtopico = 'Segurança do Paciente';
+
+  it('infere sp_identificacao para dois identificadores', () => {
+    const instruction =
+      'A identificação segura do paciente deve utilizar pelo menos dois identificadores independentes antes de medicações.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sp_identificacao');
+    expect(getLayoutVariantForBranch(subtopico, 'golden_rule', 'sp_identificacao')).toBe(
+      'reference_table',
+    );
+  });
+
+  it('infere sp_prevencao_quedas para protocolo de quedas', () => {
+    const instruction =
+      'Paciente com pulseira de risco de queda. A avaliação do risco deve ser feita na admissão com escala adequada.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sp_prevencao_quedas');
+  });
+
+  it('infere sp_eventos_adversos para PNSP e incidentes', () => {
+    const instruction =
+      'Segundo a Portaria 529/2013 do PNSP, evento adverso é lesão não intencional causada pelo cuidado.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sp_eventos_adversos');
+  });
+
+  it('infere sp_metas_internacionais para metas JCI/OMS', () => {
+    const instruction =
+      'A JCI e a OMS estabeleceram seis metas internacionais de segurança do paciente. Assinale a quarta meta.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sp_metas_internacionais');
+  });
+});

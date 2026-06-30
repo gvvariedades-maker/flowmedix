@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-06-23T15:41:09.978Z",
+  "generated_at": "2026-06-30T15:49:27.373Z",
   "subtopico": "Assistência Perioperatória (Inclui SRPA)",
   "lote": "perioperatoria-completo",
   "total": 68,
   "existing_goldens_examples": [
+    "questao-premium-idecan-perioperatoria-aldrete-srpa.json",
     "questao-premium-idecan-perioperatoria-aldrete-srpa.json",
     "questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json",
     "questao-premium-idecan-srpa-curativo-cpd-ce.json",

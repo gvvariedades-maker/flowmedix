@@ -1,0 +1,18 @@
+{
+  "lote": "infeccoes-biosseguranca-g04",
+  "generated_at": "2026-06-30T15:08:16.977Z",
+  "strict": true,
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

@@ -16,6 +16,7 @@ import type {
   ConcursoTipo,
 } from '@/types/database';
 import { isActiveMatriculaRow } from '@/lib/concursos/matriculaActive';
+import { filterModulosByVitrineQualityGate } from '@/lib/catalogMigration/vitrineQualityGate';
 
 function moduloPermitidoNoVinculoConcurso(
   concursoSlug: string,
@@ -103,7 +104,9 @@ function sortModulosByCreatedAtDesc(modulos: ModuloEstudoListRow[]): ModuloEstud
 }
 
 function finalizeAccessibleModulos(modulos: ModuloEstudoListRow[]): ModuloEstudoListRow[] {
-  return sortModulosByCreatedAtDesc(dedupeModulosById(modulos)).slice(0, ACCESSIBLE_MODULOS_LIMIT);
+  const sorted = sortModulosByCreatedAtDesc(dedupeModulosById(modulos));
+  const gated = filterModulosByVitrineQualityGate(sorted);
+  return gated.slice(0, ACCESSIBLE_MODULOS_LIMIT);
 }
 
 function modulosToSlugSet(modulos: ModuloEstudoListRow[]): Set<string> {

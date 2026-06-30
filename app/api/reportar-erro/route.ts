@@ -3,11 +3,48 @@ import { ErrorReportCreateSchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { logger } from '@/lib/logger';
 import { distributedRateLimitWithInfo } from '@/lib/rate-limit';
+import type { ErrorReportPriorityInput } from '@/lib/validations';
 
 const REPORT_ERROR_RATE_LIMIT = {
   limit: 5,
   windowMs: 60_000,
 } as const;
+
+const OPEN_STATUSES = ['novo', 'triagem'] as const;
+
+function inferReportPriority(
+  category: string,
+  recentOpenCount: number,
+): ErrorReportPriorityInput {
+  if (category === 'gabarito') return 'p0';
+  if (category === 'slides' || category === 'alternativas') return 'p1';
+  if (recentOpenCount >= 3) return 'p1';
+  return 'p2';
+}
+
+import type { SupabaseClient } from '@supabase/supabase-js';
+
+async function countRecentOpenReports(
+  supabase: SupabaseClient,
+  moduloSlug: string | null | undefined,
+): Promise<number> {
+  if (!moduloSlug) return 0;
+  const since = new Date();
+  since.setDate(since.getDate() - 7);
+
+  const { count, error } = await supabase
+    .from('error_reports')
+    .select('id', { count: 'exact', head: true })
+    .eq('modulo_slug', moduloSlug)
+    .in('status', [...OPEN_STATUSES])
+    .gte('created_at', since.toISOString());
+
+  if (error) {
+    logger.warn('Falha ao contar reportes recentes', { moduloSlug, error: error.message });
+    return 0;
+  }
+  return count ?? 0;
+}
 
 function getRequestIp(request: NextRequest): string {
   const forwarded = request.headers.get('x-forwarded-for');
@@ -69,7 +106,19 @@ export async function POST(request: NextRequest) {
     }
 
     const pageUrlFromRequest = request.headers.get('origin') ?? undefined;
-    const safeMetadata = payload.metadata ?? {};
+    const safeMetadata = {
+      ...(payload.metadata ?? {}),
+      content_standard:
+        (payload.metadata as { content_standard?: string } | undefined)?.content_standard ??
+        undefined,
+      pedagogical_branch:
+        (payload.metadata as { pedagogical_branch?: string } | undefined)?.pedagogical_branch ??
+        undefined,
+      family: (payload.metadata as { family?: string } | undefined)?.family ?? undefined,
+    };
+
+    const recentOpen = await countRecentOpenReports(auth.supabase, payload.modulo_slug);
+    const priority = inferReportPriority(payload.category, recentOpen);
 
     const { data, error } = await auth.supabase
       .from('error_reports')
@@ -82,6 +131,7 @@ export async function POST(request: NextRequest) {
         category: payload.category,
         description: payload.description,
         metadata: safeMetadata,
+        priority,
       })
       .select('id, created_at, status, priority')
       .single();

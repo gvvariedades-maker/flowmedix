@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-06-29T23:48:44.810Z",
+  "pacote_prefix": "cme",
+  "lotes": [
+    {
+      "lote": "cme-g01",
+      "count": 6
+    },
+    {
+      "lote": "cme-g02",
+      "count": 10
+    },
+    {
+      "lote": "cme-g03",
+      "count": 4
+    },
+    {
+      "lote": "cme-g04",
+      "count": 6
+    },
+    {
+      "lote": "cme-g05",
+      "count": 9
+    }
+  ],
+  "union_count": 35,
+  "registry_total_slugs": 35,
+  "match": true,
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+    "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-5",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+    "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+    "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+    "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+    "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+    "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-7",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-4",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+    "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4"
+  ]
+}

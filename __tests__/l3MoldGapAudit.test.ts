@@ -35,4 +35,41 @@ describe('l3MoldGapCatalog', () => {
     expect(r.branch_id).toBe('cme_autoclave_metodos');
     expect(r.decision).toBe('molde_inedito');
   });
+
+  it('Segurança do Paciente identificação → ok_existente', () => {
+    const r = resolveClusterIdeal(
+      'Segurança do Paciente',
+      'Identificação do paciente',
+      7,
+      11.3,
+      'bridge · minimal · cards · list',
+    );
+    expect(r.branch_id).toBe('sp_identificacao');
+    expect(r.decision).toBe('ok_existente');
+    expect(r.branch_implemented).toBe(true);
+  });
+
+  it('Segurança do Paciente quedas com volume → ok_generico', () => {
+    const r = resolveClusterIdeal(
+      'Segurança do Paciente',
+      'Prevenção de quedas',
+      11,
+      17.7,
+      'bridge · minimal',
+    );
+    expect(r.branch_id).toBe('sp_prevencao_quedas');
+    expect(r.decision).toBe('ok_generico');
+  });
+
+  it('Segurança do Paciente eventos adversos → ok_generico', () => {
+    const r = resolveClusterIdeal(
+      'Segurança do Paciente',
+      'Eventos adversos e incidentes',
+      9,
+      14.5,
+      'bridge · minimal',
+    );
+    expect(r.branch_id).toBe('sp_eventos_adversos');
+    expect(r.decision).toBe('ok_generico');
+  });
 });

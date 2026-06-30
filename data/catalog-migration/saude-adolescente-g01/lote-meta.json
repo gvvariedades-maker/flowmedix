@@ -28,5 +28,12 @@
     "4. npm run catalog:apply-lote -- --lote=saude-adolescente-g01 --dry-run",
     "5. npm run catalog:apply-lote -- --lote=saude-adolescente-g01 --apply (só quando pedido)"
   ],
-  "next_lote": "saude-adolescente-g02 — idecan-7/8, promoção violência, slugs restantes (~8)"
+  "next_lote": "saude-adolescente-g02 — idecan-7/8, promoção violência, slugs restantes (~8)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-adolescente-g01.json"
+  }
 }

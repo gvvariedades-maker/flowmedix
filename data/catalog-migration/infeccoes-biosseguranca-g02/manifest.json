@@ -1,0 +1,27 @@
+{
+  "lote": "infeccoes-biosseguranca-g02",
+  "exported_at": "2026-06-30T12:01:51.265Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-8",
+      "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-9",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-5",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-6",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-2",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3",
+      "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-4"
+    ]
+  },
+  "slugs": [
+    "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-8",
+    "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-9",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-5",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-6",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-2",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-4"
+  ]
+}

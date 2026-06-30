@@ -160,6 +160,8 @@ Regressões:
 
 ## Estender a outros subtópicos
 
+Conversa de diagnóstico: `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md).
+
 1. Cluster em ramos (`GOLDEN_HANDCRAFT_MODEL.md` fase 1b)
 2. Entrada em `BRANCH_DESIGN_MAP`
 3. Regras em `MOLD_AFFINITY_RULES` para moldes bespoke do ramo

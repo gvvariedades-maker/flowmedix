@@ -43,5 +43,13 @@
     "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0",
     "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
     "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4"
+  ],
+  "updated_at": "2026-06-29",
+  "reconciled_from": [
+    "cme-g01",
+    "cme-g02",
+    "cme-g03",
+    "cme-g04",
+    "cme-g05"
   ]
 }

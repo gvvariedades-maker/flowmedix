@@ -1,0 +1,90 @@
+{
+  "lote": "cme-g02",
+  "generated_at": "2026-06-29T23:53:17.581Z",
+  "strict": true,
+  "total": 10,
+  "passed": 10,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

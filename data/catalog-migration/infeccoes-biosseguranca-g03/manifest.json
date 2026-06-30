@@ -1,0 +1,27 @@
+{
+  "lote": "infeccoes-biosseguranca-g03",
+  "exported_at": "2026-06-30T12:16:52.814Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-1",
+      "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-2",
+      "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-3",
+      "objetiva-concursos-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-1",
+      "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-3",
+      "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-4",
+      "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-5",
+      "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-6"
+    ]
+  },
+  "slugs": [
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-1",
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-2",
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-3",
+    "objetiva-concursos-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-1",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-3",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-4",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-5",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-6"
+  ]
+}

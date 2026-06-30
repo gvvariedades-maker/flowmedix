@@ -1,0 +1,82 @@
+{
+  "lote": "respiratorio-cronico-g01",
+  "generated_at": "2026-06-29T23:11:16.140Z",
+  "strict": true,
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

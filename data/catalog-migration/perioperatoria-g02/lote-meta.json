@@ -22,5 +22,13 @@
   "artifacts": {
     "links": "artifacts/perioperatoria-g02-links.html",
     "applied": "artifacts/catalog-migration-perioperatoria-g02-applied.json"
+  },
+  "anchor_slug": "furb-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-7",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/perioperatoria-g02.json"
   }
 }

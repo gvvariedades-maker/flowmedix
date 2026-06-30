@@ -1,15 +1,65 @@
 {
   "strict": true,
-  "scanned": 1,
+  "scanned": 5,
+  "summary": {
+    "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+    "scanned": 5,
+    "ready_100": 5,
+    "pct_ready": 100,
+    "registry": {
+      "status": "applied",
+      "total_slugs": 37,
+      "handcraft_applied": 37,
+      "complete": true
+    },
+    "tier_failures": {
+      "A1": 0,
+      "A2": 0,
+      "A3": 0
+    },
+    "not_ready": []
+  },
   "results": [
     {
-      "slug": "questao-premium-vunesp-respiratorio-crise-asmatica-exceto",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "ready_100": false,
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "ready_100": true,
       "tier_pass": {
         "A1": true,
         "A2": true,
-        "A3": false,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "certo_errado",
+      "pedagogical_branch": "bacterianas_generico",
+      "inferred_branch": "bacterianas_generico"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
         "A4": true
       },
       "checks": [
@@ -21,27 +71,9 @@
         },
         {
           "tier": "A2",
-          "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: E).",
-          "severity": "warn"
-        },
-        {
-          "tier": "A3",
-          "code": "pedagogical_branch_inferred",
-          "message": "Ramo pedagógico inferido: \"respiratorio_asma_crise\" — considere meta.pedagogical_branch no handcraft.",
-          "severity": "warn"
-        },
-        {
-          "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
           "severity": "warn"
-        },
-        {
-          "tier": "A3",
-          "code": "l3_branch_undeclared",
-          "message": "meta.pedagogical_branch ausente (inferido: respiratorio_asma_crise)",
-          "severity": "error"
         },
         {
           "tier": "A4",
@@ -51,7 +83,116 @@
         }
       ],
       "family": "conceito",
-      "inferred_branch": "respiratorio_asma_crise"
+      "pedagogical_branch": "bacterianas_agente_etiologico",
+      "inferred_branch": "bacterianas_agente_etiologico"
+    },
+    {
+      "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "certo_errado",
+      "pedagogical_branch": "bacterianas_generico",
+      "inferred_branch": "bacterianas_generico"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "bacterianas_generico",
+      "inferred_branch": "bacterianas_generico"
+    },
+    {
+      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "protocolo",
+      "pedagogical_branch": "bacterianas_generico",
+      "inferred_branch": "bacterianas_generico"
     }
   ]
 }

@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-06-30T12:34:19.330Z",
+  "lote": "doencas-bacterianas-g05",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+    "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

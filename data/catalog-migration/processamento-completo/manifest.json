@@ -26,5 +26,10 @@
     "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
     "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
     "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0"
+  ],
+  "updated_at": "2026-06-29",
+  "reconciled_from": [
+    "processamento-g01",
+    "processamento-g02"
   ]
 }

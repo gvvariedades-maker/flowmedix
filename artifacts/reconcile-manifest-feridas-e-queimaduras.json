@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-06-29T23:26:26.154Z",
+  "pacote_prefix": "feridas-e-queimaduras",
+  "lotes": [
+    {
+      "lote": "feridas-e-queimaduras-g01",
+      "count": 8
+    }
+  ],
+  "union_count": 8,
+  "registry_total_slugs": 8,
+  "match": true,
+  "slugs": [
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",
+    "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-7",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-8",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-9",
+    "idib-enfermagem-feridas-e-queimaduras-1778934936220-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-1"
+  ]
+}

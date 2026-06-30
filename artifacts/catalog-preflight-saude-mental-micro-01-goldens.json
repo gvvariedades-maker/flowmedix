@@ -1,0 +1,50 @@
+{
+  "lote": "saude-mental-micro-01-goldens",
+  "generated_at": "2026-06-29T23:58:49.561Z",
+  "strict": true,
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-mental-1780001362784-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

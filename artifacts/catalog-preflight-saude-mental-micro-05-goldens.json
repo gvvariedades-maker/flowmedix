@@ -1,0 +1,50 @@
+{
+  "lote": "saude-mental-micro-05-goldens",
+  "generated_at": "2026-06-29T23:59:29.949Z",
+  "strict": true,
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-mental-1780001362784-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

@@ -25,6 +25,11 @@ npm run build            # validate:env + next build
 | **Taxonomia** (`Classify: <bucket>`) | [`docs/TAXONOMIA_MODEL.md`](docs/TAXONOMIA_MODEL.md) · [`docs/TAXONOMIA_CONVERSA.md`](docs/TAXONOMIA_CONVERSA.md) |
 | **Handcraft golden-v1** (runbook operacional) | [`docs/GOLDEN_HANDCRAFT_MODEL.md`](docs/GOLDEN_HANDCRAFT_MODEL.md) |
 | **Nova conversa handcraft** (`Handcraft: <subtópico>`) | [`docs/HANDCRAFT_CONVERSA.md`](docs/HANDCRAFT_CONVERSA.md) |
+| **Qualidade vendável** (L1–L6, modelo híbrido) | [`docs/QUALITY_LAYERS_MODEL.md`](docs/QUALITY_LAYERS_MODEL.md) · ADR [`docs/DECISAO_QUALITY_HIBRIDA.md`](docs/DECISAO_QUALITY_HIBRIDA.md) |
+| **Nova conversa vendável** (`Qualidade vendável: <subtópico>`) | [`docs/QUALITY_VENDAVEL_CONVERSA.md`](docs/QUALITY_VENDAVEL_CONVERSA.md) |
+| **Pipeline completo** (`Pipeline completo: <subtópico>`) | [`docs/PIPELINE_COMPLETO_CONVERSA.md`](docs/PIPELINE_COMPLETO_CONVERSA.md) |
+| **Mapeamento L3** (`Mapeamento L3: <subtópico>`) | [`docs/L3_MAPEAMENTO_CONVERSA.md`](docs/L3_MAPEAMENTO_CONVERSA.md) |
+| Monitoramento contínuo pós-venda | [`docs/CONTINUOUS_QUALITY_RUNBOOK.md`](docs/CONTINUOUS_QUALITY_RUNBOOK.md) |
 | Progresso handcraft | [`data/catalog-migration/handcraft-registry.json`](data/catalog-migration/handcraft-registry.json) |
 | Fonte normativa (handcraft × guideline × legado) | [`docs/FONTE_NORMATIVA_AVANT.md`](docs/FONTE_NORMATIVA_AVANT.md) |
 | Padrão de conteúdo golden (v1) | [`docs/GOLDEN_CONTENT_STANDARD.md`](docs/GOLDEN_CONTENT_STANDARD.md) |
@@ -714,6 +719,11 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) | **Runbook** procedural (Fases 0–6) + matriz por subtópico |
 | [`FONTE_NORMATIVA_AVANT.md`](docs/FONTE_NORMATIVA_AVANT.md) | Handcraft × guideline × legado builder |
 | [`DECISAO_TRILHO_A_UNICO.md`](docs/DECISAO_TRILHO_A_UNICO.md) | ADR — handcraft único |
+| [`DECISAO_QUALITY_HIBRIDA.md`](docs/DECISAO_QUALITY_HIBRIDA.md) | ADR — ship = venda; health contínuo pós-venda |
+| [`QUALITY_LAYERS_MODEL.md`](docs/QUALITY_LAYERS_MODEL.md) | Camadas L1–L6, `production_ready` vs `applied` |
+| [`QUALITY_VENDAVEL_CONVERSA.md`](docs/QUALITY_VENDAVEL_CONVERSA.md) | Prompt `Qualidade vendável: <subtópico>` |
+| [`CONTINUOUS_QUALITY_RUNBOOK.md`](docs/CONTINUOUS_QUALITY_RUNBOOK.md) | Ops diária — `audit:subtopico-health` |
+| [`RUNBOOK_ERROR_REPORT_TRIAGE.md`](docs/RUNBOOK_ERROR_REPORT_TRIAGE.md) | Triagem P0/P1 e repair pós-publicação |
 | [`AVANT_AGENT_SOURCES.md`](docs/AVANT_AGENT_SOURCES.md) | Índice para agente de questões |
 | [`AVANT_AGENT_PROMPT_EXPORT.md`](docs/AVANT_AGENT_PROMPT_EXPORT.md) | System prompt exportável (agente externo) |
 | [`JSON_FORMAT_SEMANTICO.md`](docs/JSON_FORMAT_SEMANTICO.md) | Formato enxuto vs legado |
@@ -739,7 +749,14 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 
 - [`.cursor/rules/avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc) — stack, RLS, entrega focada
 - [`.cursor/rules/avant-premium-pacote.mdc`](.cursor/rules/avant-premium-pacote.mdc) — pacote premium (estrutura + rollout por subtópico)
+- [`.cursor/rules/handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) — trigger `Handcraft: <subtópico>`
+- [`.cursor/rules/quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) — trigger `Qualidade vendável: <subtópico>`
+- [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) — trigger `Pipeline completo: <subtópico>`
+- [`.cursor/rules/l3-mapeamento.mdc`](.cursor/rules/l3-mapeamento.mdc) — trigger `Mapeamento L3: <subtópico>`
+- [`docs/cursor/l3-mapeamento.mdc`](docs/cursor/l3-mapeamento.mdc) — cópia versionada do mapeamento L3
 - [`docs/cursor/avant-agent-json.mdc`](docs/cursor/avant-agent-json.mdc) — cópia versionada da rule de JSON (copiar para `.cursor/rules/` se faltar no clone)
+- [`docs/cursor/quality-vendavel.mdc`](docs/cursor/quality-vendavel.mdc) — cópia versionada da rule vendável
+- [`docs/cursor/pipeline-completo.mdc`](docs/cursor/pipeline-completo.mdc) — cópia versionada pipeline completo
 
 ### Outros
 

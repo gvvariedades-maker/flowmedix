@@ -1,17 +1,17 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-06-28T20:13:07.040Z
+Gerado em: 2026-06-30T15:49:58.659Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
 | Fonte slugs | Supabase (vivo) |
-| Clusters mapeados | 50 |
-| Slugs auditados | 13 |
-| ok_existente | 6 |
-| ok_generico | 27 |
-| ramo_novo | 13 |
+| Clusters mapeados | 81 |
+| Slugs auditados | 68 |
+| ok_existente | 11 |
+| ok_generico | 50 |
+| ramo_novo | 16 |
 | molde_inedito | 4 |
 | Pacotes inéditos únicos | 4 |
 | Slugs com mismatch L3 | 0 |
@@ -83,16 +83,47 @@ Gerado em: 2026-06-28T20:13:07.040Z
 | Saúde do Adolescente | Transtornos alimentares / imagem corporal | 2 | 12.5% | ok_generico | `adolescente_saude_mental` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Diretrizes MS adolescente (EXCETO) | 2 | 12.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Saúde bucal / promoção | 2 | 12.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Espaçador e inalador — técnica MDI | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Tuberculose — controle, TDO e vigilância | 23 | 45.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Outros / tema misto | 6 | 11.8% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Meningite bacteriana | 4 | 7.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Agente etiológico — bactéria × vírus × fungo | 4 | 7.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Candidíase e micoses | 3 | 5.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Zoonoses (reclassificar?) | 3 | 5.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Hanseníase — transmissão e PQT | 2 | 3.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | IST (reclassificar?) | 2 | 3.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Tétano — profilaxia e imunização | 1 | 2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Exames laboratoriais (reclassificar?) | 1 | 2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Bacterioses — conceito geral | 1 | 2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Bactérias do trato gastrointestinal | 1 | 2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Espaçador e inalador — técnica MDI | 1 | 10% | ok_generico | `respiratorio_tecnica_inalador` | morphological · reference_table · cards · compare (genérico)… |
 | Doenças Respiratórias Crônicas (Asma, DPOC) | Oximetria de pulso / SpO₂ | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | O₂ titulado na DPOC (APS/emergência) | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Dispositivos de oxigenoterapia (Venturi) | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | O₂ titulado na DPOC (APS/emergência) | 1 | 10% | ok_existente | `respiratorio_dpoc_oxigenio` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Dispositivos de oxigenoterapia (Venturi) | 1 | 10% | ok_existente | `respiratorio_dpoc_oxigenio` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
 | Doenças Respiratórias Crônicas (Asma, DPOC) | Asma na APS — educação terapêutica | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Respiratórias Crônicas (Asma, DPOC) | Espirometria VEF1/CVF | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Respiratórias Crônicas (Asma, DPOC) | Semiologia pediátrica — sibilos | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Semiologia respiratória V/F | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | DPOC na UBS — papel do técnico | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Semiologia respiratória V/F | 1 | 10% | ok_existente | `respiratorio_vf_asma_dpoc` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | DPOC na UBS — papel do técnico | 1 | 10% | ok_existente | `respiratorio_dpoc_oxigenio` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
+| Infecções no Contexto da Biossegurança | IRAS / infecção hospitalar (conceitos) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Infecções no Contexto da Biossegurança | Higienização das mãos (V/F) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Infecções no Contexto da Biossegurança | Precauções padrão e por transmissão | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Infecções no Contexto da Biossegurança | ITU / cateter vesical (EXCETO) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Infecções no Contexto da Biossegurança | Biossegurança e contenção (conceitos) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Infecções no Contexto da Biossegurança | Cuidados em paciente imunossuprimido / comorbidades | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | DRIFT — auditoria/gestão | 19 | 30.6% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Prevenção de quedas | 11 | 17.7% | ok_generico | `sp_prevencao_quedas` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Eventos adversos e incidentes | 9 | 14.5% | ok_generico | `sp_eventos_adversos` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Identificação do paciente | 7 | 11.3% | ok_existente | `sp_identificacao` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | DRIFT — processo de enfermagem | 6 | 9.7% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Segurança do paciente — conceito geral | 2 | 3.2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Metas internacionais JCI/OMS | 2 | 3.2% | ok_generico | `sp_metas_internacionais` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Segurança na medicação | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Segurança do paciente — conceito | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Cultura de segurança | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Certo ou errado | 1 | 1.6% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Higienização das mãos | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Humanização e cuidado | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 
 ## Slugs (amostra com branch inferido)
 
-- `—`: 13
+- `—`: 68

@@ -1,0 +1,39 @@
+{
+  "lote": "enfermagem-do-trabalho-g04",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-28",
+  "subtopico": "Enfermagem do Trabalho",
+  "cluster": "LER/túnel carpo · SINAN notificação · dermatose · ruído NR-15 · risco físico · COFEN técnico",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-7",
+  "golden_reference": "data/catalog-migration/enfermagem-do-trabalho-g03/questions/fgv-enfermagem-processo-de-enfermagem-1780001988576-7.json",
+  "guideline": "lib/guidelines/enfermagemTrabalho.ts",
+  "moldes": "trabalho-nr32-reference-board · trabalho-vf-juggle-tap · trabalho-pep-trap-arena",
+  "slugs": [
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-3",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-5",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-6",
+    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+    "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=enfermagem-do-trabalho-g04 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/enfermagem-do-trabalho-g04/questions/",
+    "2. npm run validate:goldens -- --lote=enfermagem-do-trabalho-g04 --strict",
+    "3. npm run audit:questao-readiness -- --lote=enfermagem-do-trabalho-g04",
+    "4. npm run catalog:apply-lote -- --lote=enfermagem-do-trabalho-g04 --dry-run"
+  ],
+  "next_lote": "enfermagem-do-trabalho-g05 — 3 slugs VUNESP (fechamento)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/enfermagem-do-trabalho-g04.json"
+  }
+}

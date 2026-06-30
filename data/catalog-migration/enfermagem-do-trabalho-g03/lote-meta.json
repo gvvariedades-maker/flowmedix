@@ -1,0 +1,39 @@
+{
+  "lote": "enfermagem-do-trabalho-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-28",
+  "subtopico": "Enfermagem do Trabalho",
+  "cluster": "Hierarquia EPC/EPI · radiação CNEN · LER/DORT · níveis prevenção · FGV AMAZUL",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+  "golden_reference": "examples/questao-premium-cpcon-uepb-enfermagem-trabalho-nr32-vf.json",
+  "guideline": "lib/guidelines/enfermagemTrabalho.ts",
+  "moldes": "trabalho-nr32-reference-board · trabalho-vf-juggle-tap · trabalho-pep-trap-arena",
+  "slugs": [
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+    "fau-unicentro-enfermagem-seguranca-do-paciente-1777102678563-4",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-4",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-6",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-7",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-8",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-9",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-1"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=enfermagem-do-trabalho-g03 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/enfermagem-do-trabalho-g03/questions/",
+    "2. npm run validate:goldens -- --lote=enfermagem-do-trabalho-g03 --strict",
+    "3. npm run audit:questao-readiness -- --lote=enfermagem-do-trabalho-g03",
+    "4. npm run catalog:apply-lote -- --lote=enfermagem-do-trabalho-g03 --dry-run"
+  ],
+  "next_lote": "enfermagem-do-trabalho-g04 — 8 slugs restantes (11 FGV + 3 outras bancas)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/enfermagem-do-trabalho-g03.json"
+  }
+}

@@ -35,5 +35,12 @@
     "3. npm run catalog:apply-lote -- --lote=farmacodinamica-e-farmacocinetica-g02 --dry-run",
     "4. Apply só quando usuário pedir"
   ],
-  "notes": "g02 = 7 slugs pós-taxonomia (6 handcraft + 1 duplicata QUADRIX clonada do g01)."
+  "notes": "g02 = 7 slugs pós-taxonomia (6 handcraft + 1 duplicata QUADRIX clonada do g01).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/farmacodinamica-e-farmacocinetica-g02.json"
+  }
 }

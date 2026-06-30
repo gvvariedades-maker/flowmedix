@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-30T12:34:11.627Z",
+  "lote": "doencas-bacterianas-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+    "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+    "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+    "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-2",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+    "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563505333-8",
+    "isba-enfermagem-exames-complementares-1779563685104-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563505333-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "isba-enfermagem-exames-complementares-1779563685104-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -163,5 +163,12 @@ export const HISTORIA_ENFERMAGEM_COFEN: GuidelineTable = {
       detail: 'Fundamentos para o Processo de Enfermagem e prática baseada em evidências.',
       sourceId: 'historia-enfermagem-cofen',
     },
+    {
+      id: 'hepatite-b-sinan-epidemiologia',
+      label: 'Hepatite B — Sinan (MS)',
+      value: '36,8% das hepatites virais confirmadas entre 2000 e 2023',
+      detail: 'Segunda maior causa de óbito entre hepatites virais (21,7% dos óbitos 2000–2022) — Boletim Epidemiológico MS.',
+      sourceId: 'historia-enfermagem-cofen',
+    },
   ],
 };

@@ -20,6 +20,11 @@ import { logApiStrategy } from '@/lib/api/logApiStrategy';
 import { logger } from '@/lib/logger';
 import { SCALE_LIMITS } from '@/lib/scale/constants';
 import type { VitrinePageResponse } from '@/lib/vitrine/types';
+import {
+  applyVitrineQualityGateToPage,
+  filterModulosByVitrineQualityGate,
+  filterVitrineFacetsByQualityGate,
+} from '@/lib/catalogMigration/vitrineQualityGate';
 
 export type VitrineListFilters = {
   bancas?: string[];
@@ -117,7 +122,10 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
 
   logger.warn('getVitrinePageViaJs started', { userId, isAdmin, filters });
 
-  const modulosRaw = await loadModulosForVitrine(userId, filters, isAdmin);
+  const modulosRaw = filterModulosByVitrineQualityGate(
+    await loadModulosForVitrine(userId, filters, isAdmin),
+    { isAdmin },
+  );
   logger.warn('getVitrinePageViaJs: loadModulosForVitrine result', { count: modulosRaw.length });
 
   const facets = buildVitrineFacets(modulosRaw, { bancas: filters.bancas });
@@ -205,13 +213,15 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
       }
     }
 
-    const facets =
+    const facets = filterVitrineFacetsByQualityGate(
       rpcPage.facets ??
-      (await getVitrineFacets({
-        userId,
-        bancas: filters.bancas,
-        isAdmin,
-      }));
+        (await getVitrineFacets({
+          userId,
+          bancas: filters.bancas,
+          isAdmin,
+        })),
+      { isAdmin },
+    );
 
     logApiStrategy({
       event: 'vitrine_page',
@@ -236,10 +246,13 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
       isAdmin,
     });
 
-    return {
-      ...rpcPage,
-      facets,
-    };
+    return applyVitrineQualityGateToPage(
+      {
+        ...rpcPage,
+        facets,
+      },
+      { isAdmin },
+    );
   } catch (err) {
     logger.warn('get_vitrine_page indisponível; pipeline JS', {
       strategy: 'rpc',
@@ -278,5 +291,5 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
     isAdmin,
   });
 
-  return jsPage;
+  return applyVitrineQualityGateToPage(jsPage, { isAdmin });
 }

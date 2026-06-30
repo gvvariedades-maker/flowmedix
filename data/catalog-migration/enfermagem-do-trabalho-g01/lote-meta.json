@@ -29,5 +29,12 @@
     "4. npm run catalog:apply-lote -- --lote=enfermagem-do-trabalho-g01 --dry-run",
     "5. Apply só quando usuário pedir"
   ],
-  "next_lote": "enfermagem-do-trabalho-g02 — 6 slugs restantes (fechamento do subtópico)"
+  "next_lote": "enfermagem-do-trabalho-g02 — 6 slugs restantes (fechamento do subtópico)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/enfermagem-do-trabalho-g01.json"
+  }
 }

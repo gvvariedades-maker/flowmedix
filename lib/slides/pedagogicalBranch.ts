@@ -59,7 +59,13 @@ export type PedagogicalBranchId =
   | 'bacterianas_generico'
   // Infecções / Biossegurança
   | 'biosseg_iras_itu_cateter'
-  | 'biosseg_generico';
+  | 'biosseg_generico'
+  // Segurança do Paciente
+  | 'sp_identificacao'
+  | 'sp_prevencao_quedas'
+  | 'sp_eventos_adversos'
+  | 'sp_metas_internacionais'
+  | 'sp_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -300,6 +306,23 @@ const BIOSSEG_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'cards',
 };
 
+/** Identificação, quedas, eventos, metas JCI — tabela + compare (sem molde bespoke). */
+const SP_REFERENCE_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+const SP_GENERIC_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -468,6 +491,13 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     biosseg_iras_itu_cateter: BIOSSEG_ITU_CATETER_MOLD,
     biosseg_generico: BIOSSEG_GENERIC_MOLD,
   },
+  'seguranca do paciente': {
+    sp_identificacao: SP_REFERENCE_MOLD,
+    sp_prevencao_quedas: SP_REFERENCE_MOLD,
+    sp_eventos_adversos: SP_REFERENCE_MOLD,
+    sp_metas_internacionais: SP_REFERENCE_MOLD,
+    sp_generico: SP_GENERIC_MOLD,
+  },
 };
 
 function normalizeKey(str: string): string {
@@ -635,6 +665,26 @@ const BIOSSEG_ITU_CATETER: RegExp[] = [
   /sistema de drenagem fechado|meato|bolsa coletora/i,
 ];
 
+const SP_IDENTIFICACAO: RegExp[] = [
+  /dois identificador|identificar corretamente o paciente|pulseira.*identifica/i,
+  /paciente errado|hom[oô]nimo|dupla checagem/i,
+];
+
+const SP_QUEDAS: RegExp[] = [
+  /queda|risco de queda|escala.*morse|\bmorse\b|grades da cama/i,
+  /prevenc[aã]o de queda|protocolo de queda|pulseira.*queda/i,
+];
+
+const SP_EVENTOS: RegExp[] = [
+  /evento adverso|incidente|near miss|quase erro|\bpnsp\b|portaria.*529/i,
+  /notifica[cç][aã]o de evento|cultura de seguran[cç]a|probabilidade de um incidente/i,
+];
+
+const SP_METAS: RegExp[] = [
+  /metas internacionais|meta internacional|\bjci\b|joint commission/i,
+  /higienizar as m[aã]os.*identificar|cirurgia segura.*medicamento/i,
+];
+
 function branchMapKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
   const matches = Object.keys(BRANCH_DESIGN_MAP).filter(
@@ -786,6 +836,22 @@ function inferBiossegBranch(corpus: string, familyId?: FamilyId): PedagogicalBra
   return 'biosseg_generico';
 }
 
+function inferSegurancaPacienteBranch(corpus: string, _familyId?: FamilyId): PedagogicalBranchId {
+  if (countPatternMatches(corpus, SP_IDENTIFICACAO) > 0) {
+    return 'sp_identificacao';
+  }
+  if (countPatternMatches(corpus, SP_QUEDAS) > 0) {
+    return 'sp_prevencao_quedas';
+  }
+  if (countPatternMatches(corpus, SP_EVENTOS) > 0) {
+    return 'sp_eventos_adversos';
+  }
+  if (countPatternMatches(corpus, SP_METAS) > 0) {
+    return 'sp_metas_internacionais';
+  }
+  return 'sp_generico';
+}
+
 function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   const isVf =
     familyId === 'vf' ||
@@ -865,6 +931,9 @@ function inferBranchForBucket(
     mapKey === 'iras'
   ) {
     return inferBiossegBranch(corpus, familyId);
+  }
+  if (mapKey.includes('seguranca do paciente')) {
+    return inferSegurancaPacienteBranch(corpus, familyId);
   }
   return undefined;
 }

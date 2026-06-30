@@ -1,0 +1,40 @@
+{
+  "lote": "infeccoes-biosseguranca-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-30",
+  "subtopico": "Infecções no Contexto da Biossegurança",
+  "cluster": "IDIB higiene/exposição/IRAS + Objetiva Portaria 2616 + Omni CBS/conceitos IH",
+  "cluster_pct": 32,
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-1",
+  "golden_reference": "examples/questao-premium-fepese-infeccoes-biosseguranca-iras-vf.json",
+  "guideline": "ANVISA RDC 7/2010 · OMS 5 momentos higiene das mãos · MS Portaria 2616/1998 · MS precauções acidente perfurocortante",
+  "slugs": [
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-1",
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-2",
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-3",
+    "objetiva-concursos-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-1",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-3",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-4",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-5",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-6"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=infeccoes-biosseguranca-g03 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/infeccoes-biosseguranca-g03/questions/",
+    "2. npm run audit:questao-readiness -- --lote=infeccoes-biosseguranca-g03",
+    "3. npm run validate:goldens -- --lote=infeccoes-biosseguranca-g03 --strict",
+    "4. npm run catalog:apply-lote -- --lote=infeccoes-biosseguranca-g03 --dry-run",
+    "5. apply só com 'pode aplicar' do usuário"
+  ],
+  "prev_lote": "infeccoes-biosseguranca-g02",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/infeccoes-biosseguranca-g03.json"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-29",
+  "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
+  "anchors": {
+    "cme_vf_ce": {
+      "pedagogical_branch": "cme_vf_ce",
+      "slug": "idecan-cme-preparo-presecagem",
+      "lote": "cme-g01",
+      "json_path": "examples/questao-premium-idecan-cme-preparo-presecagem.json"
+    },
+    "cme_processamento_conceito": {
+      "pedagogical_branch": "cme_processamento_conceito",
+      "slug": "cpcon-processamento-prelimpeza",
+      "lote": "processamento-g01",
+      "json_path": "examples/questao-premium-cpcon-processamento-artigos-prelimpeza-vf.json"
+    },
+    "mental_dependencia_tabagismo": {
+      "pedagogical_branch": "mental_dependencia_tabagismo",
+      "slug": "fgv-saude-mental-tabagismo",
+      "lote": "saude-mental-micro-02-goldens",
+      "json_path": "examples/questao-premium-fgv-saude-mental-tabagismo-pnct.json"
+    },
+    "mental_depressao": {
+      "pedagogical_branch": "mental_depressao",
+      "slug": "vunesp-saude-mental-depressao",
+      "lote": "saude-mental-micro-06-goldens",
+      "json_path": "examples/questao-premium-vunesp-saude-mental-depressao-epidemiologia.json"
+    },
+    "adolescente_generico": {
+      "pedagogical_branch": "adolescente_generico",
+      "slug": "cpcon-saude-adolescente-gravidez",
+      "lote": "saude-adolescente-g01",
+      "json_path": "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json"
+    },
+    "respiratorio_crise": {
+      "pedagogical_branch": "respiratorio_crise",
+      "slug": "questao-premium-respiratorio-crise",
+      "lote": "respiratorio-cronico-g01",
+      "json_path": "examples/questao-premium-vunesp-respiratorio-crise-asmatica-exceto.json"
+    },
+    "trabalho_vf_nr32": {
+      "pedagogical_branch": "trabalho_vf_nr32",
+      "slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+      "lote": "enfermagem-do-trabalho-g01",
+      "json_path": "examples/questao-premium-cpcon-enfermagem-trabalho-nr32-vf.json"
+    },
+    "trabalho_pep_trap": {
+      "pedagogical_branch": "trabalho_pep_trap",
+      "slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+      "lote": "enfermagem-do-trabalho-g01",
+      "json_path": "data/catalog-migration/enfermagem-do-trabalho-g01/questions/copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1.json"
+    },
+    "trabalho_nr15_reference": {
+      "pedagogical_branch": "trabalho_nr15_reference",
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "lote": "enfermagem-do-trabalho-g05",
+      "json_path": "data/catalog-migration/enfermagem-do-trabalho-g05/questions/ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8.json"
+    },
+    "historia_nightingale": {
+      "pedagogical_branch": "historia_nightingale",
+      "slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "lote": "historia-enfermagem-g01",
+      "json_path": "examples/questao-premium-cpcon-historia-enfermagem-nightingale.json"
+    },
+    "historia_humanizacao": {
+      "pedagogical_branch": "historia_humanizacao",
+      "slug": "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+      "lote": "historia-enfermagem-g02",
+      "json_path": "data/catalog-migration/historia-enfermagem-g02/questions/instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2.json"
+    },
+    "historia_comunicacao_etica": {
+      "pedagogical_branch": "historia_comunicacao_etica",
+      "slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "lote": "historia-enfermagem-g04",
+      "json_path": "data/catalog-migration/historia-enfermagem-g04/questions/funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4.json"
+    },
+    "perioperatorio_pre_operatorio": {
+      "pedagogical_branch": "perioperatorio_pre_operatorio",
+      "slug": "avancasp-perioperatoria-pre",
+      "lote": "perioperatoria-g01",
+      "json_path": "examples/questao-premium-avancasp-perioperatoria-pre-operatorio.json"
+    },
+    "perioperatorio_pos_operatorio": {
+      "pedagogical_branch": "perioperatorio_pos_operatorio",
+      "slug": "idecan-perioperatoria-aldrete",
+      "lote": "perioperatoria-g01",
+      "json_path": "examples/questao-premium-idecan-perioperatoria-aldrete-srpa.json"
+    },
+    "perioperatorio_protocolo": {
+      "pedagogical_branch": "perioperatorio_protocolo",
+      "slug": "cogeps-perioperatoria-cirurgia-segura",
+      "lote": "perioperatoria-g01",
+      "json_path": "examples/questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json"
+    },
+    "perioperatorio_isc": {
+      "pedagogical_branch": "perioperatorio_isc",
+      "slug": "furb-perioperatoria-isc",
+      "lote": "perioperatoria-g02",
+      "json_path": "examples/questao-premium-furb-perioperatoria-isc-classificacao.json"
+    },
+    "perioperatorio_vf": {
+      "pedagogical_branch": "perioperatorio_vf",
+      "slug": "cebraspe-perioperatoria-ce",
+      "lote": "perioperatoria-g04",
+      "json_path": "data/catalog-migration/perioperatoria-g04/questions/cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0.json"
+    },
+    "bacterianas_generico": {
+      "pedagogical_branch": "bacterianas_generico",
+      "slug": "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+      "lote": "doencas-bacterianas-g01",
+      "json_path": "data/catalog-migration/doencas-bacterianas-g01/questions/cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0.json"
+    },
+    "bacterianas_agente_etiologico": {
+      "pedagogical_branch": "bacterianas_agente_etiologico",
+      "slug": "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0",
+      "lote": "doencas-bacterianas-g02",
+      "json_path": "data/catalog-migration/doencas-bacterianas-g02/questions/ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0.json"
+    },
+    "biosseg_generico": {
+      "pedagogical_branch": "biosseg_generico",
+      "slug": "avancasp-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-2",
+      "lote": "infeccoes-biosseguranca-g01",
+      "json_path": "data/catalog-migration/infeccoes-biosseguranca-g01/questions/avancasp-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-2.json"
+    },
+    "biosseg_iras_itu_cateter": {
+      "pedagogical_branch": "biosseg_iras_itu_cateter",
+      "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+      "lote": "infeccoes-biosseguranca-g02",
+      "json_path": "data/catalog-migration/infeccoes-biosseguranca-g02/questions/idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4.json"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "lote": "infeccoes-biosseguranca-g04",
+  "exported_at": "2026-06-30T12:00:00.000Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Infecções no Contexto da Biossegurança",
+    "slugs": 1
+  },
+  "slugs": [
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-7"
+  ]
+}

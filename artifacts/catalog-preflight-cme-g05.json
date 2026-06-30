@@ -1,0 +1,82 @@
+{
+  "lote": "cme-g05",
+  "generated_at": "2026-06-29T23:54:10.045Z",
+  "strict": true,
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

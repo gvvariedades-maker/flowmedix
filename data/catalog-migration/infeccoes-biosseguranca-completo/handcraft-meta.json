@@ -1,0 +1,22 @@
+{
+  "subtopico": "Infecções no Contexto da Biossegurança",
+  "trilho": "A",
+  "total_slugs": 25,
+  "lote_size": 8,
+  "lote_pattern": "infeccoes-biosseguranca-g{NN}",
+  "anchor_glob": "examples/questao-premium-*-infeccoes-biosseguranca-*.json,examples/questao-premium-idib-umirim-itu-cateter-exceto.json",
+  "guideline": null,
+  "pedagogical_branches": [
+    "biosseg_iras_itu_cateter",
+    "biosseg_generico"
+  ],
+  "clusters": [
+    "IRAS / infecção hospitalar (conceitos)",
+    "Higienização das mãos (V/F)",
+    "Precauções padrão e por transmissão",
+    "ITU / cateter vesical (EXCETO)",
+    "Biossegurança e contenção (conceitos)",
+    "Cuidados em paciente imunossuprimido / comorbidades"
+  ],
+  "nota_manifest": "25 slugs path canônico; 6 slugs legados (lote-01) podem ter saído do subtópico no Supabase — reconciliar com Classify se reaparecerem."
+}

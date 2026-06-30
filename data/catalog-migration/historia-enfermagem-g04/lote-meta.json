@@ -1,0 +1,34 @@
+{
+  "lote": "historia-enfermagem-g04",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-29",
+  "subtopico": "História da Enfermagem",
+  "cluster": "Ética COFEN + comunicação e bioética (slugs pós-manifest)",
+  "total": 2,
+  "status": "applied",
+  "anchor_slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+  "golden_reference": "examples/questao-premium-cpcon-historia-enfermagem-nightingale.json",
+  "guideline": "lib/guidelines/historiaEnfermagem.ts",
+  "slugs": [
+    "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+    "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=historia-enfermagem-g04 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/historia-enfermagem-g04/questions/",
+    "2. npm run validate:goldens -- --lote=historia-enfermagem-g04 --strict",
+    "3. npm run audit:questao-readiness -- --lote=historia-enfermagem-g04",
+    "4. npm run catalog:apply-lote -- --lote=historia-enfermagem-g04 --dry-run",
+    "5. Apply só quando usuário pedir"
+  ],
+  "next_lote": null,
+  "pacote_status": "repair — 2 slugs fora do manifest original com builder legado",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/historia-enfermagem-g04.json"
+  }
+}

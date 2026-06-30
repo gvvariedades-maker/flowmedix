@@ -76,5 +76,17 @@
     "unifil-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-0",
     "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
     "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6"
+  ],
+  "updated_at": "2026-06-29",
+  "reconciled_from": [
+    "perioperatoria-g01",
+    "perioperatoria-g02",
+    "perioperatoria-g03",
+    "perioperatoria-g04",
+    "perioperatoria-g05",
+    "perioperatoria-g06",
+    "perioperatoria-g07",
+    "perioperatoria-g08",
+    "perioperatoria-g09"
   ]
 }

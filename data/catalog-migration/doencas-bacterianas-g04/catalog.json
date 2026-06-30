@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-30T12:08:14.463Z",
+  "lote": "doencas-bacterianas-g04",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4088
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 3207
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4584
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 907
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-2",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3163
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 4781
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563505333-8",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3126
+    },
+    {
+      "modulo_slug": "isba-enfermagem-exames-complementares-1779563685104-3",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISBA",
+      "avant_codigo": 3334
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-30T12:00:10.028Z",
+  "lote": "doencas-bacterianas-g03",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1549
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1626
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1627
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1628
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1567
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1757
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1805
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 2793
+    }
+  ]
+}

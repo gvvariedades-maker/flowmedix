@@ -1,0 +1,38 @@
+{
+  "lote": "doencas-bacterianas-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-30",
+  "applied_at": "2026-06-30",
+  "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+  "golden_reference": "examples/questao-premium-cpcon-tuberculose-baar-aerossol-vf.json",
+  "guideline": null,
+  "parent": "data/catalog-migration/doencas-bacterianas-completo/manifest.json",
+  "manifest": "data/catalog-migration/doencas-bacterianas-completo/manifest.json",
+  "validate_command": "npm run validate:goldens -- --lote=doencas-bacterianas-g01 --strict",
+  "slugs": [
+    "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+    "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+    "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+    "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+    "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
+    "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4"
+  ],
+  "clusters": [
+    "Meningite bacteriana",
+    "Hanseníase — transmissão e PQT",
+    "Tuberculose — controle, TDO e vigilância"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/doencas-bacterianas-g01.json"
+  }
+}

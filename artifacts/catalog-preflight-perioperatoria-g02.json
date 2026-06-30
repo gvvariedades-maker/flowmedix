@@ -1,0 +1,74 @@
+{
+  "lote": "perioperatoria-g02",
+  "generated_at": "2026-06-30T00:20:08.613Z",
+  "strict": true,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "consulplan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-darwin-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

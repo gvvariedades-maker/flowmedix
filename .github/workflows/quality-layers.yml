@@ -1,0 +1,126 @@
+name: Quality layers
+
+on:
+  pull_request:
+    paths:
+      - 'data/catalog-migration/**/questions/**'
+      - 'lib/catalogMigration/slugAlignment*.ts'
+      - 'lib/catalogMigration/numericFactcheck.ts'
+      - 'lib/catalogMigration/preflightLote.ts'
+      - 'scripts/catalog-apply-preflight.ts'
+      - 'scripts/audit-slug-alignment.ts'
+      - 'lib/catalogMigration/contentHealth.ts'
+      - 'lib/catalogMigration/continuousQuality.ts'
+      - 'lib/catalogMigration/shipGate.ts'
+      - 'lib/catalogMigration/vitrineQualityGate.ts'
+      - 'lib/concursos/entitlements.ts'
+      - 'lib/vitrine/service.ts'
+      - 'scripts/audit-subtopico-quality.ts'
+      - 'scripts/audit-subtopico-health.ts'
+  schedule:
+    - cron: '0 4 * * *'
+
+env:
+  NEXT_PUBLIC_SUPABASE_URL: https://ci-build-placeholder.supabase.co
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ci-build-placeholder-key
+  NEXT_PUBLIC_APP_URL: https://ci-build-placeholder.test
+  RESEND_API_KEY: re_ci_build_placeholder_key
+  RESEND_FROM_EMAIL: Avant <noreply@ci.placeholder.test>
+  SUPABASE_WEBHOOK_SECRET: ci_supabase_webhook_secret_placeholder_32
+  SUPABASE_SERVICE_ROLE_KEY: ci_service_role_placeholder_key_32chars
+  ADMIN_EMAIL: ci-admin@placeholder.test
+
+jobs:
+  catalog-preflight-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Detect changed lotes
+        id: lotes
+        run: |
+          LOTES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD \
+            | grep -oE 'data/catalog-migration/[^/]+/questions/' \
+            | sed 's|data/catalog-migration/||;s|/questions/||' \
+            | sort -u | tr '\n' ' ')
+          echo "list=$LOTES" >> "$GITHUB_OUTPUT"
+
+      - name: Unit tests — alignment + factcheck + quality gates
+        run: |
+          npm run test -- __tests__/lib/catalogMigration/slugAlignment.test.ts
+          npm run test -- __tests__/lib/catalogMigration/shipGate.test.ts
+          npm run test -- __tests__/lib/catalogMigration/contentHealth.test.ts
+          npm run test -- __tests__/lib/catalogMigration/continuousQuality.test.ts
+          npm run test -- __tests__/lib/catalogMigration/vitrineQualityGate.test.ts
+
+      - name: Catalog preflight (changed lotes)
+        run: |
+          for lote in ${{ steps.lotes.outputs.list }}; do
+            if [ -n "$lote" ]; then
+              echo "Preflight $lote"
+              npm run catalog:preflight -- --lote="$lote" || exit 1
+            fi
+          done
+
+  quality-nightly:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Audit subtópico quality — pilotos CME + Processamento
+        run: |
+          npm run audit:subtopico-quality -- --subtopico="Enfermagem em Central de Material e Esterilização (CME)" || true
+          npm run audit:subtopico-quality -- --subtopico="Processamento de Artigos e Produtos de Saúde" || true
+        continue-on-error: true
+
+      - name: Health audit — pacotes production_ready
+        run: npm run audit:subtopico-health -- --all-production-ready || true
+        continue-on-error: true
+
+      - name: Upload quality artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: subtopico-quality-nightly
+          path: |
+            artifacts/subtopico-quality/
+            artifacts/subtopico-health/
+          retention-days: 14
+
+  slides-visual-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Check slides changes
+        id: slides
+        run: |
+          if git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -q '^components/slides/'; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Jest — catalog migration
+        if: steps.slides.outputs.changed == 'true'
+        run: |
+          npm ci
+          npm run test -- __tests__/lib/catalogMigration/

@@ -9,6 +9,9 @@ Complementa:
 - [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) — prompt de conversa nova (`Handcraft: <subtópico>`)
 - [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) — gramática de slots e gates de lint
 - [`GOLDEN_ROLLOUT_CATALOGO.md`](GOLDEN_ROLLOUT_CATALOGO.md) — programa catálogo inteiro
+- [`QUALITY_LAYERS_MODEL.md`](QUALITY_LAYERS_MODEL.md) — camadas L1–L6, `production_ready` vs `applied`
+- [`DECISAO_QUALITY_HIBRIDA.md`](DECISAO_QUALITY_HIBRIDA.md) — ship = venda; monitoramento contínuo
+- [`QUALITY_VENDAVEL_CONVERSA.md`](QUALITY_VENDAVEL_CONVERSA.md) — prompt `Qualidade vendável: <subtópico>`
 - [`.cursor/rules/avant-agent-json.mdc`](../.cursor/rules/avant-agent-json.mdc) — contrato JSON no Laboratório
 
 **Subtópicos fechados (handcraft):**
@@ -246,7 +249,13 @@ Matriz viva: [`handcraft-registry.json`](../data/catalog-migration/handcraft-reg
 
 ---
 
-## 10. Definition of Done — subtópico fechado
+## 10. Definition of Done — handcraft vs vendável
+
+Dois níveis distintos. **Não confundir** `applied` (handcraft no DB) com `production_ready` (vendável).
+
+### 10a. Handcraft fechado (`status: applied`)
+
+Critério mínimo de produção — mesmo checklist histórico:
 
 - [ ] 100% dos slugs com `meta.content_standard: "golden-v1"`
 - [ ] 100% passam `validate:goldens --strict` (0 falhas)
@@ -254,7 +263,79 @@ Matriz viva: [`handcraft-registry.json`](../data/catalog-migration/handcraft-reg
 - [ ] `slide_topic_drift` ≈ 0
 - [ ] Amostra humana ≥5% aprovada no player
 - [ ] `catalog:apply-lote --apply` com relatório 0 failed
-- [ ] Registry: `status: applied`, `pending_slugs: []`
+- [ ] Registry: `status: applied`, `handcraft_applied === total_slugs`
+
+Comando de auditoria: `npm run audit:handcraft-dod -- --subtopico="<nome>"`
+
+### 10b. Subtópico vendável (`production_status: production_ready`)
+
+Camadas de qualidade — ver [`QUALITY_LAYERS_MODEL.md`](QUALITY_LAYERS_MODEL.md) e ADR [`DECISAO_QUALITY_HIBRIDA.md`](DECISAO_QUALITY_HIBRIDA.md):
+
+| Camada | O que valida | Comando |
+|--------|--------------|---------|
+| **L1** | Gates estáticos + DoD | `audit:handcraft-dod`, `catalog:preflight` |
+| **L2** | Alignment semântico | `audit:slug-alignment --strict` |
+| **L2b** | Factcheck numérico | `audit:numeric-factcheck` |
+| **L3** | Regressão visual por molde | `e2e/visual-mold-regression` |
+| **L4** | Capture por slug | `capture:questao-review` (warn only no ship) |
+| **L5** | Saúde de reportes | `audit:content-health` |
+| **L6** | Segundo par de olhos na âncora | `audit:anchor-review` |
+
+Transição (modelo híbrido — **sem bootstrap pré-venda**):
+
+1. `applied` → `technical_ready`: L1 + L2 + L2b PASS → `quality.technical_ready_at`
+2. `technical_ready` → `production_ready`: L3 + L6 + L5 PASS + `audit:subtopico-quality --promote` com `canPromoteToSell` OK
+3. **Pós-venda:** `audit:subtopico-health` (diário); P0 stale → `blocked`; repair + `--recover` → `production_ready`
+
+Registry por pacote:
+
+```json
+{
+  "status": "applied",
+  "production_status": "none | monitoring | production_ready | blocked",
+  "quality": {
+    "technical_ready_at": null,
+    "production_ready_at": null,
+    "monitoring_until": null,
+    "layers": { "L1": false, "L2": false, "L2b": false, "L3": false, "L4": false, "L5": false, "L6": false },
+    "continuous": {
+      "enabled": false,
+      "last_audit_at": null,
+      "last_audit_pass": null,
+      "health_streak_days": 0,
+      "last_blocked_at": null,
+      "last_blocked_reason": null
+    },
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2.0,
+      "min_sessions_30d": 100,
+      "p0_block_after_hours": 24
+    }
+  }
+}
+```
+
+**Comando ship (1ª promoção):**
+
+```bash
+npm run audit:subtopico-quality -- --subtopico="<nome canônico>" --promote
+```
+
+**Comando contínuo (pós-venda):**
+
+```bash
+npm run audit:subtopico-health -- --subtopico="<nome canônico>"
+```
+
+Runbooks complementares:
+- Porta de venda: [`QUALITY_VENDAVEL_CONVERSA.md`](QUALITY_VENDAVEL_CONVERSA.md)
+- Monitoramento contínuo: [`CONTINUOUS_QUALITY_RUNBOOK.md`](CONTINUOUS_QUALITY_RUNBOOK.md)
+- Triagem de reportes: [`RUNBOOK_ERROR_REPORT_TRIAGE.md`](RUNBOOK_ERROR_REPORT_TRIAGE.md)
+- Revisão de âncora (L6): [`ANCHOR_SECOND_REVIEW_PROMPT.md`](ANCHOR_SECOND_REVIEW_PROMPT.md)
+
+Ao fechar conversa handcraft, reportar **`technical_ready`** e **`production_ready`** separadamente. **Proibido** segundo `--promote` rotineiro após vendável.
 
 ---
 

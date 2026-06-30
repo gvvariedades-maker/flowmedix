@@ -315,7 +315,8 @@ export async function buildL3MoldGapReport(
 
   if (registry?.pacotes) {
     for (const [name, pacote] of Object.entries(registry.pacotes)) {
-      if (pacote.status !== 'applied') continue;
+      const hasClusterReport = Boolean(pacote.cluster_report);
+      if (pacote.status !== 'applied' && !hasClusterReport) continue;
       const subtopico = name;
 
       if (pacote.cluster_report) {

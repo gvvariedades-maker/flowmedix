@@ -95,8 +95,9 @@ export default defineConfig({
     : {
         command: 'npm run dev',
         url: 'http://localhost:3000',
-        // false: garante E2E_*_BYPASS no processo do Next (reuse sem env quebra /simulados)
-        reuseExistingServer: false,
+        // true local: evita "port already in use" quando dev já está rodando.
+        // Use PLAYWRIGHT_SKIP_WEBSERVER=true se o dev local não tiver E2E_*_BYPASS.
+        reuseExistingServer: !ci,
         timeout: 180_000,
         env: {
           ...process.env,

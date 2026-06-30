@@ -1,442 +1,696 @@
 {
-
   "version": 2,
-
-  "updated_at": "2026-06-27",
-
+  "updated_at": "2026-06-30",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
-
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
-
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
-
   "pacotes": {
-
     "Assistência Perioperatória (Inclui SRPA)": {
-
       "pacote_prefix": "perioperatoria",
-
       "manifest": "data/catalog-migration/perioperatoria-completo/manifest.json",
-
       "handcraft_meta": "data/catalog-migration/perioperatoria-completo/handcraft-meta.json",
-
       "readme": "data/catalog-migration/perioperatoria-completo/README.md",
-
       "cluster_command": "npm run cluster:perioperatoria",
-
       "cluster_report": "artifacts/perioperatoria-topic-cluster-report.json",
-
       "lote_pattern": "perioperatoria-g{NN}",
-
       "lote_size": 8,
-
       "status": "applied",
-
       "total_slugs": 68,
-
       "handcraft_applied": 68,
-
       "anchor_glob": "examples/questao-premium-*-perioperatoria-*.json",
-
-      "guideline": null
-
+      "guideline": null,
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-30",
+        "production_ready_at": "2026-06-30",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-30T00:20:40.778Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
     "Enfermagem em Central de Material e Esterilização (CME)": {
-
       "pacote_prefix": "cme",
-
       "manifest": "data/catalog-migration/cme-completo/manifest.json",
-
       "handcraft_meta": "data/catalog-migration/cme-g05/lote-meta.json",
-
       "readme": "data/catalog-migration/cme-completo/README.md",
-
       "cluster_command": "npm run cluster:cme",
-
       "cluster_report": "artifacts/cme-topic-cluster-report.json",
-
       "lote_pattern": "cme-g{NN}",
-
       "lote_size": 8,
-
       "status": "applied",
-
       "total_slugs": 35,
-
       "handcraft_applied": 35,
-
       "anchor_glob": "examples/questao-premium-*-cme-*.json",
-
-      "guideline": "lib/guidelines/cme.ts"
-
+      "guideline": "lib/guidelines/cme.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-30",
+        "production_ready_at": "2026-06-30",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-30T00:13:59.202Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
     "Saúde Mental": {
-
       "pacote_prefix": "saude-mental",
-
       "manifest": "data/catalog-migration/saude-mental-completo/manifest.json",
-
       "handcraft_meta": "data/catalog-migration/saude-mental-micro-07-goldens/manifest.json",
-
       "readme": "data/catalog-migration/saude-mental-completo/README.md",
-
       "cluster_command": "npm run cluster:saude-mental",
-
       "cluster_report": "artifacts/saude-mental-topic-cluster-report.json",
-
       "lote_pattern": "saude-mental-micro-{NN}-goldens",
-
       "lote_size": 4,
-
       "status": "applied",
-
       "total_slugs": 37,
-
       "handcraft_applied": 37,
-
       "anchor_glob": "examples/questao-premium-*-saude-mental*.json",
-
-      "guideline": "lib/guidelines/saudeMental.ts"
-
+      "guideline": "lib/guidelines/saudeMental.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-30",
+        "production_ready_at": "2026-06-30",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-30T00:04:12.758Z",
+          "last_audit_pass": true,
+          "health_streak_days": 1,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
     "Saúde do Adolescente": {
-
       "pacote_prefix": "saude-adolescente",
-
       "manifest": "data/catalog-migration/saude-adolescente-completo/manifest.json",
-
       "handcraft_meta": "data/catalog-migration/saude-adolescente-completo/handcraft-meta.json",
-
       "readme": "data/catalog-migration/saude-adolescente-completo/README.md",
-
       "cluster_command": null,
-
       "cluster_report": null,
-
       "lote_pattern": "saude-adolescente-g{NN}",
-
       "lote_size": 8,
-
       "status": "applied",
-
       "total_slugs": 16,
-
       "handcraft_applied": 16,
-
       "anchor_glob": "examples/questao-premium-*-saude-adolescente-*.json",
-
-      "guideline": "lib/guidelines/saudeAdolescente.ts"
-
+      "guideline": "lib/guidelines/saudeAdolescente.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-30",
+        "production_ready_at": "2026-06-30",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-30T00:12:33.258Z",
+          "last_audit_pass": true,
+          "health_streak_days": 1,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
     "História da Enfermagem": {
-
       "pacote_prefix": "historia-enfermagem",
-
       "manifest": "data/catalog-migration/historia-enfermagem-completo/manifest.json",
-
       "readme": "data/catalog-migration/historia-enfermagem-completo/README.md",
-
       "cluster_command": null,
-
       "cluster_report": null,
-
       "lote_pattern": "historia-enfermagem-g{NN}",
-
       "lote_size": 8,
-
       "status": "applied",
-
-      "total_slugs": 18,
-
-      "handcraft_applied": 18,
-
+      "total_slugs": 20,
+      "handcraft_applied": 20,
       "anchor_glob": "examples/questao-premium-*-historia-enfermagem-*.json",
-
-      "guideline": "lib/guidelines/historiaEnfermagem.ts"
-
+      "guideline": "lib/guidelines/historiaEnfermagem.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-29",
+        "production_ready_at": "2026-06-29",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-29T23:49:01.823Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
     "Processamento de Artigos e Produtos de Saúde": {
-
       "pacote_prefix": "processamento",
-
       "manifest": "data/catalog-migration/processamento-completo/manifest.json",
-
       "readme": null,
-
       "cluster_command": null,
-
       "cluster_report": null,
-
       "lote_pattern": "processamento-g{NN}",
-
       "lote_size": 8,
-
       "status": "applied",
-
       "total_slugs": 18,
-
       "handcraft_applied": 18,
-
       "anchor_glob": "examples/questao-premium-*-processamento-*.json",
-
-      "guideline": "lib/guidelines/cme.ts"
-
+      "guideline": "lib/guidelines/cme.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-29",
+        "production_ready_at": "2026-06-29",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-29T23:43:01.719Z",
+          "last_audit_pass": true,
+          "health_streak_days": 1,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
     "Farmacodinâmica e Farmacocinética": {
-
       "pacote_prefix": "farmacodinamica-e-farmacocinetica",
-
       "manifest": "data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/manifest.json",
-
       "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g02/lote-meta.json",
-
       "readme": null,
-
       "cluster_command": null,
-
       "cluster_report": null,
-
       "lote_pattern": "farmacodinamica-e-farmacocinetica-g{NN}",
-
       "lote_size": 8,
-
       "status": "applied",
-
       "total_slugs": 12,
-
       "handcraft_applied": 12,
-
       "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json",
-
-      "guideline": null
-
+      "guideline": null,
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-29",
+        "production_ready_at": "2026-06-29",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-29T23:34:46.611Z",
+          "last_audit_pass": true,
+          "health_streak_days": 1,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
     "Feridas e Queimaduras": {
-
       "pacote_prefix": "feridas-e-queimaduras",
-
       "manifest": "data/catalog-migration/feridas-e-queimaduras-completo/manifest.json",
-
       "handcraft_meta": "data/catalog-migration/feridas-e-queimaduras-g01/lote-meta.json",
-
       "readme": null,
-
       "cluster_command": null,
-
       "cluster_report": null,
-
       "lote_pattern": "feridas-e-queimaduras-g{NN}",
-
       "lote_size": 8,
-
       "status": "applied",
-
       "total_slugs": 8,
-
       "handcraft_applied": 8,
-
       "anchor_glob": "examples/questao-premium-*-feridas-queimaduras-*.json",
-
-      "guideline": "lib/guidelines/deepeningPlan.ts"
-
+      "guideline": "lib/guidelines/deepeningPlan.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-29",
+        "production_ready_at": "2026-06-29",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-29T23:28:30.783Z",
+          "last_audit_pass": true,
+          "health_streak_days": 1,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
     "Enfermagem do Trabalho": {
-
       "pacote_prefix": "enfermagem-do-trabalho",
-
-      "manifest": "data/catalog-migration/enfermagem-do-trabalho-lote-01/manifest.json",
-
-      "handcraft_meta": "data/catalog-migration/enfermagem-do-trabalho-g01/lote-meta.json",
-
+      "manifest": "data/catalog-migration/enfermagem-do-trabalho-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/enfermagem-do-trabalho-g05/lote-meta.json",
       "readme": null,
-
       "cluster_command": null,
-
       "cluster_report": null,
-
       "lote_pattern": "enfermagem-do-trabalho-g{NN}",
-
       "lote_size": 8,
-
       "status": "applied",
-
-      "total_slugs": 14,
-
-      "handcraft_applied": 14,
-
+      "total_slugs": 33,
+      "handcraft_applied": 33,
       "anchor_glob": "examples/questao-premium-*-enfermagem-trabalho-*.json",
-
-      "guideline": "lib/guidelines/enfermagemTrabalho.ts"
-
+      "guideline": "lib/guidelines/enfermagemTrabalho.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-29",
+        "production_ready_at": "2026-06-29",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-29T23:39:16.244Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     },
-
-    "Doenças Respiratórias Crônicas (Asma, DPOC)": {
-
-      "pacote_prefix": "respiratorio-cronico",
-
-      "manifest": "data/catalog-migration/respiratorio-cronico-completo/manifest.json",
-
-      "handcraft_meta": "data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json",
-
+    "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)": {
+      "pacote_prefix": "doencas-bacterianas",
+      "manifest": "data/catalog-migration/doencas-bacterianas-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/doencas-bacterianas-g05/lote-meta.json",
       "readme": null,
-
-      "cluster_command": null,
-
-      "cluster_report": null,
-
-      "lote_pattern": "respiratorio-cronico-g{NN}",
-
+      "cluster_command": "npm run cluster:bacterianas",
+      "cluster_report": "artifacts/bacterianas-topic-cluster-report.json",
+      "lote_pattern": "doencas-bacterianas-g{NN}",
       "lote_size": 8,
-
       "status": "applied",
-
+      "total_slugs": 37,
+      "handcraft_applied": 37,
+      "anchor_glob": "examples/questao-premium-*-bacterianas*.json",
+      "guideline": "lib/guidelines/tuberculose.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-30",
+        "production_ready_at": "2026-06-30",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-30T15:18:00.131Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Doenças Respiratórias Crônicas (Asma, DPOC)": {
+      "pacote_prefix": "respiratorio-cronico",
+      "manifest": "data/catalog-migration/respiratorio-cronico-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json",
+      "readme": null,
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "respiratorio-cronico-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
       "total_slugs": 10,
-
       "handcraft_applied": 10,
-
       "anchor_glob": "examples/questao-premium-*-respiratorio-*.json",
-
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/respiratorio-cronico.json",
-
-      "guideline": "lib/guidelines/respiratorioCronico.ts"
-
+      "guideline": "lib/guidelines/respiratorioCronico.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-29",
+        "production_ready_at": "2026-06-29",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-29T23:16:33.341Z",
+          "last_audit_pass": true,
+          "health_streak_days": 1,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Infecções no Contexto da Biossegurança": {
+      "pacote_prefix": "infeccoes-biosseguranca",
+      "manifest": "data/catalog-migration/infeccoes-biosseguranca-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/infeccoes-biosseguranca-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/infeccoes-biosseguranca-completo/README.md",
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "infeccoes-biosseguranca-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 25,
+      "handcraft_applied": 25,
+      "anchor_glob": "examples/questao-premium-*-infeccoes-biosseguranca-*.json,examples/questao-premium-idib-umirim-itu-cateter-exceto.json",
+      "guideline": null,
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-06-30",
+        "production_ready_at": "2026-06-30",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-06-30T15:34:44.101Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Segurança do Paciente": {
+      "pacote_prefix": "seguranca-do-paciente",
+      "manifest": "data/catalog-migration/seguranca-do-paciente-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/seguranca-do-paciente-completo/handcraft-meta.json",
+      "readme": null,
+      "cluster_command": "npm run cluster:seguranca-do-paciente",
+      "cluster_report": "artifacts/seguranca-do-paciente-topic-cluster-report.json",
+      "lote_pattern": "seguranca-do-paciente-g{NN}",
+      "lote_size": 8,
+      "status": "none",
+      "total_slugs": 59,
+      "handcraft_applied": 0,
+      "anchor_glob": "examples/questao-premium-*-seguranca-paciente-*.json,examples/questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
+      "guideline": null,
+      "production_status": "none",
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": false,
+          "L4": false,
+          "L5": false,
+          "L6": false
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": false,
+          "last_audit_at": null,
+          "last_audit_pass": null,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
     }
-
   },
-
   "subtopicos_canonicos": [
-
     "História da Enfermagem",
-
     "Noções de Anatomia",
-
     "Noções de Fisiologia",
-
     "Processo de Enfermagem",
-
     "Farmacodinâmica e Farmacocinética",
-
     "Cálculo de Administração de Medicamentos e Infusões",
-
     "Vias de Administração",
-
     "Cuidados na Administração de Medicamentos",
-
     "Verificação de Sinais Vitais",
-
     "Instalação e Manejo de Sondas",
-
     "Oxigenoterapia e Cuidados Respiratórios",
-
     "Curativos e Manejo de Feridas",
-
     "Punção Venosa e Cuidados com Cateteres",
-
     "Coleta de Exames Laboratoriais",
-
     "Mobilização e Posicionamento do Paciente",
-
     "Procedimentos Diversos",
-
     "Feridas e Queimaduras",
-
     "Processamento de Artigos e Produtos de Saúde",
-
     "Enfermagem em Central de Material e Esterilização (CME)",
-
     "Medidas de Prevenção e Precaução de Contato",
-
     "Infecções no Contexto da Biossegurança",
-
     "Segurança do Paciente",
-
     "Epidemiologia e Vigilância Epidemiológica",
-
     "Promoção à Saúde e Prevenção de Agravos",
-
     "Imunização",
-
     "Atenção Básica / Saúde da Família",
-
     "Infecções Sexualmente Transmissíveis (ISTs)",
-
     "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
-
     "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
-
     "Doenças Parasitárias e Zoonoses",
-
     "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
-
     "Questões Mescladas e Outras Doenças Agudas",
-
     "Doenças Respiratórias Crônicas (Asma, DPOC)",
-
     "Assistência Perioperatória (Inclui SRPA)",
-
     "Enfermagem em Centro Cirúrgico",
-
     "Urgências e Emergências",
-
     "Enfermagem do Trabalho",
-
     "Saúde Mental",
-
     "Saúde da Criança",
-
     "Saúde do Adolescente",
-
     "Saúde da Mulher"
-
   ],
-
   "legacy_builder_subtopicos": [
-
     "Curativos e Manejo de Feridas",
-
     "Imunização",
-
     "Verificação de Sinais Vitais",
-
     "Vias de Administração",
-
     "Urgências e Emergências",
-
     "Punção Venosa e Cuidados com Cateteres",
-
     "Processo de Enfermagem"
-
   ],
-
   "fallback_novo_pacote": {
-
     "when": "subtópico não está em pacotes",
-
     "steps": [
-
       "Confirmar nome exato em CLAUDE.md §9",
-
       "npm run catalog:export-lote -- --lote=<slug>-completo --subtopico=\"Nome\" --limit=10000",
-
       "Criar entrada em handcraft-registry.json (pacote_prefix, manifest, lote_pattern, lote_size: 8)",
-
+      "Preencher production_status: none e quality.* (ver quality_schema)",
       "Seguir docs/GOLDEN_HANDCRAFT_MODEL.md e perioperatoria-completo/README.md como molde",
-
       "Handcraft em lotes g01, g02… até esgotar manifest — sem catalog:upgrade-premium"
-
     ],
-
     "slugify_hint": "minúsculas, sem acentos, hífens (ex.: saude-da-crianca)"
-
+  },
+  "quality_model_doc": "docs/QUALITY_LAYERS_MODEL.md",
+  "quality_schema": {
+    "production_status": [
+      "none",
+      "monitoring",
+      "bootstrap_monitoring",
+      "production_ready",
+      "blocked"
+    ],
+    "quality": {
+      "technical_ready_at": "ISO date | null",
+      "production_ready_at": "ISO date | null",
+      "monitoring_until": "deprecated — legado; não gate de venda",
+      "layers": {
+        "L1": "boolean",
+        "L2": "boolean",
+        "L2b": "boolean",
+        "L3": "boolean",
+        "L4": "boolean",
+        "L5": "boolean",
+        "L6": "boolean"
+      },
+      "continuous": {
+        "enabled": "boolean",
+        "last_audit_at": "ISO datetime | null",
+        "last_audit_pass": "boolean | null",
+        "health_streak_days": "number",
+        "last_blocked_at": "ISO date | null",
+        "last_blocked_reason": "string | null"
+      },
+      "slo": {
+        "open_p0": "number",
+        "open_p1_max": "number",
+        "report_rate_max_pct": "number",
+        "min_sessions_30d": "number",
+        "p0_block_after_hours": "number"
+      }
+    }
   }
-
 }
-

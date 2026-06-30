@@ -28,5 +28,12 @@
     "4. npm run catalog:apply-lote -- --lote=historia-enfermagem-g01 --dry-run",
     "5. Apply só quando usuário pedir"
   ],
-  "next_lote": "historia-enfermagem-g02 — saúde pública + humanização + teorias (8 slugs)"
+  "next_lote": "historia-enfermagem-g02 — saúde pública + humanização + teorias (8 slugs)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/historia-enfermagem-g01.json"
+  }
 }

@@ -2,7 +2,7 @@
 
 **Subtópico:** História da Enfermagem  
 **Modo:** Handcraft total (18 slugs)  
-**Status:** **applied** — g01 + g02 + g03 (**18/18** slugs no Supabase)
+**Status:** **applied** — g01 + g02 + g03 + g04 — **20/20** slugs no Supabase
 
 Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../../docs/GOLDEN_HANDCRAFT_MODEL.md) · [`docs/HANDCRAFT_CONVERSA.md`](../../../docs/HANDCRAFT_CONVERSA.md)
 
@@ -10,8 +10,8 @@ Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../../docs/GOLDEN_HANDCRAFT_MODEL
 
 | Item | Valor |
 |------|--------|
-| Slugs exportados | 18 (`manifest.json`) |
-| Lotes | `historia-enfermagem-g01` (8) · `g02` (8) · `g03` (2) |
+| Slugs exportados | 20 (`manifest.json`) |
+| Lotes | `historia-enfermagem-g01` (8) · `g02` (8) · `g03` (2) · `g04` (2 — reparo pós-manifest) |
 | Âncora VF Nightingale | `examples/questao-premium-cpcon-historia-enfermagem-nightingale.json` |
 | Guideline | `lib/guidelines/historiaEnfermagem.ts` |
 | **Não usar** | `ai:generate` · `catalog:upgrade-premium` |

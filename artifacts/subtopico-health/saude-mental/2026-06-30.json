@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-30T00:04:12.755Z",
+  "subtopico": "Saúde Mental",
+  "pacote_prefix": "saude-mental",
+  "production_status": "production_ready",
+  "content_health": {
+    "subtopico": "Saúde Mental",
+    "sessions_30d": 424,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 2,
+      "p3": 0,
+      "total": 2
+    },
+    "report_rate_pct": 0.47,
+    "top_reported_slugs": [
+      {
+        "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
+        "count": 1
+      },
+      {
+        "slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
+        "count": 1
+      }
+    ],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 424,
+      "open_p1": 0,
+      "report_rate_pct": 0.47
+    },
+    "pass": true,
+    "blockers": [],
+    "should_block": false,
+    "alerts": [],
+    "repair_queue": [
+      {
+        "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
+        "report_count": 1
+      },
+      {
+        "slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
+        "report_count": 1
+      }
+    ],
+    "stale_p0_count": 0
+  },
+  "pass": true,
+  "blocked": false,
+  "recovered": false
+}

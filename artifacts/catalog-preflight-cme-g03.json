@@ -1,0 +1,42 @@
+{
+  "lote": "cme-g03",
+  "generated_at": "2026-06-29T23:53:53.355Z",
+  "strict": true,
+  "total": 4,
+  "passed": 4,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

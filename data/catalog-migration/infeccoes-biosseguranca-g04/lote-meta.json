@@ -1,0 +1,31 @@
+{
+  "lote": "infeccoes-biosseguranca-g04",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-30",
+  "subtopico": "Infecções no Contexto da Biossegurança",
+  "cluster": "IH — origem exógena (reparo final do pacote)",
+  "cluster_pct": 4,
+  "total": 1,
+  "status": "applied",
+  "anchor_slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-7",
+  "golden_reference": "examples/questao-premium-fepese-infeccoes-biosseguranca-iras-vf.json",
+  "guideline": "ANVISA RDC 7/2010",
+  "slugs": [
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-7"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=infeccoes-biosseguranca-g04 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 — único slug remanescente do manifest (25/25)",
+    "2. npm run catalog:apply-lote -- --lote=infeccoes-biosseguranca-g04 --dry-run",
+    "3. apply g01–g04 quando usuário pedir 'pode aplicar'"
+  ],
+  "nota": "Âncora ITU/EXCETO (examples/questao-premium-idib-umirim-itu-cateter-exceto.json) não está no manifest atual — slug idib-0821-1 no Supabase é OMS 5 momentos.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/infeccoes-biosseguranca-g04.json"
+  }
+}

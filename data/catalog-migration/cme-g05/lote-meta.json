@@ -29,5 +29,12 @@
     "4. npm run catalog:apply-lote -- --lote=cme-g05 --apply"
   ],
   "prev_lote": "cme-g04 (validated 6/6)",
-  "next_lote": "CME completo — 35/35 handcraft · aplicar g01–g05"
+  "next_lote": "CME completo — 35/35 handcraft · aplicar g01–g05",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cme-g05.json"
+  }
 }

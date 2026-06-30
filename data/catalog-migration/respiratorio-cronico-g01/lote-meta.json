@@ -7,6 +7,16 @@
   "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
   "total": 9,
   "status": "applied",
+  "anchor_slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+  "golden_reference": "examples/questao-premium-fgv-respiratorio-peak-flow-zonas-vf.json",
+  "guideline": "lib/guidelines/respiratorioCronico.ts",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/respiratorio-cronico-g01.json"
+  },
   "parent": "data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json",
   "manifest": "data/catalog-migration/respiratorio-cronico-completo/manifest.json",
   "validate_command": "npm run validate:goldens -- --lote=respiratorio-cronico-g01 --strict",

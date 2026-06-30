@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-06-29T23:43:38.259Z",
+  "pacote_prefix": "historia-enfermagem",
+  "lotes": [
+    {
+      "lote": "historia-enfermagem-g01",
+      "count": 8
+    },
+    {
+      "lote": "historia-enfermagem-g02",
+      "count": 8
+    },
+    {
+      "lote": "historia-enfermagem-g03",
+      "count": 2
+    },
+    {
+      "lote": "historia-enfermagem-g04",
+      "count": 2
+    }
+  ],
+  "union_count": 20,
+  "registry_total_slugs": 20,
+  "match": true,
+  "slugs": [
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+    "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+    "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+    "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+    "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+    "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+    "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+    "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+    "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+    "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+    "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+    "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+    "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+    "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+    "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1",
+    "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+    "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6"
+  ]
+}

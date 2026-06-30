@@ -1,12 +1,15 @@
 {
   "lote": "saude-mental-completo",
-  "exported_at": "2026-06-23T15:25:56.609Z",
-  "source": "supabase",
-  "filters": {
-    "subtopico": "Saúde Mental",
-    "limit": 50,
-    "exclude_count": 0
-  },
+  "updated_at": "2026-06-29",
+  "reconciled_from": [
+    "saude-mental-micro-01-goldens",
+    "saude-mental-micro-02-goldens",
+    "saude-mental-micro-03-goldens",
+    "saude-mental-micro-04-goldens",
+    "saude-mental-micro-05-goldens",
+    "saude-mental-micro-06-goldens",
+    "saude-mental-micro-07-goldens"
+  ],
   "slugs": [
     "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
     "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",

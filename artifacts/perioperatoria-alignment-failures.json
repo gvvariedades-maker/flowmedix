@@ -1,0 +1,260 @@
+[
+  {
+    "lote": "perioperatoria-g02",
+    "slug": "unifil-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-0",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 10/38 termos do enunciado (mínimo 12 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g03",
+    "slug": "igeduc-enfermagem-assistencia-perioperatoria-inclui-srpa-1780001148264-7",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 14/50 termos do enunciado (mínimo 15 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g03",
+    "slug": "igeduc-geral-assistencia-perioperatoria-inclui-srpa-1777103789613-0",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 10/50 termos do enunciado (mínimo 15 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g04",
+    "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 5/21 termos do enunciado (mínimo 7 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g04",
+    "slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 10/44 termos do enunciado (mínimo 14 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g05",
+    "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+    "codes": [
+      "align_correct_option_ref",
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g05",
+    "slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 14/82 termos do enunciado (mínimo 25 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g05",
+    "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g05",
+    "slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 8/32 termos do enunciado (mínimo 10 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g05",
+    "slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 7/25 termos do enunciado (mínimo 8 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g07",
+    "slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-3",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g07",
+    "slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-6",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g07",
+    "slug": "ibade-enfermagem-processo-de-enfermagem-1780005128081-9",
+    "codes": [
+      "align_instruction_terms",
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "Slides citam 14/61 termos do enunciado (mínimo 19 = 30%).",
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g07",
+    "slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g07",
+    "slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 5/18 termos do enunciado (mínimo 6 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g07",
+    "slug": "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-2",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g07",
+    "slug": "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+    "codes": [
+      "align_instruction_terms",
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "Slides citam 11/41 termos do enunciado (mínimo 13 = 30%).",
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g08",
+    "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g08",
+    "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+    "codes": [
+      "align_instruction_terms",
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "Slides citam 8/75 termos do enunciado (mínimo 23 = 30%).",
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g08",
+    "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g08",
+    "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g08",
+    "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g09",
+    "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+    "codes": [
+      "align_instruction_terms"
+    ],
+    "msgs": [
+      "Slides citam 8/40 termos do enunciado (mínimo 12 = 30%)."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g09",
+    "slug": "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  },
+  {
+    "lote": "perioperatoria-g09",
+    "slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1",
+    "codes": [
+      "align_danger_duplicate_correct"
+    ],
+    "msgs": [
+      "danger_zone.items[].correct com justificativas duplicadas."
+    ]
+  }
+]

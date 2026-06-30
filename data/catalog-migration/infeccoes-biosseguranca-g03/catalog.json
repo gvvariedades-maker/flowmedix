@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-30T12:16:52.814Z",
+  "lote": "infeccoes-biosseguranca-g03",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-1",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1744
+    },
+    {
+      "modulo_slug": "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-2",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1745
+    },
+    {
+      "modulo_slug": "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-3",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1746
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-1",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 651
+    },
+    {
+      "modulo_slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-3",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 653
+    },
+    {
+      "modulo_slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-4",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 654
+    },
+    {
+      "modulo_slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-5",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 655
+    },
+    {
+      "modulo_slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-6",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 656
+    }
+  ]
+}

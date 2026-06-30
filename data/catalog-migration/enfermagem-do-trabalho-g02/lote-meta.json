@@ -27,5 +27,12 @@
     "4. npm run catalog:apply-lote -- --lote=enfermagem-do-trabalho-g02 --dry-run",
     "5. Apply só quando usuário pedir"
   ],
-  "next_lote": null
+  "next_lote": null,
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/enfermagem-do-trabalho-g02.json"
+  }
 }

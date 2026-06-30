@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-06-29T23:41:26.291Z",
+  "lote": "enfermagem-do-trabalho-g04",
+  "mode": "apply",
+  "total_files": 9,
+  "ok": 9,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-7",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-3",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-5",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-6",
+    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+    "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

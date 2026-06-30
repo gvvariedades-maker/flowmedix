@@ -28,5 +28,12 @@
     "4. npm run catalog:apply-lote -- --lote=saude-adolescente-g02 --apply (só quando pedido)"
   ],
   "next_lote": null,
-  "nota": "Fechamento handcraft — 16/16 slugs do manifest saude-adolescente-completo"
+  "nota": "Fechamento handcraft — 16/16 slugs do manifest saude-adolescente-completo",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-adolescente-g02.json"
+  }
 }

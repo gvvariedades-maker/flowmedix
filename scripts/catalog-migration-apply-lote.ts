@@ -23,6 +23,7 @@ import {
   validateAndNormalizeQuestao,
   type ValidatedQuestao,
 } from '@/lib/catalogMigration/validatePayload';
+import { runLotePreflight } from '@/lib/catalogMigration/preflightLote';
 
 async function main() {
   const lote = requireArg('lote');
@@ -32,6 +33,22 @@ async function main() {
   const strictGabarito = !hasFlag('no-strict-gabarito');
   const allowInsert = hasFlag('allow-insert');
   const premiumGate = !hasFlag('allow-generic');
+  const skipPreflight = hasFlag('skip-preflight');
+
+  if (apply && !hasFlag('dry-run') && !skipPreflight) {
+    const preflight = runLotePreflight(lote, { strict: true });
+    console.log(
+      `[catalog:apply-lote] preflight: passed=${preflight.passed}/${preflight.total} failed=${preflight.failed}`,
+    );
+    if (preflight.failed > 0) {
+      for (const s of preflight.slugs.filter((x) => !x.ok).slice(0, 10)) {
+        console.error(`  PREFLIGHT FAIL ${s.slug}: ${s.issues[0] ?? 'erro'}`);
+      }
+      throw new Error(
+        `Preflight falhou (${preflight.failed} slug(s)). Rode npm run catalog:preflight -- --lote=${lote} ou use --skip-preflight em emergência.`,
+      );
+    }
+  }
 
   const questionsDir = loteQuestionsDir(lote);
   if (!existsSync(questionsDir)) {

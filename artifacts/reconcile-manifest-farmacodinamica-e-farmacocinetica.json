@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-29T23:31:45.526Z",
+  "pacote_prefix": "farmacodinamica-e-farmacocinetica",
+  "lotes": [
+    {
+      "lote": "farmacodinamica-e-farmacocinetica-g01",
+      "count": 5
+    },
+    {
+      "lote": "farmacodinamica-e-farmacocinetica-g02",
+      "count": 6
+    }
+  ],
+  "union_count": 11,
+  "registry_total_slugs": 12,
+  "match": false,
+  "slugs": [
+    "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+    "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+    "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1"
+  ]
+}

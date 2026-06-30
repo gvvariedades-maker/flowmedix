@@ -1,0 +1,528 @@
+{
+  "mode": "infer",
+  "bucket": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "min_confidence_apply": 0.85,
+  "limit": 10000,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 51,
+    "inferred": 51,
+    "errors": 0,
+    "keep_current": 21,
+    "same_subtopico": 21,
+    "applicable": 30
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-exames-laboratoriais-1779563559434-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779562735777-6",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779563140631-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-1",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-3",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-semiologia-em-enfermagem-1779563512485-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563621885-8",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-geral-doencas-parasitarias-e-zoonoses-1777103478442-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (O2): enunciado indica Oxigenoterapia e Cuidados Respiratórios",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-1",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (O2): enunciado indica Oxigenoterapia e Cuidados Respiratórios",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563505333-8",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-parasitarias-e-zoonoses-1777103452899-3",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (O2): enunciado indica Oxigenoterapia e Cuidados Respiratórios",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "isba-enfermagem-exames-complementares-1779563685104-3",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-geral-doencas-parasitarias-e-zoonoses-1777103502990-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (bacteriana): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ],
+  "generated_at": "2026-06-30T02:52:19.394Z"
+}

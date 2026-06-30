@@ -33,5 +33,12 @@
     "6. npm run catalog:apply-lote -- --lote=cme-g02 --apply"
   ],
   "prev_lote": "cme-g01 (validated 6/6)",
-  "next_lote": "cme-g03 — Processamento e esterilização — conceito (4 slugs)"
+  "next_lote": "cme-g03 — Processamento e esterilização — conceito (4 slugs)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cme-g02.json"
+  }
 }

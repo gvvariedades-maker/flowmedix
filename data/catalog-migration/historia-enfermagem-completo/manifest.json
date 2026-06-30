@@ -13,6 +13,7 @@
     "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
     "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
     "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+    "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
     "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
     "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
     "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
@@ -23,8 +24,16 @@
     "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
     "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
     "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+    "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
     "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1",
     "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
     "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6"
+  ],
+  "updated_at": "2026-06-29",
+  "reconciled_from": [
+    "historia-enfermagem-g01",
+    "historia-enfermagem-g02",
+    "historia-enfermagem-g03",
+    "historia-enfermagem-g04"
   ]
 }

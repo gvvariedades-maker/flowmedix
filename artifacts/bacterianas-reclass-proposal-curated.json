@@ -1,0 +1,426 @@
+{
+  "generated_at": "2026-06-30T02:53:17.061Z",
+  "bucket": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "total": 51,
+  "stay_in_bucket": 37,
+  "move_out": 14,
+  "destinations": {
+    "Coleta de Exames Laboratoriais": 4,
+    "Urgências e Emergências": 1,
+    "Curativos e Manejo de Feridas": 1,
+    "Epidemiologia e Vigilância Epidemiológica": 1,
+    "Infecções Sexualmente Transmissíveis (ISTs)": 2,
+    "Questões Mescladas e Outras Doenças Agudas": 2,
+    "Doenças Parasitárias e Zoonoses": 3
+  },
+  "rows": [
+    {
+      "slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+      "topic_cluster": "Tétano — profilaxia e imunização",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.9,
+      "keep_in_bacterianas": true,
+      "rationale": "Quadro compatível com meningite bacteriana"
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+      "topic_cluster": "Outros / tema misto",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_in_bacterianas": true,
+      "rationale": "Hanseníase — pele e nervos"
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_in_bacterianas": true,
+      "rationale": "Vigilância tuberculose"
+    },
+    {
+      "slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.88,
+      "keep_in_bacterianas": true,
+      "rationale": "Cluster temático: Tuberculose — controle, TDO e vigilância"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+      "topic_cluster": "Meningite bacteriana",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_in_bacterianas": true,
+      "rationale": "Meningocócica"
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.88,
+      "keep_in_bacterianas": true,
+      "rationale": "Cluster temático: Tuberculose — controle, TDO e vigilância"
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
+      "topic_cluster": "Hanseníase — transmissão e PQT",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_in_bacterianas": true,
+      "rationale": "Hanseníase — transmissão"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.88,
+      "keep_in_bacterianas": true,
+      "rationale": "Mancha hipocrômica — suspeita hanseníase"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.9,
+      "keep_in_bacterianas": true,
+      "rationale": "Tosse hemoptoica — suspeita TB"
+    },
+    {
+      "slug": "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+      "topic_cluster": "Outros / tema misto",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.92,
+      "keep_in_bacterianas": true,
+      "rationale": "Coqueluche — Bordetella (bacteriana)"
+    },
+    {
+      "slug": "fcc-enfermagem-exames-laboratoriais-1779563559434-5",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.91,
+      "keep_in_bacterianas": false,
+      "rationale": "Coleta/acondicionamento escarro MS"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.9,
+      "keep_in_bacterianas": true,
+      "rationale": "Vigilância tosse persistente — TB"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+      "topic_cluster": "Meningite bacteriana",
+      "curated_subtopico": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_in_bacterianas": false,
+      "rationale": "Meningite em serviço de urgência"
+    },
+    {
+      "slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-2",
+      "topic_cluster": "Outros / tema misto",
+      "curated_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.92,
+      "keep_in_bacterianas": false,
+      "rationale": "Ferimento cortante — cuidados ferida"
+    },
+    {
+      "slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "topic_cluster": "Outros / tema misto",
+      "curated_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.91,
+      "keep_in_bacterianas": false,
+      "rationale": "Busca ativa sintomáticos respiratórios (vigilância TB)"
+    },
+    {
+      "slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779562735777-6",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.9,
+      "keep_in_bacterianas": false,
+      "rationale": "Orientação coleta escarro TB"
+    },
+    {
+      "slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779563140631-4",
+      "topic_cluster": "Exames laboratoriais (reclassificar?)",
+      "curated_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_in_bacterianas": false,
+      "rationale": "BAAR — técnica de coleta escarro"
+    },
+    {
+      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-1",
+      "topic_cluster": "IST (reclassificar?)",
+      "curated_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_in_bacterianas": false,
+      "rationale": "Sífilis — tratamento/conduta"
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+      "topic_cluster": "Meningite bacteriana",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_in_bacterianas": true,
+      "rationale": "Meningite bacteriana — tema central"
+    },
+    {
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-2",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.93,
+      "keep_in_bacterianas": true,
+      "rationale": "Hanseníase na APS"
+    },
+    {
+      "slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2",
+      "topic_cluster": "Bacterioses — conceito geral",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.88,
+      "keep_in_bacterianas": true,
+      "rationale": "Sinal infeccioso — hiperpirexia"
+    },
+    {
+      "slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-3",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_in_bacterianas": true,
+      "rationale": "Shigella/E.coli GI"
+    },
+    {
+      "slug": "iaupe-enfermagem-semiologia-em-enfermagem-1779563512485-5",
+      "topic_cluster": "Candidíase e micoses",
+      "curated_subtopico": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.88,
+      "keep_in_bacterianas": false,
+      "rationale": "Pneumonia aguda — não bacterianas bucket"
+    },
+    {
+      "slug": "ibfc-enfermagem-exames-laboratoriais-1779563621885-8",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.9,
+      "keep_in_bacterianas": false,
+      "rationale": "Coleta escarro — afirmativas"
+    },
+    {
+      "slug": "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0",
+      "topic_cluster": "Agente etiológico — bactéria × vírus × fungo",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.98,
+      "keep_in_bacterianas": true,
+      "rationale": "Agente etiológico — todas bactérias (handcraft aplicado)"
+    },
+    {
+      "slug": "idcap-geral-doencas-parasitarias-e-zoonoses-1777103478442-5",
+      "topic_cluster": "Zoonoses (reclassificar?)",
+      "curated_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.94,
+      "keep_in_bacterianas": false,
+      "rationale": "Febre maculosa"
+    },
+    {
+      "slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.88,
+      "keep_in_bacterianas": true,
+      "rationale": "Diagnóstico TB — papel do técnico (programa, não técnica lab)"
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-1",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.9,
+      "keep_in_bacterianas": false,
+      "rationale": "Infecções trato reprodutivo"
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_in_bacterianas": true,
+      "rationale": "Tuberculose — conteúdo central"
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+      "topic_cluster": "Agente etiológico — bactéria × vírus × fungo",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_in_bacterianas": true,
+      "rationale": "Hanseníase — assertivas V/F"
+    },
+    {
+      "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_in_bacterianas": true,
+      "rationale": "Transmissão TB pulmonar"
+    },
+    {
+      "slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.92,
+      "keep_in_bacterianas": true,
+      "rationale": "TDO na APS"
+    },
+    {
+      "slug": "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+      "topic_cluster": "Candidíase e micoses",
+      "curated_subtopico": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.88,
+      "keep_in_bacterianas": false,
+      "rationale": "Pneumonia aguda"
+    },
+    {
+      "slug": "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_in_bacterianas": true,
+      "rationale": "PQT hanseníase"
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.9,
+      "keep_in_bacterianas": true,
+      "rationale": "Teste rápido hanseníase"
+    },
+    {
+      "slug": "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8",
+      "topic_cluster": "Outros / tema misto",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.85,
+      "keep_in_bacterianas": true,
+      "rationale": "Bacterioses na APS — permanece no bucket"
+    },
+    {
+      "slug": "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+      "topic_cluster": "Agente etiológico — bactéria × vírus × fungo",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_in_bacterianas": true,
+      "rationale": "Bacterioses — transmissão/prevenção"
+    },
+    {
+      "slug": "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.9,
+      "keep_in_bacterianas": true,
+      "rationale": "Diagnóstico laboratorial TB — conteúdo programa"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+      "topic_cluster": "IST (reclassificar?)",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.91,
+      "keep_in_bacterianas": true,
+      "rationale": "ILTB — investigação"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+      "topic_cluster": "Candidíase e micoses",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_in_bacterianas": true,
+      "rationale": "Candidíase bucal"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-2",
+      "topic_cluster": "Meningite bacteriana",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.93,
+      "keep_in_bacterianas": true,
+      "rationale": "Meningite bacteriana — prevalência etiológica"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+      "topic_cluster": "Outros / tema misto",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.88,
+      "keep_in_bacterianas": true,
+      "rationale": "Indicadores hanseníase <15 anos"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563505333-8",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.92,
+      "keep_in_bacterianas": true,
+      "rationale": "TB prioritária Brasil"
+    },
+    {
+      "slug": "instituto-verbena-geral-doencas-parasitarias-e-zoonoses-1777103452899-3",
+      "topic_cluster": "Zoonoses (reclassificar?)",
+      "curated_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.94,
+      "keep_in_bacterianas": false,
+      "rationale": "Febre maculosa"
+    },
+    {
+      "slug": "isba-enfermagem-exames-complementares-1779563685104-3",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.92,
+      "keep_in_bacterianas": true,
+      "rationale": "TB infectocontagiosa — conceito"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+      "topic_cluster": "Bactérias do trato gastrointestinal",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.97,
+      "keep_in_bacterianas": true,
+      "rationale": "Cólera — Vibrio"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+      "topic_cluster": "Agente etiológico — bactéria × vírus × fungo",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.97,
+      "keep_in_bacterianas": true,
+      "rationale": "Candidíase — Candida"
+    },
+    {
+      "slug": "lj-assessoria-geral-doencas-parasitarias-e-zoonoses-1777103502990-2",
+      "topic_cluster": "Zoonoses (reclassificar?)",
+      "curated_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.93,
+      "keep_in_bacterianas": false,
+      "rationale": "Doença de Lyme"
+    },
+    {
+      "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.93,
+      "keep_in_bacterianas": true,
+      "rationale": "Estratégia Fim da TB MS"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+      "topic_cluster": "Hanseníase — transmissão e PQT",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_in_bacterianas": true,
+      "rationale": "Formas clínicas hanseníase"
+    },
+    {
+      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
+      "topic_cluster": "Tuberculose — controle, TDO e vigilância",
+      "curated_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.91,
+      "keep_in_bacterianas": true,
+      "rationale": "Busca ativa TB no cuidado"
+    }
+  ]
+}

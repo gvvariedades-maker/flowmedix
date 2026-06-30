@@ -1,0 +1,42 @@
+{
+  "lote": "doencas-bacterianas-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-30",
+  "applied_at": "2026-06-30",
+  "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+  "golden_reference": "examples/questao-premium-cpcon-tuberculose-baar-aerossol-vf.json",
+  "guideline": "lib/guidelines/tuberculose.ts",
+  "parent": "data/catalog-migration/doencas-bacterianas-completo/manifest.json",
+  "manifest": "data/catalog-migration/doencas-bacterianas-completo/manifest.json",
+  "validate_command": "npm run validate:goldens -- --lote=doencas-bacterianas-g03 --strict",
+  "slugs": [
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+    "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
+    "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8"
+  ],
+  "clusters": [
+    "TB — coleta BAAR",
+    "TB — TDO e programa",
+    "Hanseníase — transmissão e PQT",
+    "TB — sintomas e transmissão",
+    "TDO — adesão APS",
+    "Teste rápido hanseníase",
+    "Bacteriose em ferida — ESF"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/doencas-bacterianas-g03.json"
+  }
+}

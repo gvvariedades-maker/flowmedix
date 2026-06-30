@@ -28,5 +28,12 @@
     "4. npm run catalog:apply-lote -- --lote=cme-g04 --apply"
   ],
   "prev_lote": "cme-g03 (validated 4/4)",
-  "next_lote": "cme-g05 — cauda longa + preparo leftovers (~9 slugs)"
+  "next_lote": "cme-g05 — cauda longa + preparo leftovers (~9 slugs)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cme-g04.json"
+  }
 }

@@ -184,5 +184,26 @@ export const SAUDE_ADOLESCENTE_MS: GuidelineTable = {
       detail: 'ECA permite autonomia progressiva ≥12 anos; banca confunde com incapacidade civil absoluta.',
       sourceId: 'saude-adolescente-ms',
     },
+    {
+      id: 'puberdade-tardia-meninas',
+      label: 'Puberdade tardia — meninas',
+      value: 'sem desenvolvimento mamário dos 12 aos 13 anos',
+      detail: 'Ausência de broto mamário (Tanner M1) após 12–13 anos sugere atraso puberal — investigar.',
+      sourceId: 'saude-adolescente-ms',
+    },
+    {
+      id: 'puberdade-tardia-meninos',
+      label: 'Puberdade tardia — meninos',
+      value: 'sem hipertrofia testicular (< 4 mL) até 13-14 anos',
+      detail: 'Volume < 4 mL indica estágio G1 (pré-puberal); hipertrofia ausente até 13–14 anos = investigar.',
+      sourceId: 'saude-adolescente-ms',
+    },
+    {
+      id: 'tanner-puberal',
+      label: 'Estágios de Tanner',
+      value: 'avaliação padronizada de mamas, genitais masculinos e pelos pubianos',
+      detail: 'Complementa marcos cronológicos no exame físico do adolescente.',
+      sourceId: 'saude-adolescente-ms',
+    },
   ],
 };

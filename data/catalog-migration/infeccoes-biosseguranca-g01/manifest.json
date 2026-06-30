@@ -1,0 +1,27 @@
+{
+  "lote": "infeccoes-biosseguranca-g01",
+  "exported_at": "2026-06-30T11:47:07.321Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "ameosc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-2",
+      "avancasp-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-2",
+      "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-8",
+      "cogeps-unioeste-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-9",
+      "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-0",
+      "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-1",
+      "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-3",
+      "ibade-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-3"
+    ]
+  },
+  "slugs": [
+    "ameosc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-2",
+    "avancasp-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-2",
+    "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-8",
+    "cogeps-unioeste-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-9",
+    "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-0",
+    "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-1",
+    "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-3",
+    "ibade-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-3"
+  ]
+}

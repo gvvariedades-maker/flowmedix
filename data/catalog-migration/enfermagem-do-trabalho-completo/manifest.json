@@ -1,0 +1,53 @@
+{
+  "lote": "enfermagem-do-trabalho-completo",
+  "exported_at": "2026-06-28T23:39:50.344Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Enfermagem do Trabalho",
+    "limit": 10000,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "avancasp-enfermagem-enfermagem-do-trabalho-1778967789485-7",
+    "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+    "copese-ufpi-geral-enfermagem-do-trabalho-1777103554284-3",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+    "fau-unicentro-enfermagem-seguranca-do-paciente-1777102678563-4",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-4",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-6",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-7",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-8",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-9",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-1",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-3",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-5",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-6",
+    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-7",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-8",
+    "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-2",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+    "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+    "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+    "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-5",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7"
+  ],
+  "updated_at": "2026-06-29",
+  "reconciled_from": [
+    "enfermagem-do-trabalho-g01",
+    "enfermagem-do-trabalho-g02",
+    "enfermagem-do-trabalho-g03",
+    "enfermagem-do-trabalho-g04",
+    "enfermagem-do-trabalho-g05"
+  ]
+}

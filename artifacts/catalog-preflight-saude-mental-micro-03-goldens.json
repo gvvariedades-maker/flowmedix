@@ -1,0 +1,26 @@
+{
+  "lote": "saude-mental-micro-03-goldens",
+  "generated_at": "2026-06-29T23:59:19.307Z",
+  "strict": true,
+  "total": 2,
+  "passed": 2,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-dependencia-quimica-1778967935713-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

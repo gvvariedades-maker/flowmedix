@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-06-30T15:10:42.146Z",
+  "scanned": 5,
+  "passed": 5,
+  "failed": 0,
+  "warn_only": 0,
+  "results": [
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
+      "ok": true,
+      "issues": []
+    }
+  ]
+}

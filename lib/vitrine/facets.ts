@@ -1,4 +1,8 @@
 import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalogWhenEmpty';
+import {
+  filterModulosByVitrineQualityGate,
+  filterVitrineFacetsByQualityGate,
+} from '@/lib/catalogMigration/vitrineQualityGate';
 import { fetchVitrineFacetsFromRpc } from '@/lib/vitrine/rpc';
 import { logger } from '@/lib/logger';
 import type { ModuloEstudoRow } from '@/lib/vitrineFilters';
@@ -35,7 +39,7 @@ export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<
         rpcFacets.bancas.length > 0 || rpcFacets.assuntos.length > 0;
 
       if (rpcHasResults) {
-        return rpcFacets;
+        return filterVitrineFacetsByQualityGate(rpcFacets, { isAdmin });
       }
 
       logger.warn('RPC get_vitrine_facets vazio; fallback JS', { userId, bancas });
@@ -48,7 +52,10 @@ export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<
     }
   }
 
-  const modulos = (await resolveAccessibleModulosWhenEmpty(userId, isAdmin)) as ModuloEstudoRow[];
+  const modulos = filterModulosByVitrineQualityGate(
+    (await resolveAccessibleModulosWhenEmpty(userId, isAdmin)) as ModuloEstudoRow[],
+    { isAdmin },
+  );
   return buildVitrineFacets(modulos, { bancas });
 }
 

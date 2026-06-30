@@ -26,6 +26,7 @@ import {
 } from '@/components/admin/LaboratorioAiGeneratePanel';
 import { LaboratorioReviewQueuePanel } from '@/components/admin/LaboratorioReviewQueuePanel';
 import { LaboratorioErrorReportsPanel } from '@/components/admin/LaboratorioErrorReportsPanel';
+import { SubtopicoQualityHealthPanel } from '@/components/admin/SubtopicoQualityHealthPanel';
 import type { ErrorReportRow } from '@/lib/admin/errorReports';
 import type { ReviewQueueItem } from '@/lib/admin/reviewQueue';
 import type { AiGenerateResult } from '@/lib/ai/labGenerateClient';
@@ -667,6 +668,7 @@ export default function AvantLaboratory() {
                 onLoadQuestao={handleLoadFromQueue}
                 disabled={saving}
               />
+              <SubtopicoQualityHealthPanel />
               <LaboratorioErrorReportsPanel
                 onLoadQuestao={handleLoadFromErrorReport}
                 disabled={saving}

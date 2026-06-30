@@ -23,11 +23,19 @@
   "workflow": [
     "1. Handcraft golden-v1 em data/catalog-migration/cme-g01/questions/ (Cursor — sem ai:generate, sem upgrade-premium)",
     "2. Âncora: idecan-1105-2 → examples/questao-premium-idecan-cme-preparo-presecagem.json",
-    "3. npm run validate:goldens -- --lote=cme-g01 --strict",
+    "3. npm run catalog:preflight -- --lote=cme-g01",
     "4. Laboratório: import ≥1 JSON",
     "5. Player: amostra em /estudar/[slug]",
     "6. npm run catalog:apply-lote -- --lote=cme-g01 --dry-run",
-    "7. npm run catalog:apply-lote -- --lote=cme-g01 --apply"
+    "7. npm run catalog:apply-lote -- --lote=cme-g01 --apply",
+    "8. npm run audit:anchor-review -- --lote=cme-g01"
   ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cme-g01.json"
+  },
   "next_lote": "cme-g02 — Autoclave e métodos de esterilização (10 slugs, 28.6%)"
 }

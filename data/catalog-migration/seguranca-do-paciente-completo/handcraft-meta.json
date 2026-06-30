@@ -1,0 +1,16 @@
+{
+  "subtopico": "Segurança do Paciente",
+  "pacote_prefix": "seguranca-do-paciente",
+  "total_slugs": 59,
+  "drift_note": "Pós-classify 2026-06-30: 3 slugs → Processo de Enfermagem; bucket líquido 59",
+  "clusters": [
+    "sp_identificacao",
+    "sp_prevencao_quedas",
+    "sp_eventos_adversos",
+    "sp_metas_internacionais",
+    "sp_generico"
+  ],
+  "anchor_glob": "examples/questao-premium-*-seguranca-paciente-*.json,examples/questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
+  "cluster_report": "artifacts/seguranca-do-paciente-topic-cluster-report.json",
+  "l3_decision": "0 molde_inedito — pacote genérico reference_table + compare"
+}

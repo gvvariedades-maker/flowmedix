@@ -1,15 +1,57 @@
 {
-  "generated_at": "2026-06-28T17:51:22.782Z",
+  "generated_at": "2026-06-29T23:36:15.684Z",
   "lote": "farmacodinamica-e-farmacocinetica-g02",
   "mode": "apply",
-  "total_files": 1,
-  "ok": 1,
+  "total_files": 7,
+  "ok": 7,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+    "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
     "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3"
   ],
   "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
     {
       "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
       "status": "ok",

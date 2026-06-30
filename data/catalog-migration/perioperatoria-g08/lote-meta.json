@@ -22,5 +22,13 @@
   "artifacts": {
     "links": "artifacts/perioperatoria-g08-links.html",
     "applied": "artifacts/catalog-migration-perioperatoria-g08-applied.json"
+  },
+  "anchor_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/perioperatoria-g08.json"
   }
 }

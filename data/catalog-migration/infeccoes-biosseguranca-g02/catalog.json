@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-30T12:01:51.265Z",
+  "lote": "infeccoes-biosseguranca-g02",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-8",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "ICECE",
+      "avant_codigo": 4080
+    },
+    {
+      "modulo_slug": "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-9",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "ICECE",
+      "avant_codigo": 4081
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 672
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-5",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 673
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-6",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 674
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-2",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1576
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1577
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-4",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1578
+    }
+  ]
+}

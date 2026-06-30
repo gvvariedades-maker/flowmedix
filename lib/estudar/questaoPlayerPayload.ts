@@ -11,6 +11,7 @@ import {
   estudadosSetFromHistorico,
 } from '@/lib/cache';
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
+import { isTituloAulaVisibleInVitrine } from '@/lib/catalogMigration/vitrineQualityGate';
 import { getTodayReviews } from '@/lib/spaced-repetition';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
@@ -158,6 +159,10 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
   }
 
   if (!atual) return { status: 'not_found' };
+
+  if (!isAdmin && !isTituloAulaVisibleInVitrine(atual.titulo_aula)) {
+    return { status: 'forbidden' };
+  }
 
   const dadosNormalizados = ensureLessonDataForPlayer(atual.conteudo_json);
   if (!lessonDataHasPlayableQuestion(dadosNormalizados)) {

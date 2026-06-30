@@ -27,5 +27,12 @@
     "3. npm run catalog:apply-lote -- --lote=historia-enfermagem-g02 --dry-run",
     "4. Apply só quando usuário pedir"
   ],
-  "next_lote": "historia-enfermagem-g03 — Wanda Horta (2 slugs finais)"
+  "next_lote": "historia-enfermagem-g03 — Wanda Horta (2 slugs finais)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/historia-enfermagem-g02.json"
+  }
 }

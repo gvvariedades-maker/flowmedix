@@ -1,0 +1,27 @@
+{
+  "lote": "doencas-bacterianas-g01",
+  "exported_at": "2026-06-30T11:40:27.992Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+      "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+      "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+      "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+      "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+      "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
+      "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
+      "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4"
+    ]
+  },
+  "slugs": [
+    "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+    "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+    "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+    "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+    "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
+    "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4"
+  ]
+}

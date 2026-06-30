@@ -143,7 +143,7 @@ const PT_STOPWORDS = new Set([
 ]);
 
 /** Termos de conteúdo do enunciado (≥5 letras, sem stopword/numero), normalizados e únicos. */
-function extractInstructionTerms(instruction: string): string[] {
+export function extractInstructionTerms(instruction: string): string[] {
   const seen = new Set<string>();
   for (const raw of normalizeText(instruction).split(/[^a-z0-9]+/)) {
     if (raw.length < 5) continue;
@@ -155,7 +155,7 @@ function extractInstructionTerms(instruction: string): string[] {
 }
 
 // Claim numérico/normativo: dose, intervalo, percentual, tempo, escore.
-const NUMERIC_CLAIM_RE =
+export const NUMERIC_CLAIM_RE =
   /\b\d+([.,]\d+)?\s*(%|mg|ml|mcg|µg|ug|ui|g\b|kg|h\b|hora|horas|dia|dias|semana|semanas|mes|meses|min|minuto|minutos|°c|graus|mmhg|bpm|gota|gotas|ampola|comprimido|ponto|pontos|escore)\b/i;
 
 function normalizeWords(text: string): string[] {

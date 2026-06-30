@@ -128,6 +128,8 @@ Aplica-se a **todo** subtópico com builder dedicado e moldes bespoke. A famíli
 
 ### Fase 1b — Mapear ramos (antes de escalar)
 
+**Conversa agente:** `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) (cluster + `audit:l3-mold-gap` + tabela de decisão).
+
 ```bash
 # Piloto do script (Punção); replicar como cluster-<pacote>-topics.ts
 npx tsx scripts/cluster-puncao-topics.ts

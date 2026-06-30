@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-28T20:13:07.040Z",
+  "generated_at": "2026-06-30T15:49:58.659Z",
   "summary": {
-    "cluster_rows": 50,
-    "slug_rows": 13,
+    "cluster_rows": 81,
+    "slug_rows": 68,
     "by_decision": {
-      "ok_existente": 6,
-      "ok_generico": 27,
-      "ramo_novo": 13,
+      "ok_existente": 11,
+      "ok_generico": 50,
+      "ramo_novo": 16,
       "molde_inedito": 4
     },
     "inedito_packages_proposed": 4,
-    "ramo_novo_count": 13,
+    "ramo_novo_count": 16,
     "slug_mismatch_total": 0,
     "slug_mismatch_by_subtopico": {},
     "source": "supabase"
@@ -792,6 +792,228 @@
       "rationale": "Promoção/bucal — sem metáfora espacial fixa."
     },
     {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Tuberculose — controle, TDO e vigilância",
+      "slug_count": 23,
+      "pct": 45.1,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+        "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+        "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Outros / tema misto",
+      "slug_count": 6,
+      "pct": 11.8,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+        "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+        "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-2",
+        "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Meningite bacteriana",
+      "slug_count": 4,
+      "pct": 7.8,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+        "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+        "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+        "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Agente etiológico — bactéria × vírus × fungo",
+      "slug_count": 4,
+      "pct": 7.8,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0",
+        "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+        "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+        "legalle-enfermagem-processo-de-enfermagem-1780011879977-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Candidíase e micoses",
+      "slug_count": 3,
+      "pct": 5.9,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "iaupe-enfermagem-semiologia-em-enfermagem-1779563512485-5",
+        "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+        "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Zoonoses (reclassificar?)",
+      "slug_count": 3,
+      "pct": 5.9,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "idcap-geral-doencas-parasitarias-e-zoonoses-1777103478442-5",
+        "instituto-verbena-geral-doencas-parasitarias-e-zoonoses-1777103452899-3",
+        "lj-assessoria-geral-doencas-parasitarias-e-zoonoses-1777103502990-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Hanseníase — transmissão e PQT",
+      "slug_count": 2,
+      "pct": 3.9,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
+        "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "IST (reclassificar?)",
+      "slug_count": 2,
+      "pct": 3.9,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-1",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Tétano — profilaxia e imunização",
+      "slug_count": 1,
+      "pct": 2,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Exames laboratoriais (reclassificar?)",
+      "slug_count": 1,
+      "pct": 2,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779563140631-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Bacterioses — conceito geral",
+      "slug_count": 1,
+      "pct": 2,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "cluster_label": "Bactérias do trato gastrointestinal",
+      "slug_count": 1,
+      "pct": 2,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "legalle-enfermagem-processo-de-enfermagem-1780010585356-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
       "cluster_label": "Espaçador e inalador — técnica MDI",
       "slug_count": 1,
@@ -799,12 +1021,12 @@
       "sample_slugs": [],
       "source": "handcraft_meta",
       "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "generico",
-      "branch_implemented": false,
+      "branch_id": "respiratorio_tecnica_inalador",
+      "branch_implemented": true,
       "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+      "ideal_mold_package": "morphological · reference_table · cards · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Técnica MDI/espaçador — tabela de referência."
     },
     {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
@@ -829,12 +1051,12 @@
       "sample_slugs": [],
       "source": "handcraft_meta",
       "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "generico",
-      "branch_implemented": false,
+      "branch_id": "respiratorio_dpoc_oxigenio",
+      "branch_implemented": true,
       "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap."
     },
     {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
@@ -844,12 +1066,12 @@
       "sample_slugs": [],
       "source": "handcraft_meta",
       "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "generico",
-      "branch_implemented": false,
+      "branch_id": "respiratorio_dpoc_oxigenio",
+      "branch_implemented": true,
       "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap."
     },
     {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
@@ -904,12 +1126,12 @@
       "sample_slugs": [],
       "source": "handcraft_meta",
       "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "generico",
-      "branch_implemented": false,
+      "branch_id": "respiratorio_vf_asma_dpoc",
+      "branch_implemented": true,
       "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "VF asma/DPOC — pacote respiratorio-*."
     },
     {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
@@ -919,125 +1141,956 @@
       "sample_slugs": [],
       "source": "handcraft_meta",
       "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "respiratorio_dpoc_oxigenio",
+      "branch_implemented": true,
+      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap."
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "cluster_label": "IRAS / infecção hospitalar (conceitos)",
+      "slug_count": 4,
+      "pct": 16,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
       "branch_id": "generico",
       "branch_implemented": false,
-      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "current_mold_package": "molecular · banner · cards · cards (genérico)",
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
       "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "cluster_label": "Higienização das mãos (V/F)",
+      "slug_count": 4,
+      "pct": 16,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · banner · cards · cards (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "cluster_label": "Precauções padrão e por transmissão",
+      "slug_count": 4,
+      "pct": 16,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · banner · cards · cards (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "cluster_label": "ITU / cateter vesical (EXCETO)",
+      "slug_count": 4,
+      "pct": 16,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · banner · cards · cards (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "cluster_label": "Biossegurança e contenção (conceitos)",
+      "slug_count": 4,
+      "pct": 16,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · banner · cards · cards (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "cluster_label": "Cuidados em paciente imunossuprimido / comorbidades",
+      "slug_count": 4,
+      "pct": 16,
+      "sample_slugs": [],
+      "source": "handcraft_meta",
+      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "molecular · banner · cards · cards (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "DRIFT — auditoria/gestão",
+      "slug_count": 19,
+      "pct": 30.6,
+      "cluster_decision": "reclassificar",
+      "sample_slugs": [
+        "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+        "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+        "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+        "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+        "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "sp_generico",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Drift taxonômico — reclassificar antes de handcraft; layout genérico interim."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Prevenção de quedas",
+      "slug_count": 11,
+      "pct": 17.7,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+        "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+        "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+        "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+        "funcern-enfermagem-seguranca-do-paciente-1777102678563-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "sp_prevencao_quedas",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Prevenção de quedas — escala/protocolo; compare + rows bastam."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Eventos adversos e incidentes",
+      "slug_count": 9,
+      "pct": 14.5,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "com-exam-pref-bauru-enfermagem-seguranca-do-paciente-1777102918981-5",
+        "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-8",
+        "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+        "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+        "furb-enfermagem-seguranca-do-paciente-1777102918981-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "sp_eventos_adversos",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "PNSP / 4 grupos de incidente — compare + tabela de definições."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Identificação do paciente",
+      "slug_count": 7,
+      "pct": 11.3,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2",
+        "fgv-enfermagem-seguranca-do-paciente-1777102742836-4",
+        "ibade-enfermagem-seguranca-do-paciente-1779563436357-1",
+        "idecan-enfermagem-seguranca-do-paciente-1778712220716-5",
+        "imparh-enfermagem-seguranca-do-paciente-1777102936764-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "sp_identificacao",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_existente",
+      "rationale": "Identificação segura — golden CESGRANRIO + reference_table + compare."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "DRIFT — processo de enfermagem",
+      "slug_count": 6,
+      "pct": 9.7,
+      "cluster_decision": "reclassificar",
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+        "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "sp_generico",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Drift taxonômico — reclassificar antes de handcraft; layout genérico interim."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Segurança do paciente — conceito geral",
+      "slug_count": 2,
+      "pct": 3.2,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+        "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Metas internacionais JCI/OMS",
+      "slug_count": 2,
+      "pct": 3.2,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+        "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "sp_metas_internacionais",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "6 metas JCI/OMS — reference_table rows + tap no logic_flow."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Segurança na medicação",
+      "slug_count": 1,
+      "pct": 1.6,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Segurança do paciente — conceito",
+      "slug_count": 1,
+      "pct": 1.6,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "imparh-enfermagem-seguranca-do-paciente-1779563443877-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Cultura de segurança",
+      "slug_count": 1,
+      "pct": 1.6,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Certo ou errado",
+      "slug_count": 1,
+      "pct": 1.6,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "sp_generico",
+      "branch_implemented": true,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "V/F e C/E — compare + tap genérico."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Higienização das mãos",
+      "slug_count": 1,
+      "pct": 1.6,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "cluster_label": "Humanização e cuidado",
+      "slug_count": 1,
+      "pct": 1.6,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
       "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
     }
   ],
   "slugs": [
     {
-      "slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "protocolo",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idcap-enfermagem-exames-complementares-1779563668619-8",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
       "family": "vf",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
       "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-9",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-1",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-3",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-4",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-4",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "consulplan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-1",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-7",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-8",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-3",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-6",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005128081-9",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-1",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-3",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-6",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-enfermagem-em-centro-cirurgico-1778934918280-8",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-assistencia-perioperatoria-inclui-srpa-1780001148264-7",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-geral-assistencia-perioperatoria-inclui-srpa-1777103789613-0",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "vf",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-darwin-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-2",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-4",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-0",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "conceito",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6",
+      "lote": "supabase",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "protocolo",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []

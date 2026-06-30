@@ -2,6 +2,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import type { LessonData } from '@/types/lesson';
 import { getQuestaoBySlugCached } from '@/lib/cache';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
+import { isTituloAulaVisibleInVitrine } from '@/lib/catalogMigration/vitrineQualityGate';
 import { stripQuestionForSimulado } from '@/lib/estudar/questionPayload';
 import type { SimuladoQuestaoPayloadResponse } from '@/lib/simulado/types';
 
@@ -38,11 +39,14 @@ export async function buildSimuladoQuestaoPayload(
   } else {
     const { data, error } = await supabase
       .from('modulos_estudo')
-      .select('conteudo_json')
+      .select('conteudo_json, titulo_aula')
       .eq('modulo_slug', slug)
       .maybeSingle();
 
     if (error) throw error;
+    if (data?.titulo_aula && !isTituloAulaVisibleInVitrine(data.titulo_aula)) {
+      return { status: 'forbidden' };
+    }
     conteudoJson = (data?.conteudo_json as LessonData | undefined) ?? null;
   }
 

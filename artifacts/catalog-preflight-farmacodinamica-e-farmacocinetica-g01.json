@@ -1,0 +1,50 @@
+{
+  "lote": "farmacodinamica-e-farmacocinetica-g01",
+  "generated_at": "2026-06-29T23:33:09.020Z",
+  "strict": true,
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

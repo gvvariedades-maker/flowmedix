@@ -31,5 +31,12 @@
     "4. npm run catalog:apply-lote -- --lote=farmacodinamica-e-farmacocinetica-g01 --dry-run",
     "5. Apply só quando usuário pedir"
   ],
-  "notes": "Export completo por subtopico retornou 25 slugs — maioria mis-tagged no DB (urgências, SAE, vias). g01 = núcleo PK/PD curado."
+  "notes": "Export completo por subtopico retornou 25 slugs — maioria mis-tagged no DB (urgências, SAE, vias). g01 = núcleo PK/PD curado.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-29",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/farmacodinamica-e-farmacocinetica-g01.json"
+  }
 }

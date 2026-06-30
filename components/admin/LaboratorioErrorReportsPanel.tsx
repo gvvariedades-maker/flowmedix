@@ -82,6 +82,8 @@ export function LaboratorioErrorReportsPanel({
   const [summaryLoading, setSummaryLoading] = useState(false);
   const [savingId, setSavingId] = useState<string | null>(null);
   const [loadingSlug, setLoadingSlug] = useState<string | null>(null);
+  const [capturingSlug, setCapturingSlug] = useState<string | null>(null);
+  const [captureMessage, setCaptureMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [list, setList] = useState<ErrorReportListResponse | null>(null);
   const [summary, setSummary] = useState<ErrorReportSummaryResponse | null>(null);
@@ -309,6 +311,31 @@ export function LaboratorioErrorReportsPanel({
       setError(err instanceof Error ? err.message : 'Falha ao carregar questão');
     } finally {
       setLoadingSlug(null);
+    }
+  };
+
+  const handleCaptureReview = async (slug: string) => {
+    setCapturingSlug(slug);
+    setCaptureMessage(null);
+    setError(null);
+    try {
+      const res = await fetch('/api/admin/questao-review/capture', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, source: 'supabase' }),
+      });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.error ?? `HTTP ${res.status}`);
+      setCaptureMessage(
+        body.started
+          ? `Captura iniciada → ${body.out_dir}`
+          : `Dev: ${body.dev_url} · ${body.command}`,
+      );
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Falha ao gerar captures');
+    } finally {
+      setCapturingSlug(null);
     }
   };
 
@@ -572,7 +599,21 @@ export function LaboratorioErrorReportsPanel({
                         Player
                         <ExternalLink className="h-3 w-3" />
                       </Link>
+                      <button
+                        type="button"
+                        disabled={disabled || capturingSlug === selectedReport.modulo_slug}
+                        onClick={() => void handleCaptureReview(selectedReport.modulo_slug!)}
+                        className="inline-flex items-center gap-1 rounded-lg border border-cyan-200 bg-cyan-50 px-3 py-1.5 text-[10px] font-bold uppercase text-cyan-900 hover:bg-cyan-100 disabled:opacity-50"
+                      >
+                        {capturingSlug === selectedReport.modulo_slug ? (
+                          <Loader2 className="h-3 w-3 animate-spin" />
+                        ) : null}
+                        Gerar captures
+                      </button>
                     </div>
+                  ) : null}
+                  {captureMessage ? (
+                    <p className="text-[10px] text-cyan-800">{captureMessage}</p>
                   ) : null}
 
                   <div className="grid grid-cols-2 gap-2">

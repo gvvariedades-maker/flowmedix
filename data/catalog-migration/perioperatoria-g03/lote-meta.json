@@ -22,5 +22,13 @@
   "artifacts": {
     "links": "artifacts/perioperatoria-g03-links.html",
     "applied": "artifacts/catalog-migration-perioperatoria-g03-applied.json"
+  },
+  "anchor_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/perioperatoria-g03.json"
   }
 }

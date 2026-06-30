@@ -1,0 +1,27 @@
+{
+  "lote": "doencas-bacterianas-g04",
+  "exported_at": "2026-06-30T12:08:14.463Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+      "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+      "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+      "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+      "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-2",
+      "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+      "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563505333-8",
+      "isba-enfermagem-exames-complementares-1779563685104-3"
+    ]
+  },
+  "slugs": [
+    "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+    "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+    "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+    "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-2",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+    "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563505333-8",
+    "isba-enfermagem-exames-complementares-1779563685104-3"
+  ]
+}

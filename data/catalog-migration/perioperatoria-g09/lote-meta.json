@@ -22,5 +22,13 @@
   "artifacts": {
     "links": "artifacts/perioperatoria-g09-links.html",
     "applied": "artifacts/catalog-migration-perioperatoria-g09-applied.json"
+  },
+  "anchor_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/perioperatoria-g09.json"
   }
 }

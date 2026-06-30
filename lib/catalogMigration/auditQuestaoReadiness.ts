@@ -16,12 +16,20 @@ import { isPremiumSubtopico } from '@/lib/catalogMigration/premiumGate';
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
 import { detectMoldL3WriteBlockers } from '@/lib/slides/detectMoldL3WriteBlockers';
 import {
+  lintSlugAlignment,
+  slugAlignmentHasErrors,
+} from '@/lib/catalogMigration/slugAlignment';
+import {
+  lintNumericFactcheck,
+  numericFactcheckHasErrors,
+} from '@/lib/catalogMigration/numericFactcheck';
+import {
   hasSubtopicBranchDesign,
   inferPedagogicalBranch,
   resolvePedagogicalBranch,
 } from '@/lib/slides/pedagogicalBranch';
 
-export type ReadinessTier = 'A1' | 'A2' | 'A3' | 'A4';
+export type ReadinessTier = 'A1' | 'A2' | 'A2.5' | 'A2b' | 'A3' | 'A4';
 
 export type ReadinessCheck = {
   tier: ReadinessTier;
@@ -253,6 +261,22 @@ export function auditQuestaoReadiness(
     }
   }
 
+  const alignmentIssues = lintSlugAlignment(payload, { strict });
+  for (const issue of alignmentIssues) {
+    const already = checks.some((c) => c.code === issue.code);
+    if (already) continue;
+    const asError = strict && issue.severity === 'error';
+    push(checks, 'A2.5', issue.code, issue.message, asError ? 'error' : 'warn');
+  }
+
+  const numericIssues = lintNumericFactcheck(payload);
+  for (const issue of numericIssues) {
+    const already = checks.some((c) => c.code === issue.code);
+    if (already) continue;
+    const asError = strict && issue.severity === 'error';
+    push(checks, 'A2b', issue.code, issue.message, asError ? 'error' : 'warn');
+  }
+
   const inferredBranch = subtopico
     ? inferPedagogicalBranch(subtopico, instruction, slides as never[], payload.meta?.family)
     : undefined;
@@ -313,11 +337,14 @@ export function auditQuestaoReadiness(
   const tier_pass: Record<ReadinessTier, boolean> = {
     A1: !tierHasErrors(checks, 'A1'),
     A2: !tierHasErrors(checks, 'A2'),
+    'A2.5': !tierHasErrors(checks, 'A2.5'),
+    A2b: !tierHasErrors(checks, 'A2b'),
     A3: !tierHasErrors(checks, 'A3'),
     A4: true,
   };
 
-  const ready_100 = tier_pass.A1 && tier_pass.A2 && tier_pass.A3;
+  const ready_100 =
+    tier_pass.A1 && tier_pass.A2 && tier_pass['A2.5'] && tier_pass.A2b && tier_pass.A3;
 
   return {
     slug: options.slug,

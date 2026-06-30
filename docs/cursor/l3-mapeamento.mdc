@@ -1,0 +1,63 @@
+---
+description: Ativa o runbook de mapeamento L3 quando o usuário enviar "Mapeamento L3:" seguido do subtópico canônico, ou anexar docs/L3_MAPEAMENTO_CONVERSA.md
+alwaysApply: false
+---
+
+# Mapeamento L3 — ramos + auditoria de moldes
+
+> **Escopo:** 1 subtópico = 1 relatório de decisão (bespoke vs genérico). **Não** handcraft em massa nem React sem pedido explícito.
+
+Quando a mensagem começar com **`Mapeamento L3:`** (ou anexar `docs/L3_MAPEAMENTO_CONVERSA.md`), executar **sem pedir modo**:
+
+## 1. Resolver trigger
+
+- Formato: `Mapeamento L3: <subtópico canônico>` (`CLAUDE.md` §9)
+- Modificadores: `Só auditoria` | `Incluir wire` | `Implementar molde: <ramo>`
+
+Runbook: [`docs/L3_MAPEAMENTO_CONVERSA.md`](../L3_MAPEAMENTO_CONVERSA.md)
+
+## 2. Pré-requisito
+
+Se taxonomia instável (drift, catch-all): orientar `Classify: <subtópico>` antes — [`docs/TAXONOMIA_CONVERSA.md`](../TAXONOMIA_CONVERSA.md).
+
+## 3. Fase 0 — Escopo
+
+1. Resolver pacote em [`handcraft-registry.json`](../../data/catalog-migration/handcraft-registry.json).
+2. `npm run handcraft:brief -- --subtopico="..."` (opcional).
+3. `catalog:export-lote` se manifest ausente ou desatualizado.
+
+## 4. Fase 1 — Cluster (pular se `Só auditoria` e cluster report existe)
+
+- Rodar `npm run cluster:<pacote>` se existir em `package.json`.
+- Senão: criar `scripts/cluster-<pacote>-topics.ts` (padrão `cluster-perioperatoria-topics.ts`).
+- Entregável: `artifacts/<pacote>-topic-cluster-report.json` + tabela cluster × % × decisão.
+
+## 5. Fase 2 — Auditoria L3
+
+```bash
+npm run audit:l3-mold-gap -- --from-supabase --subtopico="..."
+```
+
+Cruzar com [`VARIANT_MOLDS.md`](../VARIANT_MOLDS.md) §2 (pegadinha espacial vs texto).
+
+## 6. Fase 3 — Síntese (obrigatório)
+
+Tabela ramo × `ok_generico` | `ok_existente` | `ramo_novo` | `molde_inedito` + goldens âncora + ordem de execução.
+
+## 7. Fase 4 — Opcional
+
+Só se usuário pedir: atualizar `l3MoldGapCatalog.ts`, `BRANCH_DESIGN_MAP`, `MOLD_AFFINITY_RULES`.
+
+`Implementar molde: <ramo>` → seguir [`VARIANT_MOLDS.md`](../VARIANT_MOLDS.md) §3.
+
+## 8. Proibido
+
+- `ai:generate`, `catalog:upgrade-premium`, `catalog:apply-lote --apply`
+- Handcraft de todos os slugs nesta conversa
+- React / `NeuroSlide.tsx` sem `Implementar molde: …`
+
+## 9. Encerramento
+
+Reportar: clusters mapeados | decisões L3 | candidatos `molde_inedito` | próximo trigger (`Handcraft:` / `VARIANT_MOLDS` / `Pipeline completo:`).
+
+Artefatos: `artifacts/<pacote>-topic-cluster-report.json`, `artifacts/l3-mold-gap-audit.json` + `.md`

@@ -1,0 +1,65 @@
+---
+description: Ativa o runbook qualidade vendável quando o usuário enviar "Qualidade vendável:" seguido do subtópico canônico, ou anexar docs/QUALITY_VENDAVEL_CONVERSA.md
+alwaysApply: false
+---
+
+# Qualidade vendável — conversa nova
+
+> **Decisão 2026-06-29:** modelo híbrido — 1º `--promote` = **VENDÁVEL**; monitoramento contínuo só pós-venda. Ver [`docs/DECISAO_QUALITY_HIBRIDA.md`](../DECISAO_QUALITY_HIBRIDA.md).
+
+Quando a mensagem começar com **`Qualidade vendável:`** (ou anexar `docs/QUALITY_VENDAVEL_CONVERSA.md` com subtópico), executar **sem pedir modo**:
+
+## 1. Resolver trigger
+
+- Formato: `Qualidade vendável: <subtópico canônico>` (nome exato `CLAUDE.md` §9)
+- Resolver pacote: `findPacoteBySubtopico` em [`lib/catalogMigration/handcraftRegistry.ts`](../../lib/catalogMigration/handcraftRegistry.ts)
+- Runbook completo: [`docs/QUALITY_VENDAVEL_CONVERSA.md`](../QUALITY_VENDAVEL_CONVERSA.md)
+
+**Pré-requisito:** `status: applied` e `handcraft_applied === total_slugs`. Se handcraft incompleto → redirecionar para `Handcraft: <subtópico>` ([`docs/HANDCRAFT_CONVERSA.md`](../HANDCRAFT_CONVERSA.md)).
+
+## 2. Escolher Parte A ou B
+
+| `production_status` | Executar |
+|---------------------|----------|
+| ≠ `production_ready` | **Parte A** — porta de venda (`--promote`) |
+| `production_ready` ou `blocked` | **Parte B** — baseline / recover (`audit:subtopico-health`) |
+
+Nunca confundir `applied` com vendável. `canSell()` exige `production_ready` e ≠ `blocked` ([`lib/catalogMigration/shipGate.ts`](../../lib/catalogMigration/shipGate.ts)).
+
+## 3. Parte A — Porta de venda
+
+Ordem obrigatória (detalhe em [`docs/QUALITY_VENDAVEL_CONVERSA.md`](../QUALITY_VENDAVEL_CONVERSA.md)):
+
+1. `npm run reconcile:handcraft-manifest -- --subtopico="..."`
+2. `npm run catalog:preflight -- --lote=<pacote>-gNN` em todos os lotes `g*`
+3. L1: `audit:handcraft-dod` + `audit:slug-alignment --strict` + `audit:numeric-factcheck`
+4. L6: `audit:anchor-review` + revisor B ([`docs/ANCHOR_SECOND_REVIEW_PROMPT.md`](../ANCHOR_SECOND_REVIEW_PROMPT.md)) em cada `g*`
+5. L3: `npx playwright test e2e/visual-mold-regression.spec.ts`
+6. Ship: `npm run audit:subtopico-quality -- --subtopico="..." --promote`
+
+**Sucesso:** `production_status: production_ready`, `continuous.enabled: true`.
+
+**Sem bootstrap pré-venda:** não esperar 14d nem 100 sessões antes de `--promote`.
+
+## 4. Parte B — Contínuo pós-venda
+
+```bash
+npm run audit:subtopico-health -- --subtopico="..."
+```
+
+Se `blocked` após repair P0: `--recover`. Runbook: [`docs/CONTINUOUS_QUALITY_RUNBOOK.md`](../CONTINUOUS_QUALITY_RUNBOOK.md).
+
+## 5. Proibido
+
+- `ai:generate`, `catalog:upgrade-premium`
+- `catalog:apply-lote --apply` sem o usuário pedir explicitamente
+- Segundo `audit:subtopico-quality --promote` rotineiro após `production_ready`
+- Declarar vendável sem gates L1–L6 + L5 PASS
+
+## 6. Encerramento
+
+Reportar: `applied` | `technical_ready` | `production_ready` | `blocked` | `blockers[]`
+
+Artefatos: `artifacts/subtopico-quality/<pacote>.json`, `artifacts/subtopico-health/<pacote>/latest.json`
+
+Camadas: [`docs/QUALITY_LAYERS_MODEL.md`](../QUALITY_LAYERS_MODEL.md) · Triagem P0: [`docs/RUNBOOK_ERROR_REPORT_TRIAGE.md`](../RUNBOOK_ERROR_REPORT_TRIAGE.md)
