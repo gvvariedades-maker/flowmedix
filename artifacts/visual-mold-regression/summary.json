@@ -1,12 +1,15 @@
 {
-  "generated_at": "2026-06-30T15:35:00.000Z",
-  "pacote_prefix": "infeccoes-biosseguranca",
+  "generated_at": "2026-06-30T18:45:00.000Z",
+  "pacote_prefix": "seguranca-do-paciente",
   "pass": true,
-  "detail": "Playwright L3 — 4/4 passed (biosseg_generico + biosseg_iras_itu_cateter, desktop slides + mobile player); PNGs em artifacts/visual-mold-regression/",
-  "slugs_total": 25,
-  "l3_ok": 25,
+  "detail": "Playwright L3 — 10/10 passed (5 branches sp_*: desktop slides + mobile player); PNGs em artifacts/visual-mold-regression/",
+  "slugs_total": 59,
+  "l3_ok": 59,
   "branches": [
-    "biosseg_generico",
-    "biosseg_iras_itu_cateter"
+    "sp_identificacao",
+    "sp_prevencao_quedas",
+    "sp_eventos_adversos",
+    "sp_metas_internacionais",
+    "sp_generico"
   ]
 }

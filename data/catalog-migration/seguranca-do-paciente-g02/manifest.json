@@ -1,0 +1,33 @@
+{
+  "lote": "seguranca-do-paciente-g02",
+  "exported_at": "2026-06-30T16:25:08.025Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+      "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+      "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+      "funcern-enfermagem-seguranca-do-paciente-1777102678563-5",
+      "funcern-enfermagem-seguranca-do-paciente-1777102678563-6",
+      "fundep-enfermagem-seguranca-do-paciente-1777102821787-1",
+      "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+      "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+      "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+      "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7"
+    ]
+  },
+  "slugs": [
+    "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+    "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+    "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+    "funcern-enfermagem-seguranca-do-paciente-1777102678563-5",
+    "funcern-enfermagem-seguranca-do-paciente-1777102678563-6",
+    "fundep-enfermagem-seguranca-do-paciente-1777102821787-1",
+    "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+    "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+    "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+    "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7"
+  ]
+}

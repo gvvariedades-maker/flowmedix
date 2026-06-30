@@ -20,7 +20,7 @@ Padrão canônico de **conteúdo pedagógico** para handcraft golden-v1 (`exampl
 |-----------|--------|
 | Objetivo | Aluno **entender esta questão** e **não errar similares** em concurso |
 | Prova primeiro | `question_data` = caderno fiel; cola didática **só** nos slides |
-| Estrutura fixa | 4 slides (`concept_map` → `golden_rule` → `logic_flow` → `danger_zone`) |
+| Estrutura fixa | 4 slides (`concept_map` → `logic_flow` → `golden_rule` → `danger_zone`) — ordem canônica v2 |
 | Conteúdo variável | Texto **específico** da questão — nunca frase copiável entre questões |
 | Fontes | Afirmações normativas/numéricas críticas com base **oficial e vigente** |
 | Metadados internos | `sources`, `content_review` em `meta` — **não** renderizados no player |
@@ -95,9 +95,10 @@ Cada slide preenche **funções**, não texto livre:
 |------|--------|
 | ENQUADRAMENTO | O que esta questão testa |
 | NÚCLEO (1–n) | Afirmativas, parâmetros, conceitos do caso |
-| COMBINAÇÃO/GABARITO | Conjunto → letra |
-| PEGADINHA-ÂNCORA | Erro que a banca induz **aqui** |
+| PEGADINHA-ÂNCORA | Erro que a banca induz **aqui** (sem revelar letra) |
 | PADRÃO DA BANCA (opcional) | Como esta banca costuma cobrar o tema |
+
+> **v2:** COMBINAÇÃO/GABARITO (letra) **não** fica no `concept_map` — só no `logic_flow`.
 
 Mínimo: **3** `items` com `label`, `detail`, `icon` Lucide.
 
@@ -107,9 +108,10 @@ Mínimo: **3** `items` com `label`, `detail`, `icon` Lucide.
 |------|--------|
 | REGRA-TÍTULO | `content` — mnemônico / título |
 | REFERÊNCIA (rows) | Tabela decorável (rótulo × valor oficial) |
-| LINHA-GABARITO | Última row com letra correta |
 
-**Sinais Vitais (`vitals-reference-board`):** row `Gabarito`/`Conclusão` obrigatória; use `sv_kind: "meta"` em técnica/gabarito; C/E com máx. 4 rows e sem taquicardia/bradicardia na tabela — lint em [`lib/slides/vitalsGoldenLint.ts`](../lib/slides/vitalsGoldenLint.ts).
+> **v2 (padrão):** **sem** row "Gabarito letra X" / "Combinação" — gabarito fica no `logic_flow`. Lint: `golden_rule_gabarito_spoiler` (error com `--strict-v2-pedagogy`).
+
+**Exceção — Sinais Vitais (`vitals-reference-board`):** row `Gabarito`/`Conclusão` com `sv_kind: "meta"`; C/E com máx. 4 rows — lint em [`lib/slides/vitalsGoldenLint.ts`](../lib/slides/vitalsGoldenLint.ts).
 
 ### `logic_flow`
 
@@ -171,6 +173,7 @@ Além da estrutura, o lint golden-v1 verifica **corretude pedagógica** — defe
 | **Especificidade semântica** | `specificity_semantic` | Slides citam menos de **3 termos** do vocabulário da questão (enunciado **+ alternativa correta**). Mata o "genérico que ecoa 1 palavra". Limiar adaptativo para enunciados curtos. |
 | **Cobertura de distratores** | `danger_distractors_coverage` | Em `conceito`/`legis`, menos da **metade** das letras erradas é ensinada. (Em `vf` a checagem é por afirmativa I–IV, não por letra.) |
 | **Claim↔source binding** | `numeric_claim_unsourced` | Slides afirmam número normativo (dose/intervalo/%/escore) sem ao menos uma `source` substantiva (com `covers`). Vincula o número a uma fonte — não verifica veracidade. |
+| **Pedagogia v2 (opt-in strict)** | `slide_layer_redundancy_*`, `golden_rule_gabarito_spoiler` | Redundância entre camadas; gabarito no `golden_rule` — **error** com `audit:questao-readiness --strict-v2-pedagogy`. |
 
 A extração de gabarito lê **campos estruturados** (não JSON concatenado), evitando que o `"…gabarito."` de um item case com o `"Letra X"` do distrator seguinte. A especificidade e o claim‑source leem apenas os **valores string** dos slides (ignoram chaves do JSON). Implementação: `lintGabaritoConsistency`, `lintLogicFlowRecycling`, `lintClaimSourceBinding` + checagens em `lintSlidePackage` ([`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts)).
 

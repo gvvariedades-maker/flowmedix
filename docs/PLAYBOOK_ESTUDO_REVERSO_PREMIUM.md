@@ -24,16 +24,29 @@ Referências legais, tabelas e mnemônicos ficam **nos slides**, depois da tenta
 
 ## 2. Pacote fixo: 4 slides
 
-Sempre um de cada tipo, nesta ordem narrativa no player:
+Sempre um de cada tipo, nesta **ordem canônica** no player e no array `reverse_study_slides` (handcraft/golden novo):
 
 | Ordem | `type` | Função (concurso) |
 |-------|--------|-------------------|
-| 1 | `concept_map` | Mapa do que **esta banca/tema** cobra na questão |
-| 2 | `golden_rule` | O que **não esquecer na prova** (dispositivo, fórmula, mnemônico) |
-| 3 | `logic_flow` | **Como chegar na letra certa** sozinho (estratégia reproduzível) |
-| 4 | `danger_zone` | **Por que cada distrator erra** + erros que se repetem no **mesmo assunto** |
+| 1 | `concept_map` | Enquadramento — mapa do que **esta banca/tema** cobra (**sem** gabarito/letra) |
+| 2 | `logic_flow` | Elaboração — **como chegar na letra certa** (`reveal_mode: "tap"`) |
+| 3 | `golden_rule` | Síntese — o que **não esquecer na prova** (decore, tabela normativa) |
+| 4 | `danger_zone` | Consolidação — **por que cada distrator erra** + 1–2 itens “em similares…” |
+
+> **Player:** ordem v2 é padrão (`lib/reverseStudySlideOrder.ts`). JSON legado fora de ordem ainda funciona (reordenação por `type`). Flag `NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER=legacy` só para rollback.
 
 Formato **plano** (`items` / `content` / `steps` no mesmo nível que `type`). Ver [`avant-agent-json.mdc`](cursor/avant-agent-json.mdc).
+
+### 2.1 Contrato de conteúdo por posição (v2)
+
+Cada slide responde a **uma pergunta** — não repetir os mesmos quatro eixos em todos:
+
+| Slide | Deve conter | Evitar |
+|-------|-------------|--------|
+| `concept_map` | 3–6 eixos do tema; ícones distintos | Letra correta, “gabarito letra X” |
+| `logic_flow` | Comando → teste/eliminacao A–E → **gabarito** → fixação | Copiar texto integral do `golden_rule` |
+| `golden_rule` | `rows` normativos / mnemônico de prova | Linha “Gabarito: letra X” (fica no fluxo) |
+| `danger_zone` | Distractors desta questão + transferência | Repetir passos do `logic_flow` |
 
 ---
 
@@ -227,6 +240,7 @@ Antes de publicar, responder:
 5. **Ícones repetidos** (`BookOpen` × 4)? Trocar por ícones semânticos distintos.
 6. **Transferência no danger:** no máximo 2–4 itens “de outras provas do mesmo tema” — não o mesmo kit em toda legislação.
 7. **Questão sem cola:** nenhum dispositivo legal no `text_fragment` que não exista no PDF.
+8. **Camadas v2:** `lintGoldenV2Pedagogy` — códigos `slide_layer_redundancy_*` e `golden_rule_gabarito_spoiler`. **Error** com `audit:questao-readiness --strict-v2-pedagogy` (handcraft professor).
 
 ---
 
@@ -252,7 +266,7 @@ Logic flow tap (mínimo): [`questao-preview-logic-flow-tap.json`](../examples/qu
 
 - [ ] `meta`: banca, prova, orgao, ano, topico, **subtopico canônico**; `cargo_header` quando TEC
 - [ ] `question_data`: instruction + options — **sem** cola didática; `text_fragment` só se no PDF
-- [ ] 4 slides: `concept_map`, `golden_rule`, `logic_flow`, `danger_zone`
+- [ ] 4 slides na ordem canônica: `concept_map`, `logic_flow`, `golden_rule`, `danger_zone`
 - [ ] Família correta (§3); conteúdo **específico** da questão
 - [ ] `logic_flow`: `reveal_mode: "tap"`; `steps` = array de strings
 - [ ] `danger_zone`: `content` + items com `label`, `detail`, **`correct`**

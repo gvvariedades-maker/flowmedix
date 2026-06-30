@@ -282,3 +282,51 @@ describe('pedagogicalBranch — Segurança do Paciente', () => {
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sp_metas_internacionais');
   });
 });
+
+describe('pedagogicalBranch — Assistência Perioperatória', () => {
+  const subtopico = 'Assistência Perioperatória (Inclui SRPA)';
+
+  it('infere perioperatorio_pre_operatorio para preparo e jejum', () => {
+    const instruction =
+      'No pré-operatório imediato, o técnico verifica jejum e orienta o paciente sobre tricotomia.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('perioperatorio_pre_operatorio');
+    expect(
+      getLayoutVariantForBranch(subtopico, 'golden_rule', 'perioperatorio_pre_operatorio'),
+    ).toBe('reference_table');
+  });
+
+  it('infere perioperatorio_pos_operatorio para SRPA e Aldrete', () => {
+    const instruction =
+      'Na SRPA, o paciente é monitorizado até atingir escore na Escala de Aldrete e Kroulik para alta.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('perioperatorio_pos_operatorio');
+  });
+
+  it('infere perioperatorio_protocolo para cirurgia segura e family protocolo', () => {
+    const instruction = 'Sobre o checklist da OMS Cirurgias Seguras Salvam Vidas, assinale a correta.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [], 'protocolo')).toBe(
+      'perioperatorio_protocolo',
+    );
+  });
+
+  it('infere perioperatorio_vf para Cebraspe sem SRPA', () => {
+    const instruction =
+      'Julgue o item subsequente sobre práticas em centro cirúrgico recomendadas pelas associações.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [], 'certo_errado')).toBe(
+      'perioperatorio_vf',
+    );
+  });
+
+  it('infere perioperatorio_isc para infecção de sítio cirúrgico', () => {
+    const instruction =
+      'Segundo a ANVISA, a infecção de sítio cirúrgico é complicação evitável. Assinale a correta.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('perioperatorio_isc');
+  });
+
+  it('SRPA CPD certo/errado → perioperatorio_pos_operatorio', () => {
+    const instruction =
+      'Na SRPA, o técnico pode trocar o curativo do cateter peridural sob supervisão.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [], 'certo_errado')).toBe(
+      'perioperatorio_pos_operatorio',
+    );
+  });
+});

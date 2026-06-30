@@ -1,3 +1,5 @@
+import { sortReverseStudySlides } from '@/lib/reverseStudySlideOrder';
+
 /**
  * Normaliza slides de estudo reverso para o formato semântico plano esperado pelo player e pelo Zod (`ReverseStudySlideSchema`).
  * Alguns importadores aninham dados em `concept_map`, `golden_rule`, `logic_flow`, `danger_zone`.
@@ -198,10 +200,15 @@ export function normalizeQuestaoSlideArrays(payload: unknown): unknown {
   const o = { ...(payload as Record<string, unknown>) };
 
   if (Array.isArray(o.reverse_study_slides)) {
-    o.reverse_study_slides = o.reverse_study_slides.map(normalizeReverseStudySlide);
+    const normalized = o.reverse_study_slides.map(normalizeReverseStudySlide);
+    o.reverse_study_slides = sortReverseStudySlides(
+      normalized as { type?: string }[],
+      'v2',
+    );
   }
   if (Array.isArray(o.study_slides)) {
-    o.study_slides = o.study_slides.map(normalizeReverseStudySlide);
+    const normalized = o.study_slides.map(normalizeReverseStudySlide);
+    o.study_slides = sortReverseStudySlides(normalized as { type?: string }[], 'v2');
   }
 
   return o;

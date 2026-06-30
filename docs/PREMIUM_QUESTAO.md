@@ -53,7 +53,7 @@ flowchart TD
 
 | Requisito | Detalhe |
 |-----------|---------|
-| 4 slides | `concept_map`, `golden_rule`, `logic_flow`, `danger_zone` |
+| 4 slides | `concept_map`, `logic_flow`, `golden_rule`, `danger_zone` (ordem canônica v2) |
 | Formato plano | `items` / `rows` / `steps` / `content` no mesmo nível que `type` — **não** aninhar |
 | `meta.subtopico` | Nome canônico (CLAUDE.md §9) — controla design automático |
 | Validação | `QuestaoCompletaSchema` + `LIMITS` |

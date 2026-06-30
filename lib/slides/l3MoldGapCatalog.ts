@@ -56,6 +56,7 @@ export function packageUsesBespoke(design?: SubtopicDesign): boolean {
 const ADOLESCENT_ETHICS = 'adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)';
 const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
 const SP_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const PERI_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
 
 const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
   'saude do adolescente': [
@@ -214,45 +215,42 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
     {
       pattern: /pr[eé][\s-]?operat|preparo/i,
       branch_id: 'perioperatorio_pre_operatorio',
-      branch_implemented: false,
-      ideal_mold_package: 'procedure-protocol · reference_table · vertical · compare (genérico ou inédito checklist)',
+      branch_implemented: true,
+      ideal_mold_package: PERI_GENERIC,
       base_decision: 'ok_generico',
-      inedito_if_volume: true,
-      rationale: 'Pré-op com golden âncora — genérico ou checklist inédito se volume sustentar.',
+      rationale: 'Pré-op — reference_table + compare bastam (âncora AVANÇASP).',
     },
     {
       pattern: /p[oó]s[\s-]?operat|srpa|aldrete/i,
       branch_id: 'perioperatorio_pos_operatorio',
-      branch_implemented: false,
-      ideal_mold_package: 'morphological · reference_table · vertical · compare — ou pacote SRPA/aldrete inédito',
-      base_decision: 'molde_inedito',
-      inedito_if_volume: true,
-      rationale: 'SRPA/aldrete — candidato forte a molde espacial (escore, fases).',
+      branch_implemented: true,
+      ideal_mold_package: PERI_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Pós-op/SRPA — rows Aldrete + compare; sem molde espacial no volume atual.',
     },
     {
       pattern: /protocolo|sequ[eê]ncia|cirurgia segura/i,
       branch_id: 'perioperatorio_protocolo',
-      branch_implemented: false,
-      ideal_mold_package: 'procedure-protocol · reference_table · vertical · compare (inédito checklist WHO)',
-      base_decision: 'molde_inedito',
-      inedito_if_volume: true,
-      rationale: 'Protocolo/sequência — checklist interativo repetível.',
+      branch_implemented: true,
+      ideal_mold_package: PERI_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Protocolo/CDC — tabela + tap; checklist WHO não exige UI bespoke.',
     },
     {
       pattern: /certo ou errado/i,
       branch_id: 'perioperatorio_vf',
-      branch_implemented: false,
-      ideal_mold_package: 'morphological · reference_table · vertical · compare (genérico)',
+      branch_implemented: true,
+      ideal_mold_package: PERI_GENERIC,
       base_decision: 'ok_generico',
-      rationale: 'V/F — genérico.',
+      rationale: 'V/F Cebraspe — pacote genérico premium.',
     },
     {
       pattern: /isc|classifica[cç][aã]o.*ferida/i,
       branch_id: 'perioperatorio_isc',
-      branch_implemented: false,
-      ideal_mold_package: 'wound-stage-tissue-deck · reference_table · vertical · compare (reusar curativos?)',
-      base_decision: 'ok_existente',
-      rationale: 'ISC — reutilizar moldes de curativos/feridas se afinidade OK.',
+      branch_implemented: true,
+      ideal_mold_package: PERI_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'ISC/CDC ferida — reference_table (âncora FURB/COGEPS).',
     },
   ],
   sondas: [
@@ -555,5 +553,11 @@ export function implementedBranchIds(): PedagogicalBranchId[] {
     'sp_eventos_adversos',
     'sp_metas_internacionais',
     'sp_generico',
+    'perioperatorio_pre_operatorio',
+    'perioperatorio_pos_operatorio',
+    'perioperatorio_protocolo',
+    'perioperatorio_vf',
+    'perioperatorio_isc',
+    'perioperatorio_generico',
   ];
 }

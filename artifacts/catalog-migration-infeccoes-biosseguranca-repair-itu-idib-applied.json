@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-06-30T17:27:24.045Z",
+  "lote": "infeccoes-biosseguranca-repair-itu-idib",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idib-enfermagem-instalacao-e-manejo-de-sondas-1778934890864-0",
+    "idib-geral-instalacao-e-manejo-de-sondas-1776056668359-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idib-enfermagem-instalacao-e-manejo-de-sondas-1778934890864-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-geral-instalacao-e-manejo-de-sondas-1776056668359-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

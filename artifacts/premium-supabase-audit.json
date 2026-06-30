@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-06-23T14:13:53.698Z",
+  "generated_at": "2026-06-30T17:15:34.589Z",
   "source": "supabase",
   "filters": {
     "include_warn": true
   },
-  "scanned": 37,
-  "with_issues": 13,
-  "error_rows": 13,
-  "ok_rows": 24,
+  "scanned": 55,
+  "with_issues": 14,
+  "error_rows": 14,
+  "ok_rows": 41,
   "by_issue_code": {
-    "stub_markers": 13
+    "stub_markers": 14
   },
   "by_lote_prefix": {
-    "Saúde Mental": {
-      "scanned": 37,
-      "errors": 13
+    "Infecções no Contexto da Biossegurança": {
+      "scanned": 55,
+      "errors": 14
     }
   },
   "rows": [
     {
       "source": "supabase",
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
-      "subtopico": "Saúde Mental",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -32,8 +32,8 @@
     },
     {
       "source": "supabase",
-      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
-      "subtopico": "Saúde Mental",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-1",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -44,8 +44,8 @@
     },
     {
       "source": "supabase",
-      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
-      "subtopico": "Saúde Mental",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-7",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -56,8 +56,8 @@
     },
     {
       "source": "supabase",
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
-      "subtopico": "Saúde Mental",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-8",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -68,8 +68,8 @@
     },
     {
       "source": "supabase",
-      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005128081-8",
-      "subtopico": "Saúde Mental",
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-5",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -80,8 +80,8 @@
     },
     {
       "source": "supabase",
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
-      "subtopico": "Saúde Mental",
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-3",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -92,8 +92,8 @@
     },
     {
       "source": "supabase",
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1",
-      "subtopico": "Saúde Mental",
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-8",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -104,8 +104,8 @@
     },
     {
       "source": "supabase",
-      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
-      "subtopico": "Saúde Mental",
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005311822-0",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -116,8 +116,8 @@
     },
     {
       "source": "supabase",
-      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
-      "subtopico": "Saúde Mental",
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-0",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -128,8 +128,8 @@
     },
     {
       "source": "supabase",
-      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
-      "subtopico": "Saúde Mental",
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -140,8 +140,8 @@
     },
     {
       "source": "supabase",
-      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6",
-      "subtopico": "Saúde Mental",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -152,8 +152,8 @@
     },
     {
       "source": "supabase",
-      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
-      "subtopico": "Saúde Mental",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-1",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",
@@ -164,8 +164,20 @@
     },
     {
       "source": "supabase",
-      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
-      "subtopico": "Saúde Mental",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-0",
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-1",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "issues": [
         {
           "code": "stub_markers",

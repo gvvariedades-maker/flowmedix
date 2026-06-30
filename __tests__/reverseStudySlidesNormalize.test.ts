@@ -159,17 +159,17 @@ describe('QuestaoCompletaSchema — payload premium', () => {
       if (logicSlide.type === 'logic_flow') {
         expect(logicSlide.reveal_mode).toBe('tap');
       }
-      const dangerSlide = slides[2];
-      expect(dangerSlide.type).toBe('danger_zone');
-      if (dangerSlide.type === 'danger_zone') {
-        expect(dangerSlide.bullet_style).toBe('x_icon');
-        expect(dangerSlide.items?.[0]?.correct).toBe('Certo');
-      }
-      const goldenSlide = slides[3];
+      const goldenSlide = slides[2];
       expect(goldenSlide.type).toBe('golden_rule');
       if (goldenSlide.type === 'golden_rule') {
         expect(goldenSlide.slide_title).toBe('Tabela');
         expect(goldenSlide.rows?.[0]?.label).toBe('FC');
+      }
+      const dangerSlide = slides[3];
+      expect(dangerSlide.type).toBe('danger_zone');
+      if (dangerSlide.type === 'danger_zone') {
+        expect(dangerSlide.bullet_style).toBe('x_icon');
+        expect(dangerSlide.items?.[0]?.correct).toBe('Certo');
       }
     }
   });

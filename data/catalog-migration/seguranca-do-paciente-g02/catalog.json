@@ -1,0 +1,84 @@
+{
+  "exported_at": "2026-06-30T16:25:08.025Z",
+  "lote": "seguranca-do-paciente-g02",
+  "total": 11,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4287
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 4763
+    },
+    {
+      "modulo_slug": "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 702
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FADESP",
+      "avant_codigo": 696
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 646
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 647
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-seguranca-do-paciente-1777102821787-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 697
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 733
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 686
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 698
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 703
+    }
+  ]
+}

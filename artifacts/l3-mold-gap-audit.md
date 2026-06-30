@@ -1,6 +1,6 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-06-30T15:49:58.659Z
+Gerado em: 2026-06-30T15:55:22.168Z
 
 ## Resumo
 
@@ -10,28 +10,13 @@ Gerado em: 2026-06-30T15:49:58.659Z
 | Clusters mapeados | 81 |
 | Slugs auditados | 68 |
 | ok_existente | 11 |
-| ok_generico | 50 |
-| ramo_novo | 16 |
-| molde_inedito | 4 |
-| Pacotes inéditos únicos | 4 |
+| ok_generico | 57 |
+| ramo_novo | 12 |
+| molde_inedito | 1 |
+| Pacotes inéditos únicos | 1 |
 | Slugs com mismatch L3 | 0 |
 
 ## Candidatos a molde inédito (pacote de 4 variantes)
-
-### Assistência Perioperatória (Inclui SRPA) — Pré-operatório / preparo
-- **Slugs:** 21 · **Ramo:** `perioperatorio_pre_operatorio`
-- **Pacote proposto:** procedure-protocol · reference_table · vertical · compare (genérico ou inédito checklist)
-- Pré-op com golden âncora — genérico ou checklist inédito se volume sustentar.
-
-### Assistência Perioperatória (Inclui SRPA) — Pós-operatório / cuidados
-- **Slugs:** 14 · **Ramo:** `perioperatorio_pos_operatorio`
-- **Pacote proposto:** morphological · reference_table · vertical · compare — ou pacote SRPA/aldrete inédito
-- SRPA/aldrete — candidato forte a molde espacial (escore, fases).
-
-### Assistência Perioperatória (Inclui SRPA) — Protocolo / sequência
-- **Slugs:** 13 · **Ramo:** `perioperatorio_protocolo`
-- **Pacote proposto:** procedure-protocol · reference_table · vertical · compare (inédito checklist WHO)
-- Protocolo/sequência — checklist interativo repetível.
 
 ### Enfermagem em Central de Material e Esterilização (CME) — Autoclave e métodos de esterilização
 - **Slugs:** 10 · **Ramo:** `cme_autoclave_metodos`
@@ -42,15 +27,15 @@ Gerado em: 2026-06-30T15:49:58.659Z
 
 | Subtópico | Cluster | Slugs | % | Decisão | Ramo | Ideal |
 |-----------|---------|-------|---|---------|------|-------|
-| Assistência Perioperatória (Inclui SRPA) | Pré-operatório / preparo | 21 | 30.9% | molde_inedito | `perioperatorio_pre_operatorio` | procedure-protocol · reference_table · vertical · compare (g… |
-| Assistência Perioperatória (Inclui SRPA) | Pós-operatório / cuidados | 14 | 20.6% | molde_inedito | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare — ou pa… |
-| Assistência Perioperatória (Inclui SRPA) | Protocolo / sequência | 13 | 19.1% | molde_inedito | `perioperatorio_protocolo` | procedure-protocol · reference_table · vertical · compare (i… |
-| Assistência Perioperatória (Inclui SRPA) | Certo ou errado | 9 | 13.2% | ramo_novo | `perioperatorio_vf` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | Pré-operatório / preparo | 21 | 30.9% | ok_generico | `perioperatorio_pre_operatorio` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | Pós-operatório / cuidados | 14 | 20.6% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | Protocolo / sequência | 13 | 19.1% | ok_generico | `perioperatorio_protocolo` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | Certo ou errado | 9 | 13.2% | ok_generico | `perioperatorio_vf` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | Default — sem âncora temática | 4 | 5.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | ISC / classificação e prevenção | 2 | 2.9% | ramo_novo | `perioperatorio_isc` | wound-stage-tissue-deck · reference_table · vertical · compa… |
+| Assistência Perioperatória (Inclui SRPA) | ISC / classificação e prevenção | 2 | 2.9% | ok_generico | `perioperatorio_isc` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | Fases perioperatórias | 2 | 2.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | SRPA / atribuição do técnico | 1 | 1.5% | ramo_novo | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare — ou pa… |
-| Assistência Perioperatória (Inclui SRPA) | SRPA / CPD e atribuição (C/E) | 1 | 1.5% | ramo_novo | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare — ou pa… |
+| Assistência Perioperatória (Inclui SRPA) | SRPA / atribuição do técnico | 1 | 1.5% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | SRPA / CPD e atribuição (C/E) | 1 | 1.5% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | Centro cirúrgico / asséptica | 1 | 1.5% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Enfermagem em Central de Material e Esterilização (CME) | Preparo e limpeza de instrumentais | 12 | 34.3% | ok_generico | `cme_preparo_limpeza` | bridge · minimal · cards · list (genérico)… |
 | Enfermagem em Central de Material e Esterilização (CME) | Autoclave e métodos de esterilização | 10 | 28.6% | molde_inedito | `cme_autoclave_metodos` | morphological · reference_table · vertical · compare (genéri… |
@@ -110,20 +95,25 @@ Gerado em: 2026-06-30T15:49:58.659Z
 | Infecções no Contexto da Biossegurança | ITU / cateter vesical (EXCETO) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Infecções no Contexto da Biossegurança | Biossegurança e contenção (conceitos) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Infecções no Contexto da Biossegurança | Cuidados em paciente imunossuprimido / comorbidades | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | DRIFT — auditoria/gestão | 19 | 30.6% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Prevenção de quedas | 11 | 17.7% | ok_generico | `sp_prevencao_quedas` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Eventos adversos e incidentes | 9 | 14.5% | ok_generico | `sp_eventos_adversos` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Identificação do paciente | 7 | 11.3% | ok_existente | `sp_identificacao` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | DRIFT — processo de enfermagem | 6 | 9.7% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Segurança do paciente — conceito geral | 2 | 3.2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Metas internacionais JCI/OMS | 2 | 3.2% | ok_generico | `sp_metas_internacionais` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Segurança na medicação | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Segurança do paciente — conceito | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Cultura de segurança | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Certo ou errado | 1 | 1.6% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Higienização das mãos | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Humanização e cuidado | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | DRIFT — auditoria/gestão | 16 | 27.1% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Prevenção de quedas | 11 | 18.6% | ok_generico | `sp_prevencao_quedas` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Eventos adversos e incidentes | 9 | 15.3% | ok_generico | `sp_eventos_adversos` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Identificação do paciente | 7 | 11.9% | ok_existente | `sp_identificacao` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | DRIFT — processo de enfermagem | 6 | 10.2% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Segurança do paciente — conceito geral | 2 | 3.4% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Metas internacionais JCI/OMS | 2 | 3.4% | ok_generico | `sp_metas_internacionais` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Segurança na medicação | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Segurança do paciente — conceito | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Cultura de segurança | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Certo ou errado | 1 | 1.7% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Higienização das mãos | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Humanização e cuidado | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 
 ## Slugs (amostra com branch inferido)
 
-- `—`: 68
+- `perioperatorio_isc`: 17
+- `perioperatorio_vf`: 14
+- `perioperatorio_pre_operatorio`: 13
+- `perioperatorio_protocolo`: 10
+- `perioperatorio_pos_operatorio`: 10
+- `perioperatorio_generico`: 4

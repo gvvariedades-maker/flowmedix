@@ -1,0 +1,98 @@
+{
+  "lote": "seguranca-do-paciente-g02",
+  "generated_at": "2026-06-30T17:12:40.554Z",
+  "strict": true,
+  "total": 11,
+  "passed": 11,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "facet-enfermagem-seguranca-do-paciente-1777102821787-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fadesp-enfermagem-seguranca-do-paciente-1777102821787-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "funcern-enfermagem-seguranca-do-paciente-1777102678563-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundep-enfermagem-seguranca-do-paciente-1777102821787-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

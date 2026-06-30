@@ -1,32 +1,167 @@
 {
-  "generated_at": "2026-06-30T15:10:42.146Z",
-  "scanned": 5,
-  "passed": 5,
+  "generated_at": "2026-06-30T17:13:53.398Z",
+  "scanned": 32,
+  "passed": 32,
   "failed": 0,
   "warn_only": 0,
   "results": [
     {
-      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+      "slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+      "slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-5",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-1",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-6",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "unesc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-5",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3",
       "ok": true,
       "issues": []
     }

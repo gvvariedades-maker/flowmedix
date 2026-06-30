@@ -83,23 +83,52 @@ describe('patchPedagogicalMeta', () => {
     expect(payload.meta.pedagogical_branch).toBe('farmaco_clinico_protocolo');
   });
 
-  it('subtópico sem BRANCH_DESIGN_MAP (Perioperatória) → skip no_branch_map', () => {
+  it('perioperatória SRPA → perioperatorio_pos_operatorio', () => {
+    const subtopico = 'Assistência Perioperatória (Inclui SRPA)';
     const payload = {
-      meta: { subtopico: 'Assistência Perioperatória (Inclui SRPA)' },
-      question_data: { instruction: 'Sobre SRPA, assinale a correta.' },
+      meta: { banca: 'IDECAN', topico: 'Enfermagem', subtopico },
+      question_data: {
+        instruction: 'Sobre SRPA, assinale a correta.',
+        options: [
+          { id: 'A', text: 'Alta imediata', is_correct: false },
+          { id: 'B', text: 'Monitorização contínua', is_correct: true },
+        ],
+      },
       reverse_study_slides: [
-        { type: 'concept_map', items: [{ label: 'A' }, { label: 'B' }, { label: 'C' }] },
-        { type: 'golden_rule', rows: [{ label: 'X', value: 'Y' }] },
-        { type: 'logic_flow', reveal_mode: 'tap', steps: ['1'] },
-        { type: 'danger_zone', content: 'z', items: [{ label: 'A', detail: 'b', correct: 'c' }] },
+        {
+          type: 'concept_map',
+          meta: { subtopico },
+          items: [
+            { label: 'A', detail: 'x' },
+            { label: 'B', detail: 'y' },
+            { label: 'C', detail: 'z' },
+          ],
+        },
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          rows: [{ label: 'X', value: 'Y' }],
+        },
+        {
+          type: 'logic_flow',
+          reveal_mode: 'tap',
+          meta: { subtopico },
+          steps: ['1'],
+        },
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'Pegadinhas',
+          items: [{ label: 'A', detail: 'b', correct: 'c' }],
+        },
       ],
     };
 
     const result = patchPedagogicalMeta(payload);
 
-    expect(result.changed).toBe(false);
-    expect(result.skippedReason).toBe('no_branch_map');
-    expect(payload.meta?.pedagogical_branch).toBeUndefined();
+    expect(result.changed).toBe(true);
+    expect(result.branchAfter).toBe('perioperatorio_pos_operatorio');
+    expect(payload.meta.pedagogical_branch).toBe('perioperatorio_pos_operatorio');
   });
 
   it('puberdade adolescente → adolescente_desenvolvimento, não etica_sigilo', () => {

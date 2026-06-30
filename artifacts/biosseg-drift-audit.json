@@ -1,0 +1,1761 @@
+{
+  "generated_at": "2026-06-30T17:22:06.131Z",
+  "subtopico": "Infecções no Contexto da Biossegurança",
+  "totals": {
+    "vitrine_biosseg": 55,
+    "handcraft_package": 25,
+    "drift_slugs": 30,
+    "not_ready": 30,
+    "itu_exceto_cluster": 4,
+    "like_idib_case": 27
+  },
+  "itu_exceto_slugs": [
+    {
+      "slug": "idib-enfermagem-instalacao-e-manejo-de-sondas-1778934890864-0",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial pre"
+    },
+    {
+      "slug": "idib-geral-instalacao-e-manejo-de-sondas-1776056668359-0",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial pre"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+      "banca": "INAZ do Pará",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "\"A prevenção das infecções relacionadas à assistência à saúde exige abordagem multifatorial, envolvendo práticas baseadas em evidências, vig"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "banca": "Instituto Consulplan",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Infecção Hospitalar ou Infecção Relacionada à Assistência em Saúde (IRAS) são adquiridas após a admissão do paciente, podendo se manifestar "
+    }
+  ],
+  "like_idib_case": [
+    {
+      "slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Infecções por MRSA (Staphylococcus aureus resistente à meticilina) são notificadas em número crescente em pacientes hospitalizados de vários"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "l2_topic_drift",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A pneumonia relacionada à assistência à saúde pode aumentar a severidade da doença de base do paciente, levar à falência de órgãos e pode, p"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-1",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "As Infecções Relacionadas à Assistência à Saúde (IRAS) elevam consideravelmente os custos do cuidado ao paciente, o tempo de internações, a "
+    },
+    {
+      "slug": "ameosc-enfermagem-seguranca-do-paciente-1779563448133-8",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Com base na assistência de enfermagem recomendada na prevenção de pneumonia hospitalar, assinale a alternativa INCORRETA ."
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-7",
+      "banca": "AVANÇASP",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A prevenção de infecções hospitalares depende da adesão estrita às diretrizes de higiene. Considerando as orientações de prevenção as infecç"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-8",
+      "banca": "AVANÇASP",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "O controle de infecções hospitalares baseia-se na distinção precisa entre os conceitos de limpeza e descontaminação. O procedimento específi"
+    },
+    {
+      "slug": "cetrede-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-1",
+      "banca": "Cetrede",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "É uma área na qual existe risco aumentado para desenvolvimento de infecções relacionadas à assistência à saúde, seja pela execução de proces"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-4",
+      "banca": "Coseac Uff",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "No controle da infecção hospitalar, o gluconato de clorexidina é usado por possuir:"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-5",
+      "banca": "FGV",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A Comissão de Biossegurança em Saúde (CBS) é responsável por definir estratégias e regulamentações para garantir a biossegurança nas ativida"
+    },
+    {
+      "slug": "gama-enfermagem-semiologia-em-enfermagem-1779563467322-7",
+      "banca": "Gama",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Após cateterismo vesical feminino, uma paciente, 30 anos, apresenta disúria e dor perineal. Qual é o cuidado de enfermagem mais adequado?"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-3",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em uma unidade hospitalar, um técnico de enfermagem atua simultaneamente na coleta de material biológico, preparo do ambiente assistencial e"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-8",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Na unidade de internação, um técnico de enfermagem identifica falhas durante a utilização e o acondicionamento de materiais e equipamentos h"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005311822-0",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em uma unidade de internação clínica, o técnico de enfermagem acompanha um paciente idoso, internado há 12 dias, portador de comorbidades e "
+    },
+    {
+      "slug": "idib-enfermagem-instalacao-e-manejo-de-sondas-1778934890864-0",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial pre"
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-6",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "As Infecções Relacionadas à Assistência à Saúde (IRAS) representam um desafio contínuo nas instituições de saúde, impactando negativamente a"
+    },
+    {
+      "slug": "idib-geral-instalacao-e-manejo-de-sondas-1776056668359-0",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial pre"
+    },
+    {
+      "slug": "ieses-enfermagem-instalacao-e-manejo-de-sondas-1777102719125-0",
+      "banca": "Ieses",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Segundo a Portaria no 2.616/1998, sobre as infecções comunitária e hospitalar, analisar os itens abaixo: I. São consideradas infecções hospi"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+      "banca": "INAZ do Pará",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "\"A prevenção das infecções relacionadas à assistência à saúde exige abordagem multifatorial, envolvendo práticas baseadas em evidências, vig"
+    },
+    {
+      "slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102766050-3",
+      "banca": "Instituto Access",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "\"Higiene das mãos\" é um termo geral que se refere a qualquer ação de higienizar as mãos para prevenir a transmissão de microrganismos e cons"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-1",
+      "banca": "Instituto Consulplan",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Com o aumento da utilização de dispositivos invasivos, como cateteres intravenosos, nos cuidados hospitalares, a prevenção de infecções hosp"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "banca": "Instituto Consulplan",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Infecção Hospitalar ou Infecção Relacionada à Assistência em Saúde (IRAS) são adquiridas após a admissão do paciente, podendo se manifestar "
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+      "banca": "Instituto Verbena",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Durante a coleta de exames, a realização de curativos e os cuidados com acessos venosos exigem do técnico em enfermagem a adoção de medidas "
+    },
+    {
+      "slug": "legalle-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-4",
+      "banca": "Legalle",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "a infecção adquirida após a admissão do paciente e que se manifesta durante a internação ou após a alta, quando puder ser relacionada com a "
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-1",
+      "banca": "Legalle",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A microbiologia é a ciência que estuda os microrganismos, incluindo bactérias, fungos e vírus, bem como suas características estruturais e f"
+    },
+    {
+      "slug": "ufmt-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-5",
+      "banca": "Ufmt",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em situações de bloqueio de surto de infecção hospitalar é correto"
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-0",
+      "banca": "Unifil",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "De acordo com os momentos da higiene das mãos, recomendado pela Organização Mundial de Saúde (OMS), que visa a redução do risco de Infecções"
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-1",
+      "banca": "Unifil",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Assinale a alternativa que preenche corretamente as lacunas. As infecções relacionadas à assistência à saúde (IRAS) são eventos ________ fre"
+    }
+  ],
+  "drift_not_ready": [
+    {
+      "slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Infecções por MRSA (Staphylococcus aureus resistente à meticilina) são notificadas em número crescente em pacientes hospitalizados de vários"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "l2_topic_drift",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A pneumonia relacionada à assistência à saúde pode aumentar a severidade da doença de base do paciente, levar à falência de órgãos e pode, p"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-1",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "As Infecções Relacionadas à Assistência à Saúde (IRAS) elevam consideravelmente os custos do cuidado ao paciente, o tempo de internações, a "
+    },
+    {
+      "slug": "ameosc-enfermagem-seguranca-do-paciente-1779563448133-8",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Com base na assistência de enfermagem recomendada na prevenção de pneumonia hospitalar, assinale a alternativa INCORRETA ."
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-7",
+      "banca": "AVANÇASP",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A prevenção de infecções hospitalares depende da adesão estrita às diretrizes de higiene. Considerando as orientações de prevenção as infecç"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-8",
+      "banca": "AVANÇASP",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "O controle de infecções hospitalares baseia-se na distinção precisa entre os conceitos de limpeza e descontaminação. O procedimento específi"
+    },
+    {
+      "slug": "cetrede-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-1",
+      "banca": "Cetrede",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "É uma área na qual existe risco aumentado para desenvolvimento de infecções relacionadas à assistência à saúde, seja pela execução de proces"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-4",
+      "banca": "Coseac Uff",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "No controle da infecção hospitalar, o gluconato de clorexidina é usado por possuir:"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-5",
+      "banca": "FGV",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A Comissão de Biossegurança em Saúde (CBS) é responsável por definir estratégias e regulamentações para garantir a biossegurança nas ativida"
+    },
+    {
+      "slug": "gama-enfermagem-semiologia-em-enfermagem-1779563467322-7",
+      "banca": "Gama",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Após cateterismo vesical feminino, uma paciente, 30 anos, apresenta disúria e dor perineal. Qual é o cuidado de enfermagem mais adequado?"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-3",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em uma unidade hospitalar, um técnico de enfermagem atua simultaneamente na coleta de material biológico, preparo do ambiente assistencial e"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-8",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Na unidade de internação, um técnico de enfermagem identifica falhas durante a utilização e o acondicionamento de materiais e equipamentos h"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005311822-0",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em uma unidade de internação clínica, o técnico de enfermagem acompanha um paciente idoso, internado há 12 dias, portador de comorbidades e "
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-4",
+      "banca": "IDECAN",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": false,
+      "error_codes": [
+        "l2_golden_v1"
+      ],
+      "instruction_preview": "O procedimento de limpeza terminal e/ou concorrente é um dos principais instrumentos de que se dispõe para assegurar uma assistência isenta "
+    },
+    {
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-8",
+      "banca": "IDECAN",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": false,
+      "error_codes": [
+        "l2_golden_v1"
+      ],
+      "instruction_preview": "Não existe percentual de infecções relacionadas a assistência à saúde - IRAS aceitável em nenhum hospital do mundo. Ninguém deseja adquirir "
+    },
+    {
+      "slug": "idib-enfermagem-instalacao-e-manejo-de-sondas-1778934890864-0",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial pre"
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-6",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "As Infecções Relacionadas à Assistência à Saúde (IRAS) representam um desafio contínuo nas instituições de saúde, impactando negativamente a"
+    },
+    {
+      "slug": "idib-geral-instalacao-e-manejo-de-sondas-1776056668359-0",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial pre"
+    },
+    {
+      "slug": "ieses-enfermagem-instalacao-e-manejo-de-sondas-1777102719125-0",
+      "banca": "Ieses",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Segundo a Portaria no 2.616/1998, sobre as infecções comunitária e hospitalar, analisar os itens abaixo: I. São consideradas infecções hospi"
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-0",
+      "banca": "Igeduc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": false,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A higiene de mãos é considerada a medida mais eficaz e econômica na prevenção de infecções relacionadas à assistência à saúde (IRAS). O técn"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+      "banca": "INAZ do Pará",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "\"A prevenção das infecções relacionadas à assistência à saúde exige abordagem multifatorial, envolvendo práticas baseadas em evidências, vig"
+    },
+    {
+      "slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102766050-3",
+      "banca": "Instituto Access",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "\"Higiene das mãos\" é um termo geral que se refere a qualquer ação de higienizar as mãos para prevenir a transmissão de microrganismos e cons"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-1",
+      "banca": "Instituto Consulplan",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Com o aumento da utilização de dispositivos invasivos, como cateteres intravenosos, nos cuidados hospitalares, a prevenção de infecções hosp"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "banca": "Instituto Consulplan",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Infecção Hospitalar ou Infecção Relacionada à Assistência em Saúde (IRAS) são adquiridas após a admissão do paciente, podendo se manifestar "
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+      "banca": "Instituto Verbena",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Durante a coleta de exames, a realização de curativos e os cuidados com acessos venosos exigem do técnico em enfermagem a adoção de medidas "
+    },
+    {
+      "slug": "legalle-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-4",
+      "banca": "Legalle",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "a infecção adquirida após a admissão do paciente e que se manifesta durante a internação ou após a alta, quando puder ser relacionada com a "
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-1",
+      "banca": "Legalle",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A microbiologia é a ciência que estuda os microrganismos, incluindo bactérias, fungos e vírus, bem como suas características estruturais e f"
+    },
+    {
+      "slug": "ufmt-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-5",
+      "banca": "Ufmt",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em situações de bloqueio de surto de infecção hospitalar é correto"
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-0",
+      "banca": "Unifil",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "De acordo com os momentos da higiene das mãos, recomendado pela Organização Mundial de Saúde (OMS), que visa a redução do risco de Infecções"
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-1",
+      "banca": "Unifil",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Assinale a alternativa que preenche corretamente as lacunas. As infecções relacionadas à assistência à saúde (IRAS) são eventos ________ fre"
+    }
+  ],
+  "all_drift": [
+    {
+      "slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Infecções por MRSA (Staphylococcus aureus resistente à meticilina) são notificadas em número crescente em pacientes hospitalizados de vários"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "l2_topic_drift",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A pneumonia relacionada à assistência à saúde pode aumentar a severidade da doença de base do paciente, levar à falência de órgãos e pode, p"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-1",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "As Infecções Relacionadas à Assistência à Saúde (IRAS) elevam consideravelmente os custos do cuidado ao paciente, o tempo de internações, a "
+    },
+    {
+      "slug": "ameosc-enfermagem-seguranca-do-paciente-1779563448133-8",
+      "banca": "Ameosc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Com base na assistência de enfermagem recomendada na prevenção de pneumonia hospitalar, assinale a alternativa INCORRETA ."
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-7",
+      "banca": "AVANÇASP",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A prevenção de infecções hospitalares depende da adesão estrita às diretrizes de higiene. Considerando as orientações de prevenção as infecç"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-8",
+      "banca": "AVANÇASP",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "O controle de infecções hospitalares baseia-se na distinção precisa entre os conceitos de limpeza e descontaminação. O procedimento específi"
+    },
+    {
+      "slug": "cetrede-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-1",
+      "banca": "Cetrede",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "É uma área na qual existe risco aumentado para desenvolvimento de infecções relacionadas à assistência à saúde, seja pela execução de proces"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-4",
+      "banca": "Coseac Uff",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "No controle da infecção hospitalar, o gluconato de clorexidina é usado por possuir:"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-5",
+      "banca": "FGV",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A Comissão de Biossegurança em Saúde (CBS) é responsável por definir estratégias e regulamentações para garantir a biossegurança nas ativida"
+    },
+    {
+      "slug": "gama-enfermagem-semiologia-em-enfermagem-1779563467322-7",
+      "banca": "Gama",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Após cateterismo vesical feminino, uma paciente, 30 anos, apresenta disúria e dor perineal. Qual é o cuidado de enfermagem mais adequado?"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-3",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em uma unidade hospitalar, um técnico de enfermagem atua simultaneamente na coleta de material biológico, preparo do ambiente assistencial e"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-8",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Na unidade de internação, um técnico de enfermagem identifica falhas durante a utilização e o acondicionamento de materiais e equipamentos h"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005311822-0",
+      "banca": "Ibade",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em uma unidade de internação clínica, o técnico de enfermagem acompanha um paciente idoso, internado há 12 dias, portador de comorbidades e "
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-4",
+      "banca": "IDECAN",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": false,
+      "error_codes": [
+        "l2_golden_v1"
+      ],
+      "instruction_preview": "O procedimento de limpeza terminal e/ou concorrente é um dos principais instrumentos de que se dispõe para assegurar uma assistência isenta "
+    },
+    {
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-8",
+      "banca": "IDECAN",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": false,
+      "error_codes": [
+        "l2_golden_v1"
+      ],
+      "instruction_preview": "Não existe percentual de infecções relacionadas a assistência à saúde - IRAS aceitável em nenhum hospital do mundo. Ninguém deseja adquirir "
+    },
+    {
+      "slug": "idib-enfermagem-instalacao-e-manejo-de-sondas-1778934890864-0",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial pre"
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-6",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "As Infecções Relacionadas à Assistência à Saúde (IRAS) representam um desafio contínuo nas instituições de saúde, impactando negativamente a"
+    },
+    {
+      "slug": "idib-geral-instalacao-e-manejo-de-sondas-1776056668359-0",
+      "banca": "Idib",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial pre"
+    },
+    {
+      "slug": "ieses-enfermagem-instalacao-e-manejo-de-sondas-1777102719125-0",
+      "banca": "Ieses",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Segundo a Portaria no 2.616/1998, sobre as infecções comunitária e hospitalar, analisar os itens abaixo: I. São consideradas infecções hospi"
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-0",
+      "banca": "Igeduc",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": false,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A higiene de mãos é considerada a medida mais eficaz e econômica na prevenção de infecções relacionadas à assistência à saúde (IRAS). O técn"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+      "banca": "INAZ do Pará",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": false,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "\"A prevenção das infecções relacionadas à assistência à saúde exige abordagem multifatorial, envolvendo práticas baseadas em evidências, vig"
+    },
+    {
+      "slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102766050-3",
+      "banca": "Instituto Access",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "\"Higiene das mãos\" é um termo geral que se refere a qualquer ação de higienizar as mãos para prevenir a transmissão de microrganismos e cons"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-1",
+      "banca": "Instituto Consulplan",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Com o aumento da utilização de dispositivos invasivos, como cateteres intravenosos, nos cuidados hospitalares, a prevenção de infecções hosp"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "banca": "Instituto Consulplan",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": true,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Infecção Hospitalar ou Infecção Relacionada à Assistência em Saúde (IRAS) são adquiridas após a admissão do paciente, podendo se manifestar "
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+      "banca": "Instituto Verbena",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Durante a coleta de exames, a realização de curativos e os cuidados com acessos venosos exigem do técnico em enfermagem a adoção de medidas "
+    },
+    {
+      "slug": "legalle-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-4",
+      "banca": "Legalle",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "a infecção adquirida após a admissão do paciente e que se manifesta durante a internação ou após a alta, quando puder ser relacionada com a "
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-1",
+      "banca": "Legalle",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_logic_not_recycle",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "A microbiologia é a ciência que estuda os microrganismos, incluindo bactérias, fungos e vírus, bem como suas características estruturais e f"
+    },
+    {
+      "slug": "ufmt-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-5",
+      "banca": "Ufmt",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "l2_golden_v1",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Em situações de bloqueio de surto de infecção hospitalar é correto"
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-0",
+      "banca": "Unifil",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "De acordo com os momentos da higiene das mãos, recomendado pela Organização Mundial de Saúde (OMS), que visa a redução do risco de Infecções"
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-1",
+      "banca": "Unifil",
+      "drift": true,
+      "in_handcraft_package": false,
+      "ready_100": false,
+      "is_itu_exceto": false,
+      "content_standard": null,
+      "pedagogical_branch": null,
+      "fundatec_stub": true,
+      "like_idib_case": true,
+      "error_codes": [
+        "stub_markers",
+        "l2_golden_v1",
+        "l2_stub",
+        "l2_duplicate_danger",
+        "align_danger_duplicate_correct"
+      ],
+      "instruction_preview": "Assinale a alternativa que preenche corretamente as lacunas. As infecções relacionadas à assistência à saúde (IRAS) são eventos ________ fre"
+    }
+  ]
+}

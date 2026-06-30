@@ -3,6 +3,7 @@ import {
   payloadContainsTecconcursosReference,
 } from '@/lib/validations';
 import { normalizeQuestaoSlideArrays } from '@/lib/reverseStudySlidesNormalize';
+import { REVERSE_STUDY_SLIDE_ORDER_CANONICAL } from '@/lib/reverseStudySlideOrder';
 import {
   classifyFamily,
   FAMILY_GOLDEN_FILE,
@@ -548,9 +549,8 @@ function buildGoldenRuleStub(input: {
 }
 
 function ensureFourSlides(slides: SlideRecord[]): SlideRecord[] {
-  const order = ['concept_map', 'golden_rule', 'logic_flow', 'danger_zone'] as const;
   const byType = new Map(slides.map((s) => [s.type, s]));
-  return order.map((type) => byType.get(type)!).filter(Boolean);
+  return REVERSE_STUDY_SLIDE_ORDER_CANONICAL.map((type) => byType.get(type)!).filter(Boolean);
 }
 
 export function upgradePremiumHybrid(

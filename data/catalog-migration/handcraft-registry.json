@@ -42,9 +42,9 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-30T00:20:40.778Z",
+          "last_audit_at": "2026-06-30T16:28:06.716Z",
           "last_audit_pass": true,
-          "health_streak_days": 0,
+          "health_streak_days": 1,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
@@ -553,24 +553,24 @@
       "cluster_report": "artifacts/seguranca-do-paciente-topic-cluster-report.json",
       "lote_pattern": "seguranca-do-paciente-g{NN}",
       "lote_size": 8,
-      "status": "none",
+      "status": "applied",
       "total_slugs": 59,
-      "handcraft_applied": 0,
+      "handcraft_applied": 59,
       "anchor_glob": "examples/questao-premium-*-seguranca-paciente-*.json,examples/questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
       "guideline": null,
-      "production_status": "none",
+      "production_status": "production_ready",
       "quality": {
-        "technical_ready_at": null,
-        "production_ready_at": null,
+        "technical_ready_at": "2026-06-30",
+        "production_ready_at": "2026-06-30",
         "monitoring_until": null,
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
-          "L3": false,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
         },
         "slo": {
           "open_p0": 0,
@@ -580,10 +580,10 @@
           "p0_block_after_hours": 24
         },
         "continuous": {
-          "enabled": false,
-          "last_audit_at": null,
-          "last_audit_pass": null,
-          "health_streak_days": 0,
+          "enabled": true,
+          "last_audit_at": "2026-06-30T17:21:44.835Z",
+          "last_audit_pass": true,
+          "health_streak_days": 1,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }

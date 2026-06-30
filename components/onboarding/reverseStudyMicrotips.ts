@@ -37,7 +37,7 @@ export const REVERSE_STUDY_MICROTIPS: Record<ReverseStudyMicrotipKey, ReverseStu
   },
   'reverse-study-intro': {
     title: 'Cada questão vira uma mini aula',
-    body: 'O Estudo Reverso organiza o conceito, a regra, a lógica da resposta e as pegadinhas da banca.',
+    body: 'O Estudo Reverso segue quatro passos: mapa do tema → raciocínio passo a passo → regra de ouro → pegadinhas da banca.',
     tone: 'indigo',
   },
   'dots-meaning': {

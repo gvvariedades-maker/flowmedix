@@ -26,17 +26,20 @@ function buildFamilySlideHints(family: FamilyId): string {
 - NÃO use formato V/F (Julgar I/II/III) se a questão não tiver afirmativas I–IV.`;
 
   const goldenMcq = `## golden_rule (múltipla escolha)
-- rows[] com label "Alternativa X (Correta)" ou "Alternativa X (Incorreta)" — o molde visual usa isso para badge certo/errado.
-- Última row: "Gabarito da Questão" com letra e texto da alternativa correta.`;
+- rows[] com critérios normativos / decore de prova (label + value).
+- **Sem** row "Gabarito letra X" — o gabarito fica no logic_flow (slide 2).
+- Pode usar badge "hot"/"warn" em pegadinhas normativas, não na letra correta.`;
+
+  const goldenVf = `## golden_rule (V/F)
+- rows[] por afirmativa I–IV com V/F explícito no value quando aplicável.
+- **Sem** row final de gabarito com letra — combinação/letra ficam no logic_flow.`;
 
   switch (family) {
     case 'vf':
     case 'certo_errado':
       return `${logicVf}
 
-## golden_rule (V/F)
-- rows[] por afirmativa I–IV com V/F explícito no value quando aplicável.
-- Última row: combinação ou gabarito com letra.`;
+${goldenVf}`;
     case 'calc':
     case 'protocolo':
     case 'legis':
@@ -53,19 +56,19 @@ ${goldenMcq}`;
 
 export function buildSystemPrompt(): string {
   return `Você é especialista em conteúdo pedagógico para concursos de Técnico de Enfermagem no Brasil.
-Gera EXATAMENTE 4 slides de estudo reverso no formato plano do AVANT:
-concept_map → golden_rule → logic_flow → danger_zone.
+Gera EXATAMENTE 4 slides de estudo reverso no formato plano do AVANT, nesta ordem no array:
+concept_map → logic_flow → golden_rule → danger_zone.
 
 REGRAS INVIOLÁVEIS:
-- Responda SOMENTE JSON válido: { "reverse_study_slides": [ ...4 slides... ] }
+- Responda SOMENTE JSON válido: { "reverse_study_slides": [ ...4 slides na ordem acima... ] }
 - Formato plano: items, rows, steps, content no mesmo nível que type (não aninhar).
 - NÃO invente números, intervalos, doses ou normas. Use APENAS valores da tabela GUIDELINE fornecida.
 - Conteúdo ESPECÍFICO desta questão: cite letra correta, afirmativas I–IV e termos do enunciado.
-- concept_map: ≥3 items com label, detail, icon (Lucide React válido).
-- golden_rule: rows[] (label, value) quando o molde exigir tabela; última row com gabarito/letra.
+- concept_map: ≥3 items com label, detail, icon (Lucide React válido); SEM gabarito/letra.
+- logic_flow: reveal_mode "tap", steps[] com ≥3 strings; único slide com eliminação A–E e "Marcar letra X".
+- golden_rule: rows[] (label, value) para decore/norma; SEM row "Gabarito letra X".
 - golden_rule rows.badge: SOMENTE "hot", "warn", "ok" ou "info" (nunca success/error/highlight).
-- logic_flow: reveal_mode "tap", steps[] com ≥3 strings (decisões em ordem).
-- danger_zone: content + items[] com label, detail, correct (texto da coluna certa).
+- danger_zone: content + items[] com label, detail, correct (texto da coluna certa); incluir 1 item de transferência quando couber.
 - Ícones concept_map: apenas Lucide React reais (ex.: Syringe, Calendar, ShieldCheck, Baby, Hospital, BellRing, ClipboardList, Target, Mail, Monitor, BarChart2, AlertCircle).
 - Números das alternativas e do enunciado podem ser citados; outros números normativos só da GUIDELINE.
 - Repita meta.subtopico canônico em cada slide quando fornecido.

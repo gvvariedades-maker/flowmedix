@@ -5,7 +5,7 @@
  * @see docs/PREMIUM_QUESTAO.md
  */
 import { hasPremiumStubMarkers } from '@/lib/catalogMigration/upgradePremiumHybrid';
-import { lintGoldenContent } from '@/lib/goldenContentStandard';
+import { lintGoldenContent, lintGoldenV2Pedagogy } from '@/lib/goldenContentStandard';
 import { validateQuestaoForWrite } from '@/lib/questaoSpec/validateQuestaoForWrite';
 import {
   detectDangerGabaritoMismatch,
@@ -42,6 +42,8 @@ export type AuditQuestaoReadinessOptions = {
   slug?: string;
   /** golden lint + gabarito mismatch viram error (default: true para "100%"). */
   strict?: boolean;
+  /** lintGoldenV2Pedagogy (redundância/spoiler) vira error — handcraft professor v2. */
+  strictV2Pedagogy?: boolean;
 };
 
 export type AuditQuestaoReadinessResult = {
@@ -104,6 +106,7 @@ export function auditQuestaoReadiness(
   options: AuditQuestaoReadinessOptions = {},
 ): AuditQuestaoReadinessResult {
   const strict = options.strict !== false;
+  const strictV2Pedagogy = options.strictV2Pedagogy === true;
   const checks: ReadinessCheck[] = [];
   const subtopico = payload.meta?.subtopico?.trim();
   const instruction = String(payload.question_data?.instruction ?? '');
@@ -258,6 +261,11 @@ export function auditQuestaoReadiness(
         issue.message,
         strict ? 'error' : 'warn',
       );
+    }
+    for (const issue of lintGoldenV2Pedagogy(slides as never[])) {
+      const already = checks.some((c) => c.code === issue.code);
+      if (already) continue;
+      push(checks, 'A2', issue.code, issue.message, strictV2Pedagogy ? 'error' : 'warn');
     }
   }
 

@@ -221,6 +221,133 @@ export function lintLogicFlowRecycling(slides: SlideLike[], q: QuestaoLike): Gol
   return [];
 }
 
+const LAYER_REDUNDANCY_SHINGLE = 7;
+const LAYER_REDUNDANCY_MIN_BLOCKS = 2;
+const LAYER_REDUNDANCY_MIN_RATIO = 0.5;
+/** Blocos curtos (rótulos de uma palavra) geram falso positivo. */
+const LAYER_REDUNDANCY_MIN_CHARS = 18;
+
+function slideTextBlocks(parts: Array<string | undefined | null>): string[] {
+  return parts
+    .map((p) => String(p ?? '').replace(/\s+/g, ' ').trim())
+    .filter((t) => t.length >= LAYER_REDUNDANCY_MIN_CHARS);
+}
+
+function goldenRuleRowTexts(slide: SlideLike | undefined): string[] {
+  if (!slide) return [];
+  const rows = slide.rows;
+  if (Array.isArray(rows) && rows.length > 0) {
+    return slideTextBlocks(
+      (rows as Record<string, unknown>[]).map((r) => `${r.label ?? ''} ${r.value ?? ''}`),
+    );
+  }
+  return slideTextBlocks([typeof slide.content === 'string' ? slide.content : '']);
+}
+
+function conceptMapItemTexts(slide: SlideLike | undefined): string[] {
+  if (!slide || !Array.isArray(slide.items)) return [];
+  return slideTextBlocks(
+    (slide.items as Record<string, unknown>[]).map((it) => `${it.label ?? ''} ${it.detail ?? ''}`),
+  );
+}
+
+function logicFlowStepTexts(slide: SlideLike | undefined): string[] {
+  if (!slide || !Array.isArray(slide.steps)) return [];
+  return slideTextBlocks(
+    (slide.steps as unknown[]).filter((s): s is string => typeof s === 'string'),
+  );
+}
+
+function countRedundantBlocks(source: string[], target: string[], shingle: number): number {
+  if (source.length === 0 || target.length === 0) return 0;
+  let matched = 0;
+  for (const block of source) {
+    const maxRun = Math.max(0, ...target.map((t) => longestContiguousWordRun(block, t)));
+    if (maxRun >= shingle) matched++;
+  }
+  return matched;
+}
+
+function layerRedundancyIssue(
+  code: string,
+  path: string,
+  pairLabel: string,
+  matched: number,
+  total: number,
+): GoldenContentLintIssue {
+  return {
+    code,
+    message: `${pairLabel}: ${matched}/${total} blocos compartilham ≥${LAYER_REDUNDANCY_SHINGLE} palavras contíguas com o outro slide — cada tipo deve ensinar uma camada distinta (playbook §2.1).`,
+    path,
+  };
+}
+
+/**
+ * Detecta reciclagem entre camadas de slides (v2): golden_rule não deve copiar
+ * logic_flow; concept_map não deve espelhar golden_rule como tabela duplicada.
+ */
+export function lintSlideLayerRedundancy(slides: SlideLike[]): GoldenContentLintIssue[] {
+  const issues: GoldenContentLintIssue[] = [];
+  const golden = findSlide(slides, 'golden_rule');
+  const logic = findSlide(slides, 'logic_flow');
+  const concept = findSlide(slides, 'concept_map');
+
+  const goldenRows = goldenRuleRowTexts(golden);
+  const logicSteps = logicFlowStepTexts(logic);
+  const conceptItems = conceptMapItemTexts(concept);
+
+  if (goldenRows.length >= LAYER_REDUNDANCY_MIN_BLOCKS && logicSteps.length > 0) {
+    const matched = countRedundantBlocks(goldenRows, logicSteps, LAYER_REDUNDANCY_SHINGLE);
+    const ratio = matched / goldenRows.length;
+    if (matched >= LAYER_REDUNDANCY_MIN_BLOCKS && ratio >= LAYER_REDUNDANCY_MIN_RATIO) {
+      issues.push(
+        layerRedundancyIssue(
+          'slide_layer_redundancy_golden_logic',
+          'reverse_study_slides.golden_rule',
+          'golden_rule × logic_flow',
+          matched,
+          goldenRows.length,
+        ),
+      );
+    }
+  }
+
+  if (goldenRows.length >= LAYER_REDUNDANCY_MIN_BLOCKS && conceptItems.length >= LAYER_REDUNDANCY_MIN_BLOCKS) {
+    const matched = countRedundantBlocks(goldenRows, conceptItems, LAYER_REDUNDANCY_SHINGLE);
+    const ratio = matched / goldenRows.length;
+    if (matched >= LAYER_REDUNDANCY_MIN_BLOCKS && ratio >= LAYER_REDUNDANCY_MIN_RATIO) {
+      issues.push(
+        layerRedundancyIssue(
+          'slide_layer_redundancy_concept_golden',
+          'reverse_study_slides.concept_map',
+          'concept_map × golden_rule',
+          matched,
+          goldenRows.length,
+        ),
+      );
+    }
+  }
+
+  return issues;
+}
+
+/** golden_rule v2: row de gabarito/spoiler antecipa logic_flow. */
+export function lintGoldenRuleGabaritoSpoiler(slides: SlideLike[]): GoldenContentLintIssue[] {
+  const golden = findSlide(slides, 'golden_rule');
+  if (!golden || !Array.isArray(golden.rows)) return [];
+  const rows = golden.rows as Record<string, unknown>[];
+  const spoiler = rows.some((r) => GABARITO_LABEL_RE.test(String(r.label ?? '')));
+  if (!spoiler) return [];
+  return [
+    {
+      code: 'golden_rule_gabarito_spoiler',
+      message:
+        'golden_rule contém row de gabarito/combinação — em v2 o gabarito fica só no logic_flow (playbook §2.1).',
+      path: 'reverse_study_slides.golden_rule.rows',
+    },
+  ];
+}
+
 /** Extrai letra (A–E) de um texto: "letra X", ou letra isolada. */
 function letterFromValue(text: string): string | null {
   const byLetra = text.match(/\bletra\s+([a-e])\b/i);
@@ -530,6 +657,14 @@ function lintSlidePackage(slides: SlideLike[], q: QuestaoLike, family?: GoldenFa
   }
 
   return issues;
+}
+
+/**
+ * Lint pedagógico v2 (warn no readiness): redundância entre camadas e gabarito no golden_rule.
+ * Separado de lintGoldenContent para não quebrar goldens legados até repair em massa.
+ */
+export function lintGoldenV2Pedagogy(slides: SlideLike[]): GoldenContentLintIssue[] {
+  return [...lintSlideLayerRedundancy(slides), ...lintGoldenRuleGabaritoSpoiler(slides)];
 }
 
 /**

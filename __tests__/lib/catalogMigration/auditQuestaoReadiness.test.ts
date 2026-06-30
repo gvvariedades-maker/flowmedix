@@ -83,4 +83,61 @@ describe('auditQuestaoReadiness', () => {
     expect(result.tier_pass.A2).toBe(false);
     expect(result.checks.some((c) => c.code === 'l2_stub')).toBe(true);
   });
+
+  it('strictV2Pedagogy promove golden_rule_gabarito_spoiler a error', () => {
+    const base = {
+      meta: {
+        subtopico: 'Imunização',
+        banca: 'X',
+        topico: 'Enfermagem',
+        content_standard: 'golden-v1',
+        family: 'vf' as const,
+        content_review: { reviewed_at: '2026-01-01', guideline_snapshot: 'PNI' },
+        sources: [{ id: 's1', tier: 'A' as const, issuer: 'MS', title: 'PNI', year: 2025 }],
+      },
+      question_data: {
+        instruction: 'I - Vacina X II - Intervalo Y III - Esquema Z\nÉ CORRETO o que se afirma em:',
+        options: [
+          { id: 'A', text: 'I', is_correct: false },
+          { id: 'B', text: 'II e III', is_correct: true },
+          { id: 'C', text: 'I e II', is_correct: false },
+        ],
+      },
+      reverse_study_slides: [
+        {
+          type: 'concept_map',
+          items: [
+            { label: 'I', detail: 'Vacina X no esquema PNI', icon: 'Syringe' },
+            { label: 'II', detail: 'Intervalo mínimo entre doses', icon: 'Clock' },
+            { label: 'III', detail: 'Esquema completo primovacinação', icon: 'ListChecks' },
+          ],
+        },
+        {
+          type: 'logic_flow',
+          reveal_mode: 'tap',
+          steps: ['Julgar I', 'Julgar II', 'Julgar III', 'Marcar B'],
+        },
+        {
+          type: 'golden_rule',
+          content: 'PNI',
+          rows: [{ label: 'Gabarito', value: 'Letra B — II e III' }],
+        },
+        {
+          type: 'danger_zone',
+          content: 'z',
+          items: [{ label: 'A', detail: 'b', correct: 'Gabarito letra B — II e III corretos' }],
+        },
+      ],
+    };
+
+    const warnOnly = auditQuestaoReadiness(base as never, { strictV2Pedagogy: false });
+    const strictV2 = auditQuestaoReadiness(base as never, { strictV2Pedagogy: true });
+
+    const spoilerWarn = warnOnly.checks.find((c) => c.code === 'golden_rule_gabarito_spoiler');
+    expect(spoilerWarn?.severity).toBe('warn');
+
+    const spoilerErr = strictV2.checks.find((c) => c.code === 'golden_rule_gabarito_spoiler');
+    expect(spoilerErr?.severity).toBe('error');
+    expect(strictV2.ready_100).toBe(false);
+  });
 });

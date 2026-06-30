@@ -55,28 +55,17 @@
           "icon": "ListChecks"
         },
         {
-          "label": "COMBINAÇÃO — gabarito",
-          "detail": "Conjunto verdadeiro → letra B.",
-          "icon": "CheckCircle"
+          "label": "NÚCLEO II — julgamento",
+          "detail": "VERDADEIRO ou FALSO + motivo curto.",
+          "icon": "ListChecks"
         },
         {
           "label": "PEGADINHA-ÂNCORA",
-          "detail": "O erro que a banca induz nesta questão.",
+          "detail": "O erro que a banca induz nesta questão (sem revelar letra).",
           "icon": "AlertTriangle"
         }
       ],
       "footer_rule": "Mnemônico desta questão (≤500 chars)"
-    },
-    {
-      "type": "golden_rule",
-      "slide_title": "Referência — decorar para a prova",
-      "meta": { "topico": "Enfermagem", "subtopico": "SUBTÓPICO CANÔNICO — CLAUDE.md §9" },
-      "content": "TÍTULO DA REGRA EM CAIXA ALTA",
-      "rows": [
-        { "label": "Critério 1", "value": "Valor oficial", "badge": "ok" },
-        { "label": "Combinação — gabarito", "value": "II e III → letra B", "emphasis": "success", "badge": "hot" }
-      ],
-      "footer_rule": "Decore: critério 1 · critério 2 · gabarito"
     },
     {
       "type": "logic_flow",
@@ -93,6 +82,17 @@
         "Fixação: regra reproduzível para questões similares deste tema."
       ],
       "footer_rule": "Roteiro: I → II → III → conjunto → letra"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — decorar para a prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "SUBTÓPICO CANÔNICO — CLAUDE.md §9" },
+      "content": "TÍTULO DA REGRA EM CAIXA ALTA",
+      "rows": [
+        { "label": "Critério 1", "value": "Valor oficial", "badge": "ok" },
+        { "label": "Critério 2", "value": "Valor oficial ou pegadinha normativa", "badge": "warn" }
+      ],
+      "footer_rule": "Decore: critério 1 · critério 2 (gabarito só no logic_flow)"
     },
     {
       "type": "danger_zone",

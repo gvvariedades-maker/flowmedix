@@ -22,14 +22,19 @@ export type PreflightReport = {
   lote: string;
   generated_at: string;
   strict: boolean;
+  strict_v2_pedagogy: boolean;
   total: number;
   passed: number;
   failed: number;
   slugs: PreflightSlugResult[];
 };
 
-export function runLotePreflight(lote: string, options?: { strict?: boolean }): PreflightReport {
+export function runLotePreflight(
+  lote: string,
+  options?: { strict?: boolean; strictV2Pedagogy?: boolean },
+): PreflightReport {
   const strict = options?.strict !== false;
+  const strictV2Pedagogy = options?.strictV2Pedagogy === true;
   const questionsDir = loteQuestionsDir(lote);
   if (!existsSync(questionsDir)) {
     throw new Error(`Lote não encontrado: ${questionsDir}`);
@@ -68,7 +73,7 @@ export function runLotePreflight(lote: string, options?: { strict?: boolean }): 
       if (strict) issues.push(`${issue.code}: ${issue.message}`);
     }
 
-    const readiness = auditQuestaoReadiness(raw as never, { slug, strict });
+    const readiness = auditQuestaoReadiness(raw as never, { slug, strict, strictV2Pedagogy });
     const readinessOk = readiness.ready_100;
     if (!readinessOk) {
       for (const c of readiness.checks.filter((x) => x.severity === 'error')) {
@@ -91,6 +96,7 @@ export function runLotePreflight(lote: string, options?: { strict?: boolean }): 
     lote,
     generated_at: new Date().toISOString(),
     strict,
+    strict_v2_pedagogy: strictV2Pedagogy,
     total: slugs.length,
     passed,
     failed: slugs.length - passed,

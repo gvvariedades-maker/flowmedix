@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-06-30T15:34:42.593Z",
-  "subtopicos_ready": 1,
-  "subtopicos_pass": 1,
+  "generated_at": "2026-06-30T17:21:33.018Z",
+  "subtopicos_ready": 2,
+  "subtopicos_pass": 2,
   "subtopicos_fail": 0,
   "items": [
     {
@@ -24,6 +24,29 @@
       "dod_pass": true,
       "dod_notes": [
         "Piloto humano sugerido: revisar 2 slug(s) no player (≥5%)"
+      ]
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "registry_status": "applied",
+      "total_slugs": 59,
+      "handcraft_applied": 59,
+      "manifest_slugs": 59,
+      "supabase_found": 59,
+      "golden_v1": 59,
+      "four_slides": 59,
+      "premium_gate_ok": 59,
+      "local_json_count": 216,
+      "slug_issues": [],
+      "pilot_sample": [
+        "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+        "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2"
+      ],
+      "pilot_min": 3,
+      "dod_pass": true,
+      "dod_notes": [
+        "Piloto humano sugerido: revisar 3 slug(s) no player (≥5%)"
       ]
     }
   ]

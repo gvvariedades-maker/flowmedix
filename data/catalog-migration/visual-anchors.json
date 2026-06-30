@@ -128,6 +128,36 @@
       "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
       "lote": "infeccoes-biosseguranca-g02",
       "json_path": "data/catalog-migration/infeccoes-biosseguranca-g02/questions/idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4.json"
+    },
+    "sp_identificacao": {
+      "pedagogical_branch": "sp_identificacao",
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-5",
+      "lote": "seguranca-do-paciente-g01",
+      "json_path": "data/catalog-migration/seguranca-do-paciente-g01/questions/idecan-enfermagem-seguranca-do-paciente-1778712220716-5.json"
+    },
+    "sp_prevencao_quedas": {
+      "pedagogical_branch": "sp_prevencao_quedas",
+      "slug": "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7",
+      "lote": "seguranca-do-paciente-g02",
+      "json_path": "data/catalog-migration/seguranca-do-paciente-g02/questions/vunesp-enfermagem-seguranca-do-paciente-1777102821787-7.json"
+    },
+    "sp_eventos_adversos": {
+      "pedagogical_branch": "sp_eventos_adversos",
+      "slug": "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+      "lote": "seguranca-do-paciente-g03",
+      "json_path": "data/catalog-migration/seguranca-do-paciente-g03/questions/fcm-enfermagem-seguranca-do-paciente-1779563443877-3.json"
+    },
+    "sp_metas_internacionais": {
+      "pedagogical_branch": "sp_metas_internacionais",
+      "slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+      "lote": "seguranca-do-paciente-g04",
+      "json_path": "data/catalog-migration/seguranca-do-paciente-g04/questions/instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2.json"
+    },
+    "sp_generico": {
+      "pedagogical_branch": "sp_generico",
+      "slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6",
+      "lote": "seguranca-do-paciente-g04",
+      "json_path": "data/catalog-migration/seguranca-do-paciente-g04/questions/faurgs-enfermagem-seguranca-do-paciente-1779563436357-6.json"
     }
   }
 }

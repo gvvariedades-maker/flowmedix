@@ -406,7 +406,7 @@ Quando quiser forçar um design diferente do automático:
 
 - [ ] `meta.subtopico` preenchido com nome exato da tabela da Seção 6
 - [ ] Cada questão tem exatamente **4 slides** em `reverse_study_slides`
-- [ ] Um slide de cada tipo: `concept_map`, `golden_rule`, `logic_flow`, `danger_zone`
+- [ ] Um slide de cada tipo na ordem canônica: `concept_map`, `logic_flow`, `golden_rule`, `danger_zone`
 - [ ] `steps` do `logic_flow` é array de strings (não objetos)
 - [ ] `danger_zone` tem `content`, `items` (com `label`, `detail`, **`correct`**) e `footer_rule`
 - [ ] `concept_map` tem `items` com `label`, `detail` e `icon` (ícone Lucide válido)
@@ -496,6 +496,6 @@ No **estudo reverso**, `NeuroSlide` envolve cada slide com `ReverseStudyShell` (
 | `syllable_scanner` | SCANNER SILÁBICO |
 | `versus_arena` | ARENA VERSUS |
 
-**Arcos narrativos padrão:** concept_map → Panorama do tema · golden_rule → Regra que a banca cobra · logic_flow → Raciocínio passo a passo · danger_zone → Evite as pegadinhas.
+**Arcos narrativos padrão (ordem v2):** concept_map → Panorama do tema · logic_flow → Raciocínio passo a passo · golden_rule → Regra que a banca cobra · danger_zone → Evite as pegadinhas.
 
 Previews isolados (`standalone` em `NeuroSlide`) usam shell sem badge de banca (slide 1 de 1).

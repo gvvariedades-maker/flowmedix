@@ -1,0 +1,39 @@
+{
+  "lote": "seguranca-do-paciente-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-30",
+  "subtopico": "Segurança do Paciente",
+  "cluster": "Eventos adversos e incidentes",
+  "cluster_pct": 15.3,
+  "total": 9,
+  "status": "applied",
+  "anchor_slug": "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+  "golden_reference": "examples/questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
+  "guideline": "OMS/MS — taxonomia incidente, evento adverso, quase-erro, risco (Portaria 529/2013)",
+  "slugs": [
+    "com-exam-pref-bauru-enfermagem-seguranca-do-paciente-1777102918981-5",
+    "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-8",
+    "fcm-enfermagem-seguranca-do-paciente-1779563443877-3",
+    "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+    "furb-enfermagem-seguranca-do-paciente-1777102918981-7",
+    "idcap-enfermagem-seguranca-do-paciente-1777102742836-0",
+    "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102678563-1",
+    "omni-enfermagem-seguranca-do-paciente-1779563467322-2",
+    "univali-enfermagem-seguranca-do-paciente-1777102821787-4"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=seguranca-do-paciente-g03 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-seguranca-do-paciente-g03.ts",
+    "2. npm run validate:goldens -- --lote=seguranca-do-paciente-g03 --strict",
+    "3. npm run audit:questao-readiness -- --lote=seguranca-do-paciente-g03"
+  ],
+  "next_lote": "seguranca-do-paciente-g04 — cauda longa + drift residual (32 slugs — FINAL)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-06-30",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/seguranca-do-paciente-g03.json"
+  }
+}

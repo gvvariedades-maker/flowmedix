@@ -9,7 +9,9 @@ import {
   lintClaimSourceBinding,
   lintGabaritoConsistency,
   lintGoldenContent,
+  lintGoldenRuleGabaritoSpoiler,
   lintLogicFlowRecycling,
+  lintSlideLayerRedundancy,
 } from '@/lib/goldenContentStandard';
 import { FAMILY_GOLDEN_FILE } from '@/lib/catalogMigration/classifyFamily';
 import { GUIDELINE_TABLES } from '@/lib/guidelines';
@@ -138,6 +140,61 @@ describe('golden-content-standard v1', () => {
         },
       ];
       expect(lintGabaritoConsistency(slides, q)).toEqual([]);
+    });
+  });
+
+  describe('redundância entre camadas (v2)', () => {
+    it('reprova golden_rule que copia logic_flow', () => {
+      const notificacao =
+        'violência sexual é agravo de notificação compulsória imediata suspeita ou confirmação';
+      const local =
+        'residência das crianças e dos adolescentes é o principal espaço da violência sexual';
+      const slides = [
+        {
+          type: 'logic_flow',
+          steps: [`A nega que ${notificacao}`, `C confirma que ${local}`, 'Marcar letra C'],
+        },
+        {
+          type: 'golden_rule',
+          rows: [
+            { label: 'NOTIFICAÇÃO', value: notificacao },
+            { label: 'LOCAL', value: local },
+          ],
+        },
+      ];
+      expect(lintSlideLayerRedundancy(slides).map((i) => i.code)).toContain(
+        'slide_layer_redundancy_golden_logic',
+      );
+    });
+
+    it('aceita camadas complementares (decore vs estratégia)', () => {
+      const slides = [
+        {
+          type: 'concept_map',
+          items: [{ label: 'Notificação', detail: 'Compulsória na suspeita' }],
+        },
+        {
+          type: 'logic_flow',
+          steps: ['Comando: afirmativa correta', 'Eliminar A: nega notificação', 'Marcar C'],
+        },
+        {
+          type: 'golden_rule',
+          rows: [{ label: 'Sinan', value: 'Notificação imediata — MS' }],
+        },
+      ];
+      expect(lintSlideLayerRedundancy(slides)).toEqual([]);
+    });
+
+    it('detecta row de gabarito no golden_rule (v2)', () => {
+      const slides = [
+        {
+          type: 'golden_rule',
+          rows: [{ label: 'Gabarito', value: 'Letra C' }],
+        },
+      ];
+      expect(lintGoldenRuleGabaritoSpoiler(slides).map((i) => i.code)).toContain(
+        'golden_rule_gabarito_spoiler',
+      );
     });
   });
 

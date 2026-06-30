@@ -72,4 +72,41 @@ describe('l3MoldGapCatalog', () => {
     expect(r.branch_id).toBe('sp_eventos_adversos');
     expect(r.decision).toBe('ok_generico');
   });
+
+  it('Perioperatória pré-op com volume → ok_generico (não molde_inedito)', () => {
+    const r = resolveClusterIdeal(
+      'Assistência Perioperatória (Inclui SRPA)',
+      'Pré-operatório / preparo',
+      21,
+      30.9,
+      'bridge · minimal',
+    );
+    expect(r.branch_id).toBe('perioperatorio_pre_operatorio');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('ok_generico');
+  });
+
+  it('Perioperatória pós-op/SRPA → ok_generico', () => {
+    const r = resolveClusterIdeal(
+      'Assistência Perioperatória (Inclui SRPA)',
+      'Pós-operatório / cuidados',
+      14,
+      20.6,
+      'bridge · minimal',
+    );
+    expect(r.branch_id).toBe('perioperatorio_pos_operatorio');
+    expect(r.decision).toBe('ok_generico');
+  });
+
+  it('Perioperatória protocolo → ok_generico', () => {
+    const r = resolveClusterIdeal(
+      'Assistência Perioperatória (Inclui SRPA)',
+      'Protocolo / sequência',
+      13,
+      19.1,
+      'bridge · minimal',
+    );
+    expect(r.branch_id).toBe('perioperatorio_protocolo');
+    expect(r.decision).toBe('ok_generico');
+  });
 });

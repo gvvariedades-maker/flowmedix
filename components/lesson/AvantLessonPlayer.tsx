@@ -48,6 +48,10 @@ import {
   REVERSE_STUDY_MICROTIPS,
 } from '@/components/onboarding/reverseStudyMicrotips';
 import { logger } from '@/lib/logger';
+import {
+  getReverseStudySlideOrderProfile,
+  sortReverseStudySlides,
+} from '@/lib/reverseStudySlideOrder';
 import { sanitizeHTML } from '@/lib/validations';
 import {
   buildDerivedQuestionHeaderLine,
@@ -1109,13 +1113,16 @@ export default function AvantLessonPlayer({
   });
 
   const hasRealSlides = lessonDataHasSlides(activeDados);
-  const slidesArray = (
+  const reverseStudySlideOrderProfile = getReverseStudySlideOrderProfile();
+  const rawSlidesArray =
     hasRealSlides
       ? (slidesSource ?? [])
       : slidesUsingFallback || (mode === 'preview' && !hasRealSlides)
         ? [fallbackSlide]
-        : []
-  ).map(normalizeSlide);
+        : [];
+  const slidesArray = sortReverseStudySlides(rawSlidesArray, reverseStudySlideOrderProfile).map(
+    normalizeSlide,
+  );
   const showSlidesLoading =
     etapa === 'estudo' && mode === 'live' && !hasRealSlides && slidesLoading;
   const showSlidesLoadError =

@@ -12,6 +12,7 @@
  *
  * Flags:
  *   --no-strict   golden lint / gabarito / drift como warn (não error)
+ *   --strict-v2-pedagogy   redundância/spoiler v2 vira error (handcraft professor)
  *   --json        só imprime relatório JSON em artifacts/
  */
 import { loadEnvConfig } from '@next/env';
@@ -134,6 +135,7 @@ async function loadSupabaseTargets(): Promise<{ slug: string; payload: unknown }
 
 function main(): void {
   const strict = !hasFlag('no-strict');
+  const strictV2Pedagogy = hasFlag('strict-v2-pedagogy');
   const jsonOnly = hasFlag('json');
   const fromSupabase = hasFlag('from-supabase');
 
@@ -147,7 +149,7 @@ function main(): void {
     }
 
     const results: AuditQuestaoReadinessResult[] = targets.map(({ slug, payload }) =>
-      auditQuestaoReadiness(payload as never, { slug, strict }),
+      auditQuestaoReadiness(payload as never, { slug, strict, strictV2Pedagogy }),
     );
 
     const subtopico =
@@ -166,7 +168,7 @@ function main(): void {
     const outPath = resolve(artifactsDir, 'questao-readiness-audit.json');
     writeFileSync(
       outPath,
-      JSON.stringify({ strict, scanned: results.length, summary, results }, null, 2),
+      JSON.stringify({ strict, strict_v2_pedagogy: strictV2Pedagogy, scanned: results.length, summary, results }, null, 2),
       'utf8',
     );
 

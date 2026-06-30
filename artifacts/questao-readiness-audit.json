@@ -1,15 +1,15 @@
 {
   "strict": true,
-  "scanned": 5,
+  "scanned": 2,
   "summary": {
-    "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
-    "scanned": 5,
-    "ready_100": 5,
+    "subtopico": "Infecções no Contexto da Biossegurança",
+    "scanned": 2,
+    "ready_100": 2,
     "pct_ready": 100,
     "registry": {
       "status": "applied",
-      "total_slugs": 37,
-      "handcraft_applied": 37,
+      "total_slugs": 25,
+      "handcraft_applied": 25,
       "complete": true
     },
     "tier_failures": {
@@ -21,8 +21,8 @@
   },
   "results": [
     {
-      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
-      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "slug": "idib-enfermagem-instalacao-e-manejo-de-sondas-1778934890864-0",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -38,42 +38,6 @@
           "code": "l1_schema",
           "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
           "severity": "info"
-        },
-        {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "certo_errado",
-      "pedagogical_branch": "bacterianas_generico",
-      "inferred_branch": "bacterianas_generico"
-    },
-    {
-      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
-      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
-        {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
-          "severity": "warn"
         },
         {
           "tier": "A4",
@@ -83,12 +47,12 @@
         }
       ],
       "family": "conceito",
-      "pedagogical_branch": "bacterianas_agente_etiologico",
-      "inferred_branch": "bacterianas_agente_etiologico"
+      "pedagogical_branch": "biosseg_iras_itu_cateter",
+      "inferred_branch": "biosseg_iras_itu_cateter"
     },
     {
-      "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
-      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "slug": "idib-geral-instalacao-e-manejo-de-sondas-1776056668359-0",
+      "subtopico": "Infecções no Contexto da Biossegurança",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -104,48 +68,6 @@
           "code": "l1_schema",
           "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
           "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
-          "severity": "warn"
-        },
-        {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "certo_errado",
-      "pedagogical_branch": "bacterianas_generico",
-      "inferred_branch": "bacterianas_generico"
-    },
-    {
-      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
-      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
-        {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
-          "severity": "warn"
         },
         {
           "tier": "A4",
@@ -155,44 +77,8 @@
         }
       ],
       "family": "conceito",
-      "pedagogical_branch": "bacterianas_generico",
-      "inferred_branch": "bacterianas_generico"
-    },
-    {
-      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
-      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
-        {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
-          "severity": "warn"
-        },
-        {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "protocolo",
-      "pedagogical_branch": "bacterianas_generico",
-      "inferred_branch": "bacterianas_generico"
+      "pedagogical_branch": "biosseg_iras_itu_cateter",
+      "inferred_branch": "biosseg_iras_itu_cateter"
     }
   ]
 }

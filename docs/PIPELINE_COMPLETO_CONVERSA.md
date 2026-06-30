@@ -6,6 +6,8 @@ Use em **conversa nova** (Agent mode) para fechar **um subtópico** de ponta a p
 Pipeline completo: Enfermagem em Central de Material e Esterilização (CME)
 ```
 
+**Programa 41 subtópicos:** [`PROGRAMA_CATALOGO_41.md`](PROGRAMA_CATALOGO_41.md) · `npm run catalog:program-status` · `npm run pipeline:brief -- --subtopico="..."`
+
 ou anexe este arquivo (`@docs/PIPELINE_COMPLETO_CONVERSA.md`) após editar **só** a linha:
 
 ```text
@@ -56,6 +58,30 @@ Resolver pacote em [`handcraft-registry.json`](../data/catalog-migration/handcra
 | [`QUALITY_LAYERS_MODEL.md`](QUALITY_LAYERS_MODEL.md) | 2 |
 | [`ANCHOR_SECOND_REVIEW_PROMPT.md`](ANCHOR_SECOND_REVIEW_PROMPT.md) | 2 (L6) |
 | Skill `.cursor/skills/avant-json-template/SKILL.md` § L2.5+L3 | 1 |
+| [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) §2 (ordem v2 + contrato) | 1 |
+
+### Ordem dos NeuroSlides (v2 — padrão desde 2026-06)
+
+O pipeline **não muda de fases**; muda o **contrato de handcraft** e a **experiência no player**.
+
+| Ordem | `type` | Papel |
+|------:|--------|--------|
+| 1 | `concept_map` | Enquadramento — **sem** gabarito/letra |
+| 2 | `logic_flow` | Elaboração — eliminação A–E + gabarito (`reveal_mode: "tap"`) |
+| 3 | `golden_rule` | Síntese — decore/norma — **sem** row “Gabarito letra X” |
+| 4 | `danger_zone` | Pegadinhas + transferência |
+
+**Implementação:** [`lib/reverseStudySlideOrder.ts`](../lib/reverseStudySlideOrder.ts) · player reordena por `type` (padrão v2) · `normalizeQuestaoSlideArrays` grava JSON na ordem canônica ao validar.
+
+| Situação | O que fazer no pipeline |
+|----------|-------------------------|
+| **Handcraft novo** (Fase 1) | Array `reverse_study_slides` na ordem v2 + contrato §2.1 do playbook; template [`examples/_TEMPLATE-golden-v1.json`](../examples/_TEMPLATE-golden-v1.json) |
+| **Pacote já `applied`** | **Não** exige re-handcraft só por ordem — player e normalizer corrigem em runtime/save |
+| **Conteúdo legado** (gabarito no `golden_rule`) | Não bloqueia `[READY]` hoje; repair opcional para alinhar pedagogy v2 |
+| **Fase 2 — piloto / anchor** | Revisor valida sequência **mapa → raciocínio → decore → pegadinhas** no player |
+| **Fase 2 — `visual-mold-regression`** | `/dev/slide-mold-review` usa ordem do **arquivo JSON**; atualizar âncoras/baseline se slides 2↔3 divergirem |
+
+Rollback temporário no ambiente: `NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER=legacy`.
 
 ---
 
@@ -187,7 +213,9 @@ Anexos: @docs/PIPELINE_COMPLETO_CONVERSA.md @data/catalog-migration/handcraft-re
 
 FASE 1 — Handcraft (pular se já applied 100%):
 - handcraft:brief + playbook
-- JSON golden-v1 por slug → audit:questao-readiness [READY]
+- JSON golden-v1 por slug (ordem v2: concept_map → logic_flow → golden_rule → danger_zone)
+- concept_map sem gabarito; logic_flow com eliminação + letra; golden_rule sem row de gabarito
+- audit:questao-readiness [READY]
 - validate:goldens --strict por lote
 - catalog:apply-lote --apply SOMENTE se eu escrever "pode aplicar"
 - GATE: handcraft_applied === total_slugs
@@ -213,4 +241,5 @@ Proibido: ai:generate, upgrade-premium, segundo --promote rotineiro pós-venda.
 | Só handcraft | `Handcraft: <subtópico>` — [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) |
 | Só qualidade | `Qualidade vendável: <subtópico>` — [`QUALITY_VENDAVEL_CONVERSA.md`](QUALITY_VENDAVEL_CONVERSA.md) |
 | Mapeamento L3 (antes de moldes) | `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) |
+| Ordem slides v2 | [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) §2 · [`lib/reverseStudySlideOrder.ts`](../lib/reverseStudySlideOrder.ts) |
 | Rule Cursor | `.cursor/rules/pipeline-completo.mdc` |

@@ -72,6 +72,11 @@ const EnvSchema = z.object({
    */
   SENTRY_DSN: z.string().min(1).optional(),
   NEXT_PUBLIC_SENTRY_DSN: z.string().min(1).optional(),
+  /**
+   * Ordem dos NeuroSlides: omitido ou `v2` (padrão) = concept_map → logic_flow → golden_rule → danger_zone;
+   * `legacy` = concept_map → golden_rule → logic_flow → danger_zone (catálogo antigo).
+   */
+  NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER: z.enum(['legacy', 'v2']).optional(),
   /** Token usado só em CI para upload de source maps (withSentryConfig). */
   SENTRY_AUTH_TOKEN: z.string().min(1).optional(),
   SENTRY_ORG: z.string().min(1).optional(),
@@ -143,6 +148,7 @@ const ENV_KEYS = [
   'NEXT_PUBLIC_WHATSAPP_NUMBER',
   'SENTRY_DSN',
   'NEXT_PUBLIC_SENTRY_DSN',
+  'NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER',
   'SENTRY_AUTH_TOKEN',
   'SENTRY_ORG',
   'SENTRY_PROJECT',

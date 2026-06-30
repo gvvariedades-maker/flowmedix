@@ -65,7 +65,14 @@ export type PedagogicalBranchId =
   | 'sp_prevencao_quedas'
   | 'sp_eventos_adversos'
   | 'sp_metas_internacionais'
-  | 'sp_generico';
+  | 'sp_generico'
+  // Assistência Perioperatória (Inclui SRPA)
+  | 'perioperatorio_pre_operatorio'
+  | 'perioperatorio_pos_operatorio'
+  | 'perioperatorio_protocolo'
+  | 'perioperatorio_vf'
+  | 'perioperatorio_isc'
+  | 'perioperatorio_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -323,6 +330,15 @@ const SP_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Perioperatória / SRPA — pacote genérico premium (sem molde React bespoke). */
+export const PERIOPERATORIO_GENERIC_MOLD: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -497,6 +513,38 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     sp_eventos_adversos: SP_REFERENCE_MOLD,
     sp_metas_internacionais: SP_REFERENCE_MOLD,
     sp_generico: SP_GENERIC_MOLD,
+  },
+  'assistencia perioperatoria (inclui srpa)': {
+    perioperatorio_pre_operatorio: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_pos_operatorio: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_protocolo: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_vf: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
+  },
+  'assistencia perioperatoria': {
+    perioperatorio_pre_operatorio: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_pos_operatorio: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_protocolo: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_vf: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
+  },
+  perioperatorio: {
+    perioperatorio_pre_operatorio: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_pos_operatorio: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_protocolo: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_vf: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
+  },
+  srpa: {
+    perioperatorio_pre_operatorio: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_pos_operatorio: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_protocolo: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_vf: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
   },
 };
 
@@ -685,6 +733,24 @@ const SP_METAS: RegExp[] = [
   /higienizar as m[aã]os.*identificar|cirurgia segura.*medicamento/i,
 ];
 
+const PERI_ISC: RegExp[] = [
+  /infec[cç][aã]o.*s[ií]tio|infeccao.*sitio|\bisc\b|deisc[eê]ncia|ferida operat[oó]ria/i,
+];
+
+const PERI_PROTOCOLO: RegExp[] = [
+  /cirurgia segura|checklist|time\s*out|timeout|\boms\b.*cirurg|cdc.*ferida|classifica[cç][aã]o.*ferida/i,
+];
+
+const PERI_PRE: RegExp[] = [
+  /\bpr[eé][\s-]operat|preparo.*cir[uú]rg|tricotomia|jejum/i,
+];
+
+const PERI_POS: RegExp[] = [
+  /\bsrpa\b|recupera[cç][aã]o p[oó]s-anest|p[oó]s[\s-]?operat|aldrete|kroulik/i,
+];
+
+const PERI_SRPA_CPD: RegExp[] = [/cateter peridural|\bcpd\b|curativo.*peridural/i];
+
 function branchMapKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
   const matches = Object.keys(BRANCH_DESIGN_MAP).filter(
@@ -852,6 +918,38 @@ function inferSegurancaPacienteBranch(corpus: string, _familyId?: FamilyId): Ped
   return 'sp_generico';
 }
 
+function inferPerioperatorioBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  if (countPatternMatches(corpus, PERI_ISC) > 0) {
+    return 'perioperatorio_isc';
+  }
+
+  if (/\bsrpa\b/i.test(corpus) && countPatternMatches(corpus, PERI_SRPA_CPD) > 0) {
+    return 'perioperatorio_pos_operatorio';
+  }
+
+  if (
+    familyId === 'vf' ||
+    (familyId === 'certo_errado' && !/\bsrpa\b/i.test(corpus)) ||
+    (/julgue o item/i.test(corpus) && familyId === 'certo_errado')
+  ) {
+    return 'perioperatorio_vf';
+  }
+
+  if (familyId === 'protocolo' || countPatternMatches(corpus, PERI_PROTOCOLO) > 0) {
+    return 'perioperatorio_protocolo';
+  }
+
+  if (countPatternMatches(corpus, PERI_PRE) > 0) {
+    return 'perioperatorio_pre_operatorio';
+  }
+
+  if (countPatternMatches(corpus, PERI_POS) > 0) {
+    return 'perioperatorio_pos_operatorio';
+  }
+
+  return 'perioperatorio_generico';
+}
+
 function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   const isVf =
     familyId === 'vf' ||
@@ -934,6 +1032,13 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('seguranca do paciente')) {
     return inferSegurancaPacienteBranch(corpus, familyId);
+  }
+  if (
+    mapKey.includes('perioperator') ||
+    mapKey.includes('srpa') ||
+    mapKey.includes('assistencia perioperatoria')
+  ) {
+    return inferPerioperatorioBranch(corpus, familyId);
   }
   return undefined;
 }

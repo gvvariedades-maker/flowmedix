@@ -20,6 +20,7 @@ export type HandcraftRegistryPackage = {
   handcraft_applied?: number;
   anchor_glob?: string;
   guideline?: string | null;
+  production_status?: string;
 };
 
 export type PedagogicalBranchPlaybook = {
@@ -87,16 +88,19 @@ export function parseHandcraftTrigger(message: string): {
 export function loadHandcraftRegistry(): {
   pacotes: Record<string, HandcraftRegistryPackage>;
   subtopicos_canonicos: string[];
+  legacy_builder_subtopicos?: string[];
   fallback_novo_pacote?: unknown;
 } {
   const raw = JSON.parse(readFileSync(REGISTRY_PATH, 'utf8')) as {
     pacotes?: Record<string, HandcraftRegistryPackage>;
     subtopicos_canonicos?: string[];
+    legacy_builder_subtopicos?: string[];
     fallback_novo_pacote?: unknown;
   };
   return {
     pacotes: raw.pacotes ?? {},
     subtopicos_canonicos: raw.subtopicos_canonicos ?? [],
+    legacy_builder_subtopicos: raw.legacy_builder_subtopicos ?? [],
     fallback_novo_pacote: raw.fallback_novo_pacote,
   };
 }

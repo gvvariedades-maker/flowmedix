@@ -46,13 +46,18 @@ async function gotoBranch(page: Page, branch: string): Promise<void> {
     timeout: 120_000,
   });
   await expect(page.getByTestId('slide-mold-review-root')).toBeVisible({ timeout: 60_000 });
+  // AvantLessonPlayer é dynamic(ssr:false) — aguardar hidratação antes de interagir com mold-slide-*.
+  await expect(page.getByTestId('mold-player').getByTestId('lesson-scroll-body').first()).toBeVisible({
+    timeout: 90_000,
+  });
 }
 
 async function expectSlidePanels(page: Page): Promise<void> {
   for (let i = 1; i <= SLIDE_COUNT; i++) {
-    const panel = page.getByTestId(`mold-slide-${i}`);
-    await panel.scrollIntoViewIfNeeded();
-    await expect(panel).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByTestId(`mold-slide-${i}`)).toBeVisible({ timeout: 30_000 });
+  }
+  for (let i = 1; i <= SLIDE_COUNT; i++) {
+    await page.getByTestId(`mold-slide-${i}`).scrollIntoViewIfNeeded();
   }
 }
 
@@ -82,10 +87,10 @@ test.describe('Visual mold regression — L3 branches', () => {
 
       for (let i = 1; i <= SLIDE_COUNT; i++) {
         const panel = page.getByTestId(`mold-slide-${i}`);
-        await panel.scrollIntoViewIfNeeded();
         await expect(panel).toBeVisible({ timeout: 30_000 });
+        await panel.scrollIntoViewIfNeeded();
         const out = path.join(OUT_DIR, `${branch}-desktop-slide${i}.png`);
-        await page.getByTestId(`mold-slide-${i}`).screenshot({ path: out, type: 'png' });
+        await panel.screenshot({ path: out, type: 'png' });
       }
     });
 
@@ -93,8 +98,8 @@ test.describe('Visual mold regression — L3 branches', () => {
       await page.setViewportSize({ width: 390, height: 844 });
       await gotoBranch(page, branch);
       const player = page.getByTestId('mold-player');
-      await player.scrollIntoViewIfNeeded();
       await expect(player.getByTestId('lesson-scroll-body').first()).toBeVisible({ timeout: 90_000 });
+      await player.scrollIntoViewIfNeeded();
       await player.screenshot({
         path: path.join(OUT_DIR, `${branch}-mobile-player.png`),
         type: 'png',

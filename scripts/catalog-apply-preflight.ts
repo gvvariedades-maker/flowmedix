@@ -26,16 +26,17 @@ function loadAnchorSlug(lote: string): string | undefined {
 function main(): void {
   const lote = requireArg('lote');
   const strict = !hasFlag('no-strict');
+  const strictV2Pedagogy = hasFlag('strict-v2-pedagogy');
   const capture = hasFlag('capture');
 
-  const report = runLotePreflight(lote, { strict });
+  const report = runLotePreflight(lote, { strict, strictV2Pedagogy });
 
   const artifactsDir = resolve(process.cwd(), 'artifacts');
   mkdirSync(artifactsDir, { recursive: true });
   const outPath = resolve(artifactsDir, `catalog-preflight-${lote}.json`);
   writeFileSync(outPath, JSON.stringify(report, null, 2), 'utf8');
 
-  console.log(`[catalog:preflight] lote=${lote} strict=${strict}`);
+  console.log(`[catalog:preflight] lote=${lote} strict=${strict} strict_v2=${strictV2Pedagogy}`);
   console.log(`[catalog:preflight] passed=${report.passed}/${report.total} failed=${report.failed}`);
   for (const s of report.slugs.filter((x) => !x.ok)) {
     console.log(`  FAIL ${s.slug}`);

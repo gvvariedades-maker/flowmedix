@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-29T23:10:31.342Z",
-  "mode": "apply",
-  "scanned": 13,
+  "generated_at": "2026-06-30T17:25:59.263Z",
+  "mode": "dry-run",
+  "scanned": 59,
   "patched": 0,
   "skipped": 0,
-  "subtopico_filter": "doenças respiratórias crônicas (asma, dpoc)",
+  "subtopico_filter": "segurança do paciente",
   "flags": {
-    "only_premium": true,
-    "only_golden_v1": false,
+    "only_premium": false,
+    "only_golden_v1": true,
     "force_family": false,
     "force_branch": false
   }

@@ -27,7 +27,7 @@ npm run build            # validate:env + next build
 | **Nova conversa handcraft** (`Handcraft: <subtópico>`) | [`docs/HANDCRAFT_CONVERSA.md`](docs/HANDCRAFT_CONVERSA.md) |
 | **Qualidade vendável** (L1–L6, modelo híbrido) | [`docs/QUALITY_LAYERS_MODEL.md`](docs/QUALITY_LAYERS_MODEL.md) · ADR [`docs/DECISAO_QUALITY_HIBRIDA.md`](docs/DECISAO_QUALITY_HIBRIDA.md) |
 | **Nova conversa vendável** (`Qualidade vendável: <subtópico>`) | [`docs/QUALITY_VENDAVEL_CONVERSA.md`](docs/QUALITY_VENDAVEL_CONVERSA.md) |
-| **Pipeline completo** (`Pipeline completo: <subtópico>`) | [`docs/PIPELINE_COMPLETO_CONVERSA.md`](docs/PIPELINE_COMPLETO_CONVERSA.md) |
+| **Pipeline completo** (`Pipeline completo: <subtópico>`) | [`docs/PIPELINE_COMPLETO_CONVERSA.md`](docs/PIPELINE_COMPLETO_CONVERSA.md) · [`docs/PROGRAMA_CATALOGO_41.md`](docs/PROGRAMA_CATALOGO_41.md) |
 | **Mapeamento L3** (`Mapeamento L3: <subtópico>`) | [`docs/L3_MAPEAMENTO_CONVERSA.md`](docs/L3_MAPEAMENTO_CONVERSA.md) |
 | Monitoramento contínuo pós-venda | [`docs/CONTINUOUS_QUALITY_RUNBOOK.md`](docs/CONTINUOUS_QUALITY_RUNBOOK.md) |
 | Progresso handcraft | [`data/catalog-migration/handcraft-registry.json`](data/catalog-migration/handcraft-registry.json) |

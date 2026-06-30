@@ -1,0 +1,378 @@
+{
+  "generated_at": "2026-06-30T23:20:42.324Z",
+  "total_canonicos": 41,
+  "counts": {
+    "production_ready": 13,
+    "applied_not_vendavel": 0,
+    "in_progress": 0,
+    "no_package": 28,
+    "legacy_builder": 7
+  },
+  "rows": [
+    {
+      "subtopico": "História da Enfermagem",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "historia-enfermagem",
+      "total_slugs": 20,
+      "handcraft_applied": 20,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Noções de Anatomia",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Noções de Anatomia"
+    },
+    {
+      "subtopico": "Noções de Fisiologia",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Noções de Fisiologia"
+    },
+    {
+      "subtopico": "Processo de Enfermagem",
+      "onda": "A",
+      "legacy_builder": true,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Processo de Enfermagem"
+    },
+    {
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "farmacodinamica-e-farmacocinetica",
+      "total_slugs": 12,
+      "handcraft_applied": 12,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "subtopico": "Vias de Administração",
+      "onda": "A",
+      "legacy_builder": true,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Vias de Administração"
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Cuidados na Administração de Medicamentos"
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "onda": "A",
+      "legacy_builder": true,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Verificação de Sinais Vitais"
+    },
+    {
+      "subtopico": "Instalação e Manejo de Sondas",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Instalação e Manejo de Sondas"
+    },
+    {
+      "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Oxigenoterapia e Cuidados Respiratórios"
+    },
+    {
+      "subtopico": "Curativos e Manejo de Feridas",
+      "onda": "A",
+      "legacy_builder": true,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Curativos e Manejo de Feridas"
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "onda": "A",
+      "legacy_builder": true,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Punção Venosa e Cuidados com Cateteres"
+    },
+    {
+      "subtopico": "Coleta de Exames Laboratoriais",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Coleta de Exames Laboratoriais"
+    },
+    {
+      "subtopico": "Mobilização e Posicionamento do Paciente",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Mobilização e Posicionamento do Paciente"
+    },
+    {
+      "subtopico": "Procedimentos Diversos",
+      "onda": "C",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Procedimentos Diversos"
+    },
+    {
+      "subtopico": "Feridas e Queimaduras",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "feridas-e-queimaduras",
+      "total_slugs": 8,
+      "handcraft_applied": 8,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "processamento",
+      "total_slugs": 18,
+      "handcraft_applied": 18,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "cme",
+      "total_slugs": 35,
+      "handcraft_applied": 35,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Medidas de Prevenção e Precaução de Contato"
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "infeccoes-biosseguranca",
+      "total_slugs": 25,
+      "handcraft_applied": 25,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "seguranca-do-paciente",
+      "total_slugs": 59,
+      "handcraft_applied": 59,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Epidemiologia e Vigilância Epidemiológica"
+    },
+    {
+      "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Promoção à Saúde e Prevenção de Agravos"
+    },
+    {
+      "subtopico": "Imunização",
+      "onda": "A",
+      "legacy_builder": true,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Imunização"
+    },
+    {
+      "subtopico": "Atenção Básica / Saúde da Família",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Atenção Básica / Saúde da Família"
+    },
+    {
+      "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Infecções Sexualmente Transmissíveis (ISTs)"
+    },
+    {
+      "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)"
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "doencas-bacterianas",
+      "total_slugs": 37,
+      "handcraft_applied": 37,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Doenças Parasitárias e Zoonoses",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Doenças Parasitárias e Zoonoses"
+    },
+    {
+      "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+    },
+    {
+      "subtopico": "Questões Mescladas e Outras Doenças Agudas",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Questões Mescladas e Outras Doenças Agudas"
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "respiratorio-cronico",
+      "total_slugs": 10,
+      "handcraft_applied": 10,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "perioperatoria",
+      "total_slugs": 68,
+      "handcraft_applied": 68,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Enfermagem em Centro Cirúrgico",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Enfermagem em Centro Cirúrgico"
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "onda": "A",
+      "legacy_builder": true,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Urgências e Emergências"
+    },
+    {
+      "subtopico": "Enfermagem do Trabalho",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "enfermagem-do-trabalho",
+      "total_slugs": 33,
+      "handcraft_applied": 33,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "saude-mental",
+      "total_slugs": 37,
+      "handcraft_applied": 37,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Saúde da Criança",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Saúde da Criança"
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "onda": "done",
+      "legacy_builder": false,
+      "in_registry": true,
+      "pacote_prefix": "saude-adolescente",
+      "total_slugs": 16,
+      "handcraft_applied": 16,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "onda": "B",
+      "legacy_builder": false,
+      "in_registry": false,
+      "next_trigger": "Fase 0 → Pipeline completo: Saúde da Mulher"
+    }
+  ]
+}

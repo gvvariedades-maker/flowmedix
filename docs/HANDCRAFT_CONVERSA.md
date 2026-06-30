@@ -89,8 +89,9 @@ Usar **`npm run`** no Windows (não `npx tsx`).
 
 - `meta.content_standard: "golden-v1"` + `family` + `content_review` + `sources[]` (`year` numérico)
 - **`meta.pedagogical_branch`** — obrigatório quando o subtópico tem ramos L3 (`BRANCH_DESIGN_MAP`); tabela completa na skill `.cursor/skills/avant-json-template/SKILL.md` § L2.5+L3
-- 4 slides planos; sem `template` / `layout_variant`
-- `logic_flow`: `reveal_mode: "tap"`; V/F → “Julgar I, II, III…”
+- 4 slides planos na **ordem canônica v2:** `concept_map` → `logic_flow` → `golden_rule` → `danger_zone` (ver [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) §2)
+- `concept_map`: sem gabarito/letra; `logic_flow`: eliminação + gabarito (`reveal_mode: "tap"`); `golden_rule`: decore sem row de gabarito
+- sem `template` / `layout_variant`
 - `danger_zone.items[].correct`: **distinto** por distrator; EXCETO/INCORRETA conforme regra do pacote premium
 - Conteúdo alinhado ao **pacote L3 do ramo** (bespoke vs genérico) — não copiar moldes de outro cluster
 
