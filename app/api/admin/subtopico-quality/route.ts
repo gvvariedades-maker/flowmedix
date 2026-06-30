@@ -59,8 +59,8 @@ function pacotePayload(
 
 /** GET /api/admin/subtopico-quality?subtopico=... | ?all=1 */
 export async function GET(request: NextRequest) {
-  const admin = await requireAdminApi();
-  if (!admin.ok) return admin.response;
+  const auth = await requireAdminApi();
+  if ('error' in auth) return auth.error;
 
   const all = request.nextUrl.searchParams.get('all') === '1';
 

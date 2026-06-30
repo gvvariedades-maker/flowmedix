@@ -7,8 +7,8 @@ import { logger } from '@/lib/logger';
  * Dispara captura L4 (dev local) ou retorna instruções.
  */
 export async function POST(request: NextRequest) {
-  const admin = await requireAdminApi();
-  if (!admin.ok) return admin.response;
+  const auth = await requireAdminApi();
+  if ('error' in auth) return auth.error;
 
   let body: { slug?: string; source?: string };
   try {

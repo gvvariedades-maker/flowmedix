@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { createServerSupabase } from '@/lib/supabase/server';
+import { getQuestaoBySlugCached } from '@/lib/cache';
 import type { QuestaoCompleta } from '@/types/lesson';
 import { QuestaoReviewPanels } from './QuestaoReviewPanels';
 import { loteQuestionsDir } from '@/lib/catalogMigration/paths';
@@ -25,14 +25,9 @@ async function loadLocalQuestao(slug: string): Promise<QuestaoCompleta | null> {
 }
 
 async function loadSupabaseQuestao(slug: string): Promise<QuestaoCompleta | null> {
-  const supabase = await createServerSupabase();
-  const { data, error } = await supabase
-    .from('modulos_estudo')
-    .select('conteudo_json')
-    .eq('modulo_slug', slug)
-    .maybeSingle();
-  if (error || !data?.conteudo_json) return null;
-  return data.conteudo_json as QuestaoCompleta;
+  const row = await getQuestaoBySlugCached(slug);
+  if (!row?.conteudo_json) return null;
+  return row.conteudo_json as QuestaoCompleta;
 }
 
 type PageProps = {
