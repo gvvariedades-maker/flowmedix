@@ -8,7 +8,7 @@ import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import { extractLetterFromText } from '@/lib/slides/etiologySlideUtils';
 
 interface LogicFlowEtiologyEliminationTapProps {
-  steps: string[];
+  steps: string[] | Array<{ id?: string; text: string }>;
   theme: ThemeColors;
   footerRule?: string;
 }

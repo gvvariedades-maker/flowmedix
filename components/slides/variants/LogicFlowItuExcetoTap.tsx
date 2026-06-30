@@ -11,7 +11,7 @@ import {
 } from '@/lib/slides/ituCateterSlideUtils';
 
 interface LogicFlowItuExcetoTapProps {
-  steps: string[];
+  steps: string[] | Array<{ id?: string; text: string }>;
   theme: ThemeColors;
   footerRule?: string;
 }
