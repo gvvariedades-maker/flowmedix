@@ -220,8 +220,9 @@ export function lintSlugAlignment(
   issues.push(...lintBranchDeclared(q, slides));
 
   if (q.meta?.family) {
+    const qFamily = q as Parameters<typeof lintFamilyAlignment>[1];
     issues.push(
-      ...lintFamilyAlignment(q.meta.family, q, slides).map((i) => ({
+      ...lintFamilyAlignment(q.meta.family, qFamily, slides).map((i) => ({
         ...i,
         severity: i.severity ?? 'error',
       })),
