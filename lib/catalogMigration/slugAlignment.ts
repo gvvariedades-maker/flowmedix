@@ -194,8 +194,9 @@ export function lintSlugAlignment(
   const q = payload as QuestaoLike;
   const slides = slidesOf(q);
   const issues: AlignmentIssue[] = [];
+  const qGolden = q as Parameters<typeof lintGabaritoConsistency>[1];
 
-  for (const issue of lintGabaritoConsistency(slides, q)) {
+  for (const issue of lintGabaritoConsistency(slides, qGolden)) {
     issues.push({
       code: 'align_gabarito_letter',
       message: issue.message,
@@ -204,7 +205,7 @@ export function lintSlugAlignment(
     });
   }
 
-  for (const issue of lintLogicFlowRecycling(slides, q)) {
+  for (const issue of lintLogicFlowRecycling(slides, qGolden)) {
     issues.push({
       code: 'align_logic_not_recycle',
       message: issue.message,
