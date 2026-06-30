@@ -81,7 +81,7 @@ export function SlideMoldReviewPanels({ questao, branch }: SlideMoldReviewProps)
             style={{ minHeight: 420 }}
           >
             <div className="border-b border-white/10 px-4 py-2 text-xs text-slate-400">{label}</div>
-            <NeuroSlide slide={slide} questaoMeta={questao.meta} />
+            <NeuroSlide data={slide} questionMeta={questao.meta} slideIndex={idx} standalone />
           </section>
         ))}
       </div>

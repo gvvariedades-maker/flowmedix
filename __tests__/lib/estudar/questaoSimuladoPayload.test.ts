@@ -55,7 +55,7 @@ describe('buildSimuladoQuestaoPayload', () => {
 
     expect(result).toEqual({ status: 'not_found' });
     expect(from).toHaveBeenCalledWith('modulos_estudo');
-    expect(select).toHaveBeenCalledWith('conteudo_json');
+    expect(select).toHaveBeenCalledWith('conteudo_json, titulo_aula');
   });
 
   it('retorna payload slim sem slides nem gabarito', async () => {
