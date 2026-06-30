@@ -456,7 +456,7 @@ describe('buildUserPrompt', () => {
       exemplar: null,
     });
     expect(prompt).toContain('ELIMINAÇÃO');
-    expect(prompt).toContain('Alternativa X (Correta)');
+    expect(prompt).toContain('Marcar letra X');
     expect(prompt).not.toContain('Julgar I:');
   });
 });

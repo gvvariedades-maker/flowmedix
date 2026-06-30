@@ -89,15 +89,16 @@ describe('slides premium — regressão legado vs premium', () => {
     if (result.success) {
       const slides = result.data.reverse_study_slides!;
       expect(slides).toHaveLength(4);
-      expect(slides[2].type).toBe('logic_flow');
-      expect((slides[2] as { reveal_mode?: string }).reveal_mode).toBeUndefined();
+      // Normalização v2: concept_map → logic_flow → golden_rule → danger_zone
+      expect(slides[1].type).toBe('logic_flow');
+      expect((slides[1] as { reveal_mode?: string }).reveal_mode).toBeUndefined();
+      const legacyGolden = slides[2];
+      if (legacyGolden.type === 'golden_rule') {
+        expect(legacyGolden.rows).toBeUndefined();
+      }
       const legacyDanger = slides[3];
       if (legacyDanger.type === 'danger_zone') {
         expect(legacyDanger.items?.[0]?.correct).toBeUndefined();
-      }
-      const legacyGolden = slides[1];
-      if (legacyGolden.type === 'golden_rule') {
-        expect(legacyGolden.rows).toBeUndefined();
       }
     }
   });
@@ -124,14 +125,14 @@ describe('slides premium — regressão legado vs premium', () => {
       if (logicSlide.type === 'logic_flow') {
         expect(logicSlide.reveal_mode).toBe('tap');
       }
-      const dangerSlide = slides[2];
+      const goldenSlide = slides[2];
+      if (goldenSlide.type === 'golden_rule') {
+        expect(goldenSlide.rows).toHaveLength(2);
+      }
+      const dangerSlide = slides[3];
       if (dangerSlide.type === 'danger_zone') {
         expect(dangerSlide.bullet_style).toBe('x_icon');
         expect(dangerSlide.items?.[0]?.correct).toBe('Conduta correta');
-      }
-      const goldenSlide = slides[3];
-      if (goldenSlide.type === 'golden_rule') {
-        expect(goldenSlide.rows).toHaveLength(2);
       }
     }
   });
