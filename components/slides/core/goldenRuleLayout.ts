@@ -30,6 +30,8 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'burn-rule-nine-board',
   'trabalho-nr32-reference-board',
   'respiratorio-spo2-reference-board',
+  'etiology-letter-spectrum',
+  'itu-bundle-letter-board',
 ]);
 
 /**
@@ -72,6 +74,8 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'burn-rule-nine-board') return 'burn-rule-nine-board';
   if (explicitVariant === 'trabalho-nr32-reference-board') return 'trabalho-nr32-reference-board';
   if (explicitVariant === 'respiratorio-spo2-reference-board') return 'respiratorio-spo2-reference-board';
+  if (explicitVariant === 'etiology-letter-spectrum') return 'etiology-letter-spectrum';
+  if (explicitVariant === 'itu-bundle-letter-board') return 'itu-bundle-letter-board';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

@@ -25,6 +25,8 @@ import { DangerZoneTrabalhoPepTrapArena } from './DangerZoneTrabalhoPepTrapArena
 import { DangerZoneRespiratorioSpo2TrapArena } from './DangerZoneRespiratorioSpo2TrapArena';
 import { DangerZonePniTrapChips } from './DangerZonePniTrapChips';
 import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
+import { DangerZoneEtiologyIntruderChips } from './DangerZoneEtiologyIntruderChips';
+import { DangerZoneItuCatheterTrap } from './DangerZoneItuCatheterTrap';
 import { DangerZoneAdolescentConsentGate } from './DangerZoneAdolescentConsentGate';
 import { DangerZoneVitalsClassifyArena } from './DangerZoneVitalsClassifyArena';
 
@@ -378,6 +380,30 @@ export const DangerZone = ({
         theme={theme}
         footerRule={footerRule}
         compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'etiology-intruder-chips' && items && items.length > 0) {
+    return (
+      <DangerZoneEtiologyIntruderChips
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'itu-catheter-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneItuCatheterTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        revealMode={compareRevealMode}
       />
     );
   }

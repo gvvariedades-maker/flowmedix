@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "banca": "IDIB",
+    "prova": "Técnico de Enfermagem",
+    "orgao": "Prefeitura de Umirim",
+    "ano": "2023",
+    "cargo_header": "TÉCNICO",
+    "topico": "Enfermagem",
+    "subtopico": "Infecções no Contexto da Biossegurança",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "biosseg_iras_itu_cateter",
+    "content_review": {
+      "reviewed_at": "2026-06-29",
+      "reviewer": "handcraft-agent",
+      "guideline_snapshot": "ANVISA RDC 7/2010 — Medidas de prevenção de IRAS; cuidados em cateter vesical",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anvisa-rdc7-iras",
+        "tier": "A",
+        "issuer": "ANVISA",
+        "title": "RDC 7/2010 — Programa de Controle de Infecção Hospitalar",
+        "year": 2010,
+        "url": "https://www.gov.br/anvisa/pt-br/assuntos/servicosdesaude/servicos",
+        "covers": ["IRAS", "cateter vesical", "sistema fechado de drenagem", "prevenção de ITU"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A infecção do trato urinário (ITU) é uma das causas prevalentes de Infecção Relacionada à Assistência à Saúde (IRAS) de grande potencial preventivo, visto que a maioria está relacionada à cateterização vesical. Assinale a alternativa que não condiz com cuidados, os quais o técnico de enfermagem deverá observar para prevenir tal contaminação.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Realizar a higiene rotineira do meato e sempre que necessário.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Manter o fluxo de urina desobstruído.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Manter o sistema de drenagem fechado e estéril.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Fechar previamente o cateter antes da sua remoção.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Manter sempre a bolsa coletora abaixo do nível da bexiga.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Cadeia fechada — cateter vesical",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções no Contexto da Biossegurança"
+      },
+      "items": [
+        {
+          "label": "IRAS e ITU",
+          "detail": "ITU é IRAS prevenível — a maioria das ITU hospitalares está ligada à cateterização vesical de demora.",
+          "icon": "ShieldAlert"
+        },
+        {
+          "label": "Comando EXCETO",
+          "detail": "EXCETO: quatro alternativas descrevem cuidados da cadeia fechada — uma quebra a barreira (gabarito letra D).",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Higiene do meato",
+          "detail": "Letra A: higiene rotineira do meato urinário — conduta correta de prevenção, não é o EXCETO.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Sistema fechado",
+          "detail": "Letra C: manter drenagem fechada e estéril — evita entrada de microrganismos no trato urinário.",
+          "icon": "Lock"
+        },
+        {
+          "label": "Fluxo desobstruído",
+          "detail": "Letra B: fluxo de urina livre — sem torção do tubo nem obstrução que favoreça refluxo.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Bolsa abaixo da bexiga",
+          "detail": "Letra E: coletor abaixo do nível da bexiga — gravidade favorece drenagem sem refluxo.",
+          "icon": "ArrowDown"
+        },
+        {
+          "label": "EXCETO — pinçar na remoção",
+          "detail": "Letra D: fechar o cateter antes de retirar interrompe o sistema fechado e não previne ITU — é a exceção.",
+          "icon": "XCircle"
+        }
+      ],
+      "footer_rule": "Cadeia fechada: meato + sistema estéril + fluxo + bolsa abaixo — nunca pinçar na remoção"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Prevenção ITU — letras",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções no Contexto da Biossegurança"
+      },
+      "content": "CADEIA FECHADA",
+      "rows": [
+        {
+          "label": "Comando",
+          "value": "EXCETO — marque o cuidado que NÃO previne contaminação",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Letra A",
+          "value": "Higiene do meato — cuidado correto de prevenção",
+          "badge": "ok"
+        },
+        {
+          "label": "Letra B",
+          "value": "Fluxo de urina desobstruído — conduta correta",
+          "badge": "ok"
+        },
+        {
+          "label": "Letra C",
+          "value": "Sistema de drenagem fechado e estéril — conduta correta",
+          "badge": "ok"
+        },
+        {
+          "label": "Letra D",
+          "value": "EXCETO: pinçar cateter antes da remoção quebra o sistema fechado",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Letra E",
+          "value": "Bolsa coletora abaixo da bexiga — conduta correta",
+          "badge": "ok"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra D",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "No EXCETO de ITU: A, B, C e E são cuidados corretos — sobra quem quebra a cadeia fechada"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Raciocínio EXCETO — ITU",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções no Contexto da Biossegurança"
+      },
+      "steps": [
+        "Comando EXCETO: prevenção de ITU relacionada à cateterização vesical — marque o que NÃO condiz.",
+        "Regra: três a quatro alternativas são cuidados corretos de prevenção — uma é a exceção.",
+        "Letra A: higiene do meato — conduta correta, eliminar (não é o EXCETO).",
+        "Letra B: fluxo desobstruído — conduta correta, eliminar.",
+        "Letra C: sistema fechado e estéril — conduta correta, eliminar.",
+        "Letra E: bolsa abaixo da bexiga — conduta correta, eliminar.",
+        "Letra D: fechar o cateter antes da remoção — quebra o sistema fechado; é o EXCETO.",
+        "Marcar letra D.",
+        "Fixação: pinçar na remoção não faz parte dos cuidados de prevenção de ITU."
+      ],
+      "footer_rule": "Estratégia EXCETO: validar cada cuidado de prevenção → sobra a exceção"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — ITU e cateter",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções no Contexto da Biossegurança"
+      },
+      "content": "PEGADINHAS — CATETER VESICAL E ITU",
+      "items": [
+        {
+          "label": "Letra A — higiene do meato",
+          "detail": "Muitos hesitam em A achando que higiene não previne ITU — no enunciado, é conduta correta de prevenção.",
+          "correct": "Gabarito letra D — o EXCETO é pinçar o cateter na remoção, não a higiene do meato."
+        },
+        {
+          "label": "Letra C — sistema fechado",
+          "detail": "Confundir 'fechar o sistema' (correto) com 'fechar/pinçar o cateter na remoção' (incorreto).",
+          "correct": "Gabarito letra D — manter sistema fechado é correto; pinçar antes de retirar quebra a barreira."
+        },
+        {
+          "label": "Letra E — bolsa abaixo da bexiga",
+          "detail": "Alternativa E também é cuidado válido — não marque só porque parece 'detalhe' secundário.",
+          "correct": "Gabarito letra D — posicionamento da bolsa é cuidado válido; a exceção é a pinça na remoção."
+        }
+      ],
+      "footer_rule": "Banca mistura cuidados corretos de prevenção com uma conduta que abre a cadeia fechada"
+    }
+  ]
+}

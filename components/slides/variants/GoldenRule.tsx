@@ -19,6 +19,8 @@ import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
 import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
 import { GoldenRuleRespiratorioSpo2ReferenceBoard } from './GoldenRuleRespiratorioSpo2ReferenceBoard';
+import { GoldenRuleEtiologyLetterSpectrum } from './GoldenRuleEtiologyLetterSpectrum';
+import { GoldenRuleItuBundleBoard } from './GoldenRuleItuBundleBoard';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
@@ -330,6 +332,18 @@ export const GoldenRule = ({
   if (variant === 'respiratorio-spo2-reference-board' && rows && rows.length > 0) {
     return (
       <GoldenRuleRespiratorioSpo2ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'etiology-letter-spectrum' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleEtiologyLetterSpectrum content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'itu-bundle-letter-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleItuBundleBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

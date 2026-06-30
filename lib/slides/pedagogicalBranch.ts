@@ -53,7 +53,13 @@ export type PedagogicalBranchId =
   | 'respiratorio_dpoc_oxigenio'
   | 'respiratorio_asma_crise'
   | 'respiratorio_tecnica_inalador'
-  | 'respiratorio_generico';
+  | 'respiratorio_generico'
+  // Doenças Bacterianas e Fúngicas
+  | 'bacterianas_agente_etiologico'
+  | 'bacterianas_generico'
+  // Infecções / Biossegurança
+  | 'biosseg_iras_itu_cateter'
+  | 'biosseg_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -262,6 +268,38 @@ const RESPIRATORIO_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+const BACTERIANAS_ETIOLOGIA_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'etiology-kingdom-rail',
+  goldenRule: 'etiology-letter-spectrum',
+  logicFlow: 'etiology-elimination-tap',
+  dangerZone: 'etiology-intruder-chips',
+};
+
+const BACTERIANAS_GENERIC_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'molecular',
+  goldenRule: 'minimal',
+  logicFlow: 'cards',
+  dangerZone: 'list',
+};
+
+const BIOSSEG_ITU_CATETER_MOLD: SubtopicDesign = {
+  template: 'lime',
+  conceptMap: 'itu-closed-system-rail',
+  goldenRule: 'itu-bundle-letter-board',
+  logicFlow: 'itu-exceto-tap',
+  dangerZone: 'itu-catheter-trap',
+};
+
+const BIOSSEG_GENERIC_MOLD: SubtopicDesign = {
+  template: 'lime',
+  conceptMap: 'molecular',
+  goldenRule: 'banner',
+  logicFlow: 'cards',
+  dangerZone: 'cards',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -405,6 +443,30 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     respiratorio_asma_crise: RESPIRATORIO_CRISE_MOLD,
     respiratorio_tecnica_inalador: RESPIRATORIO_TECNICA_MOLD,
     respiratorio_generico: RESPIRATORIO_GENERIC_MOLD,
+  },
+  'doencas bacterianas e fungicas (tuberculose, tetano, candidiase etc.)': {
+    bacterianas_agente_etiologico: BACTERIANAS_ETIOLOGIA_MOLD,
+    bacterianas_generico: BACTERIANAS_GENERIC_MOLD,
+  },
+  'doencas bacterianas e fungicas': {
+    bacterianas_agente_etiologico: BACTERIANAS_ETIOLOGIA_MOLD,
+    bacterianas_generico: BACTERIANAS_GENERIC_MOLD,
+  },
+  tuberculose: {
+    bacterianas_agente_etiologico: BACTERIANAS_ETIOLOGIA_MOLD,
+    bacterianas_generico: BACTERIANAS_GENERIC_MOLD,
+  },
+  'infeccoes no contexto da biosseguranca': {
+    biosseg_iras_itu_cateter: BIOSSEG_ITU_CATETER_MOLD,
+    biosseg_generico: BIOSSEG_GENERIC_MOLD,
+  },
+  biosseguranca: {
+    biosseg_iras_itu_cateter: BIOSSEG_ITU_CATETER_MOLD,
+    biosseg_generico: BIOSSEG_GENERIC_MOLD,
+  },
+  iras: {
+    biosseg_iras_itu_cateter: BIOSSEG_ITU_CATETER_MOLD,
+    biosseg_generico: BIOSSEG_GENERIC_MOLD,
   },
 };
 
@@ -561,6 +623,18 @@ const RESP_DPOC: RegExp[] = [
   /venturi|cat[eé]ter nasal|oxigenoterapia/i,
 ];
 
+const BACTERIANAS_ETIOLOGIA: RegExp[] = [
+  /todas as doen[cç]as.*bact[eé]ri|causadas por bact[eé]ri|agente etiol[oó]gic/i,
+  /bact[eé]ria.*v[ií]rus.*protozo|classifica[cç][aã]o etiol|intruso.*v[ií]rus/i,
+  /quantificador.*todas|nenhum v[ií]rus ou protozo/i,
+];
+
+const BIOSSEG_ITU_CATETER: RegExp[] = [
+  /\bitu\b|infec[cç][aã]o do trato urin[aá]rio|iras\b|infec[cç][aã]o relacionada [àa] assist/i,
+  /cateteriza[cç][aã]o vesical|sonda vesical|cateter vesical|drenagem urin[aá]ria/i,
+  /sistema de drenagem fechado|meato|bolsa coletora/i,
+];
+
 function branchMapKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
   const matches = Object.keys(BRANCH_DESIGN_MAP).filter(
@@ -691,6 +765,27 @@ function inferCalcBranch(corpus: string, familyId?: FamilyId): PedagogicalBranch
   return 'calc_generico';
 }
 
+function inferBacterianasBranch(corpus: string): PedagogicalBranchId {
+  if (countPatternMatches(corpus, BACTERIANAS_ETIOLOGIA) > 0) {
+    return 'bacterianas_agente_etiologico';
+  }
+  return 'bacterianas_generico';
+}
+
+function inferBiossegBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  const isExceto =
+    /\bexceto\b/i.test(corpus) ||
+    /n[aã]o condiz/i.test(corpus) ||
+    familyId === 'certo_errado';
+  if (isExceto && countPatternMatches(corpus, BIOSSEG_ITU_CATETER) >= 2) {
+    return 'biosseg_iras_itu_cateter';
+  }
+  if (countPatternMatches(corpus, BIOSSEG_ITU_CATETER) >= 3) {
+    return 'biosseg_iras_itu_cateter';
+  }
+  return 'biosseg_generico';
+}
+
 function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   const isVf =
     familyId === 'vf' ||
@@ -756,6 +851,20 @@ function inferBranchForBucket(
     mapKey === 'dpoc'
   ) {
     return inferRespiratorioBranch(corpus, familyId);
+  }
+  if (
+    mapKey.includes('bacterianas') ||
+    mapKey.includes('fungicas') ||
+    mapKey === 'tuberculose'
+  ) {
+    return inferBacterianasBranch(corpus);
+  }
+  if (
+    mapKey.includes('biosseguranca') ||
+    mapKey.includes('infeccoes no contexto') ||
+    mapKey === 'iras'
+  ) {
+    return inferBiossegBranch(corpus, familyId);
   }
   return undefined;
 }

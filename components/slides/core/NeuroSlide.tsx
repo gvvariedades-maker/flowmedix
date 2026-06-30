@@ -25,6 +25,8 @@ import { IstRiskRoutesDeckConceptMap } from '../variants/IstRiskRoutesDeckConcep
 import { AdolescentPrivacyCurtainConceptMap } from '../variants/AdolescentPrivacyCurtainConceptMap';
 import { Nr32AnnexDeckConceptMap } from '../variants/Nr32AnnexDeckConceptMap';
 import { RespiratorioAsmaDpocDuelDeckConceptMap } from '../variants/RespiratorioAsmaDpocDuelDeckConceptMap';
+import { EtiologyKingdomRailConceptMap } from '../variants/EtiologyKingdomRailConceptMap';
+import { ItuClosedSystemRailConceptMap } from '../variants/ItuClosedSystemRailConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -232,6 +234,12 @@ export const NeuroSlideHub = ({
             footerRule={slide.footer_rule}
           />
         );
+      }
+      if (layoutVariant === 'etiology-kingdom-rail') {
+        return <EtiologyKingdomRailConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'itu-closed-system-rail') {
+        return <ItuClosedSystemRailConceptMap concepts={getConcepts()} theme={theme} />;
       }
       return <ConceptMap concepts={getConcepts()} theme={theme} layoutVariant={layoutVariant} />;
     case 'golden_rule':

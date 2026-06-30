@@ -35,6 +35,8 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'adolescent-privacy-curtain',
   'nr32-annex-deck',
   'respiratorio-asma-dpoc-duel-deck',
+  'etiology-kingdom-rail',
+  'itu-closed-system-rail',
 ]);
 
 function countConceptItems(slide?: {

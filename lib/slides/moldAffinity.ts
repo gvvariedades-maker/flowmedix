@@ -101,6 +101,14 @@ const ADOLESCENT_ETHICS_BLOCK: RegExp[] = [
   ...ADOLESCENT_DEVELOPMENT_BLOCK,
 ];
 
+/** IRAS / ITU / cateter vesical — ramo biosseg_iras_itu_cateter. */
+const BIOSSEG_ITU_POSITIVE: RegExp[] = [
+  /\bitu\b|infec[cç][aã]o do trato urin[aá]rio|iras\b|infec[cç][aã]o relacionada [àa] assist/i,
+  /cateteriza[cç][aã]o vesical|sonda vesical|cateter vesical|drenagem urin[aá]ria/i,
+  /sistema de drenagem fechado|meato|bolsa coletora|fluxo de urina/i,
+  /pin[cç]ar|fechar.*cateter|higiene.*meato/i,
+];
+
 const ADOLESCENT_VARIANTS = new Set([
   'adolescent-privacy-curtain',
   'adolescent-sigilo-spectrum',
@@ -321,6 +329,32 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
   'ist-trap-chips': {
     homeSubtopicFragments: ['ists', 'infecoes sexualmente transmissiveis'],
     positivePatterns: [/ist\b|hiv|s[ií]filis/i],
+  },
+
+  // ---- IRAS / ITU-cateter (biossegurança) ----
+  'itu-closed-system-rail': {
+    homeSubtopicFragments: ['infeccoes no contexto da biosseguranca', 'biosseguranca', 'iras'],
+    positivePatterns: BIOSSEG_ITU_POSITIVE,
+    minPositive: 2,
+  },
+  'itu-bundle-letter-board': {
+    homeSubtopicFragments: ['infeccoes no contexto da biosseguranca', 'biosseguranca', 'iras'],
+    positivePatterns: BIOSSEG_ITU_POSITIVE,
+    minPositive: 2,
+  },
+  'itu-exceto-tap': {
+    homeSubtopicFragments: ['infeccoes no contexto da biosseguranca', 'biosseguranca', 'iras'],
+    blockFamilies: ['vf', 'legis'],
+    positivePatterns: [
+      ...BIOSSEG_ITU_POSITIVE,
+      /\bexceto\b|n[aã]o condiz/i,
+    ],
+    minPositive: 2,
+  },
+  'itu-catheter-trap': {
+    homeSubtopicFragments: ['infeccoes no contexto da biosseguranca', 'biosseguranca', 'iras'],
+    positivePatterns: BIOSSEG_ITU_POSITIVE,
+    minPositive: 2,
   },
 
   // ---- Farmacologia ----

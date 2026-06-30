@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "banca": "IBGP",
+    "prova": "Técnico de Enfermagem",
+    "orgao": "Sem Especialidade",
+    "ano": "2021",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "bacterianas_agente_etiologico",
+    "content_review": {
+      "reviewed_at": "2026-06-29",
+      "reviewer": "handcraft-agent",
+      "guideline_snapshot": "Guia de Vigilância Epidemiológica MS + classificação microbiológica de referência",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-vigilancia-etiologia",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Guia de Vigilância Epidemiológica — agentes etiológicos",
+        "year": 2022,
+        "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/guia-de-vigilancia-epidemiologica",
+        "covers": ["bacterioses", "viroses", "classificação etiológica"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa em que TODAS as doenças citadas são causadas por bactérias.",
+    "options": [
+      { "id": "A", "text": "Cólera, febre maculosa, difteria, tétano e tuberculose.", "is_correct": true },
+      { "id": "B", "text": "Dengue, febre tifoide, malária e doença de Lyme.", "is_correct": false },
+      { "id": "C", "text": "Coqueluche, hanseníase, varicela, gonorreia e herpes.", "is_correct": false },
+      { "id": "D", "text": "Sífilis, tracoma, raiva humana, resfriado comum e condiloma.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Quatro reinos — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)"
+      },
+      "items": [
+        {
+          "label": "Comando TODAS",
+          "detail": "A banca lista várias doenças na mesma letra: basta UMA virose, protozoose ou fungo para eliminar a alternativa inteira.",
+          "icon": "Target"
+        },
+        {
+          "label": "Bactérias — gabarito A",
+          "detail": "Cólera (Vibrio), febre maculosa (Rickettsia), difteria, tétano e TB — todas bacterianas, mesmo com vetor no caso da maculosa.",
+          "icon": "Bug"
+        },
+        {
+          "label": "Vírus — intrusos clássicos",
+          "detail": "Dengue, varicela, herpes, raiva, resfriado e HPV (condiloma) são viroses — aparecem nas letras B, C e D desta prova.",
+          "icon": "Biohazard"
+        },
+        {
+          "label": "Protozoário — malária",
+          "detail": "Malária = Plasmodium (protozoário), não bactéria. Letra B cai por esse único item.",
+          "icon": "Microscope"
+        },
+        {
+          "label": "Rickettsia ≠ vírus",
+          "detail": "Febre maculosa é transmitida por carrapato, mas o agente é Rickettsia (bactéria). Não confundir vetor com etiologia viral.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Padrão IBGP",
+          "detail": "Listas mistas com 4–5 doenças: teste item a item antes de marcar a letra.",
+          "icon": "ClipboardList"
+        }
+      ],
+      "footer_rule": "TODAS = nenhum intruso viral, parasitário ou fúngico na lista"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — quem é quem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)"
+      },
+      "content": "BACTÉRIA · VÍRUS · PROTOZOÁRIO",
+      "rows": [
+        { "label": "Letra A — cólera a TB", "value": "100% bacterianas", "badge": "hot", "emphasis": "success" },
+        { "label": "Letra B — dengue", "value": "Vírus → elimina B", "badge": "warn", "emphasis": "alert" },
+        { "label": "Letra B — malária", "value": "Plasmodium → elimina B", "badge": "warn", "emphasis": "alert" },
+        { "label": "Letra C — varicela/herpes", "value": "Vírus → elimina C", "badge": "warn", "emphasis": "alert" },
+        { "label": "Letra D — raiva/resfriado/HPV", "value": "Vírus → elimina D", "badge": "warn", "emphasis": "alert" },
+        { "label": "Febre maculosa", "value": "Rickettsia = bactéria (fica em A)", "badge": "ok" },
+        { "label": "Gabarito", "value": "Alternativa A", "badge": "hot", "emphasis": "success" }
+      ],
+      "footer_rule": "Vetor carrapato não transforma maculosa em virose"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)"
+      },
+      "steps": [
+        "Ler o quantificador: TODAS as doenças da letra precisam ser bacterianas.",
+        "Letra A: cólera, maculosa, difteria, tétano, TB — nenhum vírus ou protozoário.",
+        "Letra B: dengue (vírus) e malária (protozoário) — descarta B.",
+        "Letra C: varicela e herpes (vírus) — descarta C.",
+        "Letra D: raiva, resfriado e condiloma/HPV (vírus) — descarta D.",
+        "Sobra apenas A — marcar gabarito.",
+        "Fixação: na dúvida, nomeie o agente (Vibrio, Rickettsia, Plasmodium, HPV…)."
+      ],
+      "footer_rule": "Elimine por intruso — não precisa decorar a lista inteira"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)"
+      },
+      "content": "PEGADINHAS — agente etiológico (IBGP)",
+      "items": [
+        {
+          "label": "Letra B — dengue na lista",
+          "detail": "Febre tifoide e Lyme são bacterianas, mas dengue é arbovirose.",
+          "correct": "Gabarito letra A — B mistura bactérias com vírus e protozoário."
+        },
+        {
+          "label": "Letra C — coqueluche e hanseníase",
+          "detail": "Bordetella e M. leprae são bacterianas; varicela e herpes não.",
+          "correct": "Gabarito letra A — C cai por dois vírus no meio da lista."
+        },
+        {
+          "label": "Letra D — sífilis e tracoma",
+          "detail": "Treponema e Chlamydia trachomatis são bacterianas; raiva e HPV não.",
+          "correct": "Gabarito letra A — D tem três viroses (raiva, resfriado, condiloma)."
+        },
+        {
+          "label": "Febre maculosa = viral?",
+          "detail": "Carrapato transmite, mas Rickettsia é bactéria intracelular.",
+          "correct": "Gabarito letra A — maculosa permanece bacteriana na alternativa correta."
+        }
+      ],
+      "footer_rule": "Vetor ≠ agente: julgue o microrganismo, não só a transmissão"
+    }
+  ]
+}

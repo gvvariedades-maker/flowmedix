@@ -213,6 +213,8 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `vaccine-timeline` | Imunização | Timeline vacinal | `questao-premium-fundatec-meningococica-3meses.json` |
 | `sus-legal-pillars` | (componente pronto; mapear subtópico quando houver golden) | Pilares legais SUS | — |
 | `sae-documentation` | (componente pronto; mapear quando houver golden) | Documentação SAE | `questao-premium-fepese-anotacao-enfermagem-sae.json` |
+| `etiology-kingdom-rail` | Doenças Bacterianas e Fúngicas | Trilho 4 reinos etiológicos | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |
+| `itu-closed-system-rail` | Infecções no Contexto da Biossegurança (`biosseg_iras_itu_cateter`) | Trilho bundle fechado meato → fechado → fluxo → bolsa | `questao-premium-idib-umirim-itu-cateter-exceto.json` |
 
 ### Danger zone
 
@@ -224,14 +226,24 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `norm-reveal` | `sae-responsibility-matrix` | Revela norma por item | COFEN, Res., anotação, registro |
 | `trap-reveal` | `survival-chain`, `vitals-panel` | Compare com revelação sequencial | ordem, proporção, parâmetro numérico |
 | `calendar-mismatch` | `vaccine-timeline` | Calendário × idade errada | meses, dose, reforço, calendário |
+| `itu-catheter-trap` | `itu-closed-system-rail` | Trilho bundle violado × restaurado | meato, fechado, fluxo, bolsa, pinçar, letra A–E |
 
 Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md).
+
+### Logic flow (slide 3)
+
+| `layout_variant` | Subtópico(s) | Interação | Golden |
+|------------------|--------------|-----------|--------|
+| `itu-exceto-tap` | Infecções no Contexto da Biossegurança (`biosseg_iras_itu_cateter`) | Painel de letras + tap EXCETO | `questao-premium-idib-umirim-itu-cateter-exceto.json` |
+| `etiology-elimination-tap` | Doenças Bacterianas e Fúngicas | Eliminação por reino | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |
 
 ### Golden rule (slide 2)
 
 | `layout_variant` | Subtópico(s) | Interação | Golden |
 |------------------|--------------|-----------|--------|
 | `soft-lens-board` | Cálculo de Administração de Medicamentos e Infusões | Painel de lentes suaves — toque em cada `row` | `questao-premium-idecan-calculo-equivalencias-gotas.json` |
+| `itu-bundle-letter-board` | Infecções no Contexto da Biossegurança (`biosseg_iras_itu_cateter`) | Espectro de letras bundle ok × EXCETO | `questao-premium-idib-umirim-itu-cateter-exceto.json` |
+| `etiology-letter-spectrum` | Doenças Bacterianas e Fúngicas | Espectro letras bacteriana × intruso | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |
 | `reference_table` | (automático com `rows` quando sem molde) | Tabela rótulo × valor | vários |
 | `center` / `banner` / `minimal` / `compact` | demais subtópicos | Tipografia ou faixa | — |
 

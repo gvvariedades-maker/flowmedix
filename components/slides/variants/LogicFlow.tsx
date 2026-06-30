@@ -21,6 +21,8 @@ import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
 import { LogicFlowBurnTriageTapFlow } from './LogicFlowBurnTriageTapFlow';
 import { LogicFlowTrabalhoVfJuggleTap } from './LogicFlowTrabalhoVfJuggleTap';
 import { LogicFlowRespiratorioVfJuggleTap } from './LogicFlowRespiratorioVfJuggleTap';
+import { LogicFlowEtiologyEliminationTap } from './LogicFlowEtiologyEliminationTap';
+import { LogicFlowItuExcetoTap } from './LogicFlowItuExcetoTap';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
 import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
 import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
@@ -188,6 +190,14 @@ export const LogicFlow = ({
 
   if (variant === 'respiratorio-vf-juggle-tap') {
     return <LogicFlowRespiratorioVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+  }
+
+  if (variant === 'etiology-elimination-tap') {
+    return <LogicFlowEtiologyEliminationTap steps={steps} theme={theme} footerRule={undefined} />;
+  }
+
+  if (variant === 'itu-exceto-tap') {
+    return <LogicFlowItuExcetoTap steps={steps} theme={theme} footerRule={undefined} />;
   }
 
   if (variant === 'pni-vf-juggle-tap') {

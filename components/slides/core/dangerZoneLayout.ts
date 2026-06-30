@@ -31,6 +31,8 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'burn-trap-arena',
   'trabalho-pep-trap-arena',
   'respiratorio-spo2-trap-arena',
+  'etiology-intruder-chips',
+  'itu-catheter-trap',
 ]);
 
 /**
@@ -66,6 +68,8 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'vitals-classify-arena') return 'vitals-classify-arena';
   if (explicitVariant === 'pni-trap-chips') return 'pni-trap-chips';
   if (explicitVariant === 'ist-trap-chips') return 'ist-trap-chips';
+  if (explicitVariant === 'etiology-intruder-chips') return 'etiology-intruder-chips';
+  if (explicitVariant === 'itu-catheter-trap') return 'itu-catheter-trap';
   if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
   if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
   if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
@@ -116,6 +120,12 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'ist-trap-chips') {
       return 'ist-trap-chips';
+    }
+    if (!explicitVariant && fallbackVariant === 'etiology-intruder-chips') {
+      return 'etiology-intruder-chips';
+    }
+    if (!explicitVariant && fallbackVariant === 'itu-catheter-trap') {
+      return 'itu-catheter-trap';
     }
     if (!explicitVariant && fallbackVariant === 'adolescent-consent-gate') {
       return 'adolescent-consent-gate';

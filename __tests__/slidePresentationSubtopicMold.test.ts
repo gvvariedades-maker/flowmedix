@@ -1407,6 +1407,131 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('compare');
   });
 
+  describe('Doenças Bacterianas — agente etiológico (molde inédito)', () => {
+    const subtopico =
+      'Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)';
+    const branch = 'bacterianas_agente_etiologico';
+
+    it('concept_map → etiology-kingdom-rail', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico },
+          items: [{ label: 'Bactérias', detail: 'Cólera e TB', icon: 'Bug' }],
+        },
+        { questionSlug: 'ibgp-bacterias-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('etiology-kingdom-rail');
+    });
+
+    it('golden_rule com rows → etiology-letter-spectrum', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          content: 'BACTÉRIA · VÍRUS',
+          rows: [{ label: 'Letra A', value: '100% bacterianas', badge: 'hot' }],
+        },
+        { questionSlug: 'ibgp-bacterias-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('etiology-letter-spectrum');
+    });
+
+    it('logic_flow → etiology-elimination-tap', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico },
+          steps: ['Letra B: dengue — descarta B.'],
+          reveal_mode: 'tap',
+        },
+        { questionSlug: 'ibgp-bacterias-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('etiology-elimination-tap');
+    });
+
+    it('danger_zone com correct → etiology-intruder-chips', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'PEGADINHAS',
+          items: [
+            {
+              label: 'Letra B',
+              detail: 'Dengue na lista',
+              correct: 'Gabarito letra A',
+            },
+          ],
+        },
+        { questionSlug: 'ibgp-bacterias-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('etiology-intruder-chips');
+    });
+  });
+
+  describe('Infecções Biossegurança — IRAS/ITU-cateter (molde inédito)', () => {
+    const subtopico = 'Infecções no Contexto da Biossegurança';
+    const branch = 'biosseg_iras_itu_cateter';
+
+    it('concept_map → itu-closed-system-rail', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico },
+          items: [{ label: 'IRAS e ITU', detail: 'cateterização vesical', icon: 'ShieldAlert' }],
+        },
+        { questionSlug: 'idib-itu-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('itu-closed-system-rail');
+    });
+
+    it('golden_rule com rows → itu-bundle-letter-board', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          content: 'BUNDLE FECHADO',
+          rows: [{ label: 'Letra D', value: 'EXCETO pinçar cateter', badge: 'warn' }],
+        },
+        { questionSlug: 'idib-itu-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('itu-bundle-letter-board');
+    });
+
+    it('logic_flow → itu-exceto-tap', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico },
+          steps: ['Comando EXCETO: marcar letra D.'],
+          reveal_mode: 'tap',
+        },
+        { questionSlug: 'idib-itu-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('itu-exceto-tap');
+    });
+
+    it('danger_zone com correct → itu-catheter-trap', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'PEGADINHAS',
+          items: [
+            {
+              label: 'Letra A',
+              detail: 'Higiene do meato',
+              correct: 'Gabarito letra D — pinçar na remoção',
+            },
+          ],
+        },
+        { questionSlug: 'idib-itu-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('itu-catheter-trap');
+    });
+  });
+
   describe('Saúde do Adolescente — afinidade (IBAM escore Z)', () => {
     const subtopico = 'Saúde do Adolescente';
     const slug = 'ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0';
