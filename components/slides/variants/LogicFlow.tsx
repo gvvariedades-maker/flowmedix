@@ -24,6 +24,8 @@ import { LogicFlowRespiratorioVfJuggleTap } from './LogicFlowRespiratorioVfJuggl
 import { LogicFlowEtiologyEliminationTap } from './LogicFlowEtiologyEliminationTap';
 import { LogicFlowItuExcetoTap } from './LogicFlowItuExcetoTap';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
+import { LogicFlowPniCalendarEliminationTap } from './LogicFlowPniCalendarEliminationTap';
+import { LogicFlowPniColdChainTap } from './LogicFlowPniColdChainTap';
 import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
 import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
 import { LogicFlowViaVfJuggleTap } from './LogicFlowViaVfJuggleTap';
@@ -43,6 +45,7 @@ interface LogicFlowProps {
   layoutVariant?: string;
   /** Default `auto` preserva slides legados; premium usa `reveal_mode: "tap"` no JSON. */
   revealMode?: LogicFlowRevealMode;
+  footerRule?: string;
 }
 
 /** Destaca a expressão "estudo reverso" (qualquer caixa) no texto do passo. */
@@ -129,6 +132,7 @@ export const LogicFlow = ({
   theme,
   layoutVariant = 'vertical',
   revealMode = 'auto',
+  footerRule,
 }: LogicFlowProps) => {
   const variant = layoutVariant || 'vertical';
 
@@ -185,23 +189,33 @@ export const LogicFlow = ({
   }
 
   if (variant === 'trabalho-vf-juggle-tap') {
-    return <LogicFlowTrabalhoVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+    return <LogicFlowTrabalhoVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'respiratorio-vf-juggle-tap') {
-    return <LogicFlowRespiratorioVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+    return <LogicFlowRespiratorioVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'etiology-elimination-tap') {
-    return <LogicFlowEtiologyEliminationTap steps={steps} theme={theme} footerRule={undefined} />;
+    return <LogicFlowEtiologyEliminationTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'itu-exceto-tap') {
-    return <LogicFlowItuExcetoTap steps={steps} theme={theme} footerRule={undefined} />;
+    return <LogicFlowItuExcetoTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'pni-vf-juggle-tap') {
-    return <LogicFlowPniVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+    return <LogicFlowPniVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'pni-calendar-elimination-tap') {
+    return (
+      <LogicFlowPniCalendarEliminationTap steps={steps} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'pni-cold-chain-tap') {
+    return <LogicFlowPniColdChainTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'ist-vf-juggle-tap') {
@@ -209,22 +223,22 @@ export const LogicFlow = ({
       <LogicFlowPniVfJuggleTap
         steps={steps}
         theme={theme}
-        footerRule={undefined}
+        footerRule={footerRule}
         accentVariant="ist"
       />
     );
   }
 
   if (variant === 'via-vf-juggle-tap') {
-    return <LogicFlowViaVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+    return <LogicFlowViaVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'farmaco-vf-juggle-tap') {
-    return <LogicFlowFarmacoVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+    return <LogicFlowFarmacoVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'adolescent-vf-weave-tap') {
-    return <LogicFlowAdolescentVfWeaveTap steps={steps} theme={theme} footerRule={undefined} />;
+    return <LogicFlowAdolescentVfWeaveTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'dose-calc-tap' || variant === 'sae-decision-tap') {

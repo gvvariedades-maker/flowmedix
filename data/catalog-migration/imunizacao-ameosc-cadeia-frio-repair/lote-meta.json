@@ -1,0 +1,33 @@
+{
+  "lote": "imunizacao-ameosc-cadeia-frio-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-02",
+  "subtopico": "Imunização",
+  "total": 1,
+  "status": "applied",
+  "applied_at": "2026-07-02",
+  "readme": "data/catalog-migration/imunizacao-ameosc-cadeia-frio-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=data/catalog-migration/imunizacao-ameosc-cadeia-frio-repair/questions/ameosc-enfermagem-processo-de-enfermagem-1780005791580-3.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=imunizacao-ameosc-cadeia-frio-repair --apply",
+  "workflow": [
+    "1. Golden em examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "2. Copiar para questions/<slug>.json",
+    "3. npm run audit:questao-readiness -- --file=...",
+    "4. npm run catalog:apply-lote -- --lote=imunizacao-ameosc-cadeia-frio-repair --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=imunizacao-ameosc-cadeia-frio-repair --apply"
+  ],
+  "artifacts": {
+    "applied": "artifacts/catalog-migration-imunizacao-ameosc-cadeia-frio-repair-applied.json"
+  },
+  "anchor_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+  "anchor_example": "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+  "pedagogical_branch": "imunizacao_cadeia_frio",
+  "pedagogical_cluster": "Cadeia de frio / conservação / SI-PNI",
+  "family": "vf",
+  "command": "sequência V/F — sala de vacina",
+  "gabarito": "C",
+  "nota": "Âncora golden-v1 P0 — cadeia de frio + BCG + pentavalente + papel do técnico (Q-4611)."
+}

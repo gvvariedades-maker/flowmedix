@@ -171,6 +171,49 @@ describe('enrichPresentationContext — meta da questão', () => {
     expect(inferPedagogicalBranch(imunizacaoSubtopico, instruction, [], 'protocolo')).toBe(
       'imunizacao_calendario',
     );
+    const design = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_calendario');
+    expect(design?.conceptMap).toBe('vaccine-timeline');
+    expect(design?.goldenRule).toBe('pni-calendar-board');
+    expect(design?.logicFlow).toBe('pni-calendar-elimination-tap');
+    expect(design?.dangerZone).toBe('calendar-mismatch');
+  });
+
+  it('infere imunizacao_cadeia_frio para conservação e SI-PNI', () => {
+    const instruction =
+      'Sobre a cadeia de frio na sala de vacinação, assinale a alternativa correta quanto à conservação dos imunobiológicos no refrigerador do SI-PNI.';
+    expect(inferPedagogicalBranch(imunizacaoSubtopico, instruction, [], 'conceito')).toBe(
+      'imunizacao_cadeia_frio',
+    );
+    const design = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_cadeia_frio');
+    expect(design?.conceptMap).toBe('cold-chain-hub');
+    expect(design?.goldenRule).toBe('pni-temperature-rail');
+    expect(design?.logicFlow).toBe('pni-cold-chain-tap');
+    expect(design?.dangerZone).toBe('temperature-mismatch');
+  });
+
+  it('infere imunizacao_exceto para comando INCORRETA', () => {
+    const instruction = 'Sobre vacinas, é INCORRETO afirmar que:';
+    expect(inferPedagogicalBranch(imunizacaoSubtopico, instruction, [], 'certo_errado')).toBe(
+      'imunizacao_exceto',
+    );
+    const design = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_exceto');
+    expect(design?.dangerZone).toBe('compare');
+  });
+
+  it('PNI ramos bespoke — pacotes 4/4 distintos (calendário ≠ cadeia frio ≠ V/F intervalos)', () => {
+    const cal = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_calendario');
+    const frio = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_cadeia_frio');
+    const vf = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_vf_intervalos');
+
+    expect(cal?.conceptMap).toBe('vaccine-timeline');
+    expect(frio?.conceptMap).toBe('cold-chain-hub');
+    expect(vf?.conceptMap).toBe('pni-rules-deck');
+
+    expect(cal?.goldenRule).not.toBe(frio?.goldenRule);
+    expect(frio?.logicFlow).not.toBe(vf?.logicFlow);
+    expect(cal?.dangerZone).not.toBe(frio?.dangerZone);
+
+    expect(new Set([cal?.conceptMap, frio?.conceptMap, vf?.conceptMap]).size).toBe(3);
   });
 
   const viasSubtopico = 'Vias de Administração';

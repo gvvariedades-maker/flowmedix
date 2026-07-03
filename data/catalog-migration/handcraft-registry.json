@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-06-30",
+  "updated_at": "2026-07-01",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -18,6 +18,8 @@
       "total_slugs": 68,
       "handcraft_applied": 68,
       "anchor_glob": "examples/questao-premium-*-perioperatoria-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/perioperatoria.json",
+      "clinical_depth_v3_registry": "data/catalog-migration/clinical-depth-v3-anchors.json",
       "guideline": null,
       "production_status": "production_ready",
       "quality": {
@@ -42,9 +44,9 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-30T16:28:06.716Z",
+          "last_audit_at": "2026-07-01T03:03:40.683Z",
           "last_audit_pass": true,
-          "health_streak_days": 1,
+          "health_streak_days": 3,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
@@ -278,14 +280,16 @@
       "manifest": "data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/manifest.json",
       "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g02/lote-meta.json",
       "readme": null,
-      "cluster_command": null,
-      "cluster_report": null,
+      "cluster_command": "npm run cluster:farmacodinamica",
+      "cluster_report": "artifacts/farmacodinamica-topic-cluster-report.json",
       "lote_pattern": "farmacodinamica-e-farmacocinetica-g{NN}",
       "lote_size": 8,
       "status": "applied",
-      "total_slugs": 12,
-      "handcraft_applied": 12,
-      "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json",
+      "total_slugs": 11,
+      "handcraft_applied": 11,
+      "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/farmacodinamica-e-farmacocinetica.json",
+      "golden_anchors_registry": "data/catalog-migration/farmacodinamica-golden-anchors.json",
       "guideline": null,
       "production_status": "production_ready",
       "quality": {
@@ -310,9 +314,9 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-29T23:34:46.611Z",
+          "last_audit_at": "2026-07-01T21:13:53.463Z",
           "last_audit_pass": true,
-          "health_streak_days": 1,
+          "health_streak_days": 3,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
@@ -581,9 +585,103 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-30T17:21:44.835Z",
+          "last_audit_at": "2026-07-01T00:44:52.998Z",
           "last_audit_pass": true,
-          "health_streak_days": 1,
+          "health_streak_days": 6,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Vias de Administração": {
+      "pacote_prefix": "vias-de-administracao",
+      "manifest": "data/catalog-migration/vias-de-administracao-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/vias-de-administracao-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/vias-de-administracao-completo/README.md",
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "vias-de-administracao-g{NN}",
+      "lote_size": 8,
+      "status": "in_progress",
+      "total_slugs": 251,
+      "handcraft_applied": 1,
+      "anchor_glob": "examples/questao-premium-*-vias-*.json,examples/questao-premium-consulpam-vias-absorcao-oral.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/vias-de-administracao.json",
+      "golden_anchors_registry": "data/catalog-migration/vias-golden-anchors.json",
+      "guideline": null,
+      "production_status": "none",
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": false,
+          "L4": false,
+          "L5": false,
+          "L6": false
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": false,
+          "last_audit_at": null,
+          "last_audit_pass": null,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Imunização": {
+      "pacote_prefix": "imunizacao",
+      "manifest": "data/catalog-migration/imunizacao-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/imunizacao-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/imunizacao-completo/README.md",
+      "cluster_command": "npm run cluster:imunizacao",
+      "cluster_report": "artifacts/imunizacao-topic-cluster-report.json",
+      "lote_pattern": "imunizacao-g{NN}",
+      "lote_size": 8,
+      "status": "in_progress",
+      "total_slugs": 575,
+      "handcraft_applied": 59,
+      "anchor_glob": "examples/questao-premium-*-imunizacao-*.json,examples/questao-premium-decorp-imunizacao-triplice-viral-via.json,examples/questao-premium-fundatec-meningococica-3meses.json,examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json,examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json,examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json,examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/imunizacao.json",
+      "golden_anchors_registry": "data/catalog-migration/imunizacao-golden-anchors.json",
+      "guideline": "lib/guidelines/pniCalendario.ts",
+      "production_status": "none",
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": false,
+          "L4": false,
+          "L5": false,
+          "L6": false
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": false,
+          "last_audit_at": null,
+          "last_audit_pass": null,
+          "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }

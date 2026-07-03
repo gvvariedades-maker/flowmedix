@@ -139,6 +139,20 @@ const PNI_VF_VARIANTS = new Set([
   'pni-trap-chips',
 ]);
 
+const PNI_CALENDARIO_VARIANTS = new Set([
+  'vaccine-timeline',
+  'pni-calendar-board',
+  'pni-calendar-elimination-tap',
+  'calendar-mismatch',
+]);
+
+const PNI_CADEIA_FRIO_VARIANTS = new Set([
+  'cold-chain-hub',
+  'pni-temperature-rail',
+  'pni-cold-chain-tap',
+  'temperature-mismatch',
+]);
+
 const VIA_VF_VARIANTS = new Set([
   'absorption-speed-rail',
   'via-reference-board',
@@ -310,6 +324,75 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
     blockFamilies: ['protocolo', 'calc', 'legis', 'text_fragment'],
     positivePatterns: [/vacina|imuniz|pni|intervalo/i],
+    minPositive: 1,
+  },
+
+  'pni-calendar-board': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['vf', 'calc', 'legis'],
+    positivePatterns: [
+      /calend[aá]rio|faixa et[aá]ria|\d+\s*m[eê]s|ao nascer|meningo|pentavalente|cart[aã]o perdido|catch-up/i,
+    ],
+    minPositive: 1,
+  },
+
+  'pni-calendar-elimination-tap': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['vf', 'calc', 'legis'],
+    positivePatterns: [
+      /calend[aá]rio|testar [a-e]|eliminar|marcar [a-e]|\d+\s*m[eê]s|cart[aã]o perdido/i,
+    ],
+    minPositive: 1,
+  },
+
+  'vaccine-timeline': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['vf', 'calc', 'legis'],
+    positivePatterns: [
+      /calend[aá]rio|\d+\s*m[eê]s|marco|meningo|pentavalente|bcg|cart[aã]o perdido/i,
+    ],
+    minPositive: 1,
+  },
+
+  'calendar-mismatch': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['vf', 'calc', 'legis'],
+    positivePatterns: [/calend[aá]rio|\d+\s*m[eê]s|bcg|rotav|pneumo|letra [a-e]/i],
+    minPositive: 1,
+  },
+
+  'cold-chain-hub': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /cadeia de frio|rede de frio|conserva[cç][aã]o|refriger|congel|si[\s-]?pni|caixa t[eé]rmica|geladeira|imunobiol/i,
+    ],
+    minPositive: 1,
+  },
+
+  'pni-temperature-rail': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /2\s*°c|8\s*°c|cadeia de frio|rede de frio|conserva[cç][aã]o|refriger|termo|faixa/i,
+    ],
+    minPositive: 1,
+  },
+
+  'pni-cold-chain-tap': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /cadeia de frio|rede de frio|2\s*°c|8\s*°c|eliminar|marcar [a-e]|sequ[eê]ncia|\bI\b\s*[-–—]/i,
+    ],
+    minPositive: 1,
+  },
+
+  'temperature-mismatch': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /2\s*°c|8\s*°c|cadeia de frio|piso|teto|congel|agitar|letra [a-e]/i],
     minPositive: 1,
   },
 
@@ -710,6 +793,18 @@ export function bespokeMoldHasContentAffinity(
 
   if (PNI_VF_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_vf_intervalos') {
+      return false;
+    }
+  }
+
+  if (PNI_CALENDARIO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_calendario') {
+      return false;
+    }
+  }
+
+  if (PNI_CADEIA_FRIO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_cadeia_frio') {
       return false;
     }
   }

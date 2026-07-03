@@ -1,0 +1,187 @@
+{
+  "meta": {
+    "banca": "Agirh",
+    "prova": "Tec (Pref Queluz)",
+    "orgao": "Enfermagem",
+    "ano": "2022",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Imunização",
+    "pedagogical_branch": "imunizacao_exceto",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-07-02",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "PNI 2025 — eventos adversos, orientação pós-vacina; antibiótico não adia rotina",
+      "exam_vs_current": "none",
+      "catalog_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "cluster": "INCORRETA / EXCETO",
+      "anchor_role": "piloto_exceto_inc_correta_semantico"
+    },
+    "sources": [
+      {
+        "id": "pni-2025-manual",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Normas e Procedimentos para Vacinação — PNI",
+        "year": 2025,
+        "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
+        "covers": [
+          "eventos adversos",
+          "orientação pós-vacinação",
+          "doença leve",
+          "antibiótico não contraindica rotina"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre vacinas, é INCORRETO afirmar que:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A prevenção de doenças infecciosas mediante a vacinação é considerada um dos maiores sucessos em saúde pública e uma das medidas mais seguras e de melhor relação custo-efetividade para os sistemas de saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Deve-se orientar o cliente ou responsável para retornar à unidade de saúde, caso observe que os eventos adversos comuns ou esperados se apresentem com maior intensidade, demorem muito a passar e se, além destes, surgirem outros sinais e sintomas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Uso de antibióticos interfere na eficácia da vacina. Nesses casos deve-se aguardar o término do antibiótico para aplicação da vacina.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Os eventos adversos induzidos pela vacina dependem das características próprias de seus componentes e de sua produção e, ainda, da relação destes com a resposta individual da pessoa vacinada.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Comando INCORRETA — sala de vacina",
+      "chip_label": "PNI",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Marque a afirmativa falsa sobre vacinas — três alternativas são verdadeiras do Manual PNI.",
+          "icon": "Target"
+        },
+        {
+          "label": "Vacinação em SP",
+          "detail": "Prevenção de doenças infecciosas: medida segura, custo-efetiva e sucesso em saúde pública.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Eventos adversos",
+          "detail": "Reações locais/leves são esperadas; orientar retorno se intensificar ou surgirem sinais novos.",
+          "icon": "BellRing"
+        },
+        {
+          "label": "Pegadinha antibiótico",
+          "detail": "Antibiótico de rotina não suspende calendário — banca mistura infecção tratada com contraindicação vacinal.",
+          "icon": "Pill"
+        }
+      ],
+      "footer_rule": "INCORRETA = achar a afirmativa falsa, não a mais “clínica”"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Achar a INCORRETA",
+      "chip_label": "PASSO A PASSO",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "steps": [
+        "Comando: é INCORRETO afirmar — três alternativas são verdadeiras, uma é falsa.",
+        "A — vacinação como sucesso em saúde pública e custo-efetividade → afirmativa correta → eliminar.",
+        "B — orientar retorno se evento adverso intenso ou prolongado → conduta PNI → eliminar.",
+        "D — eventos adversos variam com componente da vacina e resposta individual → verdadeiro → eliminar.",
+        "C — antibiótico interfere e exige esperar para vacinar → mito na rotina PNI → esta é a INCORRETA.",
+        "Gabarito: letra C."
+      ],
+      "footer_rule": "Doença leve/antibiótico ≠ adiar vacina de rotina"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — condutas corretas PNI",
+      "chip_label": "SALA DE VACINA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "AFIRMAÇÕES VERDADEIRAS (NÃO SÃO O GABARITO)",
+      "rows": [
+        {
+          "label": "Impacto da vacinação",
+          "value": "Segura, custo-efetiva e um dos maiores sucessos em saúde pública"
+        },
+        {
+          "label": "Orientação pós-vacina",
+          "value": "Retornar à UBS se reação comum piorar, durar demais ou surgirem sinais novos"
+        },
+        {
+          "label": "Eventos adversos",
+          "value": "Dependem do imunobiológico e da resposta individual do vacinado"
+        },
+        {
+          "label": "Antibiótico × vacina",
+          "value": "Não adia rotina — infecção leve tratada não contraindica calendário",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "PNI: vacinar no calendário; notificar EAPV grave"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Por que a banca confunde",
+      "chip_label": "ARMADILHAS",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "PEGADINHAS — INCORRETA SOBRE VACINAS",
+      "items": [
+        {
+          "label": "A — sucesso em saúde pública",
+          "detail": "Parece genérico demais para ser verdade.",
+          "correct": "Afirmativa correta — vacinação é referência de custo-efetividade no SUS."
+        },
+        {
+          "label": "B — retorno à unidade",
+          "detail": "Aluno acha que reação leve sempre impede nova dose.",
+          "correct": "Orientação correta do PNI para eventos adversos intensos ou atípicos."
+        },
+        {
+          "label": "D — resposta individual",
+          "detail": "Confunde com contraindicação absoluta.",
+          "correct": "Verdadeiro: componentes da vacina e organismo do vacinado modulam a reação."
+        },
+        {
+          "label": "C — antibiótico suspende vacina",
+          "detail": "Seduz quem associa qualquer medicamento à espera.",
+          "correct": "INCORRETA: antibiótico de rotina não exige adiar vacina do calendário."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Criança em amoxicilina para otite leve.",
+          "correct": "Vacinar conforme calendário — não postergar só por antibiótico."
+        }
+      ],
+      "footer_rule": "INCORRETA = mito do antibiótico, não as condutas certas"
+    }
+  ]
+}

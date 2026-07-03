@@ -1,0 +1,15 @@
+{
+  "lote": "imunizacao-g03",
+  "subtopico": "Imunização",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_vf_intervalos": 1,
+    "imunizacao_calendario": 3,
+    "imunizacao_generico": 4
+  },
+  "priority": "V/F intervalos (1) + calendário infantil/FA (3) + EXCETO/INCORRETA/sala (4)",
+  "notes": "Piloto g03 — CPCON intervalos, BCG V/F, FA esquema, calendário 2022, HepB 30d, boas práticas, antibiótico mito, EXCETO fatores imunes"
+}

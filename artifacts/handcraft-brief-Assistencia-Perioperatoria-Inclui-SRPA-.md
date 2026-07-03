@@ -21,7 +21,34 @@
 
 ## Ramos L3 (pedagogical_branch)
 
-Se subtópico tem BRANCH_DESIGN_MAP, ver .cursor/skills/avant-json-template/SKILL.md § L2.5+L3
+  - **perioperatorio_pos_operatorio** — Pós-operatório, SRPA, anestesia regional, bloqueio, EXCETO de conduta, analgesia, retenção urinária · genérico morphological · reference_table · vertical · compare
+    Âncoras: examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json, examples/questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json
+  - **perioperatorio_pre_operatorio** — Pré-operatório, preparo, jejum, tricotomia, orientação · genérico
+    Âncoras: examples/questao-premium-avancasp-perioperatoria-pre-operatorio.json
+  - **perioperatorio_protocolo** — Protocolo, sequência, checklist, cirurgia segura, CDC · genérico
+    Âncoras: examples/questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json
+  - **perioperatorio_isc** — ISC, infecção de sítio cirúrgico, classificação de ferida · genérico
+    Âncoras: examples/questao-premium-furb-perioperatoria-isc-classificacao.json
+  - **perioperatorio_vf** — Certo ou errado, I/II/III, assertivas C/E · genérico
+    Âncoras: examples/questao-premium-idecan-srpa-curativo-cpd-ce.json
+  - **perioperatorio_generico** — Demais — sem fit claro · genérico
+    Âncoras: examples/questao-premium-idecan-perioperatoria-aldrete-srpa.json
+
+## Clusters
+
+- Pré-operatório / preparo
+- Pós-operatório / cuidados (âncora v3 Fundatec EXCETO)
+- Protocolo / sequência
+- Certo ou errado
+- ISC / classificação e prevenção
+- SRPA / atribuição do técnico
+- SRPA / Aldrete e alta
+- Cirurgia segura / classificação ferida CDC
+
+## Clinical-depth v3
+
+- Registry: `data/catalog-migration/clinical-depth-v3-anchors.json`
+- EXCETO pós-op: `examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json`
 
 ## Pipeline (executar)
 
@@ -34,12 +61,12 @@ Se subtópico tem BRANCH_DESIGN_MAP, ver .cursor/skills/avant-json-template/SKIL
 npm run catalog:export-lote -- --lote=perioperatoria-completo --subtopico="Assistência Perioperatória (Inclui SRPA)" --limit=10000
 # Handcraft → data/catalog-migration/perioperatoria-g01/questions/*.json
 npm run validate:goldens -- --lote=perioperatoria-g01 --strict
-npm run audit:questao-readiness -- --lote=perioperatoria-g01
+npm run audit:questao-readiness -- --lote=perioperatoria-g01 --strict-v2-pedagogy
 npm run catalog:apply-lote -- --lote=perioperatoria-g01 --dry-run
 # apply + patch branch só se o usuário pedir
 ```
 
 ## Critério de pronto (automático)
 
-- `audit:questao-readiness` → `[READY]` por slug
+- `audit:questao-readiness` → `[READY]` por slug (strict-v2-pedagogy obrigatório)
 - A4 (piloto `/estudar/[slug]`) — usuário

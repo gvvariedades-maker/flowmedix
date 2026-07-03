@@ -1,0 +1,24 @@
+{
+  "lote": "imunizacao-g11",
+  "subtopico": "Imunização",
+  "status": "planned",
+  "priority": "P0 — calendário (~62% volume)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "fauel-enfermagem-imunizacao-1777103257434-7",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Replanejado 2026-07-03 — slugs sem overlap com g08/g10/g12/g13 aplicados. Handcraft golden-v1 calendário. Erro reproduzível no concept_map + mirror danger_zone.",
+  "workflow": [
+    "npm run plan:imunizacao-g11",
+    "npm run catalog:export-lote -- --lote=imunizacao-g11 --from-manifest=data/catalog-migration/imunizacao-g11/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g11 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g11 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g11",
+    "npm run capture:questao-review -- --lote=imunizacao-g11"
+  ]
+}

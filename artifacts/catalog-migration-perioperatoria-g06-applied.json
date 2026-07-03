@@ -1,66 +1,17 @@
 {
-  "generated_at": "2026-06-30T01:17:57.671Z",
+  "generated_at": "2026-07-01T06:12:21.675Z",
   "lote": "perioperatoria-g06",
   "mode": "apply",
-  "total_files": 8,
-  "ok": 8,
+  "total_files": 1,
+  "ok": 1,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
-    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
-    "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
-    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
-    "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
-    "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
-    "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
-    "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
-    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2"
+    "fundatec-enfermagem-vias-de-administracao-1776056374837-7"
   ],
   "results": [
     {
-      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
-      "status": "ok",
-      "mode": "update",
-      "detail": "conteudo_json aplicado"
-    },
-    {
-      "modulo_slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
-      "status": "ok",
-      "mode": "update",
-      "detail": "conteudo_json aplicado"
-    },
-    {
-      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
-      "status": "ok",
-      "mode": "update",
-      "detail": "conteudo_json aplicado"
-    },
-    {
-      "modulo_slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
-      "status": "ok",
-      "mode": "update",
-      "detail": "conteudo_json aplicado"
-    },
-    {
       "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
-      "status": "ok",
-      "mode": "update",
-      "detail": "conteudo_json aplicado"
-    },
-    {
-      "modulo_slug": "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
-      "status": "ok",
-      "mode": "update",
-      "detail": "conteudo_json aplicado"
-    },
-    {
-      "modulo_slug": "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
-      "status": "ok",
-      "mode": "update",
-      "detail": "conteudo_json aplicado"
-    },
-    {
-      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2",
       "status": "ok",
       "mode": "update",
       "detail": "conteudo_json aplicado"

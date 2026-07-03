@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-02",
+  "subtopico": "Imunização",
+  "description": "Erros reproduzíveis por cluster (ROI handcraft) — nomear no concept_map e espelhar no danger_zone.",
+  "grammar_slots": {
+    "concept_map": "Enquadramento da prova + núcleos + pegadinha-âncora nomeando erro ROI (sem letra gabarito)",
+    "golden_rule": "Decore normativo — rows com faixas, intervalos, vias, marcos PNI (sem V/F nem gabarito)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; eliminar distratores ou julgar I–IV",
+    "danger_zone": "Erro reproduzível × correção específica por letra/tema (compare semântico)",
+    "content_review": "guideline_snapshot tier A + exam_vs_current (none ou divergência prova × PNI 2025)"
+  },
+  "v3_mental": {
+    "flag": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "roi_errors": "reproducible_errors[].id — inferir do enunciado e nomear no concept_map",
+    "codes": [
+      "imunizacao_concept_repro_error",
+      "imunizacao_concept_generic_pni",
+      "imunizacao_golden_vf_judgment",
+      "imunizacao_golden_gabarito_row",
+      "imunizacao_logic_reveal_tap",
+      "imunizacao_logic_elimination",
+      "imunizacao_danger_letter_binding",
+      "imunizacao_guideline_snapshot",
+      "imunizacao_exam_vs_current"
+    ]
+  },
+  "reproducible_errors": [
+    {
+      "id": "marco_etario_vacina",
+      "label": "Confundir marco etário × vacina",
+      "clusters": ["Calendário vacinal — infantil", "Calendário vacinal — adolescente/adulto/idoso", "HPV / campanhas e prevenção"],
+      "concept_map_hint": "Item com idade exata do enunciado × vacina do calendário; pegadinha = mês vizinho ou vacina neonatal",
+      "danger_zone_hint": "Distrator que troca 3m×5m, BCG×MenC, rotavírus×penta",
+      "anchors": ["calendario_infantil", "calendario_adolescente_adulto"]
+    },
+    {
+      "id": "intervalo_reforco",
+      "label": "Trocar intervalo × reforço / grace period",
+      "clusters": ["V/F — intervalos PNI (I/II/III/IV)"],
+      "concept_map_hint": "Afirmativa sobre grace 4d ou intervalo mínimo vs reforço",
+      "danger_zone_hint": "Letra que aceita 'repetir dose' onde PNI valida antecipação",
+      "anchors": ["vf_intervalos_pni"]
+    },
+    {
+      "id": "agitar_cadeia",
+      "label": "Agitar recupera cadeia rompida",
+      "clusters": ["Cadeia de frio / conservação / SI-PNI"],
+      "concept_map_hint": "Afirmativa II ou item cadeia — agitar não salva imunobiológico",
+      "danger_zone_hint": "Sequência ou letra que trata agitação como conduta",
+      "anchors": ["cadeia_frio_pni"]
+    },
+    {
+      "id": "faixa_termica",
+      "label": "Marcar faixa térmica errada (0–2, 8–12, congelamento)",
+      "clusters": ["Cadeia de frio / conservação / SI-PNI"],
+      "concept_map_hint": "Comando temperatura positiva 2–8 °C; pegadinha = piso/teto/congelamento",
+      "danger_zone_hint": "Letras A/C/D/E com faixa fora de 2–8 °C",
+      "anchors": ["cadeia_frio_temperatura"]
+    },
+    {
+      "id": "exceto_coringa",
+      "label": "EXCETO com frase-coringa em todas as letras",
+      "clusters": ["INCORRETA / EXCETO", "Certo ou errado"],
+      "concept_map_hint": "Distratores = condutas corretas; só gabarito aponta mito/exceção",
+      "danger_zone_hint": "Cada letra errada explica por que É correta; C (gabarito) = exceção",
+      "anchors": ["exceto_inc_piloto_antibiotico"]
+    },
+    {
+      "id": "via_administracao",
+      "label": "Trocar via de administração",
+      "clusters": ["Técnica de aplicação / sala de vacinação", "Calendário vacinal — infantil"],
+      "concept_map_hint": "SCR subcutânea vs penta IM — julgar via separada de idade",
+      "danger_zone_hint": "Letra que inverte IM/SC/ID",
+      "anchors": ["via_scr_subcutanea"]
+    }
+  ],
+  "audit_gates": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "always_error_codes": [
+      "imunizacao_pegadinha_anchor",
+      "imunizacao_concept_gabarito_spoiler",
+      "imunizacao_danger_mirror",
+      "imunizacao_exceto_semantic",
+      "imunizacao_exceto_coringa"
+    ],
+    "strict_v2_codes": [
+      "imunizacao_golden_rows",
+      "imunizacao_logic_gabarito"
+    ],
+    "rede_frio_codes": [
+      "rede_frio_tier_a_source",
+      "rede_frio_golden_faixa_28",
+      "rede_frio_trap_as_correct",
+      "rede_frio_claim_unmatched"
+    ],
+    "codes": [
+      "imunizacao_pegadinha_anchor",
+      "imunizacao_concept_gabarito_spoiler",
+      "imunizacao_danger_mirror",
+      "imunizacao_exceto_semantic",
+      "imunizacao_exceto_coringa",
+      "imunizacao_golden_rows",
+      "imunizacao_logic_gabarito"
+    ]
+  }
+}

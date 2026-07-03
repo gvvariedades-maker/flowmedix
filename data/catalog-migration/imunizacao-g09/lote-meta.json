@@ -1,0 +1,46 @@
+{
+  "lote": "imunizacao-g09",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "applied_at": "2026-07-03",
+  "readiness": "8/8",
+  "readiness_strict_v2": "8/8",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 8
+  },
+  "priority": "P0 — calendário (~62% volume): ao nascer · penta normas · 6m · BCG indicação · FA gestante · composição penta · HepA 12–23m",
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "copese-ufpi-enfermagem-imunizacao-1779564079834-6",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "g09 calendário P0 — 8/8 READY. Export via --from-manifest (não --slugs-file). Limpeza de 500 arquivos espúrios do export inicial.",
+  "validation": {
+    "validate_goldens_strict": "pass 8/8",
+    "questao_readiness_strict_v2": "pass 8/8",
+    "slug_alignment_strict": "pass 8/8",
+    "numeric_factcheck": "pass 8/8",
+    "apply_lote_dry_run": "pass 8/8"
+  },
+  "workflow": [
+    "npm run plan:imunizacao-g09",
+    "npm run catalog:export-lote -- --lote=imunizacao-g09 --from-manifest=data/catalog-migration/imunizacao-g09/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g09 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g09 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g09",
+    "npm run catalog:apply-lote -- --lote=imunizacao-g09 --dry-run"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "handcraft-apply",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g09.json"
+  }
+}

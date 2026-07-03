@@ -1,24 +1,35 @@
 {
-  "generated_at": "2026-06-30T17:15:31.697Z",
-  "total_scanned": 0,
+  "generated_at": "2026-07-01T22:04:46.732Z",
+  "total_scanned": 575,
   "filters": {
-    "subtopico_contains": "infecções no contexto da biossegurança",
-    "mismatches_only": true
+    "subtopico_contains": "imunização"
   },
   "summary": {
-    "unique_titulo_aula": 0,
-    "unique_meta_subtopico": 0,
+    "unique_titulo_aula": 1,
+    "unique_meta_subtopico": 1,
     "mismatch_count": 0,
     "missing_titulo_aula": 0,
     "missing_meta_subtopico": 0,
     "non_canonical_titulo_aula": 0,
     "non_canonical_meta_subtopico": 0,
     "catch_all_bucket_count": 0,
-    "canonical_titulo_rows": 0,
-    "canonical_meta_rows": 0
+    "canonical_titulo_rows": 575,
+    "canonical_meta_rows": 575
   },
-  "by_titulo_aula": [],
-  "by_meta_subtopico": [],
+  "by_titulo_aula": [
+    {
+      "label": "Imunização",
+      "count": 575,
+      "canonical": true
+    }
+  ],
+  "by_meta_subtopico": [
+    {
+      "label": "Imunização",
+      "count": 575,
+      "canonical": true
+    }
+  ],
   "non_canonical_titulo_aula": [],
   "non_canonical_meta_subtopico": [],
   "catch_all_buckets": [],

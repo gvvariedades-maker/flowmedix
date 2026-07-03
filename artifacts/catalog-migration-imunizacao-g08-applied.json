@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T02:41:36.383Z",
+  "lote": "imunizacao-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-imunizacao-1779564074967-3",
+    "ameosc-enfermagem-imunizacao-1779572198133-0",
+    "ameosc-enfermagem-imunizacao-1779572207173-7",
+    "ameosc-enfermagem-imunizacao-1779572207173-8",
+    "apice-enfermagem-imunizacao-1779564079834-3",
+    "apice-enfermagem-imunizacao-1779564079834-4",
+    "avancasp-enfermagem-imunizacao-1779564125198-7",
+    "cetrede-enfermagem-imunizacao-1777103215560-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103215560-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

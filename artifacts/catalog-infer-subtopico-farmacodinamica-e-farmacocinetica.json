@@ -5,56 +5,16 @@
   "limit": 50,
   "inference_source": "heuristic",
   "summary": {
-    "scanned": 25,
-    "inferred": 25,
+    "scanned": 11,
+    "inferred": 11,
     "errors": 0,
-    "keep_current": 5,
-    "same_subtopico": 5,
-    "applicable": 20
+    "keep_current": 4,
+    "same_subtopico": 4,
+    "applicable": 7
   },
   "proposals": [
     {
-      "modulo_slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-7",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
       "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Instalação e Manejo de Sondas",
-      "confidence": 0.9,
-      "keep_current": false,
-      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7",
       "from": "Farmacodinâmica e Farmacocinética",
       "suggested": "Cuidados na Administração de Medicamentos",
       "confidence": 0.86,
@@ -84,16 +44,6 @@
       "source": "heuristic"
     },
     {
-      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
-      "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
       "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
       "from": "Farmacodinâmica e Farmacocinética",
       "suggested": "Farmacodinâmica e Farmacocinética",
@@ -101,26 +51,6 @@
       "keep_current": true,
       "rationale": "Heurística: sem padrão dominante — manter bucket",
       "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-0",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
-      "confidence": 0.9,
-      "keep_current": false,
-      "rationale": "Heurística (bacteriana): enunciado indica Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibfc-enfermagem-vias-de-administracao-1778968687469-6",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
       "source": "heuristic"
     },
     {
@@ -164,56 +94,6 @@
       "source": "heuristic"
     },
     {
-      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
-      "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Curativos e Manejo de Feridas",
-      "confidence": 0.87,
-      "keep_current": false,
-      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
-      "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Urgências e Emergências",
-      "confidence": 0.93,
-      "keep_current": false,
-      "rationale": "Heurística (urgência): enunciado indica Urgências e Emergências",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
       "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
       "from": "Farmacodinâmica e Farmacocinética",
       "suggested": "Cuidados na Administração de Medicamentos",
@@ -242,27 +122,7 @@
       "rationale": "Heurística: sem padrão dominante — manter bucket",
       "applicable": false,
       "source": "heuristic"
-    },
-    {
-      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Farmacodinâmica e Farmacocinética",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0",
-      "from": "Farmacodinâmica e Farmacocinética",
-      "suggested": "Urgências e Emergências",
-      "confidence": 0.93,
-      "keep_current": false,
-      "rationale": "Heurística (urgência): enunciado indica Urgências e Emergências",
-      "applicable": true,
-      "source": "heuristic"
     }
   ],
-  "generated_at": "2026-06-28T16:56:49.933Z"
+  "generated_at": "2026-07-01T19:38:59.627Z"
 }

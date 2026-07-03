@@ -1,0 +1,22 @@
+{
+  "lote": "imunizacao-g07",
+  "subtopico": "Imunização",
+  "status": "handcraft_complete",
+  "readiness": "8/8",
+  "readiness_strict_v2": "8/8",
+  "readiness_strict_v3": "8/8",
+  "pedagogy_repair_at": "2026-07-02",
+  "pedagogy_v3_repair_at": "2026-07-02",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 5,
+    "imunizacao_vf_intervalos": 2,
+    "imunizacao_exceto": 1
+  },
+  "pedagogical_branch_patch_at": "2026-07-02",
+  "pedagogical_branch_reconciled": 4,
+  "priority": "calendário infantil V/F (1) + BCG via (1) + calendário adulto/HPV (1) + gestante Covid (1) + tetra viral V/F (1) + EXCETO atenuada (1) + recombinante (1) + ao nascer (1)",
+  "notes": "Piloto g07 — V/F BCG/penta/vias, BCG ID, HPV/câncer, Covid gestante, SCRV×polio, VIP inativada EXCETO, HepB recombinante, BCG+HepB ao nascer. Excluído 4125198-6 (vias FA/penta/rota) para manter 8 slugs."
+}

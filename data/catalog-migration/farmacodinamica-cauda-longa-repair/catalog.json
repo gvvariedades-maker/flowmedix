@@ -1,0 +1,37 @@
+{
+  "exported_at": "2026-07-01T21:00:00.000Z",
+  "lote": "farmacodinamica-cauda-longa-repair",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "pedagogical_branch": "farmaco_clinico_protocolo",
+      "family": "conceito",
+      "gabarito": "B",
+      "cluster": "Conceito — farmacodinâmica clínica"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "pedagogical_branch": "farmaco_clinico_protocolo",
+      "family": "conceito",
+      "gabarito": "E",
+      "cluster": "INCORRETA / EXCETO"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "pedagogical_branch": "farmaco_clinico_protocolo",
+      "family": "conceito",
+      "gabarito": "B",
+      "cluster": "Protocolo / administração clínica (EV, infusão)"
+    }
+  ]
+}

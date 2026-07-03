@@ -1,0 +1,15 @@
+{
+  "lote": "imunizacao-avancasp-rede-frio-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "applied_at": "2026-07-03",
+  "total": 1,
+  "created_at": "2026-07-03",
+  "anchor_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+  "anchor_example": "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+  "pedagogical_branch": "imunizacao_cadeia_frio",
+  "notes": "Repair 2026-07-03 — titulo_aula/meta.subtopico Imunização + L3 cold-chain-hub no player.",
+  "validate_command": "npm run audit:questao-readiness -- --file=data/catalog-migration/imunizacao-avancasp-rede-frio-repair/questions/avancasp-enfermagem-processo-de-enfermagem-1780011872350-6.json --strict-v2-pedagogy",
+  "apply_command": "npm run catalog:apply-lote -- --lote=imunizacao-avancasp-rede-frio-repair --apply --skip-anchor-review"
+}

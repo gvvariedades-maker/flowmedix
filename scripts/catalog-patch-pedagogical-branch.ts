@@ -9,6 +9,7 @@
  *   npm run catalog:patch-pedagogical-branch -- --from-supabase --apply
  *   npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=Farmacodin --only-premium --apply
  *   npm run catalog:patch-pedagogical-branch -- --from-supabase --force-branch --subtopico=Adolescente --apply
+ *   npm run catalog:patch-pedagogical-branch -- --lote=imunizacao-g07 --reconcile-branch --apply
  */
 import { loadEnvConfig } from '@next/env';
 import { appendFileSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -22,6 +23,7 @@ import {
   patchPedagogicalMeta,
   type PatchableQuestaoPayload,
 } from '@/lib/catalogMigration/patchPedagogicalMeta';
+import { patchLotePedagogicalBranch } from '@/lib/catalogMigration/patchLotePedagogicalBranch';
 import { loteQuestionsDir } from '@/lib/catalogMigration/paths';
 import { invalidateModulosCache, invalidateQuestoesCache } from '@/lib/cache';
 import { createServerSupabase } from '@/lib/supabase/server';
@@ -34,6 +36,7 @@ type PatchOptions = {
   inferFamily: boolean;
   forceFamily: boolean;
   forceBranch: boolean;
+  reconcileBranch?: boolean;
   onlyPremium: boolean;
   onlyGoldenV1: boolean;
 };
@@ -51,12 +54,13 @@ type SlugReportLine = {
   applied: boolean;
 };
 
-function buildPatchOptions(): PatchOptions {
+function buildPatchOptions(): PatchOptions & { reconcileBranch?: boolean } {
   return {
     dryRun: hasFlag('dry-run') || !hasFlag('apply'),
     inferFamily: !hasFlag('no-infer-family'),
     forceFamily: hasFlag('force-family'),
     forceBranch: hasFlag('force-branch'),
+    reconcileBranch: hasFlag('reconcile-branch'),
     onlyPremium: hasFlag('only-premium'),
     onlyGoldenV1: hasFlag('only-golden-v1'),
   };
@@ -72,6 +76,7 @@ function patchOne(
     inferFamily: opts.inferFamily,
     forceFamily: opts.forceFamily,
     forceBranch: opts.forceBranch,
+    reconcileBranch: opts.reconcileBranch,
     onlyPremium: opts.onlyPremium,
     onlyGoldenV1: opts.onlyGoldenV1,
   });
@@ -96,42 +101,24 @@ function writeReports(
 }
 
 function patchLocalLote(lote: string, opts: PatchOptions) {
-  const dir = loteQuestionsDir(lote);
-  const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
-
-  let patched = 0;
-  let skipped = 0;
-
-  for (const file of files) {
-    const path = join(dir, file);
-    const payload = JSON.parse(readFileSync(path, 'utf8')) as PatchableQuestaoPayload;
-    const result = patchOne(payload, file.replace(/\.json$/, ''), opts);
-
-    if (result.skippedReason && result.skippedReason !== 'unchanged') {
-      console.warn(`[patch-pedagogical-branch] SKIP ${file}: ${result.skippedReason}`);
-      skipped += 1;
-      continue;
-    }
-
-    if (!result.changed) {
-      console.log(
-        `[patch-pedagogical-branch] OK ${file} (já ${result.branchAfter ?? '—'})`,
-      );
-      continue;
-    }
-
-    if (!opts.dryRun) {
-      writeFileSync(path, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-    }
-    console.log(
-      `[patch-pedagogical-branch] ${opts.dryRun ? 'DRY' : 'PATCH'} ${file} → ${result.branchAfter}`,
-    );
-    patched += 1;
-  }
+  const result = patchLotePedagogicalBranch(lote, {
+    dryRun: opts.dryRun,
+    inferFamily: opts.inferFamily,
+    forceFamily: opts.forceFamily,
+    forceBranch: opts.forceBranch,
+    reconcileBranch: opts.reconcileBranch,
+    onlyPremium: opts.onlyPremium,
+    onlyGoldenV1: opts.onlyGoldenV1,
+  });
 
   console.log(
-    `[patch-pedagogical-branch] lote=${lote} patched=${patched} skipped=${skipped} dryRun=${opts.dryRun}`,
+    `[patch-pedagogical-branch] lote=${lote} scanned=${result.scanned} ${opts.dryRun ? 'would_patch' : 'patched'}=${result.patched} reconciled=${result.reconciled} skipped=${result.skipped} dryRun=${opts.dryRun}`,
   );
+  if (result.still_mismatch.length > 0) {
+    console.warn(
+      `[patch-pedagogical-branch] still_mismatch=${result.still_mismatch.length}: ${result.still_mismatch.slice(0, 5).join(', ')}`,
+    );
+  }
 }
 
 async function patchSupabase(opts: PatchOptions, subtopicoFilter?: string) {
@@ -240,6 +227,7 @@ async function patchSupabase(opts: PatchOptions, subtopicoFilter?: string) {
         only_golden_v1: opts.onlyGoldenV1,
         force_family: opts.forceFamily,
         force_branch: opts.forceBranch,
+        reconcile_branch: opts.reconcileBranch,
       },
     },
     slugLines,

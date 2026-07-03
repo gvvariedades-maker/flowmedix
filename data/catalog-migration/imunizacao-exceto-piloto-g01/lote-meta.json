@@ -1,0 +1,19 @@
+{
+  "lote": "imunizacao-exceto-piloto-g01",
+  "subtopico": "Imunização",
+  "status": "piloto",
+  "priority": "P2 — EXCETO/INCORRETA",
+  "slug_count": 1,
+  "pedagogical_branch_target": "imunizacao_exceto",
+  "anchor_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+  "anchors": ["examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"],
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "workflow": [
+    "Handcraft compare semântico — lint imunizacao_exceto_semantic",
+    "npm run audit:questao-readiness -- --file=examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+    "npm run capture:questao-review -- --slug=agirh-enfermagem-imunizacao-1779564113760-0",
+    "npm run audit:anchor-review -- --lote=imunizacao-exceto-piloto-g01 --record-pass --reviewer=agent",
+    "npm run catalog:apply-lote -- --lote=imunizacao-exceto-piloto-g01 --apply"
+  ],
+  "notes": "Piloto ramo imunizacao_exceto — gate L6 obrigatório antes de apply em massa nos 42 slugs EXCETO."
+}

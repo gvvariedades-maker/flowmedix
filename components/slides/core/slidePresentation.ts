@@ -210,6 +210,7 @@ function resolveCore(
     (layoutVariant === 'compare' ||
       layoutVariant === 'trap-reveal' ||
       layoutVariant === 'calendar-mismatch' ||
+      layoutVariant === 'temperature-mismatch' ||
       layoutVariant === 'norm-reveal' ||
       layoutVariant === 'scope-trap' ||
       layoutVariant === 'route-trap' ||

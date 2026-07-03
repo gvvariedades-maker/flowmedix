@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g07",
+  "exported_at": "2026-07-02T21:24:40.476Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/catalog-migration-imunizacao-g07-applied.json"
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-4",
+    "ameosc-enfermagem-imunizacao-1779564074967-2",
+    "avancasp-enfermagem-imunizacao-1777103257434-2",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-5",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-6",
+    "fundatec-enfermagem-imunizacao-1779564071106-3",
+    "fundatec-enfermagem-imunizacao-1779564125198-5",
+    "fundatec-enfermagem-imunizacao-1779572215875-4"
+  ]
+}

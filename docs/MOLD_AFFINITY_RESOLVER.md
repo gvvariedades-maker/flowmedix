@@ -58,6 +58,10 @@ Se omitido, o player infere pelo enunciado + slides. **`meta.pedagogical_branch`
 
 **Sondas** — `sonda_instalacao_protocolo` · `sonda_medicao_nex` (bespoke) · `sonda_generico`
 
+**Imunização** — `imunizacao_vf_intervalos` (`pni-rules-deck` · `pni-interval-matrix` · `pni-vf-juggle-tap` · `pni-trap-chips`) · `imunizacao_calendario` (`vaccine-timeline` · `pni-calendar-board` · `pni-calendar-elimination-tap` · `calendar-mismatch`) · `imunizacao_cadeia_frio` (`cold-chain-hub` · `pni-temperature-rail` · `pni-cold-chain-tap` · `temperature-mismatch`) · `imunizacao_generico` (genérico)
+
+Guards de ramo em `moldAffinity.ts`: `PNI_VF_VARIANTS` · `PNI_CALENDARIO_VARIANTS` · `PNI_CADEIA_FRIO_VARIANTS` — cada set só aplica quando `pedagogical_branch` coincide.
+
 Preencher em lote handcraft:
 
 ```bash
@@ -70,7 +74,7 @@ npm run catalog:patch-pedagogical-branch -- --lote=saude-adolescente-completo
 npm run audit:l3-mold-gap
 ```
 
-Saída: `artifacts/l3-mold-gap-audit.json` + `artifacts/l3-mold-gap-audit.md` — matriz cluster × decisão (`ok_existente` | `ok_generico` | `ramo_novo` | `molde_inedito`).
+Saída: `artifacts/l3-mold-gap-audit.json` + `artifacts/l3-mold-gap-audit.md` — matriz cluster × decisão (`ok_generico` | `molde_redesign` | `molde_inedito` | `ramo_novo`). Decisão legada `ok_existente` → tratar como `molde_redesign` ([`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) Fase 3b).
 
 ## Regras de afinidade (`MOLD_AFFINITY_RULES`)
 
@@ -118,9 +122,26 @@ npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=Farmacod
 
 # Corrigir branch declarado errado (ex. Adolescente)
 npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=Adolescente --force-branch --only-premium --apply
+
+# Reconciliar declarado ≠ inferido (Imunização ~553 slugs) — preferir inferência L2.5
+npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=Imunização --only-premium --reconcile-branch --dry-run
+npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=Imunização --only-premium --reconcile-branch --apply
+
+# Por lote (pós-handcraft) — também roda automaticamente em catalog:apply-lote --apply
+npm run catalog:patch-pedagogical-branch -- --lote=imunizacao-g07 --reconcile-branch --apply
 ```
 
-Flags: `--only-golden-v1` · `--force-family` · `--force-branch` · `--no-infer-family`
+Flags: `--only-golden-v1` · `--force-family` · `--force-branch` · `--reconcile-branch` · `--no-infer-family`
+
+`catalog:apply-lote --apply` executa `--reconcile-branch` nos JSONs locais antes do preflight (opt-out: `--skip-patch-branch`).
+
+Gate A3: `l3_branch_inference_mismatch` é **error** em subtópicos premium com mapa de ramos — bloqueia `[READY]` até patch.
+
+Regressão visual PNI (calendário ≠ cadeia frio ≠ V/F intervalos):
+
+```bash
+npm run test:e2e:visual-molds -- --grep="PNI"
+```
 
 Critério de aceite pós-apply: `post_mismatch` vazio ou só `mold_l3_runtime_fallback`; zero `mold_l3_zero_slots`.
 
@@ -136,9 +157,9 @@ Saída inclui `slug_mismatch_by_subtopico` no relatório JSON/MD.
 
 | Prioridade | Subtópico | Molde de casa | Ramos | Status |
 |------------|-----------|---------------|-------|--------|
-| P0 | Farmacodinâmica e Farmacocinética | `adme-journey-rail` | `farmaco_pk_pd_vf` · `farmaco_clinico_protocolo` · `farmaco_generico` | **branch_implemented** — backfill + gate B |
-| P1 | Imunização | `pni-rules-deck` | `imunizacao_vf_intervalos` · `imunizacao_calendario` · `imunizacao_generico` | **branch_implemented** |
-| P1 | Vias de Administração | `absorption-speed-rail` | `via_vf_absorcao` · `via_tecnica_admin` · `via_generico` | **branch_implemented** |
+| P0 | Farmacodinâmica e Farmacocinética | `adme-journey-rail` | `farmaco_pk_pd_vf` · `farmaco_clinico_protocolo` · `farmaco_generico` | **branch_implemented** — âncora clínica EV: `questao-premium-idecan-omeprazol-ev-ulcera.json` |
+| P1 | Imunização | `pni-rules-deck` | `imunizacao_vf_intervalos` · `imunizacao_calendario` · `imunizacao_cadeia_frio` · `imunizacao_generico` | **branch_implemented** — âncoras: CPCON intervalos · Fundatec 3m · ADM&TEC cartão · AMEOSC cadeia V/F · AVANÇASP 2–8 °C · DECORP via |
+| P1 | Vias de Administração | `absorption-speed-rail` | `via_vf_absorcao` · `via_tecnica_admin` · `via_generico` | **branch_implemented** — âncora absorção: `questao-premium-consulpam-vias-absorcao-oral.json` |
 | P1 | Cálculo de Medicamentos | `dose-equivalence-rail` | `calc_dose_equivalencia` · `calc_conceito` · `calc_generico` | **branch_implemented** |
 | P2 | Doenças Respiratórias Crônicas | `respiratorio-asma-dpoc-duel-deck` | `respiratorio_vf_asma_dpoc` · `respiratorio_dpoc_oxigenio` · `respiratorio_asma_crise` · `respiratorio_tecnica_inalador` · `respiratorio_generico` | **branch_implemented** — backfill + gate B |
 | P2 | ISTs, Sinais Vitais, Oxigenoterapia, Curativos, Punção, Lab, Trabalho/NR32 | respectivos bespoke | 2–3 ramos/cluster | pendente |
@@ -149,7 +170,8 @@ Subtópicos com layout **genérico** (bridge/morphological) — não exigem ramo
 ## Testes
 
 ```bash
-npm test -- moldAffinity pedagogicalBranch moldSlotFit slidePresentationSubtopicMold
+npm test -- moldAffinity pedagogicalBranch moldSlotFit slidePresentationSubtopicMold pniColdChainSlideUtils
+npm run pilot:validate-cadeia-frio
 ```
 
 Regressões:
@@ -172,3 +194,4 @@ Conversa de diagnóstico: `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONV
 - [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — L2 vs L3
 - [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) — cluster por ramo
 - [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) — criar molde bespoke
+- [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) — brief visual 4/4 — **Fase 3b obrigatória** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) (ramos fortes)

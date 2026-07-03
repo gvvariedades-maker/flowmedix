@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "Fundatec",
+    "orgao": "Enfermagem / Centro Cirúrgico, Sala de Recuperação e ou de Material de Esterilização",
+    "prova": "Tec (GHC)",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-07-01",
+      "reviewer": "handcraft-clinical-depth-v3",
+      "guideline_snapshot": "ANVISA RDC 7/2010 — recuperação pós-anestésica; monitorização contínua na SRPA; analgesia conforme critério clínico e prescrição",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anvisa-rdc-7-2010",
+        "tier": "A",
+        "issuer": "ANVISA",
+        "title": "RDC nº 7/2010 — Recuperação pós-anestésica",
+        "year": 2010,
+        "covers": [
+          "anestesia regional",
+          "bloqueio",
+          "monitorização",
+          "SRPA"
+        ]
+      }
+    ],
+    "pedagogical_branch": "perioperatorio_pos_operatorio"
+  },
+  "question_data": {
+    "instruction": "Considerando as responsabilidades da equipe de enfermagem no perioperatório, são cuidados fundamentais ao paciente submetido à anestesia regional, EXCETO:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Avaliação neurológica dos membros inferiores no pós-operatório.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Verificação de retorno da sensibilidade e motricidade.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Monitoramento contínuo da frequência respiratória.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Administração imediata de analgésico oral após o procedimento.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Avaliação da presença de retenção urinária.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Pós-bloqueio regional",
+      "chip_label": "SRPA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+      },
+      "items": [
+        {
+          "label": "Bloqueio regional",
+          "detail": "Raquiana/peridural: perda de sensibilidade e motricidade no território bloqueado.",
+          "icon": "Brain"
+        },
+        {
+          "label": "Neuro (MMII)",
+          "detail": "Vigilância neurológica dos membros inferiores no pós-operatório.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Respiração (FR)",
+          "detail": "Bloqueio pode ascender — monitorar frequência respiratória de forma contínua.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Eliminação",
+          "detail": "Bloqueio simpático favorece retenção urinária — avaliar diurese/bexigoma.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Analgesia",
+          "detail": "Dor é avaliada com escala; medicação segue prescrição e via compatível com o momento.",
+          "icon": "Pill"
+        }
+      ],
+      "footer_rule": "SRPA: observar e avaliar antes de medicar (RDC 7/2010)"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Achar o EXCETO",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Comando EXCETO: quatro condutas corretas, uma falsa.",
+        "Tema: cuidados fundamentais na anestesia regional — pós-operatório/SRPA.",
+        "A e B: neuro do segmento bloqueado (MMII, sensibilidade, motricidade) → corretas.",
+        "C: FR contínua — bloqueio pode ascender → correta.",
+        "E: retenção urinária pelo bloqueio simpático → correta.",
+        "D: administração imediata de analgésico oral — jejum, náusea/vômito, bloqueio ativo e prescrição definem via e momento; VO sem critério é inadequado → falsa.",
+        "Gabarito: letra D."
+      ],
+      "footer_rule": "IMEDIATO + VO sem critério → desconfie"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Leve para a prova",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+      },
+      "content": "Avaliar antes de medicar na SRPA",
+      "rows": [
+        {
+          "label": "Neurológico (MMII)",
+          "value": "Sensibilidade e motricidade do território bloqueado"
+        },
+        {
+          "label": "Respiração",
+          "value": "FR contínua — bloqueio pode ascender"
+        },
+        {
+          "label": "Eliminação",
+          "value": "Retenção urinária (bloqueio simpático)"
+        },
+        {
+          "label": "Analgesia",
+          "value": "Escala de dor + prescrição; VO só se via segura",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Monitorar → avaliar (escala) → analgesiar na via prescrita"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Por que a banca confunde",
+      "chip_label": "ARMADILHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+      },
+      "content": "PEGADINHAS — PÓS-BLOQUEIO REGIONAL",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "A — neuro é detalhe",
+          "detail": "Parece secundário diante da dor.",
+          "correct": "Após bloqueio regional, avaliar MMII é cuidado fundamental — não é a exceção."
+        },
+        {
+          "label": "B — A e B repetem",
+          "detail": "Aluno elimina uma das duas por redundância.",
+          "correct": "Sensibilidade e motricidade são eixos complementares — ambas condutas corretas."
+        },
+        {
+          "label": "C — FR só em GA",
+          "detail": "Associa monitorização respiratória só à intubação.",
+          "correct": "Bloqueio pode ascender — FR contínua é fundamental."
+        },
+        {
+          "label": "E — retenção é do médico",
+          "detail": "Subestima eliminação na enfermagem.",
+          "correct": "Bloqueio simpático causa retenção — avaliar bexiga é cuidado da equipe."
+        },
+        {
+          "label": "D — dor = VO na hora",
+          "detail": "Operou = tem que dar comprimido já.",
+          "correct": "VO imediato sem critério (jejum, náusea/vômito, bloqueio, prescrição) é o EXCETO."
+        }
+      ],
+      "footer_rule": "Outras bancas: VO ao despertar sem critério → mesma exceção"
+    }
+  ]
+}

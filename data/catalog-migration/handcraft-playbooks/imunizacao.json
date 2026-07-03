@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "subtopico": "Imunização",
+  "pacote_prefix": "imunizacao",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-imunizacao-*.json,examples/questao-premium-decorp-imunizacao-triplice-viral-via.json,examples/questao-premium-fundatec-meningococica-3meses.json,examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json,examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json,examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json,examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+  "guideline": "lib/guidelines/pniCalendario.ts",
+  "golden_anchors_registry": "data/catalog-migration/imunizacao-golden-anchors.json",
+  "handcraft_meta": "data/catalog-migration/imunizacao-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/imunizacao-topic-cluster-report.json",
+  "repair_lote_pattern": "imunizacao-*-repair",
+  "slug_selection": "Âncoras P0 fechadas (6/6): escalar lotes imunizacao-g08+ por volume — calendário ~62% · cadeia frio ~12% · V/F intervalos ~3% · EXCETO/C/E em generico (P2 deliberado, sem âncora dedicada); por slug [READY]; por lote L2 (slug-alignment --strict) + L2b (numeric-factcheck); ou Slug: explícito",
+  "clusters": [
+    "Calendário vacinal — adolescente/adulto/idoso (137 · 23,8% — âncora ADM&TEC cartão perdido)",
+    "Calendário vacinal — infantil (135 · 23,5% — âncora Fundatec 3 meses)",
+    "Cadeia de frio / conservação / SI-PNI (68 · 11,8% — ramo imunizacao_cadeia_frio · âncoras AMEOSC V/F + AVANÇASP 2–8 °C)",
+    "HPV / campanhas e prevenção (46 · 8% — absorver em imunizacao_calendario)",
+    "INCORRETA / EXCETO (42 · 7,3% — imunizacao_exceto · compare semântico · âncora Agirh P2)",
+    "Default — sem âncora temática (41 · 7,1%)",
+    "Gestante / puérpera — vacinação (40 · 7% — imunizacao_calendario)",
+    "Certo ou errado (28 · 4,9% — imunizacao_generico)",
+    "V/F — intervalos PNI I/II/III/IV (18 · 3,1% — âncora CPCON intervalos)",
+    "Técnica de aplicação / sala de vacinação (11 · 1,9% — âncora DECORP SCR)",
+    "Conceito — tipos de vacina / imunobiológicos (8 · 1,4%)",
+    "Contraindicações / eventos adversos (1 · cauda longa)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "imunizacao_vf_intervalos",
+      "when": "I/II/III/IV, intervalos entre doses, simultaneidade, grace period, reforço × intervalo mínimo",
+      "mold": "pni-rules-deck · pni-interval-matrix · pni-vf-juggle-tap · pni-trap-chips",
+      "anchors": ["examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"]
+    },
+    {
+      "id": "imunizacao_calendario",
+      "when": "Marco idade × vacina, esquema infantil/adolescente/adulto/idoso, gestante/puérpera, HPV, campanha, dose de reforço por faixa etária",
+      "mold": "vaccine-timeline · pni-calendar-board · pni-calendar-elimination-tap · calendar-mismatch",
+      "anchors": [
+        "examples/questao-premium-fundatec-meningococica-3meses.json",
+        "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+      ]
+    },
+    {
+      "id": "imunizacao_cadeia_frio",
+      "when": "Cadeia de frio, conservação, refrigeração/congelamento, validade, SI-PNI, caixa térmica, gelo, transporte de imunobiológico",
+      "mold": "cold-chain-hub · pni-temperature-rail · pni-cold-chain-tap · temperature-mismatch",
+      "anchors": [
+        "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+        "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json"
+      ]
+    },
+    {
+      "id": "imunizacao_exceto",
+      "when": "Comando EXCETO ou INCORRETA — marcar afirmativa falsa entre condutas corretas",
+      "mold": "morphological · reference_table · tap · compare semântico",
+      "anchors": ["examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"]
+    },
+    {
+      "id": "imunizacao_generico",
+      "when": "Técnica de sala/via (6 certos), certo ou errado isolado, tipos de vacina/imunobiológico, contraindicações — sem fit nos ramos acima",
+      "mold": "genérico morphological · reference_table · tap · compare",
+      "anchors": ["examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"]
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_slug_v3": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+    "v3_mental": "npm run audit:questao-readiness -- --lote=<lote> --strict-v3-pedagogy",
+    "pedagogy_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]"
+  },
+  "golden_v1_grammar": {
+    "concept_map": "Enquadramento da prova + erro reproduzível nomeado (não resumo PNI)",
+    "golden_rule": "Decore normativo — rows com faixas, intervalos, vias, marcos",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap",
+    "danger_zone": "Erro reproduzível × correção específica (espelha concept_map)"
+  },
+  "roi_priorities": [
+    { "priority": "P0", "action": "Handcraft g08+ calendário + patch pedagogical_branch", "why": "~62% do volume Imunização" },
+    { "priority": "P0", "action": "audit:slug-alignment --strict em todo lote", "why": "Evita reciclagem e compare vazio" },
+    { "priority": "P1", "action": "Lote dedicado cadeia frio (68 slugs) âncoras A+B", "why": "Molde imunizacao_cadeia_frio pronto" },
+    { "priority": "P1", "action": "audit:numeric-factcheck + guideline rede de frio", "why": "Temperaturas/doses = pegadinha #1" },
+    { "priority": "P2", "action": "Ramo imunizacao_exceto + lint semântico (Agirh)", "why": "42 slugs compare genérico → gate imunizacao_exceto_semantic" },
+    { "priority": "P2", "action": "test:e2e:visual-molds PNI + audit:subtopico-quality --promote", "why": "Fecha vendável L3–L6" }
+  ],
+  "proibido": ["ai:generate", "catalog:upgrade-premium"],
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Handcraft golden-v1 — 575 slugs em lotes imunizacao-gNN",
+      "first_lote": "imunizacao-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run audit:slug-alignment -- --lote=<lote> --strict",
+        "npm run audit:numeric-factcheck -- --lote=<lote>",
+        "npm run catalog:patch-pedagogical-branch -- --lote=<lote> --reconcile-branch --apply",
+        "npm run test:e2e:visual-molds -- --grep=\"PNI\"",
+        "npm run capture:questao-review -- --lote=<lote>",
+        "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run",
+        "# apply SOMENTE se usuário pedir:",
+        "npm run catalog:apply-lote -- --lote=<lote> --apply",
+        "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"Imunização\" --only-premium --reconcile-branch --apply"
+      ]
+    },
+    "single_slug": {
+      "lote_dir": "data/catalog-migration/imunizacao-g01/questions",
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json"
+      ]
+    }
+  }
+}

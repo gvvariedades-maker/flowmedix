@@ -7,6 +7,7 @@
  *   npm run catalog:apply-lote -- --lote=pilot-goldens --apply
  *   npm run catalog:apply-lote -- --lote=pilot-goldens --apply --allow-insert
  *   npm run catalog:apply-lote -- --lote=imunizacao-lote-02 --apply --only-slugs-file=data/catalog-migration/imunizacao-lote-02/sub01-slugs.json
+ *   npm run catalog:apply-lote -- --lote=imunizacao-g07 --apply --skip-patch-branch
  */
 
 import { loadEnvConfig } from '@next/env';
@@ -24,6 +25,8 @@ import {
   type ValidatedQuestao,
 } from '@/lib/catalogMigration/validatePayload';
 import { runLotePreflight } from '@/lib/catalogMigration/preflightLote';
+import { patchLotePedagogicalBranch } from '@/lib/catalogMigration/patchLotePedagogicalBranch';
+import { requireAnchorReviewPass } from '@/lib/catalogMigration/anchorReview';
 
 async function main() {
   const lote = requireArg('lote');
@@ -34,6 +37,20 @@ async function main() {
   const allowInsert = hasFlag('allow-insert');
   const premiumGate = !hasFlag('allow-generic');
   const skipPreflight = hasFlag('skip-preflight');
+  const skipAnchorReview = hasFlag('skip-anchor-review');
+
+  const skipPatchBranch = hasFlag('skip-patch-branch');
+
+  if (apply && !hasFlag('dry-run') && !skipPatchBranch) {
+    const patchResult = patchLotePedagogicalBranch(lote, {
+      dryRun: false,
+      reconcileBranch: !hasFlag('no-reconcile-branch'),
+      inferFamily: true,
+    });
+    console.log(
+      `[catalog:apply-lote] patch-branch: patched=${patchResult.patched} reconciled=${patchResult.reconciled} still_mismatch=${patchResult.still_mismatch.length}`,
+    );
+  }
 
   if (apply && !hasFlag('dry-run') && !skipPreflight) {
     const preflight = runLotePreflight(lote, { strict: true });
@@ -46,6 +63,13 @@ async function main() {
       }
       throw new Error(
         `Preflight falhou (${preflight.failed} slug(s)). Rode npm run catalog:preflight -- --lote=${lote} ou use --skip-preflight em emergência.`,
+      );
+    }
+
+    const anchorGate = requireAnchorReviewPass(lote, { skip: skipAnchorReview });
+    if (!anchorGate.skipped && anchorGate.anchor_slug) {
+      console.log(
+        `[catalog:apply-lote] L6 anchor_second_review=pass (${anchorGate.anchor_slug})`,
       );
     }
   }

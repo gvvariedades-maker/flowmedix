@@ -1,0 +1,12 @@
+{
+  "lote": "vias-de-administracao-completo",
+  "exported_at": "2026-07-01T00:00:00.000Z",
+  "source": "bootstrap-handcraft",
+  "description": "Manifest bootstrap — handcraft golden-v1 Vias de Administração (expandir com catalog:export-lote)",
+  "slugs_handcraft_applied": [
+    "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0"
+  ],
+  "slugs": [
+    "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0"
+  ]
+}

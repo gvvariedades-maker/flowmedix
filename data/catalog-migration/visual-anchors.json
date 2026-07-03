@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-07-02",
   "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
   "anchors": {
     "cme_vf_ce": {
@@ -158,6 +158,36 @@
       "slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6",
       "lote": "seguranca-do-paciente-g04",
       "json_path": "data/catalog-migration/seguranca-do-paciente-g04/questions/faurgs-enfermagem-seguranca-do-paciente-1779563436357-6.json"
+    },
+    "imunizacao_vf_intervalos": {
+      "pedagogical_branch": "imunizacao_vf_intervalos",
+      "slug": "cpcon-imunizacao-intervalos",
+      "lote": "imunizacao-golden",
+      "json_path": "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"
+    },
+    "imunizacao_calendario": {
+      "pedagogical_branch": "imunizacao_calendario",
+      "slug": "fundatec-enfermagem-imunizacao-1777103182944-8",
+      "lote": "imunizacao-golden",
+      "json_path": "examples/questao-premium-fundatec-meningococica-3meses.json"
+    },
+    "imunizacao_cadeia_frio": {
+      "pedagogical_branch": "imunizacao_cadeia_frio",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+      "lote": "imunizacao-golden",
+      "json_path": "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json"
+    },
+    "imunizacao_generico": {
+      "pedagogical_branch": "imunizacao_generico",
+      "slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+      "lote": "imunizacao-golden",
+      "json_path": "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"
+    },
+    "imunizacao_exceto": {
+      "pedagogical_branch": "imunizacao_exceto",
+      "slug": "agirh-imunizacao-incorreta-antibiotico",
+      "lote": "imunizacao-golden",
+      "json_path": "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"
     }
   }
 }

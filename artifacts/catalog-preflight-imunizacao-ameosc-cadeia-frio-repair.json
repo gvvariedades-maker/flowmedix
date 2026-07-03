@@ -1,0 +1,19 @@
+{
+  "lote": "imunizacao-ameosc-cadeia-frio-repair",
+  "generated_at": "2026-07-02T20:18:53.444Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

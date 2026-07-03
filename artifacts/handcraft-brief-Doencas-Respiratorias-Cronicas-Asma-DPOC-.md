@@ -6,6 +6,7 @@
 
 - **Subtópico inteiro** — reparo/atualização L3 em slugs premium
 - Seleção: Supabase: meta.pedagogical_branch ausente OU npm run audit:questao-readiness --from-supabase retorna FAIL
+- **Primeiro lote:** `respiratorio-cronico-repair-l3-g01`
 
 ## Pacote (registry)
 
@@ -20,7 +21,7 @@
 | guideline | `lib/guidelines/respiratorioCronico.ts` |
 | handcraft_meta | `data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json` |
 
-**Lote repair:** `respiratorio-cronico-repair-l3-g{NN}` (começar por g01 se não existir).
+**Padrão de lotes repair:** `respiratorio-cronico-repair-l3-g{NN}` · 1º lote: `respiratorio-cronico-repair-l3-g01`
 
 ## Ramos L3 (pedagogical_branch)
 
@@ -56,10 +57,8 @@
 ```bash
 npm run catalog:export-lote -- --lote=respiratorio-cronico-completo --subtopico="Doenças Respiratórias Crônicas (Asma, DPOC)" --limit=10000
 # Handcraft → data/catalog-migration/respiratorio-cronico-repair-l3-g01/questions/*.json
-npm run validate:goldens -- --lote=respiratorio-cronico-repair-l3-g01 --strict
 npm run audit:questao-readiness -- --lote=respiratorio-cronico-repair-l3-g01
-npm run catalog:apply-lote -- --lote=respiratorio-cronico-repair-l3-g01 --dry-run
-# apply + patch branch só se o usuário pedir
+npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico="Doenças Respiratórias Crônicas (Asma, DPOC)" --only-premium --apply
 ```
 
 ## Critério de pronto (automático)

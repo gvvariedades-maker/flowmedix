@@ -1,0 +1,15 @@
+{
+  "lote": "imunizacao-g02",
+  "subtopico": "Imunização",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_cadeia_frio": 3,
+    "imunizacao_calendario": 4,
+    "imunizacao_generico": 1
+  },
+  "priority": "cadeia frio (3) + calendário adulto/gestante/HPV (4) + tipos vacina (1)",
+  "notes": "Piloto g02 — temperatura PNI, mapa diário, dT revacinação, gestante dTpa, campanhas polio, HPV V/F"
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T23:20:42.324Z",
+  "generated_at": "2026-07-01T00:39:20.950Z",
   "total_canonicos": 41,
   "counts": {
     "production_ready": 13,
@@ -67,8 +67,11 @@
       "subtopico": "Vias de Administração",
       "onda": "A",
       "legacy_builder": true,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Vias de Administração"
+      "in_registry": true,
+      "handcraft_status": "in_progress",
+      "handcraft_applied": 1,
+      "anchor_golden": "questao-premium-consulpam-vias-absorcao-oral.json",
+      "next_trigger": "Pipeline completo: Vias de Administração"
     },
     {
       "subtopico": "Cuidados na Administração de Medicamentos",
@@ -223,8 +226,11 @@
       "subtopico": "Imunização",
       "onda": "A",
       "legacy_builder": true,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Imunização"
+      "in_registry": true,
+      "handcraft_status": "in_progress",
+      "handcraft_applied": 1,
+      "anchor_golden": "questao-premium-decorp-imunizacao-triplice-viral-via.json",
+      "next_trigger": "Pipeline completo: Imunização"
     },
     {
       "subtopico": "Atenção Básica / Saúde da Família",

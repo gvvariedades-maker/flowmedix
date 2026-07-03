@@ -1,0 +1,19 @@
+{
+  "exported_at": "2026-07-02T12:00:00.000Z",
+  "lote": "imunizacao-ameosc-cadeia-frio-repair",
+  "total": 1,
+  "entries": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "golden_file": "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+      "pedagogical_branch": "imunizacao_cadeia_frio",
+      "family": "vf",
+      "gabarito": "C",
+      "avant_codigo": 4611,
+      "applied_at": "2026-07-02T12:00:00.000Z"
+    }
+  ]
+}

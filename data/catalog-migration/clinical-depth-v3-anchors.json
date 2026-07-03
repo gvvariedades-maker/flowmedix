@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-01",
+  "description": "Âncoras golden-v1 clinical-depth-v3 — referência de estilo para handcraft e repair (não substituem JSON por slug).",
+  "readiness_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+  "anchors": {
+    "exceto_clinical_v3": {
+      "file": "examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
+      "slug_catalog": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "pedagogical_branch": "perioperatorio_pos_operatorio",
+      "cluster": "Pós-operatório / cuidados",
+      "family": "certo_errado",
+      "command": "EXCETO",
+      "notes": "Padrão v3: concept_map sem gabarito; logic_flow tap; golden_rule sem row Gabarito; danger_zone EXCETO semântico."
+    }
+  },
+  "family_grammar_refs": {
+    "exceto": "examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
+    "correto_srpa": "examples/questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json",
+    "pre_operatorio": "examples/questao-premium-avancasp-perioperatoria-pre-operatorio.json",
+    "protocolo_cirurgia_segura": "examples/questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json",
+    "vf_respiratorio": "examples/questao-premium-vunesp-respiratorio-crise-asmatica-exceto.json"
+  }
+}

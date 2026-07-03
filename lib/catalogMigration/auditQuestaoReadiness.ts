@@ -10,7 +10,9 @@ import { validateQuestaoForWrite } from '@/lib/questaoSpec/validateQuestaoForWri
 import {
   detectDangerGabaritoMismatch,
   detectDuplicateDangerJustifications,
+  detectMissingFooterRules,
   detectSlideTopicDrift,
+  detectWeakFooterRules,
 } from '@/lib/catalogMigration/slideContract';
 import { isPremiumSubtopico } from '@/lib/catalogMigration/premiumGate';
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
@@ -23,6 +25,15 @@ import {
   lintNumericFactcheck,
   numericFactcheckHasErrors,
 } from '@/lib/catalogMigration/numericFactcheck';
+import {
+  lintImunizacaoPedagogy,
+  isImunizacaoAlwaysErrorCode,
+  isImunizacaoV3ErrorCode,
+} from '@/lib/catalogMigration/imunizacaoPedagogy';
+import {
+  lintRedeFrioFactcheck,
+  REDE_FRIO_ALWAYS_ERROR_CODES,
+} from '@/lib/catalogMigration/redeFrioFactcheck';
 import {
   hasSubtopicBranchDesign,
   inferPedagogicalBranch,
@@ -44,6 +55,8 @@ export type AuditQuestaoReadinessOptions = {
   strict?: boolean;
   /** lintGoldenV2Pedagogy (redundância/spoiler) vira error — handcraft professor v2. */
   strictV2Pedagogy?: boolean;
+  /** Gramática Imunização v3 mental — decore, eliminação, ROI errors, content_review. */
+  strictV3Pedagogy?: boolean;
 };
 
 export type AuditQuestaoReadinessResult = {
@@ -106,7 +119,8 @@ export function auditQuestaoReadiness(
   options: AuditQuestaoReadinessOptions = {},
 ): AuditQuestaoReadinessResult {
   const strict = options.strict !== false;
-  const strictV2Pedagogy = options.strictV2Pedagogy === true;
+  const strictV3Pedagogy = options.strictV3Pedagogy === true;
+  const strictV2Pedagogy = strictV3Pedagogy || options.strictV2Pedagogy === true;
   const checks: ReadinessCheck[] = [];
   const subtopico = payload.meta?.subtopico?.trim();
   const instruction = String(payload.question_data?.instruction ?? '');
@@ -221,6 +235,30 @@ export function auditQuestaoReadiness(
     );
   }
 
+  if (isGoldenV1) {
+    const footerMissing = detectMissingFooterRules(slides);
+    if (footerMissing.missing) {
+      push(
+        checks,
+        'A2',
+        'l2_footer_rule_missing',
+        `footer_rule ausente em: ${footerMissing.slideTypes.join(', ')}`,
+        'error',
+      );
+    }
+
+    const footerWeak = detectWeakFooterRules(slides);
+    if (footerWeak.weak) {
+      push(
+        checks,
+        'A2',
+        'l2_footer_rule_weak',
+        footerWeak.issues.join('; '),
+        strictV2Pedagogy ? 'error' : 'warn',
+      );
+    }
+  }
+
   if (instruction && detectSlideTopicDrift(instruction, slides)) {
     push(
       checks,
@@ -267,6 +305,35 @@ export function auditQuestaoReadiness(
       if (already) continue;
       push(checks, 'A2', issue.code, issue.message, strictV2Pedagogy ? 'error' : 'warn');
     }
+
+    if (subtopico === 'Imunização') {
+      for (const issue of lintImunizacaoPedagogy(payload, {
+        strictV2: strictV2Pedagogy,
+        strictV3: strictV3Pedagogy,
+      })) {
+        const already = checks.some((c) => c.code === issue.code);
+        if (already) continue;
+        const asError =
+          isImunizacaoAlwaysErrorCode(issue.code) ||
+          (strictV3Pedagogy && isImunizacaoV3ErrorCode(issue.code)) ||
+          strictV2Pedagogy;
+        push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
+      }
+    }
+  }
+
+  const redeFrioIssues = lintRedeFrioFactcheck(payload as never);
+  for (const issue of redeFrioIssues) {
+    const already = checks.some((c) => c.code === issue.code);
+    if (already) continue;
+    const alwaysRedeFrio = REDE_FRIO_ALWAYS_ERROR_CODES.has(issue.code);
+    push(
+      checks,
+      'A2b',
+      issue.code,
+      issue.message,
+      alwaysRedeFrio || strict ? 'error' : 'warn',
+    );
   }
 
   const alignmentIssues = lintSlugAlignment(payload, { strict });
@@ -318,8 +385,8 @@ export function auditQuestaoReadiness(
       checks,
       'A3',
       'l3_branch_inference_mismatch',
-      `Declarado "${payload.meta.pedagogical_branch}" ≠ inferido "${inferredBranch}" — revisar meta ou conteúdo`,
-      'warn',
+      `meta.pedagogical_branch="${payload.meta.pedagogical_branch}" ≠ inferido="${inferredBranch}" — rodar catalog:patch-pedagogical-branch --reconcile-branch`,
+      premium && hasBranchMap ? 'error' : 'warn',
     );
   }
 

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T01:54:35.510Z",
+  "lote": "imunizacao-g10",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3670
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3898
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3949
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103204932-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 787
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 3689
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3948
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572215875-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 3990
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 3688
+    }
+  ]
+}

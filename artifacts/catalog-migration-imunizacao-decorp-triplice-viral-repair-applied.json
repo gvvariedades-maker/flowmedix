@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-02T01:54:48.159Z",
+  "lote": "imunizacao-decorp-triplice-viral-repair",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "decorp-enfermagem-vias-de-administracao-1776056357082-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -154,7 +154,7 @@ SE subtópico tem molde bespoke (L3):
 | Agente / Laboratório | Este arquivo (L1 + L2) | [`avant-agent-json.mdc`](../.cursor/rules/avant-agent-json.mdc) |
 | Revisor clínico | L2 + golden-v1 | [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) |
 | Engenharia / migração | L3 + gates | [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) |
-| Design de moldes | L3 contrato | [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) |
+| Design de moldes | L3 contrato | [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) · brief visual [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) |
 | Onboarding geral | Este arquivo | [`CLAUDE.md`](../CLAUDE.md) §8 |
 
 ---

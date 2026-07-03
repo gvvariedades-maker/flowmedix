@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Piloto — imunizacao_cadeia_frio</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.25rem; }
+    li { margin: 0.75rem 0; }
+    .hint { color: #64748b; font-size: 0.9rem; }
+    code { background: #f1f5f9; padding: 0.1rem 0.35rem; border-radius: 4px; }
+    .checklist { margin-top: 1.5rem; }
+    .checklist li { list-style: square; }
+  </style>
+</head>
+<body>
+  <h1>Piloto L3 — Cadeia de frio (Imunização)</h1>
+  <p class="hint">Dev server em <code>http://localhost:3000</code> · sessão logada · goldens aplicados em 2026-07-02</p>
+
+  <ul>
+    <li>
+      <strong>AMEOSC Q-4611</strong> — V/F sequência (4 cartas + chips V/F)<br />
+      <a href="http://localhost:3000/estudar/ameosc-enfermagem-processo-de-enfermagem-1780005791580-3" target="_blank" rel="noopener">
+        /estudar/ameosc-enfermagem-processo-de-enfermagem-1780005791580-3
+      </a>
+    </li>
+    <li>
+      <strong>AVANÇASP Q-5039</strong> — MCQ faixa 2–8 °C (trilho termômetro)<br />
+      <a href="http://localhost:3000/estudar/avancasp-enfermagem-processo-de-enfermagem-1780011872350-6" target="_blank" rel="noopener">
+        /estudar/avancasp-enfermagem-processo-de-enfermagem-1780011872350-6
+      </a>
+    </li>
+  </ul>
+
+  <h2>Checklist visual (4 slides cada)</h2>
+  <ol class="checklist">
+    <li><code>cold-chain-hub</code> — hub cadeia de frio (AMEOSC: 4 assertivas V/F; AVANÇASP: foco 2–8)</li>
+    <li><code>pni-temperature-rail</code> — trilho 0·2·8·12 com faixa 2–8 destacada</li>
+    <li><code>pni-cold-chain-tap</code> — tap passo a passo (V/F ou eliminação por letra)</li>
+    <li><code>temperature-mismatch</code> — compare com trilho térmico nas pegadinhas</li>
+  </ol>
+
+  <p class="hint">Sem fallback genérico (morphological / reference_table / compare).</p>
+</body>
+</html>

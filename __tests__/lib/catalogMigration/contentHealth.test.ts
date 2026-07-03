@@ -3,8 +3,22 @@ import {
   evaluateContentHealth,
   evaluateContinuousHealth,
   findStaleP0Reports,
+  reportMatchesSubtopico,
   type ErrorReportRow,
 } from '@/lib/catalogMigration/contentHealth';
+
+describe('reportMatchesSubtopico', () => {
+  it('exclui report sem meta_subtopico (evita poluir todos os pacotes)', () => {
+    expect(reportMatchesSubtopico(null, 'Segurança do Paciente')).toBe(false);
+    expect(reportMatchesSubtopico(undefined, 'Segurança do Paciente')).toBe(false);
+    expect(reportMatchesSubtopico('', 'Segurança do Paciente')).toBe(false);
+  });
+
+  it('casa subtópico canônico', () => {
+    expect(reportMatchesSubtopico('Segurança do Paciente', 'Segurança do Paciente')).toBe(true);
+    expect(reportMatchesSubtopico('Imunização', 'Segurança do Paciente')).toBe(false);
+  });
+});
 
 describe('evaluateContentHealth', () => {
   const emptyOpen = aggregateReportsByPriority([]);

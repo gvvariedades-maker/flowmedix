@@ -1,0 +1,238 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "Tec (SESAP RN)",
+    "orgao": "SESAP RN",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Farmacodinâmica e Farmacocinética",
+    "pedagogical_branch": "farmaco_clinico_protocolo",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-01",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "Administração de omeprazol endovenoso — bula ANVISA e protocolos hospitalares de IBP EV",
+      "exam_vs_current": "none",
+      "catalog_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "repair_lote": "farmacodinamica-idecan-omeprazol-repair",
+      "applied_at": "2026-07-01"
+    },
+    "sources": [
+      {
+        "id": "anvisa-omeprazol-ev",
+        "tier": "A",
+        "issuer": "ANVISA",
+        "title": "Bula profissional — omeprazol sódico injetável (diluição e via de administração)",
+        "year": 2024,
+        "covers": ["diluição em soro fisiológico ou glicose", "infusão endovenosa", "não administrar em bólus rápido"]
+      },
+      {
+        "id": "potter-perry-ibp",
+        "tier": "B",
+        "issuer": "Elsevier / referência técnica de enfermagem",
+        "title": "Fundamentos de Enfermagem — IBP e cuidados na administração de medicamentos",
+        "year": 2020,
+        "covers": ["inibidor da bomba de prótons", "monitorização clínica", "interações"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Em um paciente hospitalizado por úlcera péptica grave, que recebe Omeprazol na forma endovenosa, avalie as condutas farmacológicas e de enfermagem relacionadas à administração correta da medicação e marque a opção adequada.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A diluição do Omeprazol deve ocorrer em soluções de fosfato, mantidas a 40 °C, garantindo rapidez de ação.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "O ajuste da infusão contínua requer monitorar o pH gástrico e pode demandar alteração de dose, conforme resposta clínica.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "A infusão por via subcutânea é indicada em caso de falha vascular, pois mantém biodisponibilidade igual à via endovenosa.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O uso concomitante de antiácidos de alumínio intensifica a ação do Omeprazol, possibilitando redução imediata do pH.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A administração deve ser em bólus rápido, pois a estabilização de pH ocorre independentemente do tempo de infusão.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Omeprazol EV — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "items": [
+        {
+          "label": "Comando da prova",
+          "detail": "Marque a opção adequada sobre administração correta do omeprazol endovenoso em úlcera péptica grave.",
+          "icon": "Target"
+        },
+        {
+          "label": "Classe farmacológica",
+          "detail": "IBP (inibidor da bomba de prótons) — reduz secreção ácida gástrica bloqueando H⁺/K⁺-ATPase.",
+          "icon": "Pill"
+        },
+        {
+          "label": "Cenário clínico",
+          "detail": "Paciente hospitalizado com úlcera péptica grave — terapia EV para controle ácido em ambiente hospitalar.",
+          "icon": "Hospital"
+        },
+        {
+          "label": "Papel da enfermagem",
+          "detail": "Preparar/diluir conforme protocolo, infundir no tempo correto e monitorar resposta clínica do paciente.",
+          "icon": "HeartHandshake"
+        },
+        {
+          "label": "Núcleo cobrado",
+          "detail": "Conduta segura e coerente com farmacocinética — não atalho de ação rápida nem via improvisada.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Padrão IDECAN",
+          "detail": "Mistura erro de diluição (A), via impossível (C), interação invertida (D) e bólus rápido (E).",
+          "icon": "GitCompare"
+        }
+      ],
+      "footer_rule": "IBP EV = diluição correta + infusão controlada + monitorar resposta clínica/pH"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — omeprazol endovenoso",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "content": "OMEPRAZOL IV — REFERÊNCIA RÁPIDA",
+      "rows": [
+        {
+          "label": "Indicação do caso",
+          "value": "Úlcera péptica grave — controle ácido por via parenteral",
+          "badge": "info"
+        },
+        {
+          "label": "Diluição",
+          "value": "Soro fisiológico ou glicose — não fosfato com aquecimento inadequado",
+          "badge": "warn",
+          "exam_hint": "A erra diluente e temperatura para parecer ação rápida.",
+          "fixation": "Omeprazol EV: solvente compatível da bula — não inventar fosfato quente."
+        },
+        {
+          "label": "Administração",
+          "value": "Infusão lenta/contínua — não bólus rápido",
+          "badge": "warn",
+          "exam_hint": "E troca urgência por bólus — IBP EV tem tempo de infusão definido.",
+          "fixation": "EV omeprazol = infundir no tempo; pH não estabiliza à força."
+        },
+        {
+          "label": "Monitorização",
+          "value": "Resposta clínica + pH gástrico → ajuste de dose possível",
+          "emphasis": "success",
+          "badge": "hot",
+          "exam_hint": "B é a única conduta compatível com terapia EV monitorada.",
+          "fixation": "Titular infusão conforme pH e evolução clínica."
+        },
+        {
+          "label": "Via SC",
+          "value": "Não substitui EV com mesma biodisponibilidade",
+          "badge": "warn"
+        },
+        {
+          "label": "Antiácido alumínio",
+          "value": "Não potencializa IBP para reduzir pH imediato",
+          "badge": "warn"
+        },
+        {
+          "label": "Conduta de prova",
+          "value": "Monitorar pH e ajustar infusão/dose pela resposta",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "EV omeprazol: tempo de infusão + monitorização — desconfie de bólus, SC e diluição exótica"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "steps": [
+        "Identificar formato: caso clínico hospitalar + omeprazol EV + comando marque a opção adequada.",
+        "Recuperar núcleo: administração segura de IBP endovenoso — diluição, via, tempo de infusão e monitorização.",
+        "Testar A: diluir em fosfato aquecido para rapidez — ERRADA: diluente/temperatura inadequados; não acelera ação corretamente.",
+        "Testar B: infusão contínua com monitorização de pH gástrico e possível ajuste de dose — CORRETA: conduta compatível com terapia EV em caso grave.",
+        "Testar C: via subcutânea com biodisponibilidade igual à EV — ERRADA: omeprazol parenteral de prova = endovenoso; SC não é equivalente.",
+        "Testar D: antiácido de alumínio intensifica omeprazol — ERRADA: banca inverte interação; antiácido não potencializa IBP assim.",
+        "Testar E: bólus rápido porque pH estabiliza independente do tempo — ERRADA: infusão controlada; rapidez não é conduta correta.",
+        "Eliminar A, C, D e E por erro de técnica, via ou farmacologia.",
+        "Confirmar: só B descreve monitorização e ajuste racional da infusão.",
+        "Marcar B.",
+        "Fixação: IBP EV → diluir certo, infundir no tempo, monitorar pH/resposta."
+      ],
+      "footer_rule": "Roteiro: diluição → via → tempo → monitorização → marcar B"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Farmacodinâmica e Farmacocinética"
+      },
+      "content": "PEGADINHAS IDECAN — OMEPRAZOL EV",
+      "items": [
+        {
+          "label": "Letra A — fosfato aquecido",
+          "detail": "Parece química avançada para justificar ação rápida do IBP.",
+          "correct": "Diluição compatível = soro fisiológico ou glicose; temperatura exótica é distrator de prova."
+        },
+        {
+          "label": "Letra B — gabarito",
+          "detail": "Parece genérica frente às alternativas com termos técnicos chamativos.",
+          "correct": "Monitorar pH gástrico e ajustar infusão/dose conforme resposta clínica é conduta adequada."
+        },
+        {
+          "label": "Letra C — subcutânea",
+          "detail": "Confunde falha vascular com trocar para SC mantendo o mesmo efeito do EV.",
+          "correct": "Omeprazol EV não é substituído por SC com biodisponibilidade igual."
+        },
+        {
+          "label": "Letra D — alumínio potencializa",
+          "detail": "Junta duas drogas do trato GI para parecer sinergia terapêutica.",
+          "correct": "Antiácido de alumínio não intensifica IBP para reduzir pH imediatamente."
+        },
+        {
+          "label": "Letra E — bólus rápido",
+          "detail": "Seduz quem associa urgência clínica com correr a infusão.",
+          "correct": "IBP EV exige infusão controlada; estabilização de pH depende do esquema terapêutico."
+        },
+        {
+          "label": "Transferência — tempo de infusão",
+          "detail": "Outras bancas cobram tempo de infusão de antibiótico ou IBP EV.",
+          "correct": "Monte o quadro via × diluente × tempo × monitorização antes de ler as letras."
+        },
+        {
+          "label": "Confundir mecanismo com técnica",
+          "detail": "Aluno lembra que omeprazol inibe bomba de prótons, mas erra a conduta de administração.",
+          "correct": "Esta questão cobra cuidado de enfermagem na via EV — não só farmacodinâmica."
+        }
+      ],
+      "footer_rule": "Transferência: em IBP EV elimine bólus, SC e potencialização mágica — fique com monitorização"
+    }
+  ]
+}

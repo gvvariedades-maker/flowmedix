@@ -1,28 +1,12 @@
 {
   "strict": true,
-  "scanned": 2,
-  "summary": {
-    "subtopico": "Infecções no Contexto da Biossegurança",
-    "scanned": 2,
-    "ready_100": 2,
-    "pct_ready": 100,
-    "registry": {
-      "status": "applied",
-      "total_slugs": 25,
-      "handcraft_applied": 25,
-      "complete": true
-    },
-    "tier_failures": {
-      "A1": 0,
-      "A2": 0,
-      "A3": 0
-    },
-    "not_ready": []
-  },
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "scanned": 1,
   "results": [
     {
-      "slug": "idib-enfermagem-instalacao-e-manejo-de-sondas-1778934890864-0",
-      "subtopico": "Infecções no Contexto da Biossegurança",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+      "subtopico": "Imunização",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -40,34 +24,16 @@
           "severity": "info"
         },
         {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "conceito",
-      "pedagogical_branch": "biosseg_iras_itu_cateter",
-      "inferred_branch": "biosseg_iras_itu_cateter"
-    },
-    {
-      "slug": "idib-geral-instalacao-e-manejo-de-sondas-1776056668359-0",
-      "subtopico": "Infecções no Contexto da Biossegurança",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "severity": "warn"
+        },
         {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "severity": "warn"
         },
         {
           "tier": "A4",
@@ -77,8 +43,8 @@
         }
       ],
       "family": "conceito",
-      "pedagogical_branch": "biosseg_iras_itu_cateter",
-      "inferred_branch": "biosseg_iras_itu_cateter"
+      "pedagogical_branch": "imunizacao_cadeia_frio",
+      "inferred_branch": "imunizacao_cadeia_frio"
     }
   ]
 }

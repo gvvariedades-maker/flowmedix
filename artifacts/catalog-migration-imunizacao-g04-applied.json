@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-02T07:26:13.941Z",
+  "lote": "imunizacao-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+    "amauc-enfermagem-imunizacao-1779563975447-4",
+    "amauc-enfermagem-imunizacao-1779572227744-7",
+    "ameosc-enfermagem-imunizacao-1779572207173-9",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-8",
+    "fundatec-enfermagem-imunizacao-1779563975447-1",
+    "fundatec-enfermagem-imunizacao-1779563975447-6",
+    "fundatec-enfermagem-imunizacao-1779563986606-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779563975447-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563986606-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

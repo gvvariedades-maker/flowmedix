@@ -26,6 +26,7 @@
     { "lote": "perioperatoria-g09", "total": 4, "status": "applied", "links": "artifacts/perioperatoria-g09-links.html" }
   ],
   "anchor_examples": [
+    "examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
     "examples/questao-premium-idecan-srpa-curativo-cpd-ce.json",
     "examples/questao-premium-idecan-perioperatoria-aldrete-srpa.json",
     "examples/questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json",
@@ -33,6 +34,8 @@
     "examples/questao-premium-furb-perioperatoria-isc-classificacao.json",
     "examples/questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json"
   ],
+  "clinical_depth_v3_registry": "data/catalog-migration/clinical-depth-v3-anchors.json",
+  "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/perioperatoria.json",
   "workflow": [
     "1. catalog:export-lote por lote (slugs do manifest)",
     "2. Handcraft golden-v1 em data/catalog-migration/<lote>/questions/ (Cursor — sem ai:generate, sem upgrade-premium)",

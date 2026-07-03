@@ -7,6 +7,7 @@
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
     "subtopico": "Imunização",
+    "pedagogical_branch": "imunizacao_vf_intervalos",
     "content_standard": "golden-v1",
     "family": "vf",
     "content_review": {
@@ -83,13 +84,8 @@
         },
         {
           "label": "Afirmativa IV — oral × injetável",
-          "detail": "VERDADEIRA. Vacinas orais atenuadas (rotavírus, VOP) podem ser no mesmo dia ou em qualquer intervalo com vacinas injetáveis.",
+          "detail": "Rotavírus/VOP podem ser no mesmo dia ou em qualquer intervalo com vacinas injetáveis — regra do manual.",
           "icon": "Pill"
-        },
-        {
-          "label": "Combinação correta",
-          "detail": "I=F, II=V, III=V, IV=V → apenas II, III e IV → letra C.",
-          "icon": "CheckCircle"
         },
         {
           "label": "Pegadinha da I",
@@ -102,7 +98,7 @@
           "icon": "Target"
         }
       ],
-      "footer_rule": "INTERVALOS: I=F (grace 4d) · II–IV=V · GABARITO C"
+      "footer_rule": "INTERVALOS: grace 4d na I · decore II–IV no golden · julgamento no logic_flow"
     },
     {
       "type": "golden_rule",
@@ -111,27 +107,27 @@
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
-      "content": "INTERVALOS PNI — JULGAMENTO DAS AFIRMATIVAS",
+      "content": "DECORE — INTERVALOS PNI (SEM JULGAMENTO V/F)",
       "rows": [
         {
-          "label": "I — antecipação 4 dias",
-          "value": "FALSA: ≤4 dias antes = dose válida (grace period), não repetir",
+          "label": "I — grace period 4 dias",
+          "value": "≤4 dias antes da idade mínima = dose válida (não repetir por antecipação)",
           "emphasis": "alert",
           "badge": "warn"
         },
         {
           "label": "II — SCR/SCRV × FA <2 anos",
-          "value": "VERDADEIRA: não simultâneo em rotina; intervalo 30 dias",
+          "value": "Não simultâneo em rotina; intervalo mínimo 30 dias",
           "badge": "ok"
         },
         {
           "label": "III — VPC13 × VPP23",
-          "value": "VERDADEIRA: 8 semanas; VPC13 1º; VPP23 1º → 1 ano para VPC13",
+          "value": "8 semanas entre si; VPC13 primeiro; se VPP23 veio antes → 1 ano para VPC13",
           "badge": "ok"
         },
         {
           "label": "IV — oral × injetável",
-          "value": "VERDADEIRA: simultâneo ou qualquer intervalo",
+          "value": "Simultâneo ou qualquer intervalo entre rotas",
           "badge": "ok"
         },
         {
@@ -143,12 +139,6 @@
           "label": "Oral × oral (extra)",
           "value": "Simultâneo OU ≥15 dias — não confundir com item IV",
           "badge": "warn"
-        },
-        {
-          "label": "Combinação — gabarito",
-          "value": "II, III e IV apenas → letra C",
-          "emphasis": "success",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Decore: grace 4d · FA×SCR 30d · VPC13→VPP23 8sem · oral×IM livre"

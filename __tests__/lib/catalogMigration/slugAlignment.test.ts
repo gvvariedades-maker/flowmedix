@@ -1,6 +1,8 @@
 /**
  * Testes — slugAlignment (L2) e numericFactcheck (L2b).
  */
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { lintSlugAlignment, slugAlignmentHasErrors } from '@/lib/catalogMigration/slugAlignment';
 import {
   extractNumericClaims,
@@ -179,5 +181,31 @@ describe('numericFactcheck', () => {
     if (mismatch) {
       expect(mismatch.severity).toBe('warn');
     }
+  });
+
+  it('âncoras Imunização cadeia frio passam factcheck (2 °C e 8 °C)', () => {
+    const anchors = [
+      'questao-premium-avancasp-imunizacao-rede-frio-temperatura.json',
+      'questao-premium-ameosc-imunizacao-vf-cadeia-frio.json',
+    ];
+    for (const file of anchors) {
+      const payload = JSON.parse(
+        readFileSync(join(process.cwd(), 'examples', file), 'utf8'),
+      );
+      const claims = extractNumericClaims(payload.reverse_study_slides);
+      expect(claims.length).toBeGreaterThan(0);
+      for (const claim of claims) {
+        expect(matchClaimToGuideline('Imunização', claim)).not.toBeNull();
+      }
+      const issues = lintNumericFactcheck(payload);
+      expect(issues.filter((i) => i.severity === 'error')).toHaveLength(0);
+    }
+  });
+
+  it('matchClaim encontra rede de frio positiva e diluentes', () => {
+    expect(matchClaimToGuideline('Imunização', '2 °C a 8 °C')?.id).toBe('cadeia-frio-2-8');
+    expect(matchClaimToGuideline('Imunização', 'Acima de 8 °C')?.id).toBe('rede-frio-acima-8');
+    expect(matchClaimToGuideline('Imunização', '24 horas')?.id).toBe('diluente-24h');
+    expect(matchClaimToGuideline('Imunização', '−15 °C a −25 °C')?.id).toBe('rede-frio-freezer');
   });
 });

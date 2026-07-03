@@ -322,6 +322,141 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.dangerRevealMode).toBe('tap');
   });
 
+  it('Imunização calendário: pacote 4/4 no ramo imunizacao_calendario', () => {
+    const ctx = {
+      questionSlug: 'fundatec-meningo-3m-1',
+      familyId: 'conceito' as const,
+      pedagogicalBranch: 'imunizacao_calendario' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Imunização' },
+          items: [
+            { label: 'Marco da questão', detail: '3º mês = Men C', icon: 'Calendar' },
+            { label: 'BCG × Men C', detail: 'BCG ao nascer', icon: 'Baby' },
+            { label: 'Padrão Fundatec', detail: 'idade exata', icon: 'Target' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('vaccine-timeline');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Imunização' },
+          rows: [
+            { label: '3 meses — questão', value: 'Meningocócica C 1ª dose', emphasis: 'highlight' },
+            { label: 'Letra B — gabarito', value: 'Men C aos 3 meses', emphasis: 'success' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('pni-calendar-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Imunização' },
+          reveal_mode: 'tap',
+          steps: ['Fixar: 3º mês', 'Testar A (BCG): eliminar', 'Marcar B'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('pni-calendar-elimination-tap');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Imunização' },
+          content: 'Pegadinhas calendário',
+          items: [
+            {
+              label: 'Letra A — BCG aos 3 meses',
+              detail: 'Marco errado',
+              correct: 'BCG = ao nascer',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('calendar-mismatch');
+  });
+
+  it('Imunização cadeia de frio: pacote 4/4 no ramo imunizacao_cadeia_frio', () => {
+    const ctx = {
+      questionSlug: 'avancasp-enfermagem-processo-de-enfermagem-1780011872350-6',
+      familyId: 'conceito' as const,
+      pedagogicalBranch: 'imunizacao_cadeia_frio' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Imunização' },
+          items: [
+            { label: 'Cadeia de frio', detail: 'conservação SI-PNI', icon: 'Snowflake' },
+            { label: 'Faixa 2–8 °C', detail: 'refrigerador', icon: 'Thermometer' },
+            { label: 'Transporte', detail: 'caixa térmica', icon: 'Truck' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('cold-chain-hub');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Imunização' },
+          rows: [
+            { label: 'Faixa PNI', value: '2 °C a 8 °C', emphasis: 'highlight', badge: 'hot' },
+            { label: 'Monitorar', value: 'termômetro diário', emphasis: 'default' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('pni-temperature-rail');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Imunização' },
+          reveal_mode: 'tap',
+          steps: ['Decore: 2 °C a 8 °C', 'Eliminar A (piso): abaixo de 2', 'Marcar B'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('pni-cold-chain-tap');
+
+    const danger = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Imunização' },
+        content: 'Pegadinhas temperatura',
+        items: [
+          {
+            label: 'Letra A — abaixo de 2 °C',
+            detail: 'piso errado',
+            correct: 'Faixa positiva = 2 a 8 °C',
+          },
+        ],
+      },
+      ctx,
+    );
+    expect(danger.layoutVariant).toBe('temperature-mismatch');
+    expect(danger.bulletStyle).toBe('x_icon');
+    expect(danger.dangerRevealMode).toBe('tap');
+  });
+
   it('Processo de Enfermagem: concept_map sae-responsibility-matrix no molde', () => {
     const result = resolveSlidePresentation(
       {

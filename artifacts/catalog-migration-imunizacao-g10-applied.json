@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T02:41:58.042Z",
+  "lote": "imunizacao-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-imunizacao-1779564125198-8",
+    "cetrede-enfermagem-imunizacao-1777103204932-6",
+    "cetrede-enfermagem-imunizacao-1779563970889-7",
+    "cetrede-enfermagem-imunizacao-1779572171486-2",
+    "cetrede-enfermagem-imunizacao-1779572171486-3",
+    "cev-urca-enfermagem-imunizacao-1779563986606-6",
+    "cev-urca-enfermagem-imunizacao-1779563986606-7",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572215875-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103204932-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572215875-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

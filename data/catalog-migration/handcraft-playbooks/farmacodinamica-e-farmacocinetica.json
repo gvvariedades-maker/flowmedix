@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "subtopico": "Farmacodinâmica e Farmacocinética",
+  "pacote_prefix": "farmacodinamica-e-farmacocinetica",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+  "golden_anchors_registry": "data/catalog-migration/farmacodinamica-golden-anchors.json",
+  "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g02/lote-meta.json",
+  "repair_lote_pattern": "farmacodinamica-*-repair",
+  "slug_selection": "Cluster PK/PD V/F ou clínico EV/infusão; audit [READY]; ou Slug: explícito",
+  "clusters": [
+    "PK/PD definições — ADME, meia-vida, 1ª passagem (âncora FUNCAMP V/F)",
+    "Clínico hospitalar — IBP EV, infusão monitorada (âncora IDECAN omeprazol)",
+    "Insulinas e hipoglicemiantes",
+    "Interações e efeitos adversos"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "farmaco_pk_pd_vf",
+      "when": "I/II/III, ADME, meia-vida, biodisponibilidade, 1ª passagem hepática",
+      "mold": "adme-journey-rail · reference_table · tap · compare",
+      "anchors": ["examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"]
+    },
+    {
+      "id": "farmaco_clinico_protocolo",
+      "when": "Omeprazol EV, antibiótico EV, infusão contínua, diluição, monitorização clínica/pH",
+      "mold": "genérico morphological · reference_table · tap · compare",
+      "anchors": ["examples/questao-premium-idecan-omeprazol-ev-ulcera.json"]
+    },
+    {
+      "id": "farmaco_generico",
+      "when": "Demais — sem fit claro de cluster",
+      "mold": "genérico",
+      "anchors": ["examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"]
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path>",
+    "lote": "npm run audit:questao-readiness -- --lote=<lote>"
+  },
+  "proibido": ["ai:generate", "catalog:upgrade-premium"]
+}

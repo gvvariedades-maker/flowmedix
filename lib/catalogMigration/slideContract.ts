@@ -111,3 +111,54 @@ export function detectDangerGabaritoMismatch(
     parsed,
   };
 }
+
+const CANONICAL_SLIDE_TYPES = [
+  'concept_map',
+  'golden_rule',
+  'logic_flow',
+  'danger_zone',
+] as const;
+
+const GENERIC_FOOTER_RE =
+  /^(regra|footer|completar|ver exemplo|\[ia\]|fixação:|mnemônico desta questão)/i;
+
+const MIN_FOOTER_STRATEGY_LEN = 12;
+
+function slideByType(slides: unknown, type: string): { footer_rule?: string } | undefined {
+  const slideList = Array.isArray(slides) ? slides : [];
+  return slideList.find(
+    (s) => s && typeof s === 'object' && (s as { type?: string }).type === type,
+  ) as { footer_rule?: string } | undefined;
+}
+
+/** golden-v1: cada slide do pacote 4/4 deve ter footer_rule com dica de estratégia de prova. */
+export function detectMissingFooterRules(slides: unknown): {
+  missing: boolean;
+  slideTypes: string[];
+} {
+  const slideTypes: string[] = [];
+  for (const type of CANONICAL_SLIDE_TYPES) {
+    const slide = slideByType(slides, type);
+    const footer = typeof slide?.footer_rule === 'string' ? slide.footer_rule.trim() : '';
+    if (!footer) slideTypes.push(type);
+  }
+  return { missing: slideTypes.length > 0, slideTypes };
+}
+
+/** Footers presentes mas genéricos ou curtos demais para estratégia de prova. */
+export function detectWeakFooterRules(slides: unknown): {
+  weak: boolean;
+  issues: string[];
+} {
+  const issues: string[] = [];
+  for (const type of CANONICAL_SLIDE_TYPES) {
+    const footer = slideByType(slides, type)?.footer_rule?.trim() ?? '';
+    if (!footer) continue;
+    if (footer.length < MIN_FOOTER_STRATEGY_LEN) {
+      issues.push(`${type}: footer_rule curto (${footer.length} chars)`);
+    } else if (GENERIC_FOOTER_RE.test(footer)) {
+      issues.push(`${type}: footer_rule genérico`);
+    }
+  }
+  return { weak: issues.length > 0, issues };
+}

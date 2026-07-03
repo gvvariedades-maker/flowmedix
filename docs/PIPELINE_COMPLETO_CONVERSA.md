@@ -31,7 +31,7 @@ SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
 
 Pré-requisito de taxonomia: se o bucket tem drift, `Classify: <subtópico>` antes — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md).
 
-Pré-requisito L3 (recomendado em subtópico novo ou sem cluster): `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md).
+**Pré-requisito L3 (obrigatório antes da Fase 1 handcraft):** `Mapeamento L3: <subtópico>` com **Fase 3b** (brief 4/4 por ramo forte) — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md). Cauda longa (`ok_generico`) dispensa brief. Bypass só com `--skip-l3` documentado como emergência.
 
 ---
 
@@ -51,6 +51,8 @@ Resolver pacote em [`handcraft-registry.json`](../data/catalog-migration/handcra
 
 | Arquivo | Fase |
 |---------|------|
+| [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) | 0 |
+| [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) | 0 (Fase 3b) |
 | [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) | 1 |
 | [`QUALITY_VENDAVEL_CONVERSA.md`](QUALITY_VENDAVEL_CONVERSA.md) | 2 |
 | [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | 1 |
@@ -88,6 +90,12 @@ Rollback temporário no ambiente: `NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER=legacy`
 ## Fluxo (visão geral)
 
 ```text
+┌─────────────────────────────────────────────────────────────┐
+│ FASE 0 — Mapeamento L3 (se sem briefs ou cluster desatual.) │
+│   cluster → audit:l3-mold-gap → decisão → brief 4/4 (3b)    │
+│   GATE: artifacts/l3-brief-* por ramo forte                  │
+└───────────────────────────┬─────────────────────────────────┘
+                            ▼
 ┌─────────────────────────────────────────────────────────────┐
 │ FASE 1 — Handcraft (se handcraft_applied < total_slugs)      │
 │   export → JSON por slug → readiness → validate strict      │

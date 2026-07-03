@@ -1,0 +1,32 @@
+{
+  "lote": "farmacodinamica-idecan-omeprazol-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-01",
+  "applied_at": "2026-07-01",
+  "subtopico": "Farmacodinâmica e Farmacocinética",
+  "total": 1,
+  "status": "applied",
+  "parent": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g01/lote-meta.json",
+  "readme": "data/catalog-migration/farmacodinamica-idecan-omeprazol-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=data/catalog-migration/farmacodinamica-idecan-omeprazol-repair/questions/idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=farmacodinamica-idecan-omeprazol-repair --apply",
+  "workflow": [
+    "1. Golden em examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+    "2. Copiar para questions/<slug>.json",
+    "3. npm run audit:questao-readiness -- --file=...",
+    "4. npm run catalog:apply-lote -- --lote=farmacodinamica-idecan-omeprazol-repair --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=farmacodinamica-idecan-omeprazol-repair --apply"
+  ],
+  "artifacts": {
+    "applied": "artifacts/catalog-migration-farmacodinamica-idecan-omeprazol-repair-applied.json"
+  },
+  "anchor_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+  "anchor_example": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+  "pedagogical_branch": "farmaco_clinico_protocolo",
+  "family": "protocolo",
+  "command": "opção adequada",
+  "nota": "Âncora clínica golden-v1 — IBP EV úlcera péptica (diluição, infusão, monitorização pH)."
+}

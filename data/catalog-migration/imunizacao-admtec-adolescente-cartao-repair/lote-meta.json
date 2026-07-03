@@ -1,0 +1,33 @@
+{
+  "lote": "imunizacao-admtec-adolescente-cartao-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-02",
+  "applied_at": "2026-07-02",
+  "subtopico": "Imunização",
+  "total": 1,
+  "status": "applied",
+  "readme": "data/catalog-migration/imunizacao-admtec-adolescente-cartao-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=data/catalog-migration/imunizacao-admtec-adolescente-cartao-repair/questions/adm-tec-enfermagem-imunizacao-1779563986606-5.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=imunizacao-admtec-adolescente-cartao-repair --apply",
+  "workflow": [
+    "1. Golden em examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+    "2. Copiar para questions/<slug>.json",
+    "3. npm run audit:questao-readiness -- --file=...",
+    "4. npm run catalog:apply-lote -- --lote=imunizacao-admtec-adolescente-cartao-repair --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=imunizacao-admtec-adolescente-cartao-repair --apply"
+  ],
+  "artifacts": {
+    "applied": "artifacts/catalog-migration-imunizacao-admtec-adolescente-cartao-repair-applied.json"
+  },
+  "anchor_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+  "anchor_example": "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+  "pedagogical_branch": "imunizacao_calendario",
+  "pedagogical_cluster": "Calendário vacinal — adolescente/adulto/idoso",
+  "family": "conceito",
+  "command": "regularizar o esquema vacinal",
+  "gabarito": "C",
+  "nota": "Âncora golden-v1 — cartão perdido / sem comprovação; catch-up por faixa etária (Q-3687)."
+}

@@ -1,0 +1,14 @@
+{
+  "lote": "imunizacao-g06",
+  "subtopico": "Imunização",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 4,
+    "imunizacao_generico": 4
+  },
+  "priority": "calendário infantil SCR/polio (2) + calendário 2024 VIP (1) + V/F imunologia/vigilância (2) + PNI sistemas/pneumo (2) + campanha diabetes (1)",
+  "notes": "Piloto g06 — SCR 29a, polio VIP/VOP, Portaria 2048 diabetes ≥40a, vigilância V/V/F, pneumococo, EDI logística, imunidade I/II/III, CPCON calendário 2024 VIP"
+}

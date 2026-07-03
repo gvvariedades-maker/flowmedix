@@ -1,7 +1,9 @@
 import {
   detectDangerGabaritoMismatch,
   detectDuplicateDangerJustifications,
+  detectMissingFooterRules,
   detectSlideTopicDrift,
+  detectWeakFooterRules,
   formatGabaritoCorrect,
   hasInstructionArtifacts,
   parseGabaritoLetter,
@@ -80,5 +82,38 @@ describe('slideContract', () => {
     ]);
     expect(especifico.duplicate).toBe(false);
     expect(especifico.unique).toBe(3);
+  });
+
+  it('detectMissingFooterRules exige footer em 4 slides', () => {
+    const missing = detectMissingFooterRules([
+      { type: 'concept_map', items: [{ label: 'A', detail: 'b' }] },
+      { type: 'golden_rule', content: 'x', footer_rule: 'Decore antes de marcar' },
+      { type: 'logic_flow', reveal_mode: 'tap', steps: ['1'] },
+      { type: 'danger_zone', content: 'z', items: [{ label: 'A', detail: 'b', correct: 'ok' }] },
+    ]);
+    expect(missing.missing).toBe(true);
+    expect(missing.slideTypes).toEqual(
+      expect.arrayContaining(['concept_map', 'logic_flow', 'danger_zone']),
+    );
+  });
+
+  it('detectWeakFooterRules flagra footer genérico ou curto', () => {
+    const weak = detectWeakFooterRules([
+      {
+        type: 'concept_map',
+        footer_rule: 'Regra',
+        items: [{ label: 'A', detail: 'b' }],
+      },
+      { type: 'golden_rule', content: 'x', footer_rule: 'Eliminar antes de marcar letra' },
+      { type: 'logic_flow', reveal_mode: 'tap', steps: ['1'], footer_rule: 'Roteiro tap' },
+      {
+        type: 'danger_zone',
+        content: 'z',
+        footer_rule: 'Pegadinha clássica da banca',
+        items: [{ label: 'A', detail: 'b', correct: 'ok' }],
+      },
+    ]);
+    expect(weak.weak).toBe(true);
+    expect(weak.issues.some((i) => i.includes('concept_map'))).toBe(true);
   });
 });

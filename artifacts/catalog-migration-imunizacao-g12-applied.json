@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T02:42:06.844Z",
+  "lote": "imunizacao-g12",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-3",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-4",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-1",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-2",
+    "educa-pb-enfermagem-imunizacao-1779564063274-1",
+    "fafipa-enfermagem-imunizacao-1777103257434-5",
+    "fafipa-enfermagem-imunizacao-1777103257434-6",
+    "fau-unicentro-enfermagem-imunizacao-1779563986606-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572207173-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572207173-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564063274-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-imunizacao-1777103257434-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-imunizacao-1777103257434-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563986606-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "exported_at": "2026-07-02T12:00:00.000Z",
+  "lote": "imunizacao-admtec-adolescente-cartao-repair",
+  "total": 1,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "golden_file": "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+      "pedagogical_branch": "imunizacao_calendario",
+      "family": "conceito",
+      "gabarito": "C",
+      "avant_codigo": 3687,
+      "applied_at": "2026-07-02T12:00:00.000Z"
+    }
+  ]
+}

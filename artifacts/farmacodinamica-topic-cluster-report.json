@@ -1,0 +1,403 @@
+{
+  "generated_at": "2026-07-01T21:07:46.550Z",
+  "subtopico": "Farmacodinâmica e Farmacocinética",
+  "lote": "farmacodinamica-e-farmacocinetica-completo",
+  "total": 11,
+  "existing_goldens_examples": [
+    "questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+    "questao-premium-idecan-omeprazol-ev-ulcera.json"
+  ],
+  "family_counts": {
+    "conceito": 9,
+    "protocolo": 2
+  },
+  "premium_status_counts": {
+    "golden": 11
+  },
+  "drift_total": 0,
+  "taxonomy_drift_total": 0,
+  "instruction_artifacts_total": 0,
+  "branch_mismatch_total": 3,
+  "contract_fail_total": 0,
+  "decision_counts": {
+    "coberto": 1,
+    "cauda_longa": 5
+  },
+  "cluster_decisions": [
+    {
+      "cluster": "Protocolo / administração clínica (EV, infusão)",
+      "count": 4,
+      "pct": 36.4,
+      "slide_topic_drift": 0,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-idecan-omeprazol-ev-ulcera.json",
+      "pedagogical_branch_proposed": "farmaco_clinico_protocolo",
+      "sample_slugs": [
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+        "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+        "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+        "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3"
+      ],
+      "dominant_builder_topic": "Administração clínica / protocolo EV",
+      "dominant_builder_topic_share": 0.5,
+      "builder_topic_diversity": 2,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=4/11 (36.4%)",
+        "drift_ratio=0%",
+        "contract_fail_ratio=0%",
+        "dominant_topic=Administração clínica / protocolo EV (50%)",
+        "builder_topic_diversity=2",
+        "golden de referência em examples/"
+      ]
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 2,
+      "pct": 18.2,
+      "slide_topic_drift": 0,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "sample_slugs": [
+        "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2"
+      ],
+      "dominant_builder_topic": "Farmacologia — conceito geral",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "cauda_longa",
+      "confidence": "baixa",
+      "decision_score": 0,
+      "decision_reasons": [
+        "volume=2/11 (18.2%)",
+        "drift_ratio=0%",
+        "contract_fail_ratio=0%",
+        "dominant_topic=Farmacologia — conceito geral (100%)",
+        "builder_topic_diversity=1",
+        "volume insuficiente para âncora própria"
+      ]
+    },
+    {
+      "cluster": "Conceito — farmacocinética (ADME)",
+      "count": 2,
+      "pct": 18.2,
+      "slide_topic_drift": 0,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "sample_slugs": [
+        "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+        "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1"
+      ],
+      "dominant_builder_topic": "Farmacocinética (ADME)",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "cauda_longa",
+      "confidence": "media",
+      "decision_score": 2,
+      "decision_reasons": [
+        "volume=2/11 (18.2%)",
+        "drift_ratio=0%",
+        "contract_fail_ratio=0%",
+        "dominant_topic=Farmacocinética (ADME) (100%)",
+        "builder_topic_diversity=1",
+        "volume insuficiente para âncora própria"
+      ]
+    },
+    {
+      "cluster": "Conceito — meia-vida e concentração",
+      "count": 1,
+      "pct": 9.1,
+      "slide_topic_drift": 0,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "sample_slugs": [
+        "cetrede-enfermagem-vias-de-administracao-1778968997293-3"
+      ],
+      "dominant_builder_topic": "Parâmetros cinéticos",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "cauda_longa",
+      "confidence": "media",
+      "decision_score": 2,
+      "decision_reasons": [
+        "volume=1/11 (9.1%)",
+        "drift_ratio=0%",
+        "contract_fail_ratio=0%",
+        "dominant_topic=Parâmetros cinéticos (100%)",
+        "builder_topic_diversity=1",
+        "volume insuficiente para âncora própria"
+      ]
+    },
+    {
+      "cluster": "INCORRETA / EXCETO",
+      "count": 1,
+      "pct": 9.1,
+      "slide_topic_drift": 0,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "sample_slugs": [
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2"
+      ],
+      "dominant_builder_topic": "Parâmetros cinéticos",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "cauda_longa",
+      "confidence": "media",
+      "decision_score": 2,
+      "decision_reasons": [
+        "volume=1/11 (9.1%)",
+        "drift_ratio=0%",
+        "contract_fail_ratio=0%",
+        "dominant_topic=Parâmetros cinéticos (100%)",
+        "builder_topic_diversity=1",
+        "volume insuficiente para âncora própria"
+      ]
+    },
+    {
+      "cluster": "Conceito — farmacodinâmica clínica",
+      "count": 1,
+      "pct": 9.1,
+      "slide_topic_drift": 0,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "farmaco_clinico_protocolo",
+      "sample_slugs": [
+        "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7"
+      ],
+      "dominant_builder_topic": "Farmacodinâmica clínica (opioides/efeitos)",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "cauda_longa",
+      "confidence": "media",
+      "decision_score": 2,
+      "decision_reasons": [
+        "volume=1/11 (9.1%)",
+        "drift_ratio=0%",
+        "contract_fail_ratio=0%",
+        "dominant_topic=Farmacodinâmica clínica (opioides/efeitos) (100%)",
+        "builder_topic_diversity=1",
+        "volume insuficiente para âncora própria"
+      ]
+    }
+  ],
+  "golden_recommendations": [
+    {
+      "cluster": "Protocolo / administração clínica (EV, infusão)",
+      "count": 4,
+      "pct": 36.4,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 2,
+      "pct": 18.2,
+      "priority": "cauda longa — farmaco_generico",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Conceito — farmacocinética (ADME)",
+      "count": 2,
+      "pct": 18.2,
+      "priority": "cauda longa — farmaco_generico",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Conceito — meia-vida e concentração",
+      "count": 1,
+      "pct": 9.1,
+      "priority": "cauda longa — farmaco_generico",
+      "needs_golden": false
+    },
+    {
+      "cluster": "INCORRETA / EXCETO",
+      "count": 1,
+      "pct": 9.1,
+      "priority": "cauda longa — farmaco_generico",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Conceito — farmacodinâmica clínica",
+      "count": 1,
+      "pct": 9.1,
+      "priority": "cauda longa — farmaco_generico",
+      "needs_golden": false
+    }
+  ],
+  "goldens_needed_count": 0,
+  "goldens_needed": [],
+  "rows": [
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "banca": "CETREDE",
+      "family": "conceito",
+      "builder_topic": "Parâmetros cinéticos",
+      "pedagogical_cluster": "Conceito — meia-vida e concentração",
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_generico",
+      "instruction_preview": "Em relação a biodisponibilidade do fármaco, quando administrado de forma ________, será menor que a concentração adminis"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Administração clínica / protocolo EV",
+      "pedagogical_cluster": "Protocolo / administração clínica (EV, infusão)",
+      "pedagogical_branch_proposed": "farmaco_clinico_protocolo",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_clinico_protocolo",
+      "instruction_preview": "Um paciente em ventilação mecânica invasiva sob analgesia e sedação contínuas iniciou fentanil em infusão contínua para "
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Parâmetros cinéticos",
+      "pedagogical_cluster": "INCORRETA / EXCETO",
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_clinico_protocolo",
+      "instruction_preview": "O meropenem é um antibiótico carbapenêmico amplamente utilizado em infecções graves na UTI. Apesar de sua eficácia, pode"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Farmacologia — conceito geral",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_clinico_protocolo",
+      "instruction_preview": "Considerando os diferentes tipos de agentes farmacológicos utilizados para promover a perda reversível da sensibilidade "
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "banca": "IDCAP",
+      "family": "conceito",
+      "builder_topic": "Farmacocinética (ADME)",
+      "pedagogical_cluster": "Conceito — farmacocinética (ADME)",
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_pk_pd_vf",
+      "instruction_preview": "Uma das mais importantes funções da equipe de Enfermagem no cuidado aos pacientes é a administração de medicamentos. Sob"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "banca": "IDECAN",
+      "family": "conceito",
+      "builder_topic": "Administração clínica / protocolo EV",
+      "pedagogical_cluster": "Protocolo / administração clínica (EV, infusão)",
+      "pedagogical_branch_proposed": "farmaco_clinico_protocolo",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_clinico_protocolo",
+      "instruction_preview": "Em um paciente hospitalizado por úlcera péptica grave, que recebe Omeprazol na forma endovenosa, avalie as condutas farm"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "banca": "IDECAN",
+      "family": "conceito",
+      "builder_topic": "Farmacodinâmica clínica (opioides/efeitos)",
+      "pedagogical_cluster": "Conceito — farmacodinâmica clínica",
+      "pedagogical_branch_proposed": "farmaco_clinico_protocolo",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_clinico_protocolo",
+      "instruction_preview": "Considerando as mais recentes evidências científicas sobre o diazepam, marque a opção correta que descreve adequadamente"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "banca": "INSTITUTO AOCP",
+      "family": "conceito",
+      "builder_topic": "Farmacologia — conceito geral",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_generico",
+      "instruction_preview": "O fármaco que tem como objetivo melhorar a perfusão miocárdica e/ou reduzir a sua demanda metabólica, podendo ser utiliz"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Farmacocinética (ADME)",
+      "pedagogical_cluster": "Conceito — farmacocinética (ADME)",
+      "pedagogical_branch_proposed": "farmaco_generico",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_generico",
+      "instruction_preview": "Sobre a importância da farmacologia na área da Enfermagem, assinalar a alternativa que preenche a lacuna abaixo CORRETAM"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "banca": "QUADRIX",
+      "family": "protocolo",
+      "builder_topic": "Farmacologia — conceito geral",
+      "pedagogical_cluster": "Protocolo / administração clínica (EV, infusão)",
+      "pedagogical_branch_proposed": "farmaco_clinico_protocolo",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_clinico_protocolo",
+      "instruction_preview": "Caso clínico hipotético para a questão Um paciente chegou à unidade com queixa de dor de cabeça, tontura, náusea e estoc"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+      "banca": "QUADRIX",
+      "family": "protocolo",
+      "builder_topic": "Farmacologia — conceito geral",
+      "pedagogical_cluster": "Protocolo / administração clínica (EV, infusão)",
+      "pedagogical_branch_proposed": "farmaco_clinico_protocolo",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "farmaco_clinico_protocolo",
+      "instruction_preview": "Caso clínico hipotético para a questão Um paciente chegou à unidade com queixa de dor de cabeça, tontura, náusea e estoc"
+    }
+  ]
+}

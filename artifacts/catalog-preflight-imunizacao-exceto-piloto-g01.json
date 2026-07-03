@@ -1,0 +1,19 @@
+{
+  "lote": "imunizacao-exceto-piloto-g01",
+  "generated_at": "2026-07-02T20:19:02.211Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

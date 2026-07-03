@@ -1,0 +1,15 @@
+{
+  "lote": "imunizacao-g05",
+  "subtopico": "Imunização",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 3,
+    "imunizacao_generico": 3,
+    "imunizacao_cadeia_frio": 2
+  },
+  "priority": "calendário infantil/HPV/gestante (3) + cadeia frio (2) + sala/vias/tipos vacina (3)",
+  "notes": "Piloto g05 — tipos vacina V/F, FA antes 3m, HPV 2024, gestante EXCETO HepB, campanha gripe, sala INCORRETA, HepA IM, cadeia frio V/F"
+}

@@ -1,0 +1,138 @@
+{
+  "version": 2,
+  "updated_at": "2026-07-02",
+  "description": "Âncoras golden-v1 — Imunização (referência de estilo por ramo; não substituem JSON por slug).",
+  "readiness_gate": "npm run audit:questao-readiness -- --file=<path>",
+  "anchors_readiness": {
+    "validated_at": "2026-07-02",
+    "summary": "6/6 READY",
+    "note": "6/6 READY + âncora EXCETO P2 (imunizacao_exceto)."
+  },
+  "anchors": {
+    "via_scr_subcutanea": {
+      "file": "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json",
+      "slug_catalog": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+      "subtopico": "Imunização",
+      "pedagogical_branch": "imunizacao_generico",
+      "family": "conceito",
+      "command": "via de administração correta",
+      "banca": "DECORP",
+      "ano": "2025",
+      "gabarito": "A",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-02",
+      "notes": "SCR aos 12 meses — subcutânea; golden_rule tabela de vias; danger_zone compare por letra; ramo generico (não calendario — evita pni-interval-matrix)."
+    },
+    "vf_intervalos_pni": {
+      "file": "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json",
+      "slug_catalog": null,
+      "subtopico": "Imunização",
+      "pedagogical_branch": "imunizacao_vf_intervalos",
+      "family": "vf",
+      "command": "É CORRETO o que se afirma em",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-02",
+      "notes": "Intervalos PNI I–IV — molde pni-rules-deck / pni-interval-matrix."
+    },
+    "calendario_infantil": {
+      "file": "examples/questao-premium-fundatec-meningococica-3meses.json",
+      "slug_catalog": "fundatec-enfermagem-imunizacao-1777103182944-8",
+      "subtopico": "Imunização",
+      "pedagogical_branch": "imunizacao_calendario",
+      "family": "conceito",
+      "command": "vacina no 3º mês",
+      "banca": "Fundatec",
+      "ano": "2024",
+      "gabarito": "B",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-02",
+      "notes": "Marco calendário × vacina — idade × esquema PNI."
+    },
+    "cadeia_frio_pni": {
+      "file": "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+      "slug_catalog": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+      "subtopico": "Imunização",
+      "pedagogical_branch": "imunizacao_cadeia_frio",
+      "family": "vf",
+      "command": "sequência V/F — sala de vacina",
+      "banca": "AMEOSC",
+      "ano": "2026",
+      "gabarito": "C",
+      "avant_codigo": 4611,
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-02",
+      "anchor_role": "sub_padrao_a_vf_sala",
+      "notes": "Âncora A — BCG, agitar não recupera, pentavalente, papel do técnico."
+    },
+    "cadeia_frio_temperatura": {
+      "file": "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+      "slug_catalog": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+      "subtopico": "Imunização",
+      "pedagogical_branch": "imunizacao_cadeia_frio",
+      "family": "conceito",
+      "command": "temperatura positiva — faixa de conservação",
+      "banca": "AVANÇASP",
+      "ano": "2026",
+      "gabarito": "B",
+      "avant_codigo": 5039,
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-02",
+      "anchor_role": "sub_padrao_b_faixa_2_8",
+      "notes": "Âncora B — decore 2 °C a 8 °C; complementa AMEOSC V/F no ramo imunizacao_cadeia_frio."
+    },
+    "calendario_adolescente_adulto": {
+      "file": "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+      "slug_catalog": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "subtopico": "Imunização",
+      "pedagogical_branch": "imunizacao_calendario",
+      "family": "conceito",
+      "command": "regularizar esquema vacinal",
+      "banca": "ADM&TEC",
+      "ano": "2025",
+      "gabarito": "C",
+      "avant_codigo": 3687,
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-02",
+      "notes": "Cartão perdido / sem comprovação — catch-up por faixa etária; não sorologia de rotina."
+    },
+    "exceto_inc_piloto_antibiotico": {
+      "file": "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+      "slug_catalog": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "subtopico": "Imunização",
+      "pedagogical_branch": "imunizacao_exceto",
+      "family": "certo_errado",
+      "command": "é INCORRETO afirmar",
+      "banca": "Agirh",
+      "ano": "2022",
+      "gabarito": "C",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-02",
+      "notes": "P2 — âncora EXCETO/INCORRETA dedicada (imunizacao_exceto); compare semântico por letra; lote imunizacao-exceto-piloto-g01."
+    }
+  },
+  "family_grammar_refs": {
+    "conceito_via_vacinacao": "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json",
+    "vf_intervalos": "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json",
+    "conceito_calendario": "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "conceito_calendario_catchup": "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+    "vf_cadeia_frio": "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "conceito_cadeia_frio_temperatura": "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json"
+  },
+  "repair_lotes": {
+    "decorp_triplice_viral_via": "data/catalog-migration/imunizacao-decorp-triplice-viral-repair",
+    "admtec_adolescente_cartao": "data/catalog-migration/imunizacao-admtec-adolescente-cartao-repair",
+    "ameosc_cadeia_frio": "data/catalog-migration/imunizacao-ameosc-cadeia-frio-repair"
+  },
+  "deliberate_gaps": {
+    "exceto_inc_piloto": {
+      "priority": "P2",
+      "status": "anchor_ready",
+      "pedagogical_branch": "imunizacao_exceto",
+      "clusters": ["INCORRETA / EXCETO", "Certo ou errado"],
+      "slugs_estimate": 70,
+      "pilot_anchor": "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+      "pilot_lote": "imunizacao-exceto-piloto-g01",
+      "rationale": "Ramo imunizacao_exceto + lint imunizacao_exceto_semantic; escalar após piloto g01 passar audit:anchor-review."
+    }
+  }
+}

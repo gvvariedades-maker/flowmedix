@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-07-01T18:01:24.362Z",
+  "lote": "vias-de-administracao-consulpam-repair",
+  "mode": "dry-run",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

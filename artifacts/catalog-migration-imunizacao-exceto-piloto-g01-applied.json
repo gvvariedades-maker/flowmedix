@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-02T20:19:49.944Z",
+  "lote": "imunizacao-exceto-piloto-g01",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "agirh-enfermagem-imunizacao-1779564113760-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

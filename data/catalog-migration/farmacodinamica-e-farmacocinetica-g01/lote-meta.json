@@ -9,6 +9,13 @@
   "status": "applied",
   "anchor_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
   "golden_reference": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+  "clinical_anchor": {
+    "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+    "golden_file": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+    "pedagogical_branch": "farmaco_clinico_protocolo",
+    "repair_lote": "farmacodinamica-idecan-omeprazol-repair",
+    "registry": "data/catalog-migration/farmacodinamica-golden-anchors.json"
+  },
   "guideline": null,
   "slugs": [
     "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",

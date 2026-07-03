@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-01",
+  "description": "Âncoras golden-v1 — Farmacodinâmica e Farmacocinética (referência de estilo por ramo; não substituem JSON por slug).",
+  "readiness_gate": "npm run audit:questao-readiness -- --file=<path>",
+  "anchors": {
+    "clinico_ibp_ev": {
+      "file": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+      "slug_catalog": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "pedagogical_branch": "farmaco_clinico_protocolo",
+      "family": "protocolo",
+      "command": "marque a opção adequada",
+      "banca": "IDECAN",
+      "ano": "2025",
+      "gabarito": "B",
+      "notes": "IBP EV úlcera péptica — diluição, infusão monitorada, danger_zone compare por letra; evitar claims numéricos não ancorados (A2b)."
+    },
+    "pk_pd_vf": {
+      "file": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+      "slug_catalog": null,
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "pedagogical_branch": "farmaco_pk_pd_vf",
+      "family": "vf",
+      "command": "É CORRETO o que se afirma em",
+      "notes": "ADME, meia-vida, 1ª passagem — molde adme-journey-rail."
+    }
+  },
+  "family_grammar_refs": {
+    "protocolo_clinico_ev": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+    "vf_pk_pd": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"
+  },
+  "repair_lotes": {
+    "idecan_omeprazol_ev": "data/catalog-migration/farmacodinamica-idecan-omeprazol-repair"
+  }
+}

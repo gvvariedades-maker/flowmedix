@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "banca": "INSTITUTO CONSULPAM",
+    "prova": "Tec Enf (Pref Hidrolândia)",
+    "orgao": "Pref Hidrolândia",
+    "ano": "2024",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Vias de Administração",
+    "pedagogical_branch": "via_vf_absorcao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-01",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "Farmacocinética de vias de administração — referência Potter/Perry e provas de técnico de enfermagem",
+      "exam_vs_current": "none",
+      "catalog_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "repair_lote": "vias-de-administracao-consulpam-repair",
+      "applied_at": "2026-07-01"
+    },
+    "sources": [
+      {
+        "id": "potter-perry-farmacologia",
+        "tier": "B",
+        "issuer": "Elsevier / referência técnica de enfermagem",
+        "title": "Fundamentos de Enfermagem — Administração de medicamentos e vias de absorção",
+        "year": 2020,
+        "covers": ["absorção via oral", "via sublingual", "via retal", "vias parenterais"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A farmacologia é a área da farmácia que estuda como as substâncias químicas interagem com os sistemas biológicos, e, como ciência, nasceu em meados do século XIX. Se essas substâncias têm propriedades medicinais, elas são referidas como fármacos. Os profissionais de Enfermagem devem ter bons conhecimentos de fármacos e suas administrações. Sobre o tema, assinale a alternativa CORRETA.",
+    "options": [
+      {
+        "id": "A",
+        "text": "As vias parenterais que podem ser utilizadas na administração de medicamentos são: intratecal, intraperitoneal, intraóssea e endotraqueal.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A via sublingual é apropriada para a administração de medicamentos com substâncias irritantes, por não passar pelo metabolismo da mucosa gástrica.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Na via de administração retal, os medicamentos passam por biotransformação no fígado e são absorvidos por via intestinal e não atinge diretamente a circulação sistêmica.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A absorção de medicamentos administrados por via oral começa na boca e no estômago, mas ocorre principalmente no intestino delgado.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Vias de administração — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "items": [
+        {
+          "label": "Comando da prova",
+          "detail": "Assinale a alternativa CORRETA sobre fármacos e vias de administração — julgue cada letra pelo mecanismo de absorção.",
+          "icon": "Target"
+        },
+        {
+          "label": "Via oral (VO)",
+          "detail": "Absorção pode iniciar na boca e no estômago, mas o intestino delgado concentra a maior absorção pela área de superfície e pH favorável.",
+          "icon": "Pill"
+        },
+        {
+          "label": "Via parenteral",
+          "detail": "Para além do TGI: IV, IM, SC e ID são as clássicas de prova; rotas especiais (intratecal, intraóssea) existem, mas endotraqueal não entra na lista padrão.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Via sublingual",
+          "detail": "Absorção pela mucosa oral com menor metabolismo de primeira passagem hepática — indicada a fármacos de ação rápida, não a substâncias irritantes.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Via retal",
+          "detail": "Absorção variável: porção inferior do reto pode atingir circulação sistêmica com menor primeira passagem hepática que a via oral.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Padrão Consulpam neste tema",
+          "detail": "Mistura definição de via + fisiologia de absorção — o distrator certo parece simples; os errados trocam mecanismo ou lista de rotas.",
+          "icon": "GitCompare"
+        }
+      ],
+      "footer_rule": "VO = delgado · sublingual = sem irritante · retal ≠ sempre fígado · parenteral clássica = IV/IM/SC"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — absorção por via",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "content": "ABSORÇÃO E VIAS — REFERÊNCIA RÁPIDA",
+      "rows": [
+        {
+          "label": "Via oral (VO)",
+          "value": "Início boca/estômago; principal absorção no intestino delgado",
+          "emphasis": "success",
+          "badge": "hot",
+          "exam_hint": "Gabarito D — o delgado é o sítio principal de absorção da via oral.",
+          "fixation": "VO: estômago absorve pouco; delgado concentra a maior área absortiva."
+        },
+        {
+          "label": "Via sublingual",
+          "value": "Rápida; evita 1ª passagem hepática; não usar com irritantes",
+          "badge": "warn",
+          "exam_hint": "B erra ao indicar irritantes e troca metabolismo gástrico por hepático.",
+          "fixation": "Sublingual = mucosa oral + sem 1ª passagem — não é via para irritante."
+        },
+        {
+          "label": "Via retal",
+          "value": "Reto inferior → circulação sistêmica com menor 1ª passagem",
+          "badge": "warn",
+          "exam_hint": "C generaliza fígado como na via oral — reto inferior drena para sistêmica.",
+          "fixation": "Retal: nem sempre passa pelo fígado antes de circular."
+        },
+        {
+          "label": "Parenterais clássicas",
+          "value": "IV · IM · SC · ID (+ especiais: intratecal, intraóssea)",
+          "badge": "info"
+        },
+        {
+          "label": "Endotraqueal",
+          "value": "Rota de emergência — não é parenteral clássica de prova",
+          "badge": "warn",
+          "exam_hint": "A lista omite IV/IM/SC e inclui endotraqueal fora do padrão.",
+          "fixation": "Parenteral de concurso = IV, IM, SC — desconfie de lista incompleta."
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra D — absorção oral predominante no intestino delgado",
+          "emphasis": "success",
+          "badge": "hot"
+        },
+        {
+          "label": "Mnemônico absorção VO",
+          "value": "Boca começa, delgado conclui"
+        },
+        {
+          "label": "1ª passagem hepática",
+          "value": "Oral = alta · Sublingual = menor · Retal inferior = parcialmente evitada"
+        }
+      ],
+      "footer_rule": "Em vias: teste sítio de absorção e se o fármaco passa pelo fígado antes da circulação"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "steps": [
+        "Identificar formato: quatro alternativas + comando assinale a alternativa CORRETA sobre vias e absorção.",
+        "Recuperar núcleo: cada via tem sítio de absorção e perfil de metabolismo de primeira passagem distintos.",
+        "Testar A: lista intratecal, intraperitoneal, intraóssea e endotraqueal como parenterais — ERRADA: omite IV, IM e SC; endotraqueal não é classificação parenteral padrão de prova.",
+        "Testar B: sublingual para substâncias irritantes por não passar pelo metabolismo da mucosa gástrica — ERRADA: irritante lesa mucosa oral; sublingual evita 1ª passagem hepática, não metabolismo gástrico.",
+        "Testar C: via retal sempre com biotransformação hepática e sem acesso direto à sistêmica — ERRADA: reto inferior drena para veias hemorroidárias média/inferior → circulação sistêmica com menor 1ª passagem.",
+        "Testar D: absorção oral começa na boca e estômago, mas ocorre principalmente no intestino delgado — CORRETA: maior superfície absortiva e pH favorável no delgado.",
+        "Eliminar A, B e C por erro de lista, indicação clínica ou fisiologia.",
+        "Confirmar: só D descreve corretamente a farmacocinética da via oral.",
+        "Marcar D.",
+        "Fixação: monte mentalmente via → sítio de absorção → passa pelo fígado? antes de marcar."
+      ],
+      "footer_rule": "Roteiro: testar A → B → C → D → eliminar por mecanismo → marcar D"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "content": "PEGADINHAS CONSULPAM — ABSORÇÃO POR VIA",
+      "items": [
+        {
+          "label": "Letra A — lista parenteral",
+          "detail": "Cita rotas exóticas e endotraqueal para parecer completa, mas omite IV, IM e SC.",
+          "correct": "Parenteral clássica de prova = IV, IM, SC, ID — endotraqueal é rota especial de emergência."
+        },
+        {
+          "label": "Letra B — sublingual + irritante",
+          "detail": "Troca metabolismo hepático por metabolismo da mucosa gástrica — mecanismo errado.",
+          "correct": "Sublingual evita 1ª passagem hepática; contraindicada para substâncias irritantes na mucosa oral."
+        },
+        {
+          "label": "Letra C — retal = sempre fígado",
+          "detail": "Generaliza biotransformação hepática como na via oral integral.",
+          "correct": "Reto inferior pode atingir circulação sistêmica com absorção parcial sem passagem hepática total."
+        },
+        {
+          "label": "Letra D — gabarito",
+          "detail": "Parece óbvia demais e o candidato desconfia — é a única fisiologicamente correta.",
+          "correct": "Via oral absorve principalmente no intestino delgado — gabarito D."
+        },
+        {
+          "label": "Confundir estômago com sítio principal",
+          "detail": "Transferência: banca cita boca/estômago para testar se o aluno sabe onde concentra a absorção.",
+          "correct": "Estômago absorve pouco; delgado é o protagonista da via oral."
+        },
+        {
+          "label": "Confundir 1ª passagem entre vias",
+          "detail": "Transferência FCC/FGV: inverte oral, sublingual e retal na mesma questão.",
+          "correct": "Pergunte: esse fármaco passa pelo fígado antes de circular? — elimina B e C."
+        },
+        {
+          "label": "Marcar pela lista que parece mais técnica",
+          "detail": "A cita intratecal e intraóssea para impressionar — lista incompleta continua errada.",
+          "correct": "Valide se a lista inclui as vias parenterais básicas antes de aceitar A."
+        }
+      ],
+      "footer_rule": "Transferência: em vias, desconfie de listas incompletas (A), indicação invertida (B) e fisiologia generalizada (C)"
+    }
+  ]
+}

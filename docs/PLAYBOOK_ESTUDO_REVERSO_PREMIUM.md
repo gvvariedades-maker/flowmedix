@@ -4,7 +4,7 @@ Leitura estimada: **~12 minutos**. Guia para produzir e refatorar `reverse_study
 
 **Público:** agentes de conteúdo, Laboratório, revisores humanos.
 
-**Fontes complementares:** [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (subtópicos e layouts), [`AVANT_AGENT_SOURCES.md`](AVANT_AGENT_SOURCES.md) (índice), [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) (gramática de slots + fontes oficiais), [`lib/validations.ts`](../lib/validations.ts) (limites Zod).
+**Fontes complementares:** [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (subtópicos e layouts), [`AVANT_AGENT_SOURCES.md`](AVANT_AGENT_SOURCES.md) (índice), [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) (gramática de slots + fontes oficiais), [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (brief visual de variantes 4/4), [`lib/validations.ts`](../lib/validations.ts) (limites Zod).
 
 ---
 
@@ -168,7 +168,7 @@ A migração híbrida (`upgradePremiumHybrid`) **não grava** `layout_variant` n
 
 **Override:** `layout_variant` ou `template` no JSON só quando o humano pedir exceção intencional (vitrine fixa, piloto visual).
 
-**Moldes interativos bespoke** (`sus-art4-orbit`, `absorption-speed-rail`, `route-trap`, …): ver [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) — pipeline de construção, catálogo e contrato de conteúdo para o agente.
+**Moldes interativos bespoke** (`sus-art4-orbit`, `absorption-speed-rail`, `route-trap`, …): ver [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) — pipeline de construção, catálogo e contrato de conteúdo para o agente. **Brief visual antes de codar:** [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md).
 
 **Catálogo já migrado com `layout_variant`:** `npm run catalog:strip-layout-variant` em `data/catalog-migration/` antes de reaplicar lotes.
 
@@ -250,10 +250,14 @@ Antes de publicar, responder:
 |---------|--------------------------|----------------------------------------|
 | `legis` | [`questao-premium-sus-lei-8080-cesgranrio.json`](../examples/questao-premium-sus-lei-8080-cesgranrio.json) | bridge · center* · vertical · compare |
 | `protocolo` | [`questao-premium-urgencias-rcp.json`](../examples/questao-premium-urgencias-rcp.json) | molecular · banner · cards · compare |
+| `protocolo` (farmaco clínico EV) | [`questao-premium-idecan-omeprazol-ev-ulcera.json`](../examples/questao-premium-idecan-omeprazol-ev-ulcera.json) | morphological · reference_table · tap · compare |
 | `calc` | [`questao-premium-idecan-calculo-equivalencias-gotas.json`](../examples/questao-premium-idecan-calculo-equivalencias-gotas.json) | stack · center* · horizontal · compare |
 | `vf` | [`questao-premium-cpcon-vias-im-vf.json`](../examples/questao-premium-cpcon-vias-im-vf.json) | morphological · center · vertical · compare |
 | `certo_errado` | [`questao-premium-cpcon-poliomielite-pfa-vf.json`](../examples/questao-premium-cpcon-poliomielite-pfa-vf.json) | grid · minimal · cards · compare |
+| `conceito` (vias absorção) | [`questao-premium-consulpam-vias-absorcao-oral.json`](../examples/questao-premium-consulpam-vias-absorcao-oral.json) | morphological · reference_table · tap · compare |
 | `conceito` | [`questao-premium-fundatec-meningococica-3meses.json`](../examples/questao-premium-fundatec-meningococica-3meses.json) | bridge · center · cards · compare |
+| `conceito` (imunização catch-up) | [`questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json`](../examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json) | morphological · reference_table · tap · compare |
+| `vf` (imunização intervalos) | [`questao-premium-cpcon-imunizacao-intervalos-vf.json`](../examples/questao-premium-cpcon-imunizacao-intervalos-vf.json) | pni-rules-deck · pni-interval-matrix · pni-vf-juggle-tap · pni-trap-chips |
 | `text_fragment` | [`questao-premium-fepese-anotacao-enfermagem-sae.json`](../examples/questao-premium-fepese-anotacao-enfermagem-sae.json) | grid · compact · vertical · cards |
 
 \* `reference_table` no golden_rule é resolvido só quando há `rows[]` no JSON.

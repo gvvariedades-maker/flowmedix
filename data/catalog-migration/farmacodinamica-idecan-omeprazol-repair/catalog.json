@@ -1,0 +1,18 @@
+{
+  "exported_at": "2026-07-01T19:31:29.552Z",
+  "lote": "farmacodinamica-idecan-omeprazol-repair",
+  "total": 1,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "golden_file": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+      "pedagogical_branch": "farmaco_clinico_protocolo",
+      "family": "protocolo",
+      "gabarito": "B",
+      "applied_at": "2026-07-01T19:31:29.552Z"
+    }
+  ]
+}

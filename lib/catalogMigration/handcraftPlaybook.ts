@@ -1,6 +1,10 @@
 /**
  * Resolve playbook handcraft por subtópico — expande `Handcraft: <canônico>` em briefing completo.
- * @see data/catalog-migration/handcraft-playbooks/README.md
+ *
+ * Campos operacionais do JSON (`proibido`, `modes.*.first_lote`, `modes.*.after_handcraft`)
+ * são renderizados no Markdown por `buildHandcraftBrief()`.
+ *
+ * @see data/catalog-migration/handcraft-playbooks/README.md#schema-operacional-renderizado-no-briefing
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
@@ -30,6 +34,16 @@ export type PedagogicalBranchPlaybook = {
   anchors?: string[];
 };
 
+export type HandcraftModeConfig = {
+  label?: string;
+  first_lote?: string;
+  batch_size?: number;
+  pilot_slugs?: string[];
+  lote_dir?: string;
+  steps?: string[];
+  after_handcraft?: string[];
+};
+
 export type HandcraftPlaybook = {
   version?: number;
   subtopico?: string;
@@ -43,9 +57,23 @@ export type HandcraftPlaybook = {
   clusters?: string[];
   pedagogical_branches?: PedagogicalBranchPlaybook[];
   pedagogical_branches_note?: string;
-  modes?: Record<string, unknown>;
+  proibido?: string[];
+  modes?: Record<string, HandcraftModeConfig>;
   validation?: Record<string, string>;
+  golden_v1_grammar?: Record<string, string>;
+  roi_priorities?: { priority: string; action: string; why: string }[];
+  clinical_depth_v3_registry?: string;
+  golden_anchors_registry?: string;
 };
+
+export type PlaybookCommandContext = {
+  lote: string;
+  slug?: string;
+  canonical: string;
+  prefix: string;
+};
+
+const DEFAULT_PROIBIDO = ['ai:generate', 'catalog:upgrade-premium'];
 
 export type HandcraftBriefOptions = {
   /** Se informado, modo single_slug em vez do scope_default do playbook. */
@@ -170,6 +198,121 @@ export function loadHandcraftPlaybook(
   return null;
 }
 
+export function resolveModeConfig(
+  playbook: HandcraftPlaybook | null | undefined,
+  mode: string,
+): HandcraftModeConfig | undefined {
+  return playbook?.modes?.[mode];
+}
+
+/** Nome do lote inicial — prioriza `modes[mode].first_lote` do playbook. */
+export function resolveFirstLote(
+  playbook: HandcraftPlaybook | null | undefined,
+  pkg: HandcraftRegistryPackage | null | undefined,
+  mode: string,
+): string {
+  const modeConfig = resolveModeConfig(playbook, mode);
+  if (modeConfig?.first_lote) return modeConfig.first_lote;
+
+  const prefix = pkg?.pacote_prefix ?? playbook?.pacote_prefix ?? 'pacote';
+  if (mode.includes('repair') && playbook?.repair_lote_pattern) {
+    return playbook.repair_lote_pattern.replace('{NN}', '01');
+  }
+  return pkg?.lote_pattern?.replace('{NN}', '01') ?? `${prefix}-g01`;
+}
+
+export function substitutePlaybookPlaceholders(
+  command: string,
+  ctx: PlaybookCommandContext,
+): string {
+  return command
+    .replace(/<lote>/g, ctx.lote)
+    .replace(/<slug>/g, ctx.slug ?? '<slug>')
+    .replace(/<canônico>/g, ctx.canonical)
+    .replace(/<canonico>/g, ctx.canonical)
+    .replace(/<pacote>/g, ctx.prefix);
+}
+
+export function formatProibidoList(playbook: HandcraftPlaybook | null | undefined): string {
+  const items = playbook?.proibido?.length ? playbook.proibido : DEFAULT_PROIBIDO;
+  return items.map((c) => `\`${c}\``).join(', ');
+}
+
+function usesStrictV2Pedagogy(playbook: HandcraftPlaybook | null | undefined): boolean {
+  const validation = playbook?.validation ?? {};
+  return Object.values(validation).some((cmd) => cmd.includes('strict-v2-pedagogy'));
+}
+
+function defaultAfterHandcraft(
+  mode: string,
+  ctx: PlaybookCommandContext,
+  strictV2: boolean,
+): string[] {
+  const strict = strictV2 ? ' --strict-v2-pedagogy' : '';
+  if (mode === 'single_slug' && ctx.slug) {
+    return [
+      `npm run audit:questao-readiness -- --file=data/catalog-migration/${ctx.lote}/questions/${ctx.slug}.json${strict}`,
+    ];
+  }
+  return [
+    `npm run validate:goldens -- --lote=${ctx.lote} --strict`,
+    `npm run audit:questao-readiness -- --lote=${ctx.lote}${strict}`,
+    `npm run catalog:apply-lote -- --lote=${ctx.lote} --dry-run`,
+    '# apply + patch branch só se o usuário pedir',
+  ];
+}
+
+function resolveAfterHandcraftCommands(
+  playbook: HandcraftPlaybook | null | undefined,
+  mode: string,
+  ctx: PlaybookCommandContext,
+): string[] {
+  const modeConfig = resolveModeConfig(playbook, mode);
+  const strictV2 =
+    usesStrictV2Pedagogy(playbook) ||
+    modeConfig?.after_handcraft?.some((c) => c.includes('strict-v2-pedagogy')) ||
+    false;
+
+  if (modeConfig?.after_handcraft?.length) {
+    return modeConfig.after_handcraft.map((cmd) => substitutePlaybookPlaceholders(cmd, ctx));
+  }
+  return defaultAfterHandcraft(mode, ctx, strictV2);
+}
+
+function buildPipelineCommands(
+  playbook: HandcraftPlaybook | null | undefined,
+  pkg: HandcraftRegistryPackage | null | undefined,
+  mode: string,
+  options: HandcraftBriefOptions,
+  canonical: string,
+): string[] {
+  const prefix = pkg?.pacote_prefix ?? playbook?.pacote_prefix ?? 'pacote';
+  const modeConfig = resolveModeConfig(playbook, mode);
+
+  if (options.slug) {
+    const lote = resolveFirstLote(playbook, pkg, mode);
+    const loteDir =
+      modeConfig?.lote_dir ?? `data/catalog-migration/${lote}/questions`;
+    const slug = options.slug;
+    const ctx: PlaybookCommandContext = { lote, slug, canonical, prefix };
+
+    return [
+      `# Buscar JSON no Supabase: ${slug}`,
+      `# Salvar: ${loteDir}/${slug}.json`,
+      ...resolveAfterHandcraftCommands(playbook, mode, ctx),
+    ];
+  }
+
+  const lote = resolveFirstLote(playbook, pkg, mode);
+  const ctx: PlaybookCommandContext = { lote, canonical, prefix };
+
+  return [
+    `npm run catalog:export-lote -- --lote=${prefix}-completo --subtopico="${canonical}" --limit=10000`,
+    `# Handcraft → data/catalog-migration/${lote}/questions/*.json`,
+    ...resolveAfterHandcraftCommands(playbook, mode, ctx),
+  ];
+}
+
 function formatBranches(playbook: HandcraftPlaybook): string {
   const branches = playbook.pedagogical_branches;
   if (!branches?.length) {
@@ -200,6 +343,10 @@ export function buildHandcraftBrief(
       ? 'single_slug'
       : options.mode ?? playbook?.scope_default ?? 'subtopico_handcraft';
 
+  const modeConfig = resolveModeConfig(playbook, mode);
+  const firstLote = resolveFirstLote(playbook, pkg, mode);
+  const isRepairMode = mode.startsWith('subtopico_repair');
+
   const lines: string[] = [
     `# Handcraft briefing — ${canonical}`,
     '',
@@ -214,13 +361,22 @@ export function buildHandcraftBrief(
       `- **Uma questão:** \`${options.slug}\``,
       `- Reparo/atualização golden-v1 **A1+A2+A3**`,
     );
-  } else if (mode === 'subtopico_repair_l3') {
+  } else if (isRepairMode) {
+    const repairLabel =
+      modeConfig?.label ??
+      (mode === 'subtopico_repair_l3'
+        ? 'reparo/atualização L3 em slugs premium'
+        : 'reparo/atualização em slugs premium');
     lines.push(
-      `- **Subtópico inteiro** — reparo/atualização L3 em slugs premium`,
+      `- **Subtópico inteiro** — ${repairLabel}`,
       `- Seleção: ${playbook?.slug_selection ?? 'audit FAIL ou branch ausente no Supabase'}`,
+      `- **Primeiro lote:** \`${firstLote}\``,
     );
   } else {
-    lines.push(`- **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3`);
+    lines.push(
+      `- **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3`,
+      `- **Primeiro lote:** \`${firstLote}\``,
+    );
   }
 
   lines.push('', '## Pacote (registry)', '');
@@ -246,8 +402,16 @@ export function buildHandcraftBrief(
     );
   }
 
-  if (playbook?.repair_lote_pattern && mode === 'subtopico_repair_l3') {
-    lines.push('', `**Lote repair:** \`${playbook.repair_lote_pattern}\` (começar por g01 se não existir).`);
+  if (playbook?.repair_lote_pattern && isRepairMode) {
+    lines.push(
+      '',
+      `**Padrão de lotes repair:** \`${playbook.repair_lote_pattern}\` · 1º lote: \`${firstLote}\``,
+    );
+  }
+
+  const proibidoList = formatProibidoList(playbook);
+  if (playbook?.proibido?.length) {
+    lines.push('', '## Proibido (playbook)', '', ...playbook.proibido.map((c) => `- \`${c}\``));
   }
 
   lines.push('', '## Ramos L3 (pedagogical_branch)', '', formatBranches(playbook ?? {}));
@@ -256,6 +420,45 @@ export function buildHandcraftBrief(
     lines.push('', '## Clusters', '', ...playbook.clusters.map((c) => `- ${c}`));
   }
 
+  if (playbook?.golden_v1_grammar) {
+    lines.push('', '## Gramática golden-v1 (4 slides)', '');
+    for (const [slot, desc] of Object.entries(playbook.golden_v1_grammar)) {
+      lines.push(`- **${slot}:** ${desc}`);
+    }
+    const pedagogyMap = playbook.validation?.pedagogy_grammar;
+    if (pedagogyMap) {
+      lines.push(`- Mapa de erros ROI: \`${pedagogyMap}\``);
+    }
+  }
+
+  if (playbook?.roi_priorities?.length) {
+    lines.push('', '## Priorização ROI', '', '| P | Ação | Por quê |', '|---|------|---------|');
+    for (const row of playbook.roi_priorities) {
+      lines.push(`| ${row.priority} | ${row.action} | ${row.why} |`);
+    }
+  }
+
+  const v3Registry = playbook?.clinical_depth_v3_registry;
+  if (v3Registry) {
+    lines.push('', '## Clinical-depth v3', '', `- Registry: \`${v3Registry}\``, '- EXCETO pós-op: `examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json`');
+  }
+
+  const goldenAnchors = playbook?.golden_anchors_registry;
+  if (goldenAnchors) {
+    const branchAnchors = (playbook?.pedagogical_branches ?? [])
+      .flatMap((b) => (b.anchors ?? []).map((a) => `- **${b.id}:** \`${a}\``))
+      .filter((line, i, arr) => arr.indexOf(line) === i);
+    lines.push(
+      '',
+      '## Golden anchors',
+      '',
+      `- Registry: \`${goldenAnchors}\``,
+      ...(branchAnchors.length > 0 ? branchAnchors : ['- Ver registry e `examples/` do pacote']),
+    );
+  }
+
+  const strictHint = usesStrictV2Pedagogy(playbook) ? ' (strict-v2-pedagogy obrigatório)' : '';
+
   lines.push(
     '',
     '## Pipeline (executar)',
@@ -263,42 +466,15 @@ export function buildHandcraftBrief(
     '1. Ler `docs/HANDCRAFT_CONVERSA.md`, `docs/GOLDEN_HANDCRAFT_MODEL.md`, skill `avant-json-template` § L2.5+L3.',
     '2. Ler `handcraft_meta` e 1–2 âncoras do ramo de cada slug.',
     '3. Handcraft: `meta.content_standard: golden-v1` + `family` + `pedagogical_branch` + 4 slides planos.',
-    '4. **Proibido:** `ai:generate`, `catalog:upgrade-premium`.',
+    `4. **Proibido:** ${proibidoList}.`,
     '',
     '```bash',
-  );
-
-  if (options.slug) {
-    const lote =
-      (playbook?.modes?.single_slug as { lote_dir?: string })?.lote_dir ??
-      `data/catalog-migration/${pkg?.pacote_prefix ?? 'pacote'}-repair-l3-g01`;
-    lines.push(
-      `# Buscar JSON no Supabase: ${options.slug}`,
-      `# Salvar: ${lote}/questions/${options.slug}.json`,
-      `npm run audit:questao-readiness -- --file=${lote}/questions/${options.slug}.json`,
-    );
-  } else {
-    const prefix = pkg?.pacote_prefix ?? '<pacote>';
-    const lote =
-      mode === 'subtopico_repair_l3'
-        ? (playbook?.repair_lote_pattern ?? `${prefix}-repair-l3-g{NN}`).replace('{NN}', '01')
-        : `${pkg?.lote_pattern?.replace('{NN}', '01') ?? `${prefix}-g01`}`;
-    lines.push(
-      `npm run catalog:export-lote -- --lote=${prefix}-completo --subtopico="${canonical}" --limit=10000`,
-      `# Handcraft → data/catalog-migration/${lote}/questions/*.json`,
-      `npm run validate:goldens -- --lote=${lote} --strict`,
-      `npm run audit:questao-readiness -- --lote=${lote}`,
-      `npm run catalog:apply-lote -- --lote=${lote} --dry-run`,
-      `# apply + patch branch só se o usuário pedir`,
-    );
-  }
-
-  lines.push(
+    ...buildPipelineCommands(playbook, pkg, mode, options, canonical),
     '```',
     '',
     '## Critério de pronto (automático)',
     '',
-    '- `audit:questao-readiness` → `[READY]` por slug',
+    '- `audit:questao-readiness` → `[READY]` por slug' + strictHint,
     '- A4 (piloto `/estudar/[slug]`) — usuário',
     '',
   );

@@ -1,0 +1,19 @@
+{
+  "exported_at": "2026-07-01T18:01:35.575Z",
+  "lote": "vias-de-administracao-consulpam-repair",
+  "total": 1,
+  "entries": [
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 1503,
+      "golden_file": "examples/questao-premium-consulpam-vias-absorcao-oral.json",
+      "pedagogical_branch": "via_vf_absorcao",
+      "family": "conceito",
+      "gabarito": "D",
+      "applied_at": "2026-07-01T18:01:35.575Z"
+    }
+  ]
+}

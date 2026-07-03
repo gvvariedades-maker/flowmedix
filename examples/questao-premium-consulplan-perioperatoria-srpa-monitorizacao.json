@@ -9,9 +9,10 @@
     "subtopico": "Assistência Perioperatória (Inclui SRPA)",
     "content_standard": "golden-v1",
     "family": "conceito",
+    "pedagogical_branch": "perioperatorio_pos_operatorio",
     "content_review": {
-      "reviewed_at": "2026-06-23",
-      "reviewer": "content-pilot",
+      "reviewed_at": "2026-07-01",
+      "reviewer": "handcraft-clinical-depth-v3",
       "guideline_snapshot": "COFEN — atribuições do técnico; cuidados pós-anestésicos",
       "exam_vs_current": "none"
     },
@@ -50,26 +51,44 @@
         },
         {
           "label": "Técnico — núcleo",
-          "detail": "Monitorar sinais vitais, dor e nível de consciência — letra A.",
+          "detail": "Monitorar sinais vitais, dor e nível de consciência.",
           "icon": "UserCheck"
         },
         {
           "label": "Medicação",
-          "detail": "Só com prescrição — nunca analgésico não prescrito (D falsa).",
+          "detail": "Só com prescrição — nunca analgésico não prescrito.",
           "icon": "Pill"
         },
         {
           "label": "Procedimentos invasivos",
-          "detail": "SVD e tricotomia não são cuidado típico do técnico na SRPA (C e E falsas).",
+          "detail": "SVD e tricotomia não são cuidado típico do técnico na SRPA.",
           "icon": "Syringe"
         },
         {
-          "label": "Gabarito",
-          "detail": "A — monitorização contínua.",
-          "icon": "CheckCircle"
+          "label": "Vigilância",
+          "detail": "Estabilização e registro contínuo até critérios de alta.",
+          "icon": "Activity"
         }
       ],
       "footer_rule": "Na SRPA o técnico vigia — não prescreve nem invade sem atribuição"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Eliminar por fase e atribuição",
+      "chip_label": "PASSO A PASSO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "reveal_mode": "tap",
+      "steps": [
+        "Comando: cuidado do técnico na SRPA — marque a correta.",
+        "SRPA = pós-cirurgia imediata — foco em estabilização e vigilância.",
+        "Eliminar E — tricotomia é pré-operatório.",
+        "Eliminar D — medicação só prescrita.",
+        "Eliminar C — sondagem vesical não é o cuidado SRPA típico do técnico.",
+        "Eliminar B — carro de parada é outro contexto.",
+        "Confirmar A — monitorar SV, dor e consciência.",
+        "Gabarito: letra A."
+      ],
+      "footer_rule": "Procedimento de outra fase ou sem prescrição → eliminar"
     },
     {
       "type": "golden_rule",
@@ -81,27 +100,9 @@
         { "label": "Pode", "value": "Monitorar SV, dor e nível de consciência", "badge": "hot", "emphasis": "highlight" },
         { "label": "Não pode", "value": "Analgésico sem prescrição", "badge": "warn" },
         { "label": "Não é foco SRPA", "value": "Tricotomia (pré-op) ou SVD de rotina", "badge": "warn" },
-        { "label": "Carro parada", "value": "Conferência pode existir, mas não é o cuidado SRPA cobrado", "badge": "info" },
-        { "label": "Gabarito", "value": "Letra A", "badge": "hot" }
+        { "label": "Carro parada", "value": "Conferência pode existir, mas não é o cuidado SRPA cobrado", "badge": "info" }
       ],
       "footer_rule": "Banca testa monitorização — não procedimento de outra fase"
-    },
-    {
-      "type": "logic_flow",
-      "slide_title": "Eliminar por fase e atribuição",
-      "chip_label": "PASSO A PASSO",
-      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
-      "reveal_mode": "tap",
-      "steps": [
-        "SRPA = pós-cirurgia imediata — foco em estabilização e vigilância.",
-        "Eliminar E — tricotomia é pré-operatório.",
-        "Eliminar D — medicação só prescrita.",
-        "Eliminar C — sondagem vesical não é o cuidado SRPA típico do técnico.",
-        "Eliminar B — carro de parada é outro contexto.",
-        "Confirmar A — monitorar SV, dor e consciência.",
-        "Marcar A."
-      ],
-      "footer_rule": "Procedimento de outra fase ou sem prescrição → eliminar"
     },
     {
       "type": "danger_zone",
@@ -114,22 +115,22 @@
         {
           "label": "Letra E — tricotomia",
           "detail": "Tricotomia pertence ao preparo pré-operatório, não à SRPA.",
-          "correct": "Gabarito A — monitorização pós-anestésica."
+          "correct": "Pré-operatório ≠ SRPA — monitorização pós-anestésica é o cuidado cobrado."
         },
         {
           "label": "Letra D — analgésico não prescrito",
           "detail": "Administrar sem prescrição viola segurança do paciente.",
-          "correct": "Gabarito A — técnico monitora dor e aciona a equipe."
+          "correct": "Técnico monitora dor e aciona a equipe — não prescreve nem administra sem ordem."
         },
         {
           "label": "Letra C — sonda vesical",
           "detail": "Passagem de SVD é procedimento com atribuição específica — não o núcleo SRPA.",
-          "correct": "Gabarito A — vigilância de SV, dor e consciência."
+          "correct": "Vigilância de SV, dor e consciência responde ao enunciado."
         },
         {
           "label": "Letra B — carro de parada",
           "detail": "Conferência de equipamento é válida em CC, mas não responde ao cuidado SRPA do técnico.",
-          "correct": "Gabarito A — monitorização contínua do paciente."
+          "correct": "Monitorização contínua do paciente é o núcleo da alternativa correta."
         }
       ],
       "footer_rule": "Cada alternativa errada pertence a outro momento ou exige prescrição"

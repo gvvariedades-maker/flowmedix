@@ -715,6 +715,8 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | Arquivo | Quando ler |
 |---------|------------|
 | [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md) | Slides, subtópicos, layouts, exemplos JSON |
+| [`PROMPT_VARIANTES_NEUROSLIDES.md`](docs/PROMPT_VARIANTES_NEUROSLIDES.md) | System prompt (enxuto + completo) para brief de variantes NeuroSlides 4/4 |
+| [`VARIANT_MOLDS.md`](docs/VARIANT_MOLDS.md) | Pipeline de engenharia de moldes bespoke |
 | [`PREMIUM_QUESTAO.md`](docs/PREMIUM_QUESTAO.md) | Definição canônica — L1 estrutural, L2 conteúdo, L3 experiência |
 | [`PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) | **Runbook** procedural (Fases 0–6) + matriz por subtópico |
 | [`FONTE_NORMATIVA_AVANT.md`](docs/FONTE_NORMATIVA_AVANT.md) | Handcraft × guideline × legado builder |

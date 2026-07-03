@@ -1,0 +1,19 @@
+{
+  "lote": "imunizacao-g01",
+  "subtopico": "Imunização",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 4,
+    "imunizacao_cadeia_frio": 2,
+    "imunizacao_generico": 2
+  },
+  "anchors_used": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"
+  ],
+  "notes": "Piloto g01 — calendário infantil/adulto, cadeia frio PNI, EXCETO atenuados, vias vacinais, BCG V/F"
+}

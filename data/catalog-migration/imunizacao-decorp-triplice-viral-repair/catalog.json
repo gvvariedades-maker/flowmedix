@@ -1,0 +1,18 @@
+{
+  "exported_at": "2026-07-02T01:54:48.159Z",
+  "lote": "imunizacao-decorp-triplice-viral-repair",
+  "total": 1,
+  "entries": [
+    {
+      "modulo_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "golden_file": "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json",
+      "pedagogical_branch": "imunizacao_generico",
+      "family": "conceito",
+      "gabarito": "A",
+      "applied_at": "2026-07-02T01:54:48.159Z"
+    }
+  ]
+}

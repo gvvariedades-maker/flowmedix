@@ -21,6 +21,8 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'dressing-match-matrix',
   'vitals-reference-board',
   'pni-interval-matrix',
+  'pni-calendar-board',
+  'pni-temperature-rail',
   'ist-reference-board',
   'sae-reference-board',
   'sonda-measurement-board',
@@ -66,6 +68,8 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'dressing-match-matrix') return 'dressing-match-matrix';
   if (explicitVariant === 'vitals-reference-board') return 'vitals-reference-board';
   if (explicitVariant === 'pni-interval-matrix') return 'pni-interval-matrix';
+  if (explicitVariant === 'pni-calendar-board') return 'pni-calendar-board';
+  if (explicitVariant === 'pni-temperature-rail') return 'pni-temperature-rail';
   if (explicitVariant === 'ist-reference-board') return 'ist-reference-board';
   if (explicitVariant === 'sae-reference-board') return 'sae-reference-board';
   if (explicitVariant === 'via-reference-board') return 'via-reference-board';

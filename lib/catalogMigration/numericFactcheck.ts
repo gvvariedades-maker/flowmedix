@@ -57,9 +57,22 @@ function parseRatioDigits(claim: string): string | null {
   return m[1].replace(/[.,]/g, '');
 }
 
+function isTemperatureLikeClaim(claim: string): boolean {
+  return /(?:°|graus)\s*c|\d\s*°?\s*c|temperatura|congel|freezer|c[aâ]mara negativa/i.test(claim);
+}
+
+function entryIsTemperatureLike(entry: GuidelineEntry): boolean {
+  const hay = `${entry.label} ${entry.value} ${entry.detail ?? ''}`;
+  return /°?\s*c|graus|temperatura|congel|freezer|cadeia|rede de frio/i.test(hay);
+}
+
 function entryMatchesClaim(entry: GuidelineEntry, claim: string): boolean {
   const normClaim = normalizeNumericToken(claim);
   const valueHay = normalizeNumericToken(entry.value);
+
+  if (isTemperatureLikeClaim(claim) && !entryIsTemperatureLike(entry)) {
+    return false;
+  }
 
   const claimRatio = parseRatioDigits(claim);
   const entryRatio = parseRatioDigits(entry.value);
@@ -72,6 +85,19 @@ function entryMatchesClaim(entry: GuidelineEntry, claim: string): boolean {
   if (/sal|10-6|1e-6/i.test(normClaim) && /sal|10-6|1e-6|1000000/i.test(valueHay)) return true;
   if (/121/.test(normClaim) && /121/.test(valueHay)) return true;
   if (/30dia/i.test(normClaim) && /30/.test(entry.value)) return true;
+
+  if (isTemperatureLikeClaim(claim)) {
+    const entryHay = `${entry.label} ${entry.value} ${entry.detail ?? ''}`.toLowerCase();
+    if (/0\s*°?\s*c\s*(a|e|-)\s*2|0\s*[-–]\s*2/i.test(claim) && /0.*2|piso|abaixo|armadilha/i.test(entryHay)) {
+      return true;
+    }
+    if (/8\s*°?\s*c\s*(a|e|-)\s*12|8\s*[-–]\s*12/i.test(claim) && /8.*12|acima.*8|armadilha/i.test(entryHay)) {
+      return true;
+    }
+    if (/congel|freezer/i.test(claim) && /congel|freezer|negativ/i.test(entryHay)) {
+      return true;
+    }
+  }
 
   const claimDigits = normClaim.replace(/\D/g, '');
   const valueDigits = valueHay.replace(/\D/g, '');
@@ -87,6 +113,19 @@ export function matchClaimToGuideline(
 ): GuidelineEntry | null {
   const table = getGuidelineForSubtopico(subtopico);
   if (!table) return null;
+
+  if (subtopico === 'Imunização' && isTemperatureLikeClaim(claim)) {
+    for (const entry of table.entries) {
+      if (
+        !entry.id.startsWith('rede-frio') &&
+        !entry.id.startsWith('cadeia-frio') &&
+        !entry.id.startsWith('diluente')
+      ) {
+        continue;
+      }
+      if (entryMatchesClaim(entry, claim)) return entry;
+    }
+  }
 
   for (const entry of table.entries) {
     if (entryMatchesClaim(entry, claim)) return entry;

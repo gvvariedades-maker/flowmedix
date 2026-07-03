@@ -1,0 +1,25 @@
+{
+  "lote": "imunizacao-g11",
+  "exported_at": "2026-07-03T02:44:39.408Z",
+  "source": "cluster-report",
+  "filters": {
+    "clusters": [
+      "Calendário vacinal — infantil",
+      "Calendário vacinal — adolescente/adulto/idoso",
+      "Gestante / puérpera — vacinação",
+      "HPV / campanhas e prevenção"
+    ],
+    "exclude_count": 96,
+    "mix": "infantil+adulto/gestante/HPV alternado"
+  },
+  "slugs": [
+    "fauel-enfermagem-imunizacao-1777103257434-7",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-0",
+    "fenix-instituto-enfermagem-imunizacao-1780000630425-7",
+    "coseac-uff-enfermagem-imunizacao-1779572159431-3",
+    "fgv-enfermagem-imunizacao-1777103215560-7",
+    "cotec-fadenor-enfermagem-imunizacao-1777103244679-2",
+    "fgv-enfermagem-imunizacao-1779564059030-0",
+    "cotec-fadenor-enfermagem-imunizacao-1777103244679-3"
+  ]
+}

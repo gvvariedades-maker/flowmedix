@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "TEnf (Pref N Odessa)",
+    "orgao": "Pref Nova Odessa",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Imunização",
+    "pedagogical_branch": "imunizacao_cadeia_frio",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-02",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "PNI — Manual da Rede de Frio: temperatura positiva 2 °C a 8 °C",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+      "cluster": "Cadeia de frio / conservação / SI-PNI",
+      "anchor_role": "sub_padrao_b_faixa_termica"
+    },
+    "sources": [
+      {
+        "id": "pni-rede-frio-manual",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual da Rede de Frio — PNI",
+        "year": 2025,
+        "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
+        "covers": ["temperatura positiva", "2 °C a 8 °C", "cadeia de frio", "conservação de imunobiológicos"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Conforme Manual da Rede de Frio (PNI), imunobiológicos em temperatura positiva devem ser mantidos, em geral, entre:",
+    "options": [
+      {
+        "id": "A",
+        "text": "0 °C e 2 °C",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "2 °C e 8 °C",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "8 °C e 12 °C",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "–2 °C e 0 °C",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "10 °C e 15 °C",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Rede de frio — temperatura positiva",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Faixa de conservação em temperatura positiva — regra geral do Manual da Rede de Frio (PNI).",
+          "icon": "Target"
+        },
+        {
+          "label": "Cadeia de frio",
+          "detail": "Processo logístico que mantém a potência do imunobiológico do fabricante ao braço do paciente.",
+          "icon": "Truck"
+        },
+        {
+          "label": "Temperatura positiva",
+          "detail": "Maioria das vacinas do PNI: geladeira ou câmara refrigerada — não congelar.",
+          "icon": "Thermometer"
+        },
+        {
+          "label": "Faixa da prova",
+          "detail": "Decore: 2 °C a 8 °C — limites fechados; “em geral” cobre a regra padrão, não exceções.",
+          "icon": "Snowflake"
+        }
+      ],
+      "footer_rule": "Positiva = 2 · 8 — não confundir com congelamento"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — faixas da Rede de Frio",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "MANUAL DA REDE DE FRIO (PNI)",
+      "rows": [
+        {
+          "label": "Temperatura positiva",
+          "value": "2 °C a 8 °C — regra geral dos imunobiológicos",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Câmara negativa",
+          "value": "Freezer — vacinas liofilizadas específicas (ex.: SCR)",
+          "badge": "info"
+        },
+        {
+          "label": "Diluentes",
+          "value": "2 °C a 8 °C — mín. 24 h na geladeira antes do uso",
+          "badge": "info"
+        },
+        {
+          "label": "Fora da faixa",
+          "value": "Não aplicar — registrar perda e notificar fluxo PNI",
+          "badge": "warn"
+        },
+        {
+          "label": "Armazenamento",
+          "value": "Parte central da geladeira — nunca porta nem congelador",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "2 a 8 °C = padrão ouro da sala de vacina"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "steps": [
+        "Comando: faixa de temperatura positiva — regra geral do Manual da Rede de Frio.",
+        "Recuperar decore PNI: imunobiológicos em positiva = 2 °C a 8 °C.",
+        "A — piso abaixo de 2 °C → eliminar.",
+        "C — teto acima de 8 °C → eliminar.",
+        "D — faixa de congelamento — enunciado pede positiva → eliminar.",
+        "E — faixa acima de 8 °C (alternativa quente) → eliminar.",
+        "Marcar letra B — 2 °C e 8 °C (única faixa positiva correta)."
+      ],
+      "footer_rule": "Leia “positiva” e “em geral” — banca testa o decore 2–8"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "PEGADINHAS — FAIXA TÉRMICA",
+      "items": [
+        {
+          "label": "Letra A — limite inferior errado",
+          "detail": "Alternativa começa abaixo do piso da cadeia fria positiva.",
+          "correct": "O piso da cadeia fria positiva é 2 °C — não aceitar faixa que inicia antes disso."
+        },
+        {
+          "label": "Letra C — limite superior estourado",
+          "detail": "Usa o teto correto (8 °C) mas prolonga a faixa para cima.",
+          "correct": "Acima de 8 °C a vacina sai da conservação adequada."
+        },
+        {
+          "label": "Letra D — congelamento",
+          "detail": "Seduz quem mistura câmara negativa com positiva.",
+          "correct": "Congelamento é outra faixa; o enunciado pediu temperatura positiva."
+        },
+        {
+          "label": "Letra E — faixa muito acima de 8 °C",
+          "detail": "Alternativa com temperatura ambiente — fora da geladeira.",
+          "correct": "Acima de 8 °C a vacina perde potência — fora da cadeia fria PNI."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Geladeira doméstica ou câmara com termômetro na porta.",
+          "correct": "Monitorar 2–8 °C na parte central; variação = acionar fluxo de perda."
+        }
+      ],
+      "footer_rule": "Memorize os dois números: 2 e 8"
+    }
+  ]
+}

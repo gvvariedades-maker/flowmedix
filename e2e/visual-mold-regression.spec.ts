@@ -1,64 +1,30 @@
 /**
  * e2e/visual-mold-regression.spec.ts — snapshot L3 por pedagogical_branch.
  *
- *   npm run test:e2e -- e2e/visual-mold-regression.spec.ts
- *   PLAYWRIGHT_SKIP_WEBSERVER=true npm run test:e2e -- e2e/visual-mold-regression.spec.ts --project=chromium
+ *   npm run test:e2e:visual-molds
+ *   PLAYWRIGHT_SKIP_WEBSERVER=true npm run test:e2e:visual-molds
  */
 import fs from 'fs';
 import path from 'path';
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
+import {
+  assertSlidePanelsLegibleAt375,
+  DESKTOP_VIEWPORT,
+  expectSlidePanels,
+  gotoBranch,
+  loadAnchorFooterRules,
+  loadVisualAnchors,
+  MOBILE_NARROW_VIEWPORT,
+  onboardingDismissScript,
+  PNI_IMUNIZACAO_BRANCHES,
+  screenshotSlidePanels,
+  SLIDE_COUNT,
+} from './helpers/visualMoldE2e';
 
 const OUT_DIR = path.join(process.cwd(), 'artifacts/visual-mold-regression');
-const ANCHORS_PATH = path.join(process.cwd(), 'data/catalog-migration/visual-anchors.json');
-const SLIDE_COUNT = 4;
-
-type AnchorEntry = { pedagogical_branch: string };
 
 function loadBranches(): string[] {
-  const raw = JSON.parse(fs.readFileSync(ANCHORS_PATH, 'utf8')) as {
-    anchors: Record<string, AnchorEntry>;
-  };
-  return Object.keys(raw.anchors);
-}
-
-const onboardingDismissScript = () => {
-  const microtipKeys = [
-    'reverse-study.option-elimination',
-    'reverse-study.answer-before-feedback',
-    'reverse-study.feedback-learning',
-    'reverse-study.reverse-study-intro',
-    'reverse-study.dots-meaning',
-    'reverse-study.concept-map',
-    'reverse-study.golden-rule',
-    'reverse-study.logic-flow',
-    'reverse-study.danger-zone',
-    'reverse-study.study-completed',
-  ];
-  for (const key of microtipKeys) {
-    window.localStorage.setItem(`avant.microtip.${key}`, 'true');
-  }
-  window.localStorage.setItem('avant-estudo-reverso-welcome-seen', 'true');
-};
-
-async function gotoBranch(page: Page, branch: string): Promise<void> {
-  await page.goto(`/dev/slide-mold-review?branch=${encodeURIComponent(branch)}`, {
-    waitUntil: 'domcontentloaded',
-    timeout: 120_000,
-  });
-  await expect(page.getByTestId('slide-mold-review-root')).toBeVisible({ timeout: 60_000 });
-  // AvantLessonPlayer é dynamic(ssr:false) — aguardar hidratação antes de interagir com mold-slide-*.
-  await expect(page.getByTestId('mold-player').getByTestId('lesson-scroll-body').first()).toBeVisible({
-    timeout: 90_000,
-  });
-}
-
-async function expectSlidePanels(page: Page): Promise<void> {
-  for (let i = 1; i <= SLIDE_COUNT; i++) {
-    await expect(page.getByTestId(`mold-slide-${i}`)).toBeVisible({ timeout: 30_000 });
-  }
-  for (let i = 1; i <= SLIDE_COUNT; i++) {
-    await page.getByTestId(`mold-slide-${i}`).scrollIntoViewIfNeeded();
-  }
+  return Object.keys(loadVisualAnchors());
 }
 
 test.describe('Visual mold regression — L3 branches', () => {
@@ -81,17 +47,10 @@ test.describe('Visual mold regression — L3 branches', () => {
 
   for (const branch of loadBranches()) {
     test(`branch ${branch} — desktop slides`, async ({ page }) => {
-      await page.setViewportSize({ width: 1280, height: 900 });
+      await page.setViewportSize(DESKTOP_VIEWPORT);
       await gotoBranch(page, branch);
       await expectSlidePanels(page);
-
-      for (let i = 1; i <= SLIDE_COUNT; i++) {
-        const panel = page.getByTestId(`mold-slide-${i}`);
-        await expect(panel).toBeVisible({ timeout: 30_000 });
-        await panel.scrollIntoViewIfNeeded();
-        const out = path.join(OUT_DIR, `${branch}-desktop-slide${i}.png`);
-        await panel.screenshot({ path: out, type: 'png' });
-      }
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
     });
 
     test(`branch ${branch} — mobile player`, async ({ page }) => {
@@ -106,4 +65,53 @@ test.describe('Visual mold regression — L3 branches', () => {
       });
     });
   }
+});
+
+test.describe('PNI Imunização — 4 moldes bespoke', () => {
+  test.describe.configure({ mode: 'parallel', timeout: 120_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression PNI — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PNI_IMUNIZACAO_BRANCHES) {
+    test(`PNI ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PNI ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('PNI imunizacao_cadeia_frio — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'imunizacao_cadeia_frio';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
 });

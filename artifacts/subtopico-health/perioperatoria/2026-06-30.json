@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-30T16:28:06.713Z",
+  "generated_at": "2026-06-30T23:56:56.355Z",
   "subtopico": "Assistência Perioperatória (Inclui SRPA)",
   "pacote_prefix": "perioperatoria",
   "production_status": "production_ready",
   "content_health": {
     "subtopico": "Assistência Perioperatória (Inclui SRPA)",
-    "sessions_30d": 402,
+    "sessions_30d": 394,
     "open_reports": {
       "p0": 0,
       "p1": 0,
@@ -13,7 +13,7 @@
       "p3": 0,
       "total": 2
     },
-    "report_rate_pct": 0.5,
+    "report_rate_pct": 0.51,
     "top_reported_slugs": [
       {
         "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
@@ -29,9 +29,9 @@
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 402,
+      "sessions_30d": 394,
       "open_p1": 0,
-      "report_rate_pct": 0.5
+      "report_rate_pct": 0.51
     },
     "pass": true,
     "blockers": [],

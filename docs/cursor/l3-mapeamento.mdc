@@ -5,14 +5,16 @@ alwaysApply: false
 
 # Mapeamento L3 — ramos + auditoria de moldes
 
-> **Escopo:** 1 subtópico = 1 relatório de decisão (bespoke vs genérico). **Não** handcraft em massa nem React sem pedido explícito.
+> **Escopo:** 1 subtópico = cluster + decisão L3 + **brief 4/4 por ramo forte**. **Não** handcraft em massa nem React sem pedido explícito.
+>
+> **Política 2026-07-02+:** moldes legados ≠ aprovados — ramos fortes passam **Fase 3b** (`PROMPT_VARIANTES_NEUROSLIDES`). Cauda longa = `ok_generico`.
 
 Quando a mensagem começar com **`Mapeamento L3:`** (ou anexar `docs/L3_MAPEAMENTO_CONVERSA.md`), executar **sem pedir modo**:
 
 ## 1. Resolver trigger
 
 - Formato: `Mapeamento L3: <subtópico canônico>` (`CLAUDE.md` §9)
-- Modificadores: `Só auditoria` | `Incluir wire` | `Implementar molde: <ramo>`
+- Modificadores: `Só auditoria` | `Incluir wire` | `Só brief: <ramo>` | `Implementar molde: <ramo>`
 
 Runbook: [`docs/L3_MAPEAMENTO_CONVERSA.md`](../L3_MAPEAMENTO_CONVERSA.md)
 
@@ -38,26 +40,37 @@ Se taxonomia instável (drift, catch-all): orientar `Classify: <subtópico>` ant
 npm run audit:l3-mold-gap -- --from-supabase --subtopico="..."
 ```
 
-Cruzar com [`VARIANT_MOLDS.md`](../VARIANT_MOLDS.md) §2 (pegadinha espacial vs texto).
+Cruzar com [`VARIANT_MOLDS.md`](../VARIANT_MOLDS.md) §2. **Não** reutilizar `ok_existente` — moldes no repo → `molde_redesign`.
 
 ## 6. Fase 3 — Síntese (obrigatório)
 
-Tabela ramo × `ok_generico` | `ok_existente` | `ramo_novo` | `molde_inedito` + goldens âncora + ordem de execução.
+Tabela ramo × `ok_generico` (cauda longa) | `molde_redesign` | `molde_inedito` | `ramo_novo` + goldens âncora + ordem de execução.
 
-## 7. Fase 4 — Opcional
+## 7. Fase 3b — Brief 4/4 (obrigatório por ramo forte)
+
+Para cada `molde_redesign` / `molde_inedito`:
+
+1. [`PROMPT_VARIANTES_NEUROSLIDES.md`](../PROMPT_VARIANTES_NEUROSLIDES.md) §3 (versão completa)
+2. Salvar `artifacts/l3-brief-<pacote>-<branch_id>.md`
+3. GATE: 4× `layout_variant` + contrato JSON + DoD §9
+
+Cauda longa: **pular** Fase 3b.
+
+## 8. Fase 4 — Opcional
 
 Só se usuário pedir: atualizar `l3MoldGapCatalog.ts`, `BRANCH_DESIGN_MAP`, `MOLD_AFFINITY_RULES`.
 
-`Implementar molde: <ramo>` → seguir [`VARIANT_MOLDS.md`](../VARIANT_MOLDS.md) §3.
+`Implementar molde: <ramo>` → seguir [`VARIANT_MOLDS.md`](../VARIANT_MOLDS.md) §3 (após brief aprovado).
 
-## 8. Proibido
+## 9. Proibido
 
 - `ai:generate`, `catalog:upgrade-premium`, `catalog:apply-lote --apply`
 - Handcraft de todos os slugs nesta conversa
 - React / `NeuroSlide.tsx` sem `Implementar molde: …`
+- Declarar `ok_existente` ou pular Fase 3b em ramo forte
 
-## 9. Encerramento
+## 10. Encerramento
 
-Reportar: clusters mapeados | decisões L3 | candidatos `molde_inedito` | próximo trigger (`Handcraft:` / `VARIANT_MOLDS` / `Pipeline completo:`).
+Reportar: clusters mapeados | decisões L3 | briefs 4/4 gerados | próximo trigger (`VARIANT_MOLDS` / `Handcraft:` / `Pipeline completo:`).
 
-Artefatos: `artifacts/<pacote>-topic-cluster-report.json`, `artifacts/l3-mold-gap-audit.json` + `.md`
+Artefatos: `artifacts/<pacote>-topic-cluster-report.json`, `artifacts/l3-mold-gap-audit.json` + `.md`, `artifacts/l3-brief-<pacote>-<branch_id>.md` (ramos fortes)

@@ -1,7 +1,8 @@
 {
   "lote": "perioperatoria-g07",
-  "generated_at": "2026-06-30T00:20:24.380Z",
+  "generated_at": "2026-07-01T00:19:08.081Z",
   "strict": true,
+  "strict_v2_pedagogy": true,
   "total": 8,
   "passed": 8,
   "failed": 0,

@@ -1,0 +1,17 @@
+{
+  "mode": "write",
+  "lotes": [
+    "imunizacao-g07"
+  ],
+  "report": [
+    {
+      "lote": "imunizacao-g07",
+      "scanned": 8,
+      "changed": 8,
+      "ready_after": 7,
+      "still_fail": [
+        "fundatec-enfermagem-imunizacao-1779564071106-3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "lote": "imunizacao-decorp-triplice-viral-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-01",
+  "applied_at": "2026-07-01",
+  "subtopico": "Imunização",
+  "total": 1,
+  "status": "applied",
+  "readme": "data/catalog-migration/imunizacao-decorp-triplice-viral-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=data/catalog-migration/imunizacao-decorp-triplice-viral-repair/questions/decorp-enfermagem-vias-de-administracao-1776056357082-0.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=imunizacao-decorp-triplice-viral-repair --apply",
+  "workflow": [
+    "1. Golden em examples/questao-premium-decorp-imunizacao-triplice-viral-via.json",
+    "2. Copiar para questions/<slug>.json",
+    "3. npm run audit:questao-readiness -- --file=...",
+    "4. npm run catalog:apply-lote -- --lote=imunizacao-decorp-triplice-viral-repair --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=imunizacao-decorp-triplice-viral-repair --apply"
+  ],
+  "artifacts": {
+    "applied": "artifacts/catalog-migration-imunizacao-decorp-triplice-viral-repair-applied.json"
+  },
+  "anchor_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+  "anchor_example": "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json",
+  "pedagogical_branch": "imunizacao_generico",
+  "family": "conceito",
+  "command": "via de administração correta",
+  "nota": "Âncora golden-v1 — via subcutânea da SCR aos 12 meses (PNI)."
+}

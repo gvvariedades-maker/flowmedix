@@ -294,3 +294,265 @@ export const PNI_MONTH_SLOTS = PNI_MONTHS;
 export function pniMonthLabel(month: number): string {
   return month === 0 ? '0' : `${month}M`;
 }
+
+export type PniCalendarStepKind =
+  | 'anchor_age'
+  | 'eliminate'
+  | 'locate'
+  | 'catchup_eliminate'
+  | 'fixation'
+  | 'scenario'
+  | 'step';
+
+export interface ParsedPniCalendarStep {
+  kind: PniCalendarStepKind;
+  text: string;
+  title: string;
+  letter?: string;
+  months?: number[];
+}
+
+/** Detecta modo catch-up (cartão perdido / sem comprovação) — oculta trilho de meses. */
+export function isPniCatchUpCorpus(text: string): boolean {
+  return /cart[aã]o perdido|sem comprova[cç][aã]o|catch-?up|hist[oó]rico incompleto|esquema incompleto/i.test(
+    text,
+  );
+}
+
+export function inferCalendarRowMonths(label: string, value: string): number[] {
+  return extractPniMonths(`${label} ${value}`);
+}
+
+export function isCalendarHotRow(
+  label: string,
+  value: string,
+  emphasis?: string,
+  badge?: string,
+): boolean {
+  if (emphasis === 'highlight' || badge === 'hot') return true;
+  const text = `${label} ${value}`.toLowerCase();
+  return /quest[aã]o|gabarito|conduta desta|letra [a-e]/.test(text);
+}
+
+export function extractPniOptionLetter(text: string): string | null {
+  const patterns = [
+    /\btestar\s+([A-E])\b/i,
+    /\beliminar\s+([A-E])\b/i,
+    /\bmarcar\s+([A-E])\b/i,
+    /\bletra\s+([A-E])\b/i,
+    /\b([A-E])\s+sorologia/i,
+    /\b([A-E])\s+teste/i,
+    /\b([A-E])\s+ig\b/i,
+    /\b([A-E])\s*[—–-]/i,
+    /\(([A-E])\)/,
+  ];
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match?.[1]) return match[1].toUpperCase();
+  }
+  return null;
+}
+
+export function parsePniCalendarStep(step: string, index: number): ParsedPniCalendarStep {
+  const lower = step.toLowerCase();
+  const letter = extractPniOptionLetter(step);
+  const months = extractPniMonths(step);
+
+  if (/^cen[aá]rio:/i.test(step) || /adolescente|cart[aã]o perdido|sem comprova/i.test(lower)) {
+    return { kind: 'scenario', text: step, title: 'Cenário', letter, months };
+  }
+
+  if (/fixar|fixa[cç][aã]o|ler o marco|3º mês|marco et[aá]rio/i.test(lower)) {
+    return { kind: 'anchor_age', text: step, title: 'Marco etário', letter, months };
+  }
+
+  if (/eliminar|testar [a-e]|→ eliminar/i.test(lower)) {
+    const kind =
+      /sorologia|teste de sensibilidade|imunoglobulina|arquivo|ig\b/i.test(lower) &&
+      !/m[eê]s|bcg|rotav|pneumo/i.test(lower)
+        ? 'catchup_eliminate'
+        : 'eliminate';
+    return {
+      kind,
+      text: step,
+      title: kind === 'catchup_eliminate' ? 'Eliminar conduta' : 'Eliminar alternativa',
+      letter,
+      months,
+    };
+  }
+
+  if (/marcar|localizar alternativa/i.test(lower)) {
+    return { kind: 'locate', text: step, title: 'Gabarito', letter, months };
+  }
+
+  if (/fixação|fundatec|meses vizinhos|estrat[eé]gia/i.test(lower)) {
+    return { kind: 'fixation', text: step, title: 'Fixação', letter, months };
+  }
+
+  if (/abrir mentalmente|recuperar:|pn[ií]:/i.test(lower)) {
+    return { kind: 'step', text: step, title: `Passo ${index + 1}`, letter, months };
+  }
+
+  return { kind: 'step', text: step, title: `Passo ${index + 1}`, letter, months };
+}
+
+// ---- Cadeia de frio / rede de frio PNI ----
+
+export const PNI_TEMP_MARKERS = [0, 2, 8, 12] as const;
+
+export type PniTempMarker = (typeof PNI_TEMP_MARKERS)[number];
+
+export type ColdChainMode = 'vf' | 'mcq_temp' | 'exceto';
+
+export function detectColdChainMode(text: string): ColdChainMode {
+  if (/\( \)|sequ[eê]ncia|registre\s+v\s*\(|de cima para baixo/i.test(text)) return 'vf';
+  if (/INCORRETA|EXCETO/i.test(text) && /cadeia|conserva|frio|termo|imunobiol/i.test(text)) {
+    return 'exceto';
+  }
+  return 'mcq_temp';
+}
+
+export function isPniVfColdChainCorpus(text: string): boolean {
+  return detectColdChainMode(text) === 'vf';
+}
+
+export function isPniTemperatureMcqCorpus(text: string): boolean {
+  const mode = detectColdChainMode(text);
+  return mode === 'mcq_temp' || mode === 'exceto';
+}
+
+export function pniTempLabel(marker: number): string {
+  return marker === 0 ? '0' : `${marker}`;
+}
+
+export function extractTempMarkers(text: string): number[] {
+  const lower = text.toLowerCase();
+  const found = new Set<number>();
+
+  if (/2\s*°c.*8\s*°c|2\s*-\s*8|2\s*·\s*8|entre\s*2|decore.*2|faixa da prova|positiva\s*=/.test(lower)) {
+    found.add(2);
+    found.add(8);
+  }
+  if (/piso|limite inferior|abaixo de 2|antes de 2|0\s*°c/.test(lower)) found.add(0);
+  if (/\b2\s*°c\b|piso.*2/.test(lower)) found.add(2);
+  if (/\b8\s*°c\b|teto|acima de 8/.test(lower)) found.add(8);
+  if (/12\s*°c|faixa quente|muito acima/.test(lower)) found.add(12);
+  if (/congel|negativ|freezer|gelo/.test(lower) && !/2\s*°c.*8/.test(lower)) found.add(0);
+
+  return PNI_TEMP_MARKERS.filter((m) => found.has(m));
+}
+
+export function inferTemperatureRowMarkers(label: string, value: string): number[] {
+  return extractTempMarkers(`${label} ${value}`);
+}
+
+export function isTemperatureHotRow(
+  label: string,
+  value: string,
+  emphasis?: string,
+  badge?: string,
+): boolean {
+  return isCalendarHotRow(label, value, emphasis, badge);
+}
+
+export type PniColdChainStepKind =
+  | 'vf_judge'
+  | 'vf_combine'
+  | 'temp_anchor'
+  | 'eliminate'
+  | 'locate'
+  | 'exceto'
+  | 'fixation'
+  | 'step';
+
+export interface ParsedPniColdChainStep {
+  kind: PniColdChainStepKind;
+  text: string;
+  title: string;
+  letter?: string;
+  markers?: number[];
+}
+
+export function parsePniColdChainStep(step: string, index: number): ParsedPniColdChainStep {
+  const lower = step.toLowerCase();
+  const letter = extractPniOptionLetter(step);
+  const markers = extractTempMarkers(step);
+
+  if (/decore|recuperar|temperatura positiva|2\s*°c.*8/i.test(lower)) {
+    return { kind: 'temp_anchor', text: step, title: 'Decore PNI', letter, markers };
+  }
+
+  if (
+    /^[IVX]+ —/i.test(step.trim()) ||
+    (/→\s*[vf]\.?$/i.test(step) && /bcg|agitar|pentavalente|t[eé]cnico|cadeia/i.test(lower))
+  ) {
+    return { kind: 'vf_judge', text: step, title: 'Julgar assertiva', letter, markers };
+  }
+
+  if (/sequ[eê]ncia|v,\s*f,\s*v/i.test(lower)) {
+    return { kind: 'vf_combine', text: step, title: 'Combinar V/F', letter, markers };
+  }
+
+  if (/INCORRETA|exceto|alternativa falsa/i.test(lower)) {
+    return { kind: 'exceto', text: step, title: 'EXCETO', letter, markers };
+  }
+
+  if (/eliminar|piso|teto|congelamento|faixa quente/i.test(lower)) {
+    return { kind: 'eliminate', text: step, title: 'Eliminar', letter, markers };
+  }
+
+  if (/marcar|sobra/i.test(lower)) {
+    return { kind: 'locate', text: step, title: 'Gabarito', letter, markers };
+  }
+
+  if (/estrat[eé]gia|fixação|leia “positiva”/i.test(lower)) {
+    return { kind: 'fixation', text: step, title: 'Fixação', letter, markers };
+  }
+
+  if (/^comando/i.test(lower) && index === 0) {
+    return { kind: 'step', text: step, title: 'Comando', letter, markers };
+  }
+
+  return { kind: 'step', text: step, title: `Passo ${index + 1}`, letter, markers };
+}
+
+export function inferTemperatureSlots(
+  label: string,
+  detail: string,
+  correct: string,
+): { trapMarkers: number[]; correctMarkers: number[]; hasRail: boolean } {
+  const trapText = `${label} ${detail}`.toLowerCase();
+  const correctText = correct.toLowerCase();
+  const combined = `${label} ${detail} ${correct}`;
+
+  if (/transfer[eê]ncia|geladeira|porta|monitorar/i.test(combined)) {
+    return { trapMarkers: [], correctMarkers: [2, 8], hasRail: false };
+  }
+
+  if (/sequ[eê]ncia|letra [a-d] —/i.test(label) && /bcg|agitar|pentavalente|t[eé]cnico/i.test(combined)) {
+    return { trapMarkers: [], correctMarkers: [], hasRail: false };
+  }
+
+  let trapMarkers = extractTempMarkers(`${label} ${detail}`);
+  let correctMarkers = extractTempMarkers(correct);
+
+  if (/limite inferior|piso|abaixo de 2|letra a/i.test(trapText)) {
+    trapMarkers = trapMarkers.length > 0 ? trapMarkers : [0, 2];
+    correctMarkers = correctMarkers.length > 0 ? correctMarkers : [2, 8];
+  }
+  if (/limite superior|teto|acima de 8|letra c/i.test(trapText)) {
+    trapMarkers = trapMarkers.length > 0 ? trapMarkers : [8, 12];
+    correctMarkers = correctMarkers.length > 0 ? correctMarkers : [2, 8];
+  }
+  if (/congelamento|negativ|letra d/i.test(trapText)) {
+    trapMarkers = [0];
+    correctMarkers = correctMarkers.length > 0 ? correctMarkers : [2, 8];
+  }
+  if (/quente|ambiente|letra e|muito acima/i.test(trapText)) {
+    trapMarkers = trapMarkers.length > 0 ? trapMarkers : [12];
+    correctMarkers = correctMarkers.length > 0 ? correctMarkers : [2, 8];
+  }
+
+  const hasRail = trapMarkers.length > 0 || correctMarkers.length > 0;
+  return { trapMarkers, correctMarkers, hasRail };
+}

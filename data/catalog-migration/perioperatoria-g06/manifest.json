@@ -1,18 +1,9 @@
 {
   "lote": "perioperatoria-g06",
-  "exported_at": "2026-06-23T17:35:35.362Z",
+  "exported_at": "2026-07-01T00:16:22.444Z",
   "source": "supabase",
   "filters": {
-    "slugs": [
-      "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
-      "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
-      "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
-      "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
-      "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
-      "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
-      "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
-      "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2"
-    ]
+    "from_manifest": "data/catalog-migration/perioperatoria-g06/manifest.json"
   },
   "slugs": [
     "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",

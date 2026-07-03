@@ -54,6 +54,11 @@ Registry: [`data/catalog-migration/handcraft-registry.json`](../data/catalog-mig
                     └─────────────────┬───────────────────┘
                                       │
                     ┌─────────────────▼───────────────────┐
+                    │  Mapeamento L3 + brief 4/4 (3b)     │
+                    │  artifacts/l3-brief-* (ramos fortes)│
+                    └─────────────────┬───────────────────┘
+                                      │
+                    ┌─────────────────▼───────────────────┐
                     │  Âncoras de estilo (1 por ramo)     │
                     │  examples/questao-premium-*.json    │
                     └─────────────────┬───────────────────┘
@@ -99,7 +104,14 @@ Ordem **obrigatória**:
 3. Rodar `npm run cluster:<pacote>`.
 4. Ler `artifacts/<pacote>-topic-cluster-report.json`.
 
-**Regra de bolso (ramo):** volume ≥ **10%** do subtópico **ou** ≥ **5 questões** com tema coeso → **1 golden âncora de estilo**.
+**Regra de bolso (ramo):** volume ≥ **10%** do subtópico **ou** ≥ **5 questões** com tema coeso → **1 golden âncora de estilo** + **brief 4/4** ([`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) Fase 3b).
+
+### Fase 1a — Mapeamento L3 + brief 4/4 (obrigatório antes de escalar)
+
+1. Conversa `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md).
+2. Por ramo forte: brief via [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) → `artifacts/l3-brief-<pacote>-<branch_id>.md`.
+3. Implementar moldes (`VARIANT_MOLDS` §3) ou registrar pacote genérico para cauda longa.
+4. **Não** iniciar handcraft em massa de ramo forte sem brief aprovado.
 
 ### Fase 1 — Golden âncora (1 ramo)
 

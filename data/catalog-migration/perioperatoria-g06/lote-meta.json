@@ -23,7 +23,8 @@
     "links": "artifacts/perioperatoria-g06-links.html",
     "applied": "artifacts/catalog-migration-perioperatoria-g06-applied.json"
   },
-  "anchor_slug": "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
+  "anchor_slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+  "anchor_example": "examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
   "anchor_second_review": {
     "reviewed_at": "2026-06-30",
     "reviewer": "agent",

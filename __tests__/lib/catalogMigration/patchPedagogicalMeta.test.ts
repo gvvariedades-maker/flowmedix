@@ -181,4 +181,43 @@ describe('patchPedagogicalMeta', () => {
     expect(result.branchAfter).not.toBe('adolescente_etica_sigilo');
     expect(payload.meta.pedagogical_branch).toBe('adolescente_desenvolvimento');
   });
+
+  it('reconcileBranch alinha declarado ao inferido (Imunização VF intervalos)', () => {
+    const payload = {
+      meta: {
+        banca: 'CPCON',
+        topico: 'Enfermagem',
+        subtopico: 'Imunização',
+        pedagogical_branch: 'imunizacao_generico',
+        family: 'vf' as const,
+        content_standard: 'golden-v1',
+      },
+      question_data: {
+        instruction:
+          'I - O intervalo mínimo entre doses de vacinas inativadas é de 15 dias. II - Reforço da tríplice viral pode ser feito a qualquer idade. III - BCG é contraindicada em gestantes. Quais estão corretas?',
+        options: [{ id: 'A', text: 'Apenas I', is_correct: true }],
+      },
+      reverse_study_slides: [
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Imunização' },
+          items: [{ label: 'Intervalo', detail: 'PNI grace period' }],
+        },
+        { type: 'golden_rule', rows: [{ label: 'Grace', value: '4 dias' }] },
+        { type: 'logic_flow', reveal_mode: 'tap', steps: ['Julgar I', 'Marcar A'] },
+        {
+          type: 'danger_zone',
+          content: 'Pegadinhas',
+          items: [{ label: 'Letra B', detail: 'x', correct: 'y' }],
+        },
+      ],
+    };
+
+    const result = patchPedagogicalMeta(payload, { reconcileBranch: true, slug: 'vf-intervalos' });
+
+    expect(result.skippedReason).not.toBe('zod_invalid');
+    expect(result.changed).toBe(true);
+    expect(result.branchAfter).toBe('imunizacao_vf_intervalos');
+    expect(payload.meta.pedagogical_branch).toBe('imunizacao_vf_intervalos');
+  });
 });

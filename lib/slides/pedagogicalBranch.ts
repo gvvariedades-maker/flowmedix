@@ -39,6 +39,8 @@ export type PedagogicalBranchId =
   // Imunização
   | 'imunizacao_vf_intervalos'
   | 'imunizacao_calendario'
+  | 'imunizacao_cadeia_frio'
+  | 'imunizacao_exceto'
   | 'imunizacao_generico'
   // Vias de Administração
   | 'via_vf_absorcao'
@@ -183,8 +185,25 @@ const IMUNIZACAO_VF_MOLD: SubtopicDesign = {
 
 const IMUNIZACAO_CALENDARIO_MOLD: SubtopicDesign = {
   template: 'lime',
+  conceptMap: 'vaccine-timeline',
+  goldenRule: 'pni-calendar-board',
+  logicFlow: 'pni-calendar-elimination-tap',
+  dangerZone: 'calendar-mismatch',
+};
+
+const IMUNIZACAO_CADEIA_FRIO_MOLD: SubtopicDesign = {
+  template: 'lime',
+  conceptMap: 'cold-chain-hub',
+  goldenRule: 'pni-temperature-rail',
+  logicFlow: 'pni-cold-chain-tap',
+  dangerZone: 'temperature-mismatch',
+};
+
+/** EXCETO / INCORRETA — compare semântico por letra (distratores corretos × exceção). */
+const IMUNIZACAO_EXCETO_MOLD: SubtopicDesign = {
+  template: 'lime',
   conceptMap: 'morphological',
-  goldenRule: 'pni-interval-matrix',
+  goldenRule: 'reference_table',
   logicFlow: 'vertical',
   dangerZone: 'compare',
 };
@@ -423,11 +442,15 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
   imunizacao: {
     imunizacao_vf_intervalos: IMUNIZACAO_VF_MOLD,
     imunizacao_calendario: IMUNIZACAO_CALENDARIO_MOLD,
+    imunizacao_cadeia_frio: IMUNIZACAO_CADEIA_FRIO_MOLD,
+    imunizacao_exceto: IMUNIZACAO_EXCETO_MOLD,
     imunizacao_generico: IMUNIZACAO_GENERIC_MOLD,
   },
   vacinacao: {
     imunizacao_vf_intervalos: IMUNIZACAO_VF_MOLD,
     imunizacao_calendario: IMUNIZACAO_CALENDARIO_MOLD,
+    imunizacao_cadeia_frio: IMUNIZACAO_CADEIA_FRIO_MOLD,
+    imunizacao_exceto: IMUNIZACAO_EXCETO_MOLD,
     imunizacao_generico: IMUNIZACAO_GENERIC_MOLD,
   },
   'vias de administracao': {
@@ -667,6 +690,18 @@ const IMUNIZACAO_CALENDARIO: RegExp[] = [
   /calend[aá]rio|pni\b|esquema vacinal|idade.*dose|refor[cç]o|bcg|tr[ií]plice|hexa|penta/i,
 ];
 
+const IMUNIZACAO_CADEIA_FRIO: RegExp[] = [
+  /cadeia de frio|conserva[cç][aã]o|refriger|congel|termo|si-pni|gelox|caixa t[eé]rmica|validade.*vacina|transporte.*imunobiol/i,
+];
+
+const IMUNIZACAO_EXCETO: RegExp[] = [
+  /\bexceto\b/i,
+  /incorret[oa]\s+afirmar/i,
+  /é\s+incorret[oa]/i,
+  /n[aã]o\s+corresponde\s+(a\s+)?(verdade|realidade)/i,
+  /afirmativa\s+falsa|marque\s+a\s+falsa/i,
+];
+
 const VIA_VF: RegExp[] = [
   /\b(i|ii|iii)\s*[-–—]/i,
   /absor[cç][aã]o|biodisponibilidade|via.*intramuscular|via.*subcut[aâ]nea/i,
@@ -847,9 +882,17 @@ function inferFarmacoBranch(corpus: string, familyId?: FamilyId): PedagogicalBra
 function inferImunizacaoBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   const isVf =
     familyId === 'vf' ||
-    familyId === 'certo_errado' ||
     (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, IMUNIZACAO_VF) >= 1);
   if (isVf) return 'imunizacao_vf_intervalos';
+
+  const isExceto =
+    countPatternMatches(corpus, IMUNIZACAO_EXCETO) >= 1 ||
+    (familyId === 'certo_errado' && /\b(exceto|incorret[oa])\b/i.test(corpus));
+  if (isExceto) return 'imunizacao_exceto';
+
+  if (countPatternMatches(corpus, IMUNIZACAO_CADEIA_FRIO) > 0) {
+    return 'imunizacao_cadeia_frio';
+  }
 
   if (countPatternMatches(corpus, IMUNIZACAO_CALENDARIO) > 0) {
     return 'imunizacao_calendario';

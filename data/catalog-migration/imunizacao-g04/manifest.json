@@ -1,0 +1,27 @@
+{
+  "lote": "imunizacao-g04",
+  "exported_at": "2026-07-02T07:04:58.563Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "fundatec-enfermagem-imunizacao-1779563975447-1",
+      "fundatec-enfermagem-imunizacao-1779563975447-6",
+      "amauc-enfermagem-imunizacao-1779563975447-4",
+      "amauc-enfermagem-imunizacao-1779572227744-7",
+      "ameosc-enfermagem-imunizacao-1779572207173-9",
+      "cpcon-uepb-enfermagem-imunizacao-1779563996663-8",
+      "fundatec-enfermagem-imunizacao-1779563986606-2"
+    ]
+  },
+  "slugs": [
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+    "fundatec-enfermagem-imunizacao-1779563975447-1",
+    "fundatec-enfermagem-imunizacao-1779563975447-6",
+    "amauc-enfermagem-imunizacao-1779563975447-4",
+    "amauc-enfermagem-imunizacao-1779572227744-7",
+    "ameosc-enfermagem-imunizacao-1779572207173-9",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-8",
+    "fundatec-enfermagem-imunizacao-1779563986606-2"
+  ]
+}

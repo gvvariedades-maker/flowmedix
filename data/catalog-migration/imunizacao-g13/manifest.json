@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g13",
+  "exported_at": "2026-07-03T01:56:16.271Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g13/manifest.json"
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-imunizacao-1779564044052-3",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-3",
+    "fau-unicentro-enfermagem-imunizacao-1779564044052-5",
+    "copese-ufpi-enfermagem-imunizacao-1779564079834-7",
+    "fau-unicentro-enfermagem-imunizacao-1779572171486-1",
+    "coseac-uff-enfermagem-imunizacao-1779564067000-9",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-0",
+    "coseac-uff-enfermagem-imunizacao-1779572159431-1"
+  ]
+}

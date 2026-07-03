@@ -1,0 +1,43 @@
+{
+  "lote": "imunizacao-g10",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "applied_at": "2026-07-03",
+  "readiness": "8/8",
+  "readiness_strict_v2": "8/8",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 7,
+    "imunizacao_generico": 1
+  },
+  "priority": "P0 — calendário (~62% volume): infantil (BCG×2m, ao nascer, SCR 12m) + adulto (dengue 45a, influenza IM) + gestante dTpa + via SC (FA+SCR) + técnica IM aspiração",
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "cetrede-enfermagem-imunizacao-1779563970889-7",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "validation": {
+    "validate_goldens_strict": "pass 8/8",
+    "readiness_strict_v2": "8/8",
+    "slug_alignment_strict": "8/8",
+    "numeric_factcheck": "8/8",
+    "apply_lote_dry_run": "8/8 ok"
+  },
+  "notes": "g10 calendário P0 — mix infantil/adulto/gestante. Export via --slugs= (slugs-file não suportado no export-lote). avancasp dengue: exam_vs_current divergência MS pós-2022. cev-urca IM técnica → imunizacao_generico.",
+  "workflow": [
+    "npm run plan:imunizacao-g10",
+    "npm run catalog:export-lote -- --lote=imunizacao-g10 --slugs=<csv from g10-slugs.json>",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g10 --strict-v2-pedagogy",
+    "npm run catalog:apply-lote -- --lote=imunizacao-g10 --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "handcraft-apply",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g10.json"
+  }
+}

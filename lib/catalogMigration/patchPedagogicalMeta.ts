@@ -13,6 +13,7 @@ import {
 import type { MoldAffinitySlide } from '@/lib/slides/moldAffinity';
 import {
   hasSubtopicBranchDesign,
+  inferPedagogicalBranch,
   resolvePedagogicalBranch,
   type PedagogicalBranchId,
 } from '@/lib/slides/pedagogicalBranch';
@@ -31,6 +32,8 @@ export type PatchPedagogicalMetaOptions = {
   inferFamily?: boolean;
   forceFamily?: boolean;
   forceBranch?: boolean;
+  /** Quando declarado ≠ inferido, preferir inferência (backfill L3 em massa). */
+  reconcileBranch?: boolean;
   onlyPremium?: boolean;
   onlyGoldenV1?: boolean;
   slug?: string;
@@ -187,11 +190,25 @@ export function patchPedagogicalMeta(
     pedagogicalBranch: preBranch,
   });
 
+  const inferredOnly = inferPedagogicalBranch(subtopico, instruction, slides, familyAfter);
+
+  let explicitBranch: string | undefined | null = branchBefore;
+  if (options.forceBranch) {
+    explicitBranch = undefined;
+  } else if (
+    options.reconcileBranch &&
+    branchBefore &&
+    inferredOnly &&
+    branchBefore !== inferredOnly
+  ) {
+    explicitBranch = undefined;
+  }
+
   const branchAfter = resolvePedagogicalBranch(
     subtopico,
     instruction,
     slides,
-    options.forceBranch ? undefined : branchBefore,
+    explicitBranch,
     familyAfter,
   );
 

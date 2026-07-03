@@ -13,7 +13,7 @@ Handcraft: Doenças Respiratórias Crônicas (Asma, DPOC)
 Slug: objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1
 ```
 
-O trigger curto `Handcraft:` expande automaticamente o briefing completo via playbook (`lib/catalogMigration/handcraftPlaybook.ts`). Pré-visualizar:
+O trigger curto `Handcraft:` expande automaticamente o briefing completo via playbook (`lib/catalogMigration/handcraftPlaybook.ts`). O JSON do playbook define **comandos pós-handcraft** (`after_handcraft`), **primeiro lote** (`first_lote`) e **proibições** (`proibido`) — ver schema em [`handcraft-playbooks/README.md`](../data/catalog-migration/handcraft-playbooks/README.md#schema-operacional-renderizado-no-briefing). Pré-visualizar:
 
 ```bash
 npm run handcraft:brief -- --subtopico="Doenças Respiratórias Crônicas (Asma, DPOC)"
@@ -29,7 +29,11 @@ SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
 
 **Pré-requisito:** subtópico estável (taxonomia). Se o bucket ainda tem drift, use `Classify: <subtópico>` — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md).
 
-**Recomendado antes do 1º lote** (subtópico novo ou sem cluster/L3 audit): `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md).
+**Obrigatório antes do 1º lote** (subtópico novo ou re-handcraft): `Mapeamento L3: <subtópico>` com **Fase 3b** concluída — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md).
+
+**GATE handcraft (ramos fortes):** para cada `pedagogical_branch` com volume ≥5 slugs ou ≥10%, deve existir `artifacts/l3-brief-<pacote>-<branch_id>.md` (brief 4/4 via [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md)). **Cauda longa** (`ok_generico`) não exige brief.
+
+**Recomendado** se o subtópico já tem cluster/L3 audit antigo: re-rodar `Mapeamento L3:` para classificar moldes legados como `molde_redesign`.
 
 ---
 
@@ -43,12 +47,15 @@ O usuário informou o subtópico. **Modo fixo:** handcraft golden-v1 por slug.
 - `npm run catalog:upgrade-premium`
 - `catalog:apply-lote --apply` sem o usuário pedir explicitamente
 
+Se o playbook do subtópico tiver `proibido[]`, o briefing (`handcraft:brief`) lista os mesmos itens — pode incluir entradas extras além desta lista global.
+
 ### Resolver pacote
 
 1. Ler [`data/catalog-migration/handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json).
 2. Match **exato** do subtópico (nome canônico `CLAUDE.md` §9).
 3. Carregar **playbook** (`handcraft_playbook` ou `handcraft-playbooks/<pacote_prefix>.json`) — ver [`handcraft-playbooks/README.md`](../data/catalog-migration/handcraft-playbooks/README.md).
 4. Se não existir pacote: seguir `fallback_novo_pacote` no registry (export + criar entrada + handcraft em lotes).
+5. **Executar o pipeline do briefing** — priorizar `modes[mode].after_handcraft` e `first_lote` do playbook sobre comandos genéricos deste doc quando divergirem.
 
 ### Ler antes de handcraft
 
@@ -60,7 +67,9 @@ O usuário informou o subtópico. **Modo fixo:** handcraft golden-v1 por slug.
 | [`examples/_TEMPLATE-golden-v1.json`](../examples/_TEMPLATE-golden-v1.json) | Sempre |
 | `readme` do pacote no registry | Se existir |
 | `anchor_glob` do pacote (1–2 exemplos em `examples/`) | Estilo do ramo |
-| `cluster_report` | Se existir — priorizar ramos `novo_ramo` |
+| [`docs/L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) + `artifacts/l3-brief-*.md` | 1º lote — ramos fortes |
+| [`docs/PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) | Se brief do ramo ainda não existe |
+| `cluster_report` | Se existir — priorizar ramos `novo_ramo` / `molde_redesign` |
 | Último `lote-meta.json` com maior NN | Continuar de onde parou |
 
 ### Descobrir próximo lote

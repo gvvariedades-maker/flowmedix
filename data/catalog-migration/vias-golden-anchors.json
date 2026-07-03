@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-01",
+  "description": "Âncoras golden-v1 — Vias de Administração (referência de estilo por ramo; não substituem JSON por slug).",
+  "readiness_gate": "npm run audit:questao-readiness -- --file=<path>",
+  "anchors": {
+    "absorcao_conceito_correta": {
+      "file": "examples/questao-premium-consulpam-vias-absorcao-oral.json",
+      "slug_catalog": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "subtopico": "Vias de Administração",
+      "pedagogical_branch": "via_vf_absorcao",
+      "family": "conceito",
+      "command": "CORRETA",
+      "banca": "INSTITUTO CONSULPAM",
+      "ano": "2024",
+      "gabarito": "D",
+      "notes": "Absorção VO/sublingual/retal/parenteral — golden_rule reference_table; logic_flow tap; danger_zone compare por letra."
+    },
+    "absorcao_indicacao_sc": {
+      "file": "examples/questao-premium-vunesp-via-subcutanea.json",
+      "slug_catalog": "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
+      "subtopico": "Vias de Administração",
+      "pedagogical_branch": "via_generico",
+      "family": "conceito",
+      "command": "indicação da via",
+      "notes": "Perfil farmacocinético SC lenta/contínua — molde absorption-speed-rail."
+    },
+    "tecnica_im_vf": {
+      "file": "examples/questao-premium-cpcon-vias-im-vf.json",
+      "slug_catalog": "cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7",
+      "subtopico": "Vias de Administração",
+      "pedagogical_branch": "via_tecnica_admin",
+      "family": "vf",
+      "command": "É CORRETO o que se afirma em",
+      "notes": "Via IM — julgamento I–IV; ventroglúteo e absorção IM×SC."
+    }
+  },
+  "family_grammar_refs": {
+    "conceito_absorcao": "examples/questao-premium-consulpam-vias-absorcao-oral.json",
+    "conceito_indicacao_via": "examples/questao-premium-vunesp-via-subcutanea.json",
+    "vf_tecnica_im": "examples/questao-premium-cpcon-vias-im-vf.json"
+  },
+  "repair_lotes": {
+    "consulpam_absorcao_oral": "data/catalog-migration/vias-de-administracao-consulpam-repair"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "lote": "imunizacao-g05",
+  "exported_at": "2026-07-02T07:18:04.266Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "fundatec-enfermagem-imunizacao-1779564006577-0",
+      "avancasp-enfermagem-imunizacao-1777103222102-6",
+      "fau-unicentro-enfermagem-imunizacao-1779572180830-7",
+      "cpcon-uepb-enfermagem-imunizacao-1779563996663-4"
+    ]
+  },
+  "slugs": [
+    "fundatec-enfermagem-imunizacao-1779564006577-0",
+    "avancasp-enfermagem-imunizacao-1777103222102-6",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-4"
+  ]
+}

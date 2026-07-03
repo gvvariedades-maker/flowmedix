@@ -11,6 +11,7 @@ import type { LogicFlowRevealMode } from './logicFlowReveal';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
 import { DangerZoneTrapReveal } from './DangerZoneTrapReveal';
 import { DangerZoneCalendarMismatch } from './DangerZoneCalendarMismatch';
+import { DangerZoneTemperatureMismatch } from './DangerZoneTemperatureMismatch';
 import { DangerZoneNormReveal } from './DangerZoneNormReveal';
 import { DangerZoneScopeTrap } from './DangerZoneScopeTrap';
 import { DangerZoneRouteTrap } from './DangerZoneRouteTrap';
@@ -447,6 +448,18 @@ export const DangerZone = ({
   if (explicitVariant === 'calendar-mismatch' && items && items.length > 0) {
     return (
       <DangerZoneCalendarMismatch
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'temperature-mismatch' && items && items.length > 0) {
+    return (
+      <DangerZoneTemperatureMismatch
         content={content}
         items={items}
         theme={theme}

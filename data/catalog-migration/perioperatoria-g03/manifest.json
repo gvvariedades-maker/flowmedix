@@ -1,18 +1,9 @@
 {
   "lote": "perioperatoria-g03",
-  "exported_at": "2026-06-23T17:09:00.245Z",
+  "exported_at": "2026-07-01T00:15:59.373Z",
   "source": "supabase",
   "filters": {
-    "slugs": [
-      "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
-      "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-3",
-      "igeduc-enfermagem-assistencia-perioperatoria-inclui-srpa-1780001148264-7",
-      "igeduc-geral-assistencia-perioperatoria-inclui-srpa-1777103789613-0",
-      "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-4",
-      "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
-      "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
-      "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4"
-    ]
+    "from_manifest": "data/catalog-migration/perioperatoria-g03/manifest.json"
   },
   "slugs": [
     "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",

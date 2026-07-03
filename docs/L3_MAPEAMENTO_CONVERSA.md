@@ -14,12 +14,14 @@ SUBTÓPICO: Infecções no Contexto da Biossegurança
 
 **Escopo:** 1 subtópico canônico = 1 relatório de decisão L3. **Não** usar para os 41 subtópicos numa única conversa.
 
-**Objetivo:** decidir, por **ramo pedagógico**, se o pacote deve ser `ok_generico`, `ok_existente`, `ramo_novo` (só metadados) ou `molde_inedito` (pacote bespoke 4/4).
+**Objetivo:** decidir, por **ramo pedagógico**, o pacote L3 ideal e — para **ramos fortes** — gerar o **brief 4/4** antes de handcraft ou implementação React.
+
+**Política (2026-07-02+):** moldes legados no repo **não** dispensam redesign. Todo ramo forte (≥5 slugs ou ≥10% do subtópico) passa por **Fase 3b** ([`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md)). **Cauda longa** permanece `ok_generico` com justificativa.
 
 **Posição no pipeline:**
 
 ```text
-Classify (se drift) → Mapeamento L3 (esta conversa) → VARIANT_MOLDS / Handcraft / Pipeline completo
+Classify (se drift) → Mapeamento L3 (Fases 0–3b) → VARIANT_MOLDS / Handcraft / Pipeline completo
 ```
 
 ---
@@ -30,7 +32,8 @@ Classify (se drift) → Mapeamento L3 (esta conversa) → VARIANT_MOLDS / Handcr
 |---------|--------|
 | `Mapeamento L3: <subtópico>` | Cluster + auditoria + relatório de decisão |
 | `Mapeamento L3: <subtópico>` + `Só auditoria` | Já existe `artifacts/<pacote>-topic-cluster-report.json` — pular cluster |
-| `Mapeamento L3: <subtópico>` + `Incluir wire` | Além do relatório, esboçar wire + contrato JSON por ramo `molde_inedito` (sem React) |
+| `Mapeamento L3: <subtópico>` + `Incluir wire` | Alias de Fase 3b — brief 4/4 completo por ramo forte (sem React) |
+| `Mapeamento L3: <subtópico>` + `Só brief: <ramo>` | Fase 3b para **um** ramo (demais fases já feitas) |
 | `Mapeamento L3: <subtópico>` + `Implementar molde: <ramo>` | Sair do diagnóstico → seguir [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) §3 para **um** ramo |
 
 **Pré-requisito de taxonomia:** se o bucket tem drift ou catch-all, rodar antes `Classify: <subtópico>` — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md).
@@ -55,6 +58,7 @@ Resolver pacote em [`handcraft-registry.json`](../data/catalog-migration/handcra
 |---------|------|
 | [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) § Qualidade por ramos | 1 |
 | [`MOLD_AFFINITY_RESOLVER.md`](MOLD_AFFINITY_RESOLVER.md) | 1–2 |
+| [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) §3 (versão completa) | 3b |
 | [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) §2 (quando bespoke) | 3 |
 | [`lib/slides/pedagogicalBranch.ts`](../lib/slides/pedagogicalBranch.ts) | 2 |
 | [`lib/slides/l3MoldGapCatalog.ts`](../lib/slides/l3MoldGapCatalog.ts) | 2 |
@@ -83,8 +87,13 @@ Resolver pacote em [`handcraft-registry.json`](../data/catalog-migration/handcra
 └───────────────────────────┬─────────────────────────────────┘
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│ FASE 3 — Síntese e decisão (entregável da conversa)           │
+│ FASE 3 — Síntese e decisão                                    │
 │   tabela ramo × decisão × pacote ideal × próximo passo       │
+└───────────────────────────┬─────────────────────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│ FASE 3b — Brief 4/4 por ramo forte (obrigatório)             │
+│   PROMPT_VARIANTES_NEUROSLIDES → artifacts/l3-brief-*.md    │
 └───────────────────────────┬─────────────────────────────────┘
                             ▼
               (opcional, só se usuário pedir)
@@ -171,18 +180,24 @@ Ler `artifacts/l3-mold-gap-audit.md` e cruzar com Fase 1.
 
 | Decisão | Significado | Ação típica |
 |---------|-------------|-------------|
-| `ok_generico` | `compare` / `reference_table` / `tap` bastam | Handcraft com layouts genéricos |
-| `ok_existente` | Pacote bespoke já no repo | Golden âncora + alinhar JSON ao contrato |
-| `ramo_novo` | Falta `pedagogical_branch` no mapa | `BRANCH_DESIGN_MAP` + backfill; pode ser genérico |
-| `molde_inedito` | Vale pacote bespoke 4/4 | [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) antes de escalar |
+| `ok_generico` | Cauda longa ou erro só textual — `compare` / `reference_table` / `tap` bastam | Handcraft com layouts genéricos |
+| `molde_redesign` | Ramo forte com molde legado no repo — **redesign obrigatório** | **Fase 3b** → [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) → golden âncora |
+| `molde_inedito` | Ramo forte sem pacote bespoke adequado | **Fase 3b** → [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) → golden âncora |
+| `ramo_novo` | Falta `pedagogical_branch` no mapa | `BRANCH_DESIGN_MAP` + backfill; se ramo forte → `molde_inedito` |
 
-**Teste espacial** ([`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) §2) — para cada `molde_inedito`, responder:
+> **`ok_existente` (legado):** decisão histórica — **não usar em produção nova**. Tratar como `molde_redesign` e passar pela Fase 3b.
 
-1. A pegadinha é **espacial** (trilho, matriz, checklist, espectro de letras)?
-2. O padrão se repete em **≥5 questões** ou **≥10%** do ramo?
+**Quem entra na Fase 3b:** todo ramo com `count >= max(5, ceil(total * 0.10))` e decisão `molde_redesign` ou `molde_inedito`.
+
+**Quem fica `ok_generico`:** clusters `cauda_longa` (volume abaixo do limiar) **ou** ramo forte onde o teste espacial falha (ver abaixo).
+
+**Teste espacial** ([`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) §2) — para rebaixar ramo forte a `ok_generico`, documentar as três respostas:
+
+1. A pegadinha **não** é espacial (só texto × texto)?
+2. O padrão aparece em **&lt;5 questões** e **&lt;10%** do subtópico?
 3. `compare` + `correct` já ensina sem UI bespoke?
 
-Se 3 = sim → **rebaixar** para `ok_generico` e documentar no relatório.
+Se **todas** forem sim → `ok_generico` (exceção rara; não confundir com cauda longa por volume).
 
 ---
 
@@ -196,11 +211,13 @@ Reportar **neste formato**:
 | Ramo (`pedagogical_branch`) | Slugs | % | Decisão L3 | Pacote atual | Pacote ideal | Bespoke? | Próximo passo |
 |-----------------------------|-------|---|------------|--------------|--------------|----------|---------------|
 
-### Candidatos a molde inédito (4/4)
-- `<ramo>`: wire em 1 frase + slides propostos (concept · golden · logic · danger)
+### Ramos fortes — brief 4/4 (Fase 3b)
+| Ramo | Decisão | Artefato | 4× `layout_variant` |
+|------|---------|----------|------------------------|
+| `<branch_id>` | molde_redesign \| molde_inedito | `artifacts/l3-brief-<pacote>-<branch_id>.md` | concept · golden · logic · danger |
 
-### Ficam genéricos (justificativa)
-- `<ramo>`: …
+### Ficam genéricos — cauda longa (justificativa)
+- `<ramo>`: volume … · motivo …
 
 ### Ramo novo só metadados (sem React)
 - `<ramo>`: registrar em BRANCH_DESIGN_MAP com pacote genérico
@@ -226,7 +243,35 @@ Reportar **neste formato**:
 | `artifacts/<pacote>-topic-cluster-report.json` | existe |
 | `artifacts/l3-mold-gap-audit.json` | existe |
 | Tabela ramo × decisão | 100% dos clusters ≥5 slugs ou listados como cauda longa |
-| Recomendação clara | quantos pacotes `molde_inedito` vs `ok_generico` |
+| Recomendação clara | quantos ramos `molde_redesign` / `molde_inedito` vs `ok_generico` (cauda longa) |
+| Briefs 4/4 (Fase 3b) | 1 arquivo `artifacts/l3-brief-<pacote>-<branch_id>.md` por ramo forte, com DoD §9 do prompt |
+
+---
+
+## Fase 3b — Brief 4/4 por ramo forte (obrigatório)
+
+Para **cada** ramo com decisão `molde_redesign` ou `molde_inedito`:
+
+1. Escolher **questão âncora** — `sample_slugs[0]` do cluster ou golden em `examples/`.
+2. Invocar [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (**versão completa**, §3) com:
+   - Subtópico canônico
+   - Ramo (`pedagogical_branch` / `branch_id`)
+   - Família (`vf`, `certo_errado`, `protocolo`, …)
+   - Âncora (path `examples/…` ou resumo do enunciado)
+3. Salvar entregável:
+   ```text
+   artifacts/l3-brief-<pacote_prefix>-<branch_id>.md
+   ```
+4. **GATE Fase 3b** (por ramo):
+   - [ ] Metáfora única 4/4 (§1 do brief)
+   - [ ] 4× `layout_variant` nomeados (`<tema>-<conceito>-<formato>`)
+   - [ ] Contrato JSON + palavras-gatilho (§6–7)
+   - [ ] DoD §9 do prompt (375px, 0 hardcode, par conceito-perigo)
+5. Só após GATE → `Implementar molde: <ramo>` ([`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) §3) ou `Handcraft:` / `Pipeline completo:`.
+
+**Proibido** escalar handcraft em massa de ramo forte sem `artifacts/l3-brief-*.md` aprovado.
+
+**Cauda longa:** não exige Fase 3b — seguir direto para handcraft com pacote genérico após Fase 3.
 
 ---
 
@@ -262,14 +307,19 @@ FASE 2 — Auditoria L3:
 - GATE: cruzar com VARIANT_MOLDS §2 (espacial vs texto)
 
 FASE 3 — Relatório de decisão:
-- tabela ramo × ok_generico | ok_existente | ramo_novo | molde_inedito
+- tabela ramo × ok_generico (cauda longa) | molde_redesign | molde_inedito | ramo_novo
 - goldens âncora sugeridos (1 por ramo forte)
 - ordem de execução recomendada
+
+FASE 3b — Brief 4/4 (obrigatório por ramo forte):
+- @docs/PROMPT_VARIANTES_NEUROSLIDES.md versão completa
+- salvar artifacts/l3-brief-<pacote>-<branch_id>.md
+- GATE: 4 layout_variant + contrato JSON + DoD §9
 
 FASE 4 (opcional): atualizar l3MoldGapCatalog + BRANCH_DESIGN_MAP
 
 Proibido nesta conversa: apply-lote, handcraft em massa, React sem "Implementar molde: …"
-Próximo passo típico: molde_inedito → VARIANT_MOLDS; resto → Handcraft: ou Pipeline completo:
+Próximo passo típico: ramo forte com brief → VARIANT_MOLDS; cauda longa → Handcraft: ou Pipeline completo:
 ```
 
 ---
@@ -278,7 +328,7 @@ Próximo passo típico: molde_inedito → VARIANT_MOLDS; resto → Handcraft: ou
 
 | Depois do mapeamento | Trigger |
 |----------------------|---------|
-| Criar moldes React | `Implementar molde: <ramo>` + [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) |
+| Criar moldes React | `Implementar molde: <ramo>` + [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (brief) + [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) |
 | Handcraft por slug | `Handcraft: <subtópico>` |
 | Handcraft + vendável | `Pipeline completo: <subtópico>` |
 | Taxonomia instável | `Classify: <subtópico>` |

@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g12",
+  "exported_at": "2026-07-03T01:55:39.708Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g12/manifest.json"
+  },
+  "slugs": [
+    "educa-pb-enfermagem-imunizacao-1779564063274-1",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-3",
+    "fafipa-enfermagem-imunizacao-1777103257434-5",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-4",
+    "fafipa-enfermagem-imunizacao-1777103257434-6",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-1",
+    "fau-unicentro-enfermagem-imunizacao-1779563986606-4",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-2"
+  ]
+}

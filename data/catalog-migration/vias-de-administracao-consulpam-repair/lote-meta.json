@@ -1,0 +1,32 @@
+{
+  "lote": "vias-de-administracao-consulpam-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-01",
+  "applied_at": "2026-07-01",
+  "subtopico": "Vias de Administração",
+  "total": 1,
+  "status": "applied",
+  "parent": "data/catalog-migration/vias-de-administracao-completo/handcraft-meta.json",
+  "readme": "data/catalog-migration/vias-de-administracao-consulpam-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=data/catalog-migration/vias-de-administracao-consulpam-repair/questions/instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=vias-de-administracao-consulpam-repair --apply",
+  "workflow": [
+    "1. Golden em examples/questao-premium-consulpam-vias-absorcao-oral.json",
+    "2. Copiar para questions/<slug>.json",
+    "3. npm run audit:questao-readiness -- --file=...",
+    "4. npm run catalog:apply-lote -- --lote=vias-de-administracao-consulpam-repair --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=vias-de-administracao-consulpam-repair --apply"
+  ],
+  "artifacts": {
+    "applied": "artifacts/catalog-migration-vias-de-administracao-consulpam-repair-applied.json"
+  },
+  "anchor_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+  "anchor_example": "examples/questao-premium-consulpam-vias-absorcao-oral.json",
+  "pedagogical_branch": "via_vf_absorcao",
+  "family": "conceito",
+  "command": "CORRETA",
+  "nota": "Primeira âncora handcraft golden-v1 do subtópico Vias de Administração — absorção por via (1ª passagem + sítio de absorção)."
+}

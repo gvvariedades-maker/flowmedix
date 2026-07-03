@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T02:41:46.659Z",
+  "lote": "imunizacao-g09",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cogeps-unioeste-enfermagem-imunizacao-1779564090395-6",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-6",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-7",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+    "copese-ufpi-enfermagem-imunizacao-1779564079834-6",
+    "copese-uft-enfermagem-imunizacao-1777103251447-7",
+    "coseac-uff-enfermagem-imunizacao-1779572159431-0",
+    "cpcon-uepb-enfermagem-imunizacao-1779564071106-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564090395-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-imunizacao-1779564079834-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-imunizacao-1777103251447-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-imunizacao-1779572159431-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564071106-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

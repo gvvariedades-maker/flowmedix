@@ -7,6 +7,7 @@
     "cargo_header": "Técnico de Enfermagem",
     "topico": "Enfermagem",
     "subtopico": "Imunização",
+    "pedagogical_branch": "imunizacao_calendario",
     "content_standard": "golden-v1",
     "family": "conceito",
     "content_review": {
@@ -146,10 +147,10 @@
           "badge": "info"
         },
         {
-          "label": "Letra B — gabarito",
-          "value": "Meningocócica C (conjugada) aos 3 meses",
-          "emphasis": "success",
-          "badge": "hot"
+          "label": "Men C — nome na prova",
+          "value": "Meningocócica C conjugada (não BCG, rota, penta isolada)",
+          "emphasis": "highlight",
+          "badge": "ok"
         }
       ],
       "footer_rule": "Em prova: idade do enunciado → linha do calendário → cruzar com o nome exato da alternativa"

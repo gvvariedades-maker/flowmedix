@@ -7,6 +7,7 @@ import { ProcedureProtocolConceptMap } from '../variants/ProcedureProtocolConcep
 import { VitalsPanelConceptMap } from '../variants/VitalsPanelConceptMap';
 import { SurvivalChainConceptMap } from '../variants/SurvivalChainConceptMap';
 import { VaccineTimelineConceptMap } from '../variants/VaccineTimelineConceptMap';
+import { ColdChainHubConceptMap } from '../variants/ColdChainHubConceptMap';
 import { PniRulesDeckConceptMap } from '../variants/PniRulesDeckConceptMap';
 import { SaeDocumentationConceptMap } from '../variants/SaeDocumentationConceptMap';
 import { SaeResponsibilityMatrix } from '../variants/SaeResponsibilityMatrix';
@@ -126,6 +127,15 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'vaccine-timeline') {
         return <VaccineTimelineConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'cold-chain-hub') {
+        return (
+          <ColdChainHubConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
       }
       if (layoutVariant === 'pni-rules-deck') {
         return <PniRulesDeckConceptMap concepts={getConcepts()} theme={theme} />;
@@ -277,6 +287,7 @@ export const NeuroSlideHub = ({
           theme={theme}
           layoutVariant={layoutVariant}
           revealMode={logicRevealMode}
+          footerRule={slide.footer_rule}
         />
       );
     case 'syllable_scanner':
@@ -543,6 +554,7 @@ export default function NeuroSlide({
             theme={theme}
             layoutVariant={legacyPresentation.layoutVariant}
             revealMode={legacyPresentation.revealMode}
+            footerRule={normalizedData.footer_rule}
           />
         );
         break;

@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g09",
+  "exported_at": "2026-07-03T01:58:02.964Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g09/manifest.json"
+  },
+  "slugs": [
+    "copese-ufpi-enfermagem-imunizacao-1779564079834-6",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564090395-6",
+    "copese-uft-enfermagem-imunizacao-1777103251447-7",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-6",
+    "coseac-uff-enfermagem-imunizacao-1779572159431-0",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779564071106-5",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8"
+  ]
+}

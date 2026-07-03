@@ -1,0 +1,698 @@
+{
+  "mode": "infer",
+  "bucket": "Assistência Perioperatória (Inclui SRPA)",
+  "min_confidence_apply": 0.85,
+  "limit": 68,
+  "inference_source": "gemini",
+  "summary": {
+    "scanned": 68,
+    "inferred": 66,
+    "errors": 2,
+    "keep_current": 0,
+    "same_subtopico": 65,
+    "applicable": 1
+  },
+  "proposals": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda explicitamente os períodos pré, trans e pós-operatório, que são o foco central do subtópico 'Assistência Perioperatória (Inclui SRPA)'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda predominantemente a coleta de materiais para exames laboratoriais e a correta identificação das amostras.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a tricotomia como medida de prevenção de infecção do sítio cirúrgico, um cuidado direto no pré-operatório.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o preparo pré-operatório do paciente, que é um componente central da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o cuidado ao paciente cirúrgico, abrangendo pré, intra e pós-operatório, que é o conteúdo central do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado descreve cuidados pós-operatórios e a verificação de sinais vitais nesse contexto.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados de enfermagem no pós-operatório, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a investigação e avaliação do paciente na fase pré-operatória, que é o foco principal da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as funções da enfermagem no pré-operatório, que é parte central da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-9",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados no pré-operatório, que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve cuidados no pré-operatório imediato, que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a preparação e manutenção da unidade de recuperação pós-anestésica, que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a estrutura e organização da SRPA (Sala de Recuperação Pós-Anestésica), que faz parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-3",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a organização e a importância da sala de recuperação pós-anestésica em relação ao centro cirúrgico, o que se encaixa diretamente na assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-4",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve as funções da sala de recuperação pós-anestésica, que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente da assistência a pacientes cirúrgicos, abordando aspectos do período perioperatório.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados no pós-operatório, que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-4",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um procedimento cirúrgico (retirada de hérnia) e a necessidade de curativo pós-operatório, que são centrais para a assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a classificação pré-operatória de feridas cirúrgicas, um tema diretamente relacionado aos cuidados no período perioperatório.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve cuidados específicos na Sala de Recuperação Pós-Anestésica (SRPA), que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve cuidados essenciais no período pós-operatório, que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente os períodos pré, trans e pós-operatório, que são o cerne da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente os períodos pré, trans e pós-operatório, que são o cerne da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado descreve cuidados de enfermagem no pós-operatório imediato e mediato de um paciente cirúrgico, incluindo a observação de drenos e incisões, o que se alinha diretamente com a assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados de enfermagem nos períodos pré, intra e pós-operatórios, alinhando-se diretamente com o subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados perioperatórios e prevenção de infecção do sítio cirúrgico, temas centrais deste subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados fundamentais ao paciente no perioperatório, especificamente após anestesia regional.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-7",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente infecção de sítio cirúrgico, um tema central na assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a prevenção de infecções na área operatória, que é um cuidado intrínseco à assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda fatores de risco no contexto pré-operatório de cirurgias torácicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-8",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda as fases do período pós-operatório, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o preparo do paciente cirúrgico, que é o foco principal da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-3",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o preparo de pacientes cirúrgicos, que é o foco principal da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-6",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata especificamente do cuidado pré-operatório, que é um componente central da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005128081-9",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a assistência ao paciente no período pós-operatório imediato, abordando cuidados e observações específicas dessa fase.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve procedimentos e avaliações na Sala de Recuperação Pós-anestésica (SRPA), que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente no pós-operatório de uma colecistectomia, focando na assistência de enfermagem para prevenir complicações e promover recuperação segura, o que se alinha diretamente com o subtópico de Assistência Perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um procedimento realizado na SRPA, que é a Sala de Recuperação Pós-Anestésica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-3",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve procedimentos e avaliações na Sala de Recuperação Pós-anestésica (SRPA), que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Assistência Perioperatória (Inclui SRPA)\",\"confidence\":0.9,\"rationale\":\"O enunciado trata de um procedimento de higiene corporal pré-operatória com o objetivo de reduzir o ris…"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve as fases do cuidado perioperatório e a avaliação pré-operatória, que são o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-6",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um procedimento realizado no período pré-operatório, que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados pré-operatórios, especificamente a tricotomia, que é um procedimento realizado antes da cirurgia.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cuidado essencial realizado pelo Técnico de Enfermagem antes de um procedimento cirúrgico, que se enquadra diretamente na assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-enfermagem-em-centro-cirurgico-1778934918280-8",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o preparo do paciente no pré-operatório, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata de terminologia cirúrgica, que é fundamental para a assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-assistencia-perioperatoria-inclui-srpa-1780001148264-7",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda os cuidados de enfermagem nos períodos pré e pós-operatório, que são o cerne da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o período pré-operatório mediato, que é parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-geral-assistencia-perioperatoria-inclui-srpa-1777103789613-0",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve detalhadamente a função e os cuidados na Sala de Recuperação Pós-Anestésica (SRPA), que é o foco central do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente internado para um procedimento invasivo (biópsia hepática percutânea), abordando aspectos pré-procedimento e segurança do paciente, que se encaixam na assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o cuidado de enfermagem no período pós-operatório imediato (POI) e a transferência do paciente da SRPA, que são temas centrais da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente em um centro cirúrgico ambulatorial, abordando orientações pré-operatórias e vantagens da cirurgia ambulatorial, que se encaixam diretamente no contexto perioperatório.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente em pós-operatório imediato de um procedimento cirúrgico complexo, com foco nos cuidados e terminologias relacionadas ao ato cirúrgico e sua recuperação inicial.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as fases do período perioperatório, que é o tema central do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-2",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata da classificação de cirurgias, que é um tema central da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário no período pós-operatório imediato, que é o foco principal do subtópico 'Assistência Perioperatória (Inclui SRPA)'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente em pós-operatório mediato com dreno cirúrgico, focando nos cuidados com a ferida e o dreno nesse período.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o manejo de drenos cirúrgicos, um procedimento diretamente relacionado ao cuidado pós-operatório.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca nos cuidados pós-operatórios imediatos e na identificação de sinais de infecção em ferida cirúrgica, que são centrais para a assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre posicionamento do paciente no período perioperatório, que é o foco do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um dreno pós-cirúrgico, que é um cuidado do período pós-operatório.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o período pós-operatório, que faz parte da assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o manejo do paciente no período pré-operatório, que é o foco principal do subtópico 'Assistência Perioperatória (Inclui SRPA)'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve as fases do cuidado perioperatório, que incluem pré, intra e pós-operatório.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-4",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de pós-operatório de uma paciente, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-0",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a Sala de Recuperação Pós-Anestésica (SRPA) e os cuidados com pacientes no pós-operatório imediato.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Assistência Perioperatória (Inclui SRPA)\",\"confidence\":0.9,\"rationale\":\"O enunciado aborda a infecção de ferida operatória em cirurgia cardíaca, focando no controle, profilaxi…"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6",
+      "from": "Assistência Perioperatória (Inclui SRPA)",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a recuperação pós-anestésica e a escala de Aldrete e Kroulik, que são centrais na assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    }
+  ],
+  "generated_at": "2026-06-30T23:42:00.062Z"
+}

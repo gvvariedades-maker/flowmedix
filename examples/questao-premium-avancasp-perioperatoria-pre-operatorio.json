@@ -9,9 +9,10 @@
     "subtopico": "Assistência Perioperatória (Inclui SRPA)",
     "content_standard": "golden-v1",
     "family": "conceito",
+    "pedagogical_branch": "perioperatorio_pre_operatorio",
     "content_review": {
-      "reviewed_at": "2026-06-23",
-      "reviewer": "content-pilot",
+      "reviewed_at": "2026-07-01",
+      "reviewer": "handcraft-clinical-depth-v3",
       "guideline_snapshot": "Potter & Perry — fases perioperatórias; preparo pré-operatório",
       "exam_vs_current": "none"
     },
@@ -62,32 +63,17 @@
           "icon": "ClipboardCheck"
         },
         {
+          "label": "Checklist",
+          "detail": "Pulseira, lateralidade, documentos e jejum conforme protocolo.",
+          "icon": "ListChecks"
+        },
+        {
           "label": "Não é enfermagem",
           "detail": "Ato cirúrgico, técnica cirúrgica e prescrição de anestesia — médico.",
           "icon": "XCircle"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "B — orientar e verificar preparo adequado.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Pré-op = orientação + checklist — não ato médico"
-    },
-    {
-      "type": "golden_rule",
-      "slide_title": "Checklist pré-operatório",
-      "chip_label": "REGRA DE OURO",
-      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
-      "content": "PRÉ-OP: ORIENTAR + VERIFICAR PREPARO",
-      "rows": [
-        { "label": "Jejum", "value": "Conforme protocolo institucional", "badge": "ok" },
-        { "label": "Identificação", "value": "Pulseira, procedimento, lateralidade", "badge": "ok" },
-        { "label": "Documentação", "value": "Exames e termo de consentimento", "badge": "ok" },
-        { "label": "Médico cirurgião", "value": "Ato cirúrgico e técnica — não enfermagem", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "Letra B", "badge": "hot" }
-      ],
-      "footer_rule": "Enfermagem prepara e educa — médico opera e prescreve anestesia"
     },
     {
       "type": "logic_flow",
@@ -101,10 +87,23 @@
         "Eliminar C — anestesia é prescrição médica.",
         "Eliminar E — avaliar só laboratório é reducionista; preparo é integral.",
         "Confirmar B — orientar paciente e verificar preparo.",
-        "Marcar B.",
-        "Fixação: pré-op enfermagem = educação + checklist de segurança."
+        "Gabarito: letra B."
       ],
       "footer_rule": "Atribuição médica na alternativa → eliminar"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Checklist pré-operatório",
+      "chip_label": "REGRA DE OURO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "content": "PRÉ-OP: ORIENTAR + VERIFICAR PREPARO",
+      "rows": [
+        { "label": "Jejum", "value": "Conforme protocolo institucional", "badge": "ok" },
+        { "label": "Identificação", "value": "Pulseira, procedimento, lateralidade", "badge": "ok" },
+        { "label": "Documentação", "value": "Exames e termo de consentimento", "badge": "ok" },
+        { "label": "Médico cirurgião", "value": "Ato cirúrgico e técnica — não enfermagem", "emphasis": "alert", "badge": "warn" }
+      ],
+      "footer_rule": "Enfermagem prepara e educa — médico opera e prescreve anestesia"
     },
     {
       "type": "danger_zone",
@@ -117,22 +116,22 @@
         {
           "label": "Letra A — realizar o ato cirúrgico",
           "detail": "Cirurgia é ato médico — enfermagem não opera.",
-          "correct": "Gabarito B — orientar e verificar preparo."
+          "correct": "Função da enfermagem é orientar e verificar preparo — não operar."
         },
         {
           "label": "Letra C — prescrever anestesia",
           "detail": "Anestesia é competência do anestesiologista.",
-          "correct": "Gabarito B — enfermagem no preparo e segurança."
+          "correct": "Enfermagem atua no preparo e na segurança do paciente."
         },
         {
           "label": "Letra D — definir técnica cirúrgica",
           "detail": "Técnica cirúrgica é decisão do cirurgião.",
-          "correct": "Gabarito B — checklist e orientação ao paciente."
+          "correct": "Checklist e orientação ao paciente são da enfermagem."
         },
         {
           "label": "Letra E — só exames laboratoriais",
           "detail": "Preparo inclui jejum, identificação, vínculo e documentos — não só lab.",
-          "correct": "Gabarito B — preparo adequado é amplo."
+          "correct": "Preparo adequado é amplo — orientação + verificação integral."
         }
       ],
       "footer_rule": "Função da enfermagem no pré-op nunca é ato cirúrgico"

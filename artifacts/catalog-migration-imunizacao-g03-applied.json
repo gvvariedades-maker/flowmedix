@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-02T07:26:00.500Z",
+  "lote": "imunizacao-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "agirh-enfermagem-imunizacao-1779564113760-0",
+    "amauc-enfermagem-imunizacao-1779572227744-8",
+    "ameosc-enfermagem-imunizacao-1779564006577-2",
+    "ameosc-enfermagem-imunizacao-1779572180830-9",
+    "avancasp-enfermagem-imunizacao-1777103222102-5",
+    "cotec-fadenor-enfermagem-imunizacao-1779564059030-4",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-6",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564006577-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572180830-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1779564059030-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

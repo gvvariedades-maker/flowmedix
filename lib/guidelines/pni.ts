@@ -35,6 +35,13 @@ export const PNI_INTERVALOS_2025: GuidelineTable = {
       sourceId: 'pni-2025-intervalos',
     },
     {
+      id: 'oral-oral-15d',
+      label: 'Vacinas orais atenuadas entre si',
+      value: 'Mesmo dia ou intervalo mínimo de 15 dias',
+      detail: 'Rotavírus e VOP: não confundir com oral×injetável (livre) — oral×oral exige ≥15 dias se não simultâneo.',
+      sourceId: 'pni-2025-intervalos',
+    },
+    {
       id: 'virais-vivos-injetaveis',
       label: 'Virais vivos injetáveis',
       value: 'Mesmo dia OU ≥4 semanas entre si',
@@ -281,6 +288,27 @@ export const PNI_INTERVALOS_2025: GuidelineTable = {
       label: 'Encefalopatia/DNC progressiva',
       value: 'Contraindicação à vacina com componente pertussis (DTP/dTpa)',
       detail: 'Encefalopatia nos 7 dias após dose anterior de pertussis: contraindica pertussis; usar dT.',
+      sourceId: 'pni-2025-intervalos',
+    },
+    {
+      id: 'vacina-congelada-acidental',
+      label: 'Vacina refrigerada congelada por acidente',
+      value: 'Congelamento acidental de imunobiológico refrigerado: descartar — não aplicar',
+      detail: 'Vacinas que exigem refrigeração perdem potência se congelam; acionar fluxo de perda de cadeia de frio.',
+      sourceId: 'pni-2025-intervalos',
+    },
+    {
+      id: 'prematuro-bcg-peso',
+      label: 'BCG — prematuro de baixo peso',
+      value: 'Prematuro com peso inferior a 2 000 g: adiar BCG até recuperação ponderal',
+      detail: 'Cauda longa de contraindicação relativa; vacinar quando estável e conforme manual local.',
+      sourceId: 'pni-2025-intervalos',
+    },
+    {
+      id: 'evento-adverso-grave-notificar',
+      label: 'Evento adverso grave pós-vacina',
+      value: 'Anafilaxia, convulsão, síncope com trauma ou evento neurológico: notificar e contraindicar revacinação com o mesmo produto',
+      detail: 'Complementa notificacao-eapv; diferenciar reação local leve de evento grave.',
       sourceId: 'pni-2025-intervalos',
     },
     {

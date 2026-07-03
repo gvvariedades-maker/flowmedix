@@ -26,6 +26,8 @@ const GOLDEN_BY_CLUSTER: Record<string, string> = {
   'SRPA / atribuição do técnico': 'questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json',
   'SRPA / CPD e atribuição (C/E)': 'questao-premium-idecan-srpa-curativo-cpd-ce.json',
   'Pré-operatório / preparo': 'questao-premium-avancasp-perioperatoria-pre-operatorio.json',
+  'Pós-operatório / cuidados': 'questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json',
+  'Protocolo / sequência': 'questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json',
   'ISC / classificação e prevenção': 'questao-premium-furb-perioperatoria-isc-classificacao.json',
   'Cirurgia segura / classificação ferida CDC': 'questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json',
 };
@@ -35,6 +37,9 @@ const COVERED_CLUSTERS = new Set(Object.keys(GOLDEN_BY_CLUSTER));
 function inferBuilderTopic(instruction: string, options: QuestionOption[]): string {
   const blob = `${instruction} ${options.map((o) => o.text).join(' ')}`.toLowerCase();
 
+  if (/anestesia regional|bloqueio raqui|bloqueio peridural|raquianestesia|peridural|bloqueio simpático|bloqueio simpatico/.test(blob)) {
+    return 'Pós-operatório';
+  }
   if (/\bsrpa\b|recuperação pós-anestésica|recuperacao pos-anestesica|pós-anestésica|pos-anestesica/.test(blob)) {
     if (/aldrete|kroulik|escala.*alta/.test(blob)) return 'SRPA / Aldrete';
     if (/cateter peridural|cpd|curativo/.test(blob)) return 'SRPA / CPD';
@@ -87,6 +92,12 @@ function refinePedagogicalCluster(
 
   if (/\bpré-operatório|pre-operatorio|tricotomia|jejum|preparo/.test(blob)) {
     return 'Pré-operatório / preparo';
+  }
+  if (/\bexceto\b|\bincorreta\b/.test(blob) && /perioperat|srpa|anestesia|bloqueio|cirúrg|cirurg/.test(blob)) {
+    return 'Pós-operatório / cuidados';
+  }
+  if (/anestesia regional|bloqueio raqui|bloqueio peridural|raquianestesia|peridural/.test(blob)) {
+    return 'Pós-operatório / cuidados';
   }
   if (/\bpós-operatório|pos-operatorio|pós-operat|pos-operat/.test(blob)) {
     return 'Pós-operatório / cuidados';

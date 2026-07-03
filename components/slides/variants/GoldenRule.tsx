@@ -9,6 +9,8 @@ import { GoldenRuleMeshReveal } from './GoldenRuleMeshReveal';
 import { GoldenRuleLabPrepLensBoard } from './GoldenRuleLabPrepLensBoard';
 import { GoldenRuleDressingMatchMatrix } from './GoldenRuleDressingMatchMatrix';
 import { GoldenRulePniIntervalMatrix } from './GoldenRulePniIntervalMatrix';
+import { GoldenRulePniCalendarBoard } from './GoldenRulePniCalendarBoard';
+import { GoldenRulePniTemperatureRail } from './GoldenRulePniTemperatureRail';
 import { GoldenRuleVitalsReferenceBoard } from './GoldenRuleVitalsReferenceBoard';
 import { GoldenRuleIstReferenceBoard } from './GoldenRuleIstReferenceBoard';
 import { GoldenRuleSaeReferenceBoard } from './GoldenRuleSaeReferenceBoard';
@@ -278,6 +280,18 @@ export const GoldenRule = ({
   if (variant === 'pni-interval-matrix' && rows && rows.length > 0) {
     return (
       <GoldenRulePniIntervalMatrix content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'pni-calendar-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePniCalendarBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'pni-temperature-rail' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePniTemperatureRail content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

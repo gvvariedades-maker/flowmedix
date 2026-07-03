@@ -4,7 +4,9 @@ Leitura estimada: **~15 minutos**. Guia para criar uma **variante inédita** com
 
 **Público:** devs, agentes de conteúdo, revisores.
 
-**Complementa:** [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) (pedagogia), [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (layouts genéricos).
+**Complementa:** [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) (pedagogia), [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (layouts genéricos), [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (brief de design 4/4 — versão enxuta e completa para agentes).
+
+> **Antes da Fase 0 (questão âncora):** rodar **Fase 3b** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) — brief obrigatório em [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) para cada ramo forte (`molde_redesign` / `molde_inedito`). Cauda longa dispensa.
 
 ---
 
@@ -203,14 +205,15 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 
 | `layout_variant` | Subtópico(s) | Interação | Golden |
 |------------------|--------------|-----------|--------|
-| `absorption-speed-rail` | Vias de Administração | Trilho IV/IM/SC/VO + barras de velocidade | `questao-premium-vunesp-via-subcutanea.json` |
+| `absorption-speed-rail` | Vias de Administração | Trilho IV/IM/SC/VO + barras de velocidade | `questao-premium-vunesp-via-subcutanea.json` · `questao-premium-consulpam-vias-absorcao-oral.json` |
 | `dose-equivalence-rail` | Cálculo de Administração de Medicamentos e Infusões | Trilho 20 · 60 · 3 · U-100 | `questao-premium-idecan-calculo-equivalencias-gotas.json` |
 | `sus-art4-orbit` | Promoção à Saúde e Prevenção de Agravos | Órbita + montagem blocos Art. 4º | `questao-premium-sus-lei-8080-cesgranrio.json` |
 | `sae-responsibility-matrix` | Processo de Enfermagem | Colunas enfermeiro × equipe × norma | (FEPese SAE) |
 | `survival-chain` | Urgências e Emergências | Cadeia de sobrevivência | `questao-premium-urgencias-rcp.json` |
 | `vitals-panel` | Verificação de Sinais Vitais | Painel SV | — |
 | `procedure-protocol` | Instalação e Manejo de Sondas | Protocolo passo a passo | — |
-| `vaccine-timeline` | Imunização | Timeline vacinal | `questao-premium-fundatec-meningococica-3meses.json` |
+| `vaccine-timeline` | Imunização (`imunizacao_calendario`) | Timeline vacinal | `questao-premium-fundatec-meningococica-3meses.json` |
+| `cold-chain-hub` | Imunização (`imunizacao_cadeia_frio`) | Hub cadeia de frio + modo V/F ou MCQ | `questao-premium-ameosc-imunizacao-vf-cadeia-frio.json` · `questao-premium-avancasp-imunizacao-rede-frio-temperatura.json` |
 | `sus-legal-pillars` | (componente pronto; mapear subtópico quando houver golden) | Pilares legais SUS | — |
 | `sae-documentation` | (componente pronto; mapear quando houver golden) | Documentação SAE | `questao-premium-fepese-anotacao-enfermagem-sae.json` |
 | `etiology-kingdom-rail` | Doenças Bacterianas e Fúngicas | Trilho 4 reinos etiológicos | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |
@@ -220,12 +223,13 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 
 | `layout_variant` | Par tipico | Interação | Palavras-gatilho em `label`/`detail`/`correct` |
 |------------------|------------|-----------|--------------------------------------------------|
-| `route-trap` | `absorption-speed-rail` | Trilho de via errada × certa | IV, IM, SC, VO, absorção rápida/lenta, letra A–E |
+| `route-trap` | `absorption-speed-rail` | Trilho de via errada × certa | IV, IM, SC, VO, absorção rápida/lenta, 1ª passagem, letra A–E — ver `questao-premium-consulpam-vias-absorcao-oral.json` |
 | `dose-trap` | `dose-equivalence-rail` | Trilho de constante errada × certa | 20, 60, 3, U-100, 10 UI, 35 micro, letra A–E |
 | `scope-trap` | `sus-art4-orbit` | Blocos Art. 4º faltando | ações e serviços, esferas, direta e indireta, fundações |
 | `norm-reveal` | `sae-responsibility-matrix` | Revela norma por item | COFEN, Res., anotação, registro |
 | `trap-reveal` | `survival-chain`, `vitals-panel` | Compare com revelação sequencial | ordem, proporção, parâmetro numérico |
 | `calendar-mismatch` | `vaccine-timeline` | Calendário × idade errada | meses, dose, reforço, calendário |
+| `temperature-mismatch` | `cold-chain-hub` | Trilho 0·2·8·12 × faixa errada | 2 °C, 8 °C, piso, teto, congelamento, agitar |
 | `itu-catheter-trap` | `itu-closed-system-rail` | Trilho bundle violado × restaurado | meato, fechado, fluxo, bolsa, pinçar, letra A–E |
 
 Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md).
@@ -236,6 +240,8 @@ Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPL
 |------------------|--------------|-----------|--------|
 | `itu-exceto-tap` | Infecções no Contexto da Biossegurança (`biosseg_iras_itu_cateter`) | Painel de letras + tap EXCETO | `questao-premium-idib-umirim-itu-cateter-exceto.json` |
 | `etiology-elimination-tap` | Doenças Bacterianas e Fúngicas | Eliminação por reino | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |
+| `pni-calendar-elimination-tap` | Imunização (`imunizacao_calendario`) | Eliminação MCQ por mês/conduta | `questao-premium-fundatec-meningococica-3meses.json` |
+| `pni-cold-chain-tap` | Imunização (`imunizacao_cadeia_frio`) | Tap V/F ou eliminação por faixa térmica | `questao-premium-avancasp-imunizacao-rede-frio-temperatura.json` |
 
 ### Golden rule (slide 2)
 
@@ -245,6 +251,8 @@ Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPL
 | `itu-bundle-letter-board` | Infecções no Contexto da Biossegurança (`biosseg_iras_itu_cateter`) | Espectro de letras bundle ok × EXCETO | `questao-premium-idib-umirim-itu-cateter-exceto.json` |
 | `etiology-letter-spectrum` | Doenças Bacterianas e Fúngicas | Espectro letras bacteriana × intruso | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |
 | `reference_table` | (automático com `rows` quando sem molde) | Tabela rótulo × valor | vários |
+| `pni-calendar-board` | Imunização (`imunizacao_calendario`) | Trilho 0·2·3·4·6·12 + rows | `questao-premium-fundatec-meningococica-3meses.json` |
+| `pni-temperature-rail` | Imunização (`imunizacao_cadeia_frio`) | Trilho 0·2·8·12 + rows | `questao-premium-avancasp-imunizacao-rede-frio-temperatura.json` |
 | `center` / `banner` / `minimal` / `compact` | demais subtópicos | Tipografia ou faixa | — |
 
 ---

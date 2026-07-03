@@ -1,0 +1,318 @@
+{
+  "mode": "infer",
+  "bucket": "Imunização",
+  "min_confidence_apply": 0.85,
+  "limit": 30,
+  "inference_source": "gemini",
+  "summary": {
+    "scanned": 30,
+    "inferred": 29,
+    "errors": 1,
+    "keep_current": 0,
+    "same_subtopico": 27,
+    "applicable": 1
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca no acompanhamento da vacinação de crianças e na identificação de atrasos vacinais, o que se alinha diretamente com o subtópico de Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o calendário vacinal e a idade de administração de uma vacina específica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre a regularização do esquema vacinal de um adolescente, abordando o Programa Nacional de Imunização e a necessidade de atualização de vacinas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado discute a importância das vacinas na prevenção de doenças e menciona doenças específicas que são preveníveis por vacinação, além de campanhas nacionais.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779563975447-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre a proteção oferecida por uma vacina contra doenças causadas por uma bactéria específica, o que se encaixa perfeitamente no subtópico de Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente a vacina BCG, suas indicações, forma de comprovação e prazos de administração, temas centrais do subtópico Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a administração da vacina dT (Difteria e Tétano) e as condições para sua revacinação, que é um tema central de Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre vacinas e seus efeitos, que é o foco do subtópico \"Imunização\".",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779563975447-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre o início do esquema vacinal de uma criança de 2 meses, conforme o Calendário Nacional de Vacinação, o que se encaixa perfeitamente no subtópico de Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564006577-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente vacinas, calendários de vacinação, indicações e contraindicações para gestantes, que são os temas centrais do subtópico 'Imunização'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564109452-2",
+      "from": "Imunização",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado trata de uma campanha de detecção de uma doença crônica, o que se alinha com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre doenças preveníveis por vacina, que é o foco principal do subtópico \"Imunização\".",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente a vacina BCG, seu modo de aplicação, dosagem, revacinação e indicações, que são temas centrais do subtópico Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Imunização\",\"confidence\":1.0,\"rationale\":\"O enunciado aborda especificamente o calendário de vacinação, a vacina HPV, seu esquema vacinal para diferentes grupos e sua composiç…"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado discute a classificação de vacinas (atenuadas e inativadas) e suas características, o que se encaixa perfeitamente no subtópico de Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a imunização e a vigilância epidemiológica como estratégias de controle de doenças, com foco na participação do Técnico de Enfermagem nessas ações.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o conceito de imunização, vacinas e sua importância na saúde pública.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a vacinação contra o HPV como medida de prevenção primária do câncer cérvico-uterino, que é o foco principal do subtópico de Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a preparação e aplicação de vacinas, especificamente a Pentavalente, em uma sala de vacinação, conforme o PNI, o que se alinha perfeitamente com o subtópico 'Imunização'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564006577-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as boas práticas na vacinação, incluindo armazenamento, aplicação e registro, que são temas centrais do subtópico Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre vacinação e tipos de vacinas, que é o cerne do subtópico 'Imunização'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o calendário vacinal e a periodicidade da vacina contra a gripe.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564079834-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado discute características de vacinas atenuadas, que são parte do conteúdo de imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572180830-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre vacinação, especificamente a vacina contra Hepatite B em recém-nascidos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a contraindicação de uma vacina específica para uma faixa etária, o que se encaixa perfeitamente no subtópico de Imunização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente do Programa Nacional de Imunização e seus sistemas de gerenciamento de estoque e distribuição de imunobiológicos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente do calendário de vacinação infantil, especificamente sobre a primeira dose da tríplice viral.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-8",
+      "from": "Imunização",
+      "suggested": "Vias de Administração",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado pergunta sobre a via de administração intramuscular, que é o foco principal da questão.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a aplicação de vacinas e um sítio específico para essa aplicação, o que se enquadra perfeitamente no subtópico \"Imunização\" do catálogo.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a cadeia de frio e a conservação de imunobiológicos, temas centrais da imunização.",
+      "applicable": false,
+      "source": "gemini"
+    }
+  ],
+  "generated_at": "2026-07-01T22:07:37.252Z"
+}

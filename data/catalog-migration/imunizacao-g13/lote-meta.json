@@ -1,0 +1,41 @@
+{
+  "lote": "imunizacao-g13",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "applied_at": "2026-07-03",
+  "readiness": "8/8",
+  "readiness_strict_v2": "8/8",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 7,
+    "imunizacao_vf_intervalos": 1
+  },
+  "priority": "P0 — calendário (~62% volume)",
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "fau-unicentro-enfermagem-imunizacao-1779564044052-3",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Handcraft golden-v1 g13 — VORH regurgitação (1) + SCR/tetra 12-15m (1) + volumes I/II/III (1) + calendário DTP reforço (1) + pertussis 6a11m29d (1) + gestante vacinas (1) + SCR via SC (1) + dT gestante incompleto (1).",
+  "workflow": [
+    "npm run plan:imunizacao-g13",
+    "npm run catalog:export-lote -- --lote=imunizacao-g13 --from-manifest=data/catalog-migration/imunizacao-g13/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run validate:goldens -- --lote=imunizacao-g13 --strict",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g13 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g13 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g13",
+    "npm run catalog:apply-lote -- --lote=imunizacao-g13 --dry-run"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "handcraft-apply",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g13.json"
+  }
+}

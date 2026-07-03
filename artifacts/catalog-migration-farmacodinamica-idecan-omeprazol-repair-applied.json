@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-01T20:08:37.422Z",
+  "lote": "farmacodinamica-idecan-omeprazol-repair",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

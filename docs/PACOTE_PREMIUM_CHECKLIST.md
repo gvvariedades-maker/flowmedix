@@ -128,7 +128,9 @@ Aplica-se a **todo** subtópico com builder dedicado e moldes bespoke. A famíli
 
 ### Fase 1b — Mapear ramos (antes de escalar)
 
-**Conversa agente:** `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) (cluster + `audit:l3-mold-gap` + tabela de decisão).
+**Conversa agente:** `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) (cluster + `audit:l3-mold-gap` + tabela de decisão + **Fase 3b brief 4/4**).
+
+**Política 2026-07-02+:** ramos fortes com moldes legados → `molde_redesign` (não `ok_existente`). Cauda longa → `ok_generico` sem brief.
 
 ```bash
 # Piloto do script (Punção); replicar como cluster-<pacote>-topics.ts
@@ -334,7 +336,7 @@ Para cada tipo de slide, um `layout_variant` dedicado (não só `morphological`,
 - [ ] Teste de presença em [`__tests__/slidePresentationSubtopicMold.test.ts`](../__tests__/slidePresentationSubtopicMold.test.ts)
 - [ ] Preview no player (`/estudar/<slug>`) — confirmar que **não** cai em fallback
 
-Detalhe do pipeline de um molde: [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md).
+Detalhe do pipeline de um molde: [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) Fase 3b → [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (brief visual 4/4) → [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) (engenharia).
 
 ## Fase 3 — Builder de conteúdo
 

@@ -1,167 +1,47 @@
 {
-  "generated_at": "2026-06-30T17:13:53.398Z",
-  "scanned": 32,
-  "passed": 32,
+  "generated_at": "2026-07-03T02:06:13.578Z",
+  "scanned": 8,
+  "passed": 8,
   "failed": 0,
   "warn_only": 0,
   "results": [
     {
-      "slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564090395-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+      "slug": "copese-ufpi-enfermagem-imunizacao-1779564079834-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+      "slug": "copese-uft-enfermagem-imunizacao-1777103251447-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "slug": "coseac-uff-enfermagem-imunizacao-1779572159431-0",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "faurgs-enfermagem-seguranca-do-paciente-1779563436357-6",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-5",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-1",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-6",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "unesc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-5",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3",
+      "slug": "cpcon-uepb-enfermagem-imunizacao-1779564071106-5",
       "ok": true,
       "issues": []
     }

@@ -29,6 +29,7 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 - **`docs/GOLDEN_HANDCRAFT_MODEL.md`** — **runbook padrão** para escalar golden-v1 no catálogo (âncora por ramo + handcraft por questão)
 - **`docs/GOLDEN_ROLLOUT_CATALOGO.md`** — programa catálogo inteiro
 - **`docs/VARIANT_MOLDS.md`** — pipeline para moldes interativos bespoke (concept_map / danger_zone), contrato de conteúdo por molde, wiring no player e catálogo atual
+- **`docs/PROMPT_VARIANTES_NEUROSLIDES.md`** — **system prompt** (versão enxuta + completa) para brief 4/4; **Fase 3b** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) (obrigatório por ramo forte; cauda longa dispensa)
 
 ## Migração de catálogo e visual
 
@@ -40,7 +41,16 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 
 - **`examples/questao-premium-urgencias-rcp.json`** — família **protocolo** (pedagógico + vitrine; `reveal_mode: "tap"`, `danger_zone` com `correct`, `golden_rule` com `rows`, `slide_title`)
 - **`examples/questao-premium-sus-lei-8080-cesgranrio.json`** — família **legislação** + molde `sus-art4-orbit` / `scope-trap` (sem `layout_variant` no JSON — subtópico Promoção à Saúde)
-- **`examples/questao-premium-vunesp-via-subcutanea.json`** — família **conceito** + molde `absorption-speed-rail` / `route-trap` (subtópico Vias de Administração)
+- **`examples/questao-premium-vunesp-via-subcutanea.json`** — família **conceito** + molde `absorption-speed-rail` / `route-trap` (subtópico Vias de Administração — indicação SC)
+- **`examples/questao-premium-consulpam-vias-absorcao-oral.json`** — família **conceito** + ramo `via_vf_absorcao` (absorção oral/sublingual/retal/parenteral; comando CORRETA; slug `instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0`)
+- **`examples/questao-premium-cpcon-vias-im-vf.json`** — família **vf** + ramo `via_tecnica_admin` (via IM I–IV)
+- **`examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json`** — família **vf** + ramo `farmaco_pk_pd_vf` (PK/PD assertivas)
+- **`examples/questao-premium-idecan-omeprazol-ev-ulcera.json`** — família **protocolo** + ramo `farmaco_clinico_protocolo` (IBP EV úlcera péptica; slug `idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6`)
+- **`examples/questao-premium-decorp-imunizacao-triplice-viral-via.json`** — família **conceito** + ramo `imunizacao_generico` (SCR aos 12 meses — via subcutânea; slug `decorp-enfermagem-vias-de-administracao-1776056357082-0`)
+- **`examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json`** — família **conceito** + catch-up adolescente/adulto sem cartão (slug `adm-tec-enfermagem-imunizacao-1779563986606-5` · Q-3687)
+- **`examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json`** — família **vf** + ramo `imunizacao_cadeia_frio` (sub-padrão A: V/F sala — BCG, agitar não recupera, pentavalente, técnico · slug `ameosc-enfermagem-processo-de-enfermagem-1780005791580-3` · Q-4611)
+- **`examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json`** — família **conceito** + ramo `imunizacao_cadeia_frio` (sub-padrão B: MCQ faixa 2–8 °C · slug `avancasp-enfermagem-processo-de-enfermagem-1780011872350-6` · Q-5039)
+- **`examples/questao-premium-cpcon-imunizacao-intervalos-vf.json`** — família **vf** + ramo `imunizacao_vf_intervalos` (intervalos PNI I–IV)
 - **`examples/questao-premium-idecan-calculo-equivalencias-gotas.json`** — família **calc** + molde `dose-equivalence-rail` / `dose-trap` (subtópico Cálculo de Medicamentos)
 - **`examples/questao-preview-logic-flow-tap.json`** — preview mínimo só do `logic_flow` tap
 - **`examples/questao-enfermagem-sae.json`**

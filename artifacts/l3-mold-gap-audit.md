@@ -1,20 +1,28 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-06-30T15:55:22.168Z
+Gerado em: 2026-07-02T00:07:14.634Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
-| Fonte slugs | Supabase (vivo) |
-| Clusters mapeados | 81 |
-| Slugs auditados | 68 |
+| Fonte slugs | lotes locais |
+| Clusters mapeados | 87 |
+| Slugs auditados | 1002 |
 | ok_existente | 11 |
-| ok_generico | 57 |
-| ramo_novo | 12 |
+| ok_generico | 60 |
+| ramo_novo | 15 |
 | molde_inedito | 1 |
 | Pacotes inéditos únicos | 1 |
-| Slugs com mismatch L3 | 0 |
+| Slugs com mismatch L3 | 565 |
+
+## Mismatch por subtópico
+
+| Subtópico | Slugs com mismatch |
+|-----------|-------------------|
+| Imunização | 553 |
+| Saúde Mental | 6 |
+| Saúde do Adolescente | 2 |
 
 ## Candidatos a molde inédito (pacote de 4 variantes)
 
@@ -28,14 +36,14 @@ Gerado em: 2026-06-30T15:55:22.168Z
 | Subtópico | Cluster | Slugs | % | Decisão | Ramo | Ideal |
 |-----------|---------|-------|---|---------|------|-------|
 | Assistência Perioperatória (Inclui SRPA) | Pré-operatório / preparo | 21 | 30.9% | ok_generico | `perioperatorio_pre_operatorio` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | Pós-operatório / cuidados | 14 | 20.6% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | Pós-operatório / cuidados | 15 | 22.1% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | Protocolo / sequência | 13 | 19.1% | ok_generico | `perioperatorio_protocolo` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | Certo ou errado | 9 | 13.2% | ok_generico | `perioperatorio_vf` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | Default — sem âncora temática | 4 | 5.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | ISC / classificação e prevenção | 2 | 2.9% | ok_generico | `perioperatorio_isc` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | Fases perioperatórias | 2 | 2.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | SRPA / atribuição do técnico | 1 | 1.5% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | SRPA / CPD e atribuição (C/E) | 1 | 1.5% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | Fases perioperatórias | 1 | 1.5% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | Centro cirúrgico / asséptica | 1 | 1.5% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Enfermagem em Central de Material e Esterilização (CME) | Preparo e limpeza de instrumentais | 12 | 34.3% | ok_generico | `cme_preparo_limpeza` | bridge · minimal · cards · list (genérico)… |
 | Enfermagem em Central de Material e Esterilização (CME) | Autoclave e métodos de esterilização | 10 | 28.6% | molde_inedito | `cme_autoclave_metodos` | morphological · reference_table · vertical · compare (genéri… |
@@ -68,6 +76,12 @@ Gerado em: 2026-06-30T15:55:22.168Z
 | Saúde do Adolescente | Transtornos alimentares / imagem corporal | 2 | 12.5% | ok_generico | `adolescente_saude_mental` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Diretrizes MS adolescente (EXCETO) | 2 | 12.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Saúde bucal / promoção | 2 | 12.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Protocolo / administração clínica (EV, infusão) | 4 | 36.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Default — sem âncora temática | 2 | 18.2% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Conceito — farmacocinética (ADME) | 2 | 18.2% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Conceito — meia-vida e concentração | 1 | 9.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | INCORRETA / EXCETO | 1 | 9.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Conceito — farmacodinâmica clínica | 1 | 9.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Tuberculose — controle, TDO e vigilância | 23 | 45.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Outros / tema misto | 6 | 11.8% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Meningite bacteriana | 4 | 7.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
@@ -111,9 +125,40 @@ Gerado em: 2026-06-30T15:55:22.168Z
 
 ## Slugs (amostra com branch inferido)
 
-- `perioperatorio_isc`: 17
-- `perioperatorio_vf`: 14
-- `perioperatorio_pre_operatorio`: 13
-- `perioperatorio_protocolo`: 10
-- `perioperatorio_pos_operatorio`: 10
-- `perioperatorio_generico`: 4
+- `imunizacao_calendario`: 553
+- `—`: 95
+- `biosseg_generico`: 51
+- `bacterianas_generico`: 47
+- `perioperatorio_pre_operatorio`: 24
+- `sp_generico`: 24
+- `perioperatorio_pos_operatorio`: 23
+- `imunizacao_vf_intervalos`: 19
+- `cme_autoclave_metodos`: 17
+- `perioperatorio_isc`: 14
+- `mental_crise_caps`: 12
+- `sp_prevencao_quedas`: 12
+- `sp_eventos_adversos`: 11
+- `mental_generico`: 10
+- `sp_identificacao`: 10
+- `cme_generico`: 8
+- `mental_raps_legis`: 7
+- `farmaco_clinico_protocolo`: 6
+- `adolescente_etica_sigilo`: 6
+- `cme_preparo_limpeza`: 5
+- `perioperatorio_generico`: 5
+- `adolescente_antropometria`: 5
+- `cme_vf_ce`: 4
+- `bacterianas_agente_etiologico`: 4
+- `farmaco_generico`: 4
+- `biosseg_iras_itu_cateter`: 4
+- `imunizacao_generico`: 3
+- `mental_depressao`: 3
+- `mental_dependencia_tabagismo`: 3
+- `perioperatorio_protocolo`: 2
+- `adolescente_violencia_protecao`: 2
+- `adolescente_generico`: 2
+- `mental_aps_acolhimento`: 2
+- `sp_metas_internacionais`: 2
+- `cme_processamento_conceito`: 1
+- `farmaco_pk_pd_vf`: 1
+- `adolescente_desenvolvimento`: 1

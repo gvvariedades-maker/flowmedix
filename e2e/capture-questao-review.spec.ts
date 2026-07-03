@@ -1,7 +1,9 @@
 /**
- * Captura questão-review — enunciado, feedback e 4 slides.
+ * Captura questão-review — enunciado, feedback e 4 slides NeuroSlides.
  *
  *   npm run capture:questao-review -- --slug=...
+ *   npm run capture:questao-review -- --lote=imunizacao-g07
+ *   npm run capture:questao-review -- --anchor-key=calendario_infantil --anchors-registry=data/catalog-migration/imunizacao-golden-anchors.json
  */
 import fs from 'fs';
 import path from 'path';
@@ -9,6 +11,7 @@ import { test, expect } from '@playwright/test';
 
 const slug = process.env.CAPTURE_QUESTAO_SLUG ?? '';
 const source = process.env.CAPTURE_QUESTAO_SOURCE ?? 'local';
+const viewportPreset = process.env.CAPTURE_QUESTAO_VIEWPORT ?? 'desktop';
 const OUT_DIR =
   process.env.CAPTURE_QUESTAO_OUT_DIR ??
   path.join(process.cwd(), 'artifacts/questao-review', slug || 'unknown');
@@ -32,8 +35,47 @@ const onboardingDismissScript = () => {
   window.localStorage.setItem('avant-estudo-reverso-welcome-seen', 'true');
 };
 
+async function answerAndEnterReverseStudy(page: import('@playwright/test').Page): Promise<void> {
+  const option = page.locator('button.btn-option-editorial, button.btn-option').filter({
+    hasText: /.+/,
+  });
+  const optionCount = await option.count();
+  if (optionCount === 0) return;
+
+  await option.first().click();
+  const confirm = page.getByRole('button', { name: /confirmar resposta/i });
+  await expect(confirm).toBeVisible({ timeout: 10_000 });
+  await confirm.click();
+
+  await expect(page.getByText(/você acertou|você errou/i)).toBeVisible({ timeout: 15_000 });
+
+  const activate = page.getByRole('button', { name: /ativar estudo reverso/i });
+  await expect(activate).toBeVisible({ timeout: 10_000 });
+  await activate.click();
+  await page.waitForTimeout(800);
+}
+
+async function captureReverseStudySlides(
+  page: import('@playwright/test').Page,
+  player: import('@playwright/test').Locator,
+): Promise<void> {
+  for (let i = 0; i < 4; i++) {
+    await player.screenshot({
+      path: path.join(OUT_DIR, `0${i + 3}-slide${i + 1}.png`),
+      type: 'png',
+    });
+
+    if (i < 3) {
+      const next = page.getByRole('button', { name: /^próximo$/i });
+      await expect(next).toBeVisible({ timeout: 10_000 });
+      await next.click();
+      await page.waitForTimeout(700);
+    }
+  }
+}
+
 test.describe('Captura questao-review', () => {
-  test.skip(!slug, 'Defina CAPTURE_QUESTAO_SLUG ou --slug no wrapper');
+  test.skip(!slug, 'Defina CAPTURE_QUESTAO_SLUG ou --slug/--lote no wrapper');
 
   test.beforeAll(() => {
     if (process.env.CI) {
@@ -49,7 +91,13 @@ test.describe('Captura questao-review', () => {
 
   test(`captura ${slug}`, async ({ page }) => {
     test.setTimeout(300_000);
-    await page.setViewportSize({ width: 1280, height: 900 });
+
+    const viewport =
+      viewportPreset === 'mobile-375'
+        ? { width: 375, height: 812 }
+        : { width: 1280, height: 900 };
+    await page.setViewportSize(viewport);
+
     const url = `/dev/questao-review?slug=${encodeURIComponent(slug)}&source=${encodeURIComponent(source)}`;
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 180_000 });
     await expect(page.getByTestId('questao-review-root')).toBeVisible({ timeout: 90_000 });
@@ -59,30 +107,8 @@ test.describe('Captura questao-review', () => {
     await page.waitForTimeout(800);
     await player.screenshot({ path: path.join(OUT_DIR, '01-enunciado.png'), type: 'png' });
 
-    const correctBtn = page.locator('button.btn-option-editorial, button.btn-option').filter({
-      hasText: /.+/,
-    });
-    const optionCount = await correctBtn.count();
-    if (optionCount > 0) {
-      await correctBtn.first().click();
-      const confirm = page.getByRole('button', { name: /confirmar|responder/i });
-      if (await confirm.isVisible({ timeout: 5000 }).catch(() => false)) {
-        await confirm.click();
-      }
-      await page.waitForTimeout(1200);
-      await player.screenshot({ path: path.join(OUT_DIR, '02-feedback.png'), type: 'png' });
-
-      for (let i = 0; i < 4; i++) {
-        const next = page.getByRole('button', { name: /próximo|continuar|avançar|tap/i }).first();
-        if (await next.isVisible({ timeout: 8000 }).catch(() => false)) {
-          await next.click();
-          await page.waitForTimeout(600);
-        }
-        await player.screenshot({
-          path: path.join(OUT_DIR, `0${i + 3}-slide${i + 1}.png`),
-          type: 'png',
-        });
-      }
-    }
+    await answerAndEnterReverseStudy(page);
+    await player.screenshot({ path: path.join(OUT_DIR, '02-feedback.png'), type: 'png' });
+    await captureReverseStudySlides(page, player);
   });
 });

@@ -10,6 +10,10 @@ import {
   lintNumericFactcheck,
   numericFactcheckHasErrors,
 } from '@/lib/catalogMigration/numericFactcheck';
+import {
+  lintRedeFrioFactcheck,
+  redeFrioFactcheckHasErrors,
+} from '@/lib/catalogMigration/redeFrioFactcheck';
 import { loteQuestionsDir } from '@/lib/catalogMigration/paths';
 
 export type AnchorSecondReviewStatus = 'pending' | 'pass' | 'fail';
@@ -116,6 +120,13 @@ export function runAnchorAutomatedChecks(
     }
   }
 
+  const redeFrio = lintRedeFrioFactcheck(payload as never);
+  if (redeFrioFactcheckHasErrors(redeFrio)) {
+    for (const i of redeFrio) {
+      issues.push(`[rede-frio] ${i.code}: ${i.message}`);
+    }
+  }
+
   return {
     readiness_ok: readiness.ready_100,
     alignment_ok: !slugAlignmentHasErrors(alignment),
@@ -123,7 +134,8 @@ export function runAnchorAutomatedChecks(
     automated_pass:
       readiness.ready_100 &&
       !slugAlignmentHasErrors(alignment) &&
-      !numericFactcheckHasErrors(numeric),
+      !numericFactcheckHasErrors(numeric) &&
+      !redeFrioFactcheckHasErrors(redeFrio),
     issues,
   };
 }
@@ -138,6 +150,27 @@ export function defaultChecklist(): AnchorReviewChecklistItem[] {
 
 export function anchorArtifactPath(lote: string): string {
   return `artifacts/anchor-review/${lote}.json`;
+}
+
+/** L6 — bloqueia apply em massa se âncora do lote não tiver segundo par de olhos. */
+export function requireAnchorReviewPass(
+  lote: string,
+  options: { skip?: boolean } = {},
+): { anchor_slug?: string; skipped: boolean } {
+  if (options.skip) return { skipped: true };
+
+  const meta = loadLoteMeta(lote);
+  if (!meta?.anchor_slug) return { skipped: true };
+
+  const review = meta.anchor_second_review;
+  if (review?.status !== 'pass') {
+    throw new Error(
+      `L6 anchor_second_review.status deve ser "pass" antes de apply (lote=${lote}, anchor=${meta.anchor_slug}). ` +
+        `Rode: npm run audit:anchor-review -- --lote=${lote} --record-pass --reviewer=<revisor>`,
+    );
+  }
+
+  return { anchor_slug: meta.anchor_slug, skipped: false };
 }
 
 export function writeAnchorReviewArtifact(

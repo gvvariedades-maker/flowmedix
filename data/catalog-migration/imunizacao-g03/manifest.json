@@ -1,0 +1,27 @@
+{
+  "lote": "imunizacao-g03",
+  "exported_at": "2026-07-02T06:53:16.656Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "amauc-enfermagem-imunizacao-1779572227744-8",
+      "cpcon-uepb-enfermagem-imunizacao-1779563996663-6",
+      "fau-unicentro-enfermagem-imunizacao-1779572180830-5",
+      "cotec-fadenor-enfermagem-imunizacao-1779564059030-4",
+      "ameosc-enfermagem-imunizacao-1779564006577-2",
+      "ameosc-enfermagem-imunizacao-1779572180830-9",
+      "agirh-enfermagem-imunizacao-1779564113760-0",
+      "avancasp-enfermagem-imunizacao-1777103222102-5"
+    ]
+  },
+  "slugs": [
+    "amauc-enfermagem-imunizacao-1779572227744-8",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-6",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-5",
+    "cotec-fadenor-enfermagem-imunizacao-1779564059030-4",
+    "ameosc-enfermagem-imunizacao-1779564006577-2",
+    "ameosc-enfermagem-imunizacao-1779572180830-9",
+    "agirh-enfermagem-imunizacao-1779564113760-0",
+    "avancasp-enfermagem-imunizacao-1777103222102-5"
+  ]
+}

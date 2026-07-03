@@ -2,6 +2,8 @@
 
 Referência completa para o **agent-avant** gerar JSONs de questões com design automático por assunto, template (cores) e layout_variant (didática dos slides).
 
+**Brief visual de variantes bespoke (antes de codar):** [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) · **Engenharia de moldes:** [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md).
+
 **Pacote premium completo** (runbook Fases 0–6): [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) § Runbook.
 
 ---
@@ -83,6 +85,19 @@ Cada questão no estudo reverso tem 4 slides, um de cada tipo:
 | | `cards` | Itens em cards separados |
 | | `compact` | Layout condensado, sem muito espaço |
 
+### 4.1 Moldes bespoke — Imunização (`meta.pedagogical_branch`)
+
+O fallback da linha **Imunização** na §6.5 é genérico; com `pedagogical_branch` declarado, o player usa `BRANCH_DESIGN_MAP`:
+
+| Ramo | concept_map | golden_rule | logic_flow | danger_zone |
+|------|-------------|-------------|------------|-------------|
+| `imunizacao_vf_intervalos` | `pni-rules-deck` | `pni-interval-matrix` | `pni-vf-juggle-tap` | `pni-trap-chips` |
+| `imunizacao_calendario` | `vaccine-timeline` | `pni-calendar-board` | `pni-calendar-elimination-tap` | `calendar-mismatch` |
+| `imunizacao_cadeia_frio` | `cold-chain-hub` | `pni-temperature-rail` | `pni-cold-chain-tap` | `temperature-mismatch` |
+| `imunizacao_generico` | `morphological` | `reference_table` | `vertical` / tap | `compare` |
+
+Detalhe visual e goldens: [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) · briefs em `artifacts/l3-brief-imunizacao-*.md`.
+
 ---
 
 ## 5. Templates de cores (t01–t15)
@@ -162,7 +177,9 @@ O `meta.subtopico` do JSON é usado para resolver automaticamente o design compl
 |---|---|---|---|---|---|
 | Epidemiologia e Vigilância Epidemiológica | lime | grid | compact | horizontal | compact |
 | Promoção à Saúde e Prevenção de Agravos | emerald | grid | compact | horizontal | compact |
-| Imunização | lime | morphological | compact | horizontal | compact |
+| Imunização | lime | morphological* | compact* | horizontal* | compact* |
+
+\*Fallback do subtópico — ver §4.1 ramos `imunizacao_*` quando `meta.pedagogical_branch` estiver declarado.
 | Atenção Básica / Saúde da Família | emerald | morphological | center | vertical | list |
 
 ### 6.6 Doenças Transmissíveis

@@ -1,0 +1,147 @@
+{
+  "subtopico": "Imunização",
+  "pacote_prefix": "imunizacao",
+  "status": "in_progress",
+  "handcraft_applied": 99,
+  "handcraft_applied_at": "2026-07-03",
+  "handcraft_ready_lotes": {
+    "imunizacao-g01": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-02",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g01-applied.json"
+    },
+    "imunizacao-g02": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-02",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g02-applied.json"
+    },
+    "imunizacao-g03": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-02",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g03-applied.json"
+    },
+    "imunizacao-g04": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-02",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g04-applied.json"
+    },
+    "imunizacao-g05": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-02",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g05-applied.json"
+    },
+    "imunizacao-g06": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-02",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g06-applied.json"
+    },
+    "imunizacao-g07": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-02",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g07-applied.json"
+    },
+    "imunizacao-g08": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-03",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g08-applied.json"
+    },
+    "imunizacao-g09": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-03",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g09-applied.json"
+    },
+    "imunizacao-g10": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-03",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g10-applied.json"
+    },
+    "imunizacao-g12": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-03",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g12-applied.json"
+    },
+    "imunizacao-g13": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-02",
+      "applied_at": "2026-07-03",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g13-applied.json"
+    }
+  },
+  "total_slugs_estimate": 575,
+  "updated_at": "2026-07-03",
+  "anchor_glob": "examples/questao-premium-*-imunizacao-*.json,examples/questao-premium-decorp-imunizacao-triplice-viral-via.json,examples/questao-premium-fundatec-meningococica-3meses.json,examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json,examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json,examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+  "golden_anchors_registry": "data/catalog-migration/imunizacao-golden-anchors.json",
+  "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/imunizacao.json",
+  "first_handcraft": {
+    "slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+    "golden_file": "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json",
+    "repair_lote": "imunizacao-decorp-triplice-viral-repair",
+    "applied_at": "2026-07-02",
+    "pedagogical_branch": "imunizacao_generico",
+    "family": "conceito",
+    "gabarito": "A"
+  },
+  "anchors_by_branch": {
+    "imunizacao_vf_intervalos": "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json",
+    "imunizacao_calendario_infantil": "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "imunizacao_calendario_catchup": "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+    "imunizacao_cadeia_frio": "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "imunizacao_generico": "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"
+  },
+  "second_handcraft": {
+    "slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+    "golden_file": "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+    "repair_lote": "imunizacao-admtec-adolescente-cartao-repair",
+    "applied_at": "2026-07-02",
+    "pedagogical_branch": "imunizacao_calendario",
+    "family": "conceito",
+    "gabarito": "C",
+    "avant_codigo": 3687
+  },
+  "third_handcraft": {
+    "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+    "golden_file": "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "repair_lote": "imunizacao-ameosc-cadeia-frio-repair",
+    "applied_at": "2026-07-02",
+    "pedagogical_branch": "imunizacao_cadeia_frio",
+    "family": "vf",
+    "gabarito": "C",
+    "avant_codigo": 4611
+  },
+  "playbook_audit": "artifacts/imunizacao-playbook-audit.md"
+}

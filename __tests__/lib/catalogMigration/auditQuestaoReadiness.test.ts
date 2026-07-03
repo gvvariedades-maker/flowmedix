@@ -84,6 +84,110 @@ describe('auditQuestaoReadiness', () => {
     expect(result.checks.some((c) => c.code === 'l2_stub')).toBe(true);
   });
 
+  it('golden Consulpam vias absorção oral passa ready_100', () => {
+    const file = path.join(
+      process.cwd(),
+      'examples',
+      'questao-premium-consulpam-vias-absorcao-oral.json',
+    );
+    const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const result = auditQuestaoReadiness(payload, {
+      slug: 'instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0',
+    });
+
+    expect(result.tier_pass.A1).toBe(true);
+    expect(result.tier_pass.A2).toBe(true);
+    expect(result.tier_pass.A3).toBe(true);
+    expect(result.ready_100).toBe(true);
+  });
+
+  it('golden IDECAN omeprazol EV passa ready_100', () => {
+    const file = path.join(
+      process.cwd(),
+      'examples',
+      'questao-premium-idecan-omeprazol-ev-ulcera.json',
+    );
+    const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const result = auditQuestaoReadiness(payload, {
+      slug: 'idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6',
+    });
+
+    expect(result.tier_pass.A1).toBe(true);
+    expect(result.tier_pass.A2).toBe(true);
+    expect(result.tier_pass.A3).toBe(true);
+    expect(result.ready_100).toBe(true);
+  });
+
+  it('golden DECORP imunização SCR via passa ready_100', () => {
+    const file = path.join(
+      process.cwd(),
+      'examples',
+      'questao-premium-decorp-imunizacao-triplice-viral-via.json',
+    );
+    const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const result = auditQuestaoReadiness(payload, {
+      slug: 'decorp-enfermagem-vias-de-administracao-1776056357082-0',
+    });
+
+    expect(result.tier_pass.A1).toBe(true);
+    expect(result.tier_pass.A2).toBe(true);
+    expect(result.tier_pass.A3).toBe(true);
+    expect(result.ready_100).toBe(true);
+  });
+
+  it('golden ADM&TEC adolescente cartão perdido passa ready_100', () => {
+    const file = path.join(
+      process.cwd(),
+      'examples',
+      'questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json',
+    );
+    const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const result = auditQuestaoReadiness(payload, {
+      slug: 'adm-tec-enfermagem-imunizacao-1779563986606-5',
+    });
+
+    expect(result.tier_pass.A1).toBe(true);
+    expect(result.tier_pass.A2).toBe(true);
+    expect(result.tier_pass.A3).toBe(true);
+    expect(result.ready_100).toBe(true);
+  });
+
+  it('golden AMEOSC cadeia de frio V/F passa ready_100', () => {
+    const file = path.join(
+      process.cwd(),
+      'examples',
+      'questao-premium-ameosc-imunizacao-vf-cadeia-frio.json',
+    );
+    const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const result = auditQuestaoReadiness(payload, {
+      slug: 'ameosc-enfermagem-processo-de-enfermagem-1780005791580-3',
+    });
+
+    expect(result.tier_pass.A1).toBe(true);
+    expect(result.tier_pass.A2).toBe(true);
+    expect(result.tier_pass.A3).toBe(true);
+    expect(result.ready_100).toBe(true);
+  });
+
+  it('golden perioperatória Fundatec EXCETO v3 passa ready_100 com strict-v2', () => {
+    const file = path.join(
+      process.cwd(),
+      'examples',
+      'questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json',
+    );
+    const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const result = auditQuestaoReadiness(payload, {
+      slug: 'fundatec-enfermagem-vias-de-administracao-1776056374837-7',
+      strictV2Pedagogy: true,
+    });
+
+    expect(result.tier_pass.A1).toBe(true);
+    expect(result.tier_pass.A2).toBe(true);
+    expect(result.tier_pass.A3).toBe(true);
+    expect(result.ready_100).toBe(true);
+    expect(result.checks.find((c) => c.code === 'golden_rule_gabarito_spoiler')).toBeUndefined();
+  });
+
   it('strictV2Pedagogy promove golden_rule_gabarito_spoiler a error', () => {
     const base = {
       meta: {

@@ -42,6 +42,17 @@ export type ContinuousContentHealth = SubtopicoContentHealth & {
 
 const OPEN_STATUSES = ['novo', 'triagem'] as const;
 
+/** Report só entra no health do subtópico quando metadata.meta_subtopico casa com o pacote. */
+export function reportMatchesSubtopico(
+  metaSubtopico: string | undefined | null,
+  subtopico: string,
+): boolean {
+  const metaSub = metaSubtopico?.toLowerCase().trim() ?? '';
+  if (!metaSub) return false;
+  const subLower = subtopico.toLowerCase();
+  return metaSub.includes(subLower) || subLower.includes(metaSub);
+}
+
 export async function fetchSessions30dBySubtopico(
   supabase: SupabaseClient,
   subtopico: string,
@@ -86,13 +97,11 @@ export async function fetchOpenReportsBySubtopico(
     return { byPriority, bySlug, total: 0 };
   }
 
-  const subLower = subtopico.toLowerCase();
   let total = 0;
 
   for (const row of data) {
     const meta = row.metadata as { meta_subtopico?: string } | null;
-    const metaSub = meta?.meta_subtopico?.toLowerCase() ?? '';
-    if (metaSub && !metaSub.includes(subLower) && !subLower.includes(metaSub)) {
+    if (!reportMatchesSubtopico(meta?.meta_subtopico, subtopico)) {
       continue;
     }
     const pri = String(row.priority ?? 'p2');
@@ -116,12 +125,9 @@ export async function fetchOpenReportsDetailed(
 
   if (error || !data) return [];
 
-  const subLower = subtopico.toLowerCase();
   return data.filter((row) => {
     const meta = row.metadata as { meta_subtopico?: string } | null;
-    const metaSub = meta?.meta_subtopico?.toLowerCase() ?? '';
-    if (!metaSub) return true;
-    return metaSub.includes(subLower) || subLower.includes(metaSub);
+    return reportMatchesSubtopico(meta?.meta_subtopico, subtopico);
   }) as ErrorReportRow[];
 }
 

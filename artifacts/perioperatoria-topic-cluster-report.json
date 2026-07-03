@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T15:49:27.373Z",
+  "generated_at": "2026-07-01T06:56:25.652Z",
   "subtopico": "Assistência Perioperatória (Inclui SRPA)",
   "lote": "perioperatoria-completo",
   "total": 68,
@@ -9,6 +9,8 @@
     "questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json",
     "questao-premium-idecan-srpa-curativo-cpd-ce.json",
     "questao-premium-avancasp-perioperatoria-pre-operatorio.json",
+    "questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
+    "questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json",
     "questao-premium-furb-perioperatoria-isc-classificacao.json",
     "questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json"
   ],
@@ -43,12 +45,12 @@
     },
     {
       "cluster": "Pós-operatório / cuidados",
-      "count": 14,
-      "pct": 20.6,
-      "slide_contract_failures": 14,
+      "count": 15,
+      "pct": 22.1,
+      "slide_contract_failures": 15,
       "instruction_artifacts": 0,
-      "has_golden": false,
-      "golden_file": null,
+      "has_golden": true,
+      "golden_file": "questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
       "sample_slugs": [
         "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
         "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
@@ -56,7 +58,7 @@
         "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
         "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3"
       ],
-      "decision": "novo_ramo"
+      "decision": "coberto"
     },
     {
       "cluster": "Protocolo / sequência",
@@ -64,8 +66,8 @@
       "pct": 19.1,
       "slide_contract_failures": 13,
       "instruction_artifacts": 0,
-      "has_golden": false,
-      "golden_file": null,
+      "has_golden": true,
+      "golden_file": "questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json",
       "sample_slugs": [
         "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
         "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
@@ -73,7 +75,7 @@
         "ibade-enfermagem-processo-de-enfermagem-1780005128081-9",
         "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0"
       ],
-      "decision": "novo_ramo"
+      "decision": "coberto"
     },
     {
       "cluster": "Certo ou errado",
@@ -123,20 +125,6 @@
       "decision": "coberto"
     },
     {
-      "cluster": "Fases perioperatórias",
-      "count": 2,
-      "pct": 2.9,
-      "slide_contract_failures": 2,
-      "instruction_artifacts": 0,
-      "has_golden": false,
-      "golden_file": null,
-      "sample_slugs": [
-        "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
-        "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0"
-      ],
-      "decision": "cauda_longa"
-    },
-    {
       "cluster": "SRPA / atribuição do técnico",
       "count": 1,
       "pct": 1.5,
@@ -161,6 +149,19 @@
         "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2"
       ],
       "decision": "coberto"
+    },
+    {
+      "cluster": "Fases perioperatórias",
+      "count": 1,
+      "pct": 1.5,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0"
+      ],
+      "decision": "cauda_longa"
     },
     {
       "cluster": "Centro cirúrgico / asséptica",
@@ -658,7 +659,7 @@
       "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
       "banca": "IDECAN",
       "family": "certo_errado",
-      "builder_topic": "SRPA / CPD",
+      "builder_topic": "Pós-operatório",
       "pedagogical_cluster": "SRPA / CPD e atribuição (C/E)",
       "has_instruction_artifacts": false,
       "slide_contract_issues": [],
@@ -865,7 +866,7 @@
       "banca": "Instituto Consulpam",
       "family": "conceito",
       "builder_topic": "Fases perioperatórias",
-      "pedagogical_cluster": "Fases perioperatórias",
+      "pedagogical_cluster": "Pós-operatório / cuidados",
       "has_instruction_artifacts": false,
       "slide_contract_issues": [
         "danger_duplicate_justifications"

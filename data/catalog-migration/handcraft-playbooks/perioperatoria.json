@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+  "pacote_prefix": "perioperatoria",
+  "scope_default": "subtopico_repair_clinical_v3",
+  "anchor_glob": "examples/questao-premium-*-perioperatoria-*.json",
+  "clinical_depth_v3_registry": "data/catalog-migration/clinical-depth-v3-anchors.json",
+  "handcraft_meta": "data/catalog-migration/perioperatoria-completo/handcraft-meta.json",
+  "repair_lote_pattern": "perioperatoria-repair-v3-g{NN}",
+  "slug_selection": "Cluster pós-operatório/EXCETO sem v3; audit --strict-v2-pedagogy com warn/error; ou Slug: explícito do usuário",
+  "clusters": [
+    "Pré-operatório / preparo",
+    "Pós-operatório / cuidados (âncora v3 Fundatec EXCETO)",
+    "Protocolo / sequência",
+    "Certo ou errado",
+    "ISC / classificação e prevenção",
+    "SRPA / atribuição do técnico",
+    "SRPA / Aldrete e alta",
+    "Cirurgia segura / classificação ferida CDC"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "perioperatorio_pos_operatorio",
+      "when": "Pós-operatório, SRPA, anestesia regional, bloqueio, EXCETO de conduta, analgesia, retenção urinária",
+      "mold": "genérico morphological · reference_table · vertical · compare",
+      "anchors": [
+        "examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
+        "examples/questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json"
+      ]
+    },
+    {
+      "id": "perioperatorio_pre_operatorio",
+      "when": "Pré-operatório, preparo, jejum, tricotomia, orientação",
+      "mold": "genérico",
+      "anchors": ["examples/questao-premium-avancasp-perioperatoria-pre-operatorio.json"]
+    },
+    {
+      "id": "perioperatorio_protocolo",
+      "when": "Protocolo, sequência, checklist, cirurgia segura, CDC",
+      "mold": "genérico",
+      "anchors": ["examples/questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json"]
+    },
+    {
+      "id": "perioperatorio_isc",
+      "when": "ISC, infecção de sítio cirúrgico, classificação de ferida",
+      "mold": "genérico",
+      "anchors": ["examples/questao-premium-furb-perioperatoria-isc-classificacao.json"]
+    },
+    {
+      "id": "perioperatorio_vf",
+      "when": "Certo ou errado, I/II/III, assertivas C/E",
+      "mold": "genérico",
+      "anchors": ["examples/questao-premium-idecan-srpa-curativo-cpd-ce.json"]
+    },
+    {
+      "id": "perioperatorio_generico",
+      "when": "Demais — sem fit claro",
+      "mold": "genérico",
+      "anchors": ["examples/questao-premium-idecan-perioperatoria-aldrete-srpa.json"]
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "preflight": "npm run catalog:preflight -- --lote=<lote> --strict-v2-pedagogy"
+  },
+  "modes": {
+    "subtopico_repair_clinical_v3": {
+      "label": "Repair clinical-depth-v3 — slugs do cluster pós-operatório e âncoras pré-v3",
+      "batch_size": 8,
+      "pilot_slugs": [
+        "fundatec-enfermagem-vias-de-administracao-1776056374837-7"
+      ],
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run"
+      ]
+    },
+    "single_slug": {
+      "label": "Uma questão — reparo v3 (Slug:)",
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
+      ]
+    }
+  }
+}

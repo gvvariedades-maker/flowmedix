@@ -1,0 +1,14 @@
+{
+  "lote": "imunizacao-g04",
+  "subtopico": "Imunização",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-02",
+  "handcraft_by": "composer-2.5",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 3,
+    "imunizacao_generico": 5
+  },
+  "priority": "calendário infantil/adolescente (3) + SIS/soros/técnica/INCORRETA (5)",
+  "notes": "Piloto g04 — SIS atraso vacinal, colostro passiva, MenACWY 11-14, pentavalente 2m, malária INCORRETA, deltóide, soros V/F, calendário indígena"
+}
