@@ -27,19 +27,17 @@ export function repairGoldenV2SpoilerInPayload(
 
   for (const slide of slides) {
     if (slide.type === 'golden_rule' && Array.isArray(slide.rows)) {
-      const before = slide.rows.length;
-      slide.rows = (slide.rows as Record<string, unknown>[]).filter(
-        (row) => !GABARITO_LABEL_RE.test(String(row.label ?? '')),
-      );
-      removedGoldenRows += before - slide.rows.length;
+      const rows = slide.rows as Record<string, unknown>[];
+      const before = rows.length;
+      slide.rows = rows.filter((row) => !GABARITO_LABEL_RE.test(String(row.label ?? '')));
+      removedGoldenRows += before - (slide.rows as unknown[]).length;
     }
 
     if (slide.type === 'concept_map' && Array.isArray(slide.items)) {
-      const before = slide.items.length;
-      slide.items = (slide.items as Record<string, unknown>[]).filter(
-        (item) => !GABARITO_LABEL_RE.test(String(item.label ?? '')),
-      );
-      removedConceptItems += before - slide.items.length;
+      const items = slide.items as Record<string, unknown>[];
+      const before = items.length;
+      slide.items = items.filter((item) => !GABARITO_LABEL_RE.test(String(item.label ?? '')));
+      removedConceptItems += before - (slide.items as unknown[]).length;
     }
   }
 

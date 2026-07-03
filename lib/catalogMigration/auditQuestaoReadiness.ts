@@ -307,7 +307,7 @@ export function auditQuestaoReadiness(
     }
 
     if (subtopico === 'Imunização') {
-      for (const issue of lintImunizacaoPedagogy(payload, {
+      for (const issue of lintImunizacaoPedagogy(payload as never, {
         strictV2: strictV2Pedagogy,
         strictV3: strictV3Pedagogy,
       })) {

@@ -45,9 +45,15 @@ describe('pipelinePlaybook', () => {
   });
 
   it('buildPipelineBrief sem pacote sugere fase0', () => {
+    const brief = buildPipelineBrief('Mobilização e Posicionamento do Paciente');
+    expect(brief).toContain('Fase 0');
+    expect(brief).toContain('audit:subtopico-inventory');
+  });
+
+  it('buildPipelineBrief Imunização em andamento sugere fase1', () => {
     const brief = buildPipelineBrief('Imunização');
-    expect(brief).toContain('fase0');
-    expect(brief).toContain('Classify: Imunização');
+    expect(brief).toContain('Fase 1');
+    expect(brief).toContain('Handcraft golden-v1');
   });
 });
 

@@ -23,6 +23,7 @@ export type PreflightReport = {
   generated_at: string;
   strict: boolean;
   strict_v2_pedagogy: boolean;
+  strict_v3_pedagogy: boolean;
   total: number;
   passed: number;
   failed: number;

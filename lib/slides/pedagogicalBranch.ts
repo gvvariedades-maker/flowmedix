@@ -880,17 +880,22 @@ function inferFarmacoBranch(corpus: string, familyId?: FamilyId): PedagogicalBra
 }
 
 function inferImunizacaoBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
-  const isVf =
-    familyId === 'vf' ||
-    (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, IMUNIZACAO_VF) >= 1);
-  if (isVf) return 'imunizacao_vf_intervalos';
-
   const isExceto =
     countPatternMatches(corpus, IMUNIZACAO_EXCETO) >= 1 ||
     (familyId === 'certo_errado' && /\b(exceto|incorret[oa])\b/i.test(corpus));
   if (isExceto) return 'imunizacao_exceto';
 
-  if (countPatternMatches(corpus, IMUNIZACAO_CADEIA_FRIO) > 0) {
+  const cadeiaScore = countPatternMatches(corpus, IMUNIZACAO_CADEIA_FRIO);
+  if (cadeiaScore >= 2 || /cadeia de frio|rede de frio/i.test(corpus)) {
+    return 'imunizacao_cadeia_frio';
+  }
+
+  const isVf =
+    familyId === 'vf' ||
+    (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, IMUNIZACAO_VF) >= 1);
+  if (isVf) return 'imunizacao_vf_intervalos';
+
+  if (cadeiaScore > 0) {
     return 'imunizacao_cadeia_frio';
   }
 
@@ -906,6 +911,13 @@ function inferViaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchI
     familyId === 'vf' ||
     (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, VIA_VF) >= 1);
   if (isVf) return 'via_vf_absorcao';
+
+  if (
+    countPatternMatches(corpus, [/absor[cç][aã]o|biodisponibilidade/i]) > 0 &&
+    countPatternMatches(corpus, [/via\b|oral|intestinal|parenteral|sublingual|retal|est[oô]mago/i]) > 0
+  ) {
+    return 'via_vf_absorcao';
+  }
 
   if (countPatternMatches(corpus, VIA_TECNICA) > 0) {
     return 'via_tecnica_admin';

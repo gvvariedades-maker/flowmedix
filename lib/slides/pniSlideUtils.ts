@@ -355,7 +355,7 @@ export function extractPniOptionLetter(text: string): string | null {
 
 export function parsePniCalendarStep(step: string, index: number): ParsedPniCalendarStep {
   const lower = step.toLowerCase();
-  const letter = extractPniOptionLetter(step);
+  const letter = extractPniOptionLetter(step) ?? undefined;
   const months = extractPniMonths(step);
 
   if (/^cen[aá]rio:/i.test(step) || /adolescente|cart[aã]o perdido|sem comprova/i.test(lower)) {
@@ -475,7 +475,7 @@ export interface ParsedPniColdChainStep {
 
 export function parsePniColdChainStep(step: string, index: number): ParsedPniColdChainStep {
   const lower = step.toLowerCase();
-  const letter = extractPniOptionLetter(step);
+  const letter = extractPniOptionLetter(step) ?? undefined;
   const markers = extractTempMarkers(step);
 
   if (/decore|recuperar|temperatura positiva|2\s*°c.*8/i.test(lower)) {

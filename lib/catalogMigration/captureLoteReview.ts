@@ -37,6 +37,16 @@ function firstQuestionSlug(lote: string): string | null {
   return files[0]!.replace(/\.json$/, '');
 }
 
+function firstCatalogSlug(lote: string): string | null {
+  const catalogPath = resolve(CATALOG_MIGRATION_ROOT, lote, 'catalog.json');
+  if (!existsSync(catalogPath)) return null;
+  const catalog = JSON.parse(readFileSync(catalogPath, 'utf8')) as {
+    entries?: { modulo_slug?: string }[];
+  };
+  const slug = catalog.entries?.[0]?.modulo_slug?.trim();
+  return slug || null;
+}
+
 /** Resolve slug para capture L4 a partir do lote (âncora explícita → 1º JSON). */
 export function resolveLoteReviewSlug(lote: string): LoteReviewTarget {
   const meta = readLoteMeta(lote);
@@ -53,7 +63,12 @@ export function resolveLoteReviewSlug(lote: string): LoteReviewTarget {
     return { slug: first, source: 'local', reason: 'primeiro JSON do lote' };
   }
 
-  throw new Error(`Lote sem questions/ ou anchor_slug: ${lote}`);
+  const catalogSlug = firstCatalogSlug(lote);
+  if (catalogSlug) {
+    return { slug: catalogSlug, source: 'local', reason: 'primeiro slug do catalog.json' };
+  }
+
+  throw new Error(`Lote sem questions/, catalog.json ou anchor_slug: ${lote}`);
 }
 
 /** Resolve slug a partir de chave em *-golden-anchors.json (ex.: calendario_infantil). */

@@ -88,7 +88,7 @@ export async function screenshotSlidePanels(
   page: Page,
   branch: string,
   outDir: string,
-  viewportLabel: 'desktop' | 'mobile-375',
+  viewportLabel: 'desktop' | 'mobile-375' | 'mobile-375-dod',
 ): Promise<void> {
   fs.mkdirSync(outDir, { recursive: true });
   for (let i = 1; i <= SLIDE_COUNT; i++) {

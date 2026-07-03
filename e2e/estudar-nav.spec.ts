@@ -290,7 +290,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     await expectNavButtonsReady(page);
 
     await Promise.all([
-      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
+      page.waitForURL((url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
         timeout: 15_000,
       }),
       clicarProximaQuestao(page),
@@ -308,7 +308,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
 
     const dotQuestao2 = page.getByRole('button', { name: 'Questão 2', exact: true });
     await Promise.all([
-      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
+      page.waitForURL((url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
         timeout: 15_000,
       }),
       dotQuestao2.click(),
@@ -354,11 +354,11 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
 
     // Soft-nav usa replaceState: voltar retorna à vitrine (entrada anterior no histórico).
     await page.goBack();
-    await page.waitForURL((url) => isVitrineUrl(url, { page: '2' }), { timeout: 15_000 });
+    await page.waitForURL((url) => isVitrineUrl(url.href, { page: '2' }), { timeout: 15_000 });
     await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA_PAGE2)).toBeVisible({ timeout: 15_000 });
 
     await page.goForward();
-    await page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
+    await page.waitForURL((url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
       timeout: 15_000,
     });
     await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
@@ -382,7 +382,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
 
     await page.getByRole('button', { name: /Voltar para Vitrine/i }).click();
-    await page.waitForURL((url) => isVitrineUrl(url, { page: '2' }), { timeout: 15_000 });
+    await page.waitForURL((url) => isVitrineUrl(url.href, { page: '2' }), { timeout: 15_000 });
     await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA_PAGE2)).toBeVisible({ timeout: 15_000 });
     await waitVitrineListReady(page);
     await expect(page.getByText(/Questão E2E 1:/)).not.toBeVisible();
@@ -399,7 +399,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     await expectNavButtonsReady(page);
 
     await Promise.all([
-      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
+      page.waitForURL((url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
         timeout: 15_000,
       }),
       clicarProximaQuestao(page),
@@ -409,7 +409,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     await expectNavButtonsReady(page, { requireProxima: false });
 
     await page.getByRole('button', { name: 'Vitrine' }).click();
-    await page.waitForURL((url) => isVitrineUrl(url, { page: '2' }), { timeout: 15_000 });
+    await page.waitForURL((url) => isVitrineUrl(url.href, { page: '2' }), { timeout: 15_000 });
   });
 });
 

@@ -13,10 +13,10 @@ describe('captureLoteReview', () => {
     expect(target.reason).toBe('lote-meta.anchor_slug');
   });
 
-  it('resolveLoteReviewSlug usa primeiro JSON quando lote-meta não tem anchor', () => {
+  it('resolveLoteReviewSlug usa catalog.json quando questions/ está ausente (gitignore CI)', () => {
     const target = resolveLoteReviewSlug('imunizacao-g07');
     expect(target.slug).toBe('amauc-enfermagem-processo-de-enfermagem-1780004982901-4');
-    expect(target.reason).toBe('primeiro JSON do lote');
+    expect(['primeiro JSON do lote', 'primeiro slug do catalog.json']).toContain(target.reason);
   });
 
   it('resolveAnchorKeyReviewSlug lê golden-anchors registry', () => {
