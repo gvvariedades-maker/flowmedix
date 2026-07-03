@@ -93,6 +93,8 @@
     "cluster:seguranca-do-paciente": "tsx scripts/cluster-seguranca-do-paciente-topics.ts",
     "cluster:farmacodinamica": "tsx scripts/cluster-farmacodinamica-topics.ts",
     "cluster:imunizacao": "tsx scripts/cluster-imunizacao-topics.ts",
+    "cluster:vias-de-administracao": "tsx scripts/cluster-vias-de-administracao-topics.ts",
+    "plan:vias-de-administracao-g01": "tsx scripts/plan-vias-de-administracao-g01.ts",
     "plan:imunizacao-g08": "tsx scripts/plan-imunizacao-g08.ts",
     "plan:imunizacao-g09": "tsx scripts/plan-imunizacao-g09.ts",
     "plan:imunizacao-g10": "tsx scripts/plan-imunizacao-g10.ts",

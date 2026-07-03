@@ -17,6 +17,13 @@
     "family": "conceito",
     "gabarito": "D"
   },
+  "next_lote": {
+    "id": "vias-de-administracao-g01",
+    "status": "planned",
+    "plan_command": "npm run plan:vias-de-administracao-g01",
+    "pedagogical_branch_target": "via_vf_absorcao",
+    "slug_count": 8
+  },
   "anchors_by_branch": {
     "via_vf_absorcao": "examples/questao-premium-consulpam-vias-absorcao-oral.json",
     "via_tecnica_admin": "examples/questao-premium-cpcon-vias-im-vf.json",
