@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-29T23:15:25.759Z",
+  "generated_at": "2026-07-04T19:19:02.249Z",
   "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
   "pacote_prefix": "respiratorio-cronico",
-  "production_status_before": "none",
+  "production_status_before": "production_ready",
   "technical_ready": true,
   "production_ready": true,
   "can_sell": true,
@@ -14,7 +14,7 @@
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 428
+    "sessions_30d": 368
   },
   "layers": {
     "L1": {
@@ -31,7 +31,7 @@
     },
     "L3": {
       "pass": true,
-      "detail": "L3 mold audit 10/10 OK (audit-respiratorio-l3-molds.ts); branches respiratorio_* bespoke"
+      "detail": "L3 Respiratório — 3 branches ativos (respiratorio_dpoc_oxigenio + respiratorio_tecnica_inalador + respiratorio_vf_asma_dpoc); player /dev/slide-mold-review"
     },
     "L4": {
       "pass": true,
@@ -56,33 +56,24 @@
   ],
   "content_health": {
     "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-    "sessions_30d": 428,
+    "sessions_30d": 368,
     "open_reports": {
       "p0": 0,
       "p1": 0,
-      "p2": 2,
+      "p2": 0,
       "p3": 0,
-      "total": 2
+      "total": 0
     },
-    "report_rate_pct": 0.47,
-    "top_reported_slugs": [
-      {
-        "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
-        "count": 1
-      },
-      {
-        "slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
-        "count": 1
-      }
-    ],
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
     "slo": {
       "open_p0": 0,
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 428,
+      "sessions_30d": 368,
       "open_p1": 0,
-      "report_rate_pct": 0.47
+      "report_rate_pct": 0
     },
     "pass": true,
     "blockers": []

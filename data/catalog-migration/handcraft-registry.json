@@ -462,20 +462,20 @@
       "manifest": "data/catalog-migration/respiratorio-cronico-completo/manifest.json",
       "handcraft_meta": "data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json",
       "readme": null,
-      "cluster_command": null,
-      "cluster_report": null,
+      "cluster_command": "cluster:respiratorio-cronico",
+      "cluster_report": "artifacts/respiratorio-cronico-topic-cluster-report.json",
       "lote_pattern": "respiratorio-cronico-g{NN}",
       "lote_size": 8,
       "status": "applied",
-      "total_slugs": 10,
-      "handcraft_applied": 10,
+      "total_slugs": 9,
+      "handcraft_applied": 9,
       "anchor_glob": "examples/questao-premium-*-respiratorio-*.json",
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/respiratorio-cronico.json",
       "guideline": "lib/guidelines/respiratorioCronico.ts",
       "production_status": "production_ready",
       "quality": {
         "technical_ready_at": "2026-06-29",
-        "production_ready_at": "2026-06-29",
+        "production_ready_at": "2026-07-04",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -495,9 +495,9 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-29T23:16:33.341Z",
+          "last_audit_at": "2026-07-04T19:19:02.251Z",
           "last_audit_pass": true,
-          "health_streak_days": 1,
+          "health_streak_days": 2,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }

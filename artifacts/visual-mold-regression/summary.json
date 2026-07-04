@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-04T08:51:36.280Z",
-  "pacote_prefix": "farmacodinamica-e-farmacocinetica",
+  "generated_at": "2026-07-04T19:20:00.000Z",
+  "pacote_prefix": "respiratorio-cronico",
   "pass": true,
-  "detail": "L3 Farmaco — 3 branches (farmaco_pk_pd_vf bespoke ADME + farmaco_clinico_protocolo + farmaco_generico); player /dev/slide-mold-review",
+  "detail": "L3 Respiratório — 3 branches ativos (respiratorio_dpoc_oxigenio + respiratorio_tecnica_inalador + respiratorio_vf_asma_dpoc); player /dev/slide-mold-review",
   "branches": [
-    "farmaco_pk_pd_vf",
-    "farmaco_clinico_protocolo",
-    "farmaco_generico"
+    "respiratorio_dpoc_oxigenio",
+    "respiratorio_tecnica_inalador",
+    "respiratorio_vf_asma_dpoc"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T23:09:17.939Z",
+  "generated_at": "2026-07-04T19:19:15.627Z",
   "pacote_prefix": "respiratorio-cronico",
   "lotes": [
     {
@@ -8,8 +8,8 @@
     }
   ],
   "union_count": 9,
-  "registry_total_slugs": 10,
-  "match": false,
+  "registry_total_slugs": null,
+  "match": true,
   "slugs": [
     "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
     "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",

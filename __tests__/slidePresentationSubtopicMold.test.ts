@@ -1531,7 +1531,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('respiratorio-spo2-reference-board');
   });
 
-  it('Doenças Respiratórias Crônicas: logic_flow respiratorio-vf-juggle-tap no molde', () => {
+  it('Doenças Respiratórias Crônicas: logic_flow respiratorio-vf-juggle-tap no molde VF', () => {
     const result = resolveSlidePresentation(
       {
         type: 'logic_flow',
@@ -1543,9 +1543,33 @@ describe('slidePresentation — molde por subtópico', () => {
         questionSlug: 'cpcon-dpoc-1',
         slideIndex: 2,
         familyId: 'vf',
+        pedagogicalBranch: 'respiratorio_vf_asma_dpoc',
       },
     );
     expect(result.layoutVariant).toBe('respiratorio-vf-juggle-tap');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Doenças Respiratórias Crônicas: ramo dpoc_oxigenio → logic_flow cards', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Doenças Respiratórias Crônicas (Asma, DPOC)' },
+        steps: [
+          'I: O₂ titulado na DPOC → verdadeira.',
+          'III: SpO₂ 98–100% sempre → falsa.',
+          'Letra B.',
+        ],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-dpoc-1',
+        slideIndex: 2,
+        familyId: 'protocolo',
+        pedagogicalBranch: 'respiratorio_dpoc_oxigenio',
+      },
+    );
+    expect(result.layoutVariant).toBe('cards');
     expect(result.revealMode).toBe('tap');
   });
 
@@ -1566,6 +1590,7 @@ describe('slidePresentation — molde por subtópico', () => {
       {
         questionSlug: 'cpcon-dpoc-1',
         familyId: 'vf',
+        pedagogicalBranch: 'respiratorio_dpoc_oxigenio',
       },
     );
     expect(result.layoutVariant).toBe('respiratorio-spo2-trap-arena');

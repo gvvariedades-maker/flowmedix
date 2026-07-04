@@ -1,0 +1,294 @@
+{
+  "generated_at": "2026-07-04T18:48:30.515Z",
+  "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "lote": "respiratorio-cronico-completo",
+  "total": 13,
+  "strong_threshold": 5,
+  "drift_total": 0,
+  "branch_totals": {
+    "respiratorio_dpoc_oxigenio": 6,
+    "respiratorio_generico": 3,
+    "respiratorio_tecnica_inalador": 3,
+    "respiratorio_vf_asma_dpoc": 1
+  },
+  "goldens_needed": 0,
+  "cluster_decisions": [
+    {
+      "cluster": "Oximetria de pulso / SpO₂",
+      "count": 3,
+      "pct": 23.1,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "dominant_branch": "respiratorio_dpoc_oxigenio",
+      "branch_counts": {
+        "respiratorio_dpoc_oxigenio": 3
+      },
+      "sample_slugs": [
+        "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+        "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1"
+      ],
+      "decision": "absorver",
+      "l3_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena"
+    },
+    {
+      "cluster": "DPOC na UBS — papel do técnico",
+      "count": 2,
+      "pct": 15.4,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "dominant_branch": "respiratorio_generico",
+      "branch_counts": {
+        "respiratorio_generico": 1,
+        "respiratorio_tecnica_inalador": 1
+      },
+      "sample_slugs": [
+        "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+        "igecap-enfermagem-processo-de-enfermagem-1780004452857-3"
+      ],
+      "decision": "cauda_longa",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "O₂ titulado na DPOC (APS/emergência)",
+      "count": 2,
+      "pct": 15.4,
+      "drift_slugs": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json",
+      "dominant_branch": "respiratorio_dpoc_oxigenio",
+      "branch_counts": {
+        "respiratorio_dpoc_oxigenio": 2
+      },
+      "sample_slugs": [
+        "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+        "univali-enfermagem-processo-de-enfermagem-1780010600919-9"
+      ],
+      "decision": "coberto",
+      "l3_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena"
+    },
+    {
+      "cluster": "Respiratório crônico — conceito geral",
+      "count": 1,
+      "pct": 7.7,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "dominant_branch": "respiratorio_generico",
+      "branch_counts": {
+        "respiratorio_generico": 1
+      },
+      "sample_slugs": [
+        "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4"
+      ],
+      "decision": "cauda_longa",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Outros / tema misto",
+      "count": 1,
+      "pct": 7.7,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "dominant_branch": "respiratorio_generico",
+      "branch_counts": {
+        "respiratorio_generico": 1
+      },
+      "sample_slugs": [
+        "idcap-enfermagem-exames-complementares-1779563668619-8"
+      ],
+      "decision": "cauda_longa",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Espaçador e inalador — técnica MDI",
+      "count": 1,
+      "pct": 7.7,
+      "drift_slugs": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-idecan-respiratorio-espacador-inalador-conceito.json",
+      "dominant_branch": "respiratorio_tecnica_inalador",
+      "branch_counts": {
+        "respiratorio_tecnica_inalador": 1
+      },
+      "sample_slugs": [
+        "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7"
+      ],
+      "decision": "coberto",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Espirometria VEF1/CVF",
+      "count": 1,
+      "pct": 7.7,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "dominant_branch": "respiratorio_dpoc_oxigenio",
+      "branch_counts": {
+        "respiratorio_dpoc_oxigenio": 1
+      },
+      "sample_slugs": [
+        "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6"
+      ],
+      "decision": "cauda_longa",
+      "l3_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena"
+    },
+    {
+      "cluster": "Semiologia pediátrica — sibilos",
+      "count": 1,
+      "pct": 7.7,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "dominant_branch": "respiratorio_tecnica_inalador",
+      "branch_counts": {
+        "respiratorio_tecnica_inalador": 1
+      },
+      "sample_slugs": [
+        "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6"
+      ],
+      "decision": "cauda_longa",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Semiologia respiratória V/F",
+      "count": 1,
+      "pct": 7.7,
+      "drift_slugs": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf.json",
+      "dominant_branch": "respiratorio_vf_asma_dpoc",
+      "branch_counts": {
+        "respiratorio_vf_asma_dpoc": 1
+      },
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1"
+      ],
+      "decision": "coberto",
+      "l3_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena"
+    }
+  ],
+  "rows": [
+    {
+      "slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "family": "conceito",
+      "topic": "Oximetria de pulso / SpO₂",
+      "branch": "respiratorio_dpoc_oxigenio",
+      "declared_branch": "respiratorio_dpoc_oxigenio",
+      "taxonomy_drift": false,
+      "instruction_preview": "A monitorização dos sinais clínicos do paciente é uma forma de se apropriar de suas condições. Neste"
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "family": "protocolo",
+      "topic": "Oximetria de pulso / SpO₂",
+      "branch": "respiratorio_dpoc_oxigenio",
+      "declared_branch": "respiratorio_dpoc_oxigenio",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente, fumante de longa data, é atendido em serviço de emergência, com dispneia, tosse e sibilos,"
+    },
+    {
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "family": "protocolo",
+      "topic": "Oximetria de pulso / SpO₂",
+      "branch": "respiratorio_dpoc_oxigenio",
+      "declared_branch": "respiratorio_dpoc_oxigenio",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em uma Unidade Básica de Saúde organizada pela Estratégia de Saúde da Família, um usuário com Doença"
+    },
+    {
+      "slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
+      "family": "conceito",
+      "topic": "Respiratório crônico — conceito geral",
+      "branch": "respiratorio_generico",
+      "declared_branch": "respiratorio_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A combinação bicrômica considerada coloração universal em histologia e histopatologia é a hematoxili"
+    },
+    {
+      "slug": "idcap-enfermagem-exames-complementares-1779563668619-8",
+      "family": "conceito",
+      "topic": "Outros / tema misto",
+      "branch": "respiratorio_generico",
+      "declared_branch": "respiratorio_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Ao Enfermeiro com atuação intervencionista cardiovascular, cabe conhecer as principais arritmias car"
+    },
+    {
+      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "family": "conceito",
+      "topic": "Espaçador e inalador — técnica MDI",
+      "branch": "respiratorio_tecnica_inalador",
+      "declared_branch": "respiratorio_tecnica_inalador",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em um paciente com asma grave em uso de broncodilatadores inalatórios e suplementação de oxigênio, a"
+    },
+    {
+      "slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+      "family": "conceito",
+      "topic": "DPOC na UBS — papel do técnico",
+      "branch": "respiratorio_generico",
+      "declared_branch": "respiratorio_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Analise as afirmativas a seguir sobre doenças crônicas: I. A hipertensão, comumente chamada de press"
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "family": "protocolo",
+      "topic": "DPOC na UBS — papel do técnico",
+      "branch": "respiratorio_tecnica_inalador",
+      "declared_branch": "respiratorio_tecnica_inalador",
+      "taxonomy_drift": false,
+      "instruction_preview": "No âmbito da Atenção Básica à Saúde, a assistência ao usuário com asma exige do técnico de enfermage"
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "family": "protocolo",
+      "topic": "O₂ titulado na DPOC (APS/emergência)",
+      "branch": "respiratorio_dpoc_oxigenio",
+      "declared_branch": "respiratorio_dpoc_oxigenio",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente de 72 anos, com diagnóstico de Doença Pulmonar Obstrutiva Crônica (DPOC) exacerbada, é a"
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "family": "protocolo",
+      "topic": "Espirometria VEF1/CVF",
+      "branch": "respiratorio_dpoc_oxigenio",
+      "declared_branch": "respiratorio_dpoc_oxigenio",
+      "taxonomy_drift": false,
+      "instruction_preview": "A doença pulmonar obstrutiva crônica (DPOC) caracterizase por limitação crônica ao fluxo aéreo. Na e"
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "family": "conceito",
+      "topic": "Semiologia pediátrica — sibilos",
+      "branch": "respiratorio_tecnica_inalador",
+      "declared_branch": "respiratorio_tecnica_inalador",
+      "taxonomy_drift": false,
+      "instruction_preview": "Nas crianças com asma a anormalidade observada com mais frequência é:"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "family": "conceito",
+      "topic": "Semiologia respiratória V/F",
+      "branch": "respiratorio_vf_asma_dpoc",
+      "declared_branch": "respiratorio_vf_asma_dpoc",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considerando-se BARROS, sobre as manifestações das doenças respiratórias e a anamnese e exame físico"
+    },
+    {
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "family": "conceito",
+      "topic": "O₂ titulado na DPOC (APS/emergência)",
+      "branch": "respiratorio_dpoc_oxigenio",
+      "declared_branch": "respiratorio_dpoc_oxigenio",
+      "taxonomy_drift": false,
+      "instruction_preview": "A doença pulmonar obstrutiva crônica (DPOC) é uma condição crônica que exige monitoramento contínuo "
+    }
+  ]
+}

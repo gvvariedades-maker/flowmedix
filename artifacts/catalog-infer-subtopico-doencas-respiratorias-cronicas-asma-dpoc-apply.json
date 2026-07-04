@@ -1,0 +1,148 @@
+{
+  "mode": "infer",
+  "bucket": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "min_confidence_apply": 0.85,
+  "limit": 50,
+  "inference_source": "agent",
+  "summary": {
+    "scanned": 13,
+    "inferred": 13,
+    "errors": 0,
+    "keep_current": 9,
+    "same_subtopico": 9,
+    "applicable": 4
+  },
+  "proposals": [
+    {
+      "modulo_slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Revisão agente: oximetria como medida de monitorização — slug e enunciado ancoram Sinais Vitais, não doença crônica.",
+      "applicable": true,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "Paciente DPOC em emergência — permanece no bucket respiratório crônico (ramo dpoc_oxigenio).",
+      "applicable": false,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "DPOC na UBS — tema central do bucket.",
+      "applicable": false,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.98,
+      "keep_current": false,
+      "rationale": "Histologia/coloração universal — drift claro para anatomia.",
+      "applicable": true,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-complementares-1779563668619-8",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "ECG e fisiologia cardíaca — drift para fisiologia.",
+      "applicable": true,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "Técnica MDI/espaçador — âncora do ramo tecnica_inalador; não mover.",
+      "applicable": false,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "VF mesclada hipertensão/diabetes/asma — catch-all DCT.",
+      "applicable": true,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "Asma na APS — permanece.",
+      "applicable": false,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "Âncora golden dpoc_oxigenio — permanece no bucket.",
+      "applicable": false,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "Espirometria DPOC — permanece.",
+      "applicable": false,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "Asma pediátrica — permanece.",
+      "applicable": false,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "Semiologia respiratória V/F — permanece.",
+      "applicable": false,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "DPOC e monitorização — permanece.",
+      "applicable": false,
+      "source": "agent"
+    }
+  ],
+  "generated_at": "2026-07-04T19:05:00.000Z"
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-03",
+  "updated_at": "2026-07-04",
   "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
   "anchors": {
     "cme_vf_ce": {
@@ -38,6 +38,24 @@
       "slug": "questao-premium-respiratorio-crise",
       "lote": "respiratorio-cronico-g01",
       "json_path": "examples/questao-premium-vunesp-respiratorio-crise-asmatica-exceto.json"
+    },
+    "respiratorio_dpoc_oxigenio": {
+      "pedagogical_branch": "respiratorio_dpoc_oxigenio",
+      "slug": "cpcon-dpoc-oxigenoterapia-alvo",
+      "lote": "respiratorio-cronico-g01",
+      "json_path": "examples/questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json"
+    },
+    "respiratorio_tecnica_inalador": {
+      "pedagogical_branch": "respiratorio_tecnica_inalador",
+      "slug": "idecan-respiratorio-espacador",
+      "lote": "respiratorio-cronico-g01",
+      "json_path": "examples/questao-premium-idecan-respiratorio-espacador-inalador-conceito.json"
+    },
+    "respiratorio_vf_asma_dpoc": {
+      "pedagogical_branch": "respiratorio_vf_asma_dpoc",
+      "slug": "cebraspe-respiratorio-dpoc-exacerbacao",
+      "lote": "respiratorio-cronico-g01",
+      "json_path": "examples/questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf.json"
     },
     "trabalho_vf_nr32": {
       "pedagogical_branch": "trabalho_vf_nr32",

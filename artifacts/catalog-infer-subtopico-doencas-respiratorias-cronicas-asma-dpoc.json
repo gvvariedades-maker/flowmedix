@@ -1,0 +1,148 @@
+{
+  "mode": "infer",
+  "bucket": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "min_confidence_apply": 0.85,
+  "limit": 50,
+  "inference_source": "gemini",
+  "summary": {
+    "scanned": 13,
+    "inferred": 10,
+    "errors": 3,
+    "keep_current": 0,
+    "same_subtopico": 3,
+    "applicable": 5
+  },
+  "proposals": [
+    {
+      "modulo_slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a oximetria de pulso como uma medida não invasiva para suporte às condutas de enfermagem em exames clínicos respiratórios, focando na monitorização de sinais clínicos relacionados à respiração.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados com oxigenoterapia e o uso de oxímetro, que se encaixam diretamente neste subtópico.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Oxigenoterapia e Cuidados Respiratórios\",\"confidence\":0.9,\"rationale\":\"O enunciado aborda a administração de oxigênio e o manejo de um paciente com DPOC em crise, focando nos…"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.01,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a coloração de tecidos em histologia, que se relaciona com a estrutura e componentes celulares.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-complementares-1779563668619-8",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a interpretação de um eletrocardiograma, que é uma representação gráfica da atividade elétrica do coração, diretamente ligada à sua fisiologia.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados respiratórios específicos, como oxigenoterapia e uso de broncodilatadores inalatórios, que se encaixam melhor neste subtópico.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diversas doenças crônicas não transmissíveis, como hipertensão, diabetes, asma e doenças cardiovasculares, sem um foco predominante em um único subtópico.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Doenças Respiratórias Crônicas (Asma, DPOC)\",\"confidence\":1.0,\"rationale\":\"O enunciado aborda a assistência ao paciente com asma no contexto da Atenção Básica, focando nas atr…"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na instalação e monitoramento da oxigenoterapia em paciente com DPOC, abordando dispositivos e parâmetros respiratórios.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o diagnóstico e parâmetros espirométricos da DPOC, que é uma doença respiratória crônica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Doenças Respiratórias Crônicas (Asma, DPOC)\",\"confidence\":1.0,\"rationale\":\"O enunciado aborda especificamente a asma em crianças, que é uma doença respiratória crônica.\"}"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda manifestações clínicas e achados de exame físico de doenças respiratórias, com menção explícita à asma brônquica, o que se alinha diretamente com o subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a DPOC e os cuidados de enfermagem relacionados a essa condição crônica respiratória.",
+      "applicable": false,
+      "source": "gemini"
+    }
+  ],
+  "generated_at": "2026-07-04T18:59:48.707Z"
+}

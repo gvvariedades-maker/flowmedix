@@ -1,0 +1,16 @@
+{
+  "lote": "respiratorio-cronico-repair-l3-g01",
+  "mode": "subtopico_repair_l3",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-04",
+  "applied_at": "2026-07-04",
+  "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "total": 9,
+  "status": "applied",
+  "parent_playbook": "data/catalog-migration/handcraft-playbooks/respiratorio-cronico.json",
+  "validate_command": "npm run audit:questao-readiness -- --lote=respiratorio-cronico-repair-l3-g01",
+  "apply_command": "npm run catalog:apply-lote -- --lote=respiratorio-cronico-repair-l3-g01 --apply",
+  "nota": "Repair L3 pós-Classify — pedagogical_branch + pacotes L3 por ramo (dpoc_oxigenio bespoke, tecnica_inalador e vf genérico/bespoke)."
+}

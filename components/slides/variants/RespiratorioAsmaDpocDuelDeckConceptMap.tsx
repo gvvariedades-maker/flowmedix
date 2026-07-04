@@ -136,8 +136,8 @@ export function RespiratorioAsmaDpocDuelDeckConceptMap({
             <Wind className="h-3 w-3" aria-hidden />
             Duel Deck · Asma × DPOC
           </span>
-          <div className="flex gap-1.5">
-            {(['asma', 'dpoc'] as const).map((lane) => {
+          <div className="flex flex-wrap justify-end gap-1.5">
+            {(['asma', 'dpoc', 'monitor'] as const).map((lane) => {
               const hasItems = grouped.has(lane);
               const isActive = defaultLane === lane;
               const meta = LANE_META[lane];
@@ -147,7 +147,7 @@ export function RespiratorioAsmaDpocDuelDeckConceptMap({
                   type="button"
                   disabled={!hasItems}
                   onClick={() => hasItems && toggleLane(lane)}
-                  className={`rounded-full px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-wide transition-all ${
+                  className={`min-h-11 rounded-full px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-wide transition-all ${
                     isActive
                       ? `${meta.badge} ${meta.badgeText} ring-2 ${meta.ring}`
                       : hasItems
@@ -172,7 +172,7 @@ export function RespiratorioAsmaDpocDuelDeckConceptMap({
                   key={lane}
                   type="button"
                   onClick={() => toggleLane(lane)}
-                  className={`rounded-xl border px-3 py-1.5 font-mono text-[9px] font-bold uppercase tracking-widest transition-all ${
+                  className={`min-h-11 rounded-xl border px-3 py-1.5 font-mono text-[9px] font-bold uppercase tracking-widest transition-all ${
                     isActive
                       ? `${meta.badge} ${meta.badgeText} ring-2 ${meta.ring} shadow-md`
                       : 'border-slate-200/80 bg-white/70 text-slate-600 hover:shadow-sm'

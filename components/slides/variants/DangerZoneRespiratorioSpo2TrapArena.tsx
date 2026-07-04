@@ -99,23 +99,8 @@ const SLOT_META: Record<
   },
 };
 
-function inferFixation(slot: RespiratorioTrapSlot, correct: string): string {
-  if (slot === 'spo2_alvo') {
-    return correct.trim() || 'DPOC retentor: alvo 88–92% — não forçar ≥95% como em paciente sem retenção.';
-  }
-  if (slot === 'oxigenio') {
-    return correct.trim() || 'DPOC: O₂ titulado em baixo fluxo — hiperóxia indiscriminada é pegadinha clássica.';
-  }
-  if (slot === 'asma_resgate') {
-    return correct.trim() || 'Asma: broncodilatador de resgate + técnica inalatória — não confundir com manutenção diária.';
-  }
-  if (slot === 'tabagismo') {
-    return correct.trim() || 'Tabagismo ativo piora asma e DPOC — orientação de cessação faz parte do cuidado.';
-  }
-  if (slot === 'exacerbacao') {
-    return correct.trim() || 'Exacerbação: reconhecer dispneia, FR elevada e musculatura acessória — escalar, não alta cega.';
-  }
-  return correct.trim() || 'Relacione a pegadinha ao dispositivo ou técnica correta de inalação.';
+function inferFixation(_slot: RespiratorioTrapSlot, correct: string): string {
+  return correct.trim();
 }
 
 function buildEntries(items: DangerZoneItem[]): TrapEntry[] {
@@ -198,39 +183,37 @@ export function DangerZoneRespiratorioSpo2TrapArena({
           </p>
         </div>
 
-        <div className="flex items-center justify-between gap-1 rounded-xl border border-cyan-200/70 bg-cyan-50/50 px-2 py-2">
-          {RESPIRATORIO_TRAP_SLOTS.slice(0, 4).map((slot, i) => {
-            const hasItem = slotsWithItems.includes(slot);
-            const isActive = activeSlot === slot;
-            return (
-              <div key={slot} className="flex min-w-0 flex-1 items-center gap-1">
-                <button
-                  type="button"
-                  disabled={!hasItem}
-                  onClick={() => hasItem && setActiveSlot(slot)}
-                  className={`flex min-w-0 flex-1 flex-col items-center gap-0.5 rounded-lg px-0.5 py-1 transition-all ${
-                    isActive
-                      ? 'bg-cyan-200/90 ring-2 ring-cyan-400/60'
-                      : hasItem
-                        ? 'bg-white/70 opacity-90 hover:opacity-100'
-                        : 'opacity-40'
-                  }`}
-                >
-                  <span
-                    className={`font-mono text-[7px] font-black uppercase ${isActive ? 'text-cyan-900' : 'text-slate-500'}`}
+        {slotsWithItems.length > 1 ? (
+          <div className="flex flex-wrap items-center justify-center gap-1 rounded-xl border border-cyan-200/70 bg-cyan-50/50 px-2 py-2">
+            {slotsWithItems.map((slot, i) => {
+              const isActive = activeSlot === slot;
+              return (
+                <div key={slot} className="flex min-w-0 items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setActiveSlot(slot)}
+                    className={`flex min-h-11 min-w-[4.5rem] flex-col items-center justify-center gap-0.5 rounded-lg px-1.5 py-1 transition-all ${
+                      isActive
+                        ? 'bg-cyan-200/90 ring-2 ring-cyan-400/60'
+                        : 'bg-white/70 opacity-90 hover:opacity-100'
+                    }`}
                   >
-                    {respiratorioTrapSlotLabel(slot)}
-                  </span>
-                </button>
-                {i < 3 ? (
-                  <span className="font-mono text-[10px] text-cyan-400/80" aria-hidden>
-                    →
-                  </span>
-                ) : null}
-              </div>
-            );
-          })}
-        </div>
+                    <span
+                      className={`font-mono text-[8px] font-black uppercase leading-tight ${isActive ? 'text-cyan-900' : 'text-slate-500'}`}
+                    >
+                      {respiratorioTrapSlotLabel(slot)}
+                    </span>
+                  </button>
+                  {i < slotsWithItems.length - 1 ? (
+                    <span className="font-mono text-[10px] text-cyan-400/80" aria-hidden>
+                      →
+                    </span>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+        ) : null}
 
         <div className="grid grid-cols-3 gap-2 sm:grid-cols-3">
           {slotsWithItems.map((slot) => {
@@ -243,7 +226,7 @@ export function DangerZoneRespiratorioSpo2TrapArena({
                 key={slot}
                 type="button"
                 onClick={() => setActiveSlot(slot)}
-                className={`flex cursor-pointer flex-col items-center gap-1 rounded-2xl border px-1 py-2 transition-all ${
+                className={`flex min-h-11 cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl border px-1 py-2 transition-all ${
                   isActive
                     ? `border-2 bg-white shadow-lg ${slotMeta.ring} ring-2`
                     : 'border-slate-200/90 bg-white/80 shadow-sm hover:shadow-md hover:ring-1 hover:ring-cyan-200/80 active:scale-[0.98]'
@@ -333,7 +316,7 @@ export function DangerZoneRespiratorioSpo2TrapArena({
                   </div>
                 </button>
 
-                {revealed.has(activeEntry.index) ? (
+                {revealed.has(activeEntry.index) && activeEntry.fixation ? (
                   <p className="rounded-lg border border-cyan-200/70 bg-white/80 px-3 py-2 font-body text-xs text-cyan-900/90">
                     {activeEntry.fixation}
                   </p>

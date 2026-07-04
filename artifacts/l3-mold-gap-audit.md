@@ -1,6 +1,6 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-04T08:36:03.218Z
+Gerado em: 2026-07-04T18:45:38.538Z
 
 ## Resumo
 
@@ -8,7 +8,7 @@ Gerado em: 2026-07-04T08:36:03.218Z
 |---------|-------|
 | Fonte slugs | Supabase (vivo) |
 | Clusters mapeados | 108 |
-| Slugs auditados | 11 |
+| Slugs auditados | 13 |
 | ok_existente | 12 |
 | ok_generico | 66 |
 | ramo_novo | 26 |
@@ -138,6 +138,7 @@ Gerado em: 2026-07-04T08:36:03.218Z
 
 ## Slugs (amostra com branch inferido)
 
-- `farmaco_clinico_protocolo`: 6
-- `farmaco_generico`: 4
-- `farmaco_pk_pd_vf`: 1
+- `respiratorio_dpoc_oxigenio`: 6
+- `respiratorio_generico`: 3
+- `respiratorio_tecnica_inalador`: 3
+- `respiratorio_vf_asma_dpoc`: 1
