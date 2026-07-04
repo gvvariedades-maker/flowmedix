@@ -1,0 +1,31 @@
+{
+  "lote": "imunizacao-g53",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P0 — calendário (~62% volume)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Manifest P0 residual 2026-07-03. Handcraft NÃO persistido (sem questions/) — reexecutar handcraft+validação.",
+  "workflow": [
+    "npm run plan:imunizacao-g53",
+    "npm run catalog:export-lote -- --lote=imunizacao-g53 --from-manifest=data/catalog-migration/imunizacao-g53/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g53 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g53 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g53",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g53"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g53.json"
+  }
+}

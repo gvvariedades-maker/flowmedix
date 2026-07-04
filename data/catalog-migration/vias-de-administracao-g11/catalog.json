@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T23:56:45.751Z",
+  "lote": "vias-de-administracao-g11",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "instituto-jk-enfermagem-vias-de-administracao-1776056418941-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO JK",
+      "avant_codigo": 441
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-vias-de-administracao-1776056427936-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 448
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-vias-de-administracao-1778968609115-9",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 1996
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-vias-de-administracao-1776056391403-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 416
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-vias-de-administracao-1776056409987-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 432
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1778968609115-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1994
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1778968666352-9",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2022
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1776056383154-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 405
+    }
+  ]
+}

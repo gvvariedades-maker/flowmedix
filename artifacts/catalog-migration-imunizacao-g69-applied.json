@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:54:22.651Z",
+  "lote": "imunizacao-g69",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-imunizacao-1778712281975-8",
+    "igeduc-enfermagem-imunizacao-1779564035545-0",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-6",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-7",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-7",
+    "legalle-enfermagem-imunizacao-1779572166628-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-6",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-9"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564035545-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

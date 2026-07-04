@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:39:45.166Z",
+  "lote": "imunizacao-g40",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564011849-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3728
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564048247-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3770
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3982
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3983
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3984
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3997
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572236985-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4019
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103182944-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 778
+    }
+  ]
+}

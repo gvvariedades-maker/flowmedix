@@ -1,0 +1,38 @@
+{
+  "lote": "imunizacao-g45",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P0 — calendário tail + Default imunização (pool cluster esgotado)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "branch_mix": {
+    "imunizacao_calendario": 6,
+    "imunizacao_vf_intervalos": 1,
+    "imunizacao_generico": 1
+  },
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "apice-enfermagem-imunizacao-1779564079834-2",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Planejado e handcraft 2026-07-03 — tail P0: cluster calendário esgotado (g01–g44); 8 slugs Default imunização sem overlap. golden-v1 (PNI autoria, VOPb, cartão vacinal, varicela, VORH 2+4m, componente T, imunidade V/F). validate:goldens strict · slug-alignment strict · numeric-factcheck OK — pendente apply.",
+  "workflow": [
+    "npm run plan:imunizacao-g45",
+    "npm run catalog:export-lote -- --lote=imunizacao-g45 --from-manifest=data/catalog-migration/imunizacao-g45/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g45 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g45 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g45",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g45"
+  ],
+  "validated_at": "2026-07-03",
+  "readiness": "8/8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g45.json"
+  }
+}

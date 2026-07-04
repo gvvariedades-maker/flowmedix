@@ -1,0 +1,32 @@
+{
+  "lote": "vias-de-administracao-g20",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P2 — via_generico (INCORRETA / EXCETO)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "via_generico",
+  "anchors": [
+    "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json",
+    "examples/questao-premium-avancasp-vias-sublingual-exceto.json"
+  ],
+  "anchor_slug": "cetrede-enfermagem-vias-de-administracao-1776056391403-4",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Planejado 2026-07-03 — P0 esgotado; plan:vias P0 falhou. g20 abre lote INCORRETA/EXCETO (via_generico). Handcraft golden-v1 — compare semântico danger_zone + reveal tap.",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=vias-de-administracao-g20 --from-manifest=data/catalog-migration/vias-de-administracao-g20/manifest.json",
+    "Handcraft por slug — gramática vias-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=vias-de-administracao-g20 --strict-v2-pedagogy",
+    "npm run validate:goldens -- --strict --dir=data/catalog-migration/vias-de-administracao-g20/questions",
+    "npm run enrich:vias-guideline-meta -- --lote=vias-de-administracao-g20 --write",
+    "npm run audit:slug-alignment -- --lote=vias-de-administracao-g20 --strict",
+    "npm run catalog:patch-pedagogical-branch -- --lote=vias-de-administracao-g20 --reconcile-branch --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g20.json"
+  },
+  "applied_at": "2026-07-04"
+}

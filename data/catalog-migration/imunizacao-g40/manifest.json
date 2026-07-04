@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g40",
+  "exported_at": "2026-07-03T06:39:45.166Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g40/manifest.json"
+  },
+  "slugs": [
+    "selecon-enfermagem-imunizacao-1779564011849-1",
+    "selecon-enfermagem-imunizacao-1779564048247-5",
+    "unifil-enfermagem-imunizacao-1779572215875-0",
+    "unifil-enfermagem-imunizacao-1779572215875-1",
+    "unifil-enfermagem-imunizacao-1779572215875-2",
+    "unifil-enfermagem-imunizacao-1779572220683-6",
+    "unifil-enfermagem-imunizacao-1779572236985-8",
+    "univida-enfermagem-imunizacao-1777103182944-6"
+  ]
+}

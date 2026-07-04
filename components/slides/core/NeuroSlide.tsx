@@ -59,6 +59,7 @@ export const NeuroSlideHub = ({
   questionInstruction,
   questionSlides,
   questionMeta,
+  questionOptions,
 }: {
   slide: any;
   questionHash: string;
@@ -70,6 +71,8 @@ export const NeuroSlideHub = ({
   questionSlides?: unknown[];
   /** meta da questão — pedagogical_branch e subtopico canônico (L2.5). */
   questionMeta?: { subtopico?: string; pedagogical_branch?: string };
+  /** Alternativas MCQ — dicas dinâmicas no molde absorption-speed-rail. */
+  questionOptions?: { id: string; text: string; is_correct?: boolean }[];
 }) => {
   // Sistema híbrido: prioriza subject, fallback para hash com variações únicas
   const theme = getThemeForSlide(slide, questionHash, slideIndex);
@@ -153,7 +156,13 @@ export const NeuroSlideHub = ({
         return <SusArt4OrbitConceptMap concepts={getConcepts()} theme={theme} />;
       }
       if (layoutVariant === 'absorption-speed-rail') {
-        return <AbsorptionSpeedRailConceptMap concepts={getConcepts()} theme={theme} />;
+        return (
+          <AbsorptionSpeedRailConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            questionOptions={questionOptions}
+          />
+        );
       }
       if (layoutVariant === 'adme-journey-rail') {
         return <AdmeJourneyRailConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />;
@@ -288,6 +297,7 @@ export const NeuroSlideHub = ({
           layoutVariant={layoutVariant}
           revealMode={logicRevealMode}
           footerRule={slide.footer_rule}
+          chipLabel={slide.chip_label}
         />
       );
     case 'syllable_scanner':
@@ -329,6 +339,7 @@ export default function NeuroSlide({
   questionInstruction,
   questionSlides,
   questionMeta,
+  questionOptions,
 }: {
   data: any;
   questionHash?: string;
@@ -345,6 +356,8 @@ export default function NeuroSlide({
   questionSlides?: unknown[];
   /** meta da questão — pedagogical_branch e subtopico canônico (L2.5). */
   questionMeta?: { subtopico?: string; pedagogical_branch?: string };
+  /** Alternativas MCQ — dicas dinâmicas em moldes Vias (absorption-speed-rail). */
+  questionOptions?: { id: string; text: string; is_correct?: boolean }[];
 }) {
   const safeData = useMemo(() => normalizeReverseStudySlide(data ?? {}) as any, [data]);
   const hashSource = questionHash || safeData.id || JSON.stringify(safeData).substring(0, 50) || 'default';
@@ -484,6 +497,7 @@ export default function NeuroSlide({
         questionInstruction={questionInstruction}
         questionSlides={questionSlides}
         questionMeta={questionMeta}
+        questionOptions={questionOptions}
       />
     );
   } else {
@@ -555,6 +569,7 @@ export default function NeuroSlide({
             layoutVariant={legacyPresentation.layoutVariant}
             revealMode={legacyPresentation.revealMode}
             footerRule={normalizedData.footer_rule}
+            chipLabel={normalizedData.chip_label}
           />
         );
         break;

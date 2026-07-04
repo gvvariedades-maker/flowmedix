@@ -1,0 +1,32 @@
+{
+  "lote": "vias-de-administracao-g21",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P2 — via_generico (EXCETO/perfis/certo-errado)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "via_generico",
+  "anchors": [
+    "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json",
+    "examples/questao-premium-avancasp-vias-sublingual-exceto.json"
+  ],
+  "anchor_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-9",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Planejado 2026-07-03 — P0 esgotado; plan:vias P0 falhou. g21 abre P2 via_generico com mix EXCETO+perfis+certo/errado. Handcraft golden-v1 — erro ROI no concept_map + mirror danger_zone.",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=vias-de-administracao-g21 --from-manifest=data/catalog-migration/vias-de-administracao-g21/manifest.json",
+    "Handcraft por slug — gramática vias-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=vias-de-administracao-g21 --strict-v2-pedagogy",
+    "npm run validate:goldens -- --strict --dir=data/catalog-migration/vias-de-administracao-g21/questions",
+    "npm run enrich:vias-guideline-meta -- --lote=vias-de-administracao-g21 --write",
+    "npm run audit:slug-alignment -- --lote=vias-de-administracao-g21 --strict",
+    "npm run catalog:patch-pedagogical-branch -- --lote=vias-de-administracao-g21 --reconcile-branch --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g21.json"
+  },
+  "applied_at": "2026-07-04"
+}

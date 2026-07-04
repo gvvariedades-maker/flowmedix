@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:49:13.173Z",
+  "lote": "imunizacao-g39",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "omni-enfermagem-imunizacao-1779572220683-8",
+    "quadrix-enfermagem-imunizacao-1777103182944-1",
+    "quadrix-enfermagem-imunizacao-1777103277533-0",
+    "quadrix-enfermagem-imunizacao-1779563961175-2",
+    "quadrix-enfermagem-imunizacao-1779564011849-6",
+    "quadrix-enfermagem-imunizacao-1779564011849-7",
+    "quadrix-enfermagem-imunizacao-1780000630425-8",
+    "selecon-enfermagem-imunizacao-1777103238173-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103182944-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103277533-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1780000630425-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1777103238173-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

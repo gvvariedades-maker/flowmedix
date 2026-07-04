@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:58:11.236Z",
+  "lote": "imunizacao-g51",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572207173-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 3973
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103264001-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 854
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1779572215875-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 3989
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3707
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564001927-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3716
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564011849-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3730
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3744
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3745
+    }
+  ]
+}

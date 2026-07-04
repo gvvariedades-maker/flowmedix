@@ -1,0 +1,42 @@
+{
+  "lote": "imunizacao-g68",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P1 — pós-calendário (cadeia frio + EXCETO + V/F + genérico)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "mixed — imunizacao_cadeia_frio · imunizacao_exceto · imunizacao_vf_intervalos · imunizacao_generico",
+  "branch_mix": {
+    "imunizacao_cadeia_frio": 4,
+    "imunizacao_exceto": 2,
+    "imunizacao_vf_intervalos": 1,
+    "imunizacao_calendario": 1
+  },
+  "anchors": [
+    "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+    "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+    "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json",
+    "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"
+  ],
+  "anchor_slug": "educa-pb-enfermagem-imunizacao-1779564011849-4",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Handcraft golden-v1 2026-07-03 — P1 pós g67. Mix 4 cadeia frio + 2 EXCETO + 1 V/F Qdenga + 1 C/E raiva. Pool tail com slugs processo-de-enfermagem. validate:goldens strict · slug-alignment strict · numeric-factcheck OK · readiness 8/8 — pendente apply.",
+  "workflow": [
+    "npm run plan:imunizacao-g68",
+    "npm run catalog:export-lote -- --lote=imunizacao-g68 --from-manifest=data/catalog-migration/imunizacao-g68/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g68 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g68 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g68",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g68"
+  ],
+  "validated_at": "2026-07-03",
+  "readiness": "8/8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g68.json"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-07-04T04:44:44.144Z",
+  "scanned": 7,
+  "enriched": 7,
+  "skipped": 0,
+  "results": [
+    {
+      "slug": "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-1",
+      "changed": true,
+      "reasons": [
+        "merged_cofen_covers"
+      ]
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-vias-de-administracao-1778968825263-1",
+      "changed": true,
+      "reasons": [
+        "merged_cofen_covers"
+      ]
+    },
+    {
+      "slug": "omni-enfermagem-vias-de-administracao-1778968997293-5",
+      "changed": true,
+      "reasons": [
+        "merged_cofen_covers"
+      ]
+    },
+    {
+      "slug": "sc-treinamentos-enfermagem-vias-de-administracao-1778968666352-5",
+      "changed": true,
+      "reasons": [
+        "merged_cofen_covers",
+        "updated_guideline_snapshot"
+      ]
+    },
+    {
+      "slug": "univida-enfermagem-vias-de-administracao-1778968646731-3",
+      "changed": true,
+      "reasons": [
+        "merged_cofen_covers",
+        "added_cuidados_dose_source",
+        "updated_guideline_snapshot"
+      ]
+    },
+    {
+      "slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-8",
+      "changed": true,
+      "reasons": [
+        "merged_cofen_covers",
+        "added_cuidados_dose_source"
+      ]
+    },
+    {
+      "slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
+      "changed": true,
+      "reasons": [
+        "merged_cofen_covers"
+      ]
+    }
+  ]
+}

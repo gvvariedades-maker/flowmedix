@@ -1,0 +1,30 @@
+{
+  "lote": "imunizacao-g54",
+  "exported_at": "2026-07-03T07:00:22.704Z",
+  "source": "cluster-report",
+  "filters": {
+    "clusters": [
+      "Calendário vacinal — infantil",
+      "Calendário vacinal — adolescente/adulto/idoso",
+      "Gestante / puérpera — vacinação",
+      "HPV / campanhas e prevenção"
+    ],
+    "fallback_clusters": [
+      "Técnica de aplicação / sala de vacinação",
+      "Conceito — tipos de vacina / imunobiológicos",
+      "Default — sem âncora temática"
+    ],
+    "exclude_count": 387,
+    "mix": "calendário residual + técnica/conceito P0-adjacent"
+  },
+  "slugs": [
+    "cetrede-enfermagem-imunizacao-1777103215560-0",
+    "funcern-enfermagem-imunizacao-1777103238173-5",
+    "funcern-enfermagem-imunizacao-1777103244679-4",
+    "furb-enfermagem-imunizacao-1779564071106-8",
+    "ibade-enfermagem-imunizacao-1777103230085-3",
+    "ibade-enfermagem-imunizacao-1777103270218-2",
+    "ibgp-enfermagem-imunizacao-1779572166628-9",
+    "idcap-enfermagem-imunizacao-1779564096589-3"
+  ]
+}

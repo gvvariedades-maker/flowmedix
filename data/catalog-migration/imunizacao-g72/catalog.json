@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:24:42.360Z",
+  "lote": "imunizacao-g72",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3992
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3993
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4000
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4003
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 4792
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-imunizacao-1777103182944-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "REIS E REIS",
+      "avant_codigo": 774
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564040128-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3754
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564040128-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3755
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:49:15.861Z",
+  "lote": "imunizacao-g45",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 3830
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3669
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 3887
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563970889-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3667
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564040128-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3753
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564044052-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3761
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3697
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564053668-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3780
+    }
+  ]
+}

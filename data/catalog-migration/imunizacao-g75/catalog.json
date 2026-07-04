@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:28:49.193Z",
+  "lote": "imunizacao-g75",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563986606-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3690
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564085730-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3839
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 3938
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-imunizacao-1779564071106-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "SC TREINAMENTOS",
+      "avant_codigo": 3812
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779564031957-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3737
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3994
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1621
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3765
+    }
+  ]
+}

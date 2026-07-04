@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-07-03T15:41:52.641Z",
+  "dry_run": false,
+  "candidates": 8,
+  "applied_lotes": 8,
+  "failed_lotes": 0,
+  "slugs_attempted": 64,
+  "handcraft_applied_total": 575,
+  "results": [
+    {
+      "lote": "imunizacao-g76",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "imunizacao-g77",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "imunizacao-g78",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "imunizacao-g79",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "imunizacao-g80",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "imunizacao-g81",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "imunizacao-g82",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "imunizacao-g83",
+      "status": "ok",
+      "ok": 8
+    }
+  ]
+}

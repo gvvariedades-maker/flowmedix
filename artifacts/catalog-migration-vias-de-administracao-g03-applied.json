@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-04T04:57:08.225Z",
+  "lote": "vias-de-administracao-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-vias-de-administracao-1776056383154-4",
+    "avancasp-enfermagem-vias-de-administracao-1776056330579-8",
+    "avancasp-enfermagem-vias-de-administracao-1776056338955-0",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968687469-2",
+    "fau-unicentro-enfermagem-vias-de-administracao-1776056401060-6",
+    "fepese-enfermagem-vias-de-administracao-1776056391403-2",
+    "fepese-enfermagem-vias-de-administracao-1778968787431-4",
+    "fgv-enfermagem-vias-de-administracao-1776056366158-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056383154-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056330579-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968687469-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056401060-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056391403-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968787431-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1776056366158-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g82",
+  "exported_at": "2026-07-03T15:19:32.042Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g82/manifest.json"
+  },
+  "slugs": [
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712270872-0",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968194611-7",
+    "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
+    "funtef-enfermagem-vias-de-administracao-1778968598934-4",
+    "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-8",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-3",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-2"
+  ]
+}

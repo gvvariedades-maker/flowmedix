@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-04T05:03:05.365Z",
+  "lote": "vias-de-administracao-g18",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-mais-enfermagem-vias-de-administracao-1778968862077-9",
+    "instituto-verbena-enfermagem-vias-de-administracao-1776056409987-4",
+    "ivin-enfermagem-vias-de-administracao-1776056391403-3",
+    "ivin-enfermagem-vias-de-administracao-1778968629127-5",
+    "maranatha-assessoria-enfermagem-vias-de-administracao-1776056348175-4",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1776056338955-2",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968906156-3",
+    "omni-enfermagem-vias-de-administracao-1778969007166-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-mais-enfermagem-vias-de-administracao-1778968862077-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-vias-de-administracao-1776056409987-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-vias-de-administracao-1776056391403-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-vias-de-administracao-1778968629127-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-vias-de-administracao-1776056348175-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1776056338955-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1778968906156-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-vias-de-administracao-1778969007166-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "lote": "vias-de-administracao-g25",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P2 — cauda export (Consulplan + perfis + técnica)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "mixed",
+  "anchors": [
+    "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json"
+  ],
+  "anchor_slug": "imparh-enfermagem-vias-de-administracao-1778968956139-0",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "handcraft_script": "scripts/handcraft-vias-de-administracao-g25.ts",
+  "notes": "Handcraft golden-v1 concluído 2026-07-04 — 8/8 [READY] audit:questao-readiness --strict-v2-pedagogy; validate:goldens --strict OK; slug-alignment + numeric-factcheck pass; enrich:vias-guideline-meta em 6 slugs. Ramos: via_tecnica_admin (3), via_vf_absorcao (3), via_generico (2). Sem apply Supabase.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g25.json"
+  },
+  "applied_at": "2026-07-04"
+}

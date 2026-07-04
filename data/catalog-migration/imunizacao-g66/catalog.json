@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:18:12.216Z",
+  "lote": "imunizacao-g66",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3846
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3957
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-imunizacao-1777103238173-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 819
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCM",
+      "avant_codigo": 3858
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564044052-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3758
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4696
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103264001-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 853
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 817
+    }
+  ]
+}

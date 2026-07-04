@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:50:09.424Z",
+  "lote": "imunizacao-g45",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-enfermagem-imunizacao-1779564079834-2",
+    "cetrede-enfermagem-imunizacao-1779563970889-6",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-5",
+    "fau-unicentro-enfermagem-imunizacao-1779563970889-4",
+    "fau-unicentro-enfermagem-imunizacao-1779564040128-3",
+    "fau-unicentro-enfermagem-imunizacao-1779564044052-4",
+    "fgv-enfermagem-imunizacao-1779563992006-6",
+    "fgv-enfermagem-imunizacao-1779564053668-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563970889-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564040128-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564044052-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564053668-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

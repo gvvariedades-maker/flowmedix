@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:55:15.276Z",
+  "lote": "imunizacao-g73",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-2",
+    "idecan-enfermagem-imunizacao-1778712281975-6",
+    "igeduc-enfermagem-imunizacao-1779563961175-5",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010559720-2",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010917301-7",
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-7",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-2",
+    "vunesp-enfermagem-imunizacao-1779564001927-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563961175-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

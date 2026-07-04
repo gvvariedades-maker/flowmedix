@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g80",
+  "exported_at": "2026-07-03T15:19:32.588Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g80/manifest.json"
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001440222-6",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-2",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-7",
+    "igeduc-enfermagem-imunizacao-1779564048247-1",
+    "igeduc-enfermagem-imunizacao-1779564048247-2",
+    "igeduc-enfermagem-imunizacao-1779564048247-3",
+    "igeduc-enfermagem-imunizacao-1779564059030-7",
+    "igeduc-enfermagem-imunizacao-1779564059030-8"
+  ]
+}

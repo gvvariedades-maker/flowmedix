@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:06:57.425Z",
+  "lote": "imunizacao-g19",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779563975447-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3673
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCM",
+      "avant_codigo": 3857
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3825
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-imunizacao-1779563970889-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 3666
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 874
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103204932-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 784
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1611
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564001927-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3713
+    }
+  ]
+}

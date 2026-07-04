@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:32:38.281Z",
+  "lote": "imunizacao-g33",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3862
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934900821-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1752
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934909266-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1753
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934909266-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1754
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1779564067000-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 3802
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-imunizacao-1779572159431-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 3929
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563975447-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3681
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563992006-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3691
+    }
+  ]
+}

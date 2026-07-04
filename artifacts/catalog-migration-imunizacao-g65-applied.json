@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:53:27.526Z",
+  "lote": "imunizacao-g65",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cebraspe-cespe-enfermagem-imunizacao-1779572171486-8",
+    "fau-unicentro-enfermagem-imunizacao-1779564085730-8",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-3",
+    "fau-unicentro-geral-imunizacao-1777103238173-4",
+    "fcm-enfermagem-imunizacao-1779564096589-1",
+    "idecan-enfermagem-imunizacao-1780066977710-7",
+    "inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+    "univida-enfermagem-imunizacao-1777103204932-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572171486-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-imunizacao-1777103238173-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103204932-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

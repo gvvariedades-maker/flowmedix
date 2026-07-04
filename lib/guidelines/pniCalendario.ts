@@ -82,6 +82,27 @@ export const PNI_CALENDARIO_2025: GuidelineTable = {
       sourceId: 'pni-calendario-2025',
     },
     {
+      id: 'covid-spikevax-lactente',
+      label: 'Covid-19 — Spikevax (Moderna) lactente',
+      value: 'A partir de 6 meses: 2 doses de 0,25 mL por via intramuscular',
+      detail: 'Volume pediátrico 0,25 mL — não usar 0,5 mL do adulto.',
+      sourceId: 'pni-calendario-2025',
+    },
+    {
+      id: 'vsr-gestante-28sem',
+      label: 'VSR — vacina em gestante',
+      value: 'Indicada a partir de 28 semanas de gestação — dose única',
+      detail: 'Proteção passiva do recém-nascido; não confundir com dTpa aos 20 semanas.',
+      sourceId: 'pni-calendario-2025',
+    },
+    {
+      id: 'hpv-dose-unica-2024',
+      label: 'HPV — atualização 2024',
+      value: 'Rotina 9 a 14 anos: dose única para meninas e meninos',
+      detail: 'Até 14 anos, 11 meses e 29 dias; substitui esquema de 2 doses na rotina.',
+      sourceId: 'pni-calendario-2025',
+    },
+    {
       id: 'covid-idoso-60',
       label: 'Covid-19 — idosos',
       value: '60 anos ou mais: 2 doses anuais com intervalo de 6 meses',

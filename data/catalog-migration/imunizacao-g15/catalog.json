@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T05:40:55.512Z",
+  "lote": "imunizacao-g15",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564125198-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3896
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564059030-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3786
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572227744-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4001
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564059030-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3787
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572227744-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4002
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EPL CONCURSOS",
+      "avant_codigo": 4016
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572236985-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4013
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EPL CONCURSOS",
+      "avant_codigo": 4017
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "lote": "imunizacao-g56",
+  "exported_at": "2026-07-03T07:05:43.917Z",
+  "source": "cluster-report",
+  "filters": {
+    "exclude_calendario": true,
+    "calendario_pool_exhausted_at": "imunizacao-g42",
+    "exclude_done_not_used": true,
+    "clusters": [
+      "Cadeia de frio / conservação / SI-PNI",
+      "INCORRETA / EXCETO",
+      "V/F — intervalos PNI (I/II/III/IV)",
+      "Default — sem âncora temática",
+      "Certo ou errado",
+      "Técnica de aplicação / sala de vacinação",
+      "Conceito — tipos de vacina / imunobiológicos",
+      "Contraindicações / eventos adversos"
+    ],
+    "exclude_count": 371,
+    "mix": "4 cadeia frio + 2 EXCETO + 1 V/F intervalos + 1 genérico"
+  },
+  "slugs": [
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-0",
+    "cotec-fadenor-enfermagem-imunizacao-1777103264001-2",
+    "cotec-fadenor-enfermagem-imunizacao-1779572215875-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-7",
+    "avancasp-enfermagem-imunizacao-1779564129617-0",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-6",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-6",
+    "cebraspe-cespe-enfermagem-imunizacao-1777103230085-8"
+  ],
+  "slug_clusters": {
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-0": "Cadeia de frio / conservação / SI-PNI",
+    "cotec-fadenor-enfermagem-imunizacao-1777103264001-2": "Cadeia de frio / conservação / SI-PNI",
+    "cotec-fadenor-enfermagem-imunizacao-1779572215875-7": "Cadeia de frio / conservação / SI-PNI",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-7": "Cadeia de frio / conservação / SI-PNI",
+    "avancasp-enfermagem-imunizacao-1779564129617-0": "INCORRETA / EXCETO",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-6": "INCORRETA / EXCETO",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-6": "V/F — intervalos PNI (I/II/III/IV)",
+    "cebraspe-cespe-enfermagem-imunizacao-1777103230085-8": "Certo ou errado"
+  }
+}

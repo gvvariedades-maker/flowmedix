@@ -9,6 +9,11 @@ import {
   inferAbsorptionRouteKind,
   type AbsorptionRouteKind,
 } from '@/lib/slides/absorptionRouteKind';
+import {
+  buildAbsorptionExamTip,
+  resolveScGabaritoBadge,
+  type QuestionOptionLike,
+} from '@/lib/slides/absorptionSpeedRailExamTips';
 
 export interface RouteConcept {
   icon: string;
@@ -31,7 +36,6 @@ const ROUTES: {
   active: string;
   text: string;
   accentBorder: string;
-  examTip: string;
 }[] = [
   {
     id: 'iv',
@@ -45,7 +49,6 @@ const ROUTES: {
     active: 'border-rose-400 bg-rose-50 ring-2 ring-rose-300/40',
     text: 'text-rose-950',
     accentBorder: 'border-l-rose-500',
-    examTip: 'Letra A erra quando pede absorção rápida — esse é o perfil da IV, não da SC.',
   },
   {
     id: 'im',
@@ -59,7 +62,6 @@ const ROUTES: {
     active: 'border-amber-400 bg-amber-50 ring-2 ring-amber-300/40',
     text: 'text-amber-950',
     accentBorder: 'border-l-amber-500',
-    examTip: 'IM absorve mais rápido que SC — não confunda as duas quando a banca pede efeito lento.',
   },
   {
     id: 'sc',
@@ -73,7 +75,6 @@ const ROUTES: {
     active: 'border-emerald-500 bg-emerald-50 ring-2 ring-emerald-400/50',
     text: 'text-emerald-950',
     accentBorder: 'border-l-emerald-500',
-    examTip: 'Gabarito B: absorção lenta e contínua — sem dose grande, sem alta pressão.',
   },
   {
     id: 'vo',
@@ -87,18 +88,19 @@ const ROUTES: {
     active: 'border-sky-400 bg-sky-50 ring-2 ring-sky-300/40',
     text: 'text-sky-950',
     accentBorder: 'border-l-sky-500',
-    examTip: 'VO depende do TGI — a questão foca na SC, mas o comparativo ajuda a eliminar distractors.',
   },
 ];
 
 interface AbsorptionSpeedRailConceptMapProps {
   concepts: RouteConcept[];
   theme: ThemeColors;
+  questionOptions?: QuestionOptionLike[];
 }
 
 export const AbsorptionSpeedRailConceptMap = ({
   concepts,
   theme,
+  questionOptions,
 }: AbsorptionSpeedRailConceptMapProps) => {
   const [selected, setSelected] = useState<RouteSlot>('sc');
 
@@ -126,6 +128,11 @@ export const AbsorptionSpeedRailConceptMap = ({
   }, []);
 
   const activeRoute = ROUTES.find((r) => r.id === selected)!;
+  const scGabaritoBadge = useMemo(() => resolveScGabaritoBadge(questionOptions), [questionOptions]);
+  const activeExamTip = useMemo(
+    () => buildAbsorptionExamTip(selected, questionOptions),
+    [selected, questionOptions],
+  );
   const activeConcepts = byRoute[selected];
   const compareConcept = shared.find((s) => s.kind === 'compare')?.concept;
   const velocityConcept = shared.find((s) => s.kind === 'velocity')?.concept;
@@ -279,9 +286,9 @@ export const AbsorptionSpeedRailConceptMap = ({
                       </p>
                     </div>
                   </div>
-                  {selected === 'sc' ? (
+                  {selected === 'sc' && scGabaritoBadge ? (
                     <span className="shrink-0 rounded-full bg-emerald-500 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-wide text-white shadow-sm">
-                      gabarito B
+                      {scGabaritoBadge}
                     </span>
                   ) : null}
                 </div>
@@ -349,7 +356,7 @@ export const AbsorptionSpeedRailConceptMap = ({
                       selected === 'sc' ? 'text-emerald-950' : 'text-amber-950'
                     }`}
                   >
-                    {activeRoute.examTip}
+                    {activeExamTip}
                   </p>
                 </div>
               </div>

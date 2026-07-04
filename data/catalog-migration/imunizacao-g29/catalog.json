@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:23:08.465Z",
+  "lote": "imunizacao-g29",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779572236985-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 4018
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3824
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-imunizacao-1777103251447-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UFMT",
+      "avant_codigo": 837
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3826
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1779563961175-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3652
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3827
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4005
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564079834-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3828
+    }
+  ]
+}

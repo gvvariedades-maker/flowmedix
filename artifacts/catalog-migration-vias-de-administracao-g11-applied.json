@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-04T05:00:08.225Z",
+  "lote": "vias-de-administracao-g11",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-jk-enfermagem-vias-de-administracao-1776056418941-2",
+    "instituto-verbena-enfermagem-vias-de-administracao-1776056427936-1",
+    "instituto-verbena-enfermagem-vias-de-administracao-1778968609115-9",
+    "ms-sarmento-enfermagem-vias-de-administracao-1776056391403-6",
+    "ms-sarmento-enfermagem-vias-de-administracao-1776056409987-3",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968609115-7",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968666352-9",
+    "selecon-enfermagem-vias-de-administracao-1776056383154-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-jk-enfermagem-vias-de-administracao-1776056418941-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-vias-de-administracao-1776056427936-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-vias-de-administracao-1778968609115-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-vias-de-administracao-1776056391403-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-vias-de-administracao-1776056409987-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1778968609115-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1778968666352-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1776056383154-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

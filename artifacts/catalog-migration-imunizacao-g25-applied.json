@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:45:57.959Z",
+  "lote": "imunizacao-g25",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-imunizacao-1777103182944-3",
+    "fundatec-enfermagem-imunizacao-1777103204932-0",
+    "fundatec-enfermagem-imunizacao-1777103257434-4",
+    "fundatec-enfermagem-imunizacao-1779563970889-1",
+    "instituto-verbena-enfermagem-imunizacao-1779564044052-0",
+    "instituto-verbena-enfermagem-imunizacao-1779564067000-4",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-1",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103182944-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103204932-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103257434-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563970889-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564044052-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564067000-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

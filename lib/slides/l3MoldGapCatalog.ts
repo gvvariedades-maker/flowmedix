@@ -6,7 +6,12 @@ import type { SubtopicDesign } from '@/components/slides/core/themeGenerator';
 import type { PedagogicalBranchId } from '@/lib/slides/pedagogicalBranch';
 import { isBespokeLayoutVariant } from '@/lib/slides/moldAffinity';
 
-export type L3MoldGapDecision = 'ok_existente' | 'ok_generico' | 'ramo_novo' | 'molde_inedito';
+export type L3MoldGapDecision =
+  | 'ok_existente'
+  | 'ok_generico'
+  | 'ramo_novo'
+  | 'molde_inedito'
+  | 'molde_redesign';
 
 export type ClusterIdealSpec = {
   branch_id: string;
@@ -303,8 +308,8 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       branch_id: 'via_vf_absorcao',
       branch_implemented: true,
       ideal_mold_package: 'absorption-speed-rail · via-reference-board · via-vf-juggle-tap · route-trap (bespoke)',
-      base_decision: 'ok_existente',
-      rationale: 'VF absorção/velocidade — trilho vias.',
+      base_decision: 'molde_redesign',
+      rationale: 'VF absorção/velocidade — trilho bespoke implementado; brief l3-brief-vias-de-administracao-via_vf_absorcao.md.',
     },
     {
       pattern: /t[eé]cnica|ângulo|m[uú]sculo|pun[cç][aã]o|administra[cç][aã]o/i,
@@ -312,7 +317,15 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       branch_implemented: true,
       ideal_mold_package: 'morphological · banner · cards · compare (genérico)',
       base_decision: 'ok_generico',
-      rationale: 'Técnica de aplicação — genérico.',
+      rationale: 'Técnica punção IM/IV — genérico P1; brief bespoke opcional pós-g01.',
+    },
+    {
+      pattern: /\bexceto\b|alternativa\s+incorreta|incorret[oa]\s+afirmar/i,
+      branch_id: 'via_generico',
+      branch_implemented: true,
+      ideal_mold_package: 'morphological · center · vertical · compare (genérico)',
+      base_decision: 'ok_generico',
+      rationale: 'EXCETO/INCORRETA e cauda — compare semântico; sem brief bespoke.',
     },
   ],
   calculo: [

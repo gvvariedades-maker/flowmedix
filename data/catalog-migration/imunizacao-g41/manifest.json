@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g41",
+  "exported_at": "2026-07-03T06:41:06.116Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g41/manifest.json"
+  },
+  "slugs": [
+    "univida-enfermagem-imunizacao-1779564063274-0",
+    "vunesp-enfermagem-imunizacao-1777103204932-5",
+    "vunesp-enfermagem-imunizacao-1779563965519-0",
+    "vunesp-enfermagem-imunizacao-1779563965519-1",
+    "vunesp-enfermagem-imunizacao-1779563965519-3",
+    "vunesp-enfermagem-imunizacao-1779563965519-4",
+    "vunesp-enfermagem-imunizacao-1779563970889-8",
+    "vunesp-enfermagem-imunizacao-1779563992006-2"
+  ]
+}

@@ -46,6 +46,8 @@ interface LogicFlowProps {
   /** Default `auto` preserva slides legados; premium usa `reveal_mode: "tap"` no JSON. */
   revealMode?: LogicFlowRevealMode;
   footerRule?: string;
+  /** Override do chip interno (ex.: INSULINA · VIAS no molde via-vf-juggle-tap). */
+  chipLabel?: string;
 }
 
 /** Destaca a expressão "estudo reverso" (qualquer caixa) no texto do passo. */
@@ -133,6 +135,7 @@ export const LogicFlow = ({
   layoutVariant = 'vertical',
   revealMode = 'auto',
   footerRule,
+  chipLabel,
 }: LogicFlowProps) => {
   const variant = layoutVariant || 'vertical';
 
@@ -230,7 +233,14 @@ export const LogicFlow = ({
   }
 
   if (variant === 'via-vf-juggle-tap') {
-    return <LogicFlowViaVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
+    return (
+      <LogicFlowViaVfJuggleTap
+        steps={steps}
+        theme={theme}
+        footerRule={footerRule}
+        chipLabel={chipLabel}
+      />
+    );
   }
 
   if (variant === 'farmaco-vf-juggle-tap') {

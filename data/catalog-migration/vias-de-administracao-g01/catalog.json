@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T22:57:59.372Z",
+  "lote": "vias-de-administracao-g01",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968768987-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2039
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 428
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968997293-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2103
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 372
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968768987-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2040
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056391403-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 411
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 387
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2082
+    }
+  ]
+}

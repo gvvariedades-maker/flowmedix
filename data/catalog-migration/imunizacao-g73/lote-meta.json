@@ -1,0 +1,40 @@
+{
+  "lote": "imunizacao-g73",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P1 — pós-calendário (cadeia frio + EXCETO + genérico)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "mixed — imunizacao_cadeia_frio · imunizacao_exceto · imunizacao_generico · imunizacao_calendario",
+  "branch_mix": {
+    "imunizacao_cadeia_frio": 4,
+    "imunizacao_exceto": 2,
+    "imunizacao_generico": 1,
+    "imunizacao_calendario": 1
+  },
+  "anchors": [
+    "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+    "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+    "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json",
+    "examples/questao-premium-fundatec-meningococica-3meses.json"
+  ],
+  "anchor_slug": "igeduc-enfermagem-imunizacao-1779563961175-5",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Manifest P1 2026-07-03. Handcraft NÃO persistido (sem questions/) — reexecutar handcraft+validação.",
+  "workflow": [
+    "npm run plan:imunizacao-g73",
+    "npm run catalog:export-lote -- --lote=imunizacao-g73 --from-manifest=data/catalog-migration/imunizacao-g73/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g73 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g73 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g73",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g73"
+  ],
+  "readiness": "0/8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g73.json"
+  }
+}

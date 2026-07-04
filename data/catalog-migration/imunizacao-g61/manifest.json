@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g61",
+  "exported_at": "2026-07-03T07:19:59.518Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g61/manifest.json"
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-0",
+    "cotec-fadenor-enfermagem-imunizacao-1777103264001-2",
+    "cotec-fadenor-enfermagem-imunizacao-1779572215875-7",
+    "avancasp-enfermagem-imunizacao-1779564129617-0",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-6",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-6",
+    "cebraspe-cespe-enfermagem-imunizacao-1777103230085-8"
+  ]
+}

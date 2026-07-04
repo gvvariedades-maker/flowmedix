@@ -1,0 +1,25 @@
+{
+  "lote": "imunizacao-g49",
+  "exported_at": "2026-07-03T06:58:48.417Z",
+  "source": "cluster-report",
+  "filters": {
+    "clusters": [
+      "Calendário vacinal — infantil",
+      "Calendário vacinal — adolescente/adulto/idoso",
+      "Gestante / puérpera — vacinação",
+      "HPV / campanhas e prevenção"
+    ],
+    "exclude_count": 371,
+    "mix": "infantil+adulto/gestante/HPV alternado"
+  },
+  "slugs": [
+    "vunesp-enfermagem-imunizacao-1779563992006-3",
+    "vunesp-enfermagem-imunizacao-1779563996663-1",
+    "vunesp-enfermagem-imunizacao-1779564001927-1",
+    "vunesp-enfermagem-imunizacao-1779564059030-3",
+    "vunesp-enfermagem-imunizacao-1779564090395-4",
+    "vunesp-enfermagem-imunizacao-1779564096589-4",
+    "vunesp-enfermagem-imunizacao-1779564096589-6",
+    "vunesp-enfermagem-imunizacao-1779572207173-4"
+  ]
+}

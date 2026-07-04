@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:21:02.763Z",
+  "lote": "imunizacao-g27",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3772
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564031957-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 3739
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-imunizacao-1779564096589-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 3859
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564067000-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 3803
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 791
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564071106-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 3816
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 793
+    },
+    {
+      "modulo_slug": "gama-enfermagem-imunizacao-1779564006577-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 3721
+    }
+  ]
+}

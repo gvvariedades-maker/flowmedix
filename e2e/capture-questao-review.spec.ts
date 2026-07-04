@@ -66,7 +66,8 @@ async function captureReverseStudySlides(
     });
 
     if (i < 3) {
-      const next = page.getByRole('button', { name: /^próximo$/i });
+      // Rodapé do player (btn-editorial-primary); variantes logic_flow tap têm outro "Próximo" no slide.
+      const next = player.locator('button.btn-editorial-primary').filter({ hasText: /^próximo/i });
       await expect(next).toBeVisible({ timeout: 10_000 });
       await next.click();
       await page.waitForTimeout(700);

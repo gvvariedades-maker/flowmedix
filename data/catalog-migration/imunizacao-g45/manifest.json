@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g45",
+  "exported_at": "2026-07-03T06:49:15.861Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g45/manifest.json"
+  },
+  "slugs": [
+    "apice-enfermagem-imunizacao-1779564079834-2",
+    "cetrede-enfermagem-imunizacao-1779563970889-6",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-5",
+    "fau-unicentro-enfermagem-imunizacao-1779563970889-4",
+    "fau-unicentro-enfermagem-imunizacao-1779564040128-3",
+    "fau-unicentro-enfermagem-imunizacao-1779564044052-4",
+    "fgv-enfermagem-imunizacao-1779563992006-6",
+    "fgv-enfermagem-imunizacao-1779564053668-6"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T11:18:53.775Z",
+  "lote": "imunizacao-g64",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "facet-enfermagem-imunizacao-1779564006577-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3722
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563992006-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3695
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564071106-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3810
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3844
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1777103251447-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUMARC",
+      "avant_codigo": 834
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564063274-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3795
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103230085-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 813
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3936
+    }
+  ]
+}

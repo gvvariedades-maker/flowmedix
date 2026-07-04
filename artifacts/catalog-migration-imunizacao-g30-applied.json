@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:47:08.795Z",
+  "lote": "imunizacao-g30",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idcap-enfermagem-imunizacao-1777103182944-7",
+    "ideap-enfermagem-imunizacao-1779564067000-1",
+    "idecan-enfermagem-imunizacao-1778712270872-6",
+    "idecan-enfermagem-imunizacao-1778712270872-8",
+    "unifil-enfermagem-imunizacao-1779572227744-6",
+    "unifil-enfermagem-imunizacao-1779572227744-9",
+    "univida-enfermagem-imunizacao-1777103182944-5",
+    "vunesp-enfermagem-imunizacao-1777103270218-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idcap-enfermagem-imunizacao-1777103182944-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-imunizacao-1779564067000-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103182944-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1777103270218-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

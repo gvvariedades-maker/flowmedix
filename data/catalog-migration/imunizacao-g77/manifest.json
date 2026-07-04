@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g77",
+  "exported_at": "2026-07-03T15:18:53.354Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g77/manifest.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-imunizacao-1779572215875-3",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-6",
+    "instituto-consulplan-geral-imunizacao-1777103215560-8",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-6",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-0",
+    "selecon-enfermagem-processo-de-enfermagem-1780009322055-2",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-3",
+    "adm-tec-enfermagem-imunizacao-1779563986606-5"
+  ]
+}

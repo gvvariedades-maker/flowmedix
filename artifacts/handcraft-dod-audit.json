@@ -1,53 +1,7 @@
 {
-  "generated_at": "2026-06-30T17:21:33.018Z",
-  "subtopicos_ready": 2,
-  "subtopicos_pass": 2,
+  "generated_at": "2026-07-03T23:09:00.061Z",
+  "subtopicos_ready": 0,
+  "subtopicos_pass": 0,
   "subtopicos_fail": 0,
-  "items": [
-    {
-      "subtopico": "Infecções no Contexto da Biossegurança",
-      "registry_status": "applied",
-      "total_slugs": 25,
-      "handcraft_applied": 25,
-      "manifest_slugs": 25,
-      "supabase_found": 25,
-      "golden_v1": 25,
-      "four_slides": 25,
-      "premium_gate_ok": 25,
-      "local_json_count": 80,
-      "slug_issues": [],
-      "pilot_sample": [
-        "ameosc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-2",
-        "avancasp-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-2"
-      ],
-      "pilot_min": 2,
-      "dod_pass": true,
-      "dod_notes": [
-        "Piloto humano sugerido: revisar 2 slug(s) no player (≥5%)"
-      ]
-    },
-    {
-      "subtopico": "Segurança do Paciente",
-      "registry_status": "applied",
-      "total_slugs": 59,
-      "handcraft_applied": 59,
-      "manifest_slugs": 59,
-      "supabase_found": 59,
-      "golden_v1": 59,
-      "four_slides": 59,
-      "premium_gate_ok": 59,
-      "local_json_count": 216,
-      "slug_issues": [],
-      "pilot_sample": [
-        "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
-        "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
-        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2"
-      ],
-      "pilot_min": 3,
-      "dod_pass": true,
-      "dod_notes": [
-        "Piloto humano sugerido: revisar 3 slug(s) no player (≥5%)"
-      ]
-    }
-  ]
+  "items": []
 }

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:48:31.671Z",
+  "lote": "imunizacao-g36",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-5",
+    "ivin-enfermagem-imunizacao-1777103182944-4",
+    "ivin-enfermagem-imunizacao-1777103257434-8",
+    "ivin-enfermagem-imunizacao-1779564048247-6",
+    "ivin-enfermagem-imunizacao-1779564048247-8",
+    "ivin-enfermagem-imunizacao-1779564067000-7",
+    "maranatha-assessoria-enfermagem-imunizacao-1779563986606-0",
+    "maranatha-assessoria-enfermagem-imunizacao-1779564006577-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103182944-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103257434-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564067000-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779563986606-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779564006577-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

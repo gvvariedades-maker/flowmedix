@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-04T00:01:33.003Z",
+  "lote": "vias-de-administracao-g12",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1776056401060-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 422
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1778968687469-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2024
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-vias-de-administracao-1778968609115-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 1990
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 361
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056357082-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 383
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968609115-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1989
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2038
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1778968609115-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 1991
+    }
+  ]
+}

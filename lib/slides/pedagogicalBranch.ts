@@ -691,7 +691,7 @@ const IMUNIZACAO_CALENDARIO: RegExp[] = [
 ];
 
 const IMUNIZACAO_CADEIA_FRIO: RegExp[] = [
-  /cadeia de frio|conserva[cç][aã]o|refriger|congel|termo|si-pni|gelox|caixa t[eé]rmica|validade.*vacina|transporte.*imunobiol/i,
+  /cadeia de frio|rede de frio|\bconserva[cç][aã]o\b|refrigerador|refrigerada?|congelamento|term[oô]metro|termol[aá]bil|si-pni|gelox|caixa t[eé]rmica|\bvalidade\b.*\bvacina\b|\btransporte\b.*\bimunobiol/i,
 ];
 
 const IMUNIZACAO_EXCETO: RegExp[] = [
@@ -705,6 +705,14 @@ const IMUNIZACAO_EXCETO: RegExp[] = [
 const VIA_VF: RegExp[] = [
   /\b(i|ii|iii)\s*[-–—]/i,
   /absor[cç][aã]o|biodisponibilidade|via.*intramuscular|via.*subcut[aâ]nea/i,
+];
+
+const VIA_EXCETO: RegExp[] = [
+  /\bexceto\b/i,
+  /alternativa\s+incorreta/i,
+  /incorret[oa]\s+afirmar/i,
+  /é\s+incorret[oa]/i,
+  /assinale\s+a\s+alternativa\s+incorreta/i,
 ];
 
 const VIA_TECNICA: RegExp[] = [
@@ -907,10 +915,32 @@ function inferImunizacaoBranch(corpus: string, familyId?: FamilyId): Pedagogical
 }
 
 function inferViaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  const isExceto =
+    countPatternMatches(corpus, VIA_EXCETO) >= 1 ||
+    (familyId === 'certo_errado' && /\b(exceto|incorret[oa])\b/i.test(corpus));
+  if (isExceto) return 'via_generico';
+
+  const tecnicaScore = countPatternMatches(corpus, VIA_TECNICA);
+  if (tecnicaScore >= 2) return 'via_tecnica_admin';
+
+  const hasIii = /\b(i|ii|iii)\s*[-–—]/i.test(corpus);
+
+  if (familyId === 'vf' && hasIii) {
+    const isImPrimaryTopic =
+      /\bvia\s+intramuscular\b|\bpela\s+via\s+im\b|\binje[cç][aã]o\s+intramuscular\b/i.test(corpus);
+    const isScPrimaryTopic =
+      /administra[cç][aã]o\s+de\s+medicamentos\s+por\s+via\s+subcut[aâ]nea/i.test(corpus) ||
+      /\bpor\s+via\s+subcut[aâ]nea\b.*\banalise\b/i.test(corpus);
+    if (isImPrimaryTopic && tecnicaScore >= 1) return 'via_tecnica_admin';
+    if (isScPrimaryTopic) return 'via_vf_absorcao';
+  }
+
   const isVf =
-    familyId === 'vf' ||
-    (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, VIA_VF) >= 1);
+    (familyId === 'vf' && hasIii) ||
+    (hasIii && countPatternMatches(corpus, VIA_VF) >= 1);
   if (isVf) return 'via_vf_absorcao';
+
+  if (hasIii && tecnicaScore >= 1) return 'via_tecnica_admin';
 
   if (
     countPatternMatches(corpus, [/absor[cç][aã]o|biodisponibilidade/i]) > 0 &&
@@ -919,9 +949,7 @@ function inferViaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchI
     return 'via_vf_absorcao';
   }
 
-  if (countPatternMatches(corpus, VIA_TECNICA) > 0) {
-    return 'via_tecnica_admin';
-  }
+  if (tecnicaScore > 0) return 'via_tecnica_admin';
 
   return 'via_generico';
 }

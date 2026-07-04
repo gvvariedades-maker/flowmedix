@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g31",
+  "exported_at": "2026-07-03T06:31:14.937Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g31/manifest.json"
+  },
+  "slugs": [
+    "vunesp-enfermagem-imunizacao-1779563965519-5",
+    "idecan-enfermagem-imunizacao-1778712270872-9",
+    "vunesp-enfermagem-imunizacao-1779563996663-0",
+    "idecan-enfermagem-imunizacao-1778712281975-3",
+    "vunesp-enfermagem-imunizacao-1779564001927-0",
+    "idecan-enfermagem-imunizacao-1778712281975-5",
+    "vunesp-enfermagem-imunizacao-1779564053668-4",
+    "idecan-enfermagem-imunizacao-1779563986606-3"
+  ]
+}

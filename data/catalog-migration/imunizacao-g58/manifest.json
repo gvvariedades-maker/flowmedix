@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g58",
+  "exported_at": "2026-07-03T07:22:08.988Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g58/manifest.json"
+  },
+  "slugs": [
+    "fepese-enfermagem-imunizacao-1777103270218-0",
+    "fgv-enfermagem-imunizacao-1779563992006-8",
+    "fumarc-enfermagem-imunizacao-1779564006577-8",
+    "idecan-enfermagem-imunizacao-1777103277533-5",
+    "idecan-enfermagem-imunizacao-1777103277533-4",
+    "idecan-enfermagem-imunizacao-1778712281975-0",
+    "ms-sarmento-enfermagem-imunizacao-1777103244679-7",
+    "cebraspe-cespe-enfermagem-imunizacao-1779572166628-1"
+  ]
+}

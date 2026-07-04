@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g08",
+  "exported_at": "2026-07-03T23:54:00.391Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g08/manifest.json"
+  },
+  "slugs": [
+    "vunesp-enfermagem-vias-de-administracao-1776056366158-6",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-0",
+    "idecan-enfermagem-vias-de-administracao-1776056418941-6",
+    "vunesp-enfermagem-vias-de-administracao-1778968787431-7",
+    "educa-pb-enfermagem-vias-de-administracao-1776056427936-0",
+    "idecan-enfermagem-vias-de-administracao-1778712108887-4",
+    "educa-pb-enfermagem-vias-de-administracao-1778968629127-6",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1776056391403-7"
+  ]
+}

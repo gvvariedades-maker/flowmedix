@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:43:31.120Z",
+  "lote": "imunizacao-g15",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "educa-pb-enfermagem-imunizacao-1779564059030-5",
+    "educa-pb-enfermagem-imunizacao-1779564059030-6",
+    "epl-concursos-enfermagem-imunizacao-1779572236985-5",
+    "epl-concursos-enfermagem-imunizacao-1779572236985-6",
+    "fundatec-enfermagem-imunizacao-1779564125198-6",
+    "fundatec-enfermagem-imunizacao-1779572227744-0",
+    "fundatec-enfermagem-imunizacao-1779572227744-1",
+    "fundatec-enfermagem-imunizacao-1779572236985-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564059030-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564059030-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564125198-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572227744-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572227744-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572236985-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g46",
+  "exported_at": "2026-07-03T06:50:36.302Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g46/manifest.json"
+  },
+  "slugs": [
+    "copese-ufpi-geral-imunizacao-1779564079834-8",
+    "amauc-enfermagem-vias-de-administracao-1776056374837-2",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-3",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-0",
+    "cev-urca-enfermagem-vias-de-administracao-1776056427936-7",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-7",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-8"
+  ]
+}

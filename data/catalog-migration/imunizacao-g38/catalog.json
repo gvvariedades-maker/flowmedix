@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:37:12.128Z",
+  "lote": "imunizacao-g38",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 790
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 794
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 831
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "NC UFPR (FUNPAR)",
+      "avant_codigo": 804
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3814
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 4012
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3943
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3944
+    }
+  ]
+}

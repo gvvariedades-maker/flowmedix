@@ -1,0 +1,41 @@
+{
+  "lote": "imunizacao-g69",
+  "exported_at": "2026-07-03T07:45:00.000Z",
+  "source": "cluster-report",
+  "filters": {
+    "exclude_calendario": true,
+    "calendario_pool_exhausted_at": "imunizacao-g42",
+    "clusters": [
+      "Cadeia de frio / conservação / SI-PNI",
+      "INCORRETA / EXCETO",
+      "V/F — intervalos PNI (I/II/III/IV)",
+      "Default — sem âncora temática",
+      "Certo ou errado",
+      "Técnica de aplicação / sala de vacinação",
+      "Conceito — tipos de vacina / imunobiológicos",
+      "Contraindicações / eventos adversos"
+    ],
+    "exclude_count": 508,
+    "mix": "4 cadeia frio + 2 EXCETO + 2 certo/errado (pool V/F esgotado)"
+  },
+  "slugs": [
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-6",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-7",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-6",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-9",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-7",
+    "legalle-enfermagem-imunizacao-1779572166628-3",
+    "idecan-enfermagem-imunizacao-1778712281975-8",
+    "igeduc-enfermagem-imunizacao-1779564035545-0"
+  ],
+  "slug_clusters": {
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-6": "Cadeia de frio / conservação / SI-PNI",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-7": "Cadeia de frio / conservação / SI-PNI",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-6": "Cadeia de frio / conservação / SI-PNI",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-9": "Cadeia de frio / conservação / SI-PNI",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-7": "INCORRETA / EXCETO",
+    "legalle-enfermagem-imunizacao-1779572166628-3": "INCORRETA / EXCETO",
+    "idecan-enfermagem-imunizacao-1778712281975-8": "Certo ou errado",
+    "igeduc-enfermagem-imunizacao-1779564035545-0": "Certo ou errado"
+  }
+}

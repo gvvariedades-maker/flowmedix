@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:13:09.187Z",
+  "lote": "imunizacao-g24",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3875
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1777103264001-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 858
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3972
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 821
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-imunizacao-1777103264001-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO JK",
+      "avant_codigo": 859
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 822
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103251447-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 840
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1779564125198-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 3890
+    }
+  ]
+}

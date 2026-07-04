@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g25",
+  "exported_at": "2026-07-04T02:23:26.298Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g25/manifest.json"
+  },
+  "slugs": [
+    "imparh-enfermagem-vias-de-administracao-1778968956139-0",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-6",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1778968687469-9",
+    "instituto-evo-enfermagem-vias-de-administracao-1776056348175-2",
+    "ivin-enfermagem-vias-de-administracao-1778968877204-5",
+    "lj-assessoria-enfermagem-vias-de-administracao-1778968877204-7",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-0"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g16",
+  "exported_at": "2026-07-03T05:50:38.866Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g16/manifest.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-imunizacao-1779572236985-3",
+    "facet-enfermagem-imunizacao-1779563965519-8",
+    "fundep-enfermagem-imunizacao-1779572166628-6",
+    "fau-unicentro-enfermagem-imunizacao-1777103251447-6",
+    "furb-enfermagem-imunizacao-1777103244679-6",
+    "fau-unicentro-enfermagem-imunizacao-1779563970889-5",
+    "furb-enfermagem-imunizacao-1777103251447-0",
+    "fau-unicentro-enfermagem-imunizacao-1779563992006-1"
+  ]
+}

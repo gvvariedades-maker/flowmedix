@@ -1,45 +1,131 @@
 {
-  "version": 1,
+  "version": 2,
   "subtopico": "Vias de Administração",
   "pacote_prefix": "vias-de-administracao",
   "scope_default": "subtopico_handcraft",
   "anchor_glob": "examples/questao-premium-*-vias-*.json,examples/questao-premium-consulpam-vias-absorcao-oral.json",
+  "guideline": "lib/guidelines/viasAdministracao.ts",
   "golden_anchors_registry": "data/catalog-migration/vias-golden-anchors.json",
   "handcraft_meta": "data/catalog-migration/vias-de-administracao-completo/handcraft-meta.json",
-  "repair_lote_pattern": "vias-de-administracao-repair-*",
-  "slug_selection": "Cluster absorção/1ª passagem ou técnica de punção; audit [READY]; ou Slug: explícito",
+  "cluster_report": "artifacts/vias-de-administracao-topic-cluster-report.json",
+  "repair_lote_pattern": "vias-de-administracao-*-repair",
+  "slug_selection": "P0 via_vf_absorcao (~91%): lotes g01+ por cluster — V/F absorção · CORRETA · indicação SC/IM/IV; excluir slugs já handcraft/repair; [READY] strict-v2; ou Slug: explícito",
   "clusters": [
-    "Absorção farmacocinética / 1ª passagem (âncora Consulpam CORRETA)",
-    "Indicação da via (velocidade SC/IM/IV)",
-    "Técnica de administração (IM, IV, punção)",
-    "V/F assertivas I–III ou I–IV"
+    "Técnica de punção IM/IV (68 · 28,9% — ramo via_tecnica_admin · âncora CPCON IM V/F)",
+    "V/F — absorção e perfil de vias (57 · 24,3% — via_vf_absorcao · âncora CPCON)",
+    "Absorção / farmacocinética (CORRETA) (26 · 11,1% — via_vf_absorcao · âncora Consulpam)",
+    "Perfis de via (25 · 10,6% — via_generico — cauda)",
+    "Indicação da via (velocidade SC/IM/IV) (19 · 8,1% — via_vf_absorcao · âncora VUNESP SC)",
+    "INCORRETA / EXCETO (18 · 7,7% — via_generico · âncora CETREDE pendente)",
+    "Default — sem âncora temática (11 · 4,7% — absorver)",
+    "Certo ou errado (8 · 3,4% — absorver)",
+    "1ª passagem hepática / biodisponibilidade (3 · 1,3% — via_vf_absorcao)"
   ],
   "pedagogical_branches": [
     {
       "id": "via_vf_absorcao",
-      "when": "Absorção, 1ª passagem hepática, oral/sublingual/retal/parenteral, comparativo de vias",
-      "mold": "absorption-speed-rail · reference_table · tap · route-trap",
+      "when": "Absorção, 1ª passagem hepática, oral/sublingual/retal/parenteral, comparativo de vias, indicação por velocidade",
+      "mold": "absorption-speed-rail · via-reference-board · via-vf-juggle-tap · route-trap",
       "anchors": [
         "examples/questao-premium-consulpam-vias-absorcao-oral.json",
-        "examples/questao-premium-vunesp-via-subcutanea.json"
+        "examples/questao-premium-vunesp-via-subcutanea.json",
+        "examples/questao-premium-cpcon-vias-im-vf.json"
       ]
     },
     {
       "id": "via_tecnica_admin",
       "when": "Técnica de punção, sítio anatômico, volume, ângulo, complicações",
-      "mold": "genérico morphological · reference_table · vertical · compare",
+      "mold": "morphological · banner · cards · compare (genérico P1 — ok_generico; brief bespoke opcional pós-g01)",
       "anchors": ["examples/questao-premium-cpcon-vias-im-vf.json"]
     },
     {
       "id": "via_generico",
-      "when": "Demais — indicação de via sem cluster claro",
-      "mold": "genérico",
-      "anchors": ["examples/questao-premium-vunesp-via-subcutanea.json"]
+      "when": "EXCETO/INCORRETA, perfis de via sem cluster, certo ou errado — cauda longa",
+      "mold": "genérico morphological · reference_table · tap · compare",
+      "anchors": [
+        "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json",
+        "examples/questao-premium-avancasp-vias-sublingual-exceto.json"
+      ]
     }
   ],
   "validation": {
-    "per_slug": "npm run audit:questao-readiness -- --file=<path>",
-    "lote": "npm run audit:questao-readiness -- --lote=<lote>"
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_slug_v3": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+    "v3_mental": "npm run audit:questao-readiness -- --lote=<lote> --strict-v3-pedagogy",
+    "pedagogy_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+    "enrich_numeric_meta": "npm run enrich:vias-guideline-meta -- --lote=<lote> --write",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]",
+    "lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy"
   },
-  "proibido": ["ai:generate", "catalog:upgrade-premium"]
+  "golden_v1_grammar": {
+    "concept_map": "Enquadramento da prova + trilho de absorção ou sítio anatômico + erro ROI nomeado (vias-pedagogy-errors.json)",
+    "golden_rule": "Decore normativo — rows velocidade IV/IM/SC/VO, volumes, ângulos, sítios (sem V/F nem gabarito)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; eliminar distratores ou julgar I–IV",
+    "danger_zone": "Erro reproduzível × correção por letra (route-trap / compare — espelha concept_map)"
+  },
+  "roi_priorities": [
+    {
+      "priority": "P0",
+      "action": "Handcraft g01+ via_vf_absorcao (V/F absorção + CORRETA + indicação)",
+      "why": "~91% do volume inferido (214 slugs) — molde bespoke 4/4 pronto"
+    },
+    {
+      "priority": "P0",
+      "action": "audit:slug-alignment --strict + viasPedagogy em todo lote",
+      "why": "Evita reciclagem e danger_mirror vazio"
+    },
+    {
+      "priority": "P1",
+      "action": "Lote dedicado via_tecnica_admin (68 slugs punção IM/IV)",
+      "why": "29% cluster técnica — molde genérico até brief bespoke"
+    },
+    {
+      "priority": "P1",
+      "action": "enrich:vias-guideline-meta + audit:numeric-factcheck em slugs com dose/ângulo/volume",
+      "why": "COFEN tier A + factcheck L2b"
+    },
+    {
+      "priority": "P2",
+      "action": "Âncora EXCETO CETREDE + handcraft INCORRETA/EXCETO (18 slugs)",
+      "why": "compare semântico — gate vias_exceto_semantic"
+    },
+    {
+      "priority": "P2",
+      "action": "test:e2e:visual-molds Vias + audit:subtopico-quality --promote",
+      "why": "Fecha vendável L3–L6"
+    }
+  ],
+  "proibido": ["ai:generate", "catalog:upgrade-premium"],
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Handcraft golden-v1 — 251 slugs em lotes vias-de-administracao-gNN",
+      "first_lote": "vias-de-administracao-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run audit:slug-alignment -- --lote=<lote> --strict",
+        "npm run audit:numeric-factcheck -- --lote=<lote>",
+        "npm run enrich:vias-guideline-meta -- --lote=<lote> --write",
+        "npm run catalog:patch-pedagogical-branch -- --lote=<lote> --reconcile-branch --apply",
+        "npm run capture:questao-review -- --lote=<lote>",
+        "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run",
+        "# apply SOMENTE se usuário pedir:",
+        "npm run catalog:apply-lote -- --lote=<lote> --apply",
+        "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"Vias de Administração\" --only-premium --reconcile-branch --apply"
+      ]
+    },
+    "single_slug": {
+      "lote_dir": "data/catalog-migration/vias-de-administracao-g01/questions",
+      "after_handcraft": [
+        "npm run enrich:vias-guideline-meta -- --file=data/catalog-migration/<lote>/questions/<slug>.json --write",
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
+      ]
+    }
+  }
 }

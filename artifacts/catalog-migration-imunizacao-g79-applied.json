@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T15:40:44.983Z",
+  "lote": "imunizacao-g79",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-1",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-4",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-9",
+    "nao-informado-geral-imunizacao-1779564031957-0",
+    "quadrix-geral-imunizacao-1777103182944-0",
+    "selecon-enfermagem-processo-de-enfermagem-1780009322055-4",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-imunizacao-1779564031957-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-geral-imunizacao-1777103182944-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

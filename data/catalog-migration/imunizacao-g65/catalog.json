@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:11:01.262Z",
+  "lote": "imunizacao-g65",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3846
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3957
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-imunizacao-1777103238173-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 819
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCM",
+      "avant_codigo": 3858
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5141
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 875
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103204932-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 783
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572171486-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3953
+    }
+  ]
+}

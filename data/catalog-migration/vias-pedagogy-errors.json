@@ -1,0 +1,252 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-03",
+  "subtopico": "Vias de Administração",
+  "description": "Erros reproduzíveis por cluster (ROI handcraft) — nomear no concept_map e espelhar no danger_zone.",
+  "grammar_slots": {
+    "concept_map": "Enquadramento da prova + trilho de absorção ou sítio anatômico + pegadinha-âncora nomeando erro ROI (sem letra gabarito)",
+    "golden_rule": "Decore normativo — rows com velocidade IV/IM/SC/VO, volumes, ângulos, sítios (sem V/F nem gabarito)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; eliminar distratores ou julgar I–IV",
+    "danger_zone": "Erro reproduzível × correção específica por letra/tema (route-trap / compare semântico)",
+    "content_review": "guideline_snapshot tier A/B (Potter/Perry, COFEN) + exam_vs_current"
+  },
+  "v3_mental": {
+    "flag": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "roi_errors": "reproducible_errors[].id — inferir do enunciado e nomear no concept_map",
+    "cluster_roi": "reproducible_errors[].cluster_roi — agrupamento curto para briefing de lote",
+    "codes": [
+      "vias_concept_repro_error",
+      "vias_concept_generic_farmacologia",
+      "vias_golden_vf_judgment",
+      "vias_golden_gabarito_row",
+      "vias_logic_reveal_tap",
+      "vias_logic_elimination",
+      "vias_danger_letter_binding",
+      "vias_danger_mirror",
+      "vias_guideline_snapshot",
+      "vias_exam_vs_current"
+    ]
+  },
+  "reproducible_errors": [
+    {
+      "id": "inverter_velocidade_im_sc",
+      "label": "Inverter velocidade IM × SC (músculo mais lento que hipoderme)",
+      "cluster_roi": "absorção",
+      "clusters": [
+        "V/F — absorção e perfil de vias",
+        "Absorção / farmacocinética (CORRETA)",
+        "Técnica de punção IM/IV"
+      ],
+      "concept_map_hint": "Item Trilho IM × SC — músculo é mais vascularizado; IM absorve mais rápido que SC",
+      "danger_zone_hint": "Afirmativa I ou letra que diz IM mais lenta por menor vascularização",
+      "anchors": ["questao-premium-cpcon-vias-im-vf.json"]
+    },
+    {
+      "id": "lista_parenteral_incompleta",
+      "label": "Lista parenteral incompleta ou com rota não clássica",
+      "cluster_roi": "absorção",
+      "clusters": [
+        "Absorção / farmacocinética (CORRETA)",
+        "Absorção farmacocinética / 1ª passagem (âncora Consulpam CORRETA)",
+        "V/F — absorção e perfil de vias"
+      ],
+      "concept_map_hint": "Núcleo via parenteral — IV, IM, SC, ID clássicas; endotraqueal/intratecal fora da lista padrão",
+      "danger_zone_hint": "Letra A que mistura rotas especiais como se fossem parenterais de prova",
+      "anchors": ["questao-premium-consulpam-vias-absorcao-oral.json"]
+    },
+    {
+      "id": "sublingual_irritante",
+      "label": "Sublingual indicada para irritantes (inverte mecanismo)",
+      "cluster_roi": "absorção",
+      "clusters": [
+        "Absorção / farmacocinética (CORRETA)",
+        "Absorção farmacocinética / 1ª passagem (âncora Consulpam CORRETA)",
+        "V/F — absorção e perfil de vias"
+      ],
+      "concept_map_hint": "Via sublingual — rápida, evita TGI; irritantes não são indicação clássica",
+      "danger_zone_hint": "Letra B que associa sublingual a substâncias irritantes",
+      "anchors": ["questao-premium-consulpam-vias-absorcao-oral.json"]
+    },
+    {
+      "id": "retal_sempre_figado",
+      "label": "Retal sempre passa pelo fígado (ignora bypass parcial)",
+      "cluster_roi": "absorção",
+      "clusters": [
+        "Absorção / farmacocinética (CORRETA)",
+        "Absorção farmacocinética / 1ª passagem (âncora Consulpam CORRETA)",
+        "V/F — absorção e perfil de vias"
+      ],
+      "concept_map_hint": "Via retal — porção inferior pode atingir circulação sistêmica com menor 1ª passagem hepática",
+      "danger_zone_hint": "Letra C que nega acesso sistêmico direto ou exagera biotransformação hepática",
+      "anchors": ["questao-premium-consulpam-vias-absorcao-oral.json"]
+    },
+    {
+      "id": "vo_estomago_pico",
+      "label": "Absorção oral só no estômago (ignora intestino delgado)",
+      "cluster_roi": "absorção",
+      "clusters": [
+        "Absorção / farmacocinética (CORRETA)",
+        "Absorção farmacocinética / 1ª passagem (âncora Consulpam CORRETA)"
+      ],
+      "concept_map_hint": "VO inicia boca/estômago mas pico de absorção no intestino delgado",
+      "danger_zone_hint": "Distrator que limita absorção oral ao estômago ou nega o delgado",
+      "anchors": ["questao-premium-consulpam-vias-absorcao-oral.json"]
+    },
+    {
+      "id": "perfil_iv_imediato",
+      "label": "Confundir perfil IV imediato com IM/SC/VO",
+      "cluster_roi": "absorção",
+      "clusters": [
+        "V/F — absorção e perfil de vias",
+        "Perfis de via",
+        "Indicação da via (velocidade SC/IM/IV)"
+      ],
+      "concept_map_hint": "Estação IV no trilho — imediata, 100% biodisponível; não confundir com SC lenta",
+      "danger_zone_hint": "Letra que descreve absorção rápida/contínua com perfil de SC ou VO",
+      "anchors": ["questao-premium-vunesp-via-subcutanea.json"]
+    },
+    {
+      "id": "ventrogluteo_inseguro",
+      "label": "Ventroglúteo como sítio inseguro (inverte recomendação)",
+      "cluster_roi": "técnica IM",
+      "clusters": [
+        "Técnica de punção IM/IV",
+        "Técnica de administração (IM, IV, punção)"
+      ],
+      "concept_map_hint": "Glúteo médio — sítio seguro, afasta nervo ciático; IV usa medo anatômico para inverter",
+      "danger_zone_hint": "Afirmativa IV ou letra que marca ventroglúteo como menos recomendado",
+      "anchors": ["questao-premium-cpcon-vias-im-vf.json"]
+    },
+    {
+      "id": "angulo_im_errado",
+      "label": "Ângulo de punção IM incorreto (90° × 45°)",
+      "cluster_roi": "técnica IM",
+      "clusters": [
+        "Técnica de punção IM/IV",
+        "Técnica de administração (IM, IV, punção)"
+      ],
+      "concept_map_hint": "IM = 90° no músculo; SC = 45° na hipoderme — não trocar ângulos entre vias",
+      "danger_zone_hint": "Letra ou item V/F que aplica ângulo de SC na IM ou vice-versa",
+      "anchors": ["questao-premium-cpcon-vias-im-vf.json"]
+    },
+    {
+      "id": "nervo_ciatico_gluteo",
+      "label": "Punção no glúteo sem citar nervo ciático",
+      "cluster_roi": "técnica IM",
+      "clusters": [
+        "Técnica de punção IM/IV",
+        "Técnica de administração (IM, IV, punção)"
+      ],
+      "concept_map_hint": "Dorsoglútea — risco de lesão do nervo ciático; ventroglúteo/deltoide como alternativas seguras",
+      "danger_zone_hint": "Item que recomenda glúteo superior sem marcos ósseos ou ignora complicação neurológica",
+      "anchors": ["questao-premium-cpcon-vias-im-vf.json"]
+    },
+    {
+      "id": "volume_sc_alto",
+      "label": "SC para doses grandes ou efeito rápido",
+      "cluster_roi": "indicação SC",
+      "clusters": [
+        "Indicação da via (velocidade SC/IM/IV)",
+        "Perfis de via"
+      ],
+      "concept_map_hint": "SC admite volumes pequenos — indicação = absorção lenta e contínua, não pico imediato",
+      "danger_zone_hint": "Letra D que pede doses grandes + efeito rápido na SC",
+      "anchors": ["questao-premium-vunesp-via-subcutanea.json"]
+    },
+    {
+      "id": "sc_absorcao_rapida",
+      "label": "SC para absorção rápida na corrente sanguínea",
+      "cluster_roi": "indicação SC",
+      "clusters": [
+        "Indicação da via (velocidade SC/IM/IV)",
+        "Perfis de via"
+      ],
+      "concept_map_hint": "Comando indicação SC — perfil lento/contínuo no trilho parenteral",
+      "danger_zone_hint": "Letra A que descreve absorção rápida — perfil de IV/IM",
+      "anchors": ["questao-premium-vunesp-via-subcutanea.json"]
+    },
+    {
+      "id": "viscosidade_sc",
+      "label": "Alta viscosidade como critério de indicação SC",
+      "cluster_roi": "indicação SC",
+      "clusters": [
+        "Indicação da via (velocidade SC/IM/IV)",
+        "Perfis de via"
+      ],
+      "concept_map_hint": "Viscosidade alta não é critério clássico de escolha da SC — volume e perfil de absorção sim",
+      "danger_zone_hint": "Letra C que usa viscosidade como indicação principal da via",
+      "anchors": ["questao-premium-vunesp-via-subcutanea.json"]
+    },
+    {
+      "id": "exceto_coringa",
+      "label": "EXCETO com frase-coringa em todas as letras",
+      "cluster_roi": "EXCETO",
+      "clusters": ["INCORRETA / EXCETO", "Certo ou errado"],
+      "concept_map_hint": "Distratores = condutas corretas sobre vias; só gabarito aponta mito/exceção",
+      "danger_zone_hint": "Cada letra errada explica por que É correta; gabarito = exceção",
+      "anchors": []
+    },
+    {
+      "id": "vf_im_sem_julgamento",
+      "label": "V/F IM sem julgar I–IV antes da combinação",
+      "cluster_roi": "técnica IM",
+      "clusters": [
+        "V/F — absorção e perfil de vias",
+        "Técnica de punção IM/IV"
+      ],
+      "concept_map_hint": "Quatro afirmativas I–IV — montar tabela V/F antes de olhar combinações de letras",
+      "danger_zone_hint": "logic_flow sem Julgar I/II/III/IV ou sem fechar combinação/letra",
+      "anchors": ["questao-premium-cpcon-vias-im-vf.json"]
+    }
+  ],
+  "cluster_roi_index": {
+    "absorção": [
+      "inverter_velocidade_im_sc",
+      "lista_parenteral_incompleta",
+      "sublingual_irritante",
+      "retal_sempre_figado",
+      "vo_estomago_pico",
+      "perfil_iv_imediato"
+    ],
+    "técnica IM": [
+      "inverter_velocidade_im_sc",
+      "ventrogluteo_inseguro",
+      "angulo_im_errado",
+      "nervo_ciatico_gluteo",
+      "vf_im_sem_julgamento"
+    ],
+    "indicação SC": [
+      "volume_sc_alto",
+      "sc_absorcao_rapida",
+      "viscosidade_sc"
+    ],
+    "EXCETO": ["exceto_coringa"]
+  },
+  "audit_gates": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path>",
+    "per_slug_v2": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_slug_v3": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "always_error_codes": [
+      "vias_pegadinha_anchor",
+      "vias_concept_gabarito_spoiler",
+      "vias_danger_mirror",
+      "vias_exceto_semantic",
+      "vias_exceto_coringa"
+    ],
+    "strict_v2_codes": [
+      "vias_golden_rows",
+      "vias_logic_gabarito"
+    ],
+    "codes": [
+      "vias_pegadinha_anchor",
+      "vias_concept_gabarito_spoiler",
+      "vias_danger_mirror",
+      "vias_exceto_semantic",
+      "vias_exceto_coringa",
+      "vias_golden_rows",
+      "vias_logic_gabarito",
+      "vias_concept_repro_error",
+      "vias_danger_letter_binding"
+    ]
+  }
+}

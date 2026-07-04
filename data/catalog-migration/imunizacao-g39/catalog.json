@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:38:59.768Z",
+  "lote": "imunizacao-g39",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3999
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103182944-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 773
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103277533-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 868
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3650
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3733
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3734
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1780000630425-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4085
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1777103238173-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 818
+    }
+  ]
+}

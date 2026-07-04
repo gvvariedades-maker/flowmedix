@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:55:02.725Z",
+  "lote": "imunizacao-g72",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-imunizacao-1779564040128-4",
+    "igeduc-enfermagem-imunizacao-1779564040128-5",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+    "reis-e-reis-enfermagem-imunizacao-1777103182944-2",
+    "unifil-enfermagem-imunizacao-1779572220683-1",
+    "unifil-enfermagem-imunizacao-1779572220683-2",
+    "unifil-enfermagem-imunizacao-1779572220683-9",
+    "unifil-enfermagem-imunizacao-1779572227744-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564040128-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564040128-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-imunizacao-1777103182944-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

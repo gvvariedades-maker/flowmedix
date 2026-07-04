@@ -1,0 +1,43 @@
+{
+  "lote": "vias-de-administracao-g19",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P2 — Perfis de via + INCORRETA/EXCETO",
+  "slug_count": 8,
+  "pedagogical_branch_target": "via_vf_absorcao",
+  "anchors": [
+    "examples/questao-premium-consulpam-vias-absorcao-oral.json",
+    "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json"
+  ],
+  "anchor_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968768987-2",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Handcraft golden-v1 2026-07-03 — 8/8 [READY] strict-v2-pedagogy · validate:goldens --strict OK · P0/P1 esgotados — lote Perfis+EXCETO · não aplicado Supabase",
+  "handcraft": {
+    "completed_at": "2026-07-03",
+    "reviewer": "agent",
+    "slugs_ready": 8,
+    "slugs_total": 8,
+    "gates": {
+      "audit_questao_readiness_strict_v2": "8/8 pass",
+      "validate_goldens_strict": "8/8 pass",
+      "audit_slug_alignment_strict": "8/8 pass"
+    }
+  },
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=vias-de-administracao-g19 --from-manifest=data/catalog-migration/vias-de-administracao-g19/manifest.json",
+    "Handcraft por slug — gramática vias-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=vias-de-administracao-g19 --strict-v2-pedagogy",
+    "npm run validate:goldens -- --strict --dir=data/catalog-migration/vias-de-administracao-g19/questions",
+    "npm run enrich:vias-guideline-meta -- --lote=vias-de-administracao-g19 --write",
+    "npm run audit:slug-alignment -- --lote=vias-de-administracao-g19 --strict",
+    "npm run catalog:patch-pedagogical-branch -- --lote=vias-de-administracao-g19 --reconcile-branch --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g19.json"
+  },
+  "applied_at": "2026-07-04"
+}

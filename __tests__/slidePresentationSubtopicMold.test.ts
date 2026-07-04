@@ -801,6 +801,60 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('via-vf-juggle-tap');
   });
 
+  it('Vias de Administração: via_tecnica_admin usa molde genérico (banner + cards + compare)', () => {
+    const branchCtx = {
+      questionSlug: 'cpcon-vias-im-1',
+      familyId: 'vf' as const,
+      pedagogicalBranch: 'via_tecnica_admin',
+    };
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Vias de Administração' },
+          items: [
+            { label: 'IM', detail: 'Ventroglúteo', icon: 'Syringe' },
+            { label: 'Palpação', detail: 'Marcos ósseos', icon: 'Bone' },
+            { label: 'Conforto', detail: 'Distração', icon: 'Heart' },
+          ],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('morphological');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Vias de Administração' },
+          content: 'TÉCNICA IM — ventroglúteo e palpação',
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('banner');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Vias de Administração' },
+          steps: ['Julgar I', 'Marcar E'],
+          reveal_mode: 'tap',
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cards');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Vias de Administração' },
+          content: 'Pegadinhas',
+          items: [{ label: 'Letra A', detail: 'Inverte', correct: 'Afirmativa correta' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('compare');
+  });
+
   it('Farmacodinâmica e Farmacocinética: concept_map adme-journey-rail no molde', () => {
     const result = resolveSlidePresentation(
       {

@@ -191,7 +191,7 @@ function RouteTrapCard({
                 isRevealed ? 'bg-emerald-100/90 text-emerald-800' : 'bg-rose-100/90 text-rose-800'
               }`}
             >
-              {isRevealed ? 'via correta' : `pegadinha #${index + 1}`}
+              {isRevealed ? 'perfil SC' : `pegadinha #${index + 1}`}
             </span>
           </div>
 

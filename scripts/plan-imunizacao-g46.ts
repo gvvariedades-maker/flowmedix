@@ -1,0 +1,219 @@
+#!/usr/bin/env tsx
+/**
+ * Seleciona slugs para imunizacao-g46 (calendário P0) a partir do cluster report.
+ *
+ *   npm run plan:imunizacao-g46
+ *   npm run catalog:export-lote -- --lote=imunizacao-g46 --from-manifest=data/catalog-migration/imunizacao-g46/manifest.json
+ */
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+import { parseArg } from '@/lib/catalogMigration/cliArgs';
+import { loteManifestPath, loteQuestionsDir } from '@/lib/catalogMigration/paths';
+
+const CALENDARIO_CLUSTERS = new Set([
+  'Calendário vacinal — infantil',
+  'Calendário vacinal — adolescente/adulto/idoso',
+  'Gestante / puérpera — vacinação',
+  'HPV / campanhas e prevenção',
+]);
+
+const PLANNED_LOTES_BEFORE = [
+  'imunizacao-g40',
+  'imunizacao-g41',
+  'imunizacao-g42',
+  'imunizacao-g43',
+  'imunizacao-g44',
+  'imunizacao-g45',
+];
+
+type ClusterRow = {
+  modulo_slug: string;
+  pedagogical_cluster: string;
+  pedagogical_branch_proposed?: string;
+};
+
+type HandcraftMeta = {
+  handcraft_ready_lotes?: Record<string, { status?: string }>;
+};
+
+function loadCompletoSlugs(): Set<string> {
+  const completoManifest = resolve(
+    process.cwd(),
+    'data/catalog-migration/imunizacao-completo/manifest.json',
+  );
+  if (!existsSync(completoManifest)) return new Set();
+  const m = JSON.parse(readFileSync(completoManifest, 'utf8')) as {
+    slugs?: string[];
+    questoes?: string[];
+  };
+  return new Set(m.slugs ?? m.questoes ?? []);
+}
+
+/** Exclui applied g01–g13 + handcraft_ready (handcraft-meta) + lotes g40–g45 planejados. */
+function loadExcludeSlugs(skipLote?: string): Set<string> {
+  const exclude = new Set<string>();
+  const migrationRoot = resolve(process.cwd(), 'data/catalog-migration');
+
+  const handcraftMetaPath = resolve(migrationRoot, 'imunizacao-completo/handcraft-meta.json');
+  if (existsSync(handcraftMetaPath)) {
+    const handcraft = JSON.parse(readFileSync(handcraftMetaPath, 'utf8')) as HandcraftMeta;
+    for (const [loteName, info] of Object.entries(handcraft.handcraft_ready_lotes ?? {})) {
+      if (info.status !== 'applied' && info.status !== 'handcraft_ready') continue;
+      const manifest = resolve(migrationRoot, loteName, 'manifest.json');
+      if (!existsSync(manifest)) continue;
+      try {
+        const m = JSON.parse(readFileSync(manifest, 'utf8')) as { slugs?: string[] };
+        for (const s of m.slugs ?? []) exclude.add(s);
+      } catch {
+        // ignore
+      }
+    }
+  }
+
+  for (const loteName of PLANNED_LOTES_BEFORE) {
+    if (skipLote && loteName === skipLote) continue;
+    const manifest = resolve(migrationRoot, loteName, 'manifest.json');
+    if (!existsSync(manifest)) continue;
+    try {
+      const m = JSON.parse(readFileSync(manifest, 'utf8')) as { slugs?: string[] };
+      for (const s of m.slugs ?? []) exclude.add(s);
+    } catch {
+      // ignore
+    }
+  }
+
+  const completoManifest = resolve(migrationRoot, 'imunizacao-completo/manifest.json');
+  if (existsSync(completoManifest)) {
+    const m = JSON.parse(readFileSync(completoManifest, 'utf8')) as {
+      slugs_handcraft_applied?: string[];
+    };
+    for (const s of m.slugs_handcraft_applied ?? []) exclude.add(s);
+  }
+
+  const artifactsDir = resolve(process.cwd(), 'artifacts');
+  if (existsSync(artifactsDir)) {
+    for (const name of readdirSync(artifactsDir)) {
+      if (!/^catalog-migration-imunizacao-g\d{2}-applied\.json$/.test(name)) continue;
+      try {
+        const applied = JSON.parse(readFileSync(resolve(artifactsDir, name), 'utf8')) as {
+          applied_slugs?: string[];
+        };
+        for (const s of applied.applied_slugs ?? []) exclude.add(s);
+      } catch {
+        // ignore
+      }
+    }
+  }
+
+  return exclude;
+}
+
+function main(): void {
+  const lote = parseArg('lote') ?? 'imunizacao-g46';
+  const batchSize = Number(parseArg('size') ?? '8');
+  const reportPath = resolve(process.cwd(), 'artifacts/imunizacao-topic-cluster-report.json');
+  if (!existsSync(reportPath)) {
+    throw new Error('Rode npm run cluster:imunizacao antes de planejar o lote.');
+  }
+
+  const completoSlugs = loadCompletoSlugs();
+  const report = JSON.parse(readFileSync(reportPath, 'utf8')) as { rows: ClusterRow[] };
+  const exclude = loadExcludeSlugs(lote);
+
+  const infantil: string[] = [];
+  const adulto: string[] = [];
+
+  for (const row of report.rows) {
+    if (!CALENDARIO_CLUSTERS.has(row.pedagogical_cluster)) continue;
+    if (!completoSlugs.has(row.modulo_slug)) continue;
+    if (exclude.has(row.modulo_slug)) continue;
+    if (row.pedagogical_cluster === 'Calendário vacinal — infantil') {
+      infantil.push(row.modulo_slug);
+    } else {
+      adulto.push(row.modulo_slug);
+    }
+  }
+
+  const picked: string[] = [];
+  let i = 0;
+  let j = 0;
+  while (picked.length < batchSize && (i < infantil.length || j < adulto.length)) {
+    if (i < infantil.length) picked.push(infantil[i++]!);
+    if (picked.length >= batchSize) break;
+    if (j < adulto.length) picked.push(adulto[j++]!);
+  }
+
+  // Tail P0: cluster calendário esgotado em slugs canônicos — backfill Default imunização
+  if (picked.length < batchSize) {
+    const fallback: string[] = [];
+    for (const row of report.rows) {
+      if (picked.length + fallback.length >= batchSize) break;
+      if (row.pedagogical_cluster !== 'Default — sem âncora temática') continue;
+      if (!completoSlugs.has(row.modulo_slug)) continue;
+      if (exclude.has(row.modulo_slug) || picked.includes(row.modulo_slug)) continue;
+      fallback.push(row.modulo_slug);
+    }
+    picked.push(...fallback.slice(0, batchSize - picked.length));
+  }
+
+  if (picked.length < batchSize) {
+    throw new Error(`Só ${picked.length} slugs calendário disponíveis (excluídos ${exclude.size}).`);
+  }
+
+  const loteDir = resolve(process.cwd(), 'data/catalog-migration', lote);
+  mkdirSync(loteDir, { recursive: true });
+  mkdirSync(loteQuestionsDir(lote), { recursive: true });
+
+  const slugsFile = resolve(loteDir, 'g46-slugs.json');
+  writeFileSync(slugsFile, JSON.stringify(picked, null, 2), 'utf8');
+
+  const manifest = {
+    lote,
+    exported_at: new Date().toISOString(),
+    source: 'cluster-report',
+    filters: {
+      clusters: [...CALENDARIO_CLUSTERS],
+      exclude_count: exclude.size,
+      mix: 'infantil+adulto/gestante/HPV alternado; slug via imunizacao-completo; fallback Default',
+    },
+    slugs: picked,
+  };
+  writeFileSync(loteManifestPath(lote), JSON.stringify(manifest, null, 2), 'utf8');
+
+  const loteMeta = {
+    lote,
+    subtopico: 'Imunização',
+    status: 'planned',
+    priority: 'P0 — calendário (~62% volume)',
+    slug_count: picked.length,
+    pedagogical_branch_target: 'imunizacao_calendario',
+    anchors: [
+      'examples/questao-premium-fundatec-meningococica-3meses.json',
+      'examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json',
+    ],
+    anchor_slug: picked[0],
+    handcraft_grammar: 'data/catalog-migration/imunizacao-pedagogy-errors.json',
+    notes:
+      'Planejado 2026-07-03 — tail P0 calendário pós g01–g45: slugs via cluster + manifest completo (incl. processo-de-enfermagem/geral-imunizacao). Handcraft golden-v1 calendário.',
+    workflow: [
+      'npm run plan:imunizacao-g46',
+      'npm run catalog:export-lote -- --lote=imunizacao-g46 --from-manifest=data/catalog-migration/imunizacao-g46/manifest.json',
+      'Handcraft por slug — gramática imunizacao-pedagogy-errors.json',
+      'npm run audit:questao-readiness -- --lote=imunizacao-g46 --strict-v2-pedagogy',
+      'npm run audit:slug-alignment -- --lote=imunizacao-g46 --strict',
+      'npm run audit:numeric-factcheck -- --lote=imunizacao-g46',
+      'npm run validate:goldens -- --strict --lote=imunizacao-g46',
+    ],
+  };
+  writeFileSync(resolve(loteDir, 'lote-meta.json'), JSON.stringify(loteMeta, null, 2), 'utf8');
+
+  console.log(`[plan:imunizacao-g46] lote=${lote} slugs=${picked.length}`);
+  console.log(`[plan:imunizacao-g46] slugs_file=${slugsFile}`);
+  for (const s of picked) console.log(`  · ${s}`);
+  console.log(
+    `[plan:imunizacao-g46] próximo: npm run catalog:export-lote -- --lote=${lote} --from-manifest=data/catalog-migration/${lote}/manifest.json`,
+  );
+}
+
+main();

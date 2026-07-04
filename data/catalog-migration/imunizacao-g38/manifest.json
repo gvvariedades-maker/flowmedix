@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g38",
+  "exported_at": "2026-07-03T06:37:12.128Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g38/manifest.json"
+  },
+  "slugs": [
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+    "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+    "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+    "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+    "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+    "omni-enfermagem-imunizacao-1779572166628-7",
+    "omni-enfermagem-imunizacao-1779572166628-8"
+  ]
+}

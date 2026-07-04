@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:08:30.374Z",
+  "lote": "imunizacao-g21",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5139
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572166628-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3941
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1777103277533-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 869
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3946
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934900821-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1751
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3952
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-imunizacao-1777103251447-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 841
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3665
+    }
+  ]
+}

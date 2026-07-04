@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g14",
+  "exported_at": "2026-07-04T00:04:52.152Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g14/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-vias-de-administracao-1778968956139-8",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-3",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-2",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-4",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-6",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-7",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056348175-1",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7"
+  ]
+}

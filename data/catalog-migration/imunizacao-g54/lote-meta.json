@@ -1,0 +1,37 @@
+{
+  "lote": "imunizacao-g54",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P0 — calendário residual + técnica/conceito",
+  "slug_count": 8,
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "branch_mix": {
+    "imunizacao_calendario": 7,
+    "imunizacao_generico": 1
+  },
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "cetrede-enfermagem-imunizacao-1777103215560-0",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Handcraft 2026-07-03 — P0 fallback técnica/conceito (pool calendário explícito esgotado). Hep B ao nascer, soro raiva imunodeprimido, Pneumo 10 IM, imunidade passiva natural, tetraviral SC, tétano ferimento >5a, Ig/sangue × vivas, rubéola atenuada. validate:goldens strict · slug-alignment strict · numeric-factcheck OK — pendente apply.",
+  "workflow": [
+    "npm run plan:imunizacao-g54",
+    "npm run catalog:export-lote -- --lote=imunizacao-g54 --from-manifest=data/catalog-migration/imunizacao-g54/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g54 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g54 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g54",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g54"
+  ],
+  "validated_at": "2026-07-03",
+  "readiness": "8/8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g54.json"
+  }
+}

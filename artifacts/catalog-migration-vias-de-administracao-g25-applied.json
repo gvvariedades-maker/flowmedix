@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-04T05:05:23.682Z",
+  "lote": "vias-de-administracao-g25",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "imparh-enfermagem-vias-de-administracao-1778968956139-0",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-6",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1778968687469-9",
+    "instituto-evo-enfermagem-vias-de-administracao-1776056348175-2",
+    "ivin-enfermagem-vias-de-administracao-1778968877204-5",
+    "lj-assessoria-enfermagem-vias-de-administracao-1778968877204-7",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "imparh-enfermagem-vias-de-administracao-1778968956139-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968687469-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-vias-de-administracao-1776056348175-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-vias-de-administracao-1778968877204-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-vias-de-administracao-1778968877204-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

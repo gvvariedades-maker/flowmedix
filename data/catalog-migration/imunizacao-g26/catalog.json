@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:16:39.094Z",
+  "lote": "imunizacao-g26",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3905
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564109452-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3865
+    },
+    {
+      "modulo_slug": "ipefae-enfermagem-imunizacao-1779564090395-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IPEFAE",
+      "avant_codigo": 3855
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572215875-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3987
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103204932-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 785
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572528473-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4040
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103257434-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 851
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1777103244679-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 828
+    }
+  ]
+}

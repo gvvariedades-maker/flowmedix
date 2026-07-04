@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g25",
+  "exported_at": "2026-07-03T06:13:54.631Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g25/manifest.json"
+  },
+  "slugs": [
+    "instituto-verbena-enfermagem-imunizacao-1779564044052-0",
+    "fundatec-enfermagem-imunizacao-1777103182944-3",
+    "instituto-verbena-enfermagem-imunizacao-1779564067000-4",
+    "fundatec-enfermagem-imunizacao-1777103204932-0",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-1",
+    "fundatec-enfermagem-imunizacao-1777103257434-4",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-2",
+    "fundatec-enfermagem-imunizacao-1779563970889-1"
+  ]
+}

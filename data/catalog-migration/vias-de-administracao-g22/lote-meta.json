@@ -1,0 +1,27 @@
+{
+  "lote": "vias-de-administracao-g22",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P1 — via_tecnica_admin + perfis (pós-P0)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "via_tecnica_admin",
+  "anchors": [
+    "examples/questao-premium-cpcon-vias-im-vf.json"
+  ],
+  "anchor_slug": "quadrix-enfermagem-vias-de-administracao-1778968877204-2",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Planejado 2026-07-03 — P0 esgotado; g22 mix técnica punção + perfis. plan:g01 falhou (0 P0).",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=vias-de-administracao-g22 --from-manifest=data/catalog-migration/vias-de-administracao-g22/manifest.json",
+    "Handcraft golden-v1 por slug",
+    "npm run audit:questao-readiness -- --lote=vias-de-administracao-g22 --strict-v2-pedagogy"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g22.json"
+  },
+  "applied_at": "2026-07-04"
+}

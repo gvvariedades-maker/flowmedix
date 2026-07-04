@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T15:40:22.984Z",
+  "lote": "imunizacao-g78",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-4",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-0",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-8",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-3",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002389285-9",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-0",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002389285-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

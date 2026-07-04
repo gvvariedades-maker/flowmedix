@@ -5,6 +5,7 @@
 ## Escopo
 
 - **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3
+- **Primeiro lote:** `vias-de-administracao-g01`
 
 ## Pacote (registry)
 
@@ -18,6 +19,11 @@
 | anchor_glob | `examples/questao-premium-*-vias-*.json,examples/questao-premium-consulpam-vias-absorcao-oral.json` |
 | guideline | `—` |
 | handcraft_meta | `data/catalog-migration/vias-de-administracao-completo/handcraft-meta.json` |
+
+## Proibido (playbook)
+
+- `ai:generate`
+- `catalog:upgrade-premium`
 
 ## Ramos L3 (pedagogical_branch)
 
@@ -35,12 +41,13 @@
 - Técnica de administração (IM, IV, punção)
 - V/F assertivas I–III ou I–IV
 
-## Golden anchors (vias)
+## Golden anchors
 
 - Registry: `data/catalog-migration/vias-golden-anchors.json`
-- Absorção CORRETA: `examples/questao-premium-consulpam-vias-absorcao-oral.json`
-- Indicação SC: `examples/questao-premium-vunesp-via-subcutanea.json`
-- Técnica IM V/F: `examples/questao-premium-cpcon-vias-im-vf.json`
+- **via_vf_absorcao:** `examples/questao-premium-consulpam-vias-absorcao-oral.json`
+- **via_vf_absorcao:** `examples/questao-premium-vunesp-via-subcutanea.json`
+- **via_tecnica_admin:** `examples/questao-premium-cpcon-vias-im-vf.json`
+- **via_generico:** `examples/questao-premium-vunesp-via-subcutanea.json`
 
 ## Pipeline (executar)
 

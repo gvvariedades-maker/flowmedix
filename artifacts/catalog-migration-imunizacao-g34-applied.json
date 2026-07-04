@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:48:05.443Z",
+  "lote": "imunizacao-g34",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "imparh-enfermagem-imunizacao-1779564067000-5",
+    "instituto-aocp-enfermagem-imunizacao-1777103257434-0",
+    "instituto-aocp-enfermagem-imunizacao-1777103257434-1",
+    "instituto-consulpam-enfermagem-imunizacao-1779564067000-8",
+    "instituto-consulpam-enfermagem-imunizacao-1779564109452-4",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-3",
+    "instituto-consulplan-enfermagem-imunizacao-1777103230085-1",
+    "instituto-consulplan-enfermagem-imunizacao-1777103230085-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "imparh-enfermagem-imunizacao-1779564067000-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-imunizacao-1777103257434-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-imunizacao-1777103257434-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564067000-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564109452-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

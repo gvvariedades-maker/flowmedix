@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-04T00:17:49.368Z",
+  "lote": "vias-de-administracao-g21",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-9",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 438
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2042
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2109
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968968468-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2099
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2055
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968687469-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2028
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1510
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 1982
+    }
+  ]
+}
