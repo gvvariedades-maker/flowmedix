@@ -1,4 +1,5 @@
 import {
+  getCompareBackFaceLabel,
   getCompareCorrectColumnTitle,
   getGoldenRuleTitleSizeClass,
 } from '@/lib/slides/goldenRuleTypography';
@@ -33,6 +34,15 @@ describe('goldenRuleTypography', () => {
     expect(
       getCompareCorrectColumnTitle('Letra A', 'Gabarito: letra B — V, V, F, F, V, V.'),
     ).toBe('Resposta certa');
+  });
+
+  it('compare back face: distrator usa conduta, gabarito usa resposta certa', () => {
+    expect(getCompareBackFaceLabel('Letra A — fosfato', 'Diluição compatível = SF 0,9%.')).toBe(
+      'Conduta certa na prova',
+    );
+    expect(getCompareBackFaceLabel('Letra B — gabarito', 'Monitorar pH e ajustar dose.')).toBe(
+      'Resposta certa',
+    );
   });
 });
 

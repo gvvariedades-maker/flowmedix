@@ -6,7 +6,7 @@ import { AlertTriangle, CheckCircle2, ShieldAlert, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { DangerZoneBulletStyle } from '../core/dangerZoneLayout';
 import { dangerZoneHasCompareItems } from '../core/dangerZoneLayout';
-import { getCompareCorrectColumnTitle } from '@/lib/slides/goldenRuleTypography';
+import { getCompareBackFaceLabel } from '@/lib/slides/goldenRuleTypography';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
 import { DangerZoneTrapReveal } from './DangerZoneTrapReveal';
@@ -118,9 +118,7 @@ function CompareItemPanel({
   isRevealed: boolean;
   onReveal: () => void;
 }) {
-  const backTitle = getCompareCorrectColumnTitle(label, correctText);
-  const backFaceLabel =
-    backTitle === 'Resposta certa' ? 'Resposta certa' : 'Resposta correta';
+  const backFaceLabel = getCompareBackFaceLabel(label, correctText);
   const showCorrect = !isTapMode || isRevealed;
 
   return (

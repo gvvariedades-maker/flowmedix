@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
-import { getCompareCorrectColumnTitle } from '@/lib/slides/goldenRuleTypography';
+import { getCompareBackFaceLabel } from '@/lib/slides/goldenRuleTypography';
 import { inferSvIconName, inferSvShortLabel } from '@/lib/slides/vitalsSlideUtils';
 import { resolveLucideIcon } from '../core/lucideIcon';
 import type { ThemeColors } from '../core/themeGenerator';
@@ -29,8 +29,7 @@ function ArenaSplitCard({
   const iconSource = `${label} ${trapText} ${correctText}`;
   const Icon = resolveLucideIcon(inferSvIconName(iconSource));
   const svLabel = inferSvShortLabel(iconSource);
-  const backTitle = getCompareCorrectColumnTitle(label, correctText);
-  const correctLabel = backTitle === 'Resposta certa' ? 'Resposta certa' : 'Resposta correta';
+  const correctLabel = getCompareBackFaceLabel(label, correctText);
 
   return (
     <motion.div

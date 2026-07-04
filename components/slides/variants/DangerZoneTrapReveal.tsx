@@ -3,7 +3,7 @@
 import { useCallback, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
-import { getCompareCorrectColumnTitle } from '@/lib/slides/goldenRuleTypography';
+import { getCompareBackFaceLabel } from '@/lib/slides/goldenRuleTypography';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { DangerZoneBulletStyle } from '../core/dangerZoneLayout';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
@@ -64,9 +64,7 @@ function TrapRevealFlipCard({
   onFlip: () => void;
   prefersReducedMotion: boolean | null;
 }) {
-  const backTitle = getCompareCorrectColumnTitle(label, correctText);
-  const backFaceLabel =
-    backTitle === 'Resposta certa' ? 'Resposta certa' : 'Resposta correta';
+  const backFaceLabel = getCompareBackFaceLabel(label, correctText);
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {

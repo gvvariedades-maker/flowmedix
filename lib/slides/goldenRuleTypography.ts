@@ -27,3 +27,11 @@ export function getCompareCorrectColumnTitle(label: string, correctText: string)
   if (labelNorm && correct.toLowerCase().includes(labelNorm)) return 'Resposta certa';
   return label.trim() || 'Correto';
 }
+
+/** Rótulo da face verde no compare — distrator ≠ gabarito (evita "Resposta correta" em pegadinha). */
+export function getCompareBackFaceLabel(label: string, correctText: string): string {
+  const backTitle = getCompareCorrectColumnTitle(label, correctText);
+  if (backTitle === 'Resposta certa') return 'Resposta certa';
+  if (/gabarito/i.test(label.trim())) return 'Resposta certa';
+  return 'Conduta certa na prova';
+}
