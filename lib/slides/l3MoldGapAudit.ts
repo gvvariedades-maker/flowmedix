@@ -369,6 +369,7 @@ export async function buildL3MoldGapReport(
     ok_generico: 0,
     ramo_novo: 0,
     molde_inedito: 0,
+    molde_redesign: 0,
   };
 
   for (const row of clusters) {
@@ -410,11 +411,12 @@ export function printL3MoldGapSummary(report: L3MoldGapAuditReport): void {
   const s = report.summary;
   console.log('[audit:l3-mold-gap] clusters=%d slugs=%d', s.cluster_rows, s.slug_rows);
   console.log(
-    '[audit:l3-mold-gap] decisões: ok_existente=%d ok_generico=%d ramo_novo=%d molde_inedito=%d',
+    '[audit:l3-mold-gap] decisões: ok_existente=%d ok_generico=%d ramo_novo=%d molde_inedito=%d molde_redesign=%d',
     s.by_decision.ok_existente,
     s.by_decision.ok_generico,
     s.by_decision.ramo_novo,
     s.by_decision.molde_inedito,
+    s.by_decision.molde_redesign,
   );
   console.log(
     '[audit:l3-mold-gap] pacotes inéditos candidatos (únicos)=%d slug_mismatches=%d',
