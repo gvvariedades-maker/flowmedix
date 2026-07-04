@@ -400,7 +400,10 @@ function isVfVias(instruction: string, family?: string): boolean {
 }
 
 function collectCorpus(payload: {
-  question_data?: { instruction?: string; options?: { text?: string }[] };
+  question_data?: {
+    instruction?: string;
+    options?: { text?: string; id?: string; is_correct?: boolean }[];
+  };
   reverse_study_slides?: SlideLike[];
   study_slides?: SlideLike[];
 }): string {
