@@ -6,7 +6,12 @@ import type { SubtopicDesign } from '@/components/slides/core/themeGenerator';
 import type { PedagogicalBranchId } from '@/lib/slides/pedagogicalBranch';
 import { isBespokeLayoutVariant } from '@/lib/slides/moldAffinity';
 
-export type L3MoldGapDecision = 'ok_existente' | 'ok_generico' | 'ramo_novo' | 'molde_inedito';
+export type L3MoldGapDecision =
+  | 'ok_existente'
+  | 'ok_generico'
+  | 'ramo_novo'
+  | 'molde_inedito'
+  | 'molde_redesign';
 
 export type ClusterIdealSpec = {
   branch_id: string;
