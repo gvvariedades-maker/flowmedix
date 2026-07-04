@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T15:41:52.461Z",
+  "lote": "imunizacao-g83",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-1",
+    "ieses-enfermagem-atencao-basica-saude-da-familia-1778968357339-6",
+    "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4",
+    "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968357339-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

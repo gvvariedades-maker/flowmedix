@@ -63,8 +63,8 @@
   },
   "reverse_study_slides": [
     {
-      "type": "concept_map",
       "slide_title": "Rede de frio — temperatura positiva",
+      "type": "concept_map",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
@@ -94,8 +94,27 @@
       "footer_rule": "Positiva = 2 · 8 — não confundir com congelamento"
     },
     {
-      "type": "golden_rule",
+      "slide_title": "Estratégia — eliminar faixas erradas",
+      "type": "logic_flow",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "steps": [
+        "Comando: faixa de temperatura positiva — regra geral do Manual da Rede de Frio.",
+        "Recuperar decore PNI: imunobiológicos em positiva = 2 °C a 8 °C.",
+        "A — piso abaixo de 2 °C → eliminar.",
+        "C — teto acima de 8 °C → eliminar.",
+        "D — faixa de congelamento — enunciado pede positiva → eliminar.",
+        "E — faixa acima de 8 °C (alternativa quente) → eliminar.",
+        "Marcar letra B — 2 °C e 8 °C (única faixa positiva correta)."
+      ],
+      "footer_rule": "Leia “positiva” e “em geral” — banca testa o decore 2–8",
+      "reveal_mode": "tap"
+    },
+    {
       "slide_title": "Decore — faixas da Rede de Frio",
+      "type": "golden_rule",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
@@ -132,26 +151,7 @@
       "footer_rule": "2 a 8 °C = padrão ouro da sala de vacina"
     },
     {
-      "type": "logic_flow",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Imunização"
-      },
-      "steps": [
-        "Comando: faixa de temperatura positiva — regra geral do Manual da Rede de Frio.",
-        "Recuperar decore PNI: imunobiológicos em positiva = 2 °C a 8 °C.",
-        "A — piso abaixo de 2 °C → eliminar.",
-        "C — teto acima de 8 °C → eliminar.",
-        "D — faixa de congelamento — enunciado pede positiva → eliminar.",
-        "E — faixa acima de 8 °C (alternativa quente) → eliminar.",
-        "Marcar letra B — 2 °C e 8 °C (única faixa positiva correta)."
-      ],
-      "footer_rule": "Leia “positiva” e “em geral” — banca testa o decore 2–8"
-    },
-    {
       "type": "danger_zone",
-      "bullet_style": "x_icon",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Imunização"
@@ -184,7 +184,8 @@
           "correct": "Monitorar 2–8 °C na parte central; variação = acionar fluxo de perda."
         }
       ],
-      "footer_rule": "Memorize os dois números: 2 e 8"
+      "footer_rule": "Memorize os dois números: 2 e 8",
+      "bullet_style": "x_icon"
     }
   ]
 }

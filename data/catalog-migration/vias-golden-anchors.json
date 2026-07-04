@@ -1,8 +1,13 @@
 {
-  "version": 1,
-  "updated_at": "2026-07-01",
+  "version": 2,
+  "updated_at": "2026-07-03",
   "description": "Âncoras golden-v1 — Vias de Administração (referência de estilo por ramo; não substituem JSON por slug).",
-  "readiness_gate": "npm run audit:questao-readiness -- --file=<path>",
+  "readiness_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+  "anchors_readiness": {
+    "validated_at": "2026-07-03",
+    "summary": "5/5 READY",
+    "note": "via_vf_absorcao (2) · via_tecnica_admin (1) · via_generico EXCETO/INCORRETA (2)"
+  },
   "anchors": {
     "absorcao_conceito_correta": {
       "file": "examples/questao-premium-consulpam-vias-absorcao-oral.json",
@@ -14,16 +19,25 @@
       "banca": "INSTITUTO CONSULPAM",
       "ano": "2024",
       "gabarito": "D",
-      "notes": "Absorção VO/sublingual/retal/parenteral — golden_rule reference_table; logic_flow tap; danger_zone compare por letra."
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-03",
+      "anchor_role": "absorcao_oral_sublingual_retal",
+      "notes": "Absorção VO/sublingual/retal/parenteral — trilho absorption-speed-rail; logic_flow tap; danger_zone compare por letra."
     },
     "absorcao_indicacao_sc": {
       "file": "examples/questao-premium-vunesp-via-subcutanea.json",
       "slug_catalog": "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
       "subtopico": "Vias de Administração",
-      "pedagogical_branch": "via_generico",
+      "pedagogical_branch": "via_vf_absorcao",
       "family": "conceito",
       "command": "indicação da via",
-      "notes": "Perfil farmacocinético SC lenta/contínua — molde absorption-speed-rail."
+      "banca": "VUNESP",
+      "ano": "2025",
+      "gabarito": "B",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-03",
+      "anchor_role": "indicacao_velocidade_sc",
+      "notes": "Perfil farmacocinético SC lenta/contínua — molde absorption-speed-rail + route-trap."
     },
     "tecnica_im_vf": {
       "file": "examples/questao-premium-cpcon-vias-im-vf.json",
@@ -32,13 +46,51 @@
       "pedagogical_branch": "via_tecnica_admin",
       "family": "vf",
       "command": "É CORRETO o que se afirma em",
-      "notes": "Via IM — julgamento I–IV; ventroglúteo e absorção IM×SC."
+      "banca": "CPCON UEPB",
+      "ano": "2025",
+      "gabarito": "E",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-03",
+      "anchor_role": "tecnica_puncao_im_vf",
+      "notes": "Via IM V/F I–IV — ventroglúteo e absorção IM×SC; via-vf-juggle-tap + route-trap; ramo via_tecnica_admin."
+    },
+    "exceto_incorreta_injetaveis": {
+      "file": "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json",
+      "slug_catalog": "cetrede-enfermagem-vias-de-administracao-1776056391403-4",
+      "subtopico": "Vias de Administração",
+      "pedagogical_branch": "via_generico",
+      "family": "certo_errado",
+      "command": "alternativa INCORRETA",
+      "banca": "CETREDE",
+      "ano": "2025",
+      "gabarito": "A",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-03",
+      "anchor_role": "incorreta_vias_injetaveis",
+      "notes": "INCORRETA vias injetáveis — compare semântico; distratores B–E = afirmativa correta; A inverte vascularização × absorção."
+    },
+    "exceto_sublingual": {
+      "file": "examples/questao-premium-avancasp-vias-sublingual-exceto.json",
+      "slug_catalog": "avancasp-enfermagem-vias-de-administracao-1778968825263-5",
+      "subtopico": "Vias de Administração",
+      "pedagogical_branch": "via_generico",
+      "family": "certo_errado",
+      "command": "exceto",
+      "banca": "AVANÇASP",
+      "ano": "2026",
+      "gabarito": "C",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-03",
+      "anchor_role": "exceto_vantagens_sublingual",
+      "notes": "EXCETO vantagens sublingual — arsenal farmacológico limitado (C); compare semântico por letra."
     }
   },
   "family_grammar_refs": {
     "conceito_absorcao": "examples/questao-premium-consulpam-vias-absorcao-oral.json",
     "conceito_indicacao_via": "examples/questao-premium-vunesp-via-subcutanea.json",
-    "vf_tecnica_im": "examples/questao-premium-cpcon-vias-im-vf.json"
+    "vf_tecnica_im": "examples/questao-premium-cpcon-vias-im-vf.json",
+    "incorreta_injetaveis": "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json",
+    "exceto_sublingual": "examples/questao-premium-avancasp-vias-sublingual-exceto.json"
   },
   "repair_lotes": {
     "consulpam_absorcao_oral": "data/catalog-migration/vias-de-administracao-consulpam-repair"

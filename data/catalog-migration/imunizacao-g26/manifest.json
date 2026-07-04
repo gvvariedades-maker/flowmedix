@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g26",
+  "exported_at": "2026-07-03T06:16:39.094Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g26/manifest.json"
+  },
+  "slugs": [
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-6",
+    "fundatec-enfermagem-imunizacao-1779564109452-1",
+    "ipefae-enfermagem-imunizacao-1779564090395-7",
+    "fundatec-enfermagem-imunizacao-1779572215875-5",
+    "ivin-enfermagem-imunizacao-1777103204932-4",
+    "fundatec-enfermagem-imunizacao-1779572528473-2",
+    "ivin-enfermagem-imunizacao-1777103257434-9",
+    "furb-enfermagem-imunizacao-1777103244679-5"
+  ]
+}

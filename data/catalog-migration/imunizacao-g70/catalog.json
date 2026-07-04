@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:23:38.975Z",
+  "lote": "imunizacao-g70",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564001927-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3714
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564001927-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3715
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1779563975447-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3676
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779564006577-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3726
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 4963
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 5015
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564035545-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3742
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564035545-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3743
+    }
+  ]
+}

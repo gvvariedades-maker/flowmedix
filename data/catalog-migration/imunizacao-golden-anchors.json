@@ -121,7 +121,8 @@
   "repair_lotes": {
     "decorp_triplice_viral_via": "data/catalog-migration/imunizacao-decorp-triplice-viral-repair",
     "admtec_adolescente_cartao": "data/catalog-migration/imunizacao-admtec-adolescente-cartao-repair",
-    "ameosc_cadeia_frio": "data/catalog-migration/imunizacao-ameosc-cadeia-frio-repair"
+    "ameosc_cadeia_frio": "data/catalog-migration/imunizacao-ameosc-cadeia-frio-repair",
+    "avancasp_rede_frio_temperatura": "data/catalog-migration/imunizacao-avancasp-rede-frio-repair"
   },
   "deliberate_gaps": {
     "exceto_inc_piloto": {

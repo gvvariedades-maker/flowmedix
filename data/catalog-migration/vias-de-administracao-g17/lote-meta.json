@@ -1,0 +1,28 @@
+{
+  "lote": "vias-de-administracao-g17",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P1 — via_tecnica_admin (punção IM/IV)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "via_tecnica_admin",
+  "anchors": [
+    "examples/questao-premium-cpcon-vias-im-vf.json"
+  ],
+  "anchor_slug": "fundatec-enfermagem-vias-de-administracao-1776056391403-0",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Planejado 2026-07-03 — P0 esgotado; g17 continua ramo técnica punção IM/IV após g16. plan:vias P0 falhou — manifest manual cluster técnica.",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=vias-de-administracao-g17 --from-manifest=data/catalog-migration/vias-de-administracao-g17/manifest.json",
+    "Handcraft por slug — gramática vias-pedagogy-errors.json",
+    "npm run validate:goldens -- --lote=vias-de-administracao-g17 --strict",
+    "npm run audit:questao-readiness -- --lote=vias-de-administracao-g17 --strict-v2-pedagogy"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g17.json"
+  },
+  "applied_at": "2026-07-04"
+}

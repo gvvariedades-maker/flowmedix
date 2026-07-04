@@ -1,0 +1,42 @@
+{
+  "lote": "imunizacao-g65",
+  "exported_at": "2026-07-03T07:11:11.855Z",
+  "source": "cluster-report",
+  "filters": {
+    "exclude_calendario": true,
+    "calendario_pool_exhausted_at": "imunizacao-g42",
+    "exclude_done_not_used": true,
+    "clusters": [
+      "Cadeia de frio / conservação / SI-PNI",
+      "INCORRETA / EXCETO",
+      "V/F — intervalos PNI (I/II/III/IV)",
+      "Default — sem âncora temática",
+      "Certo ou errado",
+      "Técnica de aplicação / sala de vacinação",
+      "Conceito — tipos de vacina / imunobiológicos",
+      "Contraindicações / eventos adversos"
+    ],
+    "exclude_count": 466,
+    "mix": "4 cadeia frio + 2 EXCETO + 1 V/F intervalos + 1 genérico"
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-imunizacao-1779564085730-8",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-3",
+    "fau-unicentro-geral-imunizacao-1777103238173-4",
+    "fcm-enfermagem-imunizacao-1779564096589-1",
+    "idecan-enfermagem-imunizacao-1780066977710-7",
+    "inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+    "univida-enfermagem-imunizacao-1777103204932-2",
+    "cebraspe-cespe-enfermagem-imunizacao-1779572171486-8"
+  ],
+  "slug_clusters": {
+    "fau-unicentro-enfermagem-imunizacao-1779564085730-8": "Cadeia de frio / conservação / SI-PNI",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-3": "Cadeia de frio / conservação / SI-PNI",
+    "fau-unicentro-geral-imunizacao-1777103238173-4": "Cadeia de frio / conservação / SI-PNI",
+    "fcm-enfermagem-imunizacao-1779564096589-1": "Cadeia de frio / conservação / SI-PNI",
+    "idecan-enfermagem-imunizacao-1780066977710-7": "INCORRETA / EXCETO",
+    "inaz-do-para-enfermagem-imunizacao-1777103277533-7": "INCORRETA / EXCETO",
+    "univida-enfermagem-imunizacao-1777103204932-2": "V/F — intervalos PNI (I/II/III/IV)",
+    "cebraspe-cespe-enfermagem-imunizacao-1779572171486-8": "Certo ou errado"
+  }
+}

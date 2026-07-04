@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g18",
+  "exported_at": "2026-07-04T00:13:58.847Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g18/manifest.json"
+  },
+  "slugs": [
+    "instituto-mais-enfermagem-vias-de-administracao-1778968862077-9",
+    "instituto-verbena-enfermagem-vias-de-administracao-1776056409987-4",
+    "ivin-enfermagem-vias-de-administracao-1776056391403-3",
+    "ivin-enfermagem-vias-de-administracao-1778968629127-5",
+    "maranatha-assessoria-enfermagem-vias-de-administracao-1776056348175-4",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1776056338955-2",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968906156-3",
+    "omni-enfermagem-vias-de-administracao-1778969007166-1"
+  ]
+}

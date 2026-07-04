@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g47",
+  "exported_at": "2026-07-03T06:51:10.542Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g47/manifest.json"
+  },
+  "slugs": [
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-2",
+    "instituto-consulplan-enfermagem-imunizacao-1779564090395-0",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-4",
+    "omni-enfermagem-imunizacao-1779572220683-7",
+    "selecon-enfermagem-imunizacao-1779563965519-7",
+    "selecon-enfermagem-imunizacao-1779564071106-1",
+    "unifil-enfermagem-imunizacao-1779572220683-4",
+    "vunesp-enfermagem-imunizacao-1779564053668-5"
+  ]
+}

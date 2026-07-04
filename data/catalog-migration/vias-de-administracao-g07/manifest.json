@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g07",
+  "exported_at": "2026-07-03T23:52:56.248Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g07/manifest.json"
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968687469-4",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-5",
+    "fundatec-enfermagem-vias-de-administracao-1778968825263-2",
+    "omni-enfermagem-vias-de-administracao-1778968956139-5",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-8",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-0",
+    "quadrix-enfermagem-vias-de-administracao-1778968877204-3",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968629127-0"
+  ]
+}

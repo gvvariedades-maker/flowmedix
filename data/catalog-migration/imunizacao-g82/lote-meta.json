@@ -1,0 +1,31 @@
+{
+  "lote": "imunizacao-g82",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P2 — tail g76+ (slugs fora de g01–g75)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "mixed — conforme cluster report",
+  "anchors": [
+    "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+    "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"
+  ],
+  "anchor_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712270872-0",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Tail 2026-07-03 — 16 slugs restantes no manifest; lote cobre os próximos 8.",
+  "workflow": [
+    "npm run plan:imunizacao-remaining -- --lote=imunizacao-g82",
+    "npm run catalog:export-lote -- --lote=imunizacao-g82 --from-manifest=data/catalog-migration/imunizacao-g82/manifest.json",
+    "Handcraft golden-v1 por slug",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g82 --strict-v2-pedagogy",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g82"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g82.json"
+  }
+}

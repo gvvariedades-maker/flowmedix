@@ -35,7 +35,7 @@
     {
       "id": "via_tecnica_admin",
       "when": "Técnica de punção, sítio anatômico, volume, ângulo, complicações",
-      "mold": "morphological · banner · cards · compare (genérico — brief bespoke P1 opcional)",
+      "mold": "morphological · banner · cards · compare (genérico P1 — ok_generico; brief bespoke opcional pós-g01)",
       "anchors": ["examples/questao-premium-cpcon-vias-im-vf.json"]
     },
     {
@@ -43,8 +43,8 @@
       "when": "EXCETO/INCORRETA, perfis de via sem cluster, certo ou errado — cauda longa",
       "mold": "genérico morphological · reference_table · tap · compare",
       "anchors": [
-        "examples/questao-premium-vunesp-via-subcutanea.json",
-        "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json"
+        "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json",
+        "examples/questao-premium-avancasp-vias-sublingual-exceto.json"
       ]
     }
   ],

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:51:15.481Z",
+  "lote": "imunizacao-g53",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-enfermagem-saude-da-mulher-1777104323066-5",
+    "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780001903454-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-2",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-7",
+    "idecan-enfermagem-saude-do-idoso-1778712437306-7",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-saude-da-mulher-1777104323066-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780001903454-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

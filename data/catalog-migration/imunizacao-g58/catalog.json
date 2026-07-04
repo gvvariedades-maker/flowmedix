@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:22:08.988Z",
+  "lote": "imunizacao-g58",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103270218-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 860
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3699
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1779564006577-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUMARC",
+      "avant_codigo": 3725
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 873
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 872
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1614
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 830
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3937
+    }
+  ]
+}

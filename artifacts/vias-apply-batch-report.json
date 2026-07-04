@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-07-04T05:05:50.950Z",
+  "dry_run": false,
+  "candidates": 25,
+  "applied_lotes": 25,
+  "failed_lotes": 0,
+  "slugs_attempted": 199,
+  "handcraft_applied_total": 208,
+  "results": [
+    {
+      "lote": "vias-de-administracao-g02",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g03",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g04",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g05",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g06",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g07",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g08",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g09",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g10",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g11",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g12",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g13",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g14",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g15",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g16",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g17",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g18",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g19",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g20",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g21",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g22",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g23",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g24",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g25",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "vias-de-administracao-g26",
+      "status": "ok",
+      "ok": 7
+    }
+  ]
+}

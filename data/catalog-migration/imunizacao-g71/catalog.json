@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:28:08.485Z",
+  "lote": "imunizacao-g71",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4004
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4006
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4376
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4465
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-imunizacao-1777103251447-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UFMT",
+      "avant_codigo": 835
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1780001148264-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4086
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564044052-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3763
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564044052-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3764
+    }
+  ]
+}

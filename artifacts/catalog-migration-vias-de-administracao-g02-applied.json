@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-04T04:56:35.238Z",
+  "lote": "vias-de-administracao-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-vias-de-administracao-1778968956139-1",
+    "amauc-enfermagem-vias-de-administracao-1778968956139-2",
+    "ameosc-enfermagem-vias-de-administracao-1776056374837-3",
+    "avancasp-enfermagem-vias-de-administracao-1776056391403-8",
+    "cev-urca-enfermagem-vias-de-administracao-1776056357082-3",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-1",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056357082-8",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056374837-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056391403-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-vias-de-administracao-1776056357082-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056357082-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

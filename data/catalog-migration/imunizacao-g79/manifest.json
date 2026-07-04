@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g79",
+  "exported_at": "2026-07-03T15:19:19.442Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g79/manifest.json"
+  },
+  "slugs": [
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-4",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-9",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-0",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-1",
+    "nao-informado-geral-imunizacao-1779564031957-0",
+    "quadrix-geral-imunizacao-1777103182944-0",
+    "selecon-enfermagem-processo-de-enfermagem-1780009322055-4"
+  ]
+}

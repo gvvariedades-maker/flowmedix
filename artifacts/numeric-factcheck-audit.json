@@ -1,47 +1,57 @@
 {
-  "generated_at": "2026-07-03T02:06:13.578Z",
-  "scanned": 8,
-  "passed": 8,
+  "generated_at": "2026-07-04T04:44:59.845Z",
+  "scanned": 7,
+  "passed": 7,
   "failed": 0,
-  "warn_only": 0,
+  "warn_only": 1,
   "results": [
     {
-      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564090395-6",
+      "slug": "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-1",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-6",
+      "slug": "objetiva-concursos-enfermagem-vias-de-administracao-1778968825263-1",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-7",
+      "slug": "omni-enfermagem-vias-de-administracao-1778968997293-5",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+      "slug": "sc-treinamentos-enfermagem-vias-de-administracao-1778968666352-5",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "copese-ufpi-enfermagem-imunizacao-1779564079834-6",
+      "slug": "univida-enfermagem-vias-de-administracao-1778968646731-3",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "copese-uft-enfermagem-imunizacao-1777103251447-7",
+      "slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-8",
       "ok": true,
-      "issues": []
+      "issues": [
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"0,1 mL\" não encontrado na guideline de Vias de Administração.",
+          "severity": "warn",
+          "claim": "0,1 mL",
+          "path": "reverse_study_slides"
+        },
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"0,4 mL\" não encontrado na guideline de Vias de Administração.",
+          "severity": "warn",
+          "claim": "0,4 mL",
+          "path": "reverse_study_slides"
+        }
+      ]
     },
     {
-      "slug": "coseac-uff-enfermagem-imunizacao-1779572159431-0",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "cpcon-uepb-enfermagem-imunizacao-1779564071106-5",
+      "slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
       "ok": true,
       "issues": []
     }

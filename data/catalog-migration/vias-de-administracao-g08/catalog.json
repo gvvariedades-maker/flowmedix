@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T23:54:00.391Z",
+  "lote": "vias-de-administracao-g08",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 391
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2069
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1776056418941-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 445
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968787431-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2049
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1776056427936-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 447
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1509
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1778968629127-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 2003
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1776056391403-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 417
+    }
+  ]
+}

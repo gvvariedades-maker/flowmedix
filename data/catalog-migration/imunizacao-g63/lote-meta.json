@@ -1,0 +1,36 @@
+{
+  "lote": "imunizacao-g63",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P1 — pós-calendário (cadeia frio + EXCETO + V/F + genérico)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "mixed — imunizacao_cadeia_frio · imunizacao_exceto · imunizacao_vf_intervalos · imunizacao_calendario",
+  "anchors": [
+    "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+    "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+    "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json",
+    "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"
+  ],
+  "anchor_slug": "educa-pb-enfermagem-imunizacao-1779564011849-4",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "validated_at": "2026-07-03",
+  "readiness": "0/8",
+  "notes": "Manifest P1 2026-07-03. Handcraft NÃO persistido (sem questions/). 3/8 slugs overlap g68 — reexecutar handcraft dos 5 slugs únicos.",
+  "workflow": [
+    "npm run plan:imunizacao-g63",
+    "npm run catalog:export-lote -- --lote=imunizacao-g63 --from-manifest=data/catalog-migration/imunizacao-g63/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g63 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g63 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g63",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g63"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g63.json"
+  }
+}

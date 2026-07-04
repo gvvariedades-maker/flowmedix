@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:45:00.924Z",
+  "lote": "imunizacao-g21",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-enfermagem-imunizacao-1779572166628-5",
+    "fepese-enfermagem-imunizacao-1779572171486-0",
+    "fepese-enfermagem-imunizacao-1779572171486-7",
+    "fgv-enfermagem-imunizacao-1779563970889-2",
+    "idecan-enfermagem-imunizacao-1780066977710-5",
+    "idib-enfermagem-imunizacao-1777103277533-1",
+    "idib-enfermagem-imunizacao-1778934900821-8",
+    "ieses-enfermagem-imunizacao-1777103251447-9"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572166628-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1777103277533-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934900821-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-imunizacao-1777103251447-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

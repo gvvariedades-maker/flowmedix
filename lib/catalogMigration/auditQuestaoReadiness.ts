@@ -31,6 +31,11 @@ import {
   isImunizacaoV3ErrorCode,
 } from '@/lib/catalogMigration/imunizacaoPedagogy';
 import {
+  lintViasPedagogy,
+  isViasAlwaysErrorCode,
+  isViasV3ErrorCode,
+} from '@/lib/catalogMigration/viasPedagogy';
+import {
   lintRedeFrioFactcheck,
   REDE_FRIO_ALWAYS_ERROR_CODES,
 } from '@/lib/catalogMigration/redeFrioFactcheck';
@@ -316,6 +321,21 @@ export function auditQuestaoReadiness(
         const asError =
           isImunizacaoAlwaysErrorCode(issue.code) ||
           (strictV3Pedagogy && isImunizacaoV3ErrorCode(issue.code)) ||
+          strictV2Pedagogy;
+        push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
+      }
+    }
+
+    if (subtopico === 'Vias de Administração') {
+      for (const issue of lintViasPedagogy(payload as never, {
+        strictV2: strictV2Pedagogy,
+        strictV3: strictV3Pedagogy,
+      })) {
+        const already = checks.some((c) => c.code === issue.code);
+        if (already) continue;
+        const asError =
+          isViasAlwaysErrorCode(issue.code) ||
+          (strictV3Pedagogy && isViasV3ErrorCode(issue.code)) ||
           strictV2Pedagogy;
         push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
       }

@@ -1,0 +1,36 @@
+{
+  "lote": "imunizacao-g37",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P0 — calendário (~62% volume)",
+  "slug_count": 8,
+  "branch_mix": {
+    "imunizacao_calendario": 8
+  },
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-4",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Planejado e handcraft 2026-07-03 — slugs sem overlap com g01–g36. golden-v1 calendário (pentavalente, HPV, BCG, adolescente, contraindicação, dTpa gestante, SCR). validate:goldens strict · slug-alignment strict · numeric-factcheck OK — pendente apply.",
+  "workflow": [
+    "npm run plan:imunizacao-g37",
+    "npm run catalog:export-lote -- --lote=imunizacao-g37 --from-manifest=data/catalog-migration/imunizacao-g37/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g37 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g37 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g37",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g37"
+  ],
+  "validated_at": "2026-07-03",
+  "readiness": "8/8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g37.json"
+  }
+}

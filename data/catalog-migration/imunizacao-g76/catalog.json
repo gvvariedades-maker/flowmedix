@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T15:19:10.448Z",
+  "lote": "imunizacao-g76",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4473
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3656
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563970889-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3663
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3702
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564059030-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3783
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3675
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103204932-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 782
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564001927-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3712
+    }
+  ]
+}

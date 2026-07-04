@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:52:09.339Z",
+  "lote": "imunizacao-g58",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cebraspe-cespe-enfermagem-imunizacao-1779572166628-1",
+    "fepese-enfermagem-imunizacao-1777103270218-0",
+    "fgv-enfermagem-imunizacao-1779563992006-8",
+    "fumarc-enfermagem-imunizacao-1779564006577-8",
+    "idecan-enfermagem-imunizacao-1777103277533-4",
+    "idecan-enfermagem-imunizacao-1777103277533-5",
+    "idecan-enfermagem-imunizacao-1778712281975-0",
+    "ms-sarmento-enfermagem-imunizacao-1777103244679-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103270218-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1779564006577-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:34:11.548Z",
+  "lote": "imunizacao-g34",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "imparh-enfermagem-imunizacao-1779564067000-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 3805
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-imunizacao-1777103257434-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 842
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-imunizacao-1777103257434-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 843
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564067000-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 3808
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564109452-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 3868
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 800
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 807
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 808
+    }
+  ]
+}

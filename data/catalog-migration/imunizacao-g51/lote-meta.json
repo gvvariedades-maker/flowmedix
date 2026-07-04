@@ -1,0 +1,32 @@
+{
+  "lote": "imunizacao-g51",
+  "subtopico": "Imunização",
+  "status": "superseded",
+  "superseded_by": "imunizacao-g56",
+  "priority": "P1 — cadeia de frio (~12% volume)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "imunizacao_cadeia_frio",
+  "branch_mix": {
+    "imunizacao_cadeia_frio": 5,
+    "imunizacao_calendario": 2,
+    "imunizacao_exceto": 1
+  },
+  "anchors": [
+    "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json"
+  ],
+  "anchor_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572207173-0",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "SUPERSEDED — 4/8 slugs em g56; 4 cpcon remanescentes para replanejamento. Handcraft nunca gravado.",
+  "workflow": [
+    "npm run plan:imunizacao-g51",
+    "npm run catalog:export-lote -- --lote=imunizacao-g51 --from-manifest=data/catalog-migration/imunizacao-g51/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g51 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g51 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g51",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g51"
+  ],
+  "validated_at": "2026-07-03",
+  "readiness": "0/8"
+}

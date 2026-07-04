@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g76",
+  "exported_at": "2026-07-03T15:19:10.448Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g76/manifest.json"
+  },
+  "slugs": [
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-4",
+    "vunesp-enfermagem-imunizacao-1779563965519-2",
+    "vunesp-enfermagem-imunizacao-1779563970889-0",
+    "vunesp-enfermagem-imunizacao-1779563996663-2",
+    "vunesp-enfermagem-imunizacao-1779564059030-2",
+    "fundatec-enfermagem-imunizacao-1779563975447-2",
+    "univida-enfermagem-imunizacao-1777103204932-1",
+    "fundatec-enfermagem-imunizacao-1779564001927-3"
+  ]
+}

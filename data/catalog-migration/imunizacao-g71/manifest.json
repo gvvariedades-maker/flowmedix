@@ -1,0 +1,41 @@
+{
+  "lote": "imunizacao-g71",
+  "exported_at": "2026-07-03T07:29:48.195Z",
+  "source": "cluster-report",
+  "filters": {
+    "exclude_calendario": true,
+    "calendario_pool_exhausted_at": "imunizacao-g42",
+    "clusters": [
+      "Cadeia de frio / conservação / SI-PNI",
+      "INCORRETA / EXCETO",
+      "V/F — intervalos PNI (I/II/III/IV)",
+      "Default — sem âncora temática",
+      "Certo ou errado",
+      "Técnica de aplicação / sala de vacinação",
+      "Conceito — tipos de vacina / imunobiológicos",
+      "Contraindicações / eventos adversos"
+    ],
+    "exclude_count": 512,
+    "mix": "4 cadeia frio + 2 EXCETO + 1 V/F intervalos + 1 genérico"
+  },
+  "slugs": [
+    "unifil-enfermagem-imunizacao-1779572227744-3",
+    "unifil-enfermagem-imunizacao-1779572227744-5",
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-6",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-6",
+    "ufmt-enfermagem-imunizacao-1777103251447-3",
+    "unesc-enfermagem-imunizacao-1780001148264-0",
+    "igeduc-enfermagem-imunizacao-1779564044052-6",
+    "igeduc-enfermagem-imunizacao-1779564044052-7"
+  ],
+  "slug_clusters": {
+    "unifil-enfermagem-imunizacao-1779572227744-3": "Cadeia de frio / conservação / SI-PNI",
+    "unifil-enfermagem-imunizacao-1779572227744-5": "Cadeia de frio / conservação / SI-PNI",
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-6": "Cadeia de frio / conservação / SI-PNI",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-6": "Cadeia de frio / conservação / SI-PNI",
+    "ufmt-enfermagem-imunizacao-1777103251447-3": "INCORRETA / EXCETO",
+    "unesc-enfermagem-imunizacao-1780001148264-0": "INCORRETA / EXCETO",
+    "igeduc-enfermagem-imunizacao-1779564044052-6": "Certo ou errado",
+    "igeduc-enfermagem-imunizacao-1779564044052-7": "Certo ou errado"
+  }
+}

@@ -121,6 +121,8 @@ interface LogicFlowPniVfJuggleTapProps {
   footerRule?: string;
   /** `pni` = imunização (lime); `ist` = IST (fuchsia); `via` = vias (emerald). */
   accentVariant?: VfJuggleAccent;
+  /** Substitui chip padrão do molde (ex.: INSULINA · VIAS). */
+  chipLabel?: string;
 }
 
 function extractAnswerLetter(text: string): string | null {
@@ -172,6 +174,7 @@ export function LogicFlowPniVfJuggleTap({
   theme,
   footerRule,
   accentVariant = 'pni',
+  chipLabel: chipLabelOverride,
 }: LogicFlowPniVfJuggleTapProps) {
   const accent = VF_JUGGLE_ACCENTS[accentVariant];
   const reduceMotion = useReducedMotion();
@@ -190,7 +193,8 @@ export function LogicFlowPniVfJuggleTap({
   const isRevealed = revealed.has(index);
   const judgementSteps = parsedSteps.filter((s) => s.kind === 'judgement');
   const chipLabel =
-    judgementSteps.length > 0 ? accent.chipLabel : STRATEGY_CHIP_LABEL[accentVariant];
+    chipLabelOverride?.trim() ||
+    (judgementSteps.length > 0 ? accent.chipLabel : STRATEGY_CHIP_LABEL[accentVariant]);
 
   const go = useCallback(
     (dir: -1 | 1) => {

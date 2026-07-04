@@ -1,7 +1,7 @@
 {
   "lote": "vias-de-administracao-g01",
   "subtopico": "Vias de Administração",
-  "status": "planned",
+  "status": "applied",
   "priority": "P0 — via_vf_absorcao (~91% volume)",
   "slug_count": 8,
   "pedagogical_branch_target": "via_vf_absorcao",
@@ -23,5 +23,12 @@
     "npm run audit:slug-alignment -- --lote=vias-de-administracao-g01 --strict",
     "npm run audit:numeric-factcheck -- --lote=vias-de-administracao-g01",
     "npm run catalog:patch-pedagogical-branch -- --lote=vias-de-administracao-g01 --reconcile-branch --apply"
-  ]
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g01.json"
+  }
 }

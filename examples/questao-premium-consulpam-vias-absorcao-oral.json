@@ -11,9 +11,9 @@
     "content_standard": "golden-v1",
     "family": "conceito",
     "content_review": {
-      "reviewed_at": "2026-07-01",
+      "reviewed_at": "2026-07-03",
       "reviewer": "professor-para-concurso",
-      "guideline_snapshot": "Farmacocinética de vias de administração — referência Potter/Perry e provas de técnico de enfermagem",
+      "guideline_snapshot": "COFEN — Vias IM, SC, EV — absorção e técnica · Farmacocinética de vias de administração — Potter/Perry e provas de técnico de enfermagem",
       "exam_vs_current": "none",
       "catalog_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
       "repair_lote": "vias-de-administracao-consulpam-repair",
@@ -21,12 +21,31 @@
     },
     "sources": [
       {
+        "id": "vias-administracao-cofen",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Vias de administração de medicamentos",
+        "year": 2017,
+        "url": "https://www.cofen.gov.br/",
+        "covers": [
+          "absorção IM x SC",
+          "sítios de punção",
+          "via subcutânea",
+          "absorção lenta"
+        ]
+      },
+      {
         "id": "potter-perry-farmacologia",
         "tier": "B",
         "issuer": "Elsevier / referência técnica de enfermagem",
         "title": "Fundamentos de Enfermagem — Administração de medicamentos e vias de absorção",
         "year": 2020,
-        "covers": ["absorção via oral", "via sublingual", "via retal", "vias parenterais"]
+        "covers": [
+          "absorção via oral",
+          "via sublingual",
+          "via retal",
+          "vias parenterais"
+        ]
       }
     ]
   },
@@ -66,27 +85,32 @@
       "items": [
         {
           "label": "Comando da prova",
-          "detail": "Assinale a alternativa CORRETA sobre fármacos e vias de administração — julgue cada letra pelo mecanismo de absorção.",
+          "detail": "Assinale a alternativa CORRETA sobre fármacos e vias — julgue cada letra pelo mecanismo de absorção e indicação da via.",
           "icon": "Target"
         },
         {
+          "label": "Trilho de absorção",
+          "detail": "IV imediata → IM rápida → SC lenta → VO variável. Posicione cada via no trilho antes de eliminar alternativas.",
+          "icon": "TrendingUp"
+        },
+        {
           "label": "Via oral (VO)",
-          "detail": "Absorção pode iniciar na boca e no estômago, mas o intestino delgado concentra a maior absorção pela área de superfície e pH favorável.",
+          "detail": "Absorção pode iniciar na boca e no estômago, mas o intestino delgado concentra a maior absorção — área de superfície e pH favorável.",
           "icon": "Pill"
         },
         {
           "label": "Via parenteral",
-          "detail": "Para além do TGI: IV, IM, SC e ID são as clássicas de prova; rotas especiais (intratecal, intraóssea) existem, mas endotraqueal não entra na lista padrão.",
+          "detail": "Além do TGI: IV, IM, SC e ID são as clássicas de prova. Rotas especiais existem, mas endotraqueal não entra na lista padrão.",
           "icon": "Syringe"
         },
         {
           "label": "Via sublingual",
-          "detail": "Absorção pela mucosa oral com menor metabolismo de primeira passagem hepática — indicada a fármacos de ação rápida, não a substâncias irritantes.",
+          "detail": "Absorção rápida pela mucosa oral com menor 1ª passagem hepática — indicada a fármacos de ação rápida, não a irritantes.",
           "icon": "Droplets"
         },
         {
           "label": "Via retal",
-          "detail": "Absorção variável: porção inferior do reto pode atingir circulação sistêmica com menor primeira passagem hepática que a via oral.",
+          "detail": "Absorção variável: porção inferior do reto pode atingir circulação sistêmica com menor 1ª passagem hepática que a via oral.",
           "icon": "Activity"
         },
         {
@@ -95,7 +119,28 @@
           "icon": "GitCompare"
         }
       ],
-      "footer_rule": "VO = delgado · sublingual = sem irritante · retal ≠ sempre fígado · parenteral clássica = IV/IM/SC"
+      "footer_rule": "VO = delgado · sublingual = sem irritante · retal ≠ sempre fígado · parenteral clássica = IV/IM/SC/ID"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "steps": [
+        "Identificar formato: quatro alternativas + comando assinale a alternativa CORRETA sobre vias e absorção.",
+        "Recuperar núcleo: cada via tem sítio de absorção e perfil de 1ª passagem hepática distintos.",
+        "Testar A: lista intratecal, intraperitoneal, intraóssea e endotraqueal como parenterais — ERRADA: omite IV, IM e SC; endotraqueal não é classificação parenteral padrão de prova.",
+        "Testar B: sublingual para substâncias irritantes por não passar pelo metabolismo da mucosa gástrica — ERRADA: irritante lesa mucosa oral; sublingual evita 1ª passagem hepática, não metabolismo gástrico.",
+        "Testar C: via retal sempre com biotransformação hepática e sem acesso direto à sistêmica — ERRADA: reto inferior drena para veias hemorroidárias média/inferior → circulação sistêmica com menor 1ª passagem.",
+        "Testar D: absorção oral começa na boca e estômago, mas ocorre principalmente no intestino delgado — CORRETA: maior superfície absortiva e pH favorável no delgado.",
+        "Eliminar A, B e C por erro de lista, indicação clínica ou fisiologia.",
+        "Confirmar: só D descreve corretamente a farmacocinética da via oral.",
+        "Marcar D.",
+        "Fixação: monte mentalmente via → sítio de absorção → passa pelo fígado? antes de marcar."
+      ],
+      "footer_rule": "Roteiro: testar A → B → C → D → eliminar por mecanismo → marcar D"
     },
     {
       "type": "golden_rule",
@@ -104,22 +149,37 @@
         "topico": "Enfermagem",
         "subtopico": "Vias de Administração"
       },
-      "content": "ABSORÇÃO E VIAS — REFERÊNCIA RÁPIDA",
+      "content": "VIAS — VELOCIDADE DE ABSORÇÃO",
       "rows": [
+        {
+          "label": "Intravenosa (IV)",
+          "value": "Imediata — 100% biodisponível",
+          "badge": "info"
+        },
+        {
+          "label": "Intramuscular (IM)",
+          "value": "Rápida — músculo vascularizado",
+          "badge": "ok"
+        },
+        {
+          "label": "Subcutânea (SC)",
+          "value": "Lenta e contínua — hipoderme pouco vascularizada",
+          "badge": "warn"
+        },
         {
           "label": "Via oral (VO)",
           "value": "Início boca/estômago; principal absorção no intestino delgado",
           "emphasis": "success",
           "badge": "hot",
-          "exam_hint": "Gabarito D — o delgado é o sítio principal de absorção da via oral.",
-          "fixation": "VO: estômago absorve pouco; delgado concentra a maior área absortiva."
+          "exam_hint": "D acerta o sítio principal — estômago absorve pouco; delgado concentra a área absortiva.",
+          "fixation": "VO: boca começa, delgado conclui."
         },
         {
           "label": "Via sublingual",
           "value": "Rápida; evita 1ª passagem hepática; não usar com irritantes",
           "badge": "warn",
           "exam_hint": "B erra ao indicar irritantes e troca metabolismo gástrico por hepático.",
-          "fixation": "Sublingual = mucosa oral + sem 1ª passagem — não é via para irritante."
+          "fixation": "Sublingual = mucosa oral — irritante lesa a mucosa."
         },
         {
           "label": "Via retal",
@@ -137,46 +197,15 @@
           "label": "Endotraqueal",
           "value": "Rota de emergência — não é parenteral clássica de prova",
           "badge": "warn",
-          "exam_hint": "A lista omite IV/IM/SC e inclui endotraqueal fora do padrão.",
+          "exam_hint": "A omite IV/IM/SC e inclui endotraqueal fora do padrão.",
           "fixation": "Parenteral de concurso = IV, IM, SC — desconfie de lista incompleta."
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra D — absorção oral predominante no intestino delgado",
-          "emphasis": "success",
-          "badge": "hot"
-        },
-        {
-          "label": "Mnemônico absorção VO",
-          "value": "Boca começa, delgado conclui"
         },
         {
           "label": "1ª passagem hepática",
           "value": "Oral = alta · Sublingual = menor · Retal inferior = parcialmente evitada"
         }
       ],
-      "footer_rule": "Em vias: teste sítio de absorção e se o fármaco passa pelo fígado antes da circulação"
-    },
-    {
-      "type": "logic_flow",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Vias de Administração"
-      },
-      "steps": [
-        "Identificar formato: quatro alternativas + comando assinale a alternativa CORRETA sobre vias e absorção.",
-        "Recuperar núcleo: cada via tem sítio de absorção e perfil de metabolismo de primeira passagem distintos.",
-        "Testar A: lista intratecal, intraperitoneal, intraóssea e endotraqueal como parenterais — ERRADA: omite IV, IM e SC; endotraqueal não é classificação parenteral padrão de prova.",
-        "Testar B: sublingual para substâncias irritantes por não passar pelo metabolismo da mucosa gástrica — ERRADA: irritante lesa mucosa oral; sublingual evita 1ª passagem hepática, não metabolismo gástrico.",
-        "Testar C: via retal sempre com biotransformação hepática e sem acesso direto à sistêmica — ERRADA: reto inferior drena para veias hemorroidárias média/inferior → circulação sistêmica com menor 1ª passagem.",
-        "Testar D: absorção oral começa na boca e estômago, mas ocorre principalmente no intestino delgado — CORRETA: maior superfície absortiva e pH favorável no delgado.",
-        "Eliminar A, B e C por erro de lista, indicação clínica ou fisiologia.",
-        "Confirmar: só D descreve corretamente a farmacocinética da via oral.",
-        "Marcar D.",
-        "Fixação: monte mentalmente via → sítio de absorção → passa pelo fígado? antes de marcar."
-      ],
-      "footer_rule": "Roteiro: testar A → B → C → D → eliminar por mecanismo → marcar D"
+      "footer_rule": "Decore: IV imediata · IM>SC · VO pico no delgado · sublingual rápida"
     },
     {
       "type": "danger_zone",
@@ -203,9 +232,9 @@
           "correct": "Reto inferior pode atingir circulação sistêmica com absorção parcial sem passagem hepática total."
         },
         {
-          "label": "Letra D — gabarito",
+          "label": "Letra D — absorção no delgado",
           "detail": "Parece óbvia demais e o candidato desconfia — é a única fisiologicamente correta.",
-          "correct": "Via oral absorve principalmente no intestino delgado — gabarito D."
+          "correct": "Via oral absorve principalmente no intestino delgado — única alternativa com mecanismo correto."
         },
         {
           "label": "Confundir estômago com sítio principal",

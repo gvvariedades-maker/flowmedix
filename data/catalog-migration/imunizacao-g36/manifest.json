@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g36",
+  "exported_at": "2026-07-03T06:36:53.248Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g36/manifest.json"
+  },
+  "slugs": [
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-5",
+    "ivin-enfermagem-imunizacao-1777103182944-4",
+    "ivin-enfermagem-imunizacao-1777103257434-8",
+    "ivin-enfermagem-imunizacao-1779564048247-6",
+    "ivin-enfermagem-imunizacao-1779564048247-8",
+    "ivin-enfermagem-imunizacao-1779564067000-7",
+    "maranatha-assessoria-enfermagem-imunizacao-1779563986606-0",
+    "maranatha-assessoria-enfermagem-imunizacao-1779564006577-7"
+  ]
+}

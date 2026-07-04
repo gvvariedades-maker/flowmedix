@@ -1,0 +1,30 @@
+{
+  "lote": "imunizacao-g43",
+  "subtopico": "Imunização",
+  "status": "superseded",
+  "superseded_by": "imunizacao-g42",
+  "priority": "P0 — calendário (~62% volume)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "branch_mix": {
+    "imunizacao_calendario": 8
+  },
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "vunesp-enfermagem-imunizacao-1779563992006-3",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Planejado e handcraft 2026-07-03 — slugs sem overlap com g01–g42. golden-v1 calendário (UCIN ocupacional, HPV 9-14a, 15 meses, dTpa gestante, prevenção colo, influenza IM, tipos vacina, rotavírus). validate:goldens strict · slug-alignment strict · numeric-factcheck OK — pendente apply.",
+  "workflow": [
+    "npm run plan:imunizacao-g43",
+    "npm run catalog:export-lote -- --lote=imunizacao-g43 --from-manifest=data/catalog-migration/imunizacao-g43/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g43 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g43 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g43",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g43"
+  ],
+  "validated_at": "2026-07-03",
+  "readiness": "8/8"
+}

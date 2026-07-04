@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:48:58.964Z",
+  "lote": "imunizacao-g38",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+    "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+    "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+    "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+    "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+    "omni-enfermagem-imunizacao-1779572166628-7",
+    "omni-enfermagem-imunizacao-1779572166628-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

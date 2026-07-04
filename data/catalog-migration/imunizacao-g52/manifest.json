@@ -1,0 +1,25 @@
+{
+  "lote": "imunizacao-g52",
+  "exported_at": "2026-07-03T06:59:54.700Z",
+  "source": "cluster-report",
+  "filters": {
+    "clusters": [
+      "Calendário vacinal — infantil",
+      "Calendário vacinal — adolescente/adulto/idoso",
+      "Gestante / puérpera — vacinação",
+      "HPV / campanhas e prevenção"
+    ],
+    "exclude_count": 387,
+    "mix": "infantil+adulto/gestante/HPV alternado; slug via imunizacao-completo; fallback Default"
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-0",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-8",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-1",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-0",
+    "fcm-geral-imunizacao-1779564090395-8",
+    "fepese-enfermagem-vias-de-administracao-1776056383154-5",
+    "fepese-enfermagem-processo-de-enfermagem-1780008232871-9"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T15:19:33.363Z",
+  "lote": "imunizacao-g83",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3891
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3217
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1633
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968357339-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 1975
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 3589
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 3352
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 3353
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 3354
+    }
+  ]
+}

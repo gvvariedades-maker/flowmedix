@@ -1,8 +1,8 @@
 {
   "subtopico": "Imunização",
   "pacote_prefix": "imunizacao",
-  "status": "in_progress",
-  "handcraft_applied": 99,
+  "status": "applied",
+  "handcraft_applied": 575,
   "handcraft_applied_at": "2026-07-03",
   "handcraft_ready_lotes": {
     "imunizacao-g01": {
@@ -100,6 +100,639 @@
       "applied_at": "2026-07-03",
       "readiness": "8/8",
       "artifact": "artifacts/catalog-migration-imunizacao-g13-applied.json"
+    },
+    "imunizacao-g14": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g14-applied.json"
+    },
+    "imunizacao-g11": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g11-applied.json"
+    },
+    "imunizacao-g15": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g15-applied.json"
+    },
+    "imunizacao-g17": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g17-applied.json"
+    },
+    "imunizacao-g16": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g16-applied.json"
+    },
+    "imunizacao-g24": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g24-applied.json"
+    },
+    "imunizacao-g23": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g23-applied.json"
+    },
+    "imunizacao-g22": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g22-applied.json"
+    },
+    "imunizacao-g18": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g18-applied.json"
+    },
+    "imunizacao-g19": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g19-applied.json"
+    },
+    "imunizacao-g20": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g20-applied.json"
+    },
+    "imunizacao-g21": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g21-applied.json"
+    },
+    "imunizacao-g27": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g27-applied.json"
+    },
+    "imunizacao-g25": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g25-applied.json"
+    },
+    "imunizacao-g29": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g29-applied.json"
+    },
+    "imunizacao-g28": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g28-applied.json"
+    },
+    "imunizacao-g26": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g26-applied.json"
+    },
+    "imunizacao-g34": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g34-applied.json"
+    },
+    "imunizacao-g30": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g30-applied.json"
+    },
+    "imunizacao-g31": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g31-applied.json"
+    },
+    "imunizacao-g32": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g32-applied.json"
+    },
+    "imunizacao-g38": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g38-applied.json"
+    },
+    "imunizacao-g33": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g33-applied.json"
+    },
+    "imunizacao-g35": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g35-applied.json"
+    },
+    "imunizacao-g36": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g36-applied.json"
+    },
+    "imunizacao-g37": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g37-applied.json"
+    },
+    "imunizacao-g39": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g39-applied.json"
+    },
+    "imunizacao-g40": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g40-applied.json"
+    },
+    "imunizacao-g41": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g41-applied.json"
+    },
+    "imunizacao-g42": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g42-applied.json"
+    },
+    "imunizacao-g43": {
+      "slug_count": 8,
+      "status": "superseded",
+      "superseded_by": "imunizacao-g42",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "manifest idêntico ao g42 — usar g42 como canônico; não apply"
+    },
+    "imunizacao-g44": {
+      "slug_count": 8,
+      "status": "superseded",
+      "superseded_by": "imunizacao-g42",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "manifest idêntico ao g42 — usar g42 como canônico; não apply"
+    },
+    "imunizacao-g45": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g45-applied.json"
+    },
+    "imunizacao-g46": {
+      "slug_count": 8,
+      "status": "superseded",
+      "superseded_by": "imunizacao-g50",
+      "validated_at": "2026-07-03",
+      "readiness": "0/8",
+      "notes": "slugs reatribuídos ao g50 (calendário paths alternativos); handcraft canônico em g50"
+    },
+    "imunizacao-g47": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g47-applied.json"
+    },
+    "imunizacao-g48": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g48-applied.json"
+    },
+    "imunizacao-g67": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g67-applied.json"
+    },
+    "imunizacao-g68": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g68-applied.json"
+    },
+    "imunizacao-g69": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g69-applied.json"
+    },
+    "imunizacao-g70": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g70-applied.json"
+    },
+    "imunizacao-g49": {
+      "slug_count": 8,
+      "status": "superseded",
+      "superseded_by": "imunizacao-g42",
+      "validated_at": "2026-07-03",
+      "readiness": "0/8",
+      "notes": "manifest idêntico ao g42; sem questions/ handcraftadas — usar g42 como canônico; não apply"
+    },
+    "imunizacao-g50": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g50-applied.json"
+    },
+    "imunizacao-g51": {
+      "slug_count": 8,
+      "status": "superseded",
+      "superseded_by": "imunizacao-g56",
+      "validated_at": "2026-07-03",
+      "readiness": "0/8",
+      "notes": "4/8 slugs overlap g56; 4 cpcon remanescentes absorvidos por g60 (handcraft_ready) — não apply"
+    },
+    "imunizacao-g52": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g52-applied.json"
+    },
+    "imunizacao-g53": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g53-applied.json"
+    },
+    "imunizacao-g54": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g54-applied.json"
+    },
+    "imunizacao-g55": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g55-applied.json"
+    },
+    "imunizacao-g56": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g56-applied.json"
+    },
+    "imunizacao-g57": {
+      "slug_count": 8,
+      "status": "superseded",
+      "superseded_by": "imunizacao-g60",
+      "validated_at": "2026-07-03",
+      "readiness": "0/8",
+      "notes": "manifest idêntico ao g60; sem questions/ — usar g60 como canônico; não apply"
+    },
+    "imunizacao-g58": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g58-applied.json"
+    },
+    "imunizacao-g64": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "applied_at": "2026-07-03",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-migration-imunizacao-g64-applied.json",
+      "notes": "P1 mix — 2 cadeia frio + 2 generico + 2 EXCETO + 1 V/F calendário + 1 C/E BCG — apply 8/8 OK"
+    },
+    "imunizacao-g73": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g73-applied.json"
+    },
+    "imunizacao-g63": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g63-applied.json"
+    },
+    "imunizacao-g65": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g65-applied.json"
+    },
+    "imunizacao-g66": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g66-applied.json"
+    },
+    "imunizacao-g60": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g60-applied.json"
+    },
+    "imunizacao-g59": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g59-applied.json"
+    },
+    "imunizacao-g61": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g61-applied.json"
+    },
+    "imunizacao-g62": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g62-applied.json"
+    },
+    "imunizacao-g71": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g71-applied.json"
+    },
+    "imunizacao-g72": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g72-applied.json"
+    },
+    "imunizacao-g74": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g74-applied.json"
+    },
+    "imunizacao-g75": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g75-applied.json"
+    },
+    "imunizacao-g76": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g76-applied.json"
+    },
+    "imunizacao-g77": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g77-applied.json"
+    },
+    "imunizacao-g78": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g78-applied.json"
+    },
+    "imunizacao-g79": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g79-applied.json"
+    },
+    "imunizacao-g80": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g80-applied.json"
+    },
+    "imunizacao-g81": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g81-applied.json"
+    },
+    "imunizacao-g82": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g82-applied.json"
+    },
+    "imunizacao-g83": {
+      "slug_count": 8,
+      "status": "applied",
+      "validated_at": "2026-07-03",
+      "readiness": "8/8",
+      "notes": "apply batch 2026-07-03 — 8/8 OK",
+      "applied_at": "2026-07-03",
+      "artifact": "artifacts/catalog-migration-imunizacao-g83-applied.json"
     }
   },
   "total_slugs_estimate": 575,
@@ -142,6 +775,17 @@
     "family": "vf",
     "gabarito": "C",
     "avant_codigo": 4611
+  },
+  "fourth_handcraft": {
+    "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+    "golden_file": "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+    "repair_lote": "imunizacao-avancasp-rede-frio-repair",
+    "applied_at": "2026-07-03",
+    "pedagogical_branch": "imunizacao_cadeia_frio",
+    "family": "conceito",
+    "gabarito": "B",
+    "avant_codigo": 5039,
+    "readiness": "READY"
   },
   "playbook_audit": "artifacts/imunizacao-playbook-audit.md"
 }

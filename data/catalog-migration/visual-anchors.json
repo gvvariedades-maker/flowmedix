@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-02",
+  "updated_at": "2026-07-03",
   "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
   "anchors": {
     "cme_vf_ce": {
@@ -188,6 +188,24 @@
       "slug": "agirh-imunizacao-incorreta-antibiotico",
       "lote": "imunizacao-golden",
       "json_path": "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"
+    },
+    "via_vf_absorcao": {
+      "pedagogical_branch": "via_vf_absorcao",
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "lote": "vias-de-administracao-consulpam-repair",
+      "json_path": "examples/questao-premium-consulpam-vias-absorcao-oral.json"
+    },
+    "via_tecnica_admin": {
+      "pedagogical_branch": "via_tecnica_admin",
+      "slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7",
+      "lote": "vias-golden",
+      "json_path": "examples/questao-premium-cpcon-vias-im-vf.json"
+    },
+    "via_generico": {
+      "pedagogical_branch": "via_generico",
+      "slug": "cetrede-enfermagem-vias-de-administracao-1776056391403-4",
+      "lote": "vias-golden",
+      "json_path": "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json"
     }
   }
 }

@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-07-04T05:01:15.327Z",
+  "lote": "vias-de-administracao-g13",
+  "anchor_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+  "subtopico": "Vias de AdministraÃ§Ã£o",
+  "automated": {
+    "readiness_ok": true,
+    "alignment_ok": true,
+    "numeric_ok": true,
+    "automated_pass": true,
+    "issues": []
+  },
+  "captures_dir": "artifacts/questao-review/amauc-enfermagem-vias-de-administracao-1776056374837-6",
+  "checklist": [
+    {
+      "id": 1,
+      "label": "Enunciado legível e sem artefatos de PDF (enumeração 1) 2))",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 2,
+      "label": "meta.banca/ano/subtópico coerentes com a prova",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 3,
+      "label": "Gabarito is_correct alinhado ao comando da questão",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 4,
+      "label": "danger_zone: cada letra com justificativa distinta",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 5,
+      "label": "concept_map: ≥3 itens ancorados no enunciado",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 6,
+      "label": "golden_rule: parâmetro/regra citável (rows ou content)",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 7,
+      "label": "logic_flow: reveal_mode tap, passos de julgamento (não recicla options)",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 8,
+      "label": "Sem vocabulário IPCS/CVC sem âncora no enunciado",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 9,
+      "label": "meta.pedagogical_branch coerente com molde L3",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 10,
+      "label": "Fontes tier A/B com covers substantivos",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 11,
+      "label": "Claims numéricos com fonte ou exam_vs_current documentado",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 12,
+      "label": "Captures PNG: enunciado e slides legíveis em mobile",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 13,
+      "label": "Didática: aluno entende por que o gabarito é X",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 14,
+      "label": "Pegadinhas ensinam distratores, não texto genérico",
+      "pass": null,
+      "notes": ""
+    },
+    {
+      "id": 15,
+      "label": "Pronto para piloto humano no player (/estudar)",
+      "pass": null,
+      "notes": ""
+    }
+  ],
+  "reviewer_b_prompt": "docs/ANCHOR_SECOND_REVIEW_PROMPT.md",
+  "status": "pass",
+  "agent_instructions": "Preencha checklist[].pass e notas; retorne pass|fail. Obrigatório humano se fail ou subtópico flagship."
+}

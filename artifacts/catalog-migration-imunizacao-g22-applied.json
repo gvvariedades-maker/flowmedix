@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:45:14.791Z",
+  "lote": "imunizacao-g22",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fgv-enfermagem-imunizacao-1779563970889-9",
+    "fgv-enfermagem-imunizacao-1779563992006-7",
+    "fgv-enfermagem-imunizacao-1779564059030-1",
+    "fgv-enfermagem-imunizacao-1779564085730-2",
+    "imparh-enfermagem-imunizacao-1779564067000-6",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-0",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-1",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564059030-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-imunizacao-1779564067000-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

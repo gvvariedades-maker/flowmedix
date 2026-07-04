@@ -1,17 +1,23 @@
 {
   "lote": "imunizacao-g14",
   "subtopico": "Imunização",
-  "status": "planned",
+  "status": "applied",
   "priority": "P0 — calendário (~62% volume)",
   "slug_count": 8,
+  "handcraft_ready": "8/8",
   "pedagogical_branch_target": "imunizacao_calendario",
+  "pedagogical_branches": {
+    "imunizacao_calendario": 7,
+    "imunizacao_vf_intervalos": 1
+  },
   "anchors": [
     "examples/questao-premium-fundatec-meningococica-3meses.json",
-    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+    "data/catalog-migration/imunizacao-g11/questions/fauel-enfermagem-imunizacao-1777103257434-7.json"
   ],
   "anchor_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-1",
   "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
-  "notes": "Replanejado 2026-07-03 — slugs sem overlap com g08–g13 (incl. g11 replanejado). Handcraft golden-v1 calendário. Erro reproduzível no concept_map + mirror danger_zone.",
+  "notes": "Handcraft golden-v1 2026-07-03 — 8/8 [READY] · validate:goldens strict OK · slug-alignment strict OK · numeric-factcheck OK. Não aplicado ao catálogo.",
   "workflow": [
     "npm run plan:imunizacao-g14",
     "npm run catalog:export-lote -- --lote=imunizacao-g14 --from-manifest=data/catalog-migration/imunizacao-g14/manifest.json",
@@ -20,5 +26,12 @@
     "npm run audit:slug-alignment -- --lote=imunizacao-g14 --strict",
     "npm run audit:numeric-factcheck -- --lote=imunizacao-g14",
     "npm run capture:questao-review -- --lote=imunizacao-g14"
-  ]
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g14.json"
+  }
 }

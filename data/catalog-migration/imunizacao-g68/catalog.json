@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:18:02.009Z",
+  "lote": "imunizacao-g68",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564011849-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3731
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EPL CONCURSOS",
+      "avant_codigo": 4015
+    },
+    {
+      "modulo_slug": "facape-enfermagem-imunizacao-1779563986606-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACAPE",
+      "avant_codigo": 3683
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 4908
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3749
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564040128-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3750
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103251447-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 836
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 816
+    }
+  ]
+}

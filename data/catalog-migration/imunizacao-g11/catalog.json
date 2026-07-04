@@ -1,56 +1,14 @@
 {
-  "exported_at": "2026-07-03T01:54:49.511Z",
+  "exported_at": "2026-07-03T05:17:14.568Z",
   "lote": "imunizacao-g11",
   "total": 8,
   "entries": [
     {
-      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103215560-1",
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103257434-7",
       "titulo_aula": "Imunização",
       "modulo_nome": "Enfermagem",
-      "banca": "CETREDE",
-      "avant_codigo": 789
-    },
-    {
-      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103204932-6",
-      "titulo_aula": "Imunização",
-      "modulo_nome": "Enfermagem",
-      "banca": "CETREDE",
-      "avant_codigo": 787
-    },
-    {
-      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-7",
-      "titulo_aula": "Imunização",
-      "modulo_nome": "Enfermagem",
-      "banca": "CETREDE",
-      "avant_codigo": 3670
-    },
-    {
-      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-2",
-      "titulo_aula": "Imunização",
-      "modulo_nome": "Enfermagem",
-      "banca": "CETREDE",
-      "avant_codigo": 3948
-    },
-    {
-      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-3",
-      "titulo_aula": "Imunização",
-      "modulo_nome": "Enfermagem",
-      "banca": "CETREDE",
-      "avant_codigo": 3949
-    },
-    {
-      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-6",
-      "titulo_aula": "Imunização",
-      "modulo_nome": "Enfermagem",
-      "banca": "CEV URCA",
-      "avant_codigo": 3688
-    },
-    {
-      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-7",
-      "titulo_aula": "Imunização",
-      "modulo_nome": "Enfermagem",
-      "banca": "CEV URCA",
-      "avant_codigo": 3689
+      "banca": "FAUEL",
+      "avant_codigo": 849
     },
     {
       "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-0",
@@ -58,6 +16,48 @@
       "modulo_nome": "Enfermagem",
       "banca": "COGEPS UNIOESTE",
       "avant_codigo": 3882
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-imunizacao-1780000630425-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4084
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-imunizacao-1779572159431-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 3930
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1777103215560-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 795
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103244679-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 825
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564059030-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3781
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103244679-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 826
     }
   ]
 }

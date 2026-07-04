@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g24",
+  "exported_at": "2026-07-04T02:03:01.129Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g24/manifest.json"
+  },
+  "slugs": [
+    "funatec-enfermagem-vias-de-administracao-1778968609115-0",
+    "fundatec-enfermagem-vias-de-administracao-1776056409987-7",
+    "gama-geral-vias-de-administracao-1776056427936-3",
+    "igeduc-enfermagem-vias-de-administracao-1778968609115-6",
+    "igeduc-enfermagem-vias-de-administracao-1778968609115-8",
+    "igeduc-enfermagem-vias-de-administracao-1778968629127-3",
+    "igeduc-enfermagem-vias-de-administracao-1778968646731-1",
+    "igeduc-enfermagem-vias-de-administracao-1778968646731-2"
+  ]
+}

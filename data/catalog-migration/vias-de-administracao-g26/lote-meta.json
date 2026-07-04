@@ -1,0 +1,23 @@
+{
+  "lote": "vias-de-administracao-g26",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P2 — cauda final export (7 slugs, fecha vias-only 208)",
+  "slug_count": 7,
+  "pedagogical_branch_target": "mixed",
+  "anchors": [
+    "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json"
+  ],
+  "anchor_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-1",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "handcraft_script": "scripts/handcraft-vias-de-administracao-g26.ts",
+  "notes": "Handcraft golden-v1 concluído 2026-07-04 — 7/7 [READY] audit:questao-readiness --strict-v2-pedagogy; validate:goldens --strict OK; slug-alignment + numeric-factcheck pass; enrich:vias-guideline-meta em 7 slugs; patch-pedagogical-branch reconcile aplicado. Ramos: via_tecnica_admin (4), via_vf_absorcao (3). Cauda export vias-only fechada (208/208). Sem apply Supabase.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g26.json"
+  },
+  "applied_at": "2026-07-04"
+}

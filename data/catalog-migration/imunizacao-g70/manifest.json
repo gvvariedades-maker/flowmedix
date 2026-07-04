@@ -1,0 +1,44 @@
+{
+  "lote": "imunizacao-g70",
+  "exported_at": "2026-07-03T07:29:41.871Z",
+  "source": "cluster-report",
+  "filters": {
+    "exclude_calendario": true,
+    "calendario_pool_exhausted_at": "imunizacao-g42",
+    "exclude_done_not_used": true,
+    "clusters": [
+      "Cadeia de frio / conservação / SI-PNI",
+      "INCORRETA / EXCETO",
+      "Certo ou errado"
+    ],
+    "exclude_count": 512,
+    "mix": "4 cadeia frio + 2 EXCETO + 2 certo/errado",
+    "manifest_sync": "2026-07-03 — alinhado a questions/ (plan original divergia)"
+  },
+  "slugs": [
+    "selecon-enfermagem-imunizacao-1779564001927-5",
+    "selecon-enfermagem-imunizacao-1779564001927-6",
+    "unesc-enfermagem-imunizacao-1779563975447-3",
+    "unifil-enfermagem-imunizacao-1779564006577-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-8",
+    "legalle-enfermagem-processo-de-enfermagem-1780010917301-1",
+    "igeduc-enfermagem-imunizacao-1779564035545-1",
+    "igeduc-enfermagem-imunizacao-1779564035545-2"
+  ],
+  "slug_clusters": {
+    "selecon-enfermagem-imunizacao-1779564001927-5": "Cadeia de frio / conservação / SI-PNI",
+    "selecon-enfermagem-imunizacao-1779564001927-6": "Cadeia de frio / conservação / SI-PNI",
+    "unesc-enfermagem-imunizacao-1779563975447-3": "Cadeia de frio / conservação / SI-PNI",
+    "unifil-enfermagem-imunizacao-1779564006577-9": "Cadeia de frio / conservação / SI-PNI",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-8": "INCORRETA / EXCETO",
+    "legalle-enfermagem-processo-de-enfermagem-1780010917301-1": "INCORRETA / EXCETO",
+    "igeduc-enfermagem-imunizacao-1779564035545-1": "Certo ou errado",
+    "igeduc-enfermagem-imunizacao-1779564035545-2": "Certo ou errado"
+  },
+  "overlap_g67": [
+    "selecon-enfermagem-imunizacao-1779564001927-5",
+    "selecon-enfermagem-imunizacao-1779564001927-6",
+    "unesc-enfermagem-imunizacao-1779563975447-3",
+    "unifil-enfermagem-imunizacao-1779564006577-9"
+  ]
+}

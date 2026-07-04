@@ -2212,6 +2212,7 @@ export default function AvantLessonPlayer({
                           questionInstruction={activeDados.question_data?.instruction}
                           questionSlides={slidesSource}
                           questionMeta={questionMeta}
+                          questionOptions={activeDados.question_data?.options}
                           shellContext={{
                             slideIndex: slideAtual,
                             totalSlides,

@@ -1,0 +1,17 @@
+{
+  "lote": "vias-de-administracao-g26",
+  "exported_at": "2026-07-04T04:36:33.204Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g26/manifest.json"
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-1",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968825263-1",
+    "omni-enfermagem-vias-de-administracao-1778968997293-5",
+    "sc-treinamentos-enfermagem-vias-de-administracao-1778968666352-5",
+    "univida-enfermagem-vias-de-administracao-1778968646731-3",
+    "vunesp-enfermagem-vias-de-administracao-1776056366158-8",
+    "vunesp-enfermagem-vias-de-administracao-1778968768987-1"
+  ]
+}

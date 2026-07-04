@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:48:46.264Z",
+  "lote": "imunizacao-g37",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-4",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-5",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-6",
+    "instituto-verbena-enfermagem-imunizacao-1777103270218-5",
+    "instituto-verbena-enfermagem-imunizacao-1777103270218-6",
+    "instituto-verbena-enfermagem-imunizacao-1779564040128-6",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-3",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103270218-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103270218-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564040128-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

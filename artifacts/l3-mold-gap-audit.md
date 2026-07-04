@@ -1,26 +1,25 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-02T00:07:14.634Z
+Gerado em: 2026-07-03T18:56:11.973Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
 | Fonte slugs | lotes locais |
-| Clusters mapeados | 87 |
-| Slugs auditados | 1002 |
-| ok_existente | 11 |
-| ok_generico | 60 |
-| ramo_novo | 15 |
+| Clusters mapeados | 99 |
+| Slugs auditados | 1237 |
+| ok_existente | 12 |
+| ok_generico | 64 |
+| ramo_novo | 22 |
 | molde_inedito | 1 |
 | Pacotes inéditos únicos | 1 |
-| Slugs com mismatch L3 | 565 |
+| Slugs com mismatch L3 | 12 |
 
 ## Mismatch por subtópico
 
 | Subtópico | Slugs com mismatch |
 |-----------|-------------------|
-| Imunização | 553 |
 | Saúde Mental | 6 |
 | Saúde do Adolescente | 2 |
 
@@ -122,18 +121,34 @@ Gerado em: 2026-07-02T00:07:14.634Z
 | Segurança do Paciente | Certo ou errado | 1 | 1.7% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | Higienização das mãos | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | Humanização e cuidado | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | Calendário vacinal — adolescente/adulto/idoso | 137 | 23.8% | ok_generico | `imunizacao_calendario` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | Calendário vacinal — infantil | 135 | 23.5% | ok_generico | `imunizacao_calendario` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | Cadeia de frio / conservação / SI-PNI | 68 | 11.8% | ok_generico | `imunizacao_cadeia_frio` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | HPV / campanhas e prevenção | 46 | 8% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | INCORRETA / EXCETO | 42 | 7.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | Default — sem âncora temática | 41 | 7.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | Gestante / puérpera — vacinação | 40 | 7% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | Certo ou errado | 28 | 4.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | V/F — intervalos PNI (I/II/III/IV) | 18 | 3.1% | ok_existente | `imunizacao_vf_intervalos` | pni-rules-deck · pni-interval-matrix · pni-vf-juggle-tap · p… |
+| Imunização | Técnica de aplicação / sala de vacinação | 11 | 1.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | Conceito — tipos de vacina / imunobiológicos | 8 | 1.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Imunização | Contraindicações / eventos adversos | 1 | 0.2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 
 ## Slugs (amostra com branch inferido)
 
-- `imunizacao_calendario`: 553
+- `imunizacao_calendario`: 475
+- `via_vf_absorcao`: 214
 - `—`: 95
+- `imunizacao_cadeia_frio`: 56
 - `biosseg_generico`: 51
 - `bacterianas_generico`: 47
+- `imunizacao_exceto`: 28
 - `perioperatorio_pre_operatorio`: 24
 - `sp_generico`: 24
 - `perioperatorio_pos_operatorio`: 23
-- `imunizacao_vf_intervalos`: 19
+- `via_tecnica_admin`: 20
 - `cme_autoclave_metodos`: 17
+- `imunizacao_vf_intervalos`: 14
 - `perioperatorio_isc`: 14
 - `mental_crise_caps`: 12
 - `sp_prevencao_quedas`: 12
@@ -151,9 +166,9 @@ Gerado em: 2026-07-02T00:07:14.634Z
 - `bacterianas_agente_etiologico`: 4
 - `farmaco_generico`: 4
 - `biosseg_iras_itu_cateter`: 4
-- `imunizacao_generico`: 3
 - `mental_depressao`: 3
 - `mental_dependencia_tabagismo`: 3
+- `imunizacao_generico`: 2
 - `perioperatorio_protocolo`: 2
 - `adolescente_violencia_protecao`: 2
 - `adolescente_generico`: 2
@@ -162,3 +177,4 @@ Gerado em: 2026-07-02T00:07:14.634Z
 - `cme_processamento_conceito`: 1
 - `farmaco_pk_pd_vf`: 1
 - `adolescente_desenvolvimento`: 1
+- `via_generico`: 1

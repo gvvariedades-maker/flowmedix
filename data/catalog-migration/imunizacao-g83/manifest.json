@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g83",
+  "exported_at": "2026-07-03T15:19:33.363Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g83/manifest.json"
+  },
+  "slugs": [
+    "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1",
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-1",
+    "ieses-enfermagem-atencao-basica-saude-da-familia-1778968357339-6",
+    "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4"
+  ]
+}

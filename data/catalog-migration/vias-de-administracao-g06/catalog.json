@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T23:52:03.591Z",
+  "lote": "vias-de-administracao-g06",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "itame-enfermagem-vias-de-administracao-1778968609115-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 1992
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2048
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968968468-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2095
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-vias-de-administracao-1778968906156-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 2077
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2096
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056338955-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 363
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-vias-de-administracao-1778968906156-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 2078
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2097
+    }
+  ]
+}

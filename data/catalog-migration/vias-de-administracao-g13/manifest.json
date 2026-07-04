@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g13",
+  "exported_at": "2026-07-04T00:01:29.663Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g13/manifest.json"
+  },
+  "slugs": [
+    "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+    "amauc-enfermagem-vias-de-administracao-1778968906156-6",
+    "ameosc-enfermagem-vias-de-administracao-1776056348175-6",
+    "ameosc-enfermagem-vias-de-administracao-1776056357082-5",
+    "avancasp-enfermagem-vias-de-administracao-1776056338955-1",
+    "avancasp-enfermagem-vias-de-administracao-1776056338955-6",
+    "avancasp-enfermagem-vias-de-administracao-1776056401060-7",
+    "avancasp-enfermagem-vias-de-administracao-1778968598934-2"
+  ]
+}

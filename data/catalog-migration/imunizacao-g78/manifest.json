@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g78",
+  "exported_at": "2026-07-03T15:18:53.190Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g78/manifest.json"
+  },
+  "slugs": [
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-4",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-0",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-8",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-3",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002389285-9",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-0",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4"
+  ]
+}

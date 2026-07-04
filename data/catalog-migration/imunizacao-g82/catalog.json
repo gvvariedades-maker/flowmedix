@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T15:19:32.042Z",
+  "lote": "imunizacao-g82",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712270872-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1604
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968194611-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1927
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2019
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNTEF",
+      "avant_codigo": 1985
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 376
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3505
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1234
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3360
+    }
+  ]
+}

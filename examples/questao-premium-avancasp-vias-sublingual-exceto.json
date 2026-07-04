@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "Tec Enf",
+    "topico": "Enfermagem",
+    "subtopico": "Vias de Administração",
+    "cargo_header": "Técnico de Enfermagem",
+    "pedagogical_branch": "via_generico",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-07-03",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "COFEN — Vias IM, SC, EV — absorção e técnica (ângulo, dose) · Via sublingual — absorção rápida, menor 1ª passagem hepática, arsenal farmacológico limitado",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-5",
+      "cluster": "INCORRETA / EXCETO"
+    },
+    "sources": [
+      {
+        "id": "vias-administracao-cofen",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Vias de administração de medicamentos",
+        "year": 2017,
+        "url": "https://www.cofen.gov.br/",
+        "covers": [
+          "ângulo de punção IM/SC",
+          "técnica IM",
+          "dose certa",
+          "indicação de via"
+        ]
+      },
+      {
+        "id": "potter-perry-farmacologia",
+        "tier": "B",
+        "issuer": "Elsevier / referência técnica de enfermagem",
+        "title": "Fundamentos de Enfermagem — Via sublingual e absorção",
+        "year": 2020,
+        "covers": [
+          "absorção sublingual",
+          "1ª passagem hepática",
+          "fármacos sublinguais"
+        ]
+      },
+      {
+        "id": "cuidados-admin-cofen",
+        "tier": "A",
+        "issuer": "COFEN / ANVISA",
+        "title": "Cuidados na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br/wp-content/uploads/2026/03/Parecer-11-2026.pdf",
+        "covers": [
+          "dose certa",
+          "via certa",
+          "administração segura"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "São vantagens do uso da via sublingual, exceto:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Facilidade de administração.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Baixo custo financeiro.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Número elevado de medicamentos disponíveis para administração sublingual.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Método não invasivo para administração.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Rapidez na absorção.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Via sublingual — mapa EXCETO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "items": [
+        {
+          "label": "Comando da prova",
+          "detail": "São vantagens da via sublingual, exceto — quatro alternativas descrevem vantagens reais; uma é limitação disfarçada de benefício.",
+          "icon": "Target"
+        },
+        {
+          "label": "Via sublingual",
+          "detail": "Medicamento sob a língua — absorção pela mucosa oral, evita trânsito gástrico e reduz 1ª passagem hepática.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Trilho de absorção",
+          "detail": "Sublingual = rápida no trilho enteral (à frente da oral). Mucosa vascularizada → efeito mais precoce que VO.",
+          "icon": "TrendingUp"
+        },
+        {
+          "label": "Vantagens reais",
+          "detail": "Não invasiva, fácil de aplicar, absorção rápida, custo operacional geralmente baixo — A, B, D e E são plausíveis.",
+          "icon": "CheckCircle"
+        },
+        {
+          "label": "Limitação da via",
+          "detail": "Arsenal restrito: poucos fármacos lipossolúveis, dose pequena, não irritantes — a banca testa se você confunde variedade com vantagem.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Exemplos de prova",
+          "detail": "Nitroglicerina, captopril, nifedipina — lista curta; não é via para qualquer medicamento.",
+          "icon": "Pill"
+        },
+        {
+          "label": "Padrão AVANÇASP neste tema",
+          "detail": "EXCETO mistura vantagens verdadeiras com afirmativa que parece elogio (muitos medicamentos), mas descreve o oposto da realidade.",
+          "icon": "GitCompare"
+        }
+      ],
+      "footer_rule": "EXCETO sublingual: arsenal limitado — não confunda com rapidez ou facilidade"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "steps": [
+        "Identificar formato: cinco alternativas + comando EXCETO — quatro são vantagens reais, uma não é.",
+        "Recuperar perfil da sublingual: mucosa oral, absorção rápida, menor 1ª passagem hepática, não invasiva.",
+        "Testar A: facilidade de administração → vantagem real (colocar sob a língua) → eliminar.",
+        "Testar B: baixo custo financeiro → vantagem plausível (sem punção nem equipamento) → eliminar.",
+        "Testar D: método não invasivo → vantagem real → eliminar.",
+        "Testar E: rapidez na absorção → vantagem real (mucosa vascularizada) → eliminar.",
+        "Testar C: número elevado de medicamentos disponíveis → FALSO como vantagem — via sublingual tem arsenal farmacológico restrito.",
+        "Confirmar: só C não é vantagem — é limitação da via.",
+        "Marcar C.",
+        "Fixação: em EXCETO de sublingual, desconfie de afirmativas que exageram a variedade de fármacos."
+      ],
+      "footer_rule": "Roteiro EXCETO: testar A → B → D → E → C → marcar a que não é vantagem"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — via sublingual",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "content": "VIA SUBLINGUAL — VANTAGENS E LIMITES",
+      "rows": [
+        {
+          "label": "Mecanismo",
+          "value": "Absorção pela mucosa oral — evita TGI e reduz 1ª passagem hepática",
+          "badge": "info"
+        },
+        {
+          "label": "Absorção",
+          "value": "Rápida — mucosa vascularizada",
+          "badge": "hot",
+          "exam_hint": "E é vantagem real — rapidez faz parte do perfil da via.",
+          "fixation": "Sublingual = rápida no trilho enteral."
+        },
+        {
+          "label": "Invasividade",
+          "value": "Não invasiva — sem punção",
+          "badge": "ok",
+          "exam_hint": "D é vantagem real.",
+          "fixation": "Sem agulha = não invasiva."
+        },
+        {
+          "label": "Administração",
+          "value": "Relativamente fácil — sob a língua, sem engolir de imediato",
+          "badge": "ok",
+          "exam_hint": "A é vantagem real.",
+          "fixation": "Técnica simples para o paciente cooperativo."
+        },
+        {
+          "label": "Custo",
+          "value": "Em geral baixo — sem material de punção",
+          "badge": "ok",
+          "exam_hint": "B é vantagem plausível de prova.",
+          "fixation": "Comparado a IV, custo operacional menor."
+        },
+        {
+          "label": "Arsenal farmacológico",
+          "value": "Limitado — poucos fármacos adequados (lipossolúveis, dose pequena)",
+          "emphasis": "alert",
+          "badge": "warn",
+          "exam_hint": "C erra ao citar número elevado — é limitação, não vantagem.",
+          "fixation": "Poucos medicamentos, não muitos — essa é a EXCEÇÃO."
+        },
+        {
+          "label": "Exemplos clássicos",
+          "value": "Nitroglicerina · captopril · nifedipina"
+        },
+        {
+          "label": "Não indicar",
+          "value": "Irritantes na mucosa oral · doses grandes · fármacos instáveis no TGI apenas"
+        }
+      ],
+      "footer_rule": "Decore: sublingual = rápida e não invasiva · arsenal restrito"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "content": "PEGADINHAS AVANÇASP — VIA SUBLINGUAL",
+      "items": [
+        {
+          "label": "Letra A — facilidade",
+          "detail": "Parece genérico demais, mas colocar comprimido sob a língua é tecnicamente simples.",
+          "correct": "Afirmativa correta: facilidade de administração é vantagem real da via sublingual."
+        },
+        {
+          "label": "Letra B — baixo custo",
+          "detail": "Banca testa se você descarta por parecer secundário — custo menor que IV é vantagem plausível.",
+          "correct": "Afirmativa correta: baixo custo financeiro — não é a EXCEÇÃO."
+        },
+        {
+          "label": "Letra D — não invasiva",
+          "detail": "Termo óbvio, mas descreve corretamente a via — sem pele rompida nem punção.",
+          "correct": "Afirmativa correta: método não invasivo — eliminar em EXCETO."
+        },
+        {
+          "label": "Letra E — rapidez",
+          "detail": "Seduz quem confunde sublingual com oral lenta — mucosa absorve mais rápido que TGI.",
+          "correct": "Afirmativa correta: rapidez na absorção é vantagem verdadeira da sublingual."
+        },
+        {
+          "label": "Letra C — muitos medicamentos",
+          "detail": "Frase elogiosa que inverte a realidade — sublingual serve a poucos fármacos específicos.",
+          "correct": "EXCEÇÃO: arsenal farmacológico é limitado, não elevado."
+        },
+        {
+          "label": "Confundir com via oral",
+          "detail": "Transferência Consulpam: oral tem muitos fármacos, mas absorção mais lenta.",
+          "correct": "Variedade é da VO; sublingual troca variedade por rapidez."
+        },
+        {
+          "label": "Marcar E por parecer óbvia",
+          "detail": "Em EXCETO, a alternativa certa costuma ser a que parece elogio falso — C, não E.",
+          "correct": "Rapidez é vantagem verdadeira; número elevado de fármacos é que não é."
+        }
+      ],
+      "footer_rule": "Transferência: EXCETO sublingual → arsenal limitado (C), não rapidez (E)"
+    }
+  ]
+}

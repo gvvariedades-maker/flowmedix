@@ -1,16 +1,9 @@
 {
   "lote": "imunizacao-g14",
-  "exported_at": "2026-07-03T02:45:34.982Z",
-  "source": "cluster-report",
+  "exported_at": "2026-07-03T05:35:30.961Z",
+  "source": "supabase",
   "filters": {
-    "clusters": [
-      "Calendário vacinal — infantil",
-      "Calendário vacinal — adolescente/adulto/idoso",
-      "Gestante / puérpera — vacinação",
-      "HPV / campanhas e prevenção"
-    ],
-    "exclude_count": 107,
-    "mix": "infantil+adulto/gestante/HPV alternado"
+    "from_manifest": "data/catalog-migration/imunizacao-g14/manifest.json"
   },
   "slugs": [
     "fau-unicentro-enfermagem-imunizacao-1779572180830-1",

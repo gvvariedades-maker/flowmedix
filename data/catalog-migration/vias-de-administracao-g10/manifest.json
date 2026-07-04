@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g10",
+  "exported_at": "2026-07-03T23:55:13.131Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g10/manifest.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-vias-de-administracao-1776056409987-1",
+    "fundatec-enfermagem-vias-de-administracao-1778968862077-6",
+    "gama-enfermagem-vias-de-administracao-1778968573722-3",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-1",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-3",
+    "ibam-enfermagem-vias-de-administracao-1778968968468-6",
+    "imparh-enfermagem-vias-de-administracao-1778968666352-0",
+    "inaz-do-para-enfermagem-vias-de-administracao-1776056418941-7"
+  ]
+}

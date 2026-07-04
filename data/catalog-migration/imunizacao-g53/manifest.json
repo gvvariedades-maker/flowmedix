@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g53",
+  "exported_at": "2026-07-03T07:03:24.912Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g53/manifest.json"
+  },
+  "slugs": [
+    "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+    "fepese-enfermagem-saude-da-mulher-1777104323066-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780001903454-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-2",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-1",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-5",
+    "idecan-enfermagem-saude-do-idoso-1778712437306-7"
+  ]
+}

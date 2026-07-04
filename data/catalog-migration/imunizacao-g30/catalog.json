@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:26:59.830Z",
+  "lote": "imunizacao-g30",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4007
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-imunizacao-1777103182944-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 779
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4010
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-imunizacao-1779564067000-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDEAP",
+      "avant_codigo": 3801
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103182944-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 777
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1610
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1777103270218-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 864
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1612
+    }
+  ]
+}

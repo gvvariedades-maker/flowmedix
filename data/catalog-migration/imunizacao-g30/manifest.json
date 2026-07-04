@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g30",
+  "exported_at": "2026-07-03T06:26:59.830Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g30/manifest.json"
+  },
+  "slugs": [
+    "unifil-enfermagem-imunizacao-1779572227744-6",
+    "idcap-enfermagem-imunizacao-1777103182944-7",
+    "unifil-enfermagem-imunizacao-1779572227744-9",
+    "ideap-enfermagem-imunizacao-1779564067000-1",
+    "univida-enfermagem-imunizacao-1777103182944-5",
+    "idecan-enfermagem-imunizacao-1778712270872-6",
+    "vunesp-enfermagem-imunizacao-1777103270218-4",
+    "idecan-enfermagem-imunizacao-1778712270872-8"
+  ]
+}

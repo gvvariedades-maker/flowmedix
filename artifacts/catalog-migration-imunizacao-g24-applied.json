@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:45:45.090Z",
+  "lote": "imunizacao-g24",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "funatec-enfermagem-imunizacao-1777103264001-6",
+    "funcern-enfermagem-imunizacao-1777103238173-6",
+    "funcern-enfermagem-imunizacao-1777103238173-7",
+    "funcern-enfermagem-imunizacao-1779564125198-0",
+    "instituto-consulplan-enfermagem-imunizacao-1779564113760-2",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-8",
+    "instituto-jk-enfermagem-imunizacao-1777103264001-7",
+    "instituto-verbena-enfermagem-imunizacao-1777103251447-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1777103264001-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1779564125198-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-imunizacao-1777103264001-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103251447-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

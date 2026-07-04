@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:33:05.785Z",
+  "lote": "imunizacao-g73",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563961175-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3653
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4928
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5021
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3711
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4377
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4471
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 4918
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1620
+    }
+  ]
+}

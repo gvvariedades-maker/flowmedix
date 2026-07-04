@@ -1,0 +1,46 @@
+{
+  "lote": "imunizacao-g75",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P1 — pós-calendário (cadeia frio + EXCETO + V/F + genérico)",
+  "slug_count": 8,
+  "readiness": "8/8",
+  "validated_at": "2026-07-03",
+  "pedagogical_branch_target": "mixed — imunizacao_cadeia_frio · imunizacao_exceto · imunizacao_vf_intervalos · imunizacao_calendario · imunizacao_generico",
+  "slug_clusters": {
+    "igeduc-enfermagem-imunizacao-1779563986606-8": "Cadeia de frio / conservação / SI-PNI",
+    "instituto-consulplan-enfermagem-imunizacao-1779564085730-1": "Cadeia de frio / conservação / SI-PNI",
+    "legalle-enfermagem-imunizacao-1779572166628-2": "Cadeia de frio / conservação / SI-PNI",
+    "sc-treinamentos-enfermagem-imunizacao-1779564071106-2": "Cadeia de frio / conservação / SI-PNI",
+    "unifil-enfermagem-imunizacao-1779564031957-2": "INCORRETA / EXCETO",
+    "unifil-enfermagem-imunizacao-1779572220683-3": "INCORRETA / EXCETO",
+    "idecan-enfermagem-imunizacao-1778712281975-7": "Certo ou errado",
+    "igeduc-enfermagem-imunizacao-1779564048247-0": "Certo ou errado"
+  },
+  "anchors": [
+    "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+    "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+    "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+    "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json",
+    "examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"
+  ],
+  "anchor_slug": "igeduc-enfermagem-imunizacao-1779563986606-8",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Handcraft 2026-07-03 — 8/8 [READY] · 8 questions/ verificadas em disco · pool P0 esgotado (g42) · vf_intervalos pool=0 (mix: 4 cadeia + 2 EXCETO + 2 C/E) · validate:goldens strict · slug-alignment strict · numeric-factcheck OK — pendente apply",
+  "workflow": [
+    "npm run plan:imunizacao-g75",
+    "npm run catalog:export-lote -- --lote=imunizacao-g75 --from-manifest=data/catalog-migration/imunizacao-g75/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g75 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g75 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g75",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g75"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g75.json"
+  }
+}

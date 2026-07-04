@@ -1,0 +1,23 @@
+{
+  "lote": "vias-de-administracao-g13",
+  "subtopico": "Vias de AdministraÃ§Ã£o",
+  "status": "applied",
+  "priority": "P1 â€” via_tecnica_admin (punÃ§Ã£o IM/IV)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "via_tecnica_admin",
+  "anchors": [
+    "examples/questao-premium-cpcon-vias-im-vf.json"
+  ],
+  "anchor_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Planejado 2026-07-03 â€” P0 esgotado (g01-g12=95 slugs); g13 abre ramo tÃ©cnica punÃ§Ã£o IM/IV.",
+  "workflow": [],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g13.json"
+  },
+  "applied_at": "2026-07-04"
+}

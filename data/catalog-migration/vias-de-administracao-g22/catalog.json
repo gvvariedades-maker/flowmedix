@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-04T00:20:46.390Z",
+  "lote": "vias-de-administracao-g22",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "quadrix-enfermagem-vias-de-administracao-1778968877204-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2071
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-vias-de-administracao-1778969018962-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "SC TREINAMENTOS",
+      "avant_codigo": 2121
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1776056330579-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 356
+    },
+    {
+      "modulo_slug": "univali-enfermagem-vias-de-administracao-1778968573722-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 1978
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056330579-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 355
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 390
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2053
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2056
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g09",
+  "exported_at": "2026-07-03T23:54:25.107Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g09/manifest.json"
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-vias-de-administracao-1776056348175-8",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968956139-3",
+    "fepese-enfermagem-vias-de-administracao-1778968787431-5",
+    "fgv-enfermagem-vias-de-administracao-1776056401060-0",
+    "fgv-enfermagem-vias-de-administracao-1778968687469-7",
+    "funatec-enfermagem-vias-de-administracao-1776056418941-1",
+    "funatec-enfermagem-vias-de-administracao-1776056418941-3",
+    "fundatec-enfermagem-vias-de-administracao-1776056338955-8"
+  ]
+}

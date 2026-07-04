@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:19:30.546Z",
+  "lote": "imunizacao-g59",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3748
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564040128-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3751
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564040128-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3752
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564044052-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3759
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-imunizacao-1779564053668-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COM EXAM PREF BAURU",
+      "avant_codigo": 3774
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-imunizacao-1779564079834-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 3833
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3958
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 815
+    }
+  ]
+}

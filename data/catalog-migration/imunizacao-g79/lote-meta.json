@@ -1,0 +1,45 @@
+{
+  "lote": "imunizacao-g79",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "handcraft_at": "2026-07-03",
+  "handcraft_by": "composer-handcraft-g79",
+  "readiness": "8/8",
+  "readiness_strict_v2": "8/8",
+  "priority": "P2 — tail g76+ (slugs fora de g01–g75)",
+  "slug_count": 8,
+  "branches": {
+    "imunizacao_calendario": 8
+  },
+  "pedagogical_branch_target": "mixed — calendário adulto (4) + gestante/puerpera (4)",
+  "anchors": [
+    "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+    "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"
+  ],
+  "anchor_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-4",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Handcraft golden-v1 g79 — Hep B associação, vias vacinais, V/F UBS, dT 10 anos SP, BCG, Hep B gestante, dTpa 20 sem, cocooning coqueluche.",
+  "workflow": [
+    "npm run plan:imunizacao-remaining -- --lote=imunizacao-g79",
+    "npm run catalog:export-lote -- --lote=imunizacao-g79 --from-manifest=data/catalog-migration/imunizacao-g79/manifest.json",
+    "Handcraft golden-v1 por slug",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g79 --strict-v2-pedagogy",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g79"
+  ],
+  "validations": {
+    "validate_goldens_strict": "8/8 pass",
+    "readiness_strict_v2": "8/8 READY",
+    "slug_alignment_strict": "8/8 pass",
+    "numeric_factcheck": "8/8 pass"
+  },
+  "dry_run_apply_ready": true,
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g79.json"
+  }
+}

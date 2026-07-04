@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:53:14.652Z",
+  "lote": "imunizacao-g63",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cebraspe-cespe-enfermagem-imunizacao-1777103238173-2",
+    "cpcon-uepb-enfermagem-imunizacao-1779564044052-1",
+    "educa-pb-enfermagem-imunizacao-1779564011849-4",
+    "epl-concursos-enfermagem-imunizacao-1779572236985-4",
+    "facape-enfermagem-imunizacao-1779563986606-1",
+    "facet-enfermagem-imunizacao-1779564006577-5",
+    "fauel-enfermagem-imunizacao-1777103264001-1",
+    "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564044052-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564011849-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-imunizacao-1779563986606-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-imunizacao-1779564006577-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103264001-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

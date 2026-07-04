@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:03:24.912Z",
+  "lote": "imunizacao-g53",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUMARC",
+      "avant_codigo": 403
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-saude-da-mulher-1777104323066-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 1407
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780001903454-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4192
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4689
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1802
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5070
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4425
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1721
+    }
+  ]
+}

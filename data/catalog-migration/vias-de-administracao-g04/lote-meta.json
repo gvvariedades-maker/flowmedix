@@ -1,0 +1,46 @@
+{
+  "lote": "vias-de-administracao-g04",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P0 — via_vf_absorcao (~91% volume)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "via_vf_absorcao",
+  "anchors": [
+    "examples/questao-premium-consulpam-vias-absorcao-oral.json",
+    "examples/questao-premium-vunesp-via-subcutanea.json",
+    "examples/questao-premium-cpcon-vias-im-vf.json"
+  ],
+  "anchor_slug": "fgv-enfermagem-vias-de-administracao-1778968956139-4",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Handcraft golden-v1 2026-07-03 - 8/8 [READY] strict-v2-pedagogy · L2 gates OK · não aplicado no Supabase",
+  "workflow": [
+    "npm run plan:vias-de-administracao-g01",
+    "npm run catalog:export-lote -- --lote=vias-de-administracao-g01 --from-manifest=data/catalog-migration/vias-de-administracao-g01/manifest.json",
+    "Handcraft por slug — gramática vias-pedagogy-errors.json",
+    "npm run enrich:vias-guideline-meta -- --lote=vias-de-administracao-g01 --write",
+    "npm run validate:goldens -- --lote=vias-de-administracao-g01 --strict",
+    "npm run audit:questao-readiness -- --lote=vias-de-administracao-g01 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=vias-de-administracao-g01 --strict",
+    "npm run audit:numeric-factcheck -- --lote=vias-de-administracao-g01",
+    "npm run catalog:patch-pedagogical-branch -- --lote=vias-de-administracao-g01 --reconcile-branch --apply"
+  ],
+  "handcraft": {
+    "completed_at": "2026-07-03",
+    "reviewer": "agent",
+    "slugs_ready": 8,
+    "slugs_total": 8,
+    "gates": {
+      "enrich_vias_guideline_meta": "8 scanned, 7 enriched",
+      "audit_slug_alignment_strict": "8/8 pass",
+      "audit_numeric_factcheck": "8/8 pass"
+    }
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g04.json"
+  },
+  "applied_at": "2026-07-04"
+}

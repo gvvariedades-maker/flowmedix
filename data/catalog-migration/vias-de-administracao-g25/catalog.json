@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-04T02:23:26.298Z",
+  "lote": "vias-de-administracao-g25",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "imparh-enfermagem-vias-de-administracao-1778968956139-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 2085
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2009
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2011
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968687469-9",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2032
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-vias-de-administracao-1776056348175-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO EVO",
+      "avant_codigo": 369
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-vias-de-administracao-1778968877204-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 2074
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-vias-de-administracao-1778968877204-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 2076
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 395
+    }
+  ]
+}

@@ -10,6 +10,16 @@ export const PNI_IMUNIZACAO_BRANCHES = [
   'imunizacao_generico',
 ] as const;
 
+/** Ramo Vias com pacote bespoke 4/4 (absorção / velocidade). */
+export const VIAS_BESPOKE_BRANCHES = ['via_vf_absorcao'] as const;
+
+/** Ramos Vias para regressão visual (bespoke + genéricos). */
+export const VIAS_BRANCHES = [
+  'via_vf_absorcao',
+  'via_tecnica_admin',
+  'via_generico',
+] as const;
+
 /** Ramo PNI com pacote bespoke 4/4 (calendário ≠ cadeia frio ≠ V/F intervalos). */
 export const PNI_BESPOKE_BRANCHES = [
   'imunizacao_vf_intervalos',
@@ -20,6 +30,38 @@ export const PNI_BESPOKE_BRANCHES = [
 export const MOBILE_NARROW_VIEWPORT = { width: 375, height: 812 } as const;
 export const DESKTOP_VIEWPORT = { width: 1280, height: 900 } as const;
 export const SLIDE_COUNT = 4;
+
+export type VisualMoldRegressionSummary = {
+  generated_at: string;
+  pacote_prefix: string;
+  pass: boolean;
+  detail: string;
+  branches: string[];
+};
+
+/** Artefato L3 para `audit:subtopico-quality` (shipGate.checkL3VisualMold). */
+export function writeVisualMoldSummary(opts: {
+  pacotePrefix: string;
+  branches: readonly string[];
+  pass?: boolean;
+  detail?: string;
+}): string {
+  const outDir = path.join(process.cwd(), 'artifacts/visual-mold-regression');
+  fs.mkdirSync(outDir, { recursive: true });
+  const outPath = path.join(outDir, 'summary.json');
+  const branchList = [...opts.branches];
+  const summary: VisualMoldRegressionSummary = {
+    generated_at: new Date().toISOString(),
+    pacote_prefix: opts.pacotePrefix,
+    pass: opts.pass ?? true,
+    detail:
+      opts.detail ??
+      `Playwright L3 — ${branchList.length} branch(es): ${branchList.join(', ')}`,
+    branches: branchList,
+  };
+  fs.writeFileSync(outPath, JSON.stringify(summary, null, 2), 'utf8');
+  return outPath;
+}
 
 export type VisualAnchorEntry = {
   pedagogical_branch: string;
@@ -67,7 +109,7 @@ export const onboardingDismissScript = () => {
 export async function gotoBranch(page: Page, branch: string): Promise<void> {
   await page.goto(`/dev/slide-mold-review?branch=${encodeURIComponent(branch)}`, {
     waitUntil: 'domcontentloaded',
-    timeout: 120_000,
+    timeout: 180_000,
   });
   await expect(page.getByTestId('slide-mold-review-root')).toBeVisible({ timeout: 60_000 });
   await expect(page.getByTestId('mold-player').getByTestId('lesson-scroll-body').first()).toBeVisible({

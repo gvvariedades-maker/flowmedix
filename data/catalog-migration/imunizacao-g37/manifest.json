@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g37",
+  "exported_at": "2026-07-03T06:36:34.805Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g37/manifest.json"
+  },
+  "slugs": [
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-4",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-5",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-6",
+    "instituto-verbena-enfermagem-imunizacao-1777103270218-5",
+    "instituto-verbena-enfermagem-imunizacao-1777103270218-6",
+    "instituto-verbena-enfermagem-imunizacao-1779564040128-6",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-3",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-4"
+  ]
+}

@@ -234,6 +234,22 @@ describe('enrichPresentationContext — meta da questão', () => {
     );
   });
 
+  it('infere via_tecnica_admin para V/F I–IV com ventroglúteo (âncora CPCON)', () => {
+    const instruction =
+      'Sobre administração de medicamentos pela via intramuscular (IM) analise as afirmativas a seguir:\nI- A via IM propicia a absorção de medicamentos mais lenta que a via subcutânea.\nII- Examine um músculo antes de administrar uma injeção IM ao palpar os marcos ósseos.\nIII- São cuidados importantes para minimizar a dor durante uma injeção.\nIV- O músculo ventroglúteo é o menos recomendado para todos os adultos.\nÉ CORRETO o que se afirma em:';
+    expect(inferPedagogicalBranch(viasSubtopico, instruction, [], 'vf')).toBe('via_tecnica_admin');
+    const design = getPresentationDesign(viasSubtopico, 'via_tecnica_admin');
+    expect(design?.conceptMap).toBe('morphological');
+    expect(design?.dangerZone).toBe('compare');
+  });
+
+  it('infere via_generico para EXCETO/INCORRETA', () => {
+    const instruction = 'São vantagens do uso da via sublingual, exceto:';
+    expect(inferPedagogicalBranch(viasSubtopico, instruction, [], 'certo_errado')).toBe(
+      'via_generico',
+    );
+  });
+
   const calcSubtopico = 'Cálculo de Administração de Medicamentos e Infusões';
 
   it('infere calc_dose_equivalencia para cálculo numérico de dose', () => {

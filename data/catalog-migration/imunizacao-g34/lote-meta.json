@@ -1,0 +1,33 @@
+{
+  "lote": "imunizacao-g34",
+  "subtopico": "Imunização",
+  "status": "applied",
+  "priority": "P0 — calendário (~62% volume)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "imunizacao_calendario",
+  "anchors": [
+    "examples/questao-premium-fundatec-meningococica-3meses.json",
+    "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
+  ],
+  "anchor_slug": "imparh-enfermagem-imunizacao-1779564067000-5",
+  "handcraft_grammar": "data/catalog-migration/imunizacao-pedagogy-errors.json",
+  "notes": "Handcraft golden-v1 2026-07-03 — 8/8 [READY]. validate:goldens strict · slug-alignment strict · numeric-factcheck OK — pendente apply.",
+  "readiness": "8/8",
+  "validated_at": "2026-07-03",
+  "workflow": [
+    "npm run plan:imunizacao-g34",
+    "npm run catalog:export-lote -- --lote=imunizacao-g34 --from-manifest=data/catalog-migration/imunizacao-g34/manifest.json",
+    "Handcraft por slug — gramática imunizacao-pedagogy-errors.json",
+    "npm run audit:questao-readiness -- --lote=imunizacao-g34 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=imunizacao-g34 --strict",
+    "npm run audit:numeric-factcheck -- --lote=imunizacao-g34",
+    "npm run validate:goldens -- --strict --lote=imunizacao-g34"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g34.json"
+  }
+}

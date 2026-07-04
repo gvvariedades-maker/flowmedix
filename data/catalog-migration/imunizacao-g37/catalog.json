@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:36:34.805Z",
+  "lote": "imunizacao-g37",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3968
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3969
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3970
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103270218-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 865
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103270218-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 866
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564040128-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3756
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3902
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3903
+    }
+  ]
+}

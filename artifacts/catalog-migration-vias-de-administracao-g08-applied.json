@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-04T04:59:04.404Z",
+  "lote": "vias-de-administracao-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-0",
+    "educa-pb-enfermagem-vias-de-administracao-1776056427936-0",
+    "educa-pb-enfermagem-vias-de-administracao-1778968629127-6",
+    "idecan-enfermagem-vias-de-administracao-1776056418941-6",
+    "idecan-enfermagem-vias-de-administracao-1778712108887-4",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1776056391403-7",
+    "vunesp-enfermagem-vias-de-administracao-1776056366158-6",
+    "vunesp-enfermagem-vias-de-administracao-1778968787431-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1776056427936-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1778968629127-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1776056418941-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1776056391403-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968787431-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

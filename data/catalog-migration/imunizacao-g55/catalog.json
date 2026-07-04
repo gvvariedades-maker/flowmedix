@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T07:01:49.618Z",
+  "lote": "imunizacao-g55",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 3940
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572171486-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3951
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3651
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3991
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3996
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3851
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564125198-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3894
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3746
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:43:14.587Z",
+  "lote": "imunizacao-g14",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cotec-fadenor-enfermagem-imunizacao-1777103264001-3",
+    "cotec-fadenor-enfermagem-imunizacao-1777103270218-7",
+    "decorp-enfermagem-imunizacao-1779564011849-2",
+    "educa-pb-enfermagem-imunizacao-1779564006577-3",
+    "fau-unicentro-enfermagem-imunizacao-1779572180830-1",
+    "funatec-enfermagem-imunizacao-1779564063274-2",
+    "funatec-enfermagem-imunizacao-1779564063274-3",
+    "fundatec-enfermagem-imunizacao-1779564006577-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103264001-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103270218-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-imunizacao-1779564011849-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564006577-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1779564063274-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1779564063274-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564006577-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

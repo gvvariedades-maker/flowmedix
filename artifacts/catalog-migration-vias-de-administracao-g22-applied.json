@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-04T05:04:24.818Z",
+  "lote": "vias-de-administracao-g22",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-vias-de-administracao-1778968825263-3",
+    "avancasp-enfermagem-vias-de-administracao-1778968825263-6",
+    "quadrix-enfermagem-vias-de-administracao-1778968877204-2",
+    "sc-treinamentos-enfermagem-vias-de-administracao-1778969018962-0",
+    "selecon-enfermagem-vias-de-administracao-1776056330579-7",
+    "univali-enfermagem-vias-de-administracao-1778968573722-1",
+    "vunesp-enfermagem-vias-de-administracao-1776056330579-6",
+    "vunesp-enfermagem-vias-de-administracao-1776056366158-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-vias-de-administracao-1778968877204-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-vias-de-administracao-1778969018962-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1776056330579-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-vias-de-administracao-1778968573722-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056330579-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

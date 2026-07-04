@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:49:55.483Z",
+  "lote": "imunizacao-g42",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-imunizacao-1779563992006-3",
+    "vunesp-enfermagem-imunizacao-1779563996663-1",
+    "vunesp-enfermagem-imunizacao-1779564001927-1",
+    "vunesp-enfermagem-imunizacao-1779564059030-3",
+    "vunesp-enfermagem-imunizacao-1779564090395-4",
+    "vunesp-enfermagem-imunizacao-1779564096589-4",
+    "vunesp-enfermagem-imunizacao-1779564096589-6",
+    "vunesp-enfermagem-imunizacao-1779572207173-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563992006-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564059030-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779572207173-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,16 +1,9 @@
 {
   "lote": "vias-de-administracao-g01",
-  "exported_at": "2026-07-03T21:52:20.129Z",
-  "source": "cluster-report",
+  "exported_at": "2026-07-03T22:57:59.372Z",
+  "source": "supabase",
   "filters": {
-    "clusters": [
-      "V/F — absorção e perfil de vias",
-      "Absorção / farmacocinética (CORRETA)",
-      "Indicação da via (velocidade SC/IM/IV)"
-    ],
-    "pedagogical_branch_target": "via_vf_absorcao",
-    "exclude_count": 1,
-    "mix": "CORRETA + V/F absorção + indicação SC/IM/IV alternado"
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g01/manifest.json"
   },
   "slugs": [
     "amauc-enfermagem-vias-de-administracao-1778968768987-6",

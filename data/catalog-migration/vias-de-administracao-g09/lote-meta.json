@@ -1,0 +1,35 @@
+{
+  "lote": "vias-de-administracao-g09",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P0 — via_vf_absorcao (~91% volume)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "via_vf_absorcao",
+  "anchors": [
+    "examples/questao-premium-consulpam-vias-absorcao-oral.json",
+    "examples/questao-premium-vunesp-via-subcutanea.json",
+    "examples/questao-premium-cpcon-vias-im-vf.json"
+  ],
+  "anchor_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056348175-8",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Planejado 2026-07-03 — P0 absorção/V/F/indicação; exclui Consulpam repair. Handcraft golden-v1 — erro ROI no concept_map + mirror danger_zone.",
+  "workflow": [
+    "npm run plan:vias-de-administracao-g01",
+    "npm run catalog:export-lote -- --lote=vias-de-administracao-g01 --from-manifest=data/catalog-migration/vias-de-administracao-g01/manifest.json",
+    "Handcraft por slug — gramática vias-pedagogy-errors.json",
+    "npm run enrich:vias-guideline-meta -- --lote=vias-de-administracao-g01 --write",
+    "npm run validate:goldens -- --lote=vias-de-administracao-g01 --strict",
+    "npm run audit:questao-readiness -- --lote=vias-de-administracao-g01 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=vias-de-administracao-g01 --strict",
+    "npm run audit:numeric-factcheck -- --lote=vias-de-administracao-g01",
+    "npm run catalog:patch-pedagogical-branch -- --lote=vias-de-administracao-g01 --reconcile-branch --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g09.json"
+  },
+  "applied_at": "2026-07-04"
+}

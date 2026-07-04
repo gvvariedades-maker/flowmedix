@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g21",
+  "exported_at": "2026-07-03T06:08:30.374Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g21/manifest.json"
+  },
+  "slugs": [
+    "idecan-enfermagem-imunizacao-1780066977710-5",
+    "fepese-enfermagem-imunizacao-1779572166628-5",
+    "idib-enfermagem-imunizacao-1777103277533-1",
+    "fepese-enfermagem-imunizacao-1779572171486-0",
+    "idib-enfermagem-imunizacao-1778934900821-8",
+    "fepese-enfermagem-imunizacao-1779572171486-7",
+    "ieses-enfermagem-imunizacao-1777103251447-9",
+    "fgv-enfermagem-imunizacao-1779563970889-2"
+  ]
+}

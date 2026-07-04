@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g22",
+  "exported_at": "2026-07-04T00:20:46.390Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g22/manifest.json"
+  },
+  "slugs": [
+    "quadrix-enfermagem-vias-de-administracao-1778968877204-2",
+    "sc-treinamentos-enfermagem-vias-de-administracao-1778969018962-0",
+    "selecon-enfermagem-vias-de-administracao-1776056330579-7",
+    "univali-enfermagem-vias-de-administracao-1778968573722-1",
+    "vunesp-enfermagem-vias-de-administracao-1776056330579-6",
+    "vunesp-enfermagem-vias-de-administracao-1776056366158-5",
+    "avancasp-enfermagem-vias-de-administracao-1778968825263-3",
+    "avancasp-enfermagem-vias-de-administracao-1778968825263-6"
+  ]
+}

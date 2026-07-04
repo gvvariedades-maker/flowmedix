@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T11:47:38.821Z",
+  "lote": "imunizacao-g32",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-imunizacao-1779564031957-3",
+    "idecan-enfermagem-imunizacao-1780066977710-6",
+    "idib-enfermagem-imunizacao-1777103277533-2",
+    "idib-enfermagem-imunizacao-1777103277533-3",
+    "vunesp-enfermagem-imunizacao-1779564063274-5",
+    "vunesp-enfermagem-imunizacao-1779564063274-6",
+    "vunesp-enfermagem-imunizacao-1779564063274-7",
+    "vunesp-enfermagem-imunizacao-1779564090395-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1779564031957-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1777103277533-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1777103277533-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

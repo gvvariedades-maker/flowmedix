@@ -1,8 +1,12 @@
 {
   "lote": "imunizacao-avancasp-rede-frio-repair",
-  "exported_at": "2026-07-03T00:00:00.000Z",
-  "source": "handcraft-repair",
-  "description": "Repair meta.subtopico + pedagogical_branch L3 — AVANÇASP faixa 2–8 °C (âncora cadeia frio B)",
+  "exported_at": "2026-07-03T05:08:18.014Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6"
+    ]
+  },
   "slugs": [
     "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6"
   ]

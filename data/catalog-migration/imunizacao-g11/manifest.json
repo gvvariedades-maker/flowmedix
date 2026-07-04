@@ -1,16 +1,9 @@
 {
   "lote": "imunizacao-g11",
-  "exported_at": "2026-07-03T02:44:39.408Z",
-  "source": "cluster-report",
+  "exported_at": "2026-07-03T05:17:14.568Z",
+  "source": "supabase",
   "filters": {
-    "clusters": [
-      "Calendário vacinal — infantil",
-      "Calendário vacinal — adolescente/adulto/idoso",
-      "Gestante / puérpera — vacinação",
-      "HPV / campanhas e prevenção"
-    ],
-    "exclude_count": 96,
-    "mix": "infantil+adulto/gestante/HPV alternado"
+    "from_manifest": "data/catalog-migration/imunizacao-g11/manifest.json"
   },
   "slugs": [
     "fauel-enfermagem-imunizacao-1777103257434-7",

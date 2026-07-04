@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-03T15:41:38.697Z",
+  "lote": "imunizacao-g82",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+    "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
+    "funtef-enfermagem-vias-de-administracao-1778968598934-4",
+    "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712270872-0",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-3",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968194611-7",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-8",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712270872-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968194611-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

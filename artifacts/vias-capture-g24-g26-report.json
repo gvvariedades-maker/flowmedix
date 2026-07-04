@@ -1,0 +1,151 @@
+﻿{
+    "passed":  23,
+    "generated_at":  "2026-07-04T05:19:47.8011365Z",
+    "failed":  0,
+    "slugs":  [
+                  {
+                      "slug":  "funatec-enfermagem-vias-de-administracao-1778968609115-0",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "fundatec-enfermagem-vias-de-administracao-1776056409987-7",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "gama-geral-vias-de-administracao-1776056427936-3",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "igeduc-enfermagem-vias-de-administracao-1778968609115-6",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "igeduc-enfermagem-vias-de-administracao-1778968609115-8",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "igeduc-enfermagem-vias-de-administracao-1778968629127-3",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "igeduc-enfermagem-vias-de-administracao-1778968646731-1",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "igeduc-enfermagem-vias-de-administracao-1778968646731-2",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "imparh-enfermagem-vias-de-administracao-1778968956139-0",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-6",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "instituto-consulplan-enfermagem-vias-de-administracao-1778968687469-9",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "instituto-evo-enfermagem-vias-de-administracao-1776056348175-2",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "ivin-enfermagem-vias-de-administracao-1778968877204-5",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "lj-assessoria-enfermagem-vias-de-administracao-1778968877204-7",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-0",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-1",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "objetiva-concursos-enfermagem-vias-de-administracao-1778968825263-1",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "omni-enfermagem-vias-de-administracao-1778968997293-5",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "sc-treinamentos-enfermagem-vias-de-administracao-1778968666352-5",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "univida-enfermagem-vias-de-administracao-1778968646731-3",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "vunesp-enfermagem-vias-de-administracao-1776056366158-8",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  },
+                  {
+                      "slug":  "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
+                      "exit":  0,
+                      "pngs":  6,
+                      "pass":  true
+                  }
+              ],
+    "total":  23,
+    "lotes":  [
+                  "vias-de-administracao-g24",
+                  "vias-de-administracao-g25",
+                  "vias-de-administracao-g26"
+              ]
+}

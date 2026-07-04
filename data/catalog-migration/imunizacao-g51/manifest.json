@@ -1,0 +1,18 @@
+{
+  "lote": "imunizacao-g51",
+  "exported_at": "2026-07-03T06:58:11.236Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/imunizacao-g51/manifest.json"
+  },
+  "slugs": [
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-0",
+    "cotec-fadenor-enfermagem-imunizacao-1777103264001-2",
+    "cotec-fadenor-enfermagem-imunizacao-1779572215875-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779564001927-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779564011849-3",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-3",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-4"
+  ]
+}

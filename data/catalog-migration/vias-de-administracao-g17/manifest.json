@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g17",
+  "exported_at": "2026-07-04T00:17:46.886Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g17/manifest.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-vias-de-administracao-1776056391403-0",
+    "fundatec-enfermagem-vias-de-administracao-1778968862077-7",
+    "fundep-enfermagem-vias-de-administracao-1778969007166-0",
+    "furb-enfermagem-vias-de-administracao-1776056366158-9",
+    "furb-enfermagem-vias-de-administracao-1776056409987-0",
+    "fuvest-enfermagem-vias-de-administracao-1778968768987-8",
+    "iaupe-enfermagem-vias-de-administracao-1776056401060-4",
+    "iaupe-enfermagem-vias-de-administracao-1776056401060-5"
+  ]
+}

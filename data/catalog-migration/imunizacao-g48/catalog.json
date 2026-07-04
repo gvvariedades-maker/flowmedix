@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-03T06:50:00.880Z",
+  "lote": "imunizacao-g48",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3842
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103244679-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 823
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564071106-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 3817
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103230085-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 810
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103230085-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 812
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1779564129617-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 3906
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564119665-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3889
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564109452-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 3869
+    }
+  ]
+}

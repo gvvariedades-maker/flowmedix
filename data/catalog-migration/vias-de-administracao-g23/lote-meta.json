@@ -1,0 +1,22 @@
+{
+  "lote": "vias-de-administracao-g23",
+  "subtopico": "Vias de Administração",
+  "status": "applied",
+  "priority": "P2 — perfis + INCORRETA + biodisponibilidade + técnica",
+  "slug_count": 8,
+  "pedagogical_branch_target": "mixed",
+  "anchors": [
+    "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json"
+  ],
+  "anchor_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-7",
+  "handcraft_grammar": "data/catalog-migration/vias-pedagogy-errors.json",
+  "notes": "Planejado 2026-07-03 — P0 esgotado após g12; plan:g01 falhou memória. g23 mix clusters alternativos.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-04",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/vias-de-administracao-g23.json"
+  },
+  "applied_at": "2026-07-04"
+}

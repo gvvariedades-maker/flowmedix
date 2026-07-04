@@ -1,0 +1,18 @@
+{
+  "lote": "vias-de-administracao-g11",
+  "exported_at": "2026-07-03T23:56:45.751Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/vias-de-administracao-g11/manifest.json"
+  },
+  "slugs": [
+    "instituto-jk-enfermagem-vias-de-administracao-1776056418941-2",
+    "instituto-verbena-enfermagem-vias-de-administracao-1776056427936-1",
+    "instituto-verbena-enfermagem-vias-de-administracao-1778968609115-9",
+    "ms-sarmento-enfermagem-vias-de-administracao-1776056391403-6",
+    "ms-sarmento-enfermagem-vias-de-administracao-1776056409987-3",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968609115-7",
+    "objetiva-concursos-enfermagem-vias-de-administracao-1778968666352-9",
+    "selecon-enfermagem-vias-de-administracao-1776056383154-2"
+  ]
+}
