@@ -609,19 +609,19 @@
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/vias-de-administracao.json",
       "golden_anchors_registry": "data/catalog-migration/vias-golden-anchors.json",
       "guideline": "lib/guidelines/viasAdministracao.ts",
-      "production_status": "none",
+      "production_status": "production_ready",
       "quality": {
-        "technical_ready_at": null,
-        "production_ready_at": null,
+        "technical_ready_at": "2026-07-04",
+        "production_ready_at": "2026-07-04",
         "monitoring_until": null,
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
-          "L3": false,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
         },
         "slo": {
           "open_p0": 0,
@@ -631,9 +631,9 @@
           "p0_block_after_hours": 24
         },
         "continuous": {
-          "enabled": false,
-          "last_audit_at": null,
-          "last_audit_pass": null,
+          "enabled": true,
+          "last_audit_at": "2026-07-04T07:36:18.485Z",
+          "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null

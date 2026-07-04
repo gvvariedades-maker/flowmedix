@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T23:09:01.767Z",
+  "generated_at": "2026-07-04T07:36:18.483Z",
   "subtopico": "Vias de Administração",
   "pacote_prefix": "vias-de-administracao",
   "production_status_before": "none",
@@ -14,7 +14,7 @@
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 368
+    "sessions_30d": 365
   },
   "layers": {
     "L1": {
@@ -23,7 +23,7 @@
     },
     "L2": {
       "pass": true,
-      "detail": "alignment OK (8 slugs)"
+      "detail": "alignment OK (207 slugs)"
     },
     "L2b": {
       "pass": true,
@@ -43,7 +43,7 @@
     },
     "L6": {
       "pass": true,
-      "detail": "all 1 lotes anchor pass"
+      "detail": "all 26 lotes anchor pass"
     }
   },
   "lote_stats": [
@@ -52,11 +52,161 @@
       "scanned": 8,
       "alignment_fail": 0,
       "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g02",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g03",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g04",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g05",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g06",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g07",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g08",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g09",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g10",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g11",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g12",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g13",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g14",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g15",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g16",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g17",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g18",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g19",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g20",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g21",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g22",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g23",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g24",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g25",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "vias-de-administracao-g26",
+      "scanned": 7,
+      "alignment_fail": 0,
+      "numeric_fail": 0
     }
   ],
   "content_health": {
     "subtopico": "Vias de Administração",
-    "sessions_30d": 368,
+    "sessions_30d": 365,
     "open_reports": {
       "p0": 0,
       "p1": 0,
@@ -71,7 +221,7 @@
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 368,
+      "sessions_30d": 365,
       "open_p1": 0,
       "report_rate_pct": 0
     },

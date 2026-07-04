@@ -1,7 +1,39 @@
 {
-  "generated_at": "2026-07-03T23:09:00.061Z",
-  "subtopicos_ready": 0,
-  "subtopicos_pass": 0,
+  "generated_at": "2026-07-04T07:36:13.583Z",
+  "subtopicos_ready": 1,
+  "subtopicos_pass": 1,
   "subtopicos_fail": 0,
-  "items": []
+  "items": [
+    {
+      "subtopico": "Vias de Administração",
+      "registry_status": "applied",
+      "total_slugs": 208,
+      "handcraft_applied": 208,
+      "manifest_slugs": 208,
+      "supabase_found": 208,
+      "golden_v1": 208,
+      "four_slides": 208,
+      "premium_gate_ok": 208,
+      "local_json_count": 716,
+      "slug_issues": [],
+      "pilot_sample": [
+        "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+        "agirh-enfermagem-vias-de-administracao-1778968768987-7",
+        "agirh-enfermagem-vias-de-administracao-1778968787431-0",
+        "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+        "amauc-enfermagem-vias-de-administracao-1778968768987-6",
+        "amauc-enfermagem-vias-de-administracao-1778968906156-5",
+        "amauc-enfermagem-vias-de-administracao-1778968906156-6",
+        "amauc-enfermagem-vias-de-administracao-1778968956139-1",
+        "amauc-enfermagem-vias-de-administracao-1778968956139-2",
+        "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
+        "ameosc-enfermagem-vias-de-administracao-1776056348175-6"
+      ],
+      "pilot_min": 11,
+      "dod_pass": true,
+      "dod_notes": [
+        "Piloto humano sugerido: revisar 11 slug(s) no player (≥5%)"
+      ]
+    }
+  ]
 }

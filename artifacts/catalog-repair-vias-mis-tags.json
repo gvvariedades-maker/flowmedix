@@ -1,0 +1,252 @@
+{
+  "generated_at": "2026-07-04T07:32:33.116Z",
+  "mode": "apply",
+  "total": 27,
+  "applied": 27,
+  "skipped": 0,
+  "lines": [
+    {
+      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
+      "segment": "cuidados-na-administracao-de-medicamentos",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344779828-6",
+      "segment": "curativos-e-manejo-de-feridas",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Curativos e Manejo de Feridas",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "avancasp-enfermagem-seguranca-do-paciente-1777102861438-4",
+      "segment": "seguranca-do-paciente",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Segurança do Paciente",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-2",
+      "segment": "cuidados-na-administracao-de-medicamentos",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-seguranca-do-paciente-1779563436357-4",
+      "segment": "seguranca-do-paciente",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Segurança do Paciente",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-3",
+      "segment": "cuidados-na-administracao-de-medicamentos",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-0",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-6",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-1",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "fuvest-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-4",
+      "segment": "cuidados-na-administracao-de-medicamentos",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "idecan-enfermagem-saude-do-idoso-1778712437306-6",
+      "segment": "saude-do-idoso",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Promoção à Saúde e Prevenção de Agravos",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-7",
+      "segment": "cuidados-na-administracao-de-medicamentos",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-2",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+      "segment": "nocoes-de-anatomia",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Noções de Anatomia",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-8",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006486032-4",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+      "segment": "nocoes-de-anatomia",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Noções de Anatomia",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "instituto-darwin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-7",
+      "segment": "cuidados-na-administracao-de-medicamentos",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-5",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-4",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-0",
+      "segment": "processo-de-enfermagem",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Processo de Enfermagem",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102802022-6",
+      "segment": "seguranca-do-paciente",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Segurança do Paciente",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0",
+      "segment": "puncao-venosa-e-cuidados-com-cateteres",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Punção Venosa e Cuidados com Cateteres",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    },
+    {
+      "slug": "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-5",
+      "segment": "cuidados-na-administracao-de-medicamentos",
+      "subtopico_before": "Vias de Administração",
+      "subtopico_after": "Cuidados na Administração de Medicamentos",
+      "titulo_before": "Vias de Administração",
+      "zod_valid": true,
+      "applied": true
+    }
+  ]
+}

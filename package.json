@@ -64,6 +64,7 @@
     "catalog:export-lote": "tsx scripts/catalog-migration-export-lote.ts",
     "catalog:patch-pedagogical-branch": "tsx scripts/catalog-patch-pedagogical-branch.ts",
     "catalog:repair-farmaco-mispatch": "tsx scripts/catalog-repair-farmaco-mispatch.ts",
+    "catalog:repair-vias-mis-tags": "tsx scripts/repair-vias-mis-tags.ts",
     "catalog:repair-golden-v2-spoiler": "tsx scripts/catalog-repair-golden-v2-spoiler.ts",
     "catalog:seed-lote": "tsx scripts/catalog-migration-seed-lote.ts",
     "catalog:apply-lote": "tsx scripts/catalog-migration-apply-lote.ts",
