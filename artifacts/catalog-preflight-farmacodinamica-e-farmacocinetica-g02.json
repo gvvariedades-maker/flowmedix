@@ -1,7 +1,9 @@
 {
   "lote": "farmacodinamica-e-farmacocinetica-g02",
-  "generated_at": "2026-06-29T23:33:12.884Z",
+  "generated_at": "2026-07-04T08:44:10.620Z",
   "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
   "total": 7,
   "passed": 7,
   "failed": 0,

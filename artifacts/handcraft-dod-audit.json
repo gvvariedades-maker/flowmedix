@@ -1,38 +1,28 @@
 {
-  "generated_at": "2026-07-04T07:36:13.583Z",
+  "generated_at": "2026-07-04T08:53:27.270Z",
   "subtopicos_ready": 1,
   "subtopicos_pass": 1,
   "subtopicos_fail": 0,
   "items": [
     {
-      "subtopico": "Vias de Administração",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
       "registry_status": "applied",
-      "total_slugs": 208,
-      "handcraft_applied": 208,
-      "manifest_slugs": 208,
-      "supabase_found": 208,
-      "golden_v1": 208,
-      "four_slides": 208,
-      "premium_gate_ok": 208,
-      "local_json_count": 716,
+      "total_slugs": 11,
+      "handcraft_applied": 11,
+      "manifest_slugs": 11,
+      "supabase_found": 11,
+      "golden_v1": 11,
+      "four_slides": 11,
+      "premium_gate_ok": 11,
+      "local_json_count": 27,
       "slug_issues": [],
       "pilot_sample": [
-        "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
-        "agirh-enfermagem-vias-de-administracao-1778968768987-7",
-        "agirh-enfermagem-vias-de-administracao-1778968787431-0",
-        "amauc-enfermagem-vias-de-administracao-1776056374837-6",
-        "amauc-enfermagem-vias-de-administracao-1778968768987-6",
-        "amauc-enfermagem-vias-de-administracao-1778968906156-5",
-        "amauc-enfermagem-vias-de-administracao-1778968906156-6",
-        "amauc-enfermagem-vias-de-administracao-1778968956139-1",
-        "amauc-enfermagem-vias-de-administracao-1778968956139-2",
-        "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
-        "ameosc-enfermagem-vias-de-administracao-1776056348175-6"
+        "cetrede-enfermagem-vias-de-administracao-1778968997293-3"
       ],
-      "pilot_min": 11,
+      "pilot_min": 1,
       "dod_pass": true,
       "dod_notes": [
-        "Piloto humano sugerido: revisar 11 slug(s) no player (≥5%)"
+        "Piloto humano sugerido: revisar 1 slug(s) no player (≥5%)"
       ]
     }
   ]

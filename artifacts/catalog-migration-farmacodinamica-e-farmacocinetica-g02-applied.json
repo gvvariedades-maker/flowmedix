@@ -1,15 +1,16 @@
 {
-  "generated_at": "2026-06-29T23:36:15.684Z",
+  "generated_at": "2026-07-04T08:56:33.973Z",
   "lote": "farmacodinamica-e-farmacocinetica-g02",
   "mode": "apply",
-  "total_files": 7,
-  "ok": 7,
+  "total_files": 8,
+  "ok": 8,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
     "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+    "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
     "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
     "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
     "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
@@ -30,6 +31,12 @@
     },
     {
       "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
       "status": "ok",
       "mode": "update",
       "detail": "conteudo_json aplicado"

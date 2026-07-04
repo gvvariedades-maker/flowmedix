@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-29T23:34:37.214Z",
+  "generated_at": "2026-07-04T08:53:29.034Z",
   "subtopico": "Farmacodinâmica e Farmacocinética",
   "pacote_prefix": "farmacodinamica-e-farmacocinetica",
-  "production_status_before": "none",
+  "production_status_before": "production_ready",
   "technical_ready": true,
   "production_ready": true,
   "can_sell": true,
@@ -14,7 +14,7 @@
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 424
+    "sessions_30d": 366
   },
   "layers": {
     "L1": {
@@ -23,7 +23,7 @@
     },
     "L2": {
       "pass": true,
-      "detail": "alignment OK (12 slugs)"
+      "detail": "alignment OK (13 slugs)"
     },
     "L2b": {
       "pass": true,
@@ -31,7 +31,7 @@
     },
     "L3": {
       "pass": true,
-      "detail": "L1 preflight 12/12 — g01+g02 alignment e numeric OK; branches farmaco_*"
+      "detail": "L3 Farmaco — 3 branches (farmaco_pk_pd_vf bespoke ADME + farmaco_clinico_protocolo + farmaco_generico); player /dev/slide-mold-review"
     },
     "L4": {
       "pass": true,
@@ -55,40 +55,31 @@
     },
     {
       "lote": "farmacodinamica-e-farmacocinetica-g02",
-      "scanned": 7,
+      "scanned": 8,
       "alignment_fail": 0,
       "numeric_fail": 0
     }
   ],
   "content_health": {
     "subtopico": "Farmacodinâmica e Farmacocinética",
-    "sessions_30d": 424,
+    "sessions_30d": 366,
     "open_reports": {
       "p0": 0,
       "p1": 0,
-      "p2": 2,
+      "p2": 0,
       "p3": 0,
-      "total": 2
+      "total": 0
     },
-    "report_rate_pct": 0.47,
-    "top_reported_slugs": [
-      {
-        "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
-        "count": 1
-      },
-      {
-        "slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
-        "count": 1
-      }
-    ],
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
     "slo": {
       "open_p0": 0,
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 424,
+      "sessions_30d": 366,
       "open_p1": 0,
-      "report_rate_pct": 0.47
+      "report_rate_pct": 0
     },
     "pass": true,
     "blockers": []

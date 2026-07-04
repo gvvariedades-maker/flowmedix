@@ -40,7 +40,7 @@
   ],
   "notes": "Export completo por subtopico retornou 25 slugs — maioria mis-tagged no DB (urgências, SAE, vias). g01 = núcleo PK/PD curado.",
   "anchor_second_review": {
-    "reviewed_at": "2026-06-29",
+    "reviewed_at": "2026-07-04",
     "reviewer": "agent",
     "method": "agent",
     "status": "pass",

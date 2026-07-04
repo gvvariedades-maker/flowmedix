@@ -314,9 +314,9 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-07-01T21:13:53.463Z",
+          "last_audit_at": "2026-07-04T08:43:53.833Z",
           "last_audit_pass": true,
-          "health_streak_days": 3,
+          "health_streak_days": 4,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }

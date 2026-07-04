@@ -1,21 +1,16 @@
 {
-  "generated_at": "2026-06-29T23:33:46.618Z",
+  "generated_at": "2026-07-04T08:52:55.505Z",
   "lote": "farmacodinamica-e-farmacocinetica-g02",
   "anchor_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
   "subtopico": "Farmacodinâmica e Farmacocinética",
   "automated": {
-    "readiness_ok": false,
-    "alignment_ok": false,
+    "readiness_ok": true,
+    "alignment_ok": true,
     "numeric_ok": true,
-    "automated_pass": false,
-    "issues": [
-      "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-      "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
-      "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-      "[align] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas."
-    ]
+    "automated_pass": true,
+    "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
   "checklist": [
     {
       "id": 1,

@@ -15,9 +15,13 @@
     "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
     "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
     "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+    "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
     "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
-    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
-    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3"
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1"
   ],
-  "updated_at": "2026-07-01"
+  "updated_at": "2026-07-04",
+  "reconciled_from": [
+    "farmacodinamica-e-farmacocinetica-g01",
+    "farmacodinamica-e-farmacocinetica-g02"
+  ]
 }

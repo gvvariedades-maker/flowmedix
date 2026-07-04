@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T23:31:45.526Z",
+  "generated_at": "2026-07-04T08:39:56.069Z",
   "pacote_prefix": "farmacodinamica-e-farmacocinetica",
   "lotes": [
     {
@@ -12,8 +12,8 @@
     }
   ],
   "union_count": 11,
-  "registry_total_slugs": 12,
-  "match": false,
+  "registry_total_slugs": 11,
+  "match": true,
   "slugs": [
     "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",

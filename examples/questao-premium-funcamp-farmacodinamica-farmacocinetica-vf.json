@@ -57,8 +57,7 @@
       "rows": [
         { "label": "Farmacocinética", "value": "O que o organismo faz com o fármaco (ADME)", "badge": "ok" },
         { "label": "Farmacodinâmica", "value": "O que o fármaco faz no organismo", "badge": "ok" },
-        { "label": "Meia-vida", "value": "Queda de 50% da concentração — não 100%", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas → B", "badge": "hot" }
+        { "label": "Meia-vida", "value": "Queda de 50% da concentração — não 100%", "emphasis": "alert", "badge": "warn" }
       ],
       "footer_rule": "III troca 50% por 100% — pegadinha numérica clássica"
     },

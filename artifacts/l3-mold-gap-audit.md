@@ -1,27 +1,20 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-03T18:56:11.973Z
+Gerado em: 2026-07-04T08:36:03.218Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
-| Fonte slugs | lotes locais |
-| Clusters mapeados | 99 |
-| Slugs auditados | 1237 |
+| Fonte slugs | Supabase (vivo) |
+| Clusters mapeados | 108 |
+| Slugs auditados | 11 |
 | ok_existente | 12 |
-| ok_generico | 64 |
-| ramo_novo | 22 |
+| ok_generico | 66 |
+| ramo_novo | 26 |
 | molde_inedito | 1 |
 | Pacotes inéditos únicos | 1 |
-| Slugs com mismatch L3 | 12 |
-
-## Mismatch por subtópico
-
-| Subtópico | Slugs com mismatch |
-|-----------|-------------------|
-| Saúde Mental | 6 |
-| Saúde do Adolescente | 2 |
+| Slugs com mismatch L3 | 0 |
 
 ## Candidatos a molde inédito (pacote de 4 variantes)
 
@@ -121,6 +114,15 @@ Gerado em: 2026-07-03T18:56:11.973Z
 | Segurança do Paciente | Certo ou errado | 1 | 1.7% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | Higienização das mãos | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | Humanização e cuidado | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Vias de Administração | Técnica de punção IM/IV | 68 | 28.9% | ok_generico | `via_tecnica_admin` | morphological · banner · cards · compare (genérico)… |
+| Vias de Administração | V/F — absorção e perfil de vias | 57 | 24.3% | molde_redesign | `via_vf_absorcao` | absorption-speed-rail · via-reference-board · via-vf-juggle-… |
+| Vias de Administração | Absorção / farmacocinética (CORRETA) | 26 | 11.1% | molde_redesign | `via_vf_absorcao` | absorption-speed-rail · via-reference-board · via-vf-juggle-… |
+| Vias de Administração | Perfis de via | 25 | 10.6% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Vias de Administração | Indicação da via (velocidade SC/IM/IV) | 19 | 8.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Vias de Administração | INCORRETA / EXCETO | 18 | 7.7% | ok_generico | `via_generico` | morphological · center · vertical · compare (genérico)… |
+| Vias de Administração | Default — sem âncora temática | 11 | 4.7% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Vias de Administração | Certo ou errado | 8 | 3.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Vias de Administração | 1ª passagem hepática / biodisponibilidade | 3 | 1.3% | molde_redesign | `via_vf_absorcao` | absorption-speed-rail · via-reference-board · via-vf-juggle-… |
 | Imunização | Calendário vacinal — adolescente/adulto/idoso | 137 | 23.8% | ok_generico | `imunizacao_calendario` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Calendário vacinal — infantil | 135 | 23.5% | ok_generico | `imunizacao_calendario` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Cadeia de frio / conservação / SI-PNI | 68 | 11.8% | ok_generico | `imunizacao_cadeia_frio` | morphological · reference_table · vertical · compare (genéri… |
@@ -136,45 +138,6 @@ Gerado em: 2026-07-03T18:56:11.973Z
 
 ## Slugs (amostra com branch inferido)
 
-- `imunizacao_calendario`: 475
-- `via_vf_absorcao`: 214
-- `—`: 95
-- `imunizacao_cadeia_frio`: 56
-- `biosseg_generico`: 51
-- `bacterianas_generico`: 47
-- `imunizacao_exceto`: 28
-- `perioperatorio_pre_operatorio`: 24
-- `sp_generico`: 24
-- `perioperatorio_pos_operatorio`: 23
-- `via_tecnica_admin`: 20
-- `cme_autoclave_metodos`: 17
-- `imunizacao_vf_intervalos`: 14
-- `perioperatorio_isc`: 14
-- `mental_crise_caps`: 12
-- `sp_prevencao_quedas`: 12
-- `sp_eventos_adversos`: 11
-- `mental_generico`: 10
-- `sp_identificacao`: 10
-- `cme_generico`: 8
-- `mental_raps_legis`: 7
 - `farmaco_clinico_protocolo`: 6
-- `adolescente_etica_sigilo`: 6
-- `cme_preparo_limpeza`: 5
-- `perioperatorio_generico`: 5
-- `adolescente_antropometria`: 5
-- `cme_vf_ce`: 4
-- `bacterianas_agente_etiologico`: 4
 - `farmaco_generico`: 4
-- `biosseg_iras_itu_cateter`: 4
-- `mental_depressao`: 3
-- `mental_dependencia_tabagismo`: 3
-- `imunizacao_generico`: 2
-- `perioperatorio_protocolo`: 2
-- `adolescente_violencia_protecao`: 2
-- `adolescente_generico`: 2
-- `mental_aps_acolhimento`: 2
-- `sp_metas_internacionais`: 2
-- `cme_processamento_conceito`: 1
 - `farmaco_pk_pd_vf`: 1
-- `adolescente_desenvolvimento`: 1
-- `via_generico`: 1

@@ -5,6 +5,7 @@
 ## Escopo
 
 - **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3
+- **Primeiro lote:** `farmacodinamica-e-farmacocinetica-g01`
 
 ## Pacote (registry)
 
@@ -18,6 +19,11 @@
 | anchor_glob | `examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json` |
 | guideline | `—` |
 | handcraft_meta | `data/catalog-migration/farmacodinamica-e-farmacocinetica-g02/lote-meta.json` |
+
+## Proibido (playbook)
+
+- `ai:generate`
+- `catalog:upgrade-premium`
 
 ## Ramos L3 (pedagogical_branch)
 
