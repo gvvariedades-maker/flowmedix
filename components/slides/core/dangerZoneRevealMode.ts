@@ -33,6 +33,13 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'burn-trap-arena' ||
     layoutVariant === 'trabalho-pep-trap-arena' ||
     layoutVariant === 'respiratorio-spo2-trap-arena' ||
+    layoutVariant === 'urgencias-rcp-trap-arena' ||
+    layoutVariant === 'urgencias-trauma-trap-arena' ||
+    layoutVariant === 'urgencias-stroke-trap-arena' ||
+    layoutVariant === 'urgencias-shock-trap-arena' ||
+    layoutVariant === 'urgencias-choking-trap-arena' ||
+    layoutVariant === 'urgencias-pediatric-trap-arena' ||
+    layoutVariant === 'urgencias-manchester-trap' ||
     layoutVariant === 'itu-catheter-trap' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';

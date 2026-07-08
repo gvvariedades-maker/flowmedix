@@ -1,0 +1,28 @@
+{
+  "lote": "sinais-vitais-g07",
+  "branch": "vitals_pa_tecnica",
+  "exported_at": "2026-07-05T04:02:03.321Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "copese-ufpi-enfermagem-verificacao-de-sinais-vitais-1779344117207-6",
+      "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344105099-8",
+      "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-5",
+      "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-7",
+      "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344262940-0",
+      "coseac-uff-geral-verificacao-de-sinais-vitais-1779344253939-4",
+      "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779344189558-2",
+      "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1778969745165-6"
+    ]
+  },
+  "slugs": [
+    "copese-ufpi-enfermagem-verificacao-de-sinais-vitais-1779344117207-6",
+    "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344105099-8",
+    "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-5",
+    "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-7",
+    "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344262940-0",
+    "coseac-uff-geral-verificacao-de-sinais-vitais-1779344253939-4",
+    "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779344189558-2",
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1778969745165-6"
+  ]
+}

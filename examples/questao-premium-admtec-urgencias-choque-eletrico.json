@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "banca": "ADM&TEC",
+    "prova": "Tec Enf",
+    "orgao": "Pref M de Camaragibe",
+    "ano": "2024",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_choque",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-07",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "Primeiros socorros — acidente elétrico (segurança da cena · MS/SBV)",
+      "exam_vs_current": "none",
+      "catalog_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "cluster": "Choque elétrico — primeira conduta (interromper corrente)"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-sbv-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV — segurança da cena e primeiros socorros",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "seguranca da cena",
+          "interromper corrente eletrica",
+          "nao tocar vitima energizada",
+          "desligar fonte energia",
+          "primeiros socorros acidente eletrico"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A vítima de choque elétrico pode apresentar no corpo tanto sinais visíveis de choque elétrico, como queimaduras, quanto problemas nos órgãos internos, como arritmia. Em diversos casos, a vítima fica presa à corrente elétrica, podendo ocasionar a morte. Qual das alternativas abaixo refere a primeira conduta ao atendimento de primeiros socorros em caso de choque elétrico?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Afrouxar as roupas da vítima para facilitar a respiração e a circulação sanguínea.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Caso a vítima não esteja respirando, deve-se iniciar a massagem cardíaca e a respiração boca a boca.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Enrolar a vítima por completo com um pano limpo e procurar ajuda médica.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Não tocar na vítima antes de se certificar de que o circuito já tenha sido interrompido.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Choque elétrico — 1ª conduta",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Primeira conduta em choque elétrico — vítima pode ter queimaduras, arritmia e ficar presa à corrente.",
+          "icon": "Target"
+        },
+        {
+          "label": "Semântica",
+          "detail": "Choque elétrico = acidente com corrente — não confundir com choque hipovolêmico (hipotensão).",
+          "icon": "Zap"
+        },
+        {
+          "label": "Prioridade zero",
+          "detail": "Segurança do socorrista: interromper circuito antes de tocar na vítima.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Depois da segurança",
+          "detail": "Checar consciência/respiração → RCP se necessário → tratar queimaduras → acionar 192.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "RCP, afrouxar roupa ou enrolar em pano vêm só após a cena estar segura.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Desligar corrente → depois socorrer"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Comando pede a PRIMEIRA conduta — não o tratamento completo do choque elétrico.",
+        "Regra: socorrista não pode virar segunda vítima — fonte energizada mata quem toca.",
+        "A — afrouxar roupas → conduta tardia; eliminar.",
+        "B — massagem + boca a boca → só após circuito interrompido e cena segura; eliminar como 1ª conduta.",
+        "C — enrolar em pano → não interrompe corrente nem inicia SBV; eliminar.",
+        "D — não tocar antes de certificar circuito interrompido → verdadeira.",
+        "Marcar D.",
+        "Fixação: em acidente elétrico, a letra certa quase sempre é segurança da cena."
+      ],
+      "footer_rule": "Energia off → ABC → 192"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Acidente elétrico — sequência",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "1ª CONDUTA = SEGURANÇA",
+      "rows": [
+        {
+          "label": "Passo 1",
+          "value": "Não tocar · desligar chave / interromper fonte",
+          "badge": "hot"
+        },
+        {
+          "label": "Passo 2",
+          "value": "Afastar vítima só com material isolante se ainda energizada",
+          "badge": "warn"
+        },
+        {
+          "label": "Passo 3",
+          "value": "Checar consciência e respiração",
+          "badge": "ok"
+        },
+        {
+          "label": "Passo 4",
+          "value": "RCP 30:2 se PCR · cobrir queimaduras",
+          "badge": "info"
+        },
+        {
+          "label": "Passo 5",
+          "value": "Acionar 192 / SAMU",
+          "badge": "ok"
+        },
+        {
+          "label": "Arritmia",
+          "value": "Lesão elétrica pode causar — monitorar e transportar",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Corrente interrompida → então tocar"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — CHOQUE ELÉTRICO",
+      "items": [
+        {
+          "label": "Letra A — afrouxar roupas",
+          "detail": "Parece cuidado com ventilação e circulação logo de início.",
+          "correct": "Só depois da cena segura; a 1ª conduta é interromper a corrente elétrica."
+        },
+        {
+          "label": "Letra B — RCP imediata",
+          "detail": "Sem respiração assusta — candidato corre para massagem cardíaca.",
+          "correct": "RCP é após desenergizar; tocar na vítima energizada eletrocuta o socorrista."
+        },
+        {
+          "label": "Letra C — enrolar em pano",
+          "detail": "Parece proteger e buscar ajuda ao mesmo tempo.",
+          "correct": "Não interrompe a eletricidade nem substitui desligar o circuito."
+        },
+        {
+          "label": "Transferência — choque hipovolêmico",
+          "detail": "Em outra questão, “choque” é taquicardia + pele fria + hipotensão.",
+          "correct": "Choque elétrico = acidente com corrente; 1ª conduta aqui é segurança, não fluido."
+        }
+      ],
+      "footer_rule": "Choque elétrico ≠ choque circulatório"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-06T20:02:18.579Z",
+  "lote": "sinais-vitais-g23",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1778969752567-8",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2264
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1778969760552-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2267
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1778969768866-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2274
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1778969768866-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2276
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343856589-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2440
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343865210-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2447
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343865210-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2449
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343865210-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2450
+    }
+  ]
+}

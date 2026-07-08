@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-08T02:27:22.075Z",
+  "lote": "urgencias-amauc-avc-cincinnati-repair",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

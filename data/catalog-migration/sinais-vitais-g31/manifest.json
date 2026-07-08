@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g31",
+  "exported_at": "2026-07-06T23:08:09.625Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g31/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-0",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-4",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-0",
+    "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344182672-5",
+    "fenix-instituto-enfermagem-verificacao-de-sinais-vitais-1778969768866-6",
+    "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-5",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-8",
+    "furb-enfermagem-verificacao-de-sinais-vitais-1779343811344-1"
+  ]
+}

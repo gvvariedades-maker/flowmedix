@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "banca": "AMEOSC",
+    "prova": "Tec Enf",
+    "orgao": "Pref Mondaí",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_queimadura",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "Protocolo MS/SBV — queimadura: água corrente · sem pasta/manteiga/gelo · cobrir com gaze",
+      "exam_vs_current": "none",
+      "catalog_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "cluster": "Queimadura — primeiro socorro (V/F primeiros socorros)"
+    },
+    "sources": [
+      {
+        "id": "urgencias-queimadura-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/SAMU — queimadura térmica e química",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "queimadura agua corrente",
+          "nao pasta dente manteiga gelo",
+          "queimadura quimica lavar agua",
+          "cobrir gaze limpa",
+          "nao cafe hemorragia"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Primeiros socorros são procedimentos imediatos prestados a vítimas de acidentes ou mal súbito para manter sinais vitais, prevenir agravamentos e salvar vidas até a chegada de socorro especializado. Sobre primeiros socorros e emergência, marque verdadeiro (V) ou falso (F) nas afirmativas abaixo:\n( )Na reanimação cardiorrespiratória em adultos, a profundidade das compressões deve ser de 5 a 6 cm.\n( )Em caso de queimadura química, deve-se aplicar pasta de dente para resfriar a pele.\n( )A desobstrução da via aérea por corpo estranho, em adultos conscientes, é feita por meio da Manobra de Heimlich.\n( )Se houver hemorragia externa, deve-se aplicar pó de café para estancar o sangue.\nAssinale a alternativa que apresenta a sequência CORRETA, de cima para baixo.",
+    "options": [
+      {
+        "id": "A",
+        "text": "F, F, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "V, V, F, F.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "F, V, F, V.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "V, F, V, F.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Primeiros socorros — V/F",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Formato",
+          "detail": "Quatro itens V/F sobre primeiros socorros — montar sequência correta.",
+          "icon": "Target"
+        },
+        {
+          "label": "Item I — RCP",
+          "detail": "VERDADEIRO — profundidade adulto 5 a 6 cm (AHA/MS).",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Item II — queimadura",
+          "detail": "FALSO — pasta de dente agrava; lavar com água corrente abundante.",
+          "icon": "Flame"
+        },
+        {
+          "label": "Itens III e IV",
+          "detail": "III Heimlich consciente = V · IV café na hemorragia = F.",
+          "icon": "ListChecks"
+        },
+        {
+          "label": "Núcleo queimadura",
+          "detail": "Pegadinha clássica: substância caseira no lugar de água corrente.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Água sim · pasta não"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Queimadura — 1º socorro",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "RESFRIAR · NÃO CASEIRO",
+      "rows": [
+        {
+          "label": "Térmica",
+          "value": "Água corrente fria por tempo prolongado",
+          "badge": "hot"
+        },
+        {
+          "label": "Química",
+          "value": "Lavar com água abundante — remover agente",
+          "badge": "warn"
+        },
+        {
+          "label": "Proibido",
+          "value": "Pasta de dente · manteiga · gelo · óleo",
+          "badge": "warn"
+        },
+        {
+          "label": "Depois",
+          "value": "Cobrir com gaze limpa · retirar anéis · acionar 192",
+          "badge": "ok"
+        },
+        {
+          "label": "Hemorragia (item IV)",
+          "value": "Compressão direta — não café nem pó caseiro",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Caseiro na queimadura = F"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato V/F: julgar cada afirmativa antes de cruzar com A–D.",
+        "Item I — profundidade RCP adulto 5–6 cm → verdadeiro.",
+        "Item II — pasta de dente em queimadura química → falso (lavar com água).",
+        "Item III — Heimlich em adulto consciente com OVACE → verdadeiro.",
+        "Item IV — pó de café em hemorragia externa → falso (compressão direta).",
+        "Sequência: V · F · V · F.",
+        "Marcar D.",
+        "Fixação: queimadura = água corrente; banca adora pasta/manteiga como distrator."
+      ],
+      "footer_rule": "V,F,V,F → letra D"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — QUEIMADURA E V/F",
+      "items": [
+        {
+          "label": "Letra B — item II verdadeiro",
+          "detail": "Valida pasta de dente como “resfriamento” da queimadura química.",
+          "correct": "Item II é falso — pasta de dente retém calor e infecta; usar água corrente."
+        },
+        {
+          "label": "Letra C — inverte RCP e Heimlich",
+          "detail": "Nega profundidade 5–6 cm e aceita café na hemorragia.",
+          "correct": "I e III são verdadeiros; sequência correta é V,F,V,F."
+        },
+        {
+          "label": "Letra A — nega RCP e Heimlich",
+          "detail": "Marca como falsos dois itens verdadeiros do protocolo.",
+          "correct": "Profundidade 5–6 cm e Heimlich consciente estão corretos — não marcar A."
+        },
+        {
+          "label": "Transferência — queimadura térmica MCQ",
+          "detail": "Em outra questão, a banca cobra água ambiente sem caseiro em área extensa.",
+          "correct": "Mesma regra: resfriar com água · vetar manteiga, gelo e pasta."
+        }
+      ],
+      "footer_rule": "Pasta na queimadura = sempre F"
+    }
+  ]
+}

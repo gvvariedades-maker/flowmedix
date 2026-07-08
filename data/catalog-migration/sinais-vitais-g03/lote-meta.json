@@ -1,0 +1,23 @@
+{
+  "lote": "sinais-vitais-g03",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-3",
+  "handcrafted_at": "2026-07-05",
+  "slugs": 8,
+  "prior_lotes": [
+    "sinais-vitais-g01"
+  ],
+  "skipped_lote": "sinais-vitais-g02",
+  "notes": "g02 não existia no repo — slugs g02 reservados no cluster P0; g03 = posições 17–24 vitals_pa_tecnica.",
+  "applied": false,
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g03.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

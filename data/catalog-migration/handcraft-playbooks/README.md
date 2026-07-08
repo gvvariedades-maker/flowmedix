@@ -46,6 +46,7 @@ npm run handcraft:brief -- --subtopico="Doenças Respiratórias Crônicas (Asma,
 |---------|--------|
 | `_default.json` | Fallback — subtópicos sem playbook dedicado |
 | `vias-de-administracao.json` | Vias de Administração — absorção / técnica / indicação |
+| `urgencias-e-emergencias.json` | Urgências e Emergências — RCP / trauma / EXCETO / triagem (12 âncoras P0) |
 | `farmacodinamica-e-farmacocinetica.json` | Farmacodinâmica — PK/PD V/F e clínico EV (omeprazol) |
 | `<pacote_prefix>.json` | Playbook por pacote (ex.: `respiratorio-cronico.json`) |
 | `../handcraft-registry.json` | Campo opcional `handcraft_playbook` |

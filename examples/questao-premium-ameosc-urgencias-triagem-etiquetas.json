@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "banca": "AMEOSC",
+    "prova": "Tec Enf (Palma Sola)",
+    "orgao": "Pref Palma Sola",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_manchester_triagem",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "Triagem vítimas múltiplas / Manchester — cores vermelho · amarelo · verde · azul",
+      "exam_vs_current": "none",
+      "catalog_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "cluster": "Triagem múltiplas vítimas — etiquetas coloridas"
+    },
+    "sources": [
+      {
+        "id": "urgencias-manchester-cores",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo Manchester / triagem de risco — cores",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "vermelho imediato emergencia",
+          "amarelo urgente monitoramento",
+          "verde pouco urgente",
+          "azul nao urgente",
+          "triagem vitimas multiplas etiquetas"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A triagem de vítimas múltiplas visa salvar o maior número de pessoas, priorizando o atendimento de acordo com a gravidade e a chance de sobrevivência quando os recursos são limitados. No sistema de triagem de vítimas múltiplas, o uso de etiquetas coloridas é fundamental. Sobre as etiquetas e suas indicações é CORRETO afirmar que:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cor vermelha indica emergência no atendimento.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Cor amarela dispensa monitoramento de sinais.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Cor azul prioriza pacientes com instabilidade.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Cor verde indica agilidade no transporte de vítimas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Triagem — etiquetas",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Vítimas múltiplas com recursos limitados — assinale a afirmativa CORRETA sobre etiquetas coloridas.",
+          "icon": "Target"
+        },
+        {
+          "label": "Princípio",
+          "detail": "Salvar o maior número — priorizar gravidade e chance de sobrevivência (triage).",
+          "icon": "Users"
+        },
+        {
+          "label": "Vermelho",
+          "detail": "Emergência/imediato — risco de morte, atendimento agora.",
+          "icon": "Circle"
+        },
+        {
+          "label": "Amarelo · Verde · Azul",
+          "detail": "Amarelo = urgente (monitorar) · Verde = leve · Azul = não urgente.",
+          "icon": "Tags"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "A banca inverte cores: azul não é instabilidade; amarelo não dispensa SSVV.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Vermelho = emergência"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Cores da triagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "ETIQUETAS — DECORE",
+      "rows": [
+        {
+          "label": "Vermelho",
+          "value": "Imediato / emergência — risco de morte",
+          "badge": "hot"
+        },
+        {
+          "label": "Amarelo",
+          "value": "Urgente / retardado — monitorar sinais",
+          "badge": "warn"
+        },
+        {
+          "label": "Verde",
+          "value": "Leve / ambulante — pouco urgente",
+          "badge": "ok"
+        },
+        {
+          "label": "Azul",
+          "value": "Não urgente (Manchester) — não é instabilidade",
+          "badge": "info"
+        },
+        {
+          "label": "Preto",
+          "value": "Óbito ou expectante — em triagem de massa",
+          "badge": "info"
+        },
+        {
+          "label": "Objetivo",
+          "value": "Máximo de vidas com recursos limitados",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "Vermelho primeiro · verde/azul esperam"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato: triagem de vítimas múltiplas — assinalar a afirmativa CORRETA sobre etiquetas coloridas.",
+        "Princípio: priorizar gravidade e chance de sobrevivência com recursos limitados.",
+        "Mapa mental: vermelho = emergência imediata; amarelo = urgente com monitoramento.",
+        "Verde = leve/pouco urgente; azul = não urgente — nunca instabilidade crítica.",
+        "Eliminar afirmativa que dispensa monitoramento no amarelo.",
+        "Eliminar afirmativa que coloca instabilidade no azul.",
+        "Eliminar afirmativa que confunde verde com prioridade de transporte.",
+        "Resta vermelho = emergência no atendimento.",
+        "Marcar A.",
+        "Fixação: em qualquer sistema de cores, vermelho é prioridade máxima."
+      ],
+      "footer_rule": "Gravidade → cor → prioridade"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — CORES DA TRIAGEM",
+      "items": [
+        {
+          "label": "Letra B — amarelo sem monitorar",
+          "detail": "Parece que amarelo é “menos grave” e pode ficar sem vigilância.",
+          "correct": "Amarelo = urgente/retardado — requer monitoramento de sinais e reavaliação."
+        },
+        {
+          "label": "Letra C — azul = instável",
+          "detail": "Confunde azul (baixa urgência) com vermelho (crítico).",
+          "correct": "Instabilidade prioriza vermelho; azul é não urgente no protocolo Manchester."
+        },
+        {
+          "label": "Letra D — verde = transporte rápido",
+          "detail": "Verde parece “pode ir logo” e seduz como prioridade logística.",
+          "correct": "Verde = vítima leve/ambulante — menor prioridade de atendimento imediato."
+        },
+        {
+          "label": "Transferência — PS × massa",
+          "detail": "Em triagem de pronto-socorro, a banca usa Manchester com tempos.",
+          "correct": "Mesma lógica de cores: vermelho imediato; amarelo urgente; verde e azul menos graves."
+        }
+      ],
+      "footer_rule": "Não inverta vermelho com azul"
+    }
+  ]
+}

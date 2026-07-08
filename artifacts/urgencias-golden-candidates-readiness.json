@@ -1,0 +1,772 @@
+{
+  "generated_at": "2026-07-07T15:51:35.410Z",
+  "strict": true,
+  "results": [
+    {
+      "label": "baseline_imunizacao",
+      "slug": "questao-premium-cpcon-imunizacao-intervalos-vf",
+      "subtopico": "Imunização",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: C).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "vf",
+      "pedagogical_branch": "imunizacao_vf_intervalos",
+      "inferred_branch": "imunizacao_vf_intervalos"
+    },
+    {
+      "label": "golden_urgencias_rcp",
+      "slug": "questao-premium-urgencias-rcp",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_footer_rule_missing",
+          "message": "footer_rule ausente em: logic_flow",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "protocolo"
+    },
+    {
+      "label": "pilot_cpcon_rcp",
+      "slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2b",
+          "code": "numeric_claim_unsourced",
+          "message": "Claim numérico nos slides sem source substantiva (meta.sources[].covers).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_rcp_sbv",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/3 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_logic_not_recycle",
+          "message": "logic_flow recicla o texto das alternativas (4/8 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A2b",
+          "code": "numeric_claim_unsourced",
+          "message": "Claim numérico nos slides sem source substantiva (meta.sources[].covers).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2b",
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"5 min\" não encontrado na guideline de Urgências e Emergências.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_avc_iam",
+      "slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (2/5 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_exceto_conduta",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/3 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_logic_not_recycle",
+          "message": "logic_flow recicla o texto das alternativas (4/8 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_xabcde_trauma",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/3 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_logic_not_recycle",
+          "message": "logic_flow recicla o texto das alternativas (4/8 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_choque",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/3 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_logic_not_recycle",
+          "message": "logic_flow recicla o texto das alternativas (4/8 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_engasgo",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/4 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_rcp_pediatrico",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/3 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A2b",
+          "code": "numeric_claim_unsourced",
+          "message": "Claim numérico nos slides sem source substantiva (meta.sources[].covers).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_vf_protocolo",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: C).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_convulsao",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/3 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_logic_not_recycle",
+          "message": "logic_flow recicla o texto das alternativas (4/8 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_manchester_triagem",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/3 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_anafilaxia",
+      "slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/4 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    },
+    {
+      "label": "urgencias_queimadura",
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": false,
+      "tier_pass": {
+        "A1": true,
+        "A2": false,
+        "A2.5": false,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_golden_v1",
+          "message": "meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+          "severity": "error"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_duplicate_danger",
+          "message": "danger_zone: justificativas duplicadas (1/3 únicas)",
+          "severity": "error"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_danger_duplicate_correct",
+          "message": "danger_zone.items[].correct com justificativas duplicadas.",
+          "severity": "error"
+        },
+        {
+          "tier": "A2b",
+          "code": "numeric_claim_unsourced",
+          "message": "Claim numérico nos slides sem source substantiva (meta.sources[].covers).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ]
+    }
+  ]
+}

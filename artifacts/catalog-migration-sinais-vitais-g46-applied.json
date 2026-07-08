@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:58:47.732Z",
+  "lote": "sinais-vitais-g46",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-0",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-1",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-2",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-5",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-6",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-7",
+    "cebraspe-cespe-geral-verificacao-de-sinais-vitais-1779344245160-3",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-verificacao-de-sinais-vitais-1779344245160-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

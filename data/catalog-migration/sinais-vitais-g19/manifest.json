@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g19",
+  "exported_at": "2026-07-06T17:44:14.039Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g19/manifest.json"
+  },
+  "slugs": [
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-1",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-2",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-0",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-1",
+    "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-5",
+    "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-6",
+    "instituto-verbena-enfermagem-verificacao-de-sinais-vitais-1779344178184-3",
+    "intec-enfermagem-verificacao-de-sinais-vitais-1779344105099-5"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "lote": "sinais-vitais-g08",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1778969768866-1",
+  "handcrafted_at": "2026-07-05",
+  "slugs": 8,
+  "prior_lotes": [
+    "sinais-vitais-g01",
+    "sinais-vitais-g02",
+    "sinais-vitais-g03",
+    "sinais-vitais-g04",
+    "sinais-vitais-g05",
+    "sinais-vitais-g06",
+    "sinais-vitais-g07"
+  ],
+  "notes": "P0 vitals_pa_tecnica posições 57–64 no cluster PA (196 slugs) — CPCON UEPB · DECORP · EDUCA-PB · FACET · FAFIPA · FAU UNICENTRO. Apply somente após operador escrever 'pode aplicar'.",
+  "applied": false,
+  "gates": {
+    "validate_goldens_strict": "8/8 pass",
+    "questao_readiness_strict_v3": "8/8 READY",
+    "slug_alignment_strict": "8/8",
+    "numeric_factcheck": "8/8",
+    "catalog_preflight": "8/8",
+    "enrich_guideline_meta": "6/8 enriched (2 skipped)",
+    "patch_pedagogical_branch": "8/8 skipped (branch já no handcraft)",
+    "capture_questao_review": "8/8 (6 PNG/slug, retry em 3 slugs por flakiness hydration)",
+    "anchor_review": "pass (agent, automated)"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g08.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

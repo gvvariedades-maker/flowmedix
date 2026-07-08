@@ -32,6 +32,13 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'burn-trap-arena',
   'trabalho-pep-trap-arena',
   'respiratorio-spo2-trap-arena',
+  'urgencias-rcp-trap-arena',
+  'urgencias-trauma-trap-arena',
+  'urgencias-stroke-trap-arena',
+  'urgencias-shock-trap-arena',
+  'urgencias-choking-trap-arena',
+  'urgencias-pediatric-trap-arena',
+  'urgencias-manchester-trap',
   'etiology-intruder-chips',
   'itu-catheter-trap',
 ]);
@@ -76,6 +83,13 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
   if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
   if (explicitVariant === 'respiratorio-spo2-trap-arena') return 'respiratorio-spo2-trap-arena';
+  if (explicitVariant === 'urgencias-rcp-trap-arena') return 'urgencias-rcp-trap-arena';
+  if (explicitVariant === 'urgencias-trauma-trap-arena') return 'urgencias-trauma-trap-arena';
+  if (explicitVariant === 'urgencias-stroke-trap-arena') return 'urgencias-stroke-trap-arena';
+  if (explicitVariant === 'urgencias-shock-trap-arena') return 'urgencias-shock-trap-arena';
+  if (explicitVariant === 'urgencias-choking-trap-arena') return 'urgencias-choking-trap-arena';
+  if (explicitVariant === 'urgencias-pediatric-trap-arena') return 'urgencias-pediatric-trap-arena';
+  if (explicitVariant === 'urgencias-manchester-trap') return 'urgencias-manchester-trap';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -143,6 +157,27 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'respiratorio-spo2-trap-arena') {
       return 'respiratorio-spo2-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'urgencias-rcp-trap-arena') {
+      return 'urgencias-rcp-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'urgencias-trauma-trap-arena') {
+      return 'urgencias-trauma-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'urgencias-stroke-trap-arena') {
+      return 'urgencias-stroke-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'urgencias-shock-trap-arena') {
+      return 'urgencias-shock-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'urgencias-choking-trap-arena') {
+      return 'urgencias-choking-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'urgencias-pediatric-trap-arena') {
+      return 'urgencias-pediatric-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'urgencias-manchester-trap') {
+      return 'urgencias-manchester-trap';
     }
     return 'compare';
   }

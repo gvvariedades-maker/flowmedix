@@ -74,7 +74,21 @@ export type PedagogicalBranchId =
   | 'perioperatorio_protocolo'
   | 'perioperatorio_vf'
   | 'perioperatorio_isc'
-  | 'perioperatorio_generico';
+  | 'perioperatorio_generico'
+  // Urgências e Emergências
+  | 'urgencias_rcp_sbv'
+  | 'urgencias_rcp_pediatrico'
+  | 'urgencias_avc_iam'
+  | 'urgencias_xabcde_trauma'
+  | 'urgencias_choque'
+  | 'urgencias_engasgo'
+  | 'urgencias_exceto_conduta'
+  | 'urgencias_vf_protocolo'
+  | 'urgencias_convulsao'
+  | 'urgencias_manchester_triagem'
+  | 'urgencias_anafilaxia'
+  | 'urgencias_queimadura'
+  | 'urgencias_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -358,6 +372,104 @@ export const PERIOPERATORIO_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Pacote bespoke RCP/SBV adulto — survival-chain-deck + params-board + tap-flow + trap-arena. */
+const URGENCIAS_RCP_MOLD: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'urgencias-survival-chain-deck',
+  goldenRule: 'urgencias-rcp-params-board',
+  logicFlow: 'urgencias-rcp-tap-flow',
+  dangerZone: 'urgencias-rcp-trap-arena',
+};
+
+/** Pacote bespoke XABCDE / trauma pré-hospitalar. */
+const URGENCIAS_XABCDE_MOLD: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'urgencias-xabcde-rail',
+  goldenRule: 'urgencias-trauma-reference-board',
+  logicFlow: 'urgencias-xabcde-tap-flow',
+  dangerZone: 'urgencias-trauma-trap-arena',
+};
+
+/** Pacote bespoke AVC / Cincinnati (FAST). */
+const URGENCIAS_AVC_MOLD: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'urgencias-stroke-signs-deck',
+  goldenRule: 'urgencias-cincinnati-board',
+  logicFlow: 'urgencias-stroke-elimination-tap',
+  dangerZone: 'urgencias-stroke-trap-arena',
+};
+
+/** Pacote bespoke choque (elétrico × hipoperfusão). */
+const URGENCIAS_CHOQUE_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'urgencias-shock-types-deck',
+  goldenRule: 'urgencias-shock-reference-board',
+  logicFlow: 'urgencias-shock-tap-flow',
+  dangerZone: 'urgencias-shock-trap-arena',
+};
+
+/** Pacote bespoke engasgo / obstrução VA. */
+const URGENCIAS_ENGASGO_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'urgencias-choking-signal-deck',
+  goldenRule: 'urgencias-heimlich-board',
+  logicFlow: 'urgencias-choking-tap-flow',
+  dangerZone: 'urgencias-choking-trap-arena',
+};
+
+/** Pacote bespoke RCP pediátrica (15:2 · terço AP). */
+const URGENCIAS_PEDIATRIC_MOLD: SubtopicDesign = {
+  template: 'pink',
+  conceptMap: 'urgencias-pediatric-rcp-deck',
+  goldenRule: 'urgencias-pediatric-params-board',
+  logicFlow: 'urgencias-pediatric-tap-flow',
+  dangerZone: 'urgencias-pediatric-trap-arena',
+};
+
+/** Pacote bespoke Manchester / triagem de cores. */
+const URGENCIAS_MANCHESTER_MOLD: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'urgencias-manchester-spectrum',
+  goldenRule: 'urgencias-manchester-board',
+  logicFlow: 'cards',
+  dangerZone: 'urgencias-manchester-trap',
+};
+
+const URGENCIAS_GENERIC_MOLD: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** EXCETO / INCORRETA — rail semântico por letra (distratores corretos × exceção). */
+const URGENCIAS_EXCETO_MOLD: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'urgencias-exceto-rail',
+  goldenRule: 'urgencias-exceto-reference-board',
+  logicFlow: 'urgencias-exceto-tap-flow',
+  dangerZone: 'urgencias-exceto-trap-arena',
+};
+
+/** V/F protocolo · convulsão · anafilaxia · queimadura — protocol rules deck. */
+const URGENCIAS_PROTOCOL_MOLD: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'urgencias-protocol-rules-deck',
+  goldenRule: 'urgencias-protocol-reference-board',
+  logicFlow: 'urgencias-protocol-tap-flow',
+  dangerZone: 'urgencias-protocol-trap-arena',
+};
+
+/** Cauda genérica — emergency hub + protocol pack. */
+const URGENCIAS_EMERGENCY_GENERIC_MOLD: SubtopicDesign = {
+  template: 'rose',
+  conceptMap: 'urgencias-emergency-hub',
+  goldenRule: 'urgencias-protocol-reference-board',
+  logicFlow: 'urgencias-protocol-tap-flow',
+  dangerZone: 'urgencias-protocol-trap-arena',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -569,6 +681,66 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
     perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
   },
+  'urgencias e emergencias': {
+    urgencias_rcp_sbv: URGENCIAS_RCP_MOLD,
+    urgencias_rcp_pediatrico: URGENCIAS_PEDIATRIC_MOLD,
+    urgencias_avc_iam: URGENCIAS_AVC_MOLD,
+    urgencias_xabcde_trauma: URGENCIAS_XABCDE_MOLD,
+    urgencias_choque: URGENCIAS_CHOQUE_MOLD,
+    urgencias_engasgo: URGENCIAS_ENGASGO_MOLD,
+    urgencias_exceto_conduta: URGENCIAS_EXCETO_MOLD,
+    urgencias_vf_protocolo: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_convulsao: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_manchester_triagem: URGENCIAS_MANCHESTER_MOLD,
+    urgencias_anafilaxia: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_queimadura: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_generico: URGENCIAS_EMERGENCY_GENERIC_MOLD,
+  },
+  urgencias: {
+    urgencias_rcp_sbv: URGENCIAS_RCP_MOLD,
+    urgencias_rcp_pediatrico: URGENCIAS_PEDIATRIC_MOLD,
+    urgencias_avc_iam: URGENCIAS_AVC_MOLD,
+    urgencias_xabcde_trauma: URGENCIAS_XABCDE_MOLD,
+    urgencias_choque: URGENCIAS_CHOQUE_MOLD,
+    urgencias_engasgo: URGENCIAS_ENGASGO_MOLD,
+    urgencias_exceto_conduta: URGENCIAS_EXCETO_MOLD,
+    urgencias_vf_protocolo: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_convulsao: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_manchester_triagem: URGENCIAS_MANCHESTER_MOLD,
+    urgencias_anafilaxia: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_queimadura: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_generico: URGENCIAS_EMERGENCY_GENERIC_MOLD,
+  },
+  emergencia: {
+    urgencias_rcp_sbv: URGENCIAS_RCP_MOLD,
+    urgencias_rcp_pediatrico: URGENCIAS_PEDIATRIC_MOLD,
+    urgencias_avc_iam: URGENCIAS_AVC_MOLD,
+    urgencias_xabcde_trauma: URGENCIAS_XABCDE_MOLD,
+    urgencias_choque: URGENCIAS_CHOQUE_MOLD,
+    urgencias_engasgo: URGENCIAS_ENGASGO_MOLD,
+    urgencias_exceto_conduta: URGENCIAS_EXCETO_MOLD,
+    urgencias_vf_protocolo: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_convulsao: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_manchester_triagem: URGENCIAS_MANCHESTER_MOLD,
+    urgencias_anafilaxia: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_queimadura: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_generico: URGENCIAS_EMERGENCY_GENERIC_MOLD,
+  },
+  urgencia: {
+    urgencias_rcp_sbv: URGENCIAS_RCP_MOLD,
+    urgencias_rcp_pediatrico: URGENCIAS_PEDIATRIC_MOLD,
+    urgencias_avc_iam: URGENCIAS_AVC_MOLD,
+    urgencias_xabcde_trauma: URGENCIAS_XABCDE_MOLD,
+    urgencias_choque: URGENCIAS_CHOQUE_MOLD,
+    urgencias_engasgo: URGENCIAS_ENGASGO_MOLD,
+    urgencias_exceto_conduta: URGENCIAS_EXCETO_MOLD,
+    urgencias_vf_protocolo: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_convulsao: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_manchester_triagem: URGENCIAS_MANCHESTER_MOLD,
+    urgencias_anafilaxia: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_queimadura: URGENCIAS_PROTOCOL_MOLD,
+    urgencias_generico: URGENCIAS_EMERGENCY_GENERIC_MOLD,
+  },
 };
 
 function normalizeKey(str: string): string {
@@ -742,6 +914,38 @@ const RESP_TECNICA: RegExp[] = [
 const RESP_DPOC: RegExp[] = [
   /\bdpoc\b|enfisema|bronquite cr[oô]nica|retentor|hipercapnia|88.?92|oxigen.*titulad|spo2|saturac/i,
   /venturi|cat[eé]ter nasal|oxigenoterapia/i,
+];
+
+const URGENCIAS_RCP: RegExp[] = [
+  /\brcp\b|\bsbv\b|parada card|pcr\b|ressuscita[cç][aã]o cardiopulmonar/i,
+  /compress[oõ]es tor[aá]c|30:2|100.?120|5.?6\s*cm|american heart|aha\b/i,
+  /\bdea\b|desfibril|choque.*el[eé]tric/i,
+];
+
+const URGENCIAS_AVC: RegExp[] = [
+  /cincinnati|face.*bra[cç]o.*fala|escala de cincinnati|avc\b|iam\b|fast\b/i,
+  /assimetria facial|fala anormal|derrame/i,
+];
+
+const URGENCIAS_TRAUMA: RegExp[] = [
+  /\bxabcde\b|hemorragia|imobiliza[cç][aã]o|fratura|torniquete|trauma/i,
+  /queimadura|esmagamento|bt-?16/i,
+];
+
+const URGENCIAS_CHOQUE: RegExp[] = [
+  /\bchoque\b|hipoperfus|hipovol[eê]m|cardiog[eê]nic|distributivo|obstrutivo/i,
+];
+
+const URGENCIAS_ANAFILAXIA: RegExp[] = [
+  /anafilax|epinefrina|adrenalina/i,
+];
+
+const URGENCIAS_ENGASGO: RegExp[] = [
+  /engasgo|obstru[cç][aã]o.*via a[eé]rea|heimlich|manobra de heimlich|sinal universal/i,
+];
+
+const URGENCIAS_MANCHESTER: RegExp[] = [
+  /manchester|triagem de risco|etiqueta vermelha|classifica[cç][aã]o de risco/i,
 ];
 
 const BACTERIANAS_ETIOLOGIA: RegExp[] = [
@@ -1055,6 +1259,70 @@ function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): Pedagogic
   return 'respiratorio_generico';
 }
 
+function inferUrgenciasBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  if (countPatternMatches(corpus, URGENCIAS_MANCHESTER) > 0) {
+    return 'urgencias_manchester_triagem';
+  }
+
+  if (countPatternMatches(corpus, URGENCIAS_ENGASGO) > 0) {
+    return 'urgencias_engasgo';
+  }
+
+  if (countPatternMatches(corpus, URGENCIAS_AVC) > 0) {
+    return 'urgencias_avc_iam';
+  }
+
+  if (countPatternMatches(corpus, URGENCIAS_TRAUMA) >= 2) {
+    return 'urgencias_xabcde_trauma';
+  }
+
+  if (countPatternMatches(corpus, URGENCIAS_ANAFILAXIA) > 0) {
+    return 'urgencias_anafilaxia';
+  }
+
+  if (countPatternMatches(corpus, URGENCIAS_CHOQUE) > 0) {
+    return 'urgencias_choque';
+  }
+
+  if (
+    /\bexceto\b/i.test(corpus) ||
+    (familyId === 'certo_errado' && /\bincorreta\b/i.test(corpus))
+  ) {
+    return 'urgencias_exceto_conduta';
+  }
+
+  if (
+    familyId === 'vf' ||
+    (/\b(i|ii|iii)\s*[-–—]/i.test(corpus) && countPatternMatches(corpus, URGENCIAS_RCP) >= 1)
+  ) {
+    if (/pedi[aá]tr|lactente|15:2|beb[eê]/i.test(corpus)) {
+      return 'urgencias_rcp_pediatrico';
+    }
+    if (countPatternMatches(corpus, URGENCIAS_RCP) >= 1) {
+      return 'urgencias_rcp_sbv';
+    }
+    return 'urgencias_vf_protocolo';
+  }
+
+  if (/pedi[aá]tr|lactente|15:2/i.test(corpus) && countPatternMatches(corpus, URGENCIAS_RCP) >= 1) {
+    return 'urgencias_rcp_pediatrico';
+  }
+
+  if (countPatternMatches(corpus, URGENCIAS_RCP) >= 2) {
+    return 'urgencias_rcp_sbv';
+  }
+
+  if (/convuls|epilep|crise convulsiva/i.test(corpus)) {
+    return 'urgencias_convulsao';
+  }
+
+  if (/queimadura/i.test(corpus) && !countPatternMatches(corpus, URGENCIAS_TRAUMA)) {
+    return 'urgencias_queimadura';
+  }
+
+  return 'urgencias_generico';
+}
+
 function inferBranchForBucket(
   mapKey: string,
   corpus: string,
@@ -1122,6 +1390,9 @@ function inferBranchForBucket(
     mapKey.includes('assistencia perioperatoria')
   ) {
     return inferPerioperatorioBranch(corpus, familyId);
+  }
+  if (mapKey.includes('urgencias') || mapKey.includes('emergencias') || mapKey === 'emergencia') {
+    return inferUrgenciasBranch(corpus, familyId);
   }
   return undefined;
 }

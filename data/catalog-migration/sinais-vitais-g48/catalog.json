@@ -1,0 +1,35 @@
+{
+  "exported_at": "2026-07-07T00:26:57.255Z",
+  "lote": "sinais-vitais-g48",
+  "total": 4,
+  "entries": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2496
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344111854-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 2547
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO SELETIVA",
+      "avant_codigo": 2445
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344224014-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2649
+    }
+  ]
+}

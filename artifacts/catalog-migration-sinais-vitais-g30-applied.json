@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-07-07T00:53:23.017Z",
+  "lote": "sinais-vitais-g30",
+  "mode": "apply",
+  "total_files": 7,
+  "ok": 7,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "omni-enfermagem-verificacao-de-sinais-vitais-1779344237445-5",
+    "omni-geral-verificacao-de-sinais-vitais-1779344205200-3",
+    "selecon-enfermagem-verificacao-de-sinais-vitais-1779344182672-2",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-2",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-5",
+    "unifil-enfermagem-verificacao-de-sinais-vitais-1779344196733-1",
+    "univida-enfermagem-verificacao-de-sinais-vitais-1779344097180-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "omni-enfermagem-verificacao-de-sinais-vitais-1779344237445-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-geral-verificacao-de-sinais-vitais-1779344205200-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1779344182672-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-verificacao-de-sinais-vitais-1779344196733-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-verificacao-de-sinais-vitais-1779344097180-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

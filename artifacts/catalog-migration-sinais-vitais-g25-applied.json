@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-07-07T00:51:30.269Z",
+  "lote": "sinais-vitais-g25",
+  "mode": "apply",
+  "total_files": 4,
+  "ok": 4,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344127707-2",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344158323-0",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344158323-1",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344196733-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344127707-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344158323-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344158323-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344196733-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

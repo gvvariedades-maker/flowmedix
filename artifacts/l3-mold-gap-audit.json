@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-04T18:45:38.538Z",
+  "generated_at": "2026-07-08T03:25:57.286Z",
   "summary": {
-    "cluster_rows": 108,
-    "slug_rows": 13,
+    "cluster_rows": 136,
+    "slug_rows": 340,
     "by_decision": {
-      "ok_existente": 12,
-      "ok_generico": 66,
-      "ramo_novo": 26,
-      "molde_inedito": 1,
-      "molde_redesign": 3
+      "ok_existente": 11,
+      "ok_generico": 81,
+      "ramo_novo": 34,
+      "molde_inedito": 6,
+      "molde_redesign": 4
     },
-    "inedito_packages_proposed": 1,
-    "ramo_novo_count": 26,
+    "inedito_packages_proposed": 6,
+    "ramo_novo_count": 34,
     "slug_mismatch_total": 0,
     "slug_mismatch_by_subtopico": {},
     "source": "supabase"
@@ -24,6 +24,46 @@
       "slug_count": 10,
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico) — ou pacote inédito parâmetros/ciclo",
       "rationale": "Parâmetros de ciclo — tabela pode bastar; molde inédito só se interação espacial repetir em provas."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "AVC / IAM — reconhecimento",
+      "branch_id": "urgencias_avc_iam",
+      "slug_count": 23,
+      "ideal_mold_package": "urgencias-stroke-signs-deck · urgencias-cincinnati-board · urgencias-stroke-elimination-tap · urgencias-stroke-trap-arena (bespoke)",
+      "rationale": "Cincinnati Face·Arms·Speech — pegadinhas Glasgow/IAM/SSVV (âncora AMAUC)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "XABCDE / trauma e hemorragia",
+      "branch_id": "urgencias_xabcde_trauma",
+      "slug_count": 22,
+      "ideal_mold_package": "urgencias-xabcde-rail · urgencias-trauma-reference-board · urgencias-xabcde-tap-flow · urgencias-trauma-trap-arena (bespoke)",
+      "rationale": "Trilho XABCDE pré-hospitalar — trauma ≠ cadeia RCP (âncoras AMEOSC/SELECON)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Choque / hipoperfusão",
+      "branch_id": "urgencias_choque",
+      "slug_count": 18,
+      "ideal_mold_package": "urgencias-shock-types-deck · urgencias-shock-reference-board · urgencias-shock-tap-flow · urgencias-shock-trap-arena (bespoke)",
+      "rationale": "Tipos de choque + segurança da cena — matriz mecanismo × conduta."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Engasgo / obstrução de via aérea",
+      "branch_id": "urgencias_engasgo",
+      "slug_count": 12,
+      "ideal_mold_package": "urgencias-choking-signal-deck · urgencias-heimlich-board · urgencias-choking-tap-flow · urgencias-choking-trap-arena (bespoke)",
+      "rationale": "Sinal universal × manobra Heimlich — metáfora espacial (âncora FAU)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "RCP pediátrica / lactente",
+      "branch_id": "urgencias_rcp_pediatrico",
+      "slug_count": 9,
+      "ideal_mold_package": "urgencias-pediatric-rcp-deck · urgencias-pediatric-params-board · urgencias-pediatric-tap-flow · urgencias-pediatric-trap-arena (bespoke)",
+      "rationale": "RCP pediátrica 15:2 — separar visualmente do adulto 30:2 (âncora ACCESS)."
     }
   ],
   "clusters": [
@@ -1098,12 +1138,103 @@
     },
     {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Oximetria de pulso / SpO₂",
+      "slug_count": 3,
+      "pct": 23.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+        "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "DPOC na UBS — papel do técnico",
+      "slug_count": 2,
+      "pct": 15.4,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+        "igecap-enfermagem-processo-de-enfermagem-1780004452857-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "respiratorio_dpoc_oxigenio",
+      "branch_implemented": true,
+      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "O₂ titulado na DPOC (APS/emergência)",
+      "slug_count": 2,
+      "pct": 15.4,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+        "univali-enfermagem-processo-de-enfermagem-1780010600919-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "respiratorio_dpoc_oxigenio",
+      "branch_implemented": true,
+      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Respiratório crônico — conceito geral",
+      "slug_count": 1,
+      "pct": 7.7,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "cluster_label": "Outros / tema misto",
+      "slug_count": 1,
+      "pct": 7.7,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "idcap-enfermagem-exames-complementares-1779563668619-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
       "cluster_label": "Espaçador e inalador — técnica MDI",
       "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "pct": 7.7,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7"
+      ],
+      "source": "cluster_report",
       "branch_id": "respiratorio_tecnica_inalador",
       "branch_implemented": true,
       "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
@@ -1113,123 +1244,54 @@
     },
     {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "cluster_label": "Oximetria de pulso / SpO₂",
-      "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "cluster_label": "O₂ titulado na DPOC (APS/emergência)",
-      "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "respiratorio_dpoc_oxigenio",
-      "branch_implemented": true,
-      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
-      "decision": "ok_existente",
-      "rationale": "O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap."
-    },
-    {
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "cluster_label": "Dispositivos de oxigenoterapia (Venturi)",
-      "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "respiratorio_dpoc_oxigenio",
-      "branch_implemented": true,
-      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
-      "decision": "ok_existente",
-      "rationale": "O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap."
-    },
-    {
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "cluster_label": "Asma na APS — educação terapêutica",
-      "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
       "cluster_label": "Espirometria VEF1/CVF",
       "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "pct": 7.7,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6"
+      ],
+      "source": "cluster_report",
       "branch_id": "generico",
       "branch_implemented": false,
       "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
+      "decision": "ok_generico",
       "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
     },
     {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
       "cluster_label": "Semiologia pediátrica — sibilos",
       "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "pct": 7.7,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6"
+      ],
+      "source": "cluster_report",
       "branch_id": "generico",
       "branch_implemented": false,
       "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
+      "decision": "ok_generico",
       "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
     },
     {
       "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
       "cluster_label": "Semiologia respiratória V/F",
       "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
+      "pct": 7.7,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1"
+      ],
+      "source": "cluster_report",
       "branch_id": "respiratorio_vf_asma_dpoc",
       "branch_implemented": true,
       "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
       "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
       "decision": "ok_existente",
       "rationale": "VF asma/DPOC — pacote respiratorio-*."
-    },
-    {
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "cluster_label": "DPOC na UBS — papel do técnico",
-      "slug_count": 1,
-      "pct": 10,
-      "sample_slugs": [],
-      "source": "handcraft_meta",
-      "volume_note": "volume estimado (clusters sem contagem no meta)",
-      "branch_id": "respiratorio_dpoc_oxigenio",
-      "branch_implemented": true,
-      "current_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
-      "ideal_mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
-      "decision": "ok_existente",
-      "rationale": "O₂ titulado / SpO₂ alvo — golden spo2-reference-board + trap."
     },
     {
       "subtopico": "Infecções no Contexto da Biossegurança",
@@ -1560,6 +1622,254 @@
       "branch_id": "generico",
       "branch_implemented": false,
       "current_mold_package": "bridge · minimal · cards · list (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "PA — técnica e interpretação",
+      "slug_count": 196,
+      "pct": 55.4,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+        "amauc-enfermagem-verificacao-de-sinais-vitais-1779344189558-7",
+        "amauc-enfermagem-verificacao-de-sinais-vitais-1779344196733-2",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "FC e pulso — faixas e técnica",
+      "slug_count": 40,
+      "pct": 11.3,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-7",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-6",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-2",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "Temperatura — vias e febre",
+      "slug_count": 33,
+      "pct": 9.3,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-4",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-4",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-6",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "EXCETO/INCORRETA — técnica SV",
+      "slug_count": 20,
+      "pct": 5.6,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-3",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-3",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-1",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "FR e padrão respiratório",
+      "slug_count": 16,
+      "pct": 4.5,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-3",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-3",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-5",
+        "epl-concursos-enfermagem-verificacao-de-sinais-vitais-1779344182672-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "SV geral / múltiplos parâmetros",
+      "slug_count": 14,
+      "pct": 4,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-0",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-4",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-0",
+        "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344182672-5",
+        "fenix-instituto-enfermagem-verificacao-de-sinais-vitais-1778969768866-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "Certo ou errado",
+      "slug_count": 10,
+      "pct": 2.8,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-0",
+        "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-1",
+        "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-2",
+        "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-5",
+        "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "V/F — faixas de referência (I/II/III)",
+      "slug_count": 9,
+      "pct": 2.5,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-8",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-1",
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-2",
+        "epl-concursos-enfermagem-verificacao-de-sinais-vitais-1779344182672-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "SpO₂ e oximetria",
+      "slug_count": 5,
+      "pct": 1.4,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-6",
+        "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+        "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1778969760552-3",
+        "fepese-enfermagem-verificacao-de-sinais-vitais-1779343883917-6",
+        "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779344127707-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "Faixas pediátricas por idade",
+      "slug_count": 5,
+      "pct": 1.4,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-5",
+        "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-7",
+        "ibgp-enfermagem-verificacao-de-sinais-vitais-1779344253939-3",
+        "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343967847-7",
+        "quadrix-enfermagem-verificacao-de-sinais-vitais-1780000468214-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "Glasgow / escala de coma",
+      "slug_count": 4,
+      "pct": 1.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+        "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344111854-0",
+        "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+        "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344224014-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "cluster_label": "Drift taxonômico — reclassificar subtópico",
+      "slug_count": 2,
+      "pct": 0.6,
+      "cluster_decision": "reclassificar",
+      "sample_slugs": [
+        "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779343956155-0",
+        "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343883917-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (bespoke)",
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
       "decision": "ok_generico",
       "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
@@ -1998,149 +2308,3085 @@
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
       "decision": "ok_generico",
       "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "RCP / SBV adulto (V/F ou protocolo)",
+      "slug_count": 68,
+      "pct": 20,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_rcp_sbv",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "urgencias-survival-chain-deck · urgencias-rcp-params-board · urgencias-rcp-tap-flow · urgencias-rcp-trap-arena (bespoke)",
+      "decision": "molde_redesign",
+      "rationale": "Legado survival-chain no subtópico — brief urgencias_rcp_sbv aprovado; pacote urgencias-rcp-*."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Default — sem âncora temática",
+      "slug_count": 63,
+      "pct": 18.5,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+        "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+        "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_generico",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Bucket residual — morphological + reference_table + compare."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Urgências — conceito geral",
+      "slug_count": 45,
+      "pct": 13.2,
+      "cluster_decision": "novo_ramo",
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+        "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+        "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_generico",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Bucket residual — morphological + reference_table + compare."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Certo ou errado",
+      "slug_count": 32,
+      "pct": 9.4,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_generico",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "C/E disperso — handcraft com compare até clusterizar."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "AVC / IAM — reconhecimento",
+      "slug_count": 23,
+      "pct": 6.8,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+        "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+        "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_avc_iam",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "urgencias-stroke-signs-deck · urgencias-cincinnati-board · urgencias-stroke-elimination-tap · urgencias-stroke-trap-arena (bespoke)",
+      "decision": "molde_inedito",
+      "rationale": "Cincinnati Face·Arms·Speech — pegadinhas Glasgow/IAM/SSVV (âncora AMAUC)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "EXCETO / INCORRETA — conduta",
+      "slug_count": 22,
+      "pct": 6.5,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+        "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_exceto_conduta",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "EXCETO conduta — compare semântico por letra (padrão imunização EXCETO)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "XABCDE / trauma e hemorragia",
+      "slug_count": 22,
+      "pct": 6.5,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+        "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_xabcde_trauma",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "urgencias-xabcde-rail · urgencias-trauma-reference-board · urgencias-xabcde-tap-flow · urgencias-trauma-trap-arena (bespoke)",
+      "decision": "molde_inedito",
+      "rationale": "Trilho XABCDE pré-hospitalar — trauma ≠ cadeia RCP (âncoras AMEOSC/SELECON)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Choque / hipoperfusão",
+      "slug_count": 18,
+      "pct": 5.3,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+        "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+        "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_choque",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "urgencias-shock-types-deck · urgencias-shock-reference-board · urgencias-shock-tap-flow · urgencias-shock-trap-arena (bespoke)",
+      "decision": "molde_inedito",
+      "rationale": "Tipos de choque + segurança da cena — matriz mecanismo × conduta."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Engasgo / obstrução de via aérea",
+      "slug_count": 12,
+      "pct": 3.5,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+        "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_engasgo",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "urgencias-choking-signal-deck · urgencias-heimlich-board · urgencias-choking-tap-flow · urgencias-choking-trap-arena (bespoke)",
+      "decision": "molde_inedito",
+      "rationale": "Sinal universal × manobra Heimlich — metáfora espacial (âncora FAU)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "RCP pediátrica / lactente",
+      "slug_count": 9,
+      "pct": 2.6,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+        "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_rcp_pediatrico",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "urgencias-pediatric-rcp-deck · urgencias-pediatric-params-board · urgencias-pediatric-tap-flow · urgencias-pediatric-trap-arena (bespoke)",
+      "decision": "molde_inedito",
+      "rationale": "RCP pediátrica 15:2 — separar visualmente do adulto 30:2 (âncora ACCESS)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "V/F — protocolos I/II/III",
+      "slug_count": 8,
+      "pct": 2.4,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+        "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+        "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_vf_protocolo",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "V/F protocolos I–III — tap/compare genérico (não confundir com trauma imobilização)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Convulsão / crise epiléptica",
+      "slug_count": 7,
+      "pct": 2.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+        "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+        "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+        "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_convulsao",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Convulsão — compare + tap até âncora golden dedicada."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Drift taxonômico — reclassificar subtópico",
+      "slug_count": 5,
+      "pct": 1.5,
+      "cluster_decision": "reclassificar",
+      "sample_slugs": [
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+        "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+        "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+        "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_generico",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Drift taxonômico — reclassificar subtópico antes de handcraft."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Manchester / triagem de risco",
+      "slug_count": 4,
+      "pct": 1.2,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+        "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+        "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_manchester_triagem",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "urgencias-manchester-spectrum · urgencias-manchester-board · cards · urgencias-manchester-trap (bespoke)",
+      "decision": "ramo_novo",
+      "rationale": "Espectro de cores Manchester — erro espacial (etiqueta vermelha × demais)."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Anafilaxia / epinefrina",
+      "slug_count": 1,
+      "pct": 0.3,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_anafilaxia",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Cauda longa (1 slug) — genérico premium; absorver se cluster crescer."
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "cluster_label": "Queimadura — primeiro socorro",
+      "slug_count": 1,
+      "pct": 0.3,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "urgencias_queimadura",
+      "branch_implemented": false,
+      "current_mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Cauda longa — absorver em xabcde_trauma quando tema for trauma/1º socorro."
     }
   ],
   "slugs": [
     {
-      "slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_dpoc_oxigenio",
-      "declared_branch": "respiratorio_dpoc_oxigenio",
-      "mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_dpoc_oxigenio",
-      "declared_branch": "respiratorio_dpoc_oxigenio",
-      "mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
-      "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "subtopico": "Urgências e Emergências",
       "family": "protocolo",
-      "inferred_branch": "respiratorio_dpoc_oxigenio",
-      "declared_branch": "respiratorio_dpoc_oxigenio",
-      "mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "inferred_branch": "urgencias_choque",
+      "declared_branch": "urgencias_choque",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_generico",
-      "declared_branch": "respiratorio_generico",
-      "mold_package": "morphological · center · vertical · compare (genérico)",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_exceto_conduta",
+      "declared_branch": "urgencias_exceto_conduta",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idcap-enfermagem-exames-complementares-1779563668619-8",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_generico",
-      "declared_branch": "respiratorio_generico",
-      "mold_package": "morphological · center · vertical · compare (genérico)",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_rcp_sbv",
+      "declared_branch": "urgencias_rcp_sbv",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_tecnica_inalador",
-      "declared_branch": "respiratorio_tecnica_inalador",
-      "mold_package": "morphological · reference_table · cards · compare (genérico)",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_generico",
-      "declared_branch": "respiratorio_generico",
-      "mold_package": "morphological · center · vertical · compare (genérico)",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_convulsao",
+      "declared_branch": "urgencias_convulsao",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_tecnica_inalador",
-      "declared_branch": "respiratorio_tecnica_inalador",
-      "mold_package": "morphological · reference_table · cards · compare (genérico)",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_dpoc_oxigenio",
-      "declared_branch": "respiratorio_dpoc_oxigenio",
-      "mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_dpoc_oxigenio",
-      "declared_branch": "respiratorio_dpoc_oxigenio",
-      "mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "family": "conceito",
-      "inferred_branch": "respiratorio_tecnica_inalador",
-      "declared_branch": "respiratorio_tecnica_inalador",
-      "mold_package": "morphological · reference_table · cards · compare (genérico)",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_avc_iam",
+      "declared_branch": "urgencias_avc_iam",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_xabcde_trauma",
+      "declared_branch": "urgencias_xabcde_trauma",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
       "family": "vf",
-      "inferred_branch": "respiratorio_vf_asma_dpoc",
-      "declared_branch": "respiratorio_vf_asma_dpoc",
-      "mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · respiratorio-vf-juggle-tap · respiratorio-spo2-trap-arena (bespoke)",
+      "inferred_branch": "urgencias_queimadura",
+      "declared_branch": "urgencias_queimadura",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
       "lote": "supabase",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "family": "vf",
+      "inferred_branch": "urgencias_vf_protocolo",
+      "declared_branch": "urgencias_vf_protocolo",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "family": "vf",
+      "inferred_branch": "urgencias_rcp_sbv",
+      "declared_branch": "urgencias_rcp_sbv",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_manchester_triagem",
+      "declared_branch": "urgencias_manchester_triagem",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_anafilaxia",
+      "declared_branch": "urgencias_anafilaxia",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_engasgo",
+      "declared_branch": "urgencias_engasgo",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
       "family": "conceito",
-      "inferred_branch": "respiratorio_dpoc_oxigenio",
-      "declared_branch": "respiratorio_dpoc_oxigenio",
-      "mold_package": "respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-reference-board · cards · respiratorio-spo2-trap-arena (bespoke)",
+      "inferred_branch": "urgencias_choque",
+      "declared_branch": "urgencias_choque",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funcern-enfermagem-exames-laboratoriais-1779563631609-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibam-enfermagem-semiologia-em-enfermagem-1779563495719-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "icece-enfermagem-urgencias-e-emergencias-1780001297464-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_rcp_pediatrico",
+      "declared_branch": "urgencias_rcp_pediatrico",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006962671-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-semiologia-em-enfermagem-1779563521756-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104056718-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563531989-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-vias-de-administracao-1778968646731-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-semiologia-em-enfermagem-1779563537258-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "family": "protocolo",
+      "inferred_branch": "urgencias_xabcde_trauma",
+      "declared_branch": "urgencias_xabcde_trauma",
+      "mold_package": "survival-chain · center · vertical · trap-reveal (bespoke)",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "unesc-enfermagem-urgencias-e-emergencias-1780001220945-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-exames-complementares-1779563685104-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
+      "mold_mismatch_count": 0,
+      "mold_issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+      "lote": "supabase",
+      "subtopico": "Urgências e Emergências",
+      "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     }

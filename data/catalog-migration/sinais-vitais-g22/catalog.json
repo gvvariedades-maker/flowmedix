@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-06T18:09:30.741Z",
+  "lote": "sinais-vitais-g22",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1779344182672-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2618
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2230
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1779343801786-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2398
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1779344111854-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2551
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4058
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-verificacao-de-sinais-vitais-1779344196733-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2632
+    },
+    {
+      "modulo_slug": "univali-enfermagem-verificacao-de-sinais-vitais-1779343932809-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 2487
+    },
+    {
+      "modulo_slug": "univali-enfermagem-verificacao-de-sinais-vitais-1779343932809-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 2488
+    }
+  ]
+}

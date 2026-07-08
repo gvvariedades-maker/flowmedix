@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-05T04:40:18.831Z",
+  "lote": "sinais-vitais-g14",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 2651
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-verificacao-de-sinais-vitais-1779343956155-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 2506
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-verificacao-de-sinais-vitais-1779344189558-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 2627
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779343856589-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2437
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779343856589-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2438
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1778969745165-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 2249
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343865210-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 2451
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 2493
+    }
+  ]
+}

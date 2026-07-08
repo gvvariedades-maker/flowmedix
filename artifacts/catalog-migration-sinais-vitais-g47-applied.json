@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-07T00:59:07.551Z",
+  "lote": "sinais-vitais-g47",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-0",
+    "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

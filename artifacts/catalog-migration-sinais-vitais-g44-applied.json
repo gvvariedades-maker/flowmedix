@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-07T00:58:02.166Z",
+  "lote": "sinais-vitais-g44",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-6",
+    "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+    "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1778969760552-3",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343883917-6",
+    "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779344127707-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1778969760552-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343883917-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779344127707-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

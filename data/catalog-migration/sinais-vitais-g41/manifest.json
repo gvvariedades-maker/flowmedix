@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g41",
+  "exported_at": "2026-07-07T00:08:51.011Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g41/manifest.json"
+  },
+  "slugs": [
+    "fgv-enfermagem-verificacao-de-sinais-vitais-1778969737311-1",
+    "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-6",
+    "furb-enfermagem-verificacao-de-sinais-vitais-1779343956155-7",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779343865210-7",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-6",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-5",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-0",
+    "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779343865210-1"
+  ]
+}

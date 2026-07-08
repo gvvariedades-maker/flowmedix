@@ -1,0 +1,15 @@
+{
+  "lote": "sinais-vitais-g44",
+  "exported_at": "2026-07-07T00:17:55.056Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g44/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-6",
+    "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+    "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1778969760552-3",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343883917-6",
+    "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779344127707-6"
+  ]
+}

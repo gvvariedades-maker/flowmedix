@@ -7,12 +7,13 @@
     "topico": "Enfermagem",
     "subtopico": "Verificação de Sinais Vitais",
     "cargo_header": "Técnico de Enfermagem",
+    "pedagogical_branch": "vitals_interpretacao",
     "content_standard": "golden-v1",
     "family": "protocolo",
     "content_review": {
-      "reviewed_at": "2026-06-18",
-      "reviewer": "content-pilot",
-      "guideline_snapshot": "Faixas de SV adulto — referência clássica de prova",
+      "reviewed_at": "2026-07-04",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "COFEN/MS — faixas de sinais vitais do adulto (PA, FC 60–100 bpm, FR, temperatura axilar)",
       "exam_vs_current": "none"
     },
     "sources": [
@@ -129,12 +130,6 @@
           "value": "Taquipneico",
           "emphasis": "alert",
           "badge": "warn"
-        },
-        {
-          "label": "Conclusão",
-          "value": "Alternativa A",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
       "footer_rule": "A leitura clínica é combinada: pressão e temperatura normais, frequência cardíaca e respiratória elevadas."
@@ -152,7 +147,12 @@
         "Interpretar a temperatura axilar: 36,5°C = afebril.",
         "Interpretar a frequência cardíaca: 110 bpm = taquicárdico.",
         "Interpretar a frequência respiratória: 30 mpm = taquipneico.",
-        "Combinar os achados e marcar a alternativa A."
+        "Testar B: febril e eupneico — eliminar: 36,5°C é afebril e FR 30 mpm é taquipneico.",
+        "Testar C: hipotenso e normocárdico — eliminar: PA normal e FC 110 bpm é taquicárdico.",
+        "Testar D: hipertenso — eliminar: PA 110×75 mmHg é normotenso.",
+        "Testar E: normocárdico na FC — eliminar: 110 bpm é taquicárdico.",
+        "Eliminar B, C, D e E — combinação correta: normotenso, afebril, taquicárdico e taquipneico.",
+        "Marcar letra A."
       ],
       "footer_rule": "Na interpretação de SV, traduza cada número para o termo clínico correspondente."
     },

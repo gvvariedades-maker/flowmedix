@@ -1,0 +1,30 @@
+{
+  "lote": "sinais-vitais-exceto-piloto-g01",
+  "subtopico": "Verificação de Sinais Vitais",
+  "status": "applied",
+  "applied_at": "2026-07-06",
+  "priority": "P2 — EXCETO/INCORRETA técnica SV",
+  "slug_count": 1,
+  "pedagogical_branch_target": "vitals_exceto_tecnica",
+  "anchor_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
+  "anchors": [
+    "examples/questao-premium-avancasp-sv-pa-incorreta-divergente.json"
+  ],
+  "handcraft_grammar": "data/catalog-migration/sinais-vitais-pedagogy-errors.json",
+  "applied": false,
+  "workflow": [
+    "Handcraft compare semântico — lint vitals_exceto_semantic",
+    "npm run audit:questao-readiness -- --file=examples/questao-premium-avancasp-sv-pa-incorreta-divergente.json --strict-v3-pedagogy",
+    "npm run capture:questao-review -- --slug=avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
+    "npm run audit:anchor-review -- --lote=sinais-vitais-exceto-piloto-g01 --record-pass --reviewer=agent",
+    "npm run catalog:apply-lote -- --lote=sinais-vitais-exceto-piloto-g01 --apply"
+  ],
+  "notes": "Piloto ramo vitals_exceto_tecnica — paridade Imunização Agirh EXCETO; gate L6 antes de escalar ~20 slugs EXCETO.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-05",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-exceto-piloto-g01.json"
+  }
+}

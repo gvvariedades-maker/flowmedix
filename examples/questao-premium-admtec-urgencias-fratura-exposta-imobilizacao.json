@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "banca": "ADM&TEC",
+    "prova": "Tec Enf",
+    "orgao": "Pref M de Camaragibe",
+    "ano": "2024",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_exceto_conduta",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "Protocolo SBV/SAMU — fratura exposta: imobilização sem forçar reposicionamento",
+      "exam_vs_current": "none",
+      "catalog_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "cluster": "EXCETO / INCORRETA — conduta em trauma"
+    },
+    "sources": [
+      {
+        "id": "urgencias-fratura-ms-sbv",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/SAMU — fratura e imobilização",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "fratura exposta imobilizacao",
+          "posicao encontrada",
+          "nao reposicionar com dor",
+          "resistencia ao reposicionamento",
+          "acionar 192"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Fratura exposta: quando ocorre uma fratura exposta, o osso rompe a pele, abrindo uma ferida e tornando-se visível através de uma ferida aberta existente ou criando uma. No atendimento inicial à vítima de fratura exposta de extremidades, deve-se:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Realizar a imobilização do segmento afetado com ênfase para o retorno à posição anatômica, exceto se presença de dor significativa e/ou resistência ao reposicionamento.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Realizar a imobilização do segmento afetado com ênfase para o retorno à posição anatômica, mesmo se presença de dor significativa e/ou resistência ao reposicionamento.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Realizar a imobilização do segmento afetado com ênfase para o retorno à posição anatômica, mesmo se resistência ao reposicionamento.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Realizar a imobilização do segmento afetado com ênfase para o retorno à posição anatômica, independente de qualquer outro fator.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Fratura exposta — conduta inicial",
+      "chip_label": "TRAUMA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Enquadramento",
+          "detail": "Fratura exposta de extremidade — osso visível na ferida; priorizar imobilização segura no atendimento inicial.",
+          "icon": "Target"
+        },
+        {
+          "label": "Objetivo",
+          "detail": "Estabilizar o segmento, reduzir movimento e proteger tecidos — sem agravar lesão vascular ou nervosa.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Posição anatômica",
+          "detail": "Buscar alinhamento quando viável — mas não é mandato absoluto em trauma.",
+          "icon": "Bone"
+        },
+        {
+          "label": "Exceção clínica",
+          "detail": "Dor significativa ou resistência do paciente = sinal para não forçar reposicionamento.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Pegadinha de prova",
+          "detail": "Alternativas quase idênticas variam só a cláusula de exceção — leia o qualificador final.",
+          "icon": "ScanSearch"
+        }
+      ],
+      "footer_rule": "Imobilizar com critério — não forçar alinhamento à custa da dor"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Fratura exposta — regra de ouro",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "IMOBILIZAÇÃO NO PRÉ-HOSPITALAR",
+      "rows": [
+        {
+          "label": "Prioridade",
+          "value": "Imobilizar o segmento afetado; controlar sangramento; acionar 192",
+          "badge": "hot"
+        },
+        {
+          "label": "Alinhamento",
+          "value": "Buscar posição anatômica quando possível — sem forçar",
+          "badge": "ok"
+        },
+        {
+          "label": "Pare a manipulação",
+          "value": "Dor significativa ou resistência → imobilizar como encontrado",
+          "badge": "warn"
+        },
+        {
+          "label": "Nunca",
+          "value": "Empurrar osso exposto de volta à ferida no local",
+          "badge": "warn"
+        },
+        {
+          "label": "Curativo",
+          "value": "Cobrir ferida com gaze estéril úmida — não circular apertado",
+          "badge": "info"
+        },
+        {
+          "label": "Transporte",
+          "value": "Manter imobilização até avaliação hospitalar",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Posição encontrada > alinhamento forçado"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato: fratura exposta de extremidade — assinalar a conduta correta no atendimento inicial.",
+        "Eixo imobilização: estabilizar segmento; alinhar quando viável, sem agravar lesão.",
+        "Regra de exceção: dor intensa ou resistência do paciente contraindica forçar reposicionamento.",
+        "Descartar alternativas que removem a exceção — banca empilha cláusulas cada vez mais absolutas.",
+        "Letra B: ignora dor e resistência — eliminar.",
+        "Letra C: ainda força alinhamento apesar da resistência — eliminar.",
+        "Letra D: conduta cega, sem critério clínico — eliminar.",
+        "Resta letra A: imobilizar buscando anatomia, exceto dor significativa ou resistência.",
+        "Marcar A.",
+        "Fixação: em trauma, microvariação no final da frase define o gabarito — leia o qualificador."
+      ],
+      "footer_rule": "Estratégia: achar a exceção clínica, não a frase mais longa"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — FRATURA EXPOSTA",
+      "items": [
+        {
+          "label": "Letra B — forçar apesar da dor",
+          "detail": "Parece decisivo e “técnico” — alinhar custe o que custar.",
+          "correct": "Forçar reposicionamento com dor significativa agrava lesão e sangramento — conduta incorreta."
+        },
+        {
+          "label": "Letra C — ignorar resistência",
+          "detail": "Quase igual à correta, mas retira só parte da exceção.",
+          "correct": "Resistência do paciente ao reposicionamento é sinal para imobilizar na posição encontrada."
+        },
+        {
+          "label": "Letra D — independente de tudo",
+          "detail": "Versão mais absoluta — banca testa quem não lê o final da alternativa.",
+          "correct": "Imobilização em trauma nunca é cega: dor, resistência e exposição óssea limitam manipulação."
+        },
+        {
+          "label": "Transferência — reduzir osso exposto",
+          "detail": "Em outra questão, a banca oferece recolocar o osso na ferida.",
+          "correct": "No pré-hospitalar, não reduzir fratura exposta no local — cobrir, imobilizar e transportar."
+        }
+      ],
+      "footer_rule": "A exceção (dor/resistência) é o que separa A de B, C e D"
+    }
+  ]
+}

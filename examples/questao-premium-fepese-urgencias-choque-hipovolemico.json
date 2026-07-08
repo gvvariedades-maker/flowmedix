@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "banca": "FEPESE",
+    "prova": "Moto Soc S",
+    "orgao": "Pref B Camboriú",
+    "ano": "2023",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_choque",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-07",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "Choque hipovolêmico — perda de volume (MS/SBV)",
+      "exam_vs_current": "none",
+      "catalog_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "cluster": "Tipos de choque — hipovolêmico × hemorragia × desidratação"
+    },
+    "sources": [
+      {
+        "id": "urgencias-choque-hipovolemico-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV — choque hipovolêmico",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "choque hipovolemico volume intravascular",
+          "perda sangue plasma",
+          "diarreia vomito desidratacao",
+          "taquicardia hipotensao pele fria",
+          "tipos de choque"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O estado de choque que ocorre devido à redução do volume intravascular por causa da perda de sangue, de plasma ou de água em diarreia e vômito, é chamado de:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Choque anafilático.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Choque septicêmico.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Choque neurogênico.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Choque cardiogênico.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Choque hipovolêmico.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Choque — volume perdido",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Choque por redução do volume intravascular — sangue, plasma ou perda hídrica (diarreia/vômito).",
+          "icon": "Target"
+        },
+        {
+          "label": "Nome",
+          "detail": "Choque hipovolêmico = menos volume circulante → perfusão insuficiente.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Causas da prova",
+          "detail": "Hemorragia · queimadura (plasma) · gastroenterite com desidratação.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Sinais clássicos",
+          "detail": "Taquicardia, hipotensão, pele fria e úmida, TEC prolongado.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "A banca lista outros choques pelo mecanismo — só hipovolêmico = perda de volume.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Menos volume = hipovolêmico"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Comando: classificar o choque pela causa — queda do volume intravascular.",
+        "Pergunta-chave: o que faltou no sangue? Volume (sangue/plasma/água).",
+        "A anafilático → reação alérgica / vasodilatação; eliminar.",
+        "B septicêmico → infecção sistêmica; eliminar.",
+        "C neurogênico → lesão medular / perda tônus vascular; eliminar.",
+        "D cardiogênico → falha da bomba cardíaca; eliminar.",
+        "E hipovolêmico → perda de volume (enunciado literal); marcar E.",
+        "Fixação: leia o mecanismo do enunciado antes do nome do choque."
+      ],
+      "footer_rule": "Mecanismo → tipo de choque"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Tipos de choque",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "CHOQUE — DECORE MECANISMO",
+      "rows": [
+        {
+          "label": "Hipovolêmico",
+          "value": "Perda de volume — sangue, plasma, diarreia/vômito",
+          "badge": "hot"
+        },
+        {
+          "label": "Cardiogênico",
+          "value": "Bomba cardíaca falha — IAM, arritmia grave",
+          "badge": "warn"
+        },
+        {
+          "label": "Obstrutivo",
+          "value": "Tamponamento, TEP, pneumotórax hipertensivo",
+          "badge": "info"
+        },
+        {
+          "label": "Distributivo",
+          "value": "Vasodilatação — séptico, anafilático, neurogênico",
+          "badge": "info"
+        },
+        {
+          "label": "Conduta inicial",
+          "value": "O₂ · acesso venoso · tratar causa · 192",
+          "badge": "ok"
+        },
+        {
+          "label": "Hemorragia",
+          "value": "Compressão direta · torniquete em membro",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "Volume baixo → hipovolêmico"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — TIPOS DE CHOQUE",
+      "items": [
+        {
+          "label": "Letra A — anafilático",
+          "detail": "Choque aparece no enunciado e anafilaxia é emergência comum.",
+          "correct": "Anafilático = distributivo por alergia/epinefrina — não é perda de volume."
+        },
+        {
+          "label": "Letra B — septicêmico",
+          "detail": "Sepse também causa hipotensão e taquicardia.",
+          "correct": "Séptico = infecção sistêmica com vasodilatação — volume pode estar relativo, não o mecanismo do texto."
+        },
+        {
+          "label": "Letra C — neurogênico",
+          "detail": "Trauma medular parece choque “por perda”.",
+          "correct": "Neurogênico = perda do tônus simpático após lesão medular — não perda de sangue/plasma."
+        },
+        {
+          "label": "Letra D — cardiogênico",
+          "detail": "IAM com hipotensão confunde com choque hemorrágico.",
+          "correct": "Cardiogênico = bomba falha; enunciado fala em redução de volume intravascular."
+        },
+        {
+          "label": "Transferência — distributivo",
+          "detail": "Em outra questão, choque por vasodilatação sem sangramento.",
+          "correct": "Sepse, anafilaxia e neurogênico = distributivos; hipovolêmico = volume absoluto menor."
+        }
+      ],
+      "footer_rule": "Sangue/plasma/água perdidos = E"
+    }
+  ]
+}

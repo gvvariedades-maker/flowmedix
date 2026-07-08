@@ -18,17 +18,26 @@ describe('vitalsGoldenLint', () => {
     expect(lintVitalsGoldenContent(fepeseSv)).toEqual([]);
   });
 
-  it('rejeita golden C/E sem linha de gabarito', () => {
+  it('rejeita golden C/E sem gabarito no golden nem no logic_flow', () => {
     const broken = {
       ...idecanCe,
-      reverse_study_slides: idecanCe.reverse_study_slides.map((slide) =>
-        slide.type === 'golden_rule'
-          ? {
-              ...slide,
-              rows: (slide.rows ?? []).filter((r) => !/gabarito/i.test(r.label)),
-            }
-          : slide,
-      ),
+      reverse_study_slides: idecanCe.reverse_study_slides.map((slide) => {
+        if (slide.type === 'golden_rule') {
+          return {
+            ...slide,
+            rows: (slide.rows ?? []).filter((r) => !/gabarito/i.test(r.label)),
+          };
+        }
+        if (slide.type === 'logic_flow') {
+          return {
+            ...slide,
+            steps: (slide.steps ?? []).filter(
+              (s) => !/gabarito|marcar\s+certo|letra\s+[a-e]/i.test(String(s)),
+            ),
+          };
+        }
+        return slide;
+      }),
     };
     const codes = lintVitalsGoldenContent(broken).map((i) => i.code);
     expect(codes).toContain('sv_golden_gabarito');

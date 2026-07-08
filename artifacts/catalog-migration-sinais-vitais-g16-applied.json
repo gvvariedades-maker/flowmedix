@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:48:11.984Z",
+  "lote": "sinais-vitais-g16",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778969752567-4",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1779343856589-8",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-3",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-4",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-4",
+    "idib-enfermagem-verificacao-de-sinais-vitais-1778934863952-9",
+    "ieses-enfermagem-verificacao-de-sinais-vitais-1779343789998-3",
+    "ieses-enfermagem-verificacao-de-sinais-vitais-1779344105099-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778969752567-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779343856589-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-verificacao-de-sinais-vitais-1778934863952-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-verificacao-de-sinais-vitais-1779343789998-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-verificacao-de-sinais-vitais-1779344105099-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

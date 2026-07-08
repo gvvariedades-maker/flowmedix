@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-06T17:44:14.039Z",
+  "lote": "sinais-vitais-g19",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2539
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2540
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2590
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2591
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO EVO",
+      "avant_codigo": 2245
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO EVO",
+      "avant_codigo": 2246
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-verificacao-de-sinais-vitais-1779344178184-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2610
+    },
+    {
+      "modulo_slug": "intec-enfermagem-verificacao-de-sinais-vitais-1779344105099-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INTEC",
+      "avant_codigo": 2543
+    }
+  ]
+}

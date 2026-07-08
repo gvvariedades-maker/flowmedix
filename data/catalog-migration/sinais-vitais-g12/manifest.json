@@ -1,0 +1,46 @@
+{
+  "lote": "sinais-vitais-g12",
+  "exported_at": "2026-07-05T04:29:35.604Z",
+  "source": "cluster-report",
+  "filters": {
+    "clusters": [
+      "PA — técnica e interpretação"
+    ],
+    "pedagogical_branch_target": "vitals_pa_tecnica",
+    "exclude_count": 88,
+    "mix": "P0 vitals_pa_tecnica posições 89–96 — FUNDATEC N Alvorada · GHC · Criciúma · Pinhal · Foz Iguaçu",
+    "prior_lotes": [
+      "sinais-vitais-g01",
+      "sinais-vitais-g02",
+      "sinais-vitais-g03",
+      "sinais-vitais-g04",
+      "sinais-vitais-g05",
+      "sinais-vitais-g06",
+      "sinais-vitais-g07",
+      "sinais-vitais-g08",
+      "sinais-vitais-g09",
+      "sinais-vitais-g10",
+      "sinais-vitais-g11"
+    ],
+    "slugs": [
+      "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969768866-5",
+      "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343811344-3",
+      "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-4",
+      "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-5",
+      "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-2",
+      "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-3",
+      "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-3",
+      "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344178184-7"
+    ]
+  },
+  "slugs": [
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969768866-5",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343811344-3",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-4",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-5",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-2",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-3",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-3",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344178184-7"
+  ]
+}

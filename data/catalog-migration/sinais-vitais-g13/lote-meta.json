@@ -1,0 +1,33 @@
+{
+  "lote": "sinais-vitais-g13",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344205200-5",
+  "handcrafted_at": "2026-07-05",
+  "slugs": 8,
+  "prior_lotes": [
+    "sinais-vitais-g01",
+    "sinais-vitais-g02",
+    "sinais-vitais-g03",
+    "sinais-vitais-g04",
+    "sinais-vitais-g05",
+    "sinais-vitais-g06",
+    "sinais-vitais-g07",
+    "sinais-vitais-g08",
+    "sinais-vitais-g09",
+    "sinais-vitais-g10",
+    "sinais-vitais-g11",
+    "sinais-vitais-g12"
+  ],
+  "notes": "P0 vitals_pa_tecnica posições 97–104 no cluster PA (196 slugs) — FUNDATEC · FUNDEP · FURB · GAMA · GUALIMP.",
+  "applied": false,
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g13.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

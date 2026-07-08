@@ -1,0 +1,37 @@
+{
+  "mode": "apply",
+  "bucket": "Urgências e Emergências",
+  "min_confidence_apply": 0.85,
+  "limit": 2,
+  "inference_source": "agent",
+  "summary": {
+    "scanned": 2,
+    "inferred": 2,
+    "errors": 0,
+    "keep_current": 0,
+    "same_subtopico": 0,
+    "applicable": 2
+  },
+  "proposals": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "[tier vermelho revisado] Visita ESF + diabetes tipo 2 — AB/Saúde da Família.",
+      "applicable": true,
+      "source": "agent"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "[tier vermelho revisado] HAS e prevenção de agravos — não urgência.",
+      "applicable": true,
+      "source": "agent"
+    }
+  ]
+}

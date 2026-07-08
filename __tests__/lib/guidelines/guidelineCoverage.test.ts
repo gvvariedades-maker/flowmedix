@@ -44,9 +44,11 @@ describe('guideline coverage', () => {
     expect(g?.entries.length).toBeGreaterThanOrEqual(75);
   });
 
-  it('Urgências atinge meta Fase 1', () => {
+  it('Urgências mescla RCP + protocolos (nível Imunização)', () => {
     const g = getGuidelineForSubtopico('Urgências e Emergências');
-    expect(g?.entries.length).toBeGreaterThanOrEqual(55);
+    expect(g).not.toBeNull();
+    expect(g!.entries.length).toBeGreaterThanOrEqual(100);
+    expect(g!.id).toContain('urgencias');
   });
 
   it.each([

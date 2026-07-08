@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-06T23:00:20.781Z",
+  "lote": "sinais-vitais-g29",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fuvest-enfermagem-verificacao-de-sinais-vitais-1779344137078-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUVEST",
+      "avant_codigo": 2583
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344117207-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 2557
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344152370-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 2597
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 2391
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO EVO",
+      "avant_codigo": 2244
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-verificacao-de-sinais-vitais-1779343822075-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 2414
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-verificacao-de-sinais-vitais-1779343919045-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 2485
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344158323-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2601
+    }
+  ]
+}

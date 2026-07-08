@@ -1,0 +1,12 @@
+{
+  "lote": "sinais-vitais-g47",
+  "exported_at": "2026-07-07T00:26:38.237Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g47/manifest.json"
+  },
+  "slugs": [
+    "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-0",
+    "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-1"
+  ]
+}

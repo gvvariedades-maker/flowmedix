@@ -1,0 +1,23 @@
+{
+  "subtopico": "Verificação de Sinais Vitais",
+  "pacote_prefix": "sinais-vitais",
+  "manifest_handcraft": "data/catalog-migration/sinais-vitais-completo/manifest-handcraft.json",
+  "total_slugs_handcraft": 354,
+  "bucket_supabase": 502,
+  "classify_applied_at": "2026-07-04",
+  "cluster_report": "artifacts/sinais-vitais-topic-cluster-report.json",
+  "lote_size": 8,
+  "estimated_lotes": 45,
+  "ramos_fortes": [
+    "vitals_pa_tecnica",
+    "vitals_fc_faixas"
+  ],
+  "status": "applied",
+  "handcraft_applied": 354,
+  "handcraft_local_slugs": 354,
+  "last_lote": "sinais-vitais-g50",
+  "last_lote_ready": "2026-07-07",
+  "closure_lote": "data/catalog-migration/sinais-vitais-g50/lote-meta.json",
+  "notes": "Legado builder → re-handcraft golden-v1. Corpus alvo = manifest-handcraft (354 slugs). Apply Supabase completo 2026-07-07 (g01–g49 + exceto-piloto). Pendente: production_ready (L4/L5).",
+  "updated_at": "2026-07-07"
+}

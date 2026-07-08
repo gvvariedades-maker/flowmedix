@@ -9,6 +9,15 @@ export type SoftLensHintProfile =
   | 'farmaco'
   | 'trabalho'
   | 'respiratorio'
+  | 'urgencias'
+  | 'urgencias_trauma'
+  | 'urgencias_avc'
+  | 'urgencias_choque'
+  | 'urgencias_engasgo'
+  | 'urgencias_pediatric'
+  | 'urgencias_manchester'
+  | 'urgencias_protocol'
+  | 'urgencias_exceto'
   | 'none';
 
 const CALC_FORBIDDEN = /u-100|gotas|microgota|insulina|20-60-3|gts\/min/i;
@@ -59,6 +68,24 @@ function inferExamHintByProfile(row: GoldenRuleRow, profile: SoftLensHintProfile
       return inferTrabalhoExamHint(row);
     case 'respiratorio':
       return inferRespiratorioExamHint(row);
+    case 'urgencias':
+      return inferUrgenciasExamHint(row);
+    case 'urgencias_trauma':
+      return inferUrgenciasTraumaExamHint(row);
+    case 'urgencias_avc':
+      return inferUrgenciasAvcExamHint(row);
+    case 'urgencias_choque':
+      return inferUrgenciasChoqueExamHint(row);
+    case 'urgencias_engasgo':
+      return inferUrgenciasEngasgoExamHint(row);
+    case 'urgencias_pediatric':
+      return inferUrgenciasPediatricExamHint(row);
+    case 'urgencias_manchester':
+      return inferUrgenciasManchesterExamHint(row);
+    case 'urgencias_protocol':
+      return inferUrgenciasProtocolExamHint(row);
+    case 'urgencias_exceto':
+      return inferUrgenciasExcetoExamHint(row);
     default:
       return neutralExamHint(row);
   }
@@ -219,6 +246,189 @@ function inferRespiratorioExamHint(row: GoldenRuleRow): string {
   }
   if (/^i\b|^ii\b|^iii\b/.test(text) || /afirmativa/.test(text)) {
     return 'Julgue cada afirmativa pelo PCDT — separe asma (resgate) de DPOC (O₂ titulado).';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/30:2|propor[cç][aã]o/i.test(text)) {
+    return 'Eixo central do SBV com 2 socorristas — 30 compressões : 2 ventilações sem via aérea avançada.';
+  }
+  if (/100.?120|frequ[eê]ncia|batimento/i.test(text)) {
+    return 'Pegadinha clássica: 80–100/min é protocolo antigo — AHA 2020 cobra 100–120 compressões/min.';
+  }
+  if (/5.?6\s*cm|profundidade|4\s*cm/i.test(text)) {
+    return 'Adulto: pelo menos 5 cm até 6 cm com retorno completo do tórax — 4 cm subestima.';
+  }
+  if (/pulso|2\s*min|ciclo/i.test(text)) {
+    return 'Não parar a cada ciclo 30:2 — verificar pulso após ~2 min de RCP contínua.';
+  }
+  if (/dea|desfibril|choque/i.test(text)) {
+    return 'DEA assim que disponível — não atrasar por “terminar ciclos” manuais.';
+  }
+  if (/alternar|compressor|fadiga/i.test(text)) {
+    return 'Trocar quem comprime a cada ~2 min para manter qualidade — não a cada 5 min.';
+  }
+  if (/um socorrista|cont[ií]nuas/i.test(text)) {
+    return 'Sozinho: compressões contínuas; ventilar se treinado — não é o foco do 30:2.';
+  }
+  if (/gabarito|verdadeira|letra/i.test(text)) {
+    return 'Cruze cada parâmetro com a alternativa — números trocados são a pegadinha típica.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasTraumaExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/hemorragia|torniquete|compress[aã]o/i.test(text)) {
+    return 'Hemorragia de membro: compressão direta; torniquete no membro se massiva — nunca no pescoço.';
+  }
+  if (/fratura|imobiliza|tra[cç][aã]o/i.test(text)) {
+    return 'Fratura: imobilizar na posição encontrada — tração vigorosa agrava lesão vascular/nervosa.';
+  }
+  if (/corpo estranho|objeto|retirar/i.test(text)) {
+    return 'Objeto encravado: estabilizar e transportar — retirada no local pode descontrolar sangramento.';
+  }
+  if (/queimadura|[áa]gua corrente|gelo|manteiga|caseir/i.test(text)) {
+    return 'Queimadura: água corrente em temperatura ambiente — proibir gelo, pasta e substâncias caseiras.';
+  }
+  if (/xabcde|^x\b|exsanguin/i.test(text)) {
+    return 'X vem antes de A–E: controle de hemorragia exsanguinante é prioridade no trauma.';
+  }
+  if (/meta|estabilizar|samu|transporte/i.test(text)) {
+    return 'Pré-hospitalar = não piorar — estabilizar até suporte avançado chegar.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasAvcExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/face|sorriso|assimetria/i.test(text)) {
+    return 'Face: sorriso assimétrico ou queda labial — primeiro eixo da Escala de Cincinnati.';
+  }
+  if (/bra[cç]o|arms|mmss/i.test(text)) {
+    return 'Braços: elevar MMSS e observar queda ou fraqueza unilateral.';
+  }
+  if (/fala|speech|disartria|afasia/i.test(text)) {
+    return 'Fala: repetir frase simples — disartria ou afasia indicam suspeita de AVC.';
+  }
+  if (/192|samu|tempo|positivo/i.test(text)) {
+    return 'Qualquer item alterado → acionar emergência — tempo é cérebro.';
+  }
+  if (/fast\b/i.test(text)) {
+    return 'FAST = Face · Arms · Speech · Time — paralelo internacional ao Cincinnati.';
+  }
+  if (/glasgow|ssvv|men[ií]ngea|iam/i.test(text)) {
+    return 'Pegadinha: Glasgow, SSVV e tríade meníngea não compõem Cincinnati.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasChoqueExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/passo 1|n[aã]o tocar|interromper|desligar|seguran[cç]a/i.test(text)) {
+    return 'Choque elétrico: 1ª conduta é segurança da cena — interromper corrente antes de tocar.';
+  }
+  if (/isolante|energizada|fonte/i.test(text)) {
+    return 'Socorrista não pode virar segunda vítima — afastar com material isolante se necessário.';
+  }
+  if (/rcp|respira[cç][aã]o|consci[eê]ncia/i.test(text)) {
+    return 'ABC só após cena segura — RCP prematura em vítima energizada eletrocuta quem toca.';
+  }
+  if (/hipovol[eê]m|taquicardia|fria|fluido/i.test(text)) {
+    return 'Em outra questão “choque” = hipoperfusão — aqui é acidente elétrico, não reposição volêmica.';
+  }
+  if (/arritmia|queimadura/i.test(text)) {
+    return 'Lesão elétrica pode causar arritmia e queimaduras — monitorar e transportar.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasEngasgoExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/sinal universal|pesco[cç]o|garganta/i.test(text)) {
+    return 'Sinal universal: vítima leva as mãos ao pescoço — não confundir com local da manobra.';
+  }
+  if (/heimlich|abdominal/i.test(text)) {
+    return 'Adulto consciente: compressões abdominais — socorrista age no abdome, vítima aponta o pescoço.';
+  }
+  if (/gestante|obeso|interescapular|tor[aá]cic/i.test(text)) {
+    return 'Gestante/obeso: OVACE — golpes interescapulares + compressões torácicas.';
+  }
+  if (/inconsciente|rcp/i.test(text)) {
+    return 'Inconsciente: iniciar RCP e checar boca antes de ventilar.';
+  }
+  if (/lactente|beb[eê]|costas/i.test(text)) {
+    return 'Lactente: 5 tapas nas costas + 5 compressões torácicas — não Heimlich abdominal.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasPediatricExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/15:2|propor[cç][aã]o.*2 socorristas/i.test(text)) {
+    return 'Pediatria com 2 socorristas: 15:2 — não transferir 30:2 do adulto.';
+  }
+  if (/30:2.*1 socorrista|um socorrista/i.test(text)) {
+    return 'Com um socorrista treinado, pediatria também usa 30:2 — mas a prova cobra 15:2 com dois.';
+  }
+  if (/ter[cç]o|1\/3|profundidade/i.test(text)) {
+    return 'Profundidade pediátrica ≈ um terço do diâmetro AP — metade do tórax é pegadinha.';
+  }
+  if (/adulto|contraste|5.?6\s*cm/i.test(text)) {
+    return 'Adulto = 30:2 + 5–6 cm — não aplicar na pediatria sem adaptar proporção e profundidade.';
+  }
+  if (/100.?120|frequ[eê]ncia|retorno/i.test(text)) {
+    return 'Igual ao adulto: 100–120/min com retorno total do tórax entre compressões.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasManchesterExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/vermelh/i.test(text)) {
+    return 'Vermelho = imediato/emergência — prioridade máxima na triagem de massa.';
+  }
+  if (/amarel/i.test(text)) {
+    return 'Amarelo = urgente/retardado — monitorar sinais e reavaliar; não dispensar vigilância.';
+  }
+  if (/verde/i.test(text)) {
+    return 'Verde = leve/ambulante — menor prioridade; não confundir com transporte rápido.';
+  }
+  if (/azul/i.test(text)) {
+    return 'Azul = não urgente — nunca instabilidade crítica (isso é vermelho).';
+  }
+  if (/preto|[óo]bito|expectante/i.test(text)) {
+    return 'Preto = óbito ou expectante em triagem de vítimas múltiplas.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasProtocolExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/verdadeira|falsa|v\/f|sequ[eê]ncia/i.test(text)) {
+    return 'Julgue cada item antes de combinar letras — a banca inverte V/F ou troca a ordem.';
+  }
+  if (/epinefrina|adrenalina|im\b|intramuscular|coxa/i.test(text)) {
+    return 'Anafilaxia: epinefrina IM na coxa é 1ª linha — IV só em PCR/choque refratário.';
+  }
+  if (/convuls|boca|objeto|imobiliz/i.test(text)) {
+    return 'Crise: proteger cabeça, não introduzir objetos na boca, não imobilizar à força.';
+  }
+  if (/queimadura|pasta|gelo|manteiga|água corrente/i.test(text)) {
+    return 'Primeiro socorro: água corrente por tempo adequado — vetar pasta caseira e gelo direto.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferUrgenciasExcetoExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/exceto|incorreta|n[aã]o\s+[eé]/i.test(text)) {
+    return 'EXCETO: cada distrator descreve conduta correta — só a letra gabarito é a exceção.';
+  }
+  if (/imobiliz|fratura|reposicion|for[cç]ar/i.test(text)) {
+    return 'Trauma: imobilizar sem forçar alinhamento — microvariação de cláusula é pegadinha clássica.';
   }
   return neutralExamHint(row);
 }

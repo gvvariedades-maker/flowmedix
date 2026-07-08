@@ -1,0 +1,31 @@
+{
+  "lote": "sinais-vitais-g09",
+  "exported_at": "2026-07-05T04:15:00.000Z",
+  "source": "cluster-report",
+  "filters": {
+    "clusters": ["PA — técnica e interpretação"],
+    "pedagogical_branch_target": "vitals_pa_tecnica",
+    "exclude_count": 64,
+    "mix": "P0 vitals_pa_tecnica posições 65–72 — FAU UNICENTRO · FAUEL · FEPESE",
+    "prior_lotes": [
+      "sinais-vitais-g01",
+      "sinais-vitais-g02",
+      "sinais-vitais-g03",
+      "sinais-vitais-g04",
+      "sinais-vitais-g05",
+      "sinais-vitais-g06",
+      "sinais-vitais-g07",
+      "sinais-vitais-g08"
+    ]
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344117207-8",
+    "fauel-enfermagem-verificacao-de-sinais-vitais-1779343822075-5",
+    "fauel-enfermagem-verificacao-de-sinais-vitais-1779343945057-0",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-3",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-6",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343919045-5",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343919045-6"
+  ]
+}

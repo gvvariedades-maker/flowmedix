@@ -1,0 +1,3669 @@
+{
+  "mode": "infer",
+  "bucket": "Urgências e Emergências",
+  "min_confidence_apply": 0.85,
+  "limit": 365,
+  "inference_source": "gemini",
+  "summary": {
+    "scanned": 365,
+    "inferred": 357,
+    "errors": 8,
+    "keep_current": 0,
+    "same_subtopico": 318,
+    "applicable": 23,
+    "excluded_tier_vermelho": 2
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de emergência (choque elétrico) e aborda os primeiros socorros e condutas imediatas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento inicial a uma fratura exposta, que é uma condição de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente das diretrizes de RCP em adultos, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a avaliação primária de um paciente com trauma cranioencefálico, que é um cenário típico de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento imediato a uma crise epilética, que é uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma intoxicação exógena com sinais e sintomas que requerem monitoramento em sala de emergência, caracterizando um cenário de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma avaliação neurológica em paciente com traumatismo cranioencefálico grave, focando em postura reflexa e nível de lesão cerebral, temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente acidentes com animais peçonhentos (ofídicos), que se enquadram em zoonoses e doenças parasitárias.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Urgências e Emergências\",\"confidence\":1.0,\"rationale\":\"O enunciado aborda a priorização do atendimento em situações de emergência, avaliação sistematizada e tomada de decisão…"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a atuação do Técnico em Enfermagem em situações de emergência, focando em avaliação primária, primeiros socorros e estabilização do paciente, o que se alinha perfeitamente com o subtópico 'Urgências e Emergências'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o reconhecimento rápido de sinais de AVC e a Escala de Cincinnati, ferramentas essenciais em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o atendimento pré-hospitalar e o atendimento inicial ao trauma, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda procedimentos de primeiros socorros e emergência, como RCP, queimaduras químicas, desobstrução de vias aéreas e hemorragia.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o Atendimento Pré-Hospitalar (APH) e o uso do balão autoexpansível (Ambu) em situações de emergência como parada cardiorrespiratória, o que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o Suporte Básico de Vida em uma situação de parada cardiorrespiratória (PCR), que é um tema central do subtópico Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Urgências e Emergências\",\"confidence\":1.0,\"rationale\":\"O enunciado aborda a imobilização de vítimas de trauma, um tema central em urgências e emergências.\",\"keep_current\":fals…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente Suporte Básico de Vida e Ressuscitação Cardiopulmonar (RCP), que são temas centrais de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a avaliação primária do trauma (XABCDE), que é um protocolo central em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de um serviço de atendimento móvel de urgência (SAMU) e a tomada de decisão sobre o destino de um paciente em situação de emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata da triagem de vítimas em situações de múltiplas vítimas, que é um procedimento central em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata de um paciente com Acidente Vascular Cerebral (AVC), que é uma condição de urgência/emergência, e descreve condutas essenciais da equipe de enfermagem nesse contexto.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca nos cuidados com a Sonda Vesical de Demora, um procedimento de manejo de sondas.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a prioridade de atendimento em situações de emergência, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o Acidente Vascular Cerebral (AVC) como uma emergência médica e foca nos sinais de alerta e tratamento imediato, o que se alinha perfeitamente com o subtópico 'Urgências e Emergências'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o protocolo ABCDE, amplamente utilizado no atendimento inicial a pacientes em estado de trauma, que é um tema central de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre a forma de atendimento em situações de urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de hemorragia externa em atendimento de urgência, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro clínico agudo de trauma com sinais de instabilidade hemodinâmica, característico de emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cuidado imediato para uma fratura exposta, que é uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a primeira abordagem a um paciente vítima de trauma seguindo o protocolo XABCDE, que é central para o manejo de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sinais de instabilidade hemodinâmica em atendimento pré-hospitalar, tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de urgência/emergência e pergunta sobre um sintoma específico (angioedema), que é uma condição aguda que pode comprometer a vida.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente em choque, que é uma condição de emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o choque hipovolêmico, uma condição de emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata da classificação de ambulâncias, que são veículos essenciais para o transporte de enfermos em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento em setor de emergência para um quadro de entorse, que é uma situação de urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente da Ressuscitação Cardiopulmonar (RCP) em bebês e crianças, um procedimento central em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de recomendações para atendimento em Parada Cardiorrespiratória (PCR), que é um tema central de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a ressuscitação cardiopulmonar (RCP) em adultos após parada cardiorrespiratória, que é o tema central do subtópico 'Urgências e Emergências'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o choque, um evento de emergência extrema, e aborda o tratamento de emergência com drogas vasoativas em casos de choque hipovolêmico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a abordagem inicial de pacientes com suspeita de trauma e suporte básico de vida, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de parada cardiorrespiratória e as condutas de Suporte Básico de Vida, que são centrais para o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563668619-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado foca na aferição e interpretação de múltiplos sinais vitais e glicemia capilar.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente a oxigenoterapia, sua prescrição, fluxo e registro.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve os primeiros socorros em situações de risco à vida, que é o foco principal do subtópico \"Urgências e Emergências\".",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento pré-hospitalar com paciente em estado de confusão, rebaixamento de consciência e hipoglicemia, caracterizando uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro súbito de anafilaxia em uma criança e discute a administração de adrenalina como conduta imediata, abordando vias de administração em situações de emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a dor torácica como um evento agudo com diversas etiologias, o que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de obstrução de vias aéreas em crianças e idosos, que é uma emergência médica, e pergunta sobre a técnica de desobstrução, que se enquadra perfeitamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a convulsão, suas causas e os procedimentos de emergência a serem adotados, o que se encaixa perfeitamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de emergência com choque elétrico, exigindo ações imediatas para segurança e socorro.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o atendimento pré-hospitalar e o transporte de vítimas com trauma, focando em técnicas de imobilização, que são centrais em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação que necessita de ação imediata com risco iminente de morte, caracterizando uma emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.7,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com pico hipertensivo e sintomas que podem indicar uma condição aguda necessitando de avaliação imediata, mesmo que não seja uma emergência clássica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a avaliação neurológica (letra D do protocolo ABCDE) em atendimento inicial ao trauma, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o protocolo ABCDE, especificamente a letra C (Circulation) em um cenário de trauma, focando no controle de hemorragias e reposição volêmica, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o protocolo ABCDE no atendimento a traumas, focando na etapa A (vias aéreas), que é central em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de atendimento de emergência com um objeto cravado no abdome, que é um tema central de \"Urgências e Emergências\".",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um sinal de engasgo, que é uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "A Escala de Coma de Glasgow é uma ferramenta fundamental na avaliação de pacientes em estado de urgência/emergência neurológica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação clínica de emergência, sendo a parada cardiorrespiratória o exemplo mais claro.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Urgências e Emergências\",\"confidence\":0.9,\"rationale\":\"A Escala de Coma de Glasgow é utilizada na avaliação neurológica em situações de urgência e emergência.\"}"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o sinal universal de engasgo, que é um procedimento de emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "A Escala de Glasgow é utilizada na avaliação de pacientes em estado de urgência ou emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a síndrome compartimental, uma condição aguda e perigosa que se enquadra em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente que passou por um procedimento cirúrgico (colecistectomia), abordando a classificação da cirurgia em termos de potencial de contaminação, o que se encaixa diretamente na assistência perioperatória.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de parada cardiorrespiratória e as condutas iniciais de ressuscitação cardiopulmonar, que se enquadram diretamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda intoxicação/envenenamento, que é uma causa de urgência/emergência, especialmente em crianças.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Enfermagem em Centro Cirúrgico",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente o ambiente cirúrgico e suas áreas, o que se alinha diretamente com o subtópico 'Enfermagem em Centro Cirúrgico'.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de parada cardiorrespiratória e o início das manobras de reanimação cardiopulmonar, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma reação transfusional, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca no conhecimento anatômico para identificar órgãos em risco em trauma abdominal.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a sequência de atendimento em parada cardiorrespiratória, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de emergência (vítima inconsciente, sem respiração eficaz) que requer ação imediata, característica do subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Os sintomas descritos (tontura, fraqueza, sudorese intensa) em um paciente diabético são clássicos de hipoglicemia, uma emergência médica que requer intervenção imediata.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Constipação intestinal.\",\"confidence\":0.9,\"rationale\":\"O enunciado descreve sintomas clássicos de constipação intestinal, como ausência de evacuação por mais de três dias e di…"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre Parada Cárdiorrespiratória (PCR) e a Cadeia de Sobrevivência, que são temas centrais de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a convulsão e solicita cuidados específicos para vítimas em crise convulsiva, que é uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma manobra de desobstrução de vias aéreas, que é um procedimento de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um método de transporte de acidentado, que é uma técnica comum em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um tipo de choque relacionado à perda de volume intravascular, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de trauma em ambiente de trabalho, com foco na avaliação primária e nas primeiras medidas a serem tomadas em uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente vítima de acidente de trabalho com amputação, focando nas primeiras medidas a serem tomadas após a avaliação primária, o que se enquadra diretamente em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sinais e sintomas clássicos de choque, uma condição de urgência/emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o atendimento inicial a vítimas de trauma, incluindo o ABCDE do trauma e técnicas específicas como a tração mandibular, que são centrais para o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento a uma gestante em parada cardiorrespiratória, que é uma situação de emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as cadeias de sobrevivência para PCR, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento pré-hospitalar a uma vítima de traumatismo craniano, que se enquadra diretamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento a paciente em choque hipovolêmico em cenário pré-hospitalar, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento de urgência pré-hospitalar com suspeita de infarto agudo do miocárdio, focando nas ações apropriadas para o técnico de enfermagem nesse cenário.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-exames-laboratoriais-1779563631609-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro agudo de hipoglicemia com rebaixamento do sensório, caracterizando uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente da cadeia de sobrevivência em casos de parada cardiorrespiratória, um tema central em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro de dor torácica intensa associada à obstrução do fluxo sanguíneo no miocárdio, caracterizando um infarto agudo do miocárdio, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as recomendações da American Heart Association para Ressuscitação Cardiopulmonar (RCP) em adultos, que é o tema central do subtópico \"Urgências e Emergências\".",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o protocolo de classificação de risco, que é fundamental em situações de urgência e emergência para priorizar o atendimento.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de engasgo com obstrução grave das vias aéreas, que é uma emergência médica, e pergunta sobre a manobra a ser realizada.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "[tier vermelho] excluido do apply",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o manejo inicial da PCR e diretrizes de SBV, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o manejo medicamentoso de crises hipertensivas em serviços de urgência e emergência, focando em vias de administração e velocidade de redução da pressão arterial, temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento pré-hospitalar a uma vítima politraumatizada com múltiplas condições graves, exigindo priorização de condutas em um cenário de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a alta inadequada da UTI e suas consequências, focando em eventos adversos e deterioração clínica precoce, que se enquadram em emergências e complicações.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda sinais de deterioração clínica que precedem uma parada cardiorrespiratória, tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um tipo de choque e seus achados clínicos, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com trauma cranioencefálico grave apresentando piora neurológica aguda com sinais clássicos de hipertensão intracraniana, que se enquadra perfeitamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente vítima de trauma com fratura exposta e sangramento ativo, abordando o atendimento imediato e princípios de suporte ao trauma, que são centrais para o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o manejo de um paciente em choque séptico refratário, que é uma condição de urgência/emergência médica, focando na associação de drogas para reverter o quadro.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a identificação precoce de sinais de instabilidade clínica em pacientes críticos na UTI, visando prevenir a deterioração e eventos graves como falência orgânica e parada cardiorrespiratória, o que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro agudo de crise hipertensiva com sinais de acometimento de órgãos-alvo, característico de emergência hipertensiva, que se enquadra em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente crítico em UTI com acidose metabólica e hipercalemia grave, com risco de arritmias, e a conduta de emergência com insulina e glicose para manejo da hipercalemia, que é um tema central em urgências e emergências cardiovasculares e metabólicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com rebaixamento do nível de consciência e risco de broncoaspiração, que são situações de urgência/emergência que exigem intervenção imediata.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o metabolismo e a eliminação de um fármaco (midazolam) em infusão prolongada, o que se encaixa diretamente em farmacodinâmica e farmacocinética.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda doenças agudas do sistema digestório que podem levar à instabilidade clínica, exigindo reconhecimento precoce de sinais de gravidade e priorização de cuidados, características centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com obstrução intestinal e a necessidade de reconhecer sinais de agravamento clínico e risco iminente de complicações graves, o que se enquadra diretamente em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de atendimento pré-hospitalar em um acidente automobilístico, que se enquadra diretamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma fratura, que é uma lesão traumática, e suas complicações neurovasculares, temas centrais de urgências e emergências em traumatologia.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um sinal clássico de dor torácica (Sinal de Levine), frequentemente associado a condições cardíacas agudas como angina e infarto, que são emergências médicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "A avaliação pupilar é parte da avaliação neurológica, que é um componente da verificação de sinais vitais e do exame físico geral.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um sinal clínico associado a um trauma craniano, que se enquadra em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento de urgência/emergência com suspeita de intoxicação por opioide, abordando o manejo e a administração de medicamento específico para essa situação.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a classificação de risco em serviços de urgência e emergência, utilizando o Protocolo de Manchester.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma manobra de abertura de via aérea em paciente não reativo, que é um procedimento fundamental em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata de um atendimento de emergência com bradicardia, que é uma condição abordada em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a organização da rede de serviços em situações de emergências em saúde pública e a resposta a essas emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente inconsciente com sinais vitais estáveis, necessitando de avaliação primária em um contexto de urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a avaliação primária de um paciente em emergência clínica, que é o foco principal do subtópico Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma crise convulsiva em um adolescente, que é uma situação de urgência/emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com sintomas agudos de dor torácica, náuseas, sudorese e hipertensão, indicando uma situação de urgência/emergência cardiovascular.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com sintomas agudos e necessitando de intervenção imediata com administração de fluidos e medicamentos, caracterizando um cenário de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda os cuidados de enfermagem com sondas nasoentéricas, focando em sua instalação e manejo.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a conduta em parada cardiorrespiratória (PCR) e ressuscitação cardiopulmonar (RCP) em pediatria, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o Suporte Básico de Vida, Parada Cardiorrespiratória (PCR) e Ressuscitação Cardiopulmonar (RCP) em adultos, que são temas centrais de \"Urgências e Emergências\".",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a sequência de compressões e ventilações na Ressuscitação Cardiopulmonar (RCP), que é um procedimento central em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de epistaxe, que é uma emergência comum que requer conduta imediata.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as manobras de ressuscitação cardiorrespiratória (RCP), que são procedimentos centrais em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de parada cardiorrespiratória e as condutas de reanimação cardiopulmonar, que são centrais para o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda atendimento de urgência ortopédica, hemorragia e protocolo de trauma (XABCDE), que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o infarto agudo do miocárdio e as condutas de enfermagem em uma situação de emergência cardíaca.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o trauma como uma causa de morte e invalidez, com foco em suas estatísticas e particularidades em diferentes faixas etárias, o que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a atuação do técnico de enfermagem em situações de urgência e emergência, incluindo cuidados a pacientes graves e controle de sinais vitais.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a Parada Cardiorrespiratória (PCR) e a Ressuscitação Cardiopulmonar (RCP), que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de atendimento em serviço de urgência e emergência, com classificação de pacientes e análise de sinais vitais e queixas para priorização do atendimento.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um procedimento de avaliação de pulso em situações de emergência como choque e parada cardíaca.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-semiologia-em-enfermagem-1779563495719-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o abdome agudo, um quadro de urgência médica, e seus sinais clínicos, que são avaliados em contextos de emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata de uma condição clínica aguda que requer intervenção em situações de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a função da respiração e pergunta sobre um tipo específico de respiração (eupneica), o que se relaciona diretamente com as noções de fisiologia respiratória.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente vítima de trauma crânio encefálico com sinais sugestivos de fratura de base de crânio, que são emergências médicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a síndrome compartimental, uma condição aguda frequentemente associada a traumas e que requer intervenção rápida, caracterizando-se como uma urgência/emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata de uma picada de escorpião, que é uma emergência médica e requer ação rápida.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Urgências e Emergências\",\"confidence\":1.0,\"rationale\":\"O enunciado descreve uma convulsão e pede para identificar a conduta incorreta, que é um tema central de urgências e eme…"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de engasgo, que é uma emergência médica, e pergunta sobre a manobra para lidar com ela.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro de hemorragia digestiva alta com sinais de gravidade e a necessidade de transfusão sanguínea imediata, caracterizando uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-urgencias-e-emergencias-1780001297464-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata explicitamente da distinção entre urgência e emergência, com exemplos claros de cada uma.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata sobre primeiros socorros, que são condutas iniciais em situações de risco de morte, diretamente relacionadas a urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento a uma vítima inconsciente com suspeita de trauma na coluna cervical, o que é um cenário clássico de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente politraumatizado com sangramento e choque, que são situações de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de intoxicação aguda que requer conduta imediata de primeiros socorros, caracterizando uma urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve ações imediatas para um paciente com suspeita de Acidente Vascular Encefálico (AVE), que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com hematêmese e hipotensão, indicando uma situação de urgência/emergência que requer intervenção imediata.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a profilaxia pós-exposição (PEP) para HIV após um acidente ocupacional, que é um tema central em ISTs.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a assistência a vítima de TCE na unidade de emergência, focando em prioridades e intervenções imediatas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as diretrizes de Suporte Básico de Vida (SBV) e Ressuscitação Cardiopulmonar (RCP) em casos de parada cardiorrespiratória (PCR), que são temas centrais do subtópico Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a avaliação neurológica de um paciente politraumatizado, focando na sigla AVE (Avaliação da resposta ocular, verbal e motora), que é um componente crucial na avaliação de emergência de pacientes com trauma.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a gestão de risco de desastres, focando em prevenção e mitigação, o que se alinha com a vigilância epidemiológica e a preparação para eventos adversos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma emergência traumática e os cuidados iniciais, que se enquadram diretamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento de urgência pré-hospitalar e os níveis de suporte de vida (SBV e SAV), temas centrais de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve ações de enfermagem em situações de urgência e emergência, como punção venosa e obtenção de via aérea.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Feridas e Queimaduras",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve os cuidados imediatos em queimaduras térmicas, que é o foco principal do subtópico.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve manobras de Ressuscitação Cardiopulmonar (RCP), que é o tema central.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento a vítimas de politraumatismo, focando no exame primário e secundário, que são procedimentos centrais em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve condutas imediatas em caso de picadas de animais peçonhentos, que se enquadram em situações de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a conduta inicial em parada cardiorrespiratória e a sequência do Suporte Básico de Vida, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a classificação de risco em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma crise convulsiva, que é uma emergência médica, e aborda os procedimentos corretos durante a crise.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sintomas agudos de um possível infarto agudo do miocárdio, que se enquadra em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o Acidente Vascular Cerebral (AVC) e sua linha de cuidado, que é parte integrante da Rede de Atenção às Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um tipo de choque e pede para identificar os tipos de choque distributivo, que são emergências médicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o manejo de emergências em saúde pública, focando na execução de ações estratégicas e imediatas durante um evento adverso.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata sobre o Sistema de Comando de Operações (SCO) em Planos de Resposta a Emergências em Saúde Pública, o que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata da relação compressão-ventilação na RCP, um procedimento central em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve emergências hipertensivas e a conduta em caso de Infarto Agudo do Miocárdio (IAM) com necessidade de oxigênio, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente em estado grave com rebaixamento do nível de consciência e alterações hemodinâmicas e respiratórias, necessitando de condutas de urgência/emergência, como a administração de naloxona e suporte ventilatório, conforme as diretrizes da AHA.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a avaliação de um paciente com suspeita de Acidente Vascular Encefálico (AVE), que é uma condição de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as diretrizes de compressões torácicas em parada cardiorrespiratória (PCR), que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de parada cardiorrespiratória (PCR) intra-hospitalar e as ações de enfermagem nesse contexto.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata do Infarto Agudo do Miocárdio (IAM) e suas condutas iniciais, que são abordadas no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sinais de gravidade em Insuficiência Respiratória Aguda, que é uma condição de urgência/emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o Tromboembolismo Pulmonar (TEP) como causa de choque e parada cardiorrespiratória (PCR), discutindo seu tratamento e manejo em situações agudas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a avaliação inicial de vítimas em atendimento pré-hospitalar, focando em prioridades vitais como vias aéreas, respiração e circulação (ABC), que são centrais no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda técnicas de resgate e transporte de vítimas, focando na imobilização e uso de equipamentos em situações de urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda os primeiros socorros, que são cuidados imediatos em situações de urgência e emergência, com foco na preservação da vida e prevenção de agravamentos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a parada cardiorrespiratória e as manobras de reanimação, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\": \"Doenças Crônicas Não Transmissíveis (DCNT) e suas complicações\", \"confidence\": 0.8, \"rationale\": \"O enunciado aborda a hipoglicemia em um paciente com diabetes tipo 1, focand…"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma conduta imediata em caso de exposição a um agente infeccioso, o que se enquadra em medidas de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro de urgência/emergência (escorpionismo) e seu tratamento com soro antiofídico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda reações a picadas de animais (abelhas), que se enquadram em zoonoses.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata especificamente de um acidente com animal peçonhento (formiga), que se enquadra em zoonoses.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o escorpionismo, que é uma zoonose, abordando suas manifestações clínicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado trata especificamente de acidentes com serpentes, que são zoonoses.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda arritmias cardíacas, insuficiência cardíaca congestiva e choque, que são emergências médicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O escorpionismo é uma condição causada pela picada de escorpião, que é um animal peçonhento, e os sintomas descritos estão diretamente relacionados a essa intoxicação/envenenamento, que se enquadra em zoonoses.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a avaliação primária e o protocolo XABCDE no trauma, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento inicial a um trauma abdominal com evisceração, que é uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata da avaliação da gravidade de um trauma cranioencefálico utilizando a Escala de Coma de Glasgow, que é um procedimento comum em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de urgência hipertensiva, que se enquadra diretamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre a definição e classificação de situações de urgência, que é o tema central do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sinais e sintomas de hemorragia digestiva baixa, que é uma condição de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro de choque hipovolêmico, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o choque, uma condição clínica de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o escorpionismo, que é um tipo de acidente causado por animais peçonhentos (escorpiões), caracterizando-se como uma zoonose.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda acidentes com serpentes, que se enquadram em zoonoses e doenças parasitárias no contexto de doenças transmissíveis e não transmissíveis.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104038968-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o escorpionismo, que é uma zoonose.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um procedimento de reanimação cardiopulmonar após obtenção de via aérea avançada, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata da sequência de prioridades na avaliação primária de pacientes em situações de urgência/emergência, especificamente o protocolo XABCDE para controle de hemorragias graves.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata de condutas em obstrução de vias aéreas, que é uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um procedimento de atendimento pré-hospitalar em uma situação de emergência com objeto perfurante cravado.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma conduta imediata em uma emergência traumática com suspeita de lesão na coluna vertebral.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de atendimento pré-hospitalar (APH) a uma vítima em via pública, focando nas ações iniciais em uma situação de urgência até a chegada do suporte especializado, o que se alinha diretamente com o subtópico 'Urgências e Emergências'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda os primeiros socorros e condutas imediatas em situações de emergência, que são o cerne do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a atuação do Técnico de Enfermagem em situações de urgência e emergência na Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve os primeiros socorros em situações de urgência, focando em medidas iniciais para preservar a vida e evitar agravamento, o que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o Atendimento Pré-hospitalar (APH), que é um componente direto das urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a atuação da enfermagem em situações de risco iminente de vida e a participação do Técnico de Enfermagem nesse contexto, o que se alinha perfeitamente ao subtópico \"Urgências e Emergências\". As afirmativas abordam o monitoramento de sinais vitais, apoio à estabilização, comunicação de alterações e a limitação da atuação do técnico (não prescrição de condutas), todos temas pertinentes a esse cenário.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma picada de animal peçonhento (abelha), que se enquadra em zoonoses.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de parada cardiorrespiratória (PCR) em ambiente extra-hospitalar, com avaliação de inconsciência, ausência de respiração e pulso, e o uso de DEA, que são temas centrais de \"Urgências e Emergências\".",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de parada cardiorrespiratória e manobras de RCP, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca nos cuidados específicos para a administração da fenitoína, um medicamento, e a questão aborda as alternativas corretas sobre esse cuidado.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Urgências e Emergências\",\"confidence\":1.0,\"rationale\":\"O enunciado descreve um cenário de parada cardiorrespiratória e a conduta de Reanimação Cardiopulmonar (RCP), que são te…"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente da diferenciação entre os conceitos de urgência e emergência em saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na interpretação de sinais vitais para classificação de risco.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o funcionamento do Serviço de Atendimento Móvel de Urgência (SAMU) e suas atribuições, que se enquadram diretamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a classificação de ambulâncias para atendimento de urgências pré-hospitalares, o que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o manejo inicial de insuficiência cardíaca com edema agudo de pulmão, que é uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de parada cardiorrespiratória e RCP, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de um procedimento de emergência (PCR em gestantes) e menciona diretrizes de RCP.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve detalhadamente a técnica de rolamento em bloco para imobilização de coluna em pacientes com trauma, o que se encaixa perfeitamente no subtópico de mobilização e posicionamento.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro agudo de suspeita de AVC, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de parada cardiorrespiratória (PCR) e aborda os primeiros passos da cadeia de sobrevivência, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro agudo de dor torácica sugestivo de Infarto Agudo do Miocárdio (IAM) e o encaminhamento para serviço de emergência, caracterizando uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro de engasgamento (OVACE) e solicita a conduta imediata, que se enquadra perfeitamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro de parada cardiorrespiratória e a administração de naloxona, indicando uma situação de emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "A Escala de Coma de Glasgow avalia o estado neurológico, que está intrinsecamente ligado aos sinais vitais e à avaliação do paciente.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a Cadeia de Sobrevivência para Parada Cardiorrespiratória (PCR), que é um tema central de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a Parada Cardiorrespiratória (PCR) em bebês e crianças, que é um tema central do subtópico 'Urgências e Emergências'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006962671-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de atendimento a parada cardiorrespiratória extra-hospitalar, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de Obstrução Grave de Vias Aéreas por Corpo Estranho (OVACE) em uma criança, que é uma situação de emergência médica, e aborda as manobras de desobstrução.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-semiologia-em-enfermagem-1779563521756-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o reconhecimento de sinais e sintomas de traumatismo cranioencefálico, que é uma condição de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a parada cardiorrespiratória (PCR), que é um tema central em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre parada cardiorrespiratória (PCR) e protocolos de ressuscitação cardiopulmonar (RCP), que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sinais e sintomas de um trauma cranioencefálico, que é uma condição de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104056718-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro agudo de suspeita de síndrome compartimental, uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de emergência (choque elétrico) e pergunta sobre a primeira ação a ser tomada pelo socorrista, o que se encaixa perfeitamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as cadeias de sobrevivência em caso de Parada Cardiorrespiratória (PCR), que é um tema central em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a desfibrilação, um procedimento crucial em situações de emergência cardíaca como FV e TVSP.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata do tempo de resposta em situações de emergência (código amarelo), que é um tema central de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata da classificação de ambulâncias, que estão diretamente ligadas ao atendimento de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata da classificação de ambulâncias e a necessidade de médico, o que se enquadra diretamente em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o papel do TARM no atendimento de emergência e assistência pré-hospitalar, que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a comunicação em emergências e primeiros socorros, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento pré-hospitalar de trauma, focando em avaliação rápida, vias aéreas, choque e imobilização, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o Atendimento Pré-Hospitalar (APH) e o método de triagem Start, ambos diretamente relacionados a situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a Parada Cardiorrespiratória (PCR) e o protocolo de Suporte Básico de Vida (SBV), que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de acidente com vítima em estado grave, necessitando de atendimento de urgência e emergência, com foco nas primeiras ações de suporte básico de vida.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de emergência (OVACE) e a manobra correta a ser aplicada, que se enquadra diretamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de trauma com suspeita de Traumatismo Cranioencefálico (TCE), que se enquadra diretamente no subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[tier vermelho] excluido do apply",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com trauma de extremidades e aborda os cuidados iniciais e protocolos de Suporte Básico de Vida (SBV) para minimizar agravos, o que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de trauma com corpo estranho transfixado, exigindo condutas imediatas em situação de urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a Parada Cardiorrespiratória (PCR) e a necessidade de atendimento rápido e seguro em serviços de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "A Escala de Glasgow é utilizada para avaliar o nível de consciência em pacientes com trauma cranioencefálico ou outras condições neurológicas agudas, sendo um componente crucial na avaliação de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de emergência (vítima inconsciente e sem respiração) e a conduta inicial em RCP, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de trauma e primeiros socorros em um contexto de urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a técnica de rolamento em bloco para transporte de paciente com suspeita de lesão na coluna, que é um procedimento de mobilização e posicionamento.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata da Escala de Cincinnati, um instrumento de avaliação de casos suspeitos de AVC, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o choque, uma condição crítica de emergência médica, e pergunta sobre suas causas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado foca no registro de informações sobre um paciente com comorbidades crônicas (diabetes e hipertensão) e uma intercorrência aguda (hipoglicemia), mas o cerne da questão é o registro de dados no prontuário, o que se alinha melhor com o manejo de doenças crônicas e suas complicações.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento inicial a pacientes com dor torácica em serviços de urgência e emergência, focando no reconhecimento de sinais de gravidade e classificação de risco.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento inicial a uma vítima inconsciente, focando em Suporte Básico de Vida (SBV) e protocolos de primeiros respondentes, que são temas centrais de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563531989-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um caso de intoxicação aguda por organofosforado, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de urgência (obstrução de via aérea por corpo estranho) e a intervenção imediata necessária.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com desidratação grave e sinais vitais alterados, necessitando de conduta imediata, o que se enquadra em urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de um medicamento usado em suporte avançado de vida durante a reanimação cardiorrespiratória, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro clínico agudo com dor precordial, irradiação, náuseas, vômitos, sudorese e taquicardia, altamente sugestivo de Infarto Agudo do Miocárdio, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma condição aguda (hipoglicemia) e seus sinais/sintomas, que são relevantes em situações de urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de parada cardiorrespiratória com ritmo chocável, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata do manejo farmacológico da parada cardiorrespiratória (PCR), que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a crise epiléptica reativa, que é uma condição aguda e emergencial, com foco na investigação de causas reversíveis e manejo imediato.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o Acidente Vascular Cerebral (AVC), uma condição de emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a parada cardiorrespiratória (PCR) e a necessidade de reanimação, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de emergência e pergunta sobre a prioridade da equipe de enfermagem, que se alinha diretamente com o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado foca no manejo de insuficiência cardíaca descompensada, que é uma doença crônica não transmissível, e nas intervenções para sobrecarga de líquidos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma crise hipertensiva, que é uma condição aguda que requer intervenção imediata, caracterizando uma urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de engasgo e a ação correta de primeiros socorros, que se enquadra diretamente em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro agudo com dor intensa, febre e sinais clínicos sugestivos de uma condição que requer avaliação e intervenção rápida, característica de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de causas de Acidente Vascular Cerebral (AVC), uma condição de urgência/emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-vias-de-administracao-1778968646731-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente o algoritmo de Parada Cardiorrespiratória (PCR) e seus protocolos, que se enquadram perfeitamente em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o diagnóstico de meningite/meningoencefalite, que são infecções, e a punção lombar para análise do LCR é o exame diagnóstico central.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente da atuação em urgências e emergências, focando no protocolo XABCDE.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a atuação da enfermagem em parada cardiorrespiratória, um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o choque hipovolêmico, suas causas, manifestações e tratamento prioritário, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o uso do Desfibrilador Externo Automático (DEA) em situações de urgência e emergência, que é um tema central deste subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a atuação em urgências e emergências e o Protocolo de Manchester.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-semiologia-em-enfermagem-1779563537258-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sinais e sintomas de choque, que é uma condição de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento de emergência em pronto-socorro com suspeita de intoxicação por opioides, abordando o uso de um antagonista específico em um carrinho de parada.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda primeiros-socorros em acidentes com crianças, focando em situações de emergência como engasgo, afogamento e reanimação cardiopulmonar.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sintomas agudos (sudorese, vertigens, cefaleia, angina) que levam a um pronto-socorro, indicando uma situação de urgência/emergência, com o infarto agudo do miocárdio sendo a principal hipótese diagnóstica entre as alternativas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de cuidados pós-reanimação cardiopulmonar (PCR), que é uma situação de emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de ressuscitação cardiopulmonar (RCP) e parada cardiorrespiratória (PCR), que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "A avaliação pupilar em paciente acidentado é um procedimento de urgência/emergência para avaliar a gravidade neurológica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma condição clínica (anisocoria) associada a um traumatismo cranioencefálico, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve fraturas, que são lesões traumáticas frequentemente associadas a urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o AVC, uma condição de emergência neurológica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda primeiros socorros e a aplicação de calor/frio, que são procedimentos comuns em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a aferição de temperatura, pulso e pressão arterial, que são sinais vitais.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o suporte básico de vida pós-RCP, incluindo ventilação e oxigenação, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento de urgência/emergência com trauma por soterramento, caracterizando a síndrome do esmagamento.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a administração de oxigênio em uma situação de afogamento, focando na saturação de oxigênio.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de trauma com suspeita de lesão raquimedular e aborda uma técnica específica para abertura de vias aéreas em emergências, que é o Jaw Thrust.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente da classificação de risco em unidades de emergência, um tema central de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata da administração de adrenalina em parada cardiorrespiratória, um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a Síndrome do Desconforto Respiratório Agudo (SDRA), uma condição clínica grave que se enquadra em urgências e emergências médicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma lesão traumática aguda (subluxação do úmero) que requer atendimento de urgência/emergência e cuidados imediatos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve sinais clínicos de uma luxação aguda, que é uma condição de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma técnica específica de fixação de fraturas, que se enquadra em procedimentos gerais de enfermagem.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-urgencias-e-emergencias-1780001220945-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a identificação de parada cardíaca, um tema central em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as diretrizes de Ressuscitação Cardiopulmonar (RCP) e Suporte Básico de Vida (SBV), que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a Ressuscitação Cardiopulmonar (RCP), um procedimento central em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Sepse e Choque Séptico\",\"confidence\":1.0,\"rationale\":\"O enunciado descreve a definição de sepse, que é uma emergência médica e se encaixa perfeitamente no subtópico de Urgênci…"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve detalhadamente a Ressuscitação Cardiopulmonar (RCP) em um contexto de emergência hospitalar, focando nos procedimentos e na rapidez necessários para salvar vidas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diarreia e desidratação em um idoso, focando no desequilíbrio hidroeletrolítico e na necessidade de monitoramento e intervenção em uma unidade de pronto atendimento, o que se alinha com doenças agudas e suas complicações.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779563685104-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a avaliação do estado neurológico, com destaque para a Escala de Coma de Glasgow e a Escala de Cincinnati, ambas ferramentas cruciais em cenários de urgência e emergência neurológica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a manobra de Heimlich, que é um procedimento de primeiros socorros para desobstrução de vias aéreas, diretamente relacionado a situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de urgência/emergência com exposição a agente químico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma vítima de choque elétrico e pergunta sobre a conduta inicial correta, que se enquadra diretamente em situações de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um sinal sugestivo de choque hipovolêmico, que é uma condição de urgência/emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma crise hipertensiva, uma condição aguda que requer intervenção imediata e manejo de emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma complicação grave (embolia gasosa) que ocorre em um contexto clínico/cirúrgico, caracterizando uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "A síndrome compartimental é uma condição aguda que requer intervenção imediata, caracterizando-se por dor intensa e outros sintomas neurológicos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de engasgo com obstrução grave de vias aéreas, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com trauma de tórax e sintomas de pneumotórax, que é uma emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a avaliação do nível de consciência em um paciente com traumatismo craniano, que é um procedimento central em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a trombose venosa profunda (TVP) como uma complicação grave decorrente de cirurgia, focando em sua prevenção e sintomas, o que se alinha com o manejo de condições agudas e complicações em cenários de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de trauma com amputação, que é uma situação de urgência/emergência médica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "A alternativa B, que trata da utilização do DEA, é a que melhor representa o subtópico de Urgências e Emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve procedimentos de reanimação cardiopulmonar (RCP) em caso de parada cardiorrespiratória, que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um atendimento de primeiros socorros para epistaxe, que é uma situação de urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma situação de emergência com obstrução de via aérea e parada cardiorrespiratória em uma criança, demandando condutas imediatas de suporte avançado de vida.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro agudo de hipoglicemia em um paciente diabético, exigindo medidas de primeiros socorros e conduta imediata, caracterizando uma situação de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a Manobra de Heimlich em um bebê, que é um procedimento de primeiros socorros para desobstrução das vias aéreas, característico de situações de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma parada cardiorrespiratória e as medidas de primeiros socorros, que são o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente os procedimentos de ressuscitação cardiopulmonar (RCP) e o uso do desfibrilador externo automático (DEA), que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de atendimento pré-hospitalar a uma vítima de acidente com síncope, abordando a avaliação primária em urgência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o uso de equipamento para imobilização e transporte de vítima em situação de urgência/emergência, visando prevenir lesão medular.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata da avaliação primária de paciente com agravo clínico, que é um procedimento central em situações de urgência e emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de medidas de reanimação cardiorrespiratória básica em adultos, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a técnica correta para verificação da glicemia capilar, que é um sinal vital.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na monitorização de sinais vitais e oximetria de pulso como atribuição do técnico de enfermagem em atendimento pré-hospitalar.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve orientações para acidentes e intercorrências, como desmaio com ausência de pulso e convulsões, que são temas centrais de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cuidado para hemorragia digestiva alta, que é uma condição de urgência/emergência.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o atendimento pré-hospitalar a vítimas de acidentes e traumas, que é o foco principal do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o uso de um equipamento (KED) em um socorro pré-hospitalar após um acidente grave, o que se enquadra diretamente em urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o mnemônico X-ABCDE utilizado em atendimento de urgência e emergência para avaliação de vítimas de trauma.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve as recomendações para atendimento de parada cardiorrespiratória (PCR), que é um tema central de urgências e emergências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve cuidados imediatos para infarto agudo do miocárdio, que é uma emergência cardiológica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente em situação de urgência/emergência com intoxicação exógena e sinais vitais alterados, necessitando de manejo imediato.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro agudo de hipertensão gestacional com sintomas neurológicos e visuais, indicando uma emergência obstétrica.",
+      "applicable": false,
+      "source": "gemini"
+    }
+  ],
+  "generated_at": "2026-07-07T03:13:16.356Z"
+}

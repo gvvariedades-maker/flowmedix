@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "banca": "ADM&TEC",
+    "prova": "Tec Enf",
+    "orgao": "Pref São L Quitunde",
+    "ano": "2024",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_convulsao",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "SBV/SAMU — convulsão: proteger cabeça · não introduzir objetos · PLS após",
+      "exam_vs_current": "none",
+      "catalog_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "cluster": "Convulsão / crise epiléptica — conduta imediata"
+    },
+    "sources": [
+      {
+        "id": "urgencias-convulsao-ms-sbv",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/SAMU — convulsão e crise epiléptica",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "nao introduzir objetos na boca",
+          "nao segurar lingua",
+          "proteger cabeca afastar objetos",
+          "posicao lateral seguranca apos crise",
+          "cronometrar duracao convulsao"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A Epilepsia é uma alteração temporária e reversível do funcionamento do cérebro. Durante a crise epilética, as ações prioritárias no atendimento imediato a vítima incluem, assinale a alternativa CORRETA:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Proteger a cabeça da vítima para evitar traumatismo e abrir a boca e inserir um pano macio para não morder a língua.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Não tente introduzir objetos na boca da vítima durante a crise epiléptica.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Segure a vítima para impedir os movimentos involuntários para evitar que se machuque.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Mantenha a vítima deitada de costas, mas com a cabeça voltada para cima, evitando que ela se sufoque.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Crise epiléptica — 1º socorros",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Enquadramento",
+          "detail": "Crise epiléptica — ações prioritárias no atendimento imediato; assinalar a conduta correta.",
+          "icon": "Target"
+        },
+        {
+          "label": "Proteger",
+          "detail": "Afastar objetos perigosos e amortecer a cabeça — sem imobilizar à força.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Não fazer",
+          "detail": "Não introduzir objetos na boca · não segurar a língua · não prender movimentos.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Depois da crise",
+          "detail": "Cronometrar duração · posição lateral de segurança se inconsciente com respiração.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "“Pano na boca” parece cuidado — mas qualquer objeto na via aérea agrava.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Proteger sim · objeto na boca não"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Convulsão — decore",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "CRISE EPILÉPTICA — SBV",
+      "rows": [
+        {
+          "label": "Fazer",
+          "value": "Proteger cabeça · afastar objetos · cronometrar",
+          "badge": "ok"
+        },
+        {
+          "label": "Não fazer",
+          "value": "Objeto na boca · segurar língua · imobilizar à força",
+          "badge": "hot"
+        },
+        {
+          "label": "Após cessar",
+          "value": "Posição lateral de segurança se rebaixamento",
+          "badge": "warn"
+        },
+        {
+          "label": "Acionar 192",
+          "value": "Crise prolongada · recorrente · primeira crise · gestante",
+          "badge": "warn"
+        },
+        {
+          "label": "Mito",
+          "value": "“Engolir língua” — não introduza pano nem dedo",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Tempo + proteção — sem objeto oral"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato: crise epiléptica — assinalar a conduta correta no atendimento imediato.",
+        "Eixo segurança: proteger cabeça e ambiente — sem restringir movimentos involuntários.",
+        "Eliminar conduta que introduz objeto na boca — pano ou dedo lesionam via aérea.",
+        "Eliminar imobilização forçada — segurar a vítima não impede lesão e pode fraturar.",
+        "Eliminar posicionamento confuso em decúbito dorsal como única regra.",
+        "Resta orientação de não introduzir objetos durante a crise.",
+        "Marcar B.",
+        "Fixação: em convulsão, a banca premia o que NÃO fazer na boca."
+      ],
+      "footer_rule": "Proteger cabeça ≠ objeto na boca"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — CRISE EPILÉPTICA",
+      "items": [
+        {
+          "label": "Letra A — pano na boca",
+          "detail": "Mistura proteção da cabeça (correta) com inserir pano para “não morder língua”.",
+          "correct": "Proteger a cabeça é certo, mas introduzir pano na boca é proibido — pode obstruir via aérea."
+        },
+        {
+          "label": "Letra C — segurar a vítima",
+          "detail": "Parece evitar trauma durante movimentos bruscos.",
+          "correct": "Não imobilizar à força — afastar objetos e proteger a cabeça; prender aumenta risco de fratura."
+        },
+        {
+          "label": "Letra D — decúbito dorsal rígido",
+          "detail": "Confunde posição pós-crise com manejo durante a crise.",
+          "correct": "Durante a crise, proteger e não obstruir; após cessar, PLS se inconsciente com respiração."
+        },
+        {
+          "label": "Transferência — status epiléptico",
+          "detail": "Em outra questão, a banca cobra quando acionar o SAMU.",
+          "correct": "Crise prolongada ou recorrente exige 192 — mas objeto na boca nunca é conduta."
+        }
+      ],
+      "footer_rule": "B = não introduzir objetos na boca"
+    }
+  ]
+}

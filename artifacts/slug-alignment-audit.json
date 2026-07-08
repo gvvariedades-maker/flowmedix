@@ -1,44 +1,70 @@
 {
-  "generated_at": "2026-07-04T08:40:38.858Z",
+  "generated_at": "2026-07-08T11:51:13.198Z",
   "strict": true,
-  "scanned": 7,
-  "passed": 7,
+  "scanned": 8,
+  "passed": 8,
   "failed": 0,
   "results": [
     {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "ok": true,
+      "issues": [
+        {
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn",
+          "path": "reverse_study_slides"
+        }
+      ]
+    },
+    {
+      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "ok": true,
+      "issues": [
+        {
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn",
+          "path": "reverse_study_slides"
+        }
+      ]
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
       "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
-      "ok": true,
-      "issues": []
+      "issues": [
+        {
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn",
+          "path": "reverse_study_slides"
+        }
+      ]
     }
   ]
 }

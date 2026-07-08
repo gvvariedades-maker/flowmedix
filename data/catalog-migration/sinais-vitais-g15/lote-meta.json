@@ -1,0 +1,35 @@
+{
+  "lote": "sinais-vitais-g15",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "icece-enfermagem-verificacao-de-sinais-vitais-1778969729218-3",
+  "handcrafted_at": "2026-07-05",
+  "slugs": 8,
+  "prior_lotes": [
+    "sinais-vitais-g01",
+    "sinais-vitais-g02",
+    "sinais-vitais-g03",
+    "sinais-vitais-g04",
+    "sinais-vitais-g05",
+    "sinais-vitais-g06",
+    "sinais-vitais-g07",
+    "sinais-vitais-g08",
+    "sinais-vitais-g09",
+    "sinais-vitais-g10",
+    "sinais-vitais-g11",
+    "sinais-vitais-g12",
+    "sinais-vitais-g13",
+    "sinais-vitais-g14"
+  ],
+  "notes": "P0 vitals_pa_tecnica posições 113–120 no cluster PA (196 slugs) — ICECE · IDECAN. Posição 112 (ibfc-4137078-5) livre — reservada para repair ou g15b.",
+  "applied": false,
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g15.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

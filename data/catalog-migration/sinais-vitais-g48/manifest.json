@@ -1,0 +1,14 @@
+{
+  "lote": "sinais-vitais-g48",
+  "exported_at": "2026-07-07T00:26:57.255Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g48/manifest.json"
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+    "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344111854-0",
+    "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344224014-0"
+  ]
+}

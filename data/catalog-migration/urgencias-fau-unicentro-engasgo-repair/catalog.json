@@ -1,0 +1,18 @@
+{
+  "exported_at": "2026-07-07T22:15:00.000Z",
+  "lote": "urgencias-fau-unicentro-engasgo-repair",
+  "total": 1,
+  "entries": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "Fau Unicentro",
+      "golden_file": "examples/questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal.json",
+      "pedagogical_branch": "urgencias_engasgo",
+      "family": "protocolo",
+      "gabarito": "E",
+      "applied_at": "2026-07-07T22:15:00.000Z"
+    }
+  ]
+}

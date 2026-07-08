@@ -1,0 +1,56 @@
+{
+  "exported_at": "2026-07-06T23:01:41.615Z",
+  "lote": "sinais-vitais-g30",
+  "total": 7,
+  "entries": [
+    {
+      "modulo_slug": "omni-enfermagem-verificacao-de-sinais-vitais-1779344237445-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 2662
+    },
+    {
+      "modulo_slug": "omni-geral-verificacao-de-sinais-vitais-1779344205200-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 2643
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1779344182672-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2617
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2232
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4060
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-verificacao-de-sinais-vitais-1779344196733-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2633
+    },
+    {
+      "modulo_slug": "univida-enfermagem-verificacao-de-sinais-vitais-1779344097180-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 2531
+    }
+  ]
+}

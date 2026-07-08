@@ -1,0 +1,28 @@
+{
+  "exported_at": "2026-07-06T23:32:08.583Z",
+  "lote": "sinais-vitais-g35",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "nao-informado-geral-verificacao-de-sinais-vitais-1779344089179-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "NÃO INFORMADO",
+      "avant_codigo": 2519
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1779343883917-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2453
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-verificacao-de-sinais-vitais-1779344205200-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2644
+    }
+  ]
+}

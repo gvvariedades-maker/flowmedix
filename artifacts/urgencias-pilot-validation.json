@@ -1,0 +1,358 @@
+{
+  "validated_at": "2026-07-08T04:28:18.858Z",
+  "baseUrl": "http://localhost:3001",
+  "passed": 7,
+  "total": 7,
+  "anchors": [
+    {
+      "id": "rcp_sbv",
+      "label": "RCP adulto AHA 2020",
+      "file": "questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "branch": "urgencias_rcp_sbv",
+      "playerUrl": "http://localhost:3001/estudar/adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "gabarito": "D",
+      "slides": [
+        {
+          "type": "concept_map",
+          "expected": "urgencias-survival-chain-deck",
+          "actual": "urgencias-survival-chain-deck",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "golden_rule",
+          "expected": "urgencias-rcp-params-board",
+          "actual": "urgencias-rcp-params-board",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "logic_flow",
+          "expected": "urgencias-rcp-tap-flow",
+          "actual": "urgencias-rcp-tap-flow",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "tap",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "danger_zone",
+          "expected": "urgencias-rcp-trap-arena",
+          "actual": "urgencias-rcp-trap-arena",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "tap"
+        }
+      ],
+      "footerOk": true,
+      "passed": true,
+      "httpStatus": 200
+    },
+    {
+      "id": "pediatric",
+      "label": "RCP pediátrica 15:2",
+      "file": "questao-premium-access-urgencias-rcp-pediatrica-15-2.json",
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "branch": "urgencias_rcp_pediatrico",
+      "playerUrl": "http://localhost:3001/estudar/instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "gabarito": "D",
+      "slides": [
+        {
+          "type": "concept_map",
+          "expected": "urgencias-pediatric-rcp-deck",
+          "actual": "urgencias-pediatric-rcp-deck",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "golden_rule",
+          "expected": "urgencias-pediatric-params-board",
+          "actual": "urgencias-pediatric-params-board",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "logic_flow",
+          "expected": "urgencias-pediatric-tap-flow",
+          "actual": "urgencias-pediatric-tap-flow",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "tap",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "danger_zone",
+          "expected": "urgencias-pediatric-trap-arena",
+          "actual": "urgencias-pediatric-trap-arena",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "tap"
+        }
+      ],
+      "footerOk": true,
+      "passed": true,
+      "httpStatus": 200
+    },
+    {
+      "id": "avc",
+      "label": "AVC Cincinnati",
+      "file": "questao-premium-amauc-urgencias-cincinnati-avc.json",
+      "slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "branch": "urgencias_avc_iam",
+      "playerUrl": "http://localhost:3001/estudar/amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "gabarito": "A",
+      "slides": [
+        {
+          "type": "concept_map",
+          "expected": "urgencias-stroke-signs-deck",
+          "actual": "urgencias-stroke-signs-deck",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "golden_rule",
+          "expected": "urgencias-cincinnati-board",
+          "actual": "urgencias-cincinnati-board",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "logic_flow",
+          "expected": "urgencias-stroke-elimination-tap",
+          "actual": "urgencias-stroke-elimination-tap",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "tap",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "danger_zone",
+          "expected": "urgencias-stroke-trap-arena",
+          "actual": "urgencias-stroke-trap-arena",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "tap"
+        }
+      ],
+      "footerOk": true,
+      "passed": true,
+      "httpStatus": 200
+    },
+    {
+      "id": "trauma",
+      "label": "Trauma XABCDE",
+      "file": "questao-premium-ameosc-urgencias-trauma-queimadura.json",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "branch": "urgencias_xabcde_trauma",
+      "playerUrl": "http://localhost:3001/estudar/ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "gabarito": "C",
+      "slides": [
+        {
+          "type": "concept_map",
+          "expected": "urgencias-xabcde-rail",
+          "actual": "urgencias-xabcde-rail",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "logic_flow",
+          "expected": "urgencias-xabcde-tap-flow",
+          "actual": "urgencias-xabcde-tap-flow",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "tap",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "golden_rule",
+          "expected": "urgencias-trauma-reference-board",
+          "actual": "urgencias-trauma-reference-board",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "danger_zone",
+          "expected": "urgencias-trauma-trap-arena",
+          "actual": "urgencias-trauma-trap-arena",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "tap"
+        }
+      ],
+      "footerOk": true,
+      "passed": true,
+      "httpStatus": 200
+    },
+    {
+      "id": "choque",
+      "label": "Choque elétrico",
+      "file": "questao-premium-admtec-urgencias-choque-eletrico.json",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "branch": "urgencias_choque",
+      "playerUrl": "http://localhost:3001/estudar/adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "gabarito": "D",
+      "slides": [
+        {
+          "type": "concept_map",
+          "expected": "urgencias-shock-types-deck",
+          "actual": "urgencias-shock-types-deck",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "logic_flow",
+          "expected": "urgencias-shock-tap-flow",
+          "actual": "urgencias-shock-tap-flow",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "tap",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "golden_rule",
+          "expected": "urgencias-shock-reference-board",
+          "actual": "urgencias-shock-reference-board",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "danger_zone",
+          "expected": "urgencias-shock-trap-arena",
+          "actual": "urgencias-shock-trap-arena",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "tap"
+        }
+      ],
+      "footerOk": true,
+      "passed": true,
+      "httpStatus": 200
+    },
+    {
+      "id": "engasgo",
+      "label": "Engasgo sinal universal",
+      "file": "questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal.json",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "branch": "urgencias_engasgo",
+      "playerUrl": "http://localhost:3001/estudar/fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "gabarito": "E",
+      "slides": [
+        {
+          "type": "concept_map",
+          "expected": "urgencias-choking-signal-deck",
+          "actual": "urgencias-choking-signal-deck",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "golden_rule",
+          "expected": "urgencias-heimlich-board",
+          "actual": "urgencias-heimlich-board",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "logic_flow",
+          "expected": "urgencias-choking-tap-flow",
+          "actual": "urgencias-choking-tap-flow",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "tap",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "danger_zone",
+          "expected": "urgencias-choking-trap-arena",
+          "actual": "urgencias-choking-trap-arena",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "tap"
+        }
+      ],
+      "footerOk": true,
+      "passed": true,
+      "httpStatus": 200
+    },
+    {
+      "id": "manchester",
+      "label": "Manchester triagem",
+      "file": "questao-premium-ameosc-urgencias-triagem-etiquetas.json",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "branch": "urgencias_manchester_triagem",
+      "playerUrl": "http://localhost:3001/estudar/ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "gabarito": "A",
+      "slides": [
+        {
+          "type": "concept_map",
+          "expected": "urgencias-manchester-spectrum",
+          "actual": "urgencias-manchester-spectrum",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "golden_rule",
+          "expected": "urgencias-manchester-board",
+          "actual": "urgencias-manchester-board",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "logic_flow",
+          "expected": "cards",
+          "actual": "cards",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "tap",
+          "dangerRevealMode": "auto"
+        },
+        {
+          "type": "danger_zone",
+          "expected": "urgencias-manchester-trap",
+          "actual": "urgencias-manchester-trap",
+          "ok": true,
+          "moldFallback": false,
+          "revealMode": "auto",
+          "dangerRevealMode": "tap"
+        }
+      ],
+      "footerOk": true,
+      "passed": true,
+      "httpStatus": 200
+    }
+  ]
+}

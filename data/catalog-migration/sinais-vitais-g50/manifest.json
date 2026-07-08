@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "lote": "sinais-vitais-g50",
+  "subtopico": "Verificação de Sinais Vitais",
+  "phase": "catalog_closure",
+  "exported_at": "2026-07-07T00:45:00.000Z",
+  "source": "handcraft-registry",
+  "slugs": []
+}

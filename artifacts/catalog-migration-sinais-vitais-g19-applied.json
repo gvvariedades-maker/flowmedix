@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:49:18.701Z",
+  "lote": "sinais-vitais-g19",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-1",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-2",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-0",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-1",
+    "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-5",
+    "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-6",
+    "instituto-verbena-enfermagem-verificacao-de-sinais-vitais-1779344178184-3",
+    "intec-enfermagem-verificacao-de-sinais-vitais-1779344105099-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-verificacao-de-sinais-vitais-1779344178184-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "intec-enfermagem-verificacao-de-sinais-vitais-1779344105099-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-07T15:20:00.000Z",
+  "bucket": "Urgências e Emergências",
+  "review": "tier vermelho — DCNT legado rejeitado; destinos canônicos dos 41",
+  "decisions": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-6",
+      "from": "Urgências e Emergências",
+      "to": "Atenção Básica / Saúde da Família",
+      "rationale": "Visita domiciliar ESF + diabetes tipo 2 + educação em DCNT — não é urgência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-4",
+      "from": "Urgências e Emergências",
+      "to": "Promoção à Saúde e Prevenção de Agravos",
+      "rationale": "HAS como problema de saúde pública e fator de risco cardiovascular — prevenção, não urgência."
+    }
+  ]
+}

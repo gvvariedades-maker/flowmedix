@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-08",
+  "subtopico": "Urgências e Emergências",
+  "description": "Erros reproduzíveis por ramo (ROI handcraft) — nomear no concept_map e espelhar no danger_zone.",
+  "grammar_slots": {
+    "concept_map": "Enquadramento da prova + núcleos do protocolo + pegadinha-âncora nomeando erro ROI (sem letra gabarito)",
+    "golden_rule": "Decore normativo — rows RCP/XABCDE/triagem/anafilaxia (sem V/F nem gabarito)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; eliminar distratores ou julgar I–IV/asserções",
+    "danger_zone": "Erro reproduzível × correção específica por letra (compare semântico)",
+    "content_review": "guideline_snapshot MS/SAMU tier A + exam_vs_current (none ou divergência prova × guideline)"
+  },
+  "v3_mental": {
+    "flag": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "roi_errors": "reproducible_errors[].id — inferir do enunciado e nomear no concept_map",
+    "cluster_roi": "reproducible_errors[].cluster_roi",
+    "codes": [
+      "urgencias_concept_repro_error",
+      "urgencias_concept_generic_sbv",
+      "urgencias_golden_vf_judgment",
+      "urgencias_golden_gabarito_row",
+      "urgencias_logic_reveal_tap",
+      "urgencias_logic_elimination",
+      "urgencias_danger_letter_binding",
+      "urgencias_danger_mirror",
+      "urgencias_guideline_snapshot",
+      "urgencias_exam_vs_current",
+      "urgencias_exceto_semantic",
+      "urgencias_topic_drift"
+    ]
+  },
+  "reproducible_errors": [
+    {
+      "id": "rcp_pulso_cada_ciclo",
+      "label": "Checar pulso a cada ciclo 30:2 (correto: ~2 min / troca socorrista)",
+      "cluster_roi": "rcp",
+      "clusters": ["RCP / SBV adulto (V/F ou protocolo)"],
+      "concept_map_hint": "Pegadinha pulso — não interromper compressões a cada ciclo",
+      "danger_zone_hint": "Letra que valida pulso após cada 30 compressões",
+      "anchors": ["rcp_aha2020_mcq_30_2", "rcp_vf_adulto_15_2", "vf_sbv_cpcon"]
+    },
+    {
+      "id": "rcp_15_2_adulto",
+      "label": "Usar 15:2 em adulto (correto: 30:2 adulto; 15:2 pediátrico)",
+      "cluster_roi": "rcp",
+      "clusters": ["RCP / SBV adulto (V/F ou protocolo)", "RCP pediátrica / lactente"],
+      "concept_map_hint": "Proporção ventilação — adulto 30:2 × pediátrico 15:2",
+      "danger_zone_hint": "Sequência V/F que aceita 15:2 no adulto",
+      "anchors": ["rcp_vf_adulto_15_2", "rcp_pediatrica_15_2_terco"]
+    },
+    {
+      "id": "rcp_profundidade_frequencia",
+      "label": "Trocar profundidade 5–6 cm × frequência 100–120/min",
+      "cluster_roi": "rcp",
+      "clusters": ["RCP / SBV adulto (V/F ou protocolo)"],
+      "concept_map_hint": "Painel AHA — dois números que a banca permuta",
+      "danger_zone_hint": "MCQ que inverte 80–100 ou 4 cm com valores corretos",
+      "anchors": ["rcp_aha2020_mcq_30_2"]
+    },
+    {
+      "id": "exceto_frase_coringa",
+      "label": "EXCETO com mesma justificativa em todas as letras",
+      "cluster_roi": "exceto",
+      "clusters": ["EXCETO / INCORRETA — conduta"],
+      "concept_map_hint": "Cada distrator = conduta correta; só gabarito = exceção",
+      "danger_zone_hint": "danger_zone.items[].correct repetido ou copiado do gabarito",
+      "anchors": ["fratura_exposta_imobilizacao"]
+    },
+    {
+      "id": "avc_glasgow_iam",
+      "label": "Confundir Cincinnati/FAST com Glasgow, IAM ou tríade meníngea",
+      "cluster_roi": "avc",
+      "clusters": ["AVC / IAM — reconhecimento"],
+      "concept_map_hint": "Face · braço · fala — não SSVV nem cefaleia+vômito isolados",
+      "danger_zone_hint": "Alternativa com escala de coma ou dor torácica",
+      "anchors": ["avc_cincinnati_cpss"]
+    },
+    {
+      "id": "trauma_torniquete_pescoco",
+      "label": "Torniquete no pescoço ou reposicionar fratura à força",
+      "cluster_roi": "trauma",
+      "clusters": ["XABCDE / trauma e hemorragia"],
+      "concept_map_hint": "Hemorragia membro × imobilizar sem forçar",
+      "danger_zone_hint": "Conduta que agrava no local ou usa torniquete inadequado",
+      "anchors": ["trauma_queimadura_xabcde", "trauma_imobilizacao_vf"]
+    },
+    {
+      "id": "queimadura_pasta_caseira",
+      "label": "Pasta de dente/manteiga/gelo na queimadura",
+      "cluster_roi": "queimadura",
+      "clusters": ["Queimadura — primeiro socorro", "RCP / SBV adulto (V/F ou protocolo)"],
+      "concept_map_hint": "Resfriar com água corrente — caseiro = F",
+      "danger_zone_hint": "Item V/F ou alternativa que valida substância caseira",
+      "anchors": ["queimadura_vf_primeiros_socorros", "trauma_queimadura_xabcde"]
+    },
+    {
+      "id": "choque_eletrico_tocar",
+      "label": "Tocar vítima antes de interromper corrente (choque elétrico)",
+      "cluster_roi": "choque",
+      "clusters": ["Choque / hipoperfusão"],
+      "concept_map_hint": "Segurança da cena — desenergizar antes do contato",
+      "danger_zone_hint": "1ª conduta que pula isolamento da fonte",
+      "anchors": ["choque_eletrico_primeira_conduta"]
+    },
+    {
+      "id": "anafilaxia_iv_primeira",
+      "label": "Epinefrina IV de rotina na anafilaxia estável",
+      "cluster_roi": "anafilaxia",
+      "clusters": ["Anafilaxia / epinefrina"],
+      "concept_map_hint": "IM coxa imediata — IV só extremo",
+      "danger_zone_hint": "Asserção ou alternativa que posterga IM ou prefere IV",
+      "anchors": ["anafilaxia_epinefrina_im"]
+    },
+    {
+      "id": "convulsao_boca_objeto",
+      "label": "Introduzir objeto/pano na boca na convulsão",
+      "cluster_roi": "convulsao",
+      "clusters": ["Convulsão / crise epiléptica"],
+      "concept_map_hint": "Proteger cabeça — não imobilizar — não pano na boca",
+      "danger_zone_hint": "Conduta que força abertura de mandíbula",
+      "anchors": ["convulsao_crise_epileptica"]
+    },
+    {
+      "id": "engasgo_heimlich_inconsciente",
+      "label": "Heimlich em inconsciente ou confundir sinal universal",
+      "cluster_roi": "engasgo",
+      "clusters": ["Engasgo / obstrução de via aérea"],
+      "concept_map_hint": "Mãos ao pescoço = pedir ajuda; manobra conforme consciência",
+      "danger_zone_hint": "Heimlich em vítima inconsciente sem RCP",
+      "anchors": ["engasgo_sinal_universal"]
+    },
+    {
+      "id": "manchester_azul_instavel",
+      "label": "Inverter azul (não urgente) com vermelho (emergência)",
+      "cluster_roi": "triagem",
+      "clusters": ["Manchester / triagem de risco"],
+      "concept_map_hint": "Vermelho = risco imediato de morte",
+      "danger_zone_hint": "Etiqueta azul para paciente instável",
+      "anchors": ["triagem_etiquetas_multiplas"]
+    },
+    {
+      "id": "vf_protocolo_inverter_itens",
+      "label": "Inverter julgamento de itens I–IV antes de montar sequência",
+      "cluster_roi": "vf",
+      "clusters": ["V/F — protocolos I/II/III"],
+      "concept_map_hint": "Julgar cada item V/F antes de cruzar com A–D",
+      "danger_zone_hint": "Gabarito combinatório sem passo item a item",
+      "anchors": ["vf_protocolo_imobilizacao_i_iv", "vf_protocolo_rcp_sequencia"]
+    },
+    {
+      "id": "topic_drift_ipcs",
+      "label": "Vazar vocabulário IPCS/CVC/bundle sem âncora no enunciado",
+      "cluster_roi": "drift",
+      "clusters": ["Default — sem âncora temática", "Urgências — conceito geral"],
+      "concept_map_hint": "Gate detectSlideTopicDrift — só termos do caso",
+      "danger_zone_hint": "Slides com barreira estéril máxima em trauma/RCP puro",
+      "anchors": []
+    }
+  ],
+  "audit_gates": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "always_error_codes": [
+      "urgencias_pegadinha_anchor",
+      "urgencias_concept_gabarito_spoiler",
+      "urgencias_danger_mirror",
+      "urgencias_exceto_semantic",
+      "urgencias_exceto_coringa"
+    ],
+    "strict_v2_codes": [
+      "urgencias_golden_rows",
+      "urgencias_logic_gabarito"
+    ],
+    "strict_v3_codes": [
+      "urgencias_concept_repro_error",
+      "urgencias_concept_generic_sbv",
+      "urgencias_golden_vf_judgment",
+      "urgencias_golden_gabarito_row",
+      "urgencias_logic_reveal_tap",
+      "urgencias_logic_elimination",
+      "urgencias_danger_letter_binding",
+      "urgencias_guideline_snapshot",
+      "urgencias_exam_vs_current",
+      "urgencias_topic_drift"
+    ],
+    "codes": [
+      "urgencias_pegadinha_anchor",
+      "urgencias_concept_gabarito_spoiler",
+      "urgencias_danger_mirror",
+      "urgencias_exceto_semantic",
+      "urgencias_exceto_coringa",
+      "urgencias_golden_rows",
+      "urgencias_logic_gabarito",
+      "urgencias_concept_repro_error",
+      "urgencias_concept_generic_sbv",
+      "urgencias_golden_vf_judgment",
+      "urgencias_golden_gabarito_row",
+      "urgencias_logic_reveal_tap",
+      "urgencias_logic_elimination",
+      "urgencias_danger_letter_binding",
+      "urgencias_guideline_snapshot",
+      "urgencias_exam_vs_current",
+      "urgencias_topic_drift"
+    ]
+  }
+}

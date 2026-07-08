@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:42:55.347Z",
+  "lote": "sinais-vitais-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-4",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-6",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-6",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

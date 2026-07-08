@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g34",
+  "exported_at": "2026-07-06T23:28:40.631Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g34/manifest.json"
+  },
+  "slugs": [
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-6",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343897104-7",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-0",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-6",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-7",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-8",
+    "integri-brasil-enfermagem-verificacao-de-sinais-vitais-1779344189558-5",
+    "ivin-enfermagem-verificacao-de-sinais-vitais-1779344105099-7"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-07-07T00:55:14.935Z",
+  "lote": "sinais-vitais-g35",
+  "mode": "apply",
+  "total_files": 3,
+  "ok": 3,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "nao-informado-geral-verificacao-de-sinais-vitais-1779344089179-0",
+    "selecon-enfermagem-verificacao-de-sinais-vitais-1779343883917-0",
+    "unifil-enfermagem-verificacao-de-sinais-vitais-1779344205200-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "nao-informado-geral-verificacao-de-sinais-vitais-1779344089179-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1779343883917-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-verificacao-de-sinais-vitais-1779344205200-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

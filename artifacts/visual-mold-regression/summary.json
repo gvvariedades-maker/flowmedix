@@ -1,11 +1,16 @@
 {
-  "generated_at": "2026-07-04T19:20:00.000Z",
-  "pacote_prefix": "respiratorio-cronico",
+  "generated_at": "2026-07-07T02:58:42.159Z",
+  "pacote_prefix": "sinais-vitais",
   "pass": true,
-  "detail": "L3 Respiratório — 3 branches ativos (respiratorio_dpoc_oxigenio + respiratorio_tecnica_inalador + respiratorio_vf_asma_dpoc); player /dev/slide-mold-review",
+  "detail": "Playwright L3 SV — 8 branches (desktop + mobile-375 + DoD vitals_pa_tecnica); PNGs em artifacts/visual-mold-regression/",
   "branches": [
-    "respiratorio_dpoc_oxigenio",
-    "respiratorio_tecnica_inalador",
-    "respiratorio_vf_asma_dpoc"
+    "vitals_pa_tecnica",
+    "vitals_fc_faixas",
+    "vitals_interpretacao",
+    "vitals_vf_faixas",
+    "vitals_exceto_tecnica",
+    "vitals_temperatura",
+    "vitals_fr_faixas",
+    "vitals_generico"
   ]
 }

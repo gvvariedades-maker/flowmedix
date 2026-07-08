@@ -82,13 +82,21 @@ export function lintVitalsGoldenContent(payload: unknown): GoldenContentLintIssu
   }
 
   const typedRows = rows as GoldenRow[];
-  const hasGabarito = typedRows.some(isGabaritoRow);
-  if (!hasGabarito) {
+  const slides = slidesOf(q);
+  const hasGabaritoInGolden = typedRows.some(isGabaritoRow);
+  const logic = findSlide(slides, 'logic_flow');
+  const logicBlob = Array.isArray(logic?.steps)
+    ? (logic!.steps as unknown[]).map(String).join(' ')
+    : '';
+  const hasGabaritoInLogic = /\bletra\s+[a-e]\b|marcar\s+[a-e]\b|marcar\s+certo|marcar\s+errado|gabarito/i.test(
+    logicBlob,
+  );
+  if (!hasGabaritoInGolden && !hasGabaritoInLogic) {
     issues.push({
       code: 'sv_golden_gabarito',
       message:
-        'Sinais Vitais golden-v1: golden_rule.rows deve incluir linha de gabarito (label Gabarito/Conclusão ou value com letra/certificado)',
-      path: 'reverse_study_slides.golden_rule.rows',
+        'Sinais Vitais golden-v1: gabarito no logic_flow (v3) ou linha Conclusão/Gabarito no golden_rule (legado) — um dos dois é obrigatório.',
+      path: 'reverse_study_slides.logic_flow.steps',
     });
   }
 

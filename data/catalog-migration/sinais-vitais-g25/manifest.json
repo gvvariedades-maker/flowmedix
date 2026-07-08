@@ -1,0 +1,14 @@
+{
+  "lote": "sinais-vitais-g25",
+  "exported_at": "2026-07-06T20:29:13.204Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g25/manifest.json"
+  },
+  "slugs": [
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344127707-2",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344158323-0",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344158323-1",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344196733-6"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:49:39.772Z",
+  "lote": "sinais-vitais-g20",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "itame-enfermagem-verificacao-de-sinais-vitais-1779343822075-6",
+    "ivin-enfermagem-verificacao-de-sinais-vitais-1779343919045-1",
+    "lj-assessoria-enfermagem-verificacao-de-sinais-vitais-1779344189558-4",
+    "maranatha-assessoria-enfermagem-verificacao-de-sinais-vitais-1778969752567-0",
+    "metrocapital-enfermagem-verificacao-de-sinais-vitais-1779344122526-7",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1778969737311-3",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343801786-0",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343883917-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "itame-enfermagem-verificacao-de-sinais-vitais-1779343822075-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-verificacao-de-sinais-vitais-1779343919045-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-verificacao-de-sinais-vitais-1779344189558-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-verificacao-de-sinais-vitais-1778969752567-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-verificacao-de-sinais-vitais-1779344122526-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1778969737311-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343801786-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343883917-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

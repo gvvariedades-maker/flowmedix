@@ -1,0 +1,15 @@
+{
+  "lote": "sinais-vitais-g45",
+  "exported_at": "2026-07-07T00:22:43.229Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g45/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-5",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-7",
+    "ibgp-enfermagem-verificacao-de-sinais-vitais-1779344253939-3",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343967847-7",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1780000468214-2"
+  ]
+}

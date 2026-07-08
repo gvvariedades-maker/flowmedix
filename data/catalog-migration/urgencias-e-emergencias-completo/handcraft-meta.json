@@ -1,0 +1,104 @@
+{
+  "subtopico": "Urgências e Emergências",
+  "pacote_prefix": "urgencias-e-emergencias",
+  "status": "in_progress",
+  "handcraft_applied": 12,
+  "handcraft_applied_at": null,
+  "total_slugs": 340,
+  "anchors_p0": "12/12 READY aplicadas",
+  "anchors_registry": "data/catalog-migration/urgencias-golden-anchors.json",
+  "playbook": "data/catalog-migration/handcraft-playbooks/urgencias-e-emergencias.json",
+  "next_lote": "urgencias-g02",
+  "next_lote_ramo": "urgencias_rcp_sbv",
+  "handcraft_ready_lotes": {
+    "urgencias-g01": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g01.json"
+    }
+  },
+  "anchor_repairs_applied": {
+    "urgencias-fau-unicentro-engasgo-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-07",
+      "pedagogical_branch": "urgencias_engasgo"
+    },
+    "urgencias-amauc-avc-cincinnati-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_avc_iam"
+    },
+    "urgencias-admtec-rcp-aha2020-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_rcp_sbv"
+    },
+    "urgencias-admtec-fratura-exposta-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_exceto_conduta"
+    },
+    "urgencias-ameosc-trauma-xabcde-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_xabcde_trauma"
+    },
+    "urgencias-admtec-choque-eletrico-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_choque"
+    },
+    "urgencias-access-rcp-pediatrica-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_rcp_pediatrico"
+    },
+    "urgencias-ameosc-vf-imobilizacao-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_vf_protocolo"
+    },
+    "urgencias-admtec-convulsao-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_convulsao"
+    },
+    "urgencias-ameosc-triagem-etiquetas-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_manchester_triagem"
+    },
+    "urgencias-cpcon-anafilaxia-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_anafilaxia"
+    },
+    "urgencias-ameosc-queimadura-vf-repair": {
+      "slug_count": 1,
+      "status": "applied",
+      "applied_at": "2026-07-08",
+      "pedagogical_branch": "urgencias_queimadura"
+    }
+  },
+  "legacy_builder_note": "repair-lote-01…06 e lote-01…05 são legado builder — re-handcraft em urgencias-gNN; não contar como golden-v1",
+  "l3_briefs_ready": [
+    "urgencias_rcp_sbv",
+    "urgencias_xabcde_trauma",
+    "urgencias_manchester_triagem",
+    "urgencias_vf_protocolo"
+  ],
+  "l3_briefs_pending": []
+}

@@ -226,7 +226,14 @@ function resolveCore(
       layoutVariant === 'adolescent-consent-gate' ||
       layoutVariant === 'burn-trap-arena' ||
       layoutVariant === 'trabalho-pep-trap-arena' ||
-      layoutVariant === 'respiratorio-spo2-trap-arena')
+      layoutVariant === 'respiratorio-spo2-trap-arena' ||
+      layoutVariant === 'urgencias-rcp-trap-arena' ||
+      layoutVariant === 'urgencias-trauma-trap-arena' ||
+      layoutVariant === 'urgencias-stroke-trap-arena' ||
+      layoutVariant === 'urgencias-shock-trap-arena' ||
+      layoutVariant === 'urgencias-choking-trap-arena' ||
+      layoutVariant === 'urgencias-pediatric-trap-arena' ||
+      layoutVariant === 'urgencias-manchester-trap')
       ? 'x_icon'
       : 'numbered');
 

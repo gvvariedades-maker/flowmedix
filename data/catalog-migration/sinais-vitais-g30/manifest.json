@@ -1,0 +1,17 @@
+{
+  "lote": "sinais-vitais-g30",
+  "exported_at": "2026-07-06T23:01:41.615Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g30/manifest.json"
+  },
+  "slugs": [
+    "omni-enfermagem-verificacao-de-sinais-vitais-1779344237445-5",
+    "omni-geral-verificacao-de-sinais-vitais-1779344205200-3",
+    "selecon-enfermagem-verificacao-de-sinais-vitais-1779344182672-2",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-2",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-5",
+    "unifil-enfermagem-verificacao-de-sinais-vitais-1779344196733-1",
+    "univida-enfermagem-verificacao-de-sinais-vitais-1779344097180-2"
+  ]
+}

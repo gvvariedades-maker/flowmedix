@@ -1,0 +1,28 @@
+{
+  "exported_at": "2026-07-07T00:29:37.568Z",
+  "lote": "sinais-vitais-g49",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779343956155-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 2503
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343883917-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 2457
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344137078-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 2586
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-07-07T00:59:48.800Z",
+  "lote": "sinais-vitais-g49",
+  "mode": "apply",
+  "total_files": 3,
+  "ok": 3,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779343956155-0",
+    "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343883917-4",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344137078-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779343956155-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343883917-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344137078-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

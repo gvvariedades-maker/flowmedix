@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g33",
+  "exported_at": "2026-07-06T23:23:43.188Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g33/manifest.json"
+  },
+  "slugs": [
+    "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-1",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-4",
+    "faurgs-enfermagem-verificacao-de-sinais-vitais-1779344189558-0",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969745165-4",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344158323-2",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-4"
+  ]
+}

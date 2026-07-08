@@ -1,28 +1,46 @@
 {
-  "generated_at": "2026-07-04T08:53:27.270Z",
+  "generated_at": "2026-07-07T02:59:14.682Z",
   "subtopicos_ready": 1,
   "subtopicos_pass": 1,
   "subtopicos_fail": 0,
   "items": [
     {
-      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "subtopico": "Verificação de Sinais Vitais",
       "registry_status": "applied",
-      "total_slugs": 11,
-      "handcraft_applied": 11,
-      "manifest_slugs": 11,
-      "supabase_found": 11,
-      "golden_v1": 11,
-      "four_slides": 11,
-      "premium_gate_ok": 11,
-      "local_json_count": 27,
+      "total_slugs": 354,
+      "handcraft_applied": 354,
+      "manifest_slugs": 353,
+      "supabase_found": 353,
+      "golden_v1": 353,
+      "four_slides": 353,
+      "premium_gate_ok": 353,
+      "local_json_count": 917,
       "slug_issues": [],
       "pilot_sample": [
-        "cetrede-enfermagem-vias-de-administracao-1778968997293-3"
+        "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+        "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+        "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+        "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-3",
+        "amauc-enfermagem-verificacao-de-sinais-vitais-1779344189558-7",
+        "amauc-enfermagem-verificacao-de-sinais-vitais-1779344196733-2",
+        "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-7",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-0",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-1",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-7",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969768866-4",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343811344-5",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343845367-6",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-1",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-3",
+        "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-6"
       ],
-      "pilot_min": 1,
+      "pilot_min": 18,
       "dod_pass": true,
       "dod_notes": [
-        "Piloto humano sugerido: revisar 1 slug(s) no player (≥5%)"
+        "manifest (353) ≠ registry total_slugs (354)",
+        "Piloto humano sugerido: revisar 18 slug(s) no player (≥5%)"
       ]
     }
   ]

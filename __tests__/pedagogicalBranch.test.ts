@@ -311,6 +311,111 @@ describe('enrichPresentationContext — meta da questão', () => {
   });
 });
 
+describe('pedagogicalBranch — Urgências e Emergências', () => {
+  const urgSubtopico = 'Urgências e Emergências';
+
+  it('infere urgencias_rcp_sbv para RCP adulto AHA', () => {
+    const instruction =
+      'Segundo AHA 2020, assinale a alternativa correta sobre RCP em adulto: compressões 100–120/min, 30:2 e DEA.';
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, [], 'protocolo')).toBe(
+      'urgencias_rcp_sbv',
+    );
+    const design = getPresentationDesign(urgSubtopico, 'urgencias_rcp_sbv');
+    expect(design?.conceptMap).toBe('urgencias-survival-chain-deck');
+    expect(design?.goldenRule).toBe('urgencias-rcp-params-board');
+    expect(design?.logicFlow).toBe('urgencias-rcp-tap-flow');
+    expect(design?.dangerZone).toBe('urgencias-rcp-trap-arena');
+  });
+
+  it('infere urgencias_xabcde_trauma para trauma pré-hospitalar', () => {
+    const instruction =
+      'Sobre atendimento inicial ao trauma com XABCDE, hemorragia, fratura e queimadura no pré-hospitalar.';
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, [], 'protocolo')).toBe(
+      'urgencias_xabcde_trauma',
+    );
+    const design = getPresentationDesign(urgSubtopico, 'urgencias_xabcde_trauma');
+    expect(design?.conceptMap).toBe('urgencias-xabcde-rail');
+    expect(design?.goldenRule).toBe('urgencias-trauma-reference-board');
+    expect(design?.logicFlow).toBe('urgencias-xabcde-tap-flow');
+    expect(design?.dangerZone).toBe('urgencias-trauma-trap-arena');
+  });
+
+  it('infere urgencias_avc_iam para Cincinnati', () => {
+    const instruction =
+      'Escala de Cincinnati para suspeita de AVC: assimetria facial, queda de braço e fala anormal.';
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, [])).toBe('urgencias_avc_iam');
+    const design = getPresentationDesign(urgSubtopico, 'urgencias_avc_iam');
+    expect(design?.conceptMap).toBe('urgencias-stroke-signs-deck');
+    expect(design?.goldenRule).toBe('urgencias-cincinnati-board');
+    expect(design?.logicFlow).toBe('urgencias-stroke-elimination-tap');
+    expect(design?.dangerZone).toBe('urgencias-stroke-trap-arena');
+  });
+
+  it('infere urgencias_choque para acidente elétrico', () => {
+    const instruction =
+      'Choque elétrico: vítima presa à corrente. Qual a primeira conduta — interromper circuito antes de tocar?';
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, [], 'protocolo')).toBe(
+      'urgencias_choque',
+    );
+    const design = getPresentationDesign(urgSubtopico, 'urgencias_choque');
+    expect(design?.conceptMap).toBe('urgencias-shock-types-deck');
+    expect(design?.goldenRule).toBe('urgencias-shock-reference-board');
+    expect(design?.logicFlow).toBe('urgencias-shock-tap-flow');
+    expect(design?.dangerZone).toBe('urgencias-shock-trap-arena');
+  });
+
+  it('infere urgencias_engasgo para sinal universal', () => {
+    const instruction =
+      'O sinal universal de engasgo é quando a pessoa leva as mãos ao pescoço em obstrução de via aérea.';
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, [])).toBe('urgencias_engasgo');
+    const design = getPresentationDesign(urgSubtopico, 'urgencias_engasgo');
+    expect(design?.conceptMap).toBe('urgencias-choking-signal-deck');
+    expect(design?.goldenRule).toBe('urgencias-heimlich-board');
+    expect(design?.logicFlow).toBe('urgencias-choking-tap-flow');
+    expect(design?.dangerZone).toBe('urgencias-choking-trap-arena');
+  });
+
+  it('infere urgencias_anafilaxia antes de choque quando slides citam choque refratário', () => {
+    const instruction =
+      'Anafilaxia em criança após dipirona: epinefrina IM na coxa. IV reservada a PCR ou hipotensão refratária.';
+    const slides = [
+      {
+        type: 'golden_rule',
+        rows: [{ label: 'IV', value: 'PCR ou choque refratário após IM + volume' }],
+      },
+    ];
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, slides, 'protocolo')).toBe(
+      'urgencias_anafilaxia',
+    );
+  });
+
+  it('infere urgencias_rcp_pediatrico para 15:2 pediátrico', () => {
+    const instruction =
+      'RCP pediátrica sem via aérea avançada: 15:2, terço do diâmetro torácico e 100–120/min.';
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, [], 'protocolo')).toBe(
+      'urgencias_rcp_pediatrico',
+    );
+    const design = getPresentationDesign(urgSubtopico, 'urgencias_rcp_pediatrico');
+    expect(design?.conceptMap).toBe('urgencias-pediatric-rcp-deck');
+    expect(design?.goldenRule).toBe('urgencias-pediatric-params-board');
+    expect(design?.logicFlow).toBe('urgencias-pediatric-tap-flow');
+    expect(design?.dangerZone).toBe('urgencias-pediatric-trap-arena');
+  });
+
+  it('infere urgencias_manchester_triagem para etiquetas coloridas', () => {
+    const instruction =
+      'Triagem de vítimas múltiplas com etiquetas Manchester: vermelho emergência, amarelo urgente.';
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, [])).toBe(
+      'urgencias_manchester_triagem',
+    );
+    const design = getPresentationDesign(urgSubtopico, 'urgencias_manchester_triagem');
+    expect(design?.conceptMap).toBe('urgencias-manchester-spectrum');
+    expect(design?.goldenRule).toBe('urgencias-manchester-board');
+    expect(design?.logicFlow).toBe('cards');
+    expect(design?.dangerZone).toBe('urgencias-manchester-trap');
+  });
+});
+
 describe('pedagogicalBranch — Segurança do Paciente', () => {
   const subtopico = 'Segurança do Paciente';
 

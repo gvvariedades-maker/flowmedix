@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-07-07T00:59:27.841Z",
+  "lote": "sinais-vitais-g48",
+  "mode": "apply",
+  "total_files": 4,
+  "ok": 4,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+    "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344111854-0",
+    "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344224014-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344111854-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344224014-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:51:11.117Z",
+  "lote": "sinais-vitais-g24",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343904263-3",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343904263-4",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343904263-5",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344089179-6",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344097180-4",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344097180-5",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344097180-8",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344105099-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343904263-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343904263-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343904263-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344089179-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344097180-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344097180-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344097180-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344105099-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

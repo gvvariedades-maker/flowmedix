@@ -1,19 +1,19 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-04T18:45:38.538Z
+Gerado em: 2026-07-08T03:25:57.286Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
 | Fonte slugs | Supabase (vivo) |
-| Clusters mapeados | 108 |
-| Slugs auditados | 13 |
-| ok_existente | 12 |
-| ok_generico | 66 |
-| ramo_novo | 26 |
-| molde_inedito | 1 |
-| Pacotes inéditos únicos | 1 |
+| Clusters mapeados | 136 |
+| Slugs auditados | 340 |
+| ok_existente | 11 |
+| ok_generico | 81 |
+| ramo_novo | 34 |
+| molde_inedito | 6 |
+| Pacotes inéditos únicos | 6 |
 | Slugs com mismatch L3 | 0 |
 
 ## Candidatos a molde inédito (pacote de 4 variantes)
@@ -22,6 +22,31 @@ Gerado em: 2026-07-04T18:45:38.538Z
 - **Slugs:** 10 · **Ramo:** `cme_autoclave_metodos`
 - **Pacote proposto:** morphological · reference_table · vertical · compare (genérico) — ou pacote inédito parâmetros/ciclo
 - Parâmetros de ciclo — tabela pode bastar; molde inédito só se interação espacial repetir em provas.
+
+### Urgências e Emergências — AVC / IAM — reconhecimento
+- **Slugs:** 23 · **Ramo:** `urgencias_avc_iam`
+- **Pacote proposto:** urgencias-stroke-signs-deck · urgencias-cincinnati-board · urgencias-stroke-elimination-tap · urgencias-stroke-trap-arena (bespoke)
+- Cincinnati Face·Arms·Speech — pegadinhas Glasgow/IAM/SSVV (âncora AMAUC).
+
+### Urgências e Emergências — XABCDE / trauma e hemorragia
+- **Slugs:** 22 · **Ramo:** `urgencias_xabcde_trauma`
+- **Pacote proposto:** urgencias-xabcde-rail · urgencias-trauma-reference-board · urgencias-xabcde-tap-flow · urgencias-trauma-trap-arena (bespoke)
+- Trilho XABCDE pré-hospitalar — trauma ≠ cadeia RCP (âncoras AMEOSC/SELECON).
+
+### Urgências e Emergências — Choque / hipoperfusão
+- **Slugs:** 18 · **Ramo:** `urgencias_choque`
+- **Pacote proposto:** urgencias-shock-types-deck · urgencias-shock-reference-board · urgencias-shock-tap-flow · urgencias-shock-trap-arena (bespoke)
+- Tipos de choque + segurança da cena — matriz mecanismo × conduta.
+
+### Urgências e Emergências — Engasgo / obstrução de via aérea
+- **Slugs:** 12 · **Ramo:** `urgencias_engasgo`
+- **Pacote proposto:** urgencias-choking-signal-deck · urgencias-heimlich-board · urgencias-choking-tap-flow · urgencias-choking-trap-arena (bespoke)
+- Sinal universal × manobra Heimlich — metáfora espacial (âncora FAU).
+
+### Urgências e Emergências — RCP pediátrica / lactente
+- **Slugs:** 9 · **Ramo:** `urgencias_rcp_pediatrico`
+- **Pacote proposto:** urgencias-pediatric-rcp-deck · urgencias-pediatric-params-board · urgencias-pediatric-tap-flow · urgencias-pediatric-trap-arena (bespoke)
+- RCP pediátrica 15:2 — separar visualmente do adulto 30:2 (âncora ACCESS).
 
 ## Matriz por cluster
 
@@ -86,15 +111,15 @@ Gerado em: 2026-07-04T18:45:38.538Z
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Exames laboratoriais (reclassificar?) | 1 | 2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Bacterioses — conceito geral | 1 | 2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Bactérias do trato gastrointestinal | 1 | 2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Espaçador e inalador — técnica MDI | 1 | 10% | ok_generico | `respiratorio_tecnica_inalador` | morphological · reference_table · cards · compare (genérico)… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Oximetria de pulso / SpO₂ | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | O₂ titulado na DPOC (APS/emergência) | 1 | 10% | ok_existente | `respiratorio_dpoc_oxigenio` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Dispositivos de oxigenoterapia (Venturi) | 1 | 10% | ok_existente | `respiratorio_dpoc_oxigenio` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Asma na APS — educação terapêutica | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Espirometria VEF1/CVF | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Semiologia pediátrica — sibilos | 1 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | Semiologia respiratória V/F | 1 | 10% | ok_existente | `respiratorio_vf_asma_dpoc` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
-| Doenças Respiratórias Crônicas (Asma, DPOC) | DPOC na UBS — papel do técnico | 1 | 10% | ok_existente | `respiratorio_dpoc_oxigenio` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Oximetria de pulso / SpO₂ | 3 | 23.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | DPOC na UBS — papel do técnico | 2 | 15.4% | ok_existente | `respiratorio_dpoc_oxigenio` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | O₂ titulado na DPOC (APS/emergência) | 2 | 15.4% | ok_existente | `respiratorio_dpoc_oxigenio` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Respiratório crônico — conceito geral | 1 | 7.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Outros / tema misto | 1 | 7.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Espaçador e inalador — técnica MDI | 1 | 7.7% | ok_generico | `respiratorio_tecnica_inalador` | morphological · reference_table · cards · compare (genérico)… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Espirometria VEF1/CVF | 1 | 7.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Semiologia pediátrica — sibilos | 1 | 7.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | Semiologia respiratória V/F | 1 | 7.7% | ok_existente | `respiratorio_vf_asma_dpoc` | respiratorio-asma-dpoc-duel-deck · respiratorio-spo2-referen… |
 | Infecções no Contexto da Biossegurança | IRAS / infecção hospitalar (conceitos) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Infecções no Contexto da Biossegurança | Higienização das mãos (V/F) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Infecções no Contexto da Biossegurança | Precauções padrão e por transmissão | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
@@ -114,6 +139,18 @@ Gerado em: 2026-07-04T18:45:38.538Z
 | Segurança do Paciente | Certo ou errado | 1 | 1.7% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | Higienização das mãos | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | Humanização e cuidado | 1 | 1.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | PA — técnica e interpretação | 196 | 55.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | FC e pulso — faixas e técnica | 40 | 11.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | Temperatura — vias e febre | 33 | 9.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | EXCETO/INCORRETA — técnica SV | 20 | 5.6% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | FR e padrão respiratório | 16 | 4.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | SV geral / múltiplos parâmetros | 14 | 4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | Certo ou errado | 10 | 2.8% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | V/F — faixas de referência (I/II/III) | 9 | 2.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | SpO₂ e oximetria | 5 | 1.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | Faixas pediátricas por idade | 5 | 1.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | Glasgow / escala de coma | 4 | 1.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Verificação de Sinais Vitais | Drift taxonômico — reclassificar subtópico | 2 | 0.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Vias de Administração | Técnica de punção IM/IV | 68 | 28.9% | ok_generico | `via_tecnica_admin` | morphological · banner · cards · compare (genérico)… |
 | Vias de Administração | V/F — absorção e perfil de vias | 57 | 24.3% | molde_redesign | `via_vf_absorcao` | absorption-speed-rail · via-reference-board · via-vf-juggle-… |
 | Vias de Administração | Absorção / farmacocinética (CORRETA) | 26 | 11.1% | molde_redesign | `via_vf_absorcao` | absorption-speed-rail · via-reference-board · via-vf-juggle-… |
@@ -135,10 +172,35 @@ Gerado em: 2026-07-04T18:45:38.538Z
 | Imunização | Técnica de aplicação / sala de vacinação | 11 | 1.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Conceito — tipos de vacina / imunobiológicos | 8 | 1.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Contraindicações / eventos adversos | 1 | 0.2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | RCP / SBV adulto (V/F ou protocolo) | 68 | 20% | molde_redesign | `urgencias_rcp_sbv` | urgencias-survival-chain-deck · urgencias-rcp-params-board ·… |
+| Urgências e Emergências | Default — sem âncora temática | 63 | 18.5% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | Urgências — conceito geral | 45 | 13.2% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | Certo ou errado | 32 | 9.4% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | AVC / IAM — reconhecimento | 23 | 6.8% | molde_inedito | `urgencias_avc_iam` | urgencias-stroke-signs-deck · urgencias-cincinnati-board · u… |
+| Urgências e Emergências | EXCETO / INCORRETA — conduta | 22 | 6.5% | ok_generico | `urgencias_exceto_conduta` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | XABCDE / trauma e hemorragia | 22 | 6.5% | molde_inedito | `urgencias_xabcde_trauma` | urgencias-xabcde-rail · urgencias-trauma-reference-board · u… |
+| Urgências e Emergências | Choque / hipoperfusão | 18 | 5.3% | molde_inedito | `urgencias_choque` | urgencias-shock-types-deck · urgencias-shock-reference-board… |
+| Urgências e Emergências | Engasgo / obstrução de via aérea | 12 | 3.5% | molde_inedito | `urgencias_engasgo` | urgencias-choking-signal-deck · urgencias-heimlich-board · u… |
+| Urgências e Emergências | RCP pediátrica / lactente | 9 | 2.6% | molde_inedito | `urgencias_rcp_pediatrico` | urgencias-pediatric-rcp-deck · urgencias-pediatric-params-bo… |
+| Urgências e Emergências | V/F — protocolos I/II/III | 8 | 2.4% | ok_generico | `urgencias_vf_protocolo` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | Convulsão / crise epiléptica | 7 | 2.1% | ok_generico | `urgencias_convulsao` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | Drift taxonômico — reclassificar subtópico | 5 | 1.5% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | Manchester / triagem de risco | 4 | 1.2% | ramo_novo | `urgencias_manchester_triagem` | urgencias-manchester-spectrum · urgencias-manchester-board ·… |
+| Urgências e Emergências | Anafilaxia / epinefrina | 1 | 0.3% | ok_generico | `urgencias_anafilaxia` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | Queimadura — primeiro socorro | 1 | 0.3% | ok_generico | `urgencias_queimadura` | morphological · reference_table · vertical · compare (genéri… |
 
 ## Slugs (amostra com branch inferido)
 
-- `respiratorio_dpoc_oxigenio`: 6
-- `respiratorio_generico`: 3
-- `respiratorio_tecnica_inalador`: 3
-- `respiratorio_vf_asma_dpoc`: 1
+- `—`: 325
+- `urgencias_choque`: 2
+- `urgencias_rcp_sbv`: 2
+- `urgencias_xabcde_trauma`: 2
+- `urgencias_exceto_conduta`: 1
+- `urgencias_convulsao`: 1
+- `urgencias_avc_iam`: 1
+- `urgencias_queimadura`: 1
+- `urgencias_vf_protocolo`: 1
+- `urgencias_manchester_triagem`: 1
+- `urgencias_anafilaxia`: 1
+- `urgencias_engasgo`: 1
+- `urgencias_rcp_pediatrico`: 1

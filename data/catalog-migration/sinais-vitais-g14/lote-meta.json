@@ -1,0 +1,34 @@
+{
+  "lote": "sinais-vitais-g14",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-2",
+  "handcrafted_at": "2026-07-05",
+  "slugs": 8,
+  "prior_lotes": [
+    "sinais-vitais-g01",
+    "sinais-vitais-g02",
+    "sinais-vitais-g03",
+    "sinais-vitais-g04",
+    "sinais-vitais-g05",
+    "sinais-vitais-g06",
+    "sinais-vitais-g07",
+    "sinais-vitais-g08",
+    "sinais-vitais-g09",
+    "sinais-vitais-g10",
+    "sinais-vitais-g11",
+    "sinais-vitais-g12",
+    "sinais-vitais-g13"
+  ],
+  "notes": "P0 vitals_pa_tecnica posições 105–112 no cluster PA (196 slugs) — GUALIMP · IAUPE · IBADE · IBFC.",
+  "applied": false,
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g14.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

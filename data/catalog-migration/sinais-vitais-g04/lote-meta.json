@@ -1,0 +1,33 @@
+{
+  "lote": "sinais-vitais-g04",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-2",
+  "handcrafted_at": "2026-07-05",
+  "slugs": 8,
+  "prior_lotes": [
+    "sinais-vitais-g01",
+    "sinais-vitais-g02",
+    "sinais-vitais-g03"
+  ],
+  "notes": "P0 vitals_pa_tecnica posições 25–32 no cluster PA (196 slugs) — lote AVANÇASP técnica/equipamento PA · SpO₂ · 5º SV · INCORRETA. Apply somente após operador escrever 'pode aplicar'.",
+  "applied": false,
+  "gates": {
+    "validate_goldens_strict": "8/8 pass",
+    "questao_readiness_strict_v3": "8/8 READY",
+    "slug_alignment_strict": "8/8",
+    "numeric_factcheck": "8/8",
+    "catalog_preflight": "8/8",
+    "capture_questao_review": "8/8",
+    "anchor_review": "pass (agent)"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g04.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

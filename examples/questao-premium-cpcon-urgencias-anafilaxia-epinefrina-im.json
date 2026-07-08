@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec (Pref Cuité)",
+    "orgao": "Enfermagem",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_anafilaxia",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "Protocolo SBV/SAMU — anafilaxia: epinefrina IM coxa · IV só PCR/choque refratário",
+      "exam_vs_current": "none",
+      "catalog_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "cluster": "Anafilaxia / epinefrina — asserções I/II"
+    },
+    "sources": [
+      {
+        "id": "urgencias-anafilaxia-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/SAMU — anafilaxia",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "epinefrina IM anterolateral coxa",
+          "anafilaxia crianca",
+          "IV reservada PCR hipotensao refrataria",
+          "acionar 192",
+          "urticaria angioedema dispneia"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Durante o atendimento a uma criança de 7 anos, ela desenvolve quadro súbito de urticária difusa, prurido intenso, angioedema de lábios e pálpebras e dificuldade progressiva para respirar após ingerir dipirona. De acordo com o protocolo formal institucional vigente, a administração de adrenalina na anafilaxia é considerada conduta imediata da enfermagem, como ação de suporte básico de vida.\nA partir desse contexto, avalie as asserções a seguir e a relação proposta entre elas.\nI- O técnico de enfermagem, sob supervisão do enfermeiro, ao preparar a medicação, deve reconhecer que a via correta de administração da adrenalina na anafilaxia da criança em questão é a Via Intramuscular (IM), de aplicação imediata, na face ântero-lateral da coxa.\nPORQUE\nII- A Via Intravenosa (IV) da adrenalina em casos de anafilaxia é reservada para situações críticas como parada cardiorrespiratória ou hipotensão profunda que não respondeu à expansão de volume ou múltiplas injeções de epinefrina IM.\nA respeito dessas asserções, é CORRETO afirmar que:",
+    "options": [
+      {
+        "id": "A",
+        "text": "a asserção I é uma proposição verdadeira, e a II é uma proposição falsa.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "as asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "as asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "a asserção I é uma proposição falsa, e a II é uma proposição verdadeira.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "as asserções I e II são proposições falsas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Anafilaxia — quadro agudo",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Enquadramento",
+          "detail": "Criança de 7 anos: urticária difusa, prurido, angioedema de lábios/pálpebras e dispneia após dipirona.",
+          "icon": "Target"
+        },
+        {
+          "label": "Conduta imediata",
+          "detail": "Adrenalina na anafilaxia = suporte básico de vida; técnico prepara sob supervisão do enfermeiro.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Asserção I",
+          "detail": "Via Intramuscular (IM) imediata na face ântero-lateral da coxa — proposição verdadeira.",
+          "icon": "MapPin"
+        },
+        {
+          "label": "Asserção II",
+          "detail": "Via Intravenosa (IV) só em parada cardiorrespiratória ou hipotensão profunda refratária a volume e múltiplas injeções IM.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Formato CPCON",
+          "detail": "Avaliar asserções I e II e se a II é justificativa correta da I (relação PORQUE).",
+          "icon": "ListOrdered"
+        }
+      ],
+      "footer_rule": "IM na coxa · IV só no extremo"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Anafilaxia — decore",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "EPINEFRINA — PRIMEIRA LINHA",
+      "rows": [
+        {
+          "label": "Droga",
+          "value": "Epinefrina (adrenalina) — IM imediata",
+          "badge": "hot"
+        },
+        {
+          "label": "Local IM",
+          "value": "Face ântero-lateral da coxa",
+          "badge": "ok"
+        },
+        {
+          "label": "IV",
+          "value": "PCR ou choque refratário após IM + volume",
+          "badge": "warn"
+        },
+        {
+          "label": "Caso prova",
+          "value": "Criança 7 anos · dipirona · urticária · angioedema · dispneia",
+          "badge": "info"
+        },
+        {
+          "label": "Sinais",
+          "value": "Prurido intenso · lábios/pálpebras · dificuldade respiratória",
+          "badge": "info"
+        },
+        {
+          "label": "Apoio",
+          "value": "Acionar 192 · O₂ · decúbito · elevar MMII se hipotensão",
+          "badge": "ok"
+        },
+        {
+          "label": "Pegadinha",
+          "value": "Não iniciar por via IV de rotina na anafilaxia estável",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "IM primeiro · IV é exceção"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato CPCON: julgar asserção I, asserção II e relação PORQUE (II justifica I?).",
+        "Contexto: criança 7 anos com urticária, angioedema e dispneia após dipirona — anafilaxia.",
+        "Asserção I: adrenalina IM imediata na face ântero-lateral da coxa, técnico sob supervisão → verdadeira.",
+        "Asserção II: IV reservada a parada cardiorrespiratória ou hipotensão profunda após volume e múltiplas IM → verdadeira.",
+        "Relação: II explica por que IM é via de escolha no protocolo institucional de suporte básico → justificativa correta.",
+        "Eliminar alternativas que negam I ou II, ou negam a relação de justificativa.",
+        "Marcar C.",
+        "Fixação: anafilaxia = epinefrina IM na coxa; IV não é primeira escolha."
+      ],
+      "footer_rule": "I verdadeira + II verdadeira + II justifica I = C"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — ANAFILAXIA",
+      "items": [
+        {
+          "label": "Letra A — II falsa",
+          "detail": "Nega que IV seja reservada a parada cardiorrespiratória ou hipotensão refratária.",
+          "correct": "Asserção II é verdadeira: IV existe na anafilaxia, mas só após falha de IM, volume e múltiplas injeções."
+        },
+        {
+          "label": "Letra B — sem justificativa",
+          "detail": "Aceita ambas verdadeiras mas nega que II explique I.",
+          "correct": "II justifica I: reserva da IV para extremos reforça por que IM é a via inicial."
+        },
+        {
+          "label": "Letra D — I falsa",
+          "detail": "Confunde anafilaxia com adrenalina endovenosa de rotina em UTI.",
+          "correct": "Na anafilaxia aguda em criança, IM na coxa é a via correta de primeira linha."
+        },
+        {
+          "label": "Letra E — ambas falsas",
+          "detail": "Nega I e II quando ambas são verdadeiras no protocolo de anafilaxia.",
+          "correct": "I e II são verdadeiras: IM na coxa é via inicial; IV fica para PCR ou hipotensão refratária."
+        },
+        {
+          "label": "Transferência — anti-histamínico primeiro",
+          "detail": "Em outra questão, a banca oferece corticoide ou anti-H1 antes da epinefrina.",
+          "correct": "Epinefrina IM precede demais drogas — atrasar mata."
+        }
+      ],
+      "footer_rule": "Nunca postergar epinefrina IM"
+    }
+  ]
+}

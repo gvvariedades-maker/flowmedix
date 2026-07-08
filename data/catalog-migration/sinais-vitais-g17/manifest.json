@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g17",
+  "exported_at": "2026-07-06T17:36:31.254Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g17/manifest.json"
+  },
+  "slugs": [
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-5",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-6",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-4",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1778969768866-7",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-1",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-4",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-5",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779344127707-1"
+  ]
+}

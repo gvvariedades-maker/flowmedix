@@ -1,0 +1,163 @@
+{
+  "version": 2,
+  "subtopico": "Verificação de Sinais Vitais",
+  "pacote_prefix": "sinais-vitais",
+  "scope_default": "manifest_handcraft",
+  "manifest_handcraft": "data/catalog-migration/sinais-vitais-completo/manifest-handcraft.json",
+  "anchor_glob": "examples/questao-premium-*-sv-*.json,examples/questao-premium-idecan-fc-radial-ce.json",
+  "guideline": "lib/guidelines/sinaisVitais.ts",
+  "golden_anchors_registry": "data/catalog-migration/sinais-vitais-anchor-registry.json",
+  "handcraft_meta": "data/catalog-migration/sinais-vitais-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/sinais-vitais-topic-cluster-report.json",
+  "repair_lote_pattern": "sinais-vitais-*-repair",
+  "lote_pattern": "sinais-vitais-g{NN}",
+  "slug_selection": "P0 vitals_pa_tecnica (~55%): lotes g01+ por cluster — técnica PA · Korotkoff · V/F cuidados · interpretação/conduta; P1 vitals_fc_faixas (~11%); cauda FR/Temp/SpO₂/pediatria em vitals_generico ou ramo dedicado; excluir slugs já handcraft/repair; [READY] strict-v2; ou Slug: explícito",
+  "clusters": [
+    "PA — técnica e interpretação (196 · 55,4% — vitals_pa_tecnica · âncoras AMEOSC/AMAUC g01)",
+    "FC e pulso — faixas e técnica (40 · 11,3% — vitals_fc_faixas · âncora IDECAN C/E)",
+    "Temperatura — vias e febre (33 · 9,3% — vitals_temperatura → vitals_generico até brief)",
+    "EXCETO/INCORRETA — técnica SV (20 · 5,6% — vitals_exceto_tecnica · âncora AVANÇASP INCORRETA PA)",
+    "FR e padrão respiratório (16 · 4,5% — vitals_fr_faixas → vitals_generico)",
+    "SV geral / múltiplos parâmetros (14 · 4% — vitals_interpretacao · âncora FEPESE)",
+    "Certo ou errado (10 · 2,8% — vitals_generico)",
+    "V/F — faixas de referência I/II/III (9 · 2,5% — vitals_vf_faixas)",
+    "SpO₂ e oximetria (5 · 1,4% — vitals_spo2 → vitals_generico)",
+    "Faixas pediátricas por idade (5 · 1,4% — vitals_pediatrico_faixas → guideline MS/SBP)",
+    "Glasgow / escala de coma (4 · 1,1% — vitals_generico — absorver)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "vitals_pa_tecnica",
+      "when": "Técnica de aferição PA, manguito, posição, repouso, Korotkoff, V/F cuidados pré-PA, bexiga cheia",
+      "mold": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena",
+      "anchors": [
+        "examples/questao-premium-fepese-sv-interpretacao-valores.json",
+        "data/catalog-migration/sinais-vitais-g01/questions/ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3.json",
+        "data/catalog-migration/sinais-vitais-g01/questions/amauc-enfermagem-verificacao-de-sinais-vitais-1779344189558-7.json",
+        "data/catalog-migration/sinais-vitais-g01/questions/amauc-enfermagem-verificacao-de-sinais-vitais-1779344196733-2.json"
+      ]
+    },
+    {
+      "id": "vitals_fc_faixas",
+      "when": "FC 60–100 bpm, pulso radial/central, normo/taqui/bradicardia, valores combinados FC+FR+PA",
+      "mold": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena",
+      "anchors": [
+        "examples/questao-premium-idecan-fc-radial-ce.json",
+        "data/catalog-migration/sinais-vitais-g01/questions/adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6.json",
+        "data/catalog-migration/sinais-vitais-g01/questions/ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-7.json"
+      ]
+    },
+    {
+      "id": "vitals_interpretacao",
+      "when": "Interpretação multi-SV, classificar normo/hiper/hipo, taqui/taquipneia, conduta ante alteração",
+      "mold": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena",
+      "anchors": [
+        "examples/questao-premium-fepese-sv-interpretacao-valores.json",
+        "data/catalog-migration/sinais-vitais-g01/questions/ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-7.json"
+      ]
+    },
+    {
+      "id": "vitals_vf_faixas",
+      "when": "V/F I–III sobre faixas FC/FR/PA/temperatura de referência",
+      "mold": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena",
+      "anchors": ["examples/questao-premium-idecan-fc-radial-ce.json"]
+    },
+    {
+      "id": "vitals_exceto_tecnica",
+      "when": "EXCETO/INCORRETA — técnica de aferição; distratores = conduta correta",
+      "mold": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena (compare semântico)",
+      "anchors": ["examples/questao-premium-avancasp-sv-pa-incorreta-divergente.json"]
+    },
+    {
+      "id": "vitals_generico",
+      "when": "FR isolada, temperatura, SpO₂, pediatria, Glasgow, certo/errado sem fit — cauda longa",
+      "mold": "vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena",
+      "anchors": ["examples/questao-premium-fepese-sv-interpretacao-valores.json"]
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_slug_v3": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+    "v3_mental": "npm run audit:questao-readiness -- --lote=<lote> --strict-v3-pedagogy",
+    "pedagogy_grammar": "data/catalog-migration/sinais-vitais-pedagogy-errors.json",
+    "enrich_numeric_meta": "npm run enrich:sinais-vitais-guideline-meta -- --lote=<lote> --write",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]",
+    "lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy"
+  },
+  "golden_v1_grammar": {
+    "concept_map": "Painel PA/FC/FR/Temp + erro ROI nomeado (sinais-vitais-pedagogy-errors.json) — sem gabarito/letra",
+    "golden_rule": "Faixas normativas MS/COFEN — rows com sv_kind; técnica Korotkoff/manguito (sem V/F nem gabarito)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; eliminar distratores ou julgar I–III/V",
+    "danger_zone": "Erro reproduzível × correção por letra (vitals-classify-arena — espelha concept_map)"
+  },
+  "roi_priorities": [
+    {
+      "priority": "P0",
+      "action": "Handcraft g01–g25 vitals_pa_tecnica (técnica PA + Korotkoff + V/F cuidados)",
+      "why": "~55% do corpus handcraft (196 slugs) — molde vitals-* 4/4 no repo"
+    },
+    {
+      "priority": "P0",
+      "action": "audit:slug-alignment --strict + sinaisVitaisPedagogy em todo lote",
+      "why": "Evita reciclagem danger_mirror e concept_map com gabarito"
+    },
+    {
+      "priority": "P1",
+      "action": "Lote dedicado vitals_fc_faixas + vitals_interpretacao (54 slugs)",
+      "why": "Segundo e terceiro clusters fortes — âncoras FEPESE + IDECAN + g01"
+    },
+    {
+      "priority": "P1",
+      "action": "enrich:sinais-vitais-guideline-meta + audit:numeric-factcheck em slugs com bpm/irpm/mmHg/°C",
+      "why": "Faixas numéricas = pegadinha #1 em SV"
+    },
+    {
+      "priority": "P2",
+      "action": "Ramo vitals_exceto_tecnica + lint semântico (âncora AVANÇASP piloto)",
+      "why": "20 slugs compare — gate vitals_exceto_semantic; paridade Imunização Agirh"
+    },
+    {
+      "priority": "P2",
+      "action": "Brief + âncora dedicada vitals_pediatrico_faixas (5 slugs)",
+      "why": "Tabela MS/SBP por idade — não reciclar faixa adulto"
+    },
+    {
+      "priority": "P2",
+      "action": "test:e2e:visual-molds vitals + audit:subtopico-quality --promote",
+      "why": "Fecha vendável L3–L6"
+    }
+  ],
+  "proibido": ["ai:generate", "catalog:upgrade-premium"],
+  "modes": {
+    "manifest_handcraft": {
+      "label": "Handcraft golden-v1 — 354 slugs (manifest-handcraft) em lotes sinais-vitais-gNN",
+      "first_lote": "sinais-vitais-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run audit:slug-alignment -- --lote=<lote> --strict",
+        "npm run audit:numeric-factcheck -- --lote=<lote>",
+        "npm run enrich:sinais-vitais-guideline-meta -- --lote=<lote> --write",
+        "npm run catalog:patch-pedagogical-branch -- --lote=<lote> --reconcile-branch --apply",
+        "npm run capture:questao-review -- --lote=<lote>",
+        "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run",
+        "# apply SOMENTE se usuário pedir:",
+        "npm run catalog:apply-lote -- --lote=<lote> --apply",
+        "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"Verificação de Sinais Vitais\" --only-premium --reconcile-branch --apply"
+      ]
+    },
+    "single_slug": {
+      "lote_dir": "data/catalog-migration/sinais-vitais-g01/questions",
+      "after_handcraft": [
+        "npm run enrich:sinais-vitais-guideline-meta -- --file=data/catalog-migration/<lote>/questions/<slug>.json --write",
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-07T00:58:24.288Z",
+  "lote": "sinais-vitais-g45",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-5",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-7",
+    "ibgp-enfermagem-verificacao-de-sinais-vitais-1779344253939-3",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343967847-7",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1780000468214-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-verificacao-de-sinais-vitais-1779344253939-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343967847-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1780000468214-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

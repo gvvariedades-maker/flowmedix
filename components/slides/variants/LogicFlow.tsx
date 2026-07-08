@@ -21,6 +21,14 @@ import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
 import { LogicFlowBurnTriageTapFlow } from './LogicFlowBurnTriageTapFlow';
 import { LogicFlowTrabalhoVfJuggleTap } from './LogicFlowTrabalhoVfJuggleTap';
 import { LogicFlowRespiratorioVfJuggleTap } from './LogicFlowRespiratorioVfJuggleTap';
+import { LogicFlowUrgenciasRcpTapFlow } from './LogicFlowUrgenciasRcpTapFlow';
+import { LogicFlowUrgenciasXabcdeTapFlow } from './LogicFlowUrgenciasXabcdeTapFlow';
+import { LogicFlowUrgenciasStrokeEliminationTap } from './LogicFlowUrgenciasStrokeEliminationTap';
+import { LogicFlowUrgenciasShockTapFlow } from './LogicFlowUrgenciasShockTapFlow';
+import { LogicFlowUrgenciasChokingTapFlow } from './LogicFlowUrgenciasChokingTapFlow';
+import { LogicFlowUrgenciasPediatricTapFlow } from './LogicFlowUrgenciasPediatricTapFlow';
+import { LogicFlowUrgenciasProtocolTapFlow } from './LogicFlowUrgenciasProtocolTapFlow';
+import { LogicFlowUrgenciasExcetoTapFlow } from './LogicFlowUrgenciasExcetoTapFlow';
 import { LogicFlowEtiologyEliminationTap } from './LogicFlowEtiologyEliminationTap';
 import { LogicFlowItuExcetoTap } from './LogicFlowItuExcetoTap';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
@@ -197,6 +205,94 @@ export const LogicFlow = ({
 
   if (variant === 'respiratorio-vf-juggle-tap') {
     return <LogicFlowRespiratorioVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'urgencias-rcp-tap-flow') {
+    return (
+      <LogicFlowUrgenciasRcpTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'urgencias-xabcde-tap-flow') {
+    return (
+      <LogicFlowUrgenciasXabcdeTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'urgencias-stroke-elimination-tap') {
+    return (
+      <LogicFlowUrgenciasStrokeEliminationTap
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'urgencias-shock-tap-flow') {
+    return (
+      <LogicFlowUrgenciasShockTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'urgencias-choking-tap-flow') {
+    return (
+      <LogicFlowUrgenciasChokingTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'urgencias-pediatric-tap-flow') {
+    return (
+      <LogicFlowUrgenciasPediatricTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'urgencias-protocol-tap-flow') {
+    return (
+      <LogicFlowUrgenciasProtocolTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'urgencias-exceto-tap-flow') {
+    return (
+      <LogicFlowUrgenciasExcetoTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
   }
 
   if (variant === 'etiology-elimination-tap') {

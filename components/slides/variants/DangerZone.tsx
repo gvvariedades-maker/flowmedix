@@ -24,6 +24,15 @@ import { DangerZoneDressingChoiceArena } from './DangerZoneDressingChoiceArena';
 import { DangerZoneBurnTrapArena } from './DangerZoneBurnTrapArena';
 import { DangerZoneTrabalhoPepTrapArena } from './DangerZoneTrabalhoPepTrapArena';
 import { DangerZoneRespiratorioSpo2TrapArena } from './DangerZoneRespiratorioSpo2TrapArena';
+import { DangerZoneUrgenciasRcpTrapArena } from './DangerZoneUrgenciasRcpTrapArena';
+import { DangerZoneUrgenciasTraumaTrapArena } from './DangerZoneUrgenciasTraumaTrapArena';
+import { DangerZoneUrgenciasStrokeTrapArena } from './DangerZoneUrgenciasStrokeTrapArena';
+import { DangerZoneUrgenciasShockTrapArena } from './DangerZoneUrgenciasShockTrapArena';
+import { DangerZoneUrgenciasChokingTrapArena } from './DangerZoneUrgenciasChokingTrapArena';
+import { DangerZoneUrgenciasPediatricTrapArena } from './DangerZoneUrgenciasPediatricTrapArena';
+import { DangerZoneUrgenciasManchesterTrap } from './DangerZoneUrgenciasManchesterTrap';
+import { DangerZoneUrgenciasProtocolTrapArena } from './DangerZoneUrgenciasProtocolTrapArena';
+import { DangerZoneUrgenciasExcetoTrapArena } from './DangerZoneUrgenciasExcetoTrapArena';
 import { DangerZonePniTrapChips } from './DangerZonePniTrapChips';
 import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
 import { DangerZoneEtiologyIntruderChips } from './DangerZoneEtiologyIntruderChips';
@@ -351,6 +360,105 @@ export const DangerZone = ({
   if (explicitVariant === 'respiratorio-spo2-trap-arena' && items && items.length > 0) {
     return (
       <DangerZoneRespiratorioSpo2TrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-rcp-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasRcpTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-trauma-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasTraumaTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-stroke-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasStrokeTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-shock-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasShockTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-choking-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasChokingTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-pediatric-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasPediatricTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-manchester-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasManchesterTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-protocol-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasProtocolTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'urgencias-exceto-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneUrgenciasExcetoTrapArena
         content={content}
         items={items}
         theme={theme}

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-07-01T22:04:46.732Z",
-  "total_scanned": 575,
+  "generated_at": "2026-07-07T15:25:02.831Z",
+  "total_scanned": 340,
   "filters": {
-    "subtopico_contains": "imunização"
+    "subtopico_contains": "urgências"
   },
   "summary": {
     "unique_titulo_aula": 1,
@@ -13,20 +13,20 @@
     "non_canonical_titulo_aula": 0,
     "non_canonical_meta_subtopico": 0,
     "catch_all_bucket_count": 0,
-    "canonical_titulo_rows": 575,
-    "canonical_meta_rows": 575
+    "canonical_titulo_rows": 340,
+    "canonical_meta_rows": 340
   },
   "by_titulo_aula": [
     {
-      "label": "Imunização",
-      "count": 575,
+      "label": "Urgências e Emergências",
+      "count": 340,
       "canonical": true
     }
   ],
   "by_meta_subtopico": [
     {
-      "label": "Imunização",
-      "count": 575,
+      "label": "Urgências e Emergências",
+      "count": 340,
       "canonical": true
     }
   ],

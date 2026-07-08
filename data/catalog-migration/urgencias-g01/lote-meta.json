@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g01",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "pipeline-completo",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_rcp_sbv": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+    "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
+    "examples/questao-premium-urgencias-rcp.json"
+  ],
+  "notes": "Piloto g01 — RCP/SBV adulto: compressões prioritárias · V/F pulso · cadeia · gestante · VAA pós-intubação"
+}

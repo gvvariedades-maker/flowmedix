@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-05T04:37:49.107Z",
+  "lote": "sinais-vitais-g13",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344205200-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2645
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-verificacao-de-sinais-vitais-1779344253939-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 2674
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1778969745165-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 2255
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1778969768866-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 2277
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 2234
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 2235
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1779343811344-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 2410
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 2650
+    }
+  ]
+}

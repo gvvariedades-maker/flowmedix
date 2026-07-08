@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:53:47.731Z",
+  "lote": "sinais-vitais-g31",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-0",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-4",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-0",
+    "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344182672-5",
+    "fenix-instituto-enfermagem-verificacao-de-sinais-vitais-1778969768866-6",
+    "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-5",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-8",
+    "furb-enfermagem-verificacao-de-sinais-vitais-1779343811344-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344182672-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-verificacao-de-sinais-vitais-1778969768866-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1779343811344-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

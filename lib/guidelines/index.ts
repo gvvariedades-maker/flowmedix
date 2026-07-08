@@ -34,6 +34,7 @@ import { SINAIS_VITAIS_ADULTO } from '@/lib/guidelines/sinaisVitais';
 import { SONDAS_TECNICA_COFEN } from '@/lib/guidelines/sondas';
 import { TUBERCULOSE_MS } from '@/lib/guidelines/tuberculose';
 import { URGENCIAS_RCP_SBV } from '@/lib/guidelines/urgencias';
+import { URGENCIAS_PROTOCOLOS_EMERGENCIA } from '@/lib/guidelines/urgenciasProtocolos';
 import { VIAS_ADMINISTRACAO_COFEN } from '@/lib/guidelines/viasAdministracao';
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
@@ -43,6 +44,7 @@ export { PNI_INTERVALOS_2025 } from '@/lib/guidelines/pni';
 export { PNI_CALENDARIO_2025 } from '@/lib/guidelines/pniCalendario';
 export { SINAIS_VITAIS_ADULTO } from '@/lib/guidelines/sinaisVitais';
 export { URGENCIAS_RCP_SBV } from '@/lib/guidelines/urgencias';
+export { URGENCIAS_PROTOCOLOS_EMERGENCIA } from '@/lib/guidelines/urgenciasProtocolos';
 export { SAUDE_MULHER_PRENATAL } from '@/lib/guidelines/saudeMulher';
 export { CALCULO_EQUIVALENCIAS_BR } from '@/lib/guidelines/calculoMedicamentos';
 export { OXIGENOTERAPIA_DISPOSITIVOS_MS } from '@/lib/guidelines/oxigenoterapia';
@@ -82,6 +84,7 @@ export const GUIDELINE_TABLES: Record<string, GuidelineTable> = {
   [PNI_CALENDARIO_2025.id]: PNI_CALENDARIO_2025,
   [SINAIS_VITAIS_ADULTO.id]: SINAIS_VITAIS_ADULTO,
   [URGENCIAS_RCP_SBV.id]: URGENCIAS_RCP_SBV,
+  [URGENCIAS_PROTOCOLOS_EMERGENCIA.id]: URGENCIAS_PROTOCOLOS_EMERGENCIA,
   [SAUDE_MULHER_PRENATAL.id]: SAUDE_MULHER_PRENATAL,
   [CALCULO_EQUIVALENCIAS_BR.id]: CALCULO_EQUIVALENCIAS_BR,
   [OXIGENOTERAPIA_DISPOSITIVOS_MS.id]: OXIGENOTERAPIA_DISPOSITIVOS_MS,
@@ -120,7 +123,7 @@ export const GUIDELINE_TABLES: Record<string, GuidelineTable> = {
 export const SUBTOPICO_GUIDELINE_IDS: Record<string, string[]> = {
   Imunização: [PNI_INTERVALOS_2025.id, PNI_CALENDARIO_2025.id],
   'Verificação de Sinais Vitais': [SINAIS_VITAIS_ADULTO.id],
-  'Urgências e Emergências': [URGENCIAS_RCP_SBV.id],
+  'Urgências e Emergências': [URGENCIAS_RCP_SBV.id, URGENCIAS_PROTOCOLOS_EMERGENCIA.id],
   'Saúde da Mulher': [SAUDE_MULHER_PRENATAL.id],
   'Cálculo de Administração de Medicamentos e Infusões': [CALCULO_EQUIVALENCIAS_BR.id],
   'Oxigenoterapia e Cuidados Respiratórios': [OXIGENOTERAPIA_DISPOSITIVOS_MS.id],
@@ -175,6 +178,7 @@ export const SUBTOPICO_GUIDELINE_IDS: Record<string, string[]> = {
   ],
   'Questões Mescladas e Outras Doenças Agudas': [
     URGENCIAS_RCP_SBV.id,
+    URGENCIAS_PROTOCOLOS_EMERGENCIA.id,
     DOENCAS_VIRAIS_MS.id,
     RESPIRATORIO_CRONICO_MS.id,
     FERIDAS_QUEIMADURAS_MS.id,

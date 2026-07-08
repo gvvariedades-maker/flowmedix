@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g26",
+  "exported_at": "2026-07-06T20:43:22.338Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g26/manifest.json"
+  },
+  "slugs": [
+    "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-6",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-2",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-3",
+    "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-0",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3"
+  ]
+}

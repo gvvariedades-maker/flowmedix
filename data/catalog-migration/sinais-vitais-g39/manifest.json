@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g39",
+  "exported_at": "2026-07-07T00:03:02.667Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g39/manifest.json"
+  },
+  "slugs": [
+    "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-4",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-4",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-6",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-0",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-1",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-0",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343865210-3"
+  ]
+}

@@ -36,6 +36,13 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'adolescent-privacy-curtain',
   'nr32-annex-deck',
   'respiratorio-asma-dpoc-duel-deck',
+  'urgencias-survival-chain-deck',
+  'urgencias-xabcde-rail',
+  'urgencias-stroke-signs-deck',
+  'urgencias-shock-types-deck',
+  'urgencias-choking-signal-deck',
+  'urgencias-pediatric-rcp-deck',
+  'urgencias-manchester-spectrum',
   'etiology-kingdom-rail',
   'itu-closed-system-rail',
 ]);

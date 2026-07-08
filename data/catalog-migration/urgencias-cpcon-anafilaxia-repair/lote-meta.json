@@ -1,0 +1,30 @@
+{
+  "lote": "urgencias-cpcon-anafilaxia-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-08",
+  "subtopico": "Urgências e Emergências",
+  "total": 1,
+  "status": "applied",
+  "applied_at": "2026-07-08",
+  "readme": "data/catalog-migration/urgencias-cpcon-anafilaxia-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=examples/questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=urgencias-cpcon-anafilaxia-repair --apply",
+  "anchor_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+  "anchor_example": "examples/questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im.json",
+  "pedagogical_branch": "urgencias_anafilaxia",
+  "pedagogical_cluster": "Anafilaxia / epinefrina IM",
+  "family": "protocolo",
+  "command": "asserções I/II — epinefrina IM coxa · IV só PCR/choque refratário",
+  "gabarito": "C",
+  "nota": "Âncora P0 — ramo urgencias_anafilaxia (1 slug cluster; slug relatório fepese era drift choque).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-08",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/urgencias-cpcon-anafilaxia-repair.json"
+  }
+}

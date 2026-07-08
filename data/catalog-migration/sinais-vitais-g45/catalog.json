@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-07-07T00:22:43.229Z",
+  "lote": "sinais-vitais-g45",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2603
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 2494
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-verificacao-de-sinais-vitais-1779344253939-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBGP",
+      "avant_codigo": 2677
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343967847-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2518
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1780000468214-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4057
+    }
+  ]
+}

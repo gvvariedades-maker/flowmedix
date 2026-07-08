@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "banca": "AMEOSC",
+    "prova": "Tec Enf (Palma Sola)",
+    "orgao": "Pref Palma Sola",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_sbv",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-07-07",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "SBV/RCP adulto — 30:2 · 100–120 · DEA · pulso",
+      "exam_vs_current": "none",
+      "catalog_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "cluster": "RCP adulto — V/F parâmetros (15:2 pediátrico × pulso)"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-sbv-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/RCP — adulto",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "100-120 compressões/min",
+          "30:2 adulto dois socorristas",
+          "15:2 pediatrico",
+          "DEA ligar imediatamente",
+          "pulso a cada 2 minutos"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O Suporte Básico de Vida é o atendimento inicial de emergência a vítimas de parada cardiorrespiratória (PCR) ou engasgo, realizado por leigos ou profissionais para manter a oxigenação cerebral até o socorro especializado. Sobre a Ressuscitação Cardiopulmonar (RCP) em adultos, marque verdadeiro (V) ou falso (F) nas afirmativas abaixo:\n(__)A RCP em adultos utiliza frequência de 100-120/min.\n(__)A relação compressão-ventilação é 15:2 com dois socorristas.\n(__)O DEA deve ser ligado imediatamente após chegada.\n(__)O pulso carotídeo deve ser checado por 1 minuto.\nAssinale a alternativa que apresenta a sequência CORRETA de cima para baixo.",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, F, V, F.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "F, F, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "F, V, F, V.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "V, V, F, F.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "RCP adulto — mapa V/F",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Suporte Básico de Vida em PCR ou engasgo — julgar afirmativas sobre ressuscitação cardiopulmonar adulta e a sequência V/F de cima para baixo.",
+          "icon": "Target"
+        },
+        {
+          "label": "Afirmativa I",
+          "detail": "VERDADEIRA — frequência 100–120/min no adulto.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Afirmativa II",
+          "detail": "FALSA — relação compressão-ventilação 15:2 é pediátrica; adulto com dois socorristas = 30:2.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Afirmativas III–IV",
+          "detail": "III VERDADEIRA (DEA imediato após chegada) · IV FALSA (pulso carotídeo: checagem breve, não prolongada).",
+          "icon": "Zap"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "A banca troca 15:2 pediátrico e estica o tempo de checagem do pulso.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Oxigenação cerebral até socorro especializado"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato: quatro itens V/F sobre RCP adulto + sequência correta de cima para baixo.",
+        "I — 100–120/min no adulto? → VERDADEIRO.",
+        "II — 15:2 com dois socorristas no adulto? → FALSO (30:2 no adulto).",
+        "III — ligar DEA assim que chegar? → VERDADEIRO.",
+        "IV — checar pulso carotídeo por tempo prolongado? → FALSO (pausa mínima; reavaliar ~a cada 2 min).",
+        "Sequência: V, F, V, F.",
+        "Alternativa A.",
+        "Eliminar B (I falsa), C (II e III invertidas), D (II verdadeira).",
+        "Fixação: adulto = 30:2 — reserve 15:2 para pediatria."
+      ],
+      "footer_rule": "Julgue I→IV antes de olhar letras"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "RCP adulto — parâmetros",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "SBV ADULTO — DECORE",
+      "rows": [
+        {
+          "label": "Frequência",
+          "value": "100–120 compressões/min",
+          "badge": "hot"
+        },
+        {
+          "label": "Proporção (2 socorristas)",
+          "value": "30:2 — adulto",
+          "badge": "ok"
+        },
+        {
+          "label": "15:2",
+          "value": "Lactente/criança — não confundir com adulto",
+          "badge": "warn"
+        },
+        {
+          "label": "DEA",
+          "value": "Ligar e aplicar assim que disponível",
+          "badge": "ok"
+        },
+        {
+          "label": "Pulso",
+          "value": "Checagem breve; reavaliar ~a cada 2 min de RCP",
+          "badge": "warn"
+        },
+        {
+          "label": "Profundidade",
+          "value": "5–6 cm + retorno total do tórax",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "30:2 · 100–120 · DEA cedo"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — V/F RCP ADULTO",
+      "items": [
+        {
+          "label": "Letra B — F, F, V, V",
+          "detail": "Marca I como falsa e IV como verdadeira.",
+          "correct": "I é VERDADEIRA (100–120/min) e IV é FALSA (não prolongar checagem do pulso)."
+        },
+        {
+          "label": "Letra C — F, V, F, V",
+          "detail": "Aceita 15:2 no adulto e nega ligar o DEA ao chegar.",
+          "correct": "II é FALSA (adulto = 30:2) e III é VERDADEIRA (DEA imediato)."
+        },
+        {
+          "label": "Letra D — V, V, F, F",
+          "detail": "Valida 15:2 e rejeita DEA imediato.",
+          "correct": "II é FALSA (pegadinha pediátrica) e III é VERDADEIRA."
+        },
+        {
+          "label": "Confundir 15:2 (item II)",
+          "detail": "15:2 aparece em provas de RCP e parece “dois socorristas = certo”.",
+          "correct": "Adulto: 30:2 · 15:2 = lactente/criança com dois socorristas treinados."
+        },
+        {
+          "label": "Transferência — pulso",
+          "detail": "Outra banca cobra “pulso a cada ciclo 30:2”.",
+          "correct": "Não checar pulso a cada ciclo; pausa breve e reavaliação após ~2 min de RCP."
+        }
+      ],
+      "footer_rule": "II e IV são os itens que mais caem"
+    }
+  ]
+}

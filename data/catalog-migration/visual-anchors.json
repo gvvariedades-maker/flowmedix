@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-04",
+  "updated_at": "2026-07-08",
   "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
   "anchors": {
     "cme_vf_ce": {
@@ -224,6 +224,132 @@
       "slug": "cetrede-enfermagem-vias-de-administracao-1776056391403-4",
       "lote": "vias-golden",
       "json_path": "examples/questao-premium-cetrede-vias-injetaveis-incorreta.json"
+    },
+    "vitals_pa_tecnica": {
+      "pedagogical_branch": "vitals_pa_tecnica",
+      "slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+      "lote": "sinais-vitais-g01",
+      "json_path": "data/catalog-migration/sinais-vitais-g01/questions/ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3.json"
+    },
+    "vitals_fc_faixas": {
+      "pedagogical_branch": "vitals_fc_faixas",
+      "slug": "idecan-fc-radial-ce",
+      "lote": "sinais-vitais-g01",
+      "json_path": "examples/questao-premium-idecan-fc-radial-ce.json"
+    },
+    "vitals_interpretacao": {
+      "pedagogical_branch": "vitals_interpretacao",
+      "slug": "fepese-sv-interpretacao-valores",
+      "lote": "sinais-vitais-g01",
+      "json_path": "examples/questao-premium-fepese-sv-interpretacao-valores.json"
+    },
+    "vitals_vf_faixas": {
+      "pedagogical_branch": "vitals_vf_faixas",
+      "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
+      "lote": "sinais-vitais-g36",
+      "json_path": "data/catalog-migration/sinais-vitais-g36/questions/avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7.json"
+    },
+    "vitals_exceto_tecnica": {
+      "pedagogical_branch": "vitals_exceto_tecnica",
+      "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
+      "lote": "sinais-vitais-exceto-piloto-g01",
+      "json_path": "examples/questao-premium-avancasp-sv-pa-incorreta-divergente.json"
+    },
+    "vitals_temperatura": {
+      "pedagogical_branch": "vitals_temperatura",
+      "slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
+      "lote": "sinais-vitais-g39",
+      "json_path": "data/catalog-migration/sinais-vitais-g39/questions/amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1.json"
+    },
+    "vitals_fr_faixas": {
+      "pedagogical_branch": "vitals_fr_faixas",
+      "slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+      "lote": "sinais-vitais-g37",
+      "json_path": "data/catalog-migration/sinais-vitais-g37/questions/adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7.json"
+    },
+    "vitals_generico": {
+      "pedagogical_branch": "vitals_generico",
+      "slug": "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+      "lote": "sinais-vitais-g48",
+      "json_path": "data/catalog-migration/sinais-vitais-g48/questions/instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0.json"
+    },
+    "urgencias_rcp_sbv": {
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "lote": "urgencias-admtec-rcp-aha2020-repair",
+      "json_path": "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json"
+    },
+    "urgencias_rcp_pediatrico": {
+      "pedagogical_branch": "urgencias_rcp_pediatrico",
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "lote": "urgencias-access-rcp-pediatrica-repair",
+      "json_path": "examples/questao-premium-access-urgencias-rcp-pediatrica-15-2.json"
+    },
+    "urgencias_avc_iam": {
+      "pedagogical_branch": "urgencias_avc_iam",
+      "slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "lote": "urgencias-amauc-avc-cincinnati-repair",
+      "json_path": "examples/questao-premium-amauc-urgencias-cincinnati-avc.json"
+    },
+    "urgencias_xabcde_trauma": {
+      "pedagogical_branch": "urgencias_xabcde_trauma",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "lote": "urgencias-ameosc-trauma-xabcde-repair",
+      "json_path": "examples/questao-premium-ameosc-urgencias-trauma-queimadura.json"
+    },
+    "urgencias_choque": {
+      "pedagogical_branch": "urgencias_choque",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "lote": "urgencias-admtec-choque-eletrico-repair",
+      "json_path": "examples/questao-premium-admtec-urgencias-choque-eletrico.json"
+    },
+    "urgencias_engasgo": {
+      "pedagogical_branch": "urgencias_engasgo",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "lote": "urgencias-fau-unicentro-engasgo-repair",
+      "json_path": "examples/questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal.json"
+    },
+    "urgencias_exceto_conduta": {
+      "pedagogical_branch": "urgencias_exceto_conduta",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "lote": "urgencias-admtec-fratura-exposta-repair",
+      "json_path": "examples/questao-premium-admtec-urgencias-fratura-exposta-imobilizacao.json"
+    },
+    "urgencias_vf_protocolo": {
+      "pedagogical_branch": "urgencias_vf_protocolo",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "lote": "urgencias-ameosc-vf-imobilizacao-repair",
+      "json_path": "examples/questao-premium-ameosc-urgencias-trauma-imobilizacao-vf.json"
+    },
+    "urgencias_convulsao": {
+      "pedagogical_branch": "urgencias_convulsao",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "lote": "urgencias-admtec-convulsao-repair",
+      "json_path": "examples/questao-premium-admtec-urgencias-convulsao-crise.json"
+    },
+    "urgencias_manchester_triagem": {
+      "pedagogical_branch": "urgencias_manchester_triagem",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "lote": "urgencias-ameosc-triagem-etiquetas-repair",
+      "json_path": "examples/questao-premium-ameosc-urgencias-triagem-etiquetas.json"
+    },
+    "urgencias_anafilaxia": {
+      "pedagogical_branch": "urgencias_anafilaxia",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "lote": "urgencias-cpcon-anafilaxia-repair",
+      "json_path": "examples/questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im.json"
+    },
+    "urgencias_queimadura": {
+      "pedagogical_branch": "urgencias_queimadura",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "lote": "urgencias-ameosc-queimadura-vf-repair",
+      "json_path": "examples/questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros.json"
+    },
+    "urgencias_generico": {
+      "pedagogical_branch": "urgencias_generico",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "lote": "urgencias-admtec-rcp-aha2020-repair",
+      "json_path": "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json"
     }
   }
 }

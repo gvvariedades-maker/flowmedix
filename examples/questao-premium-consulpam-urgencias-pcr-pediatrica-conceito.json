@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "banca": "Instituto Consulpam",
+    "prova": "Tec Enf",
+    "orgao": "Pref Eusébio",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_pediatrico",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "PCR pediátrica — causa respiratória/choque · RCP precoce · desfibrilação",
+      "exam_vs_current": "none",
+      "catalog_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "cluster": "RCP pediátrica — epidemiologia e princípios"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-ped-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/RCP — pediatria",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "PCR pediatrica insuficiencia respiratoria",
+          "choque progressivo pediatria",
+          "RCP alta qualidade",
+          "desfibrilacao precoce quando indicada"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "No contexto da Parada Cardiorrespiratória (PCR) em bebês e crianças, considerando os princípios atuais do atendimento em primeiros socorros e suporte básico de vida, assinale a alternativa CORRETA.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A PCR pediátrica, na maioria das vezes, decorre de insuficiência respiratória progressiva ou choque, sendo fundamental o reconhecimento precoce do estado crítico, o treinamento em RCP e a oferta de RCP de alta qualidade associada à desfibrilação precoce quando indicada.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "A principal causa da PCR em bebês e crianças é cardíaca primária, razão pela qual a desfibrilação deve preceder o reconhecimento do estado clínico.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O reconhecimento precoce do agravamento clínico não interfere nos desfechos da PCR pediátrica, desde que haja acesso posterior ao atendimento hospitalar.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A RCP de alta qualidade é indicada apenas após a estabilização respiratória completa do paciente pediátrico em PCR.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "PCR pediátrica — panorama",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Enquadramento",
+          "detail": "Princípios atuais de SBV em bebês e crianças — assinalar afirmativa correta.",
+          "icon": "Target"
+        },
+        {
+          "label": "Causa usual",
+          "detail": "Na maioria das vezes: hipóxia/insuficiência respiratória ou choque — não IAM como no adulto.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Tempo",
+          "detail": "Reconhecer deterioração precoce evita PCR — tempo é tecido cerebral.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Conduta",
+          "detail": "RCP de alta qualidade + DEA quando ritmo chocável — sem atrasar por estabilização completa.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Banca transfere lógica do adulto (causa cardíaca primária) para pediatria.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Pediatria: respiração/choque → RCP precoce"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "PCR pediátrica — princípios",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "DIFERENÇA DO ADULTO",
+      "rows": [
+        {
+          "label": "Causa frequente",
+          "value": "Insuficiência respiratória ou choque progressivo",
+          "badge": "hot"
+        },
+        {
+          "label": "Adulto (contraste)",
+          "value": "Causa cardíaca primária mais comum",
+          "badge": "info"
+        },
+        {
+          "label": "Prevenção",
+          "value": "Reconhecimento precoce do estado crítico",
+          "badge": "ok"
+        },
+        {
+          "label": "Tratamento",
+          "value": "RCP alta qualidade + desfibrilação precoce se indicada",
+          "badge": "warn"
+        },
+        {
+          "label": "Erro",
+          "value": "Adiar RCP até “estabilizar respiração” em PCR estabelecida",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Prevenir · reconhecer · reanimar"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato: princípios de PCR em bebês e crianças — assinalar a alternativa correta.",
+        "Eixo epidemiológico: pediatria — hipóxia/choque costumam anteceder a PCR, não IAM isolado.",
+        "Eliminar afirmativa que inverte causa (cardíaca primária como regra).",
+        "Eliminar quem nega impacto do reconhecimento precoce.",
+        "Eliminar quem posterga RCP até estabilização respiratória completa em PCR.",
+        "Resta reconhecimento precoce + treinamento + RCP qualidade + DEA quando indicado.",
+        "Marcar A.",
+        "Fixação: pediatria = prevenir hipóxia; adulto = pensar em causa cardíaca."
+      ],
+      "footer_rule": "Causa respiratória/choque → RCP sem atrasar"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — PCR PEDIÁTRICA CONCEITUAL",
+      "items": [
+        {
+          "label": "Letra B — causa cardíaca primária",
+          "detail": "Parece lógico priorizar desfibrilação como no adulto.",
+          "correct": "Em bebês/crianças, PCR costuma ser secundária a hipóxia ou choque — não inverter a sequência."
+        },
+        {
+          "label": "Letra C — reconhecimento tardio basta",
+          "detail": "Minimiza deterioração pré-PCR.",
+          "correct": "Reconhecimento precoce do estado crítico melhora desfecho — tempo importa."
+        },
+        {
+          "label": "Letra D — RCP só após estabilizar",
+          "detail": "Parece prudente “arrumar respiração” antes de comprimir.",
+          "correct": "PCR estabelecida exige RCP imediata — não adiar compressões por estabilização completa."
+        },
+        {
+          "label": "Transferência — parâmetros 15:2",
+          "detail": "Em outra questão, a banca cobra profundidade e proporção na RCP pediátrica.",
+          "correct": "Conceito (causa) e parâmetro (15:2 · terço AP) são cards diferentes no mesmo ramo."
+        }
+      ],
+      "footer_rule": "Não trate criança como mini-adulto cardíaco"
+    }
+  ]
+}

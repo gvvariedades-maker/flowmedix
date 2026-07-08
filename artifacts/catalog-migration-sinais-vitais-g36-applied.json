@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-07T00:55:39.114Z",
+  "lote": "sinais-vitais-g36",
+  "mode": "apply",
+  "total_files": 9,
+  "ok": 9,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-8",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-1",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-2",
+    "epl-concursos-enfermagem-verificacao-de-sinais-vitais-1779344182672-1",
+    "fuvest-enfermagem-verificacao-de-sinais-vitais-1779344137078-1",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-3",
+    "reis-e-reis-enfermagem-verificacao-de-sinais-vitais-1779344089179-9",
+    "ufmt-enfermagem-verificacao-de-sinais-vitais-1779344182672-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-verificacao-de-sinais-vitais-1779344182672-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-verificacao-de-sinais-vitais-1779344137078-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-verificacao-de-sinais-vitais-1779344089179-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-verificacao-de-sinais-vitais-1779344182672-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g38",
+  "exported_at": "2026-07-06T23:50:17.132Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g38/manifest.json"
+  },
+  "slugs": [
+    "idib-enfermagem-verificacao-de-sinais-vitais-1778934863952-8",
+    "idib-enfermagem-verificacao-de-sinais-vitais-1779344105099-3",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-8",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-2",
+    "isba-enfermagem-verificacao-de-sinais-vitais-1779344253939-2",
+    "omni-enfermagem-verificacao-de-sinais-vitais-1779344253939-1",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1778969729218-6",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1778969760552-8"
+  ]
+}

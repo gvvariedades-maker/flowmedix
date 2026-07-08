@@ -167,6 +167,20 @@ export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
       sourceId: 'sv-adulto-referencia',
     },
     {
+      id: 'temp-hiperpirexia',
+      label: 'Hiperpirexia',
+      value: 'Febre extrema — ≥41 °C em provas clássicas',
+      detail: 'Acima de 40 °C já é febre alta; hiperpirexia marca pico térmico extremo.',
+      sourceId: 'sv-adulto-referencia',
+    },
+    {
+      id: 'pa-esfigmo-inflacao-max',
+      label: 'Insuflação máxima — esfigmomanômetro',
+      value: 'Não inflar acima de 300 mmHg',
+      detail: 'Limite de segurança do manômetro aneroide — evita lesão vascular e dor.',
+      sourceId: 'sv-adulto-referencia',
+    },
+    {
       id: 'temp-retal-vs-axilar',
       label: 'Retal × axilar',
       value: 'Axilar costuma ser ~0,5 °C menor que retal',
@@ -352,6 +366,13 @@ export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
       sourceId: 'sv-adulto-referencia',
     },
     {
+      id: 'fc-materna-parto-dilatacao',
+      label: 'FC materna — 1º período (dilatação)',
+      value: '1 hora — risco habitual; 2 hora e 4 hora inadequados; alto risco 15–30 min',
+      detail: 'MS: aferir e registrar FC materna no 1º período; período expulsivo = intervalos menores.',
+      sourceId: 'sv-adulto-referencia',
+    },
+    {
       id: 'pa-pediatrica-percentis',
       label: 'PA pediátrica — percentis',
       value: 'PAS avaliada por percentis (idade, sexo e estatura)',
@@ -523,7 +544,7 @@ export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
     {
       id: 'sv-prova-pas-referencia',
       label: 'PAS — valores discretos em casos de prova',
-      value: '90 mmHg · 100 mmHg · 110 mmHg · 120 mmHg · 130 mmHg · 140 mmHg · 160 mmHg · 180 mmHg',
+      value: '90 mmHg · 100 mmHg · 110 mmHg · 120 mmHg · 130 mmHg · 140 mmHg · 160 mmHg · 180 mmHg · 15 mmHg',
       detail: 'Interpretar com PAD associada; normotensão adulto PAS ~90–140 mmHg.',
       sourceId: 'sv-adulto-referencia',
     },
@@ -537,7 +558,7 @@ export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
     {
       id: 'sv-prova-fc-referencia',
       label: 'FC — valores discretos em casos de prova',
-      value: '60 bpm · 72 bpm · 80 bpm · 90 bpm · 100 bpm · 110 bpm · 120 bpm',
+      value: '60 bpm · 65 bpm · 72 bpm · 80 bpm · 90 bpm · 100 bpm · 110 bpm · 120 bpm',
       detail: 'Taquicardia adulto >100 bpm; bradicardia <60 bpm.',
       sourceId: 'sv-adulto-referencia',
     },
@@ -551,7 +572,7 @@ export const SINAIS_VITAIS_ADULTO: GuidelineTable = {
     {
       id: 'sv-prova-temperatura-referencia',
       label: 'Temperatura — valores discretos em casos de prova',
-      value: '35 °C · 36 °C · 36,5°C · 36.0°C · 37 °C · 37,2 °C · 37.2°C · 37,5 °C · 38 °C · 38,5°C · 38.5°C · 39 °C · 40 °C',
+      value: '26 °C · 28 °C · 32 °C · 35 °C · 35,8 °C · 36 °C · 36,8 °C · 36,5°C · 36,6°C · 36.0°C · 37 °C · 37,2 °C · 37.2°C · 37,3 °C · 37,5 °C · 37,7 °C · 38 °C · 38,5°C · 38.5°C · 39 °C · 40 °C · 41 °C',
       detail: 'Afebril ~36 °C a 37,5 °C axilar; febre axilar ≥37,8 °C.',
       sourceId: 'sv-adulto-referencia',
     },

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:45:35.060Z",
+  "lote": "sinais-vitais-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-3",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-4",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-3",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-4",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344196733-7",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-2",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-6",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344196733-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

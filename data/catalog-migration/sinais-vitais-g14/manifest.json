@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g14",
+  "exported_at": "2026-07-05T04:40:18.831Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g14/manifest.json"
+  },
+  "slugs": [
+    "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-2",
+    "iaupe-enfermagem-verificacao-de-sinais-vitais-1779343956155-3",
+    "iaupe-enfermagem-verificacao-de-sinais-vitais-1779344189558-3",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779343856589-1",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779343856589-2",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1778969745165-1",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343865210-6",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-6"
+  ]
+}

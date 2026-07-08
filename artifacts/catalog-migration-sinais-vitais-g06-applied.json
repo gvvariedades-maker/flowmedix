@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:43:51.715Z",
+  "lote": "sinais-vitais-g06",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-6",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344189558-1",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344122526-4",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344127707-7",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-2",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344205200-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344189558-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344122526-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344127707-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344205200-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "lote": "sinais-vitais-g01",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+  "handcrafted_at": "2026-07-04",
+  "slugs": 8,
+  "gates": {
+    "validate_goldens_strict": "pass",
+    "questao_readiness_strict_v2": "8/8 READY",
+    "slug_alignment_strict": "8/8",
+    "numeric_factcheck": "8/8",
+    "catalog_preflight": "8/8"
+  },
+  "applied": false,
+  "notes": "Apply somente após operador escrever 'pode aplicar'.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g01.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

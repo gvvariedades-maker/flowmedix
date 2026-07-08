@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "banca": "AMEOSC",
+    "prova": "Tec Enf (Palma Sola)",
+    "orgao": "Pref Palma Sola",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_vf_protocolo",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "Trauma — colar cervical · alinhamento manual · capacete · prancha (MS/SBV)",
+      "exam_vs_current": "none",
+      "catalog_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "cluster": "V/F protocolos I–IV — imobilização trauma"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-sbv-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV — trauma e imobilização cervical",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "colar cervical antes prancha",
+          "estabilizacao manual linha neutra",
+          "capacete manter via aerea",
+          "prancha transporte imobilizacao",
+          "imobilizacao trauma vitima"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Procedimentos em trauma são cruciais para reduzir a mortalidade e prevenir sequelas, focando na identificação imediata e tratamento de lesões que ameaçam a vida. Sobre a imobilização de vítimas de trauma, julgue as afirmativas abaixo:\nI- O colar cervical deve ser aplicado antes da prancha.\nII- A retirada do capacete é obrigatória em todos os casos.\nIII- O alinhamento manual precede qualquer imobilização rígida.\nIV- A prancha longa é indicada para conforto prolongado.\nEstá CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "III e IV, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "II e IV, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I e III, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "I e II, apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Imobilização — mapa V/F",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Trauma com risco de lesão cervical — julgar I–IV sobre imobilização e montar a combinação correta.",
+          "icon": "Target"
+        },
+        {
+          "label": "Afirmativa I",
+          "detail": "VERDADEIRA — colar cervical antes da prancha longa.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Afirmativa II",
+          "detail": "FALSA — capacete só sai se via aérea/RCP exigir; não é obrigatório em todos os casos.",
+          "icon": "HardHat"
+        },
+        {
+          "label": "Afirmativa III",
+          "detail": "VERDADEIRA — alinhamento manual em linha neutra precede colar e prancha.",
+          "icon": "Hand"
+        },
+        {
+          "label": "Afirmativa IV",
+          "detail": "FALSA — prancha é para transporte/imobilização, não “conforto prolongado”.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Manual → colar → prancha"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Imobilização — sequência",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "TRAUMA CERVICAL — DECORE",
+      "rows": [
+        {
+          "label": "Passo 1",
+          "value": "Estabilização manual em linha neutra",
+          "badge": "hot"
+        },
+        {
+          "label": "Passo 2",
+          "value": "Colar cervical",
+          "badge": "ok"
+        },
+        {
+          "label": "Passo 3",
+          "value": "Prancha longa — transporte",
+          "badge": "ok"
+        },
+        {
+          "label": "Capacete",
+          "value": "Manter se VA pérvia; remover só se necessário",
+          "badge": "warn"
+        },
+        {
+          "label": "Prancha",
+          "value": "Imobilização — não é conforto prolongado",
+          "badge": "warn"
+        },
+        {
+          "label": "Objetivo",
+          "value": "Reduzir mortalidade e sequelas medulares",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Manual · colar · prancha"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato V/F: julgar I–IV separadamente, depois cruzar com as combinações A–D.",
+        "I — ordem colar antes da prancha? → verdadeiro (com cabeça estabilizada).",
+        "II — capacete sempre removido? → falso (manter se VA pérvia e estável).",
+        "III — alinhamento manual antes de imobilização rígida? → verdadeiro.",
+        "IV — prancha para conforto prolongado? → falso (transporte/imobilização).",
+        "Conjunto verdadeiro: apenas I e III.",
+        "Eliminar alternativas que incluem II ou IV como corretas.",
+        "Marcar C.",
+        "Fixação: em V/F de protocolo, monte o gabarito item a item antes de olhar as letras."
+      ],
+      "footer_rule": "Julgue I→IV antes das letras"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — IMOBILIZAÇÃO",
+      "items": [
+        {
+          "label": "Letra A — III e IV",
+          "detail": "Inclui IV como verdadeira (prancha para conforto).",
+          "correct": "Gabarito letra C — I e III verdadeiras; IV é falsa (prancha não é para conforto prolongado)."
+        },
+        {
+          "label": "Letra B — II e IV",
+          "detail": "Valida retirada obrigatória do capacete e uso prolongado da prancha.",
+          "correct": "II é FALSA (capacete nem sempre sai) e IV é FALSA."
+        },
+        {
+          "label": "Letra D — I e II",
+          "detail": "Acerta I mas força retirada universal do capacete.",
+          "correct": "II é FALSA — capacete mantido quando via aérea está pérvia e paciente estável."
+        },
+        {
+          "label": "Confundir ordem (I)",
+          "detail": "Colocar na prancha antes do colar parece ganhar tempo.",
+          "correct": "Colar cervical antes da prancha, com cabeça já estabilizada manualmente."
+        },
+        {
+          "label": "Transferência — jaw-thrust",
+          "detail": "Em trauma, a banca pergunta manobra de abertura de via aérea.",
+          "correct": "Suspeita cervical: jaw-thrust — evitar head-tilt que hiperextende o pescoço."
+        }
+      ],
+      "footer_rule": "Capacete e prancha são as pegadinhas II e IV"
+    }
+  ]
+}

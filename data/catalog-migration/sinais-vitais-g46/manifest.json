@@ -1,0 +1,24 @@
+{
+  "lote": "sinais-vitais-g46",
+  "branch": "vitals_generico",
+  "family": "certo_errado",
+  "pedagogical_cluster": "Certo ou errado",
+  "exported_at": "2026-07-07T00:24:04.708Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g46/manifest.json",
+    "pedagogical_cluster": "Certo ou errado",
+    "exclude_prior_lotes": "sinais-vitais-g01..g45"
+  },
+  "slugs": [
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-0",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-1",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-2",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-5",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-6",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-7",
+    "cebraspe-cespe-geral-verificacao-de-sinais-vitais-1779344245160-3",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3"
+  ],
+  "notes": "Batch 1/2 — 8 slugs certo_errado; g47 = igeduc-0, igeduc-1."
+}

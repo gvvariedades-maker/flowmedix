@@ -250,6 +250,309 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('vertical');
   });
 
+  it('Urgências RCP: concept_map urgencias-survival-chain-deck com ramo', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Urgências e Emergências' },
+        items: [
+          { label: 'Reconhecimento PCR', detail: 'Inconsciência + ausência de respiração', icon: 'Eye' },
+          { label: 'Compressões', detail: '100–120/min, 5–6 cm', icon: 'HeartPulse' },
+          { label: 'DEA', detail: 'Ligar e aplicar assim que disponível', icon: 'Zap' },
+        ],
+      },
+      {
+        questionSlug: 'admtec-rcp-1',
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_rcp_sbv',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-survival-chain-deck');
+  });
+
+  it('Urgências RCP: golden_rule urgencias-rcp-params-board com rows', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: '30:2 · 100–120',
+        rows: [
+          { label: 'Proporção', value: '30:2 (2 socorristas)', badge: 'ok' },
+          { label: 'Frequência', value: '100–120/min', badge: 'hot' },
+          { label: 'Pulso', value: 'Checar após ~2 min', emphasis: 'alert', badge: 'warn' },
+        ],
+      },
+      {
+        questionSlug: 'admtec-rcp-1',
+        slideIndex: 1,
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_rcp_sbv',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-rcp-params-board');
+  });
+
+  it('Urgências RCP: logic_flow urgencias-rcp-tap-flow', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Urgências e Emergências' },
+        steps: [
+          'Segurança da cena + checagem de respiração.',
+          'Iniciar compressões 100–120/min.',
+          'Eliminar alternativa com 80–100/min → letra D.',
+        ],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'admtec-rcp-1',
+        slideIndex: 2,
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_rcp_sbv',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-rcp-tap-flow');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Urgências RCP: danger_zone urgencias-rcp-trap-arena com correct', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: 'PEGADINHAS — RCP ADULTO',
+        items: [
+          {
+            label: 'Pulso a cada ciclo',
+            detail: 'Parar compressões entre ciclos.',
+            correct: 'Verificar pulso só após ~2 minutos de RCP contínua.',
+          },
+        ],
+      },
+      {
+        questionSlug: 'admtec-rcp-1',
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_rcp_sbv',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-rcp-trap-arena');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
+  it('Urgências XABCDE: concept_map urgencias-xabcde-rail com ramo', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Urgências e Emergências' },
+        items: [
+          { label: 'X — Hemorragia', detail: 'Compressão direta e torniquete em membro', icon: 'Droplets' },
+          { label: 'A — Via aérea', detail: 'Manter VA pérvia', icon: 'Wind' },
+          { label: 'Queimadura', detail: 'Água corrente, sem caseiro', icon: 'Flame' },
+        ],
+      },
+      {
+        questionSlug: 'ameosc-trauma-1',
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_xabcde_trauma',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-xabcde-rail');
+  });
+
+  it('Urgências XABCDE: golden_rule urgencias-trauma-reference-board com rows', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: 'XABCDE · trauma',
+        rows: [
+          { label: 'X', value: 'Hemorragia exsanguinante', badge: 'hot' },
+          { label: 'Queimadura', value: 'Água corrente 10–20 min', badge: 'ok' },
+        ],
+      },
+      {
+        questionSlug: 'ameosc-trauma-1',
+        slideIndex: 1,
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_xabcde_trauma',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-trauma-reference-board');
+  });
+
+  it('Urgências XABCDE: logic_flow urgencias-xabcde-tap-flow', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Urgências e Emergências' },
+        steps: [
+          'Enquadrar trauma pré-hospitalar — XABCDE.',
+          'Eliminar torniquete no pescoço → letra A.',
+          'Gabarito letra C — água corrente na queimadura.',
+        ],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'ameosc-trauma-1',
+        slideIndex: 2,
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_xabcde_trauma',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-xabcde-tap-flow');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Urgências XABCDE: danger_zone urgencias-trauma-trap-arena com correct', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: 'PEGADINHAS — TRAUMA',
+        items: [
+          {
+            label: 'Torniquete no pescoço',
+            detail: 'Interromper fluxo carotídeo.',
+            correct: 'Compressão direta em membro; torniquete só em extremidade.',
+          },
+        ],
+      },
+      {
+        questionSlug: 'ameosc-trauma-1',
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_xabcde_trauma',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-trauma-trap-arena');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
+  it('Urgências AVC: concept_map urgencias-stroke-signs-deck com ramo', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Urgências e Emergências' },
+        items: [
+          { label: 'Face', detail: 'Sorriso assimétrico', icon: 'Smile' },
+          { label: 'Braços', detail: 'Queda de MMSS', icon: 'Hand' },
+        ],
+      },
+      {
+        questionSlug: 'amauc-avc-1',
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_avc_iam',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-stroke-signs-deck');
+  });
+
+  it('Urgências choque: golden_rule urgencias-shock-reference-board com ramo', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: '1ª conduta',
+        rows: [{ label: 'Passo 1', value: 'Interromper circuito', badge: 'hot' }],
+      },
+      {
+        questionSlug: 'admtec-choque-1',
+        slideIndex: 1,
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_choque',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-shock-reference-board');
+  });
+
+  it('Urgências engasgo: danger_zone urgencias-choking-trap-arena com ramo', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: 'PEGADINHAS — ENGASGO',
+        items: [
+          {
+            label: 'Letra C — abdome',
+            detail: 'Confunde sinal com manobra.',
+            correct: 'Abdome é onde o socorrista comprime — vítima aponta o pescoço.',
+          },
+        ],
+      },
+      {
+        questionSlug: 'fau-engasgo-1',
+        familyId: 'conceito',
+        pedagogicalBranch: 'urgencias_engasgo',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-choking-trap-arena');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
+  it('Urgências pediátrica: golden_rule urgencias-pediatric-params-board com ramo', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: 'PEDIATRIA × ADULTO',
+        rows: [{ label: 'Proporção', value: '15:2 lactente/criança', badge: 'hot' }],
+      },
+      {
+        questionSlug: 'access-ped-1',
+        slideIndex: 1,
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_rcp_pediatrico',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-pediatric-params-board');
+  });
+
+  it('Urgências Manchester: concept_map urgencias-manchester-spectrum com ramo', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Urgências e Emergências' },
+        items: [
+          { label: 'Vermelho', detail: 'Emergência imediata', icon: 'Circle' },
+          { label: 'Amarelo', detail: 'Urgente monitorar', icon: 'Tags' },
+        ],
+      },
+      {
+        questionSlug: 'ameosc-triagem-1',
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_manchester_triagem',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-manchester-spectrum');
+  });
+
+  it('Urgências Manchester: danger_zone urgencias-manchester-trap com ramo', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: 'PEGADINHAS — CORES',
+        items: [
+          {
+            label: 'Letra C — azul',
+            detail: 'Instabilidade crítica.',
+            correct: 'Azul é não urgente — vermelho é instabilidade.',
+          },
+        ],
+      },
+      {
+        questionSlug: 'ameosc-triagem-1',
+        familyId: 'protocolo',
+        pedagogicalBranch: 'urgencias_manchester_triagem',
+      },
+    );
+    expect(result.layoutVariant).toBe('urgencias-manchester-trap');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
   it('Imunização: concept_map pni-rules-deck no molde', () => {
     const result = resolveSlidePresentation(
       {

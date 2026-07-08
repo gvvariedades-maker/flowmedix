@@ -32,6 +32,13 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'burn-rule-nine-board',
   'trabalho-nr32-reference-board',
   'respiratorio-spo2-reference-board',
+  'urgencias-rcp-params-board',
+  'urgencias-trauma-reference-board',
+  'urgencias-cincinnati-board',
+  'urgencias-shock-reference-board',
+  'urgencias-heimlich-board',
+  'urgencias-pediatric-params-board',
+  'urgencias-manchester-board',
   'etiology-letter-spectrum',
   'itu-bundle-letter-board',
 ]);
@@ -78,6 +85,13 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'burn-rule-nine-board') return 'burn-rule-nine-board';
   if (explicitVariant === 'trabalho-nr32-reference-board') return 'trabalho-nr32-reference-board';
   if (explicitVariant === 'respiratorio-spo2-reference-board') return 'respiratorio-spo2-reference-board';
+  if (explicitVariant === 'urgencias-rcp-params-board') return 'urgencias-rcp-params-board';
+  if (explicitVariant === 'urgencias-trauma-reference-board') return 'urgencias-trauma-reference-board';
+  if (explicitVariant === 'urgencias-cincinnati-board') return 'urgencias-cincinnati-board';
+  if (explicitVariant === 'urgencias-shock-reference-board') return 'urgencias-shock-reference-board';
+  if (explicitVariant === 'urgencias-heimlich-board') return 'urgencias-heimlich-board';
+  if (explicitVariant === 'urgencias-pediatric-params-board') return 'urgencias-pediatric-params-board';
+  if (explicitVariant === 'urgencias-manchester-board') return 'urgencias-manchester-board';
   if (explicitVariant === 'etiology-letter-spectrum') return 'etiology-letter-spectrum';
   if (explicitVariant === 'itu-bundle-letter-board') return 'itu-bundle-letter-board';
 

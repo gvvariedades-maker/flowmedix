@@ -1,0 +1,30 @@
+{
+  "lote": "urgencias-ameosc-trauma-xabcde-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-08",
+  "subtopico": "Urgências e Emergências",
+  "total": 1,
+  "status": "applied",
+  "applied_at": "2026-07-08",
+  "readme": "data/catalog-migration/urgencias-ameosc-trauma-xabcde-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=examples/questao-premium-ameosc-urgencias-trauma-queimadura.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=urgencias-ameosc-trauma-xabcde-repair --apply",
+  "anchor_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+  "anchor_example": "examples/questao-premium-ameosc-urgencias-trauma-queimadura.json",
+  "pedagogical_branch": "urgencias_xabcde_trauma",
+  "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+  "family": "protocolo",
+  "command": "trauma pré-hospitalar — queimadura × hemorragia × fratura",
+  "gabarito": "C",
+  "nota": "Âncora P0 — ramo urgencias_xabcde_trauma. Sub-âncoras: imobilização V/F + BT16 esmagamento (READY).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-08",
+    "reviewer": "handcraft-urgencias",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/urgencias-ameosc-trauma-xabcde-repair.json"
+  }
+}

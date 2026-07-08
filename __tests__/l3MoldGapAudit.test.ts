@@ -109,4 +109,53 @@ describe('l3MoldGapCatalog', () => {
     expect(r.branch_id).toBe('perioperatorio_protocolo');
     expect(r.decision).toBe('ok_generico');
   });
+
+  it('Urgências RCP adulto com volume → molde_redesign', () => {
+    const r = resolveClusterIdeal(
+      'Urgências e Emergências',
+      'RCP / SBV adulto (V/F ou protocolo)',
+      68,
+      20,
+      'survival-chain · center · vertical · trap-reveal (legado)',
+    );
+    expect(r.branch_id).toBe('urgencias_rcp_sbv');
+    expect(r.decision).toBe('molde_redesign');
+    expect(r.ideal_mold_package).toContain('urgencias-rcp-params-board');
+  });
+
+  it('Urgências XABCDE trauma → molde_inedito', () => {
+    const r = resolveClusterIdeal(
+      'Urgências e Emergências',
+      'XABCDE / trauma e hemorragia',
+      22,
+      6.5,
+      'survival-chain · center',
+    );
+    expect(r.branch_id).toBe('urgencias_xabcde_trauma');
+    expect(r.decision).toBe('molde_inedito');
+  });
+
+  it('Urgências EXCETO conduta → ok_generico', () => {
+    const r = resolveClusterIdeal(
+      'Urgências e Emergências',
+      'EXCETO / INCORRETA — conduta',
+      22,
+      6.5,
+      'survival-chain · trap-reveal',
+    );
+    expect(r.branch_id).toBe('urgencias_exceto_conduta');
+    expect(r.decision).toBe('ok_generico');
+  });
+
+  it('Urgências Manchester volume baixo → molde_inedito (ramo implementado)', () => {
+    const r = resolveClusterIdeal(
+      'Urgências e Emergências',
+      'Manchester / triagem de risco',
+      4,
+      1.2,
+      'survival-chain · center',
+    );
+    expect(r.branch_id).toBe('urgencias_manchester_triagem');
+    expect(r.decision).toBe('molde_inedito');
+  });
 });

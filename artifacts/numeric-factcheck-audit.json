@@ -1,57 +1,47 @@
 {
-  "generated_at": "2026-07-04T04:44:59.845Z",
-  "scanned": 7,
-  "passed": 7,
+  "generated_at": "2026-07-08T11:51:14.964Z",
+  "scanned": 8,
+  "passed": 8,
   "failed": 0,
-  "warn_only": 1,
+  "warn_only": 0,
   "results": [
     {
-      "slug": "objetiva-concursos-enfermagem-vias-de-administracao-1776056374837-1",
+      "slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "objetiva-concursos-enfermagem-vias-de-administracao-1778968825263-1",
+      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "omni-enfermagem-vias-de-administracao-1778968997293-5",
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "sc-treinamentos-enfermagem-vias-de-administracao-1778968666352-5",
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "univida-enfermagem-vias-de-administracao-1778968646731-3",
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-8",
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
       "ok": true,
-      "issues": [
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"0,1 mL\" não encontrado na guideline de Vias de Administração.",
-          "severity": "warn",
-          "claim": "0,1 mL",
-          "path": "reverse_study_slides"
-        },
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"0,4 mL\" não encontrado na guideline de Vias de Administração.",
-          "severity": "warn",
-          "claim": "0,4 mL",
-          "path": "reverse_study_slides"
-        }
-      ]
+      "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
       "ok": true,
       "issues": []
     }

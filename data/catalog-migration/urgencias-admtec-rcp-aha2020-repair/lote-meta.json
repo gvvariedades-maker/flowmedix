@@ -1,0 +1,29 @@
+{
+  "lote": "urgencias-admtec-rcp-aha2020-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-08",
+  "subtopico": "Urgências e Emergências",
+  "total": 1,
+  "status": "handcraft_ready",
+  "readme": "data/catalog-migration/urgencias-admtec-rcp-aha2020-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=urgencias-admtec-rcp-aha2020-repair --apply",
+  "anchor_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+  "anchor_example": "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+  "pedagogical_branch": "urgencias_rcp_sbv",
+  "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+  "family": "protocolo",
+  "command": "AHA 2020 — parâmetros RCP adulto MCQ",
+  "gabarito": "D",
+  "nota": "Âncora P0 primária — ramo urgencias_rcp_sbv (68 slugs). Sub-âncora V/F: examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-08",
+    "reviewer": "handcraft-urgencias",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/urgencias-admtec-rcp-aha2020-repair.json"
+  }
+}

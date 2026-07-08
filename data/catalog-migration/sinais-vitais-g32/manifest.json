@@ -1,0 +1,16 @@
+{
+  "lote": "sinais-vitais-g32",
+  "exported_at": "2026-07-06T23:09:15.207Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g32/manifest.json"
+  },
+  "slugs": [
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-5",
+    "idesg-enfermagem-verificacao-de-sinais-vitais-1778969745165-0",
+    "idesg-enfermagem-verificacao-de-sinais-vitais-1779343801786-1",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-1",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-4",
+    "unifil-enfermagem-verificacao-de-sinais-vitais-1779343845367-7"
+  ]
+}

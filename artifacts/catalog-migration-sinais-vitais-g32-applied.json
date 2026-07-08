@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-07T00:54:08.666Z",
+  "lote": "sinais-vitais-g32",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-5",
+    "idesg-enfermagem-verificacao-de-sinais-vitais-1778969745165-0",
+    "idesg-enfermagem-verificacao-de-sinais-vitais-1779343801786-1",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-1",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-4",
+    "unifil-enfermagem-verificacao-de-sinais-vitais-1779343845367-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-verificacao-de-sinais-vitais-1778969745165-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-verificacao-de-sinais-vitais-1779343801786-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-verificacao-de-sinais-vitais-1779343845367-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

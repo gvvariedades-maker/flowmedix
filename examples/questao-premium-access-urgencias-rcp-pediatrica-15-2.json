@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "banca": "Instituto Access",
+    "prova": "Tec (CISTRI)",
+    "orgao": "Enfermagem",
+    "ano": "2023",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_pediatrico",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "SBV/RCP pediátrica — 15:2 · ~1/3 diâmetro AP · 100–120/min",
+      "exam_vs_current": "none",
+      "catalog_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "cluster": "RCP pediátrica / lactente — parâmetros sem VA avançada"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-ped-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/RCP — pediatria",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "15:2 pediatrico dois socorristas",
+          "30:2 um socorrista pediatrico",
+          "profundidade terco diametro toracico",
+          "100-120 compressoes min",
+          "retorno total torax"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Na assistência a uma parada cardiorrespiratória no paciente pediátrico, assinale a alternativa que evidencie uma RCP de alta qualidade na ausência de via aérea avançada.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Comprima com força (≥1/3 do diâmetro torácico anteroposterior e rapidez de 100 a 120 por minuto) e aguarde o retorno total do tórax, relação compressão- ventilação 30:2.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Comprima com força (≥1/2 do diâmetro torácico anteroposterior e rapidez de 100 a 120 por minuto) e aguarde o retorno total do tórax, relação compressão- ventilação 30:2.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Comprima com força (≥1/2 do diâmetro torácico anteroposterior e rapidez de 100 a 120 por minuto) e aguarde o retorno total do tórax, relação compressão- ventilação 15:2.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Comprima com força (≥1/3 do diâmetro torácico anteroposterior e rapidez de 100 a 120 por minuto) e aguarde o retorno total do tórax, relação compressão- ventilação 15:2.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "RCP pediátrica — parâmetros",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Enquadramento",
+          "detail": "PCR em criança/lactente sem via aérea avançada — identificar compressão de alta qualidade.",
+          "icon": "Target"
+        },
+        {
+          "label": "Proporção pediátrica",
+          "detail": "Dois socorristas treinados: 15 compressões : 2 ventilações (não 30:2 do adulto).",
+          "icon": "Users"
+        },
+        {
+          "label": "Profundidade",
+          "detail": "Cerca de um terço do diâmetro anteroposterior do tórax — não metade do tórax.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Ritmo e retorno",
+          "detail": "100–120/min com retorno total do tórax entre compressões.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Alternativas quase idênticas trocam proporção (30:2) e profundidade — leia os dois vértices.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Pediatria: 15:2 + ~⅓ do tórax"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "RCP pediátrica — decore",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEDIATRIA × ADULTO",
+      "rows": [
+        {
+          "label": "Proporção (2 socorristas)",
+          "value": "15:2 — lactente/criança",
+          "badge": "hot"
+        },
+        {
+          "label": "Proporção (1 socorrista)",
+          "value": "30:2 — quando só um treinado",
+          "badge": "info"
+        },
+        {
+          "label": "Profundidade",
+          "value": "~⅓ do diâmetro AP do tórax",
+          "badge": "warn"
+        },
+        {
+          "label": "Frequência",
+          "value": "100–120 compressões/min",
+          "badge": "ok"
+        },
+        {
+          "label": "Retorno torácico",
+          "value": "Completo entre compressões",
+          "badge": "ok"
+        },
+        {
+          "label": "Adulto (contraste)",
+          "value": "30:2 · 5–6 cm — não transferir para pediatria",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "15:2 + terço do tórax = pediatria"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Formato: PCR pediátrica sem VA avançada — assinalar parâmetros de RCP de alta qualidade.",
+        "Eixo 1 — proporção: com dois socorristas, pediatria exige 15:2 (adulto = 30:2).",
+        "Eixo 2 — profundidade: cerca de um terço do diâmetro AP; metade do tórax é excessivo.",
+        "Eixo 3 — qualidade: 100–120/min e retorno total do tórax em todas as alternativas.",
+        "Eliminar combinações com proporção adulta (30:2) mesmo com profundidade correta.",
+        "Eliminar combinações com profundidade excessiva, mesmo com 15:2 correto.",
+        "Resta terço do tórax + 15:2 + frequência e retorno descritos.",
+        "Marcar D.",
+        "Fixação: em MCQ pediátrica, cruze proporção E profundidade — a banca troca um vértice por letra."
+      ],
+      "footer_rule": "Cruzar 15:2 × terço do tórax"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — RCP PEDIÁTRICA",
+      "items": [
+        {
+          "label": "Letra A — profundidade certa, proporção adulta",
+          "detail": "Parece completa: terço do tórax e retorno total estão corretos.",
+          "correct": "30:2 é relação do adulto com dois socorristas — em pediatria, 15:2."
+        },
+        {
+          "label": "Letra B — profundidade excessiva",
+          "detail": "Mistura metade do diâmetro torácico com 30:2 — duplo erro.",
+          "correct": "Profundidade pediátrica ≈ um terço do AP; metade do tórax comprime demais."
+        },
+        {
+          "label": "Letra C — 15:2 com profundidade errada",
+          "detail": "Acerta a proporção pediátrica, mas exagera a profundidade.",
+          "correct": "15:2 está certo, mas a profundidade deve ser ~⅓ do diâmetro AP, não metade."
+        },
+        {
+          "label": "Transferência — 30:2 no adulto",
+          "detail": "Em outra questão, a banca cobra 30:2 sem VA avançada no adulto.",
+          "correct": "Adulto = 30:2 · pediatria com 2 socorristas = 15:2 — não inverter."
+        }
+      ],
+      "footer_rule": "Pediatria: proporção E profundidade certas"
+    }
+  ]
+}

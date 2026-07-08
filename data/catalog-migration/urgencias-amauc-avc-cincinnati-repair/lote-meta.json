@@ -1,0 +1,30 @@
+{
+  "lote": "urgencias-amauc-avc-cincinnati-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-08",
+  "subtopico": "Urgências e Emergências",
+  "total": 1,
+  "status": "applied",
+  "applied_at": "2026-07-08",
+  "readme": "data/catalog-migration/urgencias-amauc-avc-cincinnati-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=data/catalog-migration/urgencias-amauc-avc-cincinnati-repair/questions/amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=urgencias-amauc-avc-cincinnati-repair --apply",
+  "anchor_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+  "anchor_example": "examples/questao-premium-amauc-urgencias-cincinnati-avc.json",
+  "pedagogical_branch": "urgencias_avc_iam",
+  "pedagogical_cluster": "AVC / IAM — reconhecimento",
+  "family": "protocolo",
+  "command": "três itens da Escala de Cincinnati",
+  "gabarito": "A",
+  "nota": "Âncora golden-v1 P0 — ramo urgencias_avc_iam (23 slugs no cluster).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-08",
+    "reviewer": "handcraft-urgencias",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/urgencias-amauc-avc-cincinnati-repair.json"
+  }
+}

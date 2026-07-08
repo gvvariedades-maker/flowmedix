@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "ano": "2026",
+    "banca": "Fau Unicentro",
+    "orgao": "Pref Verê",
+    "prova": "Tec Enf",
+    "cargo_header": "Técnico de enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_engasgo",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-07",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "Protocolo SBV/RCP — MS SAMU 192 (engasgo / obstrução de VA)",
+      "exam_vs_current": "none",
+      "catalog_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "cluster": "Engasgo / obstrução de via aérea"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-sbv-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Suporte Básico de Vida e RCP — Protocolo SAMU 192",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "sinal universal de engasgo",
+          "mãos ao pescoço",
+          "manobras abdominais",
+          "obstrução de via aérea"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O sinal universal de engasgo é quando a pessoa leva as mãos ao:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Calcâneo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Joelho.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Abdome.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Deltoide.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Pescoço.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Engasgo — reconhecimento na prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Sinal universal",
+          "detail": "Vítima consciente com obstrução de via aérea leva as mãos ao pescoço — gesto de sufocamento.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "O que a banca pergunta",
+          "detail": "Local do gesto de reconhecimento, não o local da manobra de desobstrução.",
+          "icon": "Target"
+        },
+        {
+          "label": "Conduta após reconhecer",
+          "detail": "Adulto consciente: manobras abdominais (Heimlich) até expulsão ou inconsciência.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Pegadinha clássica",
+          "detail": "Abdome entra na manobra, mas o sinal universal é pescoço/garganta — não confundir sinal × conduta.",
+          "icon": "XCircle"
+        }
+      ],
+      "footer_rule": "Mãos no pescoço = sinal universal; abdome = manobra"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Engasgo — decore para a prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "OBSTRUÇÃO DE VIA AÉREA — RECONHECER × AGIR",
+      "rows": [
+        {
+          "label": "Sinal universal (consciente)",
+          "value": "Mãos ao pescoço / garganta"
+        },
+        {
+          "label": "Adulto consciente",
+          "value": "Manobras abdominais (Heimlich) até expulsão ou inconsciência"
+        },
+        {
+          "label": "Gestante ou obeso",
+          "value": "5 golpes interescapulares + 5 compressões torácicas, alternando"
+        },
+        {
+          "label": "Inconsciente",
+          "value": "Iniciar RCP — checar boca antes de ventilar"
+        }
+      ],
+      "footer_rule": "Reconhecer no pescoço; desobstruir conforme idade e consciência"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Identificar o foco: sinal universal de engasgo — gesto de reconhecimento, não conduta.",
+        "Recuperar a regra: vítima consciente leva as mãos ao pescoço/garganta.",
+        "Separar sinal × manobra: Heimlich usa abdome, mas o sinal não é abdominal.",
+        "Eliminar regiões sem relação com sufocamento (membros inferiores e deltoide).",
+        "Eliminar abdome — é local da compressão, não do gesto universal.",
+        "Resta pescoço: única alternativa coerente com o protocolo de reconhecimento.",
+        "Marcar E.",
+        "Fixação: mãos no pescoço = não consegue falar e pede ajuda sem palavras."
+      ],
+      "footer_rule": "Sinal no pescoço; manobra no abdome (adulto consciente)"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — SINAL UNIVERSAL DE ENGASGO",
+      "items": [
+        {
+          "label": "Letra A — calcâneo",
+          "detail": "Regiões dos membros inferiores sem relação com obstrução de via aérea.",
+          "correct": "O sinal universal é cervical: mãos no pescoço, não no pé nem no joelho."
+        },
+        {
+          "label": "Letra B — joelho",
+          "detail": "Membro inferior sem relação com sufocamento.",
+          "correct": "Joelho não traduz obstrução de via aérea — o gesto é mãos à garganta."
+        },
+        {
+          "label": "Letra C — abdome",
+          "detail": "Parece certo porque a manobra de Heimlich comprime o abdome.",
+          "correct": "Abdome é local da manobra em adulto consciente — o sinal de reconhecimento é pescoço."
+        },
+        {
+          "label": "Letra D — deltoide",
+          "detail": "Confunde membro superior com o gesto clássico de sufocamento.",
+          "correct": "Deltoide não traduz obstrução de via aérea — o gesto é mãos à garganta."
+        }
+      ],
+      "footer_rule": "Banca troca sinal (pescoço) por local da manobra (abdome)"
+    }
+  ]
+}

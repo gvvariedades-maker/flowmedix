@@ -17,6 +17,8 @@ import {
   MOBILE_NARROW_VIEWPORT,
   onboardingDismissScript,
   PNI_IMUNIZACAO_BRANCHES,
+  SINAIS_VITAIS_BRANCHES,
+  URGENCIAS_BRANCHES,
   VIAS_BRANCHES,
   screenshotSlidePanels,
   SLIDE_COUNT,
@@ -180,5 +182,130 @@ test.describe('Vias de Administração — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('vias-de-administracao');
+  });
+});
+
+test.describe('Verificação de Sinais Vitais — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression SV — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  for (const branch of SINAIS_VITAIS_BRANCHES) {
+    test(`SV ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`SV ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('SV vitals_pa_tecnica — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'vitals_pa_tecnica';
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await expectSlidePanels(page);
+
+    const panel = page.getByTestId('mold-slide-1');
+    await panel.scrollIntoViewIfNeeded();
+    const overflowX = await panel.evaluate((el) => el.scrollWidth > el.clientWidth + 2);
+    expect(overflowX).toBe(false);
+    const text = (await panel.innerText()).toLowerCase();
+    expect(text).toMatch(/press[aã]o|manguito|aferi/);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('SV — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'sinais-vitais',
+      branches: SINAIS_VITAIS_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 SV — ${SINAIS_VITAIS_BRANCHES.length} branches (desktop + mobile-375 + DoD vitals_pa_tecnica); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('sinais-vitais');
+  });
+});
+
+test.describe('Urgências e Emergências — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Urgências — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of URGENCIAS_BRANCHES) {
+    test(`Urgências ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Urgências ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Urgências urgencias_rcp_sbv — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'urgencias_rcp_sbv';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Urgências — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'urgencias-e-emergencias',
+      branches: URGENCIAS_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Urgências — ${URGENCIAS_BRANCHES.length} branches (desktop + mobile-375 + DoD urgencias_rcp_sbv); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('urgencias-e-emergencias');
   });
 });

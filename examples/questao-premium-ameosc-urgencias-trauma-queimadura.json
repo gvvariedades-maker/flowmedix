@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "banca": "AMEOSC",
+    "prova": "Tec Enf (Pref São José Cedro)",
+    "orgao": "ESF",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_xabcde_trauma",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-07",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "Protocolo SBV/trauma MS — XABCDE · queimadura · fratura · hemorragia",
+      "exam_vs_current": "none",
+      "catalog_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "cluster": "XABCDE / trauma pré-hospitalar — queimadura × hemorragia × fratura"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-sbv-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo Suporte Básico de Vida — trauma pré-hospitalar",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "queimadura agua corrente",
+          "torniquete membro hemorragia",
+          "fratura imobilizar posicao encontrada",
+          "XABCDE hemorragia exsanguinante",
+          "nao retirar corpo estranho"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O atendimento pré-hospitalar em situações de urgência na comunidade exige rapidez e aplicação de manobras que estabilizem o paciente até a chegada do suporte avançado.\nSobre o atendimento inicial ao trauma, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "O controle de grandes hemorragias externas em membros deve ser feito primordialmente através da aplicação de torniquete na região do pescoço, visando interromper o fluxo carotídeo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Em casos de queda com suspeita de fratura de fêmur, o membro deve ser tracionado vigorosamente para o alinhamento anatômico perfeito antes da aplicação de talas de imobilização improvisadas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "No atendimento a queimaduras térmicas extensas, deve-se resfriar a área com água corrente em temperatura ambiente e evitar a aplicação de substâncias caseiras como pasta de dente ou manteiga.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "A retirada imediata de objetos encravados em ferimentos penetrantes abdominais deve ser realizada pelo Técnico de Enfermagem ainda no local do acidente para estancar a hemorragia interna.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Trauma pré-hospitalar",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Atendimento inicial ao trauma na comunidade — estabilizar até suporte avançado; assinale a conduta correta.",
+          "icon": "Target"
+        },
+        {
+          "label": "XABCDE",
+          "detail": "X = hemorragia exsanguinante · depois via aérea, ventilação, circulação — não agravar no local.",
+          "icon": "ListOrdered"
+        },
+        {
+          "label": "Núcleo desta prova",
+          "detail": "Queimadura extensa: água corrente (temperatura ambiente) e proibir pasta de dente, manteiga ou gelo.",
+          "icon": "Flame"
+        },
+        {
+          "label": "Três erros clássicos",
+          "detail": "Torniquete no pescoço · tração de fratura · retirar objeto encravado no abdome.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Regra de ouro",
+          "detail": "Pré-hospitalar = não piorar — imobilizar como encontrou, comprimir membro, estabilizar corpo estranho.",
+          "icon": "Shield"
+        }
+      ],
+      "footer_rule": "Estabilizar · não agravar · transportar"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Comando: trauma inicial na comunidade — qual conduta está correta no pré-hospitalar.",
+        "A — torniquete no pescoço para hemorragia de membro → falso: compressão direta/torniquete no membro; nunca pescoço.",
+        "B — tração vigorosa do fêmur para alinhar → falso: imobilizar na posição encontrada, sem reposicionar.",
+        "D — retirar objeto abdominal encravado no local → falso: estabilizar e transportar; extração é hospitalar.",
+        "C — queimadura extensa: água corrente ambiente + sem substância caseira → verdadeira (MS/SBV).",
+        "Marcar C.",
+        "Fixação: em MCQ de trauma, teste o que NÃO agrava antes de marcar a conduta “bonita”."
+      ],
+      "footer_rule": "Hemorragia membro ≠ pescoço · fratura ≠ tração · abdome ≠ puxar objeto"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Trauma — decore",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PRÉ-HOSPITALAR — NÃO PIORAR",
+      "rows": [
+        {
+          "label": "Hemorragia membro",
+          "value": "Compressão direta; torniquete no membro se massiva",
+          "badge": "hot"
+        },
+        {
+          "label": "Fratura suspeita",
+          "value": "Imobilizar na posição encontrada — sem tração",
+          "badge": "ok"
+        },
+        {
+          "label": "Corpo estranho",
+          "value": "Estabilizar — não retirar no local do acidente",
+          "badge": "warn"
+        },
+        {
+          "label": "Queimadura térmica",
+          "value": "Água corrente · sem pasta, manteiga ou gelo",
+          "badge": "ok"
+        },
+        {
+          "label": "XABCDE",
+          "value": "X hemorragia exsanguinante antes de A–E",
+          "badge": "info"
+        },
+        {
+          "label": "Meta",
+          "value": "Estabilizar até suporte avançado / SAMU",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Água sim · caseiro não"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — TRAUMA PRÉ-HOSPITALAR",
+      "items": [
+        {
+          "label": "Letra A — torniquete no pescoço",
+          "detail": "Parece controle radical de sangramento grave.",
+          "correct": "Torniquete é no membro com hemorragia massiva — no pescoço mata; use compressão direta."
+        },
+        {
+          "label": "Letra B — tração do fêmur",
+          "detail": "Alinhamento anatômico “perfeito” seduz quem viu filme.",
+          "correct": "Fratura: imobilizar como encontrou; tração vigorosa lesiona vasos e nervos."
+        },
+        {
+          "label": "Letra D — retirar objeto abdominal",
+          "detail": "Parece estancar hemorragia interna de imediato.",
+          "correct": "Objeto encravado: estabilizar e transportar — retirada no hospital evita sangramento descontrolado."
+        },
+        {
+          "label": "Transferência — gelo na queimadura",
+          "detail": "Em outra questão, a banca oferece gelo ou manteiga na queimadura.",
+          "correct": "Resfriar com água corrente; proibir gelo, pasta de dente e substâncias caseiras."
+        }
+      ],
+      "footer_rule": "Trauma: menos é mais no pré-hospitalar"
+    }
+  ]
+}

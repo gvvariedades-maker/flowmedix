@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "banca": "SELECON",
+    "prova": "Tec (Pref Pri do Leste)",
+    "orgao": "Enfermagem / SAMU",
+    "ano": "2023",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_xabcde_trauma",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-07",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "Protocolo SAMU 192 — BT16 síndrome do esmagamento (soterramento)",
+      "exam_vs_current": "none",
+      "catalog_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4",
+      "cluster": "SAMU BT — síndrome do esmagamento × soterramento"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-sbv-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/SAMU 192 — trauma e emergências",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "sindrome esmagamento crush",
+          "soterramento compressao muscular",
+          "BT16 protocolo SAMU",
+          "rabdomiolise hipercalemia",
+          "trauma extremidades"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "João Mendes, técnico de enfermagem da SAMU, é acionado, juntamente com a equipe multidisciplinar, para atender uma paciente com trauma por mecanismo de compressão de grande massa muscular de extremidades, causado por soterramento (colapso de estrutura). Nesse caso, o protocolo indicado é o:",
+    "options": [
+      {
+        "id": "A",
+        "text": "BT22 - Afogamento",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "BT18 - Queimadura térmica (calor)",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "BT16 - Síndrome do esmagamento",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "BT8 - Pneumotórax aberto - Ferimento aberto no tórax",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "SAMU — BT16 esmagamento",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "SAMU acionado — soterramento com compressão de massa muscular em extremidades: qual Boletim Técnico (BT)?",
+          "icon": "Target"
+        },
+        {
+          "label": "Mecanismo",
+          "detail": "Esmagamento prolongado de músculo → síndrome do esmagamento (crush) — risco de rabdomiólise.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "BT16",
+          "detail": "Protocolo da síndrome do esmagamento — cenário clássico de colapso estrutural.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Conduta-chave",
+          "detail": "Monitorar volemia e eletrólitos; liberar compressão com suporte — hipercalemia e IRA são riscos.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "BT troca tema: afogamento, queimadura e pneumotórax não são compressão muscular por soterramento.",
+          "icon": "Shield"
+        }
+      ],
+      "footer_rule": "Soterramento + músculo = BT16"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Ancorar cenário: compressão de grande massa muscular em extremidades por soterramento.",
+        "Pergunta: qual protocolo SAMU (BT) cobre esmagamento muscular?",
+        "A BT22 afogamento → mecanismo aquático; eliminar.",
+        "B BT18 queimadura térmica → agente calor; eliminar.",
+        "D BT8 pneumotórax aberto → ferimento torácico; eliminar.",
+        "C BT16 síndrome do esmagamento → alinha compressão muscular prolongada.",
+        "Marcar C.",
+        "Fixação: leia o mecanismo do enunciado antes do número do BT."
+      ],
+      "footer_rule": "Mecanismo → código BT"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "BT SAMU — decore",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "BT DESTA PROVA",
+      "rows": [
+        {
+          "label": "BT16",
+          "value": "Síndrome do esmagamento — compressão muscular",
+          "badge": "hot"
+        },
+        {
+          "label": "BT22",
+          "value": "Afogamento",
+          "badge": "info"
+        },
+        {
+          "label": "BT18",
+          "value": "Queimadura térmica (calor)",
+          "badge": "info"
+        },
+        {
+          "label": "BT8",
+          "value": "Pneumotórax aberto — ferimento no tórax",
+          "badge": "info"
+        },
+        {
+          "label": "Crush — risco",
+          "value": "Rabdomiólise · hipercalemia · lesão renal",
+          "badge": "warn"
+        },
+        {
+          "label": "Equipe",
+          "value": "SAMU multidisciplinar + transporte urgente",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "Extremidade esmagada = BT16"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — CÓDIGOS BT",
+      "items": [
+        {
+          "label": "Letra A — BT22 afogamento",
+          "detail": "Emergência comum no SAMU — candidato associa qualquer vítima de desastre.",
+          "correct": "Afogamento é submersão/aspiração de líquido — não compressão muscular por soterramento."
+        },
+        {
+          "label": "Letra B — BT18 queimadura",
+          "detail": "Desastres podem envolver fogo e queimaduras.",
+          "correct": "Queimadura térmica = agente calor na pele — enunciado fala em esmagamento de músculo."
+        },
+        {
+          "label": "Letra D — BT8 pneumotórax",
+          "detail": "Colapso de estrutura pode ferir tórax — parece trauma grave.",
+          "correct": "Pneumotórax aberto é ferimento torácico comunicante — não o mecanismo de extremidade comprimida."
+        },
+        {
+          "label": "Transferência — liberação da compressão",
+          "detail": "Em outra questão, cobram conduta ao retirar o escombros.",
+          "correct": "Preparar suporte volêmico e monitorar K+ — liberação abrupta pode piorar a vítima."
+        }
+      ],
+      "footer_rule": "Não troque BT pelo tema vizinho"
+    }
+  ]
+}

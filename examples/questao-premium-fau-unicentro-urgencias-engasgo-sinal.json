@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "banca": "FAU UNICENTRO",
+    "prova": "Tec Enf",
+    "orgao": "Pref Verê",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_engasgo",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-07",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "Engasgo — sinal universal + manobra de Heimlich (MS/SBV)",
+      "exam_vs_current": "none",
+      "catalog_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "cluster": "Engasgo / obstrução VA — sinal universal (mãos ao pescoço)"
+    },
+    "sources": [
+      {
+        "id": "urgencias-rcp-sbv-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV — engasgo adulto consciente",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "sinal universal engasgo",
+          "maos ao pescoco",
+          "obstrucao via aerea",
+          "manobras abdominais Heimlich",
+          "engasgo adulto consciente"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O sinal universal de engasgo é quando a pessoa leva as mãos ao:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Calcâneo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Joelho.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Abdome.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Deltoide.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Pescoço.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Sinal universal — engasgo",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Sinal universal de engasgo: onde a pessoa leva as mãos em obstrução de via aérea.",
+          "icon": "Target"
+        },
+        {
+          "label": "Sinal",
+          "detail": "Mãos ao pescoço/garganta — sufocando, sem falar; pede ajuda sem palavras.",
+          "icon": "Hand"
+        },
+        {
+          "label": "Significado",
+          "detail": "Obstrução de via aérea parcial ou total — reconhecer antes da manobra.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Abdome = local da manobra de Heimlich — não é onde a vítima leva as próprias mãos.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Depois do sinal",
+          "detail": "Consciente: compressões abdominais · inconsciente: RCP · acionar 192.",
+          "icon": "HeartPulse"
+        }
+      ],
+      "footer_rule": "Mãos no pescoço = engasgo"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Comando: local do sinal universal — gesto da própria vítima, não da manobra do socorrista.",
+        "Engasgo consciente: mãos à garganta/pescoço sinalizam “não consigo respirar”.",
+        "A e B — calcâneo/joelho → regiões sem sentido para sufocamento; eliminar.",
+        "C — abdome → confunde com Heimlich (socorrista comprime abdome, vítima não aponta ali); eliminar.",
+        "D — deltoide → sem relação com via aérea; eliminar.",
+        "E — pescoço → gesto clássico internacional de engasgo.",
+        "Marcar E.",
+        "Fixação: sinal = pescoço · manobra = abdome — não inverter na prova."
+      ],
+      "footer_rule": "Vítima aponta pescoço · socorrista age no abdome"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Engasgo — decore",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "SINAL × MANOBRA",
+      "rows": [
+        {
+          "label": "Sinal universal",
+          "value": "Mãos ao pescoço / garganta",
+          "badge": "hot"
+        },
+        {
+          "label": "Adulto consciente",
+          "value": "Manobras abdominais (Heimlich)",
+          "badge": "ok"
+        },
+        {
+          "label": "Gestante / obeso",
+          "value": "5 golpes interescapulares + 5 compressões torácicas",
+          "badge": "info"
+        },
+        {
+          "label": "Inconsciente",
+          "value": "Iniciar RCP — checar boca antes de ventilar",
+          "badge": "warn"
+        },
+        {
+          "label": "Lactente",
+          "value": "5 tapas nas costas + 5 compressões torácicas",
+          "badge": "info"
+        },
+        {
+          "label": "Conduta",
+          "value": "Acionar 192 se não resolver",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "Reconhecer sinal → manobra certa"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — SINAL DE ENGASGO",
+      "items": [
+        {
+          "label": "Letra A — calcâneo",
+          "detail": "Parece região anatômica “de prova” sem lógica clínica.",
+          "correct": "Sinal universal é mãos ao pescoço — calcâneo não tem relação com via aérea."
+        },
+        {
+          "label": "Letra B — joelho",
+          "detail": "Membro inferior distrai quem decora anatomia sem contexto.",
+          "correct": "Engasgo: gesto na garganta/pescoço, não no joelho."
+        },
+        {
+          "label": "Letra C — abdome",
+          "detail": "A banca explora quem confunde sinal da vítima com local da Heimlich.",
+          "correct": "Abdome é onde o socorrista comprime — a vítima leva as mãos ao pescoço."
+        },
+        {
+          "label": "Letra D — deltoide",
+          "detail": "MMSS superior sem conexão com sufocamento.",
+          "correct": "Sinal clássico: mãos à altura do pescoço/garganta."
+        },
+        {
+          "label": "Transferência — Heimlich",
+          "detail": "Na sequência, a banca pergunta a manobra do adulto consciente.",
+          "correct": "Sinal no pescoço → compressões abdominais até expulsão ou inconsciência."
+        }
+      ],
+      "footer_rule": "Pescoço = sinal · abdome = manobra"
+    }
+  ]
+}

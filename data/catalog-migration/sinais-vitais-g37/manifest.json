@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g37",
+  "exported_at": "2026-07-06T23:44:53.910Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g37/manifest.json"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-5",
+    "epl-concursos-enfermagem-verificacao-de-sinais-vitais-1779344182672-0",
+    "fgv-enfermagem-verificacao-de-sinais-vitais-1779344205200-0",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-2",
+    "fundep-enfermagem-verificacao-de-sinais-vitais-1779343897104-8"
+  ]
+}

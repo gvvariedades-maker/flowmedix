@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:46:29.597Z",
+  "lote": "sinais-vitais-g12",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969768866-5",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343811344-3",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-4",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-5",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-2",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-3",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-3",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344178184-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969768866-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343811344-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344178184-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-07-07T00:39:23.670Z",
+  "scanned": 3,
+  "enriched": 3,
+  "skipped": 0,
+  "results": [
+    {
+      "slug": "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779343956155-0",
+      "changed": true,
+      "reasons": [
+        "merged_sv_covers"
+      ]
+    },
+    {
+      "slug": "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343883917-4",
+      "changed": true,
+      "reasons": [
+        "merged_sv_covers"
+      ]
+    },
+    {
+      "slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344137078-5",
+      "changed": true,
+      "reasons": [
+        "merged_sv_covers"
+      ]
+    }
+  ]
+}

@@ -131,6 +131,118 @@ describe('moldAffinity', () => {
     });
   });
 
+  describe('urgencias_rcp_sbv', () => {
+    const subtopico = 'Urgências e Emergências';
+
+    it('aceita urgencias-rcp-trap-arena para ramo rcp_sbv', () => {
+      const slide = {
+        items: [
+          {
+            label: '80–100/min',
+            detail: 'Faixa abaixo do protocolo',
+            correct: '100–120 compressões por minuto',
+          },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('urgencias-rcp-trap-arena', slide, {
+          subtopico,
+          pedagogicalBranch: 'urgencias_rcp_sbv',
+        }),
+      ).toBe(true);
+    });
+
+    it('rejeita urgencias-rcp-trap-arena para ramo generico', () => {
+      const slide = {
+        items: [{ label: 'Pulso', detail: 'ciclo', correct: '2 min' }],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('urgencias-rcp-trap-arena', slide, {
+          subtopico,
+          pedagogicalBranch: 'urgencias_generico',
+        }),
+      ).toBe(false);
+    });
+  });
+
+  describe('urgencias_xabcde_trauma', () => {
+    const subtopico = 'Urgências e Emergências';
+
+    it('aceita urgencias-trauma-trap-arena para ramo xabcde', () => {
+      const slide = {
+        items: [
+          {
+            label: 'Torniquete no pescoço',
+            detail: 'Carótida',
+            correct: 'Compressão direta em membro',
+          },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('urgencias-trauma-trap-arena', slide, {
+          subtopico,
+          pedagogicalBranch: 'urgencias_xabcde_trauma',
+        }),
+      ).toBe(true);
+    });
+
+    it('rejeita urgencias-trauma-trap-arena para ramo generico', () => {
+      const slide = {
+        items: [{ label: 'Fratura', detail: 'tração', correct: 'imobilizar' }],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('urgencias-trauma-trap-arena', slide, {
+          subtopico,
+          pedagogicalBranch: 'urgencias_generico',
+        }),
+      ).toBe(false);
+    });
+  });
+
+  describe('urgencias_engasgo', () => {
+    const subtopico = 'Urgências e Emergências';
+
+    it('aceita urgencias-choking-trap-arena para ramo engasgo', () => {
+      expect(
+        bespokeMoldHasContentAffinity('urgencias-choking-trap-arena', {
+          items: [{ label: 'Abdome', detail: 'sinal', correct: 'pescoço' }],
+        }, { subtopico, pedagogicalBranch: 'urgencias_engasgo' }),
+      ).toBe(true);
+    });
+
+    it('rejeita urgencias-choking-trap-arena para ramo generico', () => {
+      expect(
+        bespokeMoldHasContentAffinity('urgencias-choking-trap-arena', {
+          items: [{ label: 'Pescoço', detail: 'x', correct: 'y' }],
+        }, { subtopico, pedagogicalBranch: 'urgencias_generico' }),
+      ).toBe(false);
+    });
+  });
+
+  describe('urgencias_manchester_triagem', () => {
+    const subtopico = 'Urgências e Emergências';
+
+    it('aceita urgencias-manchester-trap para ramo manchester', () => {
+      expect(
+        bespokeMoldHasContentAffinity(
+          'urgencias-manchester-trap',
+          { items: [{ label: 'Azul', detail: 'instável', correct: 'vermelho' }] },
+          { subtopico, pedagogicalBranch: 'urgencias_manchester_triagem' },
+        ),
+      ).toBe(true);
+    });
+
+    it('rejeita urgencias-manchester-trap para ramo generico', () => {
+      expect(
+        bespokeMoldHasContentAffinity(
+          'urgencias-manchester-trap',
+          { items: [{ label: 'X', detail: 'y', correct: 'z' }] },
+          { subtopico, pedagogicalBranch: 'urgencias_generico' },
+        ),
+      ).toBe(false);
+    });
+  });
+
   describe('collectSlideTextCorpus', () => {
     it('agrega rows, steps e items', () => {
       const corpus = collectSlideTextCorpus({

@@ -1,0 +1,26 @@
+{
+  "lote": "sinais-vitais-g06",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-2",
+  "handcrafted_at": "2026-07-05",
+  "slugs": 8,
+  "prior_lotes": [
+    "sinais-vitais-g01",
+    "sinais-vitais-g02",
+    "sinais-vitais-g03",
+    "sinais-vitais-g04",
+    "sinais-vitais-g05"
+  ],
+  "notes": "P0 vitals_pa_tecnica posições 41–48 no cluster PA (196 slugs) — AVANÇASP + CEBRASPE + COGEPS técnica PA.",
+  "applied": false,
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g06.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

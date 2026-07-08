@@ -2,17 +2,17 @@
   "strict": true,
   "strict_v2_pedagogy": true,
   "strict_v3_pedagogy": false,
-  "scanned": 9,
+  "scanned": 8,
   "summary": {
-    "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-    "scanned": 9,
-    "ready_100": 9,
+    "subtopico": "Urgências e Emergências",
+    "scanned": 8,
+    "ready_100": 8,
     "pct_ready": 100,
     "registry": {
-      "status": "applied",
-      "total_slugs": 9,
-      "handcraft_applied": 9,
-      "complete": true
+      "status": "in_progress",
+      "total_slugs": 340,
+      "handcraft_applied": 12,
+      "complete": false
     },
     "tier_failures": {
       "A1": 0,
@@ -23,8 +23,8 @@
   },
   "results": [
     {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "subtopico": "Urgências e Emergências",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -44,13 +44,19 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
           "severity": "warn"
         },
         {
           "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
           "severity": "warn"
         },
         {
@@ -60,13 +66,55 @@
           "severity": "info"
         }
       ],
-      "family": "conceito",
-      "pedagogical_branch": "respiratorio_dpoc_oxigenio",
-      "inferred_branch": "respiratorio_dpoc_oxigenio"
+      "family": "vf",
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "inferred_branch": "urgencias_rcp_sbv"
     },
     {
-      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: C).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "protocolo",
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "inferred_branch": "urgencias_rcp_sbv"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "subtopico": "Urgências e Emergências",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -103,12 +151,12 @@
         }
       ],
       "family": "protocolo",
-      "pedagogical_branch": "respiratorio_dpoc_oxigenio",
-      "inferred_branch": "respiratorio_dpoc_oxigenio"
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "inferred_branch": "urgencias_rcp_sbv"
     },
     {
-      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "subtopico": "Urgências e Emergências",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -128,13 +176,13 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: E).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: D).",
           "severity": "warn"
         },
         {
           "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -144,97 +192,13 @@
           "severity": "info"
         }
       ],
-      "family": "conceito",
-      "pedagogical_branch": "respiratorio_tecnica_inalador",
-      "inferred_branch": "respiratorio_tecnica_inalador"
+      "family": "protocolo",
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "inferred_branch": "urgencias_rcp_sbv"
     },
     {
-      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
-        {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: E).",
-          "severity": "warn"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
-          "severity": "warn"
-        },
-        {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "conceito",
-      "pedagogical_branch": "respiratorio_tecnica_inalador",
-      "inferred_branch": "respiratorio_tecnica_inalador"
-    },
-    {
-      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
-        {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: C).",
-          "severity": "warn"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
-          "severity": "warn"
-        },
-        {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "conceito",
-      "pedagogical_branch": "respiratorio_dpoc_oxigenio",
-      "inferred_branch": "respiratorio_dpoc_oxigenio"
-    },
-    {
-      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "subtopico": "Urgências e Emergências",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -270,13 +234,13 @@
           "severity": "info"
         }
       ],
-      "family": "conceito",
-      "pedagogical_branch": "respiratorio_dpoc_oxigenio",
-      "inferred_branch": "respiratorio_dpoc_oxigenio"
+      "family": "protocolo",
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "inferred_branch": "urgencias_rcp_sbv"
     },
     {
-      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "subtopico": "Urgências e Emergências",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -296,55 +260,13 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: C).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: D).",
           "severity": "warn"
         },
         {
           "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
-          "severity": "warn"
-        },
-        {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "conceito",
-      "pedagogical_branch": "respiratorio_tecnica_inalador",
-      "inferred_branch": "respiratorio_tecnica_inalador"
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
-        {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
-          "severity": "warn"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -361,12 +283,12 @@
         }
       ],
       "family": "vf",
-      "pedagogical_branch": "respiratorio_vf_asma_dpoc",
-      "inferred_branch": "respiratorio_vf_asma_dpoc"
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "inferred_branch": "urgencias_rcp_sbv"
     },
     {
-      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "subtopico": "Urgências e Emergências",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -386,13 +308,13 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: E).",
           "severity": "warn"
         },
         {
           "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -402,9 +324,57 @@
           "severity": "info"
         }
       ],
-      "family": "conceito",
-      "pedagogical_branch": "respiratorio_dpoc_oxigenio",
-      "inferred_branch": "respiratorio_dpoc_oxigenio"
+      "family": "protocolo",
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "inferred_branch": "urgencias_rcp_sbv"
+    },
+    {
+      "slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "subtopico": "Urgências e Emergências",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "vf",
+      "pedagogical_branch": "urgencias_rcp_sbv",
+      "inferred_branch": "urgencias_rcp_sbv"
     }
   ]
 }

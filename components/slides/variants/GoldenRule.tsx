@@ -21,6 +21,15 @@ import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
 import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
 import { GoldenRuleRespiratorioSpo2ReferenceBoard } from './GoldenRuleRespiratorioSpo2ReferenceBoard';
+import { GoldenRuleUrgenciasRcpParamsBoard } from './GoldenRuleUrgenciasRcpParamsBoard';
+import { GoldenRuleUrgenciasTraumaReferenceBoard } from './GoldenRuleUrgenciasTraumaReferenceBoard';
+import { GoldenRuleUrgenciasCincinnatiBoard } from './GoldenRuleUrgenciasCincinnatiBoard';
+import { GoldenRuleUrgenciasShockReferenceBoard } from './GoldenRuleUrgenciasShockReferenceBoard';
+import { GoldenRuleUrgenciasHeimlichBoard } from './GoldenRuleUrgenciasHeimlichBoard';
+import { GoldenRuleUrgenciasPediatricParamsBoard } from './GoldenRuleUrgenciasPediatricParamsBoard';
+import { GoldenRuleUrgenciasManchesterBoard } from './GoldenRuleUrgenciasManchesterBoard';
+import { GoldenRuleUrgenciasProtocolReferenceBoard } from './GoldenRuleUrgenciasProtocolReferenceBoard';
+import { GoldenRuleUrgenciasExcetoReferenceBoard } from './GoldenRuleUrgenciasExcetoReferenceBoard';
 import { GoldenRuleEtiologyLetterSpectrum } from './GoldenRuleEtiologyLetterSpectrum';
 import { GoldenRuleItuBundleBoard } from './GoldenRuleItuBundleBoard';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
@@ -346,6 +355,60 @@ export const GoldenRule = ({
   if (variant === 'respiratorio-spo2-reference-board' && rows && rows.length > 0) {
     return (
       <GoldenRuleRespiratorioSpo2ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-rcp-params-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasRcpParamsBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-trauma-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasTraumaReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-cincinnati-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasCincinnatiBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-shock-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasShockReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-heimlich-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasHeimlichBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-pediatric-params-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasPediatricParamsBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-manchester-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasManchesterBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-protocol-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasProtocolReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'urgencias-exceto-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleUrgenciasExcetoReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

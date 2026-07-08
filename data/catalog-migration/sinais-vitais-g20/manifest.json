@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g20",
+  "exported_at": "2026-07-06T17:54:10.488Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g20/manifest.json"
+  },
+  "slugs": [
+    "itame-enfermagem-verificacao-de-sinais-vitais-1779343822075-6",
+    "ivin-enfermagem-verificacao-de-sinais-vitais-1779343919045-1",
+    "lj-assessoria-enfermagem-verificacao-de-sinais-vitais-1779344189558-4",
+    "maranatha-assessoria-enfermagem-verificacao-de-sinais-vitais-1778969752567-0",
+    "metrocapital-enfermagem-verificacao-de-sinais-vitais-1779344122526-7",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1778969737311-3",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343801786-0",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343883917-5"
+  ]
+}

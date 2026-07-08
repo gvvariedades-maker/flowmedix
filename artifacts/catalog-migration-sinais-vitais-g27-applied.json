@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:52:15.721Z",
+  "lote": "sinais-vitais-g27",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-5",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-6",
+    "cev-urca-enfermagem-verificacao-de-sinais-vitais-1778969752567-6",
+    "com-exam-pref-bauru-enfermagem-verificacao-de-sinais-vitais-1779344089179-1",
+    "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-6",
+    "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-8",
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343801786-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-verificacao-de-sinais-vitais-1778969752567-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-verificacao-de-sinais-vitais-1779344089179-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343801786-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

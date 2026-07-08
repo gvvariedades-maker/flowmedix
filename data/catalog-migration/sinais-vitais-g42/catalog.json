@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-07T00:10:56.802Z",
+  "lote": "sinais-vitais-g42",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2568
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344224014-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2656
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-verificacao-de-sinais-vitais-1779343822075-8",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO JK",
+      "avant_codigo": 2419
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-verificacao-de-sinais-vitais-1779344127707-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 2573
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344122526-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2566
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1779344111854-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2548
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-verificacao-de-sinais-vitais-1778969745165-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2253
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343897104-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2461
+    }
+  ]
+}

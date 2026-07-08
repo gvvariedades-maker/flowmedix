@@ -31,6 +31,16 @@ import {
   isImunizacaoV3ErrorCode,
 } from '@/lib/catalogMigration/imunizacaoPedagogy';
 import {
+  lintUrgenciasPedagogy,
+  isUrgenciasAlwaysErrorCode,
+  isUrgenciasV3ErrorCode,
+} from '@/lib/catalogMigration/urgenciasPedagogy';
+import {
+  lintVitalsPedagogy,
+  isVitalsAlwaysErrorCode,
+  isVitalsV3ErrorCode,
+} from '@/lib/catalogMigration/sinaisVitaisPedagogy';
+import {
   lintViasPedagogy,
   isViasAlwaysErrorCode,
   isViasV3ErrorCode,
@@ -336,6 +346,36 @@ export function auditQuestaoReadiness(
         const asError =
           isViasAlwaysErrorCode(issue.code) ||
           (strictV3Pedagogy && isViasV3ErrorCode(issue.code)) ||
+          strictV2Pedagogy;
+        push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
+      }
+    }
+
+    if (subtopico === 'Verificação de Sinais Vitais') {
+      for (const issue of lintVitalsPedagogy(payload as never, {
+        strictV2: strictV2Pedagogy,
+        strictV3: strictV3Pedagogy,
+      })) {
+        const already = checks.some((c) => c.code === issue.code);
+        if (already) continue;
+        const asError =
+          isVitalsAlwaysErrorCode(issue.code) ||
+          (strictV3Pedagogy && isVitalsV3ErrorCode(issue.code)) ||
+          strictV2Pedagogy;
+        push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
+      }
+    }
+
+    if (subtopico === 'Urgências e Emergências') {
+      for (const issue of lintUrgenciasPedagogy(payload as never, {
+        strictV2: strictV2Pedagogy,
+        strictV3: strictV3Pedagogy,
+      })) {
+        const already = checks.some((c) => c.code === issue.code);
+        if (already) continue;
+        const asError =
+          isUrgenciasAlwaysErrorCode(issue.code) ||
+          (strictV3Pedagogy && isUrgenciasV3ErrorCode(issue.code)) ||
           strictV2Pedagogy;
         push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
       }

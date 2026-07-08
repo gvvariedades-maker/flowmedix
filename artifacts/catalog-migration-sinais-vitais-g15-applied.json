@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:47:47.987Z",
+  "lote": "sinais-vitais-g15",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "icece-enfermagem-verificacao-de-sinais-vitais-1778969729218-3",
+    "icece-enfermagem-verificacao-de-sinais-vitais-1780000468214-6",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712108887-9",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-0",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-1",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-2",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-4",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "icece-enfermagem-verificacao-de-sinais-vitais-1778969729218-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-verificacao-de-sinais-vitais-1780000468214-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712108887-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

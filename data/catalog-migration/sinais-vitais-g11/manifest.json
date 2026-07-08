@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g11",
+  "exported_at": "2026-07-05T04:24:55.732Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g11/manifest.json"
+  },
+  "slugs": [
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344245160-8",
+    "fgv-enfermagem-verificacao-de-sinais-vitais-1778969737311-0",
+    "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-4",
+    "fgv-enfermagem-verificacao-de-sinais-vitais-1779344089179-5",
+    "funatec-enfermagem-verificacao-de-sinais-vitais-1779343822075-7",
+    "funatec-enfermagem-verificacao-de-sinais-vitais-1779343856589-0",
+    "funatec-enfermagem-verificacao-de-sinais-vitais-1779344097180-3",
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969729218-9"
+  ]
+}

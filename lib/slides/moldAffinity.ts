@@ -174,10 +174,99 @@ const RESPIRATORIO_BESPOKE_VARIANTS = new Set([
   'respiratorio-spo2-trap-arena',
 ]);
 
+const URGENCIAS_RCP_BESPOKE_VARIANTS = new Set([
+  'urgencias-survival-chain-deck',
+  'urgencias-rcp-params-board',
+  'urgencias-rcp-tap-flow',
+  'urgencias-rcp-trap-arena',
+]);
+
+const URGENCIAS_XABCDE_BESPOKE_VARIANTS = new Set([
+  'urgencias-xabcde-rail',
+  'urgencias-trauma-reference-board',
+  'urgencias-xabcde-tap-flow',
+  'urgencias-trauma-trap-arena',
+]);
+
+const URGENCIAS_AVC_BESPOKE_VARIANTS = new Set([
+  'urgencias-stroke-signs-deck',
+  'urgencias-cincinnati-board',
+  'urgencias-stroke-elimination-tap',
+  'urgencias-stroke-trap-arena',
+]);
+
+const URGENCIAS_CHOQUE_BESPOKE_VARIANTS = new Set([
+  'urgencias-shock-types-deck',
+  'urgencias-shock-reference-board',
+  'urgencias-shock-tap-flow',
+  'urgencias-shock-trap-arena',
+]);
+
+const URGENCIAS_ENGASGO_BESPOKE_VARIANTS = new Set([
+  'urgencias-choking-signal-deck',
+  'urgencias-heimlich-board',
+  'urgencias-choking-tap-flow',
+  'urgencias-choking-trap-arena',
+]);
+
+const URGENCIAS_PEDIATRIC_BESPOKE_VARIANTS = new Set([
+  'urgencias-pediatric-rcp-deck',
+  'urgencias-pediatric-params-board',
+  'urgencias-pediatric-tap-flow',
+  'urgencias-pediatric-trap-arena',
+]);
+
+const URGENCIAS_MANCHESTER_BESPOKE_VARIANTS = new Set([
+  'urgencias-manchester-spectrum',
+  'urgencias-manchester-board',
+  'urgencias-manchester-trap',
+]);
+
+const URGENCIAS_EXCETO_BESPOKE_VARIANTS = new Set([
+  'urgencias-exceto-rail',
+  'urgencias-exceto-reference-board',
+  'urgencias-exceto-tap-flow',
+  'urgencias-exceto-trap-arena',
+]);
+
+const URGENCIAS_PROTOCOL_BESPOKE_VARIANTS = new Set([
+  'urgencias-protocol-rules-deck',
+  'urgencias-protocol-reference-board',
+  'urgencias-protocol-tap-flow',
+  'urgencias-protocol-trap-arena',
+]);
+
+const URGENCIAS_EMERGENCY_HUB_VARIANTS = new Set(['urgencias-emergency-hub']);
+
 const RESPIRATORIO_BESPOKE_BRANCHES = new Set([
   'respiratorio_vf_asma_dpoc',
   'respiratorio_dpoc_oxigenio',
 ]);
+
+const URGENCIAS_RCP_BESPOKE_BRANCHES = new Set(['urgencias_rcp_sbv']);
+
+const URGENCIAS_XABCDE_BESPOKE_BRANCHES = new Set(['urgencias_xabcde_trauma']);
+
+const URGENCIAS_AVC_BESPOKE_BRANCHES = new Set(['urgencias_avc_iam']);
+
+const URGENCIAS_CHOQUE_BESPOKE_BRANCHES = new Set(['urgencias_choque']);
+
+const URGENCIAS_ENGASGO_BESPOKE_BRANCHES = new Set(['urgencias_engasgo']);
+
+const URGENCIAS_PEDIATRIC_BESPOKE_BRANCHES = new Set(['urgencias_rcp_pediatrico']);
+
+const URGENCIAS_MANCHESTER_BESPOKE_BRANCHES = new Set(['urgencias_manchester_triagem']);
+
+const URGENCIAS_EXCETO_BESPOKE_BRANCHES = new Set(['urgencias_exceto_conduta']);
+
+const URGENCIAS_PROTOCOL_BESPOKE_BRANCHES = new Set([
+  'urgencias_vf_protocolo',
+  'urgencias_convulsao',
+  'urgencias_anafilaxia',
+  'urgencias_queimadura',
+]);
+
+const URGENCIAS_EMERGENCY_GENERIC_BRANCHES = new Set(['urgencias_generico']);
 
 function subtopicoMatchesFragments(subtopico: string | undefined, fragments: string[]): boolean {
   if (!subtopico?.trim() || fragments.length === 0) return false;
@@ -705,6 +794,114 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['doencas respiratorias cronicas', 'asma', 'dpoc'],
     positivePatterns: [/\basma\b|\bdpoc\b|spo2|88.?92|oxigen|hiperoxia|titulad/i],
   },
+  'urgencias-survival-chain-deck': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/\brcp\b|\bsbv\b|pcr|compress|30:2|100.?120|dea|parada card/i],
+  },
+  'urgencias-rcp-params-board': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/\brcp\b|\bsbv\b|30:2|100.?120|5.?6\s*cm|pulso|dea/i],
+  },
+  'urgencias-rcp-tap-flow': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/\brcp\b|\bsbv\b|pcr|compress|30:2|afirmativa|verdadeira|falsa/i],
+  },
+  'urgencias-rcp-trap-arena': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/\brcp\b|\bsbv\b|30:2|100.?120|pulso|dea|80.?100|4\s*cm/i],
+  },
+  'urgencias-xabcde-rail': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/xabcde|hemorragia|torniquete|fratura|imobiliza|queimadura|trauma|pr[eé].?hospitalar/i],
+  },
+  'urgencias-trauma-reference-board': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/xabcde|hemorragia|fratura|queimadura|corpo estranho|trauma|imobiliza/i],
+  },
+  'urgencias-xabcde-tap-flow': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/xabcde|trauma|hemorragia|fratura|queimadura|eliminar|verdadeira|falsa/i],
+  },
+  'urgencias-trauma-trap-arena': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/torniquete|tra[cç][aã]o|queimadura|objeto|gelo|manteiga|hemorragia|fratura/i],
+  },
+  'urgencias-stroke-signs-deck': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/cincinnati|fast|avc|face|bra[cç]o|fala|speech|assimetria/i],
+  },
+  'urgencias-cincinnati-board': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/cincinnati|fast|face|arms|speech|sorriso|mmss/i],
+  },
+  'urgencias-stroke-elimination-tap': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/cincinnati|glasgow|ssvv|men[ií]ngea|iam|eliminar|avc/i],
+  },
+  'urgencias-stroke-trap-arena': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/glasgow|ssvv|men[ií]ngea|iam|cefaleia|tor[aá]cic|cincinnati/i],
+  },
+  'urgencias-shock-types-deck': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/choque|hipoperfus|el[eé]tric|hipovol[eê]m|seguran[cç]a da cena/i],
+  },
+  'urgencias-shock-reference-board': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/choque|interromper|desligar|circuito|hipovol[eê]m|arritmia/i],
+  },
+  'urgencias-shock-tap-flow': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/choque|el[eé]tric|primeira conduta|seguran[cç]a|eliminar/i],
+  },
+  'urgencias-shock-trap-arena': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/choque|el[eé]tric|rcp|afrouxar|enrolar|hipovol[eê]m/i],
+  },
+  'urgencias-choking-signal-deck': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/engasgo|obstru[cç][aã]o|sinal universal|pesco[cç]o|heimlich/i],
+  },
+  'urgencias-heimlich-board': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/engasgo|heimlich|abdominal|lactente|inconsciente|pesco[cç]o/i],
+  },
+  'urgencias-choking-tap-flow': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/engasgo|sinal|pesco[cç]o|abdome|eliminar|calc[aâ]neo/i],
+  },
+  'urgencias-choking-trap-arena': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/engasgo|pesco[cç]o|abdome|heimlich|calc[aâ]neo|joelho/i],
+  },
+  'urgencias-pediatric-rcp-deck': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/pedi[aá]tr|lactente|15:2|ter[cç]o|beb[eê]/i],
+  },
+  'urgencias-pediatric-params-board': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/15:2|pedi[aá]tr|ter[cç]o|profundidade|30:2/i],
+  },
+  'urgencias-pediatric-tap-flow': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/pedi[aá]tr|15:2|ter[cç]o|eliminar|profundidade/i],
+  },
+  'urgencias-pediatric-trap-arena': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/30:2|15:2|metade|ter[cç]o|pedi[aá]tr/i],
+  },
+  'urgencias-manchester-spectrum': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/manchester|triagem|vermelh|amarel|verde|azul|etiqueta/i],
+  },
+  'urgencias-manchester-board': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/manchester|vermelh|amarel|verde|azul|etiqueta|triagem/i],
+  },
+  'urgencias-manchester-trap': {
+    homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
+    positivePatterns: [/manchester|amarel|azul|verde|monitor|inst[aá]vel|triagem/i],
+  },
 };
 
 function isOnHomeSubtopic(
@@ -825,6 +1022,97 @@ export function bespokeMoldHasContentAffinity(
     if (
       ctx.pedagogicalBranch &&
       !RESPIRATORIO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_RCP_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_RCP_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_XABCDE_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_XABCDE_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_AVC_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_AVC_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_CHOQUE_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_CHOQUE_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_ENGASGO_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_ENGASGO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_PEDIATRIC_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_PEDIATRIC_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_MANCHESTER_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_MANCHESTER_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_EXCETO_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_EXCETO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_PROTOCOL_BESPOKE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_PROTOCOL_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch) &&
+      !URGENCIAS_EMERGENCY_GENERIC_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (URGENCIAS_EMERGENCY_HUB_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !URGENCIAS_EMERGENCY_GENERIC_BRANCHES.has(ctx.pedagogicalBranch)
     ) {
       return false;
     }

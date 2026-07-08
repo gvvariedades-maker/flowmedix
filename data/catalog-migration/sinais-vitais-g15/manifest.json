@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g15",
+  "exported_at": "2026-07-05T04:51:25.753Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g15/manifest.json"
+  },
+  "slugs": [
+    "icece-enfermagem-verificacao-de-sinais-vitais-1778969729218-3",
+    "icece-enfermagem-verificacao-de-sinais-vitais-1780000468214-6",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712108887-9",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-0",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-1",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-2",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-4",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-5"
+  ]
+}

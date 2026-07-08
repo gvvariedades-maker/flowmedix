@@ -20,12 +20,47 @@ export const VIAS_BRANCHES = [
   'via_generico',
 ] as const;
 
+/** Ramos SV com pacote bespoke vitals-panel (playbook § pedagogical_branches + clusters temperatura/FR). */
+export const SINAIS_VITAIS_BRANCHES = [
+  'vitals_pa_tecnica',
+  'vitals_fc_faixas',
+  'vitals_interpretacao',
+  'vitals_vf_faixas',
+  'vitals_exceto_tecnica',
+  'vitals_temperatura',
+  'vitals_fr_faixas',
+  'vitals_generico',
+] as const;
+
+/** Ramo SV com pacote bespoke 4/4 (PA técnica + reference-board). */
+export const SINAIS_VITAIS_BESPOKE_BRANCHES = ['vitals_pa_tecnica', 'vitals_exceto_tecnica'] as const;
+
 /** Ramo PNI com pacote bespoke 4/4 (calendário ≠ cadeia frio ≠ V/F intervalos). */
 export const PNI_BESPOKE_BRANCHES = [
   'imunizacao_vf_intervalos',
   'imunizacao_calendario',
   'imunizacao_cadeia_frio',
 ] as const;
+
+/** Ramos Urgências e Emergências — regressão L3 (13 pedagogical_branch). */
+export const URGENCIAS_BRANCHES = [
+  'urgencias_rcp_sbv',
+  'urgencias_rcp_pediatrico',
+  'urgencias_avc_iam',
+  'urgencias_xabcde_trauma',
+  'urgencias_choque',
+  'urgencias_engasgo',
+  'urgencias_exceto_conduta',
+  'urgencias_vf_protocolo',
+  'urgencias_convulsao',
+  'urgencias_manchester_triagem',
+  'urgencias_anafilaxia',
+  'urgencias_queimadura',
+  'urgencias_generico',
+] as const;
+
+/** Ramos Urgências com pacote bespoke 4/4 completo. */
+export const URGENCIAS_BESPOKE_BRANCHES = [...URGENCIAS_BRANCHES] as const;
 
 export const MOBILE_NARROW_VIEWPORT = { width: 375, height: 812 } as const;
 export const DESKTOP_VIEWPORT = { width: 1280, height: 900 } as const;

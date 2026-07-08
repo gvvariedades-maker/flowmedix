@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:54:54.790Z",
+  "lote": "sinais-vitais-g34",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-6",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343897104-7",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-0",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-6",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-7",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-8",
+    "integri-brasil-enfermagem-verificacao-de-sinais-vitais-1779344189558-5",
+    "ivin-enfermagem-verificacao-de-sinais-vitais-1779344105099-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343897104-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "integri-brasil-enfermagem-verificacao-de-sinais-vitais-1779344189558-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-verificacao-de-sinais-vitais-1779344105099-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

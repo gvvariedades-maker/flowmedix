@@ -1,0 +1,13 @@
+{
+  "lote": "sinais-vitais-g49",
+  "exported_at": "2026-07-07T00:29:37.568Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g49/manifest.json"
+  },
+  "slugs": [
+    "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779343956155-0",
+    "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343883917-4",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344137078-5"
+  ]
+}

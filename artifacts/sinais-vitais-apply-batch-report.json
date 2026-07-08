@@ -1,0 +1,256 @@
+{
+  "generated_at": "2026-07-07T00:59:48.997Z",
+  "dry_run": false,
+  "candidates": 49,
+  "applied_lotes": 47,
+  "failed_lotes": 2,
+  "slugs_attempted": 337,
+  "handcraft_applied_total": 338,
+  "results": [
+    {
+      "lote": "sinais-vitais-g01",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g02",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g03",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g04",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g05",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g06",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g07",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g08",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g09",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g10",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g11",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g12",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g13",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g14",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g15",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g16",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g17",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g18",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g19",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g20",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g21",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g22",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g23",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g24",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g25",
+      "status": "ok",
+      "ok": 4
+    },
+    {
+      "lote": "sinais-vitais-g26",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g27",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g28",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g29",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g30",
+      "status": "ok",
+      "ok": 7
+    },
+    {
+      "lote": "sinais-vitais-g31",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g32",
+      "status": "ok",
+      "ok": 6
+    },
+    {
+      "lote": "sinais-vitais-g33",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g34",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g35",
+      "status": "ok",
+      "ok": 3
+    },
+    {
+      "lote": "sinais-vitais-g36",
+      "status": "ok",
+      "ok": 9
+    },
+    {
+      "lote": "sinais-vitais-g37",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g38",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g39",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g40",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g41",
+      "status": "anchor_fail",
+      "detail": "mpile (node:internal/modules/cjs/loader:1761:14)\r\n    at Object.transformer (D:\\AVANT\\node_modules\\tsx\\dist\\register-D46fvsV_.cjs:3:1104)\r\n    at Module.load (node:internal/modules/cjs/loader:1481:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1300:12)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)\r\n    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:339:3)\r\n\r\nNode.js v24.12.0\r\n"
+    },
+    {
+      "lote": "sinais-vitais-g42",
+      "status": "anchor_fail",
+      "detail": "mpile (node:internal/modules/cjs/loader:1761:14)\r\n    at Object.transformer (D:\\AVANT\\node_modules\\tsx\\dist\\register-D46fvsV_.cjs:3:1104)\r\n    at Module.load (node:internal/modules/cjs/loader:1481:32)\r\n    at Module._load (node:internal/modules/cjs/loader:1300:12)\r\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\r\n    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)\r\n    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:339:3)\r\n\r\nNode.js v24.12.0\r\n"
+    },
+    {
+      "lote": "sinais-vitais-g43",
+      "status": "ok",
+      "ok": 1
+    },
+    {
+      "lote": "sinais-vitais-g44",
+      "status": "ok",
+      "ok": 5
+    },
+    {
+      "lote": "sinais-vitais-g45",
+      "status": "ok",
+      "ok": 5
+    },
+    {
+      "lote": "sinais-vitais-g46",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "sinais-vitais-g47",
+      "status": "ok",
+      "ok": 2
+    },
+    {
+      "lote": "sinais-vitais-g48",
+      "status": "ok",
+      "ok": 4
+    },
+    {
+      "lote": "sinais-vitais-g49",
+      "status": "ok",
+      "ok": 3
+    }
+  ]
+}

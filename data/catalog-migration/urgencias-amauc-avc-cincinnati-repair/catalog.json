@@ -1,0 +1,18 @@
+{
+  "exported_at": "2026-07-08T02:30:00.000Z",
+  "lote": "urgencias-amauc-avc-cincinnati-repair",
+  "total": 1,
+  "entries": [
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "golden_file": "examples/questao-premium-amauc-urgencias-cincinnati-avc.json",
+      "pedagogical_branch": "urgencias_avc_iam",
+      "family": "protocolo",
+      "gabarito": "A",
+      "applied_at": "2026-07-08T02:30:00.000Z"
+    }
+  ]
+}

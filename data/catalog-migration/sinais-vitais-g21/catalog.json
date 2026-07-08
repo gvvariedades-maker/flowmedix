@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-06T18:04:03.975Z",
+  "lote": "sinais-vitais-g21",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344105099-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2542
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343883917-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2460
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343919045-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2478
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343967847-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2517
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779344196733-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2637
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1780000468214-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4056
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1778969737311-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2247
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1779343811344-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2403
+    }
+  ]
+}

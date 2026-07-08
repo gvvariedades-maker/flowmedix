@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "banca": "AMAUC",
+    "prova": "Tec Enf",
+    "orgao": "Pref Seara / SAMU",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_avc_iam",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft-urgencias",
+      "guideline_snapshot": "Escala de Cincinnati (CPSS) — triagem pré-hospitalar AVC · FAST MS/SAMU",
+      "exam_vs_current": "none",
+      "catalog_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "cluster": "AVC / IAM — reconhecimento"
+    },
+    "sources": [
+      {
+        "id": "urgencias-avc-fast-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/SAMU — suspeita de AVC (FAST)",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "Face assimetria sorriso",
+          "Arms fraqueza queda braco",
+          "Speech fala alterada",
+          "Escala Cincinnati pre-hospitalar",
+          "acionar 192"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O reconhecimento rápido dos sinais e sintomas de um Acidente Vascular Cerebral (AVC) é crucial para o acionamento do serviço de emergência e o tratamento em tempo hábil. A Escala de Cincinnati é uma ferramenta pré-hospitalar simples para a suspeita de AVC. Assinale a alternativa que apresenta os três itens avaliados nesta escala.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Assimetria facial (sorriso), queda de braço (membros superiores) e fala anormal.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Cefaleia súbita, vômitos em jato e rigidez de nuca.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Dor torácica, dispneia e sudorese.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Nível de consciência, resposta motora e resposta verbal.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Pressão arterial, frequência cardíaca e frequência respiratória.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Cincinnati — triagem AVC",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Enquadramento",
+          "detail": "Triagem pré-hospitalar de AVC — identificar os três itens da Escala de Cincinnati.",
+          "icon": "Target"
+        },
+        {
+          "label": "Face",
+          "detail": "Sorriso: buscar assimetria facial (queda de um lado).",
+          "icon": "Smile"
+        },
+        {
+          "label": "Braços",
+          "detail": "Elevar MMSS: observar queda ou fraqueza de um membro superior.",
+          "icon": "Hand"
+        },
+        {
+          "label": "Fala",
+          "detail": "Repetir frase simples: disartria, afasia ou fala arrastada.",
+          "icon": "MessageCircle"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Glasgow, SSVV e tríade meníngea não entram — Cincinnati é face · braço · fala.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Sorriso · braço · fala → 192"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Cincinnati — decore",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "CINCINNATI = F · B · FALA",
+      "rows": [
+        {
+          "label": "Face",
+          "value": "Sorriso — assimetria ou queda labial",
+          "badge": "ok"
+        },
+        {
+          "label": "Braços (Arms)",
+          "value": "MMSS elevados — queda ou fraqueza unilateral",
+          "badge": "ok"
+        },
+        {
+          "label": "Fala (Speech)",
+          "value": "Frase simples — fala anormal ou incompreensível",
+          "badge": "ok"
+        },
+        {
+          "label": "Positivo",
+          "value": "Qualquer item alterado → suspeita de AVC",
+          "badge": "warn"
+        },
+        {
+          "label": "Conduta",
+          "value": "Acionar 192 / SAMU — tempo é cérebro",
+          "badge": "warn"
+        },
+        {
+          "label": "FAST (paralelo)",
+          "value": "Face · Arms · Speech · Time",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Um item alterado já aciona suspeita"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Comando: três itens da Escala de Cincinnati para suspeita de AVC pré-hospitalar.",
+        "Mnemônico: Face (sorriso) · Arms (braços) · Speech (fala) — qualquer alteração = suspeita.",
+        "Eliminar tríade meníngea — cefaleia, vômito e rigidez de nuca não compõem Cincinnati.",
+        "Eliminar quadro coronariano — dor torácica com dispneia e sudorese aponta IAM.",
+        "Eliminar Glasgow — consciência, motor e verbal são outra escala neurológica.",
+        "Eliminar SSVV — PA, FC e FR não são os três eixos de triagem de AVC.",
+        "Resta face, braço e fala anormal — única alternativa com os três itens.",
+        "Marcar A.",
+        "Fixação: SAMU cobra Cincinnati literal — não troque por GCS nem SSVV."
+      ],
+      "footer_rule": "Face → braço → fala → acionar emergência"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — CINCINNATI × OUTRAS ESCALAS",
+      "items": [
+        {
+          "label": "Letra B — tríade meníngea",
+          "detail": "Cefaleia súbita + vômito + rigidez de nuca parecem neurológico grave.",
+          "correct": "São sinais de meningite/hemorragia subaracnóidea — Cincinnati avalia face, braço e fala."
+        },
+        {
+          "label": "Letra C — dor torácica",
+          "detail": "Dispneia e sudorese confundem com emergência comum no SAMU.",
+          "correct": "Quadro típico de IAM — não compõe a Escala de Cincinnati."
+        },
+        {
+          "label": "Letra D — Glasgow",
+          "detail": "Consciência + motor + verbal soam como avaliação neurológica.",
+          "correct": "É a Escala de Coma de Glasgow (GCS) — outra ferramenta, não os três itens de Cincinnati."
+        },
+        {
+          "label": "Letra E — SSVV",
+          "detail": "PA, FC e FR são o primeiro exame físico de rotina.",
+          "correct": "São sinais vitais — Cincinnati não lista parâmetros hemodinâmicos."
+        }
+      ],
+      "footer_rule": "Cincinnati ≠ Glasgow ≠ SSVV"
+    }
+  ]
+}

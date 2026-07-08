@@ -1,0 +1,3590 @@
+{
+  "generated_at": "2026-07-07T15:30:18.106Z",
+  "subtopico": "Urgências e Emergências",
+  "lote": "urgencias-e-emergencias-completo",
+  "total": 340,
+  "strong_threshold": 34,
+  "drift_total": 5,
+  "branch_totals": {
+    "urgencias_choque": 18,
+    "urgencias_exceto_conduta": 22,
+    "urgencias_rcp_sbv": 68,
+    "urgencias_convulsao": 7,
+    "urgencias_generico": 145,
+    "urgencias_avc_iam": 23,
+    "urgencias_xabcde_trauma": 22,
+    "urgencias_vf_protocolo": 8,
+    "urgencias_rcp_pediatrico": 9,
+    "urgencias_manchester_triagem": 4,
+    "urgencias_engasgo": 12,
+    "urgencias_anafilaxia": 1,
+    "urgencias_queimadura": 1
+  },
+  "goldens_needed": 2,
+  "cluster_decisions": [
+    {
+      "cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "count": 68,
+      "pct": 20,
+      "drift_slugs": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-urgencias-rcp.json",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "branch_counts": {
+        "urgencias_rcp_sbv": 68
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3"
+      ],
+      "decision": "coberto",
+      "l3_package": "urgencias-rcp-chain-deck · urgencias-rcp-params-board · urgencias-rcp-tap-flow · urgencias-rcp-trap-arena (proposto)"
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 63,
+      "pct": 18.5,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "branch_counts": {
+        "urgencias_generico": 63
+      },
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+        "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+        "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7"
+      ],
+      "decision": "novo_ramo",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Urgências — conceito geral",
+      "count": 45,
+      "pct": 13.2,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "branch_counts": {
+        "urgencias_generico": 45
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+        "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+        "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8"
+      ],
+      "decision": "novo_ramo",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 32,
+      "pct": 9.4,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "branch_counts": {
+        "urgencias_generico": 32
+      },
+      "sample_slugs": [
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9"
+      ],
+      "decision": "absorver",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "AVC / IAM — reconhecimento",
+      "count": 23,
+      "pct": 6.8,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "branch_counts": {
+        "urgencias_avc_iam": 23
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+        "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+        "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8"
+      ],
+      "decision": "absorver",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "EXCETO / INCORRETA — conduta",
+      "count": 22,
+      "pct": 6.5,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "branch_counts": {
+        "urgencias_exceto_conduta": 22
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+        "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4"
+      ],
+      "decision": "absorver",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "XABCDE / trauma e hemorragia",
+      "count": 22,
+      "pct": 6.5,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "branch_counts": {
+        "urgencias_xabcde_trauma": 22
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+        "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3"
+      ],
+      "decision": "absorver",
+      "l3_package": "urgencias-xabcde-rail · urgencias-trauma-reference-board · urgencias-xabcde-tap-flow · urgencias-trauma-trap-arena (proposto)"
+    },
+    {
+      "cluster": "Choque / hipoperfusão",
+      "count": 18,
+      "pct": 5.3,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "branch_counts": {
+        "urgencias_choque": 18
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+        "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+        "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8"
+      ],
+      "decision": "absorver",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Engasgo / obstrução de via aérea",
+      "count": 12,
+      "pct": 3.5,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "branch_counts": {
+        "urgencias_engasgo": 12
+      },
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+        "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8"
+      ],
+      "decision": "absorver",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "RCP pediátrica / lactente",
+      "count": 9,
+      "pct": 2.6,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "branch_counts": {
+        "urgencias_rcp_pediatrico": 9
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+        "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5"
+      ],
+      "decision": "absorver",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "V/F — protocolos I/II/III",
+      "count": 8,
+      "pct": 2.4,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "branch_counts": {
+        "urgencias_vf_protocolo": 8
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+        "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+        "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1"
+      ],
+      "decision": "absorver",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Convulsão / crise epiléptica",
+      "count": 7,
+      "pct": 2.1,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_convulsao",
+      "branch_counts": {
+        "urgencias_convulsao": 7
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+        "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+        "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+        "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2"
+      ],
+      "decision": "absorver",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Drift taxonômico — reclassificar subtópico",
+      "count": 5,
+      "pct": 1.5,
+      "drift_slugs": 5,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "branch_counts": {
+        "urgencias_generico": 5
+      },
+      "sample_slugs": [
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+        "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+        "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+        "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0"
+      ],
+      "decision": "reclassificar",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Manchester / triagem de risco",
+      "count": 4,
+      "pct": 1.2,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_manchester_triagem",
+      "branch_counts": {
+        "urgencias_manchester_triagem": 4
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+        "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+        "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9"
+      ],
+      "decision": "absorver",
+      "l3_package": "urgencias-manchester-spectrum · urgencias-manchester-board · cards · urgencias-manchester-trap (proposto)"
+    },
+    {
+      "cluster": "Anafilaxia / epinefrina",
+      "count": 1,
+      "pct": 0.3,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_anafilaxia",
+      "branch_counts": {
+        "urgencias_anafilaxia": 1
+      },
+      "sample_slugs": [
+        "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1"
+      ],
+      "decision": "cauda_longa",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    },
+    {
+      "cluster": "Queimadura — primeiro socorro",
+      "count": 1,
+      "pct": 0.3,
+      "drift_slugs": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "pedagogical_branch_proposed": "urgencias_queimadura",
+      "branch_counts": {
+        "urgencias_queimadura": 1
+      },
+      "sample_slugs": [
+        "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4"
+      ],
+      "decision": "cauda_longa",
+      "l3_package": "morphological · reference_table · cards · compare (genérico)"
+    }
+  ],
+  "pedagogical_clusters": [
+    {
+      "cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "count": 68,
+      "pct": 20,
+      "decision": "coberto",
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3"
+      ]
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 63,
+      "pct": 18.5,
+      "decision": "novo_ramo",
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+        "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+        "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7"
+      ]
+    },
+    {
+      "cluster": "Urgências — conceito geral",
+      "count": 45,
+      "pct": 13.2,
+      "decision": "novo_ramo",
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+        "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+        "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8"
+      ]
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 32,
+      "pct": 9.4,
+      "decision": "absorver",
+      "sample_slugs": [
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+        "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9"
+      ]
+    },
+    {
+      "cluster": "AVC / IAM — reconhecimento",
+      "count": 23,
+      "pct": 6.8,
+      "decision": "absorver",
+      "sample_slugs": [
+        "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+        "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+        "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8"
+      ]
+    },
+    {
+      "cluster": "EXCETO / INCORRETA — conduta",
+      "count": 22,
+      "pct": 6.5,
+      "decision": "absorver",
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+        "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4"
+      ]
+    },
+    {
+      "cluster": "XABCDE / trauma e hemorragia",
+      "count": 22,
+      "pct": 6.5,
+      "decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+        "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3"
+      ]
+    },
+    {
+      "cluster": "Choque / hipoperfusão",
+      "count": 18,
+      "pct": 5.3,
+      "decision": "absorver",
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+        "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+        "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8"
+      ]
+    },
+    {
+      "cluster": "Engasgo / obstrução de via aérea",
+      "count": 12,
+      "pct": 3.5,
+      "decision": "absorver",
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+        "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8"
+      ]
+    },
+    {
+      "cluster": "RCP pediátrica / lactente",
+      "count": 9,
+      "pct": 2.6,
+      "decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+        "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5"
+      ]
+    },
+    {
+      "cluster": "V/F — protocolos I/II/III",
+      "count": 8,
+      "pct": 2.4,
+      "decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+        "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+        "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1"
+      ]
+    },
+    {
+      "cluster": "Convulsão / crise epiléptica",
+      "count": 7,
+      "pct": 2.1,
+      "decision": "absorver",
+      "sample_slugs": [
+        "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+        "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+        "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+        "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2"
+      ]
+    },
+    {
+      "cluster": "Drift taxonômico — reclassificar subtópico",
+      "count": 5,
+      "pct": 1.5,
+      "decision": "reclassificar",
+      "sample_slugs": [
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+        "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+        "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+        "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0"
+      ]
+    },
+    {
+      "cluster": "Manchester / triagem de risco",
+      "count": 4,
+      "pct": 1.2,
+      "decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+        "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+        "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9"
+      ]
+    },
+    {
+      "cluster": "Anafilaxia / epinefrina",
+      "count": 1,
+      "pct": 0.3,
+      "decision": "cauda_longa",
+      "sample_slugs": [
+        "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1"
+      ]
+    },
+    {
+      "cluster": "Queimadura — primeiro socorro",
+      "count": 1,
+      "pct": 0.3,
+      "decision": "cauda_longa",
+      "sample_slugs": [
+        "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "A vítima de choque elétrico pode apresentar no corpo tanto sinais visíveis de choque elétrico, como "
+    },
+    {
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Fratura exposta: quando ocorre uma fratura exposta, o osso rompe a pele, abrindo uma ferida e tornan"
+    },
+    {
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Segundo as Diretrizes de 2020 da American Heart Association (AHA) para ressuscitação cardiopulmonar "
+    },
+    {
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente vítima de trauma cranioencefálico, a avaliação primária do profissional de saúde deve se"
+    },
+    {
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "family": "protocolo",
+      "builder_topic": "Convulsão",
+      "pedagogical_cluster": "Convulsão / crise epiléptica",
+      "pedagogical_branch_proposed": "urgencias_convulsao",
+      "taxonomy_drift": false,
+      "instruction_preview": "A Epilepsia é uma alteração temporária e reversível do funcionamento do cérebro. Durante a crise epi"
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A intoxicação exógena por organofosforados () inibe a enzima acetilcolinesterase, gerando uma crise "
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Na avaliação neurológica de um paciente com traumatismo cranioencefálico grave, a postura reflexa in"
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O atendimento inicial em situações de emergência exige do Técnico em Enfermagem capacidade de observ"
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "As situações de emergência exigem atuação imediata, organizada e baseada em princípios técnicos cons"
+    },
+    {
+      "slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "O reconhecimento rápido dos sinais e sintomas de um Acidente Vascular Cerebral (AVC) é crucial para "
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "O atendimento pré-hospitalar em situações de urgência na comunidade exige rapidez e aplicação de man"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Primeiros socorros são procedimentos imediatos prestados a vítimas de acidentes ou mal súbito para m"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Atendimento Pré-Hospitalar (APH) é o socorro médico imediato prestado fora do ambiente hospitalar, e"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Suporte Básico de Vida é o atendimento inicial de emergência a vítimas de parada cardiorrespiratór"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "family": "vf",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "V/F — protocolos I/II/III",
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Procedimentos em trauma são cruciais para reduzir a mortalidade e prevenir sequelas, focando na iden"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Suporte Básico de Vida é o atendimento inicial de emergência a vítimas de parada cardiorrespiratór"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "A avaliação primária do trauma, baseada no mnemônico XABCDE, é um protocolo sistematizado para ident"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "No âmbito do Serviço de Atendimento Móvel de Urgência (SAMU 192), é CORRETO afirmar que a autoridade"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "family": "protocolo",
+      "builder_topic": "Manchester",
+      "pedagogical_cluster": "Manchester / triagem de risco",
+      "pedagogical_branch_proposed": "urgencias_manchester_triagem",
+      "taxonomy_drift": false,
+      "instruction_preview": "A triagem de vítimas múltiplas visa salvar o maior número de pessoas, priorizando o atendimento de a"
+    },
+    {
+      "slug": "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em paciente com Acidente Vascular Cerebral (AVC), uma conduta essencial da equipe de técnicos de enf"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em situações de emergência, a prioridade do atendimento é:"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Acidente Vascular Cerebral (AVC) é uma emergência médica que exige reconhecimento rápido dos sinai"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "O protocolo ABCDE é adotado mundialmente no atendimento ao trauma por oferecer uma metodologia siste"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em situações de urgência, o atendimento deve ser:"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em atendimento de urgência, paciente apresenta hemorragia externa em membro superior após corte prof"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em sala de emergência, paciente vítima de trauma apresenta palidez, sudorese fria, taquicardia e pre"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Ao prestar cuidados a um paciente com fratura exposta de fêmur, a medida técnica imediata e essencia"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante a primeira abordagem a um paciente vítima de trauma, a prioridade técnica imediata do Técnic"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Conforme protocolo público de atendimento pré- hospitalar, sinais compatíveis com instabilidade hemo"
+    },
+    {
+      "slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em situações de urgência e emergência, a equipe de enfermagem deve estar preparada para identificar "
+    },
+    {
+      "slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente em choque apresenta:"
+    },
+    {
+      "slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "O choque hipovolêmico é uma emergência decorrente da perda de grande quantidade de líquidos e sangue"
+    },
+    {
+      "slug": "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A ambulância é um veículo (terrestre, áereo ou hidroviário) que se destina exclusivamente ao transpo"
+    },
+    {
+      "slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Certo jogador de futebol foi recebido no setor de emergência com quadro de entorse no joelho. Nessa "
+    },
+    {
+      "slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Ao executar a Ressuscitação Cardiopulmonar em bebês e crianças com via aérea avançada, a American He"
+    },
+    {
+      "slug": "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Sobre a principais recomendações novas e atualizadas no atendimento em Parada Cardiorrespiratória - "
+    },
+    {
+      "slug": "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "A qualidade da ressuscitação cardiopulmonar, em adultos, após uma parada cardiorrespiratória pode de"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "V/F — protocolos I/II/III",
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "taxonomy_drift": false,
+      "instruction_preview": "O choque é um evento de emergência extrema, caracterizada por grave redução da perfusão de tecidos e"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em toda abordagem de pacientes com suspeita de trauma ou em situação ignorada (em que não é possível"
+    },
+    {
+      "slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "family": "vf",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o plantão, um paciente adulto é encontrado inconsciente e sem respiração espontânea. A equip"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Toda pessoa treinada pode prestar os primeiros socorros, estes cuidados imediatos e provisórios pres"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o atendimento pré-hospitalar, um técnico de enfermagem do SAMU avalia um homem de 54 anos, e"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o atendimento a uma criança de 7 anos, ela desenvolve quadro súbito de urticária difusa, pru"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "family": "vf",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "V/F — protocolos I/II/III",
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Atualmente no Brasil, uma constante no atendimento da atenção primária está relacionada à queixa de "
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "A obstrução das vias aéreas acontece mais frequentemente em crianças, idosos e indivíduos sem dentiç"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+      "family": "vf",
+      "builder_topic": "Convulsão",
+      "pedagogical_cluster": "V/F — protocolos I/II/III",
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "taxonomy_drift": false,
+      "instruction_preview": "A convulsão é a perda súbita da consciência acompanhada de contrações musculares bruscas e involuntá"
+    },
+    {
+      "slug": "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "CPCON UEPB - Tec Enf (Pref SJ Piranhas)/Pref SJ Piranhas/2024 8001) Jocely, técnica de enfermagem, p"
+    },
+    {
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "A respeito do atendimento pré-hospitalar e o transporte de vítimas com suspeita de trauma, no que se"
+    },
+    {
+      "slug": "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Determinada situação caracteriza-se pela necessidade de ação imediata, existindo risco iminente de m"
+    },
+    {
+      "slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente masculino, 60 anos, chega à unidade básica de saúde para atendimento com sinais de pico "
+    },
+    {
+      "slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "A letra D do protocolo ABCDE representa a etapa de Disability (avaliação neurológica). Durante essa "
+    },
+    {
+      "slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "No protocolo ABCDE, a letra C (Circulation) referese ao controle da circulação sanguínea e da hemorr"
+    },
+    {
+      "slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o atendimento inicial ao trauma, o protocolo ABCDE é uma abordagem sistemática usada para id"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em um atendimento de emergência com objeto perfurante cravado no abdome (como uma faca, por exemplo)"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "O sinal universal de engasgo é quando a pessoa leva as mãos ao:"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A Escala de Coma de Glasgow (ECG) é uma ferramenta neurológica padronizada para avaliar o nível de c"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-9",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Assinale a alternativa que caracteriza uma situação clínica de emergência:"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A Escala de Coma de Glasgow (ECG) é uma ferramenta neurológica padronizada para avaliar o nível de c"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Assinale a alternativa que apresenta o \"sinal universal de engasgo\":"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A Escala de Glasgow avalia resposta ocular, resposta verbal e resposta Preencha a lacuna com a alter"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Condição doloros a e perigosa causada pelo acúmulo de pressão devido a hemorragia interna ou inchaço"
+    },
+    {
+      "slug": "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente C.M.V., 52 anos, deu entrada no pronto atendimento devido náusea, vômito e dor em região de"
+    },
+    {
+      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente A.S.J., 72 anos, deu entrada no pronto atendimento com insuficiência respiratória evoluindo"
+    },
+    {
+      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+      "family": "protocolo",
+      "builder_topic": "Convulsão",
+      "pedagogical_cluster": "Convulsão / crise epiléptica",
+      "pedagogical_branch_proposed": "urgencias_convulsao",
+      "taxonomy_drift": false,
+      "instruction_preview": "A intoxicação ou envenenamento é a quinta maior causa de internação por motivos acidentais entre cri"
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A acompanhante de um paciente internado chamou o técnico de enfermagem e informou que o seu familiar"
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante transfusão de concentrado de hemácias, após 10 minutos, o paciente apresenta calafrios, dor "
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Nos primeiros socorros em casos de parada cardiorrespiratória, a sequência inicial de atendimento bá"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em vítima inconsciente, sem resposta a chamados e sem movimentos respiratórios eficazes, a prioridad"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente diabético relata tontura, fraqueza e sudorese intensa. O técnico de enfermagem deve susp"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O controle das eliminações é parte fundamental da avaliação de enfermagem. Um paciente que apresenta"
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A sobrevivência após uma Parada Cárdiorrespiratória (PCR) requer sistemas integrados de pessoas, pro"
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+      "family": "protocolo",
+      "builder_topic": "Convulsão",
+      "pedagogical_cluster": "Convulsão / crise epiléptica",
+      "pedagogical_branch_proposed": "urgencias_convulsao",
+      "taxonomy_drift": false,
+      "instruction_preview": "A convulsão é o movimento de contração desordenado dos músculos voluntários, resultante de descargas"
+    },
+    {
+      "slug": "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "A técnica para a desobstrução das vias aéreas que consiste em pressionar o abdômen da vítima (compre"
+    },
+    {
+      "slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O método de transporte de acidentado apresentado na imagem abaixo é conhecido como:"
+    },
+    {
+      "slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "family": "protocolo",
+      "builder_topic": "Anafilaxia",
+      "pedagogical_cluster": "Anafilaxia / epinefrina",
+      "pedagogical_branch_proposed": "urgencias_anafilaxia",
+      "taxonomy_drift": false,
+      "instruction_preview": "O estado de choque que ocorre devido à redução do volume intravascular por causa da perda de sangue,"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-0",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Trabalhador de 25 anos, vítima de traumatismo após explosão de caldeira no trabalho, foi encontrado "
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente vítima de acidente de trabalho com amputação na perna D. A primeira medida a ser tomada apó"
+    },
+    {
+      "slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o atendimento a um paciente em Unidade de Pronto Atendimento, o profissional de saúde observ"
+    },
+    {
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Acerca do atendimento inicial a um paciente, vítima de trauma (ABCDE do trauma), analise as afirmati"
+    },
+    {
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considerando as normas e diretrizes relacionadas ao atendimento a uma gestante com parada cardiorres"
+    },
+    {
+      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considerando as cadeias de sobrevivência para PCR em ambiente intra-hospitalar e extra-hospitalar, n"
+    },
+    {
+      "slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante um atendimento pré-hospitalar a uma vítima de traumatismo craniano, qual das seguintes alter"
+    },
+    {
+      "slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o atendimento de um paciente em estado de choque hipovolêmico devido a uma hemorragia, qual "
+    },
+    {
+      "slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante um atendimento de urgência pré-hospitalar a um paciente com suspeita de infarto agudo do mio"
+    },
+    {
+      "slug": "funcern-enfermagem-exames-laboratoriais-1779563631609-6",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente J. M. S., 76 anos, internado na enfermaria clínica com quadro de diabetes descompensada. Ao"
+    },
+    {
+      "slug": "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "De acordo com as diretrizes da American Heart Association, em casos de parada cardiorrespiratória (P"
+    },
+    {
+      "slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Nos serviços de urgência e emergência, é comum o acolhimento de usuários com queixa de dor torácica "
+    },
+    {
+      "slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considerando as recomendações da American Heart Associaton na Ressucitação Cardiopulmonar (RCP) em a"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+      "family": "protocolo",
+      "builder_topic": "Manchester",
+      "pedagogical_cluster": "Manchester / triagem de risco",
+      "pedagogical_branch_proposed": "urgencias_manchester_triagem",
+      "taxonomy_drift": false,
+      "instruction_preview": "O protocolo de classificação de risco tem a finalidade de avaliar e classificar pessoas que estão em"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Quando ocorre um episódio de engasgo com obstrução grave em paciente responsivo, mas que não consegu"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o manejo inicial da PCR em adultos, no período prévio à chegada do Suporte Avançado de Vida "
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "No contexto do manejo medicamentoso das crises hipertensivas em serviços de urgência e emergência, a"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-6",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o atendimento pré-hospitalar a uma vítima politraumatizada, inconsciente, com respiração irr"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A alta da UTI é um processo crítico que exige critérios clínicos bem definidos, comunicação efetiva "
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em pacientes adultos internados em unidades críticas, a parada cardiorrespiratória (PCR) raramente o"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-8",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "O reconhecimento precoce dos diferentes tipos de choque é essencial para intervenção imediata e redu"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente adulto vítima de trauma cranioencefálico (TCE) grave e internado na UTI apresenta piora "
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente vítima de acidente automobilístico apresenta fratura exposta de fêmur, com sangramento a"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente adulto internado na UTI evolui com choque séptico refratário, mantendo hipotensão arteri"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+      "family": "protocolo",
+      "builder_topic": "Drift taxonômico",
+      "pedagogical_cluster": "Drift taxonômico — reclassificar subtópico",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": true,
+      "instruction_preview": "Na UTI, alterações fisiológicas iniciais podem preceder a deterioração clínica significativa do paci"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente adulto com hipertensão arterial sistêmica crônica é admitido no pronto-socorro com nívei"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente crítico internado na UTI evolui com acidose metabólica grave associada à hipercalemia im"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante a admissão, um paciente adulto apresenta rebaixamento importante do nível de consciência, co"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Pacientes com doenças agudas do sistema digestório podem evoluir rapidamente para quadros de instabi"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente hospitalizado por obstrução intestinal encontra-se em observação contínua. Durante a evoluç"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Uma equipe de Atendimento Pré-Hospitalar (APH) chega a uma cena de acidente automobilístico em uma v"
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A fratura da diáfise do úmero é uma lesão comum em traumatologia, frequentemente associada a complic"
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Sinal de _______ é reconhecido quando o paciente coloca o punho sobre o peito, como uma forma de i"
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A avaliação do estado pupilar é uma etapa fundamental durante o exame físico neurológico realizado p"
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente após um trauma craniano e com suspeita de fratura da base do crânio, mais especificamente n"
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Serviço de Atendimento Móvel de Urgência (SAMU) foi chamado para atender a uma jovem de aproximada"
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "A classificação de risco é uma estratégia de triagem rápida dos pacientes que dá suporte aos atendim"
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "inclinação da cabeça-elevação do queixo é a técnica preferida para abrir a via aérea do paciente não"
+    },
+    {
+      "slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante um atendimento de emergência, o paciente apresenta um quadro de bradicardia assintomática. Q"
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em situações de emergências em saúde pública, a rede de serviços se organiza de modo especial para d"
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um trabalhador apresentou um desmaio enquanto trabalhava. Durante o exame físico, observou-se que el"
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considerando uma situação hipotética em que um paciente chega à unidade de saúde em emergência clíni"
+    },
+    {
+      "slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+      "family": "protocolo",
+      "builder_topic": "Convulsão",
+      "pedagogical_cluster": "Convulsão / crise epiléptica",
+      "pedagogical_branch_proposed": "urgencias_convulsao",
+      "taxonomy_drift": false,
+      "instruction_preview": "Adolescente, de 14 anos, chega à UBS para consulta ginecológica. Após meia hora de espera, ela apres"
+    },
+    {
+      "slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+      "family": "protocolo",
+      "builder_topic": "Drift taxonômico",
+      "pedagogical_cluster": "Drift taxonômico — reclassificar subtópico",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": true,
+      "instruction_preview": "Paciente, 38 anos, do sexo masculino, chega à unidade com queixas de dor intensa no peito, náuseas, "
+    },
+    {
+      "slug": "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente, de 40 anos, do sexo masculino, chega à UBS às 07h30min com queixas de diarreia intensa, ná"
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Assinale a alternativa que corretamente preenche a lacuna no excerto:"
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-9",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "De acordo com as diretrizes atuais da American Heart Association (AHA), analise as assertivas a segu"
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante a realização da ressuscitação cardiopulmonar (RCP) em um adulto em parada cardiorrespiratóri"
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente adulto apresenta epistaxe e aguarda atendimento em um serviço de saúde. Assinale a alter"
+    },
+    {
+      "slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "No contexto das manobras de ressuscitação cardiorrespiratória, assinale a alternativa que apresenta "
+    },
+    {
+      "slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante uma parada cardiorrespiratória (PCR) em um paciente adulto já intubado em Unidade de Terapia"
+    },
+    {
+      "slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+      "family": "vf",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "V/F — protocolos I/II/III",
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "taxonomy_drift": false,
+      "instruction_preview": "No que tange à atendimentos de urgências ortopédicas, o trauma pélvico é uma lesão (ou fratura) prov"
+    },
+    {
+      "slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "O infarto agudo do miocárdio (IAM) ocorre quando uma das artérias coronárias se torna totalmente ocl"
+    },
+    {
+      "slug": "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "O trauma é definido como \"um evento nocivo que advém da liberação de formas específicas de energia o"
+    },
+    {
+      "slug": "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considerando a atuação do técnico de enfermagem em situações de urgência e/ou emergência, analise as"
+    },
+    {
+      "slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "family": "vf",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A doença cardíaca isquêmica, principal determinante da Parada Cardiorrespiratória (PCR), continua li"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-2",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em um serviço de urgência e emergência, um técnico de enfermagem atua na sala de classificação e apo"
+    },
+    {
+      "slug": "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Local utilizado para avaliar o caráter do pulso durante choque fisiológico ou parada cardíaca quando"
+    },
+    {
+      "slug": "ibam-enfermagem-semiologia-em-enfermagem-1779563495719-1",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O abdome agudo é um quadro clínico que se caracteriza por dor abdominal súbita e intensa, associada "
+    },
+    {
+      "slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O hemotórax é definido por:"
+    },
+    {
+      "slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente vítima de trauma crânio encefálico, com saída de líquido transparente escorrendo pelo ouvid"
+    },
+    {
+      "slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-8",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Sobre a síndrome compartimental, analise as afirmativas abaixo. I . A síndrome compartimental no ant"
+    },
+    {
+      "slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Picadas de escorpião podem levar a óbito, por isso, é importante agir rapidamente após a ocorrência."
+    },
+    {
+      "slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Convulsão é a contratura involuntária da musculatura, que provoca movimentos desordenados. Geralment"
+    },
+    {
+      "slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um engasgo é o bloqueio da traqueia, órgão responsável pela passagem de ar para dentro e fora dos pu"
+    },
+    {
+      "slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente do sexo masculino, 48 anos, dá entrada no serviço de emergência com quadro de hemorragia"
+    },
+    {
+      "slug": "icece-enfermagem-urgencias-e-emergencias-1780001297464-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "No atendimento em unidades de saúde, é fundamental distinguir corretamente as situações de urgência "
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Primeiros socorros são condutas iniciais, que podem ser realizadas por um espectador, não necessaria"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o socorro a uma vítima inconsciente com suspeita de trauma na coluna cervical, marque a opçã"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Diante de paciente politraumatizado com sangramento profuso e sinais de choque hipovolêmico, a prior"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em um adulto com ingestão acidental de água sanitária, indique a conduta imediata de primeiros socor"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Na admissão de paciente com suspeita de Acidente Vascular Encefálico (AVE), as ações imediatas do té"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Diante de um paciente com hematêmese e hipotensão, a assistência de enfermagem deve garantir reposiç"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Diante de um acidente ocupacional com agulha contaminada por sangue de paciente com sorologia descon"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Na assistência direta, o enfermeiro participa da previsão de necessidades da vítima, definindo prior"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em situações de suporte básico de vida, um técnico de enfermagem deve estar preparado para lidar com"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante a avaliação neurológica de um paciente politraumatizado que sofreu um acidente automobilísti"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A gestão do risco de desastres não se limita à resposta imediata, mas envolve também ações de preven"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "No caso de uma emergência traumática, deve-se observar o estado geral do acidentado, procurando lesõ"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+      "family": "certo_errado",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "No atendimento de urgência pré- hospitalar o enfermeiro atua de forma direta, mesmo não podendo ser "
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+      "family": "certo_errado",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Nas urgências o enfermeiro atua de forma direta, realizando procedimentos como punção venosa, admini"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+      "family": "certo_errado",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em relação às manobras de Ressuscitação Cardiopulmonar (RCP), deve ser instalado acesso venoso perif"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+      "family": "certo_errado",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A vítima de politraumatismo necessita de atenção especial e continua, desde seu atendimento inicial,"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+      "family": "certo_errado",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em caso de picadas de animais peçonhentos, deve-se lavar o local da picada com água e sabão; fazer t"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Após a parada cardiorrespiratória, o indivíduo perde a consciência em cerca de 10 a 15 segundos devi"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em situação de atenção à urgência e emergência, o acolhimento deve estar associado a uma classificaç"
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "A crise convulsiva é a forma mais conhecida pelas pessoas e é identificada como \"ataque epiléptico\"."
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "\"Marcos, 56 anos, chega ao posto de saúde queixando de dormência no braço esquerdo, dor nas costas, "
+    },
+    {
+      "slug": "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "As doenças cerebrovasculares estão em segundo lugar no topo de doenças que mais acometem vítimas com"
+    },
+    {
+      "slug": "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "No choque distributivo, a má perfusão é resultado de uma vasodilatação periférica global que ocasion"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A gestão de riscos em emergências em saúde pública é um processo multidimensional que requer um plan"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Sistema de Comando de Operações (SCO) é um modelo gerencial fundamental no Plano de Resposta às Em"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Segundo a American Heart Association (AHA), a relação compressão-ventilação recomendada para adultos"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "As emergências hipertensivas se apresentam com importante elevação da pressão arterial, evidente dan"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente adulto, sexo masculino, portador de fibromialgia, que faz tratamento para dor com analgésic"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em relação ao paciente com suspeita de Acidente Vascular Encefálio, ao avaliar o paciente o Auxiliar"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Com relação das compressões realizadas no paciente adulto vítima de parada cardiorrespiratória (PCR)"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Ao constatar um paciente em situação de parada cardiorrespiratória (PCR) intra-hospitalar, assinale "
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "A maioria das mortes por Infarto Agudo do Miocárdio (IAM) ocorre nas primeiras horas de manifestação"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "São sinais de gravidade no paciente com Insuficiência Respiratória Aguda, marque o item correto:"
+    },
+    {
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Tromboembolismo Pulmonar (TEP) é uma causa potencialmente reversível de choque e parada cardiorres"
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "No atendimento pré-hospitalar básico, a avaliação inicial da vítima deve seguir protocolos que prior"
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em situações de resgate e transporte de vítimas, a técnica adequada reduz riscos adicionais. Assinal"
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Os primeiros socorros consistem em cuidados imediatos prestados à vítima de acidente ou mal súbito, "
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-1",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A capacidade de reconhecer parada cardiorrespiratória e iniciar manobras de reanimação é essencial p"
+    },
+    {
+      "slug": "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente com diabetes tipo 1 procura atendimento por causa de hipoglicemia. Acerca do sinais abai"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. Em caso de possível exposição ao vírus da raiva, é imprescindível a limpeza "
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-1",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. Em pacientes com baixa imunidade, o escorpionismo causa a redução da tempera"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-2",
+      "family": "certo_errado",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. As reações desencadeadas pela picada de abelhas são variáveis de acordo com "
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-4",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. A dor local é uma característica constante no escorpionismo e pode ser acomp"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-5",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. Em acidentes com serpentes, identificar o animal causador do acidente é um p"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-6",
+      "family": "certo_errado",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. Arritmias cardíacas, insuficiência cardíaca congestiva e choque são sintomas"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-1",
+      "family": "certo_errado",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A avaliação primária é um processo ordenado para identificar e corrigir, de imediato, os problemas q"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-2",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "No atendimento à vítima de trauma abdominal com evisceração, deve-se manter o posicionamento adequad"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-4",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A gravidade do trauma cranioencefálico (TCE) pode ser avaliada através da Escala de Coma de Glasgow."
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-6",
+      "family": "certo_errado",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item subsequente. De acordo com o protocolo de suporte básico de vida de 2014, é considerad"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-7",
+      "family": "certo_errado",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item subsequente. As situações de urgências podem ocorrer em qualquer local de Atendimento "
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-8",
+      "family": "certo_errado",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item subsequente. Em um quadro de hemorragia digestiva baixa, podemos identificar os seguin"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-9",
+      "family": "certo_errado",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item subsequente. As hemorragias com perdas acima de 30% (maiores que 1.500 ml em adultos) "
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-0",
+      "family": "certo_errado",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item subsequente. Choque é uma síndrome clínica caracterizada pela presença de perfusão org"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-7",
+      "family": "certo_errado",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. Após a obtenção de uma via aérea avançada, de sua confirmação e fixação, a r"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-8",
+      "family": "certo_errado",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. A sequência de prioridades utilizada na avaliação primária do paciente é o X"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-0",
+      "family": "certo_errado",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. Se a vítima de obstrução de vias aéreas por corpo estranho estiver grávida o"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-1",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. No atendimento pré-hospitalar às vítimas de ferimento por arma branca, cuja "
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+      "family": "certo_errado",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. Ao detectar uma emergência traumática que possa comprometer a coluna vertebr"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Atendimento Pré-hospitalar (APH) envolve ações iniciais prestadas a vítimas de agravos à saúde ant"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Os primeiros socorros correspondem às medidas imediatas prestadas à vítima até a chegada de atendime"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "As situações de urgência e emergência podem ocorrer na unidade básica de saúde ou no território, exi"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-1",
+      "family": "vf",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "V/F — protocolos I/II/III",
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Os primeiros socorros consistem em medidas iniciais prestadas a uma vítima em situação de urgência, "
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Atendimento Pré-hospitalar − APH compreende o conjunto de ações realizadas fora do ambiente hospit"
+    },
+    {
+      "slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-3",
+      "family": "vf",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "V/F — protocolos I/II/III",
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "taxonomy_drift": false,
+      "instruction_preview": "A Enfermagem em urgência e emergência envolve a prestação de cuidados imediatos a pacientes em situa"
+    },
+    {
+      "slug": "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Julgue o item a seguir. A picada de abelha costuma apresentar reações locais e sintomas gerais como "
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-8",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Uma equipe de enfermagem é acionada para atender um homem de 62 anos, encontrado inconsciente em via"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-2",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "\"As decisões em situações críticas exigem integração entre competência técnica, julgamento clínico e"
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um técnico de enfermagem, atuando em uma unidade de emergência, depara-se com um paciente adulto que"
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Urgência e emergência são conceitos diferentes e definem o tipo de atendimento médico e o tratamento"
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7",
+      "family": "legis",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Os Serviços de Atendimento Móvel de Urgência acolhem os pedidos de ajuda médica de cidadãos acometid"
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-8",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Define-se ambulância como um veículo (terrestre, aéreo ou aquaviário) que se destine exclusivamente "
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-0",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A insuficiência cardíaca (IC) é a via final de muitas doenças cardiovasculares. Na abordagem inicial"
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Na assistência a uma parada cardiorrespiratória no paciente pediátrico, assinale a alternativa que e"
+    },
+    {
+      "slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-2",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "No atendimento a PCR em gestantes, de acordo com as diretrizes de RCP e ACE de 2020 da American Hear"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um homem de 60 anos foi levado à UPA após apresentar, há cerca de 15 minutos, fala arrastada e dific"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o plantão noturno em uma unidade de internação, um paciente de 68 anos, com histórico de ins"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Pacientes com idade ≤ 75 anos com dor torácica aguda, grave e persistente ou com sinais/sintomas sug"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o almoço em uma unidade hospitalar, um paciente de 58 anos, lúcido e orientado, começou a ap"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Homem, 35 anos, foi levado ao pronto atendimento por familiares apresentando rebaixamento do nível d"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "São parâmetros avaliados na Escala de Coma de Glasgow, EXCETO :"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "De acordo com os Destaques das Diretrizes para Ressuscitação Cardiopulmonar e Atendimento Cardiovasc"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "No contexto da Parada Cardiorrespiratória (PCR) em bebês e crianças, considerando os princípios atua"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006962671-9",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Com base nas Diretrizes da American Heart Association (AHA) – 2025, acerca da composição da equipe d"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o atendimento em uma unidade de saúde, um Técnico de Enfermagem presencia uma criança consci"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-semiologia-em-enfermagem-1779563521756-1",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "É muito importante que o Técnico de Enfermagem saiba reconhecer sinais e sintomas relacionados às in"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Sobre a parada cardiorrespiratória (PCR), julgue as assertivas abaixo atribuindo V para o item verda"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-1",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A parada cardiorrespiratória (PCR) permanece como uma das emergências cardiovasculares de grande pre"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-1",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "\"Cefaleia, náuseas, vômitos, letargia, hemiparesia e pupilas assimétricas podem ser alguns dos sinai"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104056718-5",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente com fratura de rádio distal, retorna um dia após a confecção do gesso com suspeita de síndr"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-5",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considerando casos de acidente com choque elétrico, a primeira ação que o socorrista deverá realizar"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "As cadeias de sobrevivência foram criadas para ressaltar a importância da adoção organizada e hierar"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-7",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A desfibrilação consiste em aplicar uma corrente elétrica no músculo cardíaco para reorganizar toda "
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-8",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O tempo previsto para o deslocamento da saída da base após a recepção do chamado, em caso de código "
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-3",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Quanto à classificação das ambulâncias, assinale a alternativa correta."
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Assinale o tipo de ambulância que, obrigatoriamente, necessita de médico para compor a equipe."
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-5",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Técnico Auxiliar em Regulação Médica (TARM) é um profissional da área da saúde que trabalha no cam"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-6",
+      "family": "vf",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "V/F — protocolos I/II/III",
+      "pedagogical_branch_proposed": "urgencias_vf_protocolo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Analise as afirmativas a seguir. I- Em uma chamada de emergência, os técnicos do atendimento ao tele"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-7",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "A fim de garantir uma assistência pré-hospitalar eficiente, é importante que os profissionais de saú"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-8",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O Atendimento Pré-Hospitalar (APH) é aquele ofertado às pessoas em situação de urgência e emergência"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Parada Cardiorrespiratória (PCR) é a cessação súbita da atividade mecânica do coração; caracteriza-s"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considere um acidente em determinada rodovia envolvendo um motociclista e um carro. Sabe-se que o pi"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "A Obstrução de Vias Aéreas por Corpos Estranhos (OVACE) consiste em um episódio testemunhado com sin"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-3",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Luiz, 35 anos, pedreiro, trabalhava em uma construção, quando desequilibrou do andaime e caiu de uma"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-5",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente de trauma de extremidades apresenta alguns dos seguintes sinais ou sintomas: dor; ferimento"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Homem, 38 anos, vítima de acidente com vergalhão em construção civil, caiu e perfurou a região abdom"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Diariamente muitas pessoas são atendidas em serviços de atenção às urgências e emergências. É necess"
+    },
+    {
+      "slug": "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Qual é o objetivo da escala de Glasgow na avaliação de pacientes?"
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+      "family": "certo_errado",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Ao identificar uma vítima adulta inconsciente e sem respiração normal, a primeira ação do socorrista"
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+      "family": "certo_errado",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Situação hipotética: Um paciente vítima de acidente automobilístico está consciente, orientado e dei"
+    },
+    {
+      "slug": "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um dos principais instrumentos de avaliação de casos suspeitos de AVC é a Escala de Cincinnati. Ela "
+    },
+    {
+      "slug": "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Choque é uma situação crítica caracterizada pela diminuição da oferta de oxigênio para as células do"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante o turno da tarde em uma enfermaria, um paciente idoso com diabetes mellitus tipo 2 e hiperte"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+      "family": "protocolo",
+      "builder_topic": "Manchester",
+      "pedagogical_cluster": "Manchester / triagem de risco",
+      "pedagogical_branch_proposed": "urgencias_manchester_triagem",
+      "taxonomy_drift": false,
+      "instruction_preview": "No atendimento inicial a pacientes com dor torácica em serviços de urgência e emergência, o técnico "
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "No atendimento inicial a uma vítima adulta encontrada inconsciente em via pública, o técnico em enfe"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563531989-5",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Leia o caso a seguir. Um trabalhador agropecuarista deu entrada em uma unidade de pronto atendimento"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "A obstrução de via aérea é uma urgência e precisa de intervenção imediata. Em casos de obstrução por"
+    },
+    {
+      "slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente de 75 anos, do sexo masculino, apresenta sinais de desidratação grave: mucosas secas, pr"
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Medicamento utilizado no suporte avançado de vida durante a reanimação cardiorrespiratória:"
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-9",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "V.N.M., 50 anos, chega à Unidade de Pronto Atendimento queixando-se de dor precordial retroesternal "
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "family": "protocolo",
+      "builder_topic": "Convulsão",
+      "pedagogical_cluster": "Convulsão / crise epiléptica",
+      "pedagogical_branch_proposed": "urgencias_convulsao",
+      "taxonomy_drift": false,
+      "instruction_preview": "A hipoglicemia acontece quando há uma diminuição dos níveis glicêmicos a valores abaixo de 60 a 70 m"
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-2",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente apresentando parada cardiorrespiratória ao ser monitorizado observou-se a presença de um ri"
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "No que diz respeito ao manejo farmacológico da parada cardiorrespiratória (PCR), este pode ser condu"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-8",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A crise epiléptica pode ser classificada como reativa quando ocorre em decorrência de fatores agudos"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "As doenças cerebrovasculares estão entre as principais causas de morte no Brasil e no mundo. O Acide"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A parada cardiorrespiratória (PCR) é uma emergência grave caracterizada pela interrupção súbita das "
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-6",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante a avaliação inicial de um paciente na emergência, qual é a prioridade para a equipe de enfer"
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-7",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Sobre a assistência de enfermagem em um paciente com diagnóstico de insuficiência cardíaca descompen"
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-8",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Durante a assistência de enfermagem em um paciente com crise hipertensiva, qual é a medida prioritár"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Ao deparar-se com uma pessoa engasgada, (obstrução das vias aéreas), por material sólido, tendo você"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente Marina, 48 anos, apresenta dor intensa no quadrante superior direito do abdome, com irradia"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-7",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "São causas de Acidente Vascular Cerebral, (AVC), hemorrágico, exceto:"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-vias-de-administracao-1778968646731-7",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Sobre o Algoritmo de Parada Cardiorrespiratório (PCR) para adultos, marque a alternativa correta."
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A meningite ou meningoencefalite aguda ou subaguda se manifesta clinicamente com vários sintomas. So"
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+      "family": "certo_errado",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A respeito da atuação da equipe de enfermagem em situações de urgência e emergência, julgue o item a"
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-3",
+      "family": "certo_errado",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A respeito da atuação da equipe de enfermagem em situações de urgência e emergência, julgue o item a"
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+      "family": "certo_errado",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A respeito da atuação da equipe de enfermagem em situações de urgência e emergência, julgue o item a"
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+      "family": "certo_errado",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A respeito da atuação da equipe de enfermagem em situações de urgência e emergência, julgue o item a"
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+      "family": "certo_errado",
+      "builder_topic": "Manchester",
+      "pedagogical_cluster": "Certo ou errado",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A respeito da atuação da equipe de enfermagem em situações de urgência e emergência, julgue o item a"
+    },
+    {
+      "slug": "quadrix-enfermagem-semiologia-em-enfermagem-1779563537258-8",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Considere os sintomas indicados nos itens a seguir. I aumento da pressão arterial II pele fria III p"
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente chegou ao pronto-socorro com suspeita de intoxicação por opioides. Durante o atendimento"
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-7",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Diante de um acidente envolvendo uma criança, deve-se prestar os primeiros-socorros a ela. Acerca de"
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-8",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um homem deu entrada no pronto-socorro com sudorese, vertigens, cefaleia e angina. Nesse caso, os si"
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+      "family": "protocolo",
+      "builder_topic": "Drift taxonômico",
+      "pedagogical_cluster": "Drift taxonômico — reclassificar subtópico",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": true,
+      "instruction_preview": "São cuidados pós‐PCR"
+    },
+    {
+      "slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-5",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A ressuscitação cardiopulmonar (RCP) é uma manobra necessária quando paciente apresenta uma parada c"
+    },
+    {
+      "slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-5",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Se o paciente acidentado não está acordado, orientado e capaz de obedecer a comandos, devem ser aval"
+    },
+    {
+      "slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-6",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "As pupilas normais apresentam tamanhos semelhantes. Pupilas de tamanhos desiguais sugerem traumatism"
+    },
+    {
+      "slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A semiologia ortopédica é fundamental para a avaliação clínica do paciente. As fraturas do colo de f"
+    },
+    {
+      "slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+      "family": "protocolo",
+      "builder_topic": "AVC/IAM",
+      "pedagogical_cluster": "AVC / IAM — reconhecimento",
+      "pedagogical_branch_proposed": "urgencias_avc_iam",
+      "taxonomy_drift": false,
+      "instruction_preview": "O AVC (acidente vascular cerebral) é caracterizado por início súbito de sinais e sintomas neurológic"
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-1",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "No atendimento de primeiros socorros, é comum a aplicação de calor ou frio nas camadas superficiais "
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-3",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "De acordo com o Protocolo de Suporte Básico de Vida SAMU, acerca da ventilação e da oxigenação pós-R"
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4",
+      "family": "protocolo",
+      "builder_topic": "Queimadura",
+      "pedagogical_cluster": "Queimadura — primeiro socorro",
+      "pedagogical_branch_proposed": "urgencias_queimadura",
+      "taxonomy_drift": false,
+      "instruction_preview": "João Mendes, técnico de enfermagem da SAMU, é acionado, juntamente com a equipe multidisciplinar, pa"
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-6",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente Ricardo Silva, 28 anos, foi vítima de acidente automobilístico com múltiplas fraturas e esc"
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9",
+      "family": "protocolo",
+      "builder_topic": "Manchester",
+      "pedagogical_cluster": "Manchester / triagem de risco",
+      "pedagogical_branch_proposed": "urgencias_manchester_triagem",
+      "taxonomy_drift": false,
+      "instruction_preview": "Nas unidades de emergência, o sistema de classificação de risco garante a priorização do atendimento"
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A administração da adrenalina (1mg/endovenoso-EV) é recomendada na parada cardiorrespiratória (PCR) "
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-1",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A síndrome do desconforto respiratório agudo (SDRA) é um processo agudo de edema pulmonar não cardio"
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "João Neves, 43 anos, lutador, apresentou uma subluxação do úmero durante o treino. Nesses casos, a r"
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "São sinais clínicos de uma luxação aguda do cotovelo:"
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "A técnica de fixação considerada um método de estabilidade absoluta, pois promove uma compressão dos"
+    },
+    {
+      "slug": "unesc-enfermagem-urgencias-e-emergencias-1780001220945-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Entre os sinais clínicos descritos abaixo, analise as alternativas e assinale CORRETAMENTE o sinal c"
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "O International Liaison Committee on Resuscitation (ILCOR) atualiza regularmente as diretrizes inter"
+    },
+    {
+      "slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-2",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em um paciente adulto, a Ressuscitação Cardiopulmonar (RCP) deve ser realizada seguindo uma determin"
+    },
+    {
+      "slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Uma disfunção orgânica com risco de vida, causada por uma resposta desregulada do hospedeiro à infec"
+    },
+    {
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A ressuscitação cardiopulmonar (RCP) é um procedimento de emergência que salva vidas quando realizad"
+    },
+    {
+      "slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente sexo masculino, 82 anos, com diagnóstico de diarreia aquosa e desidratação, encontra-se na "
+    },
+    {
+      "slug": "vunesp-enfermagem-exames-complementares-1779563685104-0",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "São corretos os instrumentos ou ferramentas para avaliação do estado neurológico contidos em:"
+    },
+    {
+      "slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "A manobra de Heimlich pode salvar vidas e é uma das estratégias ensinadas à população leiga, inclusi"
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em caso de respingo químico ocular no laboratório, qual conduta imediata é tecnicamente recomendada?"
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Diante de vítima de choque elétrico no chão da oficina, qual conduta inicial é correta?"
+    },
+    {
+      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+      "family": "protocolo",
+      "builder_topic": "Choque",
+      "pedagogical_cluster": "Choque / hipoperfusão",
+      "pedagogical_branch_proposed": "urgencias_choque",
+      "taxonomy_drift": false,
+      "instruction_preview": "É um sinal sugestivo de choque hipovolêmico:"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Pacientes com ou sem diagnóstico prévio de HAS podem apresentar episódios agudos, geralmente com pre"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente alojado na clínica cirúrgica teve detectada a presença de gás obstruindo o seu fluxo san"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em um paciente com síndrome compartimental pós imobilização, é necessário atentar-se ao seguinte sin"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4",
+      "family": "protocolo",
+      "builder_topic": "Engasgo",
+      "pedagogical_cluster": "Engasgo / obstrução de via aérea",
+      "pedagogical_branch_proposed": "urgencias_engasgo",
+      "taxonomy_drift": false,
+      "instruction_preview": "Ao realizar visita domiciliar para um idoso acamado, o técnico de enfermagem – TE foi solicitado a c"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-4",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Paciente de 25 anos do sexo masculino é socorrido após um acidente de automóvel. Ao ser atendido pel"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-5",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Uma idosa, ao chegar a uma unidade de saúde para atendimento decorrente de um sofrimento de traumati"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-6",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "A trombose venosa profunda (TVP) é uma grave complicação decorrente de cirurgia. Em relação à TVP, é"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-7",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "M.V., trabalhador de uma serralheria, sofreu um acidente, com instrumento de trabalho, que resultou "
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "No âmbito da equipe de enfermagem, é atribuição do técnico de enfermagem, entre outras ações,"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em caso de parada cardiorrespiratória no adulto, os procedimentos de reanimação cardiopulmonar (RCP)"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-1",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "P.J., 28 anos, sexo masculino, pedreiro, chegou ao ambulatório de saúde apresentando epistaxe por um"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+      "family": "protocolo",
+      "builder_topic": "RCP pediátrica",
+      "pedagogical_cluster": "RCP pediátrica / lactente",
+      "pedagogical_branch_proposed": "urgencias_rcp_pediatrico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Uma criança de 3 anos tem obstrução de via aérea por corpo estranho durante o horário do almoço na e"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Por volta das 8:30 horas, ao realizar a visita domiciliar para P.J., 72 anos, masculino, diabético i"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+      "family": "protocolo",
+      "builder_topic": "Convulsão",
+      "pedagogical_cluster": "Convulsão / crise epiléptica",
+      "pedagogical_branch_proposed": "urgencias_convulsao",
+      "taxonomy_drift": false,
+      "instruction_preview": "Observe atentamente a figura e complete, corretamente, a afirmação a seguir. A ação apresentada na f"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em uma UBS, enquanto aguardava atendimento pelo funcionário da recepção, um usuário adulto apresento"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+      "family": "protocolo",
+      "builder_topic": "EXCETO",
+      "pedagogical_cluster": "EXCETO / INCORRETA — conduta",
+      "pedagogical_branch_proposed": "urgencias_exceto_conduta",
+      "taxonomy_drift": false,
+      "instruction_preview": "Assinale a alternativa correta em relação aos procedimentos de ressuscitação cardiopulmonar em ambie"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "João conduzia seu veículo em uma via rápida da cidade quando teve uma síncope, vindo a colidir com a"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Assinale a alternativa correta no que diz respeito ao equipamento utilizado pela equipe do SAMU para"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "No que diz respeito à avaliação primária do paciente com agravo clínico, é correto afirmar:"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Sobre as medidas de reanimação cardiorrespiratória básica de uma vítima adulta é correto afirmar que"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+      "family": "protocolo",
+      "builder_topic": "Convulsão",
+      "pedagogical_cluster": "Convulsão / crise epiléptica",
+      "pedagogical_branch_proposed": "urgencias_convulsao",
+      "taxonomy_drift": false,
+      "instruction_preview": "O técnico de enfermagem participa das ações educativas aos usuários dos serviços de saúde cujo objet"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um dos cuidados para um paciente com hemorragia digestiva alta gástrica é:"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+      "family": "protocolo",
+      "builder_topic": "Default",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "O trabalho integrado dos trabalhadores que atuam no atendimento pré-hospitalar garante a agilidade n"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Suzana sofreu um acidente automobilístico grave e se recuperou sem sequelas, o que ela atribui ao us"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+      "family": "protocolo",
+      "builder_topic": "Trauma",
+      "pedagogical_cluster": "XABCDE / trauma e hemorragia",
+      "pedagogical_branch_proposed": "urgencias_xabcde_trauma",
+      "taxonomy_drift": false,
+      "instruction_preview": "Em um acidente grave, a equipe de socorristas se orienta pelo mnemônico X-ABCDE (PHTLS 9a edição), e"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+      "family": "protocolo",
+      "builder_topic": "RCP adulto",
+      "pedagogical_cluster": "RCP / SBV adulto (V/F ou protocolo)",
+      "pedagogical_branch_proposed": "urgencias_rcp_sbv",
+      "taxonomy_drift": false,
+      "instruction_preview": "Segundo a American Heart Association (2020), as recomendações para o atendimento à pessoa em parada "
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+      "family": "protocolo",
+      "builder_topic": "Drift taxonômico",
+      "pedagogical_cluster": "Drift taxonômico — reclassificar subtópico",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": true,
+      "instruction_preview": "Quais dos cuidados imediatos devem ser prestados à pessoa que está sendo submetida a um protocolo de"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+      "family": "protocolo",
+      "builder_topic": "Urgências geral",
+      "pedagogical_cluster": "Urgências — conceito geral",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": false,
+      "instruction_preview": "Um paciente com intoxicação exógena, provavelmente intoxicação alcoólica, é encontrado com sinais vi"
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+      "family": "protocolo",
+      "builder_topic": "Drift taxonômico",
+      "pedagogical_cluster": "Drift taxonômico — reclassificar subtópico",
+      "pedagogical_branch_proposed": "urgencias_generico",
+      "taxonomy_drift": true,
+      "instruction_preview": "Joana, 32 anos, II Gesta IPC 0 Abortos, 33a semana de idade gestacional. Apresenta cefaleia intensa,"
+    }
+  ]
+}

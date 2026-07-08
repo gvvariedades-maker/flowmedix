@@ -1,0 +1,52 @@
+{
+  "lote": "sinais-vitais-g23",
+  "subtopico": "Verificação de Sinais Vitais",
+  "branch": "vitals_pa_tecnica",
+  "anchor_slug": "vunesp-enfermagem-verificacao-de-sinais-vitais-1778969752567-8",
+  "handcrafted_at": "2026-07-06",
+  "slugs": 8,
+  "prior_lotes": [
+    "sinais-vitais-g01",
+    "sinais-vitais-g02",
+    "sinais-vitais-g03",
+    "sinais-vitais-g04",
+    "sinais-vitais-g05",
+    "sinais-vitais-g06",
+    "sinais-vitais-g07",
+    "sinais-vitais-g08",
+    "sinais-vitais-g09",
+    "sinais-vitais-g10",
+    "sinais-vitais-g11",
+    "sinais-vitais-g12",
+    "sinais-vitais-g13",
+    "sinais-vitais-g14",
+    "sinais-vitais-g15",
+    "sinais-vitais-g16",
+    "sinais-vitais-g17",
+    "sinais-vitais-g18",
+    "sinais-vitais-g19",
+    "sinais-vitais-g20",
+    "sinais-vitais-g21",
+    "sinais-vitais-g22"
+  ],
+  "notes": "P0 vitals_pa_tecnica posições 177–184 no cluster PA (196 slugs) — VUNESP ×8. g01–g22, ibfc-4137078-5 e exceto piloto excluídos.",
+  "applied": false,
+  "gates": {
+    "validate_goldens_strict": "8/8 pass",
+    "questao_readiness_strict_v3": "8/8 READY",
+    "slug_alignment_strict": "8/8",
+    "numeric_factcheck": "8/8",
+    "catalog_preflight": "8/8",
+    "capture_questao_review": "skipped (--skip-capture)",
+    "anchor_review": "pass (agent)"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-07",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinais-vitais-g23.json"
+  },
+  "status": "applied",
+  "applied_at": "2026-07-07"
+}

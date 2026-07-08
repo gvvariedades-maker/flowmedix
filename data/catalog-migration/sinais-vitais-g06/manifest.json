@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g06",
+  "exported_at": "2026-07-05T03:51:19.719Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g06/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-6",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344189558-1",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344122526-4",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344127707-7",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-2",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+    "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344205200-8"
+  ]
+}

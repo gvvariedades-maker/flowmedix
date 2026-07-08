@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:46:54.497Z",
+  "lote": "sinais-vitais-g13",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344205200-5",
+    "fundep-enfermagem-verificacao-de-sinais-vitais-1779344253939-0",
+    "furb-enfermagem-verificacao-de-sinais-vitais-1778969745165-7",
+    "furb-enfermagem-verificacao-de-sinais-vitais-1778969768866-3",
+    "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-4",
+    "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-5",
+    "gama-enfermagem-verificacao-de-sinais-vitais-1779343811344-7",
+    "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344205200-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-verificacao-de-sinais-vitais-1779344253939-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1778969745165-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1778969768866-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1779343811344-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

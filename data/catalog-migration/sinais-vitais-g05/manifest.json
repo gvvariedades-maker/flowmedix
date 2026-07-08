@@ -1,0 +1,28 @@
+{
+  "lote": "sinais-vitais-g05",
+  "branch": "vitals_pa_tecnica",
+  "exported_at": "2026-07-05T03:42:44.403Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-2",
+      "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-5",
+      "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-6",
+      "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-7",
+      "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-6",
+      "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-7",
+      "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-6",
+      "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-7"
+    ]
+  },
+  "slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-5",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-6",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-7",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-6",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-7",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-6",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-7"
+  ]
+}

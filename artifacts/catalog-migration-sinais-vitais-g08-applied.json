@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:44:40.706Z",
+  "lote": "sinais-vitais-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1778969768866-1",
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344111854-5",
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-7",
+    "decorp-enfermagem-verificacao-de-sinais-vitais-1779343811344-4",
+    "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343811344-6",
+    "facet-enfermagem-verificacao-de-sinais-vitais-1779343845367-0",
+    "fafipa-enfermagem-verificacao-de-sinais-vitais-1779343822075-2",
+    "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779343956155-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1778969768866-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344111854-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-verificacao-de-sinais-vitais-1779343811344-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343811344-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-verificacao-de-sinais-vitais-1779343845367-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-verificacao-de-sinais-vitais-1779343822075-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779343956155-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

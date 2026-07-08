@@ -62,6 +62,29 @@ const ADOLESCENT_ETHICS = 'adolescent-privacy-curtain · adolescent-sigilo-spect
 const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
 const SP_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
 const PERI_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const URGENCIAS_LEGACY =
+  'survival-chain · center · vertical · trap-reveal (legado subtópico — redesign obrigatório)';
+const URGENCIAS_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const URGENCIAS_RCP_BESPOKE =
+  'urgencias-survival-chain-deck · urgencias-rcp-params-board · urgencias-rcp-tap-flow · urgencias-rcp-trap-arena (bespoke)';
+const URGENCIAS_XABCDE_BESPOKE =
+  'urgencias-xabcde-rail · urgencias-trauma-reference-board · urgencias-xabcde-tap-flow · urgencias-trauma-trap-arena (bespoke)';
+const URGENCIAS_AVC_BESPOKE =
+  'urgencias-stroke-signs-deck · urgencias-cincinnati-board · urgencias-stroke-elimination-tap · urgencias-stroke-trap-arena (bespoke)';
+const URGENCIAS_CHOQUE_BESPOKE =
+  'urgencias-shock-types-deck · urgencias-shock-reference-board · urgencias-shock-tap-flow · urgencias-shock-trap-arena (bespoke)';
+const URGENCIAS_ENGASGO_BESPOKE =
+  'urgencias-choking-signal-deck · urgencias-heimlich-board · urgencias-choking-tap-flow · urgencias-choking-trap-arena (bespoke)';
+const URGENCIAS_PEDIATRIC_BESPOKE =
+  'urgencias-pediatric-rcp-deck · urgencias-pediatric-params-board · urgencias-pediatric-tap-flow · urgencias-pediatric-trap-arena (bespoke)';
+const URGENCIAS_MANCHESTER_BESPOKE =
+  'urgencias-manchester-spectrum · urgencias-manchester-board · cards · urgencias-manchester-trap (bespoke)';
+const URGENCIAS_EXCETO_BESPOKE =
+  'urgencias-exceto-rail · urgencias-exceto-reference-board · urgencias-exceto-tap-flow · urgencias-exceto-trap-arena (bespoke)';
+const URGENCIAS_PROTOCOL_BESPOKE =
+  'urgencias-protocol-rules-deck · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)';
+const URGENCIAS_EMERGENCY_GENERIC_BESPOKE =
+  'urgencias-emergency-hub · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)';
 
 const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
   'saude do adolescente': [
@@ -440,6 +463,129 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Drift taxonômico — reclassificar antes de handcraft; layout genérico interim.',
     },
   ],
+  urgencias: [
+    {
+      pattern: /drift|reclassificar/i,
+      branch_id: 'urgencias_generico',
+      branch_implemented: false,
+      ideal_mold_package: URGENCIAS_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Drift taxonômico — reclassificar subtópico antes de handcraft.',
+    },
+    {
+      pattern: /rcp pediatrica|lactente/i,
+      branch_id: 'urgencias_rcp_pediatrico',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_PEDIATRIC_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'RCP pediátrica 15:2 — separar visualmente do adulto 30:2 (âncora ACCESS).',
+    },
+    {
+      pattern: /manchester|triagem de risco/i,
+      branch_id: 'urgencias_manchester_triagem',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_MANCHESTER_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Espectro de cores Manchester — erro espacial (etiqueta vermelha × demais).',
+    },
+    {
+      pattern: /exceto|incorreta/i,
+      branch_id: 'urgencias_exceto_conduta',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_EXCETO_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'EXCETO conduta — rail semântico por letra (âncora ADM&TEC fratura exposta).',
+    },
+    {
+      pattern: /xabcde|trauma e hemorragia/i,
+      branch_id: 'urgencias_xabcde_trauma',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_XABCDE_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Trilho XABCDE pré-hospitalar — trauma ≠ cadeia RCP (âncoras AMEOSC/SELECON).',
+    },
+    {
+      pattern: /avc|iam|reconhecimento/i,
+      branch_id: 'urgencias_avc_iam',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_AVC_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Cincinnati Face·Arms·Speech — pegadinhas Glasgow/IAM/SSVV (âncora AMAUC).',
+    },
+    {
+      pattern: /engasgo|obstrucao de via aerea/i,
+      branch_id: 'urgencias_engasgo',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_ENGASGO_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Sinal universal × manobra Heimlich — metáfora espacial (âncora FAU).',
+    },
+    {
+      pattern: /choque|hipoperfusao/i,
+      branch_id: 'urgencias_choque',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_CHOQUE_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Tipos de choque + segurança da cena — matriz mecanismo × conduta.',
+    },
+    {
+      pattern: /convulsao|crise epileptica/i,
+      branch_id: 'urgencias_convulsao',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_PROTOCOL_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Crise epiléptica — protocol rules deck (âncora ADM&TEC).',
+    },
+    {
+      pattern: /anafilaxia|epinefrina/i,
+      branch_id: 'urgencias_anafilaxia',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_PROTOCOL_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Anafilaxia — epinefrina IM × IV (âncora CPCON).',
+    },
+    {
+      pattern: /queimadura/i,
+      branch_id: 'urgencias_queimadura',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_PROTOCOL_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Primeiro socorro queimadura — protocol trap (âncora AMEOSC V/F).',
+    },
+    {
+      pattern: /rcp.*sbv|sbv adulto/i,
+      branch_id: 'urgencias_rcp_sbv',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_RCP_BESPOKE,
+      base_decision: 'molde_redesign',
+      rationale:
+        'Legado survival-chain no subtópico — brief urgencias_rcp_sbv aprovado; pacote urgencias-rcp-*.',
+    },
+    {
+      pattern: /v\/f.*protocolo|protocolos i/i,
+      branch_id: 'urgencias_vf_protocolo',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_PROTOCOL_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'V/F I–IV combinatório — protocol rules deck (brief L3).',
+    },
+    {
+      pattern: /certo ou errado/i,
+      branch_id: 'urgencias_generico',
+      branch_implemented: false,
+      ideal_mold_package: URGENCIAS_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'C/E disperso — handcraft com compare até clusterizar.',
+    },
+    {
+      pattern: /conceito geral|default|sem ancora/i,
+      branch_id: 'urgencias_generico',
+      branch_implemented: true,
+      ideal_mold_package: URGENCIAS_EMERGENCY_GENERIC_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Bucket residual — emergency hub + protocol pack.',
+    },
+  ],
 };
 
 function subtopicKey(subtopico: string): string | undefined {
@@ -457,6 +603,7 @@ function subtopicKey(subtopico: string): string | undefined {
   if (key.includes('respiratorias cronicas') || key.includes('asma') || key === 'dpoc')
     return 'respiratorio';
   if (key.includes('seguranca do paciente')) return 'seguranca do paciente';
+  if (key.includes('urgencias') || key.includes('emergencias')) return 'urgencias';
   return undefined;
 }
 
@@ -469,6 +616,15 @@ function finalizeDecision(
   pct: number,
 ): L3MoldGapDecision {
   if (!rule.branch_implemented) {
+    if (rule.base_decision === 'ok_generico') {
+      return 'ok_generico';
+    }
+    if (
+      rule.base_decision === 'molde_redesign' &&
+      (count >= VOLUME_MIN_COUNT || pct >= VOLUME_MIN_PCT)
+    ) {
+      return 'molde_redesign';
+    }
     if (rule.base_decision === 'molde_inedito' || rule.inedito_if_volume) {
       if (count >= VOLUME_MIN_COUNT || pct >= VOLUME_MIN_PCT) {
         return rule.inedito_if_volume && rule.base_decision !== 'molde_inedito'
@@ -582,5 +738,18 @@ export function implementedBranchIds(): PedagogicalBranchId[] {
     'perioperatorio_vf',
     'perioperatorio_isc',
     'perioperatorio_generico',
+    'urgencias_rcp_sbv',
+    'urgencias_xabcde_trauma',
+    'urgencias_avc_iam',
+    'urgencias_choque',
+    'urgencias_engasgo',
+    'urgencias_rcp_pediatrico',
+    'urgencias_manchester_triagem',
+    'urgencias_exceto_conduta',
+    'urgencias_vf_protocolo',
+    'urgencias_convulsao',
+    'urgencias_anafilaxia',
+    'urgencias_queimadura',
+    'urgencias_generico',
   ];
 }

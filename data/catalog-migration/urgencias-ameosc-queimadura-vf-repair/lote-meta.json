@@ -1,0 +1,30 @@
+{
+  "lote": "urgencias-ameosc-queimadura-vf-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-08",
+  "subtopico": "Urgências e Emergências",
+  "total": 1,
+  "status": "applied",
+  "applied_at": "2026-07-08",
+  "readme": "data/catalog-migration/urgencias-ameosc-queimadura-vf-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=examples/questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=urgencias-ameosc-queimadura-vf-repair --apply",
+  "anchor_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+  "anchor_example": "examples/questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros.json",
+  "pedagogical_branch": "urgencias_queimadura",
+  "pedagogical_cluster": "Queimadura — primeiro socorro V/F",
+  "family": "vf",
+  "command": "V/F — pasta de dente em queimadura química = F",
+  "gabarito": "D",
+  "nota": "Âncora P0 — ramo urgencias_queimadura (1 slug cluster; slug relatório selecon era drift BT16).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-08",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/urgencias-ameosc-queimadura-vf-repair.json"
+  }
+}

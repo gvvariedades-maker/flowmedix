@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-05T04:29:35.775Z",
+  "lote": "sinais-vitais-g12",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969768866-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2279
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343811344-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2406
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2432
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2433
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2480
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2481
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2550
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344178184-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2614
+    }
+  ]
+}

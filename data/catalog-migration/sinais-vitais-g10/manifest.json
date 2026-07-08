@@ -1,0 +1,42 @@
+{
+  "lote": "sinais-vitais-g10",
+  "exported_at": "2026-07-05T04:18:19.762Z",
+  "source": "cluster-report",
+  "filters": {
+    "clusters": ["PA — técnica e interpretação"],
+    "pedagogical_branch_target": "vitals_pa_tecnica",
+    "exclude_count": 72,
+    "mix": "P0 vitals_pa_tecnica posições 73–80 — FEPESE Korotkoff · preparo PA · interpretação · SpO₂",
+    "prior_lotes": [
+      "sinais-vitais-g01",
+      "sinais-vitais-g02",
+      "sinais-vitais-g03",
+      "sinais-vitais-g04",
+      "sinais-vitais-g05",
+      "sinais-vitais-g06",
+      "sinais-vitais-g07",
+      "sinais-vitais-g08",
+      "sinais-vitais-g09"
+    ],
+    "slugs": [
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-3",
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-4",
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-3",
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-4",
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779344196733-7",
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-2",
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-6",
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-7"
+    ]
+  },
+  "slugs": [
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-3",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-4",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-3",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-4",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344196733-7",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-2",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-6",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-7"
+  ]
+}

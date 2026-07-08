@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:50:03.130Z",
+  "lote": "sinais-vitais-g21",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344105099-4",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343883917-7",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343919045-0",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343967847-6",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1779344196733-5",
+    "quadrix-enfermagem-verificacao-de-sinais-vitais-1780000468214-1",
+    "selecon-enfermagem-verificacao-de-sinais-vitais-1778969737311-7",
+    "selecon-enfermagem-verificacao-de-sinais-vitais-1779343811344-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344105099-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343883917-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343919045-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779343967847-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1779344196733-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-verificacao-de-sinais-vitais-1780000468214-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1778969737311-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-verificacao-de-sinais-vitais-1779343811344-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

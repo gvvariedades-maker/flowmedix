@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g13",
+  "exported_at": "2026-07-05T04:37:49.107Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g13/manifest.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344205200-5",
+    "fundep-enfermagem-verificacao-de-sinais-vitais-1779344253939-0",
+    "furb-enfermagem-verificacao-de-sinais-vitais-1778969745165-7",
+    "furb-enfermagem-verificacao-de-sinais-vitais-1778969768866-3",
+    "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-4",
+    "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-5",
+    "gama-enfermagem-verificacao-de-sinais-vitais-1779343811344-7",
+    "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-1"
+  ]
+}

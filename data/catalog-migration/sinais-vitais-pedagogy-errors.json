@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-04",
+  "subtopico": "Verificação de Sinais Vitais",
+  "description": "Erros reproduzíveis por cluster (ROI handcraft) — nomear no concept_map e espelhar no danger_zone.",
+  "grammar_slots": {
+    "concept_map": "Painel PA/FC/FR/Temp/SpO₂ + trilho técnico ou interpretação — pegadinha-âncora nomeando erro ROI (sem letra gabarito)",
+    "golden_rule": "Faixas normativas MS/COFEN — rows com sv_kind; volumes/posição Korotkoff (sem V/F nem gabarito)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; eliminar distratores ou julgar I–III/V",
+    "danger_zone": "Erro reproduzível × correção específica por letra/tema (vitals-classify-arena / compare)",
+    "content_review": "guideline_snapshot tier A (sv-adulto-referencia) + exam_vs_current"
+  },
+  "v3_mental": {
+    "flag": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "roi_errors": "reproducible_errors[].id — inferir do enunciado e nomear no concept_map",
+    "cluster_roi": "reproducible_errors[].cluster_roi — agrupamento curto para briefing de lote",
+    "codes": [
+      "vitals_concept_repro_error",
+      "vitals_concept_generic_sv",
+      "vitals_golden_vf_judgment",
+      "vitals_golden_gabarito_row",
+      "vitals_logic_reveal_tap",
+      "vitals_logic_elimination",
+      "vitals_danger_letter_binding",
+      "vitals_danger_mirror",
+      "vitals_guideline_snapshot",
+      "vitals_exam_vs_current",
+      "vitals_exceto_semantic",
+      "vitals_exceto_coringa"
+    ]
+  },
+  "reproducible_errors": [
+    {
+      "id": "braco_nivel_figado",
+      "label": "Braço ao nível do fígado em vez do coração",
+      "cluster_roi": "técnica PA",
+      "clusters": ["PA — técnica e interpretação"],
+      "concept_map_hint": "Slot PA — posição: braço apoiado na altura do 4º EIC / nível do coração",
+      "danger_zone_hint": "Item II ou letra que cita fígado em vez de coração",
+      "anchors": ["pa_vf_cuidados_pre_afericao"]
+    },
+    {
+      "id": "pernas_cruzadas_pa",
+      "label": "Pernas cruzadas durante aferição PA",
+      "cluster_roi": "técnica PA",
+      "clusters": ["PA — técnica e interpretação"],
+      "concept_map_hint": "Repouso e postura — pés apoiados no chão, sem cruzar pernas",
+      "danger_zone_hint": "Item IV ou distrator que valida pernas cruzadas",
+      "anchors": ["pa_vf_cuidados_pre_afericao"]
+    },
+    {
+      "id": "manguito_inadequado",
+      "label": "Manguito sem cobrir ~80% do braço ou tamanho errado",
+      "cluster_roi": "técnica PA",
+      "clusters": ["PA — técnica e interpretação"],
+      "concept_map_hint": "Manguito calibrado + largura adequada à circunferência braquial",
+      "danger_zone_hint": "Alternativa que ignora tamanho do manguito",
+      "anchors": ["pa_tecnica_posicao_manguito"]
+    },
+    {
+      "id": "korotkoff_sequencia",
+      "label": "Sequência Korotkoff fora do MS (deflação rápida / sem confirmar fase V)",
+      "cluster_roi": "técnica PA",
+      "clusters": ["PA — técnica e interpretação"],
+      "concept_map_hint": "Após diastólica — auscultar 20–30 mmHg abaixo do último som; deflação lenta (~2 mmHg/s)",
+      "danger_zone_hint": "Letra que inverte ordem sistólica/diastólica ou deflação rápida precoce",
+      "anchors": ["korotkoff_ms_pos_diastolica"]
+    },
+    {
+      "id": "polegar_no_pulso",
+      "label": "Palpar pulso com o polegar",
+      "cluster_roi": "técnica FC",
+      "clusters": ["FC e pulso — faixas e técnica", "PA — técnica e interpretação"],
+      "concept_map_hint": "FC — indicador e médio no pulso radial; polegar tem pulsação própria",
+      "danger_zone_hint": "Distrator que recomenda polegar",
+      "anchors": ["fc_radial_ce"]
+    },
+    {
+      "id": "fc_faixa_invertida",
+      "label": "Inverter faixa normal FC (60–100 bpm) ou confundir taqui/bradi",
+      "cluster_roi": "faixas FC",
+      "clusters": ["FC e pulso — faixas e técnica", "V/F — faixas de referência (I/II/III)"],
+      "concept_map_hint": "Badge NORMAL 60–100 bpm adulto em repouso",
+      "danger_zone_hint": "Valores 130 bpm como normocárdico ou 40 bpm sem contexto atleta",
+      "anchors": ["fc_radial_ce", "valores_normais_combo"]
+    },
+    {
+      "id": "contar_fr_com_fala",
+      "label": "Contar FR com paciente conversando",
+      "cluster_roi": "técnica FR",
+      "clusters": ["FR e padrão respiratório", "PA — técnica e interpretação"],
+      "concept_map_hint": "FR — observação discreta 1 minuto; conversa altera o padrão",
+      "danger_zone_hint": "Alternativa que manda contar enquanto o paciente fala",
+      "anchors": ["pa_tecnica_posicao_manguito"]
+    },
+    {
+      "id": "temperatura_pos_exercicio",
+      "label": "Aferir temperatura logo após atividade física",
+      "cluster_roi": "temperatura",
+      "clusters": ["Temperatura — vias e febre", "PA — técnica e interpretação"],
+      "concept_map_hint": "Temp — repouso ≥15–30 min; axilar 36–37,5 °C referência",
+      "danger_zone_hint": "Distrator pós-exercício como conduta correta",
+      "anchors": ["pa_tecnica_posicao_manguito"]
+    },
+    {
+      "id": "oximetro_substitui_palpacao",
+      "label": "Oxímetro substitui totalmente palpação do pulso",
+      "cluster_roi": "FC/SpO₂",
+      "clusters": ["SpO₂ e oximetria", "PA — técnica e interpretação"],
+      "concept_map_hint": "Oxímetro complementa; palpação radial/carótida permanece técnica de prova",
+      "danger_zone_hint": "Item II V/F que diz oxímetro substitui palpação",
+      "anchors": ["fc_radial_ce"]
+    },
+    {
+      "id": "interpretacao_sv_errada",
+      "label": "Classificar errado normo/hiper/hipo ou taqui/taquipneia",
+      "cluster_roi": "interpretação",
+      "clusters": ["SV geral / múltiplos parâmetros", "PA — técnica e interpretação"],
+      "concept_map_hint": "Traduzir cada valor antes de montar alternativa (PA×FC×FR×Temp)",
+      "danger_zone_hint": "Letra que mistura hipertensão com normotenso ou eupneico com taquipneia",
+      "anchors": ["interpretacao_multi_sv"]
+    },
+    {
+      "id": "pulso_periferico_central",
+      "label": "Confundir pulso periférico (radial) com central (femoral/carótida)",
+      "cluster_roi": "técnica FC",
+      "clusters": ["FC e pulso — faixas e técnica"],
+      "concept_map_hint": "Central = femoral/carótida; radial/ulnar/poplítea = periféricos",
+      "danger_zone_hint": "Letra A radial como pulso central",
+      "anchors": ["pulso_central_femoral"]
+    },
+    {
+      "id": "exceto_coringa_sv",
+      "label": "EXCETO/INCORRETA com frase-coringa em todas as letras",
+      "cluster_roi": "EXCETO",
+      "clusters": ["EXCETO/INCORRETA — técnica SV", "Certo ou errado"],
+      "concept_map_hint": "Distratores = conduta correta; só gabarito aponta técnica errada",
+      "danger_zone_hint": "Cada letra errada explica por que É correta; gabarito = exceção",
+      "anchors": ["exceto_pa_incorreta_divergente"]
+    },
+    {
+      "id": "conduta_sem_escalonar",
+      "label": "Agir sem comunicar alteração (medicar ou só registrar)",
+      "cluster_roi": "conduta",
+      "clusters": ["PA — técnica e interpretação", "SV geral / múltiplos parâmetros"],
+      "concept_map_hint": "SV alterados — comunicar enfermeiro antes de intervenção",
+      "danger_zone_hint": "Registrar e manter rotina ou medicar sem prescrição/escalonamento",
+      "anchors": ["conduta_sv_alterados"]
+    },
+    {
+      "id": "faixa_pediatrica_adulto",
+      "label": "Aplicar faixa de adulto em RN/lactente/pré-escolar",
+      "cluster_roi": "pediatria",
+      "clusters": ["Faixas pediátricas por idade"],
+      "concept_map_hint": "Chip idade no enunciado → tabela MS/SBP (FC RN 120–160 etc.)",
+      "danger_zone_hint": "60–100 bpm em recém-nascido ou 12–20 irpm em lactente",
+      "anchors": ["interpretacao_multi_sv"]
+    }
+  ],
+  "audit_gates": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "always_error_codes": [
+      "vitals_pegadinha_anchor",
+      "vitals_concept_gabarito_spoiler",
+      "vitals_danger_mirror",
+      "vitals_exceto_semantic",
+      "vitals_exceto_coringa"
+    ],
+    "strict_v2_codes": [
+      "vitals_golden_rows",
+      "vitals_golden_gabarito_row",
+      "vitals_logic_gabarito"
+    ],
+    "numeric_codes": [
+      "vitals_numeric_tier_a_source",
+      "vitals_numeric_claim_unmatched"
+    ]
+  }
+}

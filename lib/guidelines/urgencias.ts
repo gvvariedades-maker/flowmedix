@@ -1,15 +1,16 @@
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
- * Suporte Básico de Vida / RCP — Protocolo SAMU 192 / MS (AHA 2015 alinhado).
+ * Suporte Básico de Vida / RCP — Protocolo SAMU 192 / MS (alinhado AHA/ILCOR 2020).
+ * Núcleo RCP·DEA·pediatria — ver URGENCIAS_PROTOCOLOS_EMERGENCIA para trauma/triagem/clínica.
  * Fonte: https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf
  */
 export const URGENCIAS_RCP_SBV: GuidelineTable = {
   id: 'urgencias-rcp-sbv-ms',
-  snapshot: 'Protocolo SBV/RCP — MS SAMU 192',
+  snapshot: 'Protocolo SBV/RCP — MS SAMU 192 (AHA 2020)',
   issuer: 'Ministério da Saúde',
-  title: 'Suporte Básico de Vida e RCP em adulto',
-  year: 2014,
+  title: 'Suporte Básico de Vida e RCP em adulto e pediátrico',
+  year: 2020,
   url: 'https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf',
   entries: [
     {

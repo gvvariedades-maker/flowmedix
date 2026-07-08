@@ -7,12 +7,13 @@
     "topico": "Enfermagem",
     "subtopico": "Verificação de Sinais Vitais",
     "cargo_header": "Técnico de Enfermagem",
+    "pedagogical_branch": "vitals_fc_faixas",
     "content_standard": "golden-v1",
     "family": "certo_errado",
     "content_review": {
-      "reviewed_at": "2026-06-18",
-      "reviewer": "content-pilot",
-      "guideline_snapshot": "FC adulto 60-100 bpm — referência técnica",
+      "reviewed_at": "2026-07-04",
+      "reviewer": "professor-para-concurso",
+      "guideline_snapshot": "COFEN — FC adulto 60–100 bpm; pulso radial com indicador e médio, 60 segundos",
       "exam_vs_current": "none"
     },
     "sources": [
@@ -91,16 +92,9 @@
           "sv_kind": "fc",
           "emphasis": "success",
           "badge": "ok"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Certo — letra A",
-          "sv_kind": "meta",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
-      "footer_rule": "A frase repete técnica + faixa normal: marque certo (letra A)."
+      "footer_rule": "Decore técnica + faixa — o gabarito fica só no logic_flow."
     },
     {
       "type": "logic_flow",
@@ -114,7 +108,8 @@
         "Localizar o pulso radial com os dedos indicador e médio.",
         "Contar as pulsações por 60 segundos completos.",
         "Comparar o resultado com a faixa de normalidade do adulto.",
-        "Marcar certo se a afirmação trouxer 60 a 100 bpm."
+        "Marcar certo se a afirmação trouxer 60 a 100 bpm.",
+        "Gabarito: letra A (Certo) — pulso radial, 60 s e faixa 60–100 bpm conforme a afirmativa."
       ],
       "footer_rule": "Na prova, o comando costuma premiar a faixa de 60 a 100 bpm e a contagem por 60 segundos."
     },

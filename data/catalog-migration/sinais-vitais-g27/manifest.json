@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g27",
+  "exported_at": "2026-07-06T21:14:40.673Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g27/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-5",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-6",
+    "cev-urca-enfermagem-verificacao-de-sinais-vitais-1778969752567-6",
+    "com-exam-pref-bauru-enfermagem-verificacao-de-sinais-vitais-1779344089179-1",
+    "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-6",
+    "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-8",
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343801786-5"
+  ]
+}

@@ -67,7 +67,7 @@ export const DEEPENING_BY_SUBTOPICO: Record<string, DeepeningSpec> = {
   },
   'Urgências e Emergências': {
     phase: 'P1_critico',
-    target_merged_entries: 55,
+    target_merged_entries: 100,
     edital_themes: [
       'XABCDE / avaliação primária',
       'RCP adulto e pediátrico (30:2, 15:2, DEA)',
@@ -84,7 +84,7 @@ export const DEEPENING_BY_SUBTOPICO: Record<string, DeepeningSpec> = {
       'Protocolos MS urgência/emergência',
     ],
     done_when:
-      'Além de RCP: 3+ protocolos não-RCP com números; factcheck lote urgências sem falsos positivos.',
+      'Mescla RCP+protocolos (≥100 entries): RCP/DEA, trauma/XABCDE, triagem, anafilaxia, pegadinhas por ramo; factcheck sem falsos positivos.',
   },
   'Saúde da Mulher': {
     phase: 'P2_volume',

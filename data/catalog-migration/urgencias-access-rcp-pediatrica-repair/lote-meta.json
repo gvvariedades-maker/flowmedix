@@ -1,0 +1,30 @@
+{
+  "lote": "urgencias-access-rcp-pediatrica-repair",
+  "mode": "handcraft-golden-v1-repair",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-08",
+  "subtopico": "Urgências e Emergências",
+  "total": 1,
+  "status": "applied",
+  "applied_at": "2026-07-08",
+  "readme": "data/catalog-migration/urgencias-access-rcp-pediatrica-repair/README.md",
+  "validate_command": "npm run audit:questao-readiness -- --file=examples/questao-premium-access-urgencias-rcp-pediatrica-15-2.json",
+  "apply_command": "npm run catalog:apply-lote -- --lote=urgencias-access-rcp-pediatrica-repair --apply",
+  "anchor_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+  "anchor_example": "examples/questao-premium-access-urgencias-rcp-pediatrica-15-2.json",
+  "pedagogical_branch": "urgencias_rcp_pediatrico",
+  "pedagogical_cluster": "RCP pediátrica / lactente",
+  "family": "protocolo",
+  "command": "RCP pediátrica — 15:2 e profundidade ~⅓ AP",
+  "gabarito": "D",
+  "nota": "Âncora P0 — substitui slug AMEOSC -6 (conteúdo adulto no catálogo). Sub-âncora: PCR pediátrica conceitual Consulpam (READY).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-08",
+    "reviewer": "handcraft-urgencias",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/urgencias-access-rcp-pediatrica-repair.json"
+  }
+}

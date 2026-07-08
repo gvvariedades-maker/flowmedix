@@ -1,0 +1,21 @@
+{
+  "exported_at": "2026-07-07T00:26:38.237Z",
+  "lote": "sinais-vitais-g47",
+  "total": 2,
+  "entries": [
+    {
+      "modulo_slug": "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 2529
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 2530
+    }
+  ]
+}

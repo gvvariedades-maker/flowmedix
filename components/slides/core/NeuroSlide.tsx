@@ -26,6 +26,16 @@ import { IstRiskRoutesDeckConceptMap } from '../variants/IstRiskRoutesDeckConcep
 import { AdolescentPrivacyCurtainConceptMap } from '../variants/AdolescentPrivacyCurtainConceptMap';
 import { Nr32AnnexDeckConceptMap } from '../variants/Nr32AnnexDeckConceptMap';
 import { RespiratorioAsmaDpocDuelDeckConceptMap } from '../variants/RespiratorioAsmaDpocDuelDeckConceptMap';
+import { UrgenciasSurvivalChainDeckConceptMap } from '../variants/UrgenciasSurvivalChainDeckConceptMap';
+import { UrgenciasXabcdeRailConceptMap } from '../variants/UrgenciasXabcdeRailConceptMap';
+import { UrgenciasStrokeSignsDeckConceptMap } from '../variants/UrgenciasStrokeSignsDeckConceptMap';
+import { UrgenciasShockTypesDeckConceptMap } from '../variants/UrgenciasShockTypesDeckConceptMap';
+import { UrgenciasChokingSignalDeckConceptMap } from '../variants/UrgenciasChokingSignalDeckConceptMap';
+import { UrgenciasPediatricRcpDeckConceptMap } from '../variants/UrgenciasPediatricRcpDeckConceptMap';
+import { UrgenciasManchesterSpectrumConceptMap } from '../variants/UrgenciasManchesterSpectrumConceptMap';
+import { UrgenciasProtocolRulesDeckConceptMap } from '../variants/UrgenciasProtocolRulesDeckConceptMap';
+import { UrgenciasExcetoRailConceptMap } from '../variants/UrgenciasExcetoRailConceptMap';
+import { UrgenciasEmergencyHubConceptMap } from '../variants/UrgenciasEmergencyHubConceptMap';
 import { EtiologyKingdomRailConceptMap } from '../variants/EtiologyKingdomRailConceptMap';
 import { ItuClosedSystemRailConceptMap } from '../variants/ItuClosedSystemRailConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
@@ -248,6 +258,96 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'respiratorio-asma-dpoc-duel-deck') {
         return (
           <RespiratorioAsmaDpocDuelDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-survival-chain-deck') {
+        return (
+          <UrgenciasSurvivalChainDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-xabcde-rail') {
+        return (
+          <UrgenciasXabcdeRailConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-stroke-signs-deck') {
+        return (
+          <UrgenciasStrokeSignsDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-shock-types-deck') {
+        return (
+          <UrgenciasShockTypesDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-choking-signal-deck') {
+        return (
+          <UrgenciasChokingSignalDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-pediatric-rcp-deck') {
+        return (
+          <UrgenciasPediatricRcpDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-manchester-spectrum') {
+        return (
+          <UrgenciasManchesterSpectrumConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-protocol-rules-deck') {
+        return (
+          <UrgenciasProtocolRulesDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-exceto-rail') {
+        return (
+          <UrgenciasExcetoRailConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'urgencias-emergency-hub') {
+        return (
+          <UrgenciasEmergencyHubConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}

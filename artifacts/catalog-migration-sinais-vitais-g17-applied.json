@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-07T00:48:33.258Z",
+  "lote": "sinais-vitais-g17",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-5",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-6",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-4",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1778969768866-7",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-1",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-4",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-5",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779344127707-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1778969768866-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779344127707-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

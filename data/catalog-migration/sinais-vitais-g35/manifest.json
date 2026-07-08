@@ -1,0 +1,13 @@
+{
+  "lote": "sinais-vitais-g35",
+  "exported_at": "2026-07-06T23:32:08.583Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g35/manifest.json"
+  },
+  "slugs": [
+    "nao-informado-geral-verificacao-de-sinais-vitais-1779344089179-0",
+    "selecon-enfermagem-verificacao-de-sinais-vitais-1779343883917-0",
+    "unifil-enfermagem-verificacao-de-sinais-vitais-1779344205200-4"
+  ]
+}

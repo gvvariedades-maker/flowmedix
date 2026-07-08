@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-vitais-g22",
+  "exported_at": "2026-07-06T18:09:30.741Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/sinais-vitais-g22/manifest.json"
+  },
+  "slugs": [
+    "selecon-enfermagem-verificacao-de-sinais-vitais-1779344182672-3",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1778969729218-0",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1779343801786-2",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1779344111854-4",
+    "unesc-enfermagem-verificacao-de-sinais-vitais-1780000468214-3",
+    "unifil-enfermagem-verificacao-de-sinais-vitais-1779344196733-0",
+    "univali-enfermagem-verificacao-de-sinais-vitais-1779343932809-0",
+    "univali-enfermagem-verificacao-de-sinais-vitais-1779343932809-1"
+  ]
+}
