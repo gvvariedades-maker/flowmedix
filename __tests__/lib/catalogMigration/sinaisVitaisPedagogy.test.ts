@@ -22,10 +22,8 @@ describe('sinaisVitaisPedagogy', () => {
     'examples',
     'questao-premium-idecan-fc-radial-ce.json',
   );
-  const g01Path = path.join(
-    process.cwd(),
-    'data/catalog-migration/sinais-vitais-g01/questions/ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3.json',
-  );
+  /** Golden commitado (questions/ do g01 é gitignored — não usar em CI). */
+  const pilotGoldenPath = idecanPath;
 
   it('âncora FEPESE passa pegadinha + mirror + rows + logic gabarito (strict-v2)', () => {
     const payload = JSON.parse(fs.readFileSync(fepesePath, 'utf8'));
@@ -37,8 +35,8 @@ describe('sinaisVitaisPedagogy', () => {
     expect(lintVitalsPedagogy(payload, { strictV2: true })).toEqual([]);
   });
 
-  it('piloto g01 AMEOSC passa gramática SV strict-v2 e strict-v3', () => {
-    const payload = JSON.parse(fs.readFileSync(g01Path, 'utf8'));
+  it('âncora IDECAN passa gramática SV strict-v2 e strict-v3', () => {
+    const payload = JSON.parse(fs.readFileSync(pilotGoldenPath, 'utf8'));
     expect(lintVitalsPedagogy(payload, { strictV2: true })).toEqual([]);
     expect(lintVitalsPedagogy(payload, { strictV3: true })).toEqual([]);
   });
@@ -84,7 +82,7 @@ describe('sinaisVitaisPedagogy', () => {
   });
 
   it('vitals_danger_mirror é error mesmo sem strict-v2', () => {
-    const payload = JSON.parse(fs.readFileSync(g01Path, 'utf8'));
+    const payload = JSON.parse(fs.readFileSync(pilotGoldenPath, 'utf8'));
     const slides = payload.reverse_study_slides.map((s: { type: string }) =>
       s.type === 'danger_zone'
         ? { ...s, items: [{ label: 'Genérico', detail: 'Erro comum', correct: 'Texto genérico' }] }

@@ -135,7 +135,7 @@ describe('l3MoldGapCatalog', () => {
     expect(r.decision).toBe('molde_inedito');
   });
 
-  it('Urgências EXCETO conduta → ok_generico', () => {
+  it('Urgências EXCETO conduta → molde_inedito (bespoke implementado)', () => {
     const r = resolveClusterIdeal(
       'Urgências e Emergências',
       'EXCETO / INCORRETA — conduta',
@@ -144,7 +144,9 @@ describe('l3MoldGapCatalog', () => {
       'survival-chain · trap-reveal',
     );
     expect(r.branch_id).toBe('urgencias_exceto_conduta');
-    expect(r.decision).toBe('ok_generico');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('molde_inedito');
+    expect(r.ideal_mold_package).toContain('urgencias-exceto-rail');
   });
 
   it('Urgências Manchester volume baixo → molde_inedito (ramo implementado)', () => {
