@@ -1,6 +1,27 @@
 @config "../tailwind.config.ts";
 @import "tailwindcss";
 
+/**
+ * Tipografia AVANT — escala ~+20% vs defaults Tailwind (só font-size; spacing rem intacto).
+ * Afeta `text-xs`…`text-9xl` em vitrine, dashboard, slides, player (classes rem).
+ * Valores `text-[Npx]` absolutos não entram nesta escala.
+ */
+@theme {
+  --text-xs: 0.9rem; /* 0.75 × 1.2 */
+  --text-sm: 1.05rem; /* 0.875 × 1.2 */
+  --text-base: 1.2rem; /* 1 × 1.2 */
+  --text-lg: 1.35rem; /* 1.125 × 1.2 */
+  --text-xl: 1.5rem; /* 1.25 × 1.2 */
+  --text-2xl: 1.8rem; /* 1.5 × 1.2 */
+  --text-3xl: 2.25rem; /* 1.875 × 1.2 */
+  --text-4xl: 2.7rem; /* 2.25 × 1.2 */
+  --text-5xl: 3.6rem; /* 3 × 1.2 */
+  --text-6xl: 4.5rem; /* 3.75 × 1.2 */
+  --text-7xl: 5.4rem; /* 4.5 × 1.2 */
+  --text-8xl: 7.2rem; /* 6 × 1.2 */
+  --text-9xl: 9.6rem; /* 8 × 1.2 */
+}
+
 @layer base {
   /**
    * Tokens base para componentes portados (Select, Dropdown no body).
@@ -176,6 +197,8 @@
     @apply min-h-screen antialiased;
     background-color: #010409 !important;
     color: white;
+    /* Um pouco mais firme que o default 400 — legibilidade mobile */
+    font-weight: 500;
   }
 
   /* Listras diagonais em pseudo-elemento fixo — evita jank do `background-attachment: fixed` no iOS */

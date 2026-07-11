@@ -99,16 +99,16 @@ import {
 } from 'lucide-react';
 
 const QUESTION_TEXT_TYPOGRAPHY =
-  'text-[18px] md:text-[19px] leading-relaxed font-semibold md:font-medium';
+  'text-base leading-relaxed font-semibold md:font-medium';
 
 const QUESTION_HEADER_TITLE_TYPOGRAPHY =
-  'text-[19px] md:text-[22px] font-bold leading-snug';
+  'text-base md:text-lg font-bold leading-snug';
 
 const QUESTION_HEADER_CHIP_TYPOGRAPHY =
-  'text-[13px] font-bold leading-tight';
+  'text-xs font-bold leading-tight';
 
 const QUESTION_HEADER_META_TYPOGRAPHY =
-  'text-[14px] md:text-[17px] font-medium leading-snug';
+  'text-sm md:text-base font-medium leading-snug';
 
 function resetDashboardMainScroll() {
   if (typeof document === 'undefined') return;
@@ -1377,14 +1377,14 @@ export default function AvantLessonPlayer({
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all group-hover:border-[rgba(34,197,94,0.35)] group-hover:bg-[rgba(34,197,94,0.08)]">
             <ArrowLeft size={16} />
           </div>
-          <span className="max-w-[5rem] truncate text-[14px] font-semibold sm:max-w-none sm:text-[17px]">
+          <span className="max-w-[5rem] truncate text-sm font-semibold sm:max-w-none sm:text-base">
             {voltarDestino}
           </span>
         </button>
         <div className="ml-auto flex min-w-0 max-w-full flex-wrap items-center justify-end gap-1.5 sm:gap-2">
           {listaContexto && listaContexto.total > 0 && (
             <span
-              className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[13px] font-bold tabular-nums text-slate-600 sm:px-3 sm:text-[14px] md:text-[17px]"
+              className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-bold tabular-nums text-slate-600 sm:px-3 sm:text-sm"
               aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
             >
               <span className="sm:hidden">
