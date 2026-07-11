@@ -128,17 +128,30 @@ export function VitrineSubjectCard({
           aria-controls={useSheet ? undefined : panelId}
           aria-haspopup={useSheet ? 'dialog' : undefined}
           onClick={toggleAssunto}
-          className="min-w-0 flex-1 text-left"
+          className="min-w-0 flex-1 overflow-hidden text-left"
         >
-          <span
-            className={cn(
-              'block text-sm font-semibold text-slate-900',
-              compact ? 'line-clamp-1' : assuntoExpandido ? 'line-clamp-none' : 'line-clamp-2',
-            )}
-            title={titulo_aula}
-          >
-            {titulo_aula}
-          </span>
+          <div className="flex min-w-0 items-start gap-2">
+            <span
+              className={cn(
+                'min-w-0 flex-1 font-semibold text-slate-900',
+                compact ? 'line-clamp-1 text-sm' : 'text-sm',
+                !compact && (assuntoExpandido ? 'break-words' : 'line-clamp-2'),
+              )}
+              title={titulo_aula}
+            >
+              {titulo_aula}
+            </span>
+            {hasQuestions && !compact ? (
+              <span
+                className={cn(
+                  'shrink-0 text-sm font-bold tabular-nums',
+                  trabalhadas > 0 ? 'text-[#166534]' : 'text-slate-300',
+                )}
+              >
+                {progressoPct}%
+              </span>
+            ) : null}
+          </div>
           {!compact ? (
             <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] leading-snug">
               <span>
@@ -185,17 +198,6 @@ export function VitrineSubjectCard({
             </p>
           )}
         </button>
-
-        {hasQuestions && !compact ? (
-          <span
-            className={cn(
-              'shrink-0 text-sm font-bold tabular-nums',
-              trabalhadas > 0 ? 'text-[#166534]' : 'text-slate-300',
-            )}
-          >
-            {progressoPct}%
-          </span>
-        ) : null}
 
         {mostrarCheckConclusao ? (
           <CheckCircle2 size={compact ? 16 : 18} className="shrink-0 text-green-600" aria-hidden />
