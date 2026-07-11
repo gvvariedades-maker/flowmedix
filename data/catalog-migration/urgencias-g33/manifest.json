@@ -1,0 +1,19 @@
+{
+  "lote": "urgencias-g33",
+  "exported_at": "2026-07-08T19:44:15.417Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g33-generico-tail-batch-4"
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+    "funcern-enfermagem-exames-laboratoriais-1779563631609-6"
+  ]
+}

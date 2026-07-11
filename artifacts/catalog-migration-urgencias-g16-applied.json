@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-09T02:25:19.946Z",
+  "lote": "urgencias-g16",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+    "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+    "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

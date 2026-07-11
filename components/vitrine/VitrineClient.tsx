@@ -260,7 +260,10 @@ export default function VitrineClient({
     retryNonce,
   });
 
-  const gruposPagina = vitrinePageData?.groups ?? [];
+  const gruposPagina = useMemo(
+    () => vitrinePageData?.groups ?? [],
+    [vitrinePageData?.groups],
+  );
   const gruposFiltrados = useMemo(
     () => filterVitrineGroupsByStatus(gruposPagina, statusFilter),
     [gruposPagina, statusFilter],

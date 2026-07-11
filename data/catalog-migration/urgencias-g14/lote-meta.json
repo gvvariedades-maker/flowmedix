@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g14",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g14",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_avc_iam": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-amauc-urgencias-cincinnati-avc.json"
+  ],
+  "readiness": "8/8",
+  "preflight_artifact": "artifacts/catalog-preflight-urgencias-g14.json",
+  "notes": "g14 AVC/IAM — Cincinnati critérios · Cincinnati caso UPA · sinais AVC espúrio · AVE achados típicos · conduta respiratória AVC · Sinal Levine IAM · caso IAM UPA · aspirina APH IAM"
+}

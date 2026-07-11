@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T15:47:12.497Z",
+  "lote": "saude-da-mulher-g21",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1353
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1356
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1427
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 4857
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 5014
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 4796
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1390
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1973
+    }
+  ]
+}

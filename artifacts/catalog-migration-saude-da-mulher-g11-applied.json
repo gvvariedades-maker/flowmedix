@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:53:39.203Z",
+  "lote": "saude-da-mulher-g11",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+    "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+    "amauc-enfermagem-processo-de-enfermagem-1780002441285-6",
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-9",
+    "amauc-enfermagem-saude-da-mulher-1777104295283-7",
+    "ameosc-enfermagem-saude-da-mulher-1777104376057-5",
+    "atame-enfermagem-saude-da-mulher-1777104347186-7",
+    "atame-enfermagem-saude-da-mulher-1777104382533-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104376057-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104382533-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

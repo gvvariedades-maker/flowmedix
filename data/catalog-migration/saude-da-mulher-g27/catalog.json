@@ -1,0 +1,56 @@
+{
+  "exported_at": "2026-07-10T17:45:44.645Z",
+  "lote": "saude-da-mulher-g27",
+  "total": 7,
+  "entries": [
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3550
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4386
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 1416
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-saude-da-mulher-1777104235003-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1352
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 4975
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 4157
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3607
+    }
+  ]
+}

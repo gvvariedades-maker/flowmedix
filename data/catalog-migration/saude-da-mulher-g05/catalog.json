@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-09T05:36:37.860Z",
+  "lote": "saude-da-mulher-g05",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104261182-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 1361
+    },
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104382533-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 1455
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "GRUPO TALENT",
+      "avant_codigo": 4884
+    },
+    {
+      "modulo_slug": "icece-enfermagem-saude-da-mulher-1777104261182-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ICECE",
+      "avant_codigo": 1358
+    },
+    {
+      "modulo_slug": "icece-enfermagem-saude-da-mulher-1780001362784-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ICECE",
+      "avant_codigo": 4123
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104301763-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 1393
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104389226-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 1466
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDEAP",
+      "avant_codigo": 761
+    }
+  ]
+}

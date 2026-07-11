@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-07-09T02:33:25.829Z",
+  "lote": "urgencias-g27",
+  "mode": "apply",
+  "total_files": 7,
+  "ok": 7,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+    "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+    "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

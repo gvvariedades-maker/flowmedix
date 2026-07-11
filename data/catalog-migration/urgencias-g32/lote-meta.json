@@ -1,0 +1,32 @@
+{
+  "lote": "urgencias-g32",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g32",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_generico": 3,
+    "urgencias_avc_iam": 1,
+    "urgencias_rcp_sbv": 3,
+    "urgencias_xabcde_trauma": 1
+  },
+  "branch_by_slug": {
+    "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9": "urgencias_avc_iam",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6": "urgencias_rcp_sbv",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3": "urgencias_rcp_sbv",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4": "urgencias_generico",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4": "urgencias_generico",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-0": "urgencias_xabcde_trauma",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4": "urgencias_generico",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1": "urgencias_rcp_sbv"
+  },
+  "playbook_clusters_opened": {
+    "Default — sem âncora temática": 2,
+    "Urgências — conceito geral": 1,
+    "AVC / IAM — reconhecimento": 1,
+    "RCP / SBV adulto (V/F ou protocolo)": 3,
+    "XABCDE / trauma e hemorragia": 1
+  },
+  "notes": "g32 — 3º lote cauda urgencias_generico · 8/8 READY strict-v2 · ameosc-5556782-6 VF primeiros socorros → rcp_sbv (não trauma por hemorragia+queimadura no enunciado) · fgv BT1 → xabcde_trauma (não generico) · fenix responsividade/acionamento → rcp_sbv"
+}

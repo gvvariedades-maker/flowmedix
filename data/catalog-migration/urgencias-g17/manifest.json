@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g17",
+  "exported_at": "2026-07-08T14:37:55.328Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_xabcde_trauma",
+    "batch": "g17-xabcde-trauma-lote-2"
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+    "facet-geral-urgencias-e-emergencias-1777103976379-4",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5"
+  ]
+}

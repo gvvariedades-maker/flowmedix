@@ -38,6 +38,16 @@ import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
 import { DangerZoneEtiologyIntruderChips } from './DangerZoneEtiologyIntruderChips';
 import { DangerZoneItuCatheterTrap } from './DangerZoneItuCatheterTrap';
 import { DangerZoneAdolescentConsentGate } from './DangerZoneAdolescentConsentGate';
+import { DangerZoneMulherPrenatalTrapArena } from './DangerZoneMulherPrenatalTrapArena';
+import { DangerZoneMulherPartoTrapArena } from './DangerZoneMulherPartoTrapArena';
+import { DangerZoneMulherScreeningTrapArena } from './DangerZoneMulherScreeningTrapArena';
+import { DangerZoneMulherMamaTrapArena } from './DangerZoneMulherMamaTrapArena';
+import { DangerZoneMulherPuerperioTrapArena } from './DangerZoneMulherPuerperioTrapArena';
+import { DangerZoneMulherPlanejamentoTrapArena } from './DangerZoneMulherPlanejamentoTrapArena';
+import { DangerZoneCamCertosTrapArena } from './DangerZoneCamCertosTrapArena';
+import { DangerZoneCamHighRiskTrapArena } from './DangerZoneCamHighRiskTrapArena';
+import { DangerZoneCamExcetoTrapArena } from './DangerZoneCamExcetoTrapArena';
+import { DangerZoneCamDocumentacaoTrapArena } from './DangerZoneCamDocumentacaoTrapArena';
 import { DangerZoneVitalsClassifyArena } from './DangerZoneVitalsClassifyArena';
 
 export interface DangerZoneItem {
@@ -470,6 +480,125 @@ export const DangerZone = ({
   if (explicitVariant === 'pni-trap-chips' && items && items.length > 0) {
     return (
       <DangerZonePniTrapChips
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'mulher-prenatal-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneMulherPrenatalTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'mulher-parto-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneMulherPartoTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'mulher-screening-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneMulherScreeningTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'mulher-mama-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneMulherMamaTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'mulher-puerperio-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneMulherPuerperioTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'mulher-planejamento-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneMulherPlanejamentoTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'cam-certos-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCamCertosTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'cam-high-risk-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCamHighRiskTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'cam-exceto-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCamExcetoTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'cam-documentacao-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCamDocumentacaoTrapArena
         content={content}
         items={items}
         theme={theme}

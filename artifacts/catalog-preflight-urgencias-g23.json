@@ -1,0 +1,44 @@
+{
+  "lote": "urgencias-g23",
+  "generated_at": "2026-07-08T17:26:42.003Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 4,
+  "passed": 4,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

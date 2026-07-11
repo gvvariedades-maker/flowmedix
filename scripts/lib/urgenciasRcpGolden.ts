@@ -43,7 +43,7 @@ export type Q = {
 };
 
 export type Pack = {
-  family: 'vf' | 'protocolo' | 'conceito';
+  family: 'vf' | 'protocolo' | 'conceito' | 'certo_errado';
   guideline: string;
   roi_error: string;
   cluster: string;
@@ -58,6 +58,7 @@ export function metaBase(
   slug: string,
   roiError: string,
   cluster: string,
+  reviewer = 'handcraft-urgencias-rcp',
 ) {
   return {
     ...q.meta,
@@ -72,7 +73,7 @@ export function metaBase(
     family,
     content_review: {
       reviewed_at: REVIEWED,
-      reviewer: 'handcraft-urgencias-g01',
+      reviewer,
       guideline_snapshot: guideline,
       exam_vs_current: 'none',
       catalog_slug: slug,
@@ -115,4 +116,18 @@ export function dangerFromOptions(
       })),
     footer_rule: footer,
   };
+}
+
+export function finalizeSlides(slug: string, q: Q, pack: Pack, dangerOverrides: Record<string, string>): unknown[] {
+  return pack.slides.map((slide) => {
+    if (slide !== null) return slide;
+    const overrides = dangerOverrides[slug];
+    if (!overrides) throw new Error(`danger_zone missing for ${slug}`);
+    return dangerFromOptions(
+      q,
+      `PEGADINHAS — ${pack.roi_error.replace(/_/g, ' ')}`,
+      overrides,
+      pack.danger_footer ?? `Gabarito ${q.question_data.options.find((o) => o.is_correct)?.id}`,
+    );
+  });
 }

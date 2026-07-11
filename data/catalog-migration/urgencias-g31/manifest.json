@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g31",
+  "exported_at": "2026-07-08T19:05:15.177Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g31-generico-tail-batch-2"
+  },
+  "slugs": [
+    "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+    "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+    "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6"
+  ]
+}

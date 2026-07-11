@@ -1,0 +1,18 @@
+{
+  "lote": "urgencias-g18",
+  "exported_at": "2026-07-08T16:00:03.409Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_xabcde_trauma",
+    "batch": "g18-xabcde-trauma-lote-final"
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+    "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+    "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0"
+  ]
+}

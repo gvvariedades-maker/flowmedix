@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:27:58.998Z",
+  "lote": "urgencias-g34",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

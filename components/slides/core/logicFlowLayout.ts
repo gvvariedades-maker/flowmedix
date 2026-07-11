@@ -31,6 +31,16 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'urgencias-pediatric-tap-flow',
   'etiology-elimination-tap',
   'itu-exceto-tap',
+  'mulher-prenatal-tap-flow',
+  'mulher-labor-tap-flow',
+  'mulher-screening-tap-flow',
+  'mulher-mama-tap-flow',
+  'mulher-puerperio-tap-flow',
+  'mulher-planejamento-tap-flow',
+  'cam-vf-juggle-tap',
+  'cam-alto-risco-elimination-tap',
+  'cam-exceto-tap-flow',
+  'cam-documentacao-vf-tap',
 ]);
 
 const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
@@ -60,6 +70,16 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'urgencias-pediatric-tap-flow',
   'etiology-elimination-tap',
   'itu-exceto-tap',
+  'mulher-prenatal-tap-flow',
+  'mulher-labor-tap-flow',
+  'mulher-screening-tap-flow',
+  'mulher-mama-tap-flow',
+  'mulher-puerperio-tap-flow',
+  'mulher-planejamento-tap-flow',
+  'cam-vf-juggle-tap',
+  'cam-alto-risco-elimination-tap',
+  'cam-exceto-tap-flow',
+  'cam-documentacao-vf-tap',
 ]);
 
 /**

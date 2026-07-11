@@ -1,0 +1,36 @@
+{
+  "lote": "urgencias-g49",
+  "generated_at": "2026-07-09T02:02:25.268Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

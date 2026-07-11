@@ -1,0 +1,19 @@
+{
+  "lote": "urgencias-g12",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g12",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_xabcde_trauma": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-ameosc-urgencias-trauma-queimadura.json",
+    "examples/questao-premium-selecon-urgencias-bt16-esmagamento.json",
+    "examples/questao-premium-ameosc-urgencias-trauma-imobilizacao-vf.json"
+  ],
+  "readiness": "8/8",
+  "preflight_artifact": "artifacts/catalog-preflight-urgencias-g12.json",
+  "notes": "g12 XABCDE — letra X hemorragia · compressão corte · X prioridade · VAA trauma · imobilização coluna · Glasgow D · hemorragia C · amputação controle"
+}

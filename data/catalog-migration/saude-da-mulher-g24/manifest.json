@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g24",
+  "exported_at": "2026-07-10T16:03:35.812Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g24/manifest.json"
+  },
+  "slugs": [
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-4",
+    "igeduc-enfermagem-semiologia-em-enfermagem-1779563491765-5",
+    "inaz-do-para-geral-saude-da-mulher-1777104347186-4",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-2",
+    "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104235003-0",
+    "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-6",
+    "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-8",
+    "quadrix-enfermagem-saude-da-mulher-1777104408379-2"
+  ]
+}

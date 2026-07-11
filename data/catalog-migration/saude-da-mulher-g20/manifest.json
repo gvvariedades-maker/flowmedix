@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g20",
+  "exported_at": "2026-07-10T15:42:36.063Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g20/manifest.json"
+  },
+  "slugs": [
+    "ibade-enfermagem-saude-da-mulher-1777104323066-4",
+    "ibam-enfermagem-saude-da-mulher-1777104340484-5",
+    "idecan-enfermagem-saude-da-mulher-1780067024707-8",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-2",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-4",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-5",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-5"
+  ]
+}

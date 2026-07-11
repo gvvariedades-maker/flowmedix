@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-10T18:57:19.155Z",
+  "lote": "saude-da-mulher-g26",
+  "mode": "apply",
+  "total_files": 9,
+  "ok": 9,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-6",
+    "cebraspe-cespe-enfermagem-saude-da-mulher-1777104288275-0",
+    "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+    "facet-enfermagem-saude-da-mulher-1777104261182-4",
+    "fgv-enfermagem-saude-da-mulher-1777104323066-0",
+    "funcern-enfermagem-saude-da-mulher-1777104415052-8",
+    "idib-enfermagem-saude-da-mulher-1778934944659-2",
+    "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+    "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-saude-da-mulher-1777104288275-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-saude-da-mulher-1777104261182-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104323066-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104415052-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

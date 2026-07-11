@@ -46,6 +46,12 @@ export type PedagogicalBranchId =
   | 'via_vf_absorcao'
   | 'via_tecnica_admin'
   | 'via_generico'
+  // Cuidados na Administração de Medicamentos
+  | 'cam_certos_vf_caso'
+  | 'cam_alto_risco'
+  | 'cam_exceto_conduta'
+  | 'cam_documentacao'
+  | 'cam_generico'
   // Cálculo de Medicamentos
   | 'calc_dose_equivalencia'
   | 'calc_conceito'
@@ -88,7 +94,15 @@ export type PedagogicalBranchId =
   | 'urgencias_manchester_triagem'
   | 'urgencias_anafilaxia'
   | 'urgencias_queimadura'
-  | 'urgencias_generico';
+  | 'urgencias_generico'
+  // Saúde da Mulher
+  | 'mulher_prenatal'
+  | 'mulher_parto'
+  | 'mulher_papanicolau'
+  | 'mulher_mama'
+  | 'mulher_puerperio'
+  | 'mulher_planejamento'
+  | 'mulher_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -252,6 +266,50 @@ const VIA_GENERIC_MOLD: SubtopicDesign = {
   goldenRule: 'center',
   logicFlow: 'vertical',
   dangerZone: 'compare',
+};
+
+/** Pacote bespoke V/F 9 Certos — deck + nine-rights-board + vf-juggle + trap-arena. */
+const CAM_CERTOS_VF_MOLD: SubtopicDesign = {
+  template: 'teal',
+  conceptMap: 'cam-certos-deck',
+  goldenRule: 'cam-nine-rights-board',
+  logicFlow: 'cam-vf-juggle-tap',
+  dangerZone: 'cam-certos-trap-arena',
+};
+
+const CAM_GENERIC_MOLD: SubtopicDesign = {
+  template: 'teal',
+  conceptMap: 'bridge',
+  goldenRule: 'center',
+  logicFlow: 'cards',
+  dangerZone: 'compare',
+};
+
+/** Pacote bespoke alto risco — duo-deck + protocol-board + elimination-tap + trap-arena. */
+const CAM_ALTO_RISCO_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'cam-high-risk-duo-deck',
+  goldenRule: 'cam-high-risk-protocol-board',
+  logicFlow: 'cam-alto-risco-elimination-tap',
+  dangerZone: 'cam-high-risk-trap-arena',
+};
+
+/** EXCETO / INCORRETA — rail semântico preparo × conduta correta × exceção (VO+SF). */
+const CAM_EXCETO_MOLD: SubtopicDesign = {
+  template: 'teal',
+  conceptMap: 'cam-exceto-rail',
+  goldenRule: 'cam-exceto-reference-board',
+  logicFlow: 'cam-exceto-tap-flow',
+  dangerZone: 'cam-exceto-trap-arena',
+};
+
+/** V/F Registro certo — deck documentação + board + vf-tap + trap-arena. */
+const CAM_DOCUMENTACAO_MOLD: SubtopicDesign = {
+  template: 'teal',
+  conceptMap: 'cam-documentacao-deck',
+  goldenRule: 'cam-documentacao-board',
+  logicFlow: 'cam-documentacao-vf-tap',
+  dangerZone: 'cam-documentacao-trap-arena',
 };
 
 const CALC_DOSE_MOLD: SubtopicDesign = {
@@ -443,6 +501,69 @@ const URGENCIAS_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Pacote bespoke pré-natal — trilho gestacional Caderno AB 32. */
+const MULHER_PRENATAL_MOLD: SubtopicDesign = {
+  template: 'pink',
+  conceptMap: 'mulher-gestation-timeline',
+  goldenRule: 'mulher-prenatal-board',
+  logicFlow: 'mulher-prenatal-tap-flow',
+  dangerZone: 'mulher-prenatal-trap-arena',
+};
+
+/** Pacote bespoke parto humanizado — fases + PNH. */
+const MULHER_PARTO_MOLD: SubtopicDesign = {
+  template: 'pink',
+  conceptMap: 'mulher-labor-phase-deck',
+  goldenRule: 'mulher-parto-humanizado-board',
+  logicFlow: 'mulher-labor-tap-flow',
+  dangerZone: 'mulher-parto-trap-arena',
+};
+
+/** Pacote bespoke rastreio colo — espectro etário 25–64. */
+const MULHER_PAPANICOLAU_MOLD: SubtopicDesign = {
+  template: 'pink',
+  conceptMap: 'mulher-screening-spectrum',
+  goldenRule: 'mulher-papanicolau-board',
+  logicFlow: 'mulher-screening-tap-flow',
+  dangerZone: 'mulher-screening-trap-arena',
+};
+
+/** Pacote bespoke rastreio mama — espectro etário 50–69 bienal. */
+const MULHER_MAMA_MOLD: SubtopicDesign = {
+  template: 'pink',
+  conceptMap: 'mulher-mammography-spectrum',
+  goldenRule: 'mulher-mama-board',
+  logicFlow: 'mulher-mama-tap-flow',
+  dangerZone: 'mulher-mama-trap-arena',
+};
+
+/** Pacote bespoke puerpério / lactação — linha 0–42 dias. */
+const MULHER_PUERPERIO_MOLD: SubtopicDesign = {
+  template: 'pink',
+  conceptMap: 'mulher-puerperio-timeline',
+  goldenRule: 'mulher-puerperio-board',
+  logicFlow: 'mulher-puerperio-tap-flow',
+  dangerZone: 'mulher-puerperio-trap-arena',
+};
+
+/** Pacote bespoke planejamento familiar — categorias contraceptivas. */
+const MULHER_PLANEJAMENTO_MOLD: SubtopicDesign = {
+  template: 'pink',
+  conceptMap: 'mulher-contraception-spectrum',
+  goldenRule: 'mulher-planejamento-board',
+  logicFlow: 'mulher-planejamento-tap-flow',
+  dangerZone: 'mulher-planejamento-trap-arena',
+};
+
+/** Layout genérico Saúde da Mulher (ramos sem molde bespoke). */
+export const MULHER_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'pink',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /** EXCETO / INCORRETA — rail semântico por letra (distratores corretos × exceção). */
 const URGENCIAS_EXCETO_MOLD: SubtopicDesign = {
   template: 'rose',
@@ -569,6 +690,13 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     via_vf_absorcao: VIA_VF_MOLD,
     via_tecnica_admin: VIA_TECNICA_MOLD,
     via_generico: VIA_GENERIC_MOLD,
+  },
+  'cuidados na administracao de medicamentos': {
+    cam_certos_vf_caso: CAM_CERTOS_VF_MOLD,
+    cam_alto_risco: CAM_ALTO_RISCO_MOLD,
+    cam_exceto_conduta: CAM_EXCETO_MOLD,
+    cam_documentacao: CAM_DOCUMENTACAO_MOLD,
+    cam_generico: CAM_GENERIC_MOLD,
   },
   'calculo de administracao de medicamentos e infusoes': {
     calc_dose_equivalencia: CALC_DOSE_MOLD,
@@ -741,6 +869,33 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     urgencias_queimadura: URGENCIAS_PROTOCOL_MOLD,
     urgencias_generico: URGENCIAS_EMERGENCY_GENERIC_MOLD,
   },
+  'saude da mulher': {
+    mulher_prenatal: MULHER_PRENATAL_MOLD,
+    mulher_parto: MULHER_PARTO_MOLD,
+    mulher_papanicolau: MULHER_PAPANICOLAU_MOLD,
+    mulher_mama: MULHER_MAMA_MOLD,
+    mulher_puerperio: MULHER_PUERPERIO_MOLD,
+    mulher_planejamento: MULHER_PLANEJAMENTO_MOLD,
+    mulher_generico: MULHER_GENERIC_DESIGN,
+  },
+  obstetricia: {
+    mulher_prenatal: MULHER_PRENATAL_MOLD,
+    mulher_parto: MULHER_PARTO_MOLD,
+    mulher_papanicolau: MULHER_PAPANICOLAU_MOLD,
+    mulher_mama: MULHER_MAMA_MOLD,
+    mulher_puerperio: MULHER_PUERPERIO_MOLD,
+    mulher_planejamento: MULHER_PLANEJAMENTO_MOLD,
+    mulher_generico: MULHER_GENERIC_DESIGN,
+  },
+  ginecologia: {
+    mulher_prenatal: MULHER_PRENATAL_MOLD,
+    mulher_parto: MULHER_PARTO_MOLD,
+    mulher_papanicolau: MULHER_PAPANICOLAU_MOLD,
+    mulher_mama: MULHER_MAMA_MOLD,
+    mulher_puerperio: MULHER_PUERPERIO_MOLD,
+    mulher_planejamento: MULHER_PLANEJAMENTO_MOLD,
+    mulher_generico: MULHER_GENERIC_DESIGN,
+  },
 };
 
 function normalizeKey(str: string): string {
@@ -891,6 +1046,31 @@ const VIA_TECNICA: RegExp[] = [
   /t[eé]cnica|administra[cç][aã]o|ângulo|m[uú]sculo|deltoide|ventrogluteo|pun[cç][aã]o/i,
 ];
 
+const CAM_CERTOS_VF: RegExp[] = [
+  /9 certos|nove certos|paciente certo|medicamento certo|dose certa|via certa|hor[aá]rio certo/i,
+  /documenta[cç][aã]o certa|orienta[cç][aã]o certa|resposta certa|forma certa/i,
+  /dois identificador|prescri[cç][aã]o ileg[ií]vel|dose duvidosa|uso habitual/i,
+  /administra[cç][aã]o de medicamentos|cuidados na administra[cç][aã]o/i,
+];
+
+const CAM_ALTO_RISCO: RegExp[] = [
+  /alto risco|confer[eê]ncia dupla|dois profissionais habilitados/i,
+  /insulina|nph|heparina|quimioter[aá]pico|eletr[oó]litos|vasoativ|anticoagulante/i,
+  /medicamentos de alto risco|lista.*alto risco|dupla checagem/i,
+];
+
+const CAM_EXCETO: RegExp[] = [
+  /\bexceto\b/i,
+  /incorret[oa]\s+afirmar|alternativa\s+incorreta|n[aã]o condiz/i,
+  /preparo de medicamento|sala de medica[cç][aã]o/i,
+];
+
+const CAM_DOCUMENTACAO: RegExp[] = [
+  /registro certo|documenta[cç][aã]o certa|prontu[aá]rio/i,
+  /anotar.*ap[oó]s administrar|registrar.*hor[aá]rio.*dose.*via/i,
+  /certo\s*6\b/i,
+];
+
 const CALC_DOSE: RegExp[] = [
   /calcul|gota|ml\b|mg\b|equival[eê]ncia|dilui[cç][aã]o|regra de tr[eê]s|gts\/min|ml\/h/i,
   /quantos?\s+ml|quantas?\s+gotas|prescri[cç][aã]o.*dose/i,
@@ -937,7 +1117,7 @@ const URGENCIAS_CHOQUE: RegExp[] = [
 ];
 
 const URGENCIAS_ANAFILAXIA: RegExp[] = [
-  /anafilax|epinefrina|adrenalina/i,
+  /\banafilaxia\b|epinefrina|\badrenalina\b/i,
 ];
 
 const URGENCIAS_ENGASGO: RegExp[] = [
@@ -997,6 +1177,34 @@ const PERI_POS: RegExp[] = [
 ];
 
 const PERI_SRPA_CPD: RegExp[] = [/cateter peridural|\bcpd\b|curativo.*peridural/i];
+
+const MULHER_PARTO: RegExp[] = [
+  /trabalho de parto|parto humanizado|fase expulsiva|dequita[cç][aã]o|clampeamento/i,
+  /acompanhante.*parto|posi[cç][aã]o.*expulsivo|monitoriza[cç][aã]o.*fetal/i,
+];
+
+const MULHER_PAPANICOLAU: RegExp[] = [
+  /papanicolau|colo uterino|c[aâ]ncer.*colo|citologia onc[oó]tica|rastreio.*colo/i,
+  /hpv.*vacina|25\s*(?:e|a)\s*64|trienal/i,
+];
+
+const MULHER_MAMA: RegExp[] = [
+  /mamografia|rastreio.*mama|c[aâ]ncer de mama|autoexame.*mama/i,
+];
+
+const MULHER_PUERPERIO: RegExp[] = [
+  /puerp[eé]rio|puerperal|lacta[cç][aã]o|aleitamento|colostro|amamenta[cç][aã]o/i,
+];
+
+const MULHER_PLANEJAMENTO: RegExp[] = [
+  /planejamento familiar|contracep|anticoncep|m[eé]todo.*barreira|\bdiu\b|implante/i,
+];
+
+const MULHER_PRENATAL: RegExp[] = [
+  /pr[eé][\s-]?natal|gesta[cç][aã]o|gestante|gravidez|idade gestacional|\big\b.*semana/i,
+  /ttgo|glicemia.*jejum|vdrl|ácido fólico|acido folico|consultas.*pré/i,
+  /álcool na gesta|tabagismo.*gesta|movimentos fetais/i,
+];
 
 function branchMapKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
@@ -1158,6 +1366,75 @@ function inferViaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchI
   return 'via_generico';
 }
 
+function hasCamExcetoCommand(text: string): boolean {
+  return (
+    /\bexceto\b/i.test(text) ||
+    /incorret[oa]\s+afirmar|assinale a alternativa incorreta|senten[cç]a incorreta|identifique a.*incorreta|afirmativa incorreta|alternativa incorreta/i.test(
+      text,
+    ) ||
+    /n[aã]o condiz/i.test(text)
+  );
+}
+
+function inferCamBranch(
+  corpus: string,
+  familyId?: FamilyId,
+  instruction?: string,
+): PedagogicalBranchId {
+  const commandText = instruction?.trim() ? instruction : corpus;
+  const hasIii = /\b(i|ii|iii)\s*[-–—]/i.test(corpus);
+  const certosScore = countPatternMatches(corpus, CAM_CERTOS_VF);
+  const altoRiscoScore = countPatternMatches(corpus, CAM_ALTO_RISCO);
+  const excetoScore = countPatternMatches(corpus, CAM_EXCETO);
+  const documentacaoScore = countPatternMatches(corpus, CAM_DOCUMENTACAO);
+  const isVf =
+    familyId === 'vf' ||
+    familyId === 'certo_errado' ||
+    /\bcorreto o que se afirma\b|\bé correto\b/i.test(corpus);
+
+  // Comando EXCETO/INCORRETA no enunciado vence certos e alto risco no corpus (g04 cluster).
+  if (hasCamExcetoCommand(commandText)) {
+    return 'cam_exceto_conduta';
+  }
+
+  if ((isVf || hasIii) && hasIii && documentacaoScore >= 1 && certosScore < 2) {
+    return 'cam_documentacao';
+  }
+
+  if ((isVf || hasIii) && hasIii && certosScore >= 1) {
+    return 'cam_certos_vf_caso';
+  }
+
+  // Listagem/completar 9 certos (pegadinha no 6º–9º certo) — cluster documentação g06.
+  if (
+    certosScore >= 2 &&
+    /9\s+certos|nove certos/i.test(commandText) &&
+    /s[aã]o\s*eles:|sendo eles:|consiste em:/i.test(commandText)
+  ) {
+    return 'cam_documentacao';
+  }
+
+  if (certosScore >= 2) return 'cam_certos_vf_caso';
+
+  if (
+    altoRiscoScore >= 2 ||
+    (altoRiscoScore >= 1 &&
+      /insulina|nph|heparina|confer[eê]ncia dupla|alto risco|quimioter[aá]pico/i.test(corpus))
+  ) {
+    return 'cam_alto_risco';
+  }
+
+  if (excetoScore >= 1) {
+    return 'cam_exceto_conduta';
+  }
+
+  if (documentacaoScore >= 1) {
+    return 'cam_documentacao';
+  }
+
+  return 'cam_generico';
+}
+
 function inferCalcBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   if (familyId === 'calc' || countPatternMatches(corpus, CALC_DOSE) > 0) {
     return 'calc_dose_equivalencia';
@@ -1259,21 +1536,101 @@ function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): Pedagogic
   return 'respiratorio_generico';
 }
 
-function inferUrgenciasBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+const URGENCIAS_EXCETO_COMMAND_RE =
+  /\bexceto\b|alternativa\s+incorreta|incorret[oa]\s+afirmar|[ée]\s+incorret[oa]|n[aã]o\s+corresponde\s+(a\s+)?(verdade|realidade)/i;
+
+function isUrgenciasExcetoCondutaCommand(instruction: string, familyId?: FamilyId): boolean {
+  if (URGENCIAS_EXCETO_COMMAND_RE.test(instruction)) return true;
+  if (familyId === 'certo_errado' && /\bincorreta\b/i.test(instruction)) return true;
+  return false;
+}
+
+function inferUrgenciasBranch(
+  corpus: string,
+  familyId?: FamilyId,
+  instruction?: string,
+): PedagogicalBranchId {
+  const instr = instruction?.trim() ?? '';
+  if (
+    isUrgenciasExcetoCondutaCommand(instr, familyId) ||
+    isUrgenciasExcetoCondutaCommand(corpus, familyId)
+  ) {
+    return 'urgencias_exceto_conduta';
+  }
+
   if (countPatternMatches(corpus, URGENCIAS_MANCHESTER) > 0) {
     return 'urgencias_manchester_triagem';
   }
 
-  if (countPatternMatches(corpus, URGENCIAS_ENGASGO) > 0) {
-    return 'urgencias_engasgo';
+  // V/F combinatório I–V com family vf — antes de choque/convulsão/trauma no corpus dos slides.
+  if (familyId === 'vf' && /\b(i|ii|iii|iv|v)\s*[-–—]/i.test(instr)) {
+    return 'urgencias_vf_protocolo';
+  }
+
+  const anafilaxiaHits = countPatternMatches(corpus, URGENCIAS_ANAFILAXIA);
+  const rcpHits = countPatternMatches(corpus, URGENCIAS_RCP);
+  const pedMatch = /pedi[aá]tr|lactente|crian[cç]a|beb[eê]/i.test(corpus);
+
+  // Anafilaxia explícita com RCP só como reserva (PCR incidental) — antes do guard pediátrico.
+  if (
+    anafilaxiaHits > 0 &&
+    /\banafilaxia\b/i.test(instr) &&
+    rcpHits <= 1 &&
+    !/\b15:2\b|compress[oõ]es tor[aá]c|ressuscita[cç][aã]o cardiopulmonar/i.test(instr) &&
+    !/\basser[cç][oõ]es\b/i.test(instr)
+  ) {
+    return 'urgencias_anafilaxia';
+  }
+
+  // Pediatria + RCP antes de AVC/engasgo — evita falso positivo de \biam\b e OVACE com PCR.
+  if (pedMatch && rcpHits >= 1) {
+    return 'urgencias_rcp_pediatrico';
   }
 
   if (countPatternMatches(corpus, URGENCIAS_AVC) > 0) {
     return 'urgencias_avc_iam';
   }
 
-  if (countPatternMatches(corpus, URGENCIAS_TRAUMA) >= 2) {
+  // V/F combinatory com RCP — antes de trauma incidental (queimadura/hemorragia como itens do enunciado).
+  if (
+    familyId === 'vf' &&
+    rcpHits >= 1 &&
+    /\bsequ[eê]ncia\s+correta|verdadeiro\s*\(v\)\s+ou\s+falso/i.test(instr)
+  ) {
+    if (pedMatch) return 'urgencias_rcp_pediatrico';
+    return 'urgencias_rcp_sbv';
+  }
+
+  // Trauma/XABCDE antes de engasgo — obstrução VAA no contexto ABCDE (lote trauma) não vira engasgo.
+  // BT1/avaliação primária com trauma — um hit basta quando o comando ancora trauma explícito.
+  if (
+    /\bbt-?1\b|avalia[cç][aã]o prim[aá]ria\b[\s\S]{0,40}\btrauma/i.test(instr) &&
+    countPatternMatches(corpus, URGENCIAS_TRAUMA) >= 1
+  ) {
     return 'urgencias_xabcde_trauma';
+  }
+
+  // Trauma com fratura exposta ou par fratura+imobilização — um grupo de padrão basta (evita falso generico).
+  if (
+    countPatternMatches(corpus, URGENCIAS_TRAUMA) >= 2 ||
+    /\bfratura exposta\b|\bfratura\b[\s\S]{0,80}\bimobiliza/i.test(corpus)
+  ) {
+    return 'urgencias_xabcde_trauma';
+  }
+
+  // SBV/PCR no comando — engasgo só contextual no enunciado; RCP domina o ramo.
+  if (
+    rcpHits >= 2 &&
+    /\bparada card|pcr\b|compress[oõ]es|ressuscita[cç][aã]o cardiopulmonar/i.test(instr) &&
+    countPatternMatches(corpus, URGENCIAS_ENGASGO) > 0 &&
+    !/\bheimlich\b.*inconsciente|ovace.*inconsciente|engasgo.*prioridade/i.test(instr)
+  ) {
+    if (pedMatch) return 'urgencias_rcp_pediatrico';
+    return 'urgencias_rcp_sbv';
+  }
+
+  if (countPatternMatches(corpus, URGENCIAS_ENGASGO) > 0) {
+    return 'urgencias_engasgo';
   }
 
   if (countPatternMatches(corpus, URGENCIAS_ANAFILAXIA) > 0) {
@@ -1282,13 +1639,6 @@ function inferUrgenciasBranch(corpus: string, familyId?: FamilyId): PedagogicalB
 
   if (countPatternMatches(corpus, URGENCIAS_CHOQUE) > 0) {
     return 'urgencias_choque';
-  }
-
-  if (
-    /\bexceto\b/i.test(corpus) ||
-    (familyId === 'certo_errado' && /\bincorreta\b/i.test(corpus))
-  ) {
-    return 'urgencias_exceto_conduta';
   }
 
   if (
@@ -1302,10 +1652,6 @@ function inferUrgenciasBranch(corpus: string, familyId?: FamilyId): PedagogicalB
       return 'urgencias_rcp_sbv';
     }
     return 'urgencias_vf_protocolo';
-  }
-
-  if (/pedi[aá]tr|lactente|15:2/i.test(corpus) && countPatternMatches(corpus, URGENCIAS_RCP) >= 1) {
-    return 'urgencias_rcp_pediatrico';
   }
 
   if (countPatternMatches(corpus, URGENCIAS_RCP) >= 2) {
@@ -1323,10 +1669,40 @@ function inferUrgenciasBranch(corpus: string, familyId?: FamilyId): PedagogicalB
   return 'urgencias_generico';
 }
 
+function inferMulherBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  if (countPatternMatches(corpus, MULHER_PARTO) > 0 && !/pré-natal|prenatal/i.test(corpus)) {
+    return 'mulher_parto';
+  }
+  if (countPatternMatches(corpus, MULHER_PAPANICOLAU) > 0) {
+    return 'mulher_papanicolau';
+  }
+  if (countPatternMatches(corpus, MULHER_MAMA) > 0) {
+    return 'mulher_mama';
+  }
+  if (countPatternMatches(corpus, MULHER_PUERPERIO) > 0 && countPatternMatches(corpus, MULHER_PRENATAL) === 0) {
+    return 'mulher_puerperio';
+  }
+  if (countPatternMatches(corpus, MULHER_PLANEJAMENTO) > 0 && countPatternMatches(corpus, MULHER_PRENATAL) === 0) {
+    return 'mulher_planejamento';
+  }
+  if (countPatternMatches(corpus, MULHER_PRENATAL) > 0) {
+    return 'mulher_prenatal';
+  }
+  if (
+    familyId === 'vf' &&
+    /\b(i|ii|iii)\s*[-–—]/i.test(corpus) &&
+    /gesta|pré-natal|prenatal|mulher/i.test(corpus)
+  ) {
+    return 'mulher_prenatal';
+  }
+  return 'mulher_generico';
+}
+
 function inferBranchForBucket(
   mapKey: string,
   corpus: string,
   familyId?: FamilyId,
+  instruction?: string,
 ): PedagogicalBranchId | undefined {
   if (mapKey.includes('adolescente')) {
     return inferAdolescentBranch(corpus, familyId);
@@ -1352,6 +1728,9 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('vias de administracao')) {
     return inferViaBranch(corpus, familyId);
+  }
+  if (mapKey.includes('cuidados na administracao de medicamentos')) {
+    return inferCamBranch(corpus, familyId, instruction);
   }
   if (
     mapKey.includes('calculo de administracao') ||
@@ -1392,7 +1771,14 @@ function inferBranchForBucket(
     return inferPerioperatorioBranch(corpus, familyId);
   }
   if (mapKey.includes('urgencias') || mapKey.includes('emergencias') || mapKey === 'emergencia') {
-    return inferUrgenciasBranch(corpus, familyId);
+    return inferUrgenciasBranch(corpus, familyId, instruction);
+  }
+  if (
+    mapKey.includes('saude da mulher') ||
+    mapKey === 'obstetricia' ||
+    mapKey === 'ginecologia'
+  ) {
+    return inferMulherBranch(corpus, familyId);
   }
   return undefined;
 }
@@ -1408,7 +1794,7 @@ export function inferPedagogicalBranch(
   if (!mapKey) return undefined;
 
   const corpus = [instruction, ...slides.map((s) => collectSlideTextCorpus(s))].join(' ');
-  return inferBranchForBucket(mapKey, corpus, familyId);
+  return inferBranchForBucket(mapKey, corpus, familyId, instruction);
 }
 
 export function resolvePedagogicalBranch(

@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g41",
+  "exported_at": "2026-07-09T00:31:07.779Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g41-generico-tail-batch-8"
+  },
+  "slugs": [
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+    "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7"
+  ]
+}

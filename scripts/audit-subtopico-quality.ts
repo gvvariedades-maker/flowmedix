@@ -8,8 +8,8 @@
  *   npm run audit:subtopico-quality -- --subtopico="..." --promote --skip-l3  # emergência
  */
 import { loadEnvConfig } from '@next/env';
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, statSync } from 'node:fs';
+import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 loadEnvConfig(process.cwd());
@@ -75,11 +75,19 @@ function auditLoteSlugs(lote: string): { scanned: number; alignment_fail: number
   return { scanned: files.length, alignment_fail, numeric_fail };
 }
 
-function checkAnchorReviews(pacotePrefix: string): LayerResult {
+function listPacoteLotes(pacotePrefix: string): string[] {
   const root = resolve(process.cwd(), 'data/catalog-migration');
-  const lotes = readdirSync(root)
-    .filter((n) => n.startsWith(`${pacotePrefix}-g`))
+  return readdirSync(root)
+    .filter((n) => {
+      if (!n.startsWith(`${pacotePrefix}-g`)) return false;
+      const dir = join(root, n);
+      return statSync(dir).isDirectory() && existsSync(join(dir, 'manifest.json'));
+    })
     .sort();
+}
+
+function checkAnchorReviews(pacotePrefix: string): LayerResult {
+  const lotes = listPacoteLotes(pacotePrefix);
 
   if (lotes.length === 0) {
     return { pass: true, detail: 'sem lotes g* — anchor review N/A' };
@@ -139,9 +147,7 @@ async function main(): Promise<void> {
 
   const L1 = skipDod ? { pass: true, detail: 'skipped' } : runHandcraftDod(subtopico);
 
-  const loteStats = readdirSync(resolve(process.cwd(), 'data/catalog-migration'))
-    .filter((n) => n.startsWith(`${prefix}-g`))
-    .map((lote) => ({ lote, ...auditLoteSlugs(lote) }));
+  const loteStats = listPacoteLotes(prefix).map((lote) => ({ lote, ...auditLoteSlugs(lote) }));
 
   const alignmentTotal = loteStats.reduce((s, x) => s + x.alignment_fail, 0);
   const numericTotal = loteStats.reduce((s, x) => s + x.numeric_fail, 0);

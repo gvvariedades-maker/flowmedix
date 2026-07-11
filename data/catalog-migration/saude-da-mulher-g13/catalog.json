@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T14:51:36.736Z",
+  "lote": "saude-da-mulher-g13",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 4905
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 4912
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4272
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4896
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1372
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3119
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4488
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-saude-da-mulher-1777104222222-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 1337
+    }
+  ]
+}

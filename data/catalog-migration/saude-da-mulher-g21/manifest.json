@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g21",
+  "exported_at": "2026-07-10T15:47:12.497Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g21/manifest.json"
+  },
+  "slugs": [
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-4",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-7",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-0",
+    "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4"
+  ]
+}

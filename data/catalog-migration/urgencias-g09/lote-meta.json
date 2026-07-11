@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g09",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g09",
+  "slug_count": 1,
+  "branches": {
+    "urgencias_rcp_sbv": 1
+  },
+  "anchors_used": [
+    "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+    "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
+    "examples/questao-premium-urgencias-rcp.json"
+  ],
+  "notes": "g09 final RCP/SBV — VAA pós-intubação C/E · limpeza: avancasp/idecan→g24/g31 · vunesp pediátrico→g25"
+}

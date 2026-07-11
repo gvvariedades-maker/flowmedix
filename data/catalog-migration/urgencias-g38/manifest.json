@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g38",
+  "exported_at": "2026-07-08T23:41:38.330Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g38-generico-tail-batch-8"
+  },
+  "slugs": [
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+    "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+    "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0"
+  ]
+}

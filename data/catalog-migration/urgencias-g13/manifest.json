@@ -1,0 +1,13 @@
+{
+  "lote": "urgencias-g13",
+  "exported_at": "2026-07-08T14:08:18.066Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_exceto_conduta",
+    "batch": "g13-exceto-conduta-lote-final"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5"
+  ]
+}

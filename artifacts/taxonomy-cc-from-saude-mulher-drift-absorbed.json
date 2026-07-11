@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-07-09T04:16:54.885Z",
+  "absorbed": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+      "topic": "Semiologia (drift?)",
+      "branch_target": "mulher_prenatal",
+      "rationale": "Semiologia obstétrica/gestacional — permanece em Saúde da Mulher; excluir de handcraft mulher_generico."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+      "topic": "Semiologia (drift?)",
+      "branch_target": "mulher_prenatal",
+      "rationale": "Semiologia obstétrica/gestacional — permanece em Saúde da Mulher; excluir de handcraft mulher_generico."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+      "topic": "Semiologia (drift?)",
+      "branch_target": "mulher_prenatal",
+      "rationale": "Semiologia obstétrica/gestacional — permanece em Saúde da Mulher; excluir de handcraft mulher_generico."
+    },
+    {
+      "modulo_slug": "iset-enfermagem-saude-da-mulher-1777104376057-0",
+      "topic": "Semiologia (drift?)",
+      "branch_target": "mulher_prenatal",
+      "rationale": "Semiologia obstétrica/gestacional — permanece em Saúde da Mulher; excluir de handcraft mulher_generico."
+    }
+  ]
+}

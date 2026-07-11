@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-09T06:07:53.400Z",
+  "lote": "saude-da-mulher-g09",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 5056
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 1462
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MARANATHA ASSESSORIA",
+      "avant_codigo": 1400
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "NC UFPR (FUNPAR)",
+      "avant_codigo": 1340
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 1451
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 1452
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1438
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 739
+    }
+  ]
+}

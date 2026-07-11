@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:27:49.852Z",
+  "lote": "urgencias-g33",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+    "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+    "funcern-enfermagem-exames-laboratoriais-1779563631609-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-exames-laboratoriais-1779563631609-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

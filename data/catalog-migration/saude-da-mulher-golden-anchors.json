@@ -1,0 +1,170 @@
+{
+  "version": 2,
+  "updated_at": "2026-07-09",
+  "description": "Âncoras golden-v1 — Saúde da Mulher (referência de estilo por ramo forte; slug_catalog = piloto g01 aplicado).",
+  "readiness_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+  "anchors_readiness": {
+    "validated_at": "2026-07-10",
+    "summary": "6/6 READY — 4 ramos P0 + puerpério + planejamento",
+    "note": "6 ramos — examples/ gramática de estilo; slug_catalog piloto g01 + âncoras P2 cauda"
+  },
+  "anchors": {
+    "prenatal_captacao_precoce": {
+      "file": "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json",
+      "slug_catalog": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "subtopico": "Saúde da Mulher",
+      "pedagogical_branch": "mulher_prenatal",
+      "family": "vf",
+      "command": "Analise as afirmações — captação precoce e periodicidade",
+      "banca": "ADM&TEC",
+      "ano": "2023",
+      "gabarito": "C",
+      "avant_codigo": 1497,
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-09",
+      "anchor_role": "style_ref_vf_prenatal + pilot_g01",
+      "notes": "Gramática CPCON (I–III ácido fólico/tabagismo) no examples/; piloto Q-1497 = TRG UBS + marcos 12/28 semanas. Molde mulher-gestation-timeline · mulher-prenatal-board · mulher-prenatal-tap-flow · mulher-prenatal-trap-arena."
+    },
+    "parto_oms_humanizado": {
+      "file": "examples/questao-premium-admtec-saude-mulher-parto-humanizado-vf.json",
+      "slug_catalog": "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+      "subtopico": "Saúde da Mulher",
+      "pedagogical_branch": "mulher_parto",
+      "family": "protocolo",
+      "command": "Diretrizes OMS — trabalho de parto V/F sequência",
+      "banca": "IAUPE",
+      "ano": "2024",
+      "gabarito": "E",
+      "avant_codigo": 1370,
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-09",
+      "anchor_role": "style_ref_vf_parto + pilot_g01",
+      "notes": "Gramática ADM&TEC parto humanizado (CTG, água morna, supina, clampeamento) no examples/; piloto Q-1370 = OMS F,V,F,V,F,V (enema, ocitocina HPP, puxos). Molde mulher-labor-phase-deck · mulher-parto-humanizado-board · mulher-labor-tap-flow · mulher-parto-trap-arena."
+    },
+    "papanicolau_rastreio_colo": {
+      "file": "examples/questao-premium-vunesp-saude-mulher-papanicolau.json",
+      "slug_catalog": "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "subtopico": "Saúde da Mulher",
+      "pedagogical_branch": "mulher_papanicolau",
+      "family": "conceito",
+      "command": "Rastreio câncer de colo — idade e periodicidade",
+      "banca": "FUNCERN",
+      "ano": "2024",
+      "gabarito": "D",
+      "avant_codigo": 1374,
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-09",
+      "anchor_role": "style_ref_mcq_colo + pilot_g01",
+      "notes": "Gramática VUNESP 25–64 trienal no examples/; piloto Q-1374 = fatores de risco colo (HPV oncogênico, vacina, citologia). Molde mulher-screening-spectrum · mulher-papanicolau-board · mulher-screening-tap-flow · mulher-screening-trap-arena."
+    },
+    "mama_mamografia_faixa": {
+      "file": "examples/questao-premium-vunesp-saude-mulher-mamografia.json",
+      "slug_catalog": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
+      "subtopico": "Saúde da Mulher",
+      "pedagogical_branch": "mulher_mama",
+      "family": "conceito",
+      "command": "Mamografia — faixa etária MS baixo risco",
+      "banca": "Instituto Consulplan",
+      "ano": "2024",
+      "gabarito": "D",
+      "avant_codigo": 1336,
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-09",
+      "anchor_role": "style_ref_mcq_mama + pilot_g01",
+      "notes": "Gramática VUNESP 50–69 bienal no examples/; piloto Q-1336 = faixa 50–69 (pegadinhas 40/59). Molde mulher-mammography-spectrum · mulher-mama-board · mulher-mama-tap-flow · mulher-mama-trap-arena."
+    },
+    "puerperio_consulta_42_dias": {
+      "file": "examples/questao-premium-ms-saude-mulher-puerperio-consulta.json",
+      "slug_catalog": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "subtopico": "Saúde da Mulher",
+      "pedagogical_branch": "mulher_puerperio",
+      "family": "conceito",
+      "command": "Consulta puerpério até 42º dia — visita · AM 6 meses",
+      "banca": "MS / AB",
+      "ano": "2026",
+      "gabarito": "A",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-10",
+      "anchor_role": "style_ref_mcq_puerperio + pegadinha_30_dias",
+      "notes": "Gramática consulta 42 dias + visita 1ª semana + AM 6m no examples/; slug_catalog = cluster puerpério UNESC. Molde mulher-puerperio-timeline · mulher-puerperio-board · mulher-puerperio-tap-flow · mulher-puerperio-trap-arena."
+    },
+    "planejamento_metodos_comportamentais": {
+      "file": "examples/questao-premium-cpcon-saude-mulher-planejamento-vf.json",
+      "slug_catalog": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-5",
+      "subtopico": "Saúde da Mulher",
+      "pedagogical_branch": "mulher_planejamento",
+      "family": "vf",
+      "command": "Métodos comportamentais — VF I–V (oral ≠ comportamental)",
+      "banca": "CPCON UEPB",
+      "ano": "2025",
+      "gabarito": "E",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-10",
+      "anchor_role": "style_ref_vf_planejamento + questão real CPCON",
+      "notes": "Gramática CPCON métodos comportamentais no examples/; piloto = slug real Pref Pombal ACS. Molde mulher-contraception-spectrum · mulher-planejamento-board · mulher-planejamento-tap-flow · mulher-planejamento-trap-arena."
+    }
+  },
+  "family_grammar_refs": {
+    "vf_prenatal": "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json",
+    "vf_parto_humanizado": "examples/questao-premium-admtec-saude-mulher-parto-humanizado-vf.json",
+    "conceito_papanicolau": "examples/questao-premium-vunesp-saude-mulher-papanicolau.json",
+    "conceito_mamografia": "examples/questao-premium-vunesp-saude-mulher-mamografia.json",
+    "conceito_puerperio": "examples/questao-premium-ms-saude-mulher-puerperio-consulta.json",
+    "vf_planejamento": "examples/questao-premium-cpcon-saude-mulher-planejamento-vf.json"
+  },
+  "pilot_lotes": {
+    "g01_quatro_ramos": {
+      "path": "data/catalog-migration/saude-da-mulher-g01",
+      "applied_at": "2026-07-09",
+      "slugs": [
+        "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+        "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+        "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+        "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3"
+      ],
+      "artifact": "artifacts/catalog-migration-saude-da-mulher-g01-applied.json"
+    }
+  },
+  "deliberate_gaps": {
+    "exceto_inc": {
+      "priority": "P2",
+      "status": "no_dedicated_anchor",
+      "pedagogical_branch": "mulher_generico",
+      "clusters": ["EXCETO/INCORRETA — volume insuficiente"],
+      "slugs_estimate": 2,
+      "rationale": "Sem cluster EXCETO dedicado (~2 slugs no corpus). Layout compare genérico basta até volume ≥8; espelhar imunizacao_exceto P2.",
+      "pilot_when": "Se cluster EXCETO ≥8 slugs — criar mulher_exceto + âncora golden",
+      "known_slugs": [
+        "idecan-enfermagem-saude-da-mulher-1780067024707-8",
+        "idib-enfermagem-saude-da-mulher-1778934944659-2"
+      ]
+    },
+    "puerperio_lactacao": {
+      "priority": "P2",
+      "status": "anchor_ready",
+      "pedagogical_branch": "mulher_puerperio",
+      "clusters": ["Puerpério / lactação"],
+      "slugs_estimate": 9,
+      "rationale": "Âncora golden 2026-07-10 — questao-premium-ms-saude-mulher-puerperio-consulta.json; L3 genérico até brief bespoke.",
+      "anchor": "examples/questao-premium-ms-saude-mulher-puerperio-consulta.json"
+    },
+    "planejamento_familiar": {
+      "priority": "P2",
+      "status": "anchor_ready",
+      "pedagogical_branch": "mulher_planejamento",
+      "clusters": ["Planejamento familiar / contracepção"],
+      "slugs_estimate": 7,
+      "rationale": "Âncora golden 2026-07-10 — questao-premium-cpcon-saude-mulher-planejamento-vf.json; VF métodos comportamentais.",
+      "anchor": "examples/questao-premium-cpcon-saude-mulher-planejamento-vf.json"
+    },
+    "generico_drift": {
+      "priority": "P1",
+      "status": "classify_done",
+      "pedagogical_branch": "mulher_generico",
+      "clusters": ["Saúde da mulher — conceito geral", "Drift taxonômico"],
+      "slugs_estimate": 34,
+      "rationale": "Classify drift concluído — artifacts/taxonomy-cc-from-saude-mulher-drift-decisions.json + saude-da-mulher-exclude-done.json",
+      "artifact": "data/catalog-migration/saude-da-mulher-exclude-done.json"
+    }
+  }
+}

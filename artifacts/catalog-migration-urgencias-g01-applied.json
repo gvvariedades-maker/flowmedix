@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:32:36.567Z",
+  "lote": "urgencias-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+    "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+    "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

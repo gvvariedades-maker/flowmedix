@@ -1,0 +1,15 @@
+{
+  "lote": "urgencias-g28",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g28",
+  "slug_count": 4,
+  "branches": {
+    "urgencias_manchester_triagem": 4
+  },
+  "anchors_used": [
+    "examples/questao-premium-ameosc-urgencias-triagem-etiquetas.json"
+  ],
+  "notes": "g28 Manchester final — AMEOSC etiquetas massa · FUNDATEC origem militar · VERBENA dor torácica isquêmica · SELECON verde pouco urgente · cluster 4/4 fechado"
+}

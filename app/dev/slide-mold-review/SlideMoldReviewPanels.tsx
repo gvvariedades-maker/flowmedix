@@ -17,7 +17,10 @@ type SlideMoldReviewProps = {
 
 export function SlideMoldReviewPanels({ questao, branch }: SlideMoldReviewProps) {
   useEditorialTheme();
-  const slides = questao.reverse_study_slides ?? [];
+  const slides = useMemo(
+    () => questao.reverse_study_slides ?? [],
+    [questao.reverse_study_slides],
+  );
 
   useEffect(() => {
     document.documentElement.setAttribute('data-slide-mold-review', branch);

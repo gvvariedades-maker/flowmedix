@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:52:54.586Z",
+  "lote": "saude-da-mulher-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-7",
+    "igeduc-enfermagem-saude-da-mulher-1780001362784-8",
+    "inaz-do-para-enfermagem-saude-da-mulher-1777104347186-5",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-5",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-6",
+    "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1780001362784-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104347186-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

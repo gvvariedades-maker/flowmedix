@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "banca": "AMEOSC",
+    "prova": "TEnf",
+    "orgao": "AMEOSC",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "family": "vf",
+    "content_standard": "golden-v1",
+    "pedagogical_branch": "cam_generico",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "guideline_snapshot": "Protocolo MS segurança do paciente · 9 Certos",
+      "exam_vs_current": "none",
+      "catalog_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-0",
+      "cluster": "V/F — protocolo MS / I–VI",
+      "anchor_role": "vf_protocolo_ms_nove_certos"
+    },
+    "sources": [
+      {
+        "id": "ms-seg-paciente",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo de Segurança na Prescrição, Uso e Administração de Medicamentos",
+        "year": 2013,
+        "url": "https://www.gov.br/saude",
+        "covers": ["9 certos", "identificação", "comunicação", "alto risco"]
+      },
+      {
+        "id": "cofen-seg-med",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Segurança na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br",
+        "covers": ["9 certos", "conferência dupla"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Considerando o Protocolo de Segurança na Prescrição, Uso e Administração de Medicamentos do Ministério da Saúde, analise as afirmativas:\n\nI - A comunicação efetiva entre os profissionais da equipe é uma das medidas para prevenir erros na administração de medicamentos.\nII - A identificação do paciente deve ser feita verbalmente perguntando apenas o nome, sem necessidade de conferir pulseira ou prontuário.\nIII - Medicamentos de alto risco devem passar por conferência dupla no momento da administração.\nIV - O profissional pode administrar medicação com prescrição ilegível se o colega de plantão anterior já tiver administrado o mesmo fármaco.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I e III, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I, II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II e IV, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II, III e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III e IV, apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Protocolo MS — mapa V/F",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "label": "I — Comunicação (V)",
+          "detail": "Comunicação efetiva entre profissionais previne erros de medicação — eixo do protocolo MS.",
+          "icon": "MessagesSquare"
+        },
+        {
+          "label": "II — Só nome verbal (F)",
+          "detail": "Identificação exige dois identificadores independentes — nome sozinho não basta.",
+          "icon": "UserX"
+        },
+        {
+          "label": "III — Alto risco (V)",
+          "detail": "Conferência dupla na administração de medicamentos de alto risco — insulina, heparina, eletrólitos.",
+          "icon": "ShieldAlert"
+        },
+        {
+          "label": "IV — Uso habitual (F)",
+          "detail": "Prescrição ilegível nunca autoriza administração — mesmo se colega já administrou.",
+          "icon": "FileWarning"
+        },
+        {
+          "label": "Pegadinha banca",
+          "detail": "II e IV parecem práticas “rápidas” de plantão — violam identificação e segurança na dúvida.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Protocolo MS = comunicação + identificação dupla + alto risco com dupla checagem"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — protocolo MS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "MEDIDAS DE SEGURANÇA — MS",
+      "rows": [
+        {
+          "label": "Comunicação",
+          "value": "Comunicação efetiva entre profissionais — prevenir erro de medicação",
+          "badge": "ok"
+        },
+        {
+          "label": "Identificação",
+          "value": "2 identificadores independentes — não só pergunta verbal",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Alto risco",
+          "value": "Conferência dupla na administração",
+          "badge": "hot"
+        },
+        {
+          "label": "Prescrição ilegível",
+          "value": "Suspender e comunicar — nunca administrar na dúvida",
+          "badge": "warn",
+          "emphasis": "highlight"
+        }
+      ],
+      "footer_rule": "MS + COFEN: mesma lógica dos 9 Certos na prática de prova"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — V/F protocolo",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Comando: É CORRETO o que se afirma em — julgar I, II, III e IV do Protocolo MS.",
+        "I: comunicação efetiva previne erros → medida do protocolo → VERDADEIRA.",
+        "II: identificar só pelo nome verbal, sem pulseira/prontuário → viola Certo 1 → FALSA.",
+        "III: conferência dupla em alto risco → VERDADEIRA.",
+        "IV: administrar com prescrição ilegível por uso habitual → FALSA.",
+        "Combinar: I e III verdadeiras → eliminar B (inclui II), C (II+IV), D (todas), E (III+IV).",
+        "Confirmar letra A: I e III, apenas."
+      ],
+      "footer_rule": "V/F protocolo: II e IV são falsas clássicas de plantão"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — protocolo MS",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PEGADINHAS — PROTOCOLO MS",
+      "items": [
+        {
+          "label": "Letra B — I, II e III",
+          "detail": "Inclui II (só nome verbal) — identificação incompleta.",
+          "correct": "II é falsa — exige dois identificadores independentes."
+        },
+        {
+          "label": "Letra C — II e IV",
+          "detail": "Combina as duas falsidades mais sedutoras de rotina.",
+          "correct": "II e IV violam identificação e segurança na prescrição."
+        },
+        {
+          "label": "Letra D — todas",
+          "detail": "IV invalida o conjunto — uso habitual não libera ilegibilidade.",
+          "correct": "IV é falsa: suspender e comunicar na dúvida."
+        },
+        {
+          "label": "Letra E — III e IV",
+          "detail": "III é verdadeira, mas IV puxa para gabarito errado.",
+          "correct": "Gabarito A: I e III apenas."
+        },
+        {
+          "label": "II — identificação verbal só",
+          "detail": "Espelha falsas do concept_map — nome sem pulseira/prontuário.",
+          "correct": "Falsa: dois identificadores independentes obrigatórios."
+        },
+        {
+          "label": "IV — prescrição ilegível habitual",
+          "detail": "Espelha pegadinha uso habitual — ilegibilidade nunca autoriza dose.",
+          "correct": "Falsa: suspender e comunicar prescritor na dúvida."
+        }
+      ],
+      "footer_rule": "Transferência: identificação fraca e prescrição ilegível aparecem em todo V/F de medicação"
+    }
+  ]
+}

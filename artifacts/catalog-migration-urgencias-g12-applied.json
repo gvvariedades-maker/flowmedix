@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:24:46.522Z",
+  "lote": "urgencias-g12",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+    "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+    "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+    "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

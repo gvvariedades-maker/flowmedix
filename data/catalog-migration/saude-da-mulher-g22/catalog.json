@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T15:51:44.720Z",
+  "lote": "saude-da-mulher-g22",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1401
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 1410
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4755
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 1457
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-saude-da-mulher-1777104347186-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FADESP",
+      "avant_codigo": 1437
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 4917
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 1480
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104288275-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 1375
+    }
+  ]
+}

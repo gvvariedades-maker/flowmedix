@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:53:12.562Z",
+  "lote": "saude-da-mulher-g09",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+    "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+    "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+    "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+    "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+    "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+    "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+    "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

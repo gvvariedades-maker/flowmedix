@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g07",
+  "exported_at": "2026-07-09T05:51:40.334Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g07/manifest.json"
+  },
+  "slugs": [
+    "idib-enfermagem-saude-da-mulher-1777104335102-2",
+    "idib-enfermagem-saude-da-mulher-1777104335102-3",
+    "idib-enfermagem-saude-da-mulher-1778934936220-9",
+    "idib-enfermagem-saude-da-mulher-1778934944659-0",
+    "idib-enfermagem-saude-da-mulher-1778934944659-1",
+    "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+    "igeduc-enfermagem-saude-da-mulher-1777104306781-4",
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-6"
+  ]
+}

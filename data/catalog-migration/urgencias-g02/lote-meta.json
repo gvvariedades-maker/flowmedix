@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g02",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g02",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_rcp_sbv": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+    "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
+    "examples/questao-premium-urgencias-rcp.json"
+  ],
+  "notes": "g02 — 30:2 pré-VAA · ambulância tipo B · sequência C-A-B IDECAN · PCR intubado UTI · cadeia intra-hospitalar · vasopressor · carrinho/tábua · DEA FV/TVSP"
+}

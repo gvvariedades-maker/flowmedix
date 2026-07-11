@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "banca": "MS / AB",
+    "prova": "Tec Enf",
+    "orgao": "Referência normativa",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Mulher",
+    "family": "conceito",
+    "pedagogical_branch": "mulher_puerperio",
+    "content_standard": "golden-v1",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "Caderno AB 32 — consulta e visita puerpério / AM",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "caderno-ab-32-prenatal",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Cadernos de Atenção Básica nº 32 — Atenção ao pré-natal de baixo risco",
+        "year": 2012,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/cadernos_atencao_basica_32_prenatal.pdf",
+        "covers": [
+          "consulta puerpério até 42 dias",
+          "visita domiciliar primeira semana",
+          "aleitamento materno exclusivo 6 meses",
+          "orientação direitos previdenciários"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre o acompanhamento da puérpera na Atenção Básica, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A consulta de puerpério deve ser realizada até o 42º dia após o parto.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "O puerpério se encerra aos 30 dias, dispensando consulta após esse prazo.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A visita domiciliar no puerpério deve ocorrer somente após o 42º dia.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O aleitamento materno exclusivo é recomendado somente até o 3º mês de vida.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Orientações sobre direitos previdenciários não integram o cuidado puerperal de qualidade.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Linha do tempo — puerpério",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "items": [
+        { "label": "Marco da questão", "detail": "Consulta de puerpério até o 42º dia pós-parto (letra A).", "icon": "Calendar" },
+        { "label": "Visita domiciliar", "detail": "Primeira semana após alta do recém-nascido — não após o 42º dia.", "icon": "Home" },
+        { "label": "Aleitamento", "detail": "AM exclusivo até 6 meses — não só 3 meses (D falsa).", "icon": "Baby" },
+        { "label": "Pegadinha 30 dias", "detail": "Puerpério não fecha aos 30 dias — MS usa até 42 dias.", "icon": "AlertTriangle" }
+      ],
+      "footer_rule": "42 dias consulta · visita na 1ª semana · AM 6 meses"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Puerpério — referência MS",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "ACOMPANHAMENTO PUERPERAL",
+      "rows": [
+        { "label": "Consulta puerpério", "value": "Até o 42º dia após o parto", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Visita domiciliar", "value": "Primeira semana após alta do RN", "badge": "hot" },
+        { "label": "AM exclusivo", "value": "Até 6 meses de vida", "badge": "info" },
+        { "label": "Puerpério imediato", "value": "Primeiras 24 h — vigilância hemorragia e pega", "badge": "info" },
+        { "label": "Direitos sociais", "value": "Orientar Previdência e rede de apoio — cuidado integral", "badge": "info" },
+        { "label": "Pegadinha 30 dias", "value": "Não é limite da consulta puerperal", "badge": "warn", "emphasis": "alert" }
+      ],
+      "footer_rule": "B=30 dias · C=visita tardia · D=AM curto · E=exclui direitos"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "steps": [
+        "B: puerpério encerra aos 30 dias → eliminar (marco errado — MS: até 42 dias).",
+        "C: visita só após 42º dia → eliminar (visita na primeira semana).",
+        "D: AM exclusivo só até 3 meses → eliminar (recomendação até 6 meses).",
+        "E: direitos previdenciários fora do cuidado → eliminar (atendimento holístico).",
+        "Letra A.",
+        "Fixação: consulta até 42º dia + visita precoce + AM 6 meses."
+      ],
+      "footer_rule": "Posicionar marcos na linha 0–42 dias"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "PEGADINHAS — PUERPÉRIO 30 × 42 DIAS",
+      "items": [
+        {
+          "label": "Letra B — 30 dias",
+          "detail": "Puerpério encerra aos 30 dias",
+          "correct": "Consulta de puerpério até o 42º dia — não fechar aos 30"
+        },
+        {
+          "label": "Letra C — visita tardia",
+          "detail": "Visita domiciliar só após o 42º dia",
+          "correct": "Visita na primeira semana após alta do recém-nascido"
+        },
+        {
+          "label": "Letra D — AM 3 meses",
+          "detail": "Aleitamento exclusivo só até o 3º mês",
+          "correct": "AM exclusivo recomendado até 6 meses de vida"
+        },
+        {
+          "label": "Letra E — sem direitos",
+          "detail": "Direitos previdenciários fora do cuidado",
+          "correct": "Atendimento puerperal de qualidade inclui orientação sobre direitos sociais"
+        }
+      ],
+      "footer_rule": "Cada distrator erra um marco temporal ou escopo do cuidado"
+    }
+  ]
+}

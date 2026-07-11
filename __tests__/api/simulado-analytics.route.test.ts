@@ -29,6 +29,14 @@ jest.mock('@/lib/performance-tracker', () => ({
   withPerformanceTracking: (handler: unknown) => handler,
 }));
 
+jest.mock('@/lib/supabase/server', () => ({
+  createServerSupabase: jest.fn().mockResolvedValue({}),
+}));
+
+jest.mock('@/lib/simulado/analyticsSync', () => ({
+  syncPendingSimuladoAnalytics: jest.fn().mockResolvedValue(undefined),
+}));
+
 import { GET } from '@/app/api/simulado/analytics/route';
 
 describe('GET /api/simulado/analytics', () => {

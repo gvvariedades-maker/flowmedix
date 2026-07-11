@@ -45,6 +45,16 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'urgencias-manchester-spectrum',
   'etiology-kingdom-rail',
   'itu-closed-system-rail',
+  'mulher-gestation-timeline',
+  'mulher-labor-phase-deck',
+  'mulher-screening-spectrum',
+  'mulher-mammography-spectrum',
+  'mulher-puerperio-timeline',
+  'mulher-contraception-spectrum',
+  'cam-certos-deck',
+  'cam-high-risk-duo-deck',
+  'cam-exceto-rail',
+  'cam-documentacao-deck',
 ]);
 
 function countConceptItems(slide?: {

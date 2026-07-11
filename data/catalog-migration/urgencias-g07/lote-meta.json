@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g07",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g07",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_rcp_sbv": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+    "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
+    "examples/questao-premium-urgencias-rcp.json"
+  ],
+  "notes": "g07 — SAVC acesso IV/IO · vasopressores PCR · vasopressor SAVC · ventilação pós-RCP SAMU · opioides naloxona · SAMU hipoglicemia · C/E superfície firme · C/E frequência compressões"
+}

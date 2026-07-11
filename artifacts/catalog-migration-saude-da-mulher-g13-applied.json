@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:54:05.860Z",
+  "lote": "saude-da-mulher-g13",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fafipa-enfermagem-processo-de-enfermagem-1780009379028-9",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-1",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-0",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-5",
+    "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004602717-9",
+    "fepese-enfermagem-saude-da-mulher-1777104222222-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-saude-da-mulher-1777104222222-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "exported_at": "2026-07-10T18:31:12.425Z",
+  "lote": "saude-da-mulher-g32",
+  "total": 4,
+  "entries": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 1388
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 1458
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 1471
+    },
+    {
+      "modulo_slug": "iset-enfermagem-saude-da-mulher-1777104376057-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISET",
+      "avant_codigo": 1445
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Tec Enf",
+    "orgao": "Prefeitura",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Mulher",
+    "family": "conceito",
+    "pedagogical_branch": "mulher_papanicolau",
+    "content_standard": "golden-v1",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "INCA/MS — rastreio câncer de colo do útero",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "inca-rastreio-colo",
+        "tier": "A",
+        "issuer": "INCA",
+        "title": "Diretrizes para o rastreamento do câncer do colo do útero",
+        "year": 2016,
+        "url": "https://www.inca.gov.br/publicacoes/livros/diretrizes-para-o-rastreamento-do-cancer-do-colo-do-utero",
+        "covers": [
+          "25-64 anos",
+          "citologia trienal",
+          "dois exames anuais normais",
+          "início aos 25 anos"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre o rastreamento do câncer de colo do útero, assinale a alternativa correta.",
+    "options": [
+      { "id": "A", "text": "O exame citopatológico (Papanicolau) deve ser iniciado aos 40 anos de idade.", "is_correct": false },
+      { "id": "B", "text": "O rastreamento deve ser realizado somente em mulheres sintomáticas.", "is_correct": false },
+      { "id": "C", "text": "O Papanicolau deve ser realizado em mulheres de 25 a 64 anos, a cada 3 anos, após dois exames anuais normais.", "is_correct": true },
+      { "id": "D", "text": "O rastreamento deve ser anual para todas as mulheres a partir dos 25 anos.", "is_correct": false },
+      { "id": "E", "text": "O exame citopatológico não é necessário após vacinação contra HPV.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Espectro etário — rastreio colo",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "items": [
+        { "label": "Marco da questão", "detail": "25 a 64 anos — periodicidade trienal após 2 exames anuais normais (letra C).", "icon": "Calendar" },
+        { "label": "Início rastreio", "detail": "25 anos após início da vida sexual — não aos 40 (A falsa).", "icon": "Microscope" },
+        { "label": "HPV vacina", "detail": "Campanha 9–14 anos — não substitui Papanicolau na faixa etária.", "icon": "Syringe" },
+        { "label": "Sintomáticos", "detail": "Rastreio em assintomáticas — B falsa.", "icon": "Stethoscope" }
+      ],
+      "footer_rule": "25–64 / 3 anos — não 40 nem anual universal"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Papanicolau — referência INCA",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "RASTREIO COLO UTERINO",
+      "rows": [
+        { "label": "Início", "value": "25 anos após início da vida sexual", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Periodicidade", "value": "3 anos se exames anteriores normais", "badge": "hot" },
+        { "label": "Término", "value": "Até 64 anos", "badge": "info" },
+        { "label": "Pegadinha 40 anos", "value": "Não é marco de início do rastreio", "badge": "warn", "emphasis": "alert" },
+        { "label": "Pegadinha anual", "value": "Não é rotina universal após trienal", "badge": "warn" }
+      ],
+      "footer_rule": "A=40 · B=sintomática · D=anual — todas falsas"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "steps": [
+        "A: início aos 40 anos → eliminar (marco errado).",
+        "B: só sintomáticas → eliminar.",
+        "D: anual universal → eliminar.",
+        "E: vacina dispensa Papanicolau → eliminar.",
+        "Letra C.",
+        "Fixação: 25–64 anos, trienal após 2 anuais normais."
+      ],
+      "footer_rule": "Posicionar idade e intervalo no mesmo espectro"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "PEGADINHAS — IDADE × INTERVALO",
+      "items": [
+        {
+          "label": "Letra A — início aos 40",
+          "detail": "Papanicolau deve começar aos 40 anos",
+          "correct": "Início aos 25 anos após início da vida sexual"
+        },
+        {
+          "label": "Letra B — só sintomática",
+          "detail": "Rastreio apenas com sintomas",
+          "correct": "Rastreamento em mulheres assintomáticas na faixa etária"
+        },
+        {
+          "label": "Letra D — anual universal",
+          "detail": "Exame anual para todas a partir dos 25",
+          "correct": "Trienal após dois exames anuais normais"
+        },
+        {
+          "label": "Letra E — vacina dispensa Papanicolau",
+          "detail": "Vacinação contra HPV anula citologia na faixa etária",
+          "correct": "Vacina não substitui rastreio citológico 25–64 anos"
+        }
+      ],
+      "footer_rule": "Cada distrator ocupa posição errada na régua 18–64"
+    }
+  ]
+}

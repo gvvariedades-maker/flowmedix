@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-09T02:26:36.498Z",
+  "lote": "urgencias-g25",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

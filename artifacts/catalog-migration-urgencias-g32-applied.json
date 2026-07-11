@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:27:37.375Z",
+  "lote": "urgencias-g32",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

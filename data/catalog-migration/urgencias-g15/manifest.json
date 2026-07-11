@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g15",
+  "exported_at": "2026-07-08T14:24:11.181Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_avc_iam",
+    "batch": "g15-avc-iam-lote-2"
+  },
+  "slugs": [
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+    "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+    "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4"
+  ]
+}

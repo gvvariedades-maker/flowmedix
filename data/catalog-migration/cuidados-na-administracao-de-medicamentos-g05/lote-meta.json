@@ -1,0 +1,36 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g05",
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-10",
+  "handcraft_by": "composer-2.5",
+  "priority": "P0 cauda — cam_alto_risco (fecha cluster 19/19)",
+  "slug_count": 10,
+  "pedagogical_branch_target": "cam_alto_risco",
+  "branches": {
+    "cam_alto_risco": 10
+  },
+  "anchors": [
+    "examples/questao-premium-fepese-cuidados-insulina-alto-risco.json",
+    "examples/questao-premium-cotec-cuidados-heparina-alto-risco.json"
+  ],
+  "anchor_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+  "notes": "Cauda cluster alto risco — MAV C/E Ibade, quimio oral IDECAN, insulina rodízio IVIN, heparina + INCORRETA insulina UNIFIL, vias UNIVALI, 4× VUNESP insulina/segurança. Âncora FEPESE insulina excluída (golden examples/).",
+  "workflow": [
+    "npm run plan:cuidados-na-administracao-de-medicamentos-g05",
+    "npm run catalog:export-lote -- --lote=cuidados-na-administracao-de-medicamentos-g05 --from-manifest=data/catalog-migration/cuidados-na-administracao-de-medicamentos-g05/manifest.json",
+    "Handcraft golden-v1 — cam-high-risk-* 4/4",
+    "npm run validate:goldens -- --lote=cuidados-na-administracao-de-medicamentos-g05 --strict",
+    "npm run audit:questao-readiness -- --lote=cuidados-na-administracao-de-medicamentos-g05 --strict-v3-pedagogy",
+    "npm run audit:slug-alignment -- --lote=cuidados-na-administracao-de-medicamentos-g05 --strict",
+    "npm run audit:anchor-review -- --lote=cuidados-na-administracao-de-medicamentos-g05 --record-pass --reviewer=agent --skip-capture",
+    "npm run catalog:apply-lote -- --lote=cuidados-na-administracao-de-medicamentos-g05 --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-10",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cuidados-na-administracao-de-medicamentos-g05.json"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g19",
+  "exported_at": "2026-07-08T16:14:24.861Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_choque",
+    "batch": "g19-choque-lote-1"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+    "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+    "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-6"
+  ]
+}

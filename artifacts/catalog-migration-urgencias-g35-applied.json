@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-07-09T02:28:11.432Z",
+  "lote": "urgencias-g35",
+  "mode": "apply",
+  "total_files": 7,
+  "ok": 7,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

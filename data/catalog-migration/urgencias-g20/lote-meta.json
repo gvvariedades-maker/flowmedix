@@ -1,0 +1,16 @@
+{
+  "lote": "urgencias-g20",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g20",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_choque": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-admtec-urgencias-choque-eletrico.json",
+    "examples/questao-premium-fepese-urgencias-choque-hipovolemico.json"
+  ],
+  "notes": "g20 choque lote 2 — cardiogênico · séptico vasopressina · hematêmese hipovolêmico · distributivo · IRA gravidade · elétrico Consulplan · organofosforado · hemorragia II-IV"
+}

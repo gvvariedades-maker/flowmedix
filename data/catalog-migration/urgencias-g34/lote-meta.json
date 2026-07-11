@@ -1,0 +1,28 @@
+{
+  "lote": "urgencias-g34",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g34",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_generico": 6,
+    "urgencias_xabcde_trauma": 2
+  },
+  "branch_by_slug": {
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5": "urgencias_generico",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7": "urgencias_generico",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8": "urgencias_generico",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0": "urgencias_generico",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4": "urgencias_generico",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5": "urgencias_generico",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6": "urgencias_xabcde_trauma",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3": "urgencias_xabcde_trauma"
+  },
+  "playbook_clusters_opened": {
+    "Drift taxonômico — reclassificar subtópico": 1,
+    "Urgências — conceito geral": 3,
+    "Default — sem âncora temática": 4
+  },
+  "notes": "g34 — 5º lote cauda urgencias_generico · 8/8 READY strict-v2 · 6 generico + 2 trauma (APH sinalização · fratura úmero/radial) · deterioração UTI · emergência hipertensiva · hipercalemia · broncoaspiração · abdome agudo · obstrução intestinal"
+}

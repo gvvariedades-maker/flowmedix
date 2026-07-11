@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g16",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g16",
+  "slug_count": 6,
+  "branches": {
+    "urgencias_avc_iam": 6
+  },
+  "anchors_used": [
+    "examples/questao-premium-amauc-urgencias-cincinnati-avc.json"
+  ],
+  "readiness": "6/6",
+  "preflight_artifact": "artifacts/catalog-preflight-urgencias-g16.json",
+  "notes": "g16 AVC/IAM final — choque UPA sinais · trauma epidemiologia VF · IAM O2 SAMU 94% · choque hipovolêmico hemorragia · colecistite vs IAM · IAM angina sudorese — cluster 23/23 fechado"
+}

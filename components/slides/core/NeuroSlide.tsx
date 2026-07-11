@@ -7,8 +7,18 @@ import { ProcedureProtocolConceptMap } from '../variants/ProcedureProtocolConcep
 import { VitalsPanelConceptMap } from '../variants/VitalsPanelConceptMap';
 import { SurvivalChainConceptMap } from '../variants/SurvivalChainConceptMap';
 import { VaccineTimelineConceptMap } from '../variants/VaccineTimelineConceptMap';
+import { MulherGestationTimelineConceptMap } from '../variants/MulherGestationTimelineConceptMap';
+import { MulherLaborPhaseDeckConceptMap } from '../variants/MulherLaborPhaseDeckConceptMap';
+import { MulherScreeningSpectrumConceptMap } from '../variants/MulherScreeningSpectrumConceptMap';
+import { MulherMammographySpectrumConceptMap } from '../variants/MulherMammographySpectrumConceptMap';
+import { MulherPuerperioTimelineConceptMap } from '../variants/MulherPuerperioTimelineConceptMap';
+import { MulherContraceptionSpectrumConceptMap } from '../variants/MulherContraceptionSpectrumConceptMap';
 import { ColdChainHubConceptMap } from '../variants/ColdChainHubConceptMap';
 import { PniRulesDeckConceptMap } from '../variants/PniRulesDeckConceptMap';
+import { CamCertosDeckConceptMap } from '../variants/CamCertosDeckConceptMap';
+import { CamHighRiskDuoDeckConceptMap } from '../variants/CamHighRiskDuoDeckConceptMap';
+import { CamExcetoRailConceptMap } from '../variants/CamExcetoRailConceptMap';
+import { CamDocumentacaoDeckConceptMap } from '../variants/CamDocumentacaoDeckConceptMap';
 import { SaeDocumentationConceptMap } from '../variants/SaeDocumentationConceptMap';
 import { SaeResponsibilityMatrix } from '../variants/SaeResponsibilityMatrix';
 import { SusLegalPillarsConceptMap } from '../variants/SusLegalPillarsConceptMap';
@@ -141,6 +151,30 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'vaccine-timeline') {
         return <VaccineTimelineConceptMap concepts={getConcepts()} theme={theme} />;
       }
+      if (layoutVariant === 'mulher-gestation-timeline') {
+        return <MulherGestationTimelineConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />;
+      }
+      if (layoutVariant === 'mulher-labor-phase-deck') {
+        return <MulherLaborPhaseDeckConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />;
+      }
+      if (layoutVariant === 'mulher-screening-spectrum') {
+        return <MulherScreeningSpectrumConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />;
+      }
+      if (layoutVariant === 'mulher-mammography-spectrum') {
+        return <MulherMammographySpectrumConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />;
+      }
+      if (layoutVariant === 'mulher-puerperio-timeline') {
+        return <MulherPuerperioTimelineConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'mulher-contraception-spectrum') {
+        return (
+          <MulherContraceptionSpectrumConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
       if (layoutVariant === 'cold-chain-hub') {
         return (
           <ColdChainHubConceptMap
@@ -152,6 +186,30 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'pni-rules-deck') {
         return <PniRulesDeckConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'cam-certos-deck') {
+        return <CamCertosDeckConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'cam-high-risk-duo-deck') {
+        return <CamHighRiskDuoDeckConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'cam-exceto-rail') {
+        return (
+          <CamExcetoRailConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'cam-documentacao-deck') {
+        return (
+          <CamDocumentacaoDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
       }
       if (layoutVariant === 'sae-documentation') {
         return <SaeDocumentationConceptMap concepts={getConcepts()} theme={theme} />;

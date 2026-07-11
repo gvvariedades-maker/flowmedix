@@ -1,0 +1,14 @@
+{
+  "lote": "urgencias-g29",
+  "exported_at": "2026-07-08T18:38:20.158Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "mixed_micro_cluster_drift",
+    "batch": "g29-anafilaxia-queimadura-cluster-close"
+  },
+  "slugs": [
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4"
+  ]
+}

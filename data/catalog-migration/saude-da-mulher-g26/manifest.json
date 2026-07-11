@@ -1,0 +1,19 @@
+{
+  "lote": "saude-da-mulher-g26",
+  "exported_at": "2026-07-10T17:27:41.274Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g26/manifest.json"
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-6",
+    "cebraspe-cespe-enfermagem-saude-da-mulher-1777104288275-0",
+    "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+    "facet-enfermagem-saude-da-mulher-1777104261182-4",
+    "fgv-enfermagem-saude-da-mulher-1777104323066-0",
+    "funcern-enfermagem-saude-da-mulher-1777104415052-8",
+    "idib-enfermagem-saude-da-mulher-1778934944659-2",
+    "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+    "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g08",
+  "exported_at": "2026-07-09T06:01:11.509Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g08/manifest.json"
+  },
+  "slugs": [
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-7",
+    "igeduc-enfermagem-saude-da-mulher-1780001362784-8",
+    "inaz-do-para-enfermagem-saude-da-mulher-1777104347186-5",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-5",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-6",
+    "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-7"
+  ]
+}

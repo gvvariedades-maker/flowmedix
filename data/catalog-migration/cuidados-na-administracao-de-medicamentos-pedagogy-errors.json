@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-10",
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "description": "Erros reproduzíveis por cluster (ROI handcraft) — nomear no concept_map e espelhar no danger_zone.",
+  "grammar_slots": {
+    "concept_map": "Enquadramento da prova + núcleos + pegadinha-âncora nomeando erro ROI (sem letra gabarito)",
+    "golden_rule": "Decore normativo — rows 9 Certos, protocolo alto risco ou checklist preparo (sem V/F nem gabarito)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; V/F juggle ou eliminação letra a letra",
+    "danger_zone": "Erro reproduzível × correção por letra/tema (compare semântico — espelha concept_map)",
+    "content_review": "guideline_snapshot tier A COFEN/ANVISA + exam_vs_current (none ou divergência prova × guideline)"
+  },
+  "v3_mental": {
+    "flag": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "roi_errors": "reproducible_errors[].id — inferir do enunciado e nomear no concept_map",
+    "codes": [
+      "cam_concept_repro_error",
+      "cam_concept_generic_certos",
+      "cam_golden_vf_judgment",
+      "cam_golden_gabarito_row",
+      "cam_logic_reveal_tap",
+      "cam_logic_elimination",
+      "cam_danger_letter_binding",
+      "cam_guideline_snapshot",
+      "cam_exam_vs_current",
+      "cam_exceto_semantic",
+      "cam_exceto_coringa"
+    ]
+  },
+  "reproducible_errors": [
+    {
+      "id": "uso_habitual_duvida",
+      "label": "Uso habitual libera administração com dúvida",
+      "clusters": ["V/F — 9 certos em caso clínico", "Prescrição ilegível / dúvida"],
+      "concept_map_hint": "Afirmativa III ou item dúvida — ilegível/dose duvidosa: suspender e comunicar, nunca administrar",
+      "danger_zone_hint": "Letra que aceita uso habitual ou prescrição duvidosa como autorização",
+      "anchors": ["certos_vf_nove_certos"]
+    },
+    {
+      "id": "identificacao_leito",
+      "label": "Identificar pelo leito, não pelo paciente",
+      "clusters": ["V/F — 9 certos em caso clínico", "Default — sem âncora temática"],
+      "concept_map_hint": "Certo 1 — dois identificadores no paciente (pulseira, nome+DN), não no mobiliário",
+      "danger_zone_hint": "Distrator que confia número do leito/quarto",
+      "anchors": ["certos_vf_nove_certos"]
+    },
+    {
+      "id": "alto_risco_sem_dupla",
+      "label": "Alto risco sem conferência dupla",
+      "clusters": ["V/F — 9 certos em caso clínico", "Alto risco / conferência dupla"],
+      "concept_map_hint": "II ou item alto risco — insulina/heparina exigem dois profissionais habilitados",
+      "danger_zone_hint": "Letra que dispensa segundo conferente por experiência",
+      "anchors": ["certos_vf_nove_certos", "alto_risco_insulina"]
+    },
+    {
+      "id": "massagear_insulina_sc",
+      "label": "Massagear local após insulina SC",
+      "clusters": ["Alto risco / conferência dupla"],
+      "concept_map_hint": "Técnica SC — não friccionar após aplicação; aguardar 10 s antes de retirar agulha",
+      "danger_zone_hint": "Letra A ou distrator que recomenda massagear",
+      "anchors": ["alto_risco_insulina"]
+    },
+    {
+      "id": "nph_regular_mistura",
+      "label": "Confundir homogeneização NPH × regular cristalina",
+      "clusters": ["Alto risco / conferência dupla"],
+      "concept_map_hint": "NPH leitosa homogeneizar; regular cristalina não — mistura na mesma seringa só se prescrito",
+      "danger_zone_hint": "Letra que inverte tipo de insulina ou proíbe mistura indevidamente",
+      "anchors": ["alto_risco_insulina"]
+    },
+    {
+      "id": "exceto_coringa",
+      "label": "EXCETO com frase-coringa em todas as letras",
+      "clusters": ["INCORRETA / EXCETO", "Certo ou errado"],
+      "concept_map_hint": "Distratores B–E = condutas corretas de preparo; só gabarito aponta exceção (VO+SF)",
+      "danger_zone_hint": "Cada letra errada explica por que É correta; gabarito = única falsa",
+      "anchors": ["generico_exceto_preparo"]
+    },
+    {
+      "id": "vo_com_sf",
+      "label": "Administrar VO com solução fisiológica",
+      "clusters": ["INCORRETA / EXCETO", "Preparo / sala de medicação", "Default — sem âncora temática"],
+      "concept_map_hint": "SF é diluente parenteral — via oral não usa SF como veículo de rotina",
+      "danger_zone_hint": "Letra que mistura preparo injetável com administração VO",
+      "anchors": ["generico_exceto_preparo"]
+    },
+    {
+      "id": "documentacao_pos_admin",
+      "label": "Registrar antes de administrar ou omitir prontuário",
+      "clusters": ["Documentação / registro"],
+      "concept_map_hint": "Certo 6 — documentar após administrar, não antes; horário e dose conferidos",
+      "danger_zone_hint": "Alternativa que inverte ordem registro × administração",
+      "anchors": ["generico_exceto_preparo"]
+    },
+    {
+      "id": "aprazamento_janela",
+      "label": "Confundir horário certo com janela terapêutica",
+      "clusters": ["Horário / aprazamento"],
+      "concept_map_hint": "Certo 5 — horário certo; não adiantar/atrasar fora da janela sem avaliar",
+      "danger_zone_hint": "Distrator que aceita atraso habitual sem comunicar",
+      "anchors": ["generico_exceto_preparo"]
+    }
+  ],
+  "audit_gates": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "always_error_codes": [
+      "cam_pegadinha_anchor",
+      "cam_concept_gabarito_spoiler",
+      "cam_danger_mirror",
+      "cam_exceto_semantic",
+      "cam_exceto_coringa"
+    ],
+    "strict_v2_codes": [
+      "cam_golden_rows",
+      "cam_logic_gabarito",
+      "cam_vf_i_ii_iii_binding"
+    ],
+    "alto_risco_codes": [
+      "cam_alto_risco_dupla_checagem",
+      "cam_insulina_tecnica_claim"
+    ],
+    "codes": [
+      "cam_pegadinha_anchor",
+      "cam_concept_gabarito_spoiler",
+      "cam_danger_mirror",
+      "cam_exceto_semantic",
+      "cam_exceto_coringa",
+      "cam_golden_rows",
+      "cam_logic_gabarito",
+      "cam_vf_i_ii_iii_binding"
+    ]
+  }
+}

@@ -272,20 +272,17 @@ export function ReadableTextZoomContent({ children, className }: ReadableTextZoo
   const [innerHeightPx, setInnerHeightPx] = useState(0);
   // CSS `zoom` reflui o conteudo (WebKit/Blink e Firefox 126+). Em navegadores
   // sem suporte, caimos para `transform: scale` com compensacao de altura.
-  const [zoomSupported, setZoomSupported] = useState(true);
+  const [zoomSupported] = useState(
+    () =>
+      typeof CSS !== 'undefined' &&
+      typeof CSS.supports === 'function' &&
+      CSS.supports('zoom', '1'),
+  );
   const outerWrapperRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
 
   const scale = narrowViewport ? TEXT_SCALE_STEPS[Math.min(textStep, TEXT_SCALE_STEPS.length - 1)] : 1;
   const isTextScaled = scale > 1;
-
-  useLayoutEffect(() => {
-    setZoomSupported(
-      typeof CSS !== 'undefined' &&
-        typeof CSS.supports === 'function' &&
-        CSS.supports('zoom', '1'),
-    );
-  }, []);
 
   useLayoutEffect(() => {
     const el = outerWrapperRef.current;

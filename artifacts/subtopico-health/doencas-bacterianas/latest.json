@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-07-08T14:23:35.191Z",
+  "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "pacote_prefix": "doencas-bacterianas",
+  "production_status": "production_ready",
+  "content_health": {
+    "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+    "sessions_30d": 311,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 0,
+      "total": 0
+    },
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 311,
+      "open_p1": 0,
+      "report_rate_pct": 0
+    },
+    "pass": true,
+    "blockers": [],
+    "should_block": false,
+    "alerts": [],
+    "repair_queue": [],
+    "stale_p0_count": 0
+  },
+  "pass": true,
+  "blocked": false,
+  "recovered": false
+}

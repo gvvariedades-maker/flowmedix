@@ -1,0 +1,35 @@
+{
+  "exported_at": "2026-07-09T02:50:01.428Z",
+  "lote": "saude-da-mulher-g01",
+  "total": 4,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1497
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 1370
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 1374
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1336
+    }
+  ]
+}

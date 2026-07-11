@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:52:21.721Z",
+  "lote": "saude-da-mulher-g06",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
+    "idecan-enfermagem-saude-da-mulher-1777104389226-7",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-0",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-1",
+    "idecan-enfermagem-saude-da-mulher-1780067024707-7",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-3",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-3",
+    "idib-enfermagem-saude-da-mulher-1777104335102-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1777104389226-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

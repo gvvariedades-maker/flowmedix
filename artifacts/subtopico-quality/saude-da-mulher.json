@@ -1,0 +1,274 @@
+{
+  "generated_at": "2026-07-10T19:18:49.864Z",
+  "subtopico": "Saúde da Mulher",
+  "pacote_prefix": "saude-da-mulher",
+  "production_status_before": "none",
+  "technical_ready": true,
+  "production_ready": true,
+  "can_sell": true,
+  "continuous_eligible": true,
+  "ship_gate": {
+    "ok": true,
+    "blockers": []
+  },
+  "monitoring": {
+    "deprecated": true,
+    "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
+    "sessions_30d": 219
+  },
+  "layers": {
+    "L1": {
+      "pass": true,
+      "detail": "handcraft-dod PASS"
+    },
+    "L2": {
+      "pass": true,
+      "detail": "alignment OK (246 slugs)"
+    },
+    "L2b": {
+      "pass": true,
+      "detail": "numeric factcheck OK"
+    },
+    "L3": {
+      "pass": true,
+      "detail": "Playwright L3 Saúde da Mulher — 4 branches (desktop + mobile-375 + DoD mulher_prenatal); PNGs em artifacts/visual-mold-regression/"
+    },
+    "L4": {
+      "pass": true,
+      "detail": "capture cirúrgico — warn only (não bloqueia ship)"
+    },
+    "L5": {
+      "pass": true,
+      "detail": "content health OK"
+    },
+    "L6": {
+      "pass": true,
+      "detail": "all 32 lotes anchor pass"
+    }
+  },
+  "lote_stats": [
+    {
+      "lote": "saude-da-mulher-g01",
+      "scanned": 4,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g02",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g03",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g04",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g05",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g06",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g07",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g08",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g09",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g10",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g11",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g12",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g13",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g14",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g15",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g16",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g17",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g18",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g19",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g20",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g21",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g22",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g23",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g24",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g25",
+      "scanned": 14,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g26",
+      "scanned": 9,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g27",
+      "scanned": 7,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g28",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g29",
+      "scanned": 5,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g30",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g31",
+      "scanned": 3,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-g32",
+      "scanned": 4,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "saude-da-mulher-golden-anchors.json",
+      "scanned": 0,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    }
+  ],
+  "content_health": {
+    "subtopico": "Saúde da Mulher",
+    "sessions_30d": 219,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 0,
+      "total": 0
+    },
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 219,
+      "open_p1": 0,
+      "report_rate_pct": 0
+    },
+    "pass": true,
+    "blockers": []
+  },
+  "blockers": []
+}

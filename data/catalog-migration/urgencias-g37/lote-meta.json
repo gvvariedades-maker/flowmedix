@@ -1,0 +1,26 @@
+{
+  "lote": "urgencias-g37",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g37",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_generico": 8
+  },
+  "branch_by_slug": {
+    "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7": "urgencias_generico",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1": "urgencias_generico",
+    "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3": "urgencias_generico",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4": "urgencias_generico",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4": "urgencias_generico",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7": "urgencias_generico",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2": "urgencias_generico",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3": "urgencias_generico"
+  },
+  "playbook_clusters_opened": {
+    "Default — sem âncora temática": 4,
+    "Urgências — conceito geral": 4
+  },
+  "notes": "g37 — 8º lote cauda urgencias_generico · 8/8 READY strict-v2 · TCE Battle · escorpião · O− transfusão · PS escolar · água sanitária · PEP · AVE/Glasgow · desastres"
+}

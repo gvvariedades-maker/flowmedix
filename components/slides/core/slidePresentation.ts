@@ -233,7 +233,15 @@ function resolveCore(
       layoutVariant === 'urgencias-shock-trap-arena' ||
       layoutVariant === 'urgencias-choking-trap-arena' ||
       layoutVariant === 'urgencias-pediatric-trap-arena' ||
-      layoutVariant === 'urgencias-manchester-trap')
+      layoutVariant === 'urgencias-manchester-trap' ||
+      layoutVariant === 'mulher-prenatal-trap-arena' ||
+      layoutVariant === 'mulher-parto-trap-arena' ||
+      layoutVariant === 'mulher-screening-trap-arena' ||
+      layoutVariant === 'mulher-mama-trap-arena' ||
+      layoutVariant === 'cam-certos-trap-arena' ||
+      layoutVariant === 'cam-high-risk-trap-arena' ||
+      layoutVariant === 'cam-exceto-trap-arena' ||
+      layoutVariant === 'cam-documentacao-trap-arena')
       ? 'x_icon'
       : 'numbered');
 

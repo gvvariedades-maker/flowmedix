@@ -5,8 +5,8 @@
   "readiness_gate": "npm run audit:questao-readiness -- --file=<path>",
   "anchors_readiness": {
     "validated_at": "2026-07-08",
-    "summary": "12/12 READY aplicados — âncoras P0 por ramo completo",
-    "note": "anafilaxia: CPCON I/II epinefrina IM · queimadura: AMEOSC V/F pasta de dente = F."
+    "summary": "13/13 READY — âncoras P0 por ramo + generico Glasgow (cauda)",
+    "note": "anafilaxia: CPCON I/II epinefrina IM · queimadura: AMEOSC V/F pasta de dente = F · generico: FAU GCS O+V+M."
   },
   "anchors": {
     "engasgo_sinal_universal": {
@@ -291,6 +291,21 @@
       "repair_lote": "urgencias-ameosc-queimadura-vf-repair",
       "applied_at": "2026-07-08",
       "notes": "Âncora P0 — V,F,V,F; item II queimadura; cluster report selecon era drift (BT16). 1 slug no ramo."
+    },
+    "generico_glasgow_gcs_domains": {
+      "file": "examples/questao-premium-fau-unicentro-urgencias-generico-glasgow-domains.json",
+      "slug_catalog": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "subtopico": "Urgências e Emergências",
+      "pedagogical_branch": "urgencias_generico",
+      "family": "conceito",
+      "command": "Glasgow — lacuna do terceiro domínio (ocular · verbal · motora)",
+      "banca": "Fau Unicentro",
+      "ano": "2023",
+      "gabarito": "C",
+      "readiness": "READY",
+      "readiness_validated_at": "2026-07-08",
+      "anchor_role": "sub_padrao_a_gcs_dominios",
+      "notes": "Âncora P0 cauda generico — GCS O+V+M; pegadinha olfativa/diafragmática; contraste com triagem neurológica SAMU (145 slugs generico)."
     }
   },
   "family_grammar_refs": {
@@ -310,7 +325,8 @@
     "protocolo_convulsao": "examples/questao-premium-admtec-urgencias-convulsao-crise.json",
     "manchester_triagem_etiquetas": "examples/questao-premium-ameosc-urgencias-triagem-etiquetas.json",
     "protocolo_anafilaxia_im": "examples/questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im.json",
-    "vf_queimadura_primeiros_socorros": "examples/questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros.json"
+    "vf_queimadura_primeiros_socorros": "examples/questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros.json",
+    "conceito_generico_glasgow_gcs": "examples/questao-premium-fau-unicentro-urgencias-generico-glasgow-domains.json"
   },
   "repair_lotes": {
     "engasgo_sinal_universal": "data/catalog-migration/urgencias-fau-unicentro-engasgo-repair",

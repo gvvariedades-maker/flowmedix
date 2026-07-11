@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g48",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g48",
+  "slug_count": 7,
+  "branches_planned": {
+    "urgencias_choque": 1,
+    "urgencias_xabcde_trauma": 1,
+    "urgencias_rcp_sbv": 1,
+    "urgencias_engasgo": 1,
+    "urgencias_generico": 2,
+    "urgencias_anafilaxia": 1
+  },
+  "readiness": "7/7",
+  "readiness_strict_v2": "7/7",
+  "preflight_artifact": "artifacts/catalog-preflight-urgencias-g48.json",
+  "notes": "g48 — FINAL lote partial (7 slugs) · 340/340 COMPLETE · pulso femoral · compartimental · TEP VF · OVACE · ambulância tipo D · crise reativa · adrenalina"
+}

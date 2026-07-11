@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:30:04.604Z",
+  "lote": "urgencias-g41",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+    "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

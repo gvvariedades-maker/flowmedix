@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g10",
+  "exported_at": "2026-07-09T06:19:56.500Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g10/manifest.json"
+  },
+  "slugs": [
+    "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+    "univida-enfermagem-saude-da-mulher-1777104389226-2",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-9",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+    "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+    "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+    "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+    "vunesp-enfermagem-saude-da-mulher-1777104408379-7"
+  ]
+}

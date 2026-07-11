@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:30:45.395Z",
+  "lote": "urgencias-g44",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-5",
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-6",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

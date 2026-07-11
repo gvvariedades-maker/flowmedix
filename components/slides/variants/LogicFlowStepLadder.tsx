@@ -19,7 +19,7 @@ interface LogicFlowStepLadderProps {
   steps: string[] | Array<{ id?: string; text: string }>;
   theme: ThemeColors;
   revealMode?: LogicFlowRevealMode;
-  accent?: 'default' | 'sonda' | 'urgencias' | 'xabcde' | 'stroke' | 'shock' | 'choking' | 'pediatric';
+  accent?: 'default' | 'sonda' | 'urgencias' | 'xabcde' | 'stroke' | 'shock' | 'choking' | 'pediatric' | 'cam';
 }
 
 const LADDER_ACCENTS = {
@@ -102,6 +102,16 @@ const LADDER_ACCENTS = {
     futureNode: 'border-pink-200/90 from-pink-50 to-white text-pink-400',
     tapBtn: 'from-pink-600 to-rose-600 shadow-pink-300/40',
   },
+  cam: {
+    connector: 'from-amber-300/50',
+    activeRing: 'ring-amber-200/60',
+    activeNode: 'from-amber-500 to-orange-700 shadow-amber-300/50',
+    activeCard:
+      'border-amber-300/80 border-l-amber-500 from-amber-50 via-white to-orange-50/90 shadow-amber-200/40 ring-amber-200/50',
+    activeLabel: 'text-amber-900',
+    futureNode: 'border-amber-200/90 from-amber-50 to-white text-amber-400',
+    tapBtn: 'from-amber-600 to-orange-600 shadow-amber-300/40',
+  },
 } as const;
 
 function stepTitle(
@@ -174,6 +184,18 @@ function stepTitle(
     if (/eliminar|falsa|verdadeira/i.test(lower)) return 'Eliminar distrator';
     if (/marcar|gabarito|letra/i.test(lower)) return 'Montar gabarito';
     if (/fixa[cç][aã]o|cruzar/i.test(lower)) return 'Fixação 15:2 × terço';
+  }
+  if (accent === 'cam') {
+    if (/contexto|alto risco|confer[eê]ncia dupla/i.test(lower)) return 'Conferência dupla';
+    if (/eliminar letra/i.test(lower)) {
+      const m = step.match(/letra\s*([A-E])/i);
+      return m ? `Eliminar letra ${m[1].toUpperCase()}` : 'Eliminar distrator';
+    }
+    if (/confirmar letra/i.test(lower)) {
+      const m = step.match(/letra\s*([A-E])/i);
+      return m ? `Confirmar letra ${m[1].toUpperCase()}` : 'Confirmar gabarito';
+    }
+    if (/fixa[cç][aã]o/i.test(lower)) return 'Fixação técnica';
   }
   if (index === 0 || /ler o comando|ler a afirmativa|ler o enunciado/i.test(lower)) {
     return 'Ler o comando da questão';

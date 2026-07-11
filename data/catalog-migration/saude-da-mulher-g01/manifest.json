@@ -1,0 +1,21 @@
+{
+  "lote": "saude-da-mulher-g01",
+  "exported_at": "2026-07-09T02:50:01.428Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Saúde da Mulher",
+    "batch": "g01-piloto-4-ramos-fortes",
+    "slugs": [
+      "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+      "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3"
+    ]
+  },
+  "slugs": [
+    "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+    "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3"
+  ]
+}

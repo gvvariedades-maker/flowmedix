@@ -1,0 +1,26 @@
+{
+  "lote": "urgencias-g33",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g33",
+  "slug_count": 7,
+  "branches": {
+    "urgencias_generico": 4,
+    "urgencias_choque": 1,
+    "urgencias_xabcde_trauma": 2
+  },
+  "branch_by_slug": {
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3": "urgencias_generico",
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4": "urgencias_choque",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3": "urgencias_generico",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5": "urgencias_generico",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0": "urgencias_xabcde_trauma",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3": "urgencias_xabcde_trauma",
+    "funcern-enfermagem-exames-laboratoriais-1779563631609-6": "urgencias_generico"
+  },
+  "playbook_clusters_opened": {
+    "Default — sem âncora temática": 8
+  },
+  "notes": "g33 — 4º lote cauda urgencias_generico · 7/7 READY strict-v2 (fauel CC reclassificado 2026-07-08) · 4 generico + 1 choque + 2 trauma"
+}

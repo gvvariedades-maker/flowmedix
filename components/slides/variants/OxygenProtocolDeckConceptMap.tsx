@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, ChevronDown } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 
 export interface ProtocolDeckConcept {
   icon: string;
@@ -58,9 +58,7 @@ export function OxygenProtocolDeckConceptMap({
 
   const toggleExpand = useCallback(() => setExpanded((v) => !v), []);
 
-  const PromptIcon = resolveLucideIcon(prompt?.icon ?? 'Gauge');
-
-  return (
+    return (
     <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-4 md:p-6">
       <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-40`} />
 
@@ -70,7 +68,7 @@ export function OxygenProtocolDeckConceptMap({
             <div className="border-l-[5px] border-violet-500 p-4 md:p-5">
               <div className="mb-3 flex items-center gap-2.5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-200 to-indigo-200/90 shadow-inner shadow-violet-300/30">
-                  <PromptIcon className="h-5 w-5 text-violet-800" aria-hidden />
+                  <SlideLucideIcon name={prompt.icon} className="h-5 w-5 text-violet-800" />
                 </div>
                 <span className="font-body text-sm font-bold text-slate-900 md:text-base">{prompt.title}</span>
               </div>
@@ -131,13 +129,12 @@ export function OxygenProtocolDeckConceptMap({
           </p>
           <div className="flex flex-wrap gap-2">
             {tags.map((tag, i) => {
-              const Icon = resolveLucideIcon(tag.icon);
-              return (
+                            return (
                 <span
                   key={tag.title}
                   className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-bold ${TAG_COLORS[i % TAG_COLORS.length]}`}
                 >
-                  <Icon className="h-3 w-3 shrink-0 opacity-80" aria-hidden />
+                  <SlideLucideIcon name={tag.icon} className="h-3 w-3 shrink-0 opacity-80" />
                   {tag.title}
                 </span>
               );

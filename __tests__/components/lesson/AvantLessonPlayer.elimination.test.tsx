@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
@@ -163,20 +163,29 @@ describe('AvantLessonPlayer elimination', () => {
     expect(screen.queryByRole('button', { name: 'Confirmar Resposta' })).not.toBeInTheDocument();
   });
 
-  it('restaura eliminações da sessão ao remontar a mesma questão', async () => {
-    const { unmount } = render(
-      <AvantLessonPlayer dados={baseDados} mode="live" moduloSlug="questao-a" />,
-    );
+  it(
+    'restaura eliminações da sessão ao remontar a mesma questão',
+    async () => {
+      const { unmount } = render(
+        <AvantLessonPlayer dados={baseDados} mode="live" moduloSlug="questao-a" />,
+      );
 
-    await act(async () => {
-      screen.getByRole('button', { name: 'Eliminar alternativa B' }).click();
-    });
-    unmount();
+      await act(async () => {
+        screen.getByRole('button', { name: 'Eliminar alternativa B' }).click();
+      });
+      unmount();
 
-    render(<AvantLessonPlayer dados={baseDados} mode="live" moduloSlug="questao-a" />);
+      render(<AvantLessonPlayer dados={baseDados} mode="live" moduloSlug="questao-a" />);
 
-    expect(screen.getByRole('radio', { name: /Alternativa B.*eliminada/i })).toBeDisabled();
-  });
+      await waitFor(
+        () => {
+          expect(screen.getByRole('radio', { name: /Alternativa B.*eliminada/i })).toBeDisabled();
+        },
+        { timeout: 10_000 },
+      );
+    },
+    15_000,
+  );
 
   it('seleciona alternativa pela tecla da letra', async () => {
     render(<AvantLessonPlayer dados={baseDados} mode="live" moduloSlug="questao-a" />);

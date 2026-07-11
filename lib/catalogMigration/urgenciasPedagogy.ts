@@ -674,7 +674,7 @@ export function lintUrgenciasExcetoSemantic(
   for (const opt of options) {
     const item = withCorrect.find((it) => {
       const label = String(it.label ?? '');
-      return new RegExp(`\\b${opt.id}\\b`, 'i').test(label);
+      return new RegExp(`(?:Letra|Alt\\.?)\\s*${opt.id}\\b`, 'i').test(label);
     });
     if (!item) continue;
 

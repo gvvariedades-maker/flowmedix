@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g10",
+  "exported_at": "2026-07-08T13:56:02.230Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_exceto_conduta",
+    "batch": "g10-exceto-conduta-lote-1"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+    "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+    "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5"
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "generated_at": "2026-07-10T18:15:05.453Z",
+  "catalog_total": 263,
+  "handcraft_applied": 231,
+  "remaining": 32,
+  "excluded_from_handcraft": 21,
+  "actionable_handcraft": 11,
+  "by_recommendation": {
+    "handcraft": 11,
+    "reclass": 21,
+    "review": 0
+  },
+  "by_branch_actionable": {
+    "mulher_climaterio": 3,
+    "mulher_ist_gestacao": 3,
+    "mulher_ciclo": 2,
+    "mulher_violencia": 3
+  },
+  "g30_proposal": {
+    "lote": "saude-da-mulher-g30",
+    "strategy": "handcraft residual strong-branch + review generico drift-flagged",
+    "slug_count": 8,
+    "slugs": [
+      "amauc-enfermagem-saude-da-mulher-1777104295283-8",
+      "avancasp-enfermagem-saude-da-mulher-1777104323066-2",
+      "idecan-enfermagem-saude-da-mulher-1778712437306-3",
+      "idecan-enfermagem-saude-da-mulher-1780067036141-1",
+      "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9",
+      "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+      "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+      "itame-enfermagem-saude-da-mulher-1777104432986-1"
+    ]
+  },
+  "items": [
+    {
+      "slug": "amauc-enfermagem-saude-da-mulher-1777104295283-8",
+      "branch_id": "mulher_climaterio",
+      "drift": false,
+      "topic": "Climatério / menopausa",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Coleta de exames (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "atame-enfermagem-saude-da-mulher-1777104347186-8",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "atame-enfermagem-vias-de-administracao-1778968573722-0",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "avancasp-enfermagem-saude-da-mulher-1777104323066-2",
+      "branch_id": "mulher_climaterio",
+      "drift": false,
+      "topic": "Climatério / menopausa",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Semiologia (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104408379-0",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Semiologia (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Semiologia (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Epidemiologia (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-8",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104301763-5",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-1",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Semiologia (drift?)",
+      "family": "protocolo",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "fundatec-enfermagem-saude-da-mulher-1777104424950-0",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1777104335102-4",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1778712437306-2",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1778712437306-3",
+      "branch_id": "mulher_ist_gestacao",
+      "drift": false,
+      "topic": "IST na gestação",
+      "family": "certo_errado",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067036141-1",
+      "branch_id": "mulher_ciclo",
+      "drift": false,
+      "topic": "Ciclo menstrual / amenorreia",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9",
+      "branch_id": "mulher_climaterio",
+      "drift": false,
+      "topic": "Climatério / menopausa",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+      "branch_id": "mulher_violencia",
+      "drift": false,
+      "topic": "Violência contra a mulher",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+      "branch_id": "mulher_violencia",
+      "drift": false,
+      "topic": "Violência contra a mulher",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "iset-enfermagem-saude-da-mulher-1777104376057-0",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Semiologia (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "itame-enfermagem-saude-da-mulher-1777104432986-1",
+      "branch_id": "mulher_violencia",
+      "drift": false,
+      "topic": "Violência contra a mulher",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+      "branch_id": "mulher_ciclo",
+      "drift": false,
+      "topic": "Ciclo menstrual / amenorreia",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Semiologia (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-9",
+      "branch_id": "mulher_ist_gestacao",
+      "drift": false,
+      "topic": "IST na gestação",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "unifil-enfermagem-saude-da-mulher-1777104376057-1",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "univida-enfermagem-saude-da-mulher-1777104389226-1",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4",
+      "branch_id": "mulher_ist_gestacao",
+      "drift": false,
+      "topic": "IST na gestação",
+      "family": "conceito",
+      "recommendation": "handcraft"
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-6",
+      "branch_id": "mulher_generico",
+      "drift": true,
+      "topic": "Anatomia feminina (drift?)",
+      "family": "conceito",
+      "recommendation": "reclass"
+    }
+  ]
+}

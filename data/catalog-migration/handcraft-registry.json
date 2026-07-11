@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-08",
+  "updated_at": "2026-07-10",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -687,6 +687,53 @@
         }
       }
     },
+    "Cuidados na Administração de Medicamentos": {
+      "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
+      "manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/README.md",
+      "cluster_command": "npm run cluster:cuidados-na-administracao-de-medicamentos",
+      "cluster_report": "artifacts/cuidados-na-administracao-de-medicamentos-topic-cluster-report.json",
+      "lote_pattern": "cuidados-na-administracao-de-medicamentos-g{NN}",
+      "lote_size": 8,
+      "status": "in_progress",
+      "total_slugs": 123,
+      "handcraft_applied": 0,
+      "anchor_glob": "examples/questao-premium-*-cuidados-*.json,examples/questao-premium-fepese-cuidados-administracao-medicamentos.json,examples/questao-premium-fepese-cuidados-insulina-alto-risco.json,examples/questao-premium-cotec-cuidados-heparina-alto-risco.json,examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json,examples/questao-premium-avancasp-cuidados-documentacao-vf.json,examples/questao-premium-cpcon-cuidados-incorreta-nove-certos.json,examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json,examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/cuidados-na-administracao-de-medicamentos.json",
+      "golden_anchors_registry": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-golden-anchors.json",
+      "guideline": "lib/guidelines/cuidadosMedicamentos.ts",
+      "production_status": "none",
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": true,
+          "L4": false,
+          "L5": false,
+          "L6": false
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": false,
+          "last_audit_at": null,
+          "last_audit_pass": null,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
     "Urgências e Emergências": {
       "pacote_prefix": "urgencias-e-emergencias",
       "manifest": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
@@ -696,9 +743,9 @@
       "cluster_report": "artifacts/urgencias-e-emergencias-topic-cluster-report.json",
       "lote_pattern": "urgencias-g{NN}",
       "lote_size": 8,
-      "status": "in_progress",
-      "total_slugs": 340,
-      "handcraft_applied": 12,
+      "status": "applied",
+      "total_slugs": 339,
+      "handcraft_applied": 339,
       "anchor_glob": "examples/questao-premium-*-urgencias-*.json,examples/questao-premium-urgencias-rcp.json",
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/urgencias-e-emergencias.json",
       "golden_anchors_registry": "data/catalog-migration/urgencias-golden-anchors.json",
@@ -775,6 +822,52 @@
           "enabled": false,
           "last_audit_at": null,
           "last_audit_pass": null,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Saúde da Mulher": {
+      "pacote_prefix": "saude-da-mulher",
+      "manifest": "data/catalog-migration/saude-da-mulher-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/saude-da-mulher-completo/handcraft-meta.json",
+      "cluster_command": "npm run cluster:saude-da-mulher",
+      "cluster_report": "artifacts/saude-da-mulher-topic-cluster-report.json",
+      "lote_pattern": "saude-da-mulher-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 246,
+      "handcraft_applied": 246,
+      "anchor_glob": "examples/questao-premium-*-saude-mulher-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/saude-da-mulher.json",
+      "golden_anchors_registry": "data/catalog-migration/saude-da-mulher-golden-anchors.json",
+      "guideline": "lib/guidelines/saudeMulher.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-07-09",
+        "production_ready_at": "2026-07-10",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-10T19:18:49.869Z",
+          "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null

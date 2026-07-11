@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T21:17:51.289Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g01",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 4246
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2137
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2182
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2210
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2143
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2151
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2217
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2203
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "TEnf",
+    "orgao": "Concurso AVANÇASP",
+    "ano": "2023",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "family": "vf",
+    "content_standard": "golden-v1",
+    "pedagogical_branch": "cam_documentacao",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "guideline_snapshot": "Certo 6 — Registro certo · COFEN administração segura",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4",
+      "cluster": "Documentação / registro",
+      "anchor_role": "vf_documentacao_registro"
+    },
+    "sources": [
+      {
+        "id": "cofen-seg-med",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Segurança na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br",
+        "covers": ["documentação", "registro certo", "prontuário"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Avalie as afirmações sobre o Registro certo (Documentação certa) na administração da medicação prescrita:\n\nI - Anotar na prescrição ou prontuário somente após administrar o medicamento, registrando horário, dose, via e identificação do profissional.\nII - É permitido registrar a medicação antes da administração, desde que a dose já tenha sido preparada na sala de medicação.\nIII - O registro pode ser postergado para o final do plantão, desde que o profissional lembre a hora exata da administração.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Registro certo — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "label": "I — Após administrar (V)",
+          "detail": "Certo 6: documentar depois da dose conferida e administrada — horário, dose, via, assinatura/identificação.",
+          "icon": "ClipboardCheck"
+        },
+        {
+          "label": "II — Antes de administrar (F)",
+          "detail": "Preparo na sala não autoriza registro antecipado — banca mistura preparo com administração concluída.",
+          "icon": "FileX"
+        },
+        {
+          "label": "III — Final do plantão (F)",
+          "detail": "Postergar registro viola rastreabilidade e segurança — horário deve ser o real da administração.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Pegadinha banca",
+          "detail": "Parecer “organizado” registrar antes ou no fim do turno — ambos invertem o Certo 6.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Documentação certa = após administrar, no momento, com dados completos"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Certo 6 — Registro",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "DOCUMENTAÇÃO NA ADMINISTRAÇÃO",
+      "rows": [
+        {
+          "label": "Quando registrar",
+          "value": "Imediatamente APÓS administrar — não antes, não no fim do plantão",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "O que registrar",
+          "value": "Horário, dose, via, medicamento, identificação do profissional",
+          "badge": "hot"
+        },
+        {
+          "label": "Preparo × administração",
+          "value": "Preparar na sala ≠ registrar dose — registro só após administração ao paciente",
+          "badge": "warn"
+        },
+        {
+          "label": "Rastreabilidade",
+          "value": "Registro tardio impede auditoria e segurança em caso de reação adversa",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Mnemônico: administrou → registrou — na hora"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — V/F documentação",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Comando: É CORRETO o que se afirma em — julgar I, II e III sobre Registro certo.",
+        "I: anotar após administrar com horário, dose, via e identificação → alinhado ao Certo 6 → VERDADEIRA.",
+        "II: registrar antes da administração porque já preparou na sala → inverte a sequência → FALSA.",
+        "III: postergar registro para o fim do plantão → viola rastreabilidade → FALSA.",
+        "Combinar: só I verdadeira → eliminar B (I+II), C (II+III), D (todas), E (só III).",
+        "Confirmar letra A: I, apenas.",
+        "Fixação: documentação é consequência da administração, não antecipação do preparo."
+      ],
+      "footer_rule": "V/F documentação: item a item → só I descreve o Certo 6 corretamente"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — registro",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PEGADINHAS — DOCUMENTAÇÃO CERTA",
+      "items": [
+        {
+          "label": "Letra B — I e II",
+          "detail": "II parece lógica se o medicamento já está preparado — mas paciente ainda não recebeu a dose.",
+          "correct": "II é falsa: preparo na sala não autoriza registro antecipado no prontuário."
+        },
+        {
+          "label": "Letra C — II e III",
+          "detail": "Combina duas falsidades — registrar antes e postergar ao fim do turno.",
+          "correct": "II e III violam o registro imediato após administração."
+        },
+        {
+          "label": "Letra D — todas",
+          "detail": "Incluir II e III torna o conjunto incorreto.",
+          "correct": "Só I é verdadeira — gabarito A."
+        },
+        {
+          "label": "Letra E — só III",
+          "detail": "“Lembrar depois” seduz em plantão corrido — erro de segurança do paciente.",
+          "correct": "III é falsa: registro não pode esperar o fim do plantão."
+        },
+        {
+          "label": "Pegadinha — registro antecipado",
+          "detail": "Espelha II do concept_map — preparo na sala não autoriza registro antes da dose.",
+          "correct": "Documentação certa: registrar após administrar ao paciente."
+        }
+      ],
+      "footer_rule": "Transferência: qualquer alternativa que antecipa ou posterga o registro está errada"
+    }
+  ]
+}

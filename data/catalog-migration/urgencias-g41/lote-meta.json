@@ -1,0 +1,16 @@
+{
+  "lote": "urgencias-g41",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g41",
+  "slug_count": 8,
+  "branches_planned": {
+    "urgencias_generico": 6,
+    "urgencias_vf_protocolo": 1,
+    "urgencias_exceto_conduta": 1
+  },
+  "readiness": "8/8",
+  "readiness_strict_v2": "8/8",
+  "notes": "12º lote cauda — 6 generico + 1 vf_protocolo + 1 exceto · coluna cervical C/E · APH/PS ESF · V/F primeiros socorros · picada abelha · Access urgência · SAMU CRMU EXCETO"
+}

@@ -1,0 +1,19 @@
+{
+  "lote": "urgencias-g17",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g17",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_xabcde_trauma": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-ameosc-urgencias-trauma-queimadura.json",
+    "examples/questao-premium-selecon-urgencias-bt16-esmagamento.json",
+    "examples/questao-premium-ameosc-urgencias-trauma-imobilizacao-vf.json"
+  ],
+  "readiness": "8/8",
+  "preflight_artifact": "artifacts/catalog-preflight-urgencias-g17.json",
+  "notes": "g17 XABCDE lote 2 — queimadura APH · ABCDE letra A · VF coluna/jaw thrust/TEC · jaw thrust cervical · politrauma compressão · segurança cena extremidades · colar SAMU · X-ABCDE letra X (16/22 trauma)"
+}

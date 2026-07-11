@@ -1,0 +1,19 @@
+{
+  "lote": "urgencias-g35",
+  "exported_at": "2026-07-08T20:30:00.000Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g35-generico-tail-batch-6"
+  },
+  "slugs": [
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7"
+  ]
+}

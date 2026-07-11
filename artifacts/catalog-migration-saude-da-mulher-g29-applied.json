@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-10T18:57:55.764Z",
+  "lote": "saude-da-mulher-g29",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-saude-da-mulher-1777104382533-7",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563517223-7",
+    "idecan-enfermagem-saude-da-mulher-1780067024707-9",
+    "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-1",
+    "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104382533-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563517223-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

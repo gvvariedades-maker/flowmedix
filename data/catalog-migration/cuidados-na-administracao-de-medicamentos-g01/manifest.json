@@ -1,0 +1,18 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g01",
+  "exported_at": "2026-07-10T21:17:51.289Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g01/manifest.json"
+  },
+  "slugs": [
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+    "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
+    "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-3",
+    "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-4",
+    "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-4",
+    "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-3",
+    "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-2",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7"
+  ]
+}

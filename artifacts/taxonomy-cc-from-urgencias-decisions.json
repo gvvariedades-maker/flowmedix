@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-07-08T20:20:00.000Z",
+  "rationale": "Reclassificação manual: núcleo = classificação cirúrgica por potencial de contaminação, não conduta de urgência.",
+  "decisions": [
+    {
+      "modulo_slug": "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+      "from": "Urgências e Emergências",
+      "to": "Enfermagem em Centro Cirúrgico",
+      "rationale": "Colecistectomia — classificação de potencial de contaminação (limpa/potencialmente contaminada). Cenário de PA é contexto; cobrança é CC."
+    }
+  ]
+}

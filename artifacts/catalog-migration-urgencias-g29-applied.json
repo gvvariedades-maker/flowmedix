@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-09T02:27:06.881Z",
+  "lote": "urgencias-g29",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g43",
+  "exported_at": "2026-07-09T00:55:46.870Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g43-generico-tail-batch-8"
+  },
+  "slugs": [
+    "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+    "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-6",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-7",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-8",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8"
+  ]
+}

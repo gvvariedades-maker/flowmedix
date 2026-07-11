@@ -28,6 +28,24 @@ function e2eHubData(): WeeklyMissionHubData {
   };
 }
 
+function MissionLoadError() {
+  return (
+    <div className="flex min-h-full items-center justify-center bg-background p-6">
+      <p className="text-sm text-slate-600">Erro ao carregar missão da semana. Tente novamente.</p>
+    </div>
+  );
+}
+
+function MissionUnavailable() {
+  return (
+    <div className="flex min-h-full items-center justify-center bg-background p-6">
+      <p className="text-sm text-slate-600">
+        Não foi possível carregar a missão da semana. Tente novamente.
+      </p>
+    </div>
+  );
+}
+
 export default async function MissaoSemanalPage() {
   const e2eBypass = isE2eBypassEnabled('E2E_DASHBOARD_BYPASS');
 
@@ -38,31 +56,24 @@ export default async function MissaoSemanalPage() {
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
+  let hub: WeeklyMissionHubData | null = null;
+  let loadFailed = false;
+
   try {
     const supabase = await createSupabaseServerClient();
-    const hub = await loadWeeklyMissionHubData(
-      supabase,
-      session.user.id,
-      session.user.email,
-    );
-
-    if (!hub) {
-      return (
-        <div className="flex min-h-full items-center justify-center bg-background p-6">
-          <p className="text-sm text-slate-600">
-            Não foi possível carregar a missão da semana. Tente novamente.
-          </p>
-        </div>
-      );
-    }
-
-    return <WeeklyMissionHubClient initialData={hub} />;
+    hub = await loadWeeklyMissionHubData(supabase, session.user.id, session.user.email);
   } catch (error) {
     logger.error('Failed to load weekly mission hub', error);
-    return (
-      <div className="flex min-h-full items-center justify-center bg-background p-6">
-        <p className="text-sm text-slate-600">Erro ao carregar missão da semana. Tente novamente.</p>
-      </div>
-    );
+    loadFailed = true;
   }
+
+  if (loadFailed) {
+    return <MissionLoadError />;
+  }
+
+  if (!hub) {
+    return <MissionUnavailable />;
+  }
+
+  return <WeeklyMissionHubClient initialData={hub} />;
 }

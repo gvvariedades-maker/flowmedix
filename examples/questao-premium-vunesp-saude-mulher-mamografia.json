@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Tec Enf",
+    "orgao": "Prefeitura",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Mulher",
+    "family": "conceito",
+    "pedagogical_branch": "mulher_mama",
+    "content_standard": "golden-v1",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "INCA/MS — rastreio câncer de mama",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "inca-rastreio-mama",
+        "tier": "A",
+        "issuer": "INCA",
+        "title": "Diretrizes para detecção precoce do câncer de mama no Brasil",
+        "year": 2015,
+        "url": "https://www.inca.gov.br/publicacoes/livros/diretrizes-para-deteccao-precoce-do-cancer-de-mama-no-brasil",
+        "covers": [
+          "50-69 anos",
+          "mamografia bienal",
+          "início aos 50 anos",
+          "autoexame complementar"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre o rastreamento do câncer de mama, assinale a alternativa correta.",
+    "options": [
+      { "id": "A", "text": "A mamografia deve ser iniciada aos 40 anos de idade para todas as mulheres.", "is_correct": false },
+      { "id": "B", "text": "O rastreamento deve ser realizado somente em mulheres sintomáticas.", "is_correct": false },
+      { "id": "C", "text": "A mamografia deve ser realizada em mulheres de 50 a 69 anos, a cada 2 anos.", "is_correct": true },
+      { "id": "D", "text": "O rastreamento deve ser anual para todas as mulheres a partir dos 50 anos.", "is_correct": false },
+      { "id": "E", "text": "O autoexame das mamas substitui a mamografia no rastreamento populacional.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Espectro etário — rastreio mama",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "items": [
+        { "label": "Marco da questão", "detail": "50 a 69 anos — periodicidade bienal (letra C).", "icon": "Calendar" },
+        { "label": "Início rastreio", "detail": "50 anos — não aos 40 (A falsa).", "icon": "Scan" },
+        { "label": "Autoexame", "detail": "Conscientização complementar — não substitui mamografia (E falsa).", "icon": "Hand" },
+        { "label": "Sintomáticos", "detail": "Rastreio em assintomáticas — B falsa.", "icon": "Stethoscope" }
+      ],
+      "footer_rule": "50–69 / bienal — não 40 nem anual universal"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Mamografia — referência INCA",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "RASTREIO CÂNCER DE MAMA",
+      "rows": [
+        { "label": "Início", "value": "50 anos", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Periodicidade", "value": "Bienal (a cada 2 anos)", "badge": "hot" },
+        { "label": "Término", "value": "Até 69 anos", "badge": "info" },
+        { "label": "Padrão-ouro", "value": "Mamografia no rastreamento populacional", "badge": "info" },
+        { "label": "Autoexame", "value": "Complementar — não substitui mamografia", "badge": "info" },
+        { "label": "Pegadinha 40 anos", "value": "Não é marco universal de início", "badge": "warn", "emphasis": "alert" },
+        { "label": "Pegadinha anual", "value": "Não é rotina universal — é bienal", "badge": "warn" }
+      ],
+      "footer_rule": "A=40 · B=sintomática · D=anual · E=autoexame — todas falsas"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "steps": [
+        "A: início aos 40 anos → eliminar (marco errado).",
+        "B: só sintomáticas → eliminar.",
+        "D: anual universal → eliminar.",
+        "E: autoexame substitui mamografia → eliminar.",
+        "Letra C.",
+        "Fixação: 50–69 anos, bienal."
+      ],
+      "footer_rule": "Posicionar idade e intervalo no mesmo espectro"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "PEGADINHAS — IDADE × INTERVALO",
+      "items": [
+        {
+          "label": "Letra A — início aos 40",
+          "detail": "Mamografia deve começar aos 40 anos",
+          "correct": "Início aos 50 anos no rastreamento populacional"
+        },
+        {
+          "label": "Letra B — só sintomática",
+          "detail": "Rastreio apenas com sintomas",
+          "correct": "Rastreamento em mulheres assintomáticas na faixa etária"
+        },
+        {
+          "label": "Letra D — anual universal",
+          "detail": "Exame anual para todas a partir dos 50",
+          "correct": "Bienal (a cada 2 anos) na faixa 50–69"
+        },
+        {
+          "label": "Letra E — autoexame substitui",
+          "detail": "Autoexame dispensa mamografia",
+          "correct": "Autoexame é complementar — mamografia é padrão-ouro populacional"
+        }
+      ],
+      "footer_rule": "Cada distrator ocupa posição errada na régua 40–69"
+    }
+  ]
+}

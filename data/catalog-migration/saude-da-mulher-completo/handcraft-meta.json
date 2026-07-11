@@ -1,0 +1,297 @@
+{
+  "subtopico": "Saúde da Mulher",
+  "pacote_prefix": "saude-da-mulher",
+  "status": "applied",
+  "handcraft_applied": 246,
+  "handcraft_applied_at": "2026-07-10",
+  "total_slugs": 246,
+  "anchors_p0": "6/6 READY — saude-da-mulher-golden-anchors.json (4 P0 + puerpério + planejamento)",
+  "golden_anchors_registry": "data/catalog-migration/saude-da-mulher-golden-anchors.json",
+  "playbook": "data/catalog-migration/handcraft-playbooks/saude-da-mulher.json",
+  "handcraft_grammar": "data/catalog-migration/saude-da-mulher-pedagogy-errors.json",
+  "guideline": "lib/guidelines/saudeMulher.ts",
+  "next_lote": null,
+  "next_lote_ramo": "complete",
+  "p0_rollout_complete": true,
+  "drift_classify": {
+    "status": "applied",
+    "artifact": "data/catalog-migration/saude-da-mulher-exclude-done.json",
+    "command": "npm run classify:saude-da-mulher-drift",
+    "apply_command": "npm run taxonomy:apply-saude-mulher-drift",
+    "applied_at": "2026-07-10",
+    "applied_artifact": "artifacts/taxonomy-cc-from-saude-mulher-drift-applied.json",
+    "reclass_count": 17,
+    "absorbed_count": 4
+  },
+  "rollout_plan": "D:\\AVANT\\artifacts\\saude-da-mulher-rollout-plan.json",
+  "handcraft_ready_lotes": {
+    "saude-da-mulher-g01": {
+      "slug_count": 4,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "4/4",
+      "artifact": "artifacts/catalog-preflight-saude-da-mulher-g01.json",
+      "notes": "Piloto — mulher_prenatal · mulher_parto · mulher_papanicolau · mulher_mama (1 slug cada)"
+    },
+    "saude-da-mulher-g02": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — strict-v3-pedagogy 8/8 READY; script handcraft:saude-da-mulher-g02"
+    },
+    "saude-da-mulher-g03": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — strict-v3 8/8 READY; 6× prenatal · 1× planejamento · 1× parto"
+    },
+    "saude-da-mulher-g04": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — strict-v3 8/8 READY; trimestres, AE, DIU, 6 consultas, estresse fetal, DG"
+    },
+    "saude-da-mulher-g05": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — pré-eclâmpsia, decúbito, TE, 6 consultas 1+2+3, DMG, nutrição"
+    },
+    "saude-da-mulher-g06": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — PF intervalo, HELLP, gemelar, aborto OMS, EXCETO amenorreia, vérnix LA, alto risco APS"
+    },
+    "saude-da-mulher-g07": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — infertilidade, Hb 1ª+3º tri, alto risco APS, desnutrição primária, pré-eclâmpsia, aborto C/E"
+    },
+    "saude-da-mulher-g08": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — toxoplasmose C/E, TE PSF, DHEG, TVP urgência, alto risco substâncias, pré-eclâmpsia TE/JK, PA universal"
+    },
+    "saude-da-mulher-g09": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — EXCETO queixas (hematúria), USG obstétrica, VF ectópica, métodos comportamentais, educação SSR APS, 6 consultas (×2), ácido fólico DTN"
+    },
+    "saude-da-mulher-g10": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Pré-natal P0 — VF consultas/vacinas, náuseas matinais, teste gravidez, PCR eclâmpsia, pirose, sialorreia, pré-eclâmpsia, associação queixas"
+    },
+    "saude-da-mulher-g11": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_parto",
+      "notes": "Parto P0 — ácido fólico, VF OMS (CTG/supina/clampeamento), parto humanizado PNH, TE maternidade, DMG, EXCETO tricotomia/enema"
+    },
+    "saude-da-mulher-g12": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-09",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_parto",
+      "notes": "Parto P0 — HPP puerpério, INCORRETA dTpa, pós-parto SV, EXCETO jejum, sinais alerta ACS, VF puerpério, VF consultas, distócia ombro"
+    },
+    "saude-da-mulher-g13": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_parto",
+      "notes": "Parto P0 — risco SESA, HAS leve alarmes, Naegele DPP, gineco/obstetra, G/P gestante, pródromos TP, parto normal MS, AC pré-natal"
+    },
+    "saude-da-mulher-g14": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_parto",
+      "notes": "Parto P0 — trauma 2º grau, puerpério consulta 42d, 2ª fase ocitocina, cócoras, laqueadura lei 21a, pré-parto Gama C, VF laqueadura II+IV, HPP alto risco"
+    },
+    "saude-da-mulher-g15": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_parto",
+      "notes": "Parto P0 — líquidos TP, pré-natal parceiro, infecção cesárea, TE caderneta APS, colostro, EXCETO salário-maternidade, VF DIU IST, VF TE obstétrico"
+    },
+    "saude-da-mulher-g16": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_parto",
+      "notes": "Parto P0 — HAS gestacional C/E, VF TE obstétrico, resíduos parto, TE acompanhar TP, VF 6 consultas, laceração puerpério, integralidade MS, VF PNAISH"
+    },
+    "saude-da-mulher-g17": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_parto",
+      "notes": "Parto P0 — DPP DUM+USG, lóquios rubra C/E, APS integralidade, A&CR encaminhar, AM exclusivo, DIU pós-placenta, atribuições pós-parto (×2)"
+    },
+    "saude-da-mulher-g18": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_papanicolau",
+      "notes": "Papanicolau P0 — V/F contraceptivos+colo, pré-natal TE, coleta II+III, EXCETO TE coleta, ameaça aborto, periodicidade trienal, citologia MS, lacuna colo"
+    },
+    "saude-da-mulher-g19": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_papanicolau",
+      "notes": "Papanicolau P0 — perfil 25-64, nome Papanicolau, local colo, faixa FEPESE, citologia MS, INCA V-V-V-F, VF I-III epidemiologia, trienal HPV"
+    },
+    "saude-da-mulher-g20": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_papanicolau",
+      "notes": "Papanicolau P0 — coloração citoplasma, atribuições TE coleta VF, INCORRETA USG, EXCETO amamentação/ossos, detecção precoce, MS 2016 APS, ACS rastreio"
+    },
+    "saude-da-mulher-g21": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_papanicolau",
+      "notes": "Papanicolau P0 — busca ativa INCA, VF mama/colo VVV-F, TE PSF plano, faixa 25-64, HPV fator risco (×2), primeiro exame 25a, TE AB educação"
+    },
+    "saude-da-mulher-g22": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_mama",
+      "notes": "Mama P0 — AM 6m, caso clínico mamografia, obesidade risco, puerpério útero, prevenção estilo vida, MS 626 nódulo, mamografia prova 40an (exam_vs), sinais clínicos"
+    },
+    "saude-da-mulher-g23": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_mama",
+      "notes": "Mama P0 — apojadura, caso peau d orange VF SUS III+IV, AM II+III pega, HIV cabergolina, nódulo autoexame, MS 50-69 bienal, ACS ingurgitamento"
+    },
+    "saude-da-mulher-g24": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_mama",
+      "notes": "Mama P0 — esvaziar mama C/E, sinal alerta nódulo, mastite TE ordenha, autoexame prova D (exam_vs), ocitocina AM, VF histologia I+II, Candida, autoexame complementar"
+    },
+    "saude-da-mulher-g25": {
+      "slug_count": 14,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "14/14",
+      "pedagogical_branch": "mixed_p0_tail",
+      "branch_mix": {
+        "mulher_prenatal": 2,
+        "mulher_parto": 5,
+        "mulher_papanicolau": 4,
+        "mulher_mama": 3
+      },
+      "notes": "Cauda P0 mista — amenorreia/AU, captação 12ª sem, exames PN, BCF 15min, hidratação EXCETO, TE parto, PNH TP ativo, preparo citologia, trienal 25-64, 2 anuais→trienal, ingurgitamento, fissura sabão NÃO, BLH primeiro jato"
+    },
+    "saude-da-mulher-g26": {
+      "slug_count": 9,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "9/9",
+      "pedagogical_branch": "mulher_puerperio",
+      "notes": "Puerpério P2 — AM benefícios, direitos previdência C/E, colostro, pega AM, radiofármacos, métodos comportamentais, EXCETO auxiliar/TE consulta"
+    },
+    "saude-da-mulher-g27": {
+      "slug_count": 7,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "7/7",
+      "pedagogical_branch": "mulher_planejamento",
+      "notes": "Planejamento P2 — lei 9.263 esterilização INCORRETA, DIU útero bicorno, VF comportamentais, EXCETO barreira oral, ACO tipos/adhesion, dupla proteção camisinha+vasectomia"
+    },
+    "saude-da-mulher-g28": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_generico",
+      "notes": "Conceito geral P1 — metrorragia, laqueadura VF SESA-PR, cérvice/colo, istmocele, transmissão vertical, nulípara/primípara, lactante, síndrome Couvade"
+    },
+    "saude-da-mulher-g29": {
+      "slug_count": 5,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "5/5",
+      "pedagogical_branch": "mulher_generico",
+      "notes": "Cauda conceito geral — histeropexia/histerectomia, hipogonadismo, hipermenorreia, mortalidade infantil, retirada pontos pós-cesárea; ramo mulher_generico 13/13 fechado"
+    },
+    "saude-da-mulher-g30": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "8/8",
+      "pedagogical_branch": "mulher_generico",
+      "notes": "Tail micro-ramos — climatério TH/risco CV, amenorreia, violência APS/interprofissional, violência sexual emergência, PAISM C/E, polimenorreia; strict-v3 8/8 READY"
+    },
+    "saude-da-mulher-g31": {
+      "slug_count": 3,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "3/3",
+      "pedagogical_branch": "mulher_generico",
+      "notes": "Tail final handcraft — preparo citopatológico (correlação), PNAISM princípios/pilares, mortalidade perinatal; strict-v3 3/3 READY"
+    },
+    "saude-da-mulher-g32": {
+      "slug_count": 4,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-10",
+      "readiness": "4/4",
+      "pedagogical_branch": "mulher_prenatal",
+      "notes": "Absorbed semiologia — sinais de certeza V/F, HAS PA auscultatória, consulta pré-natal I–V, aborto 8 sem; strict-v3 4/4 READY; SM 246/246 applied"
+    }
+  },
+  "rollout_lotes": 30,
+  "rollout_slugs": 234,
+  "remaining_tail_slugs": 0,
+  "handcraft_actionable_complete": true,
+  "reclass_remaining": 0,
+  "absorbed_pending_handcraft": 0
+}

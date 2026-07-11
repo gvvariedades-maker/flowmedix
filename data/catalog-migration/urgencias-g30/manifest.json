@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g30",
+  "exported_at": "2026-07-08T18:50:46.608Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g30-generico-tail-batch-1"
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+    "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+    "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1"
+  ]
+}

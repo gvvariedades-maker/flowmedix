@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g18",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g18",
+  "slug_count": 6,
+  "branches": {
+    "urgencias_xabcde_trauma": 6
+  },
+  "anchors_used": [
+    "examples/questao-premium-ameosc-urgencias-trauma-queimadura.json",
+    "examples/questao-premium-selecon-urgencias-bt16-esmagamento.json",
+    "examples/questao-premium-ameosc-urgencias-trauma-imobilizacao-vf.json"
+  ],
+  "notes": "g18 XABCDE final — obstrução VAA Heimlich · choque hipovolêmico hemorragia IV · TCE admissão coluna · APH ABC · prancha rígida coluna · síndrome compartimental dor pós-imobilização"
+}

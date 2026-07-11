@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-07-09T02:33:15.012Z",
+  "lote": "urgencias-g23",
+  "mode": "apply",
+  "total_files": 4,
+  "ok": 4,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

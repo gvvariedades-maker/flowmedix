@@ -4,7 +4,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Activity } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 import {
   inferAdmeConceptKind,
   type PkSlot,
@@ -284,8 +284,7 @@ export const AdmeJourneyRailConceptMap = ({
               <div className="flex flex-1 flex-col gap-2.5 overflow-y-auto px-4 py-3 md:px-5 md:py-4">
                 {detailSections.length > 0 ? (
                   detailSections.map((section, index) => {
-                    const Icon = resolveLucideIcon(section.icon);
-                    return (
+                                        return (
                       <div
                         key={index}
                         className={`rounded-xl border border-slate-200/70 border-l-[4px] bg-white/80 p-3 shadow-sm ${activeSlot.accentBorder} ${
@@ -296,7 +295,7 @@ export const AdmeJourneyRailConceptMap = ({
                           <span
                             className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${activeSlot.barSoft} ${activeSlot.text}`}
                           >
-                            <Icon className="h-4 w-4" aria-hidden />
+                            <SlideLucideIcon name={section.icon} className="h-4 w-4" />
                           </span>
                           <div className="min-w-0">
                             <p className="font-body text-sm font-bold text-slate-900">{section.title}</p>

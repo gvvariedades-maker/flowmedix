@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g36",
+  "exported_at": "2026-07-08T20:56:35.767Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g36-generico-tail-batch-7"
+  },
+  "slugs": [
+    "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+    "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-3",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-3",
+    "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2",
+    "ibade-enfermagem-processo-de-enfermagem-1780005137458-2",
+    "ibam-enfermagem-semiologia-em-enfermagem-1779563495719-1",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0"
+  ]
+}

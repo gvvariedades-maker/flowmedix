@@ -1,0 +1,23 @@
+{
+  "lote": "urgencias-g29",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g29",
+  "slug_count": 2,
+  "branches": {
+    "urgencias_choque": 1,
+    "urgencias_xabcde_trauma": 1
+  },
+  "playbook_clusters_closed": {
+    "Anafilaxia / epinefrina (relatório · drift→choque)": 1,
+    "Queimadura — primeiro socorro (relatório · drift→trauma BT16)": 1
+  },
+  "anchors_used": [
+    "examples/questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im.json",
+    "examples/questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros.json",
+    "examples/questao-premium-fepese-urgencias-choque-hipovolemico.json",
+    "examples/questao-premium-selecon-urgencias-bt16-esmagamento.json"
+  ],
+  "notes": "g29 micro-clusters fechados — FEPESE E choque hipovolêmico (drift cluster anafilaxia) · SELECON C BT16 esmagamento (drift cluster queimadura) · P0 âncoras cpcon/ameosc já aplicadas · 2/2 READY strict-v2"
+}

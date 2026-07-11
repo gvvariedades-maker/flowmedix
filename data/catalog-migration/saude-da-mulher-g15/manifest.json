@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g15",
+  "exported_at": "2026-07-10T15:04:51.787Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g15/manifest.json"
+  },
+  "slugs": [
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-3",
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-4",
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-6",
+    "ibade-enfermagem-saude-da-mulher-1777104408379-4",
+    "idcap-enfermagem-saude-da-mulher-1777104389226-3",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-1",
+    "idib-enfermagem-saude-da-mulher-1778934944659-4",
+    "igeduc-enfermagem-saude-da-mulher-1777104261182-1"
+  ]
+}

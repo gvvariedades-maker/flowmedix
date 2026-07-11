@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:30:32.722Z",
+  "lote": "urgencias-g43",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+    "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-6",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-7",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-8",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

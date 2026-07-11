@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g16",
+  "exported_at": "2026-07-10T15:20:36.643Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g16/manifest.json"
+  },
+  "slugs": [
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-3",
+    "igeduc-enfermagem-saude-da-mulher-1780001440222-0",
+    "igeduc-enfermagem-seguranca-do-paciente-1777102918981-3",
+    "inaz-do-para-enfermagem-saude-da-mulher-1777104335102-5",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-5",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104323066-7",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104340484-6",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104347186-0"
+  ]
+}

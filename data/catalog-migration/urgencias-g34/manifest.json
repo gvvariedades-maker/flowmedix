@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g34",
+  "exported_at": "2026-07-08T20:09:39.523Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g34-generico-tail-batch-5"
+  },
+  "slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3"
+  ]
+}

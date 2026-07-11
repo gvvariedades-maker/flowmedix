@@ -28,7 +28,10 @@ export function useCatalogStatsCountUp(
   targetSlides: number,
 ): UseCatalogStatsCountUpResult {
   const targetsRef = useRef({ q: targetQuestions, s: targetSlides });
-  targetsRef.current = { q: targetQuestions, s: targetSlides };
+
+  useEffect(() => {
+    targetsRef.current = { q: targetQuestions, s: targetSlides };
+  }, [targetQuestions, targetSlides]);
 
   const [values, setValues] = useState<CatalogStatsValues>(() => ({
     totalQuestions: targetQuestions,

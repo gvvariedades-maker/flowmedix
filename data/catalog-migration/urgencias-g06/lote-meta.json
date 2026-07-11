@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g06",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g06",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_rcp_sbv": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+    "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
+    "examples/questao-premium-urgencias-rcp.json"
+  ],
+  "notes": "g06 — 30:2 dois socorristas · sequência RCP hospitalar · pulso carotídeo · qualidade compressões · UBS PCR · trauma SBV 1º passo · DEA técnico · Ambu com reservatório O2"
+}

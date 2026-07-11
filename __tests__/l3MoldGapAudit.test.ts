@@ -160,4 +160,87 @@ describe('l3MoldGapCatalog', () => {
     expect(r.branch_id).toBe('urgencias_manchester_triagem');
     expect(r.decision).toBe('molde_inedito');
   });
+
+  const mulherSubtopico = 'Saúde da Mulher';
+
+  it('Saúde da Mulher pré-natal → ok_existente mulher-prenatal-*', () => {
+    const r = resolveClusterIdeal(
+      mulherSubtopico,
+      'Pré-natal / gestação',
+      75,
+      28.5,
+      'morphological · reference_table · vertical · compare (genérico)',
+    );
+    expect(r.branch_id).toBe('mulher_prenatal');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('ok_existente');
+    expect(r.ideal_mold_package).toContain('mulher-prenatal-board');
+  });
+
+  it('Saúde da Mulher parto com volume → ok_existente', () => {
+    const r = resolveClusterIdeal(
+      mulherSubtopico,
+      'Parto / trabalho de parto',
+      62,
+      23.6,
+      'morphological · reference_table · vertical · compare (genérico)',
+    );
+    expect(r.branch_id).toBe('mulher_parto');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('ok_existente');
+    expect(r.ideal_mold_package).toContain('mulher-labor-phase-deck');
+  });
+
+  it('Saúde da Mulher papanicolau → ok_existente', () => {
+    const r = resolveClusterIdeal(
+      mulherSubtopico,
+      'Rastreio câncer de colo',
+      37,
+      14.1,
+      'morphological · reference_table',
+    );
+    expect(r.branch_id).toBe('mulher_papanicolau');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('ok_existente');
+    expect(r.ideal_mold_package).toContain('mulher-papanicolau-board');
+  });
+
+  it('Saúde da Mulher mama → ok_existente', () => {
+    const r = resolveClusterIdeal(
+      mulherSubtopico,
+      'Saúde da mama',
+      28,
+      10.6,
+      'morphological · reference_table',
+    );
+    expect(r.branch_id).toBe('mulher_mama');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('ok_existente');
+    expect(r.ideal_mold_package).toContain('mulher-mama-board');
+  });
+
+  it('Saúde da Mulher puerpério → ok_generico', () => {
+    const r = resolveClusterIdeal(
+      mulherSubtopico,
+      'Puerpério / lactação',
+      9,
+      3.4,
+      'morphological · reference_table',
+    );
+    expect(r.branch_id).toBe('mulher_puerperio');
+    expect(r.decision).toBe('ok_generico');
+  });
+
+  it('Saúde da Mulher anatomia drift → ok_generico reclassificar', () => {
+    const r = resolveClusterIdeal(
+      mulherSubtopico,
+      'Anatomia feminina (drift?)',
+      13,
+      4.9,
+      'morphological · reference_table',
+    );
+    expect(r.branch_id).toBe('mulher_generico');
+    expect(r.decision).toBe('ok_generico');
+    expect(r.rationale).toContain('Drift');
+  });
 });

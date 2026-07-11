@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:51:38.857Z",
+  "lote": "saude-da-mulher-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+    "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+    "amauc-enfermagem-processo-de-enfermagem-1780005128081-1",
+    "ameosc-enfermagem-processo-de-enfermagem-1780008225255-7",
+    "atame-enfermagem-saude-da-mulher-1777104347186-6",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104261182-8",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-0",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104261182-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-07-08T12:15:20.069Z",
+  "lote": "urgencias-g02",
+  "mode": "dry-run",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

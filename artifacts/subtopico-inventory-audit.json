@@ -1,33 +1,38 @@
 {
-  "generated_at": "2026-07-07T15:25:02.831Z",
-  "total_scanned": 340,
+  "generated_at": "2026-07-10T16:06:28.793Z",
+  "total_scanned": 191,
   "filters": {
-    "subtopico_contains": "urgências"
+    "subtopico_contains": "cuidados na administração de medicamentos"
   },
   "summary": {
     "unique_titulo_aula": 1,
-    "unique_meta_subtopico": 1,
+    "unique_meta_subtopico": 2,
     "mismatch_count": 0,
     "missing_titulo_aula": 0,
-    "missing_meta_subtopico": 0,
+    "missing_meta_subtopico": 7,
     "non_canonical_titulo_aula": 0,
     "non_canonical_meta_subtopico": 0,
     "catch_all_bucket_count": 0,
-    "canonical_titulo_rows": 340,
-    "canonical_meta_rows": 340
+    "canonical_titulo_rows": 191,
+    "canonical_meta_rows": 184
   },
   "by_titulo_aula": [
     {
-      "label": "Urgências e Emergências",
-      "count": 340,
+      "label": "Cuidados na Administração de Medicamentos",
+      "count": 191,
       "canonical": true
     }
   ],
   "by_meta_subtopico": [
     {
-      "label": "Urgências e Emergências",
-      "count": 340,
+      "label": "Cuidados na Administração de Medicamentos",
+      "count": 184,
       "canonical": true
+    },
+    {
+      "label": "(vazio)",
+      "count": 7,
+      "canonical": false
     }
   ],
   "non_canonical_titulo_aula": [],

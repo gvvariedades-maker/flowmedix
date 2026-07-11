@@ -76,6 +76,19 @@
       "anchors": ["avc_cincinnati_cpss"]
     },
     {
+      "id": "glasgow_motor_domain",
+      "label": "Trocar domínio motor do GCS por termos inventados (olfativa, diafragmática, típica)",
+      "cluster_roi": "generico",
+      "clusters": [
+        "Default — sem âncora temática",
+        "Urgências — conceito geral",
+        "Certo ou errado"
+      ],
+      "concept_map_hint": "Glasgow = ocular + verbal + motora — pegadinha de domínio inventado",
+      "danger_zone_hint": "Letra com olfativa, diafragmática ou atípica no lugar de motora",
+      "anchors": ["generico_glasgow_gcs_domains"]
+    },
+    {
       "id": "trauma_torniquete_pescoco",
       "label": "Torniquete no pescoço ou reposicionar fratura à força",
       "cluster_roi": "trauma",

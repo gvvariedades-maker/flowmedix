@@ -1,0 +1,28 @@
+{
+  "lote": "urgencias-g21",
+  "generated_at": "2026-07-08T17:13:26.155Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 2,
+  "passed": 2,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

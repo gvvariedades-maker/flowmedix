@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T15:04:51.787Z",
+  "lote": "saude-da-mulher-g15",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 1491
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 1492
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 1494
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-saude-da-mulher-1777104408379-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 1474
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104389226-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 1465
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5164
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1795
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104261182-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1359
+    }
+  ]
+}

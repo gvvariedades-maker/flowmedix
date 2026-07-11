@@ -1,0 +1,22 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g07",
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "status": "planned",
+  "priority": "P1 — cam_generico (Default cluster — lote 1/3)",
+  "slug_count": 10,
+  "pedagogical_branch_target": "cam_generico",
+  "anchors": [
+    "examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json",
+    "examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json"
+  ],
+  "workflow": [
+    "npm run plan:cuidados-na-administracao-de-medicamentos-g07",
+    "npm run catalog:export-lote -- --lote=cuidados-na-administracao-de-medicamentos-g07 --from-manifest=data/catalog-migration/cuidados-na-administracao-de-medicamentos-g07/manifest.json",
+    "Handcraft golden-v1 — bridge/center/cards/compare semântico",
+    "npm run validate:goldens -- --lote=cuidados-na-administracao-de-medicamentos-g07 --strict",
+    "npm run audit:questao-readiness -- --lote=cuidados-na-administracao-de-medicamentos-g07 --strict-v3-pedagogy",
+    "npm run audit:slug-alignment -- --lote=cuidados-na-administracao-de-medicamentos-g07 --strict",
+    "npm run audit:anchor-review -- --lote=cuidados-na-administracao-de-medicamentos-g07 --record-pass --reviewer=agent --skip-capture",
+    "npm run catalog:apply-lote -- --lote=cuidados-na-administracao-de-medicamentos-g07 --apply"
+  ]
+}

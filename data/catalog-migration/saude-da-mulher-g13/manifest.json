@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g13",
+  "exported_at": "2026-07-10T14:51:36.736Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g13/manifest.json"
+  },
+  "slugs": [
+    "fafipa-enfermagem-processo-de-enfermagem-1780009379028-9",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-1",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-0",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-5",
+    "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004602717-9",
+    "fepese-enfermagem-saude-da-mulher-1777104222222-4"
+  ]
+}

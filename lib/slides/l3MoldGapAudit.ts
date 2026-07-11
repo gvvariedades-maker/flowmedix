@@ -312,6 +312,7 @@ export async function buildL3MoldGapReport(
   const clusters: L3MoldGapClusterRow[] = [];
   const slugs: L3MoldGapSlugRow[] = [];
   const seenCluster = new Set<string>();
+  const processedClusterReports = new Set<string>();
 
   if (registry?.pacotes) {
     for (const [name, pacote] of Object.entries(registry.pacotes)) {
@@ -321,6 +322,7 @@ export async function buildL3MoldGapReport(
 
       if (pacote.cluster_report) {
         const reportPath = resolve(root, pacote.cluster_report);
+        processedClusterReports.add(reportPath);
         for (const row of auditClusterReport(reportPath, subtopico, pacote.total_slugs)) {
           const key = `${row.subtopico}::${row.cluster_label}`;
           if (!seenCluster.has(key)) {
@@ -342,6 +344,25 @@ export async function buildL3MoldGapReport(
             seenCluster.add(key);
             clusters.push(row);
           }
+        }
+      }
+    }
+  }
+
+  const artifactsDir = resolve(root, 'artifacts');
+  if (existsSync(artifactsDir)) {
+    for (const file of readdirSync(artifactsDir)) {
+      if (!file.endsWith('-topic-cluster-report.json')) continue;
+      const reportPath = resolve(artifactsDir, file);
+      if (processedClusterReports.has(reportPath)) continue;
+      const report = readJson<ClusterReportFile & { subtopico?: string; total?: number }>(reportPath);
+      if (!report?.subtopico?.trim()) continue;
+      processedClusterReports.add(reportPath);
+      for (const row of auditClusterReport(reportPath, report.subtopico, report.total)) {
+        const key = `${row.subtopico}::${row.cluster_label}`;
+        if (!seenCluster.has(key)) {
+          seenCluster.add(key);
+          clusters.push(row);
         }
       }
     }

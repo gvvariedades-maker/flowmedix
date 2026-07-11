@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-09T05:15:02.910Z",
+  "lote": "saude-da-mulher-g03",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3092
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 1396
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4540
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4804
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 1442
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104261182-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1366
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1411
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1418
+    }
+  ]
+}

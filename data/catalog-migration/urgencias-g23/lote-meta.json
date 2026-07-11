@@ -1,0 +1,15 @@
+{
+  "lote": "urgencias-g23",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g23",
+  "slug_count": 4,
+  "branches": {
+    "urgencias_engasgo": 4
+  },
+  "anchors_used": [
+    "examples/questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal.json"
+  ],
+  "notes": "g23 engasgo final — Heimlich consciente Verbena/Sarmento · técnica VUNESP · OVACE grave domiciliar (cluster 12/12 fechado)"
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:26:29.460Z",
+  "lote": "urgencias-g24",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+    "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

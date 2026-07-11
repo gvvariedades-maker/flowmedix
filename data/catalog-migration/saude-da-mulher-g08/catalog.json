@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-09T06:01:11.509Z",
+  "lote": "saude-da-mulher-g08",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1502
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1780001362784-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4122
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104347186-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 1441
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4438
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1354
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1426
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO JK",
+      "avant_codigo": 1405
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 4962
+    }
+  ]
+}

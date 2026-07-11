@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HardHat } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 import {
   inferNr32Annex,
   nr32AnnexLabel,
@@ -142,9 +142,7 @@ export function Nr32AnnexDeckConceptMap({
     grouped.byAnnex.get('nr32') ||
     concepts[0];
   const activeMeta = ANNEX_META[activeAnnex ?? inferNr32Annex(activeConcept?.title ?? '', activeConcept?.description ?? '')];
-  const ActiveIcon = resolveLucideIcon(activeConcept?.icon ?? 'Shield');
-
-  const toggleAnnex = useCallback((annex: Nr32Annex) => {
+    const toggleAnnex = useCallback((annex: Nr32Annex) => {
     setActiveAnnex((current) => (current === annex ? null : annex));
   }, []);
 
@@ -211,7 +209,7 @@ export function Nr32AnnexDeckConceptMap({
                     <div
                       className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${theme.iconBg} ${theme.iconText}`}
                     >
-                      <ActiveIcon size={22} aria-hidden />
+                      <SlideLucideIcon name={activeConcept?.icon ?? 'Shield'} size={22} />
                     </div>
                     <div>
                       <span
@@ -238,14 +236,13 @@ export function Nr32AnnexDeckConceptMap({
             {grouped.extras.map((concept) => {
               const annex = inferNr32Annex(concept.title, concept.description);
               const meta = ANNEX_META[annex];
-              const Icon = resolveLucideIcon(concept.icon);
-              return (
+                            return (
                 <div
                   key={concept.title}
                   className={`rounded-xl border border-slate-200/70 bg-white/90 p-3 shadow-sm border-l-[3px] ${meta.border}`}
                 >
                   <div className="flex items-center gap-2">
-                    <Icon className={`h-4 w-4 ${theme.iconText}`} aria-hidden />
+                    <SlideLucideIcon name={concept.icon} />
                     <p className={`font-body text-sm font-bold ${theme.textPrimary}`}>{concept.title}</p>
                   </div>
                   <p className={`mt-1 font-body text-xs leading-relaxed ${theme.textSecondary}`}>

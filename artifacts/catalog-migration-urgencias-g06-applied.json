@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:23:56.786Z",
+  "lote": "urgencias-g06",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+    "unesc-enfermagem-urgencias-e-emergencias-1780001220945-6",
+    "unifil-enfermagem-urgencias-e-emergencias-1777104012755-2",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-urgencias-e-emergencias-1780001220945-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

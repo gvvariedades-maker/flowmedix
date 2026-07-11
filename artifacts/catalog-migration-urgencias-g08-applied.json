@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:32:47.643Z",
+  "lote": "urgencias-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+    "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+    "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

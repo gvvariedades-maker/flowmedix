@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-07-10T18:58:29.924Z",
+  "lote": "saude-da-mulher-g32",
+  "mode": "apply",
+  "total_files": 4,
+  "ok": 4,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+    "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+    "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+    "iset-enfermagem-saude-da-mulher-1777104376057-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-saude-da-mulher-1777104376057-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

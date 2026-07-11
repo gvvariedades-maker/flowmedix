@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 import { getCompareBackFaceLabel } from '@/lib/slides/goldenRuleTypography';
 import { inferSvIconName, inferSvShortLabel } from '@/lib/slides/vitalsSlideUtils';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { DangerZoneItem } from './DangerZone';
 
@@ -27,8 +27,7 @@ function ArenaSplitCard({
   const trapText = item.detail || item.description || '';
   const correctText = typeof item.correct === 'string' ? item.correct.trim() : '';
   const iconSource = `${label} ${trapText} ${correctText}`;
-  const Icon = resolveLucideIcon(inferSvIconName(iconSource));
-  const svLabel = inferSvShortLabel(iconSource);
+    const svLabel = inferSvShortLabel(iconSource);
   const correctLabel = getCompareBackFaceLabel(label, correctText);
 
   return (
@@ -40,7 +39,7 @@ function ArenaSplitCard({
     >
       <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50/80 px-4 py-2.5">
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-100/90">
-          <Icon className="h-4 w-4 text-rose-700" aria-hidden />
+          <SlideLucideIcon name={inferSvIconName(iconSource)} className="h-4 w-4 text-rose-700" />
         </div>
         <div className="min-w-0 flex-1">
           <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-slate-500">

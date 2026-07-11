@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-07-10T18:57:01.587Z",
+  "lote": "saude-da-mulher-g25",
+  "mode": "apply",
+  "total_files": 14,
+  "ok": 14,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+    "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+    "unesc-enfermagem-exames-complementares-1779563674260-4",
+    "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+    "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+    "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-4",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-3",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-4",
+    "vunesp-enfermagem-saude-da-mulher-1777104261182-6",
+    "vunesp-enfermagem-saude-da-mulher-1777104295283-1",
+    "vunesp-enfermagem-saude-da-mulher-1777104323066-6",
+    "vunesp-enfermagem-saude-da-mulher-1777104415052-0",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563467322-8",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563527042-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-exames-complementares-1779563674260-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104295283-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104323066-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104415052-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563467322-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563527042-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

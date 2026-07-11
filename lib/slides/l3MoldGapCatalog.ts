@@ -85,6 +85,19 @@ const URGENCIAS_PROTOCOL_BESPOKE =
   'urgencias-protocol-rules-deck · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)';
 const URGENCIAS_EMERGENCY_GENERIC_BESPOKE =
   'urgencias-emergency-hub · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)';
+const MULHER_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const MULHER_PRENATAL_BESPOKE =
+  'mulher-gestation-timeline · mulher-prenatal-board · mulher-prenatal-tap-flow · mulher-prenatal-trap-arena (bespoke)';
+const MULHER_PARTO_BESPOKE =
+  'mulher-labor-phase-deck · mulher-parto-humanizado-board · mulher-labor-tap-flow · mulher-parto-trap-arena (bespoke)';
+const MULHER_PAPANICOLAU_BESPOKE =
+  'mulher-screening-spectrum · mulher-papanicolau-board · mulher-screening-tap-flow · mulher-screening-trap-arena (bespoke)';
+const MULHER_MAMA_BESPOKE =
+  'mulher-mammography-spectrum · mulher-mama-board · mulher-mama-tap-flow · mulher-mama-trap-arena (bespoke)';
+const MULHER_PUERPERIO_BESPOKE =
+  'mulher-puerperio-timeline · mulher-puerperio-board · mulher-puerperio-tap-flow · mulher-puerperio-trap-arena (bespoke)';
+const MULHER_PLANEJAMENTO_BESPOKE =
+  'mulher-contraception-spectrum · mulher-planejamento-board · mulher-planejamento-tap-flow · mulher-planejamento-trap-arena (bespoke)';
 
 const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
   'saude do adolescente': [
@@ -351,6 +364,55 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'EXCETO/INCORRETA e cauda — compare semântico; sem brief bespoke.',
     },
   ],
+  'cuidados na administracao de medicamentos': [
+    {
+      pattern: /\b(i|ii|iii)\s*[-–—]|9 certos|nove certos|dois identificador|alto risco|dose certa/i,
+      branch_id: 'cam_certos_vf_caso',
+      branch_implemented: true,
+      ideal_mold_package:
+        'cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)',
+      base_decision: 'molde_redesign',
+      rationale:
+        'VF I–III sobre 9 Certos em caso clínico — trilho bespoke implementado; brief l3-brief-cuidados-na-administracao-de-medicamentos-cam_certos_vf_caso.md.',
+    },
+    {
+      pattern: /alto risco|confer[eê]ncia dupla|insulina|nph|heparina|quimioter[aá]pico/i,
+      branch_id: 'cam_alto_risco',
+      branch_implemented: true,
+      ideal_mold_package:
+        'cam-high-risk-duo-deck · cam-high-risk-protocol-board · cam-alto-risco-elimination-tap · cam-high-risk-trap-arena (bespoke)',
+      base_decision: 'molde_inedito',
+      rationale:
+        'Alto risco / conferência dupla / insulina — trilho bespoke implementado; brief l3-brief-cuidados-na-administracao-de-medicamentos-cam_alto_risco.md.',
+    },
+    {
+      pattern: /\bexceto\b|incorret[oa]\s+afirmar|alternativa\s+incorreta|preparo de medicamento/i,
+      branch_id: 'cam_exceto_conduta',
+      branch_implemented: true,
+      ideal_mold_package:
+        'cam-exceto-rail · cam-exceto-reference-board · cam-exceto-tap-flow · cam-exceto-trap-arena (bespoke)',
+      base_decision: 'molde_redesign',
+      rationale:
+        'EXCETO/INCORRETA preparo e conduta — pacote cam-exceto-* bespoke 4/4; gate cam_exceto_semantic.',
+    },
+    {
+      pattern: /registro certo|documenta[cç][aã]o certa|prontu[aá]rio|anotar.*ap[oó]s administrar/i,
+      branch_id: 'cam_documentacao',
+      branch_implemented: true,
+      ideal_mold_package:
+        'cam-documentacao-deck · cam-documentacao-board · cam-documentacao-vf-tap · cam-documentacao-trap-arena (bespoke)',
+      base_decision: 'molde_redesign',
+      rationale: 'V/F Registro certo (Certo 6) — pacote documentação bespoke 4/4.',
+    },
+    {
+      pattern: /administra[cç][aã]o de medicamentos|cuidados na administra[cç][aã]o/i,
+      branch_id: 'cam_generico',
+      branch_implemented: true,
+      ideal_mold_package: 'bridge · center · cards · compare (genérico)',
+      base_decision: 'ok_generico',
+      rationale: 'Cauda longa (vigilância, protocolo MS) — compare semântico.',
+    },
+  ],
   calculo: [
     {
       pattern: /calcul|gota|ml\b|mg\b|equival[eê]ncia|regra de tr[eê]s/i,
@@ -586,6 +648,80 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Bucket residual — emergency hub + protocol pack.',
     },
   ],
+  'saude da mulher': [
+    {
+      pattern: /drift|reclassificar|anatomia feminina|semiologia/i,
+      branch_id: 'mulher_generico',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Drift taxonômico (anatomia/semiologia) — reclassificar antes de handcraft; genérico interim.',
+    },
+    {
+      pattern: /trabalho de parto|parto humanizado|fase expulsiva|dequita/i,
+      branch_id: 'mulher_parto',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_PARTO_BESPOKE,
+      base_decision: 'ok_existente',
+      rationale: 'Parto/trabalho de parto — pacote mulher-parto-* implementado; brief l3-brief-saude-da-mulher-mulher_parto.md.',
+    },
+    {
+      pattern: /papanicolau|rastreio.*colo|c[aâ]ncer de colo|citologia onc/i,
+      branch_id: 'mulher_papanicolau',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_PAPANICOLAU_BESPOKE,
+      base_decision: 'ok_existente',
+      rationale: 'Rastreio câncer de colo — pacote mulher-screening-* implementado; brief l3-brief-saude-da-mulher-mulher_papanicolau.md.',
+    },
+    {
+      pattern: /sa[uú]de da mama|mamografia|rastreio.*mama|c[aâ]ncer de mama/i,
+      branch_id: 'mulher_mama',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_MAMA_BESPOKE,
+      base_decision: 'ok_existente',
+      rationale: 'Saúde da mama — pacote mulher-mama-* implementado; brief l3-brief-saude-da-mulher-mulher_mama.md.',
+    },
+    {
+      pattern: /pr[eé][\s-]?natal|gesta[cç][aã]o|gestante|ttgo|idade gestacional/i,
+      branch_id: 'mulher_prenatal',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_PRENATAL_BESPOKE,
+      base_decision: 'ok_existente',
+      rationale: 'Pré-natal/gestação — pacote mulher-prenatal-* implementado; âncora CPCON golden.',
+    },
+    {
+      pattern: /puerp[eé]rio|lacta[cç][aã]o|aleitamento|amamenta/i,
+      branch_id: 'mulher_puerperio',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_PUERPERIO_BESPOKE,
+      base_decision: 'ok_existente',
+      rationale: 'Puerpério/lactação — pacote mulher-puerperio-* implementado; âncora MS consulta 42 dias.',
+    },
+    {
+      pattern: /planejamento familiar|contracep|anticoncep/i,
+      branch_id: 'mulher_planejamento',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_PLANEJAMENTO_BESPOKE,
+      base_decision: 'ok_existente',
+      rationale: 'Planejamento familiar — pacote mulher-planejamento-* implementado; âncora CPCON VF.',
+    },
+    {
+      pattern: /climat[eé]rio|menopausa/i,
+      branch_id: 'mulher_generico',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Climatério/menopausa — cauda longa; genérico.',
+    },
+    {
+      pattern: /conceito geral|default/i,
+      branch_id: 'mulher_generico',
+      branch_implemented: true,
+      ideal_mold_package: MULHER_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Bucket residual — morphological + compare até clusterizar.',
+    },
+  ],
 };
 
 function subtopicKey(subtopico: string): string | undefined {
@@ -598,11 +734,15 @@ function subtopicKey(subtopico: string): string | undefined {
   if (key.includes('sonda')) return 'sondas';
   if (key.includes('imunizacao') || key.includes('vacinacao')) return 'imunizacao';
   if (key.includes('vias de administracao')) return 'vias de administracao';
+  if (key.includes('cuidados na administracao de medicamentos')) {
+    return 'cuidados na administracao de medicamentos';
+  }
   if (key.includes('calculo') || key.includes('dosagens')) return 'calculo';
   if (key.includes('farmacodinamica') || key.includes('farmacocinetica')) return 'farmacologia';
   if (key.includes('respiratorias cronicas') || key.includes('asma') || key === 'dpoc')
     return 'respiratorio';
   if (key.includes('seguranca do paciente')) return 'seguranca do paciente';
+  if (key.includes('saude da mulher')) return 'saude da mulher';
   if (key.includes('urgencias') || key.includes('emergencias')) return 'urgencias';
   return undefined;
 }
@@ -751,5 +891,12 @@ export function implementedBranchIds(): PedagogicalBranchId[] {
     'urgencias_anafilaxia',
     'urgencias_queimadura',
     'urgencias_generico',
+    'mulher_prenatal',
+    'mulher_parto',
+    'mulher_papanicolau',
+    'mulher_mama',
+    'mulher_puerperio',
+    'mulher_planejamento',
+    'mulher_generico',
   ];
 }

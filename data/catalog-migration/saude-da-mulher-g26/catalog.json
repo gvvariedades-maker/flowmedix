@@ -1,0 +1,70 @@
+{
+  "exported_at": "2026-07-10T17:27:41.274Z",
+  "lote": "saude-da-mulher-g26",
+  "total": 9,
+  "entries": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4535
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-saude-da-mulher-1777104288275-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 1367
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CONSULPLAN",
+      "avant_codigo": 762
+    },
+    {
+      "modulo_slug": "facet-enfermagem-saude-da-mulher-1777104261182-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 1362
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104323066-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 1402
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104415052-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 1486
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1793
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1846
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4111
+    }
+  ]
+}

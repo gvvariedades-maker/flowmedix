@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:52:08.313Z",
+  "lote": "saude-da-mulher-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "gama-enfermagem-saude-da-mulher-1777104261182-3",
+    "gama-enfermagem-saude-da-mulher-1777104382533-2",
+    "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-7",
+    "icece-enfermagem-saude-da-mulher-1777104261182-0",
+    "icece-enfermagem-saude-da-mulher-1780001362784-9",
+    "idcap-enfermagem-saude-da-mulher-1777104301763-7",
+    "idcap-enfermagem-saude-da-mulher-1777104389226-4",
+    "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104261182-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104382533-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-saude-da-mulher-1777104261182-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-saude-da-mulher-1780001362784-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104301763-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104389226-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

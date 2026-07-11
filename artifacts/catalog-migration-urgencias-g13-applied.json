@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-09T02:24:51.544Z",
+  "lote": "urgencias-g13",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

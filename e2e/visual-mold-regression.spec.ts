@@ -17,6 +17,9 @@ import {
   MOBILE_NARROW_VIEWPORT,
   onboardingDismissScript,
   PNI_IMUNIZACAO_BRANCHES,
+  CAM_BRANCHES,
+  CAM_BESPOKE_BRANCHES,
+  SAUDE_MULHER_BRANCHES,
   SINAIS_VITAIS_BRANCHES,
   URGENCIAS_BRANCHES,
   VIAS_BRANCHES,
@@ -307,5 +310,127 @@ test.describe('Urgências e Emergências — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('urgencias-e-emergencias');
+  });
+});
+
+test.describe('Saúde da Mulher — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Saúde da Mulher — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of SAUDE_MULHER_BRANCHES) {
+    test(`Saúde da Mulher ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Saúde da Mulher ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Saúde da Mulher mulher_prenatal — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'mulher_prenatal';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Saúde da Mulher — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'saude-da-mulher',
+      branches: SAUDE_MULHER_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Saúde da Mulher — ${SAUDE_MULHER_BRANCHES.length} branches (desktop + mobile-375 + DoD mulher_prenatal); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('saude-da-mulher');
+  });
+});
+
+test.describe('CAM Cuidados na Administração — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression CAM — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of CAM_BRANCHES) {
+    test(`CAM ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`CAM ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('CAM cam_alto_risco — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'cam_alto_risco';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('CAM — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'cuidados-na-administracao-de-medicamentos',
+      branches: CAM_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 CAM — ${CAM_BRANCHES.length} branches (${CAM_BESPOKE_BRANCHES.length} bespoke + genérico); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('cuidados-na-administracao-de-medicamentos');
   });
 });

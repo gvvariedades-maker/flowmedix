@@ -1,0 +1,19 @@
+{
+  "lote": "urgencias-g48",
+  "exported_at": "2026-07-09T02:05:00.000Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "batch": "g48-final-close-340",
+    "remaining_count": 7
+  },
+  "slugs": [
+    "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+    "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-8",
+    "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-8",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0"
+  ]
+}

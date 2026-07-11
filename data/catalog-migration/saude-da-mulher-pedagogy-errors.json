@@ -1,0 +1,237 @@
+{
+  "version": 1,
+  "updated_at": "2026-07-09",
+  "subtopico": "Saúde da Mulher",
+  "description": "Erros reproduzíveis por cluster (ROI handcraft) — nomear no concept_map e espelhar no danger_zone.",
+  "grammar_slots": {
+    "concept_map": "Enquadramento da prova + marco gestacional/etário + pegadinha-âncora nomeando erro ROI (sem letra gabarito)",
+    "golden_rule": "Decore normativo — rows com marcos AB 32/INCA/OMS (sem V/F nem gabarito)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; V/F julgar I–IV antes de cruzar letras",
+    "danger_zone": "Pegadinha × correção por letra (compare semântico); justificativa única por distrator",
+    "content_review": "guideline_snapshot tier A (Caderno AB 32 / INCA / OMS) + exam_vs_current"
+  },
+  "v3_mental": {
+    "flag": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "roi_errors": "reproducible_errors[].id — inferir do enunciado e nomear no concept_map",
+    "cluster_roi": "reproducible_errors[].cluster_roi — agrupamento curto para briefing de lote",
+    "codes": [
+      "mulher_concept_repro_error",
+      "mulher_concept_generic_gestacao",
+      "mulher_golden_vf_judgment",
+      "mulher_golden_gabarito_row",
+      "mulher_logic_reveal_tap",
+      "mulher_logic_elimination",
+      "mulher_danger_letter_binding",
+      "mulher_danger_mirror",
+      "mulher_guideline_snapshot",
+      "mulher_exam_vs_current",
+      "mulher_topic_drift"
+    ]
+  },
+  "reproducible_errors": [
+    {
+      "id": "prenatal_consultas_4",
+      "label": "Mínimo 4 consultas (correto: 6+ — Caderno AB 32)",
+      "cluster_roi": "pré-natal",
+      "clusters": ["Pré-natal / gestação"],
+      "concept_map_hint": "Item consultas mínimas — programa antigo citava 4; atual é 6 ou mais",
+      "danger_zone_hint": "Letra ou item que aceita apenas 4 consultas de pré-natal",
+      "anchors": ["prenatal_captacao_precoce"]
+    },
+    {
+      "id": "prenatal_ttgo_1_tri",
+      "label": "TTGO 75g no 1º trimestre (correto: 24–28 semanas)",
+      "cluster_roi": "pré-natal",
+      "clusters": ["Pré-natal / gestação"],
+      "concept_map_hint": "Pegadinha timing — glicemia de jejum no 1º tri; TTGO no 2º tri",
+      "danger_zone_hint": "Item que coloca TTGO rotineiro no primeiro trimestre",
+      "anchors": ["prenatal_captacao_precoce"]
+    },
+    {
+      "id": "prenatal_tabagismo_irrelevante",
+      "label": "Tabagismo irrelevante na gestação",
+      "cluster_roi": "pré-natal",
+      "clusters": ["Pré-natal / gestação"],
+      "concept_map_hint": "Assertiva III nega dano do tabaco — fator de risco materno-fetal",
+      "danger_zone_hint": "V/F que trata cessação do tabaco como opcional",
+      "anchors": ["prenatal_captacao_precoce"]
+    },
+    {
+      "id": "parto_ctg_universal",
+      "label": "CTG contínuo para todas (correto: indicação seletiva)",
+      "cluster_roi": "parto",
+      "clusters": ["Parto / trabalho de parto"],
+      "concept_map_hint": "Humanização ≠ monitorização contínua universal",
+      "danger_zone_hint": "Letra A ou I que exige cardiotocografia contínua em todas",
+      "anchors": ["parto_oms_humanizado"]
+    },
+    {
+      "id": "parto_supina_expulsivo",
+      "label": "Supina única no expulsivo (correto: vertical/lateral)",
+      "cluster_roi": "parto",
+      "clusters": ["Parto / trabalho de parto"],
+      "concept_map_hint": "Fase expulsiva — mobilidade materna; III falsa quando fixa supina",
+      "danger_zone_hint": "Letra C ou item que obriga posição dorsal no expulsivo",
+      "anchors": ["parto_oms_humanizado"]
+    },
+    {
+      "id": "parto_clampeamento_imediato",
+      "label": "Clampeamento imediato do cordão (correto: tardio quando viável)",
+      "cluster_roi": "parto",
+      "clusters": ["Parto / trabalho de parto"],
+      "concept_map_hint": "OMS/PNH — clampeamento tardio um a três minutos sem contraindicação",
+      "danger_zone_hint": "Distrator que clampa cordão assim que nasce",
+      "anchors": ["parto_oms_humanizado"]
+    },
+    {
+      "id": "papanicolau_inicio_40",
+      "label": "Papanicolau início aos 40 anos (correto: 25 após início vida sexual)",
+      "cluster_roi": "rastreio colo",
+      "clusters": ["Rastreio câncer de colo"],
+      "concept_map_hint": "Espectro 25–64 — pegadinha A = marco 40 anos",
+      "danger_zone_hint": "Letra A que desloca início do rastreio para os 40",
+      "anchors": ["papanicolau_rastreio_colo"]
+    },
+    {
+      "id": "papanicolau_anual_universal",
+      "label": "Papanicolau anual universal (correto: trienal após 2 anuais normais)",
+      "cluster_roi": "rastreio colo",
+      "clusters": ["Rastreio câncer de colo"],
+      "concept_map_hint": "Periodicidade INCA — trienal, não anual rotineira",
+      "danger_zone_hint": "Letra D que exige exame anual para todas a partir dos 25",
+      "anchors": ["papanicolau_rastreio_colo"]
+    },
+    {
+      "id": "papanicolau_vacina_dispensa",
+      "label": "Vacina HPV dispensa citologia na faixa etária",
+      "cluster_roi": "rastreio colo",
+      "clusters": ["Rastreio câncer de colo"],
+      "concept_map_hint": "Campanha 9–14 anos não substitui Papanicolau 25–64",
+      "danger_zone_hint": "Letra E que anula rastreio por vacinação",
+      "anchors": ["papanicolau_rastreio_colo"]
+    },
+    {
+      "id": "mama_inicio_40",
+      "label": "Mamografia início aos 40 anos (correto: 50 no rastreamento populacional)",
+      "cluster_roi": "rastreio mama",
+      "clusters": ["Saúde da mama"],
+      "concept_map_hint": "Espectro 50–69 bienal — pegadinha A = marco 40",
+      "danger_zone_hint": "Letra A que universaliza mamografia aos 40",
+      "anchors": ["mama_mamografia_faixa"]
+    },
+    {
+      "id": "mama_anual_universal",
+      "label": "Mamografia anual universal (correto: bienal 50–69)",
+      "cluster_roi": "rastreio mama",
+      "clusters": ["Saúde da mama"],
+      "concept_map_hint": "INCA — a cada 2 anos, não anual rotineira",
+      "danger_zone_hint": "Letra D que exige exame anual a partir dos 50",
+      "anchors": ["mama_mamografia_faixa"]
+    },
+    {
+      "id": "mama_autoexame_substituto",
+      "label": "Autoexame substitui mamografia populacional",
+      "cluster_roi": "rastreio mama",
+      "clusters": ["Saúde da mama"],
+      "concept_map_hint": "Autoexame = conscientização complementar; mamografia = padrão-ouro",
+      "danger_zone_hint": "Letra E que dispensa mamografia por autoexame",
+      "anchors": ["mama_mamografia_faixa"]
+    },
+    {
+      "id": "rastreio_so_sintomatica",
+      "label": "Rastreio só em sintomáticas (colo ou mama)",
+      "cluster_roi": "rastreio",
+      "clusters": ["Rastreio câncer de colo", "Saúde da mama"],
+      "concept_map_hint": "Rastreamento populacional em assintomáticas na faixa etária",
+      "danger_zone_hint": "Letra B que restringe exame a queixas clínicas",
+      "anchors": ["papanicolau_rastreio_colo", "mama_mamografia_faixa"]
+    },
+    {
+      "id": "puerperio_30_dias",
+      "label": "Puerpério até 30 dias (correto: até 42 dias — MS)",
+      "cluster_roi": "puerpério",
+      "clusters": ["Puerpério / lactação"],
+      "concept_map_hint": "Consulta de puerpério até o 42º dia — não confundir com 30",
+      "danger_zone_hint": "Item que fecha puerpério aos 30 dias",
+      "anchors": ["puerperio_consulta_42_dias"]
+    },
+    {
+      "id": "planejamento_oral_comportamental",
+      "label": "Anticoncepcional oral classificado como comportamental",
+      "cluster_roi": "planejamento familiar",
+      "clusters": ["Planejamento familiar / contracepção"],
+      "concept_map_hint": "Oral = hormonal — comportamental observa ciclo (tabelinha, basal, Billings, coito interrompido)",
+      "danger_zone_hint": "Combinação que inclui I (oral) como comportamental",
+      "anchors": ["planejamento_metodos_comportamentais"]
+    },
+    {
+      "id": "topic_drift_anatomia",
+      "label": "Drift taxonômico — anatomia/semiologia fora do ramo",
+      "cluster_roi": "drift",
+      "clusters": ["Drift taxonômico — reclassificar", "Saúde da mulher — conceito geral"],
+      "concept_map_hint": "Classify antes de handcraft — vocabulário de outro subtópico",
+      "danger_zone_hint": "Slides com tema IPCS/CVC ou anatomia sem ancoragem gestacional/ginecológica",
+      "anchors": []
+    }
+  ],
+  "cluster_roi_index": {
+    "pré-natal": ["prenatal_consultas_4", "prenatal_ttgo_1_tri", "prenatal_tabagismo_irrelevante"],
+    "parto": ["parto_ctg_universal", "parto_supina_expulsivo", "parto_clampeamento_imediato"],
+    "rastreio colo": [
+      "papanicolau_inicio_40",
+      "papanicolau_anual_universal",
+      "papanicolau_vacina_dispensa",
+      "rastreio_so_sintomatica"
+    ],
+    "rastreio mama": [
+      "mama_inicio_40",
+      "mama_anual_universal",
+      "mama_autoexame_substituto",
+      "rastreio_so_sintomatica"
+    ],
+    "puerpério": ["puerperio_30_dias"],
+    "planejamento familiar": ["planejamento_oral_comportamental"],
+    "drift": ["topic_drift_anatomia"]
+  },
+  "audit_gates": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path>",
+    "per_slug_v2": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_slug_v3": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "always_error_codes": [
+      "mulher_pegadinha_anchor",
+      "mulher_concept_gabarito_spoiler",
+      "mulher_danger_mirror",
+      "mulher_exceto_semantic",
+      "mulher_exceto_coringa"
+    ],
+    "strict_v2_codes": [
+      "mulher_golden_rows",
+      "mulher_logic_gabarito"
+    ],
+    "numeric_l2b": [
+      "numeric_claim_unsourced",
+      "numeric_fact_mismatch"
+    ],
+    "codes": [
+      "mulher_pegadinha_anchor",
+      "mulher_concept_gabarito_spoiler",
+      "mulher_danger_mirror",
+      "mulher_exceto_semantic",
+      "mulher_exceto_coringa",
+      "mulher_golden_rows",
+      "mulher_logic_gabarito",
+      "mulher_concept_repro_error",
+      "mulher_concept_generic_gestacao",
+      "mulher_golden_vf_judgment",
+      "mulher_golden_gabarito_row",
+      "mulher_logic_reveal_tap",
+      "mulher_logic_elimination",
+      "mulher_danger_letter_binding",
+      "mulher_guideline_snapshot",
+      "mulher_exam_vs_current",
+      "mulher_topic_drift",
+      "numeric_claim_unsourced",
+      "numeric_fact_mismatch"
+    ]
+  }
+}

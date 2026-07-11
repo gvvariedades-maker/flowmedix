@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g05",
+  "exported_at": "2026-07-09T05:36:37.860Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g05/manifest.json"
+  },
+  "slugs": [
+    "gama-enfermagem-saude-da-mulher-1777104261182-3",
+    "gama-enfermagem-saude-da-mulher-1777104382533-2",
+    "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-7",
+    "icece-enfermagem-saude-da-mulher-1777104261182-0",
+    "icece-enfermagem-saude-da-mulher-1780001362784-9",
+    "idcap-enfermagem-saude-da-mulher-1777104301763-7",
+    "idcap-enfermagem-saude-da-mulher-1777104389226-4",
+    "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5"
+  ]
+}

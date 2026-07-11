@@ -1,0 +1,14 @@
+{
+  "lote": "urgencias-g25",
+  "exported_at": "2026-07-08T17:51:58.463Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_pediatrico",
+    "batch": "g25-rcp-pediatrico-lote-final"
+  },
+  "slugs": [
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3"
+  ]
+}

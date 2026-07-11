@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:53:52.743Z",
+  "lote": "saude-da-mulher-g12",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cebraspe-cespe-enfermagem-saude-da-mulher-1777104376057-3",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-5",
+    "cev-urca-enfermagem-saude-da-mulher-1777104329543-3",
+    "cev-urca-enfermagem-saude-da-mulher-1777104347186-3",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-6",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104340484-7",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104376057-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-saude-da-mulher-1777104376057-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-saude-da-mulher-1777104329543-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-saude-da-mulher-1777104347186-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104340484-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104376057-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

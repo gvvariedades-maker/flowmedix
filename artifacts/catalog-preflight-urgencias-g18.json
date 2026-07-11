@@ -1,0 +1,60 @@
+{
+  "lote": "urgencias-g18",
+  "generated_at": "2026-07-08T16:05:11.712Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 6,
+  "passed": 6,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

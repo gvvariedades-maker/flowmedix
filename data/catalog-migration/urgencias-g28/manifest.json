@@ -1,0 +1,16 @@
+{
+  "lote": "urgencias-g28",
+  "exported_at": "2026-07-08T18:23:05.772Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_manchester_triagem",
+    "batch": "g28-manchester-lote-final"
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9"
+  ]
+}

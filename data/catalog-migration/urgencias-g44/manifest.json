@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g44",
+  "exported_at": "2026-07-09T00:58:05.140Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g44-generico-tail-batch-8"
+  },
+  "slugs": [
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-5",
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-6",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-1"
+  ]
+}

@@ -18,6 +18,8 @@ export type SoftLensHintProfile =
   | 'urgencias_manchester'
   | 'urgencias_protocol'
   | 'urgencias_exceto'
+  | 'cam_exceto'
+  | 'cam_documentacao'
   | 'none';
 
 const CALC_FORBIDDEN = /u-100|gotas|microgota|insulina|20-60-3|gts\/min/i;
@@ -86,6 +88,10 @@ function inferExamHintByProfile(row: GoldenRuleRow, profile: SoftLensHintProfile
       return inferUrgenciasProtocolExamHint(row);
     case 'urgencias_exceto':
       return inferUrgenciasExcetoExamHint(row);
+    case 'cam_exceto':
+      return inferCamExcetoExamHint(row);
+    case 'cam_documentacao':
+      return inferCamDocumentacaoExamHint(row);
     default:
       return neutralExamHint(row);
   }
@@ -429,6 +435,37 @@ function inferUrgenciasExcetoExamHint(row: GoldenRuleRow): string {
   }
   if (/imobiliz|fratura|reposicion|for[cç]ar/i.test(text)) {
     return 'Trauma: imobilizar sem forçar alinhamento — microvariação de cláusula é pegadinha clássica.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferCamExcetoExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/exceto|incorreta|n[aã]o\s+[eé]/i.test(text)) {
+    return 'EXCETO preparo: quatro letras descrevem cuidado correto — só a exceção é o gabarito.';
+  }
+  if (/via oral|fisiol[oó]gica|vo\s*\+\s*sf|diluir.*oral/i.test(text)) {
+    return 'Pegadinha clássica: VO não usa SF como veículo — mistura preparo com administração errada.';
+  }
+  if (/prescri[cç][aã]o|higieniza|lavar as m[aã]os|sala de medica/i.test(text)) {
+    return 'Condutas corretas no preparo — banca usa uma alternativa absurda como exceção.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferCamDocumentacaoExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/ap[oó]s administrar|somente ap[oó]s|certo\s*6/i.test(text)) {
+    return 'Registro certo: documentar depois da dose administrada — horário, dose, via e identificação.';
+  }
+  if (/antes de administrar|antecipad|preparad/i.test(text)) {
+    return 'Pegadinha: preparo na sala não autoriza registro antecipado — II costuma ser falsa.';
+  }
+  if (/posterg|plant[aã]o|lembrar a hora/i.test(text)) {
+    return 'Registro não pode esperar o fim do plantão — memória não substitui prontuário.';
+  }
+  if (/gabarito|combina[cç][aã]o|i, apenas/i.test(text)) {
+    return 'Julgue I–III antes da letra — só I é verdadeira nesta âncora.';
   }
   return neutralExamHint(row);
 }

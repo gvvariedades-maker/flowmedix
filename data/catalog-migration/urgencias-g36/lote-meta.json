@@ -1,0 +1,30 @@
+{
+  "lote": "urgencias-g36",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g36",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_generico": 5,
+    "urgencias_avc_iam": 1,
+    "urgencias_rcp_pediatrico": 1,
+    "urgencias_vf_protocolo": 1
+  },
+  "branch_by_slug": {
+    "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3": "urgencias_avc_iam",
+    "funtef-enfermagem-vias-de-administracao-1778968598934-3": "urgencias_generico",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-3": "urgencias_rcp_pediatrico",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-3": "urgencias_generico",
+    "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2": "urgencias_vf_protocolo",
+    "ibade-enfermagem-processo-de-enfermagem-1780005137458-2": "urgencias_generico",
+    "ibam-enfermagem-semiologia-em-enfermagem-1779563495719-1": "urgencias_generico",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0": "urgencias_generico"
+  },
+  "playbook_clusters_opened": {
+    "Drift taxonômico — reclassificar subtópico": 1,
+    "Default — sem âncora temática": 4,
+    "Urgências — conceito geral": 3
+  },
+  "notes": "g36 — 7º lote cauda urgencias_generico · 8/8 READY strict-v2 · 5 generico + 1 avc_iam + 1 rcp_pediatrico + 1 vf_protocolo"
+}

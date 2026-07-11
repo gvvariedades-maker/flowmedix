@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g07",
+  "exported_at": "2026-07-08T13:02:13.896Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_sbv",
+    "batch": "g07-rcp-adulto-lote-7"
+  },
+  "slugs": [
+    "ms-sarmento-enfermagem-vias-de-administracao-1778968646731-7",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-3",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-3"
+  ]
+}

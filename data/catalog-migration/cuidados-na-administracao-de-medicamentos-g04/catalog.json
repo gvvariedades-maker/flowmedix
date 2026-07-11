@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T23:04:41.984Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g04",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 4679
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 731
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-seguranca-do-paciente-1779563443877-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3054
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 2180
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-efeitos-adversos-dos-medicamentos-1780066909125-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5118
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 3051
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2184
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-8",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2138
+    }
+  ]
+}

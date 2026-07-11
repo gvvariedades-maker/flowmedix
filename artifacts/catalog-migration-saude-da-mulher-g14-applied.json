@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:54:18.347Z",
+  "lote": "saude-da-mulher-g14",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fgv-enfermagem-saude-da-mulher-1777104222222-6",
+    "fgv-enfermagem-saude-da-mulher-1777104340484-3",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-1",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-4",
+    "fundatec-enfermagem-saude-da-mulher-1777104382533-8",
+    "gama-enfermagem-saude-da-mulher-1777104382533-1",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-1",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104222222-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104340484-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104382533-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104382533-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

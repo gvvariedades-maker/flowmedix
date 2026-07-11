@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { logger } from '@/lib/logger';
 import { reportClientError } from '@/lib/monitoring/reportClientError';
 
@@ -79,7 +80,7 @@ export default function GlobalError({
             >
               Tentar novamente
             </button>
-            <a
+            <Link
               href="/"
               style={{
                 minHeight: '44px',
@@ -95,7 +96,7 @@ export default function GlobalError({
               }}
             >
               Voltar ao inicio
-            </a>
+            </Link>
           </div>
         </div>
       </body>

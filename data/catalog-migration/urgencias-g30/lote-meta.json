@@ -1,0 +1,27 @@
+{
+  "lote": "urgencias-g30",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g30",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_generico": 7,
+    "urgencias_xabcde_trauma": 1
+  },
+  "branch_by_slug": {
+    "amauc-enfermagem-processo-de-enfermagem-1780001517858-1": "urgencias_generico",
+    "amauc-enfermagem-processo-de-enfermagem-1780002441285-5": "urgencias_generico",
+    "amauc-enfermagem-processo-de-enfermagem-1780002549800-3": "urgencias_generico",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8": "urgencias_generico",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5": "urgencias_generico",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6": "urgencias_generico",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0": "urgencias_xabcde_trauma",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1": "urgencias_generico"
+  },
+  "playbook_clusters_opened": {
+    "Urgências — conceito geral": 7,
+    "Default — sem âncora temática": 1
+  },
+  "notes": "g30 — 1º lote cauda urgencias_generico · 8/8 READY strict-v2 · organofosforados colinérgica qualitativa · fratura exposta → trauma inferido · demais generico"
+}

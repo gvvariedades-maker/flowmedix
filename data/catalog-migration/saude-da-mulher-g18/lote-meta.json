@@ -1,0 +1,26 @@
+{
+  "lote": "saude-da-mulher-g18",
+  "subtopico": "Saúde da Mulher",
+  "status": "applied",
+  "exported_at": "2026-07-10",
+  "handcraft_applied_at": "2026-07-10",
+  "pedagogical_branch_target": "mulher_papanicolau",
+  "slug_count": 8,
+  "readiness": "8/8",
+  "handcraft_grammar": "data/catalog-migration/saude-da-mulher-pedagogy-errors.json",
+  "guideline": "lib/guidelines/saudeMulher.ts",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=saude-da-mulher-g18 --from-manifest=data/catalog-migration/saude-da-mulher-g18/manifest.json",
+    "npm run handcraft:saude-da-mulher-g18",
+    "npm run audit:questao-readiness -- --lote=saude-da-mulher-g18 --strict-v3-pedagogy"
+  ],
+  "anchor_slug": "adm-tec-enfermagem-saude-da-mulher-1777104306781-2",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-10",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-mulher-g18.json"
+  },
+  "applied_at": "2026-07-10"
+}

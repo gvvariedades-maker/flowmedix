@@ -42,6 +42,23 @@ export const PNI_BESPOKE_BRANCHES = [
   'imunizacao_cadeia_frio',
 ] as const;
 
+/** Ramos CAM com pacote bespoke 4/4 (9 certos V/F + alto risco + EXCETO + documentação). */
+export const CAM_BESPOKE_BRANCHES = [
+  'cam_certos_vf_caso',
+  'cam_alto_risco',
+  'cam_exceto_conduta',
+  'cam_documentacao',
+] as const;
+
+/** Ramos Cuidados na Administração — regressão L3. */
+export const CAM_BRANCHES = [
+  'cam_certos_vf_caso',
+  'cam_alto_risco',
+  'cam_exceto_conduta',
+  'cam_documentacao',
+  'cam_generico',
+] as const;
+
 /** Ramos Urgências e Emergências — regressão L3 (13 pedagogical_branch). */
 export const URGENCIAS_BRANCHES = [
   'urgencias_rcp_sbv',
@@ -61,6 +78,17 @@ export const URGENCIAS_BRANCHES = [
 
 /** Ramos Urgências com pacote bespoke 4/4 completo. */
 export const URGENCIAS_BESPOKE_BRANCHES = [...URGENCIAS_BRANCHES] as const;
+
+/** Ramos Saúde da Mulher — regressão L3 (4 ramos fortes bespoke 4/4). */
+export const SAUDE_MULHER_BRANCHES = [
+  'mulher_prenatal',
+  'mulher_parto',
+  'mulher_papanicolau',
+  'mulher_mama',
+] as const;
+
+/** Ramos SM com pacote bespoke 4/4 completo. */
+export const SAUDE_MULHER_BESPOKE_BRANCHES = [...SAUDE_MULHER_BRANCHES] as const;
 
 export const MOBILE_NARROW_VIEWPORT = { width: 375, height: 812 } as const;
 export const DESKTOP_VIEWPORT = { width: 1280, height: 900 } as const;

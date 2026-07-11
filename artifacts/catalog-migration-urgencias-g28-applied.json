@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-07-09T02:27:01.073Z",
+  "lote": "urgencias-g28",
+  "mode": "apply",
+  "total_files": 4,
+  "ok": 4,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

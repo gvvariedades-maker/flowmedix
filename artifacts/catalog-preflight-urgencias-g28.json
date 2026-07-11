@@ -1,0 +1,44 @@
+{
+  "lote": "urgencias-g28",
+  "generated_at": "2026-07-08T18:23:42.622Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 4,
+  "passed": 4,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

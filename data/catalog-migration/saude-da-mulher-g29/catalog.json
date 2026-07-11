@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-07-10T18:03:39.385Z",
+  "lote": "saude-da-mulher-g29",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104382533-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 1460
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563517223-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3143
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5171
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3508
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2825
+    }
+  ]
+}

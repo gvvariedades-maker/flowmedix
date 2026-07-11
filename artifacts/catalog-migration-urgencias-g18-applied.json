@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-09T02:32:54.917Z",
+  "lote": "urgencias-g18",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+    "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+    "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

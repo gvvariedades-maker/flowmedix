@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-07-10T23:00:59.523Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g03",
+  "mode": "apply",
+  "total_files": 10,
+  "ok": 10,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-4",
+    "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
+    "fcm-enfermagem-seguranca-do-paciente-1777102936764-9",
+    "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-2",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2",
+    "iaupe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-0",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+    "quadrix-enfermagem-seguranca-do-paciente-1777102861438-0",
+    "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-4",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-seguranca-do-paciente-1777102936764-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-seguranca-do-paciente-1777102861438-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

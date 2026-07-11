@@ -1,0 +1,18 @@
+{
+  "lote": "urgencias-g16",
+  "exported_at": "2026-07-08T14:31:30.029Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_avc_iam",
+    "batch": "g16-avc-iam-lote-final"
+  },
+  "slugs": [
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+    "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+    "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-8"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "lote": "urgencias-g27",
+  "generated_at": "2026-07-08T18:12:47.304Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 7,
+  "passed": 7,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

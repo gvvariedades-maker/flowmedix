@@ -1,0 +1,15 @@
+{
+  "lote": "urgencias-g21",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g21",
+  "slug_count": 2,
+  "branches": {
+    "urgencias_choque": 2
+  },
+  "anchors_used": [
+    "examples/questao-premium-fepese-urgencias-choque-hipovolemico.json"
+  ],
+  "notes": "g21 choque final — hipernatremia desidratação idoso · sinal choque hipovolêmico pele fria (cluster 18/18 fechado)"
+}

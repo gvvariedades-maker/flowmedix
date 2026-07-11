@@ -664,7 +664,7 @@ function main() {
     const raw = JSON.parse(readFileSync(path, 'utf8')) as Q;
     const slides = finalizeSlides(slug, raw, pack);
     const out = {
-      meta: metaBase(raw, pack.family, pack.guideline, slug, pack.roi_error, pack.cluster),
+      meta: metaBase(raw, pack.family, pack.guideline, slug, pack.roi_error, pack.cluster, 'handcraft-urgencias-g01'),
       question_data: raw.question_data,
       reverse_study_slides: slides,
       modulo_slug: raw.modulo_slug ?? slug,

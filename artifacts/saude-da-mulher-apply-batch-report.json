@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-07-10T18:58:30.024Z",
+  "dry_run": false,
+  "candidates": 32,
+  "applied_lotes": 31,
+  "failed_lotes": 1,
+  "slugs_attempted": 242,
+  "results": [
+    {
+      "lote": "saude-da-mulher-g01",
+      "status": "apply_fail",
+      "detail": "og:preflight -- --lote=saude-da-mulher-g01 ou use --skip-preflight em emergência.\n    at main (D:\\AVANT\\scripts\\catalog-migration-apply-lote.ts:64:13)\n    at <anonymous> (D:\\AVANT\\scripts\\catalog-migration-apply-lote.ts:169:1)\n    at Object.<anonymous> (D:\\AVANT\\scripts\\catalog-migration-apply-lote.ts:172:2)\n    at Module._compile (node:internal/modules/cjs/loader:1761:14)\n    at Object.transformer (D:\\AVANT\\node_modules\\tsx\\dist\\register-D46fvsV_.cjs:3:1104)\n    at Module.load (node:internal/modules/cjs/loader:1481:32)\n    at Module._load (node:internal/modules/cjs/loader:1300:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:328:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)\n    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:339:3)\n"
+    },
+    {
+      "lote": "saude-da-mulher-g02",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g03",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g04",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g05",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g06",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g07",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g08",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g09",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g10",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g11",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g12",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g13",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g14",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g15",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g16",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g17",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g18",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g19",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g20",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g21",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g22",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g23",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g24",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g25",
+      "status": "ok",
+      "ok": 14
+    },
+    {
+      "lote": "saude-da-mulher-g26",
+      "status": "ok",
+      "ok": 9
+    },
+    {
+      "lote": "saude-da-mulher-g27",
+      "status": "ok",
+      "ok": 7
+    },
+    {
+      "lote": "saude-da-mulher-g28",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g29",
+      "status": "ok",
+      "ok": 5
+    },
+    {
+      "lote": "saude-da-mulher-g30",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-mulher-g31",
+      "status": "ok",
+      "ok": 3
+    },
+    {
+      "lote": "saude-da-mulher-g32",
+      "status": "ok",
+      "ok": 4
+    }
+  ]
+}

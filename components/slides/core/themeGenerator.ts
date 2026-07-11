@@ -206,7 +206,7 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'vias de administração': { template: 'emerald', conceptMap: 'absorption-speed-rail', goldenRule: 'via-reference-board', logicFlow: 'via-vf-juggle-tap', dangerZone: 'route-trap' },
 
   // ---- Cuidados na Administração de Medicamentos (golden: bridge · reference_table · cards · compare) ----
-  'cuidados na administração de medicamentos': { template: 'teal', conceptMap: 'bridge', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'compare' },
+  'cuidados na administração de medicamentos': { template: 'teal', conceptMap: 'cam-certos-deck', goldenRule: 'cam-nine-rights-board', logicFlow: 'cam-vf-juggle-tap', dangerZone: 'cam-certos-trap-arena' },
 
   // ============================================================
   // PROCEDIMENTOS DE ENFERMAGEM

@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g24",
+  "exported_at": "2026-07-08T17:42:05.048Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_pediatrico",
+    "batch": "g24-rcp-pediatrico-lote-1"
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+    "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-7"
+  ]
+}

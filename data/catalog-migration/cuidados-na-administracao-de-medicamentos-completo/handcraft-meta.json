@@ -1,0 +1,67 @@
+{
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
+  "status": "in_progress",
+  "handcraft_applied": 0,
+  "total_slugs_estimate": 123,
+  "total_slugs_export_raw": 184,
+  "drift_excluded": 61,
+  "updated_at": "2026-07-10",
+  "curated_at": "2026-07-10",
+  "exclude_drift_file": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-exclude-drift.json",
+  "anchor_glob": "examples/questao-premium-*-cuidados-*.json,examples/questao-premium-fepese-cuidados-administracao-medicamentos.json,examples/questao-premium-fepese-cuidados-insulina-alto-risco.json,examples/questao-premium-cotec-cuidados-heparina-alto-risco.json,examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json,examples/questao-premium-avancasp-cuidados-documentacao-vf.json,examples/questao-premium-cpcon-cuidados-incorreta-nove-certos.json,examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json,examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json",
+  "golden_anchors_registry": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-golden-anchors.json",
+  "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/cuidados-na-administracao-de-medicamentos.json",
+  "cluster_report": "artifacts/cuidados-na-administracao-de-medicamentos-topic-cluster-report.json",
+  "next_lote": {
+    "id": "cuidados-na-administracao-de-medicamentos-g01",
+    "status": "exported",
+    "pedagogical_branch_target": "cam_alto_risco",
+    "cluster": "Alto risco / conferência dupla",
+    "slug_count": 8
+  },
+  "anchors_by_branch": {
+    "cam_certos_vf_caso": "examples/questao-premium-fepese-cuidados-administracao-medicamentos.json",
+    "cam_alto_risco": "examples/questao-premium-fepese-cuidados-insulina-alto-risco.json",
+    "cam_exceto_conduta": "examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json",
+    "cam_documentacao": "examples/questao-premium-avancasp-cuidados-documentacao-vf.json",
+    "cam_generico": "examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json"
+  },
+  "anchors_readiness": {
+    "validated_at": "2026-07-10",
+    "summary": "8/8 READY",
+    "registry": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-golden-anchors.json"
+  },
+  "l3_molds": {
+    "cam_certos_vf_caso": {
+      "decision": "molde_redesign",
+      "status": "implemented",
+      "brief": "artifacts/l3-brief-cuidados-na-administracao-de-medicamentos-cam_certos_vf_caso.md",
+      "package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena"
+    },
+    "cam_alto_risco": {
+      "decision": "molde_inedito",
+      "status": "implemented",
+      "brief": "artifacts/l3-brief-cuidados-na-administracao-de-medicamentos-cam_alto_risco.md",
+      "package": "cam-high-risk-duo-deck · cam-high-risk-protocol-board · cam-alto-risco-elimination-tap · cam-high-risk-trap-arena"
+    },
+    "cam_exceto_conduta": {
+      "decision": "molde_redesign",
+      "status": "implemented",
+      "brief": "artifacts/l3-brief-cuidados-na-administracao-de-medicamentos-cam_exceto_conduta.md",
+      "package": "cam-exceto-rail · cam-exceto-reference-board · cam-exceto-tap-flow · cam-exceto-trap-arena"
+    },
+    "cam_documentacao": {
+      "decision": "molde_redesign",
+      "status": "implemented",
+      "brief": "artifacts/l3-brief-cuidados-na-administracao-de-medicamentos-cam_documentacao.md",
+      "package": "cam-documentacao-deck · cam-documentacao-board · cam-documentacao-vf-tap · cam-documentacao-trap-arena"
+    },
+    "cam_generico": {
+      "decision": "ok_generico",
+      "status": "generic",
+      "brief": "artifacts/l3-brief-cuidados-na-administracao-de-medicamentos-cam_generico.md",
+      "package": "bridge · center/reference_table · cards tap · compare"
+    }
+  }
+}

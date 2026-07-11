@@ -250,6 +250,77 @@ describe('enrichPresentationContext — meta da questão', () => {
     );
   });
 
+  const camSubtopico = 'Cuidados na Administração de Medicamentos';
+
+  it('infere cam_certos_vf_caso para VF I–III sobre 9 Certos', () => {
+    const instruction =
+      'Em relação aos cuidados na administração de medicamentos, analise as afirmativas.\n\nI - A identificação do paciente deve ser feita com pelo menos dois identificadores.\nII - Medicamentos de alto risco exigem conferência dupla.\nIII - Diante de prescrição ilegível, o profissional pode administrar se o medicamento for de uso habitual.\n\nÉ CORRETO o que se afirma em:';
+    expect(inferPedagogicalBranch(camSubtopico, instruction, [], 'vf')).toBe('cam_certos_vf_caso');
+    const design = getPresentationDesign(camSubtopico, 'cam_certos_vf_caso');
+    expect(design?.conceptMap).toBe('cam-certos-deck');
+    expect(design?.goldenRule).toBe('cam-nine-rights-board');
+    expect(design?.logicFlow).toBe('cam-vf-juggle-tap');
+    expect(design?.dangerZone).toBe('cam-certos-trap-arena');
+  });
+
+  it('infere cam_alto_risco para insulina e conferência dupla', () => {
+    const instruction =
+      'Sobre a administração de insulina regular e NPH, assinale a alternativa correta quanto à técnica de aplicação e segurança do paciente.';
+    expect(inferPedagogicalBranch(camSubtopico, instruction, [], 'conceito')).toBe('cam_alto_risco');
+    const design = getPresentationDesign(camSubtopico, 'cam_alto_risco');
+    expect(design?.conceptMap).toBe('cam-high-risk-duo-deck');
+    expect(design?.goldenRule).toBe('cam-high-risk-protocol-board');
+    expect(design?.logicFlow).toBe('cam-alto-risco-elimination-tap');
+    expect(design?.dangerZone).toBe('cam-high-risk-trap-arena');
+  });
+
+  it('infere cam_exceto_conduta para EXCETO preparo', () => {
+    const instruction = 'São cuidados de enfermagem, no preparo de medicamentos, exceto:';
+    expect(inferPedagogicalBranch(camSubtopico, instruction, [], 'certo_errado')).toBe(
+      'cam_exceto_conduta',
+    );
+    const design = getPresentationDesign(camSubtopico, 'cam_exceto_conduta');
+    expect(design?.conceptMap).toBe('cam-exceto-rail');
+    expect(design?.goldenRule).toBe('cam-exceto-reference-board');
+    expect(design?.logicFlow).toBe('cam-exceto-tap-flow');
+    expect(design?.dangerZone).toBe('cam-exceto-trap-arena');
+  });
+
+  it('infere cam_exceto_conduta para INCORRETA entre os 9 Certos (prioridade sobre certos)', () => {
+    const instruction =
+      'Durante o preparo e administração de medicamentos, o técnico deve seguir os certos. Assinale a alternativa INCORRETA.';
+    expect(inferPedagogicalBranch(camSubtopico, instruction, [], 'certo_errado')).toBe(
+      'cam_exceto_conduta',
+    );
+  });
+
+  it('infere cam_exceto_conduta para INCORRETA insulina (prioridade sobre alto risco)', () => {
+    const instruction =
+      'Sobre a prevenção da lipohipertrofia e a aplicação adequada da insulina, assinale a alternativa incorreta.';
+    expect(inferPedagogicalBranch(camSubtopico, instruction, [], 'certo_errado')).toBe(
+      'cam_exceto_conduta',
+    );
+  });
+
+  it('infere cam_documentacao para V/F Registro certo', () => {
+    const instruction =
+      'Avalie as afirmações sobre o Registro certo (Documentação certa) na administração da medicação:\n\nI - Anotar na prescrição ou prontuário somente após administrar o medicamento.\nII - É permitido registrar a medicação antes da administração.\nIII - O registro pode ser postergado para o final do plantão.\n\nÉ CORRETO o que se afirma em:';
+    expect(inferPedagogicalBranch(camSubtopico, instruction, [], 'vf')).toBe('cam_documentacao');
+    const design = getPresentationDesign(camSubtopico, 'cam_documentacao');
+    expect(design?.conceptMap).toBe('cam-documentacao-deck');
+    expect(design?.goldenRule).toBe('cam-documentacao-board');
+    expect(design?.logicFlow).toBe('cam-documentacao-vf-tap');
+    expect(design?.dangerZone).toBe('cam-documentacao-trap-arena');
+  });
+
+  it('infere cam_documentacao para listagem 9 certos (São eles)', () => {
+    const instruction =
+      'Os "9 certos da administração de medicamentos" são empregados para alertar os profissionais. São eles:';
+    expect(inferPedagogicalBranch(camSubtopico, instruction, [], 'conceito')).toBe(
+      'cam_documentacao',
+    );
+  });
+
   const calcSubtopico = 'Cálculo de Administração de Medicamentos e Infusões';
 
   it('infere calc_dose_equivalencia para cálculo numérico de dose', () => {
@@ -375,6 +446,26 @@ describe('pedagogicalBranch — Urgências e Emergências', () => {
     expect(design?.dangerZone).toBe('urgencias-choking-trap-arena');
   });
 
+  it('prioriza urgencias_xabcde_trauma sobre engasgo quando corpus tem XABCDE+hemorragia+imobilização', () => {
+    const instruction =
+      'Obstrução de via aérea total: iniciar manobra de Heimlich após falha de ventilação.';
+    const slides = [
+      {
+        type: 'concept_map',
+        footer_rule: 'XABCDE trauma — hemorragia e imobilização',
+        items: [{ label: 'APH', detail: 'Trauma pré-hospitalar com esmagamento e imobilização' }],
+      },
+      {
+        type: 'golden_rule',
+        footer_rule: 'XABCDE trauma — hemorragia e imobilização',
+        content: 'VAA no trauma — não confundir com engasgo isolado',
+      },
+    ];
+    expect(inferPedagogicalBranch(urgSubtopico, instruction, slides, 'protocolo')).toBe(
+      'urgencias_xabcde_trauma',
+    );
+  });
+
   it('infere urgencias_anafilaxia antes de choque quando slides citam choque refratário', () => {
     const instruction =
       'Anafilaxia em criança após dipirona: epinefrina IM na coxa. IV reservada a PCR ou hipotensão refratária.';
@@ -413,6 +504,41 @@ describe('pedagogicalBranch — Urgências e Emergências', () => {
     expect(design?.goldenRule).toBe('urgencias-manchester-board');
     expect(design?.logicFlow).toBe('cards');
     expect(design?.dangerZone).toBe('urgencias-manchester-trap');
+  });
+
+  it('comando EXCETO no enunciado vence IAM/Manchester/choque — urgencias_exceto_conduta', () => {
+    expect(
+      inferPedagogicalBranch(
+        urgSubtopico,
+        'Infarto agudo do miocárdio (IAM) — medidas corretas, EXCETO:',
+        [],
+        'protocolo',
+      ),
+    ).toBe('urgencias_exceto_conduta');
+    expect(
+      inferPedagogicalBranch(
+        urgSubtopico,
+        'Classificação de risco Manchester com acolhimento — objetivos, EXCETO:',
+        [],
+        'protocolo',
+      ),
+    ).toBe('urgencias_exceto_conduta');
+    expect(
+      inferPedagogicalBranch(
+        urgSubtopico,
+        'Fratura exposta com hipoperfusão — condutas adequadas, EXCETO:',
+        [],
+        'protocolo',
+      ),
+    ).toBe('urgencias_exceto_conduta');
+    expect(
+      inferPedagogicalBranch(
+        urgSubtopico,
+        'Sobre vantagens do ABCDE no trauma, assinale a alternativa INCORRETA:',
+        [],
+        'protocolo',
+      ),
+    ).toBe('urgencias_exceto_conduta');
   });
 });
 
@@ -492,5 +618,53 @@ describe('pedagogicalBranch — Assistência Perioperatória', () => {
     expect(inferPedagogicalBranch(subtopico, instruction, [], 'certo_errado')).toBe(
       'perioperatorio_pos_operatorio',
     );
+  });
+});
+
+describe('pedagogicalBranch — Saúde da Mulher', () => {
+  const subtopico = 'Saúde da Mulher';
+
+  it('infere mulher_prenatal para gestação e pré-natal', () => {
+    const instruction =
+      'Sobre pré-natal, a primeira consulta deve ocorrer no primeiro trimestre com glicemia de jejum e ácido fólico.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('mulher_prenatal');
+    const design = getPresentationDesign(subtopico, 'mulher_prenatal');
+    expect(design?.conceptMap).toBe('mulher-gestation-timeline');
+    expect(design?.goldenRule).toBe('mulher-prenatal-board');
+    expect(design?.logicFlow).toBe('mulher-prenatal-tap-flow');
+    expect(design?.dangerZone).toBe('mulher-prenatal-trap-arena');
+  });
+
+  it('infere mulher_parto para trabalho de parto', () => {
+    const instruction =
+      'Sobre boas práticas no trabalho de parto humanizado, analise as afirmativas sobre fase expulsiva.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('mulher_parto');
+    const design = getPresentationDesign(subtopico, 'mulher_parto');
+    expect(design?.conceptMap).toBe('mulher-labor-phase-deck');
+    expect(design?.goldenRule).toBe('mulher-parto-humanizado-board');
+    expect(design?.logicFlow).toBe('mulher-labor-tap-flow');
+    expect(design?.dangerZone).toBe('mulher-parto-trap-arena');
+  });
+
+  it('infere mulher_papanicolau para rastreio de colo', () => {
+    const instruction =
+      'Para rastreio do câncer de colo do útero, o Papanicolau deve ser realizado entre 25 e 64 anos.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('mulher_papanicolau');
+    const design = getPresentationDesign(subtopico, 'mulher_papanicolau');
+    expect(design?.conceptMap).toBe('mulher-screening-spectrum');
+    expect(design?.goldenRule).toBe('mulher-papanicolau-board');
+    expect(design?.logicFlow).toBe('mulher-screening-tap-flow');
+    expect(design?.dangerZone).toBe('mulher-screening-trap-arena');
+  });
+
+  it('infere mulher_mama para rastreio de mama', () => {
+    const instruction =
+      'Sobre mamografia no rastreamento do câncer de mama, a faixa etária recomendada é de 50 a 69 anos.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('mulher_mama');
+    const design = getPresentationDesign(subtopico, 'mulher_mama');
+    expect(design?.conceptMap).toBe('mulher-mammography-spectrum');
+    expect(design?.goldenRule).toBe('mulher-mama-board');
+    expect(design?.logicFlow).toBe('mulher-mama-tap-flow');
+    expect(design?.dangerZone).toBe('mulher-mama-trap-arena');
   });
 });

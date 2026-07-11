@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "banca": "Fau Unicentro",
+    "prova": "Tec (Foz do Jordão)",
+    "orgao": "Pref Foz do Jordão",
+    "ano": "2023",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "golden-urgencias-generico",
+      "guideline_snapshot": "Escala de Coma de Glasgow (GCS) — três domínios independentes: ocular, verbal e motora",
+      "exam_vs_current": "none",
+      "catalog_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "cluster": "Default — semiologia neurológica (Glasgow)",
+      "roi_error": "glasgow_motor_domain"
+    },
+    "sources": [
+      {
+        "id": "urgencias-generico-gcs-ms-sbv",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo SBV/SAMU — avaliação neurológica e XABCDE (disability)",
+        "year": 2014,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+        "covers": [
+          "avaliação neurológica",
+          "rebaixamento de consciência",
+          "XABCDE disability",
+          "SAMU 192",
+          "nível de consciência",
+          "escala de coma de Glasgow",
+          "resposta ocular verbal motora"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A Escala de Glasgow avalia resposta ocular, resposta verbal e resposta. Preencha a lacuna com a alternativa correta:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Típica.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Atípica.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Motora.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Diafragmática.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Olfativa.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Glasgow — três domínios",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "label": "Enquadramento",
+          "detail": "Lacuna na frase: Glasgow avalia ocular, verbal e qual terceiro eixo neurológico?",
+          "icon": "Target"
+        },
+        {
+          "label": "Ocular",
+          "detail": "Abertura dos olhos — espontânea, ao chamado, à dor ou ausente.",
+          "icon": "Eye"
+        },
+        {
+          "label": "Verbal",
+          "detail": "Resposta verbal — orientada, confusa, palavras, sons ou ausente.",
+          "icon": "MessageCircle"
+        },
+        {
+          "label": "Motora",
+          "detail": "Resposta motora — obedece, localiza dor, retira, flexão ou extensão.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Banca inventa olfativa, diafragmática, típica ou atípica — não existem no GCS.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Glasgow = O + V + M"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "GCS — decore qualitativo",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "GLASGOW = O · V · M",
+      "rows": [
+        {
+          "label": "Ocular (O)",
+          "value": "Abertura ocular — espontânea a estímulo doloroso",
+          "badge": "ok"
+        },
+        {
+          "label": "Verbal (V)",
+          "value": "Resposta verbal — orientada a ausente",
+          "badge": "ok"
+        },
+        {
+          "label": "Motora (M)",
+          "value": "Resposta motora — obedece a extensão anormal",
+          "badge": "hot"
+        },
+        {
+          "label": "× Outra escala SAMU",
+          "value": "Triagem neurológica rápida — outro mnemônico, não GCS",
+          "badge": "warn"
+        },
+        {
+          "label": "Uso no trauma",
+          "value": "D no XABCDE — rebaixamento e TCE",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Glasgow = O · V · M — não confundir com outras escalas neurológicas"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Comando: completar a frase — Glasgow avalia ocular, verbal e ___?",
+        "Mnemônico fixo: três domínios independentes somados no escore total.",
+        "Eliminar A típica — adjetivo sem função na escala; termo inventado pela banca.",
+        "Eliminar B atípica — mesmo raciocínio; não nomeia eixo neurológico.",
+        "Eliminar D diafragmática — músculo respiratório; não compõe o GCS.",
+        "Eliminar E olfativa — sentido olfativo não é domínio da escala.",
+        "Resta resposta motora — terceiro pilar junto com ocular e verbal.",
+        "Marcar C.",
+        "Fixação: em outras provas a banca cobra escala de triagem neurológica SAMU — aqui é só O + V + M."
+      ],
+      "footer_rule": "Ocular → verbal → motora"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "PEGADINHAS — GLASGOW × TERMOS INVENTADOS",
+      "items": [
+        {
+          "label": "Letra A — típica",
+          "detail": "Parece adjetivo plausível para classificar resposta neurológica.",
+          "correct": "“Típica” não é domínio do GCS — a escala usa ocular, verbal e motora."
+        },
+        {
+          "label": "Letra B — atípica",
+          "detail": "Par soa simétrico com “típica” e induz julgamento subjetivo.",
+          "correct": "“Atípica” é distrator sem base na nomenclatura oficial do Glasgow."
+        },
+        {
+          "label": "Letra D — diafragmática",
+          "detail": "Associação com respiração e avaliação do tórax no trauma.",
+          "correct": "Diafragmática não integra o GCS — o terceiro eixo é a resposta motora."
+        },
+        {
+          "label": "Letra E — olfativa",
+          "detail": "Outro sentido corporal que parece “resposta” neurossensorial.",
+          "correct": "Olfativa não existe no Glasgow — motor completa o trio ocular-verbal."
+        },
+        {
+          "label": "Transferência — outra escala",
+          "detail": "Em outra questão, a banca pede itens de triagem neurológica rápida no pré-hospitalar.",
+          "correct": "Outro protocolo SAMU — Glasgow permanece ocular, verbal e motora."
+        }
+      ],
+      "footer_rule": "Inventário de domínio antes de marcar"
+    }
+  ]
+}

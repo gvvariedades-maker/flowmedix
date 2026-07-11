@@ -41,6 +41,16 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'urgencias-manchester-board',
   'etiology-letter-spectrum',
   'itu-bundle-letter-board',
+  'mulher-prenatal-board',
+  'mulher-parto-humanizado-board',
+  'mulher-papanicolau-board',
+  'mulher-mama-board',
+  'mulher-puerperio-board',
+  'mulher-planejamento-board',
+  'cam-nine-rights-board',
+  'cam-high-risk-protocol-board',
+  'cam-exceto-reference-board',
+  'cam-documentacao-board',
 ]);
 
 /**
@@ -94,6 +104,10 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'urgencias-manchester-board') return 'urgencias-manchester-board';
   if (explicitVariant === 'etiology-letter-spectrum') return 'etiology-letter-spectrum';
   if (explicitVariant === 'itu-bundle-letter-board') return 'itu-bundle-letter-board';
+  if (explicitVariant === 'cam-nine-rights-board') return 'cam-nine-rights-board';
+  if (explicitVariant === 'cam-high-risk-protocol-board') return 'cam-high-risk-protocol-board';
+  if (explicitVariant === 'cam-exceto-reference-board') return 'cam-exceto-reference-board';
+  if (explicitVariant === 'cam-documentacao-board') return 'cam-documentacao-board';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

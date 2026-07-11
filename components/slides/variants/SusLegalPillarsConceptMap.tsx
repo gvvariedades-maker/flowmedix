@@ -4,7 +4,7 @@ import React, { useCallback, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 
 export interface SusPillarConcept {
   icon: string;
@@ -129,9 +129,7 @@ function PillarCard({
   hasLongText: boolean;
 }) {
   const styles = PILLAR_STYLES[pillar];
-  const Icon = resolveLucideIcon(concept.icon);
-
-  return (
+    return (
     <motion.button
       type="button"
       onClick={onToggle}
@@ -143,7 +141,7 @@ function PillarCard({
       <div className="flex h-full flex-col gap-2 p-3.5 md:p-4">
         <div className="flex items-start justify-between gap-2">
           <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${styles.iconBg} ${styles.iconText}`}>
-            <Icon size={18} />
+            <SlideLucideIcon name={concept.icon} size={18} />
           </div>
           <span className={`rounded-full px-2 py-0.5 font-mono text-[8px] font-bold uppercase tracking-widest ${styles.chip}`}>
             {PILLAR_LABEL[pillar]}
@@ -186,9 +184,7 @@ export const SusLegalPillarsConceptMap = ({ concepts, theme }: SusLegalPillarsCo
   if (concepts.length === 0) return null;
 
   const [hero, ...rest] = concepts;
-  const HeroIcon = resolveLucideIcon(hero.icon);
-
-  const coreItems = rest.filter((c) => CORE_PILLARS.includes(inferPillar(c.title, c.description)));
+    const coreItems = rest.filter((c) => CORE_PILLARS.includes(inferPillar(c.title, c.description)));
   const supportItems = rest.filter((c) => !CORE_PILLARS.includes(inferPillar(c.title, c.description)));
 
   const orderedCore = CORE_PILLARS.map((pillar) =>
@@ -222,7 +218,7 @@ export const SusLegalPillarsConceptMap = ({ concepts, theme }: SusLegalPillarsCo
           </div>
           <div className="flex flex-col gap-3 bg-gradient-to-br from-white via-emerald-50/25 to-sky-50/20 p-4 md:flex-row md:gap-4 md:p-5">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-200/90 text-emerald-900 shadow-sm">
-              <HeroIcon size={24} />
+              <SlideLucideIcon name={hero.icon} size={24} />
             </div>
             <div className="min-w-0 flex-1">
               <h3 className="font-body text-lg font-bold text-emerald-950 md:text-xl">{hero.title}</h3>

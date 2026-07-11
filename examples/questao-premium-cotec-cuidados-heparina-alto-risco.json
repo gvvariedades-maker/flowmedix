@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "banca": "Cotec Fadenor",
+    "prova": "TEnf",
+    "orgao": "Processo seletivo",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "family": "conceito",
+    "content_standard": "golden-v1",
+    "pedagogical_branch": "cam_alto_risco",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "guideline_snapshot": "Heparina SC · medicamentos alto risco · COFEN segurança do paciente",
+      "exam_vs_current": "none",
+      "catalog_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+      "cluster": "Alto risco / conferência dupla",
+      "anchor_role": "alto_risco_heparina_sc"
+    },
+    "sources": [
+      {
+        "id": "cofen-seg-med",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Segurança na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br",
+        "covers": ["alto risco", "conferência dupla", "heparina", "anticoagulante"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A heparina é uma medicação com efeito anticoagulante e classificada como medicamento de alto risco. Se a prescrição médica solicitar que seja administrada 5.000 UI por via subcutânea, sobre os cuidados na administração, é correto afirmar:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A conferência dupla pode ser dispensada quando o profissional já administrou heparina no mesmo plantão.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Recomenda-se massagear vigorosamente o local após a aplicação para melhorar a absorção.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Após inserir a agulha em ângulo de 90°, deve-se aspirar o êmbolo para confirmar que não houve punção vascular.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A heparina pode ser preparada e administrada pelo mesmo profissional, sem necessidade de segundo conferente.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Dois profissionais habilitados devem conferir paciente, medicamento, dose, via e horário antes da administração; alternar locais no abdome evitando cicatrizes e o umbigo.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Alto risco — heparina SC",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "label": "Conferência dupla",
+          "detail": "Heparina = alto risco anticoagulante. Dois profissionais habilitados conferem dose em UI, frasco, via SC e paciente — cada administração.",
+          "icon": "Users"
+        },
+        {
+          "label": "Técnica SC heparina",
+          "detail": "Ângulo 90° (ou 45° se pouco tecido). Não aspirar êmbolo na SC — risco de hematoma. Não massagear o local após a injeção.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Locais de rotação",
+          "detail": "Abdome lateral ao umbigo (≥5 cm), face anterior dos braços ou coxas — alternar para evitar lipodistrofia e hematomas.",
+          "icon": "MapPin"
+        },
+        {
+          "label": "UI × mL",
+          "detail": "Conferir concentração do frasco (UI/mL) antes de calcular volume — erro de dose em anticoagulante é crítico.",
+          "icon": "Calculator"
+        },
+        {
+          "label": "Pegadinha banca",
+          "detail": "Dispensar dupla checagem por “rotina” ou aspirar/massagear como em outras técnicas — padrão diferente da insulina em alguns pontos, mas alto risco igual.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Heparina = alto risco + técnica SC específica — nunca pular conferência dupla"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Protocolo alto risco — heparina",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "ALTO RISCO — HEPARINA SC",
+      "rows": [
+        {
+          "label": "Classe alto risco",
+          "value": "Heparina, insulina, KCl, quimioterápicos, vasopressores",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "1. Conferência dupla",
+          "value": "2 profissionais: paciente, medicamento, dose (UI), via, horário",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "2. Não aspirar SC",
+          "value": "Inserir agulha e injetar sem aspirar — evita hematoma",
+          "badge": "hot"
+        },
+        {
+          "label": "3. Não massagear",
+          "value": "Não friccionar o local após aplicação SC",
+          "badge": "ok"
+        },
+        {
+          "label": "4. Rotação de locais",
+          "value": "Abdome, braço ou coxa — alternar; evitar umbigo e cicatrizes",
+          "badge": "ok"
+        },
+        {
+          "label": "5. Dose em UI",
+          "value": "Conferir UI prescritas × concentração do frasco antes do volume",
+          "badge": "hot",
+          "emphasis": "highlight"
+        }
+      ],
+      "footer_rule": "Anticoagulante SC: dupla checagem + não aspirar + não massagear"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — eliminação",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Contexto: heparina 5.000 UI SC = alto risco → conferência dupla obrigatória antes de qualquer passo.",
+        "Eliminar letra A: experiência no plantão não dispensa segundo conferente em medicamento de alto risco.",
+        "Eliminar letra B: massagear após SC aumenta risco de hematoma e altera absorção — conduta incorreta.",
+        "Eliminar letra C: aspirar êmbolo na heparina SC não é recomendado — pegadinha de técnica de IM.",
+        "Eliminar letra D: preparo e administração exigem dupla checagem — um profissional sozinho viola protocolo.",
+        "Confirmar letra E: conferência dupla + rotação de locais no abdome — conduta correta.",
+        "Fixação: heparina compartilha alto risco com insulina, mas técnica SC tem pegadinhas próprias (aspirar × não aspirar)."
+      ],
+      "footer_rule": "Estratégia: alto risco → eliminar letras que dispensam dupla checagem ou erram técnica SC"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — heparina",
+      "chip_label": "PEGADINHAS HEPARINA",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PEGADINHAS — ALTO RISCO / HEPARINA",
+      "items": [
+        {
+          "label": "Letra A — rotina do plantão",
+          "detail": "Parece eficiência, mas alto risco exige dupla checagem em toda administração.",
+          "correct": "Conferência dupla não se dispensa por hábito ou experiência no turno."
+        },
+        {
+          "label": "Letra B — massagear",
+          "detail": "Confunde com conforto ao paciente ou técnica de aplicação de vacina.",
+          "correct": "Não massagear o local após heparina SC — reduz risco de hematoma."
+        },
+        {
+          "label": "Letra C — aspirar êmbolo",
+          "detail": "Transferência indevida da técnica IM — aspirar na SC da heparina é pegadinha clássica.",
+          "correct": "Heparina SC: não aspirar após inserir a agulha."
+        },
+        {
+          "label": "Letra D — um profissional",
+          "detail": "Banca testa se o aluno conhece o protocolo de alto risco institucional.",
+          "correct": "Dois profissionais habilitados conferem antes de administrar."
+        },
+        {
+          "label": "Confundir com insulina",
+          "detail": "Aplicar mesma técnica sem distinguir anticoagulante × hipoglicemiante.",
+          "correct": "Ambos alto risco com dupla checagem; técnica SC tem nuances distintas na prova."
+        },
+        {
+          "label": "Pegadinha — aspirar e massagear",
+          "detail": "Espelha o concept_map: aspirar êmbolo SC e massagear são erros na heparina.",
+          "correct": "Não aspirar na SC; não massagear — dupla checagem sempre."
+        }
+      ],
+      "footer_rule": "Transferência: toda alternativa que dispensa dupla checagem ou erra técnica SC está errada"
+    }
+  ]
+}

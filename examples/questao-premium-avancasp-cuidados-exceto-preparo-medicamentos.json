@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "TEnf",
+    "orgao": "Concurso AVANÇASP",
+    "ano": "2022",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "family": "certo_errado",
+    "content_standard": "golden-v1",
+    "pedagogical_branch": "cam_exceto_conduta",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "guideline_snapshot": "Preparo e administração segura — COFEN/ANVISA · sala de medicação",
+      "exam_vs_current": "none",
+      "catalog_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
+      "cluster": "INCORRETA / EXCETO",
+      "anchor_role": "piloto_exceto_preparo_semantico"
+    },
+    "sources": [
+      {
+        "id": "cofen-seg-med",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Segurança na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br",
+        "covers": ["preparo", "sala de medicação", "higienização das mãos", "diluição"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "São cuidados de enfermagem, no preparo de medicamentos, exceto:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Administrar os medicamentos por via oral com solução fisiológica.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "A prescrição médica deve ser mantida com o profissional, no momento de preparo do medicamento.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Lavar as mãos antes e após o preparo do medicamento, a fim de minimizar os riscos de contaminação.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Não misturar na mesma administração medicamentos diferentes, com exceção dos casos prescritos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Seguir protocolos da instituição sobre diluição de medicamentos.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Comando EXCETO — sala de medicação",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Marque a conduta que NÃO é cuidado no preparo — quatro alternativas descrevem práticas corretas.",
+          "icon": "Target"
+        },
+        {
+          "label": "Prescrição à mão",
+          "detail": "Manter prescrição com o profissional durante o preparo — conferência dose × rótulo.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Higienização",
+          "detail": "Lavar as mãos antes e após o preparo — barreira contra contaminação cruzada.",
+          "icon": "Hand"
+        },
+        {
+          "label": "Pegadinha VO + SF",
+          "detail": "Via oral não usa SF como veículo rotineiro — banca mistura preparo injetável com administração VO.",
+          "icon": "Pill"
+        }
+      ],
+      "footer_rule": "EXCETO = achar a afirmativa falsa entre condutas corretas de preparo"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Preparo seguro — checklist",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PREPARO NA SALA DE MEDICAÇÃO",
+      "rows": [
+        {
+          "label": "Prescrição",
+          "value": "Conferir com rótulo — prescrição legível à mão do profissional"
+        },
+        {
+          "label": "Higienização",
+          "value": "Higienizar mãos antes e após manipular medicamentos"
+        },
+        {
+          "label": "Mistura",
+          "value": "Não misturar medicamentos na mesma seringa/bolsa salvo prescrição"
+        },
+        {
+          "label": "Diluição",
+          "value": "Seguir protocolo institucional — diluente e volume corretos"
+        },
+        {
+          "label": "Via oral",
+          "value": "VO não exige SF como diluente — não administrar comprimido/xarope em SF",
+          "emphasis": "alert"
+        }
+      ],
+      "footer_rule": "Preparo ≠ administração: SF é diluente parenteral, não veículo VO de rotina"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Achar o EXCETO",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Comando EXCETO: quatro alternativas são condutas corretas no preparo — marcar a falsa.",
+        "B: manter prescrição no preparo → prática correta de segurança → eliminar.",
+        "C: lavar mãos antes e após → biossegurança básica → eliminar.",
+        "D: não misturar medicamentos sem prescrição → evita incompatibilidade → eliminar.",
+        "E: seguir protocolo de diluição → institucional → eliminar.",
+        "A: administrar VO com solução fisiológica → conduta incorreta — SF não é veículo VO de rotina.",
+        "Confirmar letra A: única afirmativa falsa no preparo."
+      ],
+      "footer_rule": "Estratégia EXCETO: validar cada conduta correta antes de marcar a exceção"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas no preparo",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PEGADINHAS — PREPARO DE MEDICAMENTOS",
+      "items": [
+        {
+          "label": "Letra B — prescrição à mão",
+          "detail": "Parece burocracia, mas é regra dos 9 Certos — medicamento certo exige prescrição visível.",
+          "correct": "B é conduta correta — não é o EXCETO."
+        },
+        {
+          "label": "Letra C — lavar as mãos",
+          "detail": "Hábito tão básico que o aluno acha “óbvio demais” para ser gabarito — mas aqui é distrator válido.",
+          "correct": "C é correta — higienização obrigatória no preparo."
+        },
+        {
+          "label": "Letra D — não misturar",
+          "detail": "Incompatibilidade farmacológica é tema de prova — distrator forte e verdadeiro.",
+          "correct": "D é correta — mistura só com prescrição explícita."
+        },
+        {
+          "label": "Letra E — diluição",
+          "detail": "Protocolo institucional de diluição parece detalhe técnico — mas é conduta correta no preparo.",
+          "correct": "E é correta — seguir protocolo de diluição da instituição."
+        },
+        {
+          "label": "VO com solução fisiológica",
+          "detail": "Confundir diluente parenteral (SF 0,9%) com veículo de comprimido/xarope VO.",
+          "correct": "A é o EXCETO: via oral não usa SF como administrador de rotina."
+        }
+      ],
+      "footer_rule": "Transferência: toda alternativa que descreve boa prática de preparo é distrator — só A inverte VO × SF"
+    }
+  ]
+}

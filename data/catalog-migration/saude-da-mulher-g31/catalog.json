@@ -1,0 +1,28 @@
+{
+  "exported_at": "2026-07-10T18:23:34.835Z",
+  "lote": "saude-da-mulher-g31",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 4961
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4468
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3425
+    }
+  ]
+}

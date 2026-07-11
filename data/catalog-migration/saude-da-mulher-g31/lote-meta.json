@@ -1,0 +1,27 @@
+{
+  "lote": "saude-da-mulher-g31",
+  "subtopico": "Saúde da Mulher",
+  "status": "applied",
+  "exported_at": "2026-07-10",
+  "handcraft_applied_at": "2026-07-10",
+  "pedagogical_branch_target": "mulher_generico",
+  "slug_count": 3,
+  "readiness": "3/3",
+  "handcraft_grammar": "data/catalog-migration/saude-da-mulher-pedagogy-errors.json",
+  "guideline": "lib/guidelines/saudeMulher.ts",
+  "workflow": [
+    "npm run plan:saude-da-mulher-g31",
+    "npm run catalog:export-lote -- --lote=saude-da-mulher-g31 --from-manifest=data/catalog-migration/saude-da-mulher-g31/manifest.json",
+    "npm run handcraft:saude-da-mulher-g31",
+    "npm run audit:questao-readiness -- --lote=saude-da-mulher-g31 --strict-v3-pedagogy"
+  ],
+  "anchor_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-10",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-mulher-g31.json"
+  },
+  "applied_at": "2026-07-10"
+}

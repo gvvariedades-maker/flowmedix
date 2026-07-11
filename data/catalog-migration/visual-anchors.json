@@ -207,6 +207,36 @@
       "lote": "imunizacao-golden",
       "json_path": "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"
     },
+    "cam_certos_vf_caso": {
+      "pedagogical_branch": "cam_certos_vf_caso",
+      "slug": "fepese-cuidados-administracao-medicamentos",
+      "lote": "cuidados-na-administracao-de-medicamentos-golden",
+      "json_path": "examples/questao-premium-fepese-cuidados-administracao-medicamentos.json"
+    },
+    "cam_alto_risco": {
+      "pedagogical_branch": "cam_alto_risco",
+      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+      "lote": "cuidados-na-administracao-de-medicamentos-golden",
+      "json_path": "examples/questao-premium-fepese-cuidados-insulina-alto-risco.json"
+    },
+    "cam_exceto_conduta": {
+      "pedagogical_branch": "cam_exceto_conduta",
+      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
+      "lote": "cuidados-na-administracao-de-medicamentos-golden",
+      "json_path": "examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json"
+    },
+    "cam_documentacao": {
+      "pedagogical_branch": "cam_documentacao",
+      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4",
+      "lote": "cuidados-na-administracao-de-medicamentos-golden",
+      "json_path": "examples/questao-premium-avancasp-cuidados-documentacao-vf.json"
+    },
+    "cam_generico": {
+      "pedagogical_branch": "cam_generico",
+      "slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+      "lote": "cuidados-na-administracao-de-medicamentos-golden",
+      "json_path": "examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json"
+    },
     "via_vf_absorcao": {
       "pedagogical_branch": "via_vf_absorcao",
       "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
@@ -350,6 +380,30 @@
       "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
       "lote": "urgencias-admtec-rcp-aha2020-repair",
       "json_path": "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json"
+    },
+    "mulher_prenatal": {
+      "pedagogical_branch": "mulher_prenatal",
+      "slug": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "lote": "saude-da-mulher-g01",
+      "json_path": "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json"
+    },
+    "mulher_parto": {
+      "pedagogical_branch": "mulher_parto",
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+      "lote": "saude-da-mulher-g01",
+      "json_path": "examples/questao-premium-admtec-saude-mulher-parto-humanizado-vf.json"
+    },
+    "mulher_papanicolau": {
+      "pedagogical_branch": "mulher_papanicolau",
+      "slug": "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "lote": "saude-da-mulher-g01",
+      "json_path": "examples/questao-premium-vunesp-saude-mulher-papanicolau.json"
+    },
+    "mulher_mama": {
+      "pedagogical_branch": "mulher_mama",
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
+      "lote": "saude-da-mulher-g01",
+      "json_path": "examples/questao-premium-vunesp-saude-mulher-mamografia.json"
     }
   }
 }

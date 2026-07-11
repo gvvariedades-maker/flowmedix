@@ -1,0 +1,153 @@
+{
+  "version": 2,
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-cuidados-*.json,examples/questao-premium-fepese-cuidados-administracao-medicamentos.json,examples/questao-premium-fepese-cuidados-insulina-alto-risco.json,examples/questao-premium-cotec-cuidados-heparina-alto-risco.json,examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json,examples/questao-premium-avancasp-cuidados-documentacao-vf.json,examples/questao-premium-cpcon-cuidados-incorreta-nove-certos.json,examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json,examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json",
+  "guideline": "lib/guidelines/cuidadosMedicamentos.ts",
+  "golden_anchors_registry": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-golden-anchors.json",
+  "handcraft_meta": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/cuidados-na-administracao-de-medicamentos-topic-cluster-report.json",
+  "repair_lote_pattern": "cuidados-na-administracao-de-medicamentos-*-repair",
+  "slug_selection": "Âncoras P0 fechadas (8/8 READY): escalar lotes cuidados-na-administracao-de-medicamentos-g01+ — alto risco 19 · V/F 9 certos 18 · genérico ~60; export curado 123 slugs (npm run curate:cuidados-na-administracao-de-medicamentos); por slug [READY] strict-v2; por lote L2 (slug-alignment --strict) + L2b (numeric-factcheck); ou Slug: explícito",
+  "clusters": [
+    "Default — sem âncora temática (28 · 22,8% — cam_generico · âncora AVANÇASP EXCETO preparo)",
+    "Alto risco / conferência dupla (19 · 15,4% — cam_alto_risco · âncora FEPESE insulina)",
+    "V/F — 9 certos em caso clínico (18 · 14,6% — cam_certos_vf_caso · âncora FEPESE 9 certos)",
+    "Documentação / registro (16 · 13% — cam_documentacao · âncora AVANÇASP documentação V/F)",
+    "INCORRETA / EXCETO (9 · 7,3% — cam_exceto_conduta · gate cam_exceto_semantic)",
+    "Vigilância / reações adversas (7 · 5,7% — absorver em cam_generico)",
+    "Preparo / sala de medicação (6 · 4,9% — absorver em cam_generico)",
+    "V/F — protocolo MS / I–VI (5 · 4,1% — absorver em cam_generico)",
+    "Horário / aprazamento (5 · 4,1% — absorver em cam_generico)",
+    "Prescrição ilegível / dúvida (3 · 2,4% — absorver em cam_generico)",
+    "Nove certos — listagem (2 · 1,6% — cam_certos_vf_caso)",
+    "Certo ou errado (2 · 1,6% — cam_generico)",
+    "Orientação ao paciente (2 · 1,6% — cam_generico)",
+    "LASA / nomes semelhantes (1 · 0,8% — cam_generico)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "cam_certos_vf_caso",
+      "when": "V/F I–III sobre 9 Certos em caso clínico — combinação MCQ",
+      "mold": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena",
+      "anchors": ["examples/questao-premium-fepese-cuidados-administracao-medicamentos.json"]
+    },
+    {
+      "id": "cam_alto_risco",
+      "when": "Insulina, heparina, quimioterápico, conferência dupla — técnica e segurança alto risco",
+      "mold": "cam-high-risk-duo-deck · cam-high-risk-protocol-board · cam-alto-risco-elimination-tap · cam-high-risk-trap-arena",
+      "anchors": [
+        "examples/questao-premium-fepese-cuidados-insulina-alto-risco.json",
+        "examples/questao-premium-cotec-cuidados-heparina-alto-risco.json"
+      ]
+    },
+    {
+      "id": "cam_exceto_conduta",
+      "when": "EXCETO / INCORRETA — preparo sala, conduta correta × exceção (VO+SF)",
+      "mold": "cam-exceto-rail · cam-exceto-reference-board · cam-exceto-tap-flow · cam-exceto-trap-arena",
+      "anchors": [
+        "examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json",
+        "examples/questao-premium-cpcon-cuidados-incorreta-nove-certos.json"
+      ]
+    },
+    {
+      "id": "cam_documentacao",
+      "when": "V/F Registro certo (Certo 6) — documentação após administrar",
+      "mold": "cam-documentacao-deck · cam-documentacao-board · cam-documentacao-vf-tap · cam-documentacao-trap-arena",
+      "anchors": ["examples/questao-premium-avancasp-cuidados-documentacao-vf.json"]
+    },
+    {
+      "id": "cam_generico",
+      "when": "Vigilância, protocolo MS, aprazamento, preparo cauda — compare semântico genérico",
+      "mold": "bridge · center/reference_table · cards tap · compare semântico",
+      "anchors": [
+        "examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json",
+        "examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json"
+      ]
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_slug_v3": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+    "v3_mental": "npm run audit:questao-readiness -- --lote=<lote> --strict-v3-pedagogy",
+    "pedagogy_grammar": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-pedagogy-errors.json",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]",
+    "lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy"
+  },
+  "golden_v1_grammar": {
+    "concept_map": "Enquadramento da prova + erro reproduzível nomeado (9 Certos, alto risco ou preparo — não resumo COFEN)",
+    "golden_rule": "Decore normativo — rows 9 Certos, protocolo alto risco ou checklist preparo (sem gabarito letra)",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; V/F juggle ou eliminação letra a letra",
+    "danger_zone": "Erro reproduzível × correção por letra (compare semântico — espelha concept_map)"
+  },
+  "roi_priorities": [
+    {
+      "priority": "P0",
+      "action": "Handcraft g01 cam_alto_risco (19 slugs)",
+      "why": "Cluster 15,4% — molde bespoke 4/4 + âncora FEPESE insulina READY"
+    },
+    {
+      "priority": "P0",
+      "action": "Handcraft g02 cam_certos_vf_caso (18 slugs)",
+      "why": "Cluster 14,6% — molde cam-certos-* pronto"
+    },
+    {
+      "priority": "P0",
+      "action": "audit:slug-alignment --strict em todo lote",
+      "why": "Export curado 123 slugs — evita drift e compare vazio"
+    },
+    {
+      "priority": "P1",
+      "action": "Handcraft g04+ cam_exceto_conduta + cam_documentacao (~25 slugs)",
+      "why": "Pacotes cam-exceto-* e cam-documentacao-* bespoke 4/4 implementados"
+    },
+    {
+      "priority": "P1",
+      "action": "Handcraft g05+ cam_generico (vigilância, protocolo MS, cauda ~35 slugs)",
+      "why": "Cauda longa — compare semântico genérico"
+    },
+    {
+      "priority": "P1",
+      "action": "audit:numeric-factcheck + guideline cuidadosMedicamentos.ts",
+      "why": "Doses/diluição EV e preparo — pegadinha #1 em slugs clínicos"
+    },
+    {
+      "priority": "P2",
+      "action": "test:e2e:visual-molds -- --grep=\"CAM\" + audit:subtopico-quality --promote",
+      "why": "Fecha vendável L3–L6 — regressão visual 3 ramos bespoke + genérico"
+    }
+  ],
+  "proibido": ["ai:generate", "catalog:upgrade-premium"],
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Handcraft golden-v1 — 123 slugs curados em lotes cuidados-na-administracao-de-medicamentos-gNN",
+      "first_lote": "cuidados-na-administracao-de-medicamentos-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run audit:slug-alignment -- --lote=<lote> --strict",
+        "npm run audit:numeric-factcheck -- --lote=<lote>",
+        "npm run catalog:patch-pedagogical-branch -- --lote=<lote> --reconcile-branch --apply",
+        "npm run test:e2e:visual-molds -- --grep=\"CAM\"",
+        "npm run capture:questao-review -- --lote=<lote>",
+        "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run",
+        "# apply SOMENTE se usuário pedir:",
+        "npm run catalog:apply-lote -- --lote=<lote> --apply",
+        "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"Cuidados na Administração de Medicamentos\" --only-premium --reconcile-branch --apply"
+      ]
+    },
+    "single_slug": {
+      "lote_dir": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g01/questions",
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
+      ]
+    }
+  }
+}

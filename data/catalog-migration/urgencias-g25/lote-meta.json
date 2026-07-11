@@ -1,0 +1,16 @@
+{
+  "lote": "urgencias-g25",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g25",
+  "slug_count": 2,
+  "branches": {
+    "urgencias_rcp_pediatrico": 2
+  },
+  "anchors_used": [
+    "examples/questao-premium-access-urgencias-rcp-pediatrica-15-2.json",
+    "examples/questao-premium-consulpam-urgencias-pcr-pediatrica-conceito.json"
+  ],
+  "notes": "g25 RCP pediátrica final — engasgo→PCR · RCP extra-hospitalar lactente dois dedos (reconcile g09)"
+}

@@ -1,0 +1,13 @@
+{
+  "lote": "urgencias-g09",
+  "exported_at": "2026-07-08T14:01:02.234Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_sbv",
+    "batch": "g09-rcp-adulto-lote-final"
+  },
+  "slugs": [
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-7"
+  ]
+}

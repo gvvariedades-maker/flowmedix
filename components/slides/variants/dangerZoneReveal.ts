@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
 
@@ -9,23 +9,24 @@ export function useDangerZoneCompareReveal(
   revealMode: LogicFlowRevealMode = 'auto',
 ) {
   const prefersReducedMotion = useReducedMotion();
-  const [revealedIndices, setRevealedIndices] = useState<Set<number>>(() => new Set());
+  const [tapRevealedIndices, setTapRevealedIndices] = useState<Set<number>>(() => new Set());
+  const [tapSyncKey, setTapSyncKey] = useState({ itemCount, revealMode });
 
   const effectiveMode: LogicFlowRevealMode =
     prefersReducedMotion || revealMode !== 'tap' ? 'auto' : 'tap';
 
-  useEffect(() => {
-    if (effectiveMode === 'auto') {
-      setRevealedIndices(new Set(Array.from({ length: itemCount }, (_, i) => i)));
-      return;
-    }
-    setRevealedIndices(new Set());
-  }, [itemCount, effectiveMode]);
+  if (
+    effectiveMode === 'tap' &&
+    (tapSyncKey.itemCount !== itemCount || tapSyncKey.revealMode !== effectiveMode)
+  ) {
+    setTapSyncKey({ itemCount, revealMode: effectiveMode });
+    setTapRevealedIndices(new Set());
+  }
 
   const revealItem = useCallback(
     (index: number) => {
       if (effectiveMode !== 'tap') return;
-      setRevealedIndices((prev) => {
+      setTapRevealedIndices((prev) => {
         const next = new Set(prev);
         next.add(index);
         return next;
@@ -35,8 +36,8 @@ export function useDangerZoneCompareReveal(
   );
 
   const isItemRevealed = useCallback(
-    (index: number) => effectiveMode === 'auto' || revealedIndices.has(index),
-    [effectiveMode, revealedIndices],
+    (index: number) => effectiveMode === 'auto' || tapRevealedIndices.has(index),
+    [effectiveMode, tapRevealedIndices],
   );
 
   return {

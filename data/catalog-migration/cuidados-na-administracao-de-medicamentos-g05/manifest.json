@@ -1,0 +1,20 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g05",
+  "exported_at": "2026-07-10T23:25:51.527Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g05/manifest.json"
+  },
+  "slugs": [
+    "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-6",
+    "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+    "ivin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-5",
+    "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-0",
+    "unifil-enfermagem-seguranca-do-paciente-1779563443877-0",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-0",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-1",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-7",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-7",
+    "vunesp-enfermagem-seguranca-do-paciente-1779563448133-4"
+  ]
+}

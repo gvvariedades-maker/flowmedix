@@ -1,0 +1,19 @@
+{
+  "lote": "urgencias-g27",
+  "exported_at": "2026-07-08T18:09:28.427Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_convulsao",
+    "batch": "g27-convulsao-lote-final"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+    "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+    "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1"
+  ]
+}

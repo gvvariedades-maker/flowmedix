@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:33:04.294Z",
+  "lote": "urgencias-g22",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

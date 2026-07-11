@@ -6,7 +6,26 @@
     "ano": "2024",
     "cargo_header": "Técnico de Enfermagem",
     "topico": "Enfermagem",
-    "subtopico": "Cuidados na Administração de Medicamentos"
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "family": "vf",
+    "content_standard": "golden-v1",
+    "pedagogical_branch": "cam_certos_vf_caso",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "guideline_snapshot": "9 Certos da medicação · COFEN/segurança do paciente",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cofen-seg-med",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Segurança na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br",
+        "covers": ["9 certos", "identificação", "alto risco", "conferência dupla"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Em relação aos cuidados na administração de medicamentos, analise as afirmativas.\n\nI - A identificação do paciente deve ser feita com pelo menos dois identificadores independentes antes de cada administração, independentemente do local onde a medicação será aplicada.\nII - Medicamentos de alto risco exigem conferência dupla por dois profissionais habilitados, conforme protocolo institucional e normas de segurança do paciente.\nIII - Diante de prescrição ilegível, dose duvidosa ou divergência entre prescrição e rotulagem, o profissional pode administrar se o medicamento for de uso habitual na unidade.\n\nÉ CORRETO o que se afirma em:",

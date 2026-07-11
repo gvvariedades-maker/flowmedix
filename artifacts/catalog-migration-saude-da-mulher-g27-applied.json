@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-07-10T18:57:33.704Z",
+  "lote": "saude-da-mulher-g27",
+  "mode": "apply",
+  "total_files": 7,
+  "ok": 7,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-5",
+    "instituto-consulplan-geral-saude-da-mulher-1777104235003-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-0",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-5",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-saude-da-mulher-1777104235003-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

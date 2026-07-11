@@ -46,6 +46,16 @@ import {
   isViasV3ErrorCode,
 } from '@/lib/catalogMigration/viasPedagogy';
 import {
+  lintSaudeMulherPedagogy,
+  isMulherAlwaysErrorCode,
+  isMulherV3ErrorCode,
+} from '@/lib/catalogMigration/saudeMulherPedagogy';
+import {
+  lintCamPedagogy,
+  isCamAlwaysErrorCode,
+  isCamV3ErrorCode,
+} from '@/lib/catalogMigration/camPedagogy';
+import {
   lintRedeFrioFactcheck,
   REDE_FRIO_ALWAYS_ERROR_CODES,
 } from '@/lib/catalogMigration/redeFrioFactcheck';
@@ -376,6 +386,36 @@ export function auditQuestaoReadiness(
         const asError =
           isUrgenciasAlwaysErrorCode(issue.code) ||
           (strictV3Pedagogy && isUrgenciasV3ErrorCode(issue.code)) ||
+          strictV2Pedagogy;
+        push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
+      }
+    }
+
+    if (subtopico === 'Saúde da Mulher') {
+      for (const issue of lintSaudeMulherPedagogy(payload as never, {
+        strictV2: strictV2Pedagogy,
+        strictV3: strictV3Pedagogy,
+      })) {
+        const already = checks.some((c) => c.code === issue.code);
+        if (already) continue;
+        const asError =
+          isMulherAlwaysErrorCode(issue.code) ||
+          (strictV3Pedagogy && isMulherV3ErrorCode(issue.code)) ||
+          strictV2Pedagogy;
+        push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
+      }
+    }
+
+    if (subtopico === 'Cuidados na Administração de Medicamentos') {
+      for (const issue of lintCamPedagogy(payload as never, {
+        strictV2: strictV2Pedagogy,
+        strictV3: strictV3Pedagogy,
+      })) {
+        const already = checks.some((c) => c.code === issue.code);
+        if (already) continue;
+        const asError =
+          isCamAlwaysErrorCode(issue.code) ||
+          (strictV3Pedagogy && isCamV3ErrorCode(issue.code)) ||
           strictV2Pedagogy;
         push(checks, 'A2', issue.code, issue.message, asError ? 'error' : 'warn');
       }

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:56:30.437Z",
+  "lote": "saude-da-mulher-g23",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-saude-da-mulher-1777104389226-5",
+    "funtef-enfermagem-semiologia-em-enfermagem-1779563517223-5",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-2",
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-5",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-4",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-0",
+    "idesg-enfermagem-saude-da-mulher-1777104335102-0",
+    "idib-enfermagem-saude-da-mulher-1778934944659-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104389226-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-semiologia-em-enfermagem-1779563517223-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-saude-da-mulher-1777104335102-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

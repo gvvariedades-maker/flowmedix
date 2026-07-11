@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g05",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g05",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_rcp_sbv": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+    "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
+    "examples/questao-premium-urgencias-rcp.json"
+  ],
+  "notes": "g05 — PCR emergência · naloxona opioides · AHA 2020 30:2 · identificação PCR · AHA 2020 qualidade compressões · 30:2 extra-hospitalar · SBV monitorização · ILCOR RCP mecânica"
+}

@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "banca": "ADM&TEC",
+    "prova": "Tec Enf",
+    "orgao": "Prefeitura",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Mulher",
+    "family": "vf",
+    "pedagogical_branch": "mulher_parto",
+    "content_standard": "golden-v1",
+    "content_review": {
+      "reviewed_at": "2026-07-08",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "PNH — Política Nacional de Humanização / parto humanizado",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pnh-parto-humanizado",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Política Nacional de Humanização — HumanizaSUS",
+        "year": 2013,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_humanizacao.pdf",
+        "covers": [
+          "métodos não farmacológicos dilatação",
+          "acompanhante livre escolha",
+          "posição vertical expulsivo",
+          "clampeamento tardio cordão",
+          "monitorização fetal seletiva"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre boas práticas no trabalho de parto humanizado, analise as afirmativas.\n\nI - A monitorização cardíaca fetal contínua deve ser realizada para todas as gestantes em trabalho de parto.\nII - Métodos não farmacológicos de alívio da dor, como banho de imersão em água morna, devem ser oferecidos durante a dilatação.\nIII - Na fase expulsiva, a posição supina é a única recomendada para facilitar o parto.\nIV - O clampeamento tardio do cordão umbilical, entre 1 e 3 minutos após o nascimento, é recomendado quando não há contraindicação.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I e II, apenas.", "is_correct": false },
+      { "id": "B", "text": "II e IV, apenas.", "is_correct": true },
+      { "id": "C", "text": "I, II e III.", "is_correct": false },
+      { "id": "D", "text": "II, III e IV.", "is_correct": false },
+      { "id": "E", "text": "I, II, III e IV.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Fases do trabalho de parto",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "items": [
+        { "label": "Marco da questão", "detail": "Fase expulsiva — posição vertical/lateral, não supina fixa (III falsa).", "icon": "Move" },
+        { "label": "Dor não farmacológica", "detail": "Água morna e movimentação na dilatação — assertiva II.", "icon": "Droplets" },
+        { "label": "Acompanhante", "detail": "Livre escolha durante todo o trabalho de parto humanizado.", "icon": "Users" },
+        { "label": "Clampeamento", "detail": "Tardio um a três min quando viável — assertiva IV.", "icon": "Baby" }
+      ],
+      "footer_rule": "Humanização ≠ protocolo rígido de CTG contínuo"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Parto humanizado — referência",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "PARTO HUMANIZADO",
+      "rows": [
+        { "label": "Acompanhante", "value": "Livre escolha — trabalho de parto", "badge": "ok" },
+        { "label": "Alívio não farmacológico", "value": "Água morna · movimentação na dilatação", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Posição expulsivo", "value": "Vertical ou lateral — não supina fixa", "badge": "warn", "emphasis": "alert" },
+        { "label": "Clampeamento tardio", "value": "Um a três minutos — ferro neonatal", "badge": "hot" },
+        { "label": "Monitorização FCF", "value": "Indicada — não rotina contínua universal", "badge": "warn" }
+      ],
+      "footer_rule": "I e III exageram intervenção; II e IV são diretrizes atuais"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "steps": [
+        "Identificar formato: quatro afirmativas (I–IV) sobre parto humanizado + “É CORRETO o que se afirma em”.",
+        "Julgar I: CTG contínuo para todas → FALSA — indicação seletiva, não rotina universal.",
+        "Julgar II: métodos não farmacológicos na dilatação → VERDADEIRA.",
+        "Julgar III: supina única no expulsivo → FALSA — vertical/lateral permitidas.",
+        "Julgar IV: clampeamento tardio um a três minutos → VERDADEIRA.",
+        "Montar conjunto verdadeiro: II e IV apenas.",
+        "Localizar alternativa B = “II e IV, apenas”.",
+        "Eliminar A (inclui I falsa), C (inclui III falsa), D (inclui III falsa), E (inclui I e III falsas).",
+        "Marcar B.",
+        "Fixação: vertical/lateral no expulsivo — não protocolo antigo supino."
+      ],
+      "footer_rule": "Parto humanizado: conforto materno + segurança fetal seletiva"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "PEGADINHAS — PARTO HUMANIZADO",
+      "items": [
+        {
+          "label": "Letra A — CTG contínuo universal",
+          "detail": "Monitorização cardíaca fetal contínua para todas",
+          "correct": "Indicar conforme risco — não rotina para todas as gestantes"
+        },
+        {
+          "label": "Letra C — supina no expulsivo",
+          "detail": "Posição supina obrigatória na fase expulsiva",
+          "correct": "Vertical ou lateral — mobilidade e conforto materno"
+        },
+        {
+          "label": "Letra D — II, III e IV",
+          "detail": "Inclui III falsa (supina obrigatória no expulsivo).",
+          "correct": "III é falsa — posição vertical ou lateral, não supina fixa."
+        },
+        {
+          "label": "Letra E — I, II, III e IV",
+          "detail": "Aceita I e III como verdadeiras.",
+          "correct": "I e III são falsas — CTG não é universal; supina não é única no expulsivo."
+        }
+      ],
+      "footer_rule": "Cada distrator justifica a conduta humanizada da alternativa correspondente"
+    }
+  ]
+}

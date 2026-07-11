@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "banca": "Facet",
+    "prova": "TEnf",
+    "orgao": "Concurso Facet",
+    "ano": "2022",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "family": "conceito",
+    "content_standard": "golden-v1",
+    "pedagogical_branch": "cam_generico",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "guideline_snapshot": "Resposta certa · vigilância de reações adversas · COFEN",
+      "exam_vs_current": "none",
+      "catalog_slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+      "cluster": "Vigilância / reações adversas",
+      "anchor_role": "vigilancia_reacao_adversa"
+    },
+    "sources": [
+      {
+        "id": "cofen-seg-med",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Segurança na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br",
+        "covers": ["reação adversa", "vigilância", "resposta certa"]
+      },
+      {
+        "id": "anvisa-fv",
+        "tier": "A",
+        "issuer": "ANVISA",
+        "title": "Farmacovigilância e notificação de eventos adversos",
+        "year": 2023,
+        "url": "https://www.gov.br/anvisa",
+        "covers": ["notificação", "vigilância sanitária"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Ao administrar medicamentos, o técnico de enfermagem deve estar atento às práticas seguras para evitar erros e monitorar o paciente. Sobre a vigilância de reações adversas após a administração, assinale a alternativa correta:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A observação do paciente após a medicação é dispensável quando o medicamento é de uso habitual na unidade.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Reações leves no local da aplicação não precisam ser registradas no prontuário do paciente.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O profissional deve permanecer próximo ao paciente apenas na primeira administração de um antibiótico endovenoso.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O técnico deve orientar o paciente a comunicar sintomas inesperados e registrar no prontuário qualquer reação observada após a administração.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "A notificação de eventos adversos à vigilância sanitária é atribuição exclusiva do médico prescritor.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Resposta certa — vigilância",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "label": "Certo 8 — Resposta",
+          "detail": "Monitorar efeito terapêutico e reações adversas após administrar — parte dos 9 Certos.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Observação contínua",
+          "detail": "Uso habitual na unidade não dispensa vigilância — cada paciente e dose podem reagir diferente.",
+          "icon": "Eye"
+        },
+        {
+          "label": "Registro",
+          "detail": "Reação leve ou local também entra no prontuário — rastreabilidade para equipe e farmacovigilância.",
+          "icon": "ClipboardList"
+        },
+        {
+          "label": "Pegadinha banca",
+          "detail": "Achar que só EV primeira vez ou que notificação é só do médico — enfermagem participa da vigilância.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Administrou → observou → registrou → comunicou se necessário"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Vigilância pós-administração",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "RESPOSTA CERTA — REAÇÕES",
+      "rows": [
+        {
+          "label": "Monitorar",
+          "value": "Observar paciente após cada administração — inclusive medicamento habitual",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Registrar",
+          "value": "Anotar reações no prontuário — leves ou graves",
+          "badge": "hot"
+        },
+        {
+          "label": "Orientar paciente",
+          "value": "Esclarecer sinais de alerta e canal de comunicação",
+          "badge": "ok"
+        },
+        {
+          "label": "Notificar",
+          "value": "Equipe e vigilância conforme protocolo — enfermagem notifica eventos",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Reação adversa = sempre documentar + acionar protocolo institucional"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — eliminação",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Tema: vigilância de reações adversas — Certo 8 (Resposta certa) dos 9 Certos.",
+        "Eliminar letra A: uso habitual não dispensa observação pós-administração.",
+        "Eliminar letra B: reação leve também deve ser registrada no prontuário.",
+        "Eliminar letra C: vigilância não se restringe à primeira dose de antibiótico EV.",
+        "Eliminar letra E: notificação envolve equipe multiprofissional — não é exclusiva do médico.",
+        "Confirmar letra D: orientar paciente + registrar reação observada — conduta completa.",
+        "Fixação: banca testa se o aluno omite registro ou vigilância por “rotina de unidade”."
+      ],
+      "footer_rule": "Estratégia: eliminar alternativas que dispensam observar ou documentar"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — reações adversas",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PEGADINHAS — VIGILÂNCIA",
+      "items": [
+        {
+          "label": "Letra A — uso habitual",
+          "detail": "Parece ganho de tempo em unidade que repete o mesmo antibiótico.",
+          "correct": "Vigilância é obrigatória — hábito da unidade não substitui monitoramento."
+        },
+        {
+          "label": "Letra B — não registrar leve",
+          "detail": "Aluno acha que só reação grave vai ao prontuário.",
+          "correct": "Registrar reações observadas — inclusive leves no local."
+        },
+        {
+          "label": "Letra C — só primeira EV",
+          "detail": "Restringe vigilância a um cenário — ignora outras vias e redoses.",
+          "correct": "Monitorar após administração conforme risco e protocolo — não só 1ª dose EV."
+        },
+        {
+          "label": "Letra E — só médico notifica",
+          "detail": "Confunde prescrição com farmacovigilância operacional.",
+          "correct": "Enfermagem registra, comunica e participa da notificação conforme norma."
+        },
+        {
+          "label": "Pegadinha — uso habitual",
+          "detail": "Espelha o concept_map: rotina da unidade não dispensa vigilância pós-dose.",
+          "correct": "Observar e documentar reações mesmo quando o medicamento é habitual."
+        }
+      ],
+      "footer_rule": "Transferência: toda alternativa que dispensa observar ou documentar está errada"
+    }
+  ]
+}

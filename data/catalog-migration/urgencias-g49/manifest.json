@@ -1,0 +1,16 @@
+{
+  "lote": "urgencias-g49",
+  "exported_at": "2026-07-09T02:01:13.681Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "batch": "g49-orphan-reconcile-339",
+    "orphan_reconcile": true,
+    "remaining_count": 3
+  },
+  "slugs": [
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-6"
+  ]
+}

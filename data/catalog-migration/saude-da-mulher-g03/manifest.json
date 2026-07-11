@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g03",
+  "exported_at": "2026-07-09T05:15:02.910Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g03/manifest.json"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+    "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+    "amauc-enfermagem-processo-de-enfermagem-1780005128081-1",
+    "ameosc-enfermagem-processo-de-enfermagem-1780008225255-7",
+    "atame-enfermagem-saude-da-mulher-1777104347186-6",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104261182-8",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-0",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-7"
+  ]
+}

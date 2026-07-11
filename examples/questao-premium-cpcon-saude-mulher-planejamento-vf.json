@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "ACS",
+    "orgao": "Pref Pombal",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Mulher",
+    "family": "vf",
+    "pedagogical_branch": "mulher_planejamento",
+    "content_standard": "golden-v1",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "MS — planejamento familiar / categorias contraceptivas",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "caderno-ab-32-prenatal",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Cadernos de Atenção Básica nº 32 — Atenção ao pré-natal de baixo risco",
+        "year": 2012,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/cadernos_atencao_basica_32_prenatal.pdf",
+        "covers": [
+          "planejamento familiar APS",
+          "métodos comportamentais",
+          "categorias contraceptivas",
+          "contracepção lactante"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Há vários tipos de métodos anticoncepcionais. Métodos comportamentais são aqueles que, para serem utilizados, dependem da observação das mudanças que ocorrem no corpo da mulher durante vários ciclos menstruais. São métodos comportamentais apenas:\n\nI - anticoncepcionais orais.\nII - tabelinha.\nIII - temperatura basal.\nIV - coito interrompido.\nV - muco cervical.\n\nÉ CORRETO o que se afirma apenas em:",
+    "options": [
+      { "id": "A", "text": "IV e V.", "is_correct": false },
+      { "id": "B", "text": "I, II e III.", "is_correct": false },
+      { "id": "C", "text": "III, IV e V.", "is_correct": false },
+      { "id": "D", "text": "I, II e IV.", "is_correct": false },
+      { "id": "E", "text": "II, III, IV e V.", "is_correct": true }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Categorias — contracepção",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "items": [
+        { "label": "Comando", "detail": "Classificar métodos comportamentais (observação do ciclo).", "icon": "Target" },
+        { "label": "Pegadinha I", "detail": "Anticoncepcional oral = hormonal — não comportamental.", "icon": "AlertTriangle" },
+        { "label": "Comportamentais", "detail": "Tabelinha, temperatura basal, coito interrompido, muco cervical.", "icon": "ListChecks" },
+        { "label": "Julgamento", "detail": "II, III, IV e V verdadeiras — I (oral) é falsa.", "icon": "Scale" }
+      ],
+      "footer_rule": "Hormonal ≠ comportamental — julgar I antes de cruzar letras"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Planejamento familiar — referência",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "MÉTODOS CONTRACEPTIVOS",
+      "rows": [
+        { "label": "Comportamentais", "value": "Tabelinha · temperatura basal · coito interrompido · muco cervical", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Hormonais", "value": "Anticoncepcional oral combinado ou progestagênio", "badge": "info" },
+        { "label": "Barreira", "value": "Preservativo · diafragma", "badge": "info" },
+        { "label": "LARC", "value": "DIU · implante subdérmico", "badge": "info" },
+        { "label": "Lactante", "value": "Priorizar progestagênio ou LARC — evitar combinado precoce", "badge": "warn" },
+        { "label": "Pegadinha oral", "value": "Pílula não é método comportamental", "badge": "warn", "emphasis": "alert" }
+      ],
+      "footer_rule": "I falsa — oral é hormonal"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "steps": [
+        "Identificar formato: cinco assertivas (I–V) + “É CORRETO o que se afirma apenas em”.",
+        "Julgar I: anticoncepcional oral → FALSA (método hormonal).",
+        "Julgar II: tabelinha → VERDADEIRA (comportamental).",
+        "Julgar III: temperatura basal → VERDADEIRA.",
+        "Julgar IV: coito interrompido → VERDADEIRA.",
+        "Julgar V: muco cervical → VERDADEIRA.",
+        "Conjunto verdadeiro: II, III, IV e V — excluir I.",
+        "Eliminar A (falta II), B e D (incluem I), C (falta II).",
+        "Marcar E.",
+        "Fixação: comportamental exige observação do ciclo — não pílula."
+      ],
+      "footer_rule": "Julgar I–V antes de montar combinação"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Mulher" },
+      "content": "PEGADINHAS — HORMONAL × COMPORTAMENTAL",
+      "items": [
+        {
+          "label": "Letra A — IV e V",
+          "detail": "Só coito interrompido e muco cervical",
+          "correct": "Faltam tabelinha (II) e temperatura basal (III) — comportamentais"
+        },
+        {
+          "label": "Letra B — I, II e III",
+          "detail": "Inclui anticoncepcional oral",
+          "correct": "I é hormonal — não entra em métodos comportamentais"
+        },
+        {
+          "label": "Letra C — III, IV e V",
+          "detail": "Exclui tabelinha (II)",
+          "correct": "Tabelinha é método comportamental clássico em prova"
+        },
+        {
+          "label": "Letra D — I, II e IV",
+          "detail": "Mistura oral com tabelinha e coito interrompido",
+          "correct": "I é falsa — pílula não depende só de observação do ciclo"
+        }
+      ],
+      "footer_rule": "Cada distrator erra por incluir I ou omitir II/III"
+    }
+  ]
+}

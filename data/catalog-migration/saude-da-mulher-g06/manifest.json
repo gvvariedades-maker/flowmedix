@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g06",
+  "exported_at": "2026-07-09T05:42:21.142Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g06/manifest.json"
+  },
+  "slugs": [
+    "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
+    "idecan-enfermagem-saude-da-mulher-1777104389226-7",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-0",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-1",
+    "idecan-enfermagem-saude-da-mulher-1780067024707-7",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-3",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-3",
+    "idib-enfermagem-saude-da-mulher-1777104335102-1"
+  ]
+}

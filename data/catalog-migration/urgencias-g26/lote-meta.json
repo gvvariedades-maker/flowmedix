@@ -1,0 +1,16 @@
+{
+  "lote": "urgencias-g26",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g26",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_vf_protocolo": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-ameosc-urgencias-trauma-imobilizacao-vf.json",
+    "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json"
+  ],
+  "notes": "g26 V/F protocolo final — imobilização AMEOSC · vasoativas COTEC · dor torácica CPCON · convulsão CPCON (vf) · trauma pélvico GAMA · primeiros socorros IGEDUC ×2 · SAMU Consulplan · cluster urgencias_vf_protocolo 8/8 fechado"
+}

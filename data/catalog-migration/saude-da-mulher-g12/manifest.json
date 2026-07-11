@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g12",
+  "exported_at": "2026-07-10T14:44:13.351Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g12/manifest.json"
+  },
+  "slugs": [
+    "cebraspe-cespe-enfermagem-saude-da-mulher-1777104376057-3",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-5",
+    "cev-urca-enfermagem-saude-da-mulher-1777104329543-3",
+    "cev-urca-enfermagem-saude-da-mulher-1777104347186-3",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-6",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104340484-7",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104376057-4"
+  ]
+}

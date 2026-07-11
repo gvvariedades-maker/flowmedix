@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g42",
+  "exported_at": "2026-07-09T00:37:57.721Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g42-generico-tail-batch-8"
+  },
+  "slugs": [
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-8",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-0",
+    "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-1",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-8",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-4",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-5",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-8",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-3"
+  ]
+}

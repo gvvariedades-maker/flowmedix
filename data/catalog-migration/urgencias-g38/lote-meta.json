@@ -1,0 +1,29 @@
+{
+  "lote": "urgencias-g38",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g38",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_generico": 6,
+    "urgencias_xabcde_trauma": 1,
+    "urgencias_vf_protocolo": 1
+  },
+  "branch_by_slug": {
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4": "urgencias_xabcde_trauma",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9": "urgencias_generico",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0": "urgencias_generico",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-0": "urgencias_generico",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-1": "urgencias_generico",
+    "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5": "urgencias_vf_protocolo",
+    "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7": "urgencias_generico",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0": "urgencias_generico"
+  },
+  "playbook_clusters_opened": {
+    "Urgências — conceito geral": 3,
+    "Certo ou errado": 3,
+    "Default — sem âncora temática": 1
+  },
+  "notes": "g38 — 9º lote cauda urgencias_generico · 8/8 READY strict-v2 · fratura imobilização · politrauma primário · peçonhento C/E · gestão risco · SCO · PS V/F · hipoglicemia · raiva limpeza"
+}

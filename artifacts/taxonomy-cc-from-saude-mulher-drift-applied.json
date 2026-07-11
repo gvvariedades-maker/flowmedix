@@ -1,0 +1,31 @@
+{
+  "applied_at": "2026-07-10T18:29:00.000Z",
+  "dry_run": false,
+  "applied_count": 17,
+  "note": "Primeira execução --apply migrou 17 slugs no Supabase e removeu do manifest; cache invalidation falhou fora do Next (corrigido no script). Re-run confirmou mesmo subtópico.",
+  "lines": [
+    { "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2", "from": "Saúde da Mulher", "to": "Coleta de Exames Laboratoriais", "applied": true },
+    { "slug": "atame-enfermagem-saude-da-mulher-1777104347186-8", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "atame-enfermagem-vias-de-administracao-1778968573722-0", "from": "Saúde da Mulher", "to": "Vias de Administração", "applied": true },
+    { "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104408379-0", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5", "from": "Saúde da Mulher", "to": "Epidemiologia e Vigilância Epidemiológica", "applied": true },
+    { "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-8", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104301763-5", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-1", "from": "Saúde da Mulher", "to": "Urgências e Emergências", "applied": true },
+    { "slug": "fundatec-enfermagem-saude-da-mulher-1777104424950-0", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "idecan-enfermagem-saude-da-mulher-1777104335102-4", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "idecan-enfermagem-saude-da-mulher-1778712437306-2", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4", "from": "Saúde da Mulher", "to": "Promoção à Saúde e Prevenção de Agravos", "applied": true },
+    { "slug": "unifil-enfermagem-saude-da-mulher-1777104376057-1", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "univida-enfermagem-saude-da-mulher-1777104389226-1", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true },
+    { "slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-6", "from": "Saúde da Mulher", "to": "Noções de Anatomia", "applied": true }
+  ],
+  "absorbed_remain_in_sm": [
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+    "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+    "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+    "iset-enfermagem-saude-da-mulher-1777104376057-0"
+  ]
+}

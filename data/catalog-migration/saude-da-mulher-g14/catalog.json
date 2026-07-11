@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T14:58:48.294Z",
+  "lote": "saude-da-mulher-g14",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104222222-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 1339
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104340484-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 1431
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 1479
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 1482
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104382533-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 1461
+    },
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104382533-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 1454
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 1368
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 1371
+    }
+  ]
+}

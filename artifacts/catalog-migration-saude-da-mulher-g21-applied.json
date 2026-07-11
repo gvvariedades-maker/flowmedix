@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:56:01.662Z",
+  "lote": "saude-da-mulher-g21",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-4",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-7",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-0",
+    "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

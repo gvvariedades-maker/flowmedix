@@ -1,0 +1,32 @@
+{
+  "lote": "saude-da-mulher-g01",
+  "subtopico": "Saúde da Mulher",
+  "status": "applied",
+  "applied_at": "2026-07-10",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "pipeline-completo",
+  "slug_count": 4,
+  "branches": {
+    "mulher_prenatal": 1,
+    "mulher_parto": 1,
+    "mulher_papanicolau": 1,
+    "mulher_mama": 1
+  },
+  "anchors_used": [
+    "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json",
+    "examples/questao-premium-admtec-saude-mulher-parto-humanizado-vf.json",
+    "examples/questao-premium-vunesp-saude-mulher-papanicolau.json",
+    "examples/questao-premium-vunesp-saude-mulher-mamografia.json"
+  ],
+  "handcraft_grammar": "data/catalog-migration/saude-da-mulher-pedagogy-errors.json",
+  "guideline": "lib/guidelines/saudeMulher.ts",
+  "notes": "Piloto g01 — 1 slug por ramo forte (4/4 moldes bespoke) · validar no player antes de escalar g02+",
+  "anchor_slug": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-10",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-mulher-g01.json"
+  }
+}

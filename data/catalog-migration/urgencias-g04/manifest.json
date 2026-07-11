@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g04",
+  "exported_at": "2026-07-08T12:25:13.101Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_sbv",
+    "batch": "g04-rcp-adulto-lote-4"
+  },
+  "slugs": [
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006962671-9",
+    "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-0",
+    "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-1",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-6",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104056718-2"
+  ]
+}

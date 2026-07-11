@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:54:45.962Z",
+  "lote": "saude-da-mulher-g16",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-3",
+    "igeduc-enfermagem-saude-da-mulher-1780001440222-0",
+    "igeduc-enfermagem-seguranca-do-paciente-1777102918981-3",
+    "inaz-do-para-enfermagem-saude-da-mulher-1777104335102-5",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-5",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104323066-7",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104340484-6",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104347186-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1780001440222-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-seguranca-do-paciente-1777102918981-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104335102-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104323066-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104340484-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104347186-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

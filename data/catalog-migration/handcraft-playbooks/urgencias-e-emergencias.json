@@ -3,7 +3,7 @@
   "subtopico": "Urgências e Emergências",
   "pacote_prefix": "urgencias-e-emergencias",
   "scope_default": "subtopico_handcraft",
-  "anchor_glob": "examples/questao-premium-*-urgencias-*.json,examples/questao-premium-urgencias-rcp.json",
+  "anchor_glob": "examples/questao-premium-*-urgencias-*.json,examples/questao-premium-urgencias-rcp.json,examples/questao-premium-fau-unicentro-urgencias-generico-glasgow-domains.json",
   "guideline": "lib/guidelines/urgencias.ts + lib/guidelines/urgenciasProtocolos.ts",
   "golden_anchors_registry": "data/catalog-migration/urgencias-golden-anchors.json",
   "handcraft_meta": "data/catalog-migration/urgencias-e-emergencias-completo/handcraft-meta.json",
@@ -128,8 +128,8 @@
       "when": "Default, conceito geral, certo/errado, drift residual — sem fit nos ramos acima; sem vazar IPCS/CVC sem âncora",
       "mold": "urgencias-emergency-hub · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena",
       "anchors": [
-        "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
-        "examples/questao-premium-amauc-urgencias-cincinnati-avc.json"
+        "examples/questao-premium-fau-unicentro-urgencias-generico-glasgow-domains.json",
+        "examples/questao-premium-admtec-urgencias-rcp-30-2-aha2020.json"
       ]
     }
   ],

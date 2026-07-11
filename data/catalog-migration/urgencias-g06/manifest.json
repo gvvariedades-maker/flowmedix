@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g06",
+  "exported_at": "2026-07-08T12:46:03.406Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_sbv",
+    "batch": "g06-rcp-adulto-lote-6"
+  },
+  "slugs": [
+    "unifil-enfermagem-urgencias-e-emergencias-1777104012755-2",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+    "unesc-enfermagem-urgencias-e-emergencias-1780001220945-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2"
+  ]
+}

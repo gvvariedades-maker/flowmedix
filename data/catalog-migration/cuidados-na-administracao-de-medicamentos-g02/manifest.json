@@ -1,0 +1,18 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g02",
+  "exported_at": "2026-07-10T22:21:47.322Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g02/manifest.json"
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-5",
+    "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-6",
+    "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-4",
+    "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-6",
+    "avancasp-enfermagem-seguranca-do-paciente-1777102742836-5",
+    "avancasp-enfermagem-seguranca-do-paciente-1777102742836-6",
+    "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-6",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-9"
+  ]
+}

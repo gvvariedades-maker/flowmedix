@@ -1,0 +1,26 @@
+{
+  "lote": "saude-da-mulher-g16",
+  "subtopico": "Saúde da Mulher",
+  "status": "applied",
+  "exported_at": "2026-07-10",
+  "handcraft_applied_at": "2026-07-10",
+  "pedagogical_branch_target": "mulher_parto",
+  "slug_count": 8,
+  "readiness": "8/8",
+  "handcraft_grammar": "data/catalog-migration/saude-da-mulher-pedagogy-errors.json",
+  "guideline": "lib/guidelines/saudeMulher.ts",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=saude-da-mulher-g16 --from-manifest=data/catalog-migration/saude-da-mulher-g16/manifest.json",
+    "npm run handcraft:saude-da-mulher-g16",
+    "npm run audit:questao-readiness -- --lote=saude-da-mulher-g16 --strict-v3-pedagogy"
+  ],
+  "anchor_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-3",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-10",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-mulher-g16.json"
+  },
+  "applied_at": "2026-07-10"
+}

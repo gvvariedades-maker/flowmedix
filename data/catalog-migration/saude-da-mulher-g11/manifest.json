@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g11",
+  "exported_at": "2026-07-09T06:29:00.546Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g11/manifest.json"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+    "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+    "amauc-enfermagem-processo-de-enfermagem-1780002441285-6",
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-9",
+    "amauc-enfermagem-saude-da-mulher-1777104295283-7",
+    "ameosc-enfermagem-saude-da-mulher-1777104376057-5",
+    "atame-enfermagem-saude-da-mulher-1777104347186-7",
+    "atame-enfermagem-saude-da-mulher-1777104382533-0"
+  ]
+}

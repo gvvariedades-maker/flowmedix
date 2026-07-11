@@ -1,0 +1,32 @@
+{
+  "lote": "saude-da-mulher-g25",
+  "subtopico": "Saúde da Mulher",
+  "status": "applied",
+  "exported_at": "2026-07-10",
+  "handcraft_applied_at": "2026-07-10",
+  "pedagogical_branch_target": "mixed_p0_tail",
+  "slug_count": 14,
+  "readiness": "14/14",
+  "branch_mix": {
+    "mulher_prenatal": 2,
+    "mulher_parto": 5,
+    "mulher_papanicolau": 4,
+    "mulher_mama": 3
+  },
+  "handcraft_grammar": "data/catalog-migration/saude-da-mulher-pedagogy-errors.json",
+  "guideline": "lib/guidelines/saudeMulher.ts",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=saude-da-mulher-g25 --from-manifest=data/catalog-migration/saude-da-mulher-g25/manifest.json",
+    "npm run handcraft:saude-da-mulher-g25",
+    "npm run audit:questao-readiness -- --lote=saude-da-mulher-g25 --strict-v3-pedagogy"
+  ],
+  "anchor_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563467322-8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-10",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-mulher-g25.json"
+  },
+  "applied_at": "2026-07-10"
+}

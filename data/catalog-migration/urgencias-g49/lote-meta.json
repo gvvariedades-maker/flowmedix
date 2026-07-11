@@ -1,0 +1,13 @@
+{
+  "lote": "urgencias-g49",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g49",
+  "slug_count": 3,
+  "branches_planned": {
+    "urgencias_choque": 1,
+    "urgencias_generico": 2
+  },
+  "notes": "g49 — orphan-reconcile micro-lote FINAL · 3 slugs ausentes de g48 · choque elétrico (E) · embolia gasosa VM (A) · TVP pós-op panturrilha (B) → 339/339"
+}

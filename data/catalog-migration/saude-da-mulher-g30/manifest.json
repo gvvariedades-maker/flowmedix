@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g30",
+  "exported_at": "2026-07-10T18:20:00.836Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g30/manifest.json"
+  },
+  "slugs": [
+    "amauc-enfermagem-saude-da-mulher-1777104295283-8",
+    "avancasp-enfermagem-saude-da-mulher-1777104323066-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+    "itame-enfermagem-saude-da-mulher-1777104432986-1",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-3",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-1"
+  ]
+}

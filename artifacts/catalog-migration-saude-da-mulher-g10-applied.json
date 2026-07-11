@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:53:24.824Z",
+  "lote": "saude-da-mulher-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+    "univida-enfermagem-saude-da-mulher-1777104389226-2",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-9",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+    "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+    "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+    "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+    "vunesp-enfermagem-saude-da-mulher-1777104408379-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

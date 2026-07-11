@@ -153,11 +153,92 @@ const PNI_CADEIA_FRIO_VARIANTS = new Set([
   'temperature-mismatch',
 ]);
 
+const MULHER_PRENATAL_VARIANTS = new Set([
+  'mulher-gestation-timeline',
+  'mulher-prenatal-board',
+  'mulher-prenatal-tap-flow',
+  'mulher-prenatal-trap-arena',
+]);
+
+const MULHER_PARTO_VARIANTS = new Set([
+  'mulher-labor-phase-deck',
+  'mulher-parto-humanizado-board',
+  'mulher-labor-tap-flow',
+  'mulher-parto-trap-arena',
+]);
+
+const MULHER_PRENATAL_BESPOKE_BRANCHES = new Set(['mulher_prenatal']);
+const MULHER_PARTO_BESPOKE_BRANCHES = new Set(['mulher_parto']);
+
+const MULHER_PAPANICOLAU_VARIANTS = new Set([
+  'mulher-screening-spectrum',
+  'mulher-papanicolau-board',
+  'mulher-screening-tap-flow',
+  'mulher-screening-trap-arena',
+]);
+
+const MULHER_PAPANICOLAU_BESPOKE_BRANCHES = new Set(['mulher_papanicolau']);
+
+const MULHER_MAMA_VARIANTS = new Set([
+  'mulher-mammography-spectrum',
+  'mulher-mama-board',
+  'mulher-mama-tap-flow',
+  'mulher-mama-trap-arena',
+]);
+
+const MULHER_MAMA_BESPOKE_BRANCHES = new Set(['mulher_mama']);
+
+const MULHER_PUERPERIO_VARIANTS = new Set([
+  'mulher-puerperio-timeline',
+  'mulher-puerperio-board',
+  'mulher-puerperio-tap-flow',
+  'mulher-puerperio-trap-arena',
+]);
+
+const MULHER_PUERPERIO_BESPOKE_BRANCHES = new Set(['mulher_puerperio']);
+
+const MULHER_PLANEJAMENTO_VARIANTS = new Set([
+  'mulher-contraception-spectrum',
+  'mulher-planejamento-board',
+  'mulher-planejamento-tap-flow',
+  'mulher-planejamento-trap-arena',
+]);
+
+const MULHER_PLANEJAMENTO_BESPOKE_BRANCHES = new Set(['mulher_planejamento']);
+
 const VIA_VF_VARIANTS = new Set([
   'absorption-speed-rail',
   'via-reference-board',
   'via-vf-juggle-tap',
   'route-trap',
+]);
+
+const CAM_CERTOS_VF_VARIANTS = new Set([
+  'cam-certos-deck',
+  'cam-nine-rights-board',
+  'cam-vf-juggle-tap',
+  'cam-certos-trap-arena',
+]);
+
+const CAM_ALTO_RISCO_VARIANTS = new Set([
+  'cam-high-risk-duo-deck',
+  'cam-high-risk-protocol-board',
+  'cam-alto-risco-elimination-tap',
+  'cam-high-risk-trap-arena',
+]);
+
+const CAM_EXCETO_VARIANTS = new Set([
+  'cam-exceto-rail',
+  'cam-exceto-reference-board',
+  'cam-exceto-tap-flow',
+  'cam-exceto-trap-arena',
+]);
+
+const CAM_DOCUMENTACAO_VARIANTS = new Set([
+  'cam-documentacao-deck',
+  'cam-documentacao-board',
+  'cam-documentacao-vf-tap',
+  'cam-documentacao-trap-arena',
 ]);
 
 const CALC_DOSE_VARIANTS = new Set([
@@ -450,6 +531,186 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     minPositive: 1,
   },
 
+  'mulher-gestation-timeline': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /pr[eé][\s-]?natal|gesta[cç][aã]o|gestante|ttgo|consulta|trimestre|ácido fólico|acido folico/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-prenatal-board': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /pr[eé][\s-]?natal|gesta[cç][aã]o|ttgo|consulta|trimestre|vdrl|glicemia|6 consultas/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-prenatal-tap-flow': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /pr[eé][\s-]?natal|gesta[cç][aã]o|\b(i|ii|iii)\b|letra [a-e]|eliminar|verdadeira|falsa/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-prenatal-trap-arena': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /pr[eé][\s-]?natal|gesta[cç][aã]o|ttgo|tabagismo|consulta|trimestre|pegadinha/i,
+    ],
+    minPositive: 1,
+  },
+
+  'mulher-labor-phase-deck': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /trabalho de parto|parto humanizado|fase expulsiva|expulsiv|dilata[cç][aã]o|dequita[cç][aã]o|lat[eê]ncia/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-parto-humanizado-board': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /trabalho de parto|parto humanizado|acompanhante|clampeamento|posi[cç][aã]o|fcf|n[aã]o farmacol[oó]gic/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-labor-tap-flow': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /trabalho de parto|parto|\b(i|ii|iii)\b|letra [a-e]|eliminar|verdadeira|falsa|expulsiv/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-parto-trap-arena': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /trabalho de parto|parto|supina|vertical|ctg|clampeamento|água morna|agua morna|pegadinha/i,
+    ],
+    minPositive: 1,
+  },
+
+  'mulher-screening-spectrum': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /papanicolau|colo uterino|rastreio.*colo|citologia|25\s*(?:e|a)\s*64|hpv/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-papanicolau-board': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /papanicolau|25 anos|64 anos|3 anos|trienal|hpv|rastreio.*colo/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-screening-tap-flow': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /papanicolau|rastreio|colo|letra [a-e]|eliminar|40 anos|anual|trienal/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-screening-trap-arena': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /papanicolau|rastreio|colo|40 anos|anual|sintom[aá]tica|pegadinha/i,
+    ],
+    minPositive: 1,
+  },
+
+  'mulher-mammography-spectrum': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /mamografia|rastreio.*mama|c[aâ]ncer de mama|50\s*(?:e|a)\s*69|bienal|autoexame/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-mama-board': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /mamografia|50 anos|69 anos|bienal|2 anos|autoexame|rastreio.*mama/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-mama-tap-flow': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /mamografia|rastreio|mama|letra [a-e]|eliminar|40 anos|anual|bienal/i,
+    ],
+    minPositive: 1,
+  },
+  'mulher-mama-trap-arena': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [
+      /mamografia|rastreio|mama|40 anos|anual|autoexame|pegadinha/i,
+    ],
+    minPositive: 1,
+  },
+
+  'mulher-puerperio-timeline': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [/puerp[eé]rio|lacta|amamenta|42\s*dia|visita domiciliar/i],
+    minPositive: 1,
+  },
+  'mulher-puerperio-board': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [/puerp[eé]rio|42|visita|am exclusivo|6 meses/i],
+    minPositive: 1,
+  },
+  'mulher-puerperio-tap-flow': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [/puerp[eé]rio|lacta|letra [a-e]|eliminar|42|30 dias/i],
+    minPositive: 1,
+  },
+  'mulher-puerperio-trap-arena': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    positivePatterns: [/puerp[eé]rio|30 dias|42|visita|amamenta|pegadinha/i],
+    minPositive: 1,
+  },
+
+  'mulher-contraception-spectrum': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [/contracep|planejamento familiar|comportamental|oral|diu/i],
+    minPositive: 1,
+  },
+  'mulher-planejamento-board': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [/contracep|comportamental|hormonal|barreira|larc|diu/i],
+    minPositive: 1,
+  },
+  'mulher-planejamento-tap-flow': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    blockFamilies: ['calc', 'legis'],
+    positivePatterns: [/contracep|comportamental|julgar|letra [a-e]|eliminar|oral/i],
+    minPositive: 1,
+  },
+  'mulher-planejamento-trap-arena': {
+    homeSubtopicFragments: ['saude da mulher', 'obstetricia', 'ginecologia'],
+    positivePatterns: [/contracep|oral|comportamental|tabelinha|pegadinha/i],
+    minPositive: 1,
+  },
+
   'cold-chain-hub': {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
     blockFamilies: ['calc', 'legis'],
@@ -620,6 +881,116 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['vias de administracao'],
     blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
     positivePatterns: [/via\b|subcut[aâ]nea|intramuscular|intravenosa/i],
+    minPositive: 1,
+  },
+
+  // ---- Cuidados na Administração de Medicamentos ----
+  'cam-certos-deck': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /9 certos|nove certos|dois identificador|alto risco|dose certa/i,
+    ],
+    minPositive: 1,
+  },
+  'cam-nine-rights-board': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /9 certos|paciente certo|medicamento certo|dose certa|via certa/i,
+    ],
+    minPositive: 1,
+  },
+  'cam-vf-juggle-tap': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
+    positivePatterns: [/\b(i|ii|iii)\s*[-–—]/i, /9 certos|administra[cç][aã]o de medicamentos/i],
+    minPositive: 1,
+  },
+  'cam-certos-trap-arena': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'protocolo', 'text_fragment'],
+    positivePatterns: [/9 certos|uso habitual|dupla checagem|dose duvidosa/i],
+    minPositive: 1,
+  },
+
+  'cam-high-risk-duo-deck': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/alto risco|confer[eê]ncia dupla|insulina|heparina|nph/i],
+    minPositive: 1,
+  },
+  'cam-high-risk-protocol-board': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/alto risco|insulina|heparina|dupla checagem/i],
+    minPositive: 1,
+  },
+  'cam-alto-risco-elimination-tap': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/alto risco|insulina|heparina|eliminar letra/i],
+    minPositive: 1,
+  },
+  'cam-high-risk-trap-arena': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/alto risco|insulina|massagear|nph|homogeneizar/i],
+    minPositive: 1,
+  },
+
+  'cam-exceto-rail': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/\bexceto\b/i, /incorret[oa]\s+afirmar|preparo de medicamento|sala de medica/i],
+    minPositive: 1,
+  },
+  'cam-exceto-reference-board': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/\bexceto\b/i, /preparo|higieniza[cç][aã]o|prescri[cç][aã]o/i],
+    minPositive: 1,
+  },
+  'cam-exceto-tap-flow': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/\bexceto\b/i, /eliminar|letra|conduta/i],
+    minPositive: 1,
+  },
+  'cam-exceto-trap-arena': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/\bexceto\b/i, /via oral|fisiol[oó]gica|preparo/i],
+    minPositive: 1,
+  },
+
+  'cam-documentacao-deck': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /registro certo|documenta[cç][aã]o certa|prontu[aá]rio/i,
+    ],
+    minPositive: 1,
+  },
+  'cam-documentacao-board': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/registro certo|ap[oó]s administrar|certo\s*6/i],
+    minPositive: 1,
+  },
+  'cam-documentacao-vf-tap': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/\b(i|ii|iii)\s*[-–—]/i, /registro|documenta[cç][aã]o/i],
+    minPositive: 1,
+  },
+  'cam-documentacao-trap-arena': {
+    homeSubtopicFragments: ['cuidados na administracao de medicamentos'],
+    blockFamilies: ['calc', 'legis', 'text_fragment'],
+    positivePatterns: [/antecipad|posterg|ap[oó]s administrar|registro/i],
     minPositive: 1,
   },
 
@@ -1006,8 +1377,86 @@ export function bespokeMoldHasContentAffinity(
     }
   }
 
+  if (MULHER_PRENATAL_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !MULHER_PRENATAL_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (MULHER_PARTO_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !MULHER_PARTO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (MULHER_PAPANICOLAU_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !MULHER_PAPANICOLAU_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (MULHER_MAMA_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !MULHER_MAMA_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (MULHER_PUERPERIO_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !MULHER_PUERPERIO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (MULHER_PLANEJAMENTO_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !MULHER_PLANEJAMENTO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
   if (VIA_VF_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'via_vf_absorcao') {
+      return false;
+    }
+  }
+
+  if (CAM_CERTOS_VF_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'cam_certos_vf_caso') {
+      return false;
+    }
+  }
+
+  if (CAM_ALTO_RISCO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'cam_alto_risco') {
+      return false;
+    }
+  }
+
+  if (CAM_EXCETO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'cam_exceto_conduta') {
+      return false;
+    }
+  }
+
+  if (CAM_DOCUMENTACAO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'cam_documentacao') {
       return false;
     }
   }

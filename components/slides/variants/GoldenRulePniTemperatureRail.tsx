@@ -3,7 +3,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow } from './GoldenRule';
 import {
@@ -86,8 +86,7 @@ function TemperatureRowCard({
   const reduceMotion = useReducedMotion();
   const hot = isTemperatureHotRow(row.label, row.value, row.emphasis, row.badge);
   const iconName = inferPniIconName(`${row.label} ${row.value}`);
-  const Icon = resolveLucideIcon(iconName);
-  const rowMarkers = inferTemperatureRowMarkers(row.label, row.value);
+    const rowMarkers = inferTemperatureRowMarkers(row.label, row.value);
 
   return (
     <motion.button
@@ -111,7 +110,7 @@ function TemperatureRowCard({
                 hot ? 'bg-teal-600 text-white' : 'bg-teal-100 text-teal-800'
               }`}
             >
-              <Icon size={18} aria-hidden />
+              <SlideLucideIcon name={iconName} size={18} />
             </div>
             <p className="font-mono text-[10px] font-bold uppercase tracking-wide text-slate-600">
               {row.label}

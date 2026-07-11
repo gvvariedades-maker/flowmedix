@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g23",
+  "exported_at": "2026-07-10T15:58:07.928Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g23/manifest.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-saude-da-mulher-1777104389226-5",
+    "funtef-enfermagem-semiologia-em-enfermagem-1779563517223-5",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-2",
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-5",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-4",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-0",
+    "idesg-enfermagem-saude-da-mulher-1777104335102-0",
+    "idib-enfermagem-saude-da-mulher-1778934944659-3"
+  ]
+}

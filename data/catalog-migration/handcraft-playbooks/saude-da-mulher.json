@@ -1,0 +1,155 @@
+{
+  "version": 2,
+  "subtopico": "Saúde da Mulher",
+  "pacote_prefix": "saude-da-mulher",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-saude-mulher-*.json",
+  "golden_anchors_registry": "data/catalog-migration/saude-da-mulher-golden-anchors.json",
+  "guideline": "lib/guidelines/saudeMulher.ts",
+  "handcraft_meta": "data/catalog-migration/saude-da-mulher-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/saude-da-mulher-topic-cluster-report.json",
+  "repair_lote_pattern": "saude-da-mulher-*-repair",
+  "l3_brief_pattern": "artifacts/l3-brief-saude-da-mulher-<branch_id>.md",
+  "slug_selection": "Âncoras P0 fechadas (4/4 READY). Escalar saude-da-mulher-g02+ por volume — pré-natal ~28,5% · parto ~23,6% · papanicolau ~14,1% · mama ~10,6%; excluir drift taxonômico (~21 slugs anatomia/semiologia) antes de handcraft em massa; por slug [READY] strict-v2; por lote L2 (slug-alignment --strict) + L2b (numeric-factcheck); ou Slug: explícito",
+  "clusters": [
+    "Pré-natal / gestação (75 · 28,5% — mulher_prenatal · âncora CPCON pré-natal VF)",
+    "Parto / trabalho de parto (62 · 23,6% — mulher_parto · âncora ADM&TEC parto humanizado VF)",
+    "Rastreio câncer de colo (37 · 14,1% — mulher_papanicolau · âncora VUNESP papanicolau)",
+    "Saúde da mama (28 · 10,6% — mulher_mama · âncora VUNESP mamografia)",
+    "Saúde da mulher — conceito geral (13 · 4,9% — mulher_generico)",
+    "Puerpério / lactação (9 · 3,4% — mulher_puerperio · âncora MS consulta 42 dias)",
+    "Planejamento familiar (7 · 2,7% — mulher_planejamento · âncora CPCON métodos comportamentais)",
+    "Drift taxonômico — reclassificar (21 · 8% — Classify antes de handcraft)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "mulher_prenatal",
+      "when": "Pré-natal, gestação, captação precoce, periodicidade consultas, TTGO, ácido fólico, V/F I–III",
+      "mold": "mulher-gestation-timeline · mulher-prenatal-board · mulher-prenatal-tap-flow · mulher-prenatal-trap-arena",
+      "anchors": ["examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_prenatal.md"
+    },
+    {
+      "id": "mulher_parto",
+      "when": "Trabalho de parto, parto humanizado, OMS, fases, expulsivo, ocitocina HPP, enema, depilação",
+      "mold": "mulher-labor-phase-deck · mulher-parto-humanizado-board · mulher-labor-tap-flow · mulher-parto-trap-arena",
+      "anchors": ["examples/questao-premium-admtec-saude-mulher-parto-humanizado-vf.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_parto.md"
+    },
+    {
+      "id": "mulher_papanicolau",
+      "when": "Papanicolau, rastreio colo, HPV, citologia, 25–64 trienal, fatores de risco",
+      "mold": "mulher-screening-spectrum · mulher-papanicolau-board · mulher-screening-tap-flow · mulher-screening-trap-arena",
+      "anchors": ["examples/questao-premium-vunesp-saude-mulher-papanicolau.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_papanicolau.md"
+    },
+    {
+      "id": "mulher_mama",
+      "when": "Mamografia, rastreio mama, 50–69 bienal, autoexame complementar, faixa etária",
+      "mold": "mulher-mammography-spectrum · mulher-mama-board · mulher-mama-tap-flow · mulher-mama-trap-arena",
+      "anchors": ["examples/questao-premium-vunesp-saude-mulher-mamografia.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_mama.md"
+    },
+    {
+      "id": "mulher_puerperio",
+      "when": "Puerpério, lactação, aleitamento, amamentação, colostro, consulta 42 dias",
+      "mold": "mulher-puerperio-timeline · mulher-puerperio-board · mulher-puerperio-tap-flow · mulher-puerperio-trap-arena",
+      "anchors": ["examples/questao-premium-ms-saude-mulher-puerperio-consulta.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_puerperio.md"
+    },
+    {
+      "id": "mulher_planejamento",
+      "when": "Planejamento familiar, contracepção, DIU, anticoncepcionais, métodos comportamentais",
+      "mold": "mulher-contraception-spectrum · mulher-planejamento-board · mulher-planejamento-tap-flow · mulher-planejamento-trap-arena",
+      "anchors": ["examples/questao-premium-cpcon-saude-mulher-planejamento-vf.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_planejamento.md"
+    },
+    {
+      "id": "mulher_generico",
+      "when": "Conceito geral, anatomia, semiologia, drift residual — sem fit nos ramos acima",
+      "mold": "morphological · reference_table · vertical · compare (genérico)"
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_slug_v3": "npm run audit:questao-readiness -- --file=<path> --strict-v3-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+    "v3_mental": "npm run audit:questao-readiness -- --lote=<lote> --strict-v3-pedagogy",
+    "pedagogy_grammar": "data/catalog-migration/saude-da-mulher-pedagogy-errors.json",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]"
+  },
+  "golden_v1_grammar": {
+    "concept_map": "Enquadramento da prova + erro reproduzível (gestação, parto, rastreio) — saude-da-mulher-pedagogy-errors.json; sem letra gabarito",
+    "golden_rule": "Decore normativo — rows com marcos etários, periodicidade, condutas OMS/INCA",
+    "logic_flow": "Único lugar com gabarito; reveal_mode tap; V/F julgar assertivas antes de cruzar",
+    "danger_zone": "Pegadinha × correção por letra (compare); justificativa única por distrator"
+  },
+  "roi_priorities": [
+    {
+      "priority": "P0",
+      "action": "Piloto saude-da-mulher-g01 — 4/4 ramos fortes READY",
+      "why": "Pacotes L3 bespoke validados — escalar g02+"
+    },
+    {
+      "priority": "P0",
+      "action": "Classify drift (~21 slugs anatomia/semiologia)",
+      "why": "Concluído — npm run classify:saude-da-mulher-drift + saude-da-mulher-exclude-done.json"
+    },
+    {
+      "priority": "P0",
+      "action": "audit:slug-alignment --strict + saude-da-mulher-pedagogy-errors em todo lote",
+      "why": "Evita reciclagem, drift de ramo e compare vazio"
+    },
+    {
+      "priority": "P0",
+      "action": "audit:numeric-factcheck — marcos etários e periodicidade (6 consultas, 25–64, 50–69)",
+      "why": "L2b Caderno AB 32/INCA; pegadinha numérica #1 em pré-natal e rastreio"
+    },
+    {
+      "priority": "P1",
+      "action": "Handcraft g02+ mulher_prenatal (75 slugs)",
+      "why": "Maior volume — 28,5% do catálogo"
+    },
+    {
+      "priority": "P1",
+      "action": "Lotes mulher_parto + mulher_papanicolau + mulher_mama",
+      "why": "~48% combinado — moldes 4/4 prontos"
+    },
+    {
+      "priority": "P2",
+      "action": "Handcraft cauda — g25 misto (14 slugs fortes) + puerpério (9) + planejamento (7)",
+      "why": "Âncoras puerpério/planejamento prontas 2026-07-10; L3 genérico com gramática golden L2"
+    }
+  ],
+  "proibido": ["ai:generate", "catalog:upgrade-premium"],
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Handcraft golden-v1 — 263 slugs em lotes saude-da-mulher-gNN",
+      "first_lote": "saude-da-mulher-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run audit:slug-alignment -- --lote=<lote> --strict",
+        "npm run audit:numeric-factcheck -- --lote=<lote>",
+        "npm run catalog:patch-pedagogical-branch -- --lote=<lote> --reconcile-branch --apply",
+        "npm run test:e2e:visual-molds -- --grep=\"Saúde da Mulher\"",
+        "npm run capture:questao-review -- --lote=<lote>",
+        "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=<revisor>",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run",
+        "# apply SOMENTE se usuário pedir:",
+        "npm run catalog:apply-lote -- --lote=<lote> --apply",
+        "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"Saúde da Mulher\" --only-premium --reconcile-branch --apply"
+      ]
+    },
+    "single_slug": {
+      "lote_dir": "data/catalog-migration/saude-da-mulher-g01/questions",
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
+      ]
+    }
+  }
+}

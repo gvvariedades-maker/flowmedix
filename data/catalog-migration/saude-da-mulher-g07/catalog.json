@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-09T05:51:40.334Z",
+  "lote": "saude-da-mulher-g07",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1422
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1423
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934936220-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1790
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1791
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1792
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 706
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104306781-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1399
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1501
+    }
+  ]
+}

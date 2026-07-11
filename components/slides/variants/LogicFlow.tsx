@@ -32,6 +32,10 @@ import { LogicFlowUrgenciasExcetoTapFlow } from './LogicFlowUrgenciasExcetoTapFl
 import { LogicFlowEtiologyEliminationTap } from './LogicFlowEtiologyEliminationTap';
 import { LogicFlowItuExcetoTap } from './LogicFlowItuExcetoTap';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
+import { LogicFlowCamVfJuggleTap } from './LogicFlowCamVfJuggleTap';
+import { LogicFlowCamAltoRiscoEliminationTap } from './LogicFlowCamAltoRiscoEliminationTap';
+import { LogicFlowCamExcetoTapFlow } from './LogicFlowCamExcetoTapFlow';
+import { LogicFlowCamDocumentacaoVfTap } from './LogicFlowCamDocumentacaoVfTap';
 import { LogicFlowPniCalendarEliminationTap } from './LogicFlowPniCalendarEliminationTap';
 import { LogicFlowPniColdChainTap } from './LogicFlowPniColdChainTap';
 import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
@@ -39,6 +43,12 @@ import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
 import { LogicFlowViaVfJuggleTap } from './LogicFlowViaVfJuggleTap';
 import { LogicFlowFarmacoVfJuggleTap } from './LogicFlowFarmacoVfJuggleTap';
 import { LogicFlowAdolescentVfWeaveTap } from './LogicFlowAdolescentVfWeaveTap';
+import { LogicFlowMulherPrenatalTapFlow } from './LogicFlowMulherPrenatalTapFlow';
+import { LogicFlowMulherLaborTapFlow } from './LogicFlowMulherLaborTapFlow';
+import { LogicFlowMulherScreeningTapFlow } from './LogicFlowMulherScreeningTapFlow';
+import { LogicFlowMulherMamaTapFlow } from './LogicFlowMulherMamaTapFlow';
+import { LogicFlowMulherPuerperioTapFlow } from './LogicFlowMulherPuerperioTapFlow';
+import { LogicFlowMulherPlanejamentoTapFlow } from './LogicFlowMulherPlanejamentoTapFlow';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
   getLogicFlowStepVisual,
@@ -307,10 +317,59 @@ export const LogicFlow = ({
     return <LogicFlowPniVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
+  if (variant === 'cam-vf-juggle-tap') {
+    return <LogicFlowCamVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'cam-alto-risco-elimination-tap') {
+    return (
+      <LogicFlowCamAltoRiscoEliminationTap steps={steps} theme={theme} revealMode={revealMode} />
+    );
+  }
+
+  if (variant === 'cam-exceto-tap-flow') {
+    return (
+      <LogicFlowCamExcetoTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'cam-documentacao-vf-tap') {
+    return <LogicFlowCamDocumentacaoVfTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
   if (variant === 'pni-calendar-elimination-tap') {
     return (
       <LogicFlowPniCalendarEliminationTap steps={steps} theme={theme} footerRule={footerRule} />
     );
+  }
+
+  if (variant === 'mulher-prenatal-tap-flow') {
+    return <LogicFlowMulherPrenatalTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'mulher-labor-tap-flow') {
+    return <LogicFlowMulherLaborTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'mulher-screening-tap-flow') {
+    return <LogicFlowMulherScreeningTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'mulher-mama-tap-flow') {
+    return <LogicFlowMulherMamaTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'mulher-puerperio-tap-flow') {
+    return <LogicFlowMulherPuerperioTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'mulher-planejamento-tap-flow') {
+    return <LogicFlowMulherPlanejamentoTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'pni-cold-chain-tap') {

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T15:33:44.646Z",
+  "lote": "saude-da-mulher-g18",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104306781-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1397
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1382
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2959
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2930
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4754
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 1459
+    },
+    {
+      "modulo_slug": "facet-enfermagem-saude-da-mulher-1777104261182-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 1363
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4240
+    }
+  ]
+}

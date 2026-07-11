@@ -1,17 +1,17 @@
 {
   "strict": true,
   "strict_v2_pedagogy": true,
-  "strict_v3_pedagogy": false,
-  "scanned": 8,
+  "strict_v3_pedagogy": true,
+  "scanned": 15,
   "summary": {
-    "subtopico": "Urgências e Emergências",
-    "scanned": 8,
-    "ready_100": 8,
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "scanned": 15,
+    "ready_100": 15,
     "pct_ready": 100,
     "registry": {
       "status": "in_progress",
-      "total_slugs": 340,
-      "handcraft_applied": 12,
+      "total_slugs": 123,
+      "handcraft_applied": 0,
       "complete": false
     },
     "tier_failures": {
@@ -23,8 +23,50 @@
   },
   "results": [
     {
-      "slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
-      "subtopico": "Urgências e Emergências",
+      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-1",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: D).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "certo_errado",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-9",
+      "subtopico": "Cuidados na Administração de Medicamentos",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -54,67 +96,19 @@
           "severity": "warn"
         },
         {
-          "tier": "A2.5",
-          "code": "align_correct_option_ref",
-          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
-          "severity": "warn"
-        },
-        {
           "tier": "A4",
           "code": "a4_player_pilot",
           "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
           "severity": "info"
         }
       ],
-      "family": "vf",
-      "pedagogical_branch": "urgencias_rcp_sbv",
-      "inferred_branch": "urgencias_rcp_sbv"
+      "family": "certo_errado",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
     },
     {
-      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
-      "subtopico": "Urgências e Emergências",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
-        {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: C).",
-          "severity": "warn"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
-          "severity": "warn"
-        },
-        {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "protocolo",
-      "pedagogical_branch": "urgencias_rcp_sbv",
-      "inferred_branch": "urgencias_rcp_sbv"
-    },
-    {
-      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
-      "subtopico": "Urgências e Emergências",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-6",
+      "subtopico": "Cuidados na Administração de Medicamentos",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -151,12 +145,186 @@
         }
       ],
       "family": "protocolo",
-      "pedagogical_branch": "urgencias_rcp_sbv",
-      "inferred_branch": "urgencias_rcp_sbv"
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
     },
     {
-      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
-      "subtopico": "Urgências e Emergências",
+      "slug": "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-5",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-0",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-3",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: E).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-5",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "fauel-enfermagem-seguranca-do-paciente-1777102918981-1",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-6",
+      "subtopico": "Cuidados na Administração de Medicamentos",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -193,54 +361,12 @@
         }
       ],
       "family": "protocolo",
-      "pedagogical_branch": "urgencias_rcp_sbv",
-      "inferred_branch": "urgencias_rcp_sbv"
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
     },
     {
-      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
-      "subtopico": "Urgências e Emergências",
-      "ready_100": true,
-      "tier_pass": {
-        "A1": true,
-        "A2": true,
-        "A2.5": true,
-        "A2b": true,
-        "A3": true,
-        "A4": true
-      },
-      "checks": [
-        {
-          "tier": "A1",
-          "code": "l1_schema",
-          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
-          "severity": "info"
-        },
-        {
-          "tier": "A2",
-          "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
-          "severity": "warn"
-        },
-        {
-          "tier": "A2",
-          "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
-          "severity": "warn"
-        },
-        {
-          "tier": "A4",
-          "code": "a4_player_pilot",
-          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
-          "severity": "info"
-        }
-      ],
-      "family": "protocolo",
-      "pedagogical_branch": "urgencias_rcp_sbv",
-      "inferred_branch": "urgencias_rcp_sbv"
-    },
-    {
-      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
-      "subtopico": "Urgências e Emergências",
+      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-4",
+      "subtopico": "Cuidados na Administração de Medicamentos",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -270,9 +396,75 @@
           "severity": "warn"
         },
         {
-          "tier": "A2.5",
-          "code": "align_correct_option_ref",
-          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "ibade-enfermagem-seguranca-do-paciente-1777102802022-4",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: D).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -282,13 +474,13 @@
           "severity": "info"
         }
       ],
-      "family": "vf",
-      "pedagogical_branch": "urgencias_rcp_sbv",
-      "inferred_branch": "urgencias_rcp_sbv"
+      "family": "protocolo",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
     },
     {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
-      "subtopico": "Urgências e Emergências",
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
+      "subtopico": "Cuidados na Administração de Medicamentos",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -325,12 +517,12 @@
         }
       ],
       "family": "protocolo",
-      "pedagogical_branch": "urgencias_rcp_sbv",
-      "inferred_branch": "urgencias_rcp_sbv"
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
     },
     {
-      "slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
-      "subtopico": "Urgências e Emergências",
+      "slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-6",
+      "subtopico": "Cuidados na Administração de Medicamentos",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -350,19 +542,13 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
           "severity": "warn"
         },
         {
           "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
-          "severity": "warn"
-        },
-        {
-          "tier": "A2.5",
-          "code": "align_correct_option_ref",
-          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -372,9 +558,51 @@
           "severity": "info"
         }
       ],
-      "family": "vf",
-      "pedagogical_branch": "urgencias_rcp_sbv",
-      "inferred_branch": "urgencias_rcp_sbv"
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
+    },
+    {
+      "slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-8",
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "cam_documentacao",
+      "inferred_branch": "cam_documentacao"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-09T02:26:06.667Z",
+  "lote": "urgencias-g21",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-exames-complementares-1779424094915-0",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

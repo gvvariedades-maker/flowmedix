@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:26:47.180Z",
+  "lote": "urgencias-g26",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+    "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+    "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-3",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

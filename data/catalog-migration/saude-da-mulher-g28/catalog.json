@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T17:54:31.390Z",
+  "lote": "saude-da-mulher-g28",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104340484-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1432
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 4919
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 12
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4267
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1376
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1385
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104340484-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1430
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4692
+    }
+  ]
+}

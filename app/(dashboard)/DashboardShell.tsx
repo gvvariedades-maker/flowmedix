@@ -473,7 +473,7 @@ function DashboardContent({
     return subscribeNotebookActivationRefresh(() => {
       void cadernoOnboarding.refreshActivation();
     });
-  }, [cadernoOnboarding.refreshActivation]);
+  }, [cadernoOnboarding]);
 
   /** Player inline no shell: main sem scroll externo para o card preencher a altura (desktop). */
   const estudarQuestaoFillViewport =

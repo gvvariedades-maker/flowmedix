@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-07-10T19:02:42.286Z",
+  "lote": "saude-da-mulher-g01",
+  "mode": "apply",
+  "total_files": 4,
+  "ok": 4,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+    "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

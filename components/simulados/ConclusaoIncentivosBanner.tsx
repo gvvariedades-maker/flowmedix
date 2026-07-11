@@ -8,13 +8,6 @@ type ConclusaoIncentivosBannerProps = {
   incentivos: SimuladoConclusaoIncentivos | null | undefined;
 };
 
-function badgeIcon(badge: SimuladoConclusaoIncentivos['streak']['badge']) {
-  if (badge === 'streak_semanas') return Trophy;
-  if (badge === 'meta_semanal') return Target;
-  if (badge === 'streak_dias') return Flame;
-  return Sparkles;
-}
-
 function badgeLabel(badge: SimuladoConclusaoIncentivos['streak']['badge']): string {
   if (badge === 'streak_semanas') return 'Streak semanal';
   if (badge === 'meta_semanal') return 'Meta semanal';
@@ -32,7 +25,12 @@ export function ConclusaoIncentivosBanner({ incentivos }: ConclusaoIncentivosBan
 
   if (!hasStreak && !hasHighlights) return null;
 
-  const BadgeIcon = badgeIcon(streak.badge);
+  const renderBadgeIcon = () => {
+    if (streak.badge === 'streak_semanas') return <Trophy className="h-5 w-5" aria-hidden />;
+    if (streak.badge === 'meta_semanal') return <Target className="h-5 w-5" aria-hidden />;
+    if (streak.badge === 'streak_dias') return <Flame className="h-5 w-5" aria-hidden />;
+    return <Sparkles className="h-5 w-5" aria-hidden />;
+  };
 
   return (
     <section
@@ -71,7 +69,7 @@ export function ConclusaoIncentivosBanner({ incentivos }: ConclusaoIncentivosBan
             )}
             aria-hidden
           >
-            <BadgeIcon className="h-5 w-5" />
+            {renderBadgeIcon()}
           </div>
           <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">

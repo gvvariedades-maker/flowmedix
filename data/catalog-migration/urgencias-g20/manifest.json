@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g20",
+  "exported_at": "2026-07-08T17:08:23.777Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_choque",
+    "batch": "g20-choque-lote-2"
+  },
+  "slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+    "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+    "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-5",
+    "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563531989-5",
+    "quadrix-enfermagem-semiologia-em-enfermagem-1779563537258-8"
+  ]
+}

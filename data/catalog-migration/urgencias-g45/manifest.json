@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g45",
+  "exported_at": "2026-07-09T01:03:40.172Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g45-generico-tail-batch-8"
+  },
+  "slugs": [
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-6",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-1",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-3",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+    "unifil-enfermagem-urgencias-e-emergencias-1777104012755-3",
+    "vunesp-enfermagem-exames-complementares-1779563685104-0",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6"
+  ]
+}

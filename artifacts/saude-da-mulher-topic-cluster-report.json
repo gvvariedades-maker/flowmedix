@@ -1,0 +1,2448 @@
+{
+  "generated_at": "2026-07-09T03:35:05.817Z",
+  "subtopico": "Saúde da Mulher",
+  "lote": "saude-da-mulher-completo",
+  "total": 263,
+  "strong_threshold": 27,
+  "drift_total": 21,
+  "branch_totals": {
+    "mulher_parto": 62,
+    "mulher_papanicolau": 37,
+    "mulher_prenatal": 75,
+    "mulher_puerperio": 9,
+    "mulher_climaterio": 3,
+    "mulher_generico": 34,
+    "mulher_mama": 28,
+    "mulher_planejamento": 7,
+    "mulher_ist_gestacao": 3,
+    "mulher_ciclo": 2,
+    "mulher_violencia": 3
+  },
+  "inedito_packages_needed": 0,
+  "handcrafts_needed": 263,
+  "cluster_decisions": [
+    {
+      "cluster": "Pré-natal / gestação",
+      "count": 75,
+      "pct": 28.5,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cpcon-saude-mulher-pre-natal-vf.json",
+      "branch_id": "mulher_prenatal",
+      "family_counts": {
+        "conceito": 61,
+        "protocolo": 11,
+        "vf": 1,
+        "certo_errado": 2
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+        "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+        "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+        "amauc-enfermagem-processo-de-enfermagem-1780005128081-1"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_package": "mulher-gestation-timeline · mulher-prenatal-board · mulher-prenatal-tap-flow · mulher-prenatal-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "Parto / trabalho de parto",
+      "count": 62,
+      "pct": 23.6,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-admtec-saude-mulher-parto-humanizado-vf.json",
+      "branch_id": "mulher_parto",
+      "family_counts": {
+        "conceito": 43,
+        "protocolo": 12,
+        "vf": 2,
+        "calc": 2,
+        "certo_errado": 3
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+        "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+        "amauc-enfermagem-processo-de-enfermagem-1780002441285-6",
+        "amauc-enfermagem-processo-de-enfermagem-1780004982901-9"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_package": "mulher-labor-phase-deck · mulher-parto-humanizado-board · mulher-labor-tap-flow · mulher-parto-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "Rastreio câncer de colo",
+      "count": 37,
+      "pct": 14.1,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-vunesp-saude-mulher-papanicolau.json",
+      "branch_id": "mulher_papanicolau",
+      "family_counts": {
+        "conceito": 35,
+        "protocolo": 2
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-saude-da-mulher-1777104306781-2",
+        "amauc-enfermagem-saude-da-mulher-1777104295283-6",
+        "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-3",
+        "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-7"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_package": "mulher-screening-spectrum · mulher-papanicolau-board · mulher-screening-tap-flow · mulher-screening-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "Saúde da mama",
+      "count": 28,
+      "pct": 10.6,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-vunesp-saude-mulher-mamografia.json",
+      "branch_id": "mulher_mama",
+      "family_counts": {
+        "conceito": 27,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+        "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+        "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-4"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_package": "mulher-mammography-spectrum · mulher-mama-board · mulher-mama-tap-flow · mulher-mama-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "Saúde da mulher — conceito geral",
+      "count": 13,
+      "pct": 4.9,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_generico",
+      "family_counts": {
+        "conceito": 13
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-saude-da-mulher-1777104340484-4",
+        "fafipa-enfermagem-processo-de-enfermagem-1780009392850-3",
+        "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-6"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Anatomia feminina (drift?)",
+      "count": 13,
+      "pct": 4.9,
+      "drift_in_cluster": 13,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_generico",
+      "family_counts": {
+        "conceito": 13
+      },
+      "sample_slugs": [
+        "atame-enfermagem-saude-da-mulher-1777104347186-8",
+        "atame-enfermagem-vias-de-administracao-1778968573722-0",
+        "cpcon-uepb-enfermagem-saude-da-mulher-1777104408379-0",
+        "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Puerpério / lactação",
+      "count": 9,
+      "pct": 3.4,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_puerperio",
+      "family_counts": {
+        "conceito": 8,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780004982901-6",
+        "cebraspe-cespe-enfermagem-saude-da-mulher-1777104288275-0",
+        "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+        "facet-enfermagem-saude-da-mulher-1777104261182-4"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Planejamento familiar / contracepção",
+      "count": 7,
+      "pct": 2.7,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_planejamento",
+      "family_counts": {
+        "conceito": 6,
+        "vf": 1
+      },
+      "sample_slugs": [
+        "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+        "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-5",
+        "instituto-consulplan-geral-saude-da-mulher-1777104235003-3"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Semiologia (drift?)",
+      "count": 6,
+      "pct": 2.3,
+      "drift_in_cluster": 6,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_generico",
+      "family_counts": {
+        "conceito": 5,
+        "protocolo": 1
+      },
+      "sample_slugs": [
+        "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+        "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+        "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006962671-1"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Climatério / menopausa",
+      "count": 3,
+      "pct": 1.1,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_climaterio",
+      "family_counts": {
+        "conceito": 3
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-saude-da-mulher-1777104295283-8",
+        "avancasp-enfermagem-saude-da-mulher-1777104323066-2",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "IST na gestação",
+      "count": 3,
+      "pct": 1.1,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_ist_gestacao",
+      "family_counts": {
+        "certo_errado": 1,
+        "conceito": 2
+      },
+      "sample_slugs": [
+        "idecan-enfermagem-saude-da-mulher-1778712437306-3",
+        "unifil-enfermagem-processo-de-enfermagem-1780004452857-9",
+        "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Violência contra a mulher",
+      "count": 3,
+      "pct": 1.1,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_violencia",
+      "family_counts": {
+        "conceito": 3
+      },
+      "sample_slugs": [
+        "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+        "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+        "itame-enfermagem-saude-da-mulher-1777104432986-1"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Ciclo menstrual / amenorreia",
+      "count": 2,
+      "pct": 0.8,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_ciclo",
+      "family_counts": {
+        "conceito": 2
+      },
+      "sample_slugs": [
+        "idecan-enfermagem-saude-da-mulher-1780067036141-1",
+        "legalle-enfermagem-processo-de-enfermagem-1780010579953-6"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Coleta de exames (drift?)",
+      "count": 1,
+      "pct": 0.4,
+      "drift_in_cluster": 1,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_generico",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Epidemiologia (drift?)",
+      "count": 1,
+      "pct": 0.4,
+      "drift_in_cluster": 1,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "mulher_generico",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    }
+  ],
+  "rows": [
+    {
+      "slug": "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Durante uma consulta de pré-natal, uma gestante pergunta ao médico sobre a importância da suplementa",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-saude-da-mulher-1777104306781-2",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Em relação aos métodos contraceptivos, analise as afirmações abaixo e marque para verdadeiro ou \"F\" ",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Considere as afirmações abaixo referentes às boas práticas de enfermagem na assistência ao trabalho ",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Analise as afirmações a seguir: I. O Teste Rápido de Gravidez pode ser realizado na própria Unidade ",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Em relação ao reconhecimento de sinais de sofrimento fetal em ambiente pré-hospitalar, avalie as afi",
+      "drift": false
+    },
+    {
+      "slug": "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "De acordo com o Ministério da Saúde, quantas consultas devem ser realizadas, no mínimo, durante o pr",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-6",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A assistência de enfermagem à saúde da mulher durante o pré-natal, o parto e o puerpério é fundament",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-6",
+      "family": "conceito",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "A amamentação é reconhecida como uma das estratégias mais eficazes para a promoção da saúde e a prev",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-9",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "O parto humanizado constitui uma política pública de saúde que busca assegurar a dignidade e o prota",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-1",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "O planejamento familiar integra o conjunto de ações estratégicas da atenção à saúde sexual e reprodu",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-saude-da-mulher-1777104295283-6",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "A assistência de enfermagem à saúde da mulher abrange ações de promoção, prevenção e tratamento que ",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-saude-da-mulher-1777104295283-7",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A assistência de enfermagem no planejamento familiar, pré-natal, parto e puerpério é essencial para ",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-saude-da-mulher-1777104295283-8",
+      "family": "conceito",
+      "topic": "Climatério / menopausa",
+      "branch_id": "mulher_climaterio",
+      "instruction_preview": "O climatério é uma fase natural da vida da mulher, marcada por mudanças hormonais significativas e a",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-3",
+      "family": "protocolo",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O Protocolo de Enfermagem na Atenção Primária à Saúde para a saúde da mulher estabelece diretrizes p",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2",
+      "family": "conceito",
+      "topic": "Coleta de exames (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "O transporte de amostras biológicas coletadas na comunidade deve seguir normas rigorosas de biossegu",
+      "drift": true
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-7",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Em uma Unidade Básica de Saúde (UBS) do setor público, o Técnico de Enfermagem atende uma gestante e",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Durante a primeira semana após o parto, a técnica de enfermagem orienta a puérpera quanto à amamenta",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-saude-da-mulher-1777104340484-4",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Em Saúde da Mulher, existe um dicionário específico e amplo. As terminologias mais utilizadas nessa ",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-saude-da-mulher-1777104376057-5",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Em uma maternidade de hospital público, o técnico de enfermagem atua no alojamento conjunto, centro ",
+      "drift": false
+    },
+    {
+      "slug": "atame-enfermagem-saude-da-mulher-1777104347186-6",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A gestante hipertensa deve ter alguns cuidados essenciais com a sua saúde. Um dele é:",
+      "drift": false
+    },
+    {
+      "slug": "atame-enfermagem-saude-da-mulher-1777104347186-7",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Uma gestante com diabetes melitus gestacional necessita de cuidados específicos para garantir sua sa",
+      "drift": false
+    },
+    {
+      "slug": "atame-enfermagem-saude-da-mulher-1777104347186-8",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Uma paciente com Síndrome dos Ovários Poliscísticos - SOP apresenta irregularidade menstruais e difi",
+      "drift": true
+    },
+    {
+      "slug": "atame-enfermagem-saude-da-mulher-1777104382533-0",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Uma gestante em trabalho de parto chega á unidade de saúde apresentado contrações regulares e dilata",
+      "drift": false
+    },
+    {
+      "slug": "atame-enfermagem-vias-de-administracao-1778968573722-0",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Uma paciente com endometriose apresenta fortes dores pélvicas durante o período menstrual. Qual dos ",
+      "drift": true
+    },
+    {
+      "slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-7",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Dentro da assistência dada pelo técnico de enfermagem ao longo da coleta do exame de Papanicolau, re",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-saude-da-mulher-1777104323066-2",
+      "family": "conceito",
+      "topic": "Climatério / menopausa",
+      "branch_id": "mulher_climaterio",
+      "instruction_preview": "Uma mulher de 19 anos, sexualmente ativa, chegou a Unidade Básica de saúde relatando ausência da men",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-saude-da-mulher-1777104288275-0",
+      "family": "certo_errado",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "Considerados saberes validados pelo Ministério da Saúde acerca de assistência em saúde coletiva, jul",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-saude-da-mulher-1777104376057-3",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Considerando obras publicadas pelo Ministério da Saúde, assinale a opção correta acerca do puerpério",
+      "drift": false
+    },
+    {
+      "slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "family": "conceito",
+      "topic": "Planejamento familiar / contracepção",
+      "branch_id": "mulher_planejamento",
+      "instruction_preview": "\"Entende-se planejamento familiar como o conjunto de ações de regulação da fecundidade que garanta d",
+      "drift": false
+    },
+    {
+      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-5",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A assistência de enfermagem à saúde da mulher durante o pré-natal, o parto e o puerpério é fundament",
+      "drift": false
+    },
+    {
+      "slug": "cev-urca-enfermagem-saude-da-mulher-1777104329543-3",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "São os principais cuidados de enfermagem com a mulher no pós-parto vaginal imediato:",
+      "drift": false
+    },
+    {
+      "slug": "cev-urca-enfermagem-saude-da-mulher-1777104347186-3",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Fazem parte das boas práticas ao parto e nascimentos e devem ser estimuladas pela equipe multidiscip",
+      "drift": false
+    },
+    {
+      "slug": "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "family": "conceito",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "O leite amarelado e grosso que a mulher produz nos primeiros dias após o nascimento do bebê, rico em",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+      "family": "conceito",
+      "topic": "Semiologia (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "O primeiro sintoma de suspeita de gravidez geralmente é o atraso menstrual, mas há outros sintomas e",
+      "drift": true
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "A senhora Bianka Faustino Júnior, 63 anos, está internada no Hospital Municipal, Clínica Bonina, loc",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1777102813845-8",
+      "family": "vf",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A nutrição é de fundamental importância para o prognóstico da gestação. Por isso, é muito importante",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A gravidez não é doença e a maioria das gestantes não apresenta complicações durante a gestação, mas",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+      "family": "conceito",
+      "topic": "Planejamento familiar / contracepção",
+      "branch_id": "mulher_planejamento",
+      "instruction_preview": "Durante as ações educativas sobre planejamento familiar em uma Unidade Básica de Saúde, o técnico de",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-7",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Caso Hipotético: Maria, 46 anos, G4P1A2 (dois abortamentos espontâneos, com gestação viável entre el",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Durante uma roda de conversa sobre saúde da mulher realizada em uma unidade de internação de alto ri",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-4",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "O registro confiável dos óbitos de crianças e mulheres e de suas causas é fundamental para informar ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-5",
+      "family": "vf",
+      "topic": "Planejamento familiar / contracepção",
+      "branch_id": "mulher_planejamento",
+      "instruction_preview": "Há vários tipos de métodos anticoncepcionais. Métodos comportamentais são aqueles que, para serem ut",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-6",
+      "family": "vf",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "O puerpério é o período do nascimento do bebê até 45 dias após o parto. Leia as orientações que o Ag",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104340484-7",
+      "family": "vf",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Sobre o calendário de consultas durante o pré-natal, analise as afirmativas a seguir: I- O total de ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104376057-4",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Gestante de 28 anos, primigesta, em trabalho de parto, apresenta-se em período expulsivo avançado. A",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-4",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "No sentido de assegurar a saúde da mulher e do recém-nascido, a enfermeira e a técnica de enfermagem",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-6",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "A prevenção do câncer de colo uterino inclui a detecção precoce e a vacinação contra o Papiloma Víru",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104408379-0",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Alguns problemas enfrentados pelas nutrizes durante o aleitamento materno, se não forem precocemente",
+      "drift": true
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-3",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante o atendimento em um serviço de saúde, a equipe de enfermagem avalia uma mulher que afirma es",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-5",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante o atendimento em um serviço de saúde, a equipe de enfermagem avalia uma mulher que afirma es",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Leia o enunciado: \"Se expulsa o concepto e permanece a placenta ou os restos placentários; o ovo é e",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+      "family": "conceito",
+      "topic": "Semiologia (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Os distúrbios hipertensivos da gestação constituem algumas das principais causas de mortalidade mate",
+      "drift": true
+    },
+    {
+      "slug": "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+      "family": "conceito",
+      "topic": "Semiologia (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "São procedimentos da consulta de enfermagem obstétrica no pré-natal, entre outras: I. Anamnese compl",
+      "drift": true
+    },
+    {
+      "slug": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+      "family": "conceito",
+      "topic": "Epidemiologia (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Considerando seu papel na assistência ao parto, e da responsabilidade de todo profissional de saúde,",
+      "drift": true
+    },
+    {
+      "slug": "facet-enfermagem-saude-da-mulher-1777104261182-4",
+      "family": "conceito",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "No período do puerpério, a promoção do aleitamento materno é uma das principais responsabilidades da",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-saude-da-mulher-1777104261182-5",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "A prevenção do câncer de colo de útero envolve diferentes estratégias de rastreamento, sendo o princ",
+      "drift": false
+    },
+    {
+      "slug": "fadesp-enfermagem-saude-da-mulher-1777104347186-1",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O câncer de mama é uma doença causada pela multiplicação desordenada de células anormais da mama, qu",
+      "drift": false
+    },
+    {
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-9",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A Linha de Cuidado Materno Infantil, da Secretaria de Estado da Saúde do Paraná - SESA/PR (2022), te",
+      "drift": false
+    },
+    {
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A Secretaria Estadual de Saúde do Paraná (SESA/PR) preconiza protocolos assistenciais em ginecologia",
+      "drift": false
+    },
+    {
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-1",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "A nota técnica No 626/2025-CGCAN/DECAN/SAES/MS - traz como objetivo uniformizar as informações relac",
+      "drift": false
+    },
+    {
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-3",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A nota técnica no 7/2023, DAV/SESA-PR, estabelece o fluxo para realização de esterilização cirúrgica",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A cérvice, também é conhecida como:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "O endométrio",
+      "drift": true
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-1",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Paciente G.C.S., mulher, 26 anos; 32o semana de gestação (gesta Ill); atendida na unidade de pronto ",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-8",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Assinale a alternativa que se relaciona à gestação.",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-9",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Preencha a lacuna com a alternativa CORRETA. O Ministério da Saúde, através do Sistema Único de Saúd",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-6",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A istmocele é um defeito na parede anterior do miométrio, na sua porção mais baixa. Assinale a alter",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-1",
+      "family": "calc",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A Regra Universal de Naegele é uma metodologia padronizada para calcular data provável do:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-6",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O exame citopatológico (ou Papanicolau) é um rastreamento crucial recomendado pelo Ministério da Saú",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-8",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Endométrio, miométrio e perimétrio:",
+      "drift": true
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-0",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Preencha as lacunas com a alternativa CORRETA. Enquanto a cuida da saúde do sistema reprodutor femin",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A figura abaixo representa qual método contraceptivo utilizado no planejamento familiar? 4901) 4902)",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104261182-8",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Gravidez anembrionária:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-5",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Paciente 22 anos, gesta 2, para 1, aborto 0, parto vaginal há 3 anos, 33 semanas, chega à emergência",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-6",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Assinale a alterativa que corresponde ao nome popular do \"exame preventivo de colo de útero\":",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-0",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A transmissão vertical é a passagem de uma doença ou infecção de mãe para:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-9",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Os termos \"nulípara\" e \"primípara\" estão relacionados:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104301763-5",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "É uma síndrome clínica causada por vários microrganismos, que ocorre devido à entrada de agentes inf",
+      "drift": true
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-0",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Preencha as lacunas com a alternativa correta. _____________ _____________ é o fluido que preenche o",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-1",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O Papanicolau é um exame ginecológico que coleta células para identificar alterações que podem indic",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Assinale a alternativa que aponta o número de bebês paridos (ou que serão paridos) por uma primípara",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-8",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Uma gravidez (sem intercorrências) é dividida em:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104340484-1",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Assinale a alternativa correta.",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104340484-2",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A mulher que fornece o leite materno é a:",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Os pródromos:",
+      "drift": false
+    },
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-9",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A equipe de enfermagem acompanha uma parturiente de baixo risco, 39 semanas, apresentação cefálica, ",
+      "drift": false
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-saude-da-mulher-1777104261182-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Sobre os métodos contraceptivos, é correto afirmar que: I. O uso de contraceptivos hormonais orais r",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Para ampliar a captação precoce das gestantes, o Ministério da Saúde incluiu o Teste Rápido de Gravi",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-8",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "No Brasil, estimam-se, para cada ano do triênio de 2023-2025, 17.010 casos novos de câncer de colo d",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-saude-da-mulher-1777104222222-0",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Assinale a alternativa que indica corretamente o método de rastreamento do câncer do colo do útero e",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-saude-da-mulher-1777104222222-4",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "As anomalias congênitas (AC) são alterações que ocorrem durante o desenvolvimento fetal, afetam estr",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-saude-da-mulher-1777104222222-6",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Durante os cuidados a uma mulher no pós-parto foi observada lesão dos músculos perineais sem atingir",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-saude-da-mulher-1777104323066-0",
+      "family": "conceito",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "De acordo com as orientações do Ministério da Saúde, uma condição materna que contraindica a amament",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-saude-da-mulher-1777104340484-3",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Após o parto a mulher deve ser orientada sobre os cuidados e recomendações relacionadas ao puerpério",
+      "drift": false
+    },
+    {
+      "slug": "funatec-enfermagem-saude-da-mulher-1777104415052-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A assistência de enfermagem à saúde da mulher abrange diversos aspectos, incluindo o cuidado durante",
+      "drift": false
+    },
+    {
+      "slug": "funatec-enfermagem-saude-da-mulher-1777104415052-2",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "A assistência de enfermagem na prevenção do câncer de mama envolve a realização de exames específico",
+      "drift": false
+    },
+    {
+      "slug": "funatec-enfermagem-saude-da-mulher-1777104415052-3",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante o pré-natal, são realizados diversos exames para avaliar a saúde materna e fetal. Sobre a re",
+      "drift": false
+    },
+    {
+      "slug": "funatec-enfermagem-saude-da-mulher-1777104415052-4",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Na assistência de enfermagem à mulher durante o trabalho de parto, qual é a posição recomendada para",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Sabe-se que a incidência de câncer de colo de útero é muito alta nos países subdesenvolvidos e em de",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-saude-da-mulher-1777104288275-8",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O câncer de mama é uma doença resultante da multiplicação de células anormais da mama que forma um t",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-saude-da-mulher-1777104301763-0",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A gestação é um acontecimento fisiológico e deve ser considerada pela mulher e pela equipe de saúde ",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-saude-da-mulher-1777104415052-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A paciente A.J.S, 25 anos, gestante, realizou uma glicemia de jejum conforme solicitado em seu pré-n",
+      "drift": false
+    },
+    {
+      "slug": "funcern-enfermagem-saude-da-mulher-1777104415052-8",
+      "family": "conceito",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "Em relação aos métodos contraceptivos, é correto afirmar:",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-5",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Em relação à saúde do homem, há uma síndrome em que o homem apresenta os mesmos sintomas da sua parc",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-1",
+      "family": "protocolo",
+      "topic": "Semiologia (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Após um parto de emergência em via pública, a puérpera evolui, nos minutos subsequentes, com sangram",
+      "drift": true
+    },
+    {
+      "slug": "fundatec-enfermagem-saude-da-mulher-1777104306781-0",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Sobre a interrupção da gestação e os cuidados de enfermagem relacionados, analise as assertivas a se",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-saude-da-mulher-1777104382533-7",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Lurdes, 69 anos, realizou uma fixação do útero, chamada de , devido a inúmeras gestações prévias. Ap",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-saude-da-mulher-1777104382533-8",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A laqueadura tubária é um procedimento que tem por objetivo evitar o contato do espermatozoide com o",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-saude-da-mulher-1777104389226-5",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Os termos técnicos de Enfermagem são importantes porque garantem que as informações sejam transmitid",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-saude-da-mulher-1777104408379-5",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "De acordo com as Diretrizes Brasileiras para o Rastreamento do Câncer do Colo do Útero (INCA, 2016),",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-saude-da-mulher-1777104424950-0",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A Doença Inflamatória Pélvica (DIP) é uma síndrome clínica atribuída à ascensão de microrganismos do",
+      "drift": true
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563517223-7",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "É um sinal específico do hipogonadismo:",
+      "drift": false
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-5",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Dadas as afirmativas sobre a saúde da mulher, I. No Brasil, o câncer de colo do útero, também chamad",
+      "drift": false
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-6",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O câncer do colo do útero é originado pela infecção constante de alguns tipos do Papilomavírus Human",
+      "drift": false
+    },
+    {
+      "slug": "funtef-enfermagem-semiologia-em-enfermagem-1779563517223-5",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Um técnico de enfermagem de uma unidade de saúde recebe na triagem uma mulher tímida, 25 anos de ida",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-saude-da-mulher-1777104261182-3",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Uma gestante no terceiro trimestre de gravidez apresenta edema súbito de face e mãos, acompanhado de",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-saude-da-mulher-1777104382533-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "O pré-parto é um período crítico no acompanhamento da gestante, requerendo cuidados específicos da e",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-saude-da-mulher-1777104382533-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante a gestação, é importante que a gestante evite permanecer em decúbito lateral direito por lon",
+      "drift": false
+    },
+    {
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-7",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Gestante com 30 semanas de gestação procura a Unidade Básica de Saúde por demanda espontânea, relata",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Ligadura tubária ou laqueadura é uma cirurgia para a esterilização voluntária definitiva, na qual as",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-2",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O câncer de mama é o tipo, que mais acomete mulheres em todo o mundo, tanto em países em desenvolvim",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A Organização Mundial de Saúde (OMS) define como nascimento normal aquele que ocorre entre 37 e 42 s",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-4",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A hemorragia pós-parto (HPP) é definida como perda sanguínea acima de 500 mL, após o parto vaginal, ",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-3",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "O nascimento no ambiente hospitalar se caracteriza pela adoção de várias tecnologias e procedimentos",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-4",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Toda gestante deverá procurar a unidade de atenção básica mais próxima de sua residência para realiz",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-5",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Sobre o aleitamento materno, analise as proposições abaixo: I. O aleitamento materno predominante oc",
+      "drift": false
+    },
+    {
+      "slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-6",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A infecção puerperal é uma das principais causas de morbimortalidade materna, constituindo um import",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-saude-da-mulher-1777104323066-4",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "A Coloração de Papanicolaou é utilizada para detectar alterações em células do colo uterino. Quando ",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-saude-da-mulher-1777104408379-4",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Assinale a alternativa correta no que tange a atuação do Técnico de Enfermagem na atenção à gestação",
+      "drift": false
+    },
+    {
+      "slug": "ibam-enfermagem-saude-da-mulher-1777104340484-5",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "A assistência de enfermagem na prevenção do câncer de colo do útero e de mamas é um dos pilares das ",
+      "drift": false
+    },
+    {
+      "slug": "icece-enfermagem-saude-da-mulher-1777104261182-0",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante o acompanhamento da gestante no prénatal, o Técnico em Enfermagem deve:",
+      "drift": false
+    },
+    {
+      "slug": "icece-enfermagem-saude-da-mulher-1780001362784-9",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante o acompanhamento da gestante no prénatal, o Técnico em Enfermagem deve:",
+      "drift": false
+    },
+    {
+      "slug": "idcap-enfermagem-saude-da-mulher-1777104301763-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "As consultas de pré-natal poderão ser realizadas na unidade de saúde ou durante visitas domiciliares",
+      "drift": false
+    },
+    {
+      "slug": "idcap-enfermagem-saude-da-mulher-1777104389226-3",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "No que se refere as características e composição do leite materno, analise a afirmativa abaixo: Apes",
+      "drift": false
+    },
+    {
+      "slug": "idcap-enfermagem-saude-da-mulher-1777104389226-4",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A hiperglicemia materna é uma das condições mais comuns na gravidez. No Brasil, estima-se que 18% da",
+      "drift": false
+    },
+    {
+      "slug": "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "O ACS deve orientar a gestante sobre: I – Comer no mínimo seis vezes ao dia, em menores quantidades:",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Puerpério é o período que compreende a fase pós-parto, quando a mulher passa por alterações físicas ",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "O planejamento familiar é entendido como o conjunto de ações de regulação da fecundidade, de forma q",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1777104335102-4",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "O diafragma é um método contraceptivo de barreira que consiste em um anel flexível coberto por uma b",
+      "drift": true
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1777104389226-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A síndrome HELLP é o achado extremo do espectro de alterações que ocorrem na hipertensão induzida pe",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1778712437306-0",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A síndrome HELLP é o achado extremo do espectro de alterações que ocorrem na hipertensão induzida pe",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1778712437306-1",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A gravidez múltipla é considerada uma gestação de risco devido às diversas complicações potenciais q",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1778712437306-2",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "O diafragma é um método contraceptivo de barreira que consiste em um anel flexível coberto por uma b",
+      "drift": true
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1778712437306-3",
+      "family": "certo_errado",
+      "topic": "IST na gestação",
+      "branch_id": "mulher_ist_gestacao",
+      "instruction_preview": "O Programa de Assistência Integral à Saúde da Mulher preconizou a garantia de acesso de todas as mul",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1778712437306-4",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Em puérperas vivendo com HIV/Aids deve ser orientado que esta não amamente. Sobre as puérperas nesta",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067024707-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "\"De acordo com a Organização Mundial de Saúde (OMS, 1977) é considerado aborto o término da gestação",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067024707-8",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Em relação ao câncer do colo do útero, assinale a alternativa INCORRETA.",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067024707-9",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A dor é um sintoma muito frequente em ginecologia, quase sempre subjetiva e inconstante. É important",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067036141-0",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O autoexame das mamas é um procedimento que permite à mulher participar do controle de sua saúde. Re",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067036141-1",
+      "family": "conceito",
+      "topic": "Ciclo menstrual / amenorreia",
+      "branch_id": "mulher_ciclo",
+      "instruction_preview": "Os principais sintomas ginecológicos que levam as mulheres a buscarem atendimento são: a dor, as mod",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067036141-2",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Sabe-se que a etiologia do câncer cérvico-uterino é desconhecida e que esse câncer é uma doença que ",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067036141-3",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A menstruação atrasada nem sempre é sinal de gravidez, pois outras situações como o excesso de estre",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067036141-4",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O corrimento vaginal, chamado leucorreia, é representado pela saída de secreção de coloração e abund",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-mulher-1780067036141-5",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O colo é a parte do útero que se encontra no fundo do canal vaginal e pela sua localização torna-se ",
+      "drift": false
+    },
+    {
+      "slug": "idesg-enfermagem-saude-da-mulher-1777104335102-0",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O câncer de mama é uma doença causada pela multiplicação desordenada de células anormais da mama, qu",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-3",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A análise macroscópica do líquido amniótico pode fornecer informações sobre a maturidade fetal. Após",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1777104335102-1",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A equipe especializada no atendimento à gestante de alto risco desempenha um papel crucial na educaç",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1777104335102-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A orientação pré-concepcional é fundamental para a identificação e controle de fatores de risco que ",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1777104335102-3",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante o pré-natal, o rastreamento para anemia em gestantes é fundamental para prevenir complicaçõe",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1778934936220-9",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A equipe especializada no atendimento à gestante de alto risco desempenha um papel crucial na educaç",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1778934944659-0",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A orientação pré-concepcional é fundamental para a identificação e controle de fatores de risco que ",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1778934944659-1",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante o pré-natal, o rastreamento para anemia em gestantes é fundamental para prevenir complicaçõe",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1778934944659-2",
+      "family": "conceito",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "Na atenção integral à saúde da mulher, cabe ao Auxiliar de enfermagem, exceto:",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1778934944659-3",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O aleitamento materno é de suma importância para a vida atual e futura do bebê e traz muitas vantage",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-mulher-1778934944659-4",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Planejamento familiar, direito reprodutivo e infecções sexualmente transmissíveis são temas recorren",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A gestante deve sempre estar atenta à sua alimentação, pois a desnutrição na gravidez pode prejudica",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-da-mulher-1777104261182-1",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A Enfermagem em ginecologia e obstetrícia compreende cuidados à saúde da mulher nos diferentes ciclo",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-da-mulher-1777104306781-4",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A pré-eclâmpsia é uma condição médica grave que ocorre durante a gravidez, caracterizada por hiperte",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-3",
+      "family": "certo_errado",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Julgue o item a seguir. A hipertensão gestacional ocorre em menos da metade das gravidezes em primíp",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-4",
+      "family": "certo_errado",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Julgue o item a seguir. As mães devem ser aconselhadas a oferecer ao bebê os dois seios em cada mama",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-6",
+      "family": "certo_errado",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Conceitua-se como abortamento a morte ovular ocorrida antes da 22a semana de gestação. O abortamento",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-7",
+      "family": "certo_errado",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "10000) O tratamento da toxoplasmose adquirida em gestantes elimina o risco de infecção do feto. O in",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-da-mulher-1780001362784-8",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A assistência à saúde da mulher é uma das atribuições desenvolvidas na Estratégia Saúde da Família, ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-saude-da-mulher-1780001440222-0",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A Enfermagem em ginecologia e obstetrícia compreende cuidados à saúde da mulher nos diferentes ciclo",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-seguranca-do-paciente-1777102918981-3",
+      "family": "certo_errado",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Julgue o item subsequente. Os recipientes de acondicionamento existentes nas salas de cirurgia e nas",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-semiologia-em-enfermagem-1779563491765-5",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Em uma ação de saúde, o Técnico em Enfermagem orienta mulheres sobre sinais de alerta para o câncer ",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104335102-5",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Durante o trabalho de parto, qual é o papel do técnico em enfermagem para garantir a segurança e o b",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104347186-5",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Qual das alternativas abaixo não é um sinal/ sintoma de agravamento para uma gestante com suspeita d",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-geral-saude-da-mulher-1777104347186-4",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Uma puérpera, no 3o dia pós-parto, procura a unidade básica de saúde com queixas de dor intensa, cal",
+      "drift": false
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-5",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Uma gestante de 28 anos, primigesta (G1P0), com 10 semanas de idade gestacional (IG), comparece à Un",
+      "drift": false
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Para reconhecer uma urgência na gestação, a equipe de saúde deve estar atenta e pronta para identifi",
+      "drift": false
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9",
+      "family": "conceito",
+      "topic": "Climatério / menopausa",
+      "branch_id": "mulher_climaterio",
+      "instruction_preview": "Acerca da menopausa e do climatério, assinale a alternativa correta.",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+      "family": "conceito",
+      "topic": "Violência contra a mulher",
+      "branch_id": "mulher_violencia",
+      "instruction_preview": "No contexto da atenção à mulher em situação de violência doméstica e sexista, no âmbito da Atenção P",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+      "family": "conceito",
+      "topic": "Violência contra a mulher",
+      "branch_id": "mulher_violencia",
+      "instruction_preview": "No atendimento à mulher em situação de violência doméstica e sexista, o Técnico de Enfermagem integr",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+      "family": "protocolo",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Segundo o Protocolo de Atenção à Saúde das Mulheres (2016), é uma ação de rotina recomendada na Aten",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O câncer de mama é o câncer mais comum na população feminina, sendo a quinta causa de morte por cânc",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-5",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O câncer do colo do útero é o terceiro tipo de câncer mais comum entre as mulheres com, aproximadame",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-2",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O câncer de mama é o que mais acomete mulheres em todo o mundo, constituindo a maior causa de morte ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-4",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "No Brasil, o câncer de colo do útero, também chamado de câncer cervical, é o quarto tipo de câncer m",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-5",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "O acesso ao cuidado do pré-natal durante a gestação tem sido incorporado como indicador de avaliação",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-7",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Quando se trata da temática saúde da mulher, os programas mais comuns são os de câncer de colo do út",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104323066-7",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Após o parto vaginal de um recém-nascido saudável, mulher de 28 anos relata dor intensa e dificuldad",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-6",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante o acompanhamento pré-natal, uma gestante apresenta edema nas extremidades inferiores, hipert",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-7",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O câncer do colo do útero, também conhecido como câncer cervical, é causado pela infecção persistent",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104340484-6",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "De acordo com o Protocolo de Atenção à Saúde das Mulheres (2016), um dos princípios fundamentais do ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104347186-0",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "O Ministério da Saúde preconiza que a gestante deverá procurar a unidade de atenção básica, mais pró",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-geral-saude-da-mulher-1777104235003-3",
+      "family": "conceito",
+      "topic": "Planejamento familiar / contracepção",
+      "branch_id": "mulher_planejamento",
+      "instruction_preview": "O planejamento reprodutivo, chamado também de planejamento familiar, designa um conjunto de ações de",
+      "drift": false
+    },
+    {
+      "slug": "instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+      "family": "calc",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A data prevista do parto é a data estimada de nascimento do bebê. Existem duas formas de calcular a ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-6",
+      "family": "certo_errado",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "No puerpério imediato, a presença de lóquios com aspecto sanguinolento (vermelho vivo), em quantidad",
+      "drift": false
+    },
+    {
+      "slug": "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "As emergências hipertensivas gestacionais apresentam grande risco à vida tanto da gestante quanto da",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A assistência de enfermagem à mulher no ciclo gravídico-puerperal e no climatério, no âmbito da Aten",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-0",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Conhecido popularmente como \"preventivo\" ou \"Papanicolau\", o exame citopatológico do colo do útero é",
+      "drift": false
+    },
+    {
+      "slug": "iset-enfermagem-saude-da-mulher-1777104376057-0",
+      "family": "conceito",
+      "topic": "Semiologia (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Determinado paciente de 30 anos, do sexo feminino, grávida de 8 semanas, foi admitida com queixa de ",
+      "drift": true
+    },
+    {
+      "slug": "itame-enfermagem-saude-da-mulher-1777104424950-2",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Em obstetrícia, o acolhimento na porta de entrada dos hospitais e das maternidades assume peculiarid",
+      "drift": false
+    },
+    {
+      "slug": "itame-enfermagem-saude-da-mulher-1777104432986-1",
+      "family": "conceito",
+      "topic": "Violência contra a mulher",
+      "branch_id": "mulher_violencia",
+      "instruction_preview": "A violência contra mulher é um importante problema de saúde pública, assim como uma violação fundame",
+      "drift": false
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+      "family": "conceito",
+      "topic": "Ciclo menstrual / amenorreia",
+      "branch_id": "mulher_ciclo",
+      "instruction_preview": "A coleta do exame citopatológico do colo do útero é um procedimento essencial para o rastreamento do",
+      "drift": false
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-7",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "As doenças hipertensivas na gestação representam uma das principais causas de morbimortalidade mater",
+      "drift": false
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "O Sangramento Uterino Anormal (SUA) é o termo que define anormalidades em quantidade, duração e freq",
+      "drift": true
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-0",
+      "family": "conceito",
+      "topic": "Planejamento familiar / contracepção",
+      "branch_id": "mulher_planejamento",
+      "instruction_preview": "Na atenção em anticoncepção, é fundamental oferecer diferentes métodos contraceptivos, permitindo qu",
+      "drift": false
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O câncer do colo do útero é a segunda neoplasia maligna mais incidente nas Regiões Norte (21,20/100 ",
+      "drift": false
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-2",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A composição do leite materno se modifica ao longo do tempo, de acordo com as necessidades do recém-",
+      "drift": false
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "As alterações fisiológicas da gravidez produzem manifestações sobre o organismo da mulher que, muita",
+      "drift": false
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Em ginecologia e obstetrícia, qual é um dos principais exames de enfermagem no acompanhamento pré-na",
+      "drift": false
+    },
+    {
+      "slug": "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "A gravidez ectópica caracteriza-se pela implantação do saco gestacional fora da cavidade uterina. So",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O câncer do colo do útero é um importante problema de saúde pública. Sobre suas causas e fatores de ",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Quanto tempo depois do parto a mulher pode colocar o DIU- Dispositivo Intrauterino?",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-2",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A enfermagem realiza os cuidados imediatos ainda na sala de parto e, posteriormente, faz orientações",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104235003-8",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A enfermagem realiza os cuidados imediatos ainda na sala de parto e, posteriormente, faz orientações",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "O Câncer de Colo de Útero é causado pela infecção do papiloma vírus, sendo sexualmente transmissível",
+      "drift": false
+    },
+    {
+      "slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Uma das áreas de atuação da equipe de enfermagem na atenção básica é a educação sexual e reprodutiva",
+      "drift": false
+    },
+    {
+      "slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104235003-0",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O técnico de enfermagem que atua na área de Saúde da Mulher e da Criança tem uma participação muito ",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-6",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Acredita-se que cerca de 5 a 10% dos casos de câncer de mama sejam hereditários, como resultado de d",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-8",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "A infecção da mama no puerpério é bastante comum. A infecção por fungo, que costuma manifestar-se po",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Apesar da redução importante da mortalidade infantil no Brasil nas últimas décadas, os indicadores d",
+      "drift": false
+    },
+    {
+      "slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "No que se refere à atenção primária à saúde, assinale a opção que apresenta uma prática recomendada ",
+      "drift": false
+    },
+    {
+      "slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Assinale a opção que está de acordo com as diretrizes do Ministério da Saúde para o cuidado à gestan",
+      "drift": false
+    },
+    {
+      "slug": "quadrix-enfermagem-saude-da-mulher-1777104408379-2",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Durante a realização do autoexame das mamas, é importante que as mulheres saibam que",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "O acompanhamento pré-natal é essencial para a redução da incidência de mortalidade materna, do baixo",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Maria, puérpera de 3 dias, relata às profissionais da unidade de alojamento conjunto que sente as ma",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "family": "conceito",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "No âmbito da Atenção básica, de acordo com o caderno de Atenção básica- Atenção ao Pré-Natal de baix",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "family": "conceito",
+      "topic": "Puerpério / lactação",
+      "branch_id": "mulher_puerperio",
+      "instruction_preview": "No âmbito da Atenção básica, de acordo com o caderno de Atenção básica- Atenção ao Pré-Natal de baix",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-exames-complementares-1779563674260-4",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "O acompanhamento pré-natal é essencial para garantir uma gestação saudável e um parto seguro (Gomes ",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "O organismo da gestante sofre inúmeras mudanças fisiológicas e anatômicas para benefícios da saúde m",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A assistência a uma gestante em trabalho de parto exige monitoramento para prevenir complicações. O ",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "O acompanhamento de uma gestante no pré-natal exige orientações para promover a saúde materna e feta",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+      "family": "conceito",
+      "topic": "Semiologia (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A prevenção do câncer de mama em uma campanha de saúde pública exige ações educativas. O enfermeiro ",
+      "drift": true
+    },
+    {
+      "slug": "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+      "family": "conceito",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "Durante o pré-parto, a enfermagem desempenha um papel crucial no monitoramento materno e fetal. Sobr",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-1",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "A mortalidade infantil é um bom indicador para medir a qualidade da saúde prestada à população, cons",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-9",
+      "family": "conceito",
+      "topic": "IST na gestação",
+      "branch_id": "mulher_ist_gestacao",
+      "instruction_preview": "A Política Nacional de Atenção Integral à Saúde da Mulher (PNAISM) representa um marco importante na",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-saude-da-mulher-1777104376057-1",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Os cistos ovarianos benignos correspondem a alterações frequentes na rotina ginecológica e, o conhec",
+      "drift": true
+    },
+    {
+      "slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-4",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "Considerando que um Técnico em Enfermagem está orientando uma puérpera sobre os cuidados com as mama",
+      "drift": false
+    },
+    {
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-3",
+      "family": "protocolo",
+      "topic": "Parto / trabalho de parto",
+      "branch_id": "mulher_parto",
+      "instruction_preview": "A assistência de enfermagem ao parto é um procedimento crítico que exige conhecimento técnico, obser",
+      "drift": false
+    },
+    {
+      "slug": "univida-enfermagem-saude-da-mulher-1777104389226-1",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Considere os seguintes sinais clínicos em uma assistência de enfermagem ginecológica: - Sangramento ",
+      "drift": true
+    },
+    {
+      "slug": "univida-enfermagem-saude-da-mulher-1777104389226-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "\"Comuns no primeiro trimestre da gravidez, mais intensas pela manhã, ao acordar ou após um período d",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Dentre as atribuições do técnico de enfermagem que atua na atenção básica, em relação à prevenção do",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-4",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Ao orientar as mulheres a respeito do preparo necessário para a realização do exame citopatológico p",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-9",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Uma paciente procura o serviço de saúde porque suspeita que esteja grávida. De acordo com o guia par",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-3",
+      "family": "conceito",
+      "topic": "Saúde da mulher — conceito geral",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "Após realizar a avaliação de uma puérpera submetida a cirurgia cesariana há dez dias, o enfermeiro, ",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4",
+      "family": "conceito",
+      "topic": "IST na gestação",
+      "branch_id": "mulher_ist_gestacao",
+      "instruction_preview": "O indicador de saúde mais apropriado para análise da assistência obstétrica e neonatal e de utilizaç",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-5",
+      "family": "conceito",
+      "topic": "Planejamento familiar / contracepção",
+      "branch_id": "mulher_planejamento",
+      "instruction_preview": "Sobre o uso de anticoncepcional oral combinado, é correto afirmar que",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3",
+      "family": "conceito",
+      "topic": "Planejamento familiar / contracepção",
+      "branch_id": "mulher_planejamento",
+      "instruction_preview": "Como membro da equipe de saúde, o técnico de enfermagem participa de grupos de educação em saúde. Ao",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Gestante com 38 semanas de idade gestacional, feto único vivo, foi admitida na sala de emergência in",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Gestantes costumam queixar-se de pirose. A orientação para diminuir o desconforto nessa situação é:",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-6",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Janete é uma primípara, em trabalho de parto ativo no atendimento em serviço, com 4 contrações forte",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104295283-1",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "No Brasil, o câncer de colo do útero é o terceiro tipo de câncer mais incidente entre mulheres. Segu",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104323066-6",
+      "family": "conceito",
+      "topic": "Saúde da mama",
+      "branch_id": "mulher_mama",
+      "instruction_preview": "O técnico de enfermagem atua no Banco de Leite Humano (BLH) da maternidade local. Ao realizar os pro",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "J.C., 30 anos, com 9 semanas de gestação, compareceu à unidade básica de saúde para coleta de sangue",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+      "family": "protocolo",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Durante a aferição arterial de Gabriela, paciente na vigésima primeira semana de gestação, obteve-se",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-6",
+      "family": "conceito",
+      "topic": "Anatomia feminina (drift?)",
+      "branch_id": "mulher_generico",
+      "instruction_preview": "O tipo de câncer que mais acomete mulheres no Brasil e no mundo é:",
+      "drift": true
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Considere as queixas comuns na gestação e relacione as colunas do quadro apresentado a seguir de mod",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-saude-da-mulher-1777104415052-0",
+      "family": "conceito",
+      "topic": "Rastreio câncer de colo",
+      "branch_id": "mulher_papanicolau",
+      "instruction_preview": "Em relação ao exame citopatológico para o rastreamento do câncer do colo do útero, é correto afirmar",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563467322-8",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Para o diagnóstico clínico de uma gravidez, há os chamados sinais e sintomas de presunção, de probab",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563527042-7",
+      "family": "conceito",
+      "topic": "Pré-natal / gestação",
+      "branch_id": "mulher_prenatal",
+      "instruction_preview": "Em 20.09.2023, durante consulta de enfermagem de pré-natal, J.G., 24 anos, primigesta, relatou que s",
+      "drift": false
+    }
+  ]
+}

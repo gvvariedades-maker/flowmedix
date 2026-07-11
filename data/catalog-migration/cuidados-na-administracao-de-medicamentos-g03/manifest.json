@@ -1,0 +1,15 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g03",
+  "exported_at": "2026-07-10T22:47:46.193Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g03/manifest.json"
+  },
+  "slugs": [
+    "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-4",
+    "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
+    "fcm-enfermagem-seguranca-do-paciente-1777102936764-9",
+    "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-2",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2"
+  ]
+}

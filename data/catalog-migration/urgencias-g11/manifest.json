@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g11",
+  "exported_at": "2026-07-08T14:13:36.758Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_exceto_conduta",
+    "batch": "g11-exceto-conduta-lote-2"
+  },
+  "slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+    "instituto-consulpam-enfermagem-semiologia-em-enfermagem-1779563521756-1",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104056718-5",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-7",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-7"
+  ]
+}

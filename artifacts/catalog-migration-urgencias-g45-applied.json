@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:30:58.245Z",
+  "lote": "urgencias-g45",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-6",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-1",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-3",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+    "unifil-enfermagem-urgencias-e-emergencias-1777104012755-3",
+    "vunesp-enfermagem-exames-complementares-1779563685104-0",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779563685104-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

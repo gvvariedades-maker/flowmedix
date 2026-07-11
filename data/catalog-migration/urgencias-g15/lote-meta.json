@@ -1,0 +1,17 @@
+{
+  "lote": "urgencias-g15",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g15",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_avc_iam": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-amauc-urgencias-cincinnati-avc.json"
+  ],
+  "readiness": "8/8",
+  "preflight_artifact": "artifacts/catalog-preflight-urgencias-g15.json",
+  "notes": "g15 AVC/IAM — admissão AVE técnico · caso Marcos IAM · linha cuidado MS exclusão · condutas auxiliar IAM · sinais AVC semiologia · tipos isquêmico/hemorrágico · clopidogrel transporte · IAM dor torácica"
+}

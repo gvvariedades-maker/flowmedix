@@ -1,0 +1,24 @@
+{
+  "lote": "saude-da-mulher-g25",
+  "exported_at": "2026-07-10T16:44:58.288Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g25/manifest.json"
+  },
+  "slugs": [
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563467322-8",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563527042-7",
+    "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+    "unesc-enfermagem-exames-complementares-1779563674260-4",
+    "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+    "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-3",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-4",
+    "vunesp-enfermagem-saude-da-mulher-1777104261182-6",
+    "vunesp-enfermagem-saude-da-mulher-1777104295283-1",
+    "vunesp-enfermagem-saude-da-mulher-1777104415052-0",
+    "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+    "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-4",
+    "vunesp-enfermagem-saude-da-mulher-1777104323066-6"
+  ]
+}

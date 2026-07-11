@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g12",
+  "exported_at": "2026-07-08T13:52:56.508Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_xabcde_trauma",
+    "batch": "g12-xabcde-trauma-lote-1"
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+    "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+    "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+    "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-4"
+  ]
+}

@@ -1,15 +1,15 @@
 {
   "subtopico": "Urgências e Emergências",
   "pacote_prefix": "urgencias-e-emergencias",
-  "status": "in_progress",
-  "handcraft_applied": 12,
-  "handcraft_applied_at": null,
-  "total_slugs": 340,
+  "status": "applied",
+  "handcraft_applied": 339,
+  "handcraft_applied_at": "2026-07-08",
+  "total_slugs": 339,
   "anchors_p0": "12/12 READY aplicadas",
   "anchors_registry": "data/catalog-migration/urgencias-golden-anchors.json",
   "playbook": "data/catalog-migration/handcraft-playbooks/urgencias-e-emergencias.json",
-  "next_lote": "urgencias-g02",
-  "next_lote_ramo": "urgencias_rcp_sbv",
+  "next_lote": null,
+  "next_lote_ramo": null,
   "handcraft_ready_lotes": {
     "urgencias-g01": {
       "slug_count": 8,
@@ -17,6 +17,403 @@
       "validated_at": "2026-07-08",
       "readiness": "8/8",
       "artifact": "artifacts/catalog-preflight-urgencias-g01.json"
+    },
+    "urgencias-g02": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g02.json"
+    },
+    "urgencias-g03": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g03.json"
+    },
+    "urgencias-g04": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g04.json"
+    },
+    "urgencias-g05": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g05.json"
+    },
+    "urgencias-g06": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g06.json"
+    },
+    "urgencias-g07": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g07.json"
+    },
+    "urgencias-g08": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g08.json"
+    },
+    "urgencias-g09": {
+      "slug_count": 1,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "1/1",
+      "artifact": "artifacts/catalog-preflight-urgencias-g09.json",
+      "notes": "Lote final urgencias_rcp_sbv — 1 slug (vunesp pediátrico realocado g25)"
+    },
+    "urgencias-g10": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g10.json",
+      "notes": "1º lote urgencias_exceto_conduta — 8/22 EXCETO"
+    },
+    "urgencias-g11": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g11.json",
+      "notes": "2º lote urgencias_exceto_conduta — 16/22 EXCETO"
+    },
+    "urgencias-g12": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g12.json",
+      "notes": "1º lote urgencias_xabcde_trauma — 8/22 XABCDE"
+    },
+    "urgencias-g13": {
+      "slug_count": 1,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "1/1",
+      "artifact": "artifacts/catalog-preflight-urgencias-g13.json",
+      "notes": "Lote final urgencias_exceto_conduta — 22/22 EXCETO cluster fechado"
+    },
+    "urgencias-g14": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g14.json",
+      "notes": "1º lote urgencias_avc_iam — 8/23 AVC/IAM (âncora AMAUC + g14 = 9 aplicados no cluster)"
+    },
+    "urgencias-g15": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g15.json",
+      "notes": "2º lote urgencias_avc_iam — 17/23 AVC/IAM (g15 = 8 slugs · admissão AVE · caso Marcos · linha cuidado MS · condutas auxiliar IAM · sinais AVC · tipos AVC · clopidogrel · IAM fisiopatologia)"
+    },
+    "urgencias-g16": {
+      "slug_count": 6,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "6/6",
+      "artifact": "artifacts/catalog-preflight-urgencias-g16.json",
+      "notes": "Lote final urgencias_avc_iam — 23/23 cluster fechado (âncora AMAUC + g14 + g15 + g16 = 23 slugs)"
+    },
+    "urgencias-g17": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g17.json",
+      "notes": "2º lote urgencias_xabcde_trauma — 16/22 XABCDE (g12 + g17 = 16 slugs · queimadura APH · ABCDE A · VF trauma · jaw thrust · politrauma hemostasia · segurança cena · colar SAMU · X PHTLS)"
+    },
+    "urgencias-g18": {
+      "slug_count": 6,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "6/6",
+      "artifact": "artifacts/catalog-preflight-urgencias-g18.json",
+      "notes": "Lote final urgencias_xabcde_trauma — 22/22 cluster fechado (g12 + g17 + g18 = 22 slugs)"
+    },
+    "urgencias-g19": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g19.json",
+      "notes": "1º lote urgencias_choque — elétrico ADM&TEC/CPCON · hipovolêmico trauma · hipoperfusão periférica · semiologia choque · descerebração TCE · APH neuro pré-transporte"
+    },
+    "urgencias-g20": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g20.json",
+      "notes": "2º lote urgencias_choque — cardiogênico · séptico vasopressina · hematêmese hipovolêmico · distributivo · IRA gravidade · elétrico Consulplan · organofosforado · hemorragia II-IV"
+    },
+    "urgencias-g21": {
+      "slug_count": 2,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "2/2",
+      "artifact": "artifacts/catalog-preflight-urgencias-g21.json",
+      "notes": "Lote final urgencias_choque — 18/18 cluster fechado (g19 + g20 + g21 = 18 slugs) · hipernatremia desidratação · pele fria hipovolêmico"
+    },
+    "urgencias-g22": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g22.json",
+      "notes": "1º lote urgencias_engasgo — sinal universal FAU ×2 · Heimlich · OVACE criança · corpo estranho impactado · consulplan consciente"
+    },
+    "urgencias-g23": {
+      "slug_count": 4,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "4/4",
+      "artifact": "artifacts/catalog-preflight-urgencias-g23.json",
+      "notes": "Lote final urgencias_engasgo — 12/12 cluster fechado (g22 + g23 = 12 slugs) · Heimlich técnica · primeiros socorros · OVACE grave domiciliar"
+    },
+    "urgencias-g24": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g24.json",
+      "notes": "1º lote urgencias_rcp_pediatrico — VF adulto contraste · AHA gravidez · anafilaxia ped CPCON · 30:2 isolado · Access 15:2 · Consulpam conceito · Quadrix afogamento (8/9)"
+    },
+    "urgencias-g25": {
+      "slug_count": 2,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "2/2",
+      "artifact": "artifacts/catalog-preflight-urgencias-g25.json",
+      "notes": "Lote final urgencias_rcp_pediatrico — engasgo escolar + RCP extra-hospitalar lactente (reconcile g09)"
+    },
+    "urgencias-g26": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g26.json",
+      "notes": "Lote final urgencias_vf_protocolo — 8/8 cluster fechado · AMEOSC imobilização · COTEC vasoativas PORQUE · CPCON dor torácica + convulsão (vf) · GAMA trauma pélvico · IGEDUC primeiros socorros + atribuições · Consulplan SAMU I–V"
+    },
+    "urgencias-g27": {
+      "slug_count": 7,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "7/7",
+      "artifact": "artifacts/catalog-preflight-urgencias-g27.json",
+      "notes": "Lote final urgencias_convulsao — 7/7 cluster fechado · ADM&TEC objeto boca · FAUEL envenenamento · FEPESE lateralizar · FUNTEF UBS · IVIN hipoglicemia · VUNESP manobra × convulsão · VUNESP SAMU lençol/calço"
+    },
+    "urgencias-g28": {
+      "slug_count": 4,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "4/4",
+      "artifact": "artifacts/catalog-preflight-urgencias-g28.json",
+      "notes": "Lote final urgencias_manchester_triagem — 4/4 cluster fechado · AMEOSC etiquetas massa · FUNDATEC origem militar · VERBENA dor torácica isquêmica · SELECON verde pouco urgente"
+    },
+    "urgencias-g29": {
+      "slug_count": 2,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "2/2",
+      "artifact": "artifacts/catalog-preflight-urgencias-g29.json",
+      "notes": "Micro-clusters drift fechados — FEPESE choque hipovolêmico E · SELECON BT16 esmagamento C · ramos reais choque+trauma · próximo g30 generico"
+    },
+    "urgencias-g30": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g30.json",
+      "readiness_strict_v2": "8/8",
+      "notes": "1º lote cauda urgencias_generico — 7 generico + 1 trauma (fratura exposta) · organofosforados colinérgica · SAMU regulador · angioedema"
+    },
+    "urgencias-g31": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g31.json",
+      "notes": "2º lote cauda urgencias_generico — 6 generico + 1 rcp_pediatrico (VAA 2–3 s) + 1 rcp_sbv (figura RCP) · crioterapia entorse · emergência vs urgência · triagem UBS · Glasgow · C/E SAMU"
+    },
+    "urgencias-g32": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g32.json",
+      "readiness_strict_v2": "8/8",
+      "notes": "3º lote cauda urgencias_generico — 3 generico + 1 avc + 3 rcp_sbv + 1 trauma"
+    },
+    "urgencias-g33": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g33.json",
+      "notes": "4º lote cauda — 5 generico + 1 choque (compartimental) + 2 trauma (transporte APH · TCE) · registry reconciled 213→221 at g34 close"
+    },
+    "urgencias-g34": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g34.json",
+      "notes": "5º lote cauda — 6 generico + 2 trauma (APH sinalização · fratura úmero/radial) · deterioração UTI · HAS emergência · hipercalemia · broncoaspiração · abdome agudo · obstrução"
+    },
+    "urgencias-g35": {
+      "slug_count": 7,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "7/7",
+      "readiness_strict_v2": "7/7",
+      "artifact": "artifacts/catalog-preflight-urgencias-g35.json",
+      "notes": "6º lote cauda — 6 generico + 1 vf_protocolo (pupilar V/F) · sinal Battle · naloxona opioide · atropina bradicardia · ESP SUS · Glasgow desmaio · avaliação primária ABC · fauel removido (Centro Cirúrgico)"
+    },
+    "urgencias-g36": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g36.json",
+      "notes": "7º lote cauda — 5 generico + 1 avc_iam (dor torácica IAM) + 1 rcp_pediatrico (pausa <10s) + 1 vf_protocolo (atribuições COFEN) · prescrição EV · epistaxe · priorização · abdome agudo sinais · hemotórax"
+    },
+    "urgencias-g37": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g37.json",
+      "notes": "8º lote cauda — 8 generico · TCE Battle/otorreia · escorpião · HDA O− · PS escolar · água sanitária · PEP agulha · AVE/Glasgow politrauma · prevenção desastres"
+    },
+    "urgencias-g38": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g38.json",
+      "notes": "9º lote cauda — 6 generico + 1 trauma (fratura imobilização) + 1 vf_protocolo (PS V/F) · peçonhento C/E · gestão risco · SCO · hipoglicemia · raiva"
+    },
+    "urgencias-g39": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g39.json",
+      "notes": "10º lote cauda — 7 generico + 1 choque (escorpionismo arritmias/vit C) · peçonhentos C/E · XABCDE · evisceração · Glasgow TCE"
+    },
+    "urgencias-g40": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g40.json",
+      "notes": "11º lote cauda — 5 generico + 2 choque + 1 engasgo · C/E IGEDUC · hipertensiva/HDA/XABCDE/APH · choque distributivo · hemorragia qualitativa"
+    },
+    "urgencias-g41": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g41.json",
+      "notes": "12º lote cauda — 6 generico + 1 vf_protocolo + 1 exceto · coluna cervical C/E · APH/PS ESF · V/F primeiros socorros · picada abelha · Access urgência · SAMU CRMU EXCETO"
+    },
+    "urgencias-g42": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g42.json",
+      "notes": "13º lote cauda — 8 generico · ambulância tipo C · IC/EAP · TCE sinais · SAMU amarelo · tipo D · TARM · START · queda TCE NÃO condiz"
+    },
+    "urgencias-g43": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g43.json",
+      "notes": "14º lote cauda — 7 generico + 1 choque · Glasgow · C/E coluna · prontuário hipoglicemia · desidratação IV · LJ ×3 · meningite LCR"
+    },
+    "urgencias-g44": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g44.json",
+      "notes": "15º lote cauda — 6 generico + 1 choque + 1 manchester · XABCDE D · choque C/E · Manchester C/E · naloxona · pupilas/TCE · fratura fêmur · calor/frio PS"
+    },
+    "urgencias-g45": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g45.json",
+      "notes": "16º lote cauda — 6 generico + 1 choque + 1 avc_iam · jaw thrust · SDRA · ortopedia ×4 · sepse · Glasgow/Cincinnati · químico ocular"
+    },
+    "urgencias-g46": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g46.json",
+      "notes": "17º lote cauda — 7 generico + 1 vf_protocolo · crise hipertensiva · pneumotórax · Glasgow TCE · amputação · epistaxe · hipoglicemia · primária ×2"
+    },
+    "urgencias-g47": {
+      "slug_count": 8,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "8/8",
+      "readiness_strict_v2": "8/8",
+      "artifact": "artifacts/catalog-preflight-urgencias-g47.json",
+      "notes": "18º lote — 6 generico tail + fundatec TCE/Cushing (choque) + furb AHA VF (rcp_sbv) · generico tail CLOSED"
+    },
+    "urgencias-g48": {
+      "slug_count": 7,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "7/7",
+      "readiness_strict_v2": "7/7",
+      "artifact": "artifacts/catalog-preflight-urgencias-g48.json",
+      "notes": "g48 — 7 slugs · pulso femoral · compartimental VF · TEP VF · OVACE · ambulância D · crise reativa febre · adrenalina intervalo · 3 órfãos → g49"
+    },
+    "urgencias-g49": {
+      "slug_count": 3,
+      "status": "handcraft_complete",
+      "validated_at": "2026-07-08",
+      "readiness": "3/3",
+      "readiness_strict_v2": "3/3",
+      "artifact": "artifacts/catalog-preflight-urgencias-g49.json",
+      "notes": "orphan-reconcile micro-lote FINAL — choque elétrico (E) · embolia gasosa VM (A) · TVP panturrilha (B) → 339/339 completo manifest"
     }
   },
   "anchor_repairs_applied": {

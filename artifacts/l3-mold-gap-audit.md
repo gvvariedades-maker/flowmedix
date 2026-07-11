@@ -1,19 +1,19 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-08T03:25:57.286Z
+Gerado em: 2026-07-10T15:54:42.772Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
 | Fonte slugs | Supabase (vivo) |
-| Clusters mapeados | 136 |
-| Slugs auditados | 340 |
-| ok_existente | 11 |
-| ok_generico | 81 |
-| ramo_novo | 34 |
-| molde_inedito | 6 |
-| Pacotes inéditos únicos | 6 |
+| Clusters mapeados | 168 |
+| Slugs auditados | 246 |
+| ok_existente | 16 |
+| ok_generico | 92 |
+| ramo_novo | 42 |
+| molde_inedito | 14 |
+| Pacotes inéditos únicos | 10 |
 | Slugs com mismatch L3 | 0 |
 
 ## Candidatos a molde inédito (pacote de 4 variantes)
@@ -23,10 +23,25 @@ Gerado em: 2026-07-08T03:25:57.286Z
 - **Pacote proposto:** morphological · reference_table · vertical · compare (genérico) — ou pacote inédito parâmetros/ciclo
 - Parâmetros de ciclo — tabela pode bastar; molde inédito só se interação espacial repetir em provas.
 
+### Urgências e Emergências — Default — sem âncora temática
+- **Slugs:** 63 · **Ramo:** `urgencias_generico`
+- **Pacote proposto:** urgencias-emergency-hub · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)
+- Bucket residual — emergency hub + protocol pack.
+
+### Urgências e Emergências — Urgências — conceito geral
+- **Slugs:** 45 · **Ramo:** `urgencias_generico`
+- **Pacote proposto:** urgencias-emergency-hub · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)
+- Bucket residual — emergency hub + protocol pack.
+
 ### Urgências e Emergências — AVC / IAM — reconhecimento
 - **Slugs:** 23 · **Ramo:** `urgencias_avc_iam`
 - **Pacote proposto:** urgencias-stroke-signs-deck · urgencias-cincinnati-board · urgencias-stroke-elimination-tap · urgencias-stroke-trap-arena (bespoke)
 - Cincinnati Face·Arms·Speech — pegadinhas Glasgow/IAM/SSVV (âncora AMAUC).
+
+### Urgências e Emergências — EXCETO / INCORRETA — conduta
+- **Slugs:** 22 · **Ramo:** `urgencias_exceto_conduta`
+- **Pacote proposto:** urgencias-exceto-rail · urgencias-exceto-reference-board · urgencias-exceto-tap-flow · urgencias-exceto-trap-arena (bespoke)
+- EXCETO conduta — rail semântico por letra (âncora ADM&TEC fratura exposta).
 
 ### Urgências e Emergências — XABCDE / trauma e hemorragia
 - **Slugs:** 22 · **Ramo:** `urgencias_xabcde_trauma`
@@ -47,6 +62,31 @@ Gerado em: 2026-07-08T03:25:57.286Z
 - **Slugs:** 9 · **Ramo:** `urgencias_rcp_pediatrico`
 - **Pacote proposto:** urgencias-pediatric-rcp-deck · urgencias-pediatric-params-board · urgencias-pediatric-tap-flow · urgencias-pediatric-trap-arena (bespoke)
 - RCP pediátrica 15:2 — separar visualmente do adulto 30:2 (âncora ACCESS).
+
+### Urgências e Emergências — V/F — protocolos I/II/III
+- **Slugs:** 8 · **Ramo:** `urgencias_vf_protocolo`
+- **Pacote proposto:** urgencias-protocol-rules-deck · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)
+- V/F I–IV combinatório — protocol rules deck (brief L3).
+
+### Urgências e Emergências — Convulsão / crise epiléptica
+- **Slugs:** 7 · **Ramo:** `urgencias_convulsao`
+- **Pacote proposto:** urgencias-protocol-rules-deck · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)
+- Crise epiléptica — protocol rules deck (âncora ADM&TEC).
+
+### Urgências e Emergências — Manchester / triagem de risco
+- **Slugs:** 4 · **Ramo:** `urgencias_manchester_triagem`
+- **Pacote proposto:** urgencias-manchester-spectrum · urgencias-manchester-board · cards · urgencias-manchester-trap (bespoke)
+- Espectro de cores Manchester — erro espacial (etiqueta vermelha × demais).
+
+### Urgências e Emergências — Anafilaxia / epinefrina
+- **Slugs:** 1 · **Ramo:** `urgencias_anafilaxia`
+- **Pacote proposto:** urgencias-protocol-rules-deck · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)
+- Anafilaxia — epinefrina IM × IV (âncora CPCON).
+
+### Urgências e Emergências — Queimadura — primeiro socorro
+- **Slugs:** 1 · **Ramo:** `urgencias_queimadura`
+- **Pacote proposto:** urgencias-protocol-rules-deck · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)
+- Primeiro socorro queimadura — protocol trap (âncora AMEOSC V/F).
 
 ## Matriz por cluster
 
@@ -160,6 +200,22 @@ Gerado em: 2026-07-08T03:25:57.286Z
 | Vias de Administração | Default — sem âncora temática | 11 | 4.7% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Vias de Administração | Certo ou errado | 8 | 3.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Vias de Administração | 1ª passagem hepática / biodisponibilidade | 3 | 1.3% | molde_redesign | `via_vf_absorcao` | absorption-speed-rail · via-reference-board · via-vf-juggle-… |
+| Urgências e Emergências | RCP / SBV adulto (V/F ou protocolo) | 68 | 20% | molde_redesign | `urgencias_rcp_sbv` | urgencias-survival-chain-deck · urgencias-rcp-params-board ·… |
+| Urgências e Emergências | Default — sem âncora temática | 63 | 18.5% | molde_inedito | `urgencias_generico` | urgencias-emergency-hub · urgencias-protocol-reference-board… |
+| Urgências e Emergências | Urgências — conceito geral | 45 | 13.2% | molde_inedito | `urgencias_generico` | urgencias-emergency-hub · urgencias-protocol-reference-board… |
+| Urgências e Emergências | Certo ou errado | 32 | 9.4% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | AVC / IAM — reconhecimento | 23 | 6.8% | molde_inedito | `urgencias_avc_iam` | urgencias-stroke-signs-deck · urgencias-cincinnati-board · u… |
+| Urgências e Emergências | EXCETO / INCORRETA — conduta | 22 | 6.5% | molde_inedito | `urgencias_exceto_conduta` | urgencias-exceto-rail · urgencias-exceto-reference-board · u… |
+| Urgências e Emergências | XABCDE / trauma e hemorragia | 22 | 6.5% | molde_inedito | `urgencias_xabcde_trauma` | urgencias-xabcde-rail · urgencias-trauma-reference-board · u… |
+| Urgências e Emergências | Choque / hipoperfusão | 18 | 5.3% | molde_inedito | `urgencias_choque` | urgencias-shock-types-deck · urgencias-shock-reference-board… |
+| Urgências e Emergências | Engasgo / obstrução de via aérea | 12 | 3.5% | molde_inedito | `urgencias_engasgo` | urgencias-choking-signal-deck · urgencias-heimlich-board · u… |
+| Urgências e Emergências | RCP pediátrica / lactente | 9 | 2.6% | molde_inedito | `urgencias_rcp_pediatrico` | urgencias-pediatric-rcp-deck · urgencias-pediatric-params-bo… |
+| Urgências e Emergências | V/F — protocolos I/II/III | 8 | 2.4% | molde_inedito | `urgencias_vf_protocolo` | urgencias-protocol-rules-deck · urgencias-protocol-reference… |
+| Urgências e Emergências | Convulsão / crise epiléptica | 7 | 2.1% | molde_inedito | `urgencias_convulsao` | urgencias-protocol-rules-deck · urgencias-protocol-reference… |
+| Urgências e Emergências | Drift taxonômico — reclassificar subtópico | 5 | 1.5% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Urgências e Emergências | Manchester / triagem de risco | 4 | 1.2% | molde_inedito | `urgencias_manchester_triagem` | urgencias-manchester-spectrum · urgencias-manchester-board ·… |
+| Urgências e Emergências | Anafilaxia / epinefrina | 1 | 0.3% | molde_inedito | `urgencias_anafilaxia` | urgencias-protocol-rules-deck · urgencias-protocol-reference… |
+| Urgências e Emergências | Queimadura — primeiro socorro | 1 | 0.3% | molde_inedito | `urgencias_queimadura` | urgencias-protocol-rules-deck · urgencias-protocol-reference… |
 | Imunização | Calendário vacinal — adolescente/adulto/idoso | 137 | 23.8% | ok_generico | `imunizacao_calendario` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Calendário vacinal — infantil | 135 | 23.5% | ok_generico | `imunizacao_calendario` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Cadeia de frio / conservação / SI-PNI | 68 | 11.8% | ok_generico | `imunizacao_cadeia_frio` | morphological · reference_table · vertical · compare (genéri… |
@@ -172,35 +228,39 @@ Gerado em: 2026-07-08T03:25:57.286Z
 | Imunização | Técnica de aplicação / sala de vacinação | 11 | 1.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Conceito — tipos de vacina / imunobiológicos | 8 | 1.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Contraindicações / eventos adversos | 1 | 0.2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | RCP / SBV adulto (V/F ou protocolo) | 68 | 20% | molde_redesign | `urgencias_rcp_sbv` | urgencias-survival-chain-deck · urgencias-rcp-params-board ·… |
-| Urgências e Emergências | Default — sem âncora temática | 63 | 18.5% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | Urgências — conceito geral | 45 | 13.2% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | Certo ou errado | 32 | 9.4% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | AVC / IAM — reconhecimento | 23 | 6.8% | molde_inedito | `urgencias_avc_iam` | urgencias-stroke-signs-deck · urgencias-cincinnati-board · u… |
-| Urgências e Emergências | EXCETO / INCORRETA — conduta | 22 | 6.5% | ok_generico | `urgencias_exceto_conduta` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | XABCDE / trauma e hemorragia | 22 | 6.5% | molde_inedito | `urgencias_xabcde_trauma` | urgencias-xabcde-rail · urgencias-trauma-reference-board · u… |
-| Urgências e Emergências | Choque / hipoperfusão | 18 | 5.3% | molde_inedito | `urgencias_choque` | urgencias-shock-types-deck · urgencias-shock-reference-board… |
-| Urgências e Emergências | Engasgo / obstrução de via aérea | 12 | 3.5% | molde_inedito | `urgencias_engasgo` | urgencias-choking-signal-deck · urgencias-heimlich-board · u… |
-| Urgências e Emergências | RCP pediátrica / lactente | 9 | 2.6% | molde_inedito | `urgencias_rcp_pediatrico` | urgencias-pediatric-rcp-deck · urgencias-pediatric-params-bo… |
-| Urgências e Emergências | V/F — protocolos I/II/III | 8 | 2.4% | ok_generico | `urgencias_vf_protocolo` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | Convulsão / crise epiléptica | 7 | 2.1% | ok_generico | `urgencias_convulsao` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | Drift taxonômico — reclassificar subtópico | 5 | 1.5% | ok_generico | `urgencias_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | Manchester / triagem de risco | 4 | 1.2% | ramo_novo | `urgencias_manchester_triagem` | urgencias-manchester-spectrum · urgencias-manchester-board ·… |
-| Urgências e Emergências | Anafilaxia / epinefrina | 1 | 0.3% | ok_generico | `urgencias_anafilaxia` | morphological · reference_table · vertical · compare (genéri… |
-| Urgências e Emergências | Queimadura — primeiro socorro | 1 | 0.3% | ok_generico | `urgencias_queimadura` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Pré-natal / gestação | 75 | 28.5% | ok_existente | `mulher_prenatal` | mulher-gestation-timeline · mulher-prenatal-board · mulher-p… |
+| Saúde da Mulher | Parto / trabalho de parto | 62 | 23.6% | ok_existente | `mulher_parto` | mulher-labor-phase-deck · mulher-parto-humanizado-board · mu… |
+| Saúde da Mulher | Rastreio câncer de colo | 37 | 14.1% | ok_existente | `mulher_papanicolau` | mulher-screening-spectrum · mulher-papanicolau-board · mulhe… |
+| Saúde da Mulher | Saúde da mama | 28 | 10.6% | ok_existente | `mulher_mama` | mulher-mammography-spectrum · mulher-mama-board · mulher-mam… |
+| Saúde da Mulher | Saúde da mulher — conceito geral | 13 | 4.9% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Anatomia feminina (drift?) | 13 | 4.9% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Puerpério / lactação | 9 | 3.4% | ok_generico | `mulher_puerperio` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Planejamento familiar / contracepção | 7 | 2.7% | ok_generico | `mulher_planejamento` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Semiologia (drift?) | 6 | 2.3% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Climatério / menopausa | 3 | 1.1% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | IST na gestação | 3 | 1.1% | ok_existente | `mulher_prenatal` | mulher-gestation-timeline · mulher-prenatal-board · mulher-p… |
+| Saúde da Mulher | Violência contra a mulher | 3 | 1.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Ciclo menstrual / amenorreia | 2 | 0.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Coleta de exames (drift?) | 1 | 0.4% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Epidemiologia (drift?) | 1 | 0.4% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Flebite e complicações | 19 | 17.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Dispositivo / calibre / jelco | 12 | 10.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | EXCETO — técnica / conduta | 12 | 10.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Tempo / observação pós-procedimento | 11 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Punção venosa periférica | 10 | 9.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Antissepsia na punção | 8 | 7.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Técnica de punção periférica | 7 | 6.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Protocolo / procedimento | 6 | 5.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Manutenção de cateter | 5 | 4.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Prevenção de IPCS no CVC | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Certo ou errado | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Default — sem âncora temática | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Cálculo / dose / tempo numérico | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | V/F — assertivas I/II/III | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Acesso venoso central | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Acesso arterial / PAM | 1 | 0.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Medicação endovenosa — técnica | 1 | 0.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 
 ## Slugs (amostra com branch inferido)
 
-- `—`: 325
-- `urgencias_choque`: 2
-- `urgencias_rcp_sbv`: 2
-- `urgencias_xabcde_trauma`: 2
-- `urgencias_exceto_conduta`: 1
-- `urgencias_convulsao`: 1
-- `urgencias_avc_iam`: 1
-- `urgencias_queimadura`: 1
-- `urgencias_vf_protocolo`: 1
-- `urgencias_manchester_triagem`: 1
-- `urgencias_anafilaxia`: 1
-- `urgencias_engasgo`: 1
-- `urgencias_rcp_pediatrico`: 1
+- `—`: 246

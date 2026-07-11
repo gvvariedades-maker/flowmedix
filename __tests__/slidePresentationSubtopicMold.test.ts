@@ -58,7 +58,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('sonda-measurement-board');
   });
 
-  it('Cuidados: concept_map bridge no molde premium', () => {
+  it('Cuidados: concept_map cam-certos-deck no molde premium (padrão subtópico)', () => {
     const result = resolveSlidePresentation(
       {
         type: 'concept_map',
@@ -74,23 +74,25 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('bridge');
+    expect(result.layoutVariant).toBe('cam-certos-deck');
   });
 
-  it('Cuidados: danger_zone compare quando há correct (molde)', () => {
+  it('Cuidados: danger_zone cam-certos-trap-arena quando há correct (molde padrão)', () => {
     const result = resolveSlidePresentation(
       {
         type: 'danger_zone',
         meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
         content: 'Pegadinhas',
-        items: [{ label: 'Erro', detail: 'X', correct: 'Certo' }],
+        items: [{ label: 'Letra C — II e III', detail: 'III parece razoável.', correct: 'III é falsa.' }],
       },
       {
         questionSlug: 'fepese-cuidados-1',
-        familyId: 'text_fragment',
+        familyId: 'vf',
+        pedagogicalBranch: 'cam_certos_vf_caso',
       },
     );
-    expect(result.layoutVariant).toBe('compare');
+    expect(result.layoutVariant).toBe('cam-certos-trap-arena');
+    expect(result.bulletStyle).toBe('x_icon');
   });
 
   it('Sondas: danger_zone trap-reveal no molde (sem correct)', () => {
@@ -692,6 +694,402 @@ describe('slidePresentation — molde por subtópico', () => {
     ).toBe('calendar-mismatch');
   });
 
+  it('Saúde da Mulher pré-natal: pacote 4/4 no ramo mulher_prenatal', () => {
+    const ctx = {
+      questionSlug: 'cpcon-saude-mulher-prenatal-vf',
+      familyId: 'vf' as const,
+      pedagogicalBranch: 'mulher_prenatal' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Saúde da Mulher' },
+          items: [
+            { label: 'Marco da questão', detail: '1º trimestre — início precoce', icon: 'Calendar' },
+            { label: 'Ácido fólico', detail: 'pré-concepção e início', icon: 'Pill' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-gestation-timeline');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Saúde da Mulher' },
+          rows: [
+            { label: 'TTGO 75g', value: '24–28 semanas', badge: 'hot' },
+            { label: 'Consultas mínimas', value: '6 ou mais', badge: 'hot' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-prenatal-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Saúde da Mulher' },
+          reveal_mode: 'tap',
+          steps: ['I verdadeira', 'II verdadeira', 'III falsa', 'Letra B.'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-prenatal-tap-flow');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Saúde da Mulher' },
+          content: 'Pegadinhas pré-natal',
+          items: [
+            {
+              label: 'TTGO no 1º trimestre',
+              detail: 'timing errado',
+              correct: 'TTGO entre 24 e 28 semanas',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-prenatal-trap-arena');
+  });
+
+  it('Saúde da Mulher parto: pacote 4/4 no ramo mulher_parto', () => {
+    const ctx = {
+      questionSlug: 'admtec-saude-mulher-parto-vf',
+      familyId: 'vf' as const,
+      pedagogicalBranch: 'mulher_parto' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Saúde da Mulher' },
+          items: [
+            { label: 'Fase expulsiva', detail: 'Posição vertical ou lateral — não supina fixa', icon: 'Move' },
+            { label: 'Dor não farmacológica', detail: 'Água morna e movimentação na dilatação', icon: 'Droplets' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-labor-phase-deck');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Saúde da Mulher' },
+          rows: [
+            { label: 'Acompanhante', value: 'Livre escolha no trabalho de parto', badge: 'ok' },
+            { label: 'Clampeamento tardio', value: '1–3 minutos — ferro neonatal', badge: 'hot' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-parto-humanizado-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Saúde da Mulher' },
+          reveal_mode: 'tap',
+          steps: ['I falsa', 'II verdadeira', 'III falsa', 'Letra B.'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-labor-tap-flow');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Saúde da Mulher' },
+          content: 'Pegadinhas parto humanizado',
+          items: [
+            {
+              label: 'Supina no expulsivo',
+              detail: 'posição obrigatória',
+              correct: 'Vertical ou lateral — mobilidade materna',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-parto-trap-arena');
+  });
+
+  it('Saúde da Mulher papanicolau: pacote 4/4 no ramo mulher_papanicolau', () => {
+    const ctx = {
+      questionSlug: 'vunesp-saude-mulher-papanicolau',
+      familyId: 'conceito' as const,
+      pedagogicalBranch: 'mulher_papanicolau' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Saúde da Mulher' },
+          items: [
+            { label: 'Início rastreio', detail: '25 anos após início da vida sexual', icon: 'Calendar' },
+            { label: 'Periodicidade', detail: 'A cada 3 anos se exames anteriores normais', icon: 'Microscope' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-screening-spectrum');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Saúde da Mulher' },
+          rows: [
+            { label: 'Início', value: '25 anos após início vida sexual', badge: 'hot' },
+            { label: 'Término', value: 'Até 64 anos', badge: 'info' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-papanicolau-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Saúde da Mulher' },
+          reveal_mode: 'tap',
+          steps: ['Eliminar A — 40 anos', 'Eliminar D — anual', 'Letra C.'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-screening-tap-flow');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Saúde da Mulher' },
+          content: 'Pegadinhas rastreio colo',
+          items: [
+            {
+              label: '40 anos início',
+              detail: 'marco de início do Papanicolau',
+              correct: 'Início aos 25 anos — não aos 40',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-screening-trap-arena');
+  });
+
+  it('Saúde da Mulher mama: pacote 4/4 no ramo mulher_mama', () => {
+    const ctx = {
+      questionSlug: 'vunesp-saude-mulher-mamografia',
+      familyId: 'conceito' as const,
+      pedagogicalBranch: 'mulher_mama' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Saúde da Mulher' },
+          items: [
+            { label: 'Início rastreio', detail: '50 anos no rastreamento populacional', icon: 'Calendar' },
+            { label: 'Periodicidade', detail: 'Bienal — a cada 2 anos', icon: 'Scan' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-mammography-spectrum');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Saúde da Mulher' },
+          rows: [
+            { label: 'Início', value: '50 anos', badge: 'hot' },
+            { label: 'Término', value: 'Até 69 anos', badge: 'info' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-mama-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Saúde da Mulher' },
+          reveal_mode: 'tap',
+          steps: ['Eliminar A — 40 anos', 'Eliminar D — anual', 'Letra C.'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-mama-tap-flow');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Saúde da Mulher' },
+          content: 'Pegadinhas rastreio mama',
+          items: [
+            {
+              label: '40 anos início',
+              detail: 'marco de início da mamografia',
+              correct: 'Início aos 50 anos — não aos 40',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-mama-trap-arena');
+  });
+
+  it('Saúde da Mulher puerpério: pacote 4/4 no ramo mulher_puerperio', () => {
+    const ctx = {
+      questionSlug: 'ms-saude-mulher-puerperio-consulta',
+      familyId: 'conceito' as const,
+      pedagogicalBranch: 'mulher_puerperio' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Saúde da Mulher' },
+          items: [
+            { label: 'Marco da questão', detail: 'Consulta até o 42º dia', icon: 'Calendar' },
+            { label: 'Visita', detail: 'Primeira semana após alta', icon: 'Home' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-puerperio-timeline');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Saúde da Mulher' },
+          rows: [
+            { label: 'Consulta', value: 'Até 42º dia', badge: 'hot' },
+            { label: 'AM exclusivo', value: '6 meses', badge: 'info' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-puerperio-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Saúde da Mulher' },
+          reveal_mode: 'tap',
+          steps: ['B: 30 dias → eliminar', 'Letra A.'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-puerperio-tap-flow');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Saúde da Mulher' },
+          content: 'Pegadinhas puerpério',
+          items: [
+            {
+              label: 'Letra B — 30 dias',
+              detail: 'puerpério encerra aos 30 dias',
+              correct: 'Consulta até o 42º dia',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-puerperio-trap-arena');
+  });
+
+  it('Saúde da Mulher planejamento: pacote 4/4 no ramo mulher_planejamento', () => {
+    const ctx = {
+      questionSlug: 'cpcon-saude-mulher-planejamento-vf',
+      familyId: 'vf' as const,
+      pedagogicalBranch: 'mulher_planejamento' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Saúde da Mulher' },
+          items: [
+            { label: 'Pegadinha I', detail: 'Anticoncepcional oral = hormonal', icon: 'AlertTriangle' },
+            { label: 'Comportamentais', detail: 'Tabelinha e temperatura basal', icon: 'ListChecks' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-contraception-spectrum');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Saúde da Mulher' },
+          rows: [
+            { label: 'Comportamentais', value: 'Tabelinha · basal · Billings', badge: 'hot' },
+            { label: 'Hormonais', value: 'Anticoncepcional oral', badge: 'info' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-planejamento-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Saúde da Mulher' },
+          reveal_mode: 'tap',
+          steps: ['Julgar I: oral → falsa', 'Marcar E.'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-planejamento-tap-flow');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Saúde da Mulher' },
+          content: 'Pegadinhas contracepção',
+          items: [
+            {
+              label: 'Letra B — I, II e III',
+              detail: 'inclui anticoncepcional oral',
+              correct: 'I é hormonal — não comportamental',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('mulher-planejamento-trap-arena');
+  });
+
   it('Imunização cadeia de frio: pacote 4/4 no ramo imunizacao_cadeia_frio', () => {
     const ctx = {
       questionSlug: 'avancasp-enfermagem-processo-de-enfermagem-1780011872350-6',
@@ -1102,6 +1500,218 @@ describe('slidePresentation — molde por subtópico', () => {
       },
     );
     expect(result.layoutVariant).toBe('via-vf-juggle-tap');
+  });
+
+  it('Cuidados na Administração: cam_certos_vf_caso usa pacote bespoke 4/4', () => {
+    const branchCtx = {
+      questionSlug: 'fepese-cam-1',
+      familyId: 'vf' as const,
+      pedagogicalBranch: 'cam_certos_vf_caso',
+    };
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          items: [{ label: 'I — Identificação (V)', detail: 'Dois identificadores — VERDADEIRA.', icon: 'UserCheck' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-certos-deck');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          rows: [{ label: '1. Paciente certo', value: '2 identificadores' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-nine-rights-board');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          steps: ['Julgar I: identificação → VERDADEIRA.'],
+          reveal_mode: 'tap',
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-vf-juggle-tap');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          content: 'PEGADINHAS',
+          items: [{ label: 'Letra C — II e III', detail: 'III parece razoável.', correct: 'III é falsa.' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-certos-trap-arena');
+  });
+
+  it('Cuidados na Administração: cam_alto_risco usa pacote bespoke 4/4', () => {
+    const branchCtx = {
+      questionSlug: 'fepese-cam-insulina-1',
+      familyId: 'conceito' as const,
+      pedagogicalBranch: 'cam_alto_risco',
+    };
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          items: [{ label: 'Conferência dupla', detail: 'Insulina = alto risco.', icon: 'Users' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-high-risk-duo-deck');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          rows: [{ label: '1. Conferência dupla', value: 'Dois profissionais' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-high-risk-protocol-board');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          steps: ['Eliminar letra A: massagear após SC — incorreto.'],
+          reveal_mode: 'tap',
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-alto-risco-elimination-tap');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          content: 'PEGADINHAS TÉCNICAS',
+          items: [{ label: 'Letra A — massagear', detail: 'Parece acolher.', correct: 'Não massagear SC.' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-high-risk-trap-arena');
+  });
+
+  it('Cuidados na Administração: cam_exceto_conduta usa pacote bespoke 4/4', () => {
+    const branchCtx = {
+      questionSlug: 'avancasp-cam-exceto-preparo-1',
+      familyId: 'certo_errado' as const,
+      pedagogicalBranch: 'cam_exceto_conduta',
+    };
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          items: [{ label: 'Comando EXCETO', detail: 'Preparo sala.', icon: 'Target' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-exceto-rail');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          rows: [{ label: 'Letra A — VO + SF', value: 'Exceção — não diluir oral com SF.' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-exceto-reference-board');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          steps: ['B–E descrevem preparo correto — eliminar uma a uma.'],
+          reveal_mode: 'tap',
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-exceto-tap-flow');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          content: 'PEGADINHAS EXCETO',
+          items: [
+            {
+              label: 'Letra A — VO com SF',
+              detail: 'Parece técnica de diluição.',
+              correct: 'VO não usa SF como veículo.',
+            },
+          ],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-exceto-trap-arena');
+  });
+
+  it('Cuidados na Administração: cam_documentacao usa pacote bespoke 4/4', () => {
+    const branchCtx = {
+      questionSlug: 'avancasp-cam-documentacao-1',
+      familyId: 'vf' as const,
+      pedagogicalBranch: 'cam_documentacao',
+    };
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          items: [{ label: 'I — Após administrar (V)', detail: 'Certo 6.', icon: 'ClipboardCheck' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-documentacao-deck');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          rows: [{ label: 'Certo 6', value: 'Registro após administrar dose.' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-documentacao-board');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          steps: ['I verdadeira — anotar após administrar.'],
+          reveal_mode: 'tap',
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-documentacao-vf-tap');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Cuidados na Administração de Medicamentos' },
+          content: 'PEGADINHAS REGISTRO',
+          items: [
+            {
+              label: 'Letra B — II e III',
+              detail: 'II parece razoável.',
+              correct: 'II é falsa — registro antecipado.',
+            },
+          ],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('cam-documentacao-trap-arena');
   });
 
   it('Vias de Administração: via_tecnica_admin usa molde genérico (banner + cards + compare)', () => {

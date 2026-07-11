@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g28",
+  "exported_at": "2026-07-10T17:54:31.390Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g28/manifest.json"
+  },
+  "slugs": [
+    "ameosc-enfermagem-saude-da-mulher-1777104340484-4",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-3",
+    "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-6",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-0",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-9",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104340484-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-5"
+  ]
+}

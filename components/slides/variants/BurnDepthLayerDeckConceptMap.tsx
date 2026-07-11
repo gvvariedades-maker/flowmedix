@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Flame, Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 
 export interface BurnDepthConcept {
   icon: string;
@@ -148,9 +148,7 @@ export function BurnDepthLayerDeckConceptMap({
     ? grouped.depths[activeDepth]
     : fallbackConcepts[activeFallback];
   const activeMeta = hasDepths ? DEPTH_META[activeDepth] : null;
-  const ActiveIcon = resolveLucideIcon(activeConcept?.icon ?? 'Flame');
-
-  const selectDepth = useCallback((depth: 'grau1' | 'grau2s' | 'grau2p' | 'grau3') => {
+    const selectDepth = useCallback((depth: 'grau1' | 'grau2s' | 'grau2p' | 'grau3') => {
     setActiveDepth(depth);
   }, []);
 
@@ -263,7 +261,7 @@ export function BurnDepthLayerDeckConceptMap({
                       activeMeta ? `bg-gradient-to-br ${activeMeta.bar}` : 'bg-gradient-to-br from-orange-400 to-amber-300'
                     }`}
                   >
-                    <ActiveIcon className="h-5 w-5 text-white" aria-hidden />
+                    <SlideLucideIcon name={activeConcept?.icon ?? 'Flame'} className="h-5 w-5 text-white" />
                   </div>
                   <div className="min-w-0">
                     {activeMeta ? (

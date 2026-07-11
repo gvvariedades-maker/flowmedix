@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:25:10.702Z",
+  "lote": "urgencias-g15",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+    "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

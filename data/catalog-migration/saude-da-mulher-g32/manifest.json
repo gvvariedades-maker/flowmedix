@@ -1,0 +1,14 @@
+{
+  "lote": "saude-da-mulher-g32",
+  "exported_at": "2026-07-10T18:31:12.425Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g32/manifest.json"
+  },
+  "slugs": [
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+    "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+    "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+    "iset-enfermagem-saude-da-mulher-1777104376057-0"
+  ]
+}

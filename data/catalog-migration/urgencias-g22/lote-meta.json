@@ -1,0 +1,15 @@
+{
+  "lote": "urgencias-g22",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g22",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_engasgo": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal.json"
+  ],
+  "notes": "g22 engasgo lote 1 — sinal universal FAU ×2 · Heimlich · OVACE criança · corpo estranho impactado · consulplan consciente"
+}

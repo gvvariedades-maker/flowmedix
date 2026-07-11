@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g22",
+  "exported_at": "2026-07-10T15:51:44.720Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g22/manifest.json"
+  },
+  "slugs": [
+    "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-4",
+    "fadesp-enfermagem-saude-da-mulher-1777104347186-1",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-1",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-2",
+    "funcern-enfermagem-saude-da-mulher-1777104288275-8"
+  ]
+}

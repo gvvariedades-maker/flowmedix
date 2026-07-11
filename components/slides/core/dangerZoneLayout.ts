@@ -41,6 +41,16 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'urgencias-manchester-trap',
   'etiology-intruder-chips',
   'itu-catheter-trap',
+  'mulher-prenatal-trap-arena',
+  'mulher-parto-trap-arena',
+  'mulher-screening-trap-arena',
+  'mulher-mama-trap-arena',
+  'mulher-puerperio-trap-arena',
+  'mulher-planejamento-trap-arena',
+  'cam-certos-trap-arena',
+  'cam-high-risk-trap-arena',
+  'cam-exceto-trap-arena',
+  'cam-documentacao-trap-arena',
 ]);
 
 /**
@@ -90,6 +100,10 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'urgencias-choking-trap-arena') return 'urgencias-choking-trap-arena';
   if (explicitVariant === 'urgencias-pediatric-trap-arena') return 'urgencias-pediatric-trap-arena';
   if (explicitVariant === 'urgencias-manchester-trap') return 'urgencias-manchester-trap';
+  if (explicitVariant === 'cam-certos-trap-arena') return 'cam-certos-trap-arena';
+  if (explicitVariant === 'cam-high-risk-trap-arena') return 'cam-high-risk-trap-arena';
+  if (explicitVariant === 'cam-exceto-trap-arena') return 'cam-exceto-trap-arena';
+  if (explicitVariant === 'cam-documentacao-trap-arena') return 'cam-documentacao-trap-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -178,6 +192,36 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'urgencias-manchester-trap') {
       return 'urgencias-manchester-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'mulher-prenatal-trap-arena') {
+      return 'mulher-prenatal-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'mulher-parto-trap-arena') {
+      return 'mulher-parto-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'mulher-screening-trap-arena') {
+      return 'mulher-screening-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'mulher-mama-trap-arena') {
+      return 'mulher-mama-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'mulher-puerperio-trap-arena') {
+      return 'mulher-puerperio-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'mulher-planejamento-trap-arena') {
+      return 'mulher-planejamento-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'cam-certos-trap-arena') {
+      return 'cam-certos-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'cam-high-risk-trap-arena') {
+      return 'cam-high-risk-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'cam-exceto-trap-arena') {
+      return 'cam-exceto-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'cam-documentacao-trap-arena') {
+      return 'cam-documentacao-trap-arena';
     }
     return 'compare';
   }

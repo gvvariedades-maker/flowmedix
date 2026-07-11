@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-07-10T22:47:46.193Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g03",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 2158
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 2162
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-seguranca-do-paciente-1777102936764-9",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCM",
+      "avant_codigo": 755
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2141
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2156
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "lote": "urgencias-g19",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g19",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_choque": 8
+  },
+  "anchors_used": [
+    "examples/questao-premium-admtec-urgencias-choque-eletrico.json",
+    "examples/questao-premium-fepese-urgencias-choque-hipovolemico.json"
+  ],
+  "notes": "g19 choque lote 1 — choque elétrico segurança cena · descerebração TCE · hipovolêmico trauma · sinais hipoperfusão · semiologia choque · elétrico CPCON · APH neuro antes transporte"
+}

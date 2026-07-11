@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 
 export interface OrbitIvConcept {
   icon: string;
@@ -120,7 +120,6 @@ export function IvCareOrbitConceptMap({ concepts, theme, footerRule }: IvCareOrb
 
   const active = activeIndex !== null ? satellites[activeIndex] : null;
   const activeStyle = active ? SLOT_STYLES[active.slot] : null;
-  const ActiveIcon = active ? resolveLucideIcon(active.icon) : null;
 
   const close = useCallback(() => setActiveIndex(null), []);
 
@@ -181,8 +180,7 @@ export function IvCareOrbitConceptMap({ concepts, theme, footerRule }: IvCareOrb
         {/* Satélites */}
         {satellites.map((sat, index) => {
           const style = SLOT_STYLES[sat.slot];
-          const Icon = resolveLucideIcon(sat.icon);
-          const isActive = activeIndex === index;
+                    const isActive = activeIndex === index;
           return (
             <button
               key={`${sat.title}-${index}`}
@@ -201,7 +199,7 @@ export function IvCareOrbitConceptMap({ concepts, theme, footerRule }: IvCareOrb
                   isActive ? 'ring-4 ring-white/30' : ''
                 }`}
               >
-                <Icon className="h-5 w-5 text-white" aria-hidden />
+                <SlideLucideIcon name={sat.icon} className="h-5 w-5 text-white" />
               </motion.div>
               <span className="max-w-[72px] truncate font-mono text-[8px] font-semibold text-white/70">
                 {sat.title}
@@ -212,7 +210,7 @@ export function IvCareOrbitConceptMap({ concepts, theme, footerRule }: IvCareOrb
       </div>
 
       <AnimatePresence>
-        {active && activeStyle && ActiveIcon ? (
+        {active && activeStyle ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.92, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -221,7 +219,7 @@ export function IvCareOrbitConceptMap({ concepts, theme, footerRule }: IvCareOrb
           >
             <div className="mb-4 flex items-start justify-between gap-3">
               <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ${activeStyle.accent}`}>
-                <ActiveIcon className="h-6 w-6" aria-hidden />
+                <SlideLucideIcon name={active.icon} className="h-6 w-6" />
               </div>
               <button
                 type="button"

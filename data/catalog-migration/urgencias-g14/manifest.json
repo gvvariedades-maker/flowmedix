@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g14",
+  "exported_at": "2026-07-08T14:21:46.033Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_avc_iam",
+    "batch": "g14-avc-iam-lote-1"
+  },
+  "slugs": [
+    "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+    "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104048047-9",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5"
+  ]
+}

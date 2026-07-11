@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g19",
+  "exported_at": "2026-07-10T15:38:45.929Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g19/manifest.json"
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-6",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-6",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-1",
+    "fepese-enfermagem-processo-de-enfermagem-1780008232871-8",
+    "fepese-enfermagem-saude-da-mulher-1777104222222-0",
+    "fundatec-enfermagem-saude-da-mulher-1777104408379-5",
+    "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-5",
+    "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-6"
+  ]
+}

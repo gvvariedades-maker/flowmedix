@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g13",
+  "generated_at": "2026-07-08T14:11:31.077Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

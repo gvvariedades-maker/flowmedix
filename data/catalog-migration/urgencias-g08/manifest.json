@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g08",
+  "exported_at": "2026-07-08T13:11:35.934Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_sbv",
+    "batch": "g08-rcp-adulto-lote-8"
+  },
+  "slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+    "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+    "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+    "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5"
+  ]
+}

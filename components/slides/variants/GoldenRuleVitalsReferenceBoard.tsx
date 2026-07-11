@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { Check, AlertTriangle, Target } from 'lucide-react';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow } from './GoldenRule';
 import {
@@ -62,8 +62,7 @@ function VitalReferenceCard({ row, index }: { row: GoldenRuleRow; index: number 
   const svKind = resolveSvKindForRow(row);
   const isMeta = svKind === 'meta' || svKind === 'other';
   const iconName = inferSvIconName(`${row.label} ${row.value}`, svKind);
-  const Icon = resolveLucideIcon(iconName);
-  const measured = isMeta
+    const measured = isMeta
     ? row.value
     : extractMeasuredValue(row.label, row.value);
   const reference = isMeta ? '' : inferSvReferenceRange(`${row.label} ${row.value}`, svKind);
@@ -90,7 +89,7 @@ function VitalReferenceCard({ row, index }: { row: GoldenRuleRow; index: number 
         <div className="flex items-start justify-between gap-2">
           <div className="flex items-center gap-2.5">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/80 shadow-sm">
-              <Icon className="h-5 w-5 text-rose-700" aria-hidden />
+              <SlideLucideIcon name={iconName} className="h-5 w-5 text-rose-700" />
             </div>
             <div>
               <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-slate-500">

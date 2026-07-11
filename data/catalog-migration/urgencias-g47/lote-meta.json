@@ -1,0 +1,18 @@
+{
+  "lote": "urgencias-g47",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g47",
+  "slug_count": 8,
+  "branches_planned": {
+    "urgencias_generico": 5,
+    "urgencias_avc_iam": 1,
+    "urgencias_choque": 1,
+    "urgencias_rcp_sbv": 1
+  },
+  "readiness": "8/8",
+  "readiness_strict_v2": "8/8",
+  "preflight_artifact": "artifacts/catalog-preflight-urgencias-g47.json",
+  "notes": "g47 — 18º lote · 6 generico tail + fundatec Cushing (choque) + furb AHA VF · 8/8 READY strict-v2 · generico tail closed"
+}

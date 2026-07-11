@@ -3,12 +3,12 @@
 import { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, CheckCircle2, Check, X } from 'lucide-react';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import { parsePniVfStep, type ParsedPniVfStep } from '@/lib/slides/pniSlideUtils';
 
-export type VfJuggleAccent = 'pni' | 'ist' | 'via' | 'farmaco' | 'trabalho' | 'respiratorio';
+export type VfJuggleAccent = 'pni' | 'ist' | 'via' | 'farmaco' | 'trabalho' | 'respiratorio' | 'cam';
 
 const STRATEGY_CHIP_LABEL: Record<VfJuggleAccent, string> = {
   pni: 'ESTRATÉGIA PNI',
@@ -17,6 +17,7 @@ const STRATEGY_CHIP_LABEL: Record<VfJuggleAccent, string> = {
   farmaco: 'ESTRATÉGIA FARMACO',
   trabalho: 'ESTRATÉGIA NR-32',
   respiratorio: 'ESTRATÉGIA ASMA/DPOC',
+  cam: 'ESTRATÉGIA 9 CERTOS',
 };
 
 const VF_JUGGLE_ACCENTS: Record<
@@ -112,6 +113,19 @@ const VF_JUGGLE_ACCENTS: Record<
     footerSummary: 'border-cyan-200/70 bg-cyan-50/80 text-cyan-900/80',
     stepTitle: 'text-cyan-900',
     letterChip: 'from-cyan-500 to-teal-600 shadow-cyan-300/40',
+  },
+  cam: {
+    chipLabel: 'V/F MEDICAÇÃO',
+    chip: 'border-teal-200/80 text-teal-900',
+    card: 'border-teal-200/80 from-white via-teal-50/40 to-white',
+    dotActive: 'bg-teal-500',
+    dotRevealed: 'bg-emerald-400',
+    btnNext: 'from-teal-500 to-emerald-600 shadow-teal-300/40',
+    btnReveal: 'from-teal-500 to-emerald-600 shadow-teal-300/40',
+    btnSummary: 'from-teal-500 to-emerald-600',
+    footerSummary: 'border-teal-200/70 bg-teal-50/80 text-teal-900/80',
+    stepTitle: 'text-teal-900',
+    letterChip: 'from-teal-500 to-emerald-600 shadow-teal-300/40',
   },
 };
 
@@ -398,16 +412,12 @@ function StepCard({
   const accent = VF_JUGGLE_ACCENTS[accentVariant];
   if (!current) return null;
 
-  const Icon = resolveLucideIcon(
-    current.kind === 'judgement' ? 'ListChecks' : current.kind === 'combine' ? 'Layers' : 'Syringe',
-  );
-
-  if (current.kind === 'judgement' && current.judgement) {
+    if (current.kind === 'judgement' && current.judgement) {
     return (
       <>
         <div className="mb-4 flex items-center gap-3">
           <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${theme.iconBg}`}>
-            <Icon className={`h-5 w-5 ${theme.iconText}`} aria-hidden />
+            <SlideLucideIcon name={current.kind === 'judgement' ? 'ListChecks' : current.kind === 'combine' ? 'Layers' : 'Syringe'} />
           </div>
           <div>
             <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-slate-500">

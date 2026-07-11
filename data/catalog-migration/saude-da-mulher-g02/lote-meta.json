@@ -1,0 +1,36 @@
+{
+  "lote": "saude-da-mulher-g02",
+  "subtopico": "Saúde da Mulher",
+  "status": "applied",
+  "exported_at": "2026-07-09",
+  "handcraft_applied_at": "2026-07-09",
+  "priority": "P0 — pré-natal (~28,5% volume)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "mulher_prenatal",
+  "anchors": [
+    "examples/questao-premium-cpcon-saude-mulher-pre-natal-vf.json"
+  ],
+  "anchor_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1777102813845-8",
+  "handcraft_grammar": "data/catalog-migration/saude-da-mulher-pedagogy-errors.json",
+  "guideline": "lib/guidelines/saudeMulher.ts",
+  "notes": "Primeiro lote escalado pré-natal — gramática golden-v1 + pedagogy v3. Rodar export-lote depois deste plano.",
+  "workflow": [
+    "npm run classify:saude-da-mulher-drift",
+    "npm run plan:saude-da-mulher-g02",
+    "npm run catalog:export-lote -- --lote=saude-da-mulher-g02 --from-manifest=data/catalog-migration/saude-da-mulher-g02/manifest.json",
+    "npm run handcraft:saude-da-mulher-g02",
+    "npm run audit:questao-readiness -- --lote=saude-da-mulher-g02 --strict-v3-pedagogy",
+    "npm run audit:slug-alignment -- --lote=saude-da-mulher-g02 --strict",
+    "npm run audit:numeric-factcheck -- --lote=saude-da-mulher-g02",
+    "npm run capture:questao-review -- --lote=saude-da-mulher-g02",
+    "npm run audit:anchor-review -- --lote=saude-da-mulher-g02 --record-pass --reviewer=pipeline"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-10",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-mulher-g02.json"
+  },
+  "applied_at": "2026-07-10"
+}

@@ -1,70 +1,84 @@
 {
-  "generated_at": "2026-07-08T11:51:13.198Z",
+  "generated_at": "2026-07-10T23:47:53.141Z",
   "strict": true,
-  "scanned": 8,
-  "passed": 8,
+  "scanned": 15,
+  "passed": 15,
   "failed": 0,
   "results": [
     {
-      "slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
-      "ok": true,
-      "issues": [
-        {
-          "code": "align_correct_option_ref",
-          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
-          "severity": "warn",
-          "path": "reverse_study_slides"
-        }
-      ]
-    },
-    {
-      "slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-1",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-9",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "slug": "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-5",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
-      "ok": true,
-      "issues": [
-        {
-          "code": "align_correct_option_ref",
-          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
-          "severity": "warn",
-          "path": "reverse_study_slides"
-        }
-      ]
-    },
-    {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-0",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-3",
       "ok": true,
-      "issues": [
-        {
-          "code": "align_correct_option_ref",
-          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
-          "severity": "warn",
-          "path": "reverse_study_slides"
-        }
-      ]
+      "issues": []
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-5",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fauel-enfermagem-seguranca-do-paciente-1777102918981-1",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-6",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-4",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-seguranca-do-paciente-1777102802022-4",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-6",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-8",
+      "ok": true,
+      "issues": []
     }
   ]
 }

@@ -4,7 +4,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bandage, CheckCircle2, Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 
 export interface WoundDeckConcept {
   icon: string;
@@ -120,9 +120,7 @@ export function WoundStageTissueDeckConceptMap({
     ? grouped.stages[activeStage]
     : fallbackConcepts[activeFallback];
   const activeMeta = hasStages ? STAGE_META[activeStage] : null;
-  const ActiveIcon = resolveLucideIcon(activeConcept?.icon ?? 'Bandage');
-
-  const selectStage = useCallback((stage: 'stage1' | 'stage2' | 'stage3' | 'stage4') => {
+    const selectStage = useCallback((stage: 'stage1' | 'stage2' | 'stage3' | 'stage4') => {
     setActiveStage(stage);
   }, []);
 
@@ -214,7 +212,7 @@ export function WoundStageTissueDeckConceptMap({
                       activeMeta ? `bg-gradient-to-br ${activeMeta.bar}` : 'bg-gradient-to-br from-orange-400 to-amber-300'
                     }`}
                   >
-                    <ActiveIcon className="h-5 w-5 text-white" aria-hidden />
+                    <SlideLucideIcon name={activeConcept?.icon ?? 'Bandage'} className="h-5 w-5 text-white" />
                   </div>
                   <div className="min-w-0">
                     {activeMeta ? (

@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g09",
+  "exported_at": "2026-07-09T06:07:53.400Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g09/manifest.json"
+  },
+  "slugs": [
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+    "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+    "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+    "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+    "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+    "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+    "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+    "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1"
+  ]
+}

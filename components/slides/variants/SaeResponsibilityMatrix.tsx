@@ -4,7 +4,7 @@ import React, { useCallback, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { resolveLucideIcon } from '../core/lucideIcon';
+import { SlideLucideIcon } from '../core/SlideLucideIcon';
 
 export interface SaeMatrixConcept {
   icon: string;
@@ -121,9 +121,7 @@ function MatrixCard({
   hasLongText: boolean;
 }) {
   const styles = LANE_STYLES[lane];
-  const Icon = resolveLucideIcon(concept.icon);
-
-  return (
+    return (
     <motion.button
       type="button"
       onClick={onToggle}
@@ -138,7 +136,7 @@ function MatrixCard({
             <div
               className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg shadow-sm ${styles.iconBg} ${styles.iconText}`}
             >
-              <Icon size={18} />
+              <SlideLucideIcon name={concept.icon} size={18} />
             </div>
             <h4 className={`min-w-0 flex-1 font-body text-sm font-bold leading-snug tracking-normal ${styles.title}`}>
               {concept.title}
@@ -186,9 +184,7 @@ export const SaeResponsibilityMatrix = ({ concepts, theme }: SaeResponsibilityMa
   if (concepts.length === 0) return null;
 
   const [hero, ...rest] = concepts;
-  const HeroIcon = resolveLucideIcon(hero.icon);
-
-  const enfermeiroItems = rest.filter((c) => inferLane(c.title, c.description) === 'enfermeiro');
+    const enfermeiroItems = rest.filter((c) => inferLane(c.title, c.description) === 'enfermeiro');
   const otherLanes: MatrixLane[] = ['equipe', 'norma', 'etica', 'prova'];
   const rightItems = rest.filter((c) => inferLane(c.title, c.description) !== 'enfermeiro');
 
@@ -265,7 +261,7 @@ export const SaeResponsibilityMatrix = ({ concepts, theme }: SaeResponsibilityMa
           </div>
           <div className="flex flex-col gap-3 bg-gradient-to-br from-white via-violet-50/30 to-indigo-50/20 p-4 md:flex-row md:items-start md:gap-4 md:p-5">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-violet-200/90 text-violet-900 shadow-sm">
-              <HeroIcon size={24} />
+              <SlideLucideIcon name={hero.icon} size={24} />
             </div>
             <div className="min-w-0 flex-1">
               <h3 className={`font-body text-lg font-bold tracking-normal text-violet-950 md:text-xl`}>

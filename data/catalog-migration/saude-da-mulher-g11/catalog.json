@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-09T06:29:00.546Z",
+  "lote": "saude-da-mulher-g11",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1387
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1413
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4257
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4538
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1383
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104376057-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1450
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 1443
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104382533-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 1453
+    }
+  ]
+}

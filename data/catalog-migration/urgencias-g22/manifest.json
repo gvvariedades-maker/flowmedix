@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g22",
+  "exported_at": "2026-07-08T17:17:59.557Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_engasgo",
+    "batch": "g22-engasgo-lote-1"
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6"
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "banca": "FEPESE",
+    "prova": "TEnf (B Camboriú)",
+    "orgao": "Pref B Camboriú / SAMU",
+    "ano": "2023",
+    "cargo_header": "Técnico de enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "family": "conceito",
+    "content_standard": "golden-v1",
+    "pedagogical_branch": "cam_alto_risco",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "guideline_snapshot": "Insulina SC · medicamentos alto risco · segurança do paciente",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cofen-seg-med",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Segurança na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br",
+        "covers": ["alto risco", "conferência dupla", "insulina"]
+      },
+      {
+        "id": "ms-diabetes",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Cadernos de Atenção Básica — Diabetes",
+        "year": 2023,
+        "url": "https://www.gov.br/saude",
+        "covers": ["técnica insulina", "NPH", "aplicação SC"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Você está cuidando de um paciente com diabetes e precisará fazer insulina regular e NPH utilizando seringa conforme prescrição médica.\nSobre os cuidados com a aplicação de insulina, é correto afirmar:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Recomenda-se massagear o local após a aplicação da insulina",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Os locais mais recomendados para aplicação da insulina são no abdome em volta do umbigo e na parte interna da coxa.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "As insulinas NPH e regular devem sempre ser feitas em seringas separadas para não precipitar.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A insulina regular, por ser leitosa e de ação lenta, necessita que seja homogeneizada cerca de 20 vezes rolando entre as mãos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Após a aplicação recomenda-se aguardar um período de 10 segundos antes de retirar a agulha no local da picada.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Alto risco — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "label": "Conferência dupla",
+          "detail": "Insulina = medicamento de alto risco. Dois profissionais habilitados conferem dose, horário e paciente antes de administrar.",
+          "icon": "Users"
+        },
+        {
+          "label": "Insulina NPH × regular",
+          "detail": "NPH é leitosa (lenta) — homogeneizar rolando entre as mãos. Regular é cristalina (rápida). Mistura na mesma seringa quando prescrito: regular primeiro, depois NPH.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Técnica SC insulina",
+          "detail": "Ângulo 90° (ou 45° se pouco tecido). Rotação de locais: abdome (2 cm do umbigo), face anterior da coxa, deltoide, glúteo. Não massagear.",
+          "icon": "ShieldAlert"
+        },
+        {
+          "label": "Após a picada",
+          "detail": "Aguardar ~10 segundos com agulha no tecido antes de retirar — reduz extravasamento e garante dose completa.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Pegadinha banca",
+          "detail": "Confundir qual insulina homogeneizar, massagear o local ou exigir seringas sempre separadas ignora a prescrição de mistura.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Insulina = alto risco + técnica SC específica — eliminar letras por regra, não por intuição"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Protocolo alto risco — insulina",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "ALTO RISCO — INSULINA SC",
+      "rows": [
+        {
+          "label": "Classe alto risco",
+          "value": "Insulina, heparina, quimioterápicos, eletrólitos, vasopressores",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "1. Conferência dupla",
+          "value": "2 profissionais: paciente, medicamento, dose, via, horário",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "2. NPH (leitosa)",
+          "value": "Homogeneizar ~20× entre as mãos antes de aspirar",
+          "badge": "hot"
+        },
+        {
+          "label": "3. Regular (cristalina)",
+          "value": "Não homogeneizar — aspirar sem agitar o frasco",
+          "badge": "ok"
+        },
+        {
+          "label": "4. Mistura na seringa",
+          "value": "Quando prescrito: regular primeiro, depois NPH — mesma seringa",
+          "badge": "hot"
+        },
+        {
+          "label": "5. Locais SC",
+          "value": "Abdome (≥2 cm do umbigo), coxa anterior, deltoide, glúteo — rotacionar",
+          "badge": "ok"
+        },
+        {
+          "label": "6. Após aplicação",
+          "value": "Aguardar 10 s antes de retirar agulha — não massagear",
+          "badge": "hot",
+          "emphasis": "highlight"
+        }
+      ],
+      "footer_rule": "Na prova: quem confunde NPH×regular ou massageia o local erra a técnica"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — eliminação",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Contexto: insulina regular + NPH = alto risco → conferência dupla antes de qualquer passo técnico.",
+        "Eliminar letra A: massagear o local acelera absorção e aumenta risco de hipoglicemia — conduta incorreta.",
+        "Eliminar letra B: locais SC corretos incluem abdome lateral ao umbigo e face anterior da coxa — não “parte interna” como regra isolada.",
+        "Eliminar letra C: NPH e regular na mesma seringa quando a prescrição indica mistura — “sempre separadas” é falso.",
+        "Eliminar letra D: regular é cristalina e rápida; homogeneizar 20× é da NPH leitosa, não da regular.",
+        "Confirmar letra E: aguardar 10 segundos antes de retirar a agulha — técnica correta pós-aplicação.",
+        "Fixação: em insulina, a banca troca qual frasco homogeneizar e se pode massagear o local."
+      ],
+      "footer_rule": "Estratégia: conferência dupla → eliminar A–D por técnica → confirmar E"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas técnicas",
+      "chip_label": "PEGADINHAS INSULINA",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PEGADINHAS — ALTO RISCO / INSULINA",
+      "items": [
+        {
+          "label": "Letra A — massagear",
+          "detail": "Parece cuidado com conforto, mas massagem altera absorção da insulina SC.",
+          "correct": "Não massagear: aguardar 10 s e retirar a agulha sem friccionar o local."
+        },
+        {
+          "label": "Letra B — locais SC",
+          "detail": "Mistura abdome com “parte interna da coxa” — rotação e face anterior da coxa são o padrão.",
+          "correct": "Rotação: abdome (2 cm do umbigo), coxa anterior, deltoide, glúteo."
+        },
+        {
+          "label": "Letra C — seringas separadas",
+          "detail": "“Sempre separadas” ignora prescrição de mistura NPH + regular na mesma seringa.",
+          "correct": "Mistura prescrita: regular primeiro, depois NPH — uma seringa."
+        },
+        {
+          "label": "Letra D — homogeneizar regular",
+          "detail": "Troca NPH (leitosa, lenta) com regular (cristalina, rápida) — pegadinha clássica.",
+          "correct": "Homogeneizar só a NPH; regular não se agita no frasco."
+        },
+        {
+          "label": "Pular conferência dupla",
+          "detail": "Ir direto à técnica por ser “rotina de enfermagem” em diabetes.",
+          "correct": "Insulina = alto risco: dupla checagem obrigatória antes de administrar."
+        },
+        {
+          "label": "Retirar agulha imediatamente",
+          "detail": "Achar que 10 segundos é detalhe dispensável após a picada.",
+          "correct": "Aguardar ~10 s com agulha no tecido — gabarito E desta questão."
+        }
+      ],
+      "footer_rule": "Transferência: toda alternativa que massageia, troca NPH×regular ou dispensa dupla checagem está errada"
+    }
+  ]
+}

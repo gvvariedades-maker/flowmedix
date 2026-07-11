@@ -1,0 +1,21 @@
+{
+  "lote": "urgencias-g47",
+  "exported_at": "2026-07-09T01:32:58.433Z",
+  "source": "artifacts/urgencias-e-emergencias-topic-cluster-report.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "batch": "g47-tail-6-plus-reconcile",
+    "tail_count": 6,
+    "reconcile_count": 2
+  },
+  "slugs": [
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-9"
+  ]
+}

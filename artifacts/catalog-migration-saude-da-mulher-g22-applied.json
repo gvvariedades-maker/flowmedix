@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:56:16.058Z",
+  "lote": "saude-da-mulher-g22",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-4",
+    "fadesp-enfermagem-saude-da-mulher-1777104347186-1",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-1",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-2",
+    "funcern-enfermagem-saude-da-mulher-1777104288275-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-saude-da-mulher-1777104347186-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104288275-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

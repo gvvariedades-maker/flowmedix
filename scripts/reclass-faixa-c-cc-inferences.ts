@@ -52,10 +52,10 @@ const OVERRIDES: Record<string, Omit<InferRow, 'modulo_slug'>> = {
     rationale: 'Terminologia cirúrgica (-ectomia, -rafia) — núcleo anatomia.',
   },
   'fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0': {
-    suggested_subtopico: URG,
-    confidence: 0.91,
-    keep_current: false,
-    rationale: 'Colecistite no pronto atendimento — urgência clínica.',
+    suggested_subtopico: BUCKET,
+    confidence: 0.95,
+    keep_current: true,
+    rationale: 'Classificação de potencial de contaminação cirúrgica — núcleo CC, não urgência.',
   },
   'fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-2': {
     suggested_subtopico: SONDAS,

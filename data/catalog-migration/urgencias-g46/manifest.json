@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g46",
+  "exported_at": "2026-07-09T01:15:56.460Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_generico",
+    "batch": "g46-generico-tail-batch-8"
+  },
+  "slugs": [
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6"
+  ]
+}

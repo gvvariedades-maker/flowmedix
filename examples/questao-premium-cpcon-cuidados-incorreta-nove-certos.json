@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "TEnf",
+    "orgao": "UEPB",
+    "ano": "2023",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "family": "certo_errado",
+    "content_standard": "golden-v1",
+    "pedagogical_branch": "cam_exceto_conduta",
+    "content_review": {
+      "reviewed_at": "2026-07-10",
+      "guideline_snapshot": "9 Certos · COFEN — administração segura (não preparo sala)",
+      "exam_vs_current": "none",
+      "catalog_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-2",
+      "cluster": "INCORRETA / EXCETO",
+      "anchor_role": "piloto_inc_conduta_administracao"
+    },
+    "sources": [
+      {
+        "id": "cofen-seg-med",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Segurança na administração de medicamentos",
+        "year": 2024,
+        "url": "https://www.cofen.gov.br",
+        "covers": ["9 certos", "documentação", "identificação", "alto risco"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre os cuidados na administração de medicamentos ao paciente, é INCORRETO afirmar que:",
+    "options": [
+      {
+        "id": "A",
+        "text": "A identificação do paciente deve ser feita com pelo menos dois identificadores independentes antes de cada administração.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Medicamentos de alto risco exigem conferência dupla por dois profissionais habilitados, conforme protocolo institucional.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O registro no prontuário deve ser realizado antes da administração, para garantir que a dose foi anotada a tempo.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Diante de prescrição ilegível ou dose duvidosa, o profissional deve suspender a administração e comunicar ao prescritor.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Comando INCORRETA — 9 Certos",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "Marque a afirmativa falsa sobre administração ao paciente — três alternativas descrevem condutas corretas dos 9 Certos.",
+          "icon": "Target"
+        },
+        {
+          "label": "Certo 1 — Paciente",
+          "detail": "Dois identificadores independentes antes de cada dose — pulseira, nome + data de nascimento.",
+          "icon": "UserCheck"
+        },
+        {
+          "label": "Alto risco",
+          "detail": "Insulina, heparina, eletrólitos: conferência dupla por dois profissionais habilitados.",
+          "icon": "ShieldAlert"
+        },
+        {
+          "label": "Pegadinha documentação",
+          "detail": "Registrar ANTES de administrar parece organização, mas inverte o Certo 6 — registro é após a dose conferida.",
+          "icon": "FileWarning"
+        }
+      ],
+      "footer_rule": "INCORRETA na administração = achar a falsa entre condutas que parecem razoáveis"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — 9 Certos (condutas verdadeiras)",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "AFIRMAÇÕES VERDADEIRAS (NÃO SÃO O GABARITO)",
+      "rows": [
+        {
+          "label": "Paciente certo",
+          "value": "2 identificadores antes de cada administração"
+        },
+        {
+          "label": "Alto risco",
+          "value": "Conferência dupla — 2 profissionais habilitados"
+        },
+        {
+          "label": "Dúvida na prescrição",
+          "value": "Suspender, comunicar prescritor — nunca administrar na dúvida"
+        },
+        {
+          "label": "Registro certo",
+          "value": "Documentar APÓS administrar — horário, dose, via conferidos",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Certo 6: registro após administração — não antecipar no prontuário"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Achar a INCORRETA",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Comando: é INCORRETO afirmar — três alternativas são condutas corretas dos 9 Certos.",
+        "A: dois identificadores antes de cada dose → Certo 1 → afirmativa correta → eliminar.",
+        "B: conferência dupla em alto risco → protocolo de segurança → eliminar.",
+        "D: suspender e comunicar se prescrição ilegível ou dose duvidosa → eliminar.",
+        "C: registrar no prontuário ANTES de administrar → inverte o Certo 6 → esta é a INCORRETA.",
+        "Confirmar letra C: documentação é após a administração, não antes."
+      ],
+      "footer_rule": "Estratégia INCORRETA: validar cada conduta correta antes de marcar a falsa"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Por que a banca confunde",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PEGADINHAS — INCORRETA ADMINISTRAÇÃO",
+      "items": [
+        {
+          "label": "A — dois identificadores",
+          "detail": "Parece detalhe burocrático, mas é núcleo do Certo 1.",
+          "correct": "Afirmativa correta — identificação com 2 identificadores independentes."
+        },
+        {
+          "label": "B — conferência dupla",
+          "detail": "Aluno acha exagero institucional em medicamentos “comuns”.",
+          "correct": "Conduta correta para medicamentos de alto risco."
+        },
+        {
+          "label": "D — suspender na dúvida",
+          "detail": "Parece atrasar o tratamento — banca testa segurança × pressa.",
+          "correct": "Orientação correta: comunicar prescritor e não administrar na dúvida."
+        },
+        {
+          "label": "C — registrar antes",
+          "detail": "Seduz quem confunde planejamento com registro legal da dose administrada.",
+          "correct": "INCORRETA: registro no prontuário é após administrar a medicação conferida."
+        },
+        {
+          "label": "Pegadinha — documentação antecipada",
+          "detail": "Espelha o item Pegadinha documentação do concept_map — registrar antes inverte o Certo 6.",
+          "correct": "Documentação certa: anotar após administrar, não antecipar no prontuário."
+        }
+      ],
+      "footer_rule": "Transferência: distratores são condutas corretas — só o gabarito inverte documentação × administração"
+    }
+  ]
+}

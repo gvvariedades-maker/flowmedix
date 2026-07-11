@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-mulher-g14",
+  "exported_at": "2026-07-10T14:58:48.294Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-mulher-g14/manifest.json"
+  },
+  "slugs": [
+    "fgv-enfermagem-saude-da-mulher-1777104222222-6",
+    "fgv-enfermagem-saude-da-mulher-1777104340484-3",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-1",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-4",
+    "fundatec-enfermagem-saude-da-mulher-1777104382533-8",
+    "gama-enfermagem-saude-da-mulher-1777104382533-1",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-1",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-4"
+  ]
+}

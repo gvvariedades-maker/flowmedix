@@ -302,12 +302,12 @@ export default function AvantLessonPlayer({
   const questionListProgressPercent = useMemo(() => {
     if (!listaContexto || listaContexto.total <= 0) return null;
     return computeQuestionListProgressPercent(listaContexto.atual, listaContexto.total);
-  }, [listaContexto?.atual, listaContexto?.total]);
+  }, [listaContexto]);
 
   const questionListProgressVisualPercent = useMemo(() => {
     if (!listaContexto || listaContexto.total <= 0) return null;
     return computeQuestionListProgressVisualPercent(listaContexto.atual, listaContexto.total);
-  }, [listaContexto?.atual, listaContexto?.total]);
+  }, [listaContexto]);
 
   const prevDotsIndiceRef = useRef(listaContexto?.atual ?? 1);
   const [dotsSlideDirection, setDotsSlideDirection] = useState(0);
@@ -698,6 +698,8 @@ export default function AvantLessonPlayer({
     [navegacaoIndisponivel, questaoNav, router],
   );
 
+  let questionUnavailableUi: React.ReactNode = null;
+
   if (!activeDados?.question_data?.options?.length) {
     const vitrineSuffix = fromPlano
       ? '?from=plano'
@@ -719,7 +721,7 @@ export default function AvantLessonPlayer({
         ? 'cadernos'
         : 'vitrine';
 
-    return (
+    questionUnavailableUi = (
       <div
         data-testid="lesson-empty-question-error"
         className="card-elevated-lg flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden font-sans shadow-none md:rounded-[2.5rem]"
@@ -746,6 +748,8 @@ export default function AvantLessonPlayer({
       </div>
     );
   }
+
+  const questionUnavailable = questionUnavailableUi !== null;
 
   const meta = activeDados.meta ?? {
     banca: 'DESCONHECIDA',
@@ -1702,6 +1706,10 @@ export default function AvantLessonPlayer({
       </>
     );
   };
+
+  if (questionUnavailable) {
+    return questionUnavailableUi;
+  }
 
   return (
     <>

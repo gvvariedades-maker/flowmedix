@@ -9,7 +9,17 @@ import { GoldenRuleMeshReveal } from './GoldenRuleMeshReveal';
 import { GoldenRuleLabPrepLensBoard } from './GoldenRuleLabPrepLensBoard';
 import { GoldenRuleDressingMatchMatrix } from './GoldenRuleDressingMatchMatrix';
 import { GoldenRulePniIntervalMatrix } from './GoldenRulePniIntervalMatrix';
+import { GoldenRuleCamNineRightsBoard } from './GoldenRuleCamNineRightsBoard';
+import { GoldenRuleCamHighRiskProtocolBoard } from './GoldenRuleCamHighRiskProtocolBoard';
+import { GoldenRuleCamExcetoReferenceBoard } from './GoldenRuleCamExcetoReferenceBoard';
+import { GoldenRuleCamDocumentacaoBoard } from './GoldenRuleCamDocumentacaoBoard';
 import { GoldenRulePniCalendarBoard } from './GoldenRulePniCalendarBoard';
+import { GoldenRuleMulherPrenatalBoard } from './GoldenRuleMulherPrenatalBoard';
+import { GoldenRuleMulherPartoHumanizadoBoard } from './GoldenRuleMulherPartoHumanizadoBoard';
+import { GoldenRuleMulherPapanicolauBoard } from './GoldenRuleMulherPapanicolauBoard';
+import { GoldenRuleMulherMamaBoard } from './GoldenRuleMulherMamaBoard';
+import { GoldenRuleMulherPuerperioBoard } from './GoldenRuleMulherPuerperioBoard';
+import { GoldenRuleMulherPlanejamentoBoard } from './GoldenRuleMulherPlanejamentoBoard';
 import { GoldenRulePniTemperatureRail } from './GoldenRulePniTemperatureRail';
 import { GoldenRuleVitalsReferenceBoard } from './GoldenRuleVitalsReferenceBoard';
 import { GoldenRuleIstReferenceBoard } from './GoldenRuleIstReferenceBoard';
@@ -292,9 +302,84 @@ export const GoldenRule = ({
     );
   }
 
+  if (variant === 'cam-nine-rights-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleCamNineRightsBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'cam-high-risk-protocol-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleCamHighRiskProtocolBoard
+        content={content}
+        rows={rows}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'cam-exceto-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleCamExcetoReferenceBoard
+        content={content}
+        rows={rows}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'cam-documentacao-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleCamDocumentacaoBoard
+        content={content}
+        rows={rows}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
   if (variant === 'pni-calendar-board' && rows && rows.length > 0) {
     return (
       <GoldenRulePniCalendarBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'mulher-prenatal-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleMulherPrenatalBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'mulher-parto-humanizado-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleMulherPartoHumanizadoBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'mulher-papanicolau-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleMulherPapanicolauBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'mulher-mama-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleMulherMamaBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'mulher-puerperio-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleMulherPuerperioBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'mulher-planejamento-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleMulherPlanejamentoBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

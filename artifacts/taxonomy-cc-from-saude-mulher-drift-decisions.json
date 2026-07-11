@@ -1,0 +1,128 @@
+{
+  "generated_at": "2026-07-09T04:16:54.885Z",
+  "source": "artifacts/saude-da-mulher-topic-cluster-report.json",
+  "drift_total": 21,
+  "reclass_count": 17,
+  "absorbed_count": 4,
+  "decisions": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2",
+      "from": "Saúde da Mulher",
+      "to": "Coleta de Exames Laboratoriais",
+      "topic": "Coleta de exames (drift?)",
+      "rationale": "Drift taxonômico — Coleta de exames (drift?) → Coleta de Exames Laboratoriais."
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-8",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "atame-enfermagem-vias-de-administracao-1778968573722-0",
+      "from": "Saúde da Mulher",
+      "to": "Vias de Administração",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Slug e enunciado ancoram vias — fora do bucket Saúde da Mulher."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104408379-0",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+      "from": "Saúde da Mulher",
+      "to": "Epidemiologia e Vigilância Epidemiológica",
+      "topic": "Epidemiologia (drift?)",
+      "rationale": "Drift taxonômico — Epidemiologia (drift?) → Epidemiologia e Vigilância Epidemiológica."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-8",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104301763-5",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-1",
+      "from": "Saúde da Mulher",
+      "to": "Urgências e Emergências",
+      "topic": "Semiologia (drift?)",
+      "rationale": "Parto de emergência em via pública + sangramento pós-parto — urgência obstétrica."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104424950-0",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1777104335102-4",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-2",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+      "from": "Saúde da Mulher",
+      "to": "Promoção à Saúde e Prevenção de Agravos",
+      "topic": "Semiologia (drift?)",
+      "rationale": "Campanha de saúde pública / ações educativas — promoção e prevenção."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-saude-da-mulher-1777104376057-1",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-1",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-6",
+      "from": "Saúde da Mulher",
+      "to": "Noções de Anatomia",
+      "topic": "Anatomia feminina (drift?)",
+      "rationale": "Drift taxonômico — Anatomia feminina (drift?) → Noções de Anatomia."
+    }
+  ]
+}

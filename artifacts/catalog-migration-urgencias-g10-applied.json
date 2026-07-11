@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:24:27.284Z",
+  "lote": "urgencias-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+    "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+    "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

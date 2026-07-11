@@ -1,0 +1,20 @@
+{
+  "lote": "urgencias-g02",
+  "exported_at": "2026-07-08T12:13:09.050Z",
+  "source": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "pedagogical_branch": "urgencias_rcp_sbv",
+    "batch": "g02-rcp-adulto-lote-2"
+  },
+  "slugs": [
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-0",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+    "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-7"
+  ]
+}

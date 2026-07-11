@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-07-10T18:58:18.209Z",
+  "lote": "saude-da-mulher-g31",
+  "mode": "apply",
+  "total_files": 3,
+  "ok": 3,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-9",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

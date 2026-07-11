@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:55:26.235Z",
+  "lote": "saude-da-mulher-g19",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-6",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-6",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-1",
+    "fepese-enfermagem-processo-de-enfermagem-1780008232871-8",
+    "fepese-enfermagem-saude-da-mulher-1777104222222-0",
+    "fundatec-enfermagem-saude-da-mulher-1777104408379-5",
+    "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-5",
+    "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-saude-da-mulher-1777104222222-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104408379-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

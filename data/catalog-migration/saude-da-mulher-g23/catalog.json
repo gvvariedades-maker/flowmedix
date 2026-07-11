@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-10T15:58:07.928Z",
+  "lote": "saude-da-mulher-g23",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104389226-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 1467
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-semiologia-em-enfermagem-1779563517223-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNTEF",
+      "avant_codigo": 3141
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 1369
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 1493
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1718
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5172
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-saude-da-mulher-1777104335102-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDESG",
+      "avant_codigo": 1420
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1794
+    }
+  ]
+}

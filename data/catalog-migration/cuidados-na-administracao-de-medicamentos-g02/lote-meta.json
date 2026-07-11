@@ -1,0 +1,35 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g02",
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-10",
+  "handcraft_by": "composer-2.5",
+  "priority": "P0 — cam_certos_vf_caso (18 slugs cluster)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "cam_certos_vf_caso",
+  "branches": {
+    "cam_certos_vf_caso": 8
+  },
+  "anchors": [
+    "examples/questao-premium-fepese-cuidados-administracao-medicamentos.json"
+  ],
+  "anchor_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+  "handcraft_grammar": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-pedagogy-errors.json",
+  "notes": "Piloto g02 — 9 Certos V/F I–III, caso clínico ceftriaxona, documentação, COFEN 564, erros de medicação",
+  "workflow": [
+    "npm run plan:cuidados-na-administracao-de-medicamentos-g02",
+    "npm run catalog:export-lote -- --lote=cuidados-na-administracao-de-medicamentos-g02 --from-manifest=data/catalog-migration/cuidados-na-administracao-de-medicamentos-g02/manifest.json",
+    "Handcraft golden-v1 por slug — cam-certos-* 4/4",
+    "npm run validate:goldens -- --lote=cuidados-na-administracao-de-medicamentos-g02 --strict",
+    "npm run audit:questao-readiness -- --lote=cuidados-na-administracao-de-medicamentos-g02 --strict-v3-pedagogy",
+    "npm run audit:slug-alignment -- --lote=cuidados-na-administracao-de-medicamentos-g02 --strict",
+    "npm run audit:anchor-review -- --lote=cuidados-na-administracao-de-medicamentos-g02 --record-pass --reviewer=agent --skip-capture"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-10",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cuidados-na-administracao-de-medicamentos-g02.json"
+  }
+}

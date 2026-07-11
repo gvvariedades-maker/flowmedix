@@ -1,0 +1,29 @@
+{
+  "lote": "urgencias-g31",
+  "subtopico": "Urgências e Emergências",
+  "status": "handcraft_complete",
+  "handcraft_at": "2026-07-08",
+  "handcraft_by": "handcraft-urgencias-g31",
+  "slug_count": 8,
+  "branches": {
+    "urgencias_generico": 6,
+    "urgencias_rcp_pediatrico": 1,
+    "urgencias_rcp_sbv": 1
+  },
+  "branch_by_slug": {
+    "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5": "urgencias_generico",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4": "urgencias_rcp_pediatrico",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4": "urgencias_rcp_sbv",
+    "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6": "urgencias_generico",
+    "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8": "urgencias_generico",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7": "urgencias_generico",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5": "urgencias_generico",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6": "urgencias_generico"
+  },
+  "playbook_clusters_opened": {
+    "Urgências — conceito geral": 2,
+    "Default — sem âncora temática": 4,
+    "Certo ou errado": 2
+  },
+  "notes": "g31 — 2º lote cauda urgencias_generico · 8/8 READY strict-v2 · avancasp-3571-4 → rcp_pediatrico (VAA 2–3 s, não drift adulto 6 s) · cpcon figura RCP → rcp_sbv · idecan-5 USA → generico (não rcp_sbv)"
+}

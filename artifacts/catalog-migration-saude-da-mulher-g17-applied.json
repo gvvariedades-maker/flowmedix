@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-10T18:54:59.800Z",
+  "lote": "saude-da-mulher-g17",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-6",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-1",
+    "itame-enfermagem-saude-da-mulher-1777104424950-2",
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-2",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-1",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-2",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104235003-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-saude-da-mulher-1777104424950-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104235003-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

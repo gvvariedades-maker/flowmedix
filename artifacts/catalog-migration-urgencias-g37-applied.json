@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-09T02:28:37.777Z",
+  "lote": "urgencias-g37",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+    "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

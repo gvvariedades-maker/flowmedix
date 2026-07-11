@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-09T06:19:56.500Z",
+  "lote": "saude-da-mulher-g10",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1379
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 1464
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2947
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2876
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1360
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1428
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1473
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1477
+    }
+  ]
+}
