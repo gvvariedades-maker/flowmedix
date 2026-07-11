@@ -117,7 +117,7 @@ const LADDER_ACCENTS = {
 function stepTitle(
   step: string,
   index: number,
-  accent: 'default' | 'sonda' | 'urgencias' | 'xabcde' | 'stroke' | 'shock' | 'choking' | 'pediatric',
+  accent: 'default' | 'sonda' | 'urgencias' | 'xabcde' | 'stroke' | 'shock' | 'choking' | 'pediatric' | 'cam',
 ): string {
   const lower = step.toLowerCase();
   if (accent === 'sonda') {
