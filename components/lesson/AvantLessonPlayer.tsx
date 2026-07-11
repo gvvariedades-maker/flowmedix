@@ -1442,7 +1442,7 @@ export default function AvantLessonPlayer({
               storageKey="reverse-study.option-elimination"
               tip={REVERSE_STUDY_MICROTIPS['option-elimination']}
               enabled={etapa === 'pergunta'}
-              className={cn('mb-3', estudarQuestaoImmersive && 'max-md:mb-2')}
+              className={cn('mb-3 max-md:hidden', estudarQuestaoImmersive && 'md:mb-2')}
             />
           ) : null}
           <div
@@ -1464,12 +1464,12 @@ export default function AvantLessonPlayer({
               let styles =
                 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50';
               let badge =
-                'border border-slate-300 bg-slate-50 text-slate-800 group-hover:border-slate-400 group-hover:text-slate-900';
+                'border-2 border-slate-300 bg-slate-100 text-slate-900 shadow-sm group-hover:border-slate-400 group-hover:bg-white';
               let text = 'text-slate-900';
 
               if (isEliminada && !showResult) {
                 styles = "border-slate-100 bg-slate-50";
-                badge = "border border-slate-200 bg-slate-100 text-slate-400";
+                badge = "border-2 border-slate-200 bg-slate-100 text-slate-400";
                 text = "text-slate-400 line-through decoration-slate-400/80";
               } else if (showResult) {
                 if (isCorrect) {
@@ -1515,7 +1515,7 @@ export default function AvantLessonPlayer({
                       aria-pressed={isEliminada}
                       title={isEliminada ? 'Restaurar alternativa' : 'Eliminar alternativa (tecla E)'}
                       className={cn(
-                        'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-200',
+                        'hidden h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-200 md:flex',
                         isEliminada
                           ? 'text-sky-600 opacity-100'
                           : cn(
@@ -1524,7 +1524,6 @@ export default function AvantLessonPlayer({
                               'group-focus-within:pointer-events-auto group-focus-within:opacity-100',
                               'focus-visible:pointer-events-auto focus-visible:opacity-100',
                               'hover:bg-slate-100 hover:text-sky-600',
-                              '[@media(hover:none)]:pointer-events-auto [@media(hover:none)]:opacity-100',
                             ),
                       )}
                     >
@@ -1556,7 +1555,9 @@ export default function AvantLessonPlayer({
                     className={`group relative min-w-0 flex-1 rounded-xl border transition-all duration-300 active:scale-[0.98] btn-option-editorial ${styles} ${rowLayout}`}
                   >
                     {!certoErradoLayout && (
-                      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold uppercase transition-colors duration-300 ${badge}`}>
+                      <span
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black uppercase tabular-nums tracking-tight shadow-sm transition-colors duration-300 md:h-9 md:w-9 md:text-base ${badge}`}
+                      >
                         {opt.id}
                       </span>
                     )}
