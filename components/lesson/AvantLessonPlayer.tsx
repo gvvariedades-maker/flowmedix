@@ -99,7 +99,16 @@ import {
 } from 'lucide-react';
 
 const QUESTION_TEXT_TYPOGRAPHY =
-  'text-[15px] md:text-base leading-relaxed font-medium md:font-normal';
+  'text-[18px] md:text-[19px] leading-relaxed font-semibold md:font-medium';
+
+const QUESTION_HEADER_TITLE_TYPOGRAPHY =
+  'text-[19px] md:text-[22px] font-bold leading-snug';
+
+const QUESTION_HEADER_CHIP_TYPOGRAPHY =
+  'text-[13px] font-bold leading-tight';
+
+const QUESTION_HEADER_META_TYPOGRAPHY =
+  'text-[14px] md:text-[17px] font-medium leading-snug';
 
 function resetDashboardMainScroll() {
   if (typeof document === 'undefined') return;
@@ -1368,14 +1377,14 @@ export default function AvantLessonPlayer({
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all group-hover:border-[rgba(34,197,94,0.35)] group-hover:bg-[rgba(34,197,94,0.08)]">
             <ArrowLeft size={16} />
           </div>
-          <span className="max-w-[5rem] truncate text-xs font-medium sm:max-w-none sm:text-sm">
+          <span className="max-w-[5rem] truncate text-[14px] font-semibold sm:max-w-none sm:text-[17px]">
             {voltarDestino}
           </span>
         </button>
         <div className="ml-auto flex min-w-0 max-w-full flex-wrap items-center justify-end gap-1.5 sm:gap-2">
           {listaContexto && listaContexto.total > 0 && (
             <span
-              className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-semibold tabular-nums text-slate-600 sm:px-3 sm:text-xs sm:text-sm"
+              className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[13px] font-bold tabular-nums text-slate-600 sm:px-3 sm:text-[14px] md:text-[17px]"
               aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
             >
               <span className="sm:hidden">
@@ -1647,7 +1656,7 @@ export default function AvantLessonPlayer({
           className="border-b border-slate-200 bg-slate-50 px-6 py-4 md:px-8 md:py-5"
         >
           {subjectLine && (
-            <p className="text-base md:text-lg font-semibold text-slate-900 border-l-4 border-[#22c55e] pl-3 leading-snug">
+            <p className={`${QUESTION_HEADER_TITLE_TYPOGRAPHY} text-slate-900 border-l-4 border-[#22c55e] pl-3`}>
               {subjectLine}
             </p>
           )}
@@ -1662,7 +1671,8 @@ export default function AvantLessonPlayer({
                 <span
                   key={chip.id}
                   className={cn(
-                    'inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-semibold leading-tight',
+                    'inline-flex items-center rounded-md border px-2 py-0.5',
+                    QUESTION_HEADER_CHIP_TYPOGRAPHY,
                     chip.tone === 'banca'
                       ? 'border-sky-200 bg-sky-50 text-sky-800'
                       : 'border-slate-200 bg-white text-slate-600',
@@ -1672,13 +1682,14 @@ export default function AvantLessonPlayer({
                 </span>
               ))}
               {examDetailLine ? (
-                <span className="text-xs text-slate-500 leading-snug">{examDetailLine}</span>
+                <span className={`${QUESTION_HEADER_META_TYPOGRAPHY} text-slate-500`}>{examDetailLine}</span>
               ) : null}
             </div>
           ) : examHeaderLine ? (
             <p
               className={cn(
-                'text-xs md:text-sm text-slate-500 leading-snug',
+                QUESTION_HEADER_META_TYPOGRAPHY,
+                'text-slate-500',
                 subjectLine ? 'mt-2' : '',
               )}
             >
