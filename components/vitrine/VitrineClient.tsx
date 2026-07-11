@@ -733,7 +733,7 @@ export default function VitrineClient({
             />
           ) : null}
           {loading && gruposPagina.length === 0 ? (
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3 xl:gap-5">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5">
               {Array.from({ length: 8 }).map((_, i) => (
                 <div key={i} className="h-72 animate-pulse rounded-2xl bg-muted/50" />
               ))}
@@ -751,7 +751,7 @@ export default function VitrineClient({
                 className={cn(
                   viewMode === 'compact'
                     ? 'flex flex-col gap-2'
-                    : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3 xl:gap-5',
+                    : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5',
                   MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
                   isRefreshing && 'opacity-80',
                 )}
