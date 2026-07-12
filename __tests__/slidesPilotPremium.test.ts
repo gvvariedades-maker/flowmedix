@@ -63,15 +63,17 @@ describe('piloto premium — goldens de subtópico', () => {
           ? 'sonda-decision-tap'
           : subtopico === 'Processo de Enfermagem'
             ? 'sae-decision-tap'
-          : subtopico === 'Urgências e Emergências'
-          ? 'vertical'
-          : subtopico === 'Verificação de Sinais Vitais'
-            ? 'vitals-translate-tap'
-            : subtopico === 'Imunização'
-              ? 'pni-vf-juggle-tap'
-              : subtopico === 'Vias de Administração'
-                ? 'via-vf-juggle-tap'
-              : 'cards';
+            : subtopico === 'Urgências e Emergências'
+              ? 'vertical'
+              : subtopico === 'Verificação de Sinais Vitais'
+                ? 'vitals-translate-tap'
+                : subtopico === 'Imunização'
+                  ? 'pni-vf-juggle-tap'
+                  : subtopico === 'Vias de Administração'
+                    ? 'via-vf-juggle-tap'
+                    : subtopico === 'Cuidados na Administração de Medicamentos'
+                      ? 'cam-vf-juggle-tap'
+                      : 'cards';
       const slide = {
         type: 'logic_flow',
         meta: { subtopico },
@@ -98,11 +100,13 @@ describe('piloto premium — goldens de subtópico', () => {
             ? 'vitals-reference-board'
             : subtopico === 'Instalação e Manejo de Sondas'
               ? 'sonda-measurement-board'
-            : subtopico === 'Processo de Enfermagem'
-              ? 'sae-reference-board'
-            : subtopico === 'Vias de Administração'
-              ? 'via-reference-board'
-            : 'reference_table';
+              : subtopico === 'Processo de Enfermagem'
+                ? 'sae-reference-board'
+                : subtopico === 'Vias de Administração'
+                  ? 'via-reference-board'
+                  : subtopico === 'Cuidados na Administração de Medicamentos'
+                    ? 'cam-nine-rights-board'
+                    : 'reference_table';
       expect(
         resolveGoldenRuleLayoutVariant(golden, golden.layout_variant, mapVariant),
       ).toBe(expectedGolden);
@@ -133,7 +137,9 @@ describe('piloto premium — goldens de subtópico', () => {
                   ? 'scope-trap'
                   : subtopico === 'Vias de Administração'
                     ? 'route-trap'
-                    : 'compare';
+                    : subtopico === 'Cuidados na Administração de Medicamentos'
+                      ? 'cam-certos-trap-arena'
+                      : 'compare';
       expect(
         resolveDangerZoneLayoutVariant(danger, danger.layout_variant, mapVariant),
       ).toBe(expected);

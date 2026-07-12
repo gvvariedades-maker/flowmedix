@@ -219,7 +219,7 @@ describe('l3MoldGapCatalog', () => {
     expect(r.ideal_mold_package).toContain('mulher-mama-board');
   });
 
-  it('Saúde da Mulher puerpério → ok_generico', () => {
+  it('Saúde da Mulher puerpério → ok_existente', () => {
     const r = resolveClusterIdeal(
       mulherSubtopico,
       'Puerpério / lactação',
@@ -228,7 +228,9 @@ describe('l3MoldGapCatalog', () => {
       'morphological · reference_table',
     );
     expect(r.branch_id).toBe('mulher_puerperio');
-    expect(r.decision).toBe('ok_generico');
+    expect(r.branch_implemented).toBe(true);
+    expect(r.decision).toBe('ok_existente');
+    expect(r.ideal_mold_package).toContain('mulher-puerperio-board');
   });
 
   it('Saúde da Mulher anatomia drift → ok_generico reclassificar', () => {
@@ -240,6 +242,7 @@ describe('l3MoldGapCatalog', () => {
       'morphological · reference_table',
     );
     expect(r.branch_id).toBe('mulher_generico');
+    expect(r.branch_implemented).toBe(true);
     expect(r.decision).toBe('ok_generico');
     expect(r.rationale).toContain('Drift');
   });
