@@ -1,5 +1,11 @@
-import { FlowchartContent } from './flow';
 import { DecisionFlowData } from './simulator';
+
+/** @deprecated Fluxograma React Flow legado — tabelas `flowcharts`/`modules` removidas do AVANT. */
+export interface FlowchartContent {
+  nodes: Array<Record<string, unknown>>;
+  edges: Array<Record<string, unknown>>;
+  viewport: { x: number; y: number; zoom: number };
+}
 
 /**
  * Tipos do banco de dados Supabase (schema `public` atual).
