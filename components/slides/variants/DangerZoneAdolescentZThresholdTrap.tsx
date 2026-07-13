@@ -99,7 +99,7 @@ export function DangerZoneAdolescentZThresholdTrap({
 
         {items.map((item, index) => {
           const isOpen = isItemRevealed(index);
-          const letter = extractLetterFromTrapLabel(item.label);
+          const letter = extractLetterFromTrapLabel(item.label ?? '');
           const bands = inferZTrapBands(item.detail ?? '', item.correct ?? '');
 
           return (
