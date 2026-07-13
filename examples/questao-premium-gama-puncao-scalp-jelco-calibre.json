@@ -12,17 +12,47 @@
     "content_review": {
       "reviewed_at": "2026-06-22",
       "reviewer": "content-pilot",
-      "guideline_snapshot": "Dispositivos de acesso venoso periférico — scalp (butterfly) × jelco × calibre",
+      "guideline_snapshot": "Anvisa / COFEN — Acesso venoso, bundle CVC e manutenção (tempo e troca de equipos; dispositivo e calibre) · Dispositivos de acesso venoso periférico — scalp (butterfly) × jelco × calibre",
       "exam_vs_current": "none"
     },
     "sources": [
+      {
+        "id": "potter-perry-fundamentos-11ed-2024",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Acesso venoso e complicações",
+        "year": 2024,
+        "covers": [
+          "dispositivo venoso",
+          "calibre",
+          "acesso venoso periférico"
+        ]
+      },
+      {
+        "id": "puncao-cateter-anvisa",
+        "tier": "A",
+        "issuer": "Anvisa / COFEN",
+        "title": "Punção venosa e cuidados com cateteres",
+        "year": 2021,
+        "url": "https://www.gov.br/anvisa/",
+        "covers": [
+          "dispositivo venoso",
+          "calibre",
+          "acesso venoso periférico"
+        ]
+      },
       {
         "id": "cofen-puncao-dispositivos",
         "tier": "A",
         "issuer": "COFEN",
         "title": "Procedimentos de enfermagem — punção venosa e dispositivos de infusão",
         "year": 2024,
-        "covers": ["jelco", "scalp", "calibre", "indicação clínica"]
+        "covers": [
+          "jelco",
+          "scalp",
+          "calibre",
+          "indicação clínica"
+        ]
       }
     ]
   },

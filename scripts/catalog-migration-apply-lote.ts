@@ -27,6 +27,30 @@ import {
 import { runLotePreflight } from '@/lib/catalogMigration/preflightLote';
 import { patchLotePedagogicalBranch } from '@/lib/catalogMigration/patchLotePedagogicalBranch';
 import { requireAnchorReviewPass } from '@/lib/catalogMigration/anchorReview';
+import { loadHandcraftRegistry } from '@/lib/catalogMigration/handcraftRegistry';
+
+function resolveRiskContextFromLote(lote: string): {
+  riskApprovalGate: boolean;
+  riskContext: {
+    productionReady: boolean;
+    autoApprovalEnabled: boolean;
+  };
+} {
+  const registry = loadHandcraftRegistry();
+  const pacote = Object.values(registry.pacotes).find(
+    (p) => lote === p.pacote_prefix || lote.startsWith(`${p.pacote_prefix}-`),
+  );
+  const auto = pacote?.auto_approval;
+  const productionReady = pacote?.production_status === 'production_ready';
+  const autoEnabled = auto?.enabled === true;
+  return {
+    riskApprovalGate: autoEnabled || hasFlag('risk-approval-gate'),
+    riskContext: {
+      productionReady,
+      autoApprovalEnabled: autoEnabled || hasFlag('risk-approval-gate'),
+    },
+  };
+}
 
 async function main() {
   const lote = requireArg('lote');
@@ -113,11 +137,19 @@ async function main() {
   }
 
   const supabase = await createServerSupabase();
+  const { riskApprovalGate, riskContext } = resolveRiskContextFromLote(lote);
+  if (riskApprovalGate) {
+    console.log(
+      `[catalog:apply-lote] riskApprovalGate=on productionReady=${riskContext.productionReady} autoApproval=${riskContext.autoApprovalEnabled}`,
+    );
+  }
   const { results, appliedSlugs } = await applyLoteToSupabase(supabase, items, {
     dryRun,
     strictGabarito,
     premiumGate,
     allowInsert,
+    riskApprovalGate,
+    riskContext,
   });
 
   const allResults = [

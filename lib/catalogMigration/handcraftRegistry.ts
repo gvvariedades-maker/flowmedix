@@ -49,6 +49,17 @@ export type ProductionStatus =
   | 'production_ready'
   | 'blocked';
 
+/** Política de auto-aprovação por risco — @see docs/DECISAO_AUTO_APROVACAO_RISCO.md */
+export type AutoApprovalConfig = {
+  enabled: boolean;
+  /** Maior tier que o agente pode auto-aprovar. */
+  default_max_tier_auto?: 'baixo' | 'medio' | 'alto';
+  sample_rate?: { baixo: number; medio: number };
+  /** report_rate acima disso → rebaixa confiança / kill-switch. */
+  downgrade_on_report_rate_pct?: number;
+  last_calibrated_at?: string | null;
+};
+
 export type RegistryPacote = {
   pacote_prefix: string;
   manifest: string;
@@ -57,6 +68,8 @@ export type RegistryPacote = {
   handcraft_applied: number;
   production_status?: ProductionStatus;
   quality?: PacoteQuality;
+  /** Kill-switch: default false até histórico limpo. */
+  auto_approval?: AutoApprovalConfig;
 };
 
 export type HandcraftRegistry = {

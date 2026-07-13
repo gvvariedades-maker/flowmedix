@@ -1,0 +1,18 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g04",
+  "exported_at": "2026-07-12T04:35:51.398Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g04/manifest.json"
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+    "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
+    "iaupe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-1",
+    "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-7",
+    "maranatha-assessoria-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-4",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7"
+  ]
+}

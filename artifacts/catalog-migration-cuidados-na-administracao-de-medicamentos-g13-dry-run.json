@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-11T19:16:10.105Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g13",
+  "mode": "dry-run",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102936764-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-seguranca-do-paciente-1779563448133-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

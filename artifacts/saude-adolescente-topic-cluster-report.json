@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-07-13T20:00:00.000Z",
+  "subtopico": "Saúde do Adolescente",
+  "lote": "saude-adolescente-completo",
+  "total": 16,
+  "source": "handcraft g01+g02 (scan local pedagogical_branch)",
+  "note": "audit:l3-mold-gap falhou em lote local (null modulo_slug no manifest). Cluster derivado dos JSON em saude-adolescente-g01/g02.",
+  "family_counts": {
+    "conceito": 9,
+    "certo_errado": 2,
+    "protocolo": 2,
+    "legis": 2,
+    "vf": 1,
+    "calc": 1
+  },
+  "branch_counts": {
+    "adolescente_generico": 6,
+    "adolescente_saude_mental": 3,
+    "adolescente_etica_sigilo": 2,
+    "adolescente_antropometria": 2,
+    "adolescente_violencia_protecao": 2,
+    "adolescente_desenvolvimento": 1
+  },
+  "pedagogical_clusters": [
+    {
+      "cluster": "Escore Z / Caderneta / classificação nutricional",
+      "branch_id": "adolescente_antropometria",
+      "count": 1,
+      "pct": 6.25,
+      "sample_slugs": ["ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0"],
+      "family": "calc",
+      "golden_anchor": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0"
+    },
+    {
+      "cluster": "Obesidade adolescente — comorbidades (sem escore Z)",
+      "branch_id": "adolescente_antropometria",
+      "count": 1,
+      "pct": 6.25,
+      "sample_slugs": ["amauc-enfermagem-saude-do-adolescente-1777104229064-5"],
+      "family": "conceito",
+      "branch_drift": "meta.pedagogical_branch=antropometria mas enunciado não ancora Z/IMC — candidato a adolescente_saude_mental ou generico"
+    },
+    {
+      "cluster": "Gravidez / pré-natal / escuta e sigilo",
+      "branch_id": "adolescente_etica_sigilo",
+      "count": 2,
+      "pct": 12.5,
+      "sample_slugs": [
+        "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+        "agirh-enfermagem-saude-do-adolescente-1777104229064-4"
+      ],
+      "golden_anchor": "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json"
+    },
+    {
+      "cluster": "Violência sexual / rede de proteção",
+      "branch_id": "adolescente_violencia_protecao",
+      "count": 2,
+      "pct": 12.5,
+      "sample_slugs": [
+        "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+        "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6"
+      ]
+    },
+    {
+      "cluster": "Saúde mental / transtornos alimentares",
+      "branch_id": "adolescente_saude_mental",
+      "count": 3,
+      "pct": 18.75,
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+        "idecan-enfermagem-saude-do-adolescente-1778712426701-8"
+      ]
+    },
+    {
+      "cluster": "Puberdade / desenvolvimento",
+      "branch_id": "adolescente_desenvolvimento",
+      "count": 1,
+      "pct": 6.25,
+      "sample_slugs": ["nao-informado-geral-saude-do-adolescente-1777104229064-0"]
+    },
+    {
+      "cluster": "EXCETO / diretrizes MS / promoção / bucal",
+      "branch_id": "adolescente_generico",
+      "count": 6,
+      "pct": 37.5,
+      "sample_slugs": [
+        "ideap-enfermagem-saude-do-adolescente-1777104229064-2",
+        "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+        "idecan-enfermagem-saude-do-adolescente-1778712426701-7"
+      ]
+    }
+  ],
+  "cluster_decisions": [
+    {
+      "cluster": "Escore Z / Caderneta",
+      "branch_id": "adolescente_antropometria",
+      "count": 1,
+      "pct": 6.25,
+      "decision": "molde_inedito",
+      "l3_decision": "molde_inedito",
+      "rationale": "Erro espacial (deslocar ±1 DP na faixa Z). Volume 1 slug — brief condicional; implementar React quando ≥5 slugs Z ou pedido explícito.",
+      "brief": "artifacts/l3-brief-saude-adolescente-adolescente_antropometria.md"
+    },
+    {
+      "cluster": "Obesidade — comorbidades",
+      "branch_id": "adolescente_antropometria",
+      "count": 1,
+      "pct": 6.25,
+      "decision": "ok_generico",
+      "l3_decision": "ok_generico",
+      "rationale": "Pegadinha textual (par metabólico+psíquico). Não usar molde Z-rail. Reclassificar branch recomendado."
+    },
+    {
+      "cluster": "Gravidez / sigilo",
+      "branch_id": "adolescente_etica_sigilo",
+      "count": 2,
+      "pct": 12.5,
+      "decision": "coberto",
+      "l3_decision": "molde_redesign",
+      "rationale": "Pacote adolescent-* implementado. Brief já implícito nos componentes existentes."
+    },
+    {
+      "cluster": "Violência / proteção",
+      "branch_id": "adolescente_violencia_protecao",
+      "count": 2,
+      "pct": 12.5,
+      "decision": "cauda_longa",
+      "l3_decision": "ok_generico",
+      "rationale": "Volume <5. compare + reference_table bastam."
+    },
+    {
+      "cluster": "Saúde mental",
+      "branch_id": "adolescente_saude_mental",
+      "count": 3,
+      "pct": 18.75,
+      "decision": "cauda_longa",
+      "l3_decision": "ok_generico",
+      "rationale": "Volume <5. Genérico premium."
+    },
+    {
+      "cluster": "Desenvolvimento",
+      "branch_id": "adolescente_desenvolvimento",
+      "count": 1,
+      "pct": 6.25,
+      "decision": "cauda_longa",
+      "l3_decision": "ok_generico",
+      "rationale": "1 slug."
+    },
+    {
+      "cluster": "Genérico MS / EXCETO / promoção",
+      "branch_id": "adolescente_generico",
+      "count": 6,
+      "pct": 37.5,
+      "decision": "cauda_longa",
+      "l3_decision": "ok_generico",
+      "rationale": "Tema heterogêneo; sem metáfora única."
+    }
+  ],
+  "volume_threshold": {
+    "min_count": 5,
+    "min_pct": 10,
+    "note": "adolescente_antropometria tem 2 slugs (12,5%) mas sub-cluster Z-score = 1 slug — abaixo do limiar absoluto de 5."
+  },
+  "drift_total": 1,
+  "goldens_needed": ["examples/questao-premium-ibam-saude-adolescente-escore-z.json"]
+}

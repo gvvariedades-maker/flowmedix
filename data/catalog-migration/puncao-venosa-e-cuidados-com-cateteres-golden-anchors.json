@@ -1,0 +1,41 @@
+{
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "updated_at": "2026-07-11",
+  "anchors": [
+    {
+      "branch": "puncao_flebite",
+      "file": "examples/questao-premium-avancasp-puncao-infiltracao-flebite.json",
+      "readiness": "READY"
+    },
+    {
+      "branch": "puncao_dispositivo",
+      "file": "examples/questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "readiness": "READY"
+    },
+    {
+      "branch": "puncao_exceto",
+      "file": "examples/questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "readiness": "READY"
+    },
+    {
+      "branch": "puncao_tempo",
+      "file": "examples/questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+      "readiness": "READY"
+    },
+    {
+      "branch": "puncao_periferica_antissepsia",
+      "file": "examples/questao-premium-funpar-puncao-tecnica-periferica.json",
+      "readiness": "READY"
+    },
+    {
+      "branch": "puncao_ipcs_cvc",
+      "file": "examples/questao-premium-admtec-puncao-venosa-cateteres.json",
+      "readiness": "READY"
+    },
+    {
+      "branch": "puncao_generico",
+      "file": "examples/questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "readiness": "READY"
+    }
+  ]
+}

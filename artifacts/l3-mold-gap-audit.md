@@ -1,17 +1,17 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-10T15:54:42.772Z
+Gerado em: 2026-07-11T23:05:09.678Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
 | Fonte slugs | Supabase (vivo) |
-| Clusters mapeados | 168 |
-| Slugs auditados | 246 |
-| ok_existente | 16 |
-| ok_generico | 92 |
-| ramo_novo | 42 |
+| Clusters mapeados | 182 |
+| Slugs auditados | 145 |
+| ok_existente | 18 |
+| ok_generico | 94 |
+| ramo_novo | 47 |
 | molde_inedito | 14 |
 | Pacotes inéditos únicos | 10 |
 | Slugs com mismatch L3 | 0 |
@@ -200,6 +200,20 @@ Gerado em: 2026-07-10T15:54:42.772Z
 | Vias de Administração | Default — sem âncora temática | 11 | 4.7% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Vias de Administração | Certo ou errado | 8 | 3.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Vias de Administração | 1ª passagem hepática / biodisponibilidade | 3 | 1.3% | molde_redesign | `via_vf_absorcao` | absorption-speed-rail · via-reference-board · via-vf-juggle-… |
+| Cuidados na Administração de Medicamentos | Default — sem âncora temática | 28 | 22.8% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Cuidados na Administração de Medicamentos | Alto risco / conferência dupla | 19 | 15.4% | molde_redesign | `cam_certos_vf_caso` | cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap … |
+| Cuidados na Administração de Medicamentos | V/F — 9 certos em caso clínico | 18 | 14.6% | molde_redesign | `cam_certos_vf_caso` | cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap … |
+| Cuidados na Administração de Medicamentos | Documentação / registro | 16 | 13% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Cuidados na Administração de Medicamentos | INCORRETA / EXCETO | 9 | 7.3% | molde_redesign | `cam_exceto_conduta` | cam-exceto-rail · cam-exceto-reference-board · cam-exceto-ta… |
+| Cuidados na Administração de Medicamentos | Vigilância / reações adversas | 7 | 5.7% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Cuidados na Administração de Medicamentos | Preparo / sala de medicação | 6 | 4.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Cuidados na Administração de Medicamentos | V/F — protocolo MS / I–VI | 5 | 4.1% | molde_redesign | `cam_certos_vf_caso` | cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap … |
+| Cuidados na Administração de Medicamentos | Horário / aprazamento | 5 | 4.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Cuidados na Administração de Medicamentos | Prescrição ilegível / dúvida | 3 | 2.4% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Cuidados na Administração de Medicamentos | Certo ou errado | 2 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Cuidados na Administração de Medicamentos | Orientação ao paciente | 2 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Cuidados na Administração de Medicamentos | Nove certos — listagem | 2 | 1.6% | molde_redesign | `cam_certos_vf_caso` | cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap … |
+| Cuidados na Administração de Medicamentos | LASA / nomes semelhantes | 1 | 0.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Urgências e Emergências | RCP / SBV adulto (V/F ou protocolo) | 68 | 20% | molde_redesign | `urgencias_rcp_sbv` | urgencias-survival-chain-deck · urgencias-rcp-params-board ·… |
 | Urgências e Emergências | Default — sem âncora temática | 63 | 18.5% | molde_inedito | `urgencias_generico` | urgencias-emergency-hub · urgencias-protocol-reference-board… |
 | Urgências e Emergências | Urgências — conceito geral | 45 | 13.2% | molde_inedito | `urgencias_generico` | urgencias-emergency-hub · urgencias-protocol-reference-board… |
@@ -234,8 +248,8 @@ Gerado em: 2026-07-10T15:54:42.772Z
 | Saúde da Mulher | Saúde da mama | 28 | 10.6% | ok_existente | `mulher_mama` | mulher-mammography-spectrum · mulher-mama-board · mulher-mam… |
 | Saúde da Mulher | Saúde da mulher — conceito geral | 13 | 4.9% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde da Mulher | Anatomia feminina (drift?) | 13 | 4.9% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Saúde da Mulher | Puerpério / lactação | 9 | 3.4% | ok_generico | `mulher_puerperio` | morphological · reference_table · vertical · compare (genéri… |
-| Saúde da Mulher | Planejamento familiar / contracepção | 7 | 2.7% | ok_generico | `mulher_planejamento` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Mulher | Puerpério / lactação | 9 | 3.4% | ok_existente | `mulher_puerperio` | mulher-puerperio-timeline · mulher-puerperio-board · mulher-… |
+| Saúde da Mulher | Planejamento familiar / contracepção | 7 | 2.7% | ok_existente | `mulher_planejamento` | mulher-contraception-spectrum · mulher-planejamento-board · … |
 | Saúde da Mulher | Semiologia (drift?) | 6 | 2.3% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde da Mulher | Climatério / menopausa | 3 | 1.1% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde da Mulher | IST na gestação | 3 | 1.1% | ok_existente | `mulher_prenatal` | mulher-gestation-timeline · mulher-prenatal-board · mulher-p… |
@@ -263,4 +277,4 @@ Gerado em: 2026-07-10T15:54:42.772Z
 
 ## Slugs (amostra com branch inferido)
 
-- `—`: 246
+- `—`: 145

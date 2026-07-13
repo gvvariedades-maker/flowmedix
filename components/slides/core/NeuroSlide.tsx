@@ -28,12 +28,19 @@ import { AdmeJourneyRailConceptMap } from '../variants/AdmeJourneyRailConceptMap
 import { DoseEquivalenceRailConceptMap } from '../variants/DoseEquivalenceRailConceptMap';
 import { OxygenProtocolDeckConceptMap } from '../variants/OxygenProtocolDeckConceptMap';
 import { IvCareOrbitConceptMap } from '../variants/IvCareOrbitConceptMap';
+import { IvComplicationOrbitConceptMap } from '../variants/IvComplicationOrbitConceptMap';
+import { IvGaugeMatrixConceptMap } from '../variants/IvGaugeMatrixConceptMap';
+import { IvExcetoSpectrumConceptMap } from '../variants/IvExcetoSpectrumConceptMap';
+import { IvIntervalTimelineConceptMap } from '../variants/IvIntervalTimelineConceptMap';
+import { IvPunctureRailConceptMap } from '../variants/IvPunctureRailConceptMap';
+import { IvBundleOrbitConceptMap } from '../variants/IvBundleOrbitConceptMap';
 import { MorphingTimelineConceptMap } from '../variants/MorphingTimelineConceptMap';
 import { LabSpecimenChainConceptMap } from '../variants/LabSpecimenChainConceptMap';
 import { WoundStageTissueDeckConceptMap } from '../variants/WoundStageTissueDeckConceptMap';
 import { BurnDepthLayerDeckConceptMap } from '../variants/BurnDepthLayerDeckConceptMap';
 import { IstRiskRoutesDeckConceptMap } from '../variants/IstRiskRoutesDeckConceptMap';
 import { AdolescentPrivacyCurtainConceptMap } from '../variants/AdolescentPrivacyCurtainConceptMap';
+import { AdolescentGrowthZRailConceptMap } from '../variants/AdolescentGrowthZRailConceptMap';
 import { Nr32AnnexDeckConceptMap } from '../variants/Nr32AnnexDeckConceptMap';
 import { RespiratorioAsmaDpocDuelDeckConceptMap } from '../variants/RespiratorioAsmaDpocDuelDeckConceptMap';
 import { UrgenciasSurvivalChainDeckConceptMap } from '../variants/UrgenciasSurvivalChainDeckConceptMap';
@@ -256,6 +263,60 @@ export const NeuroSlideHub = ({
           />
         );
       }
+      if (layoutVariant === 'iv-complication-orbit') {
+        return (
+          <IvComplicationOrbitConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'iv-gauge-matrix') {
+        return (
+          <IvGaugeMatrixConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'iv-exceto-spectrum') {
+        return (
+          <IvExcetoSpectrumConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'iv-interval-timeline') {
+        return (
+          <IvIntervalTimelineConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'iv-puncture-rail') {
+        return (
+          <IvPunctureRailConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'iv-bundle-orbit') {
+        return (
+          <IvBundleOrbitConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
       if (layoutVariant === 'morphing-timeline') {
         return (
           <MorphingTimelineConceptMap
@@ -298,6 +359,15 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'adolescent-privacy-curtain') {
         return (
           <AdolescentPrivacyCurtainConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'adolescent-growth-z-rail') {
+        return (
+          <AdolescentGrowthZRailConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}

@@ -34,6 +34,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'burn-depth-layer-deck',
   'ist-risk-routes-deck',
   'adolescent-privacy-curtain',
+  'adolescent-growth-z-rail',
   'nr32-annex-deck',
   'respiratorio-asma-dpoc-duel-deck',
   'urgencias-survival-chain-deck',
@@ -55,6 +56,12 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'cam-high-risk-duo-deck',
   'cam-exceto-rail',
   'cam-documentacao-deck',
+  'iv-complication-orbit',
+  'iv-gauge-matrix',
+  'iv-exceto-spectrum',
+  'iv-interval-timeline',
+  'iv-puncture-rail',
+  'iv-bundle-orbit',
 ]);
 
 function countConceptItems(slide?: {

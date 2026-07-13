@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AVANT Enf — Logo preview (light / dark)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --font: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    header {
+      padding: 28px 32px 8px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    header p {
+      margin: 0;
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 32px 48px;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .panel {
+      border-radius: 20px;
+      padding: 28px 24px 32px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .panel.light {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #e2e8f0;
+    }
+    .panel.dark {
+      background: #010409;
+      color: #e2e8f0;
+    }
+    .panel h2 {
+      margin: 0 0 4px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.55;
+    }
+    .panel .hint {
+      margin: 0 0 24px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+    .row {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .slot label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 10px;
+    }
+    .slot img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
+    .icon-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .icon-row img {
+      width: 56px;
+      height: 56px;
+    }
+    .icon-row img.sm {
+      width: 40px;
+      height: 40px;
+    }
+    .icon-row img.xs {
+      width: 28px;
+      height: 28px;
+    }
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px 40px;
+      font-size: 12px;
+      color: #64748b;
+    }
+    code { font-size: 11px; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AVANT Enf — Protocolo AE</h1>
+    <p>
+      Chip forest <strong>#166534</strong> + monograma AE branco · wordmark <strong>AVANT</strong> /
+      <strong>· ENF</strong> · tipografia 700 · lima só no accent cyber.
+    </p>
+  </header>
+
+  <div class="grid">
+    <section class="panel light" aria-label="Preview light / editorial">
+      <h2>Light · Editorial</h2>
+      <p class="hint">Dashboard, auth, headers públicos (tone brand / light)</p>
+      <div class="row">
+        <div class="slot">
+          <label>Lockup horizontal</label>
+          <img src="../public/brand/avant-logo-horizontal-light.svg" alt="AVANT Enf lockup editorial" width="220" height="56" />
+        </div>
+        <div class="slot">
+          <label>Wordmark</label>
+          <img src="../public/brand/avant-logo-wordmark-light.svg" alt="AVANT Enf wordmark editorial" width="160" height="48" />
+        </div>
+        <div class="slot">
+          <label>Ícone AE (56 / 40 / 28)</label>
+          <div class="icon-row">
+            <img src="../public/brand/avant-logo-symbol.svg" alt="AE 56" />
+            <img class="sm" src="../public/brand/avant-logo-symbol.svg" alt="AE 40" />
+            <img class="xs" src="../public/brand/avant-logo-symbol.svg" alt="AE 28" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel dark" aria-label="Preview dark / cyber">
+      <h2>Dark · Cyber</h2>
+      <p class="hint">NeuroSlides, e-mail, landing escura (tone default)</p>
+      <div class="row">
+        <div class="slot">
+          <label>Lockup horizontal</label>
+          <img src="../public/brand/avant-logo-horizontal.svg" alt="AVANT Enf lockup cyber" width="268" height="72" />
+        </div>
+        <div class="slot">
+          <label>Wordmark</label>
+          <img src="../public/brand/avant-logo-wordmark.svg" alt="AVANT Enf wordmark cyber" width="160" height="48" />
+        </div>
+        <div class="slot">
+          <label>App icon</label>
+          <img src="../public/brand/avant-app-icon.svg" alt="AVANT Enf app icon" width="96" height="96" style="border-radius:22px" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    Assets em <code>public/brand/</code> · componente React <code>components/brand/AvantLogo.tsx</code> ·
+    tokens <code>lib/brand/avantLogoConstants.ts</code>.
+    Abra este HTML pelo filesystem ou sirva a pasta do repo para carregar os SVGs.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g14",
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "status": "applied",
+  "handcraft_at": "2026-07-11",
+  "handcraft_by": "composer-2.5",
+  "priority": "P0 — fechamento catálogo (lote 5/5)",
+  "slug_count": 6,
+  "pedagogical_branch_target": "mixed",
+  "branches": {
+    "cam_generico": 3,
+    "cam_exceto_conduta": 1,
+    "cam_alto_risco": 1,
+    "cam_certos_vf_caso": 1
+  },
+  "notes": "Fechamento 123/123: reconstituição, EXCETO preparo VO+SF, Facet vigilância (10×9 certos), insulina alto risco, 5Cs Decreto 94.406, IESES pediatria",
+  "anchors": [
+    "examples/questao-premium-fepese-cuidados-insulina-alto-risco.json",
+    "examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json",
+    "examples/questao-premium-avancasp-cuidados-documentacao-vf.json",
+    "examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json"
+  ],
+  "anchor_slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+  "handcraft_grammar": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-pedagogy-errors.json",
+  "workflow": [
+    "npm run plan:cuidados-na-administracao-de-medicamentos-g14",
+    "npm run catalog:export-lote -- --lote=cuidados-na-administracao-de-medicamentos-g14 --from-manifest=data/catalog-migration/cuidados-na-administracao-de-medicamentos-g14/manifest.json",
+    "Handcraft golden-v1 por ramo forte",
+    "npm run validate:goldens -- --lote=cuidados-na-administracao-de-medicamentos-g14 --strict",
+    "npm run audit:questao-readiness -- --lote=cuidados-na-administracao-de-medicamentos-g14 --strict-v3-pedagogy",
+    "npm run audit:slug-alignment -- --lote=cuidados-na-administracao-de-medicamentos-g14 --strict",
+    "npm run audit:anchor-review -- --lote=cuidados-na-administracao-de-medicamentos-g14 --record-pass --reviewer=agent --skip-capture",
+    "npm run catalog:apply-lote -- --lote=cuidados-na-administracao-de-medicamentos-g14 --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-11",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cuidados-na-administracao-de-medicamentos-g14.json"
+  }
+}

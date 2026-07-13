@@ -1,0 +1,44 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g06",
+  "generated_at": "2026-07-12T05:57:51.790Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 4,
+  "passed": 4,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

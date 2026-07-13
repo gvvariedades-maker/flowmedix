@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { hasPremiumStubMarkers } from '@/lib/catalogMigration/upgradePremiumHybrid';
+import { hasPremiumStubMarkers } from '@/lib/catalogMigration/premiumStubMarkers';
 import { QuestaoCompletaSchema } from '@/lib/validations';
 
 const exclude = JSON.parse(

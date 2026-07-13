@@ -1,0 +1,39 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g11",
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "status": "applied",
+  "handcraft_at": "2026-07-11",
+  "handcraft_by": "composer-2.5",
+  "priority": "P1 — cauda cam_generico (lote 2/5)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "cam_generico",
+  "branches": {
+    "cam_generico": 5,
+    "cam_exceto_conduta": 2,
+    "cam_certos_vf_caso": 1
+  },
+  "notes": "LASA, via tópica/olho, anticoagulante, preparo injetável EXCETO, domicílio/chás, descarte parenterais, lacuna cuidado terapêutico",
+  "anchors": [
+    "examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json",
+    "examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json"
+  ],
+  "anchor_slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+  "handcraft_grammar": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-pedagogy-errors.json",
+  "workflow": [
+    "npm run plan:cuidados-na-administracao-de-medicamentos-g11",
+    "npm run catalog:export-lote -- --lote=cuidados-na-administracao-de-medicamentos-g11 --from-manifest=data/catalog-migration/cuidados-na-administracao-de-medicamentos-g11/manifest.json",
+    "Handcraft golden-v1 — bridge/center/cards/compare semântico",
+    "npm run validate:goldens -- --lote=cuidados-na-administracao-de-medicamentos-g11 --strict",
+    "npm run audit:questao-readiness -- --lote=cuidados-na-administracao-de-medicamentos-g11 --strict-v3-pedagogy",
+    "npm run audit:slug-alignment -- --lote=cuidados-na-administracao-de-medicamentos-g11 --strict",
+    "npm run audit:anchor-review -- --lote=cuidados-na-administracao-de-medicamentos-g11 --record-pass --reviewer=agent --skip-capture",
+    "npm run catalog:apply-lote -- --lote=cuidados-na-administracao-de-medicamentos-g11 --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-11",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cuidados-na-administracao-de-medicamentos-g11.json"
+  }
+}

@@ -136,7 +136,7 @@ export function ReportErrorDialog({
         return;
       }
 
-      addToast('Reporte enviado com sucesso. Obrigado por ajudar a melhorar o AVANT.', 'success');
+      addToast('Reporte enviado com sucesso. Obrigado por ajudar a melhorar o AVANT Enf.', 'success');
       onSuccess?.(data.report?.id);
       resetForm();
       setOpen(false);

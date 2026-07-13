@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-11T18:37:10.762Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g12",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780008241722-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4817
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-seguranca-do-paciente-1779563436357-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3042
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2177
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-seguranca-do-paciente-1779563448133-9",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBAM",
+      "avant_codigo": 3065
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1512
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4417
+    },
+    {
+      "modulo_slug": "itame-enfermagem-seguranca-do-paciente-1777102861438-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 718
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-seguranca-do-paciente-1777102678563-8",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 649
+    }
+  ]
+}

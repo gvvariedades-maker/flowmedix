@@ -4,7 +4,6 @@
  */
 
 import type { GoldenContentLintIssue } from '@/lib/goldenContentStandard';
-import { isSinaisSubtopico } from '@/lib/catalogMigration/upgradePremiumSinais';
 import {
   isConclusionRow,
   isSvRowMoldCompatible,
@@ -12,6 +11,11 @@ import {
   resolveSvKindForRow,
   type SvKind,
 } from '@/lib/slides/vitalsSlideUtils';
+
+function isSinaisSubtopico(subtopico: string): boolean {
+  const n = subtopico.trim().toLowerCase();
+  return n === 'verificação de sinais vitais' || n === 'sinais vitais';
+}
 
 type GoldenRow = {
   label?: string;

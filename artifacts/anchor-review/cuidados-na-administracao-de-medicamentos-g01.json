@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T22:09:50.944Z",
+  "generated_at": "2026-07-11T19:56:30.560Z",
   "lote": "cuidados-na-administracao-de-medicamentos-g01",
   "anchor_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
   "subtopico": "Cuidados na Administração de Medicamentos",
@@ -10,7 +10,7 @@
     "automated_pass": true,
     "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
   "checklist": [
     {
       "id": 1,

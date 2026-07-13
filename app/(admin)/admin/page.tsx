@@ -472,7 +472,7 @@ export default function AdminMaster() {
           <div>
             <h2 className="font-black italic uppercase text-lg text-slate-900">Landings de concurso</h2>
             <p className="text-slate-500 text-sm mt-1">
-              Crie e publique LPs reutilizáveis por edital — funil AVANT Pro.
+              Crie e publique LPs reutilizáveis por edital — funil AVANT Enf Pro.
             </p>
           </div>
           <Link

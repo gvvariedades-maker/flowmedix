@@ -95,6 +95,14 @@ export type PedagogicalBranchId =
   | 'urgencias_anafilaxia'
   | 'urgencias_queimadura'
   | 'urgencias_generico'
+  // Punção Venosa e Cuidados com Cateteres
+  | 'puncao_flebite'
+  | 'puncao_dispositivo'
+  | 'puncao_exceto'
+  | 'puncao_tempo'
+  | 'puncao_periferica_antissepsia'
+  | 'puncao_ipcs_cvc'
+  | 'puncao_generico'
   // Saúde da Mulher
   | 'mulher_prenatal'
   | 'mulher_parto'
@@ -119,6 +127,15 @@ export const ADOLESCENTE_GENERIC_DESIGN: SubtopicDesign = {
   goldenRule: 'reference_table',
   logicFlow: 'vertical',
   dangerZone: 'compare',
+};
+
+/** Escore Z / Caderneta — trilho de faixas antropométricas (brief l3 antropometria). */
+const ADOLESCENTE_ANTHROPOMETRY_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'adolescent-growth-z-rail',
+  goldenRule: 'adolescent-z-band-board',
+  logicFlow: 'adolescent-z-classify-tap',
+  dangerZone: 'adolescent-z-threshold-trap',
 };
 
 const CME_DEFAULT: SubtopicDesign = {
@@ -310,6 +327,64 @@ const CAM_DOCUMENTACAO_MOLD: SubtopicDesign = {
   goldenRule: 'cam-documentacao-board',
   logicFlow: 'cam-documentacao-vf-tap',
   dangerZone: 'cam-documentacao-trap-arena',
+};
+
+/** Complicações IV — órbita diferencial + label-swap (infiltração × flebite × hematoma). */
+const PUNCAO_FLEBITE_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'iv-complication-orbit',
+  goldenRule: 'iv-differential-board',
+  logicFlow: 'iv-complication-tap-flow',
+  dangerZone: 'iv-label-swap-trap',
+};
+
+/** Fallback Punção — genérico sem pacote IPCS global. */
+const PUNCAO_GENERIC_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'bridge',
+  goldenRule: 'reference_table',
+  logicFlow: 'cards',
+  dangerZone: 'compare',
+};
+
+const PUNCAO_DISPOSITIVO_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'iv-gauge-matrix',
+  goldenRule: 'iv-device-reference-board',
+  logicFlow: 'iv-device-tap-flow',
+  dangerZone: 'iv-gauge-mismatch-trap',
+};
+
+const PUNCAO_EXCETO_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'iv-exceto-spectrum',
+  goldenRule: 'iv-exceto-command-board',
+  logicFlow: 'iv-exceto-tap-flow',
+  dangerZone: 'iv-exceto-intruder-trap',
+};
+
+const PUNCAO_TEMPO_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'iv-interval-timeline',
+  goldenRule: 'iv-interval-board',
+  logicFlow: 'iv-interval-tap-flow',
+  dangerZone: 'iv-interval-swap-trap',
+};
+
+const PUNCAO_PERIFERICA_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'iv-puncture-rail',
+  goldenRule: 'iv-antisepsis-board',
+  logicFlow: 'iv-puncture-tap-flow',
+  dangerZone: 'iv-order-invert-trap',
+};
+
+const PUNCAO_IPCS_CVC_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'iv-bundle-orbit',
+  goldenRule: 'iv-bundle-mesh-reveal',
+  logicFlow: 'iv-bundle-tap-flow',
+  dangerZone: 'iv-bundle-break-trap',
 };
 
 const CALC_DOSE_MOLD: SubtopicDesign = {
@@ -598,7 +673,7 @@ const URGENCIAS_EMERGENCY_GENERIC_MOLD: SubtopicDesign = {
 export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchId, SubtopicDesign>>> = {
   'saude do adolescente': {
     adolescente_etica_sigilo: ADOLESCENTE_ETHICS_MOLD,
-    adolescente_antropometria: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_antropometria: ADOLESCENTE_ANTHROPOMETRY_MOLD,
     adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
@@ -606,7 +681,7 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
   },
   adolescente: {
     adolescente_etica_sigilo: ADOLESCENTE_ETHICS_MOLD,
-    adolescente_antropometria: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_antropometria: ADOLESCENTE_ANTHROPOMETRY_MOLD,
     adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
@@ -690,6 +765,33 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     via_vf_absorcao: VIA_VF_MOLD,
     via_tecnica_admin: VIA_TECNICA_MOLD,
     via_generico: VIA_GENERIC_MOLD,
+  },
+  'puncao venosa e cuidados com cateteres': {
+    puncao_flebite: PUNCAO_FLEBITE_MOLD,
+    puncao_dispositivo: PUNCAO_DISPOSITIVO_MOLD,
+    puncao_exceto: PUNCAO_EXCETO_MOLD,
+    puncao_tempo: PUNCAO_TEMPO_MOLD,
+    puncao_periferica_antissepsia: PUNCAO_PERIFERICA_MOLD,
+    puncao_ipcs_cvc: PUNCAO_IPCS_CVC_MOLD,
+    puncao_generico: PUNCAO_GENERIC_MOLD,
+  },
+  'puncao venosa': {
+    puncao_flebite: PUNCAO_FLEBITE_MOLD,
+    puncao_dispositivo: PUNCAO_DISPOSITIVO_MOLD,
+    puncao_exceto: PUNCAO_EXCETO_MOLD,
+    puncao_tempo: PUNCAO_TEMPO_MOLD,
+    puncao_periferica_antissepsia: PUNCAO_PERIFERICA_MOLD,
+    puncao_ipcs_cvc: PUNCAO_IPCS_CVC_MOLD,
+    puncao_generico: PUNCAO_GENERIC_MOLD,
+  },
+  cateteres: {
+    puncao_flebite: PUNCAO_FLEBITE_MOLD,
+    puncao_dispositivo: PUNCAO_DISPOSITIVO_MOLD,
+    puncao_exceto: PUNCAO_EXCETO_MOLD,
+    puncao_tempo: PUNCAO_TEMPO_MOLD,
+    puncao_periferica_antissepsia: PUNCAO_PERIFERICA_MOLD,
+    puncao_ipcs_cvc: PUNCAO_IPCS_CVC_MOLD,
+    puncao_generico: PUNCAO_GENERIC_MOLD,
   },
   'cuidados na administracao de medicamentos': {
     cam_certos_vf_caso: CAM_CERTOS_VF_MOLD,
@@ -920,11 +1022,9 @@ const NUTRITION_ANTHROPOMETRY: RegExp[] = [
 
 const ADOLESCENT_ETHICS: RegExp[] = [
   /sigilo|confidencial|quebra de sigilo|quebrar sigilo/i,
-  /escuta qualificada|privacidade|acolhimento|v[ií]nculo/i,
-  /gravidez|gestante|gesta[cç][aã]o|pr[eé][\s-]?natal/i,
+  /escuta qualificada|privacidade\s+(?:na\s+)?consulta|consulta.{0,30}privacidade/i,
+  /acolhimento\s+sem\s+julgamento|espa[cç]o do adolescente/i,
   /\bcaps\b|aten[cç][aã]o psicossocial/i,
-  /contracep|orienta[cç][aã]o sexual/i,
-  /autonomia|consentimento|respons[aá]vel legal/i,
 ];
 
 /** Violência / rede de proteção — não usar moldes de sigilo em consulta. */
@@ -1069,6 +1169,41 @@ const CAM_DOCUMENTACAO: RegExp[] = [
   /registro certo|documenta[cç][aã]o certa|prontu[aá]rio/i,
   /anotar.*ap[oó]s administrar|registrar.*hor[aá]rio.*dose.*via/i,
   /certo\s*6\b/i,
+];
+
+const PUNCAO_FLEBITE: RegExp[] = [
+  /infiltra[cç][aã]o|flebite|hematoma|extravasamento|esclerose/i,
+  /complica[cç][aã]o.*(venos|cateter|acesso venoso|iv\b)/i,
+  /tecido subcut[aâ]neo|fora do vaso|inflama[cç][aã]o.*veia/i,
+  /deslocamento da agulha|perfura[cç][aã]o da parede/i,
+];
+
+const PUNCAO_DISPOSITIVO: RegExp[] = [
+  /jelco|scalp|calibre|\b(14|16|18|20|22|24)\s*g\b|gauge/i,
+  /dispositivo venoso|agulha.?cateter|cateter perif[eé]ric/i,
+];
+
+const PUNCAO_EXCETO: RegExp[] = [
+  /\bexceto\b/i,
+  /incorret[oa]\s+afirmar|alternativa\s+incorreta|assinale a alternativa incorreta/i,
+  /administra[cç][aã]o endovenosa.*exceto|pun[cç][aã]o.*exceto/i,
+];
+
+const PUNCAO_TEMPO: RegExp[] = [
+  /troca.*equipo|equipos?.*(24|48|72|96)\s*h|perman[eê]ncia.*cateter/i,
+  /curativo.*(24|48|72)\s*h|intervalo.*infus/i,
+  /observa[cç][aã]o p[oó]s|observar.*sinais.*ap[oó]s/i,
+];
+
+const PUNCAO_PERIFERICA: RegExp[] = [
+  /antissepsia|álcool\s*70|clorexidina.*pun[cç][aã]o/i,
+  /bisel.*cima|sele[cç][aã]o de veia|veia proeminente/i,
+  /pun[cç][aã]o perif[eé]rica|cateter novo.*tentativa|proximal.*distal/i,
+];
+
+const PUNCAO_IPCS: RegExp[] = [
+  /bundle|ipcs|corrente sangu[ií]nea|cvc\b|cateter central/i,
+  /barreira est[eé]ril m[aá]xima|infec[cç][aã]o.*cateter venoso central/i,
 ];
 
 const CALC_DOSE: RegExp[] = [
@@ -1222,6 +1357,13 @@ export function hasSubtopicBranchDesign(subtopico: string | undefined): boolean 
 }
 
 function inferAdolescentBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  // Anorexia/bulimia com IMC no enunciado → saúde mental (não antropometria/escore Z)
+  if (
+    countPatternMatches(corpus, ADOLESCENT_MENTAL) > 0 &&
+    /anorexia|bulimia|transtorno alimentar|imagem corporal|autoles[aã]o|suic[ií]dio/i.test(corpus)
+  ) {
+    return 'adolescente_saude_mental';
+  }
   if (familyId === 'calc' || countPatternMatches(corpus, NUTRITION_ANTHROPOMETRY) > 0) {
     return 'adolescente_antropometria';
   }
@@ -1366,12 +1508,52 @@ function inferViaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchI
   return 'via_generico';
 }
 
+function hasPuncaoExcetoCommand(text: string): boolean {
+  return (
+    /\bexceto\b/i.test(text) ||
+    /incorret[oa]\s+afirmar|assinale a alternativa incorreta|senten[cç]a incorreta|identifique a.*incorreta|afirmativa incorreta|alternativa incorreta/i.test(
+      text,
+    ) ||
+    /n[aã]o\s+representa\s+(um\s+)?dos/i.test(text)
+  );
+}
+
+function inferPuncaoBranch(
+  corpus: string,
+  familyId?: FamilyId,
+  instruction?: string,
+): PedagogicalBranchId {
+  const commandText = instruction?.trim() ? instruction : corpus;
+
+  if (hasPuncaoExcetoCommand(commandText)) {
+    return 'puncao_exceto';
+  }
+
+  const ipcsScore = countPatternMatches(corpus, PUNCAO_IPCS);
+  if (ipcsScore >= 2) return 'puncao_ipcs_cvc';
+
+  const flebiteScore = countPatternMatches(corpus, PUNCAO_FLEBITE);
+  if (flebiteScore >= 1) return 'puncao_flebite';
+
+  const deviceScore = countPatternMatches(corpus, PUNCAO_DISPOSITIVO);
+  if (deviceScore >= 1) return 'puncao_dispositivo';
+
+  const tempoScore = countPatternMatches(corpus, PUNCAO_TEMPO);
+  if (tempoScore >= 1) return 'puncao_tempo';
+
+  const perifericaScore = countPatternMatches(corpus, PUNCAO_PERIFERICA);
+  if (perifericaScore >= 1) return 'puncao_periferica_antissepsia';
+
+  return 'puncao_generico';
+}
+
 function hasCamExcetoCommand(text: string): boolean {
   return (
     /\bexceto\b/i.test(text) ||
     /incorret[oa]\s+afirmar|assinale a alternativa incorreta|senten[cç]a incorreta|identifique a.*incorreta|afirmativa incorreta|alternativa incorreta/i.test(
       text,
     ) ||
+    /n[aã]o\s+representa\s+(um\s+)?dos/i.test(text) ||
     /n[aã]o condiz/i.test(text)
   );
 }
@@ -1414,6 +1596,14 @@ function inferCamBranch(
     return 'cam_documentacao';
   }
 
+  // EXCETO listagem MCQ — qual item NÃO é um dos 9 Certos (default cluster g08).
+  if (
+    certosScore >= 2 &&
+    /n[aã]o\s+constitui|qual\s+das.*n[aã]o\s+constitui/i.test(commandText)
+  ) {
+    return 'cam_generico';
+  }
+
   if (certosScore >= 2) return 'cam_certos_vf_caso';
 
   if (
@@ -1426,6 +1616,23 @@ function inferCamBranch(
 
   if (excetoScore >= 1) {
     return 'cam_exceto_conduta';
+  }
+
+  // Preparo/conceito — reconstituição; prontuário em distrator não vira cluster documentação.
+  if (
+    /reconstitui[cç][aã]o|entende-se por\b/i.test(commandText) &&
+    /pó|l[ií]quido|diluente|forma original|liofiliz/i.test(corpus)
+  ) {
+    return 'cam_generico';
+  }
+
+  // 10 certos (banca) + vigilância pós-administração — playbook cam_generico.
+  if (
+    /10 certos|dez certos/i.test(corpus) ||
+    (/vigil[aâ]ncia|efeitos?\s+colaterais|rea[cç][oõ]es?\s+adversas?/i.test(commandText) &&
+      certosScore >= 1)
+  ) {
+    return 'cam_generico';
   }
 
   if (documentacaoScore >= 1) {
@@ -1728,6 +1935,9 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('vias de administracao')) {
     return inferViaBranch(corpus, familyId);
+  }
+  if (mapKey.includes('puncao venosa') || mapKey.includes('cateteres')) {
+    return inferPuncaoBranch(corpus, familyId, instruction);
   }
   if (mapKey.includes('cuidados na administracao de medicamentos')) {
     return inferCamBranch(corpus, familyId, instruction);

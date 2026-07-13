@@ -5,6 +5,7 @@ import { getServerSession } from '@/lib/supabase/server-auth';
 import { userHasActiveMatricula } from '@/lib/concursos/entitlements';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
+import { BRAND_NAME } from '@/lib/brand/brandName';
 import { COMPARE_AVANT_SLIDES } from '@/lib/marketing/compareAvantAssets';
 import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 
@@ -21,7 +22,7 @@ const LandingHome = dynamic(() => import('@/components/landing/LandingHomeClient
   ),
 });
 
-const homeTitle = 'AVANT — Plataforma de Concursos para Técnico em Enfermagem';
+const homeTitle = `${BRAND_NAME} — Plataforma de Concursos para Técnico em Enfermagem`;
 const homeDescription =
   `Prepare-se para concursos de Técnico em Enfermagem com Estudo Reverso, NeuroSlides, revisão espaçada e plano diário automático. Questões reais de EBSERH e prefeituras. Comece grátis: ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}.`;
 
@@ -39,11 +40,11 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'AVANT — Estudo reverso para Técnico em Enfermagem',
+    title: `${BRAND_NAME} — Estudo reverso para Técnico em Enfermagem`,
     description:
       'O único método que transforma cada erro em aprendizado real — feito exclusivamente para Técnico em Enfermagem.',
     url: getAbsoluteUrl('/'),
-    siteName: 'AVANT',
+    siteName: BRAND_NAME,
     locale: 'pt_BR',
     type: 'website',
     images: [
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
         url: getAbsoluteUrl(COMPARE_AVANT_SLIDES[1].src),
         width: COMPARE_AVANT_SLIDES[1].width,
         height: COMPARE_AVANT_SLIDES[1].height,
-        alt: 'AVANT — NeuroSlides de estudo reverso para Técnico em Enfermagem',
+        alt: `${BRAND_NAME} — NeuroSlides de estudo reverso para Técnico em Enfermagem`,
       },
     ],
   },

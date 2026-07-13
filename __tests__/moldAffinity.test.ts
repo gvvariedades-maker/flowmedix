@@ -74,6 +74,43 @@ describe('moldAffinity', () => {
         }),
       ).toBe(false);
     });
+
+    it('aceita adolescent-growth-z-rail para escore Z + ramo antropometria', () => {
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-growth-z-rail', conceptMapSlide, {
+          familyId: 'calc',
+          subtopico,
+          pedagogicalBranch: 'adolescente_antropometria',
+        }),
+      ).toBe(true);
+    });
+
+    it('rejeita adolescent-growth-z-rail para obesidade sem escore Z (amauc)', () => {
+      const slide = {
+        type: 'concept_map' as const,
+        items: [
+          { label: 'Quadro', detail: 'Obesidade na adolescência e comorbidades', icon: 'Scale' },
+          { label: 'Metabólico', detail: 'Diabetes tipo 2', icon: 'Activity' },
+        ],
+      };
+      expect(
+        bespokeMoldHasContentAffinity('adolescent-growth-z-rail', slide, {
+          familyId: 'conceito',
+          subtopico,
+          pedagogicalBranch: 'adolescente_antropometria',
+        }),
+      ).toBe(false);
+    });
+
+    it('shouldApplySubtopicMold usa z-band-board quando afinidade passa', () => {
+      expect(
+        shouldApplySubtopicMold('adolescent-z-band-board', goldenRuleSlide, {
+          familyId: 'calc',
+          subtopico,
+          pedagogicalBranch: 'adolescente_antropometria',
+        }),
+      ).toBe(true);
+    });
   });
 
   describe('Doenças Respiratórias Crônicas — ramo pedagógico', () => {

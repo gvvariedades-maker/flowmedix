@@ -1,22 +1,16 @@
-<!-- AVANT: ícone 56×56 — gradiente verde premium, letra A (avantLogoConstants). -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" aria-label="AVANT">
+<!-- AVANT Enf: selo circular Protocolo AE interlocked. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" aria-label="AVANT Enf">
   <defs>
-    <linearGradient id="avant-icon" x1="10%" y1="0%" x2="90%" y2="100%">
-      <stop offset="0%" stop-color="#4ade80"/>
-      <stop offset="40%" stop-color="#22c55e"/>
-      <stop offset="100%" stop-color="#15803d"/>
+    <linearGradient id="avant-seal" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#1a7a3e"/>
+      <stop offset="42%" stop-color="#166534"/>
+      <stop offset="100%" stop-color="#14532d"/>
     </linearGradient>
   </defs>
-  <rect width="56" height="56" rx="14" fill="url(#avant-icon)"/>
-  <rect width="56" height="10" rx="14" fill="#fff" fill-opacity="0.30"/>
-  <text
-    x="28"
-    y="35"
-    text-anchor="middle"
-    fill="#ffffff"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="27"
-    font-weight="800"
-    style="text-shadow: 0 1px 0 rgba(0,0,0,0.35)"
-  >A</text>
+  <circle cx="28" cy="28" r="28" fill="url(#avant-seal)"/>
+  <path fill="#ffffff" d="M26.4 10.2h3.2v35.6h-3.2z"/>
+  <path fill="#ffffff" d="M26.4 10.2L11.8 45.8h3.9L26.4 15.6z"/>
+  <path fill="#ffffff" d="M15.4 28.4H43.2v2H15.4z"/>
+  <path fill="#ffffff" d="M29.6 10.2h13.6v2H29.6z"/>
+  <path fill="#ffffff" d="M29.6 43.8h13.6v2H29.6z"/>
 </svg>

@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
-  if (!post) return { title: 'Artigo | AVANT' };
+  if (!post) return { title: 'Artigo | AVANT Enf' };
 
   const { title, description, date } = post.meta;
   return {

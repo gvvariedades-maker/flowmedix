@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-11T20:43:43.233Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g14",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

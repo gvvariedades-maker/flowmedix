@@ -1,6 +1,6 @@
 {
   "lote": "cuidados-na-administracao-de-medicamentos-g07",
-  "exported_at": "2026-07-11T00:50:17.909Z",
+  "exported_at": "2026-07-11T04:53:40.388Z",
   "source": "supabase",
   "filters": {
     "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g07/manifest.json"

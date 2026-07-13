@@ -1,0 +1,35 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "status": "handcraft_complete",
+  "priority": "P1 — cauda final (calc + VF + CVC + periférica + arterial + EV)",
+  "slug_count": 10,
+  "workflow": [
+    "npm run plan:puncao-venosa-e-cuidados-com-cateteres-g15",
+    "npm run catalog:export-lote -- --lote=puncao-venosa-e-cuidados-com-cateteres-g15 --from-manifest=data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g15/manifest.json",
+    "npm run handcraft:puncao-venosa-e-cuidados-com-cateteres-g15",
+    "npm run validate:goldens -- --lote=puncao-venosa-e-cuidados-com-cateteres-g15 --strict",
+    "npm run audit:questao-readiness -- --lote=puncao-venosa-e-cuidados-com-cateteres-g15 --strict-v2-pedagogy",
+    "npm run enrich:puncao-guideline-meta -- --lote=puncao-venosa-e-cuidados-com-cateteres-g15 --write",
+    "npm run audit:slug-alignment -- --lote=puncao-venosa-e-cuidados-com-cateteres-g15 --strict"
+  ],
+  "gates": {
+    "readiness": "10/10",
+    "validate_goldens_strict": "pass",
+    "slug_alignment_strict": "pass",
+    "numeric_factcheck": "pass",
+    "dry_run_apply": "pass"
+  },
+  "anchor_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
+  "anchors": [
+    "examples/questao-premium-gama-puncao-scalp-jelco-calibre.json"
+  ],
+  "pedagogical_branch_target": "puncao_generico",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-12",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g15.json"
+  }
+}

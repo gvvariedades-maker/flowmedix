@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-07-08",
+  "updated_at": "2026-07-13",
   "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
   "anchors": {
     "cme_vf_ce": {
@@ -32,6 +32,36 @@
       "slug": "cpcon-saude-adolescente-gravidez",
       "lote": "saude-adolescente-g01",
       "json_path": "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json"
+    },
+    "adolescente_etica_sigilo": {
+      "pedagogical_branch": "adolescente_etica_sigilo",
+      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+      "lote": "saude-adolescente-g01",
+      "json_path": "data/catalog-migration/saude-adolescente-g01/questions/idecan-enfermagem-saude-do-adolescente-1778712426701-6.json"
+    },
+    "adolescente_antropometria": {
+      "pedagogical_branch": "adolescente_antropometria",
+      "slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "lote": "saude-adolescente-g02",
+      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0.json"
+    },
+    "adolescente_desenvolvimento": {
+      "pedagogical_branch": "adolescente_desenvolvimento",
+      "slug": "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+      "lote": "saude-adolescente-g02",
+      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/nao-informado-geral-saude-do-adolescente-1777104229064-0.json"
+    },
+    "adolescente_saude_mental": {
+      "pedagogical_branch": "adolescente_saude_mental",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "lote": "saude-adolescente-g02",
+      "json_path": "data/catalog-migration/saude-adolescente-g02/questions/cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1.json"
+    },
+    "adolescente_violencia_protecao": {
+      "pedagogical_branch": "adolescente_violencia_protecao",
+      "slug": "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+      "lote": "saude-adolescente-g01",
+      "json_path": "data/catalog-migration/saude-adolescente-g01/questions/funcern-enfermagem-saude-do-adolescente-1777104229064-1.json"
     },
     "respiratorio_crise": {
       "pedagogical_branch": "respiratorio_crise",
@@ -236,6 +266,48 @@
       "slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
       "lote": "cuidados-na-administracao-de-medicamentos-golden",
       "json_path": "examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json"
+    },
+    "puncao_flebite": {
+      "pedagogical_branch": "puncao_flebite",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
+      "lote": "puncao-venosa-golden",
+      "json_path": "examples/questao-premium-avancasp-puncao-infiltracao-flebite.json"
+    },
+    "puncao_generico": {
+      "pedagogical_branch": "puncao_generico",
+      "slug": "gama-enfermagem-puncao-scalp-jelco-calibre",
+      "lote": "puncao-venosa-golden",
+      "json_path": "examples/questao-premium-gama-puncao-scalp-jelco-calibre.json"
+    },
+    "puncao_dispositivo": {
+      "pedagogical_branch": "puncao_dispositivo",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+      "lote": "puncao-venosa-golden",
+      "json_path": "examples/questao-premium-gama-puncao-scalp-jelco-calibre.json"
+    },
+    "puncao_exceto": {
+      "pedagogical_branch": "puncao_exceto",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+      "lote": "puncao-venosa-golden",
+      "json_path": "examples/questao-premium-cev-urca-puncao-exceto-med-endovenosa.json"
+    },
+    "puncao_tempo": {
+      "pedagogical_branch": "puncao_tempo",
+      "slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+      "lote": "puncao-venosa-golden",
+      "json_path": "examples/questao-premium-cpcon-puncao-troca-equipos-intervalos.json"
+    },
+    "puncao_periferica_antissepsia": {
+      "pedagogical_branch": "puncao_periferica_antissepsia",
+      "slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+      "lote": "puncao-venosa-golden",
+      "json_path": "examples/questao-premium-funpar-puncao-tecnica-periferica.json"
+    },
+    "puncao_ipcs_cvc": {
+      "pedagogical_branch": "puncao_ipcs_cvc",
+      "slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "lote": "puncao-venosa-golden",
+      "json_path": "examples/questao-premium-admtec-puncao-venosa-cateteres.json"
     },
     "via_vf_absorcao": {
       "pedagogical_branch": "via_vf_absorcao",

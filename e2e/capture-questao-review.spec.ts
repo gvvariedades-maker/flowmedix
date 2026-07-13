@@ -35,40 +35,97 @@ const onboardingDismissScript = () => {
   window.localStorage.setItem('avant-estudo-reverso-welcome-seen', 'true');
 };
 
-async function answerAndEnterReverseStudy(page: import('@playwright/test').Page): Promise<void> {
-  const option = page.locator('button.btn-option-editorial, button.btn-option').filter({
-    hasText: /.+/,
-  });
-  const optionCount = await option.count();
-  if (optionCount === 0) return;
+type PlaywrightPage = import('@playwright/test').Page;
+type PlaywrightLocator = import('@playwright/test').Locator;
 
-  await option.first().click();
-  const confirm = page.getByRole('button', { name: /confirmar resposta/i });
-  await expect(confirm).toBeVisible({ timeout: 10_000 });
-  await confirm.click();
-
-  await expect(page.getByText(/você acertou|você errou/i)).toBeVisible({ timeout: 15_000 });
-
-  const activate = page.getByRole('button', { name: /ativar estudo reverso/i });
-  await expect(activate).toBeVisible({ timeout: 10_000 });
-  await activate.click();
-  await page.waitForTimeout(800);
+/** Overlay do estudo reverso (preview: absolute z-30; live: fixed). */
+function getReverseStudyShell(player: PlaywrightLocator): PlaywrightLocator {
+  return player.locator('div.z-30.flex.flex-col.overflow-hidden').first();
 }
 
+/** Completa interações in-slide (logic_flow tap, danger_zone compare) antes do screenshot. */
+async function advanceInSlideInteractions(shell: PlaywrightLocator, page: PlaywrightPage): Promise<void> {
+  for (let attempt = 0; attempt < 24; attempt++) {
+    const tapNext = shell.locator('button.bg-sky-500').first();
+    if (await tapNext.isVisible().catch(() => false)) {
+      if (await tapNext.isEnabled().catch(() => false)) {
+        await tapNext.click();
+        await page.waitForTimeout(250);
+        continue;
+      }
+    }
+
+    const stepBtn = shell.getByRole('button', { name: /próximo passo/i }).first();
+    const stepVisible = await stepBtn.isVisible().catch(() => false);
+    const stepEnabled = stepVisible ? await stepBtn.isEnabled().catch(() => false) : false;
+    if (!stepVisible || !stepEnabled) break;
+    await stepBtn.click();
+    await page.waitForTimeout(250);
+  }
+
+  for (let attempt = 0; attempt < 12; attempt++) {
+    const revealBtn = shell
+      .locator('button')
+      .filter({ hasText: /toque para ver/i })
+      .first();
+    if (!(await revealBtn.isVisible().catch(() => false))) break;
+    if (!(await revealBtn.isEnabled().catch(() => false))) break;
+    await revealBtn.click();
+    await page.waitForTimeout(250);
+  }
+
+  for (let attempt = 0; attempt < 8; attempt++) {
+    const trapBtn = shell.locator('button[aria-expanded="false"]').first();
+    if (!(await trapBtn.isVisible().catch(() => false))) break;
+    await trapBtn.click();
+    await page.waitForTimeout(250);
+  }
+}
+
+async function answerQuestion(page: PlaywrightPage, player: PlaywrightLocator): Promise<void> {
+  const option = player.getByRole('radio').first();
+  await expect(option).toBeVisible({ timeout: 90_000 });
+  await option.click();
+
+  const confirm = player.getByRole('button', { name: /confirmar resposta/i });
+  await expect(confirm).toBeVisible({ timeout: 15_000 });
+  await confirm.click();
+  await expect(player.getByText(/você acertou|você errou/i)).toBeVisible({ timeout: 15_000 });
+}
+
+async function enterReverseStudy(page: PlaywrightPage, player: PlaywrightLocator): Promise<PlaywrightLocator> {
+  const activate = player.getByRole('button', { name: /ativar estudo reverso/i });
+  await expect(activate).toBeVisible({ timeout: 10_000 });
+  await activate.click();
+
+  const shell = getReverseStudyShell(player);
+  await expect(shell).toBeVisible({ timeout: 15_000 });
+  await page.waitForTimeout(500);
+  return shell;
+}
+
+function getStudyFooterNextButton(player: PlaywrightLocator): PlaywrightLocator {
+  return player
+    .locator('button.btn-editorial-primary')
+    .filter({ hasText: /^Próximo/i })
+    .filter({ hasNotText: /questão/i });
+}
 async function captureReverseStudySlides(
-  page: import('@playwright/test').Page,
-  player: import('@playwright/test').Locator,
+  page: PlaywrightPage,
+  player: PlaywrightLocator,
+  shell: PlaywrightLocator,
 ): Promise<void> {
   for (let i = 0; i < 4; i++) {
-    await player.screenshot({
+    await advanceInSlideInteractions(shell, page);
+    await shell.scrollIntoViewIfNeeded();
+    await shell.screenshot({
       path: path.join(OUT_DIR, `0${i + 3}-slide${i + 1}.png`),
       type: 'png',
     });
 
     if (i < 3) {
-      // Rodapé do player (btn-editorial-primary); variantes logic_flow tap têm outro "Próximo" no slide.
-      const next = player.locator('button.btn-editorial-primary').filter({ hasText: /^próximo/i });
-      await expect(next).toBeVisible({ timeout: 10_000 });
+      const next = getStudyFooterNextButton(player);
+      await expect(next).toBeVisible({ timeout: 15_000 });
       await next.click();
       await page.waitForTimeout(700);
     }
@@ -104,12 +161,15 @@ test.describe('Captura questao-review', () => {
     await expect(page.getByTestId('questao-review-root')).toBeVisible({ timeout: 90_000 });
 
     const player = page.getByTestId('questao-review-player');
-    await expect(player).toBeVisible();
-    await page.waitForTimeout(800);
+    await expect(player).toBeVisible({ timeout: 90_000 });
+    await expect(player.getByRole('radio').first()).toBeVisible({ timeout: 90_000 });
+    await page.waitForTimeout(400);
     await player.screenshot({ path: path.join(OUT_DIR, '01-enunciado.png'), type: 'png' });
 
-    await answerAndEnterReverseStudy(page);
+    await answerQuestion(page, player);
     await player.screenshot({ path: path.join(OUT_DIR, '02-feedback.png'), type: 'png' });
-    await captureReverseStudySlides(page, player);
+
+    const studyShell = await enterReverseStudy(page, player);
+    await captureReverseStudySlides(page, player, studyShell);
   });
 });

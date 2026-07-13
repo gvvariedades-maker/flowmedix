@@ -12,17 +12,58 @@
     "content_review": {
       "reviewed_at": "2026-06-22",
       "reviewer": "content-pilot",
-      "guideline_snapshot": "Técnica de punção venosa periférica e administração endovenosa",
+      "guideline_snapshot": "Anvisa / COFEN — Acesso venoso, bundle CVC e manutenção (antissepsia e técnica; documentação COFEN 358/2009) · Técnica de punção venosa periférica e administração endovenosa",
       "exam_vs_current": "none"
     },
     "sources": [
+      {
+        "id": "potter-perry-fundamentos-11ed-2024",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Acesso venoso e complicações",
+        "year": 2024,
+        "covers": [
+          "antissepsia da pele",
+          "acesso venoso periférico"
+        ]
+      },
+      {
+        "id": "sae-cofen-358",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Processo de Enfermagem e SAE",
+        "year": 2009,
+        "url": "https://www.cofen.gov.br/",
+        "covers": [
+          "documentação",
+          "registro de enfermagem"
+        ]
+      },
+      {
+        "id": "puncao-cateter-anvisa",
+        "tier": "A",
+        "issuer": "Anvisa / COFEN",
+        "title": "Punção venosa e cuidados com cateteres",
+        "year": 2021,
+        "url": "https://www.gov.br/anvisa/",
+        "covers": [
+          "antissepsia da pele",
+          "documentação",
+          "registro de enfermagem",
+          "acesso venoso periférico"
+        ]
+      },
       {
         "id": "cofen-puncao",
         "tier": "A",
         "issuer": "COFEN",
         "title": "Procedimentos de enfermagem — punção venosa periférica",
         "year": 2022,
-        "covers": ["antissepsia", "seleção de veia", "técnica de punção"]
+        "covers": [
+          "antissepsia",
+          "seleção de veia",
+          "técnica de punção"
+        ]
       }
     ]
   },

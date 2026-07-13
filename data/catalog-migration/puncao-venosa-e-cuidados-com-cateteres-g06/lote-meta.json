@@ -1,0 +1,29 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g06",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "status": "handcraft_complete",
+  "priority": "P0 — puncao_ipcs_cvc (Bundle CVC / IPCS)",
+  "slug_count": 4,
+  "pedagogical_branch_target": "puncao_ipcs_cvc",
+  "anchors": [
+    "examples/questao-premium-admtec-puncao-venosa-cateteres.json"
+  ],
+  "anchor_slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+  "workflow": [
+    "npm run plan:puncao-venosa-e-cuidados-com-cateteres-g06",
+    "npm run catalog:export-lote -- --lote=puncao-venosa-e-cuidados-com-cateteres-g06 --from-manifest=data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g06/manifest.json",
+    "npm run handcraft:puncao-venosa-e-cuidados-com-cateteres-g06",
+    "npm run validate:goldens -- --lote=puncao-venosa-e-cuidados-com-cateteres-g06 --strict",
+    "npm run audit:questao-readiness -- --lote=puncao-venosa-e-cuidados-com-cateteres-g06 --strict-v2-pedagogy",
+    "npm run enrich:puncao-guideline-meta -- --lote=puncao-venosa-e-cuidados-com-cateteres-g06 --write",
+    "npm run audit:slug-alignment -- --lote=puncao-venosa-e-cuidados-com-cateteres-g06 --strict",
+    "npm run catalog:patch-pedagogical-branch -- --lote=puncao-venosa-e-cuidados-com-cateteres-g06 --reconcile-branch --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-12",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g06.json"
+  }
+}

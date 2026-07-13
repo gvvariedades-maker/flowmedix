@@ -162,7 +162,7 @@ export default function EsqueciSenhaPage() {
                 <p className="text-sm text-slate-500 font-medium">
                   Ainda não tem conta?{' '}
                   <Link href="/register" className="text-indigo-600 font-black hover:text-indigo-700">
-                    Cadastre-se na AVANT
+                    Cadastre-se na AVANT Enf
                   </Link>
                 </p>
               </div>

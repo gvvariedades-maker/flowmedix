@@ -116,6 +116,7 @@ function main(): void {
           'examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json',
           'examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json',
         ],
+        anchor_slug: 'facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5',
         workflow: [
           'npm run plan:cuidados-na-administracao-de-medicamentos-g07',
           'npm run catalog:export-lote -- --lote=cuidados-na-administracao-de-medicamentos-g07 --from-manifest=data/catalog-migration/cuidados-na-administracao-de-medicamentos-g07/manifest.json',

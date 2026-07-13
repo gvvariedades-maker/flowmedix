@@ -1,11 +1,16 @@
 /**
- * AVANT logo — cores, dimensões base e tokens de escala.
- * Fonte única para AvantLogo, PWA (public/brand/avant-pwa-icon.png) e e-mail estático.
+ * AVANT Enf logo — Protocolo AE Ultra Premium.
+ *
+ * Pesquisa (monogram/luxury/healthcare):
+ * - Monograma = letras fundidas (interlock), não lettermark lado a lado
+ * - Contraste vertical/horizontal (tradição Didone em geometria)
+ * - Selagem circular (enclosed) > squircle de app icon
+ * - Tracking aéreo no wordmark; ENF em small-caps sem bullet
+ * - Verde dual: forest profundo + lima só no CTA/accent
  */
 
 export type AvantLogoSizeToken = 'nav' | 'md' | 'lg';
 
-/** Escala por contexto: nav ≈ 72% (header compacto), lg = 100% (auth/cards). */
 export const AVANT_LOGO_SIZE_SCALE: Record<AvantLogoSizeToken, number> = {
   nav: 0.72,
   md: 0.86,
@@ -20,88 +25,113 @@ export function scaleAvantLogoPx(base: number, size: AvantLogoSizeToken): number
   return Math.round(base * getAvantLogoScale(size));
 }
 
-/** Letter-spacing do wordmark por contexto (px na escala lg). */
+/** Tracking aéreo (~0.22em) — luxury signifier. */
 export const AVANT_LOGO_WORDMARK_LETTER_SPACING: Record<AvantLogoSizeToken, number> = {
-  nav: 5,
-  md: 7,
-  lg: 9,
+  nav: 3.2,
+  md: 4.2,
+  lg: 5.2,
 } as const;
 
 export function getAvantLogoWordmarkLetterSpacing(size: AvantLogoSizeToken): number {
   const base = AVANT_LOGO_WORDMARK_LETTER_SPACING[size];
-  return Math.round(base * getAvantLogoScale(size));
+  return Math.round(base * getAvantLogoScale(size) * 10) / 10;
 }
 
 export const AVANT_LOGO_COLORS = {
-  iconGradientHighlight: '#4ade80',
-  iconGradientStart: '#22c55e',
-  iconGradientEnd: '#15803d',
-  /** Sheen superior do chip — faixa fina (~18% altura). */
-  iconSheen: 'rgba(255,255,255,0.30)',
-  iconSheenHeightRatio: 0.18,
-  iconInsetHighlight: 'rgba(255,255,255,0.35)',
-  iconInsetShadow: 'rgba(0,0,0,0.25)',
-  iconOuterShadow:
-    '0 4px 16px rgba(34, 197, 94, 0.45), 0 2px 6px rgba(0, 0, 0, 0.15)',
-  iconLetterShadow: '0 1px 0 rgba(0,0,0,0.35), 0 -1px 0 rgba(255,255,255,0.15)',
-  /** Deslocamento óptico do «A» (cap height parece alta demais no centro geométrico). */
-  iconLetterOffsetY: -1,
+  iconForest: '#166534',
+  iconForestDeep: '#14532d',
+  /** Gradiente vertical sutil — profundidade tipo foil, sem candy. */
+  iconForestGradient: 'linear-gradient(165deg, #1a7a3e 0%, #166534 42%, #14532d 100%)',
+  iconCyberBg: '#0d0d18',
+  iconCyberRing: '#8fe020',
+  monogramFill: '#ffffff',
+  /** Anel interno (emboss / selo). */
+  iconInsetHighlight: 'inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.18)',
+  iconOuterShadowEditorial: '0 1px 2px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(22, 101, 52, 0.12)',
+  iconOuterShadowCyber: '0 0 0 1px rgba(143, 224, 32, 0.30)',
   lockupInnerBg: '#0d0d18',
   lockupInnerInsetShadow:
-    'inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.20)',
-  accentBar: '#22c55e',
-  accentBarGlow: 'rgba(34, 197, 94, 0.55)',
-  wordmarkGlow: 'rgba(74, 222, 128, 0.40)',
-  /** Editorial v2 — wordmark em fundo claro (auth / headers públicos) */
+    'inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.20)',
+  accentBar: '#8fe020',
+  accentBarGlow: 'rgba(143, 224, 32, 0.28)',
   wordmarkLight: '#0f172a',
-  /** Editorial v2 — wordmark no dashboard (sidebar, alinhado ao chip verde) */
-  wordmarkEditorial: '#166534',
+  wordmarkEditorial: '#0f172a',
+  wordmarkCyber: '#f8fafc',
+  subtitleEditorial: '#64748b',
+  subtitleLight: '#64748b',
+  subtitleCyber: '#94a3b8',
+  hairlineEditorial: 'rgba(22, 101, 52, 0.28)',
+  hairlineCyber: 'rgba(143, 224, 32, 0.35)',
+  wordmarkGlow: 'rgba(143, 224, 32, 0.18)',
 } as const;
 
 export const AVANT_LOGO_GRADIENTS = {
-  icon: `linear-gradient(160deg, ${AVANT_LOGO_COLORS.iconGradientHighlight} 0%, ${AVANT_LOGO_COLORS.iconGradientStart} 40%, ${AVANT_LOGO_COLORS.iconGradientEnd} 100%)`,
-  wordmark: 'linear-gradient(130deg, #a7f3d0 0%, #22c55e 50%, #4ade80 100%)',
-  wordmarkStops: ['#a7f3d0', '#22c55e', '#4ade80'] as const,
+  icon: AVANT_LOGO_COLORS.iconForestGradient,
+  wordmark: 'linear-gradient(130deg, #ecfdf5 0%, #86efac 45%, #8fe020 100%)',
+  wordmarkStops: ['#ecfdf5', '#86efac', '#8fe020'] as const,
   shellBorder:
-    'linear-gradient(160deg, rgba(255,255,255,0.25) 0%, rgba(34, 197, 94, 0.60) 50%, rgba(22, 163, 74, 0.40) 100%)',
+    'linear-gradient(160deg, rgba(255,255,255,0.14) 0%, rgba(143, 224, 32, 0.35) 50%, rgba(22, 101, 52, 0.45) 100%)',
 } as const;
 
-/** Dimensões em px na escala 1 (lg). Aplicar `scaleAvantLogoPx` por `size`. */
 export const AVANT_LOGO_DIMENSIONS = {
   icon: {
     size: 56,
-    radius: 14,
+    /** Círculo = selo premium (enclosed monogram). */
+    radius: 28,
   },
   lockupInner: {
-    radius: 16,
-    paddingTop: 14,
-    paddingRight: 36,
-    paddingBottom: 14,
-    paddingLeft: 14,
-    accentBarWidth: 4,
-    gap: 12,
+    radius: 14,
+    paddingTop: 10,
+    paddingRight: 24,
+    paddingBottom: 10,
+    paddingLeft: 10,
+    accentBarWidth: 2,
+    gap: 14,
   },
   lockupShell: {
-    radius: 18,
-    padding: 2,
+    radius: 16,
+    padding: 1,
   },
   wordmark: {
-    fontSize: 26,
-    /** Base legado; preferir AVANT_LOGO_WORDMARK_LETTER_SPACING por size. */
-    letterSpacingPx: 9,
-    fontWeight: 800,
+    fontSize: 21,
+    letterSpacingPx: 5.2,
+    fontWeight: 600,
+    lineHeight: 1.05,
+  },
+  subtitle: {
+    fontSize: 9,
+    fontWeight: 600,
+    letterSpacingPx: 3.2,
     lineHeight: 1,
+    gapFromWordmark: 7,
+    /** Small-caps limpo — sem bullet (research: middle-dot lê como tipografia improvisada). */
+    label: 'ENF',
+    hairlineWidth: 18,
+    hairlineHeight: 1,
   },
 } as const;
 
 /**
- * Sombras do shell externo (lockup).
- * Manter em sync com `@keyframes avantLogoPulse` em app/globals.css.
- * Halo verde bicromo: camada próxima intensa + camada difusa suave.
+ * Monograma AE interlocked (viewBox 0 0 56 56).
+ * Travessão do A atravessa o spine e vira a barra média do E = um só motivo.
+ * Verticais ~3.2 · horizontais ~2.0 (contraste Didone geométrico).
  */
+export const AVANT_AE_MONOGRAM_PATHS = [
+  /** Spine vertical (peso forte) */
+  'M26.4 10.2h3.2v35.6h-3.2z',
+  /** Asa esquerda do A */
+  'M26.4 10.2L11.8 45.8h3.9L26.4 15.6z',
+  /** Travessão interlock A→E (peso fino, contínua) */
+  'M15.4 28.4H43.2v2H15.4z',
+  /** Barra superior do E */
+  'M29.6 10.2h13.6v2H29.6z',
+  /** Barra inferior do E */
+  'M29.6 43.8h13.6v2H29.6z',
+] as const;
+
 export const AVANT_LOGO_SHELL_SHADOW = {
-  rest: '0 0 14px rgba(34, 197, 94, 0.22), 0 0 32px rgba(74, 222, 128, 0.10)',
-  peak: '0 0 22px rgba(34, 197, 94, 0.50), 0 0 48px rgba(74, 222, 128, 0.20)',
+  rest: '0 0 0 1px rgba(143, 224, 32, 0.20), 0 4px 20px rgba(0, 0, 0, 0.35)',
+  peak: '0 0 0 1px rgba(143, 224, 32, 0.40), 0 4px 28px rgba(143, 224, 32, 0.12)',
 } as const;
 
 export const AVANT_LOGO_ANIMATION = {
@@ -112,11 +142,9 @@ export const AVANT_LOGO_ANIMATION = {
   pulseIteration: 'infinite',
 } as const;
 
-/** Variável CSS Plus Jakarta Sans (definida em app/layout.tsx). */
 export const AVANT_LOGO_FONT_FAMILY =
   'var(--font-plus-jakarta-sans, "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif)';
 
-/** Padding do lockup interno como string CSS (escala 1). */
 export function getAvantLogoLockupPadding(size: AvantLogoSizeToken = 'lg'): string {
   const s = getAvantLogoScale(size);
   const d = AVANT_LOGO_DIMENSIONS.lockupInner;

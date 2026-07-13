@@ -49,7 +49,7 @@ export function AssinaturaClient({
           Minha conta
         </p>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
-          Assinatura AVANT Pro
+          Assinatura AVANT Enf Pro
         </h1>
         <p className="mt-3 text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
           Gerencie seu plano, forma de pagamento ou cancelamento. Você continua com acesso até o fim
@@ -78,7 +78,7 @@ export function AssinaturaClient({
                 {isAdmin && isPro
                   ? 'Acesso completo'
                   : isPro
-                    ? 'AVANT PRO'
+                    ? 'AVANT ENF PRO'
                     : 'Plano gratuito'}
               </span>
             </div>
@@ -164,7 +164,7 @@ export function AssinaturaClient({
               ) : (
                 <>
                   <Zap size={16} fill="currentColor" aria-hidden />
-                  Assinar AVANT Pro
+                  Assinar AVANT Enf Pro
                 </>
               )}
             </button>

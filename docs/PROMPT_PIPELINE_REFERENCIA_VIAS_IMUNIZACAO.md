@@ -1,6 +1,8 @@
-# Prompt — pipeline com barra Vias + Imunização
+# Prompt — pipeline com barra Vias + Imunização + Adolescente
 
-Use em **conversa nova** (Agent mode) para levar **qualquer subtópico** ao mesmo padrão de **conteúdo** e **slides** de **Vias de Administração** e **Imunização**: handcraft golden-v1, moldes L3, gates L1–L6, `applied` + `production_ready`.
+Use em **conversa nova** (Agent mode) para levar **qualquer subtópico** ao mesmo padrão de **conteúdo** e **slides** de **Vias de Administração**, **Imunização** e **Saúde do Adolescente**: handcraft golden-v1, moldes L3, gates L1–L6, `applied` + `production_ready`.
+
+> **Nome do arquivo:** `PROMPT_PIPELINE_REFERENCIA_VIAS_IMUNIZACAO.md` (legado) — cobre os **três** pacotes flagship abaixo.
 
 **Canônico equivalente:** [`PIPELINE_COMPLETO_CONVERSA.md`](PIPELINE_COMPLETO_CONVERSA.md) — este arquivo é o **prompt expandido** com referências explícitas aos pacotes flagship.
 
@@ -31,6 +33,15 @@ Substitua pelo nome **exato** de `CLAUDE.md` §9 (ex.: `Punção Venosa e Cuidad
 |--------|-------|----------------|
 | **Vias de Administração** | `production_ready`, 208 slugs | Ramos L3 (`via_vf_absorcao`, `via_tecnica_admin`, `via_generico`); moldes bespoke VF; repair mis-tags; `scripts/handcraft-vias-de-administracao-g*.ts` |
 | **Imunização** | `production_ready`, g01–g83+ | Moldes PNI (calendário, cadeia frio, VF intervalos); `apply:imunizacao-ready-batch` |
+| **Saúde do Adolescente** | `production_ready`, 16/16, onda nota-10 | 6 ramos L3 (`adolescente_etica_sigilo` … `adolescente_generico`); A4-mínimo onda 3 (`stamp:a4-minimo`); `ADOLESCENTE_BRANCHES` e2e; L6 checklist + captures; relatório `artifacts/saude-adolescente-nota10-report.md` |
+
+### Qual referência usar
+
+| Situação | Copiar de |
+|----------|-----------|
+| Pacote grande, escala, moldes bespoke VF/PNI | **Vias** ou **Imunização** |
+| Pacote pequeno/médio, fechar A4+L6+L3 com checklist | **Saúde do Adolescente** |
+| É tica/sigilo, VF gravidez, saúde mental, escore Z | JSONs `saude-adolescente-g01/g02` + `lib/guidelines/saudeAdolescente.ts` |
 
 **Invariantes de conteúdo (L2):** [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) · skill `avant-json-template` · anti-reciclagem `danger_zone` · sem vazamento de ramo.
 
@@ -67,9 +78,10 @@ Anexos obrigatórios:
 @data/catalog-migration/handcraft-registry.json
 @.cursor/skills/avant-json-template/SKILL.md
 
-Referência de qualidade (mesmo padrão Vias + Imunização):
+Referência de qualidade (mesmo padrão Vias + Imunização + Adolescente):
 - Vias de Administração: production_ready, moldes L3 bespoke, 208 slugs handcraft
 - Imunização: production_ready, moldes PNI, lotes g01+
+- Saúde do Adolescente: production_ready, 16/16, A4-mínimo 16/16, L6+L3 6 ramos (onda nota-10)
 - Template: @examples/_TEMPLATE-golden-v1.json
 - Âncoras: anchor_glob do playbook do pacote no registry
 
@@ -112,14 +124,16 @@ Por lote:
 - audit:questao-readiness --strict-v2-pedagogy → [READY]
 - validate:goldens --strict
 - enrich/guideline + slug-alignment + numeric-factcheck + patch-pedagogical-branch (playbook)
+- stamp:a4-minimo (se pacote em `a4MinimoRegistry` — ex. Adolescente onda 3)
 - capture:questao-review (opcional A4)
 
 Apply Supabase:
 - catalog:apply-lote --dry-run → --apply SOMENTE quando eu escrever "pode aplicar"
 - Batch apply se existir (modelo: apply:vias-ready-batch, apply:imunizacao-ready-batch)
 
-Mis-tags (meta.subtopico ≠ segmento do slug): repair antes do promote
-(modelo: catalog:repair-vias-mis-tags)
+Mis-tags (meta.subtopico ≠ segmento do slug):
+- **Vias:** `catalog:repair-vias-mis-tags` (slug segment → meta)
+- **Adolescente:** aceitar drift de URL legada se `meta.subtopico` canônico — ver `artifacts/catalog-repair-saude-adolescente-mis-tags.json` (não renomear `modulo_slug`)
 
 GATE Fase 1: status=applied, handcraft_applied === total_slugs
 
@@ -130,7 +144,7 @@ FASE 2 — Qualidade vendável
 2. catalog:preflight em todos g*
 3. audit:handcraft-dod + slug-alignment --strict + numeric-factcheck
 4. audit:anchor-review + L6 pass em cada g*
-5. npx playwright test e2e/visual-mold-regression.spec.ts
+5. npx playwright test e2e/visual-mold-regression.spec.ts --grep "<Pacote>" (ex. Adolescente: `Saúde do Adolescente — moldes L3`)
 6. audit:subtopico-quality -- --subtopico="..." --promote
 
 GATE Fase 2: production_status=production_ready
@@ -161,11 +175,11 @@ Conversa 1: Mapeamento L3: <Subtópico>
 Conversa 2: Pipeline completo: <Subtópico>  (+ este arquivo anexado)
 ```
 
-Espelha Vias: L3 → g01…gNN → apply → repair mis-tags → `--promote`.
+Espelha Vias/Adolescente: L3 → g01…gNN → apply → A4 stamp (se onda) → `--promote`.
 
 ---
 
-## Checklist — igual a Vias/Imunização
+## Checklist — igual a Vias / Imunização / Adolescente
 
 | Camada | Critério |
 |--------|----------|
@@ -192,4 +206,6 @@ Espelha Vias: L3 → g01…gNN → apply → repair mis-tags → `--promote`.
 | [`QUALITY_VENDAVEL_CONVERSA.md`](QUALITY_VENDAVEL_CONVERSA.md) | Só Fase 2 |
 | [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) | Fase 0 |
 | [`PROGRAMA_CATALOGO_41.md`](PROGRAMA_CATALOGO_41.md) | 41 subtópicos |
+| [`PROTOCOLO_A4_MINIMO_ADOLESCENTE.md`](PROTOCOLO_A4_MINIMO_ADOLESCENTE.md) | A4-mínimo onda 3 |
+| [`artifacts/saude-adolescente-nota10-report.md`](../artifacts/saude-adolescente-nota10-report.md) | Onda nota-10 fechada |
 | Rule Cursor | `.cursor/rules/pipeline-completo.mdc` |

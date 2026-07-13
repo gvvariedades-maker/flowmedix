@@ -29,6 +29,7 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'via-reference-board',
   'pk-pd-reference-board',
   'adolescent-sigilo-spectrum',
+  'adolescent-z-band-board',
   'burn-rule-nine-board',
   'trabalho-nr32-reference-board',
   'respiratorio-spo2-reference-board',
@@ -51,6 +52,11 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'cam-high-risk-protocol-board',
   'cam-exceto-reference-board',
   'cam-documentacao-board',
+  'iv-differential-board',
+  'iv-device-reference-board',
+  'iv-exceto-command-board',
+  'iv-interval-board',
+  'iv-antisepsis-board',
 ]);
 
 /**
@@ -92,6 +98,7 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'via-reference-board') return 'via-reference-board';
   if (explicitVariant === 'pk-pd-reference-board') return 'pk-pd-reference-board';
   if (explicitVariant === 'adolescent-sigilo-spectrum') return 'adolescent-sigilo-spectrum';
+  if (explicitVariant === 'adolescent-z-band-board') return 'adolescent-z-band-board';
   if (explicitVariant === 'burn-rule-nine-board') return 'burn-rule-nine-board';
   if (explicitVariant === 'trabalho-nr32-reference-board') return 'trabalho-nr32-reference-board';
   if (explicitVariant === 'respiratorio-spo2-reference-board') return 'respiratorio-spo2-reference-board';
@@ -108,6 +115,11 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'cam-high-risk-protocol-board') return 'cam-high-risk-protocol-board';
   if (explicitVariant === 'cam-exceto-reference-board') return 'cam-exceto-reference-board';
   if (explicitVariant === 'cam-documentacao-board') return 'cam-documentacao-board';
+  if (explicitVariant === 'iv-differential-board') return 'iv-differential-board';
+  if (explicitVariant === 'iv-device-reference-board') return 'iv-device-reference-board';
+  if (explicitVariant === 'iv-exceto-command-board') return 'iv-exceto-command-board';
+  if (explicitVariant === 'iv-interval-board') return 'iv-interval-board';
+  if (explicitVariant === 'iv-antisepsis-board') return 'iv-antisepsis-board';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

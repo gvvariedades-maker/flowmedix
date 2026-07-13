@@ -14,8 +14,8 @@ const BRAND_MARK_SIZE: Record<NonNullable<AvantBrandMarkProps['size']>, AvantLog
 };
 
 /**
- * Lockup compacto do dashboard — delega a `AvantLogo` (escala e tokens únicos).
- * Editorial: wordmark verde `#166534`; cyber: lockup neon (landing).
+ * Lockup compacto do dashboard — delega a `AvantLogo` (AE + AVANT / Enf).
+ * Editorial: wordmark `#166534` + Enf; cyber: lockup com glow mínimo.
  */
 export function AvantBrandMark({
   size = 'md',

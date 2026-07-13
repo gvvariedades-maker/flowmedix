@@ -5,7 +5,7 @@ import {
   hasGenericSlides,
   hasPremiumStubMarkers,
   PREMIUM_STUB_MARKERS,
-} from '@/lib/catalogMigration/upgradePremiumHybrid';
+} from '@/lib/catalogMigration/premiumStubMarkers';
 
 const EXAMPLES_DIR = path.join(process.cwd(), 'examples');
 

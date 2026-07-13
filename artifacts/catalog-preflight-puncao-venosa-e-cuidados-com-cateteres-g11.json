@@ -1,0 +1,36 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g11",
+  "generated_at": "2026-07-12T05:58:17.375Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 3,
+  "passed": 3,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

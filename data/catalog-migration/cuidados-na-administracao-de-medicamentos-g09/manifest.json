@@ -1,0 +1,18 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g09",
+  "exported_at": "2026-07-11T04:53:54.644Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g09/manifest.json"
+  },
+  "slugs": [
+    "instituto-verbena-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-6",
+    "isba-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-0",
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-6",
+    "selecon-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-1",
+    "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-1",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-2",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-3",
+    "vunesp-enfermagem-seguranca-do-paciente-1777102861438-1"
+  ]
+}

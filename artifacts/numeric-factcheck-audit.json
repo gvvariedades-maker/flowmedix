@@ -1,47 +1,55 @@
 {
-  "generated_at": "2026-07-08T19:48:00.626Z",
+  "generated_at": "2026-07-13T17:36:03.468Z",
   "scanned": 8,
   "passed": 8,
   "failed": 0,
-  "warn_only": 0,
+  "warn_only": 1,
   "results": [
     {
-      "slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+      "slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+      "slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
       "ok": true,
-      "issues": []
+      "issues": [
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"2019 Semana\" não encontrado na guideline de Saúde do Adolescente.",
+          "severity": "warn",
+          "claim": "2019 Semana",
+          "path": "reverse_study_slides"
+        }
+      ]
     },
     {
-      "slug": "funcern-enfermagem-exames-laboratoriais-1779563631609-6",
+      "slug": "nao-informado-geral-saude-do-adolescente-1777104229064-0",
       "ok": true,
       "issues": []
     }

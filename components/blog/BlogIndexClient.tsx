@@ -184,7 +184,7 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
                 Transforme leitura em aprovação com método.
               </h2>
               <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed font-medium text-slate-400 sm:text-lg">
-                Crie sua conta gratuita no AVANT e comece a estudar por questões reais, diagnóstico e Estudo Reverso.
+                Crie sua conta gratuita no AVANT Enf e comece a estudar por questões reais, diagnóstico e Estudo Reverso.
               </p>
               <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link

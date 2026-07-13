@@ -30,6 +30,7 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'pni-trap-chips' ||
     layoutVariant === 'ist-trap-chips' ||
     layoutVariant === 'adolescent-consent-gate' ||
+    layoutVariant === 'adolescent-z-threshold-trap' ||
     layoutVariant === 'burn-trap-arena' ||
     layoutVariant === 'trabalho-pep-trap-arena' ||
     layoutVariant === 'respiratorio-spo2-trap-arena' ||
@@ -41,6 +42,12 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'urgencias-pediatric-trap-arena' ||
     layoutVariant === 'urgencias-manchester-trap' ||
     layoutVariant === 'itu-catheter-trap' ||
+    layoutVariant === 'iv-label-swap-trap' ||
+    layoutVariant === 'iv-gauge-mismatch-trap' ||
+    layoutVariant === 'iv-exceto-intruder-trap' ||
+    layoutVariant === 'iv-interval-swap-trap' ||
+    layoutVariant === 'iv-order-invert-trap' ||
+    layoutVariant === 'iv-bundle-break-trap' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }

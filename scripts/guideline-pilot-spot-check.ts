@@ -16,7 +16,7 @@ import { loadEnvConfig } from '@next/env';
 loadEnvConfig(process.cwd());
 
 import { runFactCheck } from '@/lib/ai/factCheck';
-import { hasPremiumStubMarkers } from '@/lib/catalogMigration/upgradePremiumHybrid';
+import { hasPremiumStubMarkers } from '@/lib/catalogMigration/premiumStubMarkers';
 import { hasFlag, parseArg } from '@/lib/catalogMigration/cliArgs';
 import { getGuidelineForSubtopico } from '@/lib/guidelines';
 import { QuestaoCompletaSchema } from '@/lib/validations';

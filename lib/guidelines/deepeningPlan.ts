@@ -234,8 +234,8 @@ export const DEEPENING_BY_SUBTOPICO: Record<string, DeepeningSpec> = {
     phase: 'P0_manter',
     target_merged_entries: 40,
     edital_themes: ['Punção periférica', 'CVC/PICC bundle', 'Flebite', 'Manutenção e troca'],
-    sources_tier_a: ['Anvisa dispositivos invasivos', 'COFEN punção venosa'],
-    done_when: 'Manter; expandir INS flebite se lote punção falhar factcheck.',
+    sources_tier_a: ['Anvisa dispositivos invasivos', 'COFEN punção venosa', 'COFEN 358/2009'],
+    done_when: 'enrich:puncao-guideline-meta em todos os lotes golden-v1; factcheck L2b em claims numéricos.',
   },
   'Enfermagem em Centro Cirúrgico': {
     phase: 'P3_complementar',

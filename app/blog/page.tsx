@@ -4,12 +4,12 @@ import { getAllBlogPosts } from '@/lib/blog';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
 export const metadata: Metadata = {
-  title: 'Blog | AVANT',
+  title: 'Blog | AVANT Enf',
   description:
     'Artigos sobre Estudo Reverso, NeuroSlides e preparação para concursos de Técnico em Enfermagem (EBSERH, prefeituras e mais).',
   alternates: { canonical: '/blog' },
   openGraph: {
-    title: 'Blog | AVANT',
+    title: 'Blog | AVANT Enf',
     description:
       'Artigos sobre método de estudo, concursos de Técnico em Enfermagem e novidades da plataforma.',
     url: getAbsoluteUrl('/blog'),

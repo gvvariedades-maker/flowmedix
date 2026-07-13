@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-02T21:45:12.733Z",
-  "mode": "apply",
-  "scanned": 575,
-  "patched": 89,
-  "skipped": 0,
-  "subtopico_filter": "imunização",
+  "generated_at": "2026-07-11T04:52:33.239Z",
+  "mode": "dry-run",
+  "scanned": 191,
+  "patched": 0,
+  "skipped": 104,
+  "subtopico_filter": "cuidados na administração de medicamentos",
   "flags": {
-    "only_premium": true,
-    "only_golden_v1": false,
+    "only_premium": false,
+    "only_golden_v1": true,
     "force_family": false,
     "force_branch": false,
     "reconcile_branch": true

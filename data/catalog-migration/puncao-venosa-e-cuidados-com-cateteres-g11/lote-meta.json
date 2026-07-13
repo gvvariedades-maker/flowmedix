@@ -1,0 +1,28 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g11",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "status": "handcraft_complete",
+  "priority": "P0 — puncao_flebite (fim do cluster)",
+  "slug_count": 3,
+  "pedagogical_branch_target": "puncao_flebite",
+  "anchors": [
+    "examples/questao-premium-avancasp-puncao-infiltracao-flebite.json"
+  ],
+  "anchor_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-7",
+  "workflow": [
+    "npm run plan:puncao-venosa-e-cuidados-com-cateteres-g11",
+    "npm run catalog:export-lote -- --lote=puncao-venosa-e-cuidados-com-cateteres-g11 --from-manifest=data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g11/manifest.json",
+    "npm run handcraft:puncao-venosa-e-cuidados-com-cateteres-g11",
+    "npm run validate:goldens -- --lote=puncao-venosa-e-cuidados-com-cateteres-g11 --strict",
+    "npm run audit:questao-readiness -- --lote=puncao-venosa-e-cuidados-com-cateteres-g11 --strict-v2-pedagogy",
+    "npm run enrich:puncao-guideline-meta -- --lote=puncao-venosa-e-cuidados-com-cateteres-g11 --write",
+    "npm run audit:slug-alignment -- --lote=puncao-venosa-e-cuidados-com-cateteres-g11 --strict"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-12",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g11.json"
+  }
+}

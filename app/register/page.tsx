@@ -170,7 +170,7 @@ function RegisterForm() {
 
           {inviteToken ? (
             <p className="text-xs font-semibold text-[#166534]">
-              Convite AVANT Pro — após criar a conta, o Pro temporário será ativado automaticamente.
+              Convite AVANT Enf Pro — após criar a conta, o Pro temporário será ativado automaticamente.
             </p>
           ) : null}
         </div>
@@ -185,7 +185,7 @@ function RegisterForm() {
                   <p className="text-xs font-medium leading-relaxed text-green-800">
                     Se a confirmação por e-mail estiver ativa, abra o link enviado para{' '}
                     <strong className="text-green-900">{email.trim()}</strong> e depois entre no login. Você também
-                    deve receber um e-mail de boas-vindas do AVANT (verifique spam e promoções).
+                    deve receber um e-mail de boas-vindas do AVANT Enf (verifique spam e promoções).
                   </p>
                 </div>
               </div>

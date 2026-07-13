@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import {
+  AVANT_AE_MONOGRAM_PATHS,
   AVANT_LOGO_ANIMATION,
   AVANT_LOGO_COLORS,
   AVANT_LOGO_DIMENSIONS,
@@ -20,9 +21,8 @@ export type { AvantLogoSizeToken } from '@/lib/brand/avantLogoConstants';
 export type AvantLogoVariant = 'lockup' | 'icon';
 
 /**
- * - `default` — cyber (gradiente no wordmark + shell escuro no lockup)
- * - `light` — auth editorial: wordmark `#0f172a`
- * - `brand` — dashboard editorial: wordmark `#166534` (mesma regra do chip)
+ * - `default` — cyber (shell + selo forest + wordmark claro)
+ * - `light` / `brand` — editorial: slate + ENF + hairline
  */
 export type AvantLogoTone = 'default' | 'light' | 'brand';
 
@@ -30,57 +30,59 @@ export type AvantLogoProps = {
   variant?: AvantLogoVariant;
   size?: AvantLogoSizeToken;
   tone?: AvantLogoTone;
-  /** Default: true apenas em lockup cyber + size lg */
   animated?: boolean;
   href?: string;
   className?: string;
   'aria-label'?: string;
 };
 
-function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
+function AvantAeMonogram({ size }: { size: AvantLogoSizeToken }) {
   const iconPx = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.size, size);
-  const radius = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.radius, size);
-  const fontSize = Math.round(iconPx * 0.48);
-  const sheenHeight = Math.round(iconPx * AVANT_LOGO_COLORS.iconSheenHeightRatio);
+  return (
+    <svg
+      width={iconPx}
+      height={iconPx}
+      viewBox="0 0 56 56"
+      fill="none"
+      aria-hidden
+      className="absolute inset-0"
+    >
+      {AVANT_AE_MONOGRAM_PATHS.map((d) => (
+        <path key={d} d={d} fill={AVANT_LOGO_COLORS.monogramFill} />
+      ))}
+    </svg>
+  );
+}
+
+function AvantLogoIcon({
+  size,
+  tone,
+}: {
+  size: AvantLogoSizeToken;
+  tone: AvantLogoTone;
+}) {
+  const iconPx = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.size, size);
+  const isEditorial = tone === 'light' || tone === 'brand';
 
   return (
     <div
-      className="relative flex shrink-0 items-center justify-center"
+      className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-full"
       style={{
         width: iconPx,
         height: iconPx,
-        borderRadius: radius,
-        background: AVANT_LOGO_GRADIENTS.icon,
-        boxShadow: `${AVANT_LOGO_COLORS.iconOuterShadow}, inset 0 1px 0 ${AVANT_LOGO_COLORS.iconInsetHighlight}, inset 0 -1px 0 ${AVANT_LOGO_COLORS.iconInsetShadow}`,
+        background: AVANT_LOGO_COLORS.iconForestGradient,
+        boxShadow: isEditorial
+          ? `${AVANT_LOGO_COLORS.iconOuterShadowEditorial}, ${AVANT_LOGO_COLORS.iconInsetHighlight}`
+          : `${AVANT_LOGO_COLORS.iconOuterShadowCyber}, ${AVANT_LOGO_COLORS.iconInsetHighlight}`,
       }}
       aria-hidden
     >
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0"
-        style={{
-          height: sheenHeight,
-          borderRadius: `${radius}px ${radius}px 0 0`,
-          background: AVANT_LOGO_COLORS.iconSheen,
-        }}
-      />
-      <span
-        className="relative select-none text-white"
-        style={{
-          fontFamily: AVANT_LOGO_FONT_FAMILY,
-          fontWeight: 800,
-          fontSize,
-          lineHeight: 1,
-          textShadow: AVANT_LOGO_COLORS.iconLetterShadow,
-          transform: `translateY(${AVANT_LOGO_COLORS.iconLetterOffsetY}px)`,
-        }}
-      >
-        A
-      </span>
+      <AvantAeMonogram size={size} />
     </div>
   );
 }
 
-function AvantLogoWordmark({
+function AvantLogoWordmarkStack({
   size,
   tone,
 }: {
@@ -89,45 +91,68 @@ function AvantLogoWordmark({
 }) {
   const fontSize = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.wordmark.fontSize, size);
   const letterSpacing = getAvantLogoWordmarkLetterSpacing(size);
+  const subtitleSize = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.subtitle.fontSize, size);
+  const subtitleTracking = AVANT_LOGO_DIMENSIONS.subtitle.letterSpacingPx;
+  const stackGap = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.subtitle.gapFromWordmark, size);
+  const subtitleLabel = AVANT_LOGO_DIMENSIONS.subtitle.label;
+  const hairlineW = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.subtitle.hairlineWidth, size);
+  const hairlineH = AVANT_LOGO_DIMENSIONS.subtitle.hairlineHeight;
+  const isEditorial = tone === 'light' || tone === 'brand';
 
-  const baseStyle = {
+  const wordmarkBase = {
     fontFamily: AVANT_LOGO_FONT_FAMILY,
     fontSize,
     fontWeight: AVANT_LOGO_DIMENSIONS.wordmark.fontWeight,
     lineHeight: AVANT_LOGO_DIMENSIONS.wordmark.lineHeight,
     letterSpacing: `${letterSpacing}px`,
+  } as const;
+
+  const subtitleBase = {
+    fontFamily: AVANT_LOGO_FONT_FAMILY,
+    fontSize: subtitleSize,
+    fontWeight: AVANT_LOGO_DIMENSIONS.subtitle.fontWeight,
+    lineHeight: AVANT_LOGO_DIMENSIONS.subtitle.lineHeight,
+    letterSpacing: `${subtitleTracking}px`,
+    textTransform: 'uppercase' as const,
   };
 
-  if (tone === 'light' || tone === 'brand') {
-    return (
+  return (
+    <span className="inline-flex shrink-0 flex-col justify-center" style={{ gap: stackGap }}>
       <span
-        className="shrink-0 select-none"
+        className="select-none"
         style={{
-          ...baseStyle,
-          color:
-            tone === 'brand'
-              ? AVANT_LOGO_COLORS.wordmarkEditorial
-              : AVANT_LOGO_COLORS.wordmarkLight,
+          ...wordmarkBase,
+          color: isEditorial
+            ? AVANT_LOGO_COLORS.wordmarkEditorial
+            : AVANT_LOGO_COLORS.wordmarkCyber,
         }}
       >
         AVANT
       </span>
-    );
-  }
-
-  return (
-    <span
-      className="shrink-0 select-none"
-      style={{
-        ...baseStyle,
-        backgroundImage: AVANT_LOGO_GRADIENTS.wordmark,
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-        color: 'transparent',
-        filter: `drop-shadow(0 0 12px ${AVANT_LOGO_COLORS.wordmarkGlow})`,
-      }}
-    >
-      AVANT
+      <span className="inline-flex items-center" style={{ gap: Math.max(6, Math.round(stackGap * 1.2)) }}>
+        <span
+          aria-hidden
+          style={{
+            width: hairlineW,
+            height: hairlineH,
+            borderRadius: 1,
+            background: isEditorial
+              ? AVANT_LOGO_COLORS.hairlineEditorial
+              : AVANT_LOGO_COLORS.hairlineCyber,
+          }}
+        />
+        <span
+          className="select-none"
+          style={{
+            ...subtitleBase,
+            color: isEditorial
+              ? AVANT_LOGO_COLORS.subtitleEditorial
+              : AVANT_LOGO_COLORS.subtitleCyber,
+          }}
+        >
+          {subtitleLabel}
+        </span>
+      </span>
     </span>
   );
 }
@@ -139,14 +164,13 @@ export function AvantLogo({
   animated,
   href,
   className,
-  'aria-label': ariaLabel = 'AVANT — início',
+  'aria-label': ariaLabel = 'AVANT Enf — início',
 }: AvantLogoProps) {
   const isLight = tone === 'light' || tone === 'brand';
   const pulse =
     animated ?? (variant === 'lockup' && size === 'lg' && tone === 'default');
 
   const iconOnly = variant === 'icon';
-  const accentGlowPx = scaleAvantLogoPx(10, size);
 
   const lightLockup = (
     <div
@@ -155,8 +179,8 @@ export function AvantLogo({
         gap: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.gap, size),
       }}
     >
-      <AvantLogoIcon size={size} />
-      <AvantLogoWordmark size={size} tone={tone} />
+      <AvantLogoIcon size={size} tone={tone} />
+      <AvantLogoWordmarkStack size={size} tone={tone} />
     </div>
   );
 
@@ -187,20 +211,19 @@ export function AvantLogo({
           className="shrink-0 self-stretch"
           style={{
             width: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.accentBarWidth, size),
-            borderRadius: 2,
+            borderRadius: 1,
             background: AVANT_LOGO_COLORS.accentBar,
-            boxShadow: `0 0 ${accentGlowPx}px ${AVANT_LOGO_COLORS.accentBarGlow}`,
           }}
           aria-hidden
         />
-        <AvantLogoIcon size={size} />
-        <AvantLogoWordmark size={size} tone={tone} />
+        <AvantLogoIcon size={size} tone={tone} />
+        <AvantLogoWordmarkStack size={size} tone={tone} />
       </div>
     </div>
   );
 
   const content = iconOnly ? (
-    <AvantLogoIcon size={size} />
+    <AvantLogoIcon size={size} tone={tone} />
   ) : isLight ? (
     lightLockup
   ) : (

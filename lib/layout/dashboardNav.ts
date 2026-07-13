@@ -11,6 +11,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import type { MenuAccentKey } from '@/components/layout/MenuNavIconChip';
+import { BRAND_NAME } from '@/lib/brand/brandName';
 
 export type IsPathActiveFn = (path: string, exact?: boolean) => boolean;
 
@@ -52,7 +53,7 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
       },
       {
         label: 'Tutorial',
-        title: 'Como usar o AVANT',
+        title: `Como usar o ${BRAND_NAME}`,
         href: '/ajuda',
         icon: HelpCircle,
         accent: 'sky',

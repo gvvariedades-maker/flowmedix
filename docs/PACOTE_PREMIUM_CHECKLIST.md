@@ -205,27 +205,34 @@ Para cada cluster em `goldens_needed` (prioridade: maior volume primeiro):
 □ audit-premium-supabase --warn revisado
 ```
 
-### Caso de estudo — Punção Venosa (2026-06-22)
+### Caso de estudo — Punção Venosa
 
-Relatório: [`artifacts/puncao-topic-cluster-report.json`](../artifacts/puncao-topic-cluster-report.json) · Script: [`scripts/cluster-puncao-topics.ts`](../scripts/cluster-puncao-topics.ts).
+**Histórico cluster (2026-06-22):** [`artifacts/puncao-topic-cluster-report.json`](../artifacts/puncao-topic-cluster-report.json) — drift alto no legado builder; **não** usar `upgradePremiumPuncao.ts` em produção nova.
+
+**Handcraft golden-v1 (2026-07-11):** trilho único via playbook [`puncao-venosa-e-cuidados-com-cateteres.json`](../data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json).
 
 | Métrica | Valor |
 |---------|-------|
-| Questões | 110 |
-| `drift_total` | 82 (~75%) |
-| Golden hoje | 1 (MCQ IPCS/CVC — `admtec-puncao`) |
-| Goldens recomendados (≥10%) | **4 novos** + IPCS existente |
+| Questões no manifest | 110 |
+| Handcraft applied | **8/110** (`g01` · `puncao_flebite`) |
+| Readiness g01 | 8/8 `[READY]` strict-v2 |
+| L6 g01 | anchor-review pass (15/15) |
+| Fontes meta | Anvisa (A) + Potter 11ª ed. (B) + COFEN 358 quando cabível |
+| `production_status` | `none` |
 
-| Ramo | Qtd | % | Golden? |
-|------|-----|---|---------|
-| Flebite e complicações | 19 | 17% | ❌ |
-| EXCETO — técnica / conduta | 12 | 11% | ❌ |
-| Default — sem âncora | 12 | 11% | ❌ (encolhe após ramos) |
-| Dispositivo / calibre / jelco | 11 | 10% | ❌ |
-| Tempo / observação | 11 | 10% | ❌ |
-| Prevenção IPCS/CVC | 7+ | — | ✅ |
+| Ramo | Qtd cluster | Lote | Status |
+|------|-------------|------|--------|
+| Flebite e complicações | 19 | g01 | **8 applied** (primeiro lote P0) |
+| Dispositivo / calibre | 12 | g02 | pendente |
+| EXCETO — técnica | 12 | g03 | pendente |
+| Tempo / intervalos | 13 | g04 | pendente |
+| Punção periférica / antissepsia | 19 | g05 | pendente |
+| IPCS / CVC | 11 | g06 | pendente |
+| Genérico | ~24 | g07+ | pendente |
 
-**Ordem de fechamento sugerida:** EXCETO (corrige bug CEV URCA) → Flebite → Tempo → Dispositivo → re-cluster → declarar Completo.
+**Ordem de fechamento:** g01 ✅ → g02…g07+ → `audit:subtopico-quality --promote`.
+
+**Âncoras golden:** `questao-premium-avancasp-puncao-infiltracao-flebite.json` (flebite) · `questao-premium-gama-puncao-scalp-jelco-calibre.json` (dispositivo) · `questao-premium-cev-urca-puncao-exceto-med-endovenosa.json` (EXCETO) · `questao-premium-admtec-puncao-venosa-cateteres.json` (IPCS).
 
 ---
 
@@ -453,7 +460,7 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 | Noções de Anatomia | 107 | 100 | 93,5% | ✅ | ❌ | ❌ | Moldes + builder |
 | Saúde da Mulher | 225 | 199 | 88,4% | ❌ | ❌ | ❌ | Builder |
 | Instalação e Manejo de Sondas | 191 | 167 | 87,4% | ✅ | 🟡 2/4 | ❌ | Builder |
-| **Punção Venosa e Cuidados com Cateteres** | **110** | **110** | **100%** | 🟡 1/5 ramos | ✅ 4/4 | ✅ | **L3 estrutural — revisão ramos** |
+| **Punção Venosa e Cuidados com Cateteres** | **110** | **8** | **7%** handcraft | 🟡 g01/7 ramos | ✅ 4/4 flebite | ✅ | **Handcraft g01 applied** — 8/110 |
 | Oxigenoterapia e Cuidados Respiratórios | 195 | 158 | 81,0% | ✅ | 🟡 3/4 | ❌ | Builder |
 | Cálculo de Administração de Medicamentos e Infusões | 124 | 88 | 71,0% | ✅ | 🟡 3/4 | ❌ | Builder |
 | Cuidados na Administração de Medicamentos | 267 | 167 | 62,5% | ✅ | ❌ | ❌ | Builder |
@@ -490,7 +497,8 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 > Atualizar esta matriz após cada pacote concluído ou nova auditoria Supabase.  
 > **Imunização (2026-06-16):** pacote fechado no repo — moldes PNI 4/4, `upgradePremiumImunizacao.ts`, migração em lote (~577 slugs, 0 stub nos lotes builder); % premium da linha reflete apply concluído (re-auditar Supabase para métricas globais do catálogo).  
 > **Sinais Vitais (2026-06-18):** pacote fechado no repo — moldes 4/4, `upgradePremiumSinais.ts`, hybrid integrado, migração builder (lotes 01–08 + parser-fix); `sinais-remaining-slugs.json` vazio; re-auditar Supabase para % global.  
-> **Perioperatória (2026-06-23):** **68/68 golden-v1 handcraft** — lotes `perioperatoria-g01`…`g09`, apply concluído; ver [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) e [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md).
+> **Perioperatória (2026-06-23):** **68/68 golden-v1 handcraft** — lotes `perioperatoria-g01`…`g09`, apply concluído; ver [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) e [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md).  
+> **Punção Venosa (2026-07-11):** **8/110 handcraft** — `g01` (`puncao_flebite`), L6 pass, fontes Anvisa + Potter 11ª ed.; ver [`puncao-venosa-e-cuidados-com-cateteres-completo/README.md`](../data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-completo/README.md) e [`FONTE_NORMATIVA_AVANT.md`](FONTE_NORMATIVA_AVANT.md) §9.
 
 ---
 
@@ -508,7 +516,7 @@ Ordem por **impacto** (volume × gap de stub), com dados de produção 2026-06-1
 
 ### Onda 2 — Quick wins (já >80% premium; falta builder para consolidar)
 
-5. **Punção Venosa** — gate estrutural OK; **revisão ramos** (cluster 2026-06-22: ~75% drift) — ver § Caso Punção  
+5. **Punção Venosa** — **g01 applied** (8/110, `puncao_flebite`); próximo g02 dispositivo — ver § Caso Punção  
 6. **Coleta de Exames Laboratoriais** — 244 questões, **99,6%** (golden + moldes 4/4)  
 7. **Oxigenoterapia** — 195 questões, **81%** (completar 4º molde + builder)  
 
@@ -521,7 +529,7 @@ Ordem por **impacto** (volume × gap de stub), com dados de produção 2026-06-1
 ### Referência concluída
 
 - **Curativos** — 201/201 (**100%** premium) — `upgradePremiumCurativos.ts` + moldes orange (`wound-stage-tissue-deck`, `dressing-match-matrix`, `wound-prep-tap-flow`, `dressing-choice-arena`)
-- **Punção Venosa** — 110/110 gate estrutural; **revisão ramos pendente** (~75% drift no cluster 2026-06-22) — `upgradePremiumPuncao.ts` + moldes indigo; golden IPCS `questao-premium-admtec-puncao-venosa-cateteres.json`; script [`cluster-puncao-topics.ts`](../scripts/cluster-puncao-topics.ts)
+- **Punção Venosa** — **8/110 handcraft** (`g01` flebite, L6 pass, Anvisa + Potter 11ª ed.) — playbook [`puncao-venosa-e-cuidados-com-cateteres.json`](../data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json); README [`puncao-venosa-e-cuidados-com-cateteres-completo/README.md`](../data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-completo/README.md); **não** usar `upgradePremiumPuncao.ts` em lotes novos
 - **Imunização** — 577/577 (**100%** premium pós-migração) — `upgradePremiumImunizacao.ts` + moldes PNI (`pni-rules-deck`, `pni-interval-matrix`, `pni-vf-juggle-tap`, `pni-trap-chips`); goldens `questao-premium-cpcon-imunizacao-intervalos-vf.json`, `questao-premium-fundatec-meningococica-3meses.json`
 - **Sinais Vitais** — ~377 slugs migrados (builder) + exclude híbrido — `upgradePremiumSinais.ts` + moldes rose (`vitals-panel`, `vitals-reference-board`, `vitals-translate-tap`, `vitals-classify-arena`); goldens `questao-premium-fepese-sv-interpretacao-valores.json`, `questao-premium-idecan-fc-radial-ce.json`; spot-check `npx tsx scripts/spot-check-sinais.ts`
 

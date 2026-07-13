@@ -383,7 +383,7 @@ export default function AvantLaboratory() {
         setToast({
           message: det
             ? `🚨 Questão não inserida: ${det}`
-            : '🚨 Questão repetida: já existe no AVANT (mesmo enunciado) ou no lote.',
+            : '🚨 Questão repetida: já existe no AVANT Enf (mesmo enunciado) ou no lote.',
           type: 'error',
         });
         setTimeout(() => setToast(null), 6000);

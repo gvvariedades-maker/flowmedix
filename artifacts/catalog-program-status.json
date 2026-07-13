@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-08T14:18:12.127Z",
+  "generated_at": "2026-07-13T17:44:47.334Z",
   "total_canonicos": 41,
   "counts": {
-    "production_ready": 15,
-    "applied_not_vendavel": 0,
-    "in_progress": 2,
-    "no_package": 24,
-    "legacy_builder": 5
+    "production_ready": 18,
+    "applied_not_vendavel": 1,
+    "in_progress": 1,
+    "no_package": 21,
+    "legacy_builder": 4
   },
   "rows": [
     {
@@ -78,10 +78,16 @@
     },
     {
       "subtopico": "Cuidados na Administração de Medicamentos",
-      "onda": "B",
+      "onda": "done",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Cuidados na Administração de Medicamentos"
+      "in_registry": true,
+      "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
+      "total_slugs": 123,
+      "handcraft_applied": 123,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Verificação de Sinais Vitais",
@@ -119,10 +125,16 @@
     },
     {
       "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "onda": "A",
+      "onda": "done",
       "legacy_builder": true,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Punção Venosa e Cuidados com Cateteres"
+      "in_registry": true,
+      "pacote_prefix": "puncao-venosa-e-cuidados-com-cateteres",
+      "total_slugs": 110,
+      "handcraft_applied": 110,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Coleta de Exames Laboratoriais",
@@ -338,12 +350,12 @@
       "legacy_builder": true,
       "in_registry": true,
       "pacote_prefix": "urgencias-e-emergencias",
-      "total_slugs": 340,
-      "handcraft_applied": 93,
-      "status": "in_progress",
+      "total_slugs": 339,
+      "handcraft_applied": 339,
+      "status": "applied",
       "production_status": "none",
-      "pct_handcraft": 27.4,
-      "next_trigger": "Pipeline completo: Urgências e Emergências"
+      "pct_handcraft": 100,
+      "next_trigger": "Pipeline completo: Urgências e Emergências + Só qualidade"
     },
     {
       "subtopico": "Enfermagem do Trabalho",
@@ -393,10 +405,16 @@
     },
     {
       "subtopico": "Saúde da Mulher",
-      "onda": "B",
+      "onda": "done",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Saúde da Mulher"
+      "in_registry": true,
+      "pacote_prefix": "saude-da-mulher",
+      "total_slugs": 246,
+      "handcraft_applied": 246,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     }
   ]
 }

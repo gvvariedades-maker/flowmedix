@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-07-13",
+  "subtopico": "Saúde do Adolescente",
+  "decision": "accept_slug_segment_drift",
+  "rationale": "modulo_slug é chave de URL/histórico; meta.subtopico canônico é a fonte de verdade para vitrine, design L3 e gates. Não renomear slug (quebra /estudar, historico_questoes, simulados).",
+  "do_not_use": "npm run catalog:repair-vias-mis-tags (sentido inverso — confiaria no segmento do slug)",
+  "mis_tags": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "slug_segment": "processo-de-enfermagem",
+      "meta_subtopico": "Saúde do Adolescente",
+      "status": "accepted",
+      "note": "Anorexia×bulimia; branch adolescente_saude_mental"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "slug_segment": "promocao-a-saude-e-prevencao-de-agravos",
+      "meta_subtopico": "Saúde do Adolescente",
+      "status": "accepted",
+      "note": "Violência sexual / promoção"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "slug_segment": "promocao-a-saude-e-prevencao-de-agravos",
+      "meta_subtopico": "Saúde do Adolescente",
+      "status": "accepted"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "slug_segment": "nutricao-aplicada-a-enfermagem",
+      "meta_subtopico": "Saúde do Adolescente",
+      "status": "accepted",
+      "note": "Escore Z IMC; family=calc; A4 humano handcraft-qc"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+      "slug_segment": "saude-da-mulher",
+      "meta_subtopico": "Saúde do Adolescente",
+      "status": "accepted",
+      "note": "DIU/consentimento adolescente"
+    }
+  ],
+  "total_accepted": 5,
+  "lote": "saude-adolescente-g02"
+}

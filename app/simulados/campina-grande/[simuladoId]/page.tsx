@@ -8,7 +8,7 @@ type PageProps = { params: Promise<{ simuladoId: string }> };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { simuladoId } = await params;
-  if (!isPublicSimuladoId(simuladoId)) return { title: 'Simulado AVANT' };
+  if (!isPublicSimuladoId(simuladoId)) return { title: 'Simulado AVANT Enf' };
 
   try {
     const { manifest } = loadPublicSimuladoBundle(simuladoId);
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     };
   } catch {
-    return { title: 'Simulado AVANT' };
+    return { title: 'Simulado AVANT Enf' };
   }
 }
 

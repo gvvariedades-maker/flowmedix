@@ -1,0 +1,18 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+  "exported_at": "2026-07-12T05:00:44.316Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g08/manifest.json"
+  },
+  "slugs": [
+    "igeduc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-9",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+    "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2",
+    "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
+    "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6"
+  ]
+}

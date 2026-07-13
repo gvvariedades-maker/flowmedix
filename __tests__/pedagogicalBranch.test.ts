@@ -667,4 +667,45 @@ describe('pedagogicalBranch — Saúde da Mulher', () => {
     expect(design?.logicFlow).toBe('mulher-mama-tap-flow');
     expect(design?.dangerZone).toBe('mulher-mama-trap-arena');
   });
+
+  const puncaoSubtopico = 'Punção Venosa e Cuidados com Cateteres';
+
+  it('infere puncao_flebite para complicação infiltração', () => {
+    const instruction =
+      'Ao administrar medicamentos endovenosos, você observou passagem do líquido para o tecido subcutâneo por deslocamento da agulha. Esse acidente resultou em:';
+    expect(inferPedagogicalBranch(puncaoSubtopico, instruction, [], 'conceito')).toBe(
+      'puncao_flebite',
+    );
+    const design = getPresentationDesign(puncaoSubtopico, 'puncao_flebite');
+    expect(design?.conceptMap).toBe('iv-complication-orbit');
+    expect(design?.goldenRule).toBe('iv-differential-board');
+    expect(design?.logicFlow).toBe('iv-complication-tap-flow');
+    expect(design?.dangerZone).toBe('iv-label-swap-trap');
+  });
+
+  it('infere puncao_ipcs_cvc para bundle CVC', () => {
+    const instruction =
+      'Sobre o bundle de prevenção de ICS associada a cateter venoso central, assinale a alternativa correta quanto à barreira estéril máxima e corrente sanguínea.';
+    expect(inferPedagogicalBranch(puncaoSubtopico, instruction, [], 'conceito')).toBe(
+      'puncao_ipcs_cvc',
+    );
+    const design = getPresentationDesign(puncaoSubtopico, 'puncao_ipcs_cvc');
+    expect(design?.conceptMap).toBe('iv-bundle-orbit');
+    expect(design?.dangerZone).toBe('iv-bundle-break-trap');
+  });
+
+  it('infere puncao_exceto para comando EXCETO punção', () => {
+    const instruction = 'São cuidados na administração endovenosa, exceto:';
+    expect(inferPedagogicalBranch(puncaoSubtopico, instruction, [], 'certo_errado')).toBe(
+      'puncao_exceto',
+    );
+  });
+
+  it('infere puncao_dispositivo para calibre jelco', () => {
+    const instruction =
+      'Para infusão rápida em adulto, qual calibre de jelco (G) é mais indicado?';
+    expect(inferPedagogicalBranch(puncaoSubtopico, instruction, [], 'conceito')).toBe(
+      'puncao_dispositivo',
+    );
+  });
 });

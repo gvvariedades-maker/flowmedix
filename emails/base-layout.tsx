@@ -9,6 +9,7 @@ import {
 } from '@react-email/components';
 import type { ReactNode } from 'react';
 import { AvantLogoEmail } from '@/emails/AvantLogoEmail';
+import { BRAND_NAME } from '@/lib/brand/brandName';
 
 const BG = '#010409';
 const ACCENT = '#00f2ff';
@@ -86,7 +87,7 @@ export function BaseLayout({ children, preview, brandTagline }: BaseLayoutProps)
                 textAlign: 'center',
               }}
             >
-              © AVANT — Estudo reverso para Técnico de Enfermagem
+              © {BRAND_NAME} — Estudo reverso para Técnico de Enfermagem
             </Text>
           </Section>
         </Container>

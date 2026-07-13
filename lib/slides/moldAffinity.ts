@@ -7,6 +7,7 @@
  * @see docs/MOLD_AFFINITY_RESOLVER.md
  */
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
+import { ADOLESCENT_Z_SCORE_POSITIVE } from '@/lib/slides/adolescentAntropometriaSlideUtils';
 
 function normalizeKey(str: string): string {
   return str
@@ -114,6 +115,13 @@ const ADOLESCENT_VARIANTS = new Set([
   'adolescent-sigilo-spectrum',
   'adolescent-vf-weave-tap',
   'adolescent-consent-gate',
+]);
+
+const ADOLESCENT_ANTHROPOMETRY_VARIANTS = new Set([
+  'adolescent-growth-z-rail',
+  'adolescent-z-band-board',
+  'adolescent-z-classify-tap',
+  'adolescent-z-threshold-trap',
 ]);
 
 const MENTAL_SAE_VARIANTS = new Set(['sae-decision-tap', 'norm-reveal']);
@@ -240,6 +248,60 @@ const CAM_DOCUMENTACAO_VARIANTS = new Set([
   'cam-documentacao-vf-tap',
   'cam-documentacao-trap-arena',
 ]);
+
+const PUNCAO_FLEBITE_VARIANTS = new Set([
+  'iv-complication-orbit',
+  'iv-differential-board',
+  'iv-complication-tap-flow',
+  'iv-label-swap-trap',
+]);
+
+const PUNCAO_FLEBITE_BESPOKE_BRANCHES = new Set(['puncao_flebite']);
+
+const PUNCAO_DISPOSITIVO_VARIANTS = new Set([
+  'iv-gauge-matrix',
+  'iv-device-reference-board',
+  'iv-device-tap-flow',
+  'iv-gauge-mismatch-trap',
+]);
+
+const PUNCAO_DISPOSITIVO_BESPOKE_BRANCHES = new Set(['puncao_dispositivo']);
+
+const PUNCAO_EXCETO_VARIANTS = new Set([
+  'iv-exceto-spectrum',
+  'iv-exceto-command-board',
+  'iv-exceto-tap-flow',
+  'iv-exceto-intruder-trap',
+]);
+
+const PUNCAO_EXCETO_BESPOKE_BRANCHES = new Set(['puncao_exceto']);
+
+const PUNCAO_TEMPO_VARIANTS = new Set([
+  'iv-interval-timeline',
+  'iv-interval-board',
+  'iv-interval-tap-flow',
+  'iv-interval-swap-trap',
+]);
+
+const PUNCAO_TEMPO_BESPOKE_BRANCHES = new Set(['puncao_tempo']);
+
+const PUNCAO_PERIFERICA_VARIANTS = new Set([
+  'iv-puncture-rail',
+  'iv-antisepsis-board',
+  'iv-puncture-tap-flow',
+  'iv-order-invert-trap',
+]);
+
+const PUNCAO_PERIFERICA_BESPOKE_BRANCHES = new Set(['puncao_periferica_antissepsia']);
+
+const PUNCAO_IPCS_VARIANTS = new Set([
+  'iv-bundle-orbit',
+  'iv-bundle-mesh-reveal',
+  'iv-bundle-tap-flow',
+  'iv-bundle-break-trap',
+]);
+
+const PUNCAO_IPCS_BESPOKE_BRANCHES = new Set(['puncao_ipcs_cvc']);
 
 const CALC_DOSE_VARIANTS = new Set([
   'dose-equivalence-rail',
@@ -427,6 +489,35 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+  },
+
+  // ---- Saúde do Adolescente — antropometria / escore Z ----
+  'adolescent-growth-z-rail': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockPatterns: [
+      ...ADOLESCENT_ETHICS_POSITIVE,
+      /anorexia|bulimia/i,
+    ],
+    positivePatterns: ADOLESCENT_Z_SCORE_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-z-band-board': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockPatterns: [...ADOLESCENT_ETHICS_POSITIVE, /anorexia|bulimia/i],
+    positivePatterns: ADOLESCENT_Z_SCORE_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-z-classify-tap': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockPatterns: [...ADOLESCENT_ETHICS_POSITIVE, /anorexia|bulimia/i],
+    positivePatterns: ADOLESCENT_Z_SCORE_POSITIVE,
+    minPositive: 1,
+  },
+  'adolescent-z-threshold-trap': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockPatterns: [...ADOLESCENT_ETHICS_POSITIVE, /anorexia|bulimia/i],
+    positivePatterns: ADOLESCENT_Z_SCORE_POSITIVE,
+    minPositive: 1,
   },
 
   // ---- Sinais vitais ----
@@ -1097,6 +1188,123 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['puncao venosa', 'cateteres'],
     positivePatterns: [/cateter|pun[cç][aã]o|venosa/i],
   },
+  'iv-complication-orbit': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [
+      /infiltra[cç][aã]o|flebite|hematoma|extravasamento|esclerose|subcut[aâ]neo/i,
+    ],
+    minPositive: 1,
+  },
+  'iv-differential-board': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/infiltra[cç][aã]o|flebite|hematoma|mecanismo|sinal/i],
+    minPositive: 1,
+  },
+  'iv-complication-tap-flow': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/mecanismo|eliminar|complica[cç][aã]o|em similares/i],
+    minPositive: 1,
+  },
+  'iv-label-swap-trap': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/infiltra[cç][aã]o|flebite|hematoma|troca|confund/i],
+    minPositive: 1,
+  },
+  'iv-gauge-matrix': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/jelco|scalp|calibre|\b(14|16|18|20|22|24)\s*g\b/i],
+    minPositive: 1,
+  },
+  'iv-device-reference-board': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/calibre|jelco|scalp|hemotransfus/i],
+    minPositive: 1,
+  },
+  'iv-device-tap-flow': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/calibre|eliminar|dispositivo/i],
+    minPositive: 1,
+  },
+  'iv-gauge-mismatch-trap': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/calibre|jelco|grosso|fr[aá]gil/i],
+    minPositive: 1,
+  },
+  'iv-exceto-spectrum': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/\bexceto\b|incorret[oa]|pun[cç][aã]o/i],
+    minPositive: 1,
+  },
+  'iv-exceto-command-board': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/\bexceto\b|antissepsia|bisel/i],
+    minPositive: 1,
+  },
+  'iv-exceto-tap-flow': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/\bexceto\b|eliminar|intrusa/i],
+    minPositive: 1,
+  },
+  'iv-exceto-intruder-trap': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/\bexceto\b|proeminente|veia/i],
+    minPositive: 1,
+  },
+  'iv-interval-timeline': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/troca|equipo|24\s*h|72\s*h|perman[eê]ncia/i],
+    minPositive: 1,
+  },
+  'iv-interval-board': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/intervalo|troca|curativo|equipo/i],
+    minPositive: 1,
+  },
+  'iv-interval-tap-flow': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/prazo|horas|eliminar/i],
+    minPositive: 1,
+  },
+  'iv-interval-swap-trap': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/24\s*h|72\s*h|invert|trocar/i],
+    minPositive: 1,
+  },
+  'iv-puncture-rail': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/antissepsia|bisel|pun[cç][aã]o perif/i],
+    minPositive: 1,
+  },
+  'iv-antisepsis-board': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/antissepsia|álcool|70\s*%|secar/i],
+    minPositive: 1,
+  },
+  'iv-puncture-tap-flow': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/sequ[eê]ncia|ordem|eliminar/i],
+    minPositive: 1,
+  },
+  'iv-order-invert-trap': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/invert|distal|proximal|bisel/i],
+    minPositive: 1,
+  },
+  'iv-bundle-orbit': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/bundle|ipcs|cvc|barreira est[eé]ril/i],
+    minPositive: 1,
+  },
+  'iv-bundle-tap-flow': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/bundle|ipcs|barreira|curativo/i],
+    minPositive: 1,
+  },
+  'iv-bundle-break-trap': {
+    homeSubtopicFragments: ['puncao venosa', 'cateteres'],
+    positivePatterns: [/bundle|barreira|curativo|[uú]mido/i],
+    minPositive: 1,
+  },
 
   // ---- Laboratório ----
   'lab-specimen-chain': {
@@ -1319,6 +1527,18 @@ export function bespokeMoldHasContentAffinity(
     return hits >= (rule.minPositive ?? 1);
   }
 
+  if (ADOLESCENT_ANTHROPOMETRY_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'adolescente_antropometria') {
+      return false;
+    }
+    if (/anorexia|bulimia/i.test(corpus) && !/escore\s*z|score\s*z/i.test(corpus)) {
+      return false;
+    }
+    const positives = rule?.positivePatterns ?? ADOLESCENT_Z_SCORE_POSITIVE;
+    const hits = countPatternMatches(corpus, positives);
+    return hits >= (rule?.minPositive ?? 1);
+  }
+
   if (MENTAL_SAE_VARIANTS.has(variant)) {
     const isMentalSubtopic = subtopicoMatchesFragments(ctx.subtopico, [
       'saude mental',
@@ -1457,6 +1677,51 @@ export function bespokeMoldHasContentAffinity(
 
   if (CAM_DOCUMENTACAO_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'cam_documentacao') {
+      return false;
+    }
+  }
+
+  if (PUNCAO_FLEBITE_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !PUNCAO_FLEBITE_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (PUNCAO_DISPOSITIVO_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !PUNCAO_DISPOSITIVO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (PUNCAO_EXCETO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !PUNCAO_EXCETO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (PUNCAO_TEMPO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !PUNCAO_TEMPO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (PUNCAO_PERIFERICA_VARIANTS.has(variant)) {
+    if (
+      ctx.pedagogicalBranch &&
+      !PUNCAO_PERIFERICA_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
+    ) {
+      return false;
+    }
+  }
+
+  if (PUNCAO_IPCS_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !PUNCAO_IPCS_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
       return false;
     }
   }

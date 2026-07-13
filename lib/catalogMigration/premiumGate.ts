@@ -9,7 +9,7 @@
  * @see docs/PACOTE_PREMIUM_CHECKLIST.md · docs/GOLDEN_CONTENT_STANDARD.md
  */
 import { getDesignBySubtopic } from '@/components/slides/core/themeGenerator';
-import { hasPremiumStubMarkers } from '@/lib/catalogMigration/upgradePremiumHybrid';
+import { hasPremiumStubMarkers } from '@/lib/catalogMigration/premiumStubMarkers';
 import {
   detectDangerGabaritoMismatch,
   detectSlideTopicDrift,

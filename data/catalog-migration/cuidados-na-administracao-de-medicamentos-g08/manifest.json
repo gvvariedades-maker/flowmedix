@@ -1,0 +1,20 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g08",
+  "exported_at": "2026-07-11T04:53:48.110Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g08/manifest.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
+    "ibec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-6",
+    "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-4",
+    "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-6",
+    "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-8",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
+    "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-3",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-2",
+    "imparh-enfermagem-seguranca-do-paciente-1777102936764-5",
+    "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102918981-6"
+  ]
+}

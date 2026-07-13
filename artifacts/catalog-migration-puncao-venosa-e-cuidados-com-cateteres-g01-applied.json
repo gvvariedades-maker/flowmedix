@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-12T03:03:55.763Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
+    "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0",
+    "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-1",
+    "decorp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-2",
+    "facape-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-5",
+    "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-7",
+    "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -26,6 +26,7 @@ import { SAUDE_ADOLESCENTE_MS } from '@/lib/guidelines/saudeAdolescente';
 import { SAUDE_MENTAL_MS } from '@/lib/guidelines/saudeMental';
 import { PNI_CALENDARIO_2025 } from '@/lib/guidelines/pniCalendario';
 import { PNI_INTERVALOS_2025 } from '@/lib/guidelines/pni';
+import { POTTER_PERRY_FUNDAMENTOS_11ED } from '@/lib/guidelines/potterPerryFundamentos';
 import { PUNCAO_CATETER_ANVISA } from '@/lib/guidelines/puncaoVenosa';
 import { SAUDE_CRIANCA_MS } from '@/lib/guidelines/saudeCrianca';
 import { SAE_COFEN_358 } from '@/lib/guidelines/saeCofen';
@@ -55,6 +56,7 @@ export { FARMACO_ADME_BR } from '@/lib/guidelines/farmacodinamica';
 export { VIAS_ADMINISTRACAO_COFEN } from '@/lib/guidelines/viasAdministracao';
 export { CURATIVOS_LPP_NPUAP } from '@/lib/guidelines/curativos';
 export { SONDAS_TECNICA_COFEN } from '@/lib/guidelines/sondas';
+export { POTTER_PERRY_FUNDAMENTOS_11ED } from '@/lib/guidelines/potterPerryFundamentos';
 export { PUNCAO_CATETER_ANVISA } from '@/lib/guidelines/puncaoVenosa';
 export { ISTS_PREVENCAO_MS } from '@/lib/guidelines/ists';
 export { BIOSSEGURANCA_ANVISA } from '@/lib/guidelines/biosseguranca';
@@ -96,6 +98,7 @@ export const GUIDELINE_TABLES: Record<string, GuidelineTable> = {
   [CURATIVOS_LPP_NPUAP.id]: CURATIVOS_LPP_NPUAP,
   [SONDAS_TECNICA_COFEN.id]: SONDAS_TECNICA_COFEN,
   [PUNCAO_CATETER_ANVISA.id]: PUNCAO_CATETER_ANVISA,
+  [POTTER_PERRY_FUNDAMENTOS_11ED.id]: POTTER_PERRY_FUNDAMENTOS_11ED,
   [ISTS_PREVENCAO_MS.id]: ISTS_PREVENCAO_MS,
   [BIOSSEGURANCA_ANVISA.id]: BIOSSEGURANCA_ANVISA,
   [SAE_COFEN_358.id]: SAE_COFEN_358,
@@ -134,7 +137,11 @@ export const SUBTOPICO_GUIDELINE_IDS: Record<string, string[]> = {
   'Vias de Administração': [VIAS_ADMINISTRACAO_COFEN.id, CUIDADOS_ADMIN_COFEN.id],
   'Curativos e Manejo de Feridas': [CURATIVOS_LPP_NPUAP.id],
   'Instalação e Manejo de Sondas': [SONDAS_TECNICA_COFEN.id],
-  'Punção Venosa e Cuidados com Cateteres': [PUNCAO_CATETER_ANVISA.id, COLETA_EXAMES_SBPC.id],
+  'Punção Venosa e Cuidados com Cateteres': [
+    PUNCAO_CATETER_ANVISA.id,
+    SAE_COFEN_358.id,
+    POTTER_PERRY_FUNDAMENTOS_11ED.id,
+  ],
   'Infecções Sexualmente Transmissíveis (ISTs)': [ISTS_PREVENCAO_MS.id],
   'Processo de Enfermagem': [SAE_COFEN_358.id],
   'Medidas de Prevenção e Precaução de Contato': [BIOSSEGURANCA_ANVISA.id],

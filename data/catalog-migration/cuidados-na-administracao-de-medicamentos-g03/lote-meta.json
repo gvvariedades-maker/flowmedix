@@ -1,7 +1,7 @@
 {
   "lote": "cuidados-na-administracao-de-medicamentos-g03",
   "subtopico": "Cuidados na Administração de Medicamentos",
-  "status": "handcraft_complete",
+  "status": "applied",
   "handcraft_at": "2026-07-10",
   "handcraft_by": "composer-2.5",
   "priority": "P0 — cam_certos_vf_caso (cauda cluster — fecha 18/18)",
@@ -10,7 +10,9 @@
   "branches": {
     "cam_certos_vf_caso": 10
   },
-  "anchors": ["examples/questao-premium-fepese-cuidados-administracao-medicamentos.json"],
+  "anchors": [
+    "examples/questao-premium-fepese-cuidados-administracao-medicamentos.json"
+  ],
   "anchor_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
   "handcraft_grammar": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-pedagogy-errors.json",
   "notes": "Cauda cluster 9 certos — 10 certos Decorp, I–V Educa Pb, ANVISA, IV bolus FGV, EXCETO médico certo, IM IAUPE, V/F Access, Quadrix, UNESC dupla, VUNESP hora certa",
@@ -24,7 +26,7 @@
     "npm run audit:anchor-review -- --lote=cuidados-na-administracao-de-medicamentos-g03 --record-pass --reviewer=agent --skip-capture"
   ],
   "anchor_second_review": {
-    "reviewed_at": "2026-07-10",
+    "reviewed_at": "2026-07-11",
     "reviewer": "agent",
     "method": "agent",
     "status": "pass",

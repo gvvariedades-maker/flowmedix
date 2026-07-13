@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next';
+import { BRAND_NAME, BRAND_SHORT_NAME } from '@/lib/brand/brandName';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'AVANT — Estudo Reverso',
-    short_name: 'AVANT',
+    name: `${BRAND_NAME} — Estudo Reverso`,
+    short_name: BRAND_SHORT_NAME,
     description:
       'Estudo reverso para Técnicos de Enfermagem. Questões reais, NeuroSlides e revisão inteligente.',
     start_url: '/estudar',

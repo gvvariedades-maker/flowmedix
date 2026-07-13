@@ -234,10 +234,10 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'feridas': { template: 'orange', conceptMap: 'burn-depth-layer-deck', goldenRule: 'burn-rule-nine-board', logicFlow: 'burn-triage-tap-flow', dangerZone: 'burn-trap-arena' },
   'queimaduras': { template: 'orange', conceptMap: 'burn-depth-layer-deck', goldenRule: 'burn-rule-nine-board', logicFlow: 'burn-triage-tap-flow', dangerZone: 'burn-trap-arena' },
 
-  // ---- Punção Venosa / Cateteres ----
-  'punção venosa e cuidados com cateteres': { template: 'indigo', conceptMap: 'morphing-timeline', goldenRule: 'iv-bundle-mesh-reveal', logicFlow: 'iv-care-soft-stack', dangerZone: 'catheter-danger-arena' },
-  'punção venosa': { template: 'indigo', conceptMap: 'morphing-timeline', goldenRule: 'iv-bundle-mesh-reveal', logicFlow: 'iv-care-soft-stack', dangerZone: 'catheter-danger-arena' },
-  'cateteres': { template: 'indigo', conceptMap: 'morphing-timeline', goldenRule: 'iv-bundle-mesh-reveal', logicFlow: 'iv-care-soft-stack', dangerZone: 'catheter-danger-arena' },
+  // ---- Punção Venosa / Cateteres (ramos L2.5 — ver BRANCH_DESIGN_MAP) ----
+  'punção venosa e cuidados com cateteres': { template: 'indigo', conceptMap: 'bridge', goldenRule: 'reference_table', logicFlow: 'cards', dangerZone: 'compare' },
+  'punção venosa': { template: 'indigo', conceptMap: 'bridge', goldenRule: 'reference_table', logicFlow: 'cards', dangerZone: 'compare' },
+  'cateteres': { template: 'indigo', conceptMap: 'bridge', goldenRule: 'reference_table', logicFlow: 'cards', dangerZone: 'compare' },
 
   // ---- Coleta de Exames ----
   'coleta de exames laboratoriais': { template: 'sky', conceptMap: 'lab-specimen-chain', goldenRule: 'lab-prep-lens-board', logicFlow: 'lab-vf-soft-stack', dangerZone: 'lab-specimen-arena' },

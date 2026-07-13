@@ -6,7 +6,8 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Punção Venosa e Cuidados com Cateteres"
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "pedagogical_branch": "puncao_ipcs_cvc"
   },
   "question_data": {
     "instruction": "Em uma unidade de terapia intensiva, observa-se aumento na incidência de infecções relacionadas a cateter venoso central. Assinale a abordagem mais efetiva para minimizar essa ocorrência, considerando os protocolos vigentes de prevenção.",

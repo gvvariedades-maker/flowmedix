@@ -77,7 +77,7 @@
       "items": [
         {
           "label": "Conferência dupla",
-          "detail": "Insulina = medicamento de alto risco. Dois profissionais habilitados conferem dose, horário e paciente antes de administrar.",
+          "detail": "Insulina = alto risco — dois profissionais habilitados conferem dose, horário e paciente antes de administrar.",
           "icon": "Users"
         },
         {
@@ -102,6 +102,25 @@
         }
       ],
       "footer_rule": "Insulina = alto risco + técnica SC específica — eliminar letras por regra, não por intuição"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — eliminação",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Contexto: insulina regular + NPH = alto risco → conferência dupla antes de qualquer passo técnico.",
+        "Eliminar letra A: massagear o local acelera absorção e aumenta risco de hipoglicemia — conduta incorreta.",
+        "Eliminar letra B: locais SC corretos incluem abdome lateral ao umbigo e face anterior da coxa — não “parte interna” como regra isolada.",
+        "Eliminar letra C: NPH e regular na mesma seringa quando a prescrição indica mistura — “sempre separadas” é falso.",
+        "Eliminar letra D: regular é cristalina e rápida; homogeneizar 20× é da NPH leitosa, não da regular.",
+        "Confirmar letra E: aguardar 10 segundos antes de retirar a agulha — técnica correta pós-aplicação.",
+        "Fixação: Estratégia: conferência dupla → eliminar A–D por técnica → confirmar E. Banca troca qual frasco homogeneizar e se massagear o local."
+      ],
+      "footer_rule": "Estratégia: conferência dupla → eliminar A–D por técnica → confirmar E"
     },
     {
       "type": "golden_rule",
@@ -152,25 +171,6 @@
         }
       ],
       "footer_rule": "Na prova: quem confunde NPH×regular ou massageia o local erra a técnica"
-    },
-    {
-      "type": "logic_flow",
-      "slide_title": "Como resolver — eliminação",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Cuidados na Administração de Medicamentos"
-      },
-      "steps": [
-        "Contexto: insulina regular + NPH = alto risco → conferência dupla antes de qualquer passo técnico.",
-        "Eliminar letra A: massagear o local acelera absorção e aumenta risco de hipoglicemia — conduta incorreta.",
-        "Eliminar letra B: locais SC corretos incluem abdome lateral ao umbigo e face anterior da coxa — não “parte interna” como regra isolada.",
-        "Eliminar letra C: NPH e regular na mesma seringa quando a prescrição indica mistura — “sempre separadas” é falso.",
-        "Eliminar letra D: regular é cristalina e rápida; homogeneizar 20× é da NPH leitosa, não da regular.",
-        "Confirmar letra E: aguardar 10 segundos antes de retirar a agulha — técnica correta pós-aplicação.",
-        "Fixação: em insulina, a banca troca qual frasco homogeneizar e se pode massagear o local."
-      ],
-      "footer_rule": "Estratégia: conferência dupla → eliminar A–D por técnica → confirmar E"
     },
     {
       "type": "danger_zone",

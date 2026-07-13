@@ -15,6 +15,12 @@ import {
   lintGoldenContent,
   type GoldenContentLintIssue,
 } from '@/lib/goldenContentStandard';
+import {
+  assertApprovalGate,
+  scoreQuestaoRisk,
+  type RiskResult,
+  type RiskScoringContext,
+} from '@/lib/catalogMigration/riskScoring';
 import { normalizeQuestaoSlideArrays } from '@/lib/reverseStudySlidesNormalize';
 import {
   QuestaoCompletaSchema,
@@ -31,7 +37,8 @@ export type QuestaoWriteIssueLayer =
   | 'tecconcursos'
   | 'zod'
   | 'premium_gate'
-  | 'golden_v1';
+  | 'golden_v1'
+  | 'risk_approval';
 
 export type QuestaoWriteIssue = {
   code: string;
@@ -47,6 +54,12 @@ export type ValidateQuestaoForWriteOptions = {
   premiumGate?: boolean;
   /** Lint golden-v1 quando meta.content_standard declarado (default: true). */
   goldenLint?: boolean;
+  /**
+   * Gate de risco: alto risco sem assinatura humana → error (default: false).
+   * @see docs/DECISAO_AUTO_APROVACAO_RISCO.md
+   */
+  riskApprovalGate?: boolean;
+  riskContext?: RiskScoringContext;
 };
 
 export type ValidateQuestaoForWriteSuccess = {
@@ -54,6 +67,7 @@ export type ValidateQuestaoForWriteSuccess = {
   data: ValidatedQuestao;
   warnings: QuestaoWriteIssue[];
   specVersion: typeof QUESTAO_WRITE_SPEC_VERSION;
+  risk?: RiskResult;
 };
 
 export type ValidateQuestaoForWriteFailure = {
@@ -61,6 +75,7 @@ export type ValidateQuestaoForWriteFailure = {
   errors: QuestaoWriteIssue[];
   warnings: QuestaoWriteIssue[];
   specVersion: typeof QUESTAO_WRITE_SPEC_VERSION;
+  risk?: RiskResult;
 };
 
 export type ValidateQuestaoForWriteResult =
@@ -148,8 +163,22 @@ export function validateQuestaoForWrite(
     }
   }
 
+  const risk = scoreQuestaoRisk(data, options.riskContext);
+  const riskBlockers = assertApprovalGate(data, risk);
+  if (riskBlockers.length > 0) {
+    const issue: QuestaoWriteIssue = {
+      code: 'risk_human_approval_required',
+      message: riskBlockers[0]!,
+      path: 'meta.efficacy_contract',
+      severity: options.riskApprovalGate === true ? 'error' : 'warn',
+      layer: 'risk_approval',
+    };
+    if (issue.severity === 'error') errors.push(issue);
+    else warnings.push(issue);
+  }
+
   if (errors.length > 0) {
-    return { ok: false, errors, warnings, specVersion: QUESTAO_WRITE_SPEC_VERSION };
+    return { ok: false, errors, warnings, specVersion: QUESTAO_WRITE_SPEC_VERSION, risk };
   }
 
   const payload = options.moduloSlug
@@ -161,5 +190,6 @@ export function validateQuestaoForWrite(
     data: payload as ValidatedQuestao,
     warnings,
     specVersion: QUESTAO_WRITE_SPEC_VERSION,
+    risk,
   };
 }

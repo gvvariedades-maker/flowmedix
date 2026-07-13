@@ -29,6 +29,7 @@ import { GoldenRuleViaReferenceBoard } from './GoldenRuleViaReferenceBoard';
 import { GoldenRulePkPdReferenceBoard } from './GoldenRulePkPdReferenceBoard';
 import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
+import { GoldenRuleAdolescentZBandBoard } from './GoldenRuleAdolescentZBandBoard';
 import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
 import { GoldenRuleRespiratorioSpo2ReferenceBoard } from './GoldenRuleRespiratorioSpo2ReferenceBoard';
 import { GoldenRuleUrgenciasRcpParamsBoard } from './GoldenRuleUrgenciasRcpParamsBoard';
@@ -42,6 +43,11 @@ import { GoldenRuleUrgenciasProtocolReferenceBoard } from './GoldenRuleUrgencias
 import { GoldenRuleUrgenciasExcetoReferenceBoard } from './GoldenRuleUrgenciasExcetoReferenceBoard';
 import { GoldenRuleEtiologyLetterSpectrum } from './GoldenRuleEtiologyLetterSpectrum';
 import { GoldenRuleItuBundleBoard } from './GoldenRuleItuBundleBoard';
+import { GoldenRuleIvDifferentialBoard } from './GoldenRuleIvDifferentialBoard';
+import { GoldenRuleIvDeviceReferenceBoard } from './GoldenRuleIvDeviceReferenceBoard';
+import { GoldenRuleIvExcetoCommandBoard } from './GoldenRuleIvExcetoCommandBoard';
+import { GoldenRuleIvIntervalBoard } from './GoldenRuleIvIntervalBoard';
+import { GoldenRuleIvAntisepsisBoard } from './GoldenRuleIvAntisepsisBoard';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
@@ -341,6 +347,51 @@ export const GoldenRule = ({
     );
   }
 
+  if (variant === 'iv-differential-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleIvDifferentialBoard
+        content={content}
+        rows={rows}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'iv-device-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleIvDeviceReferenceBoard
+        content={content}
+        rows={rows}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'iv-exceto-command-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleIvExcetoCommandBoard
+        content={content}
+        rows={rows}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'iv-interval-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleIvIntervalBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'iv-antisepsis-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleIvAntisepsisBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
   if (variant === 'pni-calendar-board' && rows && rows.length > 0) {
     return (
       <GoldenRulePniCalendarBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
@@ -512,6 +563,12 @@ export const GoldenRule = ({
   if (variant === 'adolescent-sigilo-spectrum' && rows && rows.length > 0) {
     return (
       <GoldenRuleAdolescentSigiloSpectrum content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'adolescent-z-band-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleAdolescentZBandBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

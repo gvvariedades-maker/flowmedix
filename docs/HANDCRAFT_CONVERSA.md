@@ -84,7 +84,7 @@ Se o playbook do subtópico tiver `proibido[]`, o briefing (`handcraft:brief`) l
 ```bash
 npm run catalog:export-lote -- --lote=<lote> --slugs=...
 # handcraft: data/catalog-migration/<lote>/questions/<slug>.json
-# Por slug: inferir ramo → declarar meta.pedagogical_branch → JSON A1+A2+A3 (ver skill avant-json-template § L2.5+L3)
+# Por slug: family → âncora → slots (skill avant-golden-anchor-handcraft) + meta.pedagogical_branch (avant-json-template § L2.5+L3)
 npm run validate:goldens -- --lote=<lote> --strict
 npm run audit:questao-readiness -- --lote=<lote>
 npm run catalog:apply-lote -- --lote=<lote> --dry-run
@@ -107,9 +107,9 @@ Usar **`npm run`** no Windows (não `npx tsx`).
 ### Handcraft por slug (A1+A2+A3 num prompt)
 
 1. Ler export do slug (enunciado + gabarito reais).
-2. Identificar **ramo** (`pedagogical_branch`) pelo cluster/enunciado.
-3. Abrir golden âncora do mesmo ramo em `examples/`.
-4. Gerar JSON com L1+L2+L3 declarados.
+2. Classificar **família** (`meta.family`) e identificar **ramo** (`pedagogical_branch`) pelo cluster/enunciado.
+3. Abrir golden âncora da família/ramo em `examples/` ou `*-golden-anchors.json` — seguir skill `.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`.
+4. Gerar JSON com L1+L2+L3 declarados (`logic_flow` primeiro na autoria).
 5. Validar:
    ```bash
    npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json

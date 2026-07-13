@@ -11,6 +11,16 @@ npm test                 # Jest
 npm run build            # validate:env + next build
 ```
 
+### Handcraft / guideline (por pacote)
+
+| Comando | Pacote |
+|---------|--------|
+| `npm run enrich:puncao-guideline-meta -- --lote=<lote> --write` | Punção — Anvisa + Potter 11ª ed. + COFEN 358 |
+| `npm run handcraft:puncao-venosa-e-cuidados-com-cateteres-g01` | Punção g01 (`puncao_flebite`) |
+| `npm run catalog:apply-lote -- --lote=<lote> --apply` | Apply Supabase (somente com pedido explícito) |
+
+Ver playbook: [`data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json`](data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json)
+
 ## Fontes de verdade (código)
 
 | Área | Arquivo |
@@ -26,6 +36,7 @@ npm run build            # validate:env + next build
 | **Handcraft golden-v1** (runbook operacional) | [`docs/GOLDEN_HANDCRAFT_MODEL.md`](docs/GOLDEN_HANDCRAFT_MODEL.md) |
 | **Nova conversa handcraft** (`Handcraft: <subtópico>`) | [`docs/HANDCRAFT_CONVERSA.md`](docs/HANDCRAFT_CONVERSA.md) |
 | **Qualidade vendável** (L1–L6, modelo híbrido) | [`docs/QUALITY_LAYERS_MODEL.md`](docs/QUALITY_LAYERS_MODEL.md) · ADR [`docs/DECISAO_QUALITY_HIBRIDA.md`](docs/DECISAO_QUALITY_HIBRIDA.md) |
+| **Auto-aprovação por risco** (A4 humano só em dose/conduta) | [`docs/DECISAO_AUTO_APROVACAO_RISCO.md`](docs/DECISAO_AUTO_APROVACAO_RISCO.md) · [`lib/catalogMigration/riskScoring.ts`](lib/catalogMigration/riskScoring.ts) |
 | **Nova conversa vendável** (`Qualidade vendável: <subtópico>`) | [`docs/QUALITY_VENDAVEL_CONVERSA.md`](docs/QUALITY_VENDAVEL_CONVERSA.md) |
 | **Pipeline completo** (`Pipeline completo: <subtópico>`) | [`docs/PIPELINE_COMPLETO_CONVERSA.md`](docs/PIPELINE_COMPLETO_CONVERSA.md) · [`docs/PROGRAMA_CATALOGO_41.md`](docs/PROGRAMA_CATALOGO_41.md) |
 | **Mapeamento L3** (`Mapeamento L3: <subtópico>`) | [`docs/L3_MAPEAMENTO_CONVERSA.md`](docs/L3_MAPEAMENTO_CONVERSA.md) |
@@ -745,6 +756,8 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 |-------|-------------|
 | [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md) | Melhorar visual de componentes/telas (vitrine, player, dashboard); tokens editorial + cyber |
 | [`.cursor/skills/avant-json-template/SKILL.md`](.cursor/skills/avant-json-template/SKILL.md) | Gerar/editar JSON de questões e NeuroSlides |
+| [`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`](.cursor/skills/avant-golden-anchor-handcraft/SKILL.md) | Handcraft L2: family → âncora → slots por slide |
+| [`.cursor/skills/professor-para-concurso/SKILL.md`](.cursor/skills/professor-para-concurso/SKILL.md) | Tom de professor para comentários e estudo reverso |
 | [`.cursor/skills/ebook-enfermagem-premium/SKILL.md`](.cursor/skills/ebook-enfermagem-premium/SKILL.md) | Ebooks HTML offline (fora do app Next) |
 
 ### Regras Cursor (não duplicar aqui)

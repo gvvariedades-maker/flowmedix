@@ -20,6 +20,16 @@ export const VIAS_BRANCHES = [
   'via_generico',
 ] as const;
 
+/** Ramos Saúde do Adolescente (ética bespoke + genéricos por eixo). */
+export const ADOLESCENTE_BRANCHES = [
+  'adolescente_etica_sigilo',
+  'adolescente_antropometria',
+  'adolescente_desenvolvimento',
+  'adolescente_saude_mental',
+  'adolescente_violencia_protecao',
+  'adolescente_generico',
+] as const;
+
 /** Ramos SV com pacote bespoke vitals-panel (playbook § pedagogical_branches + clusters temperatura/FR). */
 export const SINAIS_VITAIS_BRANCHES = [
   'vitals_pa_tecnica',
@@ -48,6 +58,27 @@ export const CAM_BESPOKE_BRANCHES = [
   'cam_alto_risco',
   'cam_exceto_conduta',
   'cam_documentacao',
+] as const;
+
+/** Ramos Punção com pacote bespoke 4/4. */
+export const PUNCAO_BESPOKE_BRANCHES = [
+  'puncao_flebite',
+  'puncao_dispositivo',
+  'puncao_exceto',
+  'puncao_tempo',
+  'puncao_periferica_antissepsia',
+  'puncao_ipcs_cvc',
+] as const;
+
+/** Ramos Punção Venosa — regressão L3 (6 bespoke + genérico). */
+export const PUNCAO_BRANCHES = [
+  'puncao_flebite',
+  'puncao_dispositivo',
+  'puncao_exceto',
+  'puncao_tempo',
+  'puncao_periferica_antissepsia',
+  'puncao_ipcs_cvc',
+  'puncao_generico',
 ] as const;
 
 /** Ramos Cuidados na Administração — regressão L3. */

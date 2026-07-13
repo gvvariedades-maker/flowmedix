@@ -30,9 +30,9 @@
   "next_lote": null,
   "nota": "Fechamento handcraft — 16/16 slugs do manifest saude-adolescente-completo",
   "anchor_second_review": {
-    "reviewed_at": "2026-06-29",
-    "reviewer": "agent",
-    "method": "agent",
+    "reviewed_at": "2026-07-13",
+    "reviewer": "handcraft-qc",
+    "method": "human",
     "status": "pass",
     "artifact": "artifacts/anchor-review/saude-adolescente-g02.json"
   }

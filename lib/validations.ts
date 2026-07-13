@@ -133,6 +133,23 @@ export const ContentReviewSchema = z.object({
   exam_vs_current: z.union([z.literal('none'), z.string().max(500)]).optional(),
 });
 
+/** Auto-aprovação por risco — @see docs/DECISAO_AUTO_APROVACAO_RISCO.md */
+export const EfficacyContractSchema = z.object({
+  risk_tier: z.enum(['baixo', 'medio', 'alto']).optional(),
+  risk_factors: z.array(z.string().max(64)).max(20).optional(),
+  approval_mode: z.enum(['auto', 'auto_conditional', 'human_required']).optional(),
+  a4_reviewed: z.boolean().optional(),
+  a4_reviewer: z.string().max(LIMITS.REVIEWER_MAX).optional(),
+  a4_checklist_passed: z.array(z.string().max(40)).max(12).optional(),
+  auto_approved_at: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'auto_approved_at deve ser AAAA-MM-DD')
+    .optional(),
+  sampled: z.boolean().optional(),
+  transfer_targets: z.array(z.string().max(200)).max(8).optional(),
+  retrieval_first: z.boolean().optional(),
+});
+
 export const QuestaoMetaSchema = z.object({
   ano: z.string().max(40, 'Ano deve ter no máximo 40 caracteres').optional(),
   banca: z.string().min(1, 'Banca é obrigatória').max(LIMITS.BANCA_MAX, `Banca deve ter no máximo ${LIMITS.BANCA_MAX} caracteres`),
@@ -154,6 +171,8 @@ export const QuestaoMetaSchema = z.object({
   sources: z.array(ContentSourceSchema).max(12).optional(),
   /** Ramo pedagógico L2.5 — define molde L3 quando o subtópico é bucket amplo. */
   pedagogical_branch: z.string().trim().max(80).optional(),
+  /** Contrato de eficácia / auto-aprovação por risco (opcional). */
+  efficacy_contract: EfficacyContractSchema.optional(),
 });
 
 export const QuestaoOptionSchema = z.object({
@@ -647,7 +666,7 @@ export const ConcursoRegraModulosSchema = z.object({
 });
 
 // ============================================================================
-// LP PAGES (CMS — funil AVANT Pro)
+// LP PAGES (CMS — funil AVANT Enf Pro)
 // ============================================================================
 
 export const LpPathSchema = z

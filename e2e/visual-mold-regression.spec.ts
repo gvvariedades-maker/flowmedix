@@ -19,10 +19,13 @@ import {
   PNI_IMUNIZACAO_BRANCHES,
   CAM_BRANCHES,
   CAM_BESPOKE_BRANCHES,
+  PUNCAO_BRANCHES,
+  PUNCAO_BESPOKE_BRANCHES,
   SAUDE_MULHER_BRANCHES,
   SINAIS_VITAIS_BRANCHES,
   URGENCIAS_BRANCHES,
   VIAS_BRANCHES,
+  ADOLESCENTE_BRANCHES,
   screenshotSlidePanels,
   SLIDE_COUNT,
   writeVisualMoldSummary,
@@ -185,6 +188,53 @@ test.describe('Vias de Administração — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('vias-de-administracao');
+  });
+});
+
+test.describe('Saúde do Adolescente — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Adolescente — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!browserName.includes('chromium') && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  for (const branch of ADOLESCENTE_BRANCHES) {
+    test(`Adolescente ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Adolescente ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Adolescente — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'saude-adolescente',
+      branches: ADOLESCENTE_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Adolescente — ${ADOLESCENTE_BRANCHES.length} branches (desktop + mobile-375); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('saude-adolescente');
   });
 });
 
@@ -432,5 +482,66 @@ test.describe('CAM Cuidados na Administração — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('cuidados-na-administracao-de-medicamentos');
+  });
+});
+
+test.describe('Visual mold regression — Punção Venosa', () => {
+  const OUT_DIR = path.join(process.cwd(), 'artifacts/visual-mold-regression');
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Punção — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PUNCAO_BRANCHES) {
+    test(`Punção ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Punção ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Punção puncao_flebite — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'puncao_flebite';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Punção — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'puncao-venosa-e-cuidados-com-cateteres',
+      branches: PUNCAO_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Punção — ${PUNCAO_BRANCHES.length} branches (${PUNCAO_BESPOKE_BRANCHES.length} bespoke + genérico); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('puncao-venosa-e-cuidados-com-cateteres');
   });
 });

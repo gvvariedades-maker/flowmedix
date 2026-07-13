@@ -1,0 +1,18 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+  "exported_at": "2026-07-12T05:26:56.965Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g12/manifest.json"
+  },
+  "slugs": [
+    "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+    "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+    "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-1",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
+    "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-3",
+    "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6"
+  ]
+}

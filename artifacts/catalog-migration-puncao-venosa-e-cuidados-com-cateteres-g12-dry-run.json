@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-07-13T13:58:28.664Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+  "mode": "dry-run",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

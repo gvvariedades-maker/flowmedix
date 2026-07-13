@@ -1,0 +1,18 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g10",
+  "exported_at": "2026-07-11T17:22:14.703Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g10/manifest.json"
+  },
+  "slugs": [
+    "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-0",
+    "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+    "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-0",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002714111-8",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003793968-2",
+    "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-0",
+    "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-7"
+  ]
+}

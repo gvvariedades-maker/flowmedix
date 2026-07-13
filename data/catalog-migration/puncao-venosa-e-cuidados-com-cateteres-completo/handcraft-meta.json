@@ -1,0 +1,70 @@
+{
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "pacote_prefix": "puncao-venosa-e-cuidados-com-cateteres",
+  "status": "in_progress",
+  "handcraft_applied": 8,
+  "total_slugs": 110,
+  "updated_at": "2026-07-11",
+  "cluster_report": "artifacts/puncao-topic-cluster-report.json",
+  "anchor_glob": "examples/questao-premium-*-puncao-*.json,examples/questao-premium-admtec-puncao-venosa-cateteres.json",
+  "golden_anchors_registry": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-golden-anchors.json",
+  "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json",
+  "next_lote": {
+    "id": "puncao-venosa-e-cuidados-com-cateteres-g02",
+    "status": "planned",
+    "pedagogical_branch_target": "puncao_dispositivo",
+    "cluster": "Dispositivo / calibre / jelco",
+    "slug_count": 8
+  },
+  "anchors_by_branch": {
+    "puncao_flebite": "examples/questao-premium-avancasp-puncao-infiltracao-flebite.json",
+    "puncao_dispositivo": "examples/questao-premium-gama-puncao-scalp-jelco-calibre.json",
+    "puncao_exceto": "examples/questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+    "puncao_tempo": "examples/questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+    "puncao_periferica_antissepsia": "examples/questao-premium-funpar-puncao-tecnica-periferica.json",
+    "puncao_ipcs_cvc": "examples/questao-premium-admtec-puncao-venosa-cateteres.json",
+    "puncao_generico": "examples/questao-premium-gama-puncao-scalp-jelco-calibre.json"
+  },
+  "l3_molds": {
+    "puncao_flebite": {
+      "status": "implemented",
+      "package": "iv-complication-orbit · iv-differential-board · iv-complication-tap-flow · iv-label-swap-trap"
+    },
+    "puncao_dispositivo": {
+      "status": "implemented",
+      "package": "iv-gauge-matrix · iv-device-reference-board · iv-device-tap-flow · iv-gauge-mismatch-trap"
+    },
+    "puncao_exceto": {
+      "status": "implemented",
+      "package": "iv-exceto-spectrum · iv-exceto-command-board · iv-exceto-tap-flow · iv-exceto-intruder-trap"
+    },
+    "puncao_tempo": {
+      "status": "implemented",
+      "package": "iv-interval-timeline · iv-interval-board · iv-interval-tap-flow · iv-interval-swap-trap"
+    },
+    "puncao_periferica_antissepsia": {
+      "status": "implemented",
+      "package": "iv-puncture-rail · iv-antisepsis-board · iv-puncture-tap-flow · iv-order-invert-trap"
+    },
+    "puncao_ipcs_cvc": {
+      "status": "implemented",
+      "package": "iv-bundle-orbit · iv-bundle-mesh-reveal · iv-bundle-tap-flow · iv-bundle-break-trap"
+    },
+    "puncao_generico": {
+      "status": "implemented",
+      "package": "bridge · reference_table · cards · compare"
+    }
+  },
+  "g01": {
+    "id": "puncao-venosa-e-cuidados-com-cateteres-g01",
+    "status": "applied",
+    "pedagogical_branch": "puncao_flebite",
+    "slug_count": 8,
+    "applied_at": "2026-07-11",
+    "quality_uplift_at": "2026-07-11",
+    "readiness": "8/8 READY strict-v2",
+    "enrich_guideline_meta": "8/8 enriched (puncao-cateter-anvisa + sae-cofen-358 quando AVP)",
+    "a4_pilot": "artifacts/puncao-g01-a4-pilot.md",
+    "l6_anchor_review": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g01.json"
+  }
+}

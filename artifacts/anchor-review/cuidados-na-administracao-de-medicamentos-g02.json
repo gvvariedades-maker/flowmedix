@@ -1,16 +1,25 @@
 {
-  "generated_at": "2026-07-10T22:31:53.468Z",
+  "generated_at": "2026-07-11T19:56:38.951Z",
   "lote": "cuidados-na-administracao-de-medicamentos-g02",
   "anchor_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
   "subtopico": "Cuidados na Administração de Medicamentos",
   "automated": {
-    "readiness_ok": true,
-    "alignment_ok": true,
+    "readiness_ok": false,
+    "alignment_ok": false,
     "numeric_ok": true,
-    "automated_pass": true,
-    "issues": []
+    "automated_pass": false,
+    "issues": [
+      "[A2] molde_golden_rule_sem_rows: golden_rule do molde \"cam-nine-rights-board\" exige rows (label+value) — sem rows o player cai em layout genérico.",
+      "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
+      "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
+      "[A2.5] align_logic_not_recycle: logic_flow recicla o texto das alternativas (5/9 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
+      "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
+      "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_certos_vf_caso)",
+      "[align] align_logic_not_recycle: logic_flow recicla o texto das alternativas (5/9 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
+      "[align] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas."
+    ]
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
   "checklist": [
     {
       "id": 1,

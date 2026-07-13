@@ -1,8 +1,8 @@
 export const HERO = {
-  eyebrow: 'Método AVANT',
+  eyebrow: 'Método AVANT Enf',
   title: 'Estudo Reverso: aprenda pela questão, não para a questão',
   subtitle:
-    'Uma das formas mais eficientes para concursos: o AVANT transforma cada questão em uma aula completa, com diagnóstico, explicação guiada, fixação e revisão.',
+    'Uma das formas mais eficientes para concursos: o AVANT Enf transforma cada questão em uma aula completa, com diagnóstico, explicação guiada, fixação e revisão.',
   ctaPrimary: { label: 'Começar meu primeiro Estudo Reverso', href: '/estudar' },
   ctaSecondary: { label: 'Ver tutorial completo', href: '/ajuda' },
 } as const;
@@ -10,10 +10,10 @@ export const HERO = {
 export const TOC = [
   { id: 'problema', label: 'O problema do estudo tradicional' },
   { id: 'definicao', label: 'O que é Estudo Reverso' },
-  { id: 'ciclo', label: 'Ciclo AVANT de Aprovação' },
+  { id: 'ciclo', label: 'Ciclo AVANT Enf de Aprovação' },
   { id: 'comparativo', label: 'Tradicional vs Reverso' },
   { id: 'neurociencia', label: 'Por que funciona (neurociência)' },
-  { id: 'passo-a-passo', label: 'Como aplicar no AVANT' },
+  { id: 'passo-a-passo', label: 'Como aplicar no AVANT Enf' },
   { id: 'faq', label: 'Perguntas frequentes' },
 ] as const;
 
@@ -36,7 +36,7 @@ export const DEFINICAO = {
 } as const;
 
 export const CICLO = {
-  titulo: 'Ciclo AVANT de Aprovação',
+  titulo: 'Ciclo AVANT Enf de Aprovação',
   intro: 'Quatro etapas que se repetem a cada questão. Quanto mais ciclos, mais consolidado o conteúdo fica.',
   etapas: [
     {
@@ -125,7 +125,7 @@ export const PILARES = {
 } as const;
 
 export const PASSO_A_PASSO = {
-  titulo: 'Como aplicar o método no AVANT',
+  titulo: 'Como aplicar o método no AVANT Enf',
   passos: [
     'Escolha um assunto na Vitrine.',
     'Tente responder a questão antes de ver o gabarito.',

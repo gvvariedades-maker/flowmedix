@@ -15,6 +15,12 @@ import {
   formatPremiumGateIssues,
   premiumGateErrors,
 } from '@/lib/catalogMigration/premiumGate';
+import {
+  assertApprovalGate,
+  scoreQuestaoRisk,
+  type RiskScoringContext,
+} from '@/lib/catalogMigration/riskScoring';
+import { auditAndMitigateA4Minimo } from '@/lib/catalogMigration/a4MinimoRegistry';
 
 export type ApplyLoteItem = {
   modulo_slug: string;
@@ -27,6 +33,14 @@ export type ApplyLoteOptions = {
   allowInsert: boolean;
   /** Bloqueia escrita de questões com conteúdo/visual genérico (default: true). */
   premiumGate?: boolean;
+  /**
+   * Gate de auto-aprovação por risco (default: false — opt-in por pacote).
+   * Quando true, alto risco sem assinatura humana bloqueia o apply.
+   * @see docs/DECISAO_AUTO_APROVACAO_RISCO.md
+   */
+  riskApprovalGate?: boolean;
+  /** Contexto do registry para score de risco. */
+  riskContext?: RiskScoringContext;
 };
 
 export type ApplyLoteRowResult = {
@@ -35,6 +49,16 @@ export type ApplyLoteRowResult = {
   mode: 'update' | 'insert' | 'skip';
   detail?: string;
 };
+
+function scoreRiskForApply(
+  payload: ValidatedQuestao,
+  riskContext?: RiskScoringContext,
+) {
+  const base = scoreQuestaoRisk(payload, riskContext);
+  return auditAndMitigateA4Minimo(payload, base, {
+    autoApprovalEnabled: riskContext?.autoApprovalEnabled,
+  }).risk;
+}
 
 export async function applyLoteToSupabase(
   supabase: Awaited<ReturnType<typeof createServerSupabase>>,
@@ -45,6 +69,7 @@ export async function applyLoteToSupabase(
   const appliedSlugs: string[] = [];
 
   const premiumGate = options.premiumGate !== false;
+  const riskApprovalGate = options.riskApprovalGate === true;
 
   for (const item of items) {
     const { modulo_slug: slug, payload } = item;
@@ -57,6 +82,20 @@ export async function applyLoteToSupabase(
           status: 'failed',
           mode: 'update',
           detail: `gate premium: ${formatPremiumGateIssues(gateErrors)}`,
+        });
+        continue;
+      }
+    }
+
+    if (riskApprovalGate) {
+      const risk = scoreRiskForApply(payload, options.riskContext);
+      const blockers = assertApprovalGate(payload, risk);
+      if (blockers.length > 0) {
+        results.push({
+          modulo_slug: slug,
+          status: 'failed',
+          mode: 'update',
+          detail: `risk approval: ${blockers[0]}`,
         });
         continue;
       }

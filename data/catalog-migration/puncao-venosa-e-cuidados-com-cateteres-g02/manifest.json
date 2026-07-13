@@ -1,0 +1,18 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g02",
+  "exported_at": "2026-07-12T03:49:28.283Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g02/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-2",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-5",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-6",
+    "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-5",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-4"
+  ]
+}

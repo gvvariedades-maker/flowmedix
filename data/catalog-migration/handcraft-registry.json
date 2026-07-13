@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-10",
+  "updated_at": "2026-07-13",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -157,6 +157,16 @@
       "anchor_glob": "examples/questao-premium-*-saude-adolescente-*.json",
       "guideline": "lib/guidelines/saudeAdolescente.ts",
       "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": "2026-07-13"
+      },
       "quality": {
         "technical_ready_at": "2026-06-30",
         "production_ready_at": "2026-06-30",
@@ -179,9 +189,9 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-30T00:12:33.258Z",
+          "last_audit_at": "2026-07-13T18:41:35.679Z",
           "last_audit_pass": true,
-          "health_streak_days": 1,
+          "health_streak_days": 4,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
@@ -201,6 +211,16 @@
       "anchor_glob": "examples/questao-premium-*-historia-enfermagem-*.json",
       "guideline": "lib/guidelines/historiaEnfermagem.ts",
       "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": "2026-07-13"
+      },
       "quality": {
         "technical_ready_at": "2026-06-29",
         "production_ready_at": "2026-06-29",
@@ -657,6 +677,16 @@
       "golden_anchors_registry": "data/catalog-migration/vias-golden-anchors.json",
       "guideline": "lib/guidelines/viasAdministracao.ts",
       "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": "2026-07-13"
+      },
       "quality": {
         "technical_ready_at": "2026-07-04",
         "production_ready_at": "2026-07-04",
@@ -687,35 +717,43 @@
         }
       }
     },
-    "Cuidados na Administração de Medicamentos": {
-      "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
-      "manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/manifest.json",
-      "handcraft_meta": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/handcraft-meta.json",
-      "readme": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/README.md",
-      "cluster_command": "npm run cluster:cuidados-na-administracao-de-medicamentos",
-      "cluster_report": "artifacts/cuidados-na-administracao-de-medicamentos-topic-cluster-report.json",
-      "lote_pattern": "cuidados-na-administracao-de-medicamentos-g{NN}",
+    "Punção Venosa e Cuidados com Cateteres": {
+      "pacote_prefix": "puncao-venosa-e-cuidados-com-cateteres",
+      "manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-completo/README.md",
+      "cluster_report": "artifacts/puncao-topic-cluster-report.json",
+      "lote_pattern": "puncao-venosa-e-cuidados-com-cateteres-g{NN}",
       "lote_size": 8,
-      "status": "in_progress",
-      "total_slugs": 123,
-      "handcraft_applied": 0,
-      "anchor_glob": "examples/questao-premium-*-cuidados-*.json,examples/questao-premium-fepese-cuidados-administracao-medicamentos.json,examples/questao-premium-fepese-cuidados-insulina-alto-risco.json,examples/questao-premium-cotec-cuidados-heparina-alto-risco.json,examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json,examples/questao-premium-avancasp-cuidados-documentacao-vf.json,examples/questao-premium-cpcon-cuidados-incorreta-nove-certos.json,examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json,examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json",
-      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/cuidados-na-administracao-de-medicamentos.json",
-      "golden_anchors_registry": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-golden-anchors.json",
-      "guideline": "lib/guidelines/cuidadosMedicamentos.ts",
-      "production_status": "none",
+      "status": "applied",
+      "total_slugs": 110,
+      "handcraft_applied": 110,
+      "anchor_glob": "examples/questao-premium-*-puncao-*.json,examples/questao-premium-admtec-puncao-venosa-cateteres.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json",
+      "golden_anchors_registry": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-golden-anchors.json",
+      "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": "2026-07-13"
+      },
       "quality": {
-        "technical_ready_at": null,
-        "production_ready_at": null,
+        "technical_ready_at": "2026-07-12",
+        "production_ready_at": "2026-07-12",
         "monitoring_until": null,
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
+          "L1": true,
+          "L2": true,
+          "L2b": true,
           "L3": true,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L4": true,
+          "L5": true,
+          "L6": true
         },
         "slo": {
           "open_p0": 0,
@@ -725,9 +763,56 @@
           "p0_block_after_hours": 24
         },
         "continuous": {
-          "enabled": false,
-          "last_audit_at": null,
-          "last_audit_pass": null,
+          "enabled": true,
+          "last_audit_at": "2026-07-12T06:07:47.892Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Cuidados na Administração de Medicamentos": {
+      "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
+      "manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/README.md",
+      "cluster_command": "npm run cluster:cuidados-na-administracao-de-medicamentos",
+      "cluster_report": "artifacts/cuidados-na-administracao-de-medicamentos-topic-cluster-report.json",
+      "lote_pattern": "cuidados-na-administracao-de-medicamentos-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 123,
+      "handcraft_applied": 123,
+      "anchor_glob": "examples/questao-premium-*-cuidados-*.json,examples/questao-premium-fepese-cuidados-administracao-medicamentos.json,examples/questao-premium-fepese-cuidados-insulina-alto-risco.json,examples/questao-premium-cotec-cuidados-heparina-alto-risco.json,examples/questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json,examples/questao-premium-avancasp-cuidados-documentacao-vf.json,examples/questao-premium-cpcon-cuidados-incorreta-nove-certos.json,examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json,examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/cuidados-na-administracao-de-medicamentos.json",
+      "golden_anchors_registry": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-golden-anchors.json",
+      "guideline": "lib/guidelines/cuidadosMedicamentos.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-07-11",
+        "production_ready_at": "2026-07-11",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-11T20:35:17.301Z",
+          "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null
@@ -940,6 +1025,7 @@
     "slugify_hint": "minúsculas, sem acentos, hífens (ex.: saude-da-crianca)"
   },
   "quality_model_doc": "docs/QUALITY_LAYERS_MODEL.md",
+  "auto_approval_doc": "docs/DECISAO_AUTO_APROVACAO_RISCO.md",
   "quality_schema": {
     "production_status": [
       "none",
@@ -948,6 +1034,16 @@
       "production_ready",
       "blocked"
     ],
+    "auto_approval": {
+      "enabled": "boolean — default false; kill-switch por pacote",
+      "default_max_tier_auto": "baixo | medio | alto",
+      "sample_rate": {
+        "baixo": 0.05,
+        "medio": 0.2
+      },
+      "downgrade_on_report_rate_pct": 2,
+      "last_calibrated_at": "ISO date | null"
+    },
     "quality": {
       "technical_ready_at": "ISO date | null",
       "production_ready_at": "ISO date | null",
