@@ -29,6 +29,22 @@ const resendFromEmailSchema = z
     message: 'RESEND_FROM_EMAIL deve conter um endereço de e-mail (ex.: Avant <noreply@dominio.com>)',
   });
 
+/**
+ * Gate de ADMIN_EMAIL no build/runtime.
+ * - Vercel Production → obrigatório
+ * - Vercel Preview/Development → opcional (NODE_ENV=production no build, mas não é prod)
+ * - Fora da Vercel com NODE_ENV=production → obrigatório (build local/CI)
+ */
+export function requiresAdminEmailInEnv(
+  nodeEnv: string | undefined = process.env.NODE_ENV,
+  vercelEnv: string | undefined = process.env.VERCEL_ENV,
+): boolean {
+  const vercel = vercelEnv?.trim();
+  if (vercel === 'preview' || vercel === 'development') return false;
+  if (vercel === 'production') return true;
+  return nodeEnv === 'production';
+}
+
 const EnvSchema = z.object({
   NODE_ENV: nodeEnvSchema,
   NEXT_PUBLIC_SUPABASE_URL: z
@@ -82,15 +98,21 @@ const EnvSchema = z.object({
   SENTRY_ORG: z.string().min(1).optional(),
   SENTRY_PROJECT: z.string().min(1).optional(),
 }).superRefine((data, ctx) => {
-  if (data.NODE_ENV !== 'production') return;
-  if (!data.ADMIN_EMAIL?.trim() && !data.ADMIN_EMAILS?.trim()) {
-    ctx.addIssue({
-      code: 'custom',
-      message: 'ADMIN_EMAIL ou ADMIN_EMAILS é obrigatório em produção',
-      path: ['ADMIN_EMAIL'],
-    });
+  /**
+   * Na Vercel, Preview/Development também rodam `next build` com NODE_ENV=production.
+   * Exigir ADMIN_EMAIL só no deploy de produção real (VERCEL_ENV=production) ou em
+   * `next build` local/CI sem Vercel — evita falha de Preview por env branch-scoped.
+   */
+  if (requiresAdminEmailInEnv(data.NODE_ENV)) {
+    if (!data.ADMIN_EMAIL?.trim() && !data.ADMIN_EMAILS?.trim()) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'ADMIN_EMAIL ou ADMIN_EMAILS é obrigatório em produção',
+        path: ['ADMIN_EMAIL'],
+      });
+    }
   }
-  if (!data.SUPABASE_SERVICE_ROLE_KEY?.trim()) {
+  if (data.NODE_ENV === 'production' && !data.SUPABASE_SERVICE_ROLE_KEY?.trim()) {
     ctx.addIssue({
       code: 'custom',
       message: 'SUPABASE_SERVICE_ROLE_KEY é obrigatória em produção',

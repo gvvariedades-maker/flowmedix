@@ -27,7 +27,7 @@ Performance (LCP, INP, CLS) depende de medir em produção (Vercel Analytics, We
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Production, Preview | Sim |
 | `SUPABASE_SERVICE_ROLE_KEY` | Production | **Obrigatória** (cache, webhooks, RLS bypass server-side) |
 | `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | Production | Recomendado (rate limit distribuído; sem isso, fallback in-memory + warn) |
-| `ADMIN_EMAIL` | Production | **Obrigatório** (`ADMIN_EMAIL` ou `ADMIN_EMAILS`) |
+| `ADMIN_EMAIL` | Production | **Obrigatório** (`ADMIN_EMAIL` ou `ADMIN_EMAILS`). Preview na Vercel **não** bloqueia o build se ausente (`VERCEL_ENV=preview`); recomenda-se definir em Preview (todas as branches) para testar admin. |
 | `GOOGLE_API_KEY` | Production | Opcional (recursos de IA) |
 | `SUPABASE_WEBHOOK_SECRET` | Production | Webhooks Supabase (cache + auth); ver [Webhooks Supabase](#webhooks-supabase) |
 | `WEBHOOK_SECRET` | Production | Legado — fallback em `/api/cache/revalidate`; preferir `SUPABASE_WEBHOOK_SECRET` |
