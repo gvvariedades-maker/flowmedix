@@ -43,7 +43,8 @@ export type AutoApprovalPolicy = {
 
 export type EfficacyContract = {
   risk_tier?: RiskTier;
-  risk_factors?: RiskFactor[];
+  /** Preferir RiskFactor; Zod/JSON aceita string[] — score lê como fatores conhecidos. */
+  risk_factors?: Array<RiskFactor | string>;
   approval_mode?: ApprovalMode;
   /** true = A4 fechado (agente ou humano). */
   a4_reviewed?: boolean;
