@@ -1,45 +1,15 @@
-<!-- AVANT Enf: lockup cyber ultra-premium. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 68" fill="none" aria-label="AVANT Enf">
+<!-- AVANT Enf: lockup cyber — brasao + wordmark raster "AVANT enf" dourado/esmeralda. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 260 68" fill="none" aria-label="AVANT Enf">
   <defs>
     <linearGradient id="avant-h-shell" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="rgba(255,255,255,0.14)"/>
       <stop offset="50%" stop-color="rgba(143,224,32,0.35)"/>
       <stop offset="100%" stop-color="rgba(22,101,52,0.45)"/>
     </linearGradient>
-    <linearGradient id="avant-h-seal" x1="20%" y1="0%" x2="80%" y2="100%">
-      <stop offset="0%" stop-color="#1a7a3e"/>
-      <stop offset="42%" stop-color="#166534"/>
-      <stop offset="100%" stop-color="#14532d"/>
-    </linearGradient>
   </defs>
-  <rect width="256" height="68" rx="16" fill="url(#avant-h-shell)"/>
-  <rect x="1" y="1" width="254" height="66" rx="15" fill="#0d0d18"/>
+  <rect width="260" height="68" rx="16" fill="url(#avant-h-shell)"/>
+  <rect x="1" y="1" width="258" height="66" rx="15" fill="#0d0d18"/>
   <rect x="12" y="16" width="2" height="36" rx="1" fill="#8fe020"/>
-  <svg x="22" y="12" width="44" height="44" viewBox="0 0 56 56">
-    <circle cx="28" cy="28" r="28" fill="url(#avant-h-seal)"/>
-    <path fill="#ffffff" d="M26.4 10.2h3.2v35.6h-3.2z"/>
-    <path fill="#ffffff" d="M26.4 10.2L11.8 45.8h3.9L26.4 15.6z"/>
-    <path fill="#ffffff" d="M15.4 28.4H43.2v2H15.4z"/>
-    <path fill="#ffffff" d="M29.6 10.2h13.6v2H29.6z"/>
-    <path fill="#ffffff" d="M29.6 43.8h13.6v2H29.6z"/>
-  </svg>
-  <text
-    x="78"
-    y="32"
-    fill="#f8fafc"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="19"
-    font-weight="600"
-    letter-spacing="4.8"
-  >AVANT</text>
-  <rect x="78" y="40" width="16" height="1" rx="0.5" fill="rgba(143,224,32,0.35)"/>
-  <text
-    x="100"
-    y="46"
-    fill="#94a3b8"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="9"
-    font-weight="600"
-    letter-spacing="3.2"
-  >ENF</text>
+  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="22" y="12" width="44" height="44" preserveAspectRatio="xMidYMid meet"/>
+  <image href="avant-logo-wordmark-raster.png" xlink:href="avant-logo-wordmark-raster.png" x="76" y="19" width="172" height="38.4" preserveAspectRatio="xMidYMid meet"/>
 </svg>

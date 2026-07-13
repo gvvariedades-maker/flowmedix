@@ -20,7 +20,6 @@ export function AvantLogoEmail() {
   const barW = AVANT_LOGO_DIMENSIONS.lockupInner.accentBarWidth;
   const wordmarkSize = AVANT_LOGO_DIMENSIONS.wordmark.fontSize;
   const letterSpacing = AVANT_LOGO_DIMENSIONS.wordmark.letterSpacingPx;
-  const subtitleSize = AVANT_LOGO_DIMENSIONS.subtitle.fontSize;
   const subtitleLabel = AVANT_LOGO_DIMENSIONS.subtitle.label;
 
   return (
@@ -112,6 +111,7 @@ export function AvantLogoEmail() {
                               &nbsp;
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
+                              {/* Mesmo lockup "AVANT enf" do emblema dourado/esmeralda (sem gradiente — clientes de e-mail nao suportam background-clip:text de forma confiavel). */}
                               <Text
                                 style={{
                                   margin: 0,
@@ -119,29 +119,16 @@ export function AvantLogoEmail() {
                                   fontFamily:
                                     '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                                   fontSize: `${wordmarkSize}px`,
-                                  fontWeight: 600,
+                                  fontWeight: 800,
                                   lineHeight: '1.05',
                                   letterSpacing: `${letterSpacing}px`,
-                                  textTransform: 'uppercase',
-                                  color: AVANT_LOGO_COLORS.wordmarkCyber,
+                                  color: AVANT_LOGO_COLORS.wordmarkGoldSolid,
                                 }}
                               >
-                                AVANT
-                              </Text>
-                              <Text
-                                style={{
-                                  margin: `${AVANT_LOGO_DIMENSIONS.subtitle.gapFromWordmark}px 0 0`,
-                                  padding: 0,
-                                  fontFamily:
-                                    '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
-                                  fontSize: `${subtitleSize}px`,
-                                  fontWeight: 600,
-                                  lineHeight: '1',
-                                  letterSpacing: `${AVANT_LOGO_DIMENSIONS.subtitle.letterSpacingPx}px`,
-                                  color: AVANT_LOGO_COLORS.subtitleCyber,
-                                }}
-                              >
-                                {subtitleLabel}
+                                AVANT{' '}
+                                <span style={{ color: AVANT_LOGO_COLORS.wordmarkEnfGreen }}>
+                                  {subtitleLabel}
+                                </span>
                               </Text>
                             </td>
                           </tr>

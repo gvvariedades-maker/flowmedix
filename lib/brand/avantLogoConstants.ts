@@ -63,6 +63,11 @@ export const AVANT_LOGO_COLORS = {
   hairlineEditorial: 'rgba(22, 101, 52, 0.28)',
   hairlineCyber: 'rgba(143, 224, 32, 0.35)',
   wordmarkGlow: 'rgba(143, 224, 32, 0.18)',
+  /** Brasao dourado/esmeralda (mesmo modelo do emblema) — "AVANT" metalizado dourado. */
+  wordmarkGoldSolid: '#d4af37',
+  /** "enf" em verde esmeralda vivo, tom sólido para e-mail (sem gradiente). */
+  wordmarkEnfGreen: '#0b7a53',
+  wordmarkEnfGreenDeep: '#054a33',
 } as const;
 
 export const AVANT_LOGO_GRADIENTS = {
@@ -71,6 +76,11 @@ export const AVANT_LOGO_GRADIENTS = {
   wordmarkStops: ['#ecfdf5', '#86efac', '#8fe020'] as const,
   shellBorder:
     'linear-gradient(160deg, rgba(255,255,255,0.14) 0%, rgba(143, 224, 32, 0.35) 50%, rgba(22, 101, 52, 0.45) 100%)',
+  /** Texto "AVANT" metalizado — mesmo brasao dourado do emblema (foil gradient). */
+  wordmarkGoldText:
+    'linear-gradient(135deg, #fbe9ac 0%, #e9c460 22%, #d4af37 45%, #a9791a 62%, #f2d478 80%, #d4af37 100%)',
+  /** Verde esmeralda de "enf" — combina com o fundo do brasao. */
+  wordmarkEnfGreen: 'linear-gradient(160deg, #109466 0%, #0b7a53 55%, #054a33 100%)',
 } as const;
 
 export const AVANT_LOGO_DIMENSIONS = {
@@ -104,8 +114,8 @@ export const AVANT_LOGO_DIMENSIONS = {
     letterSpacingPx: 3.2,
     lineHeight: 1,
     gapFromWordmark: 7,
-    /** Small-caps limpo — sem bullet (research: middle-dot lê como tipografia improvisada). */
-    label: 'ENF',
+    /** Minúsculo — mesmo lockup "AVANT enf" do emblema dourado/esmeralda. */
+    label: 'enf',
     hairlineWidth: 18,
     hairlineHeight: 1,
   },

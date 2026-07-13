@@ -100,11 +100,20 @@ export const metadata: Metadata = {
     siteName,
     locale: 'pt_BR',
     type: "website",
+    images: [
+      {
+        url: '/brand/avant-logo-cover.png',
+        width: 1536,
+        height: 1024,
+        alt: siteName,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${BRAND_NAME} - Estudo reverso para concursos de Enfermagem`,
     description: siteDescription,
+    images: ['/brand/avant-logo-cover.png'],
   },
   robots: {
     index: true,

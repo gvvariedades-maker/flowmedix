@@ -12,8 +12,8 @@ export const BRAND_PRO_NAME = 'AVANT Enf Pro';
 /** Wordmark no logo (sem subtítulo) */
 export const BRAND_WORDMARK = 'AVANT';
 
-/** Subtítulo no lockup */
-export const BRAND_LOGO_SUBTITLE = 'Enf';
+/** Subtítulo no lockup (minúsculo — mesmo lockup "AVANT enf" do emblema) */
+export const BRAND_LOGO_SUBTITLE = 'enf';
 
 /** PWA / apple-mobile-web-app-title (curto) */
 export const BRAND_SHORT_NAME = 'AVANT Enf';

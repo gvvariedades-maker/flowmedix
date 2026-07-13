@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { resolveLucideIcon } from '../core/lucideIcon';
 import {
@@ -131,6 +132,19 @@ export function AdolescentGrowthZRailConceptMap({
         <div className="text-center">
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-sky-700">
             Caderneta — escore Z (5–19 anos)
+          </p>
+        </div>
+
+        <div
+          role="status"
+          className="flex flex-col items-center gap-1.5 rounded-xl border border-amber-200/80 bg-amber-50/90 px-3 py-2.5 text-center"
+        >
+          <p className="flex items-center justify-center gap-2 font-body text-xs font-semibold text-amber-950">
+            <Hand className="h-3.5 w-3.5 shrink-0 text-amber-700" aria-hidden />
+            Toque nos marcos do trilho ou nos cards abaixo
+          </p>
+          <p className="font-body text-[11px] leading-relaxed text-amber-900/85">
+            Cada card liga um conceito (ferramenta, Z, sobrepeso, conduta) ao ponto certo da curva OMS.
           </p>
         </div>
 

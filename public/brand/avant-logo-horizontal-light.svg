@@ -1,35 +1,5 @@
-<!-- AVANT Enf: lockup editorial ultra-premium. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" fill="none" aria-label="AVANT Enf">
-  <defs>
-    <linearGradient id="avant-hl-seal" x1="20%" y1="0%" x2="80%" y2="100%">
-      <stop offset="0%" stop-color="#1a7a3e"/>
-      <stop offset="42%" stop-color="#166534"/>
-      <stop offset="100%" stop-color="#14532d"/>
-    </linearGradient>
-  </defs>
-  <circle cx="28" cy="28" r="28" fill="url(#avant-hl-seal)"/>
-  <path fill="#ffffff" d="M26.4 10.2h3.2v35.6h-3.2z"/>
-  <path fill="#ffffff" d="M26.4 10.2L11.8 45.8h3.9L26.4 15.6z"/>
-  <path fill="#ffffff" d="M15.4 28.4H43.2v2H15.4z"/>
-  <path fill="#ffffff" d="M29.6 10.2h13.6v2H29.6z"/>
-  <path fill="#ffffff" d="M29.6 43.8h13.6v2H29.6z"/>
-  <text
-    x="70"
-    y="25"
-    fill="#0f172a"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="21"
-    font-weight="600"
-    letter-spacing="5.2"
-  >AVANT</text>
-  <rect x="70" y="34" width="18" height="1" rx="0.5" fill="rgba(22,101,52,0.28)"/>
-  <text
-    x="94"
-    y="40"
-    fill="#64748b"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="9"
-    font-weight="600"
-    letter-spacing="3.2"
-  >ENF</text>
+<!-- AVANT Enf: lockup editorial — brasao + wordmark raster "AVANT enf" dourado/esmeralda. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 232 56" fill="none" aria-label="AVANT Enf">
+  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="0" y="0" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>
+  <image href="avant-logo-wordmark-raster.png" xlink:href="avant-logo-wordmark-raster.png" x="66" y="9" width="166" height="37" preserveAspectRatio="xMidYMid meet"/>
 </svg>

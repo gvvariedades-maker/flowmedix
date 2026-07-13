@@ -2,7 +2,7 @@
 
 import { useCallback } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Check, X } from 'lucide-react';
+import { Check, Hand, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
@@ -76,6 +76,8 @@ export function DangerZoneAdolescentZThresholdTrap({
     [isTapMode, revealItem],
   );
 
+  const openedCount = items.filter((_, i) => isItemRevealed(i)).length;
+
   return (
     <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-5">
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-30`} />
@@ -84,6 +86,16 @@ export function DangerZoneAdolescentZThresholdTrap({
         <h2 className="text-center font-display text-base font-black uppercase tracking-wide text-rose-800 md:text-lg">
           {content}
         </h2>
+
+        <div className="flex flex-col items-center gap-2 text-center">
+          <p className="font-mono text-[9px] font-bold uppercase tracking-widest text-rose-700/80">
+            {openedCount}/{items.length} pegadinhas reveladas
+          </p>
+          <p className="flex items-center justify-center gap-1.5 font-body text-xs font-semibold text-rose-900">
+            <Hand className="h-3.5 w-3.5 shrink-0" aria-hidden />
+            Toque em cada card para ver a faixa certa no trilho Z
+          </p>
+        </div>
 
         {items.map((item, index) => {
           const isOpen = isItemRevealed(index);
@@ -117,6 +129,12 @@ export function DangerZoneAdolescentZThresholdTrap({
                     <p className="font-display text-sm font-bold text-slate-900">{item.label}</p>
                   </div>
                   <p className="mt-1 font-body text-xs text-slate-600">{item.detail}</p>
+                  {!isOpen ? (
+                    <p className="mt-2 flex items-center gap-1 font-mono text-[9px] font-bold uppercase tracking-wider text-rose-600">
+                      <Hand className="h-3 w-3 shrink-0" aria-hidden />
+                      Toque para ver a correção
+                    </p>
+                  ) : null}
                 </div>
               </button>
 
@@ -126,7 +144,9 @@ export function DangerZoneAdolescentZThresholdTrap({
                   correctPosition={bands.correctPosition}
                   revealed={isOpen}
                 />
-                <p className="mt-2 font-mono text-[10px] text-slate-500">{bands.trapLabel}</p>
+                <p className="mt-2 font-mono text-[10px] text-slate-500">
+                  {isOpen ? 'Faixa correta no verde' : bands.trapLabel}
+                </p>
               </div>
 
               {isOpen && item.correct ? (

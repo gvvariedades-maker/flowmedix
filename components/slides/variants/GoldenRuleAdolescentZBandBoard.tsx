@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow } from './GoldenRule';
 import {
@@ -37,7 +38,10 @@ export function GoldenRuleAdolescentZBandBoard({
   footerRule,
 }: GoldenRuleAdolescentZBandBoardProps) {
   const reduceMotion = useReducedMotion();
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(() => {
+    const highlightIdx = rows.findIndex((row) => row.emphasis === 'highlight');
+    return highlightIdx >= 0 ? highlightIdx : null;
+  });
 
   const enriched = useMemo(
     () =>
@@ -68,6 +72,23 @@ export function GoldenRuleAdolescentZBandBoard({
             {content}
           </h2>
         ) : null}
+
+        <div
+          role="status"
+          className="flex flex-col items-center gap-1.5 rounded-xl border border-amber-200/80 bg-amber-50/90 px-4 py-3 text-center"
+        >
+          <p className="flex items-center justify-center gap-2 font-body text-sm font-semibold text-amber-950">
+            <Hand className="h-4 w-4 shrink-0 text-amber-700" aria-hidden />
+            Toque em cada faixa da tabela
+          </p>
+          <p className="font-body text-xs leading-relaxed text-amber-900/85">
+            O trilho Z acende no desvio-padrão da linha — role para ver sobrepeso, obesidade e magreza acentuada.
+          </p>
+        </div>
+
+        <p className="text-center font-mono text-[10px] font-bold uppercase tracking-widest text-sky-700/80">
+          Qual limiar a banca cobra na Caderneta?
+        </p>
 
         <div className="overflow-x-auto rounded-2xl border border-sky-200/80 bg-white/90 p-3 shadow-sm">
           <div className="min-w-[280px]">
@@ -116,7 +137,11 @@ export function GoldenRuleAdolescentZBandBoard({
                       >
                         {row.badge}
                       </span>
-                    ) : null}
+                    ) : (
+                      <span className="shrink-0 font-mono text-[9px] font-bold uppercase tracking-wider text-sky-600/80">
+                        {active ? 'No trilho' : 'Toque'}
+                      </span>
+                    )}
                   </motion.button>
                 );
               })}

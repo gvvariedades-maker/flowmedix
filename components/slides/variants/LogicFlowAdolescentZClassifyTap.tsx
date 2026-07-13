@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, CheckCircle2, XCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle2, Hand, XCircle } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import {
@@ -89,6 +89,21 @@ export function LogicFlowAdolescentZClassifyTap({
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
 
       <div className="relative z-10 mx-auto flex w-full max-w-lg flex-col gap-4">
+        {isTap ? (
+          <div
+            role="status"
+            className="flex flex-col items-center gap-1 rounded-xl border border-amber-200/80 bg-amber-50/90 px-3 py-2.5 text-center"
+          >
+            <p className="flex items-center justify-center gap-2 font-body text-xs font-semibold text-amber-950">
+              <Hand className="h-3.5 w-3.5 shrink-0 text-amber-700" aria-hidden />
+              Toque em <span className="font-bold">Próximo</span> a cada passo
+            </p>
+            <p className="font-body text-[11px] leading-relaxed text-amber-900/85">
+              Classifique letra por letra no trilho Z antes de marcar o gabarito.
+            </p>
+          </div>
+        ) : null}
+
         <div className="flex items-center justify-center gap-1">
           {parsed.map((_, i) => (
             <span
