@@ -1,15 +1,21 @@
 {
   "lote": "cuidados-na-administracao-de-medicamentos-g03",
-  "exported_at": "2026-07-10T22:47:46.193Z",
+  "exported_at": "2026-07-11T04:53:05.033Z",
   "source": "supabase",
   "filters": {
-    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g03/manifest.json"
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g03/manifest.json",
+    "reconciled_from": "artifacts/catalog-migration-cuidados-na-administracao-de-medicamentos-g03-applied.json"
   },
   "slugs": [
     "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-4",
     "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
     "fcm-enfermagem-seguranca-do-paciente-1777102936764-9",
     "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-2",
-    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2"
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2",
+    "iaupe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-0",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+    "quadrix-enfermagem-seguranca-do-paciente-1777102861438-0",
+    "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-4",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-8"
   ]
 }

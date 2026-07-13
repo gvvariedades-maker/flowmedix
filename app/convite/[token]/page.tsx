@@ -40,7 +40,7 @@ function statusCopy(status: InviteLinkPublicStatus): { title: string; detail: st
       };
     default:
       return {
-        title: 'Convite AVANT Pro',
+        title: 'Convite AVANT Enf Pro',
         detail: 'Estudo ilimitado por um período — crie sua conta ou entre para resgatar.',
         icon: Gift,
       };
@@ -105,7 +105,7 @@ export default async function ConvitePage({ params }: PageProps) {
             {isValid && preview ? (
               <ul className="space-y-2 rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm text-slate-300">
                 <li>
-                  <span className="font-black text-cyan-400">{preview.proDays} dias</span> de AVANT Pro
+                  <span className="font-black text-cyan-400">{preview.proDays} dias</span> de AVANT Enf Pro
                   ilimitado após o resgate
                 </li>
                 <li>
@@ -152,7 +152,7 @@ export default async function ConvitePage({ params }: PageProps) {
                   href="/planos"
                   className="flex w-full items-center justify-center rounded-xl border border-white/15 p-4 text-center text-sm font-black uppercase tracking-widest text-slate-300 transition-colors hover:text-white"
                 >
-                  Ver planos AVANT Pro
+                  Ver planos AVANT Enf Pro
                 </Link>
               </div>
             )}

@@ -1,0 +1,372 @@
+{
+  "generated_at": "2026-07-11T04:57:22.951Z",
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "summary": {
+    "total_curated": 123,
+    "golden_v1_applied_db": 87,
+    "golden_v1_local_questions": 87,
+    "v3_ready_all_lotes": 87,
+    "branch_reconcile_mismatches": 0,
+    "rehandcraft_needed": 0,
+    "remaining_slugs": 36,
+    "clusters_closed": {
+      "cam_alto_risco": "18/19",
+      "cam_certos_vf_caso": "18/18",
+      "cam_exceto_conduta": "8/9",
+      "cam_documentacao": "15/16",
+      "cam_generico": "28/28 Default"
+    }
+  },
+  "db_branch_counts": {
+    "cam_generico": 28,
+    "cam_alto_risco": 18,
+    "cam_certos_vf_caso": 18,
+    "cam_documentacao": 15,
+    "cam_exceto_conduta": 8
+  },
+  "lotes_g01_g09": [
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g01",
+      "target": "cam_alto_risco",
+      "slug_count": 8,
+      "v3_ready": 8,
+      "branches_meta": {
+        "cam_alto_risco": 8
+      },
+      "status": "applied"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g02",
+      "target": "cam_certos_vf_caso",
+      "slug_count": 8,
+      "v3_ready": 8,
+      "branches_meta": {
+        "cam_certos_vf_caso": 8
+      },
+      "status": "handcraft_complete"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g03",
+      "target": "cam_certos_vf_caso",
+      "slug_count": 10,
+      "v3_ready": 10,
+      "branches_meta": {
+        "cam_certos_vf_caso": 10
+      },
+      "status": "handcraft_complete"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g04",
+      "target": "cam_exceto_conduta",
+      "slug_count": 8,
+      "v3_ready": 8,
+      "branches_meta": {
+        "cam_exceto_conduta": 8
+      },
+      "status": "handcraft_complete"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g05",
+      "target": "cam_alto_risco",
+      "slug_count": 10,
+      "v3_ready": 10,
+      "branches_meta": {
+        "cam_alto_risco": 10
+      },
+      "status": "handcraft_complete"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g06",
+      "target": "cam_documentacao",
+      "slug_count": 15,
+      "v3_ready": 15,
+      "branches_meta": {
+        "cam_documentacao": 15
+      },
+      "status": "handcraft_complete"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g07",
+      "target": "cam_generico",
+      "slug_count": 10,
+      "v3_ready": 10,
+      "branches_meta": {
+        "cam_generico": 10
+      },
+      "status": "handcraft_complete"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g08",
+      "target": "cam_generico",
+      "slug_count": 10,
+      "v3_ready": 10,
+      "branches_meta": {
+        "cam_generico": 10
+      },
+      "status": "handcraft_complete"
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g09",
+      "target": "cam_generico",
+      "slug_count": 8,
+      "v3_ready": 8,
+      "branches_meta": {
+        "cam_generico": 8
+      },
+      "status": "applied"
+    }
+  ],
+  "finding": "Ramos fortes já em g01–g06 com meta.pedagogical_branch correto; v3 [READY] 87/87; reconcile-branch 0 mismatches. Fila re-handcraft vazia. Próximo: g10+ (36 slugs cauda cam_generico + gaps de âncora).",
+  "rehandcraft_queue": [],
+  "next_lotes_queue": {
+    "g10": {
+      "target_branch": "cam_generico",
+      "count": 8
+    },
+    "g11": {
+      "target_branch": "cam_generico",
+      "count": 8
+    },
+    "g12": {
+      "target_branch": "cam_generico",
+      "count": 8
+    },
+    "g13": {
+      "target_branch": "cam_generico",
+      "count": 8
+    },
+    "g14": {
+      "target_branch": "cam_generico",
+      "count": 4
+    },
+    "anchor_gaps_not_in_lotes": [
+      "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+      "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
+      "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4"
+    ]
+  },
+  "remaining_by_playbook_branch": {
+    "cam_generico": 32,
+    "cam_exceto_conduta": 1,
+    "cam_alto_risco": 1,
+    "cam_certos_vf_caso": 2
+  },
+  "remaining_slugs": [
+    {
+      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-0",
+      "cluster": "V/F — protocolo MS / I–VI",
+      "micro_branch": "cam_vf_protocolo",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-7",
+      "cluster": "Prescrição ilegível / dúvida",
+      "micro_branch": "cam_prescricao_duvida",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+      "cluster": "V/F — protocolo MS / I–VI",
+      "micro_branch": "cam_vf_protocolo",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4",
+      "cluster": "Documentação / registro",
+      "micro_branch": "cam_generico",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-0",
+      "cluster": "Preparo / sala de medicação",
+      "micro_branch": "cam_preparo_asepsia",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
+      "cluster": "INCORRETA / EXCETO",
+      "micro_branch": "cam_exceto_conduta",
+      "playbook_branch": "cam_exceto_conduta"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-8",
+      "cluster": "Horário / aprazamento",
+      "micro_branch": "cam_generico",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-2",
+      "cluster": "Horário / aprazamento",
+      "micro_branch": "cam_generico",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-0",
+      "cluster": "Preparo / sala de medicação",
+      "micro_branch": "cam_preparo_asepsia",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-7",
+      "cluster": "Certo ou errado",
+      "micro_branch": "cam_generico",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-8",
+      "cluster": "Certo ou errado",
+      "micro_branch": "cam_generico",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-1",
+      "cluster": "LASA / nomes semelhantes",
+      "micro_branch": "cam_lasa_erro",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-7",
+      "cluster": "Orientação ao paciente",
+      "micro_branch": "cam_orientacao_paciente",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+      "cluster": "Vigilância / reações adversas",
+      "micro_branch": "cam_vigilancia_reacao",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-5",
+      "cluster": "Preparo / sala de medicação",
+      "micro_branch": "cam_preparo_asepsia",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+      "cluster": "Vigilância / reações adversas",
+      "micro_branch": "cam_vigilancia_reacao",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-2",
+      "cluster": "Preparo / sala de medicação",
+      "micro_branch": "cam_preparo_asepsia",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "faurgs-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-8",
+      "cluster": "Horário / aprazamento",
+      "micro_branch": "cam_generico",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+      "cluster": "Vigilância / reações adversas",
+      "micro_branch": "cam_vigilancia_reacao",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+      "cluster": "Alto risco / conferência dupla",
+      "micro_branch": "cam_alto_risco",
+      "playbook_branch": "cam_alto_risco"
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-7",
+      "cluster": "Nove certos — listagem",
+      "micro_branch": "cam_certos_lista",
+      "playbook_branch": "cam_certos_vf_caso"
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780008241722-0",
+      "cluster": "Orientação ao paciente",
+      "micro_branch": "cam_orientacao_paciente",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "fundatec-enfermagem-seguranca-do-paciente-1779563436357-3",
+      "cluster": "Horário / aprazamento",
+      "micro_branch": "cam_generico",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-6",
+      "cluster": "Vigilância / reações adversas",
+      "micro_branch": "cam_vigilancia_reacao",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "ibam-enfermagem-seguranca-do-paciente-1779563448133-9",
+      "cluster": "Vigilância / reações adversas",
+      "micro_branch": "cam_vigilancia_reacao",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7",
+      "cluster": "Vigilância / reações adversas",
+      "micro_branch": "cam_vigilancia_reacao",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1",
+      "cluster": "Nove certos — listagem",
+      "micro_branch": "cam_certos_lista",
+      "playbook_branch": "cam_certos_vf_caso"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-7",
+      "cluster": "Horário / aprazamento",
+      "micro_branch": "cam_generico",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "itame-enfermagem-seguranca-do-paciente-1777102861438-6",
+      "cluster": "Vigilância / reações adversas",
+      "micro_branch": "cam_vigilancia_reacao",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-seguranca-do-paciente-1777102678563-8",
+      "cluster": "V/F — protocolo MS / I–VI",
+      "micro_branch": "cam_vf_protocolo",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-0",
+      "cluster": "V/F — protocolo MS / I–VI",
+      "micro_branch": "cam_vf_protocolo",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102936764-0",
+      "cluster": "V/F — protocolo MS / I–VI",
+      "micro_branch": "cam_vf_protocolo",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-2",
+      "cluster": "Preparo / sala de medicação",
+      "micro_branch": "cam_preparo_asepsia",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-4",
+      "cluster": "Preparo / sala de medicação",
+      "micro_branch": "cam_preparo_asepsia",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "unifil-enfermagem-seguranca-do-paciente-1779563448133-0",
+      "cluster": "Prescrição ilegível / dúvida",
+      "micro_branch": "cam_prescricao_duvida",
+      "playbook_branch": "cam_generico"
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6",
+      "cluster": "Prescrição ilegível / dúvida",
+      "micro_branch": "cam_prescricao_duvida",
+      "playbook_branch": "cam_generico"
+    }
+  ]
+}

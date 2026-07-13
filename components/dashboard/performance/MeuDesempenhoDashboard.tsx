@@ -238,10 +238,3 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
     </div>
   );
 }
-
-/**
- * @deprecated Use `ProgressoEstudoDashboard` em novos imports.
- * Mantido para compatibilidade com referencias legadas.
- */
-const MeuDesempenhoDashboard = ProgressoEstudoDashboard;
-export default MeuDesempenhoDashboard;

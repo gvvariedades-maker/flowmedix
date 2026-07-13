@@ -128,18 +128,37 @@ O repositório mantém `lib/catalogMigration/upgradePremium*.ts` e `upgradePremi
 
 ---
 
-## 9. Referências no código
+## 9. Punção Venosa — fontes `meta.sources` (handcraft)
+
+Pacote: `puncao-venosa-e-cuidados-com-cateteres` · Enrich: `lib/catalogMigration/puncaoPedagogy.ts` · CLI: `npm run enrich:puncao-guideline-meta`
+
+| ID | Tier | Issuer | Uso |
+|----|------|--------|-----|
+| `puncao-cateter-anvisa` | A | Anvisa / COFEN | AVP, bundle CVC, antissepsia, complicações, troca de equipos |
+| `potter-perry-fundamentos-11ed-2024` | B | Elsevier / Potter & Perry | *Fundamentos de Enfermagem*, 11ª ed., Guanabara Koogan, 2024 — técnica e complicações AVP |
+| `sae-cofen-358` | A | COFEN | Documentação / registro quando o enunciado ancora prontuário ou SAE |
+| `manual-tecnico-enfermagem-avp` | B | Literatura técnica | Nomenclatura popular × norma (ex.: “flebite” coloquial = infiltração) |
+
+**Regra:** todo golden-v1 Punção deve ter **Anvisa + Potter** em `meta.sources`; `guideline_snapshot` prefixa snapshot Anvisa e cita Potter quando aplicável. IDs legados (`cofen-puncao-complicacoes`, `cofen-res-358-2009` sem URL) são substituídos pelo enrich.
+
+**Progresso (2026-07-11):** g01 (`puncao_flebite`) — 8/8 handcraft applied; subtópico 8/110; `production_status: none`.
+
+---
+
+## 10. Referências no código
 
 | Arquivo | Papel |
 |---------|--------|
 | [`data/catalog-migration/handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json) | Progresso handcraft |
 | [`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts) | Lint golden-v1 |
+| [`lib/catalogMigration/puncaoPedagogy.ts`](../lib/catalogMigration/puncaoPedagogy.ts) | Enrich meta Punção (Anvisa + Potter + COFEN 358) |
+| [`lib/guidelines/potterPerryFundamentos.ts`](../lib/guidelines/potterPerryFundamentos.ts) | Tier B — Potter & Perry 11ª ed. Brasil |
 | [`lib/guidelines/index.ts`](../lib/guidelines/index.ts) | Referência normativa |
 | [`lib/catalogMigration/upgradePremiumHybrid.ts`](../lib/catalogMigration/upgradePremiumHybrid.ts) | **Legado** — hybrid + stubs |
 | [`lib/catalogMigration/upgradePremiumDedicatedRouter.ts`](../lib/catalogMigration/upgradePremiumDedicatedRouter.ts) | **Legado** — builders |
 
 ---
 
-## 10. Resumo em uma frase
+## 11. Resumo em uma frase
 
 **Handcraft golden-v1 por slug é a produção; golden âncora guia o estilo; guideline apoia referência e factcheck — builder/hybrid são legado a substituir.**

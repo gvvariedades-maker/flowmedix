@@ -1,0 +1,84 @@
+{
+  "exported_at": "2026-07-12T05:41:48.730Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+  "total": 11,
+  "entries": [
+    {
+      "modulo_slug": "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 2915
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 2881
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2873
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "REIS E REIS",
+      "avant_codigo": 2874
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 2371
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 2373
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2904
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2346
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2910
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2879
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2385
+    }
+  ]
+}

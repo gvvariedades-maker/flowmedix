@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-12T06:11:55.328Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-6",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-0",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-2",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-0",
+    "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-0",
+    "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-1",
+    "idib-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778934890864-3",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778934890864-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

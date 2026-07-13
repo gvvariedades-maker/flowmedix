@@ -6,6 +6,7 @@ import { JsonLd, type JsonLdObject } from "@/components/seo/JsonLd";
 import { RegisterServiceWorker } from "@/components/pwa/RegisterServiceWorker";
 import { GlobalErrorListeners } from "@/components/monitoring/GlobalErrorListeners";
 import { getAbsoluteUrl, getSiteUrl } from "@/lib/siteUrl";
+import { BRAND_NAME } from "@/lib/brand/brandName";
 
 // Validar variáveis de ambiente no startup (apenas no servidor)
 if (typeof window === 'undefined') {
@@ -45,7 +46,7 @@ const dmSans = DM_Sans({
 });
 
 const siteUrl = getSiteUrl();
-const siteName = "AVANT";
+const siteName = BRAND_NAME;
 const siteDescription =
   "Estudo reverso para Técnicos de Enfermagem. Prepare-se para EBSERH, prefeituras e concursos com questões reais, diagnóstico de erro e revisão inteligente.";
 
@@ -74,7 +75,7 @@ const siteStructuredData: JsonLdObject[] = [
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-  title: "AVANT - Plataforma de Estudo Reverso para Técnicos de Enfermagem",
+  title: `${BRAND_NAME} - Plataforma de Estudo Reverso para Técnicos de Enfermagem`,
   description: siteDescription,
   alternates: {
     canonical: '/',
@@ -91,19 +92,28 @@ export const metadata: Metadata = {
     "questões enfermagem",
     "simulados técnico enfermagem",
   ],
-  authors: [{ name: "AVANT" }],
+  authors: [{ name: BRAND_NAME }],
   openGraph: {
-    title: "AVANT - Plataforma de Estudo Reverso para Técnicos de Enfermagem",
+    title: `${BRAND_NAME} - Plataforma de Estudo Reverso para Técnicos de Enfermagem`,
     description: siteDescription,
     url: getAbsoluteUrl('/'),
     siteName,
     locale: 'pt_BR',
     type: "website",
+    images: [
+      {
+        url: '/brand/avant-logo-cover.png',
+        width: 1536,
+        height: 1024,
+        alt: siteName,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "AVANT - Estudo reverso para concursos de Enfermagem",
+    title: `${BRAND_NAME} - Estudo reverso para concursos de Enfermagem`,
     description: siteDescription,
+    images: ['/brand/avant-logo-cover.png'],
   },
   robots: {
     index: true,

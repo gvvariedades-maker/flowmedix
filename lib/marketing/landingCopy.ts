@@ -5,8 +5,9 @@ import {
   FREEMIUM_SIMULADOS_PERSONALIZADOS_COMPACT,
   FREEMIUM_SIMULADOS_PERSONALIZADOS_DESCRIPTION,
 } from '@/lib/freemium/constants';
+import { BRAND_NAME, BRAND_PRO_NAME, brandCopyright } from '@/lib/brand/brandName';
 
-/** Preço mensal AVANT Pro (Stripe). */
+/** Preço mensal AVANT Enf Pro (Stripe). */
 export const LANDING_PRECO_PRO = '14,90';
 
 export const LANDING_HERO = {
@@ -14,7 +15,7 @@ export const LANDING_HERO = {
   h1Lines: [
     'A maioria do material',
     'foi feito para enfermeiro.',
-    'O AVANT foi feito',
+    `O ${BRAND_NAME} foi feito`,
     'para você.',
   ] as const,
   h1AccentWord: 'você',
@@ -56,10 +57,10 @@ export const LANDING_PROBLEMA = {
 } as const;
 
 export const LANDING_COMPARATIVO = {
-  label: 'Método antigo vs AVANT',
+  label: `Método antigo vs ${BRAND_NAME}`,
   h2: 'Por que a apostila não é suficiente',
   apostilaLabel: 'Apostila / PDF',
-  avantLabel: 'AVANT',
+  avantLabel: BRAND_NAME,
   apostilaItems: [
     'Linguagem de nível superior — feita para enfermeiro',
     'Você lê tudo sem saber o que a banca cobra para o seu cargo',
@@ -172,7 +173,7 @@ export const LANDING_RECURSOS = {
 } as const;
 
 export const LANDING_AUTORIDADE = {
-  name: 'Técnico AVANT',
+  name: `Técnico ${BRAND_NAME}`,
   role: 'Técnico em Enfermagem · 10+ aprovações em vaga',
   text: 'Desenvolvido por um Técnico em Enfermagem aprovado em mais de 10 concursos dentro das vagas — um método que transforma erro em aprendizado real, não apenas gabarito.',
   sub: "Técnico para técnico. Não 'equipe de especialistas'.",
@@ -183,8 +184,8 @@ export const LANDING_PRICING = {
   label: 'Planos',
   h2Prefix: 'Foque no que importa:',
   h2Accent: 'estudar.',
-  sub: 'O resto fica por conta do AVANT.',
-  proTitle: 'AVANT Pro inclui:',
+  sub: `O resto fica por conta do ${BRAND_NAME}.`,
+  proTitle: `${BRAND_PRO_NAME} inclui:`,
   proBenefits: [
     'Questões ilimitadas todo dia',
     'Missão semanal ilimitada + streak',
@@ -220,7 +221,7 @@ export function landingFaqItems(): { q: string; a: string }[] {
     },
     {
       q: 'O que é Estudo Reverso?',
-      a: 'É o método do AVANT: você responde a questão primeiro, depois vê o gabarito com diagnóstico do tipo de erro (conceito, interpretação ou pegadinha), depois percorre 4 NeuroSlides que fixam o conteúdo. Você aprende pelo erro, não pelo resumo.',
+      a: `É o método do ${BRAND_NAME}: você responde a questão primeiro, depois vê o gabarito com diagnóstico do tipo de erro (conceito, interpretação ou pegadinha), depois percorre 4 NeuroSlides que fixam o conteúdo. Você aprende pelo erro, não pelo resumo.`,
     },
     {
       q: 'Para qual concurso serve?',
@@ -251,7 +252,7 @@ export const LANDING_CTA_FINAL = {
 
 export const LANDING_FOOTER = {
   tagline: 'Estudo reverso para Técnico em Enfermagem',
-  copyright: '© 2026 AVANT · Todos os direitos reservados',
+  copyright: brandCopyright(2026),
 } as const;
 
 export const LANDING_HEADER = {

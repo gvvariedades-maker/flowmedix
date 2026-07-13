@@ -130,10 +130,24 @@ Obrigatório: `reveal_mode: "tap"`, ≥3 `steps` (strings).
 
 | Slot | Função |
 |------|--------|
-| Por DISTRATOR | 1 item por letra errada **desta prova** (quando houver) |
-| CONFUSÃO DO TEMA | 2–4 pegadinhas que se repetem no **mesmo assunto** |
+| Por DISTRATOR | **1 item por cada letra errada** desta prova (barra handcraft 10/10) |
+| TRANSFERÊNCIA | ≥1 item “Em outra banca…” / “Se o comando mudar…” (separado) |
+| CONFUSÃO DO TEMA | pegadinhas que se repetem no **mesmo assunto** |
 
-Obrigatório: `content`, cada item com `label`, `detail`, **`correct`**.
+Obrigatório: `content`, cada item com `label`, `detail`, **`correct`** (únicos entre itens).
+
+> **Barra de autoria (skills):** cobertura completa de letras erradas + item de transferência. O lint `danger_distractors_coverage` hoje exige metade em `conceito`/`legis` (gate mínimo); handcraft novo deve ir **além** do lint.
+
+### Densidade de card (UI)
+
+Alvo de autoria (player / estudo reverso) — contrato nas skills `avant-golden-anchor-handcraft` §3b:
+
+| Campo | Alvo | Duro |
+|-------|------|------|
+| `detail` / `steps[]` / `rows[].value` | ≤110 chars | ≤140 |
+| `footer_rule` | ≤90 chars | ≤120 |
+
+1 ideia por string; preferir conduta portátil a “decorar letra”.
 
 ---
 
@@ -236,16 +250,17 @@ npm test -- __tests__/golden-content-standard.test.ts
 1. Bloqueio TecConcursos  
 2. `normalizeQuestaoSlideArrays` + `QuestaoCompletaSchema`  
 3. **Premium gate** (`premiumGate.ts`) — stubs + contrato de molde bespoke  
-4. **Lint golden-v1** — só se `meta.content_standard = golden-v1` (avisos, não bloqueia por padrão)
+4. **Lint golden-v1** — só se `meta.content_standard = golden-v1` (avisos, não bloqueia por padrão)  
+5. **Risk score** (`riskScoring.ts`) — classifica `baixo|medio|alto`; gate de apply opt-in via `riskApprovalGate` — ver [`DECISAO_AUTO_APROVACAO_RISCO.md`](DECISAO_AUTO_APROVACAO_RISCO.md)
 
 ### Onde roda
 
 - **Laboratório** — bloqueia publicação em erros do premium gate  
 - **`POST /api/admin/questions`** — mesma regra  
 - **`POST /api/validate-question`** — mesma regra  
-- **`catalog:apply-lote`** — premium gate no apply (export usa Zod sem gate)
+- **`catalog:apply-lote`** — premium gate no apply (export usa Zod sem gate); risk gate opt-in
 
-Implementação: [`lib/questaoSpec/`](../lib/questaoSpec/) · testes [`__tests__/lib/questaoSpec/`](../__tests__/lib/questaoSpec/)
+Implementação: [`lib/questaoSpec/`](../lib/questaoSpec/) · testes [`__tests__/lib/questaoSpec/`](../__tests__/lib/questaoSpec/) · risco [`lib/catalogMigration/riskScoring.ts`](../lib/catalogMigration/riskScoring.ts)
 
 ---
 

@@ -97,7 +97,7 @@ export function LPNavbar({ ctaLabel }: { ctaLabel: string }) {
               Concursos abertos
             </Link>
             <Link href={AVANT_PRO_LP_HREF} className={`${lpNavLinkClass} shrink-0 text-[11px]`}>
-              AVANT Pro
+              AVANT Enf Pro
             </Link>
           </nav>
         </div>
@@ -121,7 +121,7 @@ export function LPNavbar({ ctaLabel }: { ctaLabel: string }) {
                 Concursos abertos
               </Link>
               <Link href={AVANT_PRO_LP_HREF} className={`${lpNavLinkClass} shrink-0`}>
-                AVANT Pro
+                AVANT Enf Pro
               </Link>
             </nav>
 

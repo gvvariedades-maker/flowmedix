@@ -59,7 +59,7 @@ const PAYWALL_COPY: Record<
         No plano gratuito:{' '}
         <span className="font-semibold text-slate-800">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>{' '}
         (estudo reverso com NeuroSlides). Com o{' '}
-        <span className="font-semibold text-[#166534]">AVANT Pro</span>, estude sem limite.
+        <span className="font-semibold text-[#166534]">AVANT Enf Pro</span>, estude sem limite.
       </>
     ),
   },
@@ -70,7 +70,7 @@ const PAYWALL_COPY: Record<
       <>
         No plano gratuito:{' '}
         <span className="font-semibold text-slate-800">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>.
-        Com o <span className="font-semibold text-[#166534]">AVANT Pro</span>, simule sem limite.
+        Com o <span className="font-semibold text-[#166534]">AVANT Enf Pro</span>, simule sem limite.
       </>
     ),
   },
@@ -242,7 +242,7 @@ export function PaywallModal({
                 </>
               ) : (
                 <>
-                  Assinar AVANT Pro
+                  Assinar AVANT Enf Pro
                   <ArrowRight size={18} aria-hidden />
                 </>
               )}

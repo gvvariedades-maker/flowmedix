@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-07-11T01:27:18.531Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g08",
+  "mode": "apply",
+  "total_files": 10,
+  "ok": 10,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
+    "ibec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-6",
+    "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-4",
+    "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-6",
+    "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-8",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
+    "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-3",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-2",
+    "imparh-enfermagem-seguranca-do-paciente-1777102936764-5",
+    "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102918981-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102918981-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

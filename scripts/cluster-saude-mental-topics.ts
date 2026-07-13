@@ -18,7 +18,7 @@ import {
   detectDuplicateDangerJustifications,
   hasInstructionArtifacts,
 } from '@/lib/catalogMigration/slideContract';
-import { hasPremiumStubMarkers } from '@/lib/catalogMigration/upgradePremiumHybrid';
+import { hasPremiumStubMarkers } from '@/lib/catalogMigration/premiumStubMarkers';
 import { premiumGateErrors } from '@/lib/catalogMigration/premiumGate';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { parseArg } from '@/lib/catalogMigration/cliArgs';

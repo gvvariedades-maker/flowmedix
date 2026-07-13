@@ -61,7 +61,7 @@ export function SimuladoDiagnosticoCard({ state }: SimuladoDiagnosticoCardProps)
             <ClipboardCheck size={16} />
           </div>
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-800">
-            {isResume ? 'Simulado em andamento' : 'Boas-vindas ao AVANT'}
+            {isResume ? 'Simulado em andamento' : 'Boas-vindas ao AVANT Enf'}
           </p>
         </div>
         <p className="mt-2 text-sm font-bold leading-snug text-slate-900">

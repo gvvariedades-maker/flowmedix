@@ -16,7 +16,15 @@ const customJestConfig = {
     '**/__tests__/**/*.test.[jt]s?(x)',
     '**/?(*.)+(spec|test).[jt]s?(x)',
   ],
-  testPathIgnorePatterns: ['/node_modules/', '/e2e/', '/.next/'],
+  // Arquiva builders em legacy/, mas mantém legacy/__tests__ na suíte
+  // (upgradePremium* ainda tem cobertura; não apagar / não orphanar).
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/e2e/',
+    '/.next/',
+    '/legacy/scripts/',
+    '/legacy/catalog-migration/',
+  ],
   collectCoverageFrom: [
     'lib/**/*.{js,jsx,ts,tsx}',
     'components/**/*.{js,jsx,ts,tsx}',

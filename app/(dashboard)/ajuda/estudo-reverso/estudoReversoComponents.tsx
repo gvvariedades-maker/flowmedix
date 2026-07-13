@@ -1,5 +1,6 @@
 ﻿import Link from 'next/link';
 import { ArrowRight, BookOpenCheck, CheckCircle2, ChevronRight, Sparkles } from 'lucide-react';
+import { BRAND_NAME } from '@/lib/brand/brandName';
 import { ActionLink, AJUDA_SURFACE, AJUDA_SURFACE_SM, ONDE_CLICAR } from '../ajudaComponents';
 
 type Cta = {
@@ -92,7 +93,7 @@ export function CicloCards({
             <h3 className="mt-3 text-lg font-black text-slate-900">{etapa.nome}</h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">{etapa.desc}</p>
             <p className="mt-3 rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs font-semibold leading-relaxed text-slate-700">
-              No AVANT: {etapa.noAvant}
+              No {BRAND_NAME}: {etapa.noAvant}
             </p>
           </article>
         ))}
@@ -160,7 +161,7 @@ export function PilaresGrid({
             <BookOpenCheck className="h-5 w-5 text-[#166534]" aria-hidden />
             <h3 className="mt-3 text-lg font-black text-slate-900">{item.nome}</h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-            <p className="mt-3 text-xs font-bold leading-relaxed text-[#166534]">No AVANT: {item.noAvant}</p>
+            <p className="mt-3 text-xs font-bold leading-relaxed text-[#166534]">No {BRAND_NAME}: {item.noAvant}</p>
             <p className="mt-2 text-[11px] font-semibold text-slate-500">Referência: {item.fonte}</p>
           </article>
         ))}

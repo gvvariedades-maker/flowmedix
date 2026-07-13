@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-12T05:00:44.316Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "igeduc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-9",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 2875
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 2369
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 2891
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 2908
+    },
+    {
+      "modulo_slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISET",
+      "avant_codigo": 2354
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2372
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2382
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2360
+    }
+  ]
+}

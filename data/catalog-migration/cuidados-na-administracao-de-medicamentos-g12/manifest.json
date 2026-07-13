@@ -1,0 +1,18 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g12",
+  "exported_at": "2026-07-11T18:37:10.762Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g12/manifest.json"
+  },
+  "slugs": [
+    "fepese-enfermagem-processo-de-enfermagem-1780008241722-0",
+    "fundatec-enfermagem-seguranca-do-paciente-1779563436357-3",
+    "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-6",
+    "ibam-enfermagem-seguranca-do-paciente-1779563448133-9",
+    "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-7",
+    "itame-enfermagem-seguranca-do-paciente-1777102861438-6",
+    "ms-sarmento-enfermagem-seguranca-do-paciente-1777102678563-8"
+  ]
+}

@@ -20,6 +20,7 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'via-vf-juggle-tap',
   'farmaco-vf-juggle-tap',
   'adolescent-vf-weave-tap',
+  'adolescent-z-classify-tap',
   'burn-triage-tap-flow',
   'trabalho-vf-juggle-tap',
   'respiratorio-vf-juggle-tap',
@@ -41,6 +42,12 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'cam-alto-risco-elimination-tap',
   'cam-exceto-tap-flow',
   'cam-documentacao-vf-tap',
+  'iv-complication-tap-flow',
+  'iv-device-tap-flow',
+  'iv-exceto-tap-flow',
+  'iv-interval-tap-flow',
+  'iv-puncture-tap-flow',
+  'iv-bundle-tap-flow',
 ]);
 
 const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
@@ -59,6 +66,7 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'via-vf-juggle-tap',
   'farmaco-vf-juggle-tap',
   'adolescent-vf-weave-tap',
+  'adolescent-z-classify-tap',
   'burn-triage-tap-flow',
   'trabalho-vf-juggle-tap',
   'respiratorio-vf-juggle-tap',
@@ -80,6 +88,12 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'cam-alto-risco-elimination-tap',
   'cam-exceto-tap-flow',
   'cam-documentacao-vf-tap',
+  'iv-complication-tap-flow',
+  'iv-device-tap-flow',
+  'iv-exceto-tap-flow',
+  'iv-interval-tap-flow',
+  'iv-puncture-tap-flow',
+  'iv-bundle-tap-flow',
 ]);
 
 /**

@@ -1,0 +1,80 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+  "exported_at": "2026-07-12T05:53:23.598Z",
+  "source": "cluster-report",
+  "filters": {
+    "clusters": [
+      "Cálculo / dose / tempo numérico",
+      "V/F — assertivas I/II/III",
+      "Acesso venoso central",
+      "Punção venosa periférica",
+      "Acesso arterial / PAM",
+      "Medicação endovenosa — técnica"
+    ],
+    "exclude_count": 100,
+    "slug_meta": [
+      {
+        "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
+        "cluster": "Cálculo / dose / tempo numérico",
+        "branch": "puncao_generico"
+      },
+      {
+        "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7",
+        "cluster": "Cálculo / dose / tempo numérico",
+        "branch": "puncao_generico"
+      },
+      {
+        "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+        "cluster": "V/F — assertivas I/II/III",
+        "branch": "puncao_generico"
+      },
+      {
+        "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
+        "cluster": "V/F — assertivas I/II/III",
+        "branch": "puncao_generico"
+      },
+      {
+        "slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+        "cluster": "Acesso venoso central",
+        "branch": "puncao_ipcs_cvc"
+      },
+      {
+        "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
+        "cluster": "Acesso venoso central",
+        "branch": "puncao_ipcs_cvc"
+      },
+      {
+        "slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
+        "cluster": "Punção venosa periférica",
+        "branch": "puncao_periferica_antissepsia"
+      },
+      {
+        "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-4",
+        "cluster": "Punção venosa periférica",
+        "branch": "puncao_periferica_antissepsia"
+      },
+      {
+        "slug": "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4",
+        "cluster": "Acesso arterial / PAM",
+        "branch": "puncao_generico"
+      },
+      {
+        "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0",
+        "cluster": "Medicação endovenosa — técnica",
+        "branch": "puncao_generico"
+      }
+    ]
+  },
+  "slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7",
+    "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
+    "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
+    "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-4",
+    "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0"
+  ]
+}

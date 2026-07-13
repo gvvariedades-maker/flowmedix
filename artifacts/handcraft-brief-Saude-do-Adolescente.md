@@ -5,6 +5,7 @@
 ## Escopo
 
 - **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3
+- **Primeiro lote:** `saude-adolescente-g01`
 
 ## Pacote (registry)
 

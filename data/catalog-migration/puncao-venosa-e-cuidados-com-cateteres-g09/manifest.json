@@ -1,0 +1,13 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g09",
+  "exported_at": "2026-07-12T05:06:02.868Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g09/manifest.json"
+  },
+  "slugs": [
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0"
+  ]
+}

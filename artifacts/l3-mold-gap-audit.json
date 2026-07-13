@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-10T15:54:42.772Z",
+  "generated_at": "2026-07-11T23:05:09.678Z",
   "summary": {
-    "cluster_rows": 168,
-    "slug_rows": 246,
+    "cluster_rows": 182,
+    "slug_rows": 145,
     "by_decision": {
-      "ok_existente": 16,
-      "ok_generico": 92,
-      "ramo_novo": 42,
+      "ok_existente": 18,
+      "ok_generico": 94,
+      "ramo_novo": 47,
       "molde_inedito": 14,
-      "molde_redesign": 4
+      "molde_redesign": 9
     },
     "inedito_packages_proposed": 10,
-    "ramo_novo_count": 42,
+    "ramo_novo_count": 47,
     "slug_mismatch_total": 0,
     "slug_mismatch_by_subtopico": {},
     "source": "supabase"
@@ -2126,6 +2126,285 @@
       "rationale": "VF absorção/velocidade — trilho bespoke implementado; brief l3-brief-vias-de-administracao-via_vf_absorcao.md."
     },
     {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Default — sem âncora temática",
+      "slug_count": 28,
+      "pct": 22.8,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780003137298-1",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-8",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-4",
+        "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-3",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004628956-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Alto risco / conferência dupla",
+      "slug_count": 19,
+      "pct": 15.4,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+        "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+        "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
+        "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-3",
+        "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cam_certos_vf_caso",
+      "branch_implemented": true,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "decision": "molde_redesign",
+      "rationale": "VF I–III sobre 9 Certos em caso clínico — trilho bespoke implementado; brief l3-brief-cuidados-na-administracao-de-medicamentos-cam_certos_vf_caso.md."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "V/F — 9 certos em caso clínico",
+      "slug_count": 18,
+      "pct": 14.6,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780004982901-5",
+        "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-6",
+        "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-4",
+        "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-6",
+        "avancasp-enfermagem-seguranca-do-paciente-1777102742836-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cam_certos_vf_caso",
+      "branch_implemented": true,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "decision": "molde_redesign",
+      "rationale": "VF I–III sobre 9 Certos em caso clínico — trilho bespoke implementado; brief l3-brief-cuidados-na-administracao-de-medicamentos-cam_certos_vf_caso.md."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Documentação / registro",
+      "slug_count": 16,
+      "pct": 13,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-1",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005556782-9",
+        "ameosc-enfermagem-processo-de-enfermagem-1780008225255-6",
+        "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4",
+        "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "INCORRETA / EXCETO",
+      "slug_count": 9,
+      "pct": 7.3,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
+        "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-1",
+        "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-2",
+        "fundatec-enfermagem-seguranca-do-paciente-1779563443877-7",
+        "fundep-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cam_exceto_conduta",
+      "branch_implemented": true,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "cam-exceto-rail · cam-exceto-reference-board · cam-exceto-tap-flow · cam-exceto-trap-arena (bespoke)",
+      "decision": "molde_redesign",
+      "rationale": "EXCETO/INCORRETA preparo e conduta — pacote cam-exceto-* bespoke 4/4; gate cam_exceto_semantic."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Vigilância / reações adversas",
+      "slug_count": 7,
+      "pct": 5.7,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+        "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+        "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+        "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-6",
+        "ibam-enfermagem-seguranca-do-paciente-1779563448133-9"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Preparo / sala de medicação",
+      "slug_count": 6,
+      "pct": 4.9,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-0",
+        "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-0",
+        "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-5",
+        "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-2",
+        "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "V/F — protocolo MS / I–VI",
+      "slug_count": 5,
+      "pct": 4.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-0",
+        "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+        "ms-sarmento-enfermagem-seguranca-do-paciente-1777102678563-8",
+        "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-0",
+        "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102936764-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cam_certos_vf_caso",
+      "branch_implemented": true,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "decision": "molde_redesign",
+      "rationale": "VF I–III sobre 9 Certos em caso clínico — trilho bespoke implementado; brief l3-brief-cuidados-na-administracao-de-medicamentos-cam_certos_vf_caso.md."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Horário / aprazamento",
+      "slug_count": 5,
+      "pct": 4.1,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780002714111-8",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003793968-2",
+        "faurgs-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-8",
+        "fundatec-enfermagem-seguranca-do-paciente-1779563436357-3",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Prescrição ilegível / dúvida",
+      "slug_count": 3,
+      "pct": 2.4,
+      "cluster_decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-7",
+        "unifil-enfermagem-seguranca-do-paciente-1779563448133-0",
+        "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Certo ou errado",
+      "slug_count": 2,
+      "pct": 1.6,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-7",
+        "cebraspe-cespe-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Orientação ao paciente",
+      "slug_count": 2,
+      "pct": 1.6,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "cotec-fadenor-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-7",
+        "fepese-enfermagem-processo-de-enfermagem-1780008241722-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "Nove certos — listagem",
+      "slug_count": 2,
+      "pct": 1.6,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "fepese-enfermagem-processo-de-enfermagem-1780008232871-7",
+        "ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "cam_certos_vf_caso",
+      "branch_implemented": true,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "decision": "molde_redesign",
+      "rationale": "VF I–III sobre 9 Certos em caso clínico — trilho bespoke implementado; brief l3-brief-cuidados-na-administracao-de-medicamentos-cam_certos_vf_caso.md."
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "cluster_label": "LASA / nomes semelhantes",
+      "slug_count": 1,
+      "pct": 0.8,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [
+        "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap · cam-certos-trap-arena (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
       "subtopico": "Urgências e Emergências",
       "cluster_label": "RCP / SBV adulto (V/F ou protocolo)",
       "slug_count": 68,
@@ -2823,9 +3102,9 @@
       "branch_id": "mulher_puerperio",
       "branch_implemented": true,
       "current_mold_package": "morphological · center · cards · list (genérico)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Puerpério/lactação — compare + reference_table bastam; sem molde bespoke obrigatório."
+      "ideal_mold_package": "mulher-puerperio-timeline · mulher-puerperio-board · mulher-puerperio-tap-flow · mulher-puerperio-trap-arena (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "Puerpério/lactação — pacote mulher-puerperio-* implementado; âncora MS consulta 42 dias."
     },
     {
       "subtopico": "Saúde da Mulher",
@@ -2843,9 +3122,9 @@
       "branch_id": "mulher_planejamento",
       "branch_implemented": true,
       "current_mold_package": "morphological · center · cards · list (genérico)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Planejamento familiar/contracepção — genérico premium até volume justificar molde."
+      "ideal_mold_package": "mulher-contraception-spectrum · mulher-planejamento-board · mulher-planejamento-tap-flow · mulher-planejamento-trap-arena (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "Planejamento familiar — pacote mulher-planejamento-* implementado; âncora CPCON VF."
     },
     {
       "subtopico": "Saúde da Mulher",
@@ -3295,9 +3574,9 @@
   ],
   "slugs": [
     {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
+      "slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -3305,182 +3584,55 @@
     {
       "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-5",
+      "slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-8",
+      "slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "amauc-enfermagem-vias-de-administracao-1776056348175-0",
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-8",
+      "slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-0",
+      "slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-1",
+      "slug": "ameosc-enfermagem-seguranca-do-paciente-1777102936764-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-7",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
-      "lote": "supabase",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-9",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-9",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-0",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -3488,629 +3640,383 @@
     {
       "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-6",
+      "slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-0",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-8",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-9",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-9",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-1",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-1",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-6",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-2",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-3",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-seguranca-do-paciente-1777102742836-5",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-seguranca-do-paciente-1777102742836-6",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-0",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-7",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cebraspe-cespe-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-8",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-7",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cetap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-6",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-1",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cogeps-unioeste-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-0",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "com-exam-pref-bauru-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-2",
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-5",
+      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-6",
+      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-0",
+      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-1",
+      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-2",
+      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
       "lote": "supabase",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-3",
+      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cotec-fadenor-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-7",
+      "slug": "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-1",
+      "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-2",
+      "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+      "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cpcon-uepb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-0",
+      "slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-9",
+      "slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-2",
+      "slug": "decorp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-4",
+      "slug": "facape-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-5",
+      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
+      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-7",
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-9",
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-3",
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-6",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-8",
+      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-3",
+      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-4",
+      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-5",
+      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-3",
+      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fauel-enfermagem-seguranca-do-paciente-1777102918981-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "faurgs-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-8",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcc-geral-seguranca-do-paciente-1777102802022-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcm-enfermagem-seguranca-do-paciente-1777102936764-9",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-7",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-9",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-5",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-7",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-processo-de-enfermagem-1780008241722-0",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-3",
-      "lote": "supabase",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-0",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969737311-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4118,158 +4024,159 @@
     {
       "slug": "funatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "funcepe-enfermagem-seguranca-do-paciente-1777102678563-2",
+      "slug": "funatec-enfermagem-curativos-e-manejo-de-feridas-1779269315587-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-1",
+      "slug": "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-9",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-4",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-2",
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7",
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-0",
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-2",
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-seguranca-do-paciente-1779563436357-2",
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-seguranca-do-paciente-1779563436357-3",
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundatec-enfermagem-seguranca-do-paciente-1779563443877-7",
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fundep-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-1",
+      "slug": "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-1",
+      "slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-0",
+      "slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-1",
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "fuvest-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-4",
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
       "lote": "supabase",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-4",
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-6",
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4277,135 +4184,79 @@
     {
       "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "iaupe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-0",
+      "slug": "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "iaupe-enfermagem-vias-de-administracao-1778968877204-6",
+      "slug": "iaupe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-6",
+      "slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-3",
+      "slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-4",
+      "slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-5",
+      "slug": "ibade-enfermagem-seguranca-do-paciente-1777102802022-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-3",
+      "slug": "ibade-enfermagem-seguranca-do-paciente-1779563436357-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-6",
+      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-5",
+      "slug": "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibade-enfermagem-seguranca-do-paciente-1777102802022-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibam-enfermagem-seguranca-do-paciente-1779563448133-9",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibam-enfermagem-vias-de-administracao-1776056366158-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibfc-enfermagem-vias-de-administracao-1778968573722-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibfc-enfermagem-vias-de-administracao-1778968687469-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4413,15 +4264,7 @@
     {
       "slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4429,63 +4272,47 @@
     {
       "slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-8",
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7",
+      "slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idecan-enfermagem-efeitos-adversos-dos-medicamentos-1780066909125-3",
+      "slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1780066938846-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1777102802022-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idecan-enfermagem-enfermagem-em-uti-1778712392541-0",
+      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4493,15 +4320,7 @@
     {
       "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-9",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4509,102 +4328,15 @@
     {
       "slug": "idecan-enfermagem-vias-de-administracao-1778712108887-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "idesg-enfermagem-vias-de-administracao-1776056338955-4",
+      "slug": "idib-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778934890864-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-7",
-      "lote": "supabase",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-5",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-8",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-7",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4612,39 +4344,31 @@
     {
       "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-6",
+      "slug": "igeduc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-9",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-2",
+      "slug": "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-5",
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4652,214 +4376,167 @@
     {
       "slug": "instituto-access-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-access-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-8",
+      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-7",
+      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-1",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-3",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-2",
+      "slug": "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-0",
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-5",
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-9",
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006480333-9",
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-5",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-5",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102918981-6",
+      "slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-darwin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-7",
+      "slug": "iset-enfermagem-exames-complementares-1779563655698-4",
       "lote": "supabase",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-9",
+      "slug": "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003637054-1",
+      "slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-verbena-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-6",
+      "slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-3",
+      "slug": "maranatha-assessoria-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "isba-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-0",
+      "slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "itame-enfermagem-seguranca-do-paciente-1777102802022-1",
+      "slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "itame-enfermagem-seguranca-do-paciente-1777102861438-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ivin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-5",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ivin-enfermagem-vias-de-administracao-1778968666352-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ivin-enfermagem-vias-de-administracao-1778968877204-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "metrocapital-enfermagem-vias-de-administracao-1778968768987-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "metrocapital-enfermagem-vias-de-administracao-1778968768987-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4867,63 +4544,15 @@
     {
       "slug": "ms-sarmento-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ms-sarmento-enfermagem-seguranca-do-paciente-1777102678563-8",
+      "slug": "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "nc-ufpr-funpar-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-0",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-5",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-9",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -4931,214 +4560,118 @@
     {
       "slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-6",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-3",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102936764-0",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-1",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-2",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-4",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "quadrix-enfermagem-seguranca-do-paciente-1777102861438-0",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "reis-e-reis-enfermagem-vias-de-administracao-1778968629127-7",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "selecon-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-5",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "selecon-enfermagem-vias-de-administracao-1778968629127-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-5",
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0",
       "lote": "supabase",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-7",
+      "slug": "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-4",
+      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-1",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-8",
+      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-0",
+      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-4",
+      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-5",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "unifil-enfermagem-seguranca-do-paciente-1779563443877-0",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "unifil-enfermagem-seguranca-do-paciente-1779563448133-0",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-0",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
@@ -5146,111 +4679,55 @@
     {
       "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "univida-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-1",
+      "slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-3",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-2",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-7",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-7",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-8",
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-0",
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-1",
+      "slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-5",
       "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-3",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-2",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-7",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-7",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-seguranca-do-paciente-1777102861438-1",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-4",
-      "lote": "supabase",
-      "subtopico": "Cuidados na Administração de Medicamentos",
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
       "mold_package": "—",
       "mold_mismatch_count": 0,
       "mold_issues": []

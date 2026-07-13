@@ -1,0 +1,14 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g06",
+  "exported_at": "2026-07-12T04:47:36.566Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g06/manifest.json"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+    "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+    "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
+    "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0"
+  ]
+}

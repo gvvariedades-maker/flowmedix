@@ -23,6 +23,8 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 
 - **`docs/PREMIUM_QUESTAO.md`** — definição canônica: L1 estrutural, L2 conteúdo premium, L3 experiência (moldes)
 - **`.cursor/skills/avant-json-template/SKILL.md`** (geração de JSON; pasta `.cursor` pode estar no `.gitignore` — manter cópia ou sincronizar com o time).
+- **`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`** — handcraft L2: family → âncora → slots; cópia versionada em `docs/skills/avant-golden-anchor-handcraft/SKILL.md`.
+- **`.cursor/skills/professor-para-concurso/SKILL.md`** — tom de professor; cópia em `docs/skills/professor-para-concurso/SKILL.md`.
 - **`.cursor/rules/avant-agent-json.mdc`** — regra **alwaysApply** com `meta`, cabeçalho, `instruction` e slides. **Cópia versionada no Git:** `docs/cursor/avant-agent-json.mdc` (se a rule local sumir após clone, copiar esse arquivo para `.cursor/rules/`).
 - **`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`**
 - **`docs/GOLDEN_CONTENT_STANDARD.md`** — gramática golden-v1, fontes, gates de lint

@@ -51,7 +51,10 @@ export function QuestaoReviewPanels({ questao, slug, source }: QuestaoReviewPane
         <p className="text-xs text-slate-500">questao-review · source={source}</p>
         <h1 className="truncate text-sm font-medium text-slate-800">{slug}</h1>
       </header>
-      <div data-testid="questao-review-player">
+      <div
+        data-testid="questao-review-player"
+        className="relative min-h-[min(100dvh,900px)]"
+      >
         <AvantLessonPlayer dados={questao} mode="preview" previewImmersive />
       </div>
     </div>

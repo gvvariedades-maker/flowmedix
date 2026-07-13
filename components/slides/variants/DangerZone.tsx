@@ -38,6 +38,7 @@ import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
 import { DangerZoneEtiologyIntruderChips } from './DangerZoneEtiologyIntruderChips';
 import { DangerZoneItuCatheterTrap } from './DangerZoneItuCatheterTrap';
 import { DangerZoneAdolescentConsentGate } from './DangerZoneAdolescentConsentGate';
+import { DangerZoneAdolescentZThresholdTrap } from './DangerZoneAdolescentZThresholdTrap';
 import { DangerZoneMulherPrenatalTrapArena } from './DangerZoneMulherPrenatalTrapArena';
 import { DangerZoneMulherPartoTrapArena } from './DangerZoneMulherPartoTrapArena';
 import { DangerZoneMulherScreeningTrapArena } from './DangerZoneMulherScreeningTrapArena';
@@ -48,6 +49,12 @@ import { DangerZoneCamCertosTrapArena } from './DangerZoneCamCertosTrapArena';
 import { DangerZoneCamHighRiskTrapArena } from './DangerZoneCamHighRiskTrapArena';
 import { DangerZoneCamExcetoTrapArena } from './DangerZoneCamExcetoTrapArena';
 import { DangerZoneCamDocumentacaoTrapArena } from './DangerZoneCamDocumentacaoTrapArena';
+import { DangerZoneIvLabelSwapTrap } from './DangerZoneIvLabelSwapTrap';
+import { DangerZoneIvGaugeMismatchTrap } from './DangerZoneIvGaugeMismatchTrap';
+import { DangerZoneIvExcetoIntruderTrap } from './DangerZoneIvExcetoIntruderTrap';
+import { DangerZoneIvIntervalSwapTrap } from './DangerZoneIvIntervalSwapTrap';
+import { DangerZoneIvOrderInvertTrap } from './DangerZoneIvOrderInvertTrap';
+import { DangerZoneIvBundleBreakTrap } from './DangerZoneIvBundleBreakTrap';
 import { DangerZoneVitalsClassifyArena } from './DangerZoneVitalsClassifyArena';
 
 export interface DangerZoneItem {
@@ -608,6 +615,78 @@ export const DangerZone = ({
     );
   }
 
+  if (explicitVariant === 'iv-label-swap-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneIvLabelSwapTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'iv-gauge-mismatch-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneIvGaugeMismatchTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'iv-exceto-intruder-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneIvExcetoIntruderTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'iv-interval-swap-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneIvIntervalSwapTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'iv-order-invert-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneIvOrderInvertTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'iv-bundle-break-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneIvBundleBreakTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
   if (explicitVariant === 'ist-trap-chips' && items && items.length > 0) {
     return (
       <DangerZoneIstTrapChips
@@ -652,6 +731,18 @@ export const DangerZone = ({
         theme={theme}
         footerRule={footerRule}
         compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'adolescent-z-threshold-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneAdolescentZThresholdTrap
+        content={content}
+        items={items}
+        theme={theme}
+        revealMode={compareRevealMode}
+        footerRule={footerRule}
       />
     );
   }

@@ -1,12 +1,4 @@
-<!-- AVANT: wordmark para fundos claros — mesma geometria, verde editorial #166534. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" aria-label="AVANT">
-  <text
-    x="4"
-    y="30"
-    fill="#166534"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="26"
-    font-weight="800"
-    letter-spacing="7"
-  >AVANT</text>
+<!-- AVANT Enf: wordmark editorial (mesmo modelo raster do emblema dourado/esmeralda). -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 168 37.5" fill="none" aria-label="AVANT Enf">
+  <image href="avant-logo-wordmark-raster.png" xlink:href="avant-logo-wordmark-raster.png" x="0" y="0" width="168" height="37.5" preserveAspectRatio="xMidYMid meet"/>
 </svg>

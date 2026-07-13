@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-12T06:11:36.330Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-9",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+    "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2",
+    "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
+    "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

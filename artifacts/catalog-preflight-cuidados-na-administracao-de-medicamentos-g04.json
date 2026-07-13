@@ -1,0 +1,76 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g04",
+  "generated_at": "2026-07-11T19:38:02.258Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-seguranca-do-paciente-1779563443877-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundep-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-efeitos-adversos-dos-medicamentos-1780066909125-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

@@ -155,8 +155,9 @@ export function extractInstructionTerms(instruction: string): string[] {
 }
 
 // Claim numérico/normativo: dose, intervalo, percentual, tempo, escore.
+// `%` não é word-char — `\b` após `%` falhava em "70% após".
 export const NUMERIC_CLAIM_RE =
-  /\b\d+([.,]\d+)?\s*(%|mg|ml|mcg|µg|ug|ui|g\b|kg|h\b|hora|horas|dia|dias|semana|semanas|mes|meses|min|minuto|minutos|°c|graus|mmhg|bpm|gota|gotas|ampola|comprimido|ponto|pontos|escore)\b/i;
+  /\b\d+([.,]\d+)?\s*%|\b\d+([.,]\d+)?\s*(mg|ml|mcg|µg|ug|ui|g\b|kg|h\b|hora|horas|dia|dias|semana|semanas|mes|meses|min|minuto|minutos|°c|graus|mmhg|bpm|gota|gotas|ampola|comprimido|ponto|pontos|escore)\b/i;
 
 function normalizeWords(text: string): string[] {
   return text

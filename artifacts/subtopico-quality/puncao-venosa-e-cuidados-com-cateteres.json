@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-07-12T06:07:47.891Z",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "pacote_prefix": "puncao-venosa-e-cuidados-com-cateteres",
+  "production_status_before": "none",
+  "technical_ready": true,
+  "production_ready": true,
+  "can_sell": true,
+  "continuous_eligible": true,
+  "ship_gate": {
+    "ok": true,
+    "blockers": []
+  },
+  "monitoring": {
+    "deprecated": true,
+    "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
+    "sessions_30d": 214
+  },
+  "layers": {
+    "L1": {
+      "pass": true,
+      "detail": "handcraft-dod PASS"
+    },
+    "L2": {
+      "pass": true,
+      "detail": "alignment OK (110 slugs)"
+    },
+    "L2b": {
+      "pass": true,
+      "detail": "numeric factcheck OK"
+    },
+    "L3": {
+      "pass": true,
+      "detail": "Playwright L3 Punção — 7 branches (6 bespoke + genérico); PNGs em artifacts/visual-mold-regression/"
+    },
+    "L4": {
+      "pass": true,
+      "detail": "capture cirúrgico — warn only (não bloqueia ship)"
+    },
+    "L5": {
+      "pass": true,
+      "detail": "content health OK"
+    },
+    "L6": {
+      "pass": true,
+      "detail": "all 15 lotes anchor pass"
+    }
+  },
+  "lote_stats": [
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g01",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g02",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g03",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g04",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g05",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g06",
+      "scanned": 4,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g07",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g09",
+      "scanned": 3,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g10",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g11",
+      "scanned": 3,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "scanned": 7,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "scanned": 11,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+      "scanned": 10,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    }
+  ],
+  "content_health": {
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "sessions_30d": 214,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 0,
+      "total": 0
+    },
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 214,
+      "open_p1": 0,
+      "report_rate_pct": 0
+    },
+    "pass": true,
+    "blockers": []
+  },
+  "blockers": []
+}

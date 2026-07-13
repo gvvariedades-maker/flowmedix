@@ -1,0 +1,35 @@
+{
+  "exported_at": "2026-07-12T04:47:36.566Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g06",
+  "total": 4,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2345
+    },
+    {
+      "modulo_slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 2351
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 2888
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2886
+    }
+  ]
+}

@@ -29,6 +29,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'pni-trap-chips',
   'ist-trap-chips',
   'adolescent-consent-gate',
+  'adolescent-z-threshold-trap',
   'burn-trap-arena',
   'trabalho-pep-trap-arena',
   'respiratorio-spo2-trap-arena',
@@ -51,6 +52,12 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'cam-high-risk-trap-arena',
   'cam-exceto-trap-arena',
   'cam-documentacao-trap-arena',
+  'iv-label-swap-trap',
+  'iv-gauge-mismatch-trap',
+  'iv-exceto-intruder-trap',
+  'iv-interval-swap-trap',
+  'iv-order-invert-trap',
+  'iv-bundle-break-trap',
 ]);
 
 /**
@@ -90,6 +97,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'etiology-intruder-chips') return 'etiology-intruder-chips';
   if (explicitVariant === 'itu-catheter-trap') return 'itu-catheter-trap';
   if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
+  if (explicitVariant === 'adolescent-z-threshold-trap') return 'adolescent-z-threshold-trap';
   if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
   if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
   if (explicitVariant === 'respiratorio-spo2-trap-arena') return 'respiratorio-spo2-trap-arena';
@@ -104,6 +112,12 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'cam-high-risk-trap-arena') return 'cam-high-risk-trap-arena';
   if (explicitVariant === 'cam-exceto-trap-arena') return 'cam-exceto-trap-arena';
   if (explicitVariant === 'cam-documentacao-trap-arena') return 'cam-documentacao-trap-arena';
+  if (explicitVariant === 'iv-label-swap-trap') return 'iv-label-swap-trap';
+  if (explicitVariant === 'iv-gauge-mismatch-trap') return 'iv-gauge-mismatch-trap';
+  if (explicitVariant === 'iv-exceto-intruder-trap') return 'iv-exceto-intruder-trap';
+  if (explicitVariant === 'iv-interval-swap-trap') return 'iv-interval-swap-trap';
+  if (explicitVariant === 'iv-order-invert-trap') return 'iv-order-invert-trap';
+  if (explicitVariant === 'iv-bundle-break-trap') return 'iv-bundle-break-trap';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -162,6 +176,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'adolescent-consent-gate') {
       return 'adolescent-consent-gate';
+    }
+    if (!explicitVariant && fallbackVariant === 'adolescent-z-threshold-trap') {
+      return 'adolescent-z-threshold-trap';
     }
     if (!explicitVariant && fallbackVariant === 'burn-trap-arena') {
       return 'burn-trap-arena';
@@ -222,6 +239,24 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'cam-documentacao-trap-arena') {
       return 'cam-documentacao-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'iv-label-swap-trap') {
+      return 'iv-label-swap-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'iv-gauge-mismatch-trap') {
+      return 'iv-gauge-mismatch-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'iv-exceto-intruder-trap') {
+      return 'iv-exceto-intruder-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'iv-interval-swap-trap') {
+      return 'iv-interval-swap-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'iv-order-invert-trap') {
+      return 'iv-order-invert-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'iv-bundle-break-trap') {
+      return 'iv-bundle-break-trap';
     }
     return 'compare';
   }

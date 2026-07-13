@@ -2,7 +2,7 @@ import type { GuidelineTable } from '@/lib/guidelines/types';
 
 /**
  * Punção venosa periférica e cuidados com cateteres.
- * Fontes: Anvisa (RDC dispositivos invasivos), COFEN, CDC/OMS bundle CVC.
+ * Fontes: Anvisa (RDC dispositivos invasivos), COFEN, Potter & Perry 11ª ed. (Brasil), CDC/OMS bundle CVC.
  */
 export const PUNCAO_CATETER_ANVISA: GuidelineTable = {
   id: 'puncao-cateter-anvisa',
@@ -41,6 +41,20 @@ export const PUNCAO_CATETER_ANVISA: GuidelineTable = {
       sourceId: 'puncao-cateter-anvisa',
     },
     {
+      id: 'infiltracao-conduta',
+      label: 'Infiltração / extravasamento',
+      value: 'suspender infusão e remover o cateter',
+      detail: 'Solução medicamentosa no subcutâneo — não confundir com flebite (inflamação do trajeto venoso).',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'hematoma-conduta',
+      label: 'Hematoma',
+      value: 'compressão local e observação',
+      detail: 'Sangue extravasado no tecido por punção — não é líquido da infusão no subcutâneo.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
       id: 'sitio-femoral',
       label: 'Acesso femoral',
       value: 'não é preferência de rotina',
@@ -57,6 +71,27 @@ export const PUNCAO_CATETER_ANVISA: GuidelineTable = {
       id: 'manutencao-assepsia',
       label: 'Manutenção de cateter',
       value: 'higiene das mãos + técnica asséptica no lúmen',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'hub-desinfeccao-alcool-70',
+      label: 'Desinfecção do hub / conexão',
+      value: 'álcool 70% com fricção a cada manipulação / após cada medicação',
+      detail:
+        'Bundle de manutenção CVC — não confundir com troca de curativo do sítio. Fonte de prova + Anvisa/CDC bundle.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'flush-sf09',
+      label: 'Flush / lavagem do cateter',
+      value: 'SF 0,9% conforme protocolo — manutenção contínua',
+      detail: 'Não limitar lavagem apenas ao momento da inserção.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'antibiotico-nao-substitui-bundle',
+      label: 'Antibiótico IV e manutenção',
+      value: 'antibiótico não substitui bundle de manutenção do CVC',
       sourceId: 'puncao-cateter-anvisa',
     },
     {

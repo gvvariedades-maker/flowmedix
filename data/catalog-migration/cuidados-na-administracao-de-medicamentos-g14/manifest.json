@@ -1,0 +1,16 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g14",
+  "exported_at": "2026-07-11T19:20:13.251Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g14/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4",
+    "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
+    "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+    "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+    "fepese-enfermagem-processo-de-enfermagem-1780008232871-7",
+    "ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-12T06:11:24.908Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g07",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
+    "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
+    "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
+    "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
+    "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+    "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

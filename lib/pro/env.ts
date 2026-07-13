@@ -6,7 +6,7 @@ const StripePriceIdSchema = z
   .regex(/^price_/, 'STRIPE_PRICE_ID_PRO deve ser um Price ID Stripe (price_…)');
 
 /**
- * Price ID da assinatura AVANT Pro (Dashboard Stripe → Produtos → Preço recorrente).
+ * Price ID da assinatura AVANT Enf Pro (Dashboard Stripe → Produtos → Preço recorrente).
  * @throws Error com mensagem explícita se ausente ou inválido
  */
 export function requireStripePriceIdPro(): string {

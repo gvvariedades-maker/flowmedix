@@ -17,12 +17,46 @@
     },
     "sources": [
       {
+        "id": "potter-perry-fundamentos-11ed-2024",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Acesso venoso e complicações",
+        "year": 2024,
+        "covers": [
+          "hematoma",
+          "antissepsia da pele",
+          "dispositivo venoso",
+          "calibre",
+          "acesso venoso periférico"
+        ]
+      },
+      {
+        "id": "puncao-cateter-anvisa",
+        "tier": "A",
+        "issuer": "Anvisa / COFEN",
+        "title": "Punção venosa e cuidados com cateteres",
+        "year": 2021,
+        "url": "https://www.gov.br/anvisa/",
+        "covers": [
+          "hematoma",
+          "antissepsia da pele",
+          "dispositivo venoso",
+          "calibre",
+          "acesso venoso periférico"
+        ]
+      },
+      {
         "id": "anvisa-puncao-periferica",
         "tier": "A",
         "issuer": "ANVISA",
         "title": "Medidas de Prevenção de IRAS — punção venosa periférica",
         "year": 2017,
-        "covers": ["garrote", "ângulo de inserção", "bisel", "técnica asséptica"]
+        "covers": [
+          "garrote",
+          "ângulo de inserção",
+          "bisel",
+          "técnica asséptica"
+        ]
       }
     ]
   },

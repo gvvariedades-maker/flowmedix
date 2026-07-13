@@ -1,0 +1,17 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+  "exported_at": "2026-07-12T05:33:44.426Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g13/manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
+    "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+    "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
+    "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-4",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4"
+  ]
+}

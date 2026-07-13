@@ -7,8 +7,8 @@ import { getServerSession } from '@/lib/supabase/server-auth';
 import { AssinaturaClient } from './AssinaturaClient';
 
 export const metadata: Metadata = {
-  title: 'Minha assinatura | AVANT',
-  description: 'Gerencie seu plano AVANT Pro, forma de pagamento ou cancelamento.',
+  title: 'Minha assinatura | AVANT Enf',
+  description: 'Gerencie seu plano AVANT Enf Pro, forma de pagamento ou cancelamento.',
 };
 
 export default async function AssinaturaPage() {

@@ -1,0 +1,70 @@
+{
+  "exported_at": "2026-07-12T05:47:30.660Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+  "total": 9,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2377
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 2353
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2885
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2368
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 2907
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2381
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 2890
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-4",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2900
+    },
+    {
+      "modulo_slug": "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 2870
+    }
+  ]
+}

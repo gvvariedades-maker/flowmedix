@@ -134,5 +134,22 @@
     "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6",
     "vunesp-enfermagem-seguranca-do-paciente-1777102861438-1",
     "vunesp-enfermagem-seguranca-do-paciente-1779563448133-4"
+  ],
+  "updated_at": "2026-07-11",
+  "reconciled_from": [
+    "cuidados-na-administracao-de-medicamentos-g01",
+    "cuidados-na-administracao-de-medicamentos-g02",
+    "cuidados-na-administracao-de-medicamentos-g03",
+    "cuidados-na-administracao-de-medicamentos-g04",
+    "cuidados-na-administracao-de-medicamentos-g05",
+    "cuidados-na-administracao-de-medicamentos-g06",
+    "cuidados-na-administracao-de-medicamentos-g07",
+    "cuidados-na-administracao-de-medicamentos-g08",
+    "cuidados-na-administracao-de-medicamentos-g09",
+    "cuidados-na-administracao-de-medicamentos-g10",
+    "cuidados-na-administracao-de-medicamentos-g11",
+    "cuidados-na-administracao-de-medicamentos-g12",
+    "cuidados-na-administracao-de-medicamentos-g13",
+    "cuidados-na-administracao-de-medicamentos-g14"
   ]
 }

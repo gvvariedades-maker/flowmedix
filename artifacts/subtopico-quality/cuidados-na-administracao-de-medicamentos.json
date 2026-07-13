@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T22:10:01.432Z",
+  "generated_at": "2026-07-11T20:35:17.300Z",
   "subtopico": "Cuidados na Administração de Medicamentos",
   "pacote_prefix": "cuidados-na-administracao-de-medicamentos",
   "production_status_before": "none",
@@ -14,7 +14,7 @@
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 220
+    "sessions_30d": 214
   },
   "layers": {
     "L1": {
@@ -23,7 +23,7 @@
     },
     "L2": {
       "pass": true,
-      "detail": "alignment OK (8 slugs)"
+      "detail": "alignment OK (123 slugs)"
     },
     "L2b": {
       "pass": true,
@@ -31,7 +31,7 @@
     },
     "L3": {
       "pass": true,
-      "detail": "Playwright L3 CAM — 5 branches (4 bespoke + genérico); moldes cam_exceto_conduta e cam_documentacao implementados 2026-07-10"
+      "detail": "Playwright L3 CAM — 5 branches (4 bespoke + genérico); PNGs em artifacts/visual-mold-regression/"
     },
     "L4": {
       "pass": true,
@@ -43,7 +43,7 @@
     },
     "L6": {
       "pass": true,
-      "detail": "all 1 lotes anchor pass"
+      "detail": "all 14 lotes anchor pass"
     }
   },
   "lote_stats": [
@@ -52,11 +52,89 @@
       "scanned": 8,
       "alignment_fail": 0,
       "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g02",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g03",
+      "scanned": 10,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g04",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g05",
+      "scanned": 10,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g06",
+      "scanned": 15,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g07",
+      "scanned": 10,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g08",
+      "scanned": 10,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g09",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g10",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g11",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g12",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g13",
+      "scanned": 6,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g14",
+      "scanned": 6,
+      "alignment_fail": 0,
+      "numeric_fail": 0
     }
   ],
   "content_health": {
     "subtopico": "Cuidados na Administração de Medicamentos",
-    "sessions_30d": 220,
+    "sessions_30d": 214,
     "open_reports": {
       "p0": 0,
       "p1": 0,
@@ -71,7 +149,7 @@
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 220,
+      "sessions_30d": 214,
       "open_p1": 0,
       "report_rate_pct": 0
     },

@@ -1,7 +1,9 @@
 {
   "lote": "saude-adolescente-g02",
-  "generated_at": "2026-06-29T23:48:18.359Z",
+  "generated_at": "2026-07-13T18:17:40.804Z",
   "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
   "total": 8,
   "passed": 8,
   "failed": 0,

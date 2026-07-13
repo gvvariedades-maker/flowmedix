@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-12T06:10:57.525Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+    "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+    "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3",
+    "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-8",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-6",
+    "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-3",
+    "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1780066938846-2",
+    "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1780066938846-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

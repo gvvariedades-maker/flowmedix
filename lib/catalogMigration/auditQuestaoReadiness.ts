@@ -4,7 +4,7 @@
  *
  * @see docs/PREMIUM_QUESTAO.md
  */
-import { hasPremiumStubMarkers } from '@/lib/catalogMigration/upgradePremiumHybrid';
+import { hasPremiumStubMarkers } from '@/lib/catalogMigration/premiumStubMarkers';
 import { lintGoldenContent, lintGoldenV2Pedagogy } from '@/lib/goldenContentStandard';
 import { validateQuestaoForWrite } from '@/lib/questaoSpec/validateQuestaoForWrite';
 import {
@@ -64,6 +64,12 @@ import {
   inferPedagogicalBranch,
   resolvePedagogicalBranch,
 } from '@/lib/slides/pedagogicalBranch';
+import {
+  assertApprovalGate,
+  scoreQuestaoRisk,
+  type RiskResult,
+} from '@/lib/catalogMigration/riskScoring';
+import { auditAndMitigateA4Minimo } from '@/lib/catalogMigration/a4MinimoRegistry';
 
 export type ReadinessTier = 'A1' | 'A2' | 'A2.5' | 'A2b' | 'A3' | 'A4';
 
@@ -82,6 +88,12 @@ export type AuditQuestaoReadinessOptions = {
   strictV2Pedagogy?: boolean;
   /** Gramática Imunização v3 mental — decore, eliminação, ROI errors, content_review. */
   strictV3Pedagogy?: boolean;
+  /** Pacote production_ready no registry (afeta risk score). */
+  productionReady?: boolean;
+  /** Flag auto_approval.enabled do pacote (default: true para scoring). */
+  autoApprovalEnabled?: boolean;
+  /** Ramo sem âncora / cauda longa. */
+  branchNovel?: boolean;
 };
 
 export type AuditQuestaoReadinessResult = {
@@ -94,6 +106,8 @@ export type AuditQuestaoReadinessResult = {
   family?: string;
   pedagogical_branch?: string;
   inferred_branch?: string;
+  /** Auto-aprovação por risco — @see docs/DECISAO_AUTO_APROVACAO_RISCO.md */
+  risk?: RiskResult;
 };
 
 const REQUIRED_SLIDE_TYPES = [
@@ -111,6 +125,7 @@ type QuestaoPayload = {
     content_standard?: string;
     content_review?: unknown;
     sources?: unknown[];
+    efficacy_contract?: unknown;
   };
   question_data?: {
     instruction?: string;
@@ -509,6 +524,60 @@ export function auditQuestaoReadiness(
     'info',
   );
 
+  const residualPedagogyWarn = checks.some(
+    (c) =>
+      c.severity === 'warn' &&
+      (c.code.startsWith('slide_layer_redundancy') ||
+        c.code === 'golden_rule_gabarito_spoiler' ||
+        c.code.includes('pedagogy')),
+  );
+
+  let risk = scoreQuestaoRisk(payload as never, {
+    productionReady: options.productionReady === true,
+    autoApprovalEnabled: options.autoApprovalEnabled,
+    branchNovel: options.branchNovel === true,
+    residualPedagogyWarn,
+  });
+
+  const a4Resolved = auditAndMitigateA4Minimo(payload as never, risk, {
+    autoApprovalEnabled: options.autoApprovalEnabled,
+  });
+  risk = a4Resolved.risk;
+  if (a4Resolved.cfg && a4Resolved.audit) {
+    const a4 = a4Resolved.audit;
+    push(
+      checks,
+      'A4',
+      `a4_minimo_${a4Resolved.cfg.packageId}`,
+      a4.agentA4Eligible
+        ? `A4-mínimo ${a4Resolved.cfg.label} PASS — claims [${a4.matched.map((m) => m.claimId).join(', ') || '—'}] eixos [${a4.axesHit.join(', ')}]`
+        : `A4-mínimo ${a4Resolved.cfg.label} FAIL — ${a4.blockers.slice(0, 4).join('; ') || 'inelegível'}`,
+      a4.agentA4Eligible ? 'info' : 'warn',
+    );
+  }
+
+  push(
+    checks,
+    'A4',
+    'risk_tier',
+    `Risco ${risk.risk_tier} → ${risk.approval_mode}` +
+      (risk.risk_factors.length > 0 ? ` [${risk.risk_factors.join(', ')}]` : '') +
+      (risk.reasons[0] ? ` — ${risk.reasons[0]}` : ''),
+    'info',
+  );
+
+  const approvalBlockers = assertApprovalGate(payload as never, risk);
+  for (const msg of approvalBlockers) {
+    push(
+      checks,
+      'A4',
+      'risk_human_approval_required',
+      msg,
+      // Não bloqueia ready_100 (A4 não entra no ready_100) — bloqueia apply via assertApprovalGate.
+      'warn',
+    );
+  }
+
   const tier_pass: Record<ReadinessTier, boolean> = {
     A1: !tierHasErrors(checks, 'A1'),
     A2: !tierHasErrors(checks, 'A2'),
@@ -530,6 +599,7 @@ export function auditQuestaoReadiness(
     family: payload.meta?.family,
     pedagogical_branch: payload.meta?.pedagogical_branch,
     inferred_branch: inferredBranch,
+    risk,
   };
 }
 
@@ -600,5 +670,7 @@ export function formatReadinessLine(result: AuditQuestaoReadinessResult): string
   const status = result.ready_100 ? 'READY' : 'FAIL';
   const errors = result.checks.filter((c) => c.severity === 'error').map((c) => c.code);
   const branch = result.pedagogical_branch ?? result.inferred_branch ?? '—';
-  return `[${status}] ${result.slug ?? '—'} branch=${branch} errors=${errors.join(',') || 'none'}`;
+  const risk =
+    result.risk != null ? ` risk=${result.risk.risk_tier}/${result.risk.approval_mode}` : '';
+  return `[${status}] ${result.slug ?? '—'} branch=${branch}${risk} errors=${errors.join(',') || 'none'}`;
 }

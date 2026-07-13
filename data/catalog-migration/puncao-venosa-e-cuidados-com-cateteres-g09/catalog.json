@@ -1,0 +1,28 @@
+{
+  "exported_at": "2026-07-12T05:06:02.868Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g09",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2868
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2916
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2876
+    }
+  ]
+}

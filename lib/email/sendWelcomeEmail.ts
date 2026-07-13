@@ -71,7 +71,7 @@ export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmail
       slug: 'welcome',
       kind: 'transactional' as const,
       name: 'Boas-vindas',
-      subject: 'Bem-vindo ao AVANT — Técnico de Enfermagem',
+      subject: 'Bem-vindo ao AVANT Enf — Técnico de Enfermagem',
       preview_text: 'Estudo reverso com NeuroSlides — comece pela sua primeira questão',
       content: DEFAULT_WELCOME_CONTENT,
       updated_at: new Date().toISOString(),

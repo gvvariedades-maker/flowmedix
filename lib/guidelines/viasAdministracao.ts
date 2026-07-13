@@ -46,6 +46,20 @@ export const VIAS_ADMINISTRACAO_COFEN: GuidelineTable = {
       sourceId: 'vias-administracao-cofen',
     },
     {
+      id: 'im-glutea-5ml',
+      label: 'Sítio IM — glútea/dorsoglútea',
+      value: 'até 5 mL',
+      detail: 'Glúteo maior/dorsoglútea — volume maior que deltoide em adultos.',
+      sourceId: 'vias-administracao-cofen',
+    },
+    {
+      id: 'im-ventrogluteo-2ml',
+      label: 'Ventroglúteo — volume adulto',
+      value: '2 mL',
+      detail: 'Solução aquosa 2 mL em adulto; agulha 30×0,6–0,7 mm (referência de prova).',
+      sourceId: 'vias-administracao-cofen',
+    },
+    {
       id: 'im-vastolateral',
       label: 'Sítio IM — vasto lateral',
       value: 'seguro em lactentes e crianças',
@@ -165,6 +179,36 @@ export const VIAS_ADMINISTRACAO_COFEN: GuidelineTable = {
       label: 'VO com alimento',
       value: 'alguns fármacos exigem refeição para reduzir irritação gástrica',
       detail: 'AINEs e metformina — outros (tetraciclinas, quinolonas) não devem ser tomados com laticínios.',
+      sourceId: 'vias-administracao-cofen',
+    },
+    {
+      id: 'noradrenalina-glicose-5',
+      label: 'Noradrenalina — diluente EV',
+      value: 'glicose 5% (glicosado)',
+      detail:
+        'Vasopressor fotossensível: diluir em glicose 5%; preferir acesso venoso central — reduz oxidação à luz e risco de necrose por extravasamento.',
+      sourceId: 'vias-administracao-cofen',
+    },
+    {
+      id: 'noradrenalina-sf09-distrator',
+      label: 'Noradrenalina — SF 0,9% (distrator)',
+      value: '0,9%',
+      detail:
+        'SF 0,9% (fisiológico) com acesso periférico é distrator clássico — não é diluente preferido de noradrenalina.',
+      sourceId: 'vias-administracao-cofen',
+    },
+    {
+      id: 'insulina-sc-abdome-rapido',
+      label: 'Insulina SC — absorção (literatura)',
+      value: 'abdome mais rápido',
+      detail: 'ADA/Potter — abdome absorve mais rápido; nádegas mais lento.',
+      sourceId: 'vias-administracao-cofen',
+    },
+    {
+      id: 'insulina-sc-nadegas-prova',
+      label: 'Insulina SC — gabarito de prova',
+      value: 'nádegas mais rápidas',
+      detail: 'Cadastro específico de banca — pode divergir da literatura; ensinar letra da prova.',
       sourceId: 'vias-administracao-cofen',
     },
   ],

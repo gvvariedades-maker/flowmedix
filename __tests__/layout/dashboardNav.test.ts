@@ -25,7 +25,7 @@ describe('buildMenuSections', () => {
       expect(item.title.trim().length).toBeGreaterThan(0);
     }
     expect(items.find((i) => i.href === '/estudar')?.title).toBe('Vitrine de aulas e assuntos');
-    expect(items.find((i) => i.href === '/ajuda')?.title).toBe('Como usar o AVANT');
+    expect(items.find((i) => i.href === '/ajuda')?.title).toBe('Como usar o AVANT Enf');
     expect(items.find((i) => i.href === '/simulados')?.title).toBe('Simulados');
   });
 

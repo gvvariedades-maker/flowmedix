@@ -343,7 +343,7 @@ Atualizar §1 manualmente ou pedir ao agente: *“Atualize PROMPT_META_AUDITORIA
 
 | Doc | Uso |
 |-----|-----|
-| [`PROMPT_PIPELINE_REFERENCIA_VIAS_IMUNIZACAO.md`](PROMPT_PIPELINE_REFERENCIA_VIAS_IMUNIZACAO.md) | Pipeline expandido flagship |
+| [`PROMPT_PIPELINE_REFERENCIA_VIAS_IMUNIZACAO.md`](PROMPT_PIPELINE_REFERENCIA_VIAS_IMUNIZACAO.md) | Pipeline expandido flagship (Vias + Imunização + Adolescente) |
 | [`PIPELINE_COMPLETO_CONVERSA.md`](PIPELINE_COMPLETO_CONVERSA.md) | Runbook canônico por subtópico |
 | [`QUALITY_LAYERS_MODEL.md`](QUALITY_LAYERS_MODEL.md) | L1–L6 |
 | [`CONTINUOUS_QUALITY_RUNBOOK.md`](CONTINUOUS_QUALITY_RUNBOOK.md) | Pós-venda |

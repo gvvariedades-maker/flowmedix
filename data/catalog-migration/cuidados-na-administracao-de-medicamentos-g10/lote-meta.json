@@ -1,0 +1,38 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g10",
+  "subtopico": "Cuidados na Administração de Medicamentos",
+  "status": "applied",
+  "handcraft_at": "2026-07-11",
+  "handcraft_by": "composer-2.5",
+  "priority": "P1 — cauda cam_generico (lote 1/5)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "cam_generico",
+  "branches": {
+    "cam_certos_vf_caso": 6,
+    "cam_exceto_conduta": 2
+  },
+  "anchors": [
+    "examples/questao-premium-facet-cuidados-vigilancia-reacao-adversa.json",
+    "examples/questao-premium-ameosc-cuidados-protocolo-ms-vf.json"
+  ],
+  "anchor_slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+  "handcraft_grammar": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-pedagogy-errors.json",
+  "notes": "Cauda pós-clusters fortes — vigilância, protocolo MS, preparo, aprazamento, prescrição dúvida",
+  "workflow": [
+    "npm run plan:cuidados-na-administracao-de-medicamentos-g10",
+    "npm run catalog:export-lote -- --lote=cuidados-na-administracao-de-medicamentos-g10 --from-manifest=data/catalog-migration/cuidados-na-administracao-de-medicamentos-g10/manifest.json",
+    "Handcraft golden-v1 — bridge/center/cards/compare semântico",
+    "npm run validate:goldens -- --lote=cuidados-na-administracao-de-medicamentos-g10 --strict",
+    "npm run audit:questao-readiness -- --lote=cuidados-na-administracao-de-medicamentos-g10 --strict-v3-pedagogy",
+    "npm run audit:slug-alignment -- --lote=cuidados-na-administracao-de-medicamentos-g10 --strict",
+    "npm run audit:anchor-review -- --lote=cuidados-na-administracao-de-medicamentos-g10 --record-pass --reviewer=agent --skip-capture",
+    "npm run catalog:apply-lote -- --lote=cuidados-na-administracao-de-medicamentos-g10 --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-11",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/cuidados-na-administracao-de-medicamentos-g10.json"
+  }
+}

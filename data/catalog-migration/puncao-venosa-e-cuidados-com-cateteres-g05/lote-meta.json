@@ -1,0 +1,29 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g05",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "status": "handcraft_complete",
+  "priority": "P0 — puncao_periferica_antissepsia (Punção periférica / antissepsia)",
+  "slug_count": 8,
+  "pedagogical_branch_target": "puncao_periferica_antissepsia",
+  "anchors": [
+    "examples/questao-premium-funpar-puncao-tecnica-periferica.json"
+  ],
+  "anchor_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+  "workflow": [
+    "npm run plan:puncao-venosa-e-cuidados-com-cateteres-g05",
+    "npm run catalog:export-lote -- --lote=puncao-venosa-e-cuidados-com-cateteres-g05 --from-manifest=data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g05/manifest.json",
+    "npm run handcraft:puncao-venosa-e-cuidados-com-cateteres-g05",
+    "npm run validate:goldens -- --lote=puncao-venosa-e-cuidados-com-cateteres-g05 --strict",
+    "npm run audit:questao-readiness -- --lote=puncao-venosa-e-cuidados-com-cateteres-g05 --strict-v2-pedagogy",
+    "npm run enrich:puncao-guideline-meta -- --lote=puncao-venosa-e-cuidados-com-cateteres-g05 --write",
+    "npm run audit:slug-alignment -- --lote=puncao-venosa-e-cuidados-com-cateteres-g05 --strict",
+    "npm run catalog:patch-pedagogical-branch -- --lote=puncao-venosa-e-cuidados-com-cateteres-g05 --reconcile-branch --apply"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-12",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g05.json"
+  }
+}

@@ -132,7 +132,7 @@ function LoginContent() {
 
           {inviteToken ? (
             <p className="text-xs font-semibold text-[#166534]">
-              Convite AVANT Pro detectado — ao entrar, o benefício será aplicado automaticamente.
+              Convite AVANT Enf Pro detectado — ao entrar, o benefício será aplicado automaticamente.
             </p>
           ) : null}
         </div>
@@ -216,7 +216,7 @@ function LoginContent() {
             href={registerHref}
             className="font-semibold text-slate-700 underline-offset-2 transition-colors hover:text-slate-900 hover:underline"
           >
-            Cadastre-se na AVANT
+            Cadastre-se na AVANT Enf
           </Link>
         </p>
 

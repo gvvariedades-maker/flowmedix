@@ -1,0 +1,100 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+  "generated_at": "2026-07-12T05:58:30.510Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 11,
+  "passed": 11,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

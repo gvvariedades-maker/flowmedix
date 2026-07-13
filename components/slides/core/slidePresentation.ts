@@ -224,6 +224,7 @@ function resolveCore(
       layoutVariant === 'pni-trap-chips' ||
       layoutVariant === 'ist-trap-chips' ||
       layoutVariant === 'adolescent-consent-gate' ||
+      layoutVariant === 'adolescent-z-threshold-trap' ||
       layoutVariant === 'burn-trap-arena' ||
       layoutVariant === 'trabalho-pep-trap-arena' ||
       layoutVariant === 'respiratorio-spo2-trap-arena' ||
@@ -241,7 +242,13 @@ function resolveCore(
       layoutVariant === 'cam-certos-trap-arena' ||
       layoutVariant === 'cam-high-risk-trap-arena' ||
       layoutVariant === 'cam-exceto-trap-arena' ||
-      layoutVariant === 'cam-documentacao-trap-arena')
+      layoutVariant === 'cam-documentacao-trap-arena' ||
+      layoutVariant === 'iv-label-swap-trap' ||
+      layoutVariant === 'iv-gauge-mismatch-trap' ||
+      layoutVariant === 'iv-exceto-intruder-trap' ||
+      layoutVariant === 'iv-interval-swap-trap' ||
+      layoutVariant === 'iv-order-invert-trap' ||
+      layoutVariant === 'iv-bundle-break-trap')
       ? 'x_icon'
       : 'numbered');
 

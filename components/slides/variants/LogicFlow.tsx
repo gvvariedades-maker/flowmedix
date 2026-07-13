@@ -36,6 +36,12 @@ import { LogicFlowCamVfJuggleTap } from './LogicFlowCamVfJuggleTap';
 import { LogicFlowCamAltoRiscoEliminationTap } from './LogicFlowCamAltoRiscoEliminationTap';
 import { LogicFlowCamExcetoTapFlow } from './LogicFlowCamExcetoTapFlow';
 import { LogicFlowCamDocumentacaoVfTap } from './LogicFlowCamDocumentacaoVfTap';
+import { LogicFlowIvComplicationTapFlow } from './LogicFlowIvComplicationTapFlow';
+import { LogicFlowIvDeviceTapFlow } from './LogicFlowIvDeviceTapFlow';
+import { LogicFlowIvExcetoTapFlow } from './LogicFlowIvExcetoTapFlow';
+import { LogicFlowIvIntervalTapFlow } from './LogicFlowIvIntervalTapFlow';
+import { LogicFlowIvPunctureTapFlow } from './LogicFlowIvPunctureTapFlow';
+import { LogicFlowIvBundleTapFlow } from './LogicFlowIvBundleTapFlow';
 import { LogicFlowPniCalendarEliminationTap } from './LogicFlowPniCalendarEliminationTap';
 import { LogicFlowPniColdChainTap } from './LogicFlowPniColdChainTap';
 import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
@@ -43,6 +49,7 @@ import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
 import { LogicFlowViaVfJuggleTap } from './LogicFlowViaVfJuggleTap';
 import { LogicFlowFarmacoVfJuggleTap } from './LogicFlowFarmacoVfJuggleTap';
 import { LogicFlowAdolescentVfWeaveTap } from './LogicFlowAdolescentVfWeaveTap';
+import { LogicFlowAdolescentZClassifyTap } from './LogicFlowAdolescentZClassifyTap';
 import { LogicFlowMulherPrenatalTapFlow } from './LogicFlowMulherPrenatalTapFlow';
 import { LogicFlowMulherLaborTapFlow } from './LogicFlowMulherLaborTapFlow';
 import { LogicFlowMulherScreeningTapFlow } from './LogicFlowMulherScreeningTapFlow';
@@ -342,6 +349,47 @@ export const LogicFlow = ({
     return <LogicFlowCamDocumentacaoVfTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
+  if (variant === 'iv-complication-tap-flow') {
+    return (
+      <LogicFlowIvComplicationTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'iv-device-tap-flow') {
+    return (
+      <LogicFlowIvDeviceTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'iv-exceto-tap-flow') {
+    return (
+      <LogicFlowIvExcetoTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'iv-interval-tap-flow') {
+    return (
+      <LogicFlowIvIntervalTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'iv-puncture-tap-flow') {
+    return (
+      <LogicFlowIvPunctureTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'iv-bundle-tap-flow') {
+    return (
+      <LogicFlowIvBundleTapFlow steps={steps} theme={theme} revealMode={revealMode} footerRule={footerRule} />
+    );
+  }
+
   if (variant === 'pni-calendar-elimination-tap') {
     return (
       <LogicFlowPniCalendarEliminationTap steps={steps} theme={theme} footerRule={footerRule} />
@@ -404,6 +452,17 @@ export const LogicFlow = ({
 
   if (variant === 'adolescent-vf-weave-tap') {
     return <LogicFlowAdolescentVfWeaveTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'adolescent-z-classify-tap') {
+    return (
+      <LogicFlowAdolescentZClassifyTap
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
   }
 
   if (variant === 'dose-calc-tap' || variant === 'sae-decision-tap') {

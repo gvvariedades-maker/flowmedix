@@ -1,0 +1,13 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g11",
+  "exported_at": "2026-07-12T05:17:11.375Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g11/manifest.json"
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-7",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-1",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3"
+  ]
+}

@@ -1,33 +1,5 @@
-<!-- AVANT: lockup horizontal para fundos claros (shell neutro, wordmark editorial). -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" fill="none" aria-label="AVANT">
-  <defs>
-    <linearGradient id="avant-hl-icon" x1="10%" y1="0%" x2="90%" y2="100%">
-      <stop offset="0%" stop-color="#4ade80"/>
-      <stop offset="40%" stop-color="#22c55e"/>
-      <stop offset="100%" stop-color="#15803d"/>
-    </linearGradient>
-  </defs>
-  <rect width="240" height="64" rx="18" fill="#f1f5f9"/>
-  <rect x="2" y="2" width="236" height="60" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
-  <rect x="16" y="14" width="4" height="36" rx="2" fill="#22c55e"/>
-  <rect x="26" y="14" width="36" height="36" rx="9" fill="url(#avant-hl-icon)"/>
-  <rect x="26" y="14" width="36" height="6" rx="9" fill="#fff" fill-opacity="0.30"/>
-  <text
-    x="44"
-    y="39"
-    text-anchor="middle"
-    fill="#ffffff"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="17"
-    font-weight="800"
-  >A</text>
-  <text
-    x="72"
-    y="42"
-    fill="#166534"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="22"
-    font-weight="800"
-    letter-spacing="7"
-  >AVANT</text>
+<!-- AVANT Enf: lockup editorial — brasao + wordmark raster "AVANT enf" dourado/esmeralda. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 232 56" fill="none" aria-label="AVANT Enf">
+  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="0" y="0" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>
+  <image href="avant-logo-wordmark-raster.png" xlink:href="avant-logo-wordmark-raster.png" x="66" y="9" width="166" height="37" preserveAspectRatio="xMidYMid meet"/>
 </svg>

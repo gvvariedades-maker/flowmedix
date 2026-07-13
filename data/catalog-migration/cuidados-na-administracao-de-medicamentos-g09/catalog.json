@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-11T04:53:54.644Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g09",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2193
+    },
+    {
+      "modulo_slug": "isba-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISBA",
+      "avant_codigo": 2163
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3447
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2149
+    },
+    {
+      "modulo_slug": "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 2224
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3368
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2133
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102861438-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 713
+    }
+  ]
+}

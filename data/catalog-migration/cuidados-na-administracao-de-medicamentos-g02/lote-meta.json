@@ -1,7 +1,7 @@
 {
   "lote": "cuidados-na-administracao-de-medicamentos-g02",
   "subtopico": "Cuidados na Administração de Medicamentos",
-  "status": "handcraft_complete",
+  "status": "applied",
   "handcraft_at": "2026-07-10",
   "handcraft_by": "composer-2.5",
   "priority": "P0 — cam_certos_vf_caso (18 slugs cluster)",
@@ -26,7 +26,7 @@
     "npm run audit:anchor-review -- --lote=cuidados-na-administracao-de-medicamentos-g02 --record-pass --reviewer=agent --skip-capture"
   ],
   "anchor_second_review": {
-    "reviewed_at": "2026-07-10",
+    "reviewed_at": "2026-07-11",
     "reviewer": "agent",
     "method": "agent",
     "status": "pass",

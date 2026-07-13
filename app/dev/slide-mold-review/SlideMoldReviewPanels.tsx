@@ -21,6 +21,13 @@ export function SlideMoldReviewPanels({ questao, branch }: SlideMoldReviewProps)
     () => questao.reverse_study_slides ?? [],
     [questao.reverse_study_slides],
   );
+  const questionMeta = useMemo(
+    () => ({
+      ...questao.meta,
+      pedagogical_branch: branch,
+    }),
+    [questao.meta, branch],
+  );
 
   useEffect(() => {
     document.documentElement.setAttribute('data-slide-mold-review', branch);
@@ -84,7 +91,7 @@ export function SlideMoldReviewPanels({ questao, branch }: SlideMoldReviewProps)
             style={{ minHeight: 420, maxHeight: 720 }}
           >
             <div className="border-b border-white/10 px-4 py-2 text-xs text-slate-400">{label}</div>
-            <NeuroSlide data={slide} questionMeta={questao.meta} slideIndex={idx} standalone />
+            <NeuroSlide data={slide} questionMeta={questionMeta} slideIndex={idx} standalone />
           </section>
         ))}
       </div>

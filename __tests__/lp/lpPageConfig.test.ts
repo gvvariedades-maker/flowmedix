@@ -59,7 +59,7 @@ describe('LpPageAdminCreateSchema', () => {
         },
       }),
       seo: {
-        title: 'T | AVANT',
+        title: 'T | AVANT Enf',
         description: 'Desc',
       },
     };

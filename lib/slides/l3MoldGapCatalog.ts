@@ -99,8 +99,19 @@ const MULHER_PUERPERIO_BESPOKE =
 const MULHER_PLANEJAMENTO_BESPOKE =
   'mulher-contraception-spectrum · mulher-planejamento-board · mulher-planejamento-tap-flow · mulher-planejamento-trap-arena (bespoke)';
 
+const ADOLESCENT_ANTHROPOMETRY_BESPOKE =
+  'adolescent-growth-z-rail · adolescent-z-band-board · adolescent-z-classify-tap · adolescent-z-threshold-trap (bespoke)';
+
 const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
   'saude do adolescente': [
+    {
+      pattern: /escore\s*z|score\s*z|caderneta\s+do\s+adolescente|classifica[cç][aã]o\s+nutricional.*z/i,
+      branch_id: 'adolescente_antropometria',
+      branch_implemented: true,
+      ideal_mold_package: ADOLESCENT_ANTHROPOMETRY_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Escore Z / Caderneta — trilho de faixas antropométricas (brief l3 antropometria).',
+    },
     {
       pattern: /viol[eê]ncia sexual|indicadores.*viol/i,
       branch_id: 'adolescente_violencia_protecao',

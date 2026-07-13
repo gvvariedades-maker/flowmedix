@@ -9,20 +9,59 @@
     "subtopico": "Punção Venosa e Cuidados com Cateteres",
     "content_standard": "golden-v1",
     "family": "conceito",
+    "pedagogical_branch": "puncao_flebite",
     "content_review": {
       "reviewed_at": "2026-06-22",
       "reviewer": "content-pilot",
-      "guideline_snapshot": "Complicações de acesso venoso periférico — infiltração, flebite, hematoma",
+      "guideline_snapshot": "Anvisa / COFEN — Acesso venoso, bundle CVC e manutenção (complicações locais AVP; dispositivo e calibre; documentação COFEN 358/2009) · Complicações de acesso venoso periférico — infiltração, flebite, hematoma",
       "exam_vs_current": "none"
     },
     "sources": [
       {
-        "id": "cofen-puncao-complicacoes",
+        "id": "potter-perry-fundamentos-11ed-2024",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Acesso venoso e complicações",
+        "year": 2024,
+        "covers": [
+          "flebite",
+          "infiltração",
+          "hematoma",
+          "dispositivo venoso",
+          "calibre",
+          "acesso venoso periférico"
+        ]
+      },
+      {
+        "id": "sae-cofen-358",
         "tier": "A",
         "issuer": "COFEN",
-        "title": "Procedimentos de enfermagem — punção venosa e complicações locais",
-        "year": 2024,
-        "covers": ["infiltração", "flebite", "extravasamento", "hematoma"]
+        "title": "Processo de Enfermagem e SAE",
+        "year": 2009,
+        "url": "https://www.cofen.gov.br/",
+        "covers": [
+          "documentação",
+          "registro de enfermagem"
+        ]
+      },
+      {
+        "id": "puncao-cateter-anvisa",
+        "tier": "A",
+        "issuer": "Anvisa / COFEN",
+        "title": "Punção venosa e cuidados com cateteres",
+        "year": 2021,
+        "url": "https://www.gov.br/anvisa/",
+        "covers": [
+          "flebite",
+          "infiltração",
+          "hematoma",
+          "esclerose",
+          "dispositivo venoso",
+          "calibre",
+          "documentação",
+          "registro de enfermagem",
+          "acesso venoso periférico"
+        ]
       }
     ]
   },

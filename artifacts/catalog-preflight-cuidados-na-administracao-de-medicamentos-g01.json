@@ -1,137 +1,76 @@
 {
   "lote": "cuidados-na-administracao-de-medicamentos-g01",
-  "generated_at": "2026-07-10T21:34:54.883Z",
+  "generated_at": "2026-07-11T19:37:52.057Z",
   "strict": true,
-  "strict_v2_pedagogy": true,
+  "strict_v2_pedagogy": false,
   "strict_v3_pedagogy": false,
   "total": 8,
-  "passed": 0,
-  "failed": 8,
+  "passed": 8,
+  "failed": 0,
   "slugs": [
     {
       "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
-      "ok": false,
+      "ok": true,
       "zod_ok": true,
       "golden_ok": true,
-      "readiness_ok": false,
-      "issues": [
-        "meta.content_standard deve ser golden-v1",
-        "[A2] molde_concept_map_sem_items: concept_map do molde \"cam-certos-deck\" exige ≥3 items — fallback genérico evitado.",
-        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (1/4 únicas)",
-        "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-        "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_alto_risco)"
-      ]
+      "readiness_ok": true,
+      "issues": []
     },
     {
       "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
-      "ok": false,
+      "ok": true,
       "zod_ok": true,
       "golden_ok": true,
-      "readiness_ok": false,
-      "issues": [
-        "meta.content_standard deve ser golden-v1",
-        "[A2] molde_golden_rule_sem_rows: golden_rule do molde \"cam-nine-rights-board\" exige rows (label+value) — sem rows o player cai em layout genérico.",
-        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
-        "[A2.5] align_logic_not_recycle: logic_flow recicla o texto das alternativas (5/9 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
-        "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-        "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_certos_vf_caso)"
-      ]
+      "readiness_ok": true,
+      "issues": []
     },
     {
       "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-3",
-      "ok": false,
+      "ok": true,
       "zod_ok": true,
       "golden_ok": true,
-      "readiness_ok": false,
-      "issues": [
-        "meta.content_standard deve ser golden-v1",
-        "[A2] molde_golden_rule_sem_rows: golden_rule do molde \"cam-nine-rights-board\" exige rows (label+value) — sem rows o player cai em layout genérico.",
-        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
-        "[A2.5] align_logic_not_recycle: logic_flow recicla o texto das alternativas (5/9 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
-        "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-        "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_certos_vf_caso)"
-      ]
+      "readiness_ok": true,
+      "issues": []
     },
     {
       "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-4",
-      "ok": false,
+      "ok": true,
       "zod_ok": true,
       "golden_ok": true,
-      "readiness_ok": false,
-      "issues": [
-        "meta.content_standard deve ser golden-v1",
-        "[A2] molde_golden_rule_sem_rows: golden_rule do molde \"cam-nine-rights-board\" exige rows (label+value) — sem rows o player cai em layout genérico.",
-        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
-        "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-        "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_certos_vf_caso)"
-      ]
+      "readiness_ok": true,
+      "issues": []
     },
     {
       "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-4",
-      "ok": false,
+      "ok": true,
       "zod_ok": true,
       "golden_ok": true,
-      "readiness_ok": false,
-      "issues": [
-        "meta.content_standard deve ser golden-v1",
-        "[A2] molde_concept_map_sem_items: concept_map do molde \"cam-certos-deck\" exige ≥3 items — fallback genérico evitado.",
-        "[A2] molde_golden_rule_sem_rows: golden_rule do molde \"cam-nine-rights-board\" exige rows (label+value) — sem rows o player cai em layout genérico.",
-        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
-        "[A2.5] align_logic_not_recycle: logic_flow recicla o texto das alternativas (5/9 steps copiam ≥8 palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.",
-        "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-        "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_alto_risco)"
-      ]
+      "readiness_ok": true,
+      "issues": []
     },
     {
       "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-3",
-      "ok": false,
+      "ok": true,
       "zod_ok": true,
       "golden_ok": true,
-      "readiness_ok": false,
-      "issues": [
-        "meta.content_standard deve ser golden-v1",
-        "[A2] molde_concept_map_sem_items: concept_map do molde \"cam-certos-deck\" exige ≥3 items — fallback genérico evitado.",
-        "[A2] molde_golden_rule_sem_rows: golden_rule do molde \"cam-nine-rights-board\" exige rows (label+value) — sem rows o player cai em layout genérico.",
-        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
-        "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-        "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_alto_risco)"
-      ]
+      "readiness_ok": true,
+      "issues": []
     },
     {
       "slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-2",
-      "ok": false,
+      "ok": true,
       "zod_ok": true,
       "golden_ok": true,
-      "readiness_ok": false,
-      "issues": [
-        "meta.content_standard deve ser golden-v1",
-        "[A2] molde_golden_rule_sem_rows: golden_rule do molde \"cam-nine-rights-board\" exige rows (label+value) — sem rows o player cai em layout genérico.",
-        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
-        "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-        "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_certos_vf_caso)"
-      ]
+      "readiness_ok": true,
+      "issues": []
     },
     {
       "slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7",
-      "ok": false,
+      "ok": true,
       "zod_ok": true,
       "golden_ok": true,
-      "readiness_ok": false,
-      "issues": [
-        "meta.content_standard deve ser golden-v1",
-        "[A2] molde_golden_rule_sem_rows: golden_rule do molde \"cam-nine-rights-board\" exige rows (label+value) — sem rows o player cai em layout genérico.",
-        "[A2] l2_golden_v1: meta.content_standard deve ser \"golden-v1\" para 100% pronto",
-        "[A2] l2_duplicate_danger: danger_zone: justificativas duplicadas (2/5 únicas)",
-        "[A2.5] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas.",
-        "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: cam_certos_vf_caso)"
-      ]
+      "readiness_ok": true,
+      "issues": []
     }
   ]
 }

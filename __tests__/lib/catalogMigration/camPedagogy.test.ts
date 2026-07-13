@@ -49,7 +49,7 @@ describe('camPedagogy', () => {
   it('âncora AVANÇASP EXCETO passa lint semântico', () => {
     const payload = JSON.parse(fs.readFileSync(excetoPath, 'utf8'));
     expect(lintCamPedagogy(payload, { strictV2: true })).toEqual([]);
-    expect(payload.meta.pedagogical_branch).toBe('cam_generico');
+    expect(payload.meta.pedagogical_branch).toBe('cam_exceto_conduta');
   });
 
   it('flagra concept_map sem pegadinha-âncora', () => {

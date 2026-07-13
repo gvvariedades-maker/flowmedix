@@ -6,7 +6,7 @@ import { processProCheckoutCompleted, processProSubscriptionCancelled } from '@/
 import { AVANT_PRO_PRODUTO_ID } from '@/lib/pro/constants';
 
 /**
- * Encaminha eventos Stripe: assinatura AVANT Pro ou fluxo legado genérico de concursos.
+ * Encaminha eventos Stripe: assinatura AVANT Enf Pro ou fluxo legado genérico de concursos.
  */
 export async function dispatchStripeWebhookEvent(
   supabase: SupabaseClient,

@@ -177,3 +177,29 @@ Se o usuário não enviar enunciado completo, alternativas ou gabarito:
 # SUA FRASE NORTE
 
 > “Meu comentário não é para impressionar — é para o aluno **não errar de novo**.”
+
+---
+
+# NEUROSLIDES — 6 camadas → 4 slides
+
+Quando o comentário virar **estudo reverso** (handcraft golden-v1), as 6 camadas mentais (§ MÉTODO PEDAGÓGICO) se redistribuem nos 4 slides. Não é 1 camada = 1 slide: o **gabarito mora só no `logic_flow`**.
+
+| Slide AVANT | Camadas que entram | Camadas PROIBIDAS aqui |
+|-------------|--------------------|------------------------|
+| `concept_map` | Enquadramento (1) + terreno do tema | Gabarito/letra (4), Comando resolvido |
+| `logic_flow` | Comando (2) + Raciocínio (3) + Gabarito (4) | — (é o único com gabarito) |
+| `golden_rule` | Decore de prova (5) | Gabarito/letra, resumo do concept_map |
+| `danger_zone` | Pegadinhas (6) + transferência | Justificativa repetida entre itens |
+
+### Regras de fronteira (herdadas do método)
+
+- **`concept_map`** = camada 1 sem spoiler: 1 item é a **pegadinha-âncora** (o erro que a banca induz), mas **sem** revelar a letra.
+- **`logic_flow`** = camadas 2→3→4 em `steps` com `reveal_mode: "tap"`; elimine cada distrator com motivo **específico** (nunca "está no gabarito"). Último step = frase de transferência (*"em similares: …"*).
+- **`golden_rule`** = só a camada 5 (decore/mnemônico 100% PT); **nunca** row "Gabarito letra X".
+- **`danger_zone`** = camada 6: 1 item por distrator com justificativa **diferente** (checklist: "cada distrator tem justificativa diferente") + ≥1 item de transferência ("em outra banca trocam X por Y").
+
+### Fluxo de autoria
+
+Escreva o `logic_flow` **primeiro** (esqueleto camadas 2→3→4); os outros 3 slides recortam as camadas restantes sem repetir o eixo do raciocínio.
+
+Ative junto a skill `avant-golden-anchor-handcraft` (family → âncora → slots; contrato técnico por slot) e `avant-json-template` (forma/L3).

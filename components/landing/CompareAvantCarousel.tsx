@@ -25,7 +25,7 @@ export function CompareAvantCarousel() {
       <div className="relative mx-auto w-full max-w-[240px]">
         <DeviceFrame
           variant="phone"
-          label="NeuroSlides AVANT no celular"
+          label="NeuroSlides AVANT Enf no celular"
           screenMode="cover"
           showGroundShadow={false}
         >
@@ -56,7 +56,7 @@ export function CompareAvantCarousel() {
         </DeviceFrame>
       </div>
 
-      <div className="flex justify-center gap-2 pt-4" role="tablist" aria-label="Slides AVANT">
+      <div className="flex justify-center gap-2 pt-4" role="tablist" aria-label="Slides AVANT Enf">
         {COMPARE_AVANT_SLIDES.map((slide, i) => (
           <button
             key={slide.src}

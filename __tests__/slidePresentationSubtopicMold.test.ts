@@ -1658,6 +1658,62 @@ describe('slidePresentation — molde por subtópico', () => {
     ).toBe('cam-exceto-trap-arena');
   });
 
+  it('Punção Venosa: puncao_flebite usa pacote bespoke 4/4', () => {
+    const branchCtx = {
+      questionSlug: 'avancasp-puncao-infiltracao-flebite-1',
+      familyId: 'conceito' as const,
+      pedagogicalBranch: 'puncao_flebite',
+    };
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          items: [{ label: 'Infiltração', detail: 'Líquido no subcutâneo.', icon: 'Droplets' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('iv-complication-orbit');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          rows: [{ label: 'Infiltração', value: 'líquido SC — edema, dor' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('iv-differential-board');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          steps: ['Ler mecanismo do enunciado — líquido no subcutâneo.'],
+          reveal_mode: 'tap',
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('iv-complication-tap-flow');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          content: 'TROCA DE RÓTULO',
+          items: [
+            {
+              label: 'Letra D — Flebite',
+              detail: 'Parece inflamação da veia.',
+              correct: 'Infiltração — líquido fora do vaso.',
+            },
+          ],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('iv-label-swap-trap');
+  });
+
   it('Cuidados na Administração: cam_documentacao usa pacote bespoke 4/4', () => {
     const branchCtx = {
       questionSlug: 'avancasp-cam-documentacao-1',
@@ -2020,78 +2076,106 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.bulletStyle).toBe('x_icon');
   });
 
-  it('Punção Venosa: concept_map morphing-timeline no molde', () => {
-    const result = resolveSlidePresentation(
-      {
-        type: 'concept_map',
-        meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
-        items: [
-          { label: 'Antissepsia', detail: 'clorexidina' },
-          { label: 'Barreira estéril', detail: 'máxima' },
-          { label: 'Gabarito', detail: 'Letra B' },
-        ],
-      },
-      {
-        questionSlug: 'adm-tec-puncao-1',
-        familyId: 'protocolo',
-      },
-    );
-    expect(result.layoutVariant).toBe('morphing-timeline');
+  it('Punção Venosa: fallback genérico sem pedagogical_branch', () => {
+    const ctx = {
+      questionSlug: 'puncao-generico-1',
+      familyId: 'protocolo' as const,
+    };
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          items: [
+            { label: 'Contexto', detail: 'acesso venoso' },
+            { label: 'Cuidado', detail: 'identificação' },
+            { label: 'Etapa', detail: 'fixação' },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('bridge');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          rows: [{ label: 'Item', value: 'valor' }],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('reference_table');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          steps: ['1', '2', '3'],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('cards');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          content: 'Pegadinhas',
+          items: [{ label: 'A', detail: 'trap', correct: 'certo' }],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('compare');
   });
 
-  it('Punção Venosa: golden_rule iv-bundle-mesh-reveal com rows no molde', () => {
-    const result = resolveSlidePresentation(
-      {
-        type: 'golden_rule',
-        meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
-        content: 'Letra B',
-        rows: [
-          { label: 'Higienização', value: 'Antes e após manipular' },
-          { label: 'Barreira', value: 'Estéril máxima', emphasis: 'success' },
-        ],
-      },
-      {
-        questionSlug: 'adm-tec-puncao-1',
-        slideIndex: 1,
-        familyId: 'protocolo',
-      },
-    );
-    expect(result.layoutVariant).toBe('iv-bundle-mesh-reveal');
-  });
-
-  it('Punção Venosa: logic_flow iv-care-soft-stack no molde', () => {
-    const result = resolveSlidePresentation(
-      {
-        type: 'logic_flow',
-        meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
-        steps: ['1', '2', '3', '4'],
-        reveal_mode: 'tap',
-      },
-      {
-        questionSlug: 'adm-tec-puncao-1',
-        slideIndex: 2,
-        familyId: 'protocolo',
-      },
-    );
-    expect(result.layoutVariant).toBe('iv-care-soft-stack');
-    expect(result.revealMode).toBe('tap');
-  });
-
-  it('Punção Venosa: danger_zone catheter-danger-arena com correct no molde', () => {
-    const result = resolveSlidePresentation(
-      {
-        type: 'danger_zone',
-        meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
-        content: 'Pegadinhas',
-        items: [{ label: 'Letra A', detail: 'curativo 72h fixo', correct: 'Gabarito letra B' }],
-      },
-      {
-        questionSlug: 'adm-tec-puncao-1',
-        familyId: 'protocolo',
-      },
-    );
-    expect(result.layoutVariant).toBe('catheter-danger-arena');
-    expect(result.bulletStyle).toBe('x_icon');
+  it('Punção Venosa: puncao_ipcs_cvc usa pacote bundle 4/4', () => {
+    const branchCtx = {
+      questionSlug: 'adm-tec-puncao-ipcs-1',
+      familyId: 'protocolo' as const,
+      pedagogicalBranch: 'puncao_ipcs_cvc',
+    };
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          items: [{ label: 'Barreira', detail: 'estéril máxima', icon: 'Shield' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('iv-bundle-orbit');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          rows: [{ label: 'Bundle', value: 'higiene + barreira' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('iv-bundle-mesh-reveal');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          steps: ['Identificar item do bundle'],
+          reveal_mode: 'tap',
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('iv-bundle-tap-flow');
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+          content: 'PEGADINHAS BUNDLE',
+          items: [{ label: 'Curativo úmido', detail: 'trap', correct: 'Trocar curativo' }],
+        },
+        branchCtx,
+      ).layoutVariant,
+    ).toBe('iv-bundle-break-trap');
   });
 
   it('Coleta de Exames: concept_map lab-specimen-chain no molde', () => {

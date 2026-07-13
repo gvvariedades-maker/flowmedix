@@ -1,22 +1,4 @@
-<!-- AVANT: ícone 56×56 — gradiente verde premium, letra A (avantLogoConstants). -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" aria-label="AVANT">
-  <defs>
-    <linearGradient id="avant-icon" x1="10%" y1="0%" x2="90%" y2="100%">
-      <stop offset="0%" stop-color="#4ade80"/>
-      <stop offset="40%" stop-color="#22c55e"/>
-      <stop offset="100%" stop-color="#15803d"/>
-    </linearGradient>
-  </defs>
-  <rect width="56" height="56" rx="14" fill="url(#avant-icon)"/>
-  <rect width="56" height="10" rx="14" fill="#fff" fill-opacity="0.30"/>
-  <text
-    x="28"
-    y="35"
-    text-anchor="middle"
-    fill="#ffffff"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="27"
-    font-weight="800"
-    style="text-shadow: 0 1px 0 rgba(0,0,0,0.35)"
-  >A</text>
+<!-- AVANT Enf: brasao dourado/esmeralda (emblema). -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56 56" fill="none" aria-label="AVANT Enf">
+  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>
 </svg>

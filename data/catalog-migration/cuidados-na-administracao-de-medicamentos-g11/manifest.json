@@ -1,0 +1,18 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g11",
+  "exported_at": "2026-07-11T17:38:28.069Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g11/manifest.json"
+  },
+  "slugs": [
+    "cebraspe-cespe-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-8",
+    "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-1",
+    "cotec-fadenor-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-7",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+    "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-5",
+    "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-2",
+    "faurgs-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-8",
+    "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4"
+  ]
+}

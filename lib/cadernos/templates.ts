@@ -46,14 +46,14 @@ export function moduloMatchesBanca(
 
 export function buildNotebookTitleSuggestions(edital: NotebookEditalContext): string[] {
   if (!edital) {
-    return ['Revisão diária', 'Minhas questões', 'Simulado focado', 'Meu caderno AVANT'];
+    return ['Revisão diária', 'Minhas questões', 'Simulado focado', 'Meu caderno AVANT Enf'];
   }
 
   const suggestions: string[] = [];
   if (edital.banca?.trim()) suggestions.push(`Meu edital — ${edital.banca.trim()}`);
   if (edital.orgao?.trim()) suggestions.push(`Revisão ${edital.orgao.trim()}`);
   if (edital.nome?.trim()) suggestions.push(edital.nome.trim());
-  suggestions.push('Meu caderno AVANT');
+  suggestions.push('Meu caderno AVANT Enf');
 
   return [...new Set(suggestions)].slice(0, 4);
 }

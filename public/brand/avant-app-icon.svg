@@ -1,25 +1,5 @@
-<!-- AVANT app icon 512: fundo #010409, chip premium verde + letra A. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-label="AVANT">
-  <defs>
-    <linearGradient id="avant-app-icon-bg" x1="10%" y1="0%" x2="90%" y2="100%">
-      <stop offset="0%" stop-color="#4ade80"/>
-      <stop offset="40%" stop-color="#22c55e"/>
-      <stop offset="100%" stop-color="#15803d"/>
-    </linearGradient>
-  </defs>
+<!-- AVANT Enf app icon: brasao dourado/esmeralda sobre fundo cyber. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" fill="none" aria-label="AVANT Enf">
   <rect width="512" height="512" rx="114" fill="#010409"/>
-  <g transform="translate(128 128)">
-    <rect width="256" height="256" rx="64" fill="url(#avant-app-icon-bg)"/>
-    <rect width="256" height="46" rx="64" fill="#fff" fill-opacity="0.30"/>
-    <text
-      x="128"
-      y="166"
-      text-anchor="middle"
-      fill="#ffffff"
-      font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-      font-size="123"
-      font-weight="800"
-      style="text-shadow: 0 2px 0 rgba(0,0,0,0.35)"
-    >A</text>
-  </g>
+  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="96" y="96" width="320" height="320" preserveAspectRatio="xMidYMid meet"/>
 </svg>

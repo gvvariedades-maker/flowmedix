@@ -1,0 +1,76 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g03",
+  "generated_at": "2026-07-12T05:57:32.264Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

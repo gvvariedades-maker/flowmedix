@@ -1,0 +1,60 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g14",
+  "generated_at": "2026-07-11T19:38:48.600Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 6,
+  "passed": 6,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

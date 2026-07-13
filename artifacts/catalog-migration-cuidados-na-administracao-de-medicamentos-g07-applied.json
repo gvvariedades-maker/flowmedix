@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-07-11T01:05:49.527Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-g07",
+  "mode": "apply",
+  "total_files": 10,
+  "ok": 10,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-processo-de-enfermagem-1780003137298-1",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-8",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-4",
+    "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-3",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-6",
+    "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-3",
+    "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-6",
+    "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-0",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-1",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

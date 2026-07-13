@@ -3,6 +3,7 @@ import { join } from 'node:path';
 
 const brandPath = join(process.cwd(), 'components', 'brand', 'AvantBrandMark.tsx');
 const logoPath = join(process.cwd(), 'components', 'brand', 'AvantLogo.tsx');
+const constantsPath = join(process.cwd(), 'lib', 'brand', 'avantLogoConstants.ts');
 const brandAssetsDir = join(process.cwd(), 'public', 'brand');
 const emailLogoPath = join(process.cwd(), 'emails', 'AvantLogoEmail.tsx');
 
@@ -15,15 +16,16 @@ describe('AvantBrandMark', () => {
     expect(source).toContain("tone={variant === 'editorial' ? 'brand' : 'default'}");
   });
 
-  it('AvantLogo mantém letra A no chip (não raio legado)', () => {
+  it('AvantLogo usa brasao + wordmark raster "AVANT enf" (mesmo modelo do emblema)', () => {
     const logo = readFileSync(logoPath, 'utf8');
-    expect(logo).toContain('AVANT_LOGO_GRADIENTS.icon');
-    expect(logo).toMatch(/>\s*A\s*<\/span>/);
+    expect(logo).toContain('/brand/avant-logo-shield.png');
+    expect(logo).toContain('/brand/avant-logo-wordmark-raster.png');
+    expect(logo).toContain('AVANT Enf - inicio');
     expect(logo).not.toContain('<Zap');
     expect(logo).not.toContain('⚡');
   });
 
-  it('SVGs de marca não usam raio/roxo legado', () => {
+  it('SVGs de marca usam brasao dourado/esmeralda e wordmark "AVANT enf"', () => {
     const svgs = readdirSync(brandAssetsDir).filter((f) => f.endsWith('.svg'));
     expect(svgs.length).toBeGreaterThan(0);
 
@@ -31,34 +33,34 @@ describe('AvantBrandMark', () => {
       const svg = readFileSync(join(brandAssetsDir, file), 'utf8');
       expect(svg).not.toContain('#3018c8');
       expect(svg).not.toContain('polygon points="22,0');
+      expect(svg).not.toContain('>ENF</text>');
     }
 
     const symbol = readFileSync(join(brandAssetsDir, 'avant-logo-symbol.svg'), 'utf8');
-    expect(symbol).toContain('#22c55e');
-    expect(symbol).toMatch(/>\s*A\s*<\/text>/i);
+    expect(symbol).toContain('avant-logo-shield.png');
+    expect(symbol).toContain('AVANT Enf');
 
     const wordmarkLight = readFileSync(
       join(brandAssetsDir, 'avant-logo-wordmark-light.svg'),
       'utf8',
     );
-    expect(wordmarkLight).toContain('#166534');
+    expect(wordmarkLight).toContain('avant-logo-wordmark-raster.png');
+    expect(wordmarkLight).toContain('AVANT Enf');
   });
 
-  it('AvantLogo usa tokens premium (gradiente 3-stop, sheen fino)', () => {
+  it('AvantLogo usa AvantLogoWordmarkStack como wordmark', () => {
     const logo = readFileSync(logoPath, 'utf8');
-    const constants = readFileSync(
-      join(process.cwd(), 'lib', 'brand', 'avantLogoConstants.ts'),
-      'utf8',
-    );
-    expect(constants).toContain('iconSheenHeightRatio: 0.18');
-    expect(constants).toContain('linear-gradient(160deg');
-    expect(logo).toContain('iconSheenHeightRatio');
-    expect(logo).toContain('iconLetterShadow');
+    expect(logo).toContain('AvantLogoWordmarkStack');
+    expect(logo).toContain('function AvantLogoWordmarkStack');
   });
 
-  it('AvantLogoEmail usa letra A no chip (não raio legado)', () => {
+  it('AvantLogoEmail usa AE no selo forest + wordmark "AVANT enf"', () => {
     const email = readFileSync(emailLogoPath, 'utf8');
     expect(email).not.toContain('AVANT_LOGO_BOLT');
-    expect(email).toMatch(/>\s*A\s*<\/Text>/);
+    expect(email).toMatch(/>\s*AE\s*<\/Text>/);
+    expect(email).toContain('borderRadius: \'50%\'');
+    expect(email).toContain('subtitleLabel');
+    expect(email).toContain('wordmarkGoldSolid');
+    expect(email).toContain('wordmarkEnfGreen');
   });
 });

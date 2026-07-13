@@ -1,7 +1,29 @@
 {
-  "generated_at": "2026-07-10T22:09:59.559Z",
-  "subtopicos_ready": 0,
-  "subtopicos_pass": 0,
+  "generated_at": "2026-07-13T18:43:35.411Z",
+  "subtopicos_ready": 1,
+  "subtopicos_pass": 1,
   "subtopicos_fail": 0,
-  "items": []
+  "items": [
+    {
+      "subtopico": "Saúde do Adolescente",
+      "registry_status": "applied",
+      "total_slugs": 16,
+      "handcraft_applied": 16,
+      "manifest_slugs": 16,
+      "supabase_found": 16,
+      "golden_v1": 16,
+      "four_slides": 16,
+      "premium_gate_ok": 16,
+      "local_json_count": 32,
+      "slug_issues": [],
+      "pilot_sample": [
+        "agirh-enfermagem-saude-do-adolescente-1777104229064-4"
+      ],
+      "pilot_min": 1,
+      "dod_pass": true,
+      "dod_notes": [
+        "Piloto humano sugerido: revisar 1 slug(s) no player (≥5%)"
+      ]
+    }
+  ]
 }

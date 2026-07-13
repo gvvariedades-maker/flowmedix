@@ -8,10 +8,9 @@ import {
 } from '@/lib/brand/avantLogoConstants';
 
 const ICON = AVANT_LOGO_DIMENSIONS.icon.size;
-const ICON_RADIUS = AVANT_LOGO_DIMENSIONS.icon.radius;
-const ICON_LETTER_SIZE = Math.round(ICON * 0.48);
+const ICON_LETTER_SIZE = Math.round(ICON * 0.26);
 
-/** Lockup estático para clientes de e-mail (tabelas + estilos inline). */
+/** Lockup e-mail: selo circular AE interlocked + AVANT / ENF. */
 export function AvantLogoEmail() {
   const innerPad = getAvantLogoLockupPadding('lg');
   const shellPad = AVANT_LOGO_DIMENSIONS.lockupShell.padding;
@@ -21,6 +20,7 @@ export function AvantLogoEmail() {
   const barW = AVANT_LOGO_DIMENSIONS.lockupInner.accentBarWidth;
   const wordmarkSize = AVANT_LOGO_DIMENSIONS.wordmark.fontSize;
   const letterSpacing = AVANT_LOGO_DIMENSIONS.wordmark.letterSpacingPx;
+  const subtitleLabel = AVANT_LOGO_DIMENSIONS.subtitle.label;
 
   return (
     <Section style={{ margin: 0, padding: 0 }}>
@@ -69,7 +69,7 @@ export function AvantLogoEmail() {
                               style={{
                                 width: `${barW}px`,
                                 backgroundColor: AVANT_LOGO_COLORS.accentBar,
-                                borderRadius: '2px',
+                                borderRadius: '1px',
                                 verticalAlign: 'middle',
                               }}
                               aria-hidden
@@ -83,11 +83,10 @@ export function AvantLogoEmail() {
                               style={{
                                 width: `${ICON}px`,
                                 height: `${ICON}px`,
-                                borderRadius: `${ICON_RADIUS}px`,
-                                background: AVANT_LOGO_GRADIENTS.icon,
+                                borderRadius: '50%',
+                                background: AVANT_LOGO_COLORS.iconForestGradient,
                                 verticalAlign: 'middle',
                                 textAlign: 'center',
-                                boxShadow: AVANT_LOGO_COLORS.iconOuterShadow,
                               }}
                               aria-hidden
                             >
@@ -98,19 +97,21 @@ export function AvantLogoEmail() {
                                   fontFamily:
                                     '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                                   fontSize: `${ICON_LETTER_SIZE}px`,
-                                  fontWeight: 800,
+                                  fontWeight: 700,
                                   lineHeight: '1',
+                                  letterSpacing: '-0.5px',
                                   color: '#ffffff',
                                   textAlign: 'center',
                                 }}
                               >
-                                A
+                                AE
                               </Text>
                             </td>
                             <td style={{ width: `${gap}px` }} aria-hidden>
                               &nbsp;
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
+                              {/* Mesmo lockup "AVANT enf" do emblema dourado/esmeralda (sem gradiente — clientes de e-mail nao suportam background-clip:text de forma confiavel). */}
                               <Text
                                 style={{
                                   margin: 0,
@@ -119,13 +120,15 @@ export function AvantLogoEmail() {
                                     '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                                   fontSize: `${wordmarkSize}px`,
                                   fontWeight: 800,
-                                  lineHeight: '1',
+                                  lineHeight: '1.05',
                                   letterSpacing: `${letterSpacing}px`,
-                                  textTransform: 'uppercase',
-                                  color: AVANT_LOGO_GRADIENTS.wordmarkStops[2],
+                                  color: AVANT_LOGO_COLORS.wordmarkGoldSolid,
                                 }}
                               >
-                                AVANT
+                                AVANT{' '}
+                                <span style={{ color: AVANT_LOGO_COLORS.wordmarkEnfGreen }}>
+                                  {subtitleLabel}
+                                </span>
                               </Text>
                             </td>
                           </tr>

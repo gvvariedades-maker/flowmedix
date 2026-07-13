@@ -8,7 +8,7 @@ export type ProAccessLinkEmailProps = {
 
 export function ProAccessLinkEmail({ accessLink }: ProAccessLinkEmailProps) {
   return (
-    <BaseLayout preview="Seu acesso AVANT Pro está liberado">
+    <BaseLayout preview="Seu acesso AVANT Enf Pro está liberado">
       <Heading
         as="h1"
         style={{
@@ -18,7 +18,7 @@ export function ProAccessLinkEmail({ accessLink }: ProAccessLinkEmailProps) {
           color: '#ffffff',
         }}
       >
-        Acesso AVANT Pro liberado
+        Acesso AVANT Enf Pro liberado
       </Heading>
 
       <Text style={{ margin: '0 0 12px', color: '#e2e8f0' }}>
@@ -39,7 +39,7 @@ export function ProAccessLinkEmail({ accessLink }: ProAccessLinkEmailProps) {
           padding: '14px 24px',
         }}
       >
-        Entrar no AVANT
+        Entrar no AVANT Enf
       </Button>
     </BaseLayout>
   );

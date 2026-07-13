@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-07-12T06:13:10.715Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+  "mode": "apply",
+  "total_files": 11,
+  "ok": 11,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
+    "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
+    "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+    "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+    "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+    "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+    "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+    "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

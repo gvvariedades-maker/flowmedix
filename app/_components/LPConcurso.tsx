@@ -57,7 +57,7 @@ const WALKTHROUGH_CAPTIONS = [
 const DEFAULT_PRECO = '14,90';
 
 function ctaLabel(preco: string): string {
-  return `Assinar AVANT Pro — R$ ${preco}/mês`;
+  return `Assinar AVANT Enf Pro — R$ ${preco}/mês`;
 }
 
 function inscricoesEncerradas(status: string): boolean {
@@ -323,16 +323,16 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
         {/* 8 — CTA */}
         <LPMotionSection
           id="cta"
-          ariaLabel="Assinar AVANT Pro"
+          ariaLabel="Assinar AVANT Enf Pro"
           className="px-4 py-16 sm:px-6 lg:px-8"
         >
           <div className="mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-emerald-300/20 bg-gradient-to-br from-slate-950 via-slate-950 to-emerald-950/35 p-6 sm:p-10">
             <h2 className="max-w-full break-words text-center text-xl leading-tight font-black tracking-tight text-white sm:text-3xl">
-              Prepare-se para a prova da {concurso.nomeBanca} com o AVANT Pro
+              Prepare-se para a prova da {concurso.nomeBanca} com o AVANT Enf Pro
             </h2>
             <div className="mx-auto mt-8 max-w-md rounded-2xl border border-white/10 bg-slate-900/80 p-6 backdrop-blur-xl">
               <span className="inline-flex rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-200">
-                AVANT Pro
+                AVANT Enf Pro
               </span>
               <p className="mt-2 text-sm font-semibold text-emerald-200/90">
                 Acesso completo à plataforma
@@ -343,7 +343,7 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
               </p>
               <p className="mt-2 text-sm font-semibold text-emerald-200">Cancela quando quiser</p>
               <p className="mt-4 text-sm leading-relaxed text-slate-400">
-                A inscrição custou {concurso.taxaInscricao}. O AVANT Pro custa R$ {preco}/mês —
+                A inscrição custou {concurso.taxaInscricao}. O AVANT Enf Pro custa R$ {preco}/mês —
                 menos que um lanche.
               </p>
               <div className="mt-6">

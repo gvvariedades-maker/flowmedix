@@ -7,7 +7,7 @@
  * - components/slides/variants/ (componentes de variantes)
  * - components/slides/core/themeGenerator.ts (sistema de temas)
  * 
- * Para novos imports, use: import NeuroSlide from '@/components/slides'
+ * Para novos imports, use: import NeuroSlide from '@/components/slides/NeuroSlide'
  */
 
 export { default, NeuroSlideHub } from './core/NeuroSlide';

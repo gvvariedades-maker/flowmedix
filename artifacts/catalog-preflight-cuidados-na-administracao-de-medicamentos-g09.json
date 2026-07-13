@@ -1,0 +1,76 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-g09",
+  "generated_at": "2026-07-11T19:38:26.624Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "instituto-verbena-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "isba-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-seguranca-do-paciente-1777102861438-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

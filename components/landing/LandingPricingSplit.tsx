@@ -25,7 +25,7 @@ type LandingPricingSplitProps = {
 /** Pricing editorial claro — conversão em contexto de confiança. */
 export function LandingPricingSplit({ precoPro }: LandingPricingSplitProps) {
   return (
-    <section id="pricing" className="bg-[#f1f5f9] px-4 py-16 sm:px-6 sm:py-24" aria-label="Planos AVANT">
+    <section id="pricing" className="bg-[#f1f5f9] px-4 py-16 sm:px-6 sm:py-24" aria-label="Planos AVANT Enf">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <SectionLabel>{LANDING_PRICING.label}</SectionLabel>

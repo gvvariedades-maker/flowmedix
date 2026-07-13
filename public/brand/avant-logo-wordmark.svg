@@ -1,19 +1,4 @@
-<!-- AVANT: wordmark para fundos escuros — Plus Jakarta Sans 800, gradiente diagonal premium. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" aria-label="AVANT">
-  <defs>
-    <linearGradient id="avant-wm" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a7f3d0"/>
-      <stop offset="50%" stop-color="#22c55e"/>
-      <stop offset="100%" stop-color="#4ade80"/>
-    </linearGradient>
-  </defs>
-  <text
-    x="4"
-    y="30"
-    fill="url(#avant-wm)"
-    font-family="Plus Jakarta Sans, ui-sans-serif, system-ui, sans-serif"
-    font-size="26"
-    font-weight="800"
-    letter-spacing="9"
-  >AVANT</text>
+<!-- AVANT Enf: wordmark "AVANT enf" (mesmo modelo raster do emblema dourado/esmeralda). -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 168 37.5" fill="none" aria-label="AVANT Enf">
+  <image href="avant-logo-wordmark-raster.png" xlink:href="avant-logo-wordmark-raster.png" x="0" y="0" width="168" height="37.5" preserveAspectRatio="xMidYMid meet"/>
 </svg>

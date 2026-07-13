@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T23:22:50.832Z",
+  "generated_at": "2026-07-11T19:57:05.721Z",
   "lote": "cuidados-na-administracao-de-medicamentos-g04",
   "anchor_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
   "subtopico": "Cuidados na Administração de Medicamentos",
@@ -19,7 +19,7 @@
       "[align] align_danger_duplicate_correct: danger_zone.items[].correct com justificativas duplicadas."
     ]
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
   "checklist": [
     {
       "id": 1,

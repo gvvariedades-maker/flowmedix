@@ -44,13 +44,13 @@ export async function redeemInviteFromClient(token: string): Promise<ClientRedee
       return {
         ok: true,
         alreadyPro: true,
-        message: 'Você já tem AVANT Pro — nada foi alterado.',
+        message: 'Você já tem AVANT Enf Pro — nada foi alterado.',
       };
     }
     return {
       ok: true,
       proExpiresAt: payload.proExpiresAt,
-      message: 'Convite resgatado! Aproveite o AVANT Pro.',
+      message: 'Convite resgatado! Aproveite o AVANT Enf Pro.',
     };
   }
 
