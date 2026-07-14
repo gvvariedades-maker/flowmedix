@@ -129,6 +129,63 @@ export const HISTORIA_CLAIM_WHITELIST: readonly HistoriaWhitelistClaim[] = [
     guidelineEntryId: 'teoria-peplau',
     groundsNumeric: false,
   },
+  {
+    id: 'cepe-codigo-etica',
+    axis: 'etica',
+    match: /c[oó]digo\s+de\s+[eé]tica|\bcepe\b/i,
+    canonical: 'Código de Ética dos Profissionais de Enfermagem (CEPE)',
+    guidelineEntryId: 'codigo-etica',
+    groundsNumeric: false,
+  },
+  {
+    id: 'cofen-res-564-direitos',
+    axis: 'etica',
+    match:
+      /res\.?\s*cofen|resolu[cç][aã]o\s+cofen|cofen.{0,24}564|comiss[aã]o\s+de\s+[eé]tica|direitos?\s+do\s+profissional/i,
+    canonical: 'Resolução COFEN 564/2017 — direitos do profissional',
+    guidelineEntryId: 'etica-autonomia-beneficencia',
+    groundsNumeric: false,
+  },
+  {
+    id: 'revolta-vacina-1904',
+    axis: 'brasil',
+    match: /revolta\s+da\s+vacina|1904.{0,40}(?:vacina|imuniza)|resist[eê]ncia.{0,40}vacina\s+obrig/i,
+    canonical: 'Revolta da Vacina (1904) — resistência à imunização compulsória',
+    guidelineEntryId: 'henrique-dutra-vargas',
+    groundsNumeric: true,
+  },
+  {
+    id: 'cf88-sus-universal',
+    axis: 'brasil',
+    match: /cf\s*\/?\s*88|constitui[cç][aã]o.{0,30}1988|1988.{0,40}\bsus\b|\bsus\b.{0,40}universal/i,
+    canonical: 'Constituição de 1988 — SUS universal',
+    guidelineEntryId: 'pegadinha-sus',
+    groundsNumeric: true,
+  },
+  {
+    id: 'caps-1923-previdencia',
+    axis: 'brasil',
+    match: /\bcaps?\b|1923.{0,40}(?:previd|aposent)|aposentadoria.{0,30}pens/i,
+    canonical: 'CAPs (1923) — previdência, não universalidade',
+    guidelineEntryId: 'henrique-dutra-vargas',
+    groundsNumeric: true,
+  },
+  {
+    id: 'horta-necessidades',
+    axis: 'teorias',
+    match: /wanda\s+(?:de\s+aguiar\s+)?horta|horta.{0,40}necessidades|necessidades\s+humanas\s+b[aá]sicas/i,
+    canonical: 'Wanda Horta — necessidades humanas básicas',
+    guidelineEntryId: 'teorias-enfermagem-classicas',
+    groundsNumeric: false,
+  },
+  {
+    id: 'hepatite-b-sinan-stats',
+    axis: 'epidemiologia',
+    match: /36[.,]8\s*%|21[.,]7\s*%|hepatite\s+b.{0,40}sinan|sinan.{0,40}hepatite/i,
+    canonical: 'Hepatite B — estatísticas Sinan/MS (Boletim Epidemiológico)',
+    guidelineEntryId: 'hepatite-b-sinan-epidemiologia',
+    groundsNumeric: true,
+  },
 ];
 
 /** Marcos/anos/% que pedem whitelist quando aparecem nos slides. */

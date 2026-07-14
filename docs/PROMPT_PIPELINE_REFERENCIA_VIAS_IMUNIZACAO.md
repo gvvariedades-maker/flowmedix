@@ -34,14 +34,18 @@ Substitua pelo nome **exato** de `CLAUDE.md` §9 (ex.: `Punção Venosa e Cuidad
 | **Vias de Administração** | `production_ready`, 208 slugs | Ramos L3 (`via_vf_absorcao`, `via_tecnica_admin`, `via_generico`); moldes bespoke VF; repair mis-tags; `scripts/handcraft-vias-de-administracao-g*.ts` |
 | **Imunização** | `production_ready`, g01–g83+ | Moldes PNI (calendário, cadeia frio, VF intervalos); `apply:imunizacao-ready-batch` |
 | **Saúde do Adolescente** | `production_ready`, 16/16, onda nota-10 | 6 ramos L3 (`adolescente_etica_sigilo` … `adolescente_generico`); A4-mínimo onda 3 (`stamp:a4-minimo`); `ADOLESCENTE_BRANCHES` e2e; L6 checklist + captures; relatório `artifacts/saude-adolescente-nota10-report.md` |
+| **Farmacodinâmica e Farmacocinética** | `production_ready`, 13/13, onda nota-10 | 3 ramos L3 (`farmaco_clinico_protocolo`, `farmaco_pk_pd_vf`, `farmaco_generico`); A4-mínimo; `lib/guidelines/farmacodinamica.ts`; L6 + Playwright 7/7; `artifacts/farmacodinamica-nota10-report.md` |
+| **História da Enfermagem** | `production_ready`, 20/20, onda nota-10 | 4 ramos L3 + briefs INDEX; `inferHistoriaBranch`; Playwright 9/9; A4 4× humano; `artifacts/historia-enfermagem-nota10-report.md` |
+| **Doenças Respiratórias Crônicas** | `production_ready`, 9/9, onda nota-10 | 5 ramos L3 + briefs INDEX; A4-mínimo SpO₂/Venturi; Playwright 12/12; `lib/guidelines/respiratorioCronico.ts`; `artifacts/respiratorio-cronico-nota10-report.md` |
 
 ### Qual referência usar
 
 | Situação | Copiar de |
 |----------|-----------|
 | Pacote grande, escala, moldes bespoke VF/PNI | **Vias** ou **Imunização** |
-| Pacote pequeno/médio, fechar A4+L6+L3 com checklist | **Saúde do Adolescente** |
-| É tica/sigilo, VF gravidez, saúde mental, escore Z | JSONs `saude-adolescente-g01/g02` + `lib/guidelines/saudeAdolescente.ts` |
+| Pacote pequeno/médio, fechar A4+L6+L3 com checklist | **Saúde do Adolescente** ou **Farmacodinâmica** |
+| PK/PD, ADME, infusão EV, protocolo clínico | JSONs `farmacodinamica-e-farmacocinetica-g01/g02` + `lib/guidelines/farmacodinamica.ts` |
+| Ética/sigilo, VF gravidez, saúde mental, escore Z | JSONs `saude-adolescente-g01/g02` + `lib/guidelines/saudeAdolescente.ts` |
 
 **Invariantes de conteúdo (L2):** [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) · skill `avant-json-template` · anti-reciclagem `danger_zone` · sem vazamento de ramo.
 
@@ -82,6 +86,8 @@ Referência de qualidade (mesmo padrão Vias + Imunização + Adolescente):
 - Vias de Administração: production_ready, moldes L3 bespoke, 208 slugs handcraft
 - Imunização: production_ready, moldes PNI, lotes g01+
 - Saúde do Adolescente: production_ready, 16/16, A4-mínimo 16/16, L6+L3 6 ramos (onda nota-10)
+- Farmacodinâmica e Farmacocinética: production_ready, 13/13, A4-mínimo 13/13, L6+L3 3 ramos (onda nota-10)
+- História da Enfermagem: production_ready, 20/20, A4-mínimo 20/20, L3 3 ramos Playwright (onda nota-10)
 - Template: @examples/_TEMPLATE-golden-v1.json
 - Âncoras: anchor_glob do playbook do pacote no registry
 
@@ -124,7 +130,7 @@ Por lote:
 - audit:questao-readiness --strict-v2-pedagogy → [READY]
 - validate:goldens --strict
 - enrich/guideline + slug-alignment + numeric-factcheck + patch-pedagogical-branch (playbook)
-- stamp:a4-minimo (se pacote em `a4MinimoRegistry` — ex. Adolescente onda 3)
+- stamp:a4-minimo (se pacote em `a4MinimoRegistry` — ex. Adolescente onda 3, Farmacodinâmica onda 3b)
 - capture:questao-review (opcional A4)
 
 Apply Supabase:
@@ -207,6 +213,11 @@ Espelha Vias/Adolescente: L3 → g01…gNN → apply → A4 stamp (se onda) → 
 | [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) | Fase 0 |
 | [`PROGRAMA_CATALOGO_41.md`](PROGRAMA_CATALOGO_41.md) | 41 subtópicos |
 | [`PROTOCOLO_A4_MINIMO_ADOLESCENTE.md`](PROTOCOLO_A4_MINIMO_ADOLESCENTE.md) | A4-mínimo onda 3 |
+| [`PROTOCOLO_A4_MINIMO_FARMACODINAMICA.md`](PROTOCOLO_A4_MINIMO_FARMACODINAMICA.md) | A4-mínimo onda 3b |
 | [`artifacts/saude-adolescente-nota10-report.md`](../artifacts/saude-adolescente-nota10-report.md) | Onda nota-10 fechada |
+| [`artifacts/farmacodinamica-nota10-report.md`](../artifacts/farmacodinamica-nota10-report.md) | Onda nota-10 fechada |
+| [`artifacts/historia-enfermagem-nota10-report.md`](../artifacts/historia-enfermagem-nota10-report.md) | Onda nota-10 fechada |
+| [`artifacts/respiratorio-cronico-nota10-report.md`](../artifacts/respiratorio-cronico-nota10-report.md) | Onda nota-10 fechada |
 | [`artifacts/l3-brief-saude-adolescente-INDEX.md`](../artifacts/l3-brief-saude-adolescente-INDEX.md) | Briefs L3 — 6 ramos documentados |
+| [`artifacts/l3-brief-farmacodinamica-e-farmacocinetica-INDEX.md`](../artifacts/l3-brief-farmacodinamica-e-farmacocinetica-INDEX.md) | Briefs L3 — 3 ramos documentados |
 | Rule Cursor | `.cursor/rules/pipeline-completo.mdc` |

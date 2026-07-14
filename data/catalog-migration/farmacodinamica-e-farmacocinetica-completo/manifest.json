@@ -1,15 +1,17 @@
 {
   "lote": "farmacodinamica-e-farmacocinetica-completo",
-  "exported_at": "2026-07-01T19:40:00.000Z",
-  "source": "supabase-post-classify",
+  "exported_at": "2026-07-14T02:20:28.253Z",
+  "source": "supabase",
   "filters": {
     "subtopico": "Farmacodinâmica e Farmacocinética",
-    "note": "11 slugs após infer apply 2026-06-28 (13 reclassificados para outros subtópicos)"
+    "limit": 500,
+    "exclude_count": 0
   },
   "slugs": [
     "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
     "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
     "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
     "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
@@ -17,9 +19,10 @@
     "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
     "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
     "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
-    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1"
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3"
   ],
-  "updated_at": "2026-07-04",
+  "updated_at": "2026-07-14",
   "reconciled_from": [
     "farmacodinamica-e-farmacocinetica-g01",
     "farmacodinamica-e-farmacocinetica-g02"

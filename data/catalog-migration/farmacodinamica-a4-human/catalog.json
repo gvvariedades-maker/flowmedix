@@ -1,0 +1,28 @@
+{
+  "exported_at": "2026-07-14T05:13:24.839Z",
+  "lote": "farmacodinamica-a4-human",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1521
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1522
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2122
+    }
+  ]
+}

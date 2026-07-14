@@ -1,11 +1,19 @@
 {
   "lote": "respiratorio-cronico-completo",
-  "exported_at": "2026-07-04T19:12:34.447Z",
+  "exported_at": "2026-07-14T06:45:30.055Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-    "limit": 10000,
-    "exclude_count": 0
+    "slugs": [
+      "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "univali-enfermagem-processo-de-enfermagem-1780010600919-9"
+    ]
   },
   "slugs": [
     "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",

@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-07-14T02:50:11.943Z",
+  "scanned": 8,
+  "enriched": 3,
+  "skipped": 5,
+  "results": [
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "changed": true,
+      "reasons": [
+        "added_farmaco-adme-anvisa"
+      ]
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "changed": true,
+      "reasons": [
+        "added_farmaco-adme-anvisa"
+      ]
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+      "changed": true,
+      "reasons": [
+        "added_farmaco-adme-anvisa"
+      ]
+    }
+  ]
+}

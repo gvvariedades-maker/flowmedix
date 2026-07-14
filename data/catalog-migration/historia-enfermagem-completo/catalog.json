@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-06-24T22:10:09.596Z",
+  "exported_at": "2026-07-14T05:25:16.767Z",
   "lote": "historia-enfermagem-completo",
-  "total": 18,
+  "total": 20,
   "entries": [
     {
       "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
@@ -37,6 +37,13 @@
       "modulo_nome": "Enfermagem",
       "banca": "FUNATEC",
       "avant_codigo": 179
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCEPE",
+      "avant_codigo": 3344
     },
     {
       "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
@@ -107,6 +114,13 @@
       "modulo_nome": "Enfermagem",
       "banca": "INSTITUTO CONSULPAM",
       "avant_codigo": 207
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3351
     },
     {
       "modulo_slug": "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1",

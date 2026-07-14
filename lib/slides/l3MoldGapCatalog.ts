@@ -60,6 +60,8 @@ export function packageUsesBespoke(design?: SubtopicDesign): boolean {
 
 const ADOLESCENT_ETHICS = 'adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)';
 const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const HISTORIA_BRIDGE = 'bridge · reference_table · vertical · compare (genérico premium)';
+const HISTORIA_GENERIC = 'morphological · reference_table · vertical · compare (genérico premium)';
 const SP_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
 const PERI_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
 const URGENCIAS_LEGACY =
@@ -733,11 +735,56 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Bucket residual — morphological + compare até clusterizar.',
     },
   ],
+  'historia da enfermagem': [
+    {
+      pattern: /nightingale|florence|crimeia|dama da l[aâ]mpada|12 de maio|pioneir|anna nery/i,
+      branch_id: 'historia_nightingale',
+      branch_implemented: true,
+      ideal_mold_package: HISTORIA_BRIDGE,
+      base_decision: 'ok_generico',
+      rationale: 'Marcos históricos / cronologia — bridge conecta pilares temporais.',
+    },
+    {
+      pattern: /pr[eé][\s-]?sus|sistema [uú]nico|1988|sa[uú]de p[uú]blica.*brasil|lei\s*7\.?498/i,
+      branch_id: 'historia_nightingale',
+      branch_implemented: true,
+      ideal_mold_package: HISTORIA_BRIDGE,
+      base_decision: 'ok_generico',
+      rationale: 'Legislação e marcos brasileiros — tabela + bridge.',
+    },
+    {
+      pattern: /humaniza[cç][aã]o|peplau|horta|watson|hol[ií]stic|interdisciplinar/i,
+      branch_id: 'historia_humanizacao',
+      branch_implemented: true,
+      ideal_mold_package: HISTORIA_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Humanização e teorias do cuidado — morphological + compare.',
+    },
+    {
+      pattern: /c[oó]digo de [eé]tica|cofen|coren|comunica[cç][aã]o profissional|ru[ií]do/i,
+      branch_id: 'historia_comunicacao_etica',
+      branch_implemented: true,
+      ideal_mold_package: HISTORIA_BRIDGE,
+      base_decision: 'ok_generico',
+      rationale: 'Ética COFEN e comunicação — bridge COFEN×COREN×conduta.',
+    },
+    {
+      pattern: /teoria.*administrativa|processo de enfermagem|lideran[cç]a/i,
+      branch_id: 'historia_generico',
+      branch_implemented: true,
+      ideal_mold_package: HISTORIA_GENERIC,
+      base_decision: 'ok_generico',
+      rationale: 'Cauda longa — slug legado com tema adjacente.',
+    },
+  ],
 };
 
 function subtopicKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
   if (key.includes('adolescente')) return 'saude do adolescente';
+  if (key.includes('historia da enfermagem') || key.includes('historia enfermagem')) {
+    return 'historia da enfermagem';
+  }
   if (key.includes('central de material') || key === 'cme' || key.includes('esterilizacao'))
     return 'cme';
   if (key.includes('saude mental') || key.includes('psiquiatria')) return 'saude mental';
@@ -909,5 +956,9 @@ export function implementedBranchIds(): PedagogicalBranchId[] {
     'mulher_puerperio',
     'mulher_planejamento',
     'mulher_generico',
+    'historia_nightingale',
+    'historia_humanizacao',
+    'historia_comunicacao_etica',
+    'historia_generico',
   ];
 }

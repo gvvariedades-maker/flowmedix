@@ -7,7 +7,7 @@
   "cluster": "PK/PD definições · meia-vida · 1ª passagem · insulinas · IBP/diazepam clínico",
   "total": 5,
   "status": "applied",
-  "anchor_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+  "anchor_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
   "golden_reference": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
   "clinical_anchor": {
     "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
@@ -16,7 +16,7 @@
     "repair_lote": "farmacodinamica-idecan-omeprazol-repair",
     "registry": "data/catalog-migration/farmacodinamica-golden-anchors.json"
   },
-  "guideline": null,
+  "guideline": "lib/guidelines/farmacodinamica.ts",
   "slugs": [
     "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
     "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
@@ -40,8 +40,8 @@
   ],
   "notes": "Export completo por subtopico retornou 25 slugs — maioria mis-tagged no DB (urgências, SAE, vias). g01 = núcleo PK/PD curado.",
   "anchor_second_review": {
-    "reviewed_at": "2026-07-04",
-    "reviewer": "agent",
+    "reviewed_at": "2026-07-14",
+    "reviewer": "handcraft-qc",
     "method": "agent",
     "status": "pass",
     "artifact": "artifacts/anchor-review/farmacodinamica-e-farmacocinetica-g01.json"

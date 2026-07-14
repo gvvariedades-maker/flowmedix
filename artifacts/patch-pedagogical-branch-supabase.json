@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-11T04:52:33.239Z",
-  "mode": "dry-run",
-  "scanned": 191,
-  "patched": 0,
-  "skipped": 104,
-  "subtopico_filter": "cuidados na administração de medicamentos",
+  "generated_at": "2026-07-14T02:15:11.872Z",
+  "mode": "apply",
+  "scanned": 13,
+  "patched": 1,
+  "skipped": 0,
+  "subtopico_filter": "farmacodinâmica e farmacocinética",
   "flags": {
     "only_premium": false,
-    "only_golden_v1": true,
+    "only_golden_v1": false,
     "force_family": false,
     "force_branch": false,
     "reconcile_branch": true

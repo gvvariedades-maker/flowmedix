@@ -143,10 +143,10 @@ export function PlanStatusCard({
   const reducedMotion = useReducedMotion();
   const inviteExpiry = proSource === 'invite' ? formatProExpiryShort(proExpiresAt) : null;
 
-  const brandMark = <AvantBrandMark className="px-1" />;
+  const brandMark = <AvantBrandMark className="overflow-visible" />;
 
   return (
-    <div className="space-y-2 px-2.5 pt-3 pb-1">
+    <div className="space-y-2 overflow-visible px-2 pt-3 pb-1">
       {brandHref ? (
         <Link
           href={brandHref}

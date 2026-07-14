@@ -1,23 +1,19 @@
 {
   "lote": "farmacodinamica-e-farmacocinetica-g02",
   "exported_at": "2026-06-28T17:42:36.460Z",
-  "source": "supabase",
+  "source": "handcraft-curated",
   "filters": {
-    "slugs": [
-      "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
-      "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
-      "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
-      "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
-      "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
-      "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1"
-    ]
+    "subtopico": "Farmacodinâmica e Farmacocinética",
+    "curated": true
   },
   "slugs": [
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
     "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
     "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
     "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
-    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1"
+    "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3"
   ]
 }

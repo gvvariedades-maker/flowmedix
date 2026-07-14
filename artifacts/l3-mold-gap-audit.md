@@ -1,19 +1,19 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-11T23:05:09.678Z
+Gerado em: 2026-07-14T01:33:17.096Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
 | Fonte slugs | Supabase (vivo) |
-| Clusters mapeados | 182 |
-| Slugs auditados | 145 |
-| ok_existente | 18 |
-| ok_generico | 94 |
-| ramo_novo | 47 |
-| molde_inedito | 14 |
-| Pacotes inéditos únicos | 10 |
+| Clusters mapeados | 189 |
+| Slugs auditados | 13 |
+| ok_existente | 19 |
+| ok_generico | 97 |
+| ramo_novo | 49 |
+| molde_inedito | 15 |
+| Pacotes inéditos únicos | 11 |
 | Slugs com mismatch L3 | 0 |
 
 ## Candidatos a molde inédito (pacote de 4 variantes)
@@ -87,6 +87,11 @@ Gerado em: 2026-07-11T23:05:09.678Z
 - **Slugs:** 1 · **Ramo:** `urgencias_queimadura`
 - **Pacote proposto:** urgencias-protocol-rules-deck · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)
 - Primeiro socorro queimadura — protocol trap (âncora AMEOSC V/F).
+
+### Saúde do Adolescente — Escore Z / Caderneta
+- **Slugs:** 1 · **Ramo:** `adolescente_antropometria`
+- **Pacote proposto:** adolescent-growth-z-rail · adolescent-z-band-board · adolescent-z-classify-tap · adolescent-z-threshold-trap (bespoke)
+- Escore Z / Caderneta — trilho de faixas antropométricas (brief l3 antropometria).
 
 ## Matriz por cluster
 
@@ -200,6 +205,23 @@ Gerado em: 2026-07-11T23:05:09.678Z
 | Vias de Administração | Default — sem âncora temática | 11 | 4.7% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Vias de Administração | Certo ou errado | 8 | 3.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Vias de Administração | 1ª passagem hepática / biodisponibilidade | 3 | 1.3% | molde_redesign | `via_vf_absorcao` | absorption-speed-rail · via-reference-board · via-vf-juggle-… |
+| Punção Venosa e Cuidados com Cateteres | Flebite e complicações | 19 | 17.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Dispositivo / calibre / jelco | 12 | 10.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | EXCETO — técnica / conduta | 12 | 10.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Tempo / observação pós-procedimento | 11 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Punção venosa periférica | 10 | 9.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Antissepsia na punção | 8 | 7.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Técnica de punção periférica | 7 | 6.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Protocolo / procedimento | 6 | 5.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Manutenção de cateter | 5 | 4.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Prevenção de IPCS no CVC | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Certo ou errado | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Default — sem âncora temática | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Cálculo / dose / tempo numérico | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | V/F — assertivas I/II/III | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Acesso venoso central | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Acesso arterial / PAM | 1 | 0.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Punção Venosa e Cuidados com Cateteres | Medicação endovenosa — técnica | 1 | 0.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Cuidados na Administração de Medicamentos | Default — sem âncora temática | 28 | 22.8% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Cuidados na Administração de Medicamentos | Alto risco / conferência dupla | 19 | 15.4% | molde_redesign | `cam_certos_vf_caso` | cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap … |
 | Cuidados na Administração de Medicamentos | V/F — 9 certos em caso clínico | 18 | 14.6% | molde_redesign | `cam_certos_vf_caso` | cam-certos-deck · cam-nine-rights-board · cam-vf-juggle-tap … |
@@ -257,24 +279,16 @@ Gerado em: 2026-07-11T23:05:09.678Z
 | Saúde da Mulher | Ciclo menstrual / amenorreia | 2 | 0.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde da Mulher | Coleta de exames (drift?) | 1 | 0.4% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde da Mulher | Epidemiologia (drift?) | 1 | 0.4% | ok_generico | `mulher_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Flebite e complicações | 19 | 17.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Dispositivo / calibre / jelco | 12 | 10.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | EXCETO — técnica / conduta | 12 | 10.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Tempo / observação pós-procedimento | 11 | 10% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Punção venosa periférica | 10 | 9.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Antissepsia na punção | 8 | 7.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Técnica de punção periférica | 7 | 6.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Protocolo / procedimento | 6 | 5.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Manutenção de cateter | 5 | 4.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Prevenção de IPCS no CVC | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Certo ou errado | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Default — sem âncora temática | 4 | 3.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Cálculo / dose / tempo numérico | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | V/F — assertivas I/II/III | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Acesso venoso central | 2 | 1.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Acesso arterial / PAM | 1 | 0.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Punção Venosa e Cuidados com Cateteres | Medicação endovenosa — técnica | 1 | 0.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde do Adolescente | Escore Z / Caderneta | 1 | 6.25% | molde_inedito | `adolescente_antropometria` | adolescent-growth-z-rail · adolescent-z-band-board · adolesc… |
+| Saúde do Adolescente | Obesidade — comorbidades | 1 | 6.25% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde do Adolescente | Gravidez / sigilo | 2 | 12.5% | ok_existente | `adolescente_etica_sigilo` | adolescent-privacy-curtain · adolescent-sigilo-spectrum · ad… |
+| Saúde do Adolescente | Violência / proteção | 2 | 12.5% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde do Adolescente | Saúde mental | 3 | 18.75% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde do Adolescente | Desenvolvimento | 1 | 6.25% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde do Adolescente | Genérico MS / EXCETO / promoção | 6 | 37.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
 
 ## Slugs (amostra com branch inferido)
 
-- `—`: 145
+- `farmaco_generico`: 6
+- `farmaco_clinico_protocolo`: 6
+- `farmaco_pk_pd_vf`: 1

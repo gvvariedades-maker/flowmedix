@@ -48,12 +48,13 @@ describe('Sidebar rebrand P1', () => {
   });
 
   describe('P1-4 — AvantBrandMark unificado com AvantLogo', () => {
-    it('delega lockup editorial ao AvantLogo (chip A + wordmark brand)', () => {
+    it('delega lockup editorial ao AvantLogo (monograma Ae + wordmark raster)', () => {
       const source = brand();
       expect(source).toContain('AvantLogo');
       expect(source).toContain("'brand'");
       const logo = readFileSync(join(root, 'components', 'brand', 'AvantLogo.tsx'), 'utf8');
-      expect(logo).toMatch(/>\s*A\s*<\/span>/);
+      expect(logo).toContain('/brand/avant-logo-shield.png');
+      expect(logo).toContain('/brand/avant-logo-wordmark-raster.png');
       expect(logo).not.toContain('<Zap');
     });
   });

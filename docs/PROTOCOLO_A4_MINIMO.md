@@ -20,6 +20,7 @@ a4MinimoCore (audit + mitigação + contract)
     ├── historiaA4Minimo.ts    → agent:historia-a4-minimo-v1
     ├── viasA4Minimo.ts        → agent:vias-a4-minimo-v1
     ├── adolescenteA4Minimo.ts → agent:adolescente-a4-minimo-v1
+    ├── farmacoA4Minimo.ts     → agent:farmaco-a4-minimo-v1
     └── (próximas ondas: sinais-vitais, CME, …)
 ```
 
@@ -56,10 +57,11 @@ npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy
 | 1 | História da Enfermagem | ✅ |
 | 2 | Vias de Administração | ✅ |
 | 3 | Saúde do Adolescente | ✅ |
+| 3b | Farmacodinâmica e Farmacocinética | ✅ |
 | 4 | CME, Processamento, Sinais Vitais… | pendente |
 | 5 | Imunização / Urgências / Cálculo | último |
 
-Docs: `PROTOCOLO_A4_MINIMO_PUNCAO.md` · `HISTORIA` · `VIAS` · `ADOLESCENTE`
+Docs: `PROTOCOLO_A4_MINIMO_PUNCAO.md` · `HISTORIA` · `VIAS` · `ADOLESCENTE` · `FARMACODINAMICA`
 
 ---
 

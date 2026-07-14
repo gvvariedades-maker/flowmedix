@@ -1,0 +1,45 @@
+{
+  "subtopico": "História da Enfermagem",
+  "trilho": "A",
+  "total_slugs": 20,
+  "lote_size": 8,
+  "lote_pattern": "historia-enfermagem-g{NN}",
+  "anchor_glob": "examples/questao-premium-*-historia-enfermagem-*.json",
+  "guideline": "lib/guidelines/historiaEnfermagem.ts",
+  "clusters": [
+    "Nightingale / pioneiras / cronologia SUS",
+    "COFEN / COREN / código de ética / comunicação",
+    "Humanização / teorias do cuidado (V/F I–IV)",
+    "Cauda longa — teorias administrativas / slug legado"
+  ],
+  "pedagogical_branches": [
+    "historia_nightingale",
+    "historia_humanizacao",
+    "historia_comunicacao_etica",
+    "historia_generico"
+  ],
+  "inference_rules": [
+    {
+      "id": "humanizacao-vf",
+      "when": "humanização + V/F I–IV ou ≥2 gatilhos Peplau/Horta/PNH",
+      "branch": "historia_humanizacao",
+      "note": "Slug teorias-em-enfermagem com enunciado de humanização → humanização (não genérico)."
+    },
+    {
+      "id": "etica-cofen",
+      "when": "código de ética, COFEN, comunicação profissional, ruído",
+      "branch": "historia_comunicacao_etica"
+    },
+    {
+      "id": "marcos-brasil",
+      "when": "Nightingale, pioneiras, pré-SUS, Lei 7.498, saúde pública histórica",
+      "branch": "historia_nightingale"
+    },
+    {
+      "id": "cauda-generica",
+      "when": "teorias administrativas, processo de enfermagem genérico, tema adjacente no slug",
+      "branch": "historia_generico"
+    }
+  ],
+  "nota_manifest": "20 slugs meta.subtopico História; parte com URL legada (teorias, processo, vias) — handcraft ancora no enunciado."
+}

@@ -2,6 +2,10 @@
 
 **Modo automático** (trigger `Pipeline completo:`). Executar sem pedir confirmação de modo.
 
+**Status:** applied **13/13** · `production_ready` · onda nota-10 (2026-07-14)
+
+Relatório: [`artifacts/farmacodinamica-nota10-report.md`](farmacodinamica-nota10-report.md) · README: [`data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/README.md`](../data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/README.md)
+
 ## Persona — professor de concursos (Téc. Enfermagem)
 
 Você é o melhor professor de concursos para **Técnicos de Enfermagem**:
@@ -31,8 +35,11 @@ Você é o melhor professor de concursos para **Técnicos de Enfermagem**:
 | Campo | Valor |
 |-------|-------|
 | pacote_prefix | `farmacodinamica-e-farmacocinetica` |
-| status | applied (11/11 slugs) |
+| status | applied (13/13 slugs) |
 | production_status | production_ready |
+| readme | `data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/README.md` |
+| guideline | `lib/guidelines/farmacodinamica.ts` |
+| A4-mínimo | `docs/PROTOCOLO_A4_MINIMO_FARMACODINAMICA.md` · 13/13 |
 | lote_pattern | `farmacodinamica-e-farmacocinetica-g{NN}` |
 | anchor_glob | `examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json` |
 

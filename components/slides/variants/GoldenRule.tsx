@@ -27,6 +27,7 @@ import { GoldenRuleSaeReferenceBoard } from './GoldenRuleSaeReferenceBoard';
 import { GoldenRuleSondaMeasurementBoard } from './GoldenRuleSondaMeasurementBoard';
 import { GoldenRuleViaReferenceBoard } from './GoldenRuleViaReferenceBoard';
 import { GoldenRulePkPdReferenceBoard } from './GoldenRulePkPdReferenceBoard';
+import { GoldenRuleFarmacoClinicoReferenceBoard } from './GoldenRuleFarmacoClinicoReferenceBoard';
 import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
 import { GoldenRuleAdolescentZBandBoard } from './GoldenRuleAdolescentZBandBoard';
@@ -473,6 +474,12 @@ export const GoldenRule = ({
   if (variant === 'pk-pd-reference-board' && rows && rows.length > 0) {
     return (
       <GoldenRulePkPdReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'farmaco-clinico-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleFarmacoClinicoReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

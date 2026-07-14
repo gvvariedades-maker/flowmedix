@@ -22,7 +22,7 @@ Complementa:
 | Saúde do Adolescente | 16 | **Fechado** |
 | História da Enfermagem | 18 | **Fechado** |
 | Processamento de Artigos e Produtos de Saúde | 18 | **Fechado** |
-| Farmacodinâmica e Farmacocinética | 5 | **Fechado** |
+| Farmacodinâmica e Farmacocinética | 13 | **Fechado** — [`farmacodinamica-e-farmacocinetica-completo/README.md`](../data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/README.md) |
 | Feridas e Queimaduras | 8 | **Fechado** |
 | Enfermagem do Trabalho | 14 | **Fechado** |
 | CME | 35 | **Fechado** — [`cme-completo/README.md`](../data/catalog-migration/cme-completo/README.md) |

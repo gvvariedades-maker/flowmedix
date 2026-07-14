@@ -26,6 +26,12 @@ import {
   URGENCIAS_BRANCHES,
   VIAS_BRANCHES,
   ADOLESCENTE_BRANCHES,
+  FARMACO_BRANCHES,
+  FARMACO_BESPOKE_BRANCHES,
+  RESPIRATORIO_BRANCHES,
+  RESPIRATORIO_BESPOKE_BRANCHES,
+  HISTORIA_BRANCHES,
+  HISTORIA_BESPOKE_BRANCHES,
   screenshotSlidePanels,
   SLIDE_COUNT,
   writeVisualMoldSummary,
@@ -543,5 +549,181 @@ test.describe('Visual mold regression — Punção Venosa', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('puncao-venosa-e-cuidados-com-cateteres');
+  });
+});
+
+test.describe('Farmacodinâmica e Farmacocinética — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Farmacodinâmica — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of FARMACO_BRANCHES) {
+    test(`Farmacodinâmica ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Farmacodinâmica ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Farmacodinâmica farmaco_clinico_protocolo — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'farmaco_clinico_protocolo';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Farmacodinâmica — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'farmacodinamica-e-farmacocinetica',
+      branches: FARMACO_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Farmacodinâmica — ${FARMACO_BRANCHES.length} branches (${FARMACO_BESPOKE_BRANCHES.length} bespoke + genérico); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('farmacodinamica-e-farmacocinetica');
+  });
+});
+
+test.describe('Doenças Respiratórias Crônicas — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Respiratório — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of RESPIRATORIO_BRANCHES) {
+    test(`Respiratório ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Respiratório ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Respiratório respiratorio_dpoc_oxigenio — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'respiratorio_dpoc_oxigenio';
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await expectSlidePanels(page);
+
+    const panel = page.getByTestId('mold-slide-1');
+    await panel.scrollIntoViewIfNeeded();
+    const overflowX = await panel.evaluate((el) => el.scrollWidth > el.clientWidth + 2);
+    expect(overflowX).toBe(false);
+    const text = (await panel.innerText()).toLowerCase();
+    expect(text).toMatch(/dpoc|asma|spo2|oxig/i);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Respiratório — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'respiratorio-cronico',
+      branches: RESPIRATORIO_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Respiratório — ${RESPIRATORIO_BRANCHES.length} branches (${RESPIRATORIO_BESPOKE_BRANCHES.length} bespoke); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('respiratorio-cronico');
+  });
+});
+
+test.describe('História da Enfermagem — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression História — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of HISTORIA_BRANCHES) {
+    test(`História ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`História ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('História — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'historia-enfermagem',
+      branches: HISTORIA_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 História — ${HISTORIA_BRANCHES.length} branches (${HISTORIA_BESPOKE_BRANCHES.length} bespoke); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('historia-enfermagem');
   });
 });

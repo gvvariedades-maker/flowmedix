@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T19:19:02.249Z",
+  "generated_at": "2026-07-14T06:59:20.924Z",
   "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
   "pacote_prefix": "respiratorio-cronico",
   "production_status_before": "production_ready",
@@ -14,7 +14,7 @@
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 368
+    "sessions_30d": 203
   },
   "layers": {
     "L1": {
@@ -31,7 +31,7 @@
     },
     "L3": {
       "pass": true,
-      "detail": "L3 Respiratório — 3 branches ativos (respiratorio_dpoc_oxigenio + respiratorio_tecnica_inalador + respiratorio_vf_asma_dpoc); player /dev/slide-mold-review"
+      "detail": "Playwright L3 Respiratório — 5 branches (2 bespoke); PNGs em artifacts/visual-mold-regression/"
     },
     "L4": {
       "pass": true,
@@ -56,7 +56,7 @@
   ],
   "content_health": {
     "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-    "sessions_30d": 368,
+    "sessions_30d": 203,
     "open_reports": {
       "p0": 0,
       "p1": 0,
@@ -71,7 +71,7 @@
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 368,
+      "sessions_30d": 203,
       "open_p1": 0,
       "report_rate_pct": 0
     },

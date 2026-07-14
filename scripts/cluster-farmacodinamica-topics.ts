@@ -98,7 +98,11 @@ function refinePedagogicalCluster(
 
   const blob = `${instruction} ${options.map((o) => o.text).join(' ')}`.toLowerCase();
 
-  if (family === 'vf' || (/\b(i|ii|iii)\s*[-–—]/i.test(instruction) && /correto|afirmativas|verdadeira/.test(blob))) {
+  if (
+    family === 'vf' ||
+    /julgue[\s\S]{0,80}?\(V\)\s*ou\s*falsas?\s*\(F\)/i.test(instruction) ||
+    (/\b(i|ii|iii)\s*[-–—]/i.test(instruction) && /correto|afirmativas|verdadeira/.test(blob))
+  ) {
     return 'V/F — ADME e definições PK/PD';
   }
   if (family === 'certo_errado') return 'Certo ou errado';

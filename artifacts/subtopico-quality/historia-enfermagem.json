@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-29T23:49:01.822Z",
+  "generated_at": "2026-07-14T05:48:54.575Z",
   "subtopico": "História da Enfermagem",
   "pacote_prefix": "historia-enfermagem",
-  "production_status_before": "none",
+  "production_status_before": "production_ready",
   "technical_ready": true,
   "production_ready": true,
   "can_sell": true,
@@ -14,7 +14,7 @@
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 424
+    "sessions_30d": 203
   },
   "layers": {
     "L1": {
@@ -31,7 +31,7 @@
     },
     "L3": {
       "pass": true,
-      "detail": "L1 preflight 20/20 — moldes história/ética COFEN; anchors historia_nightingale · historia_humanizacao · historia_comunicacao_etica"
+      "detail": "Playwright L3 História — 4 branches (2 bespoke); PNGs em artifacts/visual-mold-regression/"
     },
     "L4": {
       "pass": true,
@@ -74,33 +74,24 @@
   ],
   "content_health": {
     "subtopico": "História da Enfermagem",
-    "sessions_30d": 424,
+    "sessions_30d": 203,
     "open_reports": {
       "p0": 0,
       "p1": 0,
-      "p2": 2,
+      "p2": 0,
       "p3": 0,
-      "total": 2
+      "total": 0
     },
-    "report_rate_pct": 0.47,
-    "top_reported_slugs": [
-      {
-        "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
-        "count": 1
-      },
-      {
-        "slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
-        "count": 1
-      }
-    ],
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
     "slo": {
       "open_p0": 0,
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 424,
+      "sessions_30d": 203,
       "open_p1": 0,
-      "report_rate_pct": 0.47
+      "report_rate_pct": 0
     },
     "pass": true,
     "blockers": []

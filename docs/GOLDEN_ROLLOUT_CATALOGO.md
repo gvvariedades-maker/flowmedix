@@ -23,7 +23,7 @@ Runbook do programa **"toda questão do AVANT vira golden-v1 handcraft"** (≈5.
 | Saúde do Adolescente | 16 | [`saude-adolescente-completo/README.md`](../data/catalog-migration/saude-adolescente-completo/README.md) |
 | História da Enfermagem | 18 | [`historia-enfermagem-completo/README.md`](../data/catalog-migration/historia-enfermagem-completo/README.md) |
 | Processamento de Artigos e Produtos de Saúde | 18 | registry |
-| Farmacodinâmica e Farmacocinética | 5 | registry |
+| Farmacodinâmica e Farmacocinética | 13 | [`farmacodinamica-e-farmacocinetica-completo/README.md`](../data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/README.md) |
 | Feridas e Queimaduras | 8 | registry |
 | Enfermagem do Trabalho | 14 | registry |
 

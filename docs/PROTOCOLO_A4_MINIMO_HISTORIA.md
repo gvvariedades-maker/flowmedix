@@ -30,7 +30,8 @@
 ## CLI
 
 ```bash
-npm run stamp:a4-minimo -- --lote=historia-enfermagem-g01
+npm run stamp:a4-minimo -- --lote=historia-enfermagem-completo
+npm run enrich:historia-guideline-meta -- --lote=historia-enfermagem-completo --write
 npm run audit:questao-readiness -- --file=examples/questao-premium-cpcon-historia-enfermagem-nightingale.json --strict-v2-pedagogy
 ```
 

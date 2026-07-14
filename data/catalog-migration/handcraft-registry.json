@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-13",
+  "updated_at": "2026-07-14",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -200,9 +200,10 @@
     "História da Enfermagem": {
       "pacote_prefix": "historia-enfermagem",
       "manifest": "data/catalog-migration/historia-enfermagem-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/historia-enfermagem-completo/handcraft-meta.json",
       "readme": "data/catalog-migration/historia-enfermagem-completo/README.md",
       "cluster_command": null,
-      "cluster_report": null,
+      "cluster_report": "artifacts/historia-enfermagem-topic-cluster-report.json",
       "lote_pattern": "historia-enfermagem-g{NN}",
       "lote_size": 8,
       "status": "applied",
@@ -219,7 +220,7 @@
           "medio": 0.2
         },
         "downgrade_on_report_rate_pct": 2,
-        "last_calibrated_at": "2026-07-13"
+        "last_calibrated_at": "2026-07-14"
       },
       "quality": {
         "technical_ready_at": "2026-06-29",
@@ -299,19 +300,29 @@
       "pacote_prefix": "farmacodinamica-e-farmacocinetica",
       "manifest": "data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/manifest.json",
       "handcraft_meta": "data/catalog-migration/farmacodinamica-e-farmacocinetica-g02/lote-meta.json",
-      "readme": null,
+      "readme": "data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/README.md",
       "cluster_command": "npm run cluster:farmacodinamica",
       "cluster_report": "artifacts/farmacodinamica-topic-cluster-report.json",
       "lote_pattern": "farmacodinamica-e-farmacocinetica-g{NN}",
       "lote_size": 8,
       "status": "applied",
-      "total_slugs": 11,
-      "handcraft_applied": 11,
+      "total_slugs": 13,
+      "handcraft_applied": 13,
       "anchor_glob": "examples/questao-premium-*-farmacodinamica-*.json,examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/farmacodinamica-e-farmacocinetica.json",
       "golden_anchors_registry": "data/catalog-migration/farmacodinamica-golden-anchors.json",
-      "guideline": null,
+      "guideline": "lib/guidelines/farmacodinamica.ts",
       "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": "2026-07-14"
+      },
       "quality": {
         "technical_ready_at": "2026-06-29",
         "production_ready_at": "2026-06-29",
@@ -334,9 +345,9 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-07-04T08:43:53.833Z",
+          "last_audit_at": "2026-07-14T01:58:51.365Z",
           "last_audit_pass": true,
-          "health_streak_days": 4,
+          "health_streak_days": 5,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
@@ -481,7 +492,7 @@
       "pacote_prefix": "respiratorio-cronico",
       "manifest": "data/catalog-migration/respiratorio-cronico-completo/manifest.json",
       "handcraft_meta": "data/catalog-migration/respiratorio-cronico-completo/handcraft-meta.json",
-      "readme": null,
+      "readme": "data/catalog-migration/respiratorio-cronico-completo/README.md",
       "cluster_command": "cluster:respiratorio-cronico",
       "cluster_report": "artifacts/respiratorio-cronico-topic-cluster-report.json",
       "lote_pattern": "respiratorio-cronico-g{NN}",
@@ -493,9 +504,19 @@
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/respiratorio-cronico.json",
       "guideline": "lib/guidelines/respiratorioCronico.ts",
       "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": "2026-07-14"
+      },
       "quality": {
         "technical_ready_at": "2026-06-29",
-        "production_ready_at": "2026-07-04",
+        "production_ready_at": "2026-07-14",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -515,7 +536,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-07-04T19:19:02.251Z",
+          "last_audit_at": "2026-07-14T06:59:20.927Z",
           "last_audit_pass": true,
           "health_streak_days": 2,
           "last_blocked_at": null,

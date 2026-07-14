@@ -283,16 +283,14 @@ Trecho derivado da âncora IDECAN (formato plano):
 ## 9. Critérios de aceite (DoD)
 
 - [x] 4× `layout_variant` nomeados: `infusao-ev-station-deck` · `farmaco-clinico-reference-board` · `farmaco-protocol-tap-flow` · `farmaco-clinico-trap`
-- [ ] Componentes React a implementar (pacote atual = genérico `morphological · banner · cards · compare`)
-- [ ] `BRANCH_DESIGN_MAP` → `farmaco_clinico_protocolo` atualizado após React
-- [ ] Preview 375px — deck com scroll snap; board scroll vertical
-- [ ] 0 hardcode de gabarito nos componentes
-- [ ] Par deck (estações) ↔ farmaco-clinico-trap (slot errado)
-- [ ] `footer_rule` com estratégia de prova em cada slide
+- [x] Componentes React implementados (2026-07-13)
+- [x] `BRANCH_DESIGN_MAP` → `farmaco_clinico_protocolo` atualizado
+- [x] Preview 375px — deck com scroll snap; board scroll vertical
+- [x] 0 hardcode de gabarito nos componentes
+- [x] Par deck (estações) ↔ farmaco-clinico-trap (slot errado)
+- [x] `footer_rule` com estratégia de prova em cada slide
 
-**Status implementação:** brief **novo** — React pendente (`Implementar molde: farmaco_clinico_protocolo`).
-
-**Próximo trigger:** `Implementar molde: farmaco_clinico_protocolo` → [`VARIANT_MOLDS.md`](../docs/VARIANT_MOLDS.md) §3.
+**Status implementação:** brief **concluído** — React em produção (`Implementar molde: farmaco_clinico_protocolo`).
 
 ---
 

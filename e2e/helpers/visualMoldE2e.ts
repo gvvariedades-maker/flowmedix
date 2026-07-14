@@ -118,8 +118,50 @@ export const SAUDE_MULHER_BRANCHES = [
   'mulher_mama',
 ] as const;
 
-/** Ramos SM com pacote bespoke 4/4 completo. */
+/** Ramos Saúde da Mulher com pacote bespoke 4/4 completo. */
 export const SAUDE_MULHER_BESPOKE_BRANCHES = [...SAUDE_MULHER_BRANCHES] as const;
+
+/** Ramos Farmacodinâmica — regressão L3 (clínico bespoke + PK/PD VF + genérico). */
+export const FARMACO_BRANCHES = [
+  'farmaco_clinico_protocolo',
+  'farmaco_pk_pd_vf',
+  'farmaco_generico',
+] as const;
+
+/** Ramos Farmacodinâmica com pacote bespoke 4/4 (clínico EV + ADME journey). */
+export const FARMACO_BESPOKE_BRANCHES = [
+  'farmaco_clinico_protocolo',
+  'farmaco_pk_pd_vf',
+] as const;
+
+/** Ramos Doenças Respiratórias Crônicas — regressão L3 (5 ramos). */
+export const RESPIRATORIO_BRANCHES = [
+  'respiratorio_vf_asma_dpoc',
+  'respiratorio_dpoc_oxigenio',
+  'respiratorio_asma_crise',
+  'respiratorio_tecnica_inalador',
+  'respiratorio_generico',
+] as const;
+
+/** Ramos Respiratório com pacote bespoke duel-deck + spo2-board. */
+export const RESPIRATORIO_BESPOKE_BRANCHES = [
+  'respiratorio_vf_asma_dpoc',
+  'respiratorio_dpoc_oxigenio',
+] as const;
+
+/** Ramos História da Enfermagem — regressão L3 (4 ramos). */
+export const HISTORIA_BRANCHES = [
+  'historia_nightingale',
+  'historia_humanizacao',
+  'historia_comunicacao_etica',
+  'historia_generico',
+] as const;
+
+/** Ramos História com concept_map bridge (marcos / ética COFEN). */
+export const HISTORIA_BESPOKE_BRANCHES = [
+  'historia_nightingale',
+  'historia_comunicacao_etica',
+] as const;
 
 export const MOBILE_NARROW_VIEWPORT = { width: 375, height: 812 } as const;
 export const DESKTOP_VIEWPORT = { width: 1280, height: 900 } as const;

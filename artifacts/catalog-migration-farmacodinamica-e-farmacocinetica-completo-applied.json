@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-14T02:19:44.003Z",
+  "lote": "farmacodinamica-e-farmacocinetica-completo",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

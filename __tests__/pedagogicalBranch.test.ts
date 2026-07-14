@@ -150,7 +150,24 @@ describe('enrichPresentationContext — meta da questão', () => {
       'farmaco_clinico_protocolo',
     );
     const design = getPresentationDesign(farmacoSubtopico, 'farmaco_clinico_protocolo');
-    expect(design?.conceptMap).toBe('morphological');
+    expect(design?.conceptMap).toBe('infusao-ev-station-deck');
+    expect(design?.goldenRule).toBe('farmaco-clinico-reference-board');
+    expect(design?.logicFlow).toBe('farmaco-protocol-tap-flow');
+    expect(design?.dangerZone).toBe('farmaco-clinico-trap');
+  });
+
+  it('infere farmaco_generico para meropenem INCORRETA e classificação de anestésico', () => {
+    const meropenemExceto =
+      'O meropenem é um antibiótico carbapenêmico. Assinale a alternativa INCORRETA sobre convulsões induzidas por meropenem.';
+    expect(inferPedagogicalBranch(farmacoSubtopico, meropenemExceto, [], 'certo_errado')).toBe(
+      'farmaco_generico',
+    );
+
+    const anestesicoClassificacao =
+      'Qual das seguintes substâncias NÃO é classificada como um anestésico local?';
+    expect(inferPedagogicalBranch(farmacoSubtopico, anestesicoClassificacao, [], 'conceito')).toBe(
+      'farmaco_generico',
+    );
   });
 
   const imunizacaoSubtopico = 'Imunização';
@@ -378,6 +395,24 @@ describe('enrichPresentationContext — meta da questão', () => {
       'Sobre a técnica correta de uso do inalador com espaçador (MDI), assinale a alternativa correta.';
     expect(inferPedagogicalBranch(respSubtopico, instruction, [], 'conceito')).toBe(
       'respiratorio_tecnica_inalador',
+    );
+  });
+
+  it('infere respiratorio_generico para asma na APS (educação)', () => {
+    const instruction =
+      'No âmbito da Atenção Básica à Saúde, a assistência ao usuário com asma exige do técnico atuação educativa.';
+    expect(inferPedagogicalBranch(respSubtopico, instruction, [], 'conceito')).toBe(
+      'respiratorio_generico',
+    );
+  });
+
+  it('infere respiratorio_asma_crise para semiologia pediátrica com sibilos', () => {
+    const instruction = 'Nas crianças com asma a anormalidade observada com mais frequência é:';
+    const slides = [
+      { type: 'concept_map', items: [{ label: 'Sibilos expiratórios', detail: 'Ruído na expiração' }] },
+    ];
+    expect(inferPedagogicalBranch(respSubtopico, instruction, slides, 'conceito')).toBe(
+      'respiratorio_asma_crise',
     );
   });
 });
@@ -707,5 +742,34 @@ describe('pedagogicalBranch — Saúde da Mulher', () => {
     expect(inferPedagogicalBranch(puncaoSubtopico, instruction, [], 'conceito')).toBe(
       'puncao_dispositivo',
     );
+  });
+});
+
+describe('inferPedagogicalBranch — História da Enfermagem', () => {
+  const subtopico = 'História da Enfermagem';
+
+  it('infere historia_nightingale para Nightingale e SUS', () => {
+    const instruction =
+      'Florence Nightingale é fundadora da enfermagem moderna na Guerra da Crimeia. A enfermagem brasileira surgiu apenas após o SUS em 1988.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [], 'vf')).toBe('historia_nightingale');
+  });
+
+  it('infere historia_comunicacao_etica para COFEN e comunicação', () => {
+    const instruction =
+      'O Código de Ética dos Profissionais de Enfermagem é norma do COFEN. Ruídos na comunicação impedem o receptor de decodificar a mensagem.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [], 'legis')).toBe(
+      'historia_comunicacao_etica',
+    );
+  });
+
+  it('infere historia_humanizacao para V/F humanização I–IV', () => {
+    const instruction =
+      'Sobre humanização na saúde:\nI - incentivar colaboração interdisciplinar.\nII - humanizar é apenas amenizar dor hospitalar.\nIII - dar lugar à palavra do usuário.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [], 'vf')).toBe('historia_humanizacao');
+  });
+
+  it('infere historia_generico para cauda teorias administrativas', () => {
+    const instruction = 'Sobre as principais teorias administrativas na Enfermagem, assinale a alternativa correta.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [], 'conceito')).toBe('historia_generico');
   });
 });

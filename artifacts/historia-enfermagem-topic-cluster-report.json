@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-07-14T06:00:00.000Z",
+  "subtopico": "História da Enfermagem",
+  "lote": "historia-enfermagem-completo",
+  "total": 20,
+  "source": "patch-pedagogical-branch + inferHistoriaBranch",
+  "family_counts": {
+    "conceito": 12,
+    "legis": 5,
+    "vf": 2,
+    "certo_errado": 1
+  },
+  "branch_counts": {
+    "historia_humanizacao": 8,
+    "historia_comunicacao_etica": 5,
+    "historia_nightingale": 4,
+    "historia_generico": 3
+  },
+  "pedagogical_clusters": [
+    {
+      "cluster": "Humanização / teorias do cuidado (V/F I–IV)",
+      "branch_id": "historia_humanizacao",
+      "count": 8,
+      "pct": 40,
+      "sample_slugs": [
+        "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+        "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3"
+      ],
+      "golden_anchor": "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2"
+    },
+    {
+      "cluster": "COFEN / código de ética / comunicação",
+      "branch_id": "historia_comunicacao_etica",
+      "count": 5,
+      "pct": 25,
+      "sample_slugs": [
+        "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+        "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1"
+      ],
+      "golden_anchor": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4"
+    },
+    {
+      "cluster": "Nightingale / marcos / legislação / saúde pública",
+      "branch_id": "historia_nightingale",
+      "count": 4,
+      "pct": 20,
+      "sample_slugs": [
+        "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+        "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2"
+      ],
+      "golden_anchor": "examples/questao-premium-cpcon-historia-enfermagem-nightingale.json"
+    },
+    {
+      "cluster": "Cauda longa — teorias administrativas / slug legado",
+      "branch_id": "historia_generico",
+      "count": 3,
+      "pct": 15,
+      "sample_slugs": [
+        "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+        "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0"
+      ]
+    }
+  ],
+  "cluster_decisions": [
+    {
+      "cluster": "Humanização",
+      "branch_id": "historia_humanizacao",
+      "decision": "ok_generico",
+      "rationale": "morphological + reference_table — sem metáfora espacial única."
+    },
+    {
+      "cluster": "Ética COFEN",
+      "branch_id": "historia_comunicacao_etica",
+      "decision": "ok_generico",
+      "rationale": "bridge COFEN×COREN×conduta."
+    },
+    {
+      "cluster": "Marcos históricos",
+      "branch_id": "historia_nightingale",
+      "decision": "ok_generico",
+      "rationale": "bridge cronologia + tabela de leis."
+    },
+    {
+      "cluster": "Cauda",
+      "branch_id": "historia_generico",
+      "decision": "ok_generico",
+      "rationale": "Fallback inferência — slug legado."
+    }
+  ]
+}

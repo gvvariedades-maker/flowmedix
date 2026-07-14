@@ -7,8 +7,11 @@ import {
   AVANT_LOGO_COLORS,
   AVANT_LOGO_DIMENSIONS,
   AVANT_LOGO_GRADIENTS,
+  AVANT_LOGO_ICON_FLAT_BELOW,
+  AVANT_LOGO_ICON_INSET_SCALE,
   AVANT_LOGO_SHELL_SHADOW,
   getAvantLogoLockupPadding,
+  getAvantLogoWordmarkRasterSize,
   scaleAvantLogoPx,
   type AvantLogoSizeToken,
 } from '@/lib/brand/avantLogoConstants';
@@ -18,8 +21,8 @@ export type { AvantLogoSizeToken } from '@/lib/brand/avantLogoConstants';
 export type AvantLogoVariant = 'lockup' | 'icon';
 
 /**
- * - `default` - cyber (shell + selo forest + wordmark claro)
- * - `light` / `brand` - editorial: slate + ENF + hairline
+ * - `default` — cyber (shell + monograma Ae + wordmark raster)
+ * - `light` / `brand` — editorial (monograma Ae + wordmark raster, sem shell)
  */
 export type AvantLogoTone = 'default' | 'light' | 'brand';
 
@@ -33,22 +36,28 @@ export type AvantLogoProps = {
   'aria-label'?: string;
 };
 
+/**
+ * Abaixo de `AVANT_LOGO_ICON_FLAT_BELOW` (ex.: nav/favicon), o glass 3D some
+ * em ruído visual — trocar para o monograma flat (mesmas cores, sem vidro/bisel).
+ */
 function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
   const iconPx = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.size, size);
+  const insetPx = Math.round(iconPx * AVANT_LOGO_ICON_INSET_SCALE);
+  const useFlat = size === AVANT_LOGO_ICON_FLAT_BELOW;
 
   return (
     <div
-      className="relative flex shrink-0 items-center justify-center"
+      className="relative flex shrink-0 items-center justify-center overflow-visible"
       style={{ width: iconPx, height: iconPx }}
       aria-hidden
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/brand/avant-logo-shield.png"
+        src={useFlat ? '/brand/avant-logo-ae-flat.png' : '/brand/avant-logo-shield.png'}
         alt=""
-        width={iconPx}
-        height={iconPx}
-        className="h-full w-full select-none object-contain"
+        width={insetPx}
+        height={insetPx}
+        className="h-full w-full max-h-[90%] max-w-[90%] select-none object-contain"
         draggable={false}
       />
     </div>
@@ -56,19 +65,16 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
 }
 
 /**
- * Wordmark "AVANT enf" - mesmo modelo e cores do emblema dourado/esmeralda:
- * imagem raster (ouro 3D + "enf" cursivo verde) em vez de texto CSS, para
- * reproduzir fielmente a tipografia do emblema de referencia.
+ * Wordmark "AVANT enf" — modelo canônico ouro + esmeralda 3D:
+ * AVANT serif brushed gold · enf face esmeralda com borda ouro.
  */
 function AvantLogoWordmarkStack({ size }: { size: AvantLogoSizeToken }) {
-  const fontSize = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.wordmark.fontSize, size);
-  const heightPx = Math.round(fontSize * 1.05);
-  const widthPx = Math.round(heightPx * (1465 / 327));
+  const { width: widthPx, height: heightPx } = getAvantLogoWordmarkRasterSize(size);
 
   return (
     <span
-      className="inline-flex shrink-0 items-center"
-      style={{ height: heightPx, width: widthPx }}
+      className="inline-flex min-w-0 shrink items-center overflow-visible"
+      style={{ height: heightPx, width: widthPx, maxWidth: '100%' }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -100,7 +106,7 @@ export function AvantLogo({
 
   const lightLockup = (
     <div
-      className="inline-flex shrink-0 items-center"
+      className="inline-flex shrink-0 items-center overflow-visible"
       style={{
         gap: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.gap, size),
       }}
@@ -156,7 +162,7 @@ export function AvantLogo({
     cyberLockup
   );
 
-  const rootClass = cn('inline-flex shrink-0 items-center', className);
+  const rootClass = cn('inline-flex shrink-0 items-center overflow-visible', className);
 
   if (href) {
     return (

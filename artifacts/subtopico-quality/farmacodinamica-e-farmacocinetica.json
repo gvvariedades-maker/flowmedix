@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T08:53:29.034Z",
+  "generated_at": "2026-07-14T03:11:41.717Z",
   "subtopico": "Farmacodinâmica e Farmacocinética",
   "pacote_prefix": "farmacodinamica-e-farmacocinetica",
   "production_status_before": "production_ready",
@@ -14,7 +14,7 @@
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 366
+    "sessions_30d": 208
   },
   "layers": {
     "L1": {
@@ -31,7 +31,7 @@
     },
     "L3": {
       "pass": true,
-      "detail": "L3 Farmaco — 3 branches (farmaco_pk_pd_vf bespoke ADME + farmaco_clinico_protocolo + farmaco_generico); player /dev/slide-mold-review"
+      "detail": "Playwright L3 Farmacodinâmica — 3 branches (2 bespoke + genérico); PNGs em artifacts/visual-mold-regression/"
     },
     "L4": {
       "pass": true,
@@ -62,7 +62,7 @@
   ],
   "content_health": {
     "subtopico": "Farmacodinâmica e Farmacocinética",
-    "sessions_30d": 366,
+    "sessions_30d": 208,
     "open_reports": {
       "p0": 0,
       "p1": 0,
@@ -77,7 +77,7 @@
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 366,
+      "sessions_30d": 208,
       "open_p1": 0,
       "report_rate_pct": 0
     },

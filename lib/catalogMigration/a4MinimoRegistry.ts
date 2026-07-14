@@ -10,8 +10,10 @@ import {
   type QuestaoLike,
 } from '@/lib/catalogMigration/a4MinimoCore';
 import { ADOLESCENTE_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/adolescenteA4Minimo';
+import { FARMACO_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/farmacoA4Minimo';
 import { HISTORIA_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/historiaA4Minimo';
 import { PUNCAO_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/puncaoA4Minimo';
+import { RESPIRATORIO_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/respiratorioA4Minimo';
 import { VIAS_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/viasA4Minimo';
 import type { RiskResult } from '@/lib/catalogMigration/riskScoring';
 
@@ -21,6 +23,8 @@ export const A4_MINIMO_PACKAGES: readonly A4MinimoPackageConfig[] = [
   HISTORIA_A4_MINIMO_CONFIG,
   VIAS_A4_MINIMO_CONFIG,
   ADOLESCENTE_A4_MINIMO_CONFIG,
+  FARMACO_A4_MINIMO_CONFIG,
+  RESPIRATORIO_A4_MINIMO_CONFIG,
 ];
 
 export function resolveA4MinimoConfig(

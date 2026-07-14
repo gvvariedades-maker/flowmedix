@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-07-11T23:05:09.678Z",
+  "generated_at": "2026-07-14T01:33:17.096Z",
   "summary": {
-    "cluster_rows": 182,
-    "slug_rows": 145,
+    "cluster_rows": 189,
+    "slug_rows": 13,
     "by_decision": {
-      "ok_existente": 18,
-      "ok_generico": 94,
-      "ramo_novo": 47,
-      "molde_inedito": 14,
+      "ok_existente": 19,
+      "ok_generico": 97,
+      "ramo_novo": 49,
+      "molde_inedito": 15,
       "molde_redesign": 9
     },
-    "inedito_packages_proposed": 10,
-    "ramo_novo_count": 47,
+    "inedito_packages_proposed": 11,
+    "ramo_novo_count": 49,
     "slug_mismatch_total": 0,
     "slug_mismatch_by_subtopico": {},
     "source": "supabase"
@@ -128,6 +128,14 @@
       "slug_count": 1,
       "ideal_mold_package": "urgencias-protocol-rules-deck · urgencias-protocol-reference-board · urgencias-protocol-tap-flow · urgencias-protocol-trap-arena (bespoke)",
       "rationale": "Primeiro socorro queimadura — protocol trap (âncora AMEOSC V/F)."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Escore Z / Caderneta",
+      "branch_id": "adolescente_antropometria",
+      "slug_count": 1,
+      "ideal_mold_package": "adolescent-growth-z-rail · adolescent-z-band-board · adolescent-z-classify-tap · adolescent-z-threshold-trap (bespoke)",
+      "rationale": "Escore Z / Caderneta — trilho de faixas antropométricas (brief l3 antropometria)."
     }
   ],
   "clusters": [
@@ -2126,6 +2134,322 @@
       "rationale": "VF absorção/velocidade — trilho bespoke implementado; brief l3-brief-vias-de-administracao-via_vf_absorcao.md."
     },
     {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Flebite e complicações",
+      "slug_count": 19,
+      "pct": 17.3,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
+        "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Dispositivo / calibre / jelco",
+      "slug_count": 12,
+      "pct": 10.9,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "EXCETO — técnica / conduta",
+      "slug_count": 12,
+      "pct": 10.9,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Tempo / observação pós-procedimento",
+      "slug_count": 11,
+      "pct": 10,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+        "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+        "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Punção venosa periférica",
+      "slug_count": 10,
+      "pct": 9.1,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+        "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+        "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Antissepsia na punção",
+      "slug_count": 8,
+      "pct": 7.3,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+        "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+        "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Técnica de punção periférica",
+      "slug_count": 7,
+      "pct": 6.4,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
+        "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+        "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Protocolo / procedimento",
+      "slug_count": 6,
+      "pct": 5.5,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
+        "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+        "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Manutenção de cateter",
+      "slug_count": 5,
+      "pct": 4.5,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
+        "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
+        "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ramo_novo",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Prevenção de IPCS no CVC",
+      "slug_count": 4,
+      "pct": 3.6,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+        "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+        "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Certo ou errado",
+      "slug_count": 4,
+      "pct": 3.6,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Default — sem âncora temática",
+      "slug_count": 4,
+      "pct": 3.6,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+        "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Cálculo / dose / tempo numérico",
+      "slug_count": 2,
+      "pct": 1.8,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "V/F — assertivas I/II/III",
+      "slug_count": 2,
+      "pct": 1.8,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Acesso venoso central",
+      "slug_count": 2,
+      "pct": 1.8,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Acesso arterial / PAM",
+      "slug_count": 1,
+      "pct": 0.9,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "cluster_label": "Medicação endovenosa — técnica",
+      "slug_count": 1,
+      "pct": 0.9,
+      "cluster_decision": "coberto",
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0"
+      ],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "bridge · reference_table · cards · compare (genérico)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
       "subtopico": "Cuidados na Administração de Medicamentos",
       "cluster_label": "Default — sem âncora temática",
       "slug_count": 28,
@@ -3256,1479 +3580,250 @@
       "rationale": "Drift taxonômico (anatomia/semiologia) — reclassificar antes de handcraft; genérico interim."
     },
     {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Flebite e complicações",
-      "slug_count": 19,
-      "pct": 17.3,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
-        "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0"
-      ],
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Escore Z / Caderneta",
+      "slug_count": 1,
+      "pct": 6.25,
+      "cluster_decision": "molde_inedito",
+      "sample_slugs": [],
+      "source": "cluster_report",
+      "branch_id": "adolescente_antropometria",
+      "branch_implemented": true,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "adolescent-growth-z-rail · adolescent-z-band-board · adolescent-z-classify-tap · adolescent-z-threshold-trap (bespoke)",
+      "decision": "molde_inedito",
+      "rationale": "Escore Z / Caderneta — trilho de faixas antropométricas (brief l3 antropometria)."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Obesidade — comorbidades",
+      "slug_count": 1,
+      "pct": 6.25,
+      "cluster_decision": "ok_generico",
+      "sample_slugs": [],
       "source": "cluster_report",
       "branch_id": "generico",
       "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
+      "decision": "ok_generico",
+      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Gravidez / sigilo",
+      "slug_count": 2,
+      "pct": 12.5,
+      "cluster_decision": "coberto",
+      "sample_slugs": [],
+      "source": "cluster_report",
+      "branch_id": "adolescente_etica_sigilo",
+      "branch_implemented": true,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "ideal_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
+      "decision": "ok_existente",
+      "rationale": "Gravidez na adolescência — moldes adolescent-* já desenhados para sigilo/escuta."
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Violência / proteção",
+      "slug_count": 2,
+      "pct": 12.5,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [],
+      "source": "cluster_report",
+      "branch_id": "generico",
+      "branch_implemented": false,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
       "decision": "ramo_novo",
       "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
     },
     {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Dispositivo / calibre / jelco",
-      "slug_count": 12,
-      "pct": 10.9,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7"
-      ],
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Saúde mental",
+      "slug_count": 3,
+      "pct": 18.75,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [],
       "source": "cluster_report",
       "branch_id": "generico",
       "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
       "decision": "ramo_novo",
       "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
     },
     {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "EXCETO — técnica / conduta",
-      "slug_count": 12,
-      "pct": 10.9,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3"
-      ],
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Desenvolvimento",
+      "slug_count": 1,
+      "pct": 6.25,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [],
       "source": "cluster_report",
       "branch_id": "generico",
       "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
+      "decision": "ok_generico",
       "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
     },
     {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Tempo / observação pós-procedimento",
-      "slug_count": 11,
-      "pct": 10,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
-        "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
-        "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Punção venosa periférica",
-      "slug_count": 10,
-      "pct": 9.1,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
-        "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
-        "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Antissepsia na punção",
-      "slug_count": 8,
-      "pct": 7.3,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
-        "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
-        "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Técnica de punção periférica",
-      "slug_count": 7,
-      "pct": 6.4,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
-        "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
-        "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Protocolo / procedimento",
+      "subtopico": "Saúde do Adolescente",
+      "cluster_label": "Genérico MS / EXCETO / promoção",
       "slug_count": 6,
-      "pct": 5.5,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
-        "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
-        "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3"
-      ],
+      "pct": 37.5,
+      "cluster_decision": "cauda_longa",
+      "sample_slugs": [],
       "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Manutenção de cateter",
-      "slug_count": 5,
-      "pct": 4.5,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
-        "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
-        "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ramo_novo",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Prevenção de IPCS no CVC",
-      "slug_count": 4,
-      "pct": 3.6,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
-        "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
-        "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
+      "branch_id": "adolescente_generico",
+      "branch_implemented": true,
+      "current_mold_package": "adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)",
       "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
       "decision": "ok_generico",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Certo ou errado",
-      "slug_count": 4,
-      "pct": 3.6,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
-        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
-        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Default — sem âncora temática",
-      "slug_count": 4,
-      "pct": 3.6,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
-        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
-        "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Cálculo / dose / tempo numérico",
-      "slug_count": 2,
-      "pct": 1.8,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
-        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "V/F — assertivas I/II/III",
-      "slug_count": 2,
-      "pct": 1.8,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
-        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Acesso venoso central",
-      "slug_count": 2,
-      "pct": 1.8,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
-        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Acesso arterial / PAM",
-      "slug_count": 1,
-      "pct": 0.9,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
-    },
-    {
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "cluster_label": "Medicação endovenosa — técnica",
-      "slug_count": 1,
-      "pct": 0.9,
-      "cluster_decision": "coberto",
-      "sample_slugs": [
-        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0"
-      ],
-      "source": "cluster_report",
-      "branch_id": "generico",
-      "branch_implemented": false,
-      "current_mold_package": "morphing-timeline · iv-bundle-mesh-reveal · iv-care-soft-stack · catheter-danger-arena (bespoke)",
-      "ideal_mold_package": "morphological · reference_table · vertical · compare (genérico)",
-      "decision": "ok_generico",
-      "rationale": "Sem regra no catálogo — genérico ou ramo novo se volume alto."
+      "rationale": "EXCETO/diretrizes — layout genérico premium."
     }
   ],
   "slugs": [
     {
-      "slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_generico",
+      "declared_branch": "farmaco_generico",
+      "mold_package": "morphological · center · vertical · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-6",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_clinico_protocolo",
+      "declared_branch": "farmaco_clinico_protocolo",
+      "mold_package": "morphological · banner · cards · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "certo_errado",
+      "inferred_branch": "farmaco_clinico_protocolo",
+      "declared_branch": "farmaco_clinico_protocolo",
+      "mold_package": "morphological · banner · cards · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "inferred_branch": "farmaco_generico",
+      "mold_package": "morphological · center · vertical · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_clinico_protocolo",
+      "declared_branch": "farmaco_clinico_protocolo",
+      "mold_package": "morphological · banner · cards · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+      "slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "vf",
+      "inferred_branch": "farmaco_pk_pd_vf",
+      "declared_branch": "farmaco_pk_pd_vf",
+      "mold_package": "adme-journey-rail · pk-pd-reference-board · farmaco-vf-juggle-tap · farmaco-trap (bespoke)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "protocolo",
+      "inferred_branch": "farmaco_clinico_protocolo",
+      "declared_branch": "farmaco_clinico_protocolo",
+      "mold_package": "morphological · banner · cards · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "ameosc-enfermagem-seguranca-do-paciente-1777102936764-1",
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_generico",
+      "declared_branch": "farmaco_generico",
+      "mold_package": "morphological · center · vertical · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-5",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_generico",
+      "declared_branch": "farmaco_generico",
+      "mold_package": "morphological · center · vertical · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-5",
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_generico",
+      "declared_branch": "farmaco_generico",
+      "mold_package": "morphological · center · vertical · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-4",
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_generico",
+      "declared_branch": "farmaco_generico",
+      "mold_package": "morphological · center · vertical · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-6",
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_clinico_protocolo",
+      "declared_branch": "farmaco_clinico_protocolo",
+      "mold_package": "morphological · banner · cards · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     },
     {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-9",
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
       "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "decorp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "facape-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "funatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "funatec-enfermagem-curativos-e-manejo-de-feridas-1779269315587-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-9",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "iaupe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibade-enfermagem-seguranca-do-paciente-1777102802022-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibade-enfermagem-seguranca-do-paciente-1779563436357-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1780066938846-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-seguranca-do-paciente-1777102802022-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-9",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-vias-de-administracao-1778712108887-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "idib-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778934890864-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "igeduc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-9",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-access-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "iset-enfermagem-exames-complementares-1779563655698-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "maranatha-assessoria-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "ms-sarmento-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0",
-      "lote": "supabase",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-1",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-3",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-7",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
-      "mold_mismatch_count": 0,
-      "mold_issues": []
-    },
-    {
-      "slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-5",
-      "lote": "supabase",
-      "subtopico": "Punção Venosa e Cuidados com Cateteres",
-      "mold_package": "—",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "family": "conceito",
+      "inferred_branch": "farmaco_clinico_protocolo",
+      "declared_branch": "farmaco_clinico_protocolo",
+      "mold_package": "morphological · banner · cards · compare (genérico)",
       "mold_mismatch_count": 0,
       "mold_issues": []
     }

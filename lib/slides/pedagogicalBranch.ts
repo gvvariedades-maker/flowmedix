@@ -110,7 +110,12 @@ export type PedagogicalBranchId =
   | 'mulher_mama'
   | 'mulher_puerperio'
   | 'mulher_planejamento'
-  | 'mulher_generico';
+  | 'mulher_generico'
+  // História da Enfermagem
+  | 'historia_nightingale'
+  | 'historia_humanizacao'
+  | 'historia_comunicacao_etica'
+  | 'historia_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -206,10 +211,10 @@ const FARMACO_VF_MOLD: SubtopicDesign = {
 /** MCQ clínico — droga, via, infusão (omeprazol, antibiótico EV…). */
 const FARMACO_CLINICO_MOLD: SubtopicDesign = {
   template: 'purple',
-  conceptMap: 'morphological',
-  goldenRule: 'banner',
-  logicFlow: 'cards',
-  dangerZone: 'compare',
+  conceptMap: 'infusao-ev-station-deck',
+  goldenRule: 'farmaco-clinico-reference-board',
+  logicFlow: 'farmaco-protocol-tap-flow',
+  dangerZone: 'farmaco-clinico-trap',
 };
 
 const FARMACO_GENERIC_MOLD: SubtopicDesign = {
@@ -657,6 +662,42 @@ const URGENCIAS_PROTOCOL_MOLD: SubtopicDesign = {
   dangerZone: 'urgencias-protocol-trap-arena',
 };
 
+/** Pacote genérico premium — História (amber). */
+const HISTORIA_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Marcos históricos / cronologia / legislação (Nightingale, SUS, pioneiras). */
+const HISTORIA_NIGHTINGALE_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'bridge',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Humanização / teorias do cuidado (PNH, Peplau, Horta, holismo). */
+const HISTORIA_HUMANIZACAO_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** COFEN/COREN, código de ética e comunicação profissional. */
+const HISTORIA_ETICA_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'bridge',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /** Cauda genérica — emergency hub + protocol pack. */
 const URGENCIAS_EMERGENCY_GENERIC_MOLD: SubtopicDesign = {
   template: 'rose',
@@ -998,6 +1039,24 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     mulher_planejamento: MULHER_PLANEJAMENTO_MOLD,
     mulher_generico: MULHER_GENERIC_DESIGN,
   },
+  'historia da enfermagem': {
+    historia_nightingale: HISTORIA_NIGHTINGALE_MOLD,
+    historia_humanizacao: HISTORIA_HUMANIZACAO_MOLD,
+    historia_comunicacao_etica: HISTORIA_ETICA_MOLD,
+    historia_generico: HISTORIA_GENERIC_DESIGN,
+  },
+  'historia enfermagem': {
+    historia_nightingale: HISTORIA_NIGHTINGALE_MOLD,
+    historia_humanizacao: HISTORIA_HUMANIZACAO_MOLD,
+    historia_comunicacao_etica: HISTORIA_ETICA_MOLD,
+    historia_generico: HISTORIA_GENERIC_DESIGN,
+  },
+  historia: {
+    historia_nightingale: HISTORIA_NIGHTINGALE_MOLD,
+    historia_humanizacao: HISTORIA_HUMANIZACAO_MOLD,
+    historia_comunicacao_etica: HISTORIA_ETICA_MOLD,
+    historia_generico: HISTORIA_GENERIC_DESIGN,
+  },
 };
 
 function normalizeKey(str: string): string {
@@ -1103,8 +1162,18 @@ const FARMACO_VF: RegExp[] = [
 
 const FARMACO_CLINICO: RegExp[] = [
   /hospitaliz|úlcera|infus[aã]o contínua|monitoriz|ph g[aá]stric|titulad/i,
-  /omeprazol|antibi[oó]tic|endovenos|fentanil|meropenem|insulina|anest[eé]sico local/i,
+  /omeprazol|antibi[oó]tic|endovenos|fentanil|meropenem|insulina|diazepam|midazolam|benzodiazep/i,
   /administra[cç][aã]o correta|conduta.*enfermagem.*medicamento/i,
+];
+
+const FARMACO_EXCETO: RegExp[] = [
+  /\bexceto\b/i,
+  /incorret[oa]\s+afirmar/i,
+  /é\s+incorret[oa]/i,
+  /alternativa\s+incorreta/i,
+  /assinale a alternativa incorreta/i,
+  /qual.*n[aã]o\s+[ée]\s+classificad/i,
+  /n[aã]o\s+[ée]\s+classificad[oa]/i,
 ];
 
 const IMUNIZACAO_VF: RegExp[] = [
@@ -1219,7 +1288,7 @@ const RESP_VF: RegExp[] = [
 
 const RESP_CRISE: RegExp[] = [
   /\bexceto\b/i,
-  /crise asm[aá]tica|broncoespasmo|sibil[aâ]ncia|beta[\s-]?2|salbutamol|inalador de resgate/i,
+  /crise asm[aá]tica|broncoespasmo|sibil[oô]s?|sibil[aâ]ncia|beta[\s-]?2|salbutamol|inalador de resgate/i,
 ];
 
 const RESP_TECNICA: RegExp[] = [
@@ -1341,6 +1410,28 @@ const MULHER_PRENATAL: RegExp[] = [
   /álcool na gesta|tabagismo.*gesta|movimentos fetais/i,
 ];
 
+const HISTORIA_NIGHTINGALE: RegExp[] = [
+  /nightingale|florence|crimeia|dama da l[aâ]mpada|12 de maio/i,
+  /ana n[eé]ri|eul[aá]lia|anna nery|escola de enfermagem|pioneir/i,
+  /pr[eé][\s-]?sus|sistema [uú]nico de sa[uú]de|1988|marco hist[oó]ric/i,
+  /sa[uú]de p[uú]blica.*brasil|evolu[cç][aã]o hist[oó]rica|lei\s*7\.?498|decreto\s*94\.?406/i,
+  /get[uú]lio vargas|revolta da vacina|henrique dutra/i,
+];
+
+const HISTORIA_ETICA: RegExp[] = [
+  /c[oó]digo de [eé]tica|cofen|coren/i,
+  /autonomia|benefic[eê]ncia|n[aã]o malefic[eê]ncia|justi[cç]a/i,
+  /comunica[cç][aã]o profissional|ru[ií]do na comunica|cal[uú]nia|difama[cç][aã]o|inj[uú]ria/i,
+  /deveres profissionais|rela[cç][oõ]es humanas.*comunica/i,
+];
+
+const HISTORIA_HUMANIZACAO: RegExp[] = [
+  /humaniza[cç][aã]o|pnh|pol[ií]tica nacional de humaniza/i,
+  /peplau|watson|leininger|horta|hol[ií]stic|interdisciplinar|intersubjetiv/i,
+  /teoria.*enfermagem|lideran[cç]a democr[aá]tica|abordagem hol[ií]stica/i,
+  /cuidado centrado|terap[eê]utico|promo[cç][aã]o da humaniza/i,
+];
+
 function branchMapKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
   const matches = Object.keys(BRANCH_DESIGN_MAP).filter(
@@ -1433,6 +1524,11 @@ function inferFarmacoBranch(corpus: string, familyId?: FamilyId): PedagogicalBra
     (countPatternMatches(corpus, FARMACO_VF) >= 2 &&
       /\b(i|ii|iii)\s*[-–—]/i.test(corpus));
   if (isVf) return 'farmaco_pk_pd_vf';
+
+  const isExceto =
+    countPatternMatches(corpus, FARMACO_EXCETO) >= 1 ||
+    (familyId === 'certo_errado' && /\b(incorret[oa]|exceto)\b/i.test(corpus));
+  if (isExceto) return 'farmaco_generico';
 
   const isClinical =
     familyId === 'protocolo' || countPatternMatches(corpus, FARMACO_CLINICO) > 0;
@@ -1730,8 +1826,16 @@ function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): Pedagogic
   const isCrise =
     /\bexceto\b/i.test(corpus) ||
     (familyId === 'certo_errado' && countPatternMatches(corpus, RESP_CRISE) >= 1) ||
-    countPatternMatches(corpus, RESP_CRISE) >= 2;
+    countPatternMatches(corpus, RESP_CRISE) >= 2 ||
+    (/crian[cç]as? com asma|asma.*crian[cç]a/i.test(corpus) &&
+      countPatternMatches(corpus, RESP_CRISE) >= 1);
   if (isCrise) return 'respiratorio_asma_crise';
+
+  const isApsAsmaGenerico =
+    /aten[cç][aã]o b[aá]sica|ubs\b|esf\b/i.test(corpus) &&
+    /\basma\b/i.test(corpus) &&
+    !/espacador|espaçador|peak flow|mdi\b|pico de fluxo/i.test(corpus);
+  if (isApsAsmaGenerico) return 'respiratorio_generico';
 
   if (countPatternMatches(corpus, RESP_TECNICA) > 0) {
     return 'respiratorio_tecnica_inalador';
@@ -1876,6 +1980,40 @@ function inferUrgenciasBranch(
   return 'urgencias_generico';
 }
 
+function inferHistoriaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  const humanizacaoScore = countPatternMatches(corpus, HISTORIA_HUMANIZACAO);
+  const eticaScore = countPatternMatches(corpus, HISTORIA_ETICA);
+  const nightingaleScore = countPatternMatches(corpus, HISTORIA_NIGHTINGALE);
+
+  if (/teorias administrativas|teoria administrativa/i.test(corpus)) {
+    return 'historia_generico';
+  }
+
+  // Teorias em enfermagem no slug mas enunciado de humanização → humanização (não genérico)
+  if (
+    humanizacaoScore >= 2 ||
+    (/humaniza/i.test(corpus) &&
+      (familyId === 'vf' || /\b(i|ii|iii|iv)\s*[-–—]/i.test(corpus)))
+  ) {
+    return 'historia_humanizacao';
+  }
+
+  if (eticaScore >= 2) return 'historia_comunicacao_etica';
+  if (eticaScore > 0 && nightingaleScore === 0 && humanizacaoScore === 0) {
+    return 'historia_comunicacao_etica';
+  }
+
+  if (nightingaleScore > 0) return 'historia_nightingale';
+  if (/lei\s*7\.?498|decreto\s*94\.?406/i.test(corpus) && familyId === 'legis') {
+    return 'historia_nightingale';
+  }
+
+  if (humanizacaoScore > 0) return 'historia_humanizacao';
+  if (eticaScore > 0) return 'historia_comunicacao_etica';
+
+  return 'historia_generico';
+}
+
 function inferMulherBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   if (countPatternMatches(corpus, MULHER_PARTO) > 0 && !/pré-natal|prenatal/i.test(corpus)) {
     return 'mulher_parto';
@@ -1982,6 +2120,13 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('urgencias') || mapKey.includes('emergencias') || mapKey === 'emergencia') {
     return inferUrgenciasBranch(corpus, familyId, instruction);
+  }
+  if (
+    mapKey.includes('historia da enfermagem') ||
+    mapKey.includes('historia enfermagem') ||
+    mapKey === 'historia'
+  ) {
+    return inferHistoriaBranch(corpus, familyId);
   }
   if (
     mapKey.includes('saude da mulher') ||

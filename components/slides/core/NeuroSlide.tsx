@@ -25,6 +25,7 @@ import { SusLegalPillarsConceptMap } from '../variants/SusLegalPillarsConceptMap
 import { SusArt4OrbitConceptMap } from '../variants/SusArt4OrbitConceptMap';
 import { AbsorptionSpeedRailConceptMap } from '../variants/AbsorptionSpeedRailConceptMap';
 import { AdmeJourneyRailConceptMap } from '../variants/AdmeJourneyRailConceptMap';
+import { InfusaoEvStationDeckConceptMap } from '../variants/InfusaoEvStationDeckConceptMap';
 import { DoseEquivalenceRailConceptMap } from '../variants/DoseEquivalenceRailConceptMap';
 import { OxygenProtocolDeckConceptMap } from '../variants/OxygenProtocolDeckConceptMap';
 import { IvCareOrbitConceptMap } from '../variants/IvCareOrbitConceptMap';
@@ -241,6 +242,15 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'adme-journey-rail') {
         return <AdmeJourneyRailConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />;
+      }
+      if (layoutVariant === 'infusao-ev-station-deck') {
+        return (
+          <InfusaoEvStationDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
       }
       if (layoutVariant === 'dose-equivalence-rail') {
         return <DoseEquivalenceRailConceptMap concepts={getConcepts()} theme={theme} />;

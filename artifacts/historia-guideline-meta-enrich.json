@@ -1,0 +1,122 @@
+{
+  "generated_at": "2026-07-14T05:27:29.429Z",
+  "scanned": 20,
+  "enriched": 7,
+  "skipped": 13,
+  "results": [
+    {
+      "slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+      "changed": true,
+      "reasons": [
+        "added_historia-enfermagem-cofen"
+      ]
+    },
+    {
+      "slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "changed": true,
+      "reasons": [
+        "added_historia-enfermagem-cofen"
+      ]
+    },
+    {
+      "slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+      "changed": true,
+      "reasons": [
+        "added_historia-enfermagem-cofen"
+      ]
+    },
+    {
+      "slug": "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+      "changed": true,
+      "reasons": [
+        "added_historia-enfermagem-cofen"
+      ]
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+      "changed": true,
+      "reasons": [
+        "added_historia-enfermagem-cofen"
+      ]
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+      "changed": true,
+      "reasons": [
+        "added_historia-enfermagem-cofen"
+      ]
+    },
+    {
+      "slug": "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6",
+      "changed": true,
+      "reasons": [
+        "added_historia-enfermagem-cofen"
+      ]
+    }
+  ]
+}

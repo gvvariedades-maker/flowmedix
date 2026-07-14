@@ -25,6 +25,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'sus-art4-orbit',
   'absorption-speed-rail',
   'adme-journey-rail',
+  'infusao-ev-station-deck',
   'dose-equivalence-rail',
   'oxygen-protocol-deck',
   'iv-care-orbit',

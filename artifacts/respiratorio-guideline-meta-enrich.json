@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-14T06:47:12.809Z",
+  "scanned": 9,
+  "enriched": 1,
+  "skipped": 8,
+  "results": [
+    {
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "changed": false,
+      "reasons": []
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "changed": true,
+      "reasons": [
+        "added_respiratorio-cronico-ms"
+      ]
+    },
+    {
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "changed": false,
+      "reasons": []
+    }
+  ]
+}

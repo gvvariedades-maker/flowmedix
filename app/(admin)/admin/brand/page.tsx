@@ -21,7 +21,7 @@ export default function AdminBrandPreviewPage() {
               Logo AE — preview light / dark
             </h1>
             <p className="mt-2 max-w-xl text-sm text-slate-400">
-              Ultra-premium: selo circular · AE interlocked · tracking aéreo · hairline + ENF.
+              Modelo ouro + esmeralda: monograma Ae (estrela) · wordmark AVANT enf 3D.
             </p>
           </div>
           <Link

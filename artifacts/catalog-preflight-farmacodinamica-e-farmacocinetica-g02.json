@@ -1,11 +1,11 @@
 {
   "lote": "farmacodinamica-e-farmacocinetica-g02",
-  "generated_at": "2026-07-04T08:44:10.620Z",
+  "generated_at": "2026-07-14T02:57:08.222Z",
   "strict": true,
-  "strict_v2_pedagogy": true,
+  "strict_v2_pedagogy": false,
   "strict_v3_pedagogy": false,
-  "total": 7,
-  "passed": 7,
+  "total": 8,
+  "passed": 8,
   "failed": 0,
   "slugs": [
     {
@@ -18,6 +18,14 @@
     },
     {
       "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
       "ok": true,
       "zod_ok": true,
       "golden_ok": true,

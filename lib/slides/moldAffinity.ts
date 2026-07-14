@@ -140,6 +140,13 @@ const FARMACO_VF_VARIANTS = new Set([
   'farmaco-trap',
 ]);
 
+const FARMACO_CLINICO_VARIANTS = new Set([
+  'infusao-ev-station-deck',
+  'farmaco-clinico-reference-board',
+  'farmaco-protocol-tap-flow',
+  'farmaco-clinico-trap',
+]);
+
 const PNI_VF_VARIANTS = new Set([
   'pni-rules-deck',
   'pni-interval-matrix',
@@ -917,6 +924,37 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     minPositive: 1,
   },
 
+  'infusao-ev-station-deck': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    blockFamilies: ['vf', 'calc', 'legis'],
+    blockPatterns: [/\b(i|ii|iii)\s*[-–—]/i, /meia[\s-]?vida.*100%|\badme\b/i],
+    positivePatterns: [
+      /endoven|infus[aã]o|dilui[cç][aã]o|omeprazol|ibp|fentanil|antib[ií]otico ev/i,
+      /monitor|ph g[aá]stric|úlcera|protocolo clínico/i,
+    ],
+    minPositive: 1,
+  },
+  'farmaco-clinico-reference-board': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    blockFamilies: ['vf', 'calc', 'legis'],
+    positivePatterns: [
+      /dilui[cç][aã]o|infus[aã]o|endoven|monitor|ph g[aá]stric|via sc|bólus/i,
+    ],
+    minPositive: 1,
+  },
+  'farmaco-protocol-tap-flow': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    blockFamilies: ['vf', 'calc', 'legis'],
+    positivePatterns: [/testar [a-e]|eliminar|correta|errada|marcar/i],
+    minPositive: 1,
+  },
+  'farmaco-clinico-trap': {
+    homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
+    blockFamilies: ['vf', 'calc', 'legis'],
+    positivePatterns: [/letra [a-e]|fosfato|subcut|bólus|alumínio|dilui/i],
+    minPositive: 1,
+  },
+
   // ---- Cálculos ----
   'dose-equivalence-rail': {
     homeSubtopicFragments: ['calculo de administracao', 'calculos de enfermagem', 'dosagens'],
@@ -1575,6 +1613,12 @@ export function bespokeMoldHasContentAffinity(
 
   if (FARMACO_VF_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'farmaco_pk_pd_vf') {
+      return false;
+    }
+  }
+
+  if (FARMACO_CLINICO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'farmaco_clinico_protocolo') {
       return false;
     }
   }

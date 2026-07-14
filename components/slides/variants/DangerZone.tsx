@@ -17,6 +17,7 @@ import { DangerZoneScopeTrap } from './DangerZoneScopeTrap';
 import { DangerZoneRouteTrap } from './DangerZoneRouteTrap';
 import { DangerZoneDoseTrap } from './DangerZoneDoseTrap';
 import { DangerZoneFarmacoTrap } from './DangerZoneFarmacoTrap';
+import { DangerZoneFarmacoClinicoTrap } from './DangerZoneFarmacoClinicoTrap';
 import { DangerZoneCatheterArena } from './DangerZoneCatheterArena';
 import { DangerZoneLabPrepTrap } from './DangerZoneLabPrepTrap';
 import { DangerZoneLabSpecimenArena } from './DangerZoneLabSpecimenArena';
@@ -851,6 +852,17 @@ export const DangerZone = ({
         theme={theme}
         footerRule={footerRule}
         compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'farmaco-clinico-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneFarmacoClinicoTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
       />
     );
   }

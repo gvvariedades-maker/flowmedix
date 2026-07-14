@@ -1,15 +1,43 @@
 {
-  "generated_at": "2026-07-04T10:05:33.149Z",
+  "generated_at": "2026-07-14T03:35:15.330Z",
   "lote": "farmacodinamica-e-farmacocinetica-g01",
   "mode": "apply",
-  "total_files": 1,
-  "ok": 1,
+  "total_files": 5,
+  "ok": 5,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
+    "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+    "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
     "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1"
   ],
   "results": [
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
     {
       "modulo_slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
       "status": "ok",

@@ -48,6 +48,7 @@ import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
 import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
 import { LogicFlowViaVfJuggleTap } from './LogicFlowViaVfJuggleTap';
 import { LogicFlowFarmacoVfJuggleTap } from './LogicFlowFarmacoVfJuggleTap';
+import { LogicFlowFarmacoProtocolTapFlow } from './LogicFlowFarmacoProtocolTapFlow';
 import { LogicFlowAdolescentVfWeaveTap } from './LogicFlowAdolescentVfWeaveTap';
 import { LogicFlowAdolescentZClassifyTap } from './LogicFlowAdolescentZClassifyTap';
 import { LogicFlowMulherPrenatalTapFlow } from './LogicFlowMulherPrenatalTapFlow';
@@ -448,6 +449,17 @@ export const LogicFlow = ({
 
   if (variant === 'farmaco-vf-juggle-tap') {
     return <LogicFlowFarmacoVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'farmaco-protocol-tap-flow') {
+    return (
+      <LogicFlowFarmacoProtocolTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
   }
 
   if (variant === 'adolescent-vf-weave-tap') {

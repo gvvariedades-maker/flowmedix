@@ -1,11 +1,9 @@
 {
   "lote": "historia-enfermagem-completo",
-  "exported_at": "2026-06-24T22:10:09.596Z",
+  "exported_at": "2026-07-14T05:25:16.767Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "História da Enfermagem",
-    "limit": 200,
-    "exclude_count": 0
+    "from_manifest": "data/catalog-migration/historia-enfermagem-completo/manifest.json"
   },
   "slugs": [
     "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
@@ -28,12 +26,5 @@
     "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1",
     "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
     "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6"
-  ],
-  "updated_at": "2026-06-29",
-  "reconciled_from": [
-    "historia-enfermagem-g01",
-    "historia-enfermagem-g02",
-    "historia-enfermagem-g03",
-    "historia-enfermagem-g04"
   ]
 }

@@ -1,16 +1,20 @@
 {
-  "generated_at": "2026-07-04T08:52:55.505Z",
+  "generated_at": "2026-07-14T03:01:34.836Z",
   "lote": "farmacodinamica-e-farmacocinetica-g02",
-  "anchor_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+  "anchor_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
   "subtopico": "Farmacodinâmica e Farmacocinética",
   "automated": {
-    "readiness_ok": true,
+    "readiness_ok": false,
     "alignment_ok": true,
-    "numeric_ok": true,
-    "automated_pass": true,
-    "issues": []
+    "numeric_ok": false,
+    "automated_pass": false,
+    "issues": [
+      "[A2b] numeric_fact_mismatch: Claim \"40 °C\" não encontrado na guideline de Farmacodinâmica e Farmacocinética.",
+      "[A3] l3_branch_undeclared: meta.pedagogical_branch ausente (inferido: farmaco_clinico_protocolo)",
+      "[numeric] numeric_fact_mismatch: Claim \"40 °C\" não encontrado na guideline de Farmacodinâmica e Farmacocinética."
+    ]
   },
-  "captures_dir": "artifacts/questao-review/idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+  "captures_dir": "artifacts/questao-review/idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
   "checklist": [
     {
       "id": 1,

@@ -1,0 +1,17 @@
+{
+  "lote": "farmacodinamica-a4-human",
+  "exported_at": "2026-07-14T05:13:24.839Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1"
+    ]
+  },
+  "slugs": [
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1"
+  ]
+}

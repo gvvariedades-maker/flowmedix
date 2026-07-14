@@ -63,11 +63,11 @@
       "lote": "saude-adolescente-g01",
       "json_path": "data/catalog-migration/saude-adolescente-g01/questions/funcern-enfermagem-saude-do-adolescente-1777104229064-1.json"
     },
-    "respiratorio_crise": {
-      "pedagogical_branch": "respiratorio_crise",
-      "slug": "questao-premium-respiratorio-crise",
-      "lote": "respiratorio-cronico-g01",
-      "json_path": "examples/questao-premium-vunesp-respiratorio-crise-asmatica-exceto.json"
+    "respiratorio_asma_crise": {
+      "pedagogical_branch": "respiratorio_asma_crise",
+      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "lote": "respiratorio-cronico-completo",
+      "json_path": "data/catalog-migration/respiratorio-cronico-completo/questions/lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6.json"
     },
     "respiratorio_dpoc_oxigenio": {
       "pedagogical_branch": "respiratorio_dpoc_oxigenio",
@@ -86,6 +86,12 @@
       "slug": "cebraspe-respiratorio-dpoc-exacerbacao",
       "lote": "respiratorio-cronico-g01",
       "json_path": "examples/questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf.json"
+    },
+    "respiratorio_generico": {
+      "pedagogical_branch": "respiratorio_generico",
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "lote": "respiratorio-cronico-completo",
+      "json_path": "data/catalog-migration/respiratorio-cronico-completo/questions/igecap-enfermagem-processo-de-enfermagem-1780004452857-3.json"
     },
     "trabalho_vf_nr32": {
       "pedagogical_branch": "trabalho_vf_nr32",
@@ -122,6 +128,12 @@
       "slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
       "lote": "historia-enfermagem-g04",
       "json_path": "data/catalog-migration/historia-enfermagem-g04/questions/funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4.json"
+    },
+    "historia_generico": {
+      "pedagogical_branch": "historia_generico",
+      "slug": "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+      "lote": "historia-enfermagem-g02",
+      "json_path": "data/catalog-migration/historia-enfermagem-completo/questions/lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0.json"
     },
     "perioperatorio_pre_operatorio": {
       "pedagogical_branch": "perioperatorio_pre_operatorio",
@@ -476,6 +488,24 @@
       "slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
       "lote": "saude-da-mulher-g01",
       "json_path": "examples/questao-premium-vunesp-saude-mulher-mamografia.json"
+    },
+    "farmaco_clinico_protocolo": {
+      "pedagogical_branch": "farmaco_clinico_protocolo",
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "lote": "farmacodinamica-e-farmacocinetica-g01",
+      "json_path": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json"
+    },
+    "farmaco_pk_pd_vf": {
+      "pedagogical_branch": "farmaco_pk_pd_vf",
+      "slug": "funcamp-farmacodinamica-vf",
+      "lote": "farmacodinamica-e-farmacocinetica-g01",
+      "json_path": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"
+    },
+    "farmaco_generico": {
+      "pedagogical_branch": "farmaco_generico",
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "lote": "farmacodinamica-e-farmacocinetica-g02",
+      "json_path": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"
     }
   }
 }

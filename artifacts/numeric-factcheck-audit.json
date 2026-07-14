@@ -1,55 +1,52 @@
 {
-  "generated_at": "2026-07-13T17:36:03.468Z",
-  "scanned": 8,
-  "passed": 8,
+  "generated_at": "2026-07-14T06:47:53.251Z",
+  "scanned": 9,
+  "passed": 9,
   "failed": 0,
-  "warn_only": 1,
+  "warn_only": 0,
   "results": [
     {
-      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
       "ok": true,
-      "issues": [
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"2019 Semana\" não encontrado na guideline de Saúde do Adolescente.",
-          "severity": "warn",
-          "claim": "2019 Semana",
-          "path": "reverse_study_slides"
-        }
-      ]
+      "issues": []
     },
     {
-      "slug": "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
       "ok": true,
       "issues": []
     }

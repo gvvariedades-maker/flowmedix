@@ -1925,7 +1925,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(ctx.pedagogicalBranch).toBe('farmaco_clinico_protocolo');
     const result = resolveSlidePresentation(slide, ctx);
     expect(result.layoutVariant).not.toBe('adme-journey-rail');
-    expect(['morphological', 'bridge', 'grid', 'molecular']).toContain(result.layoutVariant);
+    expect(result.layoutVariant).toBe('infusao-ev-station-deck');
   });
 
   it('Cálculo de Medicamentos: concept_map dose-equivalence-rail no molde', () => {

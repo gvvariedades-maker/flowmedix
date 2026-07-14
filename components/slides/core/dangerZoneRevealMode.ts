@@ -22,6 +22,7 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'route-trap' ||
     layoutVariant === 'dose-trap' ||
     layoutVariant === 'farmaco-trap' ||
+    layoutVariant === 'farmaco-clinico-trap' ||
     layoutVariant === 'catheter-danger-arena' ||
     layoutVariant === 'lab-prep-trap' ||
     layoutVariant === 'lab-specimen-arena' ||

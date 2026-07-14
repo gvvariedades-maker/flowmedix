@@ -3,10 +3,10 @@
  * Handcraft golden-v1 — respiratorio-cronico-g01 (9 slugs pendentes).
  * Uso: npx tsx scripts/handcraft-respiratorio-cronico-g01.ts
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { loteQuestionsDir } from '@/lib/catalogMigration/paths';
+import { loteDir, loteQuestionsDir } from '@/lib/catalogMigration/paths';
 
 const SUBTOPICO = 'Doenças Respiratórias Crônicas (Asma, DPOC)';
 const REVIEWED = '2026-06-27';
@@ -21,6 +21,7 @@ type Q = {
 
 type SlidePack = {
   family: 'conceito' | 'vf' | 'protocolo';
+  pedagogical_branch: string;
   guideline: string;
   sources: { id: string; tier: 'A' | 'B'; issuer: string; title: string; year: number; url?: string; covers: string[] }[];
   concept_map: Record<string, unknown>;
@@ -60,6 +61,7 @@ function correctOption(opts: Opt[]): Opt {
 const SPECS: Record<string, SlidePack> = {
   'facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1': {
     family: 'conceito',
+    pedagogical_branch: 'respiratorio_dpoc_oxigenio',
     guideline: 'Oximetria de pulso — SatO₂ periférica (monitorização respiratória)',
     sources: [
       {
@@ -157,6 +159,7 @@ const SPECS: Record<string, SlidePack> = {
 
   'fcpc-enfermagem-processo-de-enfermagem-1780004602717-4': {
     family: 'conceito',
+    pedagogical_branch: 'respiratorio_dpoc_oxigenio',
     guideline: 'PCDT MS — DPOC (monitorização de SpO₂ na descompensação)',
     sources: [
       {
@@ -241,6 +244,7 @@ const SPECS: Record<string, SlidePack> = {
 
   'grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1': {
     family: 'protocolo',
+    pedagogical_branch: 'respiratorio_dpoc_oxigenio',
     guideline: 'PCDT MS — DPOC (O₂ titulado, segurança do paciente na APS)',
     sources: [
       {
@@ -325,6 +329,7 @@ const SPECS: Record<string, SlidePack> = {
 
   'igecap-enfermagem-processo-de-enfermagem-1780004452857-3': {
     family: 'conceito',
+    pedagogical_branch: 'respiratorio_generico',
     guideline: 'PCDT MS — Asma na Atenção Básica (educação e dispositivos inalatórios)',
     sources: [
       {
@@ -414,6 +419,7 @@ const SPECS: Record<string, SlidePack> = {
 
   'instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8': {
     family: 'conceito',
+    pedagogical_branch: 'respiratorio_dpoc_oxigenio',
     guideline: 'PCDT MS — DPOC (O₂ titulado; dispositivos de oxigenoterapia)',
     sources: [
       {
@@ -497,6 +503,7 @@ const SPECS: Record<string, SlidePack> = {
 
   'instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6': {
     family: 'conceito',
+    pedagogical_branch: 'respiratorio_dpoc_oxigenio',
     guideline: 'GOLD COPD / PCDT MS — espirometria VEF1/CVF na DPOC',
     sources: [
       {
@@ -585,6 +592,7 @@ const SPECS: Record<string, SlidePack> = {
 
   'lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6': {
     family: 'conceito',
+    pedagogical_branch: 'respiratorio_asma_crise',
     guideline: 'PCDT MS — Asma (semiologia pediátrica)',
     sources: [
       {
@@ -674,6 +682,7 @@ const SPECS: Record<string, SlidePack> = {
 
   'objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1': {
     family: 'vf',
+    pedagogical_branch: 'respiratorio_vf_asma_dpoc',
     guideline: 'Semiologia respiratória — dispneia, cianose, ausculta (BARROS)',
     sources: [
       {
@@ -755,6 +764,7 @@ const SPECS: Record<string, SlidePack> = {
 
   'univali-enfermagem-processo-de-enfermagem-1780010600919-9': {
     family: 'conceito',
+    pedagogical_branch: 'respiratorio_dpoc_oxigenio',
     guideline: 'PCDT MS — DPOC na Atenção Básica (papel do técnico de enfermagem)',
     sources: [
       {
@@ -843,6 +853,7 @@ function applyHandcraft(slug: string, raw: Q): Q {
 
   const meta = metaBase(raw, spec.family, spec.guideline);
   meta.sources = spec.sources;
+  meta.pedagogical_branch = spec.pedagogical_branch;
 
   const { modulo_slug: _drop, ...rest } = raw;
 
@@ -859,11 +870,21 @@ function applyHandcraft(slug: string, raw: Q): Q {
 }
 
 function main() {
-  const lote = 'respiratorio-cronico-g01';
+  const lote = process.env.HANDCRAFT_LOTE ?? 'respiratorio-cronico-g01';
   const dir = loteQuestionsDir(lote);
+  const manifestPath = join(loteDir(lote), 'manifest.json');
+  const manifestSlugs = existsSync(manifestPath)
+    ? (JSON.parse(readFileSync(manifestPath, 'utf8')) as { slugs?: string[] }).slugs
+    : undefined;
+  const slugFilter = manifestSlugs?.length ? new Set(manifestSlugs) : null;
 
   for (const slug of Object.keys(SPECS)) {
+    if (slugFilter && !slugFilter.has(slug)) continue;
     const path = join(dir, `${slug}.json`);
+    if (!existsSync(path)) {
+      console.warn(`handcraft SKIP ${slug} (arquivo ausente)`);
+      continue;
+    }
     const raw = JSON.parse(readFileSync(path, 'utf8')) as Q;
     const crafted = applyHandcraft(slug, raw);
     writeFileSync(path, JSON.stringify(crafted, null, 2), 'utf8');

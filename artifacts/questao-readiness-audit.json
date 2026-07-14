@@ -5,8 +5,8 @@
   "scanned": 1,
   "results": [
     {
-      "slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
-      "subtopico": "Saúde do Adolescente",
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "subtopico": "Farmacodinâmica e Farmacocinética",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -26,13 +26,13 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: D).",
           "severity": "warn"
         },
         {
           "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -43,33 +43,30 @@
         },
         {
           "tier": "A4",
-          "code": "a4_minimo_adolescente",
-          "message": "A4-mínimo Adolescente FAIL — unmatched_sensitive:claim_sensivel_sem_match_whitelist; family_calc_always_human",
-          "severity": "warn"
+          "code": "a4_minimo_farmaco",
+          "message": "A4-mínimo Farmacodinâmica PASS — claims [insulina-perfil-acao] eixos [farmacodinamica]",
+          "severity": "info"
         },
         {
           "tier": "A4",
           "code": "risk_tier",
-          "message": "Risco alto → human_required [family_high_stakes, numeric_claim_soft, subtopic_immature] — family=calc — resposta é número; revisão humana obrigatória.",
+          "message": "Risco medio → auto_conditional [subtopic_immature] — Slides/enunciado afirmam dose ou parâmetro vital (mg/mL/UI/mmHg/bpm/°C/proporção).",
           "severity": "info"
         }
       ],
-      "family": "calc",
-      "pedagogical_branch": "adolescente_antropometria",
-      "inferred_branch": "adolescente_antropometria",
+      "family": "conceito",
+      "pedagogical_branch": "farmaco_clinico_protocolo",
+      "inferred_branch": "farmaco_clinico_protocolo",
       "risk": {
-        "risk_tier": "alto",
-        "approval_mode": "human_required",
+        "risk_tier": "medio",
+        "approval_mode": "auto_conditional",
         "risk_factors": [
-          "family_high_stakes",
-          "numeric_claim_soft",
           "subtopic_immature"
         ],
         "reasons": [
-          "family=calc — resposta é número; revisão humana obrigatória.",
-          "Claim numérico suave (%, tempo, escore) — amostragem elevada.",
+          "Slides/enunciado afirmam dose ou parâmetro vital (mg/mL/UI/mmHg/bpm/°C/proporção).",
           "Pacote ainda não está production_ready — confiança limitada.",
-          "A4-mínimo Adolescente: não elegível (unmatched_sensitive:claim_sensivel_sem_match_whitelist; family_calc_always_human)."
+          "A4-mínimo Farmacodinâmica: whitelist grounded → alto↓medio [insulina-perfil-acao]."
         ]
       }
     }

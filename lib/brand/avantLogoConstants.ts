@@ -44,6 +44,8 @@ export const AVANT_LOGO_COLORS = {
   iconForestGradient: 'linear-gradient(165deg, #1a7a3e 0%, #166534 42%, #14532d 100%)',
   iconCyberBg: '#0d0d18',
   iconCyberRing: '#8fe020',
+  /** Vidro do monograma Ae (tile) — verde lima forte da marca editorial. */
+  iconGlassLime: '#8fe020',
   monogramFill: '#ffffff',
   /** Anel interno (emboss / selo). */
   iconInsetHighlight: 'inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.18)',
@@ -85,9 +87,9 @@ export const AVANT_LOGO_GRADIENTS = {
 
 export const AVANT_LOGO_DIMENSIONS = {
   icon: {
-    size: 56,
-    /** Círculo = selo premium (enclosed monogram). */
-    radius: 28,
+    /** Glass Ae tile reads optically larger than legacy shield — slightly smaller box. */
+    size: 50,
+    radius: 25,
   },
   lockupInner: {
     radius: 14,
@@ -96,14 +98,15 @@ export const AVANT_LOGO_DIMENSIONS = {
     paddingBottom: 10,
     paddingLeft: 10,
     accentBarWidth: 2,
-    gap: 14,
+    /** Extra air between glass tile and wordmark raster. */
+    gap: 18,
   },
   lockupShell: {
     radius: 16,
     padding: 1,
   },
   wordmark: {
-    fontSize: 21,
+    fontSize: 19,
     letterSpacingPx: 5.2,
     fontWeight: 600,
     lineHeight: 1.05,
@@ -120,6 +123,32 @@ export const AVANT_LOGO_DIMENSIONS = {
     hairlineHeight: 1,
   },
 } as const;
+
+/** Wordmark raster PNG — proporção do arquivo em public/brand (com espaço real AVANT · enf). */
+export const AVANT_LOGO_WORDMARK_RASTER = {
+  /** Altura relativa ao fontSize base (1.5 ≈ legível sem estourar sidebar 16rem). */
+  scale: 1.5,
+  aspect: 1488 / 279,
+} as const;
+
+/** Glass Ae monogram — escala interna para sombra/bevel não clipar no lockup. */
+export const AVANT_LOGO_ICON_INSET_SCALE = 0.9;
+
+/**
+ * Abaixo deste token, o monograma de vidro (glass 3D) fica detalhado demais
+ * para ler bem — usar a versão flat (avant-logo-ae-flat.png).
+ */
+export const AVANT_LOGO_ICON_FLAT_BELOW: AvantLogoSizeToken = 'nav';
+
+export function getAvantLogoWordmarkRasterSize(size: AvantLogoSizeToken): {
+  width: number;
+  height: number;
+} {
+  const fontSize = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.wordmark.fontSize, size);
+  const height = Math.round(fontSize * AVANT_LOGO_DIMENSIONS.wordmark.lineHeight * AVANT_LOGO_WORDMARK_RASTER.scale);
+  const width = Math.round(height * AVANT_LOGO_WORDMARK_RASTER.aspect);
+  return { width, height };
+}
 
 /**
  * Monograma AE interlocked (viewBox 0 0 56 56).

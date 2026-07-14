@@ -1,59 +1,73 @@
 {
-  "generated_at": "2026-07-13T17:32:44.523Z",
+  "generated_at": "2026-07-14T06:47:20.921Z",
   "strict": true,
-  "scanned": 8,
-  "passed": 8,
+  "scanned": 9,
+  "passed": 9,
   "failed": 0,
   "results": [
     {
-      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
       "ok": true,
       "issues": [
         {
           "code": "align_branch_declared",
-          "message": "meta.pedagogical_branch=\"adolescente_generico\" ≠ inferido=\"adolescente_etica_sigilo\"",
+          "message": "meta.pedagogical_branch=\"respiratorio_generico\" ≠ inferido=\"respiratorio_tecnica_inalador\"",
           "severity": "warn",
           "path": "meta.pedagogical_branch"
-        },
-        {
-          "code": "align_legis_device",
-          "message": "Dispositivo citado no enunciado (Lei n.) não aparece nos slides.",
-          "severity": "warn"
         }
       ]
     },
     {
-      "slug": "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "ok": true,
+      "issues": [
+        {
+          "code": "align_branch_declared",
+          "message": "meta.pedagogical_branch=\"respiratorio_asma_crise\" ≠ inferido=\"respiratorio_generico\"",
+          "severity": "warn",
+          "path": "meta.pedagogical_branch"
+        }
+      ]
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "ok": true,
+      "issues": [
+        {
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn",
+          "path": "reverse_study_slides"
+        }
+      ]
+    },
+    {
+      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
       "ok": true,
       "issues": []
     }

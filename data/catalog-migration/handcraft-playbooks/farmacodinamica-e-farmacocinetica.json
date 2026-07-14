@@ -24,7 +24,7 @@
     {
       "id": "farmaco_clinico_protocolo",
       "when": "Omeprazol EV, antibiótico EV, infusão contínua, diluição, monitorização clínica/pH",
-      "mold": "genérico morphological · reference_table · tap · compare",
+      "mold": "infusao-ev-station-deck · farmaco-clinico-reference-board · farmaco-protocol-tap-flow · farmaco-clinico-trap",
       "anchors": ["examples/questao-premium-idecan-omeprazol-ev-ulcera.json"]
     },
     {

@@ -5,14 +5,22 @@
   "created_at": "2026-06-28",
   "subtopico": "Farmacodinâmica e Farmacocinética",
   "cluster": "opioides UTI · meropenem PK · anestésico local · angina nitrato · absorção oral · farmacovigilância",
-  "total": 7,
+  "total": 8,
   "status": "applied",
-  "anchor_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+  "anchor_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
   "golden_reference": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
-  "guideline": null,
+  "clinical_anchor": {
+    "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+    "golden_file": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+    "pedagogical_branch": "farmaco_clinico_protocolo",
+    "repair_lote": "farmacodinamica-idecan-omeprazol-repair",
+    "registry": "data/catalog-migration/farmacodinamica-golden-anchors.json"
+  },
+  "guideline": "lib/guidelines/farmacodinamica.ts",
   "slugs": [
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
     "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
     "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
     "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
     "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
@@ -35,10 +43,10 @@
     "3. npm run catalog:apply-lote -- --lote=farmacodinamica-e-farmacocinetica-g02 --dry-run",
     "4. Apply só quando usuário pedir"
   ],
-  "notes": "g02 = 7 slugs pós-taxonomia (6 handcraft + 1 duplicata QUADRIX clonada do g01).",
+  "notes": "g02 = 8 slugs (7 handcraft + 1 duplicata QUADRIX clonada do g01). Midazolam UTI (7230169-1) handcraft nota-10.",
   "anchor_second_review": {
-    "reviewed_at": "2026-07-04",
-    "reviewer": "agent",
+    "reviewed_at": "2026-07-14",
+    "reviewer": "handcraft-qc",
     "method": "agent",
     "status": "pass",
     "artifact": "artifacts/anchor-review/farmacodinamica-e-farmacocinetica-g02.json"

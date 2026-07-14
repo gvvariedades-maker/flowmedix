@@ -214,6 +214,13 @@ export const FARMACO_ADME_BR: GuidelineTable = {
       sourceId: 'farmaco-adme-anvisa',
     },
     {
+      id: 'midazolam-metabolitos-ativos',
+      label: 'Midazolam — metabólitos ativos',
+      value: 'biotransformação hepática; acúmulo em infusão prolongada na UTI',
+      detail: 'Despertar tardio pós-suspensão — sedação residual por metabólitos ativos.',
+      sourceId: 'farmaco-adme-anvisa',
+    },
+    {
       id: 'antagonista-inverso',
       label: 'Antagonista inverso',
       value: 'reduz atividade basal do receptor abaixo do repouso',
