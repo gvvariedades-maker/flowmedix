@@ -64,7 +64,7 @@ describe('scoreQuestaoRisk', () => {
   it('BCG com dose 0,1 mL → alto / human_required', () => {
     const file = path.join(
       process.cwd(),
-      'data/catalog-migration/imunizacao-g03/questions/amauc-enfermagem-imunizacao-1779572227744-8.json',
+      'examples/questao-premium-amauc-imunizacao-bcg-dose-a4.json',
     );
     const payload = JSON.parse(fs.readFileSync(file, 'utf8'));
     const risk = scoreQuestaoRisk(payload, { productionReady: false });

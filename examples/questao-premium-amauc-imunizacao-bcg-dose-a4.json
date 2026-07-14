@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "banca": "AMAUC",
+    "prova": "TEnf",
+    "orgao": "Pref Seara",
+    "ano": "2021",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Imunização",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "pedagogical_branch": "imunizacao_generico",
+    "content_review": {
+      "reviewed_at": "2026-07-02",
+      "reviewer": "handcraft-imunizacao-g03",
+      "guideline_snapshot": "PNI / Manual MS 2025 — vacina BCG",
+      "exam_vs_current": "none",
+      "catalog_slug": "amauc-enfermagem-imunizacao-1779572227744-8"
+    },
+    "sources": [
+      {
+        "id": "pni-2025-bcg",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Normas e Procedimentos para Vacinação — BCG",
+        "year": 2025,
+        "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
+        "covers": ["BCG dose única", "via intradérmica", "deltóide direito", "cicatriz", "baixo peso ao nascer"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A vacina BCG protege contra as formas graves de tuberculose e sua aplicação deve ser adiada quando o peso da criança for inferior a 2.000 kg. Ainda sobre a vacina BCG:\nI - Criança vacinada que não apresentar cicatriz vacinal da administração deve ser revacinada dentro de 2 meses.\nII - A dosagem da vacina é de 0,1ml.\nIII - A via de administração da vacina é IM.\nIV - A vacina deve ser aplicada na inserção inferior do músculo deltóide direito.\nV - A vacina deve ser aplicada ao nascer e é dose única.\nEstá correto o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, II e III",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "III, IV e V",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II, IV e V",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "I, IV e V",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "I, II, III e V",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "BCG PNI — mapa V/F (I–V)",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "items": [
+        {
+          "label": "Contexto do enunciado",
+          "detail": "BCG ao nascer, dose única, adiar se peso <2 kg. A banca testa técnica (via, dose, local) e mito da revacinação por cicatriz.",
+          "icon": "Baby"
+        },
+        {
+          "label": "Afirmativa I — cicatriz ausente",
+          "detail": "FALSA. Ausência de cicatriz NÃO indica revacinação — BCG é dose única; não revacinar rotineiramente por cicatriz ausente.",
+          "icon": "AlertCircle"
+        },
+        {
+          "label": "Afirmativa II — dosagem",
+          "detail": "VERDADEIRA. Dose padrão da BCG no PNI — volume intradérmico oficial (afirmativa literal da prova).",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Afirmativa III — via IM",
+          "detail": "FALSA. BCG é intradérmica (ID), nunca intramuscular — pegadinha clássica de prova.",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Afirmativa IV — local",
+          "detail": "VERDADEIRA. Aplicação na inserção inferior do deltóide direito (braço direito).",
+          "icon": "Target"
+        },
+        {
+          "label": "Afirmativa V — ao nascer, dose única",
+          "detail": "VERDADEIRA. Esquema PNI: uma dose preferencialmente ao nascer, ainda na maternidade.",
+          "icon": "Calendar"
+        },
+        {
+          "label": "Conjunto verdadeiro",
+          "detail": "I=F, II=V, III=F, IV=V, V=V → combinação II, IV e V.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "BCG: I=F · II–V=V · III=F (via ID, não IM)"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "steps": [
+        "Formato: cinco afirmativas (I–V) sobre BCG + “Está correto o que se afirma em”.",
+        "Julgar I: revacinar se não houver cicatriz? → FALSO — ausência de cicatriz não é indicação de revacinação.",
+        "Julgar II: dosagem conforme manual? → VERDADEIRO — volume intradérmico padrão da BCG.",
+        "Julgar III: via IM? → FALSO — BCG é intradérmica (ID).",
+        "Julgar IV: inserção inferior do deltóide direito? → VERDADEIRO — local oficial PNI.",
+        "Julgar V: ao nascer, dose única? → VERDADEIRO — esquema básico da criança.",
+        "Montar conjunto: II + IV + V (I e III ficam de fora).",
+        "Alternativa C = “II, IV e V”.",
+        "Eliminar A (inclui I e III), B (inclui III falsa), D (inclui I), E (inclui I e III).",
+        "Marcar C.",
+        "Fixação: BCG = ID + dose padrão + deltóide direito + dose única — cicatriz ausente não revacina."
+      ],
+      "footer_rule": "V/F BCG: teste I (cicatriz) e III (via) antes de fechar a combinação"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "BCG — referência de prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "BCG — JULGAMENTO DAS AFIRMATIVAS",
+      "rows": [
+        {
+          "label": "I — revacinar sem cicatriz",
+          "value": "FALSA: ausência de cicatriz ≠ revacinação",
+          "badge": "warn"
+        },
+        {
+          "label": "II — dosagem",
+          "value": "VERDADEIRA: volume intradérmico padrão do manual",
+          "badge": "ok"
+        },
+        {
+          "label": "III — via IM",
+          "value": "FALSA: via intradérmica (ID)",
+          "badge": "warn"
+        },
+        {
+          "label": "IV — local",
+          "value": "VERDADEIRA: inserção inferior deltóide direito",
+          "badge": "ok"
+        },
+        {
+          "label": "V — esquema",
+          "value": "VERDADEIRA: ao nascer, dose única",
+          "badge": "ok"
+        },
+        {
+          "label": "Técnica resumo",
+          "value": "ID · dose padrão · deltóide direito · dose única ao nascer",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Decore: ID (não IM) · dose padrão · braço direito · sem revacina por cicatriz"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "PEGADINHAS AMAUC — BCG (I–V)",
+      "items": [
+        {
+          "label": "Letra A — I, II e III",
+          "detail": "Inclui I (revacinação por cicatriz) e III (via IM), ambas falsas no PNI.",
+          "correct": "I é FALSA (sem revacina por cicatriz) e III é FALSA (BCG é ID) — não entram juntas no gabarito."
+        },
+        {
+          "label": "Letra B — III, IV e V",
+          "detail": "Mantém III (via IM) como se fosse correta — erro clássico de técnica.",
+          "correct": "III é FALSA: BCG é intradérmica; II (dosagem padrão) é verdadeira e deveria compor a resposta."
+        },
+        {
+          "label": "Letra D — I, IV e V",
+          "detail": "Acerta IV e V, mas reintroduz I (revacinação por cicatriz ausente).",
+          "correct": "I é FALSA: cicatriz ausente não indica nova dose — falta II (dosagem correta)."
+        },
+        {
+          "label": "Letra E — I, II, III e V",
+          "detail": "Quase todas as afirmativas, inclusive I falsa e III falsa (IM).",
+          "correct": "I e III são FALSAS; gabarito traz só II, IV e V — exclui revacinação e via IM."
+        },
+        {
+          "label": "Confundir cicatriz com falha (I)",
+          "detail": "Muitos serviços antigamente revacinavam — no PNI atual, não há revacinação rotineira por cicatriz.",
+          "correct": "Ausência de cicatriz não é critério para repetir BCG."
+        },
+        {
+          "label": "Trocar ID por IM (III)",
+          "detail": "BCG intradérmica forma pápula característica — IM invalidaria a técnica e a resposta imune esperada.",
+          "correct": "Via oficial: intradérmica (ID), dose padrão, deltóide direito."
+        }
+      ],
+      "footer_rule": "BCG: III (IM) e I (cicatriz) são as pegadinhas — gabarito II, IV, V"
+    }
+  ],
+  "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-8"
+}

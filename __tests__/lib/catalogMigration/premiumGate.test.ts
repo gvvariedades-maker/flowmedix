@@ -110,9 +110,9 @@ describe('auditPremiumQuestao — contrato de molde bespoke (Vias)', () => {
 });
 
 describe('auditPremiumQuestao — gate semântico (warn)', () => {
-  it('slide_topic_drift gera warn em Punção', () => {
+  it('slide_topic_drift gera warn em subtópico premium (Vias)', () => {
     const q = {
-      meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+      meta: { subtopico: 'Vias de Administração' },
       question_data: {
         instruction: 'Sobre punção venosa periférica, assinale a alternativa correta.',
         options: [{ id: 'A', is_correct: true }],
@@ -138,9 +138,9 @@ describe('auditPremiumQuestao — gate semântico (warn)', () => {
 
   it('danger_gabarito_letter_mismatch gera warn', () => {
     const q = {
-      meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+      meta: { subtopico: 'Vias de Administração' },
       question_data: {
-        instruction: 'Questão de acesso venoso.',
+        instruction: 'Questão sobre vias de administração.',
         options: [{ id: 'D', is_correct: true }],
       },
       reverse_study_slides: [

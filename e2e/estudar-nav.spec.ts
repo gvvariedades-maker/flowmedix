@@ -414,7 +414,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
 });
 
 function globalMobileHeader(page: Page) {
-  return page.locator('header').filter({ hasText: 'AVANT' }).first();
+  return page.locator('header').filter({ has: page.getByAltText('AVANT enf') }).first();
 }
 
 function bottomNav(page: Page) {

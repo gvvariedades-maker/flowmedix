@@ -16,7 +16,7 @@ import {
 
 const GOLDEN = path.join(
   process.cwd(),
-  'data/catalog-migration/respiratorio-cronico-completo/questions/instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8.json',
+  'examples/questao-premium-lab-respiratorio-cronico-4-moldes.json',
 );
 
 describe('respiratorioA4Minimo', () => {
@@ -35,8 +35,8 @@ describe('respiratorioA4Minimo', () => {
     expect(audit.matched.map((m) => m.claimId)).toEqual(
       expect.arrayContaining([
         'spo2-alvo-dpoc-88-92',
-        'venturi-fiO2-controlada',
         'dpoc-persistente',
+        'pegadinha-spo2-98-100',
       ]),
     );
 

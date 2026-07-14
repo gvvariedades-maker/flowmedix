@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "Facet",
+    "orgao": "Enfermagem / Plantonista",
+    "prova": "Tec (Pref Pedro Velho)",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "pedagogical_branch": "puncao_ipcs_cvc",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-07-12",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "Anvisa / COFEN — Acesso venoso, bundle CVC e manutenção (bundle CVC / IPCS; antissepsia e técnica; tempo e troca de equipos; Potter & Perry 11ª ed. (AVP))",
+      "exam_vs_current": "Prova cobra desinfecção da conexão do cateter central com álcool setenta por cento após cada medicação — prática do bundle de manutenção.",
+      "catalog_slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "roi_error": "curativo_cvc_vs_desinfeccao_conexao"
+    },
+    "sources": [
+      {
+        "id": "puncao-cateter-anvisa",
+        "tier": "A",
+        "issuer": "Anvisa / COFEN",
+        "title": "Punção venosa e cuidados com cateteres",
+        "year": 2021,
+        "url": "https://www.gov.br/anvisa/",
+        "covers": [
+          "bundle CVC",
+          "prevenção IPCS",
+          "antissepsia da pele",
+          "acesso venoso periférico"
+        ]
+      },
+      {
+        "id": "potter-perry-fundamentos-11ed-2024",
+        "tier": "B",
+        "issuer": "Elsevier / Potter & Perry",
+        "title": "Fundamentos de Enfermagem — Acesso venoso e complicações",
+        "year": 2024,
+        "covers": [
+          "antissepsia da pele",
+          "acesso venoso periférico"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "risk_tier": "medio",
+      "risk_factors": [],
+      "approval_mode": "auto_conditional",
+      "sampled": false,
+      "a4_reviewed": true,
+      "a4_reviewer": "agent:puncao-a4-minimo-v1",
+      "auto_approved_at": "2026-07-13",
+      "a4_checklist_passed": [
+        "tier_a_covers",
+        "exam_vs_current_ok",
+        "no_forbid_hits",
+        "sensitive_claims_whitelisted",
+        "family_not_calc",
+        "danger_zone_coverage_min",
+        "logic_flow_fixacao",
+        "whitelist_hits:5",
+        "agent_a4_eligible"
+      ],
+      "retrieval_first": true,
+      "transfer_targets": [
+        "hub",
+        "curativo",
+        "bundle"
+      ]
+    }
+  },
+  "question_data": {
+    "instruction": "Em pacientes com cateter venoso central, os cuidados com o dispositivo são fundamentais para prevenir infecções nosocomiais, especialmente infecções da corrente sanguínea. Qual das práticas abaixo é a mais adequada para garantir a manutenção segura de um cateter venoso central?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A troca do curativo deve ser realizada semanalmente ou quando houver descolamento, utilizando técnica asséptica.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A troca do curativo deve ser feita apenas se houver sinais de infecção no local de inserção.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O cateter deve ser lavado com solução salina apenas no momento da inserção.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A desinfecção da conexão do cateter deve ser feita com álcool 70% após cada administração de medicamento.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "O cateter venoso central não precisa de manutenção especial se o paciente estiver recebendo antibióticos intravenosos.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Manutenção do CVC — antissepsia",
+      "chip_label": "ANTISSEPSIA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "items": [
+        {
+          "label": "Contexto",
+          "detail": "Prática que previne infecção de corrente sanguínea no CVC.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Conexão / hub",
+          "detail": "Ponto de entrada de medicamentos — desinfetar a cada manipulação.",
+          "icon": "Link"
+        },
+        {
+          "label": "Álcool 70%",
+          "detail": "Friccionar a conexão após cada administração — bundle de manutenção.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Curativo",
+          "detail": "Troca asséptica se descolar — não é o mesmo que desinfetar o hub.",
+          "icon": "Bandage"
+        }
+      ],
+      "footer_rule": "Cada medicação = nova desinfecção do hub com álcool 70%."
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Qual prática é a mais adequada?",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Comando: prática que previne infecção de corrente no CVC.",
+        "A verdadeira (curativo), mas não responde o comando.",
+        "Eliminar B — manutenção reativa (só se infectar) é tardia.",
+        "Eliminar C — flush só na inserção ignora manutenção contínua.",
+        "Eliminar E — antibiótico não substitui bundle do dispositivo.",
+        "D: álcool 70% na conexão após cada medicação — fecha o bundle.",
+        "Em similares: hub a cada manipulação ≠ troca de curativo."
+      ],
+      "footer_rule": "Manipulação da conexão = fricção com álcool 70%."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "CVC — práticas corretas × incorretas",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "rows": [
+        {
+          "label": "Conexão",
+          "value": "Álcool 70% com fricção após cada administração.",
+          "badge": "hot"
+        },
+        {
+          "label": "Curativo",
+          "value": "Troca asséptica se descolar — certo, mas não é o foco.",
+          "badge": "info"
+        },
+        {
+          "label": "Só se infectar",
+          "value": "Esperar sinal local para trocar — conduta tardia.",
+          "badge": "warn"
+        },
+        {
+          "label": "Antibiótico IV",
+          "value": "Antibiótico IV não dispensa manutenção do CVC.",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Comando pede prevenção de corrente → desinfecção da conexão."
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — curativo × conexão",
+      "chip_label": "ARMADILHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "PEGADINHAS — CVC",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — Troca de curativo",
+          "detail": "Verdade sobre curativo, mas não responde o comando.",
+          "correct": "Foco é desinfecção da conexão, não só curativo."
+        },
+        {
+          "label": "Letra B — Só se infectar",
+          "detail": "Manutenção reativa aumenta risco de corrente.",
+          "correct": "Prevenção exige cuidado proativo no hub."
+        },
+        {
+          "label": "Letra C — Flush só na inserção",
+          "detail": "Lavar só na inserção ignora manutenção contínua.",
+          "correct": "Flush do lúmen é rotina, não evento único."
+        },
+        {
+          "label": "Letra E — Antibiótico IV",
+          "detail": "Tratamento não substitui bundle de manutenção.",
+          "correct": "Desinfetar hub após cada medicação — conduta D."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Podem cobrar curativo semanal se o comando for só curativo.",
+          "correct": "Leia o comando: corrente/hub ≠ curativo do sítio."
+        }
+      ],
+      "footer_rule": "Não confunda troca de curativo com desinfecção do canhão."
+    }
+  ],
+  "modulo_slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2"
+}

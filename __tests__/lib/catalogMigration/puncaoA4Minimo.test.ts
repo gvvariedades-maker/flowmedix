@@ -15,7 +15,7 @@ import {
 
 const FACET_CVC = path.join(
   process.cwd(),
-  'data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g12/questions/facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2.json',
+  'examples/questao-premium-facet-puncao-cvc-hub-a4.json',
 );
 
 describe('puncaoA4Minimo', () => {

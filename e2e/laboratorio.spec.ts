@@ -66,7 +66,7 @@ test.describe('Laboratório Admin', () => {
   });
 
   test('deve carregar a página do laboratório', async ({ page }) => {
-    await expect(page.getByText('AVANT', { exact: true }).first()).toBeVisible();
+    await expect(page.getByAltText('AVANT enf').first()).toBeVisible();
     await expect(page.getByText('Payload Input')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Aguardando Injeção' })).toBeVisible();
   });
