@@ -208,4 +208,5 @@ Espelha Vias/Adolescente: L3 → g01…gNN → apply → A4 stamp (se onda) → 
 | [`PROGRAMA_CATALOGO_41.md`](PROGRAMA_CATALOGO_41.md) | 41 subtópicos |
 | [`PROTOCOLO_A4_MINIMO_ADOLESCENTE.md`](PROTOCOLO_A4_MINIMO_ADOLESCENTE.md) | A4-mínimo onda 3 |
 | [`artifacts/saude-adolescente-nota10-report.md`](../artifacts/saude-adolescente-nota10-report.md) | Onda nota-10 fechada |
+| [`artifacts/l3-brief-saude-adolescente-INDEX.md`](../artifacts/l3-brief-saude-adolescente-INDEX.md) | Briefs L3 — 6 ramos documentados |
 | Rule Cursor | `.cursor/rules/pipeline-completo.mdc` |

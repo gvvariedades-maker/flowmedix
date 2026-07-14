@@ -1,7 +1,7 @@
 # Resolver de moldes por afinidade de conteúdo
 
 **Status:** `lib/slides/moldAffinity.ts` · `lib/slides/pedagogicalBranch.ts` · `lib/slides/moldSlotFit.ts` · `components/slides/core/slidePresentation.ts`  
-**Data:** 2026-06-27 (v2 — ramo pedagógico + fallback runtime)
+**Data:** 2026-07-13 (v2.1 — Saúde do Adolescente: 6 ramos + antropometria bespoke)
 
 ## Problema
 
@@ -42,15 +42,20 @@ Subtópicos canônicos (41) são **buckets amplos**. Um molde L3 fixo por subtó
 
 Se omitido, o player infere pelo enunciado + slides. **`meta.pedagogical_branch` da questão** é lido no player (`questionMeta` → `enrichPresentationContext`); slide pode sobrescrever.
 
-**Saúde do Adolescente**
+**Saúde do Adolescente** (16 slugs · `production_ready` · onda nota-10)
 
-| Ramo | Molde L3 |
-|------|----------|
-| `adolescente_etica_sigilo` | `adolescent-*` |
-| `adolescente_antropometria` | genérico |
-| `adolescente_desenvolvimento` | genérico |
-| `adolescente_saude_mental` | genérico |
-| `adolescente_generico` | genérico |
+| Ramo | Pacote L3 | Status | Brief |
+|------|-----------|--------|-------|
+| `adolescente_etica_sigilo` | `adolescent-privacy-curtain` · `adolescent-sigilo-spectrum` · `adolescent-vf-weave-tap` · `adolescent-consent-gate` | **bespoke** | [`l3-brief-…-etica_sigilo.md`](../artifacts/l3-brief-saude-adolescente-adolescente_etica_sigilo.md) |
+| `adolescente_antropometria` | `adolescent-growth-z-rail` · `adolescent-z-band-board` · `adolescent-z-classify-tap` · `adolescent-z-threshold-trap` | **bespoke** (só corpus escore Z) | [`l3-brief-…-antropometria.md`](../artifacts/l3-brief-saude-adolescente-adolescente_antropometria.md) |
+| `adolescente_desenvolvimento` | `morphological` · `reference_table` · `vertical` · `compare` | genérico premium | [`l3-brief-…-desenvolvimento.md`](../artifacts/l3-brief-saude-adolescente-adolescente_desenvolvimento.md) |
+| `adolescente_saude_mental` | idem | genérico premium | [`l3-brief-…-saude_mental.md`](../artifacts/l3-brief-saude-adolescente-adolescente_saude_mental.md) |
+| `adolescente_violencia_protecao` | idem | genérico premium | [`l3-brief-…-violencia_protecao.md`](../artifacts/l3-brief-saude-adolescente-adolescente_violencia_protecao.md) |
+| `adolescente_generico` | idem | genérico premium | [`l3-brief-…-generico.md`](../artifacts/l3-brief-saude-adolescente-adolescente_generico.md) |
+
+Índice dos briefs: [`artifacts/l3-brief-saude-adolescente-INDEX.md`](../artifacts/l3-brief-saude-adolescente-INDEX.md)
+
+Guards de ramo em `moldAffinity.ts`: `ADOLESCENT_VARIANTS` · `ADOLESCENT_ANTHROPOMETRY_VARIANTS` — cada set só aplica quando `pedagogical_branch` coincide **e** o corpus passa em `positivePatterns` (Z-score não recebe cortinas de sigilo; puberdade não recebe `adolescent-*`).
 
 **CME** — `cme_preparo_limpeza` · `cme_autoclave_metodos` (tabela) · `cme_processamento_conceito` · `cme_vf_ce` · `cme_generico`
 
@@ -176,9 +181,14 @@ npm run pilot:validate-cadeia-frio
 
 Regressões:
 
-- IBAM escore Z → `reference_table`, não `adolescent-sigilo-spectrum`
+- IBAM escore Z → `adolescent-growth-z-rail` / `adolescent-z-band-board` (não `adolescent-sigilo-spectrum`)
 - IGEDUC puberdade → `morphological`, não `adolescent-privacy-curtain`
 - Sigilo/gravidez → mantém `adolescent-*`
+- `amauc` obesidade/comorbidades (sem Z) → **não** usar trilho Z; preferir `adolescente_saude_mental` ou genérico
+
+```bash
+npm run test:e2e:visual-molds -- --grep="Saúde do Adolescente"
+```
 
 ## Estender a outros subtópicos
 

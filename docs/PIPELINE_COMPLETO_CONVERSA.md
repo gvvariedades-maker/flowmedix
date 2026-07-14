@@ -249,7 +249,7 @@ Proibido: ai:generate, upgrade-premium, segundo --promote rotineiro pós-venda.
 | Só handcraft | `Handcraft: <subtópico>` — [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) |
 | Só qualidade | `Qualidade vendável: <subtópico>` — [`QUALITY_VENDAVEL_CONVERSA.md`](QUALITY_VENDAVEL_CONVERSA.md) |
 | Prompt expandido (barra Vias + Imunização + Adolescente) | [`PROMPT_PIPELINE_REFERENCIA_VIAS_IMUNIZACAO.md`](PROMPT_PIPELINE_REFERENCIA_VIAS_IMUNIZACAO.md) |
-| Onda nota-10 Adolescente | [`artifacts/saude-adolescente-nota10-report.md`](../artifacts/saude-adolescente-nota10-report.md) |
+| Onda nota-10 Adolescente | [`artifacts/saude-adolescente-nota10-report.md`](../artifacts/saude-adolescente-nota10-report.md) · briefs L3 [`artifacts/l3-brief-saude-adolescente-INDEX.md`](../artifacts/l3-brief-saude-adolescente-INDEX.md) |
 | Mapeamento L3 (antes de moldes) | `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) |
 | Ordem slides v2 | [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) §2 · [`lib/reverseStudySlideOrder.ts`](../lib/reverseStudySlideOrder.ts) |
 | Rule Cursor | `.cursor/rules/pipeline-completo.mdc` |

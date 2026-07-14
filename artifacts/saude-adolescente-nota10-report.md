@@ -24,6 +24,8 @@
 
 `adolescente_etica_sigilo` · `adolescente_antropometria` · `adolescente_desenvolvimento` · `adolescente_saude_mental` · `adolescente_violencia_protecao` · `adolescente_generico`
 
+Briefs 4/4 por ramo: [`l3-brief-saude-adolescente-INDEX.md`](l3-brief-saude-adolescente-INDEX.md)
+
 ## Inferência
 
 Anorexia/bulimia com IMC no enunciado → `adolescente_saude_mental` (antes caía em antropometria).

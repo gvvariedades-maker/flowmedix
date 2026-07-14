@@ -1,6 +1,7 @@
 # BRIEF DE VARIANTES — Saúde do Adolescente / adolescente_antropometria
 
 **Gerado:** 2026-07-13  
+**Status implementação:** **concluído** (produção — merge PR #23, 2026-07-13)  
 **Política:** `molde_inedito` (condicional — sub-cluster escore Z com **1 slug** no catálogo; brief formal antes de React)  
 **Família:** `calc` | `conceito` (faixas Z do IMC / estatura na Caderneta)  
 **Template:** `sky` (t08)  
@@ -351,32 +352,25 @@ Trecho derivado da âncora IBAM (formato plano v2):
 
 ## 9. Critérios de aceite (DoD)
 
-- [ ] 4× `layout_variant` declarados: `adolescent-growth-z-rail` · `adolescent-z-band-board` · `adolescent-z-classify-tap` · `adolescent-z-threshold-trap`
-- [ ] Rails/slots preenchidos com JSON do §7 (âncora IBAM)
-- [ ] Preview 375px legível — trilho com scroll horizontal
-- [ ] 0 hardcode de gabarito/letra no componente React
-- [ ] Par concept_map `pegadinha` ↔ danger_zone `transfer` coerente
-- [ ] `footer_rule` com estratégia de prova (“±1 DP”, “grave além de ±3”)
-- [ ] `moldAffinity`: só `adolescente_antropometria` + corpus Z-score
-- [ ] e2e `visual-mold-regression` com slug IBAM após implementação
+- [x] 4× `layout_variant` declarados: `adolescent-growth-z-rail` · `adolescent-z-band-board` · `adolescent-z-classify-tap` · `adolescent-z-threshold-trap`
+- [x] Rails/slots preenchidos com JSON do §7 (âncora IBAM)
+- [x] Preview 375px legível — trilho com scroll horizontal
+- [x] 0 hardcode de gabarito/letra no componente React
+- [x] Par concept_map `pegadinha` ↔ danger_zone `transfer` coerente
+- [x] `footer_rule` com estratégia de prova (“±1 DP”, “grave além de ±3”)
+- [x] `moldAffinity`: só `adolescente_antropometria` + corpus Z-score
+- [x] e2e `visual-mold-regression` com slug IBAM após implementação
 - [ ] Golden `examples/questao-premium-ibam-saude-adolescente-escore-z.json` (opcional pré-React)
 
 ---
 
 ## 10. Handoff para engenharia
 
-**Trigger:** `Implementar molde: adolescente_antropometria`
+**Status:** implementado · ver componentes em `components/slides/variants/AdolescentGrowthZRailConceptMap.tsx` e irmãos Z.
 
-**Ordem sugerida:**
+**Pendência opcional:**
 
-1. `AdolescentGrowthZRailConceptMap.tsx` + testes de `inferZRailSlot`
-2. `GoldenRuleAdolescentZBandBoard.tsx`
-3. `LogicFlowAdolescentZClassifyTap.tsx`
-4. `DangerZoneAdolescentZThresholdTrap.tsx`
-5. Atualizar `BRANCH_DESIGN_MAP` · `MOLD_AFFINITY_RULES` · `moldSlotFit` · `NeuroSlide.tsx`
 6. Reclassificar `amauc-…9064-5` → `adolescente_saude_mental` (recomendado) ou manter genérico
-7. Playwright + captura `capture:questao-review` no IBAM
+7. Golden example IBAM em `examples/`
 
-**Gate de volume:** implementar React **somente** quando catálogo tiver **≥5 slugs** com escore Z **ou** pedido explícito de polish flagship.
-
-**Até lá:** manter `ADOLESCENTE_GENERIC_DESIGN` (estado atual `production_ready`).
+**Gate de volume (histórico):** implementação autorizada na onda nota-10 apesar de 1 slug Z; novos pacotes devem preferir ≥5 slugs.

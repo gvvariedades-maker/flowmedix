@@ -99,7 +99,7 @@
       "pct": 6.25,
       "decision": "molde_inedito",
       "l3_decision": "molde_inedito",
-      "rationale": "Erro espacial (deslocar ±1 DP na faixa Z). Volume 1 slug — brief condicional; implementar React quando ≥5 slugs Z ou pedido explícito.",
+      "rationale": "Erro espacial (deslocar ±1 DP na faixa Z). Implementado na onda nota-10 (exceção volume 1 slug Z).",
       "brief": "artifacts/l3-brief-saude-adolescente-adolescente_antropometria.md"
     },
     {
@@ -109,7 +109,8 @@
       "pct": 6.25,
       "decision": "ok_generico",
       "l3_decision": "ok_generico",
-      "rationale": "Pegadinha textual (par metabólico+psíquico). Não usar molde Z-rail. Reclassificar branch recomendado."
+      "rationale": "Pegadinha textual (par metabólico+psíquico). Não usar molde Z-rail. Reclassificar branch recomendado.",
+      "brief": "artifacts/l3-brief-saude-adolescente-adolescente_saude_mental.md"
     },
     {
       "cluster": "Gravidez / sigilo",
@@ -118,7 +119,8 @@
       "pct": 12.5,
       "decision": "coberto",
       "l3_decision": "molde_redesign",
-      "rationale": "Pacote adolescent-* implementado. Brief já implícito nos componentes existentes."
+      "rationale": "Pacote adolescent-* implementado.",
+      "brief": "artifacts/l3-brief-saude-adolescente-adolescente_etica_sigilo.md"
     },
     {
       "cluster": "Violência / proteção",
@@ -127,7 +129,8 @@
       "pct": 12.5,
       "decision": "cauda_longa",
       "l3_decision": "ok_generico",
-      "rationale": "Volume <5. compare + reference_table bastam."
+      "rationale": "Volume <5. compare + reference_table bastam.",
+      "brief": "artifacts/l3-brief-saude-adolescente-adolescente_violencia_protecao.md"
     },
     {
       "cluster": "Saúde mental",
@@ -136,7 +139,8 @@
       "pct": 18.75,
       "decision": "cauda_longa",
       "l3_decision": "ok_generico",
-      "rationale": "Volume <5. Genérico premium."
+      "rationale": "Volume <5. Genérico premium.",
+      "brief": "artifacts/l3-brief-saude-adolescente-adolescente_saude_mental.md"
     },
     {
       "cluster": "Desenvolvimento",
@@ -145,7 +149,8 @@
       "pct": 6.25,
       "decision": "cauda_longa",
       "l3_decision": "ok_generico",
-      "rationale": "1 slug."
+      "rationale": "1 slug.",
+      "brief": "artifacts/l3-brief-saude-adolescente-adolescente_desenvolvimento.md"
     },
     {
       "cluster": "Genérico MS / EXCETO / promoção",
@@ -154,7 +159,8 @@
       "pct": 37.5,
       "decision": "cauda_longa",
       "l3_decision": "ok_generico",
-      "rationale": "Tema heterogêneo; sem metáfora única."
+      "rationale": "Tema heterogêneo; sem metáfora única.",
+      "brief": "artifacts/l3-brief-saude-adolescente-adolescente_generico.md"
     }
   ],
   "volume_threshold": {
