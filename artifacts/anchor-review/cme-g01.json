@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T23:56:04.828Z",
+  "generated_at": "2026-07-14T20:23:09.175Z",
   "lote": "cme-g01",
   "anchor_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
   "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
@@ -10,7 +10,7 @@
     "automated_pass": true,
     "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
   "checklist": [
     {
       "id": 1,

@@ -1,13 +1,10 @@
 {
-  "generated_at": "2026-07-14T06:58:56.262Z",
-  "pacote_prefix": "respiratorio-cronico",
+  "generated_at": "2026-07-15T18:16:20.448Z",
+  "pacote_prefix": "calculo-de-administracao-de-medicamentos-e-infusoes",
   "pass": true,
-  "detail": "Playwright L3 Respiratório — 5 branches (2 bespoke); PNGs em artifacts/visual-mold-regression/",
+  "detail": "Playwright L3 Cálculo — 2 branches (1 bespoke + conceito ok_generico); unit tests __tests__/slidePresentationSubtopicMold.test.ts calc 4/4",
   "branches": [
-    "respiratorio_vf_asma_dpoc",
-    "respiratorio_dpoc_oxigenio",
-    "respiratorio_asma_crise",
-    "respiratorio_tecnica_inalador",
-    "respiratorio_generico"
+    "calc_dose_equivalencia",
+    "calc_conceito"
   ]
 }

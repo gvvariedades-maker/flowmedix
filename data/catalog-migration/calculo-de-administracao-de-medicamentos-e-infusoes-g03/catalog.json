@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T17:16:06.213Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g03",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 324
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 325
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 352
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 353
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 354
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 288
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 323
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 331
+    }
+  ]
+}

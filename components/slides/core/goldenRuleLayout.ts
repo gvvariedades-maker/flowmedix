@@ -33,7 +33,14 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'adolescent-z-band-board',
   'burn-rule-nine-board',
   'trabalho-nr32-reference-board',
+  'sp-nsp-reference-board',
   'respiratorio-spo2-reference-board',
+  'mental-raps-tier-board',
+  'mental-crisis-ladder-board',
+  'peri-preop-prep-board',
+  'peri-aldrete-board',
+  'peri-protocol-reference-board',
+  'peri-vf-reference-board',
   'urgencias-rcp-params-board',
   'urgencias-trauma-reference-board',
   'urgencias-cincinnati-board',
@@ -42,13 +49,22 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'urgencias-pediatric-params-board',
   'urgencias-manchester-board',
   'etiology-letter-spectrum',
+  'tb-precaution-board',
   'itu-bundle-letter-board',
+  'biosseg-reference-board',
   'mulher-prenatal-board',
   'mulher-parto-humanizado-board',
   'mulher-papanicolau-board',
   'mulher-mama-board',
   'mulher-puerperio-board',
   'mulher-planejamento-board',
+  'crianca-feeding-board',
+  'crianca-screening-board',
+  'crianca-pediatric-board',
+  'crianca-dehydration-board',
+  'crianca-puericultura-board',
+  'crianca-neonatal-board',
+  'crianca-dev-board',
   'cam-nine-rights-board',
   'cam-high-risk-protocol-board',
   'cam-exceto-reference-board',
@@ -103,7 +119,14 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'adolescent-z-band-board') return 'adolescent-z-band-board';
   if (explicitVariant === 'burn-rule-nine-board') return 'burn-rule-nine-board';
   if (explicitVariant === 'trabalho-nr32-reference-board') return 'trabalho-nr32-reference-board';
+  if (explicitVariant === 'sp-nsp-reference-board') return 'sp-nsp-reference-board';
   if (explicitVariant === 'respiratorio-spo2-reference-board') return 'respiratorio-spo2-reference-board';
+  if (explicitVariant === 'mental-raps-tier-board') return 'mental-raps-tier-board';
+  if (explicitVariant === 'mental-crisis-ladder-board') return 'mental-crisis-ladder-board';
+  if (explicitVariant === 'peri-preop-prep-board') return 'peri-preop-prep-board';
+  if (explicitVariant === 'peri-aldrete-board') return 'peri-aldrete-board';
+  if (explicitVariant === 'peri-protocol-reference-board') return 'peri-protocol-reference-board';
+  if (explicitVariant === 'peri-vf-reference-board') return 'peri-vf-reference-board';
   if (explicitVariant === 'urgencias-rcp-params-board') return 'urgencias-rcp-params-board';
   if (explicitVariant === 'urgencias-trauma-reference-board') return 'urgencias-trauma-reference-board';
   if (explicitVariant === 'urgencias-cincinnati-board') return 'urgencias-cincinnati-board';
@@ -112,7 +135,9 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'urgencias-pediatric-params-board') return 'urgencias-pediatric-params-board';
   if (explicitVariant === 'urgencias-manchester-board') return 'urgencias-manchester-board';
   if (explicitVariant === 'etiology-letter-spectrum') return 'etiology-letter-spectrum';
+  if (explicitVariant === 'tb-precaution-board') return 'tb-precaution-board';
   if (explicitVariant === 'itu-bundle-letter-board') return 'itu-bundle-letter-board';
+  if (explicitVariant === 'biosseg-reference-board') return 'biosseg-reference-board';
   if (explicitVariant === 'cam-nine-rights-board') return 'cam-nine-rights-board';
   if (explicitVariant === 'cam-high-risk-protocol-board') return 'cam-high-risk-protocol-board';
   if (explicitVariant === 'cam-exceto-reference-board') return 'cam-exceto-reference-board';

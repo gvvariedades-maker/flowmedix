@@ -1673,7 +1673,7 @@ describe('slidePresentation — molde por subtópico', () => {
         },
         branchCtx,
       ).layoutVariant,
-    ).toBe('iv-complication-orbit');
+    ).toBe('iv-complication-tissue-layers');
     expect(
       resolveSlidePresentation(
         {
@@ -2681,6 +2681,69 @@ describe('slidePresentation — molde por subtópico', () => {
     });
   });
 
+  describe('Doenças Bacterianas — tuberculose (molde inédito)', () => {
+    const subtopico =
+      'Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)';
+    const branch = 'bacterianas_tuberculose';
+
+    it('concept_map → tb-vigilance-rail', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico },
+          items: [{ label: 'Notificação', detail: 'TB compulsória', icon: 'FileWarning' }],
+        },
+        { questionSlug: 'cpcon-tb-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('tb-vigilance-rail');
+    });
+
+    it('golden_rule com rows → tb-precaution-board', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          content: 'Vigilância TB',
+          rows: [{ label: 'BAAR', value: 'Escarro', badge: 'ok' }],
+        },
+        { questionSlug: 'cpcon-tb-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('tb-precaution-board');
+    });
+
+    it('logic_flow → tb-vf-elimination-tap', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico },
+          steps: ['III: só pele → falsa.'],
+          reveal_mode: 'tap',
+        },
+        { questionSlug: 'cpcon-tb-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('tb-vf-elimination-tap');
+    });
+
+    it('danger_zone com correct → tb-transmission-trap', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'PEGADINHAS TB',
+          items: [
+            {
+              label: 'TB = contato',
+              detail: 'Via errada',
+              correct: 'Aerossóis e gotículas',
+            },
+          ],
+        },
+        { questionSlug: 'cpcon-tb-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('tb-transmission-trap');
+    });
+  });
+
   describe('Infecções Biossegurança — IRAS/ITU-cateter (molde inédito)', () => {
     const subtopico = 'Infecções no Contexto da Biossegurança';
     const branch = 'biosseg_iras_itu_cateter';
@@ -2740,6 +2803,68 @@ describe('slidePresentation — molde por subtópico', () => {
         { questionSlug: 'idib-itu-1', pedagogicalBranch: branch },
       );
       expect(result.layoutVariant).toBe('itu-catheter-trap');
+    });
+  });
+
+  describe('Infecções Biossegurança — genérico IRAS/precauções (molde bespoke)', () => {
+    const subtopico = 'Infecções no Contexto da Biossegurança';
+    const branch = 'biosseg_generico';
+
+    it('concept_map → biosseg-precaution-deck', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'concept_map',
+          meta: { subtopico },
+          items: [{ label: 'Precaução padrão', detail: 'higiene das mãos para todos', icon: 'Shield' }],
+        },
+        { questionSlug: 'fepese-biosseg-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('biosseg-precaution-deck');
+    });
+
+    it('golden_rule com rows → biosseg-reference-board', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          content: 'IRAS',
+          rows: [{ label: 'Cadeia', value: '6 elos — I correta', badge: 'ok' }],
+        },
+        { questionSlug: 'fepese-biosseg-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('biosseg-reference-board');
+    });
+
+    it('logic_flow → biosseg-vf-juggle-tap', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico },
+          steps: ['I: cadeia de infecção → verdadeira.', 'Letra B.'],
+          reveal_mode: 'tap',
+        },
+        { questionSlug: 'fepese-biosseg-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('biosseg-vf-juggle-tap');
+    });
+
+    it('danger_zone com correct → biosseg-trap-chips', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico },
+          content: 'PEGADINHAS',
+          items: [
+            {
+              label: 'Recapear agulha',
+              detail: 'Descarte no lixo comum',
+              correct: 'Coletor perfurocortante grupo E',
+            },
+          ],
+        },
+        { questionSlug: 'fepese-biosseg-1', pedagogicalBranch: branch },
+      );
+      expect(result.layoutVariant).toBe('biosseg-trap-chips');
     });
   });
 

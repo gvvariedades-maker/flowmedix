@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T16:33:15.073Z",
+  "lote": "saude-da-crianca-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-4",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-5",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-6",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-7",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-0",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-1",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

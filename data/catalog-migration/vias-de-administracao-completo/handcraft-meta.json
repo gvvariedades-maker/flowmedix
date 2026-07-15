@@ -46,14 +46,14 @@
     "via_tecnica_admin": {
       "decision": "ok_generico",
       "status": "generic",
-      "brief": null,
+      "brief": "artifacts/l3-brief-vias-de-administracao-via_tecnica_admin.md",
       "package": "morphological · banner · cards · compare",
       "note": "P1 — brief bespoke só se audit:subtopico-quality exigir (VARIANT_MOLDS §3)"
     },
     "via_generico": {
       "decision": "ok_generico",
       "status": "generic",
-      "brief": null,
+      "brief": "artifacts/l3-brief-vias-de-administracao-via_generico.md",
       "package": "morphological · center · vertical · compare"
     }
   }

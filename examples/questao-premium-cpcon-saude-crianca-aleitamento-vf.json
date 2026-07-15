@@ -6,7 +6,27 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Saúde da Criança"
+    "subtopico": "Saúde da Criança",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "pedagogical_branch": "crianca_aleitamento_nutricao",
+    "content_review": {
+      "reviewed_at": "2026-07-15",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "Caderneta da Criança MS — AME 6 meses",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "saude-crianca-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Caderneta da Saúde da Criança — aleitamento",
+        "year": 2024,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/caderneta_saude_crianca_menino_12ed.pdf",
+        "covers": ["AME até 6 meses", "sem mel no primeiro ano", "fatores de proteção no leite materno"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre saúde da criança e aleitamento materno, analise as afirmativas.\n\nI - O aleitamento materno exclusivo é recomendado até os 6 meses de vida, quando não houver contraindicação.\nII - O leite materno fornece anticorpos e fatores de proteção, contribuindo para a imunidade do lactente.\nIII - Mel complementar deve ser introduzido rotineiramente no primeiro mês de vida para todos os recém-nascidos a termo, mesmo em aleitamento materno exclusivo.\n\nÉ CORRETO o que se afirma em:",
@@ -39,8 +59,7 @@
       "rows": [
         { "label": "AME", "value": "Até 6 meses — I correta", "badge": "hot", "emphasis": "highlight" },
         { "label": "Proteção imune", "value": "Anticorpos no leite — II correta", "badge": "ok" },
-        { "label": "Mel no 1º mês", "value": "Falso — contraindicado", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+        { "label": "Mel no 1º mês", "value": "Falso — contraindicado", "emphasis": "alert", "badge": "warn" }
       ],
       "footer_rule": "III é pegadinha clássica de pediatria"
     },

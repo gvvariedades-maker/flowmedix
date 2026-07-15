@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-07-15T18:02:08.778Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g10",
+  "mode": "dry-run",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780000237780-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

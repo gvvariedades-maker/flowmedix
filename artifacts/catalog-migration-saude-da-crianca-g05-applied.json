@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T16:33:43.660Z",
+  "lote": "saude-da-crianca-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

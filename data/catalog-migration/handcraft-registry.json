@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-14",
+  "updated_at": "2026-07-15",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -24,7 +24,7 @@
       "production_status": "production_ready",
       "quality": {
         "technical_ready_at": "2026-06-30",
-        "production_ready_at": "2026-06-30",
+        "production_ready_at": "2026-07-15",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -44,7 +44,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-07-01T03:03:40.683Z",
+          "last_audit_at": "2026-07-15T12:30:41.040Z",
           "last_audit_pass": true,
           "health_streak_days": 3,
           "last_blocked_at": null,
@@ -67,9 +67,18 @@
       "anchor_glob": "examples/questao-premium-*-cme-*.json",
       "guideline": "lib/guidelines/cme.ts",
       "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "blockers_always_human": [
+          "family_calc",
+          "exam_vs_current_divergence",
+          "unmatched_sensitive"
+        ]
+      },
       "quality": {
         "technical_ready_at": "2026-06-30",
-        "production_ready_at": "2026-06-30",
+        "production_ready_at": "2026-07-14",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -89,7 +98,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-30T00:13:59.202Z",
+          "last_audit_at": "2026-07-14T20:40:44.983Z",
           "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
@@ -114,7 +123,7 @@
       "production_status": "production_ready",
       "quality": {
         "technical_ready_at": "2026-06-30",
-        "production_ready_at": "2026-06-30",
+        "production_ready_at": "2026-07-15",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -134,7 +143,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-30T00:04:12.758Z",
+          "last_audit_at": "2026-07-15T09:28:52.970Z",
           "last_audit_pass": true,
           "health_streak_days": 1,
           "last_blocked_at": null,
@@ -256,8 +265,8 @@
       "pacote_prefix": "processamento",
       "manifest": "data/catalog-migration/processamento-completo/manifest.json",
       "readme": null,
-      "cluster_command": null,
-      "cluster_report": null,
+      "cluster_command": "npm run cluster:processamento",
+      "cluster_report": "artifacts/processamento-topic-cluster-report.json",
       "lote_pattern": "processamento-g{NN}",
       "lote_size": 8,
       "status": "applied",
@@ -266,9 +275,19 @@
       "anchor_glob": "examples/questao-premium-*-processamento-*.json",
       "guideline": "lib/guidelines/cme.ts",
       "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": "2026-07-14"
+      },
       "quality": {
         "technical_ready_at": "2026-06-29",
-        "production_ready_at": "2026-06-29",
+        "production_ready_at": "2026-07-14",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -288,7 +307,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-29T23:43:01.719Z",
+          "last_audit_at": "2026-07-14T14:55:36.735Z",
           "last_audit_pass": true,
           "health_streak_days": 1,
           "last_blocked_at": null,
@@ -370,7 +389,7 @@
       "production_status": "production_ready",
       "quality": {
         "technical_ready_at": "2026-06-29",
-        "production_ready_at": "2026-06-29",
+        "production_ready_at": "2026-07-15",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -390,9 +409,9 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-29T23:28:30.783Z",
+          "last_audit_at": "2026-07-15T02:11:09.685Z",
           "last_audit_pass": true,
-          "health_streak_days": 1,
+          "health_streak_days": 2,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
@@ -403,8 +422,8 @@
       "manifest": "data/catalog-migration/enfermagem-do-trabalho-completo/manifest.json",
       "handcraft_meta": "data/catalog-migration/enfermagem-do-trabalho-g05/lote-meta.json",
       "readme": null,
-      "cluster_command": null,
-      "cluster_report": null,
+      "cluster_command": "npm run cluster:enfermagem-do-trabalho",
+      "cluster_report": "artifacts/cluster-enfermagem-do-trabalho.json",
       "lote_pattern": "enfermagem-do-trabalho-g{NN}",
       "lote_size": 8,
       "status": "applied",
@@ -415,7 +434,7 @@
       "production_status": "production_ready",
       "quality": {
         "technical_ready_at": "2026-06-29",
-        "production_ready_at": "2026-06-29",
+        "production_ready_at": "2026-07-15",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -435,7 +454,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-29T23:39:16.244Z",
+          "last_audit_at": "2026-07-15T05:21:33.441Z",
           "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
@@ -460,7 +479,7 @@
       "production_status": "production_ready",
       "quality": {
         "technical_ready_at": "2026-06-30",
-        "production_ready_at": "2026-06-30",
+        "production_ready_at": "2026-07-15",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -480,7 +499,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-30T15:18:00.131Z",
+          "last_audit_at": "2026-07-15T12:07:02.259Z",
           "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
@@ -561,7 +580,7 @@
       "production_status": "production_ready",
       "quality": {
         "technical_ready_at": "2026-06-30",
-        "production_ready_at": "2026-06-30",
+        "production_ready_at": "2026-07-15",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -581,7 +600,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-06-30T15:34:44.101Z",
+          "last_audit_at": "2026-07-15T09:44:22.961Z",
           "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
@@ -606,7 +625,7 @@
       "production_status": "production_ready",
       "quality": {
         "technical_ready_at": "2026-06-30",
-        "production_ready_at": "2026-06-30",
+        "production_ready_at": "2026-07-15",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -626,7 +645,7 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-07-01T00:44:52.998Z",
+          "last_audit_at": "2026-07-15T14:58:10.360Z",
           "last_audit_pass": true,
           "health_streak_days": 6,
           "last_blocked_at": null,
@@ -710,7 +729,7 @@
       },
       "quality": {
         "technical_ready_at": "2026-07-04",
-        "production_ready_at": "2026-07-04",
+        "production_ready_at": "2026-07-14",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -730,7 +749,63 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-07-04T07:36:18.485Z",
+          "last_audit_at": "2026-07-14T16:58:07.673Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Processo de Enfermagem": {
+      "pacote_prefix": "processo-de-enfermagem",
+      "manifest": "data/catalog-migration/processo-de-enfermagem-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/processo-de-enfermagem-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/processo-de-enfermagem-completo/README.md",
+      "cluster_command": "npm run cluster:processo-de-enfermagem",
+      "cluster_report": "artifacts/processo-de-enfermagem-topic-cluster-report.json",
+      "lote_pattern": "processo-de-enfermagem-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 51,
+      "handcraft_applied": 51,
+      "anchor_glob": "examples/questao-premium-*-processo-de-enfermagem*.json,examples/questao-premium-*-sae-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/processo-de-enfermagem.json",
+      "guideline": "lib/guidelines/saeCofen.ts",
+      "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": null
+      },
+      "quality": {
+        "technical_ready_at": "2026-07-15",
+        "production_ready_at": "2026-07-15",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 50,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-15T09:46:04.596Z",
           "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
@@ -765,7 +840,7 @@
       },
       "quality": {
         "technical_ready_at": "2026-07-12",
-        "production_ready_at": "2026-07-12",
+        "production_ready_at": "2026-07-14",
         "monitoring_until": null,
         "layers": {
           "L1": true,
@@ -785,7 +860,54 @@
         },
         "continuous": {
           "enabled": true,
-          "last_audit_at": "2026-07-12T06:07:47.892Z",
+          "last_audit_at": "2026-07-14T19:12:16.415Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Cálculo de Administração de Medicamentos e Infusões": {
+      "pacote_prefix": "calculo-de-administracao-de-medicamentos-e-infusoes",
+      "manifest": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g01/lote-meta.json",
+      "readme": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/README.md",
+      "cluster_command": "npm run cluster:calculo-de-administracao-de-medicamentos-e-infusoes",
+      "cluster_report": "artifacts/calculo-de-administracao-de-medicamentos-e-infusoes-topic-cluster-report.json",
+      "lote_pattern": "calculo-de-administracao-de-medicamentos-e-infusoes-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 85,
+      "handcraft_applied": 85,
+      "anchor_glob": "examples/questao-premium-*-calculo-*.json,examples/questao-premium-idecan-calculo-equivalencias-gotas.json,examples/questao-premium-idecan-calculo-ml-gotas-microgotas.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/calculo-de-administracao-de-medicamentos-e-infusoes.json",
+      "golden_anchors_registry": "data/catalog-migration/calculo-golden-anchors.json",
+      "guideline": "lib/guidelines/calculoMedicamentos.ts",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-07-15",
+        "production_ready_at": "2026-07-15",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-15T18:18:12.351Z",
           "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
@@ -928,6 +1050,62 @@
           "enabled": false,
           "last_audit_at": null,
           "last_audit_pass": null,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Saúde da Criança": {
+      "pacote_prefix": "saude-da-crianca",
+      "manifest": "data/catalog-migration/saude-da-crianca-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/saude-da-crianca-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/saude-da-crianca-completo/README.md",
+      "cluster_command": "npm run cluster:saude-da-crianca",
+      "cluster_report": "artifacts/saude-da-crianca-topic-cluster-report.json",
+      "lote_pattern": "saude-da-crianca-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 62,
+      "handcraft_applied": 62,
+      "anchor_glob": "examples/questao-premium-*-saude-crianca-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/saude-da-crianca.json",
+      "guideline": "lib/guidelines/saudeCrianca.ts",
+      "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": true,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": null
+      },
+      "quality": {
+        "technical_ready_at": "2026-07-15",
+        "production_ready_at": "2026-07-15",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-15T16:43:22.689Z",
+          "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null

@@ -229,6 +229,8 @@ function resolveCore(
       layoutVariant === 'burn-trap-arena' ||
       layoutVariant === 'trabalho-pep-trap-arena' ||
       layoutVariant === 'respiratorio-spo2-trap-arena' ||
+      layoutVariant === 'mental-raps-trap-arena' ||
+      layoutVariant === 'mental-crisis-coercion-trap' ||
       layoutVariant === 'urgencias-rcp-trap-arena' ||
       layoutVariant === 'urgencias-trauma-trap-arena' ||
       layoutVariant === 'urgencias-stroke-trap-arena' ||
@@ -240,6 +242,13 @@ function resolveCore(
       layoutVariant === 'mulher-parto-trap-arena' ||
       layoutVariant === 'mulher-screening-trap-arena' ||
       layoutVariant === 'mulher-mama-trap-arena' ||
+      layoutVariant === 'crianca-feeding-trap-arena' ||
+      layoutVariant === 'crianca-screening-trap-arena' ||
+      layoutVariant === 'crianca-pediatric-trap-arena' ||
+      layoutVariant === 'crianca-dehydration-trap-arena' ||
+      layoutVariant === 'crianca-puericultura-trap-arena' ||
+      layoutVariant === 'crianca-neonatal-trap-arena' ||
+      layoutVariant === 'crianca-dev-trap-arena' ||
       layoutVariant === 'cam-certos-trap-arena' ||
       layoutVariant === 'cam-high-risk-trap-arena' ||
       layoutVariant === 'cam-exceto-trap-arena' ||

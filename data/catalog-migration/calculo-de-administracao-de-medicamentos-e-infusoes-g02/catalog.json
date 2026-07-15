@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T17:18:57.908Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g02",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 316
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 321
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 286
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 344
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 326
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 338
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 341
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 324
+    }
+  ]
+}

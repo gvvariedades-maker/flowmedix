@@ -1,0 +1,60 @@
+{
+  "lote": "saude-da-crianca-g08",
+  "generated_at": "2026-07-15T16:22:03.444Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 6,
+  "passed": 6,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

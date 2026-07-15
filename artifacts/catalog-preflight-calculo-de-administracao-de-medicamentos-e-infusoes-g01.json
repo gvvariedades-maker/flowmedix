@@ -1,0 +1,76 @@
+{
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g01",
+  "generated_at": "2026-07-15T18:09:24.840Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

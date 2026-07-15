@@ -1,24 +1,26 @@
 {
-  "generated_at": "2026-06-30T02:09:26.549Z",
+  "generated_at": "2026-07-15T11:41:32.906Z",
   "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
   "lote": "doencas-bacterianas-completo",
   "total": 51,
   "branch_totals": {
-    "bacterianas_generico": 47,
+    "bacterianas_generico": 19,
+    "bacterianas_tuberculose": 28,
     "bacterianas_agente_etiologico": 4
   },
-  "inedito_packages_needed": 2,
+  "inedito_packages_needed": 1,
   "handcrafts_needed": 51,
   "cluster_decisions": [
     {
       "cluster": "Tuberculose — controle, TDO e vigilância",
       "count": 23,
       "pct": 45.1,
-      "has_golden": false,
-      "golden_file": null,
-      "dominant_branch": "bacterianas_generico",
+      "has_golden": true,
+      "golden_file": "questao-premium-cpcon-tuberculose-baar-aerossol-vf.json",
+      "dominant_branch": "bacterianas_tuberculose",
       "branch_counts": {
-        "bacterianas_generico": 23
+        "bacterianas_tuberculose": 22,
+        "bacterianas_generico": 1
       },
       "sample_slugs": [
         "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
@@ -26,8 +28,8 @@
         "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
         "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4"
       ],
-      "decision": "novo_ramo",
-      "l3_package": "molecular · reference_table · vertical · compare (genérico)"
+      "decision": "coberto",
+      "l3_package": "tb-vigilance-rail · tb-precaution-board · tb-vf-elimination-tap · tb-transmission-trap"
     },
     {
       "cluster": "Outros / tema misto",
@@ -37,7 +39,8 @@
       "golden_file": null,
       "dominant_branch": "bacterianas_generico",
       "branch_counts": {
-        "bacterianas_generico": 6
+        "bacterianas_generico": 5,
+        "bacterianas_tuberculose": 1
       },
       "sample_slugs": [
         "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
@@ -56,7 +59,8 @@
       "golden_file": null,
       "dominant_branch": "bacterianas_generico",
       "branch_counts": {
-        "bacterianas_generico": 4
+        "bacterianas_tuberculose": 1,
+        "bacterianas_generico": 3
       },
       "sample_slugs": [
         "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
@@ -94,7 +98,8 @@
       "golden_file": null,
       "dominant_branch": "bacterianas_generico",
       "branch_counts": {
-        "bacterianas_generico": 3
+        "bacterianas_generico": 2,
+        "bacterianas_tuberculose": 1
       },
       "sample_slugs": [
         "iaupe-enfermagem-semiologia-em-enfermagem-1779563512485-5",
@@ -128,16 +133,17 @@
       "pct": 3.9,
       "has_golden": false,
       "golden_file": null,
-      "dominant_branch": "bacterianas_generico",
+      "dominant_branch": "bacterianas_tuberculose",
       "branch_counts": {
-        "bacterianas_generico": 2
+        "bacterianas_tuberculose": 1,
+        "bacterianas_generico": 1
       },
       "sample_slugs": [
         "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
         "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8"
       ],
       "decision": "cauda_longa",
-      "l3_package": "molecular · reference_table · vertical · compare (genérico)"
+      "l3_package": "tb-vigilance-rail · tb-precaution-board · tb-vf-elimination-tap · tb-transmission-trap"
     },
     {
       "cluster": "IST (reclassificar?)",
@@ -178,15 +184,15 @@
       "pct": 2,
       "has_golden": false,
       "golden_file": null,
-      "dominant_branch": "bacterianas_generico",
+      "dominant_branch": "bacterianas_tuberculose",
       "branch_counts": {
-        "bacterianas_generico": 1
+        "bacterianas_tuberculose": 1
       },
       "sample_slugs": [
         "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779563140631-4"
       ],
       "decision": "cauda_longa",
-      "l3_package": "molecular · reference_table · vertical · compare (genérico)"
+      "l3_package": "tb-vigilance-rail · tb-precaution-board · tb-vf-elimination-tap · tb-transmission-trap"
     },
     {
       "cluster": "Bacterioses — conceito geral",
@@ -194,15 +200,15 @@
       "pct": 2,
       "has_golden": false,
       "golden_file": null,
-      "dominant_branch": "bacterianas_generico",
+      "dominant_branch": "bacterianas_tuberculose",
       "branch_counts": {
-        "bacterianas_generico": 1
+        "bacterianas_tuberculose": 1
       },
       "sample_slugs": [
         "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2"
       ],
       "decision": "cauda_longa",
-      "l3_package": "molecular · reference_table · vertical · compare (genérico)"
+      "l3_package": "tb-vigilance-rail · tb-precaution-board · tb-vf-elimination-tap · tb-transmission-trap"
     },
     {
       "cluster": "Bactérias do trato gastrointestinal",
@@ -227,6 +233,7 @@
       "family": "conceito",
       "topic": "Tétano — profilaxia e imunização",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Uma criança foi internada, apresentando, febre, cefaleia, vomito, rigidez de nuca, sinal de Brudzins"
     },
     {
@@ -234,55 +241,63 @@
       "family": "conceito",
       "topic": "Outros / tema misto",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A hanseníase é uma doença infecciosa e crônica que compromete a pele e os nervos, podendo causar inc"
     },
     {
       "slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A tuberculose permanece como um importante desafio para a saúde pública, exigindo vigilância ativa e"
     },
     {
       "slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Em relação as medidas de controle da tuberculose, assinale a alternativa CORRETA."
     },
     {
       "slug": "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
       "family": "certo_errado",
       "topic": "Meningite bacteriana",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "As doenças transmissíveis são tratáveis e, quanto antes forem detectadas, maiores serão os índices d"
     },
     {
       "slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A tuberculose é uma doença infecciosa e transmissível, causada pelo Mycobacterium tuberculosis, que "
     },
     {
       "slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
       "family": "conceito",
       "topic": "Hanseníase — transmissão e PQT",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A hanseníase é uma doença crônica, infectocontagiosa, causada por um bacilo capaz de infectar grande"
     },
     {
       "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Durante a visita domiciliar, o Agente Comunitário de Saúde encontrou um indivíduo com mancha localiz"
     },
     {
       "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Paciente do sexo masculino, 45 anos, apresenta tosse persistente com eliminação de sangue vermelho v"
     },
     {
@@ -290,20 +305,23 @@
       "family": "conceito",
       "topic": "Outros / tema misto",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A coqueluche é uma doença inefcciosa aguda, causada pelo Bordetella pertussis , cocobacilo Gram-nega"
     },
     {
       "slug": "fcc-enfermagem-exames-laboratoriais-1779563559434-5",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Dentre as recomendações do Ministério da Saúde para coleta e acondicionamento do escarro espontâneo "
     },
     {
       "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Durante ação de vigilância em saúde, um indivíduo apresenta tosse persistente há mais de três semana"
     },
     {
@@ -311,6 +329,7 @@
       "family": "protocolo",
       "topic": "Meningite bacteriana",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Em um serviço de urgência, um paciente apresenta febre elevada, cefaleia intensa, náuseas, vômitos, "
     },
     {
@@ -318,6 +337,7 @@
       "family": "conceito",
       "topic": "Outros / tema misto",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Um trabalhador da construção civil apresenta um ferimento cortante na mão direita, causado por um ob"
     },
     {
@@ -325,20 +345,23 @@
       "family": "conceito",
       "topic": "Outros / tema misto",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Uma equipe de saúde realizou um trabalho de busca ativa de sintomáticos respiratórios em sua área de"
     },
     {
       "slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779562735777-6",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Um técnico de enfermagem precisa orientar um paciente sintomático respiratório sobre a coleta adequa"
     },
     {
       "slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779563140631-4",
       "family": "conceito",
       "topic": "Exames laboratoriais (reclassificar?)",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Assinale a alternativa que indica o exame que auxilia no diagnóstico de pesquisa de Bacilo de Kock ("
     },
     {
@@ -346,6 +369,7 @@
       "family": "conceito",
       "topic": "IST (reclassificar?)",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A sífilis é uma infecção bacteriana sistêmica, crônica, curável e exclusiva do ser humano. Quando nã"
     },
     {
@@ -353,6 +377,7 @@
       "family": "conceito",
       "topic": "Meningite bacteriana",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A meningite bacteriana é uma infecção grave que afeta as membranas que envolvem o cérebro e a medula"
     },
     {
@@ -360,20 +385,23 @@
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "No contexto da Atenção Primária à Saúde, a hanseníase permanece como agravo de relevância epidemioló"
     },
     {
       "slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2",
       "family": "conceito",
       "topic": "Bacterioses — conceito geral",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Um sinal de que um paciente pode estar apresentando um quadro infeccioso é:"
     },
     {
       "slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-3",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "São bactérias que estão relacionadas à infecção do trato gastrintestinal, e que podem causar sintoma"
     },
     {
@@ -381,13 +409,15 @@
       "family": "conceito",
       "topic": "Candidíase e micoses",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A pneumonia é uma inflamação do parênquima pulmonar, causada por diversos microrganismos, incluindo "
     },
     {
       "slug": "ibfc-enfermagem-exames-laboratoriais-1779563621885-8",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Sobre a coleta de escarro, analise as afirmativas abaixo. 4421) 4422) 4423) 4424) 4425) I. A coleta "
     },
     {
@@ -403,27 +433,31 @@
       "family": "conceito",
       "topic": "Zoonoses (reclassificar?)",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A febre maculosa é uma doença infecciosa, febril aguda e de gravidade variável. Trata-se de uma doen"
     },
     {
       "slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "No âmbito das medidas para diagnóstico da tuberculose, o Técnico de Enfermagem é responsável por ori"
     },
     {
       "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-1",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A coleta de dados em enfermagem é crucial para o diagnóstico e manejo de infecções no trato reprodut"
     },
     {
       "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Sobre a tuberculose, doença infecciosa causada pela bactéria Mycobacterium tuberculosis, que apesar "
     },
     {
@@ -431,20 +465,23 @@
       "family": "conceito",
       "topic": "Agente etiológico — bactéria × vírus × fungo",
       "branch": "bacterianas_agente_etiologico",
+      "declared_branch": "bacterianas_agente_etiologico",
       "instruction_preview": "A hanseníase é uma doença transmissível relevante para saúde da coletividade. Sobre a hanseníase, as"
     },
     {
       "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A transmissão da tuberculose pulmonar ou laríngea ocorre de pessoa a pessoa pela via respiratória, q"
     },
     {
       "slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Considere uma unidade de atenção primária à saúde que implementou o Tratamento Diretamente Observado"
     },
     {
@@ -452,27 +489,31 @@
       "family": "conceito",
       "topic": "Candidíase e micoses",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Pneumonia é uma infecção que se instala nos pulmões (órgão duplo localizado um de cada lado da caixa"
     },
     {
       "slug": "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Sobre o tratamento da hanseníase, o qual deve ser amplo, em nível ambulatorial, visando a atenção in"
     },
     {
       "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Teste rápido para hanseníase é um teste imunocromatográfico capaz de determinar de forma qualitativa"
     },
     {
       "slug": "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8",
       "family": "conceito",
       "topic": "Outros / tema misto",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "As bacterioses representam um grupo importante de doenças infecciosas acompanhadas na Atenção Primár"
     },
     {
@@ -480,13 +521,15 @@
       "family": "conceito",
       "topic": "Agente etiológico — bactéria × vírus × fungo",
       "branch": "bacterianas_agente_etiologico",
+      "declared_branch": "bacterianas_agente_etiologico",
       "instruction_preview": "As bacterioses são doenças causadas por bactérias patogênicas e representam importante problema de s"
     },
     {
       "slug": "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
       "family": "calc",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "O diagnóstico laboratorial da tuberculose (TB) pulmonar e laríngea se dá, na grande maioria dos caso"
     },
     {
@@ -494,13 +537,15 @@
       "family": "conceito",
       "topic": "IST (reclassificar?)",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A investigação da Infecção Latente pelo M. tuberculosis (ILTB) é indicada para"
     },
     {
       "slug": "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
       "family": "conceito",
       "topic": "Candidíase e micoses",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "O Agente Comunitário de Saúde (ACS) deve orientar as famílias, principalmente as crianças sobre a im"
     },
     {
@@ -508,6 +553,7 @@
       "family": "conceito",
       "topic": "Meningite bacteriana",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A meningite bacteriana pode ser causada por uma grande variedade de bactérias. Sua prevalência está "
     },
     {
@@ -515,13 +561,15 @@
       "family": "conceito",
       "topic": "Outros / tema misto",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Os indicadores de saúde utilizados no Brasil, como a proporção de casos novos em menores de 15 anos "
     },
     {
       "slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563505333-8",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Considerando a tuberculose como um problema de saúde prioritário no Brasil, especialmente entre os i"
     },
     {
@@ -529,13 +577,15 @@
       "family": "conceito",
       "topic": "Zoonoses (reclassificar?)",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A febre maculosa é uma doença infecciosa febril aguda, de gravidade variável, que pode cursar com fo"
     },
     {
       "slug": "isba-enfermagem-exames-complementares-1779563685104-3",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A tuberculose é uma doença infectocontagiosa causada pelo bacilo Mycobacterium tuberculosis também c"
     },
     {
@@ -543,6 +593,7 @@
       "family": "conceito",
       "topic": "Bactérias do trato gastrointestinal",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A cólera é causada pela enterotoxina do Vibrio cholerae O1 ou O139 e compõe as Doenças Diarreicas Ag"
     },
     {
@@ -550,6 +601,7 @@
       "family": "conceito",
       "topic": "Agente etiológico — bactéria × vírus × fungo",
       "branch": "bacterianas_agente_etiologico",
+      "declared_branch": "bacterianas_agente_etiologico",
       "instruction_preview": "A candidíase é uma micose que atinge a superfície cutânea e/ou membranas mucosas, resultando em cand"
     },
     {
@@ -557,13 +609,15 @@
       "family": "conceito",
       "topic": "Zoonoses (reclassificar?)",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Quais são os principais sintomas da doença de Lyme, uma doença infecciosa transmitida por carrapatos"
     },
     {
       "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "Sobre os pilares e componentes da Estratégia pelo Fim da Tuberculose (TB) do Ministério da Saúde, pr"
     },
     {
@@ -571,13 +625,15 @@
       "family": "conceito",
       "topic": "Hanseníase — transmissão e PQT",
       "branch": "bacterianas_generico",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "A hanseníase apresenta diferentes formas clínicas, cada uma com sinais característicos. Aponte a alt"
     },
     {
       "slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
       "family": "conceito",
       "topic": "Tuberculose — controle, TDO e vigilância",
-      "branch": "bacterianas_generico",
+      "branch": "bacterianas_tuberculose",
+      "declared_branch": "bacterianas_generico",
       "instruction_preview": "No que diz respeito à busca ativa de casos de tuberculose, ao prestar cuidados de enfermagem, o auxi"
     }
   ]

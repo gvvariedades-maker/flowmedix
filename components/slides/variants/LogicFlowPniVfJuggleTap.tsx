@@ -8,7 +8,17 @@ import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import { parsePniVfStep, type ParsedPniVfStep } from '@/lib/slides/pniSlideUtils';
 
-export type VfJuggleAccent = 'pni' | 'ist' | 'via' | 'farmaco' | 'trabalho' | 'respiratorio' | 'cam';
+export type VfJuggleAccent =
+  | 'pni'
+  | 'ist'
+  | 'via'
+  | 'farmaco'
+  | 'trabalho'
+  | 'respiratorio'
+  | 'cam'
+  | 'biosseg'
+  | 'seguranca'
+  | 'peri';
 
 const STRATEGY_CHIP_LABEL: Record<VfJuggleAccent, string> = {
   pni: 'ESTRATÉGIA PNI',
@@ -18,6 +28,9 @@ const STRATEGY_CHIP_LABEL: Record<VfJuggleAccent, string> = {
   trabalho: 'ESTRATÉGIA NR-32',
   respiratorio: 'ESTRATÉGIA ASMA/DPOC',
   cam: 'ESTRATÉGIA 9 CERTOS',
+  biosseg: 'ESTRATÉGIA IRAS',
+  seguranca: 'ESTRATÉGIA NSP',
+  peri: 'ESTRATÉGIA SRPA',
 };
 
 const VF_JUGGLE_ACCENTS: Record<
@@ -126,6 +139,45 @@ const VF_JUGGLE_ACCENTS: Record<
     footerSummary: 'border-teal-200/70 bg-teal-50/80 text-teal-900/80',
     stepTitle: 'text-teal-900',
     letterChip: 'from-teal-500 to-emerald-600 shadow-teal-300/40',
+  },
+  biosseg: {
+    chipLabel: 'V/F IRAS',
+    chip: 'border-lime-200/80 text-lime-900',
+    card: 'border-lime-200/80 from-white via-lime-50/40 to-white',
+    dotActive: 'bg-lime-500',
+    dotRevealed: 'bg-emerald-400',
+    btnNext: 'from-lime-500 to-emerald-600 shadow-lime-300/40',
+    btnReveal: 'from-lime-500 to-emerald-600 shadow-lime-300/40',
+    btnSummary: 'from-emerald-500 to-lime-600',
+    footerSummary: 'border-lime-200/70 bg-lime-50/80 text-lime-900/80',
+    stepTitle: 'text-lime-800',
+    letterChip: 'from-lime-500 to-emerald-600 shadow-lime-300/40',
+  },
+  seguranca: {
+    chipLabel: 'V/F NSP',
+    chip: 'border-amber-200/80 text-amber-900',
+    card: 'border-amber-200/80 from-white via-amber-50/40 to-white',
+    dotActive: 'bg-amber-500',
+    dotRevealed: 'bg-orange-400',
+    btnNext: 'from-amber-500 to-orange-600 shadow-amber-300/40',
+    btnReveal: 'from-amber-500 to-orange-600 shadow-amber-300/40',
+    btnSummary: 'from-amber-500 to-orange-600',
+    footerSummary: 'border-amber-200/70 bg-amber-50/80 text-amber-900/80',
+    stepTitle: 'text-amber-900',
+    letterChip: 'from-amber-500 to-orange-600 shadow-amber-300/40',
+  },
+  peri: {
+    chipLabel: 'V/F PERI',
+    chip: 'border-violet-200/80 text-violet-900',
+    card: 'border-violet-200/80 from-white via-violet-50/40 to-white',
+    dotActive: 'bg-violet-500',
+    dotRevealed: 'bg-fuchsia-400',
+    btnNext: 'from-violet-500 to-fuchsia-600 shadow-violet-300/40',
+    btnReveal: 'from-violet-500 to-fuchsia-600 shadow-violet-300/40',
+    btnSummary: 'from-violet-500 to-fuchsia-600',
+    footerSummary: 'border-violet-200/70 bg-violet-50/80 text-violet-900/80',
+    stepTitle: 'text-violet-900',
+    letterChip: 'from-violet-500 to-fuchsia-600 shadow-violet-300/40',
   },
 };
 

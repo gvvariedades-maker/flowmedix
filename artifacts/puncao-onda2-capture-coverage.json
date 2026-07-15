@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-07-14T18:40:03.707Z",
+  "handcraft_qc": 42,
+  "sampled_total": 16,
+  "sampled_with_png": 16,
+  "exam_divergence_blocker": 17,
+  "exam_divergence_with_png": 4,
+  "must_capture_total": 29,
+  "must_capture_with_png": 16,
+  "missing_must_capture": [
+    {
+      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g07"
+    },
+    {
+      "slug": "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g07"
+    },
+    {
+      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g08"
+    },
+    {
+      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g09"
+    },
+    {
+      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12"
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13"
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13"
+    },
+    {
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14"
+    },
+    {
+      "slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14"
+    },
+    {
+      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+      "sampled": false,
+      "hasPng": false,
+      "examDiv": true,
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g15"
+    }
+  ]
+}

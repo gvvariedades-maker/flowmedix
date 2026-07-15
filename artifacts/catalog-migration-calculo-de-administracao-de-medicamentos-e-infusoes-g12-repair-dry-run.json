@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-07-15T18:06:02.124Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair",
+  "mode": "dry-run",
+  "total_files": 3,
+  "ok": 3,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "isba-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

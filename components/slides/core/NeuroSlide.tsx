@@ -29,7 +29,7 @@ import { InfusaoEvStationDeckConceptMap } from '../variants/InfusaoEvStationDeck
 import { DoseEquivalenceRailConceptMap } from '../variants/DoseEquivalenceRailConceptMap';
 import { OxygenProtocolDeckConceptMap } from '../variants/OxygenProtocolDeckConceptMap';
 import { IvCareOrbitConceptMap } from '../variants/IvCareOrbitConceptMap';
-import { IvComplicationOrbitConceptMap } from '../variants/IvComplicationOrbitConceptMap';
+import { IvComplicationTissueLayersConceptMap } from '../variants/IvComplicationTissueLayersConceptMap';
 import { IvGaugeMatrixConceptMap } from '../variants/IvGaugeMatrixConceptMap';
 import { IvExcetoSpectrumConceptMap } from '../variants/IvExcetoSpectrumConceptMap';
 import { IvIntervalTimelineConceptMap } from '../variants/IvIntervalTimelineConceptMap';
@@ -40,10 +40,20 @@ import { LabSpecimenChainConceptMap } from '../variants/LabSpecimenChainConceptM
 import { WoundStageTissueDeckConceptMap } from '../variants/WoundStageTissueDeckConceptMap';
 import { BurnDepthLayerDeckConceptMap } from '../variants/BurnDepthLayerDeckConceptMap';
 import { IstRiskRoutesDeckConceptMap } from '../variants/IstRiskRoutesDeckConceptMap';
+import { BiossegPrecautionDeckConceptMap } from '../variants/BiossegPrecautionDeckConceptMap';
 import { AdolescentPrivacyCurtainConceptMap } from '../variants/AdolescentPrivacyCurtainConceptMap';
 import { AdolescentGrowthZRailConceptMap } from '../variants/AdolescentGrowthZRailConceptMap';
 import { Nr32AnnexDeckConceptMap } from '../variants/Nr32AnnexDeckConceptMap';
+import { SpIdVerifyDeckConceptMap } from '../variants/SpIdVerifyDeckConceptMap';
+import { SpFallRiskRailConceptMap } from '../variants/SpFallRiskRailConceptMap';
+import { SpIncidentTaxonomyDeckConceptMap } from '../variants/SpIncidentTaxonomyDeckConceptMap';
 import { RespiratorioAsmaDpocDuelDeckConceptMap } from '../variants/RespiratorioAsmaDpocDuelDeckConceptMap';
+import { MentalRapsNetworkRailConceptMap } from '../variants/MentalRapsNetworkRailConceptMap';
+import { MentalCrisisSignalDeckConceptMap } from '../variants/MentalCrisisSignalDeckConceptMap';
+import { PeriPreopPhaseDeckConceptMap } from '../variants/PeriPreopPhaseDeckConceptMap';
+import { PeriSrpaMonitorDeckConceptMap } from '../variants/PeriSrpaMonitorDeckConceptMap';
+import { PeriProtocolChecklistDeckConceptMap } from '../variants/PeriProtocolChecklistDeckConceptMap';
+import { PeriVfAssertionsDeckConceptMap } from '../variants/PeriVfAssertionsDeckConceptMap';
 import { UrgenciasSurvivalChainDeckConceptMap } from '../variants/UrgenciasSurvivalChainDeckConceptMap';
 import { UrgenciasXabcdeRailConceptMap } from '../variants/UrgenciasXabcdeRailConceptMap';
 import { UrgenciasStrokeSignsDeckConceptMap } from '../variants/UrgenciasStrokeSignsDeckConceptMap';
@@ -54,7 +64,17 @@ import { UrgenciasManchesterSpectrumConceptMap } from '../variants/UrgenciasManc
 import { UrgenciasProtocolRulesDeckConceptMap } from '../variants/UrgenciasProtocolRulesDeckConceptMap';
 import { UrgenciasExcetoRailConceptMap } from '../variants/UrgenciasExcetoRailConceptMap';
 import { UrgenciasEmergencyHubConceptMap } from '../variants/UrgenciasEmergencyHubConceptMap';
+import {
+  CriancaFeedingTimelineConceptMap,
+  CriancaScreeningTimelineConceptMap,
+  CriancaPediatricHubConceptMap,
+  CriancaDehydrationSpectrumConceptMap,
+  CriancaPuericulturaTimelineConceptMap,
+  CriancaNeonatalDeckConceptMap,
+  CriancaDevMilestonesRailConceptMap,
+} from '../variants/criancaVariants';
 import { EtiologyKingdomRailConceptMap } from '../variants/EtiologyKingdomRailConceptMap';
+import { TbVigilanceRailConceptMap } from '../variants/TbVigilanceRailConceptMap';
 import { ItuClosedSystemRailConceptMap } from '../variants/ItuClosedSystemRailConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
@@ -183,6 +203,41 @@ export const NeuroSlideHub = ({
           />
         );
       }
+      if (layoutVariant === 'crianca-feeding-timeline') {
+        return (
+          <CriancaFeedingTimelineConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />
+        );
+      }
+      if (layoutVariant === 'crianca-screening-timeline') {
+        return (
+          <CriancaScreeningTimelineConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />
+        );
+      }
+      if (layoutVariant === 'crianca-pediatric-hub') {
+        return (
+          <CriancaPediatricHubConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />
+        );
+      }
+      if (layoutVariant === 'crianca-dehydration-spectrum') {
+        return (
+          <CriancaDehydrationSpectrumConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />
+        );
+      }
+      if (layoutVariant === 'crianca-puericultura-timeline') {
+        return (
+          <CriancaPuericulturaTimelineConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />
+        );
+      }
+      if (layoutVariant === 'crianca-neonatal-deck') {
+        return (
+          <CriancaNeonatalDeckConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />
+        );
+      }
+      if (layoutVariant === 'crianca-dev-milestones-rail') {
+        return (
+          <CriancaDevMilestonesRailConceptMap concepts={getConcepts()} theme={theme} footerRule={slide.footer_rule} />
+        );
+      }
       if (layoutVariant === 'cold-chain-hub') {
         return (
           <ColdChainHubConceptMap
@@ -273,9 +328,9 @@ export const NeuroSlideHub = ({
           />
         );
       }
-      if (layoutVariant === 'iv-complication-orbit') {
+      if (layoutVariant === 'iv-complication-tissue-layers') {
         return (
-          <IvComplicationOrbitConceptMap
+          <IvComplicationTissueLayersConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}
@@ -393,9 +448,90 @@ export const NeuroSlideHub = ({
           />
         );
       }
+      if (layoutVariant === 'sp-id-verify-deck') {
+        return (
+          <SpIdVerifyDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'sp-fall-risk-rail') {
+        return (
+          <SpFallRiskRailConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'sp-incident-taxonomy-deck') {
+        return (
+          <SpIncidentTaxonomyDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
       if (layoutVariant === 'respiratorio-asma-dpoc-duel-deck') {
         return (
           <RespiratorioAsmaDpocDuelDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'mental-raps-network-rail') {
+        return (
+          <MentalRapsNetworkRailConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'mental-crisis-signal-deck') {
+        return (
+          <MentalCrisisSignalDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'peri-preop-phase-deck') {
+        return (
+          <PeriPreopPhaseDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'peri-srpa-monitor-deck') {
+        return (
+          <PeriSrpaMonitorDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'peri-protocol-checklist-deck') {
+        return (
+          <PeriProtocolChecklistDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'peri-vf-assertions-deck') {
+        return (
+          <PeriVfAssertionsDeckConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}
@@ -495,8 +631,26 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'etiology-kingdom-rail') {
         return <EtiologyKingdomRailConceptMap concepts={getConcepts()} theme={theme} />;
       }
+      if (layoutVariant === 'tb-vigilance-rail') {
+        return (
+          <TbVigilanceRailConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
       if (layoutVariant === 'itu-closed-system-rail') {
         return <ItuClosedSystemRailConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'biosseg-precaution-deck') {
+        return (
+          <BiossegPrecautionDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
       }
       return <ConceptMap concepts={getConcepts()} theme={theme} layoutVariant={layoutVariant} />;
     case 'golden_rule':

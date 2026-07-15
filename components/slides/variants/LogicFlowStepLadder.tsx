@@ -19,7 +19,7 @@ interface LogicFlowStepLadderProps {
   steps: string[] | Array<{ id?: string; text: string }>;
   theme: ThemeColors;
   revealMode?: LogicFlowRevealMode;
-  accent?: 'default' | 'sonda' | 'urgencias' | 'xabcde' | 'stroke' | 'shock' | 'choking' | 'pediatric' | 'cam';
+  accent?: 'default' | 'sonda' | 'urgencias' | 'xabcde' | 'stroke' | 'shock' | 'choking' | 'pediatric' | 'cam' | 'seguranca';
 }
 
 const LADDER_ACCENTS = {
@@ -112,12 +112,22 @@ const LADDER_ACCENTS = {
     futureNode: 'border-amber-200/90 from-amber-50 to-white text-amber-400',
     tapBtn: 'from-amber-600 to-orange-600 shadow-amber-300/40',
   },
+  seguranca: {
+    connector: 'from-amber-300/50',
+    activeRing: 'ring-amber-200/60',
+    activeNode: 'from-amber-500 to-amber-700 shadow-amber-300/50',
+    activeCard:
+      'border-amber-300/80 border-l-amber-500 from-amber-50 via-white to-yellow-50/90 shadow-amber-200/40 ring-amber-200/50',
+    activeLabel: 'text-amber-900',
+    futureNode: 'border-amber-200/90 from-amber-50 to-white text-amber-400',
+    tapBtn: 'from-amber-600 to-yellow-600 shadow-amber-300/40',
+  },
 } as const;
 
 function stepTitle(
   step: string,
   index: number,
-  accent: 'default' | 'sonda' | 'urgencias' | 'xabcde' | 'stroke' | 'shock' | 'choking' | 'pediatric' | 'cam',
+  accent: 'default' | 'sonda' | 'urgencias' | 'xabcde' | 'stroke' | 'shock' | 'choking' | 'pediatric' | 'cam' | 'seguranca',
 ): string {
   const lower = step.toLowerCase();
   if (accent === 'sonda') {
@@ -196,6 +206,14 @@ function stepTitle(
       return m ? `Confirmar letra ${m[1].toUpperCase()}` : 'Confirmar gabarito';
     }
     if (/fixa[cç][aã]o/i.test(lower)) return 'Fixação técnica';
+  }
+  if (accent === 'seguranca') {
+    if (/dois identificador|pulseira|leito/i.test(lower)) return 'Identificação segura';
+    if (/\bmorse\b|queda|risco de queda/i.test(lower)) return 'Avaliar risco de queda';
+    if (/evento adverso|incidente|near miss|\bpnsp\b/i.test(lower)) return 'Classificar incidente';
+    if (/eliminar|falsa|verdadeira|julgar/i.test(lower)) return 'Julgar afirmativa';
+    if (/marcar|gabarito|letra/i.test(lower)) return 'Montar gabarito';
+    if (/fixa[cç][aã]o/i.test(lower)) return 'Fixação NSP';
   }
   if (index === 0 || /ler o comando|ler a afirmativa|ler o enunciado/i.test(lower)) {
     return 'Ler o comando da questão';

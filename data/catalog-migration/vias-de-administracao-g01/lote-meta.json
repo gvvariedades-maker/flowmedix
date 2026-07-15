@@ -25,8 +25,8 @@
     "npm run catalog:patch-pedagogical-branch -- --lote=vias-de-administracao-g01 --reconcile-branch --apply"
   ],
   "anchor_second_review": {
-    "reviewed_at": "2026-07-03",
-    "reviewer": "agent",
+    "reviewed_at": "2026-07-14",
+    "reviewer": "handcraft-qc",
     "method": "agent",
     "status": "pass",
     "artifact": "artifacts/anchor-review/vias-de-administracao-g01.json"

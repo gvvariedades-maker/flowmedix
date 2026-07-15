@@ -1,0 +1,38 @@
+{
+  "lote": "saude-da-crianca-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-15",
+  "subtopico": "Saúde da Criança",
+  "cluster": "Aleitamento / nutrição infantil",
+  "pedagogical_branch_target": "crianca_aleitamento_nutricao",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-4",
+  "golden_reference": "examples/questao-premium-cpcon-saude-crianca-aleitamento-vf.json",
+  "guideline": "lib/guidelines/saudeCrianca.ts (SAUDE_CRIANCA_MS)",
+  "slugs": [
+    "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-8",
+    "educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-4",
+    "fepese-geral-saude-da-crianca-1777104415052-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-5",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-3"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=saude-da-crianca-g03 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/saude-da-crianca-g03/questions/",
+    "2. Âncora L6: fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-4",
+    "3. npm run audit:anchor-review -- --lote=saude-da-crianca-g03 --record-pass --reviewer=agent --skip-capture",
+    "4. npm run catalog:apply-lote -- --lote=saude-da-crianca-g03 --apply (só quando pedido)"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-crianca-g03.json"
+  }
+}

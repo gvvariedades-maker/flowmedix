@@ -5,10 +5,20 @@
 ## Escopo
 
 - **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3
+- **Primeiro lote:** `seguranca-do-paciente-g01`
 
 ## Pacote (registry)
 
-_Subtópico não está em handcraft-registry.json → seguir fallback_novo_pacote no registry._
+| Campo | Valor |
+|-------|-------|
+| pacote_prefix | `seguranca-do-paciente` |
+| status | applied (59/59 slugs) |
+| manifest | `data/catalog-migration/seguranca-do-paciente-completo/manifest.json` |
+| lote_pattern | `seguranca-do-paciente-g{NN}` |
+| lote_size | 8 |
+| anchor_glob | `examples/questao-premium-*-seguranca-paciente-*.json,examples/questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json` |
+| guideline | `—` |
+| handcraft_meta | `data/catalog-migration/seguranca-do-paciente-completo/handcraft-meta.json` |
 
 ## Ramos L3 (pedagogical_branch)
 
@@ -22,11 +32,11 @@ Se subtópico tem BRANCH_DESIGN_MAP, ver .cursor/skills/avant-json-template/SKIL
 4. **Proibido:** `ai:generate`, `catalog:upgrade-premium`.
 
 ```bash
-npm run catalog:export-lote -- --lote=<pacote>-completo --subtopico="Segurança do Paciente" --limit=10000
-# Handcraft → data/catalog-migration/<pacote>-g01/questions/*.json
-npm run validate:goldens -- --lote=<pacote>-g01 --strict
-npm run audit:questao-readiness -- --lote=<pacote>-g01
-npm run catalog:apply-lote -- --lote=<pacote>-g01 --dry-run
+npm run catalog:export-lote -- --lote=seguranca-do-paciente-completo --subtopico="Segurança do Paciente" --limit=10000
+# Handcraft → data/catalog-migration/seguranca-do-paciente-g01/questions/*.json
+npm run validate:goldens -- --lote=seguranca-do-paciente-g01 --strict
+npm run audit:questao-readiness -- --lote=seguranca-do-paciente-g01
+npm run catalog:apply-lote -- --lote=seguranca-do-paciente-g01 --dry-run
 # apply + patch branch só se o usuário pedir
 ```
 

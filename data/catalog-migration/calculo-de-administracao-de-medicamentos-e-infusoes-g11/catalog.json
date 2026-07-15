@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-07-15T17:38:33.001Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g11",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 318
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 319
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 327
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 328
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 329
+    }
+  ]
+}

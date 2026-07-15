@@ -20,10 +20,11 @@
     "npm run catalog:patch-pedagogical-branch -- --lote=puncao-venosa-e-cuidados-com-cateteres-g06 --reconcile-branch --apply"
   ],
   "anchor_second_review": {
-    "reviewed_at": "2026-07-12",
-    "reviewer": "agent",
-    "method": "agent",
+    "reviewed_at": "2026-07-14",
+    "reviewer": "handcraft-qc",
+    "method": "both",
     "status": "pass",
-    "artifact": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g06.json"
+    "artifact": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g06.json",
+    "notes": "Onda 2 L6 humano — bundle IPCS/CVC; capture PNGs 2026-07-14 (adm-tec-…1984-7)."
   }
 }

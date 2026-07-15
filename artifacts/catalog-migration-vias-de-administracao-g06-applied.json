@@ -1,17 +1,66 @@
 {
-  "generated_at": "2026-07-13T17:08:07.456Z",
+  "generated_at": "2026-07-14T18:33:40.121Z",
   "lote": "vias-de-administracao-g06",
   "mode": "apply",
-  "total_files": 1,
-  "ok": 1,
+  "total_files": 8,
+  "ok": 8,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
-    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-3"
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-6",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-2",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-3",
+    "fgv-enfermagem-vias-de-administracao-1778968968468-1",
+    "fundatec-enfermagem-vias-de-administracao-1776056338955-5",
+    "itame-enfermagem-vias-de-administracao-1778968609115-5",
+    "lj-assessoria-enfermagem-vias-de-administracao-1778968906156-0",
+    "lj-assessoria-enfermagem-vias-de-administracao-1778968906156-1"
   ],
   "results": [
     {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
       "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968968468-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056338955-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-vias-de-administracao-1778968609115-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-vias-de-administracao-1778968906156-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-vias-de-administracao-1778968906156-1",
       "status": "ok",
       "mode": "update",
       "detail": "conteudo_json aplicado"

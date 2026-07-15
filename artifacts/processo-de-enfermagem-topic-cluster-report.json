@@ -1,0 +1,336 @@
+{
+  "generated_at": "2026-07-15T07:58:23.765Z",
+  "subtopico": "Processo de Enfermagem",
+  "lote": "processo-de-enfermagem-completo",
+  "total": 39,
+  "by_cluster": {
+    "Documentação / anotação / prontuário": 23,
+    "EXCETO / INCORRETA — conduta SAE": 7,
+    "Etapas SAE / NANDA-NIC-NOC": 6,
+    "SAE — conceito geral": 3
+  },
+  "by_branch": {
+    "sae_documentacao": 21,
+    "sae_exceto": 7,
+    "sae_etapas": 11
+  },
+  "golden_by_cluster": {
+    "Documentação / anotação / prontuário": "examples/questao-premium-copese-processo-de-enfermagem-documentacao.json",
+    "Etapas SAE / NANDA-NIC-NOC": "examples/questao-premium-copese-processo-de-enfermagem-etapas-sae.json"
+  },
+  "mismatches": 0,
+  "rows": [
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O registro adequado das informações em prontuários e documentos hospitalares é essencial para garant"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-0",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O registro adequado das observações e intervenções realizadas é essencial para garantir a continuida"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-5",
+      "cluster": "EXCETO / INCORRETA — conduta SAE",
+      "pedagogical_branch_proposed": "sae_exceto",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Os registros realizados pela equipe de enfermagem, referentes aos cuidados prestados, são denominado"
+    },
+    {
+      "slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Assinale o conceito a seguir que se refere à \"perspectiva de evolução do paciente e sua resposta às "
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-6",
+      "cluster": "Etapas SAE / NANDA-NIC-NOC",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Na mensuração de circunferência do braço para avaliação antropométrica, a fita métrica deve ser posi"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "certo_errado",
+      "instruction_preview": "EM RELAÇÃO AO REGISTRO DAS AÇÕES DE ENFERMAGEM E AO USO ADEQUADO DO PRONTUÁRIO, JULGUE O PRÓXIMO ITE"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "certo_errado",
+      "instruction_preview": "EM RELAÇÃO AO REGISTRO DAS AÇÕES DE ENFERMAGEM E AO USO ADEQUADO DO PRONTUÁRIO, JULGUE O PRÓXIMO ITE"
+    },
+    {
+      "slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+      "cluster": "EXCETO / INCORRETA — conduta SAE",
+      "pedagogical_branch_proposed": "sae_exceto",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O Processo de Enfermagem (PE) pode ser definido como método de trabalho que orienta o cuidado profis"
+    },
+    {
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+      "cluster": "SAE — conceito geral",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Várias atividades de enfermagem podem ser usadas para auxiliar a pessoa que manifesta dor. A interaç"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1776056129848-3",
+      "cluster": "SAE — conceito geral",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "É o processo de analisar e descartar diferentes condições para chegar a um diagnóstico preciso."
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-2",
+      "cluster": "Etapas SAE / NANDA-NIC-NOC",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A escala numérica para avaliação de \"dor\" é pontuada:"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-9",
+      "cluster": "SAE — conceito geral",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Assinale a alternativa que denomina um paciente que desfruta de boa saúde, estando sadio e sem doenç"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Após realizar um procedimento de enfermagem conforme prescrição e rotina institucional, uma conduta "
+    },
+    {
+      "slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-3",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Por que a anotação de enfermagem é considerada uma responsabilidade legal dos profissionais:"
+    },
+    {
+      "slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-5",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O que considerar ao escrever diferentes tipos de anotação de enfermagem:"
+    },
+    {
+      "slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-6",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Quais são as regras para realizar a anotação de enfermagem:"
+    },
+    {
+      "slug": "funatec-enfermagem-processo-de-enfermagem-1776056173194-0",
+      "cluster": "Etapas SAE / NANDA-NIC-NOC",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A enfermagem é uma área ampla que envolve diversas competências e conhecimentos. Sobre o processo de"
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-0",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Durante a anamnese de um paciente, o técnico de enfermagem observa que o paciente relata não consegu"
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056149404-3",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Dadas as afirmativas sobre os registros de enfermagem, I. São considerados documentos legais na defe"
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-1",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Dadas as afirmativas sobre as técnicas e procedimentos de admissão e alta, I. Os profissionais de en"
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-4",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Dadas as afirmativas sobre os registros de enfermagem, I. Registro é uma ação de enfermagem que prod"
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-2",
+      "cluster": "Etapas SAE / NANDA-NIC-NOC",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A dor é considerada o quinto sinal vital e deve ser avaliada rotineiramente em todos os pacientes. Q"
+    },
+    {
+      "slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "certo_errado",
+      "instruction_preview": "Prestar cuidados de enfermagem ao paciente diabético hospitalizado, como monitorar frequentemente a "
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-8",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Considerando as diretrizes sobre os registros de enfermagem e sua importância legal e clínica, assin"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1776056140199-7",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "No registro de enfermagem, qual dos seguintes itens NÃO é essencial?"
+    },
+    {
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1776056140199-2",
+      "cluster": "EXCETO / INCORRETA — conduta SAE",
+      "pedagogical_branch_proposed": "sae_exceto",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A anotação de enfermagem é fundamental para o desenvolvimento do Processo de Enfermagem (PE). Assina"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-3",
+      "cluster": "EXCETO / INCORRETA — conduta SAE",
+      "pedagogical_branch_proposed": "sae_exceto",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O técnico de enfermagem da clínica médica, ao realizar as anotações de enfermagem relacionadas aos c"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-4",
+      "cluster": "Etapas SAE / NANDA-NIC-NOC",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Uma técnica de enfermagem está cuidando de um paciente em seu 2o dia de internação por suspeita de p"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-8",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O Processo de Enfermagem deve ser realizado pelos membros da equipe formalmente no prontuário do pac"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005320352-9",
+      "cluster": "Etapas SAE / NANDA-NIC-NOC",
+      "pedagogical_branch_proposed": "sae_etapas",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Sob a supervisão e a orientação do enfermeiro, os técnicos de enfermagem participam do processo de e"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+      "cluster": "EXCETO / INCORRETA — conduta SAE",
+      "pedagogical_branch_proposed": "sae_exceto",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "São anotações de enfermagem realizadas pelo técnico de enfermagem, EXCETO"
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1776056149404-6",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Segundo Potter (2013), um prontuário médico é uma fonte valiosa de dados para toda a equipe de saúde"
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-2",
+      "cluster": "EXCETO / INCORRETA — conduta SAE",
+      "pedagogical_branch_proposed": "sae_exceto",
+      "meta_pedagogical_branch": null,
+      "family": "certo_errado",
+      "instruction_preview": "O registro de enfermagem é um documento legal e, em caso de erro de escrita, o profissional deve uti"
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Para garantir a qualidade e a segurança do cuidado, as anotações de enfermagem no prontuário do paci"
+    },
+    {
+      "slug": "ufmt-enfermagem-processo-de-enfermagem-1776055865890-2",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A Anotação de Enfermagem refere-se a dados"
+    },
+    {
+      "slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "cluster": "EXCETO / INCORRETA — conduta SAE",
+      "pedagogical_branch_proposed": "sae_exceto",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Os procedimentos de enfermagem correspondem às técnicas executadas pela equipe de enfermagem na pres"
+    },
+    {
+      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O preenchimento de documentos, a preparação de relatórios, formulários, planilhas e prontuários inte"
+    },
+    {
+      "slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Assinale a alternativa correta no que tange ao prontuário médico."
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8",
+      "cluster": "Documentação / anotação / prontuário",
+      "pedagogical_branch_proposed": "sae_documentacao",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O desenvolvimento e a aplicação do processo de enfermagem envolvem a atuação de profissionais de enf"
+    }
+  ]
+}

@@ -111,7 +111,7 @@ export function AvantLogoEmail() {
                               &nbsp;
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                              {/* Mesmo lockup "AVANT enf" do emblema dourado/esmeralda (sem gradiente — clientes de e-mail nao suportam background-clip:text de forma confiavel). */}
+                              {/* Mesmo lockup "AVANT enf" do emblema azul/verde (sem gradiente — clientes de e-mail nao suportam background-clip:text de forma confiavel). */}
                               <Text
                                 style={{
                                   margin: 0,
@@ -122,7 +122,7 @@ export function AvantLogoEmail() {
                                   fontWeight: 800,
                                   lineHeight: '1.05',
                                   letterSpacing: `${letterSpacing}px`,
-                                  color: AVANT_LOGO_COLORS.wordmarkGoldSolid,
+                                  color: AVANT_LOGO_COLORS.wordmarkBrandBlueSolid,
                                 }}
                               >
                                 AVANT{' '}

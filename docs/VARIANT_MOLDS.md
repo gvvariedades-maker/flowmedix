@@ -218,6 +218,12 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `sae-documentation` | (componente pronto; mapear quando houver golden) | Documentação SAE | `questao-premium-fepese-anotacao-enfermagem-sae.json` |
 | `etiology-kingdom-rail` | Doenças Bacterianas e Fúngicas | Trilho 4 reinos etiológicos | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |
 | `itu-closed-system-rail` | Infecções no Contexto da Biossegurança (`biosseg_iras_itu_cateter`) | Trilho bundle fechado meato → fechado → fluxo → bolsa | `questao-premium-idib-umirim-itu-cateter-exceto.json` |
+| `mental-raps-network-rail` | Saúde Mental (`mental_raps_legis`) | Trilho RAPS × componentes (CAPS, SRT, AB…) | `questao-premium-fau-unicentro-saude-mental-raps.json` |
+| `mental-crisis-signal-deck` | Saúde Mental (`mental_crise_caps`) | Deck escada acolhimento → contenção | `questao-premium-ibade-saude-mental-caps-acolhimento.json` |
+| `peri-preop-phase-deck` | Perioperatória (`perioperatorio_pre_operatorio`) | Trilho fases pré/intra/pós/SRPA | `questao-premium-avancasp-perioperatoria-pre-operatorio.json` |
+| `peri-srpa-monitor-deck` | Perioperatória (`perioperatorio_pos_operatorio`) | Deck monitorização SRPA × Aldrete | `questao-premium-idecan-perioperatoria-aldrete-srpa.json` |
+| `peri-protocol-checklist-deck` | Perioperatória (`perioperatorio_protocolo`) | Checklist WHO sign in / time out / sign out | `questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json` |
+| `peri-vf-assertions-deck` | Perioperatória (`perioperatorio_vf`) | Chips I/II/III + V/F | `data/catalog-migration/perioperatoria-g04/questions/cebraspe-*.json` |
 
 ### Danger zone
 
@@ -231,6 +237,12 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `calendar-mismatch` | `vaccine-timeline` | Calendário × idade errada | meses, dose, reforço, calendário |
 | `temperature-mismatch` | `cold-chain-hub` | Trilho 0·2·8·12 × faixa errada | 2 °C, 8 °C, piso, teto, congelamento, agitar |
 | `itu-catheter-trap` | `itu-closed-system-rail` | Trilho bundle violado × restaurado | meato, fechado, fluxo, bolsa, pinçar, letra A–E |
+| `mental-raps-trap-arena` | `mental-raps-network-rail` | Componente errado × RAPS | hospital, asilo, exclusão, CAPS isolado, letra A–E |
+| `mental-crisis-coercion-trap` | `mental-crisis-signal-deck` | Escada coerção 1ª × acolhimento | contenção imediata, punição, internação rotina, letra A–E |
+| `peri-preop-trap-arena` | `peri-preop-phase-deck` | Fase errada × preparo correto | jejum, tricotomia, letra A–E |
+| `peri-srpa-trap-arena` | `peri-srpa-monitor-deck` | Slot SRPA errado × Aldrete/monitor | aldrete, analgesia, EXCETO, letra A–E |
+| `peri-protocol-trap-arena` | `peri-protocol-checklist-deck` | WHO/CDC violado × checklist | sign in, time out, letra A–E |
+| `peri-vf-trap-chips` | `peri-vf-assertions-deck` | Item V/F errado × combinação | I, II, III, verdadeira, falsa |
 
 Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md).
 

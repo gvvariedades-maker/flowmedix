@@ -17,7 +17,7 @@ import {
 } from '@/lib/catalogMigration/slideContract';
 import { detectMoldL3Mismatch } from '@/lib/slides/detectMoldL3Mismatch';
 import { detectMoldL3WriteBlockers } from '@/lib/slides/detectMoldL3WriteBlockers';
-import { resolvePedagogicalBranch } from '@/lib/slides/pedagogicalBranch';
+import { getPresentationDesign, resolvePedagogicalBranch } from '@/lib/slides/pedagogicalBranch';
 
 export type PremiumGateSeverity = 'error' | 'warn';
 
@@ -114,13 +114,7 @@ function countSteps(slide: SlideLike | undefined): number {
   return Array.isArray(slide?.steps) ? (slide!.steps as unknown[]).length : 0;
 }
 
-/**
- * Subtópico é "premium" quando seu design tem ao menos um molde bespoke
- * (fora do conjunto de variantes genéricas).
- */
-export function isPremiumSubtopico(subtopico: string | undefined): boolean {
-  if (!subtopico?.trim()) return false;
-  const design = getDesignBySubtopic(subtopico);
+function isPremiumDesign(design: { conceptMap: string; goldenRule: string; logicFlow: string; dangerZone: string } | undefined): boolean {
   if (!design) return false;
   return (
     isBespokeVariant(design.conceptMap) ||
@@ -128,6 +122,15 @@ export function isPremiumSubtopico(subtopico: string | undefined): boolean {
     isBespokeVariant(design.logicFlow) ||
     isBespokeVariant(design.dangerZone)
   );
+}
+
+/**
+ * Subtópico é "premium" quando seu design (ou ramo resolvido) tem ao menos um molde bespoke.
+ */
+export function isPremiumSubtopico(subtopico: string | undefined): boolean {
+  if (!subtopico?.trim()) return false;
+  const design = getDesignBySubtopic(subtopico);
+  return isPremiumDesign(design);
 }
 
 /**
@@ -148,75 +151,91 @@ export function auditPremiumQuestao(payload: QuestaoLike): PremiumGateIssue[] {
     });
   }
 
-  // 2) Contrato de molde bespoke (apenas subtópicos premium)
+  // 2) Contrato de molde bespoke (subtópico ou ramo pedagógico resolvido)
   const subtopico = payload.meta?.subtopico;
-  if (!subtopico || !isPremiumSubtopico(subtopico)) {
+  const instruction = payload.question_data?.instruction ?? '';
+  const familyId = payload.meta?.family;
+  const branch = resolvePedagogicalBranch(
+    subtopico,
+    instruction,
+    slides as import('@/lib/slides/moldAffinity').MoldAffinitySlide[],
+    payload.meta?.pedagogical_branch,
+    familyId,
+  );
+  const designFromBranch = subtopico ? getPresentationDesign(subtopico, branch) : undefined;
+  // Subtópicos premium legados (ex.: Vias): sem ramo forte resolvido, auditar pelo design do subtópico.
+  const design =
+    subtopico && !isPremiumDesign(designFromBranch) && isPremiumSubtopico(subtopico)
+      ? getDesignBySubtopic(subtopico)
+      : designFromBranch;
+  if (!subtopico || !isPremiumDesign(design)) {
+    // Continua para checks de ramo/L3 abaixo sem contrato de molde bespoke
+  } else if (design) {
+    if (isBespokeVariant(design.conceptMap)) {
+      const slide = findSlide(slides, 'concept_map');
+      if (countItems(slide) < 3) {
+        issues.push({
+          code: 'molde_concept_map_sem_items',
+          severity: 'error',
+          slideType: 'concept_map',
+          message: `concept_map do molde "${design.conceptMap}" exige ≥3 items — fallback genérico evitado.`,
+        });
+      }
+    }
+
+    if (isBespokeVariant(design.goldenRule)) {
+      const slide = findSlide(slides, 'golden_rule');
+      if (!hasValidRows(slide)) {
+        issues.push({
+          code: 'molde_golden_rule_sem_rows',
+          severity: 'error',
+          slideType: 'golden_rule',
+          message: `golden_rule do molde "${design.goldenRule}" exige rows (label+value) — sem rows o player cai em layout genérico.`,
+        });
+      }
+    }
+
+    if (isBespokeVariant(design.logicFlow)) {
+      const slide = findSlide(slides, 'logic_flow');
+      if (countSteps(slide) < 3) {
+        issues.push({
+          code: 'molde_logic_flow_sem_steps',
+          severity: 'error',
+          slideType: 'logic_flow',
+          message: `logic_flow do molde "${design.logicFlow}" exige ≥3 steps.`,
+        });
+      } else if ((slide as { reveal_mode?: unknown })?.reveal_mode !== 'tap') {
+        issues.push({
+          code: 'molde_logic_flow_sem_tap',
+          severity: 'warn',
+          slideType: 'logic_flow',
+          message: `logic_flow do molde "${design.logicFlow}" recomenda reveal_mode: "tap" (interação passo a passo).`,
+        });
+      }
+    }
+
+    if (isBespokeVariant(design.dangerZone)) {
+      const slide = findSlide(slides, 'danger_zone');
+      if (!hasItemsWithCorrect(slide)) {
+        issues.push({
+          code: 'molde_danger_zone_sem_correct',
+          severity: 'error',
+          slideType: 'danger_zone',
+          message: `danger_zone do molde "${design.dangerZone}" exige items[].correct em cada pegadinha.`,
+        });
+      }
+    }
+  }
+
+  if (!subtopico) {
     return issues;
   }
 
-  const design = getDesignBySubtopic(subtopico);
-  if (!design) return issues;
-
-  if (isBespokeVariant(design.conceptMap)) {
-    const slide = findSlide(slides, 'concept_map');
-    if (countItems(slide) < 3) {
-      issues.push({
-        code: 'molde_concept_map_sem_items',
-        severity: 'error',
-        slideType: 'concept_map',
-        message: `concept_map do molde "${design.conceptMap}" exige ≥3 items — fallback genérico evitado.`,
-      });
-    }
-  }
-
-  if (isBespokeVariant(design.goldenRule)) {
-    const slide = findSlide(slides, 'golden_rule');
-    if (!hasValidRows(slide)) {
-      issues.push({
-        code: 'molde_golden_rule_sem_rows',
-        severity: 'error',
-        slideType: 'golden_rule',
-        message: `golden_rule do molde "${design.goldenRule}" exige rows (label+value) — sem rows o player cai em layout genérico.`,
-      });
-    }
-  }
-
-  if (isBespokeVariant(design.logicFlow)) {
-    const slide = findSlide(slides, 'logic_flow');
-    if (countSteps(slide) < 3) {
-      issues.push({
-        code: 'molde_logic_flow_sem_steps',
-        severity: 'error',
-        slideType: 'logic_flow',
-        message: `logic_flow do molde "${design.logicFlow}" exige ≥3 steps.`,
-      });
-    } else if ((slide as { reveal_mode?: unknown })?.reveal_mode !== 'tap') {
-      issues.push({
-        code: 'molde_logic_flow_sem_tap',
-        severity: 'warn',
-        slideType: 'logic_flow',
-        message: `logic_flow do molde "${design.logicFlow}" recomenda reveal_mode: "tap" (interação passo a passo).`,
-      });
-    }
-  }
-
-  if (isBespokeVariant(design.dangerZone)) {
-    const slide = findSlide(slides, 'danger_zone');
-    if (!hasItemsWithCorrect(slide)) {
-      issues.push({
-        code: 'molde_danger_zone_sem_correct',
-        severity: 'error',
-        slideType: 'danger_zone',
-        message: `danger_zone do molde "${design.dangerZone}" exige items com "correct" (layout compare/arena) — sem isso cai em layout legado.`,
-      });
-    }
-  }
-
   // 3) Gate semântico (warn — não bloqueia escrita na fase piloto)
-  const instruction = String(payload.question_data?.instruction ?? '').trim();
+  const instructionText = String(payload.question_data?.instruction ?? '').trim();
   const options = payload.question_data?.options;
 
-  if (instruction && hasInstructionArtifacts(instruction)) {
+  if (instructionText && hasInstructionArtifacts(instructionText)) {
     issues.push({
       code: 'instruction_import_artifacts',
       severity: 'warn',
@@ -224,7 +243,7 @@ export function auditPremiumQuestao(payload: QuestaoLike): PremiumGateIssue[] {
     });
   }
 
-  if (instruction && detectSlideTopicDrift(instruction, slides)) {
+  if (instructionText && detectSlideTopicDrift(instructionText, slides)) {
     issues.push({
       code: 'slide_topic_drift',
       severity: 'warn',
@@ -250,16 +269,7 @@ export function auditPremiumQuestao(payload: QuestaoLike): PremiumGateIssue[] {
     });
   }
 
-  const familyId = payload.meta?.family;
-  const branch = resolvePedagogicalBranch(
-    subtopico,
-    instruction,
-    slides as import('@/lib/slides/moldAffinity').MoldAffinitySlide[],
-    payload.meta?.pedagogical_branch,
-    familyId,
-  );
-
-  if (subtopico && isPremiumSubtopico(subtopico) && branch && !payload.meta?.pedagogical_branch?.trim()) {
+  if (subtopico && isPremiumDesign(design) && branch && !payload.meta?.pedagogical_branch?.trim()) {
     issues.push({
       code: 'pedagogical_branch_inferred',
       severity: 'warn',

@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-07-15T16:11:44.732Z",
+  "lote": "saude-da-crianca-g08",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4121
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2091
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2941
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3426
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3245
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1308
+    }
+  ]
+}

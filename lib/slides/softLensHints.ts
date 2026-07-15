@@ -20,6 +20,8 @@ export type SoftLensHintProfile =
   | 'urgencias_exceto'
   | 'cam_exceto'
   | 'cam_documentacao'
+  | 'biosseg'
+  | 'seguranca'
   | 'none';
 
 const CALC_FORBIDDEN = /u-100|gotas|microgota|insulina|20-60-3|gts\/min/i;
@@ -92,6 +94,10 @@ function inferExamHintByProfile(row: GoldenRuleRow, profile: SoftLensHintProfile
       return inferCamExcetoExamHint(row);
     case 'cam_documentacao':
       return inferCamDocumentacaoExamHint(row);
+    case 'biosseg':
+      return inferBiossegExamHint(row);
+    case 'seguranca':
+      return inferSegurancaExamHint(row);
     default:
       return neutralExamHint(row);
   }
@@ -499,6 +505,26 @@ function inferTrabalhoExamHint(row: GoldenRuleRow): string {
   return neutralExamHint(row);
 }
 
+function inferSegurancaExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/dois identificador|pulseira|nome.*nascimento|leito/.test(text)) {
+    return 'Identificação segura: dois identificadores independentes no leito — pegadinha clássica é checar só um dado.';
+  }
+  if (/\bmorse\b|escala de morse|risco de queda|grades da cama/.test(text)) {
+    return 'Prevenção de quedas: Morse + ambiente (grades, piso, calçado) — não subestime idoso ou paciente confuso.';
+  }
+  if (/evento adverso|incidente|near miss|quase erro|\bpnsp\b|portaria.*529/.test(text)) {
+    return 'PNSP: classifique evento adverso × incidente × quase erro — notificação não se omite.';
+  }
+  if (/metas internacionais|\bjci\b|6 metas|higienizar as m[aã]os/.test(text)) {
+    return '6 metas internacionais: identificar paciente e higiene das mãos são as mais cobradas em prova.';
+  }
+  if (/verdadeira|falsa|gabarito|i e ii/.test(text)) {
+    return 'Julgue cada afirmativa I/II/III antes de montar a combinação A–E.';
+  }
+  return neutralExamHint(row);
+}
+
 function inferSaeExamHint(row: GoldenRuleRow): string {
   const text = `${row.label} ${row.value}`.toLowerCase();
   if (/anotação|diagnóstico|nanda|nic|noc|sae/.test(text)) {
@@ -506,6 +532,35 @@ function inferSaeExamHint(row: GoldenRuleRow): string {
   }
   if (/verdadeira|gabarito/.test(text)) {
     return 'Critério do gabarito nesta questão de SAE — relacione com a etapa do processo.';
+  }
+  return neutralExamHint(row);
+}
+
+function inferBiossegExamHint(row: GoldenRuleRow): string {
+  const text = `${row.label} ${row.value}`.toLowerCase();
+  if (/cadeia de infec[cç][aã]o|6 elos|reservat[oó]rio/.test(text)) {
+    return 'IRAS: memorize os 6 elos — agente, reservatório, porta de saída, transmissão, entrada e hospedeiro.';
+  }
+  if (/precau[cç][aã]o padr[aã]o|5 momentos|higiene das m[aã]os/.test(text)) {
+    return 'Precaução padrão vale para todos os pacientes — HH nos 5 momentos OMS é a medida mais eficaz.';
+  }
+  if (/perfurocortante|recapear|lixo comum|grupo e/.test(text)) {
+    return 'Pegadinha clássica: nunca recapear agulha nem descartar perfurocortante em lixo comum.';
+  }
+  if (/contato|mdro|luvas.*avental/.test(text)) {
+    return 'Precaução por contato — luvas e avental; quarto individual ou cohort quando indicado.';
+  }
+  if (/got[ií]cula|m[aá]scara cir[uú]rgica/.test(text)) {
+    return 'Gotículas: máscara cirúrgica a ≤1 m — influenza, meningite, coqueluche.';
+  }
+  if (/aeross[oó]l|n95|pff2|press[aã]o negativa/.test(text)) {
+    return 'Aerossóis: PFF2/N95 + ventilação — TB bacilífera, sarampo, varicela.';
+  }
+  if (/sf 0[,.]9|0[,.]9%|flushing|lock/.test(text)) {
+    return 'Cateter periférico: flush/lock com SF 0,9% — não confunda com água estéril.';
+  }
+  if (/verdadeira|falsa|gabarito|i e ii/.test(text)) {
+    return 'Julgue cada afirmativa I/II/III antes de montar a combinação A–E.';
   }
   return neutralExamHint(row);
 }
@@ -541,6 +596,12 @@ function inferFixationByProfile(
     }
     if (profile === 'respiratorio') {
       return 'Fixe SpO₂ 88–92% (DPOC), O₂ titulado e resgate asma antes das combinações A–E.';
+    }
+    if (profile === 'biosseg') {
+      return 'Fixe precauções padrão/contato/gotículas/aerossóis e descarte de perfurocortantes antes das combinações A–E.';
+    }
+    if (profile === 'seguranca') {
+      return 'Fixe dois identificadores, prevenção de quedas e classificação PNSP antes das combinações A–E.';
     }
     return 'Decore primeiro — item central cobrado nesta prova.';
   }

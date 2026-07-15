@@ -20,9 +20,19 @@ import { GoldenRuleMulherPapanicolauBoard } from './GoldenRuleMulherPapanicolauB
 import { GoldenRuleMulherMamaBoard } from './GoldenRuleMulherMamaBoard';
 import { GoldenRuleMulherPuerperioBoard } from './GoldenRuleMulherPuerperioBoard';
 import { GoldenRuleMulherPlanejamentoBoard } from './GoldenRuleMulherPlanejamentoBoard';
+import {
+  GoldenRuleCriancaFeedingBoard,
+  GoldenRuleCriancaScreeningBoard,
+  GoldenRuleCriancaPediatricBoard,
+  GoldenRuleCriancaDehydrationBoard,
+  GoldenRuleCriancaPuericulturaBoard,
+  GoldenRuleCriancaNeonatalBoard,
+  GoldenRuleCriancaDevBoard,
+} from './criancaVariants';
 import { GoldenRulePniTemperatureRail } from './GoldenRulePniTemperatureRail';
 import { GoldenRuleVitalsReferenceBoard } from './GoldenRuleVitalsReferenceBoard';
 import { GoldenRuleIstReferenceBoard } from './GoldenRuleIstReferenceBoard';
+import { GoldenRuleBiossegReferenceBoard } from './GoldenRuleBiossegReferenceBoard';
 import { GoldenRuleSaeReferenceBoard } from './GoldenRuleSaeReferenceBoard';
 import { GoldenRuleSondaMeasurementBoard } from './GoldenRuleSondaMeasurementBoard';
 import { GoldenRuleViaReferenceBoard } from './GoldenRuleViaReferenceBoard';
@@ -32,7 +42,14 @@ import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
 import { GoldenRuleAdolescentZBandBoard } from './GoldenRuleAdolescentZBandBoard';
 import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
+import { GoldenRuleSpNspReferenceBoard } from './GoldenRuleSpNspReferenceBoard';
 import { GoldenRuleRespiratorioSpo2ReferenceBoard } from './GoldenRuleRespiratorioSpo2ReferenceBoard';
+import { GoldenRuleMentalRapsTierBoard } from './GoldenRuleMentalRapsTierBoard';
+import { GoldenRuleMentalCrisisLadderBoard } from './GoldenRuleMentalCrisisLadderBoard';
+import { GoldenRulePeriPreopPrepBoard } from './GoldenRulePeriPreopPrepBoard';
+import { GoldenRulePeriAldreteBoard } from './GoldenRulePeriAldreteBoard';
+import { GoldenRulePeriProtocolReferenceBoard } from './GoldenRulePeriProtocolReferenceBoard';
+import { GoldenRulePeriVfReferenceBoard } from './GoldenRulePeriVfReferenceBoard';
 import { GoldenRuleUrgenciasRcpParamsBoard } from './GoldenRuleUrgenciasRcpParamsBoard';
 import { GoldenRuleUrgenciasTraumaReferenceBoard } from './GoldenRuleUrgenciasTraumaReferenceBoard';
 import { GoldenRuleUrgenciasCincinnatiBoard } from './GoldenRuleUrgenciasCincinnatiBoard';
@@ -43,6 +60,7 @@ import { GoldenRuleUrgenciasManchesterBoard } from './GoldenRuleUrgenciasManches
 import { GoldenRuleUrgenciasProtocolReferenceBoard } from './GoldenRuleUrgenciasProtocolReferenceBoard';
 import { GoldenRuleUrgenciasExcetoReferenceBoard } from './GoldenRuleUrgenciasExcetoReferenceBoard';
 import { GoldenRuleEtiologyLetterSpectrum } from './GoldenRuleEtiologyLetterSpectrum';
+import { GoldenRuleTbPrecautionBoard } from './GoldenRuleTbPrecautionBoard';
 import { GoldenRuleItuBundleBoard } from './GoldenRuleItuBundleBoard';
 import { GoldenRuleIvDifferentialBoard } from './GoldenRuleIvDifferentialBoard';
 import { GoldenRuleIvDeviceReferenceBoard } from './GoldenRuleIvDeviceReferenceBoard';
@@ -435,6 +453,28 @@ export const GoldenRule = ({
     );
   }
 
+  if (variant === 'crianca-feeding-board' && rows && rows.length > 0) {
+    return <GoldenRuleCriancaFeedingBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-screening-board' && rows && rows.length > 0) {
+    return <GoldenRuleCriancaScreeningBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-pediatric-board' && rows && rows.length > 0) {
+    return <GoldenRuleCriancaPediatricBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-dehydration-board' && rows && rows.length > 0) {
+    return <GoldenRuleCriancaDehydrationBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-puericultura-board' && rows && rows.length > 0) {
+    return <GoldenRuleCriancaPuericulturaBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-neonatal-board' && rows && rows.length > 0) {
+    return <GoldenRuleCriancaNeonatalBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-dev-board' && rows && rows.length > 0) {
+    return <GoldenRuleCriancaDevBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />;
+  }
+
   if (variant === 'pni-temperature-rail' && rows && rows.length > 0) {
     return (
       <GoldenRulePniTemperatureRail content={content} rows={rows} theme={theme} footerRule={footerRule} />
@@ -450,6 +490,12 @@ export const GoldenRule = ({
   if (variant === 'ist-reference-board' && rows && rows.length > 0) {
     return (
       <GoldenRuleIstReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'biosseg-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleBiossegReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 
@@ -495,9 +541,51 @@ export const GoldenRule = ({
     );
   }
 
+  if (variant === 'sp-nsp-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleSpNspReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
   if (variant === 'respiratorio-spo2-reference-board' && rows && rows.length > 0) {
     return (
       <GoldenRuleRespiratorioSpo2ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'mental-raps-tier-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleMentalRapsTierBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'mental-crisis-ladder-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleMentalCrisisLadderBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'peri-preop-prep-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePeriPreopPrepBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'peri-aldrete-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePeriAldreteBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'peri-protocol-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePeriProtocolReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'peri-vf-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePeriVfReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 
@@ -558,6 +646,12 @@ export const GoldenRule = ({
   if (variant === 'etiology-letter-spectrum' && rows && rows.length > 0) {
     return (
       <GoldenRuleEtiologyLetterSpectrum content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'tb-precaution-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleTbPrecautionBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

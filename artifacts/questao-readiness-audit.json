@@ -2,11 +2,29 @@
   "strict": true,
   "strict_v2_pedagogy": true,
   "strict_v3_pedagogy": false,
-  "scanned": 1,
+  "scanned": 3,
+  "summary": {
+    "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+    "scanned": 3,
+    "ready_100": 3,
+    "pct_ready": 100,
+    "registry": {
+      "status": "applied",
+      "total_slugs": 85,
+      "handcraft_applied": 85,
+      "complete": true
+    },
+    "tier_failures": {
+      "A1": 0,
+      "A2": 0,
+      "A3": 0
+    },
+    "not_ready": []
+  },
   "results": [
     {
-      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
-      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-4",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -31,6 +49,186 @@
         },
         {
           "tier": "A2",
+          "code": "risk_human_approval_required",
+          "message": "risk_tier=alto: revisão humana obrigatória antes do apply (factors: family_high_stakes, numeric_claim_critical, subtopic_immature). Assine meta.efficacy_contract com a4_reviewed=true e a4_reviewer humano (não agent:).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2b",
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"1.000 mL\" não encontrado na guideline de Cálculo de Administração de Medicamentos e Infusões.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_minimo_calculo",
+          "message": "A4-mínimo Cálculo FAIL — family_calc_always_human",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco alto → human_required [family_high_stakes, numeric_claim_critical, subtopic_immature] — family=calc — resposta é número; revisão humana obrigatória.",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_human_approval_required",
+          "message": "risk_tier=alto: revisão humana obrigatória antes do apply (factors: family_high_stakes, numeric_claim_critical, subtopic_immature). Assine meta.efficacy_contract com a4_reviewed=true e a4_reviewer humano (não agent:).",
+          "severity": "warn"
+        }
+      ],
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "inferred_branch": "calc_dose_equivalencia",
+      "risk": {
+        "risk_tier": "alto",
+        "approval_mode": "human_required",
+        "risk_factors": [
+          "family_high_stakes",
+          "numeric_claim_critical",
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "family=calc — resposta é número; revisão humana obrigatória.",
+          "Slides/enunciado afirmam dose ou parâmetro vital (mg/mL/UI/mmHg/bpm/°C/proporção).",
+          "Pacote ainda não está production_ready — confiança limitada.",
+          "A4-mínimo Cálculo: não elegível (family_calc_always_human)."
+        ]
+      }
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-2",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: E).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "risk_human_approval_required",
+          "message": "risk_tier=alto: revisão humana obrigatória antes do apply (factors: family_high_stakes, numeric_claim_critical, subtopic_immature). Assine meta.efficacy_contract com a4_reviewed=true e a4_reviewer humano (não agent:).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2b",
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"6 mg\" não encontrado na guideline de Cálculo de Administração de Medicamentos e Infusões.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_minimo_calculo",
+          "message": "A4-mínimo Cálculo FAIL — family_calc_always_human",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco alto → human_required [family_high_stakes, numeric_claim_critical, subtopic_immature] — family=calc — resposta é número; revisão humana obrigatória.",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_human_approval_required",
+          "message": "risk_tier=alto: revisão humana obrigatória antes do apply (factors: family_high_stakes, numeric_claim_critical, subtopic_immature). Assine meta.efficacy_contract com a4_reviewed=true e a4_reviewer humano (não agent:).",
+          "severity": "warn"
+        }
+      ],
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "inferred_branch": "calc_dose_equivalencia",
+      "risk": {
+        "risk_tier": "alto",
+        "approval_mode": "human_required",
+        "risk_factors": [
+          "family_high_stakes",
+          "numeric_claim_critical",
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "family=calc — resposta é número; revisão humana obrigatória.",
+          "Slides/enunciado afirmam dose ou parâmetro vital (mg/mL/UI/mmHg/bpm/°C/proporção).",
+          "Pacote ainda não está production_ready — confiança limitada.",
+          "A4-mínimo Cálculo: não elegível (family_calc_always_human)."
+        ]
+      }
+    },
+    {
+      "slug": "isba-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-0",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: D).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "risk_human_approval_required",
+          "message": "risk_tier=alto: revisão humana obrigatória antes do apply (factors: family_high_stakes, numeric_claim_critical, subtopic_immature). Assine meta.efficacy_contract com a4_reviewed=true e a4_reviewer humano (não agent:).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
           "code": "l2_gabarito_unparseable",
           "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
           "severity": "warn"
@@ -43,30 +241,39 @@
         },
         {
           "tier": "A4",
-          "code": "a4_minimo_farmaco",
-          "message": "A4-mínimo Farmacodinâmica PASS — claims [insulina-perfil-acao] eixos [farmacodinamica]",
-          "severity": "info"
+          "code": "a4_minimo_calculo",
+          "message": "A4-mínimo Cálculo FAIL — family_calc_always_human",
+          "severity": "warn"
         },
         {
           "tier": "A4",
           "code": "risk_tier",
-          "message": "Risco medio → auto_conditional [subtopic_immature] — Slides/enunciado afirmam dose ou parâmetro vital (mg/mL/UI/mmHg/bpm/°C/proporção).",
+          "message": "Risco alto → human_required [family_high_stakes, numeric_claim_critical, subtopic_immature] — family=calc — resposta é número; revisão humana obrigatória.",
           "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_human_approval_required",
+          "message": "risk_tier=alto: revisão humana obrigatória antes do apply (factors: family_high_stakes, numeric_claim_critical, subtopic_immature). Assine meta.efficacy_contract com a4_reviewed=true e a4_reviewer humano (não agent:).",
+          "severity": "warn"
         }
       ],
-      "family": "conceito",
-      "pedagogical_branch": "farmaco_clinico_protocolo",
-      "inferred_branch": "farmaco_clinico_protocolo",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "inferred_branch": "calc_dose_equivalencia",
       "risk": {
-        "risk_tier": "medio",
-        "approval_mode": "auto_conditional",
+        "risk_tier": "alto",
+        "approval_mode": "human_required",
         "risk_factors": [
+          "family_high_stakes",
+          "numeric_claim_critical",
           "subtopic_immature"
         ],
         "reasons": [
+          "family=calc — resposta é número; revisão humana obrigatória.",
           "Slides/enunciado afirmam dose ou parâmetro vital (mg/mL/UI/mmHg/bpm/°C/proporção).",
           "Pacote ainda não está production_ready — confiança limitada.",
-          "A4-mínimo Farmacodinâmica: whitelist grounded → alto↓medio [insulina-perfil-acao]."
+          "A4-mínimo Cálculo: não elegível (family_calc_always_human)."
         ]
       }
     }

@@ -10,7 +10,7 @@ export type IvComplicationSlot =
   | 'pegadinha'
   | 'geral';
 
-export const IV_COMPLICATION_ORBIT_SLOTS: IvComplicationSlot[] = [
+export const IV_COMPLICATION_LAYER_SLOTS: IvComplicationSlot[] = [
   'contexto',
   'infiltracao',
   'flebite',

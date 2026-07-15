@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-15T16:34:55.179Z",
+  "lote": "saude-da-crianca-g08",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+    "unifil-enfermagem-vias-de-administracao-1778968956139-6",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+    "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

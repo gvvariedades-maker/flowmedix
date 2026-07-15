@@ -1,0 +1,144 @@
+﻿---itame-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-1---
+INST: Uma ampola de Gluconato de C├ílcio 8%/10mL foi dilu├¡da em 50 mL de soro glicosado 5%. Se dessa solu├º├úo, o paciente receber apenas, 42 mL, a quantidade de
+Gluconato de C├ílcio infundida ser├í de:
+OPTS: A: 480 mg. | B: 520 mg. | C*: 560 mg. | D: 580 mg.
+META: {"banca":"Itame","ano":"2022"}
+
+---ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-2---
+INST: R.J.S. deu entrada na Unidade de Pronto Atendimento com diagn├│stico de exacerba├º├úo de asma, na prescri├º├úo m├®dica foi solicitada a administra├º├úo de 2ml de
+epinefrina para ser dilu├¡da em 8 ml SF 0,9% e redilu├¡da em 500ml de soro glicosado ├á 5%, a ser administrado por meio de uma bomba de infus├úo cont├¡nua por 4 horas.
+Qual a vaz├úo a ser ajustada na bomba?
+OPTS: A*: 127,5ml/hora. | B: 125ml/hora. | C: 125,5ml/hora. | D: 130ml/hora. | E: 132ml/hora.
+META: {"banca":"Ivin","ano":"2022"}
+
+---ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3---
+INST: A transfus├úo de concentrado de hem├ícias (CH) deve ser realizada para tratar, ou prevenir iminente e inadequada libera├º├úo de oxig├¬nio (O2) aos tecidos, ou seja,
+em casos de anemia, por├®m nem todo estado de anemia exige a transfus├úo de hem├ícias. Ap├│s o in├¡cio da transfus├úo, o sangue deve ser transfundido dentro de, no
+m├íximo, quantas horas:
+OPTS: A: 5 horas. | B: 5 horas e 30 minutos. | C: 3 horas. | D*: 4 horas. | E: 4 horas e 30 minutos.
+META: {"banca":"Ivin","ano":"2022"}
+
+---ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-4---
+INST: Foi prescrito 2000 ml de Soro Fisiol├│gico 0,9%, para ser infundido por via endovenosa em 24 horas, nesse caso, o t├®cnico de enfermagem dever├í realizar o c├ílculo
+e administrar a solu├º├úo prescrita no seguinte gotejamento:
+OPTS: A: 21 gotas/min. | B*: 28 gotas/min. | C: 62 gotas/min. | D: 83 gotas/ min. | E: 100 gotas/min.
+META: {"banca":"Ivin","ano":"2022"}
+
+---ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5---
+INST: Dentre as recomenda├º├Áes para o uso de hemocomponentes, nenhuma transfus├úo deve exceder o per├¡odo de infus├úo de:
+OPTS: A: 1 hora. | B: 2 horas. | C: 3 horas. | D*: 4 horas. | E: 24 horas.
+META: {"banca":"Ivin","ano":"2022"}
+
+---lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-6---
+INST: A posologia de um determinado medicamento analg├®sico que ├® recomendada para crian├ºas a partir de 6 meses ├® de 1 gota/Kg peso.
+Para uma crian├ºa de 36 Kg dever├í ser administrada a seguinte quantidade deste medicamento em mililitros:
+OPTS: A: 1, 4 ml. | B: 1,6 ml. | C: 1,8 ml. | D*: 2,0 ml. | E: 2,2 ml.
+META: {"banca":"Lj Assessoria","ano":"2022"}
+
+---lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-7---
+INST: O m├®dico prescreveu para uma crian├ºa de 6 anos a administra├º├úo de 10 ml de um determinado medicamento por via oral. Para cumprimento desta prescri├º├úo, o
+profissional de enfermagem dever├í administrar a seguinte quantidade de medicamento em gotas:
+OPTS: A*: 100 gotas. | B: 120 gotas. | C: 150 gotas. | D: 180 gotas. | E: 200 gotas.
+META: {"banca":"Lj Assessoria","ano":"2022"}
+
+---nao-informado-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-0---
+INST: Sabendo que a ampola tem apresenta├º├úo comercial de 10 mg/2,5 mL e o t├®cnico em enfermagem administrou, por via intramuscular, 1,8 mL, a dosagem prescrita
+foi de:
+OPTS: A: 5,6 mg. | B: 6,3 mg. | C*: 7,2 mg. | D: 8,5 mg.
+META: {"banca":"ITAME","ano":"2022"}
+
+---objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-1---
+INST: Paciente comparece ├á emerg├¬ncia com quadro de desidrata├º├úo. Foi prescrita reposi├º├úo h├¡drica e de eletr├│litos em volume total de 320ml, para infundir em 3 horas.
+Assinalar a alternativa que cont├®m o gotejamento aproximado em microgotas/min:
+OPTS: A: 35 | B: 46 | C: 96 | D*: 107
+META: {"banca":"Objetiva Concursos","ano":"2021"}
+
+---objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7---
+INST: O m├®dico prescreveu heparina s├│dica 8.000U via subcut├ónea de 12/12 horas. Por├®m, o medicamento dispon├¡vel ├® em 10.000U/ml. Assinalar a alternativa que
+apresenta o volume CORRETO de heparina que deve ser administrado:
+OPTS: A: 0,6ml | B*: 0,8ml | C: 0,10ml | D: 0,16ml
+META: {"banca":"Objetiva Concursos","ano":"2021"}
+
+---omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-8---
+INST: Uma paciente, com diagn├│stico de infec├º├úo p├®lvica, precisa receber, a cada 4 horas, 1250 mg de ceftriaxone intravenoso. A farm├ícia possui, apenas, ampolas de
+500 mg. Para que a paciente receba a dose adequada, nas 24 horas do dia, dever├í ser solicitado ├á farm├ícia:
+OPTS: A: 10 ampolas. | B: 12 ampolas. | C*: 15 ampolas. | D: 17 ampolas.
+META: {"banca":"Omni","ano":"2021"}
+
+---omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-0---
+INST: 10 mg de dexametasona foram dilu├¡das em 50 mL de soro fisiol├│gico. Dessa solu├º├úo, a prescri├º├úo m├®dica ├® de infus├úo de, apenas, 32 mL. Qual dosagem de
+dexametasona o paciente receber├í?
+OPTS: A: 0,8 mg. | B: 4,5 mg. | C*: 6,4 mg. | D: 32 mg.
+META: {"banca":"Omni","ano":"2021"}
+
+---omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-1---
+INST: Qual das medidas, abaixo, ├® indicada para o preparo do medicamento de forma segura?
+OPTS: A: Checar o nome completo do paciente, na etiqueta do medicamento, com o nome, na pulseira de identifica├º├úo. | B: Verificar as condi├º├Áes das vias de acesso para administra├º├úo de medicamento (oral, intramuscular, intravenosa perif├®rica ou central, entre outras). | C*: Saber calcular a dose exata prescrita e a unidade de medida do sistema m├®trico. | D: Realizar a desinfec├º├úo das conex├Áes instaladas para administra├º├úo de medicamentos, utilizar solu├º├Áes contendo ├ílcool, por meio de fric├º├úo vigorosa com, no m├¡nimo, tr├¬s movimentos rotat├│rios, utilizando gaze limpa ou sach├¬, sempre antes de acessar o dispositivo.
+META: {"banca":"Omni","ano":"2021"}
+
+---quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7---
+INST: Ao consultar a prescri├º├úo m├®dica, um t├®cnico em enfermagem observou que est├úo prescritos 500 mL de SG a 10%. No entanto, ao analisar os medicamentos
+dispon├¡veis em sua unidade de trabalho, notou que n├úo h├í a concentra├º├úo prescrita, estando dispon├¡veis a de 500 mL de SG a 5% e ampolas de 20 mL de glicose a 50%.
+Com base nessa situa├º├úo hipot├®tica, ├® correto afirmar que, para que se consiga preparar o soro prescrito,
+OPTS: A: n├úo se deve desprezar o volume do frasco dispon├¡vel e deve-se acrescentar 55 mL de glicose a 50% no frasco de 500 mL de SG a 5% para transform├í-lo em SG a 10%. | B: n├úo se deve desprezar o volume do frasco dispon├¡vel e deve-se acrescentar 75 mL de glicose a 50% no frasco de 500 mL de SG a 5% para transform├í-lo em SG a 10%. | C: n├úo se deve desprezar o volume do frasco dispon├¡vel e deve-se acrescentar 25 mL de glicose a 50% no frasco de 500 mL de SG a 5% para transform├í-lo em SG a 10%. | D: deve-se desprezar 80 mL do frasco dispon├¡vel e acrescentar 80 mL de glicose a 50% no frasco de 500 mL de SG a 5% para transform├í-lo em SG a 10%. | E*: deve-se desprezar 50 mL do frasco dispon├¡vel e acrescentar 55 mL de glicose a 50% no frasco de 450 mL de SG a 5% para transform├í-lo em SG a 10%.
+META: {"banca":"QUADRIX","ano":"2021"}
+
+---quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780000237780-2---
+INST: Caso cl├¡nico hipot├®tico para a quest├úo
+Um paciente chegou ├á unidade com queixa de dor de cabe├ºa, tontura, n├íusea e estocoma cintilante. Uma t├®cnica de enfermagem fez os primeiros passos para a admiss├úo e para a coleta os seguintes dados: PA de 198 x 110; FC de 179 bpm; FR de 28 rpm; sat. a 95%; e HGT de 552. Ap├│s a admiss├úo, o m├®dico assistente fez a prescri├º├úo a seguir.
+Tramadol 50 mg ÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉ 2 ampolas / IV Diluir em SF 0,9% de 100 ml, correr em 2 horas.
+Cloridrato de ondasetrona 8 mg ÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉ 1 ampola /
+IV.
+Dexametasona 2 mg ÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉ 1 ampola /
+IV.
+Insulina asparte ÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉ 8 UI / SC.
+Insulina regular ÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉ 16 UI / SC.
+Captopril 50 mg ÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉÔÇÉ 1 cp / SL.
+O tramadol, prescrito para o caso cl├¡nico apresentado, precisa correr de forma lenta devido aos seus efeitos colaterais. Dessa forma, quando ele ├® aplicado de forma r├ípida, a sua apresenta├º├úo ├® realizada em ampola de 1 ml, sendo 50 mg/ml de tramadol. A partir desse caso cl├¡nico hipot├®tico, da informa├º├úo apresentada e conforme a prescri├º├úo indicada, o tempo de gotejamento ser├í de
+OPTS: A: 0,3 gotas por minuto. | B: 2 gotas por minuto. | C: 12 gotas por minuto. | D*: 17 gotas por minuto. | E: 20 gotas por minuto.
+META: {"banca":"QUADRIX","ano":"2026"}
+
+---unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0---
+INST: Paciente idosa, sexo feminino, 67 anos, encontra-se internada na cl├¡nica m├®dica devido infec├º├úo do trato respirat├│rio. O m├®dico prescreveu 3.000.000UI de
+penicilina cristalina de 12/12 horas. Considerando que na unidade o frasco dispon├¡vel tem 5.000.000UI e deve ser reconstitu├¡do em 8ml de ├ígua destilada para totalizar
+um volume de 10ml, qual o volume que deve ser administrado?
+OPTS: A: 5ml. | B: 6,5ml. | C*: 6ml. | D: 4ml.
+META: {"banca":"Unifil","ano":"2021"}
+
+---unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4---
+INST: O cuidado a administra├º├úo de medicamentos ├® de responsabilidade do t├®cnico de enfermagem, analise as assertivas e assinale a alternativa correta.
+I. Espera-se na aplica├º├úo de insulina regular por via subcut├ónea a forma├º├úo de p├ípula.
+II. Considerando uma dose prescrita de 0,4mg de medicamento X, ao qual na unidade est├í dispon├¡vel frasco de 4mg/ml ├® correto afirmar que a dose administrada
+ser├í de 0,2 ml.
+III. No caso de uma prescri├º├úo de 500 ml de soro fisiol├│gico para correr em 6 horas ├® correto que o gotejamento ser├í de 60 gotas ou 240 microgotas por
+minutos.
+IV. No caso de uma prescri├º├úo de 500 ml de soro glicosado, endovenoso, 8/8 horas ├® correta que o n├║mero de gotas por minutos infundidas ├® de 21 gotas.
+V. Medicamentos iguais provocam rea├º├Áes iguais em todos os indiv├¡duos.
+OPTS: A: Apenas II, III e IV est├úo corretas. | B*: Apenas IV est├í correta. | C: Apenas V est├í correta. | D: Apenas II e IV est├úo incorretas. | E: Todas est├úo corretas.
+META: {"banca":"Unifil","ano":"2021"}
+
+---unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-5---
+INST: Para administrar um soro fisiol├│gico de 0,9% de 1000ml em um per├¡odo de 08 horas, o gotejamento em gotas/min. Ser├í de:
+OPTS: A: 48 gotas por minuto. | B: 52 gotas por minuto. | C: 40 gotas por minuto. | D*: 44 gotas por minuto. | E: 42 gotas por minuto.
+META: {"banca":"Unifil","ano":"2021"}
+
+---vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-5---
+INST: O profissional de enfermagem deve possui a compet├¬ncia t├®cnica de realizar c├ílculos de medica├º├úo precisos a fim de garantir dose e gotejamento corretos para o
+paciente. Considerando seu conhecimento pr├®vio sobre o assunto, responda: quantas gotas e microgotas por minuto s├úo necess├írias, aproximadamente, para correr uma
+solu├º├úo de ringer lactato de 1 000 mL em 12 horas?
+OPTS: A: 32 gotas e 96 microgotas. | B: 46 gotas e 138 microgotas. | C: 30 gotas e 96 microgotas. | D*: 28 gotas e 84 microgotas. | E: 46 gotas e 198 microgotas.
+META: {"banca":"VUNESP","ano":"2021"}
+
+---vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-6---
+INST: A m├®dica plantonista da Unidade de Terapia Intensiva solicitou a administra├º├úo de 10 mg de dormonid em bolus em um paciente e na unidade encontram-se
+dispon├¡veis ampolas de 15 mg/3 mL desse medicamento. Qual a quantidade em ml dever├í ser administrada para cumprir a prescri├º├úo?
+OPTS: A: 1,0 mL. | B: 1,5 mL. | C*: 2,0 mL. | D: 2,5 mL. | E: 3,0 mL.
+META: {"banca":"VUNESP","ano":"2021"}
+
+---vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7---
+INST: Considere a correta sequ├¬ncia do preparo e da administra├º├úo de uma dose da medica├º├úo metilprednisolona 5 mg (via endovenosa, para correr em 30 minutos, a
+partir de frasco-ampola com p├│ liofilizado), em uma crian├ºa com acesso venoso perif├®rico (AVP) em dorso de m├úo direita. Ap├│s adotar o uso de precau├º├Áes-padr├úo, os
+pr├│ximos passos s├úo, respectivamente:
+OPTS: A: identifica├º├úo dos materiais; redilui├º├úo; saliniza├º├úo de AVP; ajuste de dose conforme peso; administra├º├úo em bolus. | B: c├ílculo de dose e gotejamento; pun├º├úo venosa espec├¡fica para administra├º├úo; reconstitui├º├úo em 10 mL; administra├º├úo em c├ómara graduada (bureta). | C: c├ílculo de ajuste de dose conforme peso e redilui├º├úo; saliniza├º├úo de AVP; confer├¬ncia de identifica├º├úo ("dois certos"); administra├º├úo em soro glicosado. | D: pun├º├úo de acesso venoso independente; ajuste de dose para pediatria; reconstitui├º├úo em c├ómara graduada (bureta); infus├úo em bolus. | E*: reconstitui├º├úo e identifica├º├úo; processo de redilui├º├úo a partir da apresenta├º├úo do medicamento e da dose prescrita; preparo de equipo e bureta; administra├º├úo em AVP verificado e salinizado.
+META: {"banca":"VUNESP","ano":"2021"}
+

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T17:15:56.052Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g04",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 332
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 333
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 336
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 337
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 342
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 308
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 309
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 334
+    }
+  ]
+}

@@ -62,8 +62,19 @@ export type PedagogicalBranchId =
   | 'respiratorio_asma_crise'
   | 'respiratorio_tecnica_inalador'
   | 'respiratorio_generico'
+  // Feridas e Queimaduras
+  | 'feridas_grau_profundidade'
+  | 'feridas_scq_calculo'
+  | 'feridas_scq_regra9'
+  | 'feridas_grande_queimado'
+  | 'feridas_atendimento_inicial'
+  | 'feridas_classificacao'
+  | 'feridas_cicatrizacao'
+  | 'feridas_curativo_tipo'
+  | 'feridas_generico'
   // Doenças Bacterianas e Fúngicas
   | 'bacterianas_agente_etiologico'
+  | 'bacterianas_tuberculose'
   | 'bacterianas_generico'
   // Infecções / Biossegurança
   | 'biosseg_iras_itu_cateter'
@@ -111,6 +122,25 @@ export type PedagogicalBranchId =
   | 'mulher_puerperio'
   | 'mulher_planejamento'
   | 'mulher_generico'
+  // Saúde da Criança
+  | 'crianca_aleitamento_nutricao'
+  | 'crianca_triagem_neonatal'
+  | 'crianca_neonatologia'
+  | 'crianca_aps_puericultura'
+  | 'crianca_desenvolvimento'
+  | 'crianca_desidratacao'
+  | 'crianca_generico'
+  // Enfermagem do Trabalho
+  | 'trabalho_vf_nr32'
+  | 'trabalho_pep_trap'
+  | 'trabalho_nr15_reference'
+  | 'trabalho_ergonomia'
+  | 'trabalho_generico'
+  // Processo de Enfermagem / SAE
+  | 'sae_documentacao'
+  | 'sae_etapas'
+  | 'sae_exceto'
+  | 'sae_generico'
   // História da Enfermagem
   | 'historia_nightingale'
   | 'historia_humanizacao'
@@ -159,12 +189,13 @@ const CME_REFERENCE: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Pacote bespoke crise/CAPS — escada de cuidado (não reutiliza SAE). */
 const MENTAL_CRISIS_MOLD: SubtopicDesign = {
   template: 'violet',
-  conceptMap: 'morphological',
-  goldenRule: 'center',
-  logicFlow: 'sae-decision-tap',
-  dangerZone: 'norm-reveal',
+  conceptMap: 'mental-crisis-signal-deck',
+  goldenRule: 'mental-crisis-ladder-board',
+  logicFlow: 'mental-crisis-decision-tap',
+  dangerZone: 'mental-crisis-coercion-trap',
 };
 
 const MENTAL_GENERIC: SubtopicDesign = {
@@ -175,12 +206,31 @@ const MENTAL_GENERIC: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Pacote bespoke RAPS/legis — trilho de componentes da rede. */
 const MENTAL_LEGIS: SubtopicDesign = {
   template: 'violet',
-  conceptMap: 'bridge',
-  goldenRule: 'reference_table',
-  logicFlow: 'vertical',
-  dangerZone: 'compare',
+  conceptMap: 'mental-raps-network-rail',
+  goldenRule: 'mental-raps-tier-board',
+  logicFlow: 'mental-raps-classify-tap',
+  dangerZone: 'mental-raps-trap-arena',
+};
+
+/** Pacote SAE bespoke 4/4 — etapas / diagnóstico / responsabilidades (âncora COPESE). */
+const SAE_BESPOKE: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'sae-responsibility-matrix',
+  goldenRule: 'sae-reference-board',
+  logicFlow: 'sae-decision-tap',
+  dangerZone: 'norm-reveal',
+};
+
+/** Documentação / anotação / prontuário — concept_map sae-documentation. */
+const SAE_DOC_BESPOKE: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'sae-documentation',
+  goldenRule: 'sae-reference-board',
+  logicFlow: 'sae-decision-tap',
+  dangerZone: 'norm-reveal',
 };
 
 const SONDA_BESPOKE: SubtopicDesign = {
@@ -334,10 +384,10 @@ const CAM_DOCUMENTACAO_MOLD: SubtopicDesign = {
   dangerZone: 'cam-documentacao-trap-arena',
 };
 
-/** Complicações IV — órbita diferencial + label-swap (infiltração × flebite × hematoma). */
+/** Complicações IV — camadas teciduais + label-swap (infiltração × flebite × hematoma). */
 const PUNCAO_FLEBITE_MOLD: SubtopicDesign = {
   template: 'indigo',
-  conceptMap: 'iv-complication-orbit',
+  conceptMap: 'iv-complication-tissue-layers',
   goldenRule: 'iv-differential-board',
   logicFlow: 'iv-complication-tap-flow',
   dangerZone: 'iv-label-swap-trap',
@@ -452,12 +502,100 @@ const RESPIRATORIO_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Graus/profundidade — burn-depth-layer-deck (âncora ICECE). */
+const FERIDAS_GRAU_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'burn-depth-layer-deck',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'burn-trap-arena',
+};
+
+/** SCQ / regra dos 9 — burn-rule-nine-board. */
+const FERIDAS_SCQ_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'burn-depth-layer-deck',
+  goldenRule: 'burn-rule-nine-board',
+  logicFlow: 'vertical',
+  dangerZone: 'burn-trap-arena',
+};
+
+/** Atendimento inicial / protocolo — triage tap-flow. */
+const FERIDAS_ATENDIMENTO_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'burn-triage-tap-flow',
+  dangerZone: 'burn-trap-arena',
+};
+
+/** Classificação ferida / cicatrização / curativo — genérico premium laranja. */
+const FERIDAS_REFERENCE_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+const FERIDAS_GENERIC_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'morphological',
+  goldenRule: 'center',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Pacote bespoke 4/4 — NR-32 annex deck + VF juggle + PEP trap (âncora golden). */
+const TRABALHO_BESPOKE_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'nr32-annex-deck',
+  goldenRule: 'trabalho-nr32-reference-board',
+  logicFlow: 'trabalho-vf-juggle-tap',
+  dangerZone: 'trabalho-pep-trap-arena',
+};
+
+/** NR-15 / agentes físicos — calor, ruído, radiação (reference board). */
+const TRABALHO_NR15_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'morphological',
+  goldenRule: 'trabalho-nr32-reference-board',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Ergonomia / LER-DORT — genérico premium amber. */
+const TRABALHO_ERGONOMIA_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+const TRABALHO_GENERIC_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 const BACTERIANAS_ETIOLOGIA_MOLD: SubtopicDesign = {
   template: 'orange',
   conceptMap: 'etiology-kingdom-rail',
   goldenRule: 'etiology-letter-spectrum',
   logicFlow: 'etiology-elimination-tap',
   dangerZone: 'etiology-intruder-chips',
+};
+
+/** Pacote TB bespoke 4/4 — vigilância × BAAR × aerossóis × VF I/II/III. */
+const BACTERIANAS_TB_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'tb-vigilance-rail',
+  goldenRule: 'tb-precaution-board',
+  logicFlow: 'tb-vf-elimination-tap',
+  dangerZone: 'tb-transmission-trap',
 };
 
 const BACTERIANAS_GENERIC_MOLD: SubtopicDesign = {
@@ -476,15 +614,44 @@ const BIOSSEG_ITU_CATETER_MOLD: SubtopicDesign = {
   dangerZone: 'itu-catheter-trap',
 };
 
-const BIOSSEG_GENERIC_MOLD: SubtopicDesign = {
+/** IRAS / precauções / higiene — pacote bespoke 4/4 (âncora fepese IRAS V/F). */
+const BIOSSEG_GENERIC_BESPOKE_MOLD: SubtopicDesign = {
   template: 'lime',
-  conceptMap: 'molecular',
-  goldenRule: 'banner',
-  logicFlow: 'cards',
-  dangerZone: 'cards',
+  conceptMap: 'biosseg-precaution-deck',
+  goldenRule: 'biosseg-reference-board',
+  logicFlow: 'biosseg-vf-juggle-tap',
+  dangerZone: 'biosseg-trap-chips',
 };
 
-/** Identificação, quedas, eventos, metas JCI — tabela + compare (sem molde bespoke). */
+const BIOSSEG_GENERIC_MOLD: SubtopicDesign = BIOSSEG_GENERIC_BESPOKE_MOLD;
+
+/** Identificação segura — deck pulseira + VF juggle + trap arena (bespoke). */
+const SP_IDENTIFICACAO_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'sp-id-verify-deck',
+  goldenRule: 'sp-nsp-reference-board',
+  logicFlow: 'sp-vf-juggle-tap',
+  dangerZone: 'sp-safety-trap-arena',
+};
+
+/** Prevenção de quedas — trilho Morse + protocol tap + trap arena (bespoke). */
+const SP_QUEDAS_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'sp-fall-risk-rail',
+  goldenRule: 'sp-nsp-reference-board',
+  logicFlow: 'sp-protocol-tap-flow',
+  dangerZone: 'sp-safety-trap-arena',
+};
+
+/** Eventos adversos / PNSP — taxonomy deck + protocol tap + trap arena (bespoke). */
+const SP_EVENTOS_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'sp-incident-taxonomy-deck',
+  goldenRule: 'sp-nsp-reference-board',
+  logicFlow: 'sp-protocol-tap-flow',
+  dangerZone: 'sp-safety-trap-arena',
+};
+
 const SP_REFERENCE_MOLD: SubtopicDesign = {
   template: 'amber',
   conceptMap: 'morphological',
@@ -501,13 +668,49 @@ const SP_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
-/** Perioperatória / SRPA — pacote genérico premium (sem molde React bespoke). */
+/** Perioperatória / SRPA — pacote genérico premium (cauda longa: ISC, genérico). */
 export const PERIOPERATORIO_GENERIC_MOLD: SubtopicDesign = {
   template: 'violet',
   conceptMap: 'morphological',
   goldenRule: 'reference_table',
   logicFlow: 'vertical',
   dangerZone: 'compare',
+};
+
+/** Perioperatória — pré-operatório bespoke 4/4 (fases × preparo). */
+const PERI_PREOP_MOLD: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'peri-preop-phase-deck',
+  goldenRule: 'peri-preop-prep-board',
+  logicFlow: 'peri-preop-decision-tap',
+  dangerZone: 'peri-preop-trap-arena',
+};
+
+/** Perioperatória — pós-operatório / SRPA bespoke 4/4 (monitorização × Aldrete). */
+const PERI_POS_MOLD: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'peri-srpa-monitor-deck',
+  goldenRule: 'peri-aldrete-board',
+  logicFlow: 'peri-srpa-decision-tap',
+  dangerZone: 'peri-srpa-trap-arena',
+};
+
+/** Perioperatória — protocolo / cirurgia segura bespoke 4/4 (WHO × CDC). */
+const PERI_PROTOCOL_MOLD: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'peri-protocol-checklist-deck',
+  goldenRule: 'peri-protocol-reference-board',
+  logicFlow: 'peri-protocol-tap-flow',
+  dangerZone: 'peri-protocol-trap-arena',
+};
+
+/** Perioperatória — V/F Cebraspe bespoke 4/4 (I/II/III juggle). */
+const PERI_VF_MOLD: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'peri-vf-assertions-deck',
+  goldenRule: 'peri-vf-reference-board',
+  logicFlow: 'peri-vf-juggle-tap',
+  dangerZone: 'peri-vf-trap-chips',
 };
 
 /** Pacote bespoke RCP/SBV adulto — survival-chain-deck + params-board + tap-flow + trap-arena. */
@@ -644,6 +847,78 @@ export const MULHER_GENERIC_DESIGN: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+/** Pacote bespoke aleitamento / nutrição infantil — trilho AME. */
+export const CRIANCA_ALEITAMENTO_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'crianca-feeding-timeline',
+  goldenRule: 'crianca-feeding-board',
+  logicFlow: 'crianca-feeding-tap-flow',
+  dangerZone: 'crianca-feeding-trap-arena',
+};
+
+/** Pacote bespoke triagem neonatal — pezinho / coraçãozinho. */
+export const CRIANCA_TRIAGEM_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'crianca-screening-timeline',
+  goldenRule: 'crianca-screening-board',
+  logicFlow: 'crianca-screening-tap-flow',
+  dangerZone: 'crianca-screening-trap-arena',
+};
+
+/** Pacote bespoke hub pediátrico — conceito geral forte. */
+export const CRIANCA_PEDIATRIC_HUB_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'crianca-pediatric-hub',
+  goldenRule: 'crianca-pediatric-board',
+  logicFlow: 'crianca-pediatric-tap-flow',
+  dangerZone: 'crianca-pediatric-trap-arena',
+};
+
+/** Pacote bespoke desidratação — espectro plano A/B/C. */
+export const CRIANCA_DESIDRATACAO_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'crianca-dehydration-spectrum',
+  goldenRule: 'crianca-dehydration-board',
+  logicFlow: 'crianca-dehydration-tap-flow',
+  dangerZone: 'crianca-dehydration-trap-arena',
+};
+
+/** Pacote bespoke APS / puericultura — linha de visitas. */
+export const CRIANCA_PUERICULTURA_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'crianca-puericultura-timeline',
+  goldenRule: 'crianca-puericultura-board',
+  logicFlow: 'crianca-puericultura-tap-flow',
+  dangerZone: 'crianca-puericultura-trap-arena',
+};
+
+/** Pacote bespoke neonatologia clínica — deck APGAR / cuidados RN. */
+export const CRIANCA_NEONATOLOGIA_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'crianca-neonatal-deck',
+  goldenRule: 'crianca-neonatal-board',
+  logicFlow: 'crianca-neonatal-tap-flow',
+  dangerZone: 'crianca-neonatal-trap-arena',
+};
+
+/** Pacote bespoke desenvolvimento — trilho de marcos. */
+export const CRIANCA_DESENVOLVIMENTO_MOLD: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'crianca-dev-milestones-rail',
+  goldenRule: 'crianca-dev-board',
+  logicFlow: 'crianca-dev-tap-flow',
+  dangerZone: 'crianca-dev-trap-arena',
+};
+
+/** Layout genérico Saúde da Criança (ramos sem molde bespoke). */
+export const CRIANCA_GENERIC_DESIGN: SubtopicDesign = {
+  template: 'cyan',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /** EXCETO / INCORRETA — rail semântico por letra (distratores corretos × exceção). */
 const URGENCIAS_EXCETO_MOLD: SubtopicDesign = {
   template: 'rose',
@@ -728,6 +1003,13 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
     adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
   },
+  'processamento de artigos e produtos de saude': {
+    cme_preparo_limpeza: CME_DEFAULT,
+    cme_autoclave_metodos: CME_REFERENCE,
+    cme_processamento_conceito: CME_DEFAULT,
+    cme_vf_ce: CME_REFERENCE,
+    cme_generico: CME_DEFAULT,
+  },
   'central de material e esterilizacao': {
     cme_preparo_limpeza: CME_DEFAULT,
     cme_autoclave_metodos: CME_REFERENCE,
@@ -757,6 +1039,18 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     mental_depressao: MENTAL_GENERIC,
     mental_aps_acolhimento: MENTAL_GENERIC,
     mental_generico: MENTAL_GENERIC,
+  },
+  'processo de enfermagem': {
+    sae_documentacao: SAE_DOC_BESPOKE,
+    sae_etapas: SAE_BESPOKE,
+    sae_exceto: SAE_BESPOKE,
+    sae_generico: SAE_BESPOKE,
+  },
+  sae: {
+    sae_documentacao: SAE_DOC_BESPOKE,
+    sae_etapas: SAE_BESPOKE,
+    sae_exceto: SAE_BESPOKE,
+    sae_generico: SAE_BESPOKE,
   },
   'instalacao e manejo de sondas': {
     sonda_instalacao_protocolo: SONDA_BESPOKE,
@@ -891,14 +1185,17 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
   },
   'doencas bacterianas e fungicas (tuberculose, tetano, candidiase etc.)': {
     bacterianas_agente_etiologico: BACTERIANAS_ETIOLOGIA_MOLD,
+    bacterianas_tuberculose: BACTERIANAS_TB_MOLD,
     bacterianas_generico: BACTERIANAS_GENERIC_MOLD,
   },
   'doencas bacterianas e fungicas': {
     bacterianas_agente_etiologico: BACTERIANAS_ETIOLOGIA_MOLD,
+    bacterianas_tuberculose: BACTERIANAS_TB_MOLD,
     bacterianas_generico: BACTERIANAS_GENERIC_MOLD,
   },
   tuberculose: {
     bacterianas_agente_etiologico: BACTERIANAS_ETIOLOGIA_MOLD,
+    bacterianas_tuberculose: BACTERIANAS_TB_MOLD,
     bacterianas_generico: BACTERIANAS_GENERIC_MOLD,
   },
   'infeccoes no contexto da biosseguranca': {
@@ -914,41 +1211,41 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     biosseg_generico: BIOSSEG_GENERIC_MOLD,
   },
   'seguranca do paciente': {
-    sp_identificacao: SP_REFERENCE_MOLD,
-    sp_prevencao_quedas: SP_REFERENCE_MOLD,
-    sp_eventos_adversos: SP_REFERENCE_MOLD,
+    sp_identificacao: SP_IDENTIFICACAO_MOLD,
+    sp_prevencao_quedas: SP_QUEDAS_MOLD,
+    sp_eventos_adversos: SP_EVENTOS_MOLD,
     sp_metas_internacionais: SP_REFERENCE_MOLD,
     sp_generico: SP_GENERIC_MOLD,
   },
   'assistencia perioperatoria (inclui srpa)': {
-    perioperatorio_pre_operatorio: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_pos_operatorio: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_protocolo: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_vf: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_pre_operatorio: PERI_PREOP_MOLD,
+    perioperatorio_pos_operatorio: PERI_POS_MOLD,
+    perioperatorio_protocolo: PERI_PROTOCOL_MOLD,
+    perioperatorio_vf: PERI_VF_MOLD,
     perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
     perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
   },
   'assistencia perioperatoria': {
-    perioperatorio_pre_operatorio: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_pos_operatorio: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_protocolo: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_vf: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_pre_operatorio: PERI_PREOP_MOLD,
+    perioperatorio_pos_operatorio: PERI_POS_MOLD,
+    perioperatorio_protocolo: PERI_PROTOCOL_MOLD,
+    perioperatorio_vf: PERI_VF_MOLD,
     perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
     perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
   },
   perioperatorio: {
-    perioperatorio_pre_operatorio: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_pos_operatorio: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_protocolo: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_vf: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_pre_operatorio: PERI_PREOP_MOLD,
+    perioperatorio_pos_operatorio: PERI_POS_MOLD,
+    perioperatorio_protocolo: PERI_PROTOCOL_MOLD,
+    perioperatorio_vf: PERI_VF_MOLD,
     perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
     perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
   },
   srpa: {
-    perioperatorio_pre_operatorio: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_pos_operatorio: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_protocolo: PERIOPERATORIO_GENERIC_MOLD,
-    perioperatorio_vf: PERIOPERATORIO_GENERIC_MOLD,
+    perioperatorio_pre_operatorio: PERI_PREOP_MOLD,
+    perioperatorio_pos_operatorio: PERI_POS_MOLD,
+    perioperatorio_protocolo: PERI_PROTOCOL_MOLD,
+    perioperatorio_vf: PERI_VF_MOLD,
     perioperatorio_isc: PERIOPERATORIO_GENERIC_MOLD,
     perioperatorio_generico: PERIOPERATORIO_GENERIC_MOLD,
   },
@@ -1039,6 +1336,24 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     mulher_planejamento: MULHER_PLANEJAMENTO_MOLD,
     mulher_generico: MULHER_GENERIC_DESIGN,
   },
+  'saude da crianca': {
+    crianca_aleitamento_nutricao: CRIANCA_ALEITAMENTO_MOLD,
+    crianca_triagem_neonatal: CRIANCA_TRIAGEM_MOLD,
+    crianca_neonatologia: CRIANCA_NEONATOLOGIA_MOLD,
+    crianca_aps_puericultura: CRIANCA_PUERICULTURA_MOLD,
+    crianca_desenvolvimento: CRIANCA_DESENVOLVIMENTO_MOLD,
+    crianca_desidratacao: CRIANCA_DESIDRATACAO_MOLD,
+    crianca_generico: CRIANCA_PEDIATRIC_HUB_MOLD,
+  },
+  pediatria: {
+    crianca_aleitamento_nutricao: CRIANCA_ALEITAMENTO_MOLD,
+    crianca_triagem_neonatal: CRIANCA_TRIAGEM_MOLD,
+    crianca_neonatologia: CRIANCA_NEONATOLOGIA_MOLD,
+    crianca_aps_puericultura: CRIANCA_PUERICULTURA_MOLD,
+    crianca_desenvolvimento: CRIANCA_DESENVOLVIMENTO_MOLD,
+    crianca_desidratacao: CRIANCA_DESIDRATACAO_MOLD,
+    crianca_generico: CRIANCA_PEDIATRIC_HUB_MOLD,
+  },
   'historia da enfermagem': {
     historia_nightingale: HISTORIA_NIGHTINGALE_MOLD,
     historia_humanizacao: HISTORIA_HUMANIZACAO_MOLD,
@@ -1056,6 +1371,53 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     historia_humanizacao: HISTORIA_HUMANIZACAO_MOLD,
     historia_comunicacao_etica: HISTORIA_ETICA_MOLD,
     historia_generico: HISTORIA_GENERIC_DESIGN,
+  },
+  'feridas e queimaduras': {
+    feridas_grau_profundidade: FERIDAS_GRAU_MOLD,
+    feridas_scq_calculo: FERIDAS_SCQ_MOLD,
+    feridas_scq_regra9: FERIDAS_SCQ_MOLD,
+    feridas_grande_queimado: FERIDAS_SCQ_MOLD,
+    feridas_atendimento_inicial: FERIDAS_ATENDIMENTO_MOLD,
+    feridas_classificacao: FERIDAS_REFERENCE_MOLD,
+    feridas_cicatrizacao: FERIDAS_REFERENCE_MOLD,
+    feridas_curativo_tipo: FERIDAS_REFERENCE_MOLD,
+    feridas_generico: FERIDAS_GENERIC_MOLD,
+  },
+  feridas: {
+    feridas_grau_profundidade: FERIDAS_GRAU_MOLD,
+    feridas_scq_calculo: FERIDAS_SCQ_MOLD,
+    feridas_scq_regra9: FERIDAS_SCQ_MOLD,
+    feridas_grande_queimado: FERIDAS_SCQ_MOLD,
+    feridas_atendimento_inicial: FERIDAS_ATENDIMENTO_MOLD,
+    feridas_classificacao: FERIDAS_REFERENCE_MOLD,
+    feridas_cicatrizacao: FERIDAS_REFERENCE_MOLD,
+    feridas_curativo_tipo: FERIDAS_REFERENCE_MOLD,
+    feridas_generico: FERIDAS_GENERIC_MOLD,
+  },
+  queimaduras: {
+    feridas_grau_profundidade: FERIDAS_GRAU_MOLD,
+    feridas_scq_calculo: FERIDAS_SCQ_MOLD,
+    feridas_scq_regra9: FERIDAS_SCQ_MOLD,
+    feridas_grande_queimado: FERIDAS_SCQ_MOLD,
+    feridas_atendimento_inicial: FERIDAS_ATENDIMENTO_MOLD,
+    feridas_classificacao: FERIDAS_REFERENCE_MOLD,
+    feridas_cicatrizacao: FERIDAS_REFERENCE_MOLD,
+    feridas_curativo_tipo: FERIDAS_REFERENCE_MOLD,
+    feridas_generico: FERIDAS_GENERIC_MOLD,
+  },
+  'enfermagem do trabalho': {
+    trabalho_vf_nr32: TRABALHO_BESPOKE_MOLD,
+    trabalho_pep_trap: TRABALHO_BESPOKE_MOLD,
+    trabalho_nr15_reference: TRABALHO_NR15_MOLD,
+    trabalho_ergonomia: TRABALHO_ERGONOMIA_MOLD,
+    trabalho_generico: TRABALHO_GENERIC_MOLD,
+  },
+  'saude do trabalhador': {
+    trabalho_vf_nr32: TRABALHO_BESPOKE_MOLD,
+    trabalho_pep_trap: TRABALHO_BESPOKE_MOLD,
+    trabalho_nr15_reference: TRABALHO_NR15_MOLD,
+    trabalho_ergonomia: TRABALHO_ERGONOMIA_MOLD,
+    trabalho_generico: TRABALHO_GENERIC_MOLD,
   },
 };
 
@@ -1143,6 +1505,21 @@ const MENTAL_DEPRESSAO: RegExp[] = [
 
 const MENTAL_APS: RegExp[] = [
   /\baps\b|aten[cç][aã]o b[aá]sica|biopsicossocial|acolhimento.*prim[aá]ria/i,
+];
+
+const SAE_DOCUMENTACAO: RegExp[] = [
+  /anota[cç][aã]o de enfermagem|prontu[aá]rio|documenta[cç][aã]o|registro de enfermagem|soapi|evolu[cç][aã]o de enfermagem/i,
+  /carimbo|identifica[cç][aã]o do profissional|veracidade|integridade do registro/i,
+];
+
+const SAE_ETAPAS: RegExp[] = [
+  /processo de enfermagem|\bsae\b|nanda|nic\b|noc\b|diagn[oó]stico de enfermagem/i,
+  /coleta de dados|planejamento de enfermagem|implementa[cç][aã]o|avalia[cç][aã]o de enfermagem|prescri[cç][aã]o de enfermagem/i,
+  /cinco etapas|5 etapas|etapa.*enfermagem/i,
+];
+
+const SAE_EXCETO: RegExp[] = [
+  /\bexceto\b|incorret[oa]|n[aã]o corresponde|afirmativa.*incorreta/i,
 ];
 
 const SONDA_MEDICAO: RegExp[] = [
@@ -1262,6 +1639,9 @@ const PUNCAO_TEMPO: RegExp[] = [
   /troca.*equipo|equipos?.*(24|48|72|96)\s*h|perman[eê]ncia.*cateter/i,
   /curativo.*(24|48|72)\s*h|intervalo.*infus/i,
   /observa[cç][aã]o p[oó]s|observar.*sinais.*ap[oó]s/i,
+  /reavaliar.*di[aá]riamente|remover quando n[aã]o necess/i,
+  /(?:flush|lavagem|permeabil).{0,40}(?:cateter|l[uú]men|equipo)/i,
+  /manuten[cç][aã]o.*cateter|manter.*oclus/i,
 ];
 
 const PUNCAO_PERIFERICA: RegExp[] = [
@@ -1338,6 +1718,14 @@ const BACTERIANAS_ETIOLOGIA: RegExp[] = [
   /quantificador.*todas|nenhum v[ií]rus ou protozo/i,
 ];
 
+const BACTERIANAS_TB: RegExp[] = [
+  /tuberculose|tubercul[ií]n|bacilo de koch|mycobacterium/i,
+  /\bbaar\b|bacilo [aá]lcool|escarro.*bacilo/i,
+  /\btdo\b|\bdot\b|tratamento diretamente observado/i,
+  /notifica[cç][aã]o compuls[oó]ria.*tubercul|contactante.*tubercul/i,
+  /precau[cç][aã]o.*aeross[oó]l|bacil[ií]fer/i,
+];
+
 const BIOSSEG_ITU_CATETER: RegExp[] = [
   /\bitu\b|infec[cç][aã]o do trato urin[aá]rio|iras\b|infec[cç][aã]o relacionada [àa] assist/i,
   /cateteriza[cç][aã]o vesical|sonda vesical|cateter vesical|drenagem urin[aá]ria/i,
@@ -1408,6 +1796,36 @@ const MULHER_PRENATAL: RegExp[] = [
   /pr[eé][\s-]?natal|gesta[cç][aã]o|gestante|gravidez|idade gestacional|\big\b.*semana/i,
   /ttgo|glicemia.*jejum|vdrl|ácido fólico|acido folico|consultas.*pré/i,
   /álcool na gesta|tabagismo.*gesta|movimentos fetais/i,
+];
+
+const CRIANCA_TRIAGEM: RegExp[] = [
+  /pezinho|teste do pezinho|fenilceton|fenilalanina|pk[uú]|tsh|hipotireoidismo congen/i,
+  /triagem neonatal|teste do cora[cç][aã]ozinho|oximetria.*rn|pntn/i,
+];
+
+const CRIANCA_ALEITAMENTO: RegExp[] = [
+  /aleitamento|amamenta[cç][aã]o|ame\b|leite materno|lactente|colostro/i,
+  /introdu[cç][aã]o alimentar|pnae|mel\b|ordenha|fórmula infantil|nutri[cç][aã]o infantil/i,
+];
+
+const CRIANCA_DESIDRATACAO: RegExp[] = [
+  /desidrata[cç][aã]o|diarreia aguda|plano [abc]|soro oral|tiragem|fontanela/i,
+  /olig[uú]ria|mucosa seca|perda de peso.*diarreia/i,
+];
+
+const CRIANCA_NEONATOLOGIA: RegExp[] = [
+  /surfactante|icter[ií]cia|s[ií]ndrome do desconforto|sdr\b|cefalohematoma/i,
+  /convuls[aã]o neonatal|banho.*rec[eé]m|pele.*rec[eé]m-nascido|glicemia.*neonatal/i,
+];
+
+const CRIANCA_PUERICULTURA: RegExp[] = [
+  /visita domiciliar|puericultura|5[oº] dia|caderneta|calend[aá]rio.*consulta/i,
+  /estratifica[cç][aã]o.*risco|sinais de alerta|cab\b|aten[cç][aã]o b[aá]sica.*crian[cç]a/i,
+];
+
+const CRIANCA_DESENVOLVIMENTO: RegExp[] = [
+  /tea\b|m-?chat|estrabismo|hirschberg|marco.*desenvolv|aidpi/i,
+  /estimula[cç][aã]o precoce|desenvolvimento infantil/i,
 ];
 
 const HISTORIA_NIGHTINGALE: RegExp[] = [
@@ -1493,19 +1911,39 @@ function inferMentalBranch(corpus: string): PedagogicalBranchId {
   if (countPatternMatches(corpus, MENTAL_RAPS) > 0) {
     return 'mental_raps_legis';
   }
-  if (countPatternMatches(corpus, MENTAL_CRISE) > 0) {
-    return 'mental_crise_caps';
-  }
   if (countPatternMatches(corpus, MENTAL_DEPENDENCIA) > 0) {
     return 'mental_dependencia_tabagismo';
   }
   if (countPatternMatches(corpus, MENTAL_DEPRESSAO) > 0) {
     return 'mental_depressao';
   }
+  if (countPatternMatches(corpus, MENTAL_CRISE) > 0) {
+    return 'mental_crise_caps';
+  }
   if (countPatternMatches(corpus, MENTAL_APS) > 0) {
     return 'mental_aps_acolhimento';
   }
   return 'mental_generico';
+}
+
+function inferSaeBranch(
+  corpus: string,
+  familyId?: FamilyId,
+  instruction?: string,
+): PedagogicalBranchId {
+  const instr = (instruction ?? corpus).toLowerCase();
+  const isExceto =
+    /\b(exceto|incorret[oa])\b/i.test(instr) ||
+    (familyId === 'certo_errado' && /\b(exceto|incorret[oa])\b/i.test(instr));
+  if (isExceto) return 'sae_exceto';
+
+  if (countPatternMatches(corpus, SAE_DOCUMENTACAO) > 0) {
+    return 'sae_documentacao';
+  }
+  if (countPatternMatches(corpus, SAE_ETAPAS) > 0) {
+    return 'sae_etapas';
+  }
+  return 'sae_generico';
 }
 
 function inferSondaBranch(corpus: string): PedagogicalBranchId {
@@ -1624,6 +2062,19 @@ function inferPuncaoBranch(
   if (hasPuncaoExcetoCommand(commandText)) {
     return 'puncao_exceto';
   }
+
+  // Onda 2: comando ancora tempo/IPCS/periférica antes de flebite incidental nas alternativas.
+  const ipcsInCommand = countPatternMatches(commandText, PUNCAO_IPCS);
+  if (ipcsInCommand >= 1) return 'puncao_ipcs_cvc';
+
+  const tempoInCommand = countPatternMatches(commandText, PUNCAO_TEMPO);
+  if (tempoInCommand >= 1) return 'puncao_tempo';
+
+  const perifericaInCommand = countPatternMatches(commandText, PUNCAO_PERIFERICA);
+  if (perifericaInCommand >= 1) return 'puncao_periferica_antissepsia';
+
+  const deviceInCommand = countPatternMatches(commandText, PUNCAO_DISPOSITIVO);
+  if (deviceInCommand >= 1) return 'puncao_dispositivo';
 
   const ipcsScore = countPatternMatches(corpus, PUNCAO_IPCS);
   if (ipcsScore >= 2) return 'puncao_ipcs_cvc';
@@ -1752,6 +2203,9 @@ function inferBacterianasBranch(corpus: string): PedagogicalBranchId {
   if (countPatternMatches(corpus, BACTERIANAS_ETIOLOGIA) > 0) {
     return 'bacterianas_agente_etiologico';
   }
+  if (countPatternMatches(corpus, BACTERIANAS_TB) > 0) {
+    return 'bacterianas_tuberculose';
+  }
   return 'bacterianas_generico';
 }
 
@@ -1845,6 +2299,134 @@ function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): Pedagogic
   if (isDpoc) return 'respiratorio_dpoc_oxigenio';
 
   return 'respiratorio_generico';
+}
+
+const FERIDAS_SCQ: RegExp[] = [
+  /regra\s+dos\s*9|wallace|pulaski/i,
+  /superf[ií]cie\s+corporal\s+queimada|\bscq\b/i,
+  /percentual\s+correspondente|estimativa\s+da\s+extens[aã]o/i,
+];
+const FERIDAS_GRAU: RegExp[] = [
+  /grau\b|profundidade|escara|espessura\s+total/i,
+  /terceiro\s+grau|segundo\s+grau|primeiro\s+grau/i,
+  /bolhas?\b/i,
+];
+const FERIDAS_ATENDIMENTO: RegExp[] = [
+  /resfriamento|[áa]gua\s+corrente|\bgelo\b/i,
+  /bolha\s+[ií]ntegra|primeiros\s+socorros|atendimento\s+inicial/i,
+  /orienta[cç][aã]o\s+correta/i,
+];
+const FERIDAS_CLASSIFICACAO: RegExp[] = [
+  /ferida\s+(limpa|contaminada|infectada)/i,
+  /contaminad|6\s+horas|micro.?organismo|ass[eé]ptic/i,
+];
+const FERIDAS_CICATRIZACAO: RegExp[] = [
+  /cicatriza[cç][aã]o|inflamat[oó]ria|proliferativa|matura[cç][aã]o/i,
+  /granula[cç][aã]o|exsudativa/i,
+];
+const FERIDAS_CURATIVO: RegExp[] = [
+  /alginato|hidrogel|hidrocol[oó]ide|bioativ|oclusiv/i,
+  /tipos?\s+de\s+curativ/i,
+];
+const FERIDAS_GRANDE: RegExp[] = [
+  /grande\s+queimad|>\s*26\s*%/i,
+  /crit[eé]rio.*gravidade|encaminhamento.*refer[eê]ncia/i,
+];
+
+const TRABALHO_PEP: RegExp[] = [
+  /perfurocortante|material\s+biol[oó]gico|pep\b|p[oó]s[\s-]?exposi[cç][aã]o|profilaxia\s+p[oó]s/i,
+  /acidente\s+(?:de\s+)?trabalho|exposi[cç][aã]o\s+ocupacional|notificar.*acidente/i,
+  /descarte\s+de\s+agulhas|reencapar|coletor\s+r[ií]gid/i,
+  /anvisa.{0,40}preven[cç][aã]o.{0,30}acidente/i,
+];
+
+const TRABALHO_NR15: RegExp[] = [
+  /nr[\s-]?15|ibutg|calor\s+excessivo|exposi[cç][aã]o\s+di[aá]ria\s+permiss[ií]vel/i,
+  /ru[ií]do\s+occupacional|perda\s+auditiva|n[ií]vel\s+de\s+ru[ií]do|nr[\s-]?9\b/i,
+  /radia[cç][aã]o\s+(?:n[aã]o\s+)?ionizante|radia[cç][aã]o\s+ionizante|exposi[cç][aã]o\s+radiol[oó]gica/i,
+  /agentes?\s+f[ií]sicos?|temperatura\s+extrema|ilumina[cç][aã]o\s+pobre/i,
+];
+
+const TRABALHO_ERGONOMIA_PATTERNS: RegExp[] = [
+  /ergonomia|ler\b|dort|esfor[cç]o\s+repetitivo|postura\s+est[aá]tica/i,
+  /levantamento\s+manual|membro\s+superior|mobili[aá]rio\s+ergon[oô]mic/i,
+  /burnout|esgotamento\s+profissional|sobrecarga\s+de\s+trabalho/i,
+];
+
+const TRABALHO_VF_NR32: RegExp[] = [
+  /nr[\s-]?32|risco\s+biol[oó]gico|anexo\s+(?:i|ii|iii|iv|v)/i,
+  /pcmso|aso\b|atestado\s+de\s+sa[uú]de\s+ocupacional|mapa\s+de\s+riscos/i,
+  /hierarquia\s+de\s+controles|epi\b|vacina\s+hepatite/i,
+];
+
+function isTrabalhoExcetoCommand(instruction: string, familyId?: FamilyId): boolean {
+  if (/\bexceto\b|alternativa\s+incorreta|incorret[oa]\s+sobre|assinale.*incorreta/i.test(instruction)) {
+    return true;
+  }
+  if (familyId === 'certo_errado' && /\bincorreta\b/i.test(instruction)) return true;
+  return false;
+}
+
+function inferTrabalhoBranch(
+  corpus: string,
+  familyId?: FamilyId,
+  instruction?: string,
+): PedagogicalBranchId {
+  const instr = instruction?.trim() ?? '';
+
+  if (isTrabalhoExcetoCommand(instr, familyId) && countPatternMatches(corpus, TRABALHO_PEP) > 0) {
+    return 'trabalho_pep_trap';
+  }
+  if (countPatternMatches(corpus, TRABALHO_PEP) >= 2) {
+    return 'trabalho_pep_trap';
+  }
+  if (countPatternMatches(corpus, TRABALHO_NR15) > 0) {
+    return 'trabalho_nr15_reference';
+  }
+  if (countPatternMatches(corpus, TRABALHO_ERGONOMIA_PATTERNS) > 0) {
+    return 'trabalho_ergonomia';
+  }
+  if (
+    familyId === 'vf' ||
+    (familyId === 'certo_errado' && countPatternMatches(corpus, TRABALHO_VF_NR32) > 0)
+  ) {
+    return 'trabalho_vf_nr32';
+  }
+  if (countPatternMatches(corpus, TRABALHO_VF_NR32) > 0) {
+    return 'trabalho_vf_nr32';
+  }
+  return 'trabalho_generico';
+}
+
+function inferFeridasBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  if (familyId === 'calc' && countPatternMatches(corpus, FERIDAS_SCQ) > 0) {
+    return 'feridas_scq_calculo';
+  }
+  if (familyId === 'protocolo' && countPatternMatches(corpus, FERIDAS_ATENDIMENTO) > 0) {
+    return 'feridas_atendimento_inicial';
+  }
+  if (countPatternMatches(corpus, FERIDAS_GRANDE) > 0) {
+    return 'feridas_grande_queimado';
+  }
+  if (familyId === 'text_fragment' && countPatternMatches(corpus, FERIDAS_CICATRIZACAO) > 0) {
+    return 'feridas_cicatrizacao';
+  }
+  if (countPatternMatches(corpus, FERIDAS_GRAU) > 0 && countPatternMatches(corpus, FERIDAS_SCQ) === 0) {
+    return 'feridas_grau_profundidade';
+  }
+  if (countPatternMatches(corpus, FERIDAS_SCQ) > 0) {
+    return 'feridas_scq_regra9';
+  }
+  if (countPatternMatches(corpus, FERIDAS_CLASSIFICACAO) > 0) {
+    return 'feridas_classificacao';
+  }
+  if (countPatternMatches(corpus, FERIDAS_CICATRIZACAO) > 0) {
+    return 'feridas_cicatrizacao';
+  }
+  if (countPatternMatches(corpus, FERIDAS_CURATIVO) > 0) {
+    return 'feridas_curativo_tipo';
+  }
+  return 'feridas_generico';
 }
 
 const URGENCIAS_EXCETO_COMMAND_RE =
@@ -2014,6 +2596,35 @@ function inferHistoriaBranch(corpus: string, familyId?: FamilyId): PedagogicalBr
   return 'historia_generico';
 }
 
+function inferCriancaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+  if (countPatternMatches(corpus, CRIANCA_TRIAGEM) > 0) {
+    return 'crianca_triagem_neonatal';
+  }
+  if (countPatternMatches(corpus, CRIANCA_ALEITAMENTO) > 0) {
+    return 'crianca_aleitamento_nutricao';
+  }
+  if (countPatternMatches(corpus, CRIANCA_DESIDRATACAO) > 0) {
+    return 'crianca_desidratacao';
+  }
+  if (countPatternMatches(corpus, CRIANCA_NEONATOLOGIA) > 0) {
+    return 'crianca_neonatologia';
+  }
+  if (countPatternMatches(corpus, CRIANCA_PUERICULTURA) > 0) {
+    return 'crianca_aps_puericultura';
+  }
+  if (countPatternMatches(corpus, CRIANCA_DESENVOLVIMENTO) > 0) {
+    return 'crianca_desenvolvimento';
+  }
+  if (
+    familyId === 'vf' &&
+    /\b(i|ii|iii)\s*[-–—]/i.test(corpus) &&
+    /crian[cç]a|lactente|pediatr|infantil/i.test(corpus)
+  ) {
+    return 'crianca_aleitamento_nutricao';
+  }
+  return 'crianca_generico';
+}
+
 function inferMulherBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   if (countPatternMatches(corpus, MULHER_PARTO) > 0 && !/pré-natal|prenatal/i.test(corpus)) {
     return 'mulher_parto';
@@ -2052,11 +2663,14 @@ function inferBranchForBucket(
   if (mapKey.includes('adolescente')) {
     return inferAdolescentBranch(corpus, familyId);
   }
-  if (mapKey.includes('cme') || mapKey.includes('material')) {
+  if (mapKey.includes('cme') || mapKey.includes('material') || mapKey.includes('processamento')) {
     return inferCmeBranch(corpus, familyId);
   }
   if (mapKey.includes('mental') || mapKey === 'psiquiatria') {
     return inferMentalBranch(corpus);
+  }
+  if (mapKey.includes('processo de enfermagem') || mapKey === 'sae') {
+    return inferSaeBranch(corpus, familyId, instruction);
   }
   if (mapKey.includes('sonda')) {
     return inferSondaBranch(corpus);
@@ -2128,12 +2742,25 @@ function inferBranchForBucket(
   ) {
     return inferHistoriaBranch(corpus, familyId);
   }
+  if (mapKey.includes('enfermagem do trabalho') || mapKey.includes('saude do trabalhador')) {
+    return inferTrabalhoBranch(corpus, familyId, instruction);
+  }
+  if (
+    mapKey.includes('feridas e queimaduras') ||
+    mapKey === 'feridas' ||
+    mapKey === 'queimaduras'
+  ) {
+    return inferFeridasBranch(corpus, familyId);
+  }
   if (
     mapKey.includes('saude da mulher') ||
     mapKey === 'obstetricia' ||
     mapKey === 'ginecologia'
   ) {
     return inferMulherBranch(corpus, familyId);
+  }
+  if (mapKey.includes('saude da crianca') || mapKey === 'pediatria') {
+    return inferCriancaBranch(corpus, familyId);
   }
   return undefined;
 }

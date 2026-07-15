@@ -1,11 +1,9 @@
 {
   "lote": "processamento-completo",
-  "exported_at": "2026-06-24T22:07:50.135Z",
+  "exported_at": "2026-07-14T14:30:21.506Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Processamento de Artigos e Produtos de Saúde",
-    "limit": 200,
-    "exclude_count": 0
+    "from_manifest": "data/catalog-migration/processamento-completo/manifest.json"
   },
   "slugs": [
     "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
@@ -27,7 +25,7 @@
     "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
     "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0"
   ],
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-07-14",
   "reconciled_from": [
     "processamento-g01",
     "processamento-g02"

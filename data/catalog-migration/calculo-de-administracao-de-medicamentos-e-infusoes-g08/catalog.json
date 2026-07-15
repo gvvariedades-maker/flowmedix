@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T17:24:01.346Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g08",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5121
+    },
+    {
+      "modulo_slug": "idecan-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 339
+    },
+    {
+      "modulo_slug": "idib-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778934863952-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1728
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 297
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 298
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 290
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 291
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 292
+    }
+  ]
+}

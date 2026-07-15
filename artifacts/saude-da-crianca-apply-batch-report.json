@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-07-15T16:34:55.274Z",
+  "candidates": 8,
+  "applied_lotes": 8,
+  "failed_lotes": 0,
+  "slugs_applied": 62,
+  "results": [
+    {
+      "lote": "saude-da-crianca-g01",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-crianca-g02",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-crianca-g03",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-crianca-g04",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-crianca-g05",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-crianca-g06",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-crianca-g07",
+      "status": "ok",
+      "ok": 8
+    },
+    {
+      "lote": "saude-da-crianca-g08",
+      "status": "ok",
+      "ok": 6
+    }
+  ]
+}

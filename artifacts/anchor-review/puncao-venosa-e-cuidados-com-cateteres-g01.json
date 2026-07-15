@@ -107,8 +107,9 @@
   "reviewer_b_prompt": "docs/ANCHOR_SECOND_REVIEW_PROMPT.md",
   "status": "pass",
   "reviewer_b": {
-    "reviewed_at": "2026-07-11",
-    "reviewer": "agent",
-    "method": "agent"
+    "reviewed_at": "2026-07-14",
+    "reviewer": "handcraft-qc",
+    "method": "both",
+    "notes": "Onda 2 L6 humano — flebite; checklist 15/15 + PNGs player (avancasp-…4185-7)."
   }
 }

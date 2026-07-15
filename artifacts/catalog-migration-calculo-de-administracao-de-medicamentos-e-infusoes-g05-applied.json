@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T18:07:31.503Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-3",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-5",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-6",
+    "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-5",
+    "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-6",
+    "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-0",
+    "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-6",
+    "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

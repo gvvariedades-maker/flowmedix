@@ -1,50 +1,32 @@
 {
-  "generated_at": "2026-07-14T06:59:18.728Z",
-  "subtopicos_ready": 2,
-  "subtopicos_pass": 2,
+  "generated_at": "2026-07-15T18:18:10.298Z",
+  "subtopicos_ready": 1,
+  "subtopicos_pass": 1,
   "subtopicos_fail": 0,
   "items": [
     {
-      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
       "registry_status": "applied",
-      "total_slugs": 37,
-      "handcraft_applied": 37,
-      "manifest_slugs": 37,
-      "supabase_found": 37,
-      "golden_v1": 37,
-      "four_slides": 37,
-      "premium_gate_ok": 37,
-      "local_json_count": 102,
+      "total_slugs": 85,
+      "handcraft_applied": 85,
+      "manifest_slugs": 85,
+      "supabase_found": 85,
+      "golden_v1": 85,
+      "four_slides": 85,
+      "premium_gate_ok": 85,
+      "local_json_count": 329,
       "slug_issues": [],
       "pilot_sample": [
-        "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
-        "amauc-enfermagem-processo-de-enfermagem-1780004982901-7"
+        "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+        "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+        "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+        "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+        "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6"
       ],
-      "pilot_min": 2,
+      "pilot_min": 5,
       "dod_pass": true,
       "dod_notes": [
-        "Piloto humano sugerido: revisar 2 slug(s) no player (≥5%)"
-      ]
-    },
-    {
-      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "registry_status": "applied",
-      "total_slugs": 9,
-      "handcraft_applied": 9,
-      "manifest_slugs": 9,
-      "supabase_found": 9,
-      "golden_v1": 9,
-      "four_slides": 9,
-      "premium_gate_ok": 9,
-      "local_json_count": 28,
-      "slug_issues": [],
-      "pilot_sample": [
-        "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4"
-      ],
-      "pilot_min": 1,
-      "dod_pass": true,
-      "dod_notes": [
-        "Piloto humano sugerido: revisar 1 slug(s) no player (≥5%)"
+        "Piloto humano sugerido: revisar 5 slug(s) no player (≥5%)"
       ]
     }
   ]

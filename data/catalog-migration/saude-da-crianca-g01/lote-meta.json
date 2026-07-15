@@ -1,0 +1,38 @@
+{
+  "lote": "saude-da-crianca-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-15",
+  "subtopico": "Saúde da Criança",
+  "cluster": "Triagem neonatal pezinho/coraçãozinho",
+  "pedagogical_branch_target": "crianca_triagem_neonatal",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+  "golden_reference": "examples/questao-premium-cpcon-saude-crianca-triagem-neonatal-vf.json",
+  "guideline": "lib/guidelines/saudeCrianca.ts (SAUDE_CRIANCA_MS)",
+  "slugs": [
+    "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-8",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5",
+    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+    "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+    "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=saude-da-crianca-g01 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/saude-da-crianca-g01/questions/",
+    "2. Âncora L6: adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+    "3. npm run audit:anchor-review -- --lote=saude-da-crianca-g01 --record-pass --reviewer=agent --skip-capture",
+    "4. npm run catalog:apply-lote -- --lote=saude-da-crianca-g01 --apply (só quando pedido)"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-crianca-g01.json"
+  }
+}

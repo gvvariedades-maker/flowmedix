@@ -1,0 +1,17 @@
+{
+  "lote": "saude-da-crianca-g01",
+  "planned_at": "2026-07-15T16:19:23.346Z",
+  "source": "saude-da-crianca-completo",
+  "batch_index": 1,
+  "batch_total": 8,
+  "slugs": [
+    "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-8",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5",
+    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+    "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+    "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3"
+  ]
+}

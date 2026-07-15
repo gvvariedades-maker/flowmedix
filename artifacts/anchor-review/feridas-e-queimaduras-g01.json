@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T23:28:02.570Z",
+  "generated_at": "2026-07-15T00:30:22.548Z",
   "lote": "feridas-e-queimaduras-g01",
   "anchor_slug": "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
   "subtopico": "Feridas e Queimaduras",
@@ -10,7 +10,7 @@
     "automated_pass": true,
     "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
   "checklist": [
     {
       "id": 1,

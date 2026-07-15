@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "subtopico": "Processo de Enfermagem",
+  "pacote_prefix": "processo-de-enfermagem",
+  "scope_default": "manifest_handcraft",
+  "manifest_handcraft": "data/catalog-migration/processo-de-enfermagem-completo/manifest.json",
+  "anchor_glob": "examples/questao-premium-*-processo-de-enfermagem*.json,examples/questao-premium-*-sae-*.json",
+  "guideline": "lib/guidelines/saeCofen.ts",
+  "cluster_report": "artifacts/processo-de-enfermagem-topic-cluster-report.json",
+  "lote_pattern": "processo-de-enfermagem-g{NN}",
+  "slug_selection": "P0 sae_documentacao (21) → g01–g03; P1 sae_etapas (11) → g03–g04; P2 sae_exceto (7) → g05; meta.subtopico canônico; [READY] strict-v2",
+  "pedagogical_branches": [
+    {
+      "id": "sae_documentacao",
+      "when": "Anotação, prontuário, registro, SOAPIE, veracidade/integridade",
+      "mold": "sae-documentation · sae-reference-board · sae-decision-tap · norm-reveal",
+      "anchors": ["examples/questao-premium-ameosc-processo-de-enfermagem-documentacao.json"]
+    },
+    {
+      "id": "sae_etapas",
+      "when": "5 etapas SAE, NANDA-NIC-NOC, coleta, planejamento, implementação",
+      "mold": "sae-responsibility-matrix · sae-reference-board · sae-decision-tap · norm-reveal",
+      "anchors": ["examples/questao-premium-copese-processo-de-enfermagem-etapas-sae.json"]
+    },
+    {
+      "id": "sae_exceto",
+      "when": "EXCETO/INCORRETA — privativa enfermeiro × técnico",
+      "mold": "sae-responsibility-matrix · sae-reference-board · sae-decision-tap · norm-reveal",
+      "anchors": ["examples/questao-premium-copese-processo-de-enfermagem-etapas-sae.json"]
+    },
+    {
+      "id": "sae_generico",
+      "when": "Cauda SAE sem cluster dominante",
+      "mold": "sae-responsibility-matrix · sae-reference-board · sae-decision-tap · norm-reveal",
+      "anchors": ["examples/questao-premium-copese-processo-de-enfermagem-etapas-sae.json"]
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=agent",
+    "enrich_guideline": "npm run enrich:processo-guideline-meta -- --lote=<lote> --write"
+  }
+}

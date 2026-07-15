@@ -33,7 +33,14 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'adolescent-z-threshold-trap',
   'burn-trap-arena',
   'trabalho-pep-trap-arena',
+  'sp-safety-trap-arena',
   'respiratorio-spo2-trap-arena',
+  'mental-raps-trap-arena',
+  'mental-crisis-coercion-trap',
+  'peri-preop-trap-arena',
+  'peri-srpa-trap-arena',
+  'peri-protocol-trap-arena',
+  'peri-vf-trap-chips',
   'urgencias-rcp-trap-arena',
   'urgencias-trauma-trap-arena',
   'urgencias-stroke-trap-arena',
@@ -42,13 +49,22 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'urgencias-pediatric-trap-arena',
   'urgencias-manchester-trap',
   'etiology-intruder-chips',
+  'tb-transmission-trap',
   'itu-catheter-trap',
+  'biosseg-trap-chips',
   'mulher-prenatal-trap-arena',
   'mulher-parto-trap-arena',
   'mulher-screening-trap-arena',
   'mulher-mama-trap-arena',
   'mulher-puerperio-trap-arena',
   'mulher-planejamento-trap-arena',
+  'crianca-feeding-trap-arena',
+  'crianca-screening-trap-arena',
+  'crianca-pediatric-trap-arena',
+  'crianca-dehydration-trap-arena',
+  'crianca-puericultura-trap-arena',
+  'crianca-neonatal-trap-arena',
+  'crianca-dev-trap-arena',
   'cam-certos-trap-arena',
   'cam-high-risk-trap-arena',
   'cam-exceto-trap-arena',
@@ -97,12 +113,20 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'pni-trap-chips') return 'pni-trap-chips';
   if (explicitVariant === 'ist-trap-chips') return 'ist-trap-chips';
   if (explicitVariant === 'etiology-intruder-chips') return 'etiology-intruder-chips';
+  if (explicitVariant === 'tb-transmission-trap') return 'tb-transmission-trap';
   if (explicitVariant === 'itu-catheter-trap') return 'itu-catheter-trap';
+  if (explicitVariant === 'biosseg-trap-chips') return 'biosseg-trap-chips';
   if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
   if (explicitVariant === 'adolescent-z-threshold-trap') return 'adolescent-z-threshold-trap';
   if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
   if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
   if (explicitVariant === 'respiratorio-spo2-trap-arena') return 'respiratorio-spo2-trap-arena';
+  if (explicitVariant === 'mental-raps-trap-arena') return 'mental-raps-trap-arena';
+  if (explicitVariant === 'mental-crisis-coercion-trap') return 'mental-crisis-coercion-trap';
+  if (explicitVariant === 'peri-preop-trap-arena') return 'peri-preop-trap-arena';
+  if (explicitVariant === 'peri-srpa-trap-arena') return 'peri-srpa-trap-arena';
+  if (explicitVariant === 'peri-protocol-trap-arena') return 'peri-protocol-trap-arena';
+  if (explicitVariant === 'peri-vf-trap-chips') return 'peri-vf-trap-chips';
   if (explicitVariant === 'urgencias-rcp-trap-arena') return 'urgencias-rcp-trap-arena';
   if (explicitVariant === 'urgencias-trauma-trap-arena') return 'urgencias-trauma-trap-arena';
   if (explicitVariant === 'urgencias-stroke-trap-arena') return 'urgencias-stroke-trap-arena';
@@ -176,8 +200,14 @@ export function resolveDangerZoneLayoutVariant(
     if (!explicitVariant && fallbackVariant === 'etiology-intruder-chips') {
       return 'etiology-intruder-chips';
     }
+    if (!explicitVariant && fallbackVariant === 'tb-transmission-trap') {
+      return 'tb-transmission-trap';
+    }
     if (!explicitVariant && fallbackVariant === 'itu-catheter-trap') {
       return 'itu-catheter-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'biosseg-trap-chips') {
+      return 'biosseg-trap-chips';
     }
     if (!explicitVariant && fallbackVariant === 'adolescent-consent-gate') {
       return 'adolescent-consent-gate';
@@ -191,8 +221,29 @@ export function resolveDangerZoneLayoutVariant(
     if (!explicitVariant && fallbackVariant === 'trabalho-pep-trap-arena') {
       return 'trabalho-pep-trap-arena';
     }
+    if (!explicitVariant && fallbackVariant === 'sp-safety-trap-arena') {
+      return 'sp-safety-trap-arena';
+    }
     if (!explicitVariant && fallbackVariant === 'respiratorio-spo2-trap-arena') {
       return 'respiratorio-spo2-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'mental-raps-trap-arena') {
+      return 'mental-raps-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'mental-crisis-coercion-trap') {
+      return 'mental-crisis-coercion-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'peri-preop-trap-arena') {
+      return 'peri-preop-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'peri-srpa-trap-arena') {
+      return 'peri-srpa-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'peri-protocol-trap-arena') {
+      return 'peri-protocol-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'peri-vf-trap-chips') {
+      return 'peri-vf-trap-chips';
     }
     if (!explicitVariant && fallbackVariant === 'urgencias-rcp-trap-arena') {
       return 'urgencias-rcp-trap-arena';
@@ -232,6 +283,27 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'mulher-planejamento-trap-arena') {
       return 'mulher-planejamento-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'crianca-feeding-trap-arena') {
+      return 'crianca-feeding-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'crianca-screening-trap-arena') {
+      return 'crianca-screening-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'crianca-pediatric-trap-arena') {
+      return 'crianca-pediatric-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'crianca-dehydration-trap-arena') {
+      return 'crianca-dehydration-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'crianca-puericultura-trap-arena') {
+      return 'crianca-puericultura-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'crianca-neonatal-trap-arena') {
+      return 'crianca-neonatal-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'crianca-dev-trap-arena') {
+      return 'crianca-dev-trap-arena';
     }
     if (!explicitVariant && fallbackVariant === 'cam-certos-trap-arena') {
       return 'cam-certos-trap-arena';

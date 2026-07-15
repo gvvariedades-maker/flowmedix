@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T18:06:40.120Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+    "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+    "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+    "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+    "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-8",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-0",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

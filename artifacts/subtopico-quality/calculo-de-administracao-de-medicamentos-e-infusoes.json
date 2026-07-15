@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-07-15T18:18:12.349Z",
+  "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+  "pacote_prefix": "calculo-de-administracao-de-medicamentos-e-infusoes",
+  "production_status_before": "none",
+  "technical_ready": true,
+  "production_ready": true,
+  "can_sell": true,
+  "continuous_eligible": true,
+  "ship_gate": {
+    "ok": true,
+    "blockers": []
+  },
+  "monitoring": {
+    "deprecated": true,
+    "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
+    "sessions_30d": 208
+  },
+  "layers": {
+    "L1": {
+      "pass": true,
+      "detail": "handcraft-dod PASS"
+    },
+    "L2": {
+      "pass": true,
+      "detail": "alignment OK (88 slugs)"
+    },
+    "L2b": {
+      "pass": true,
+      "detail": "numeric factcheck OK"
+    },
+    "L3": {
+      "pass": true,
+      "detail": "Playwright L3 Cálculo — 2 branches (1 bespoke + conceito ok_generico); unit tests __tests__/slidePresentationSubtopicMold.test.ts calc 4/4"
+    },
+    "L4": {
+      "pass": true,
+      "detail": "capture cirúrgico — warn only (não bloqueia ship)"
+    },
+    "L5": {
+      "pass": true,
+      "detail": "content health OK"
+    },
+    "L6": {
+      "pass": true,
+      "detail": "all 12 lotes anchor pass"
+    }
+  },
+  "lote_stats": [
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g01",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g02",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g03",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g04",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g05",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g06",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g07",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g08",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g09",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g10",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g11",
+      "scanned": 5,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair",
+      "scanned": 3,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    }
+  ],
+  "content_health": {
+    "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+    "sessions_30d": 208,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 0,
+      "total": 0
+    },
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 208,
+      "open_p1": 0,
+      "report_rate_pct": 0
+    },
+    "pass": true,
+    "blockers": []
+  },
+  "blockers": []
+}

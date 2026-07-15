@@ -1,31 +1,97 @@
 {
   "version": 1,
-  "updated_at": "2026-07-13",
+  "updated_at": "2026-07-15",
   "description": "Âncoras visuais por pedagogical_branch para regressão L3 (slide-mold-review).",
   "anchors": {
     "cme_vf_ce": {
       "pedagogical_branch": "cme_vf_ce",
-      "slug": "idecan-cme-preparo-presecagem",
-      "lote": "cme-g01",
-      "json_path": "examples/questao-premium-idecan-cme-preparo-presecagem.json"
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+      "lote": "cme-completo",
+      "json_path": "data/catalog-migration/cme-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1780005791580-0.json"
+    },
+    "cme_preparo_limpeza": {
+      "pedagogical_branch": "cme_preparo_limpeza",
+      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+      "lote": "cme-completo",
+      "json_path": "data/catalog-migration/cme-completo/questions/fcpc-enfermagem-processo-de-enfermagem-1780004906875-6.json"
+    },
+    "cme_autoclave_metodos": {
+      "pedagogical_branch": "cme_autoclave_metodos",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+      "lote": "cme-completo",
+      "json_path": "data/catalog-migration/cme-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1780001613305-2.json"
+    },
+    "cme_generico": {
+      "pedagogical_branch": "cme_generico",
+      "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+      "lote": "cme-completo",
+      "json_path": "data/catalog-migration/cme-completo/questions/idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2.json"
     },
     "cme_processamento_conceito": {
       "pedagogical_branch": "cme_processamento_conceito",
-      "slug": "cpcon-processamento-prelimpeza",
-      "lote": "processamento-g01",
-      "json_path": "examples/questao-premium-cpcon-processamento-artigos-prelimpeza-vf.json"
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "lote": "cme-completo",
+      "json_path": "data/catalog-migration/cme-completo/questions/cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3.json"
     },
     "mental_dependencia_tabagismo": {
       "pedagogical_branch": "mental_dependencia_tabagismo",
-      "slug": "fgv-saude-mental-tabagismo",
+      "slug": "fgv-enfermagem-dependencia-quimica-1778967935713-2",
       "lote": "saude-mental-micro-02-goldens",
-      "json_path": "examples/questao-premium-fgv-saude-mental-tabagismo-pnct.json"
+      "json_path": "data/catalog-migration/saude-mental-micro-02-goldens/questions/fgv-enfermagem-dependencia-quimica-1778967935713-2.json"
     },
     "mental_depressao": {
       "pedagogical_branch": "mental_depressao",
-      "slug": "vunesp-saude-mental-depressao",
+      "slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
       "lote": "saude-mental-micro-06-goldens",
-      "json_path": "examples/questao-premium-vunesp-saude-mental-depressao-epidemiologia.json"
+      "json_path": "data/catalog-migration/saude-mental-micro-06-goldens/questions/fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0.json"
+    },
+    "mental_raps_legis": {
+      "pedagogical_branch": "mental_raps_legis",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+      "lote": "saude-mental-micro-01-goldens",
+      "json_path": "data/catalog-migration/saude-mental-micro-01-goldens/questions/fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8.json"
+    },
+    "mental_crise_caps": {
+      "pedagogical_branch": "mental_crise_caps",
+      "slug": "idecan-enfermagem-saude-mental-1780067024707-2",
+      "lote": "saude-mental-micro-06-goldens",
+      "json_path": "data/catalog-migration/saude-mental-micro-06-goldens/questions/idecan-enfermagem-saude-mental-1780067024707-2.json"
+    },
+    "mental_aps_acolhimento": {
+      "pedagogical_branch": "mental_aps_acolhimento",
+      "slug": "vunesp-enfermagem-saude-mental-1780001362784-5",
+      "lote": "saude-mental-micro-05-goldens",
+      "json_path": "data/catalog-migration/saude-mental-micro-05-goldens/questions/vunesp-enfermagem-saude-mental-1780001362784-5.json"
+    },
+    "mental_generico": {
+      "pedagogical_branch": "mental_generico",
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+      "lote": "saude-mental-micro-07-goldens",
+      "json_path": "data/catalog-migration/saude-mental-micro-07-goldens/questions/cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4.json"
+    },
+    "sae_documentacao": {
+      "pedagogical_branch": "sae_documentacao",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+      "lote": "processo-de-enfermagem-completo",
+      "json_path": "data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056129848-7.json"
+    },
+    "sae_etapas": {
+      "pedagogical_branch": "sae_etapas",
+      "slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+      "lote": "processo-de-enfermagem-completo",
+      "json_path": "data/catalog-migration/processo-de-enfermagem-completo/questions/copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8.json"
+    },
+    "sae_exceto": {
+      "pedagogical_branch": "sae_exceto",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+      "lote": "processo-de-enfermagem-completo",
+      "json_path": "data/catalog-migration/processo-de-enfermagem-completo/questions/instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1.json"
+    },
+    "sae_generico": {
+      "pedagogical_branch": "sae_generico",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-9",
+      "lote": "processo-de-enfermagem-completo",
+      "json_path": "data/catalog-migration/processo-de-enfermagem-completo/questions/fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-9.json"
     },
     "adolescente_generico": {
       "pedagogical_branch": "adolescente_generico",
@@ -93,6 +159,54 @@
       "lote": "respiratorio-cronico-completo",
       "json_path": "data/catalog-migration/respiratorio-cronico-completo/questions/igecap-enfermagem-processo-de-enfermagem-1780004452857-3.json"
     },
+    "feridas_grau_profundidade": {
+      "pedagogical_branch": "feridas_grau_profundidade",
+      "slug": "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
+      "lote": "feridas-e-queimaduras-completo",
+      "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/icece-enfermagem-feridas-e-queimaduras-1780001297464-5.json"
+    },
+    "feridas_scq_calculo": {
+      "pedagogical_branch": "feridas_scq_calculo",
+      "slug": "idib-enfermagem-feridas-e-queimaduras-1778934936220-2",
+      "lote": "feridas-e-queimaduras-completo",
+      "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/idib-enfermagem-feridas-e-queimaduras-1778934936220-2.json"
+    },
+    "feridas_scq_regra9": {
+      "pedagogical_branch": "feridas_scq_regra9",
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-1",
+      "lote": "feridas-e-queimaduras-completo",
+      "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-1.json"
+    },
+    "feridas_grande_queimado": {
+      "pedagogical_branch": "feridas_grande_queimado",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+      "lote": "feridas-e-queimaduras-completo",
+      "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0.json"
+    },
+    "feridas_atendimento_inicial": {
+      "pedagogical_branch": "feridas_atendimento_inicial",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",
+      "lote": "feridas-e-queimaduras-completo",
+      "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/avancasp-enfermagem-processo-de-enfermagem-1780011872350-0.json"
+    },
+    "feridas_classificacao": {
+      "pedagogical_branch": "feridas_classificacao",
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-7",
+      "lote": "feridas-e-queimaduras-completo",
+      "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/idecan-enfermagem-feridas-e-queimaduras-1780067013432-7.json"
+    },
+    "feridas_cicatrizacao": {
+      "pedagogical_branch": "feridas_cicatrizacao",
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-8",
+      "lote": "feridas-e-queimaduras-completo",
+      "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/idecan-enfermagem-feridas-e-queimaduras-1780067013432-8.json"
+    },
+    "feridas_curativo_tipo": {
+      "pedagogical_branch": "feridas_curativo_tipo",
+      "slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-9",
+      "lote": "feridas-e-queimaduras-completo",
+      "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/idecan-enfermagem-feridas-e-queimaduras-1780067013432-9.json"
+    },
     "trabalho_vf_nr32": {
       "pedagogical_branch": "trabalho_vf_nr32",
       "slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
@@ -110,6 +224,18 @@
       "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
       "lote": "enfermagem-do-trabalho-g05",
       "json_path": "data/catalog-migration/enfermagem-do-trabalho-g05/questions/ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8.json"
+    },
+    "trabalho_ergonomia": {
+      "pedagogical_branch": "trabalho_ergonomia",
+      "slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+      "lote": "enfermagem-do-trabalho-g01",
+      "json_path": "data/catalog-migration/enfermagem-do-trabalho-g01/questions/idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6.json"
+    },
+    "trabalho_generico": {
+      "pedagogical_branch": "trabalho_generico",
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3",
+      "lote": "enfermagem-do-trabalho-g01",
+      "json_path": "data/catalog-migration/enfermagem-do-trabalho-g01/questions/instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3.json"
     },
     "historia_nightingale": {
       "pedagogical_branch": "historia_nightingale",
@@ -161,9 +287,15 @@
     },
     "perioperatorio_vf": {
       "pedagogical_branch": "perioperatorio_vf",
-      "slug": "cebraspe-perioperatoria-ce",
+      "slug": "idecan-srpa-curativo-cpd-ce",
       "lote": "perioperatoria-g04",
-      "json_path": "data/catalog-migration/perioperatoria-g04/questions/cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0.json"
+      "json_path": "examples/questao-premium-idecan-srpa-curativo-cpd-ce.json"
+    },
+    "perioperatorio_generico": {
+      "pedagogical_branch": "perioperatorio_generico",
+      "slug": "idecan-perioperatoria-aldrete",
+      "lote": "perioperatoria-g01",
+      "json_path": "examples/questao-premium-idecan-perioperatoria-aldrete-srpa.json"
     },
     "bacterianas_generico": {
       "pedagogical_branch": "bacterianas_generico",
@@ -176,6 +308,12 @@
       "slug": "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0",
       "lote": "doencas-bacterianas-g02",
       "json_path": "data/catalog-migration/doencas-bacterianas-g02/questions/ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0.json"
+    },
+    "bacterianas_tuberculose": {
+      "pedagogical_branch": "bacterianas_tuberculose",
+      "slug": "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+      "lote": "doencas-bacterianas-g03",
+      "json_path": "data/catalog-migration/doencas-bacterianas-g03/questions/idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4.json"
     },
     "biosseg_generico": {
       "pedagogical_branch": "biosseg_generico",
@@ -506,6 +644,60 @@
       "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
       "lote": "farmacodinamica-e-farmacocinetica-g02",
       "json_path": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json"
+    },
+    "calc_dose_equivalencia": {
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+      "json_path": "examples/questao-premium-idecan-calculo-equivalencias-gotas.json"
+    },
+    "calc_conceito": {
+      "pedagogical_branch": "calc_conceito",
+      "slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5",
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+      "json_path": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5.json"
+    },
+    "crianca_aleitamento_nutricao": {
+      "pedagogical_branch": "crianca_aleitamento_nutricao",
+      "slug": "cpcon-saude-crianca-aleitamento-vf",
+      "lote": "saude-da-crianca-g03",
+      "json_path": "examples/questao-premium-cpcon-saude-crianca-aleitamento-vf.json"
+    },
+    "crianca_triagem_neonatal": {
+      "pedagogical_branch": "crianca_triagem_neonatal",
+      "slug": "cpcon-saude-crianca-triagem-neonatal-vf",
+      "lote": "saude-da-crianca-g01",
+      "json_path": "examples/questao-premium-cpcon-saude-crianca-triagem-neonatal-vf.json"
+    },
+    "crianca_generico": {
+      "pedagogical_branch": "crianca_generico",
+      "slug": "funcern-saude-crianca-generico-hub",
+      "lote": "saude-da-crianca-g05",
+      "json_path": "examples/questao-premium-funcern-saude-crianca-generico-hub.json"
+    },
+    "crianca_desidratacao": {
+      "pedagogical_branch": "crianca_desidratacao",
+      "slug": "cev-saude-crianca-desidratacao-vf",
+      "lote": "saude-da-crianca-g06",
+      "json_path": "examples/questao-premium-cev-saude-crianca-desidratacao-vf.json"
+    },
+    "crianca_aps_puericultura": {
+      "pedagogical_branch": "crianca_aps_puericultura",
+      "slug": "consulplan-saude-crianca-puericultura-vf",
+      "lote": "saude-da-crianca-g08",
+      "json_path": "examples/questao-premium-consulplan-saude-crianca-puericultura-vf.json"
+    },
+    "crianca_neonatologia": {
+      "pedagogical_branch": "crianca_neonatologia",
+      "slug": "idecan-saude-crianca-neonatologia-vf",
+      "lote": "saude-da-crianca-g01",
+      "json_path": "examples/questao-premium-idecan-saude-crianca-neonatologia-vf.json"
+    },
+    "crianca_desenvolvimento": {
+      "pedagogical_branch": "crianca_desenvolvimento",
+      "slug": "cpcon-saude-crianca-desenvolvimento-vf",
+      "lote": "saude-da-crianca-g07",
+      "json_path": "examples/questao-premium-cpcon-saude-crianca-desenvolvimento-vf.json"
     }
   }
 }

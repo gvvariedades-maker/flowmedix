@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-07-14T17:51:18.339Z",
+  "subtopico": "Vias de Administração",
+  "scanned_lotes": 26,
+  "distribution": {
+    "via_vf_absorcao": 98,
+    "via_tecnica_admin": 85,
+    "via_generico": 24
+  },
+  "mismatch_count": 0,
+  "by_transition": {},
+  "mismatches": []
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T05:04:48.414Z",
+  "generated_at": "2026-07-14T16:45:10.603Z",
   "lote": "vias-de-administracao-g24",
   "anchor_slug": "funatec-enfermagem-vias-de-administracao-1778968609115-0",
   "subtopico": "Vias de Administração",
@@ -10,7 +10,7 @@
     "automated_pass": true,
     "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/funatec-enfermagem-vias-de-administracao-1778968609115-0",
   "checklist": [
     {
       "id": 1,

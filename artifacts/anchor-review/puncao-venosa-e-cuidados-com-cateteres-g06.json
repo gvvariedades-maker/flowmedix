@@ -10,7 +10,7 @@
     "automated_pass": true,
     "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
   "checklist": [
     {
       "id": 1,
@@ -103,7 +103,10 @@
       "notes": ""
     }
   ],
-  "reviewer_b_prompt": "docs/ANCHOR_SECOND_REVIEW_PROMPT.md",
-  "status": "pass",
-  "agent_instructions": "Preencha checklist[].pass e notas; retorne pass|fail. Obrigatório humano se fail ou subtópico flagship."
+  "reviewer_b": {
+    "reviewed_at": "2026-07-14",
+    "reviewer": "handcraft-qc",
+    "method": "both",
+    "notes": "Onda 2 L6 humano — bundle IPCS/CVC; checklist 15/15 + PNGs player."
+  }
 }

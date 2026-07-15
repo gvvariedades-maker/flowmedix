@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T17:38:16.993Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g10",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 306
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 312
+    },
+    {
+      "modulo_slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 348
+    },
+    {
+      "modulo_slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 349
+    },
+    {
+      "modulo_slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 350
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 303
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780000237780-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4047
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 296
+    }
+  ]
+}

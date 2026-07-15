@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T18:08:11.856Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-8",
+    "idecan-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-8",
+    "idib-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778934863952-5",
+    "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-1",
+    "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-2",
+    "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-3",
+    "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-4",
+    "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778934863952-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -110,6 +110,20 @@ const BIOSSEG_ITU_POSITIVE: RegExp[] = [
   /pin[cç]ar|fechar.*cateter|higiene.*meato/i,
 ];
 
+const BIOSSEG_GENERIC_VARIANTS = new Set([
+  'biosseg-precaution-deck',
+  'biosseg-reference-board',
+  'biosseg-vf-juggle-tap',
+  'biosseg-trap-chips',
+]);
+
+const BIOSSEG_ITU_VARIANTS = new Set([
+  'itu-closed-system-rail',
+  'itu-bundle-letter-board',
+  'itu-exceto-tap',
+  'itu-catheter-trap',
+]);
+
 const ADOLESCENT_VARIANTS = new Set([
   'adolescent-privacy-curtain',
   'adolescent-sigilo-spectrum',
@@ -125,6 +139,52 @@ const ADOLESCENT_ANTHROPOMETRY_VARIANTS = new Set([
 ]);
 
 const MENTAL_SAE_VARIANTS = new Set(['sae-decision-tap', 'norm-reveal']);
+const MENTAL_RAPS_VARIANTS = new Set([
+  'mental-raps-network-rail',
+  'mental-raps-tier-board',
+  'mental-raps-classify-tap',
+  'mental-raps-trap-arena',
+]);
+const MENTAL_RAPS_BESPOKE_BRANCHES = new Set(['mental_raps_legis']);
+const MENTAL_CRISIS_VARIANTS = new Set([
+  'mental-crisis-signal-deck',
+  'mental-crisis-ladder-board',
+  'mental-crisis-decision-tap',
+  'mental-crisis-coercion-trap',
+]);
+const MENTAL_CRISIS_BESPOKE_BRANCHES = new Set(['mental_crise_caps']);
+
+const PERI_PREOP_VARIANTS = new Set([
+  'peri-preop-phase-deck',
+  'peri-preop-prep-board',
+  'peri-preop-decision-tap',
+  'peri-preop-trap-arena',
+]);
+const PERI_PREOP_BESPOKE_BRANCHES = new Set(['perioperatorio_pre_operatorio']);
+
+const PERI_POS_VARIANTS = new Set([
+  'peri-srpa-monitor-deck',
+  'peri-aldrete-board',
+  'peri-srpa-decision-tap',
+  'peri-srpa-trap-arena',
+]);
+const PERI_POS_BESPOKE_BRANCHES = new Set(['perioperatorio_pos_operatorio']);
+
+const PERI_PROTOCOL_VARIANTS = new Set([
+  'peri-protocol-checklist-deck',
+  'peri-protocol-reference-board',
+  'peri-protocol-tap-flow',
+  'peri-protocol-trap-arena',
+]);
+const PERI_PROTOCOL_BESPOKE_BRANCHES = new Set(['perioperatorio_protocolo']);
+
+const PERI_VF_VARIANTS = new Set([
+  'peri-vf-assertions-deck',
+  'peri-vf-reference-board',
+  'peri-vf-juggle-tap',
+  'peri-vf-trap-chips',
+]);
+const PERI_VF_BESPOKE_BRANCHES = new Set(['perioperatorio_vf']);
 
 const SONDA_BESPOKE_VARIANTS = new Set([
   'procedure-protocol',
@@ -257,7 +317,7 @@ const CAM_DOCUMENTACAO_VARIANTS = new Set([
 ]);
 
 const PUNCAO_FLEBITE_VARIANTS = new Set([
-  'iv-complication-orbit',
+  'iv-complication-tissue-layers',
   'iv-differential-board',
   'iv-complication-tap-flow',
   'iv-label-swap-trap',
@@ -322,6 +382,34 @@ const RESPIRATORIO_BESPOKE_VARIANTS = new Set([
   'respiratorio-spo2-reference-board',
   'respiratorio-vf-juggle-tap',
   'respiratorio-spo2-trap-arena',
+]);
+
+const SP_IDENTIFICACAO_VARIANTS = new Set(['sp-id-verify-deck', 'sp-vf-juggle-tap']);
+
+const SP_QUEDAS_VARIANTS = new Set(['sp-fall-risk-rail']);
+
+const SP_EVENTOS_VARIANTS = new Set(['sp-incident-taxonomy-deck']);
+
+const SP_SHARED_BESPOKE_VARIANTS = new Set([
+  'sp-nsp-reference-board',
+  'sp-safety-trap-arena',
+  'sp-protocol-tap-flow',
+]);
+
+export const SP_BESPOKE_VARIANTS = new Set([
+  ...SP_IDENTIFICACAO_VARIANTS,
+  ...SP_QUEDAS_VARIANTS,
+  ...SP_EVENTOS_VARIANTS,
+  ...SP_SHARED_BESPOKE_VARIANTS,
+]);
+
+const SP_IDENTIFICACAO_BESPOKE_BRANCHES = new Set(['sp_identificacao']);
+const SP_QUEDAS_BESPOKE_BRANCHES = new Set(['sp_prevencao_quedas']);
+const SP_EVENTOS_BESPOKE_BRANCHES = new Set(['sp_eventos_adversos']);
+const SP_STRONG_BESPOKE_BRANCHES = new Set([
+  'sp_identificacao',
+  'sp_prevencao_quedas',
+  'sp_eventos_adversos',
 ]);
 
 const URGENCIAS_RCP_BESPOKE_VARIANTS = new Set([
@@ -888,6 +976,36 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     minPositive: 2,
   },
 
+  'biosseg-precaution-deck': {
+    homeSubtopicFragments: ['infeccoes no contexto da biosseguranca', 'biosseguranca', 'iras'],
+    positivePatterns: [
+      /iras|infec[cç][aã]o.*assist[eê]ncia|precau[cç][aã]o|higiene das m[aã]os|epi\b|res[ií]duo/i,
+    ],
+    minPositive: 1,
+  },
+  'biosseg-reference-board': {
+    homeSubtopicFragments: ['infeccoes no contexto da biosseguranca', 'biosseguranca', 'iras'],
+    positivePatterns: [/iras|precau[cç][aã]o|higiene|epi|res[ií]duo|cadeia de infec[cç][aã]o/i],
+    minPositive: 1,
+  },
+  'biosseg-vf-juggle-tap': {
+    homeSubtopicFragments: ['infeccoes no contexto da biosseguranca', 'biosseguranca', 'iras'],
+    // Portarias/RDCs (legis) são âncora frequente em IRAS — não bloquear; só calc puro.
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /\b(i|ii|iii)\s*[-–—]/i,
+      /afirmativa|verdadeira|falsa|julgue/i,
+      /letra [a-e]|alternativa correta|eliminar|marcar|gabarito|correta/i,
+      /iras|infec[cç][aã]o hospitalar|portaria|precau[cç][aã]o|higiene|perfurocortante|epi\b|res[ií]duo|cadeia/i,
+    ],
+    minPositive: 1,
+  },
+  'biosseg-trap-chips': {
+    homeSubtopicFragments: ['infeccoes no contexto da biosseguranca', 'biosseguranca', 'iras'],
+    positivePatterns: [/iras|precau[cç][aã]o|perfurocortante|epi|higiene/i],
+    minPositive: 1,
+  },
+
   // ---- Farmacologia ----
   'adme-journey-rail': {
     homeSubtopicFragments: ['farmacodinamica', 'farmacocinetica', 'farmacologia'],
@@ -1136,26 +1254,19 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: [
       'processo de enfermagem',
       'sae',
-      'saude mental',
-      'saúde mental',
-      'psiquiatria',
     ],
     positivePatterns: [
       /sae|processo de enfermagem|diagn[oó]stico/i,
-      /caps|crise|agita[cç][aã]o|suic[ií]dio|psicose|transtorno mental/i,
     ],
   },
   'norm-reveal': {
     homeSubtopicFragments: [
       'processo de enfermagem',
       'sae',
-      'saude mental',
-      'saúde mental',
-      'psiquiatria',
     ],
     positivePatterns: [
       /sae|processo de enfermagem|diagn[oó]stico|nanda/i,
-      /caps|crise|agita[cç][aã]o|suic[ií]dio|norma|conduta/i,
+      /norma|conduta|registro/i,
     ],
   },
 
@@ -1226,7 +1337,7 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['puncao venosa', 'cateteres'],
     positivePatterns: [/cateter|pun[cç][aã]o|venosa/i],
   },
-  'iv-complication-orbit': {
+  'iv-complication-tissue-layers': {
     homeSubtopicFragments: ['puncao venosa', 'cateteres'],
     positivePatterns: [
       /infiltra[cç][aã]o|flebite|hematoma|extravasamento|esclerose|subcut[aâ]neo/i,
@@ -1394,6 +1505,36 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     positivePatterns: [/nr[\s-]?32|pep\b|profilaxia|acidente/i],
   },
 
+  // ---- Segurança do Paciente / NSP ----
+  'sp-id-verify-deck': {
+    homeSubtopicFragments: ['seguranca do paciente'],
+    positivePatterns: [/dois identificador|pulseira|identificar.*paciente|hom[oô]nimo|dupla checagem/i],
+  },
+  'sp-fall-risk-rail': {
+    homeSubtopicFragments: ['seguranca do paciente'],
+    positivePatterns: [/\bmorse\b|queda|risco de queda|grades da cama|prevenc[aã]o de queda/i],
+  },
+  'sp-incident-taxonomy-deck': {
+    homeSubtopicFragments: ['seguranca do paciente'],
+    positivePatterns: [/evento adverso|incidente|near miss|quase erro|\bpnsp\b|portaria.*529/i],
+  },
+  'sp-nsp-reference-board': {
+    homeSubtopicFragments: ['seguranca do paciente'],
+    positivePatterns: [/seguran[cç]a do paciente|nsp\b|identificador|queda|evento adverso/i],
+  },
+  'sp-vf-juggle-tap': {
+    homeSubtopicFragments: ['seguranca do paciente'],
+    positivePatterns: [/seguran[cç]a do paciente|identificador|verdadeira|falsa|afirmativa/i],
+  },
+  'sp-protocol-tap-flow': {
+    homeSubtopicFragments: ['seguranca do paciente'],
+    positivePatterns: [/queda|\bmorse\b|evento adverso|incidente|protocolo|notifica[cç][aã]o/i],
+  },
+  'sp-safety-trap-arena': {
+    homeSubtopicFragments: ['seguranca do paciente'],
+    positivePatterns: [/seguran[cç]a do paciente|pegadinha|identificador|queda|evento adverso/i],
+  },
+
   // ---- Doenças Respiratórias Crônicas ----
   'respiratorio-asma-dpoc-duel-deck': {
     homeSubtopicFragments: ['doencas respiratorias cronicas', 'asma', 'dpoc'],
@@ -1410,6 +1551,106 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
   'respiratorio-spo2-trap-arena': {
     homeSubtopicFragments: ['doencas respiratorias cronicas', 'asma', 'dpoc'],
     positivePatterns: [/\basma\b|\bdpoc\b|spo2|88.?92|oxigen|hiperoxia|titulad/i],
+  },
+
+  // ---- Saúde Mental (bespoke — não reutiliza SAE) ----
+  'mental-raps-network-rail': {
+    homeSubtopicFragments: ['saude mental', 'saúde mental', 'psiquiatria'],
+    positivePatterns: [/\braps\b|reforma psiqui[aá]trica|\bsrt\b|portaria.*3088|aten[cç][aã]o psicossocial/i],
+  },
+  'mental-raps-tier-board': {
+    homeSubtopicFragments: ['saude mental', 'saúde mental', 'psiquiatria'],
+    positivePatterns: [/\braps\b|\bcaps\b|hospital[\s-]?dia|rede de aten[cç][aã]o|componente/i],
+  },
+  'mental-raps-classify-tap': {
+    homeSubtopicFragments: ['saude mental', 'saúde mental', 'psiquiatria'],
+    positivePatterns: [/\braps\b|eliminar|letra|sigla|rede de aten[cç][aã]o/i],
+  },
+  'mental-raps-trap-arena': {
+    homeSubtopicFragments: ['saude mental', 'saúde mental', 'psiquiatria'],
+    positivePatterns: [/\braps\b|hospitaliza[cç][aã]o|asilo|exclus[aã]o|caps|pegadinha/i],
+  },
+  'mental-crisis-signal-deck': {
+    homeSubtopicFragments: ['saude mental', 'saúde mental', 'psiquiatria'],
+    positivePatterns: [/\bcaps\b|crise|agita[cç][aã]o|acolhimento|escuta|conten[cç][aã]o/i],
+  },
+  'mental-crisis-ladder-board': {
+    homeSubtopicFragments: ['saude mental', 'saúde mental', 'psiquiatria'],
+    positivePatterns: [/acolh|escuta|v[ií]nculo|conten[cç][aã]o|interna[cç][aã]o|equipe/i],
+  },
+  'mental-crisis-decision-tap': {
+    homeSubtopicFragments: ['saude mental', 'saúde mental', 'psiquiatria'],
+    positivePatterns: [/crise|caps|agita[cç][aã]o|eliminar|priorizar|acolhimento/i],
+  },
+  'mental-crisis-coercion-trap': {
+    homeSubtopicFragments: ['saude mental', 'saúde mental', 'psiquiatria'],
+    positivePatterns: [/conten[cç][aã]o|coer[cç][aã]o|acolh|escuta|pegadinha|letra/i],
+  },
+
+  // ---- Assistência Perioperatória (bespoke 4 ramos fortes) ----
+  'peri-preop-phase-deck': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/pr[eé][\s-]?operat|preparo|jejum|tricotomia|orienta[cç][aã]o/i],
+  },
+  'peri-preop-prep-board': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/pr[eé][\s-]?operat|jejum|tricotomia|preparo|verifica[cç][aã]o/i],
+  },
+  'peri-preop-decision-tap': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/pr[eé][\s-]?operat|eliminar|letra|preparo|orienta[cç][aã]o/i],
+  },
+  'peri-preop-trap-arena': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/pr[eé][\s-]?operat|jejum|tricotomia|pegadinha|letra/i],
+  },
+  'peri-srpa-monitor-deck': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/\bsrpa\b|aldrete|monitor|sinais vitais|p[oó]s[\s-]?anest/i],
+  },
+  'peri-aldrete-board': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/aldrete|kroulik|escala|alta da srpa|pontua[cç][aã]o/i],
+  },
+  'peri-srpa-decision-tap': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/\bsrpa\b|aldrete|eliminar|letra|monitor|analgesia/i],
+  },
+  'peri-srpa-trap-arena': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/\bsrpa\b|aldrete|\bexceto\b|analgesia|pegadinha|letra/i],
+  },
+  'peri-protocol-checklist-deck': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/protocolo|cirurgia segura|sign[\s-]?in|time[\s-]?out|sign[\s-]?out|who/i],
+  },
+  'peri-protocol-reference-board': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/protocolo|cdc|anvisa|cirurgia segura|checklist|sequ[eê]ncia/i],
+  },
+  'peri-protocol-tap-flow': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/protocolo|sign[\s-]?in|time[\s-]?out|eliminar|letra|who/i],
+  },
+  'peri-protocol-trap-arena': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/protocolo|cirurgia segura|cdc|pegadinha|letra|who/i],
+  },
+  'peri-vf-assertions-deck': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/\b(i|ii|iii)\b|verdadeira|falsa|certo ou errado|julgue/i],
+  },
+  'peri-vf-reference-board': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/\b(i|ii|iii)\b|verdadeira|falsa|srpa|perioperat/i],
+  },
+  'peri-vf-juggle-tap': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/\b(i|ii|iii)\b|verdadeira|falsa|combina[cç][aã]o|letra/i],
+  },
+  'peri-vf-trap-chips': {
+    homeSubtopicFragments: ['perioperatoria', 'assistencia perioperatoria', 'srpa'],
+    positivePatterns: [/\b(i|ii|iii)\b|verdadeira|falsa|pegadinha|letra|srpa/i],
   },
   'urgencias-survival-chain-deck': {
     homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
@@ -1583,26 +1824,65 @@ export function bespokeMoldHasContentAffinity(
       'saúde mental',
       'psiquiatria',
     ]);
-    const isSaeSubtopic = subtopicoMatchesFragments(ctx.subtopico, [
-      'processo de enfermagem',
-      'sae',
-    ]);
-
-    if (isSaeSubtopic && !isMentalSubtopic) {
-      if (onHome) return true;
-      if (rule?.positivePatterns?.length) {
-        const hits = countPatternMatches(corpus, rule.positivePatterns);
-        return hits >= (rule.minPositive ?? 1);
-      }
-      return true;
-    }
-
-    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'mental_crise_caps') {
+    if (isMentalSubtopic) {
       return false;
     }
-    if (!rule?.positivePatterns?.length) return false;
-    const hits = countPatternMatches(corpus, rule.positivePatterns);
-    return hits >= (rule.minPositive ?? 1);
+    if (onHome) return true;
+    if (rule?.positivePatterns?.length) {
+      const hits = countPatternMatches(corpus, rule.positivePatterns);
+      return hits >= (rule.minPositive ?? 1);
+    }
+    return true;
+  }
+
+  if (MENTAL_RAPS_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !MENTAL_RAPS_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (MENTAL_CRISIS_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !MENTAL_CRISIS_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (PERI_PREOP_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !PERI_PREOP_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (PERI_POS_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !PERI_POS_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (PERI_PROTOCOL_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !PERI_PROTOCOL_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (PERI_VF_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !PERI_VF_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (BIOSSEG_GENERIC_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'biosseg_generico') {
+      return false;
+    }
+    if (onHome) return true;
+  }
+
+  if (BIOSSEG_ITU_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'biosseg_iras_itu_cateter') {
+      return false;
+    }
+    if (onHome) return true;
   }
 
   if (SONDA_BESPOKE_VARIANTS.has(variant)) {
@@ -1781,6 +2061,30 @@ export function bespokeMoldHasContentAffinity(
       ctx.pedagogicalBranch &&
       !RESPIRATORIO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)
     ) {
+      return false;
+    }
+  }
+
+  if (SP_IDENTIFICACAO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !SP_IDENTIFICACAO_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (SP_QUEDAS_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !SP_QUEDAS_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (SP_EVENTOS_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !SP_EVENTOS_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
+      return false;
+    }
+  }
+
+  if (SP_SHARED_BESPOKE_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && !SP_STRONG_BESPOKE_BRANCHES.has(ctx.pedagogicalBranch)) {
       return false;
     }
   }

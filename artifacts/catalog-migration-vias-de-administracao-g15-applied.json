@@ -1,17 +1,66 @@
 {
-  "generated_at": "2026-07-13T17:08:32.934Z",
+  "generated_at": "2026-07-14T18:42:57.276Z",
   "lote": "vias-de-administracao-g15",
   "mode": "apply",
-  "total_files": 1,
-  "ok": 1,
+  "total_files": 8,
+  "ok": 8,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
-    "funatec-enfermagem-vias-de-administracao-1778968609115-1"
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056427936-2",
+    "facet-enfermagem-vias-de-administracao-1777178733298-0",
+    "fau-unicentro-enfermagem-vias-de-administracao-1778968968468-8",
+    "fcc-enfermagem-vias-de-administracao-1776056418941-0",
+    "fepese-enfermagem-vias-de-administracao-1776056418941-4",
+    "fepese-enfermagem-vias-de-administracao-1778968997293-1",
+    "funatec-enfermagem-vias-de-administracao-1778968609115-1",
+    "fundatec-enfermagem-vias-de-administracao-1776056383154-3"
   ],
   "results": [
     {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056427936-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-vias-de-administracao-1777178733298-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1778968968468-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-vias-de-administracao-1776056418941-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056418941-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968997293-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
       "modulo_slug": "funatec-enfermagem-vias-de-administracao-1778968609115-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-3",
       "status": "ok",
       "mode": "update",
       "detail": "conteudo_json aplicado"

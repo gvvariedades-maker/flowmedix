@@ -1,0 +1,292 @@
+{
+  "generated_at": "2026-07-15T04:49:26.770Z",
+  "subtopico": "Enfermagem do Trabalho",
+  "lote": "enfermagem-do-trabalho-completo",
+  "total": 33,
+  "by_cluster": {
+    "Ergonomia / LER-DORT / burnout": 4,
+    "PEP / perfurocortante / acidente biológico": 1,
+    "Outros / tema misto": 12,
+    "NR-15 / agentes físicos (calor, ruído, radiação)": 11,
+    "NR-32 / PCMSO / V-F normativo": 5
+  },
+  "by_branch": {
+    "trabalho_ergonomia": 17,
+    "trabalho_pep_trap": 3,
+    "trabalho_nr15_reference": 9,
+    "trabalho_vf_nr32": 3,
+    "trabalho_generico": 1
+  },
+  "golden_by_cluster": {
+    "NR-32 / PCMSO / V-F normativo": "questao-premium-cpcon-enfermagem-trabalho-nr32-vf.json",
+    "PEP / perfurocortante / acidente biológico": "enfermagem-do-trabalho-g01/questions/copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1.json",
+    "NR-15 / agentes físicos (calor, ruído, radiação)": "enfermagem-do-trabalho-g05/questions/ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8.json"
+  },
+  "mismatches": 0,
+  "rows": [
+    {
+      "slug": "avancasp-enfermagem-enfermagem-do-trabalho-1778967789485-7",
+      "cluster": "Ergonomia / LER-DORT / burnout",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Na Ergonomia de , a intervenção é feita na fase do projeto, interferindo, amplamente, no posto de tr"
+    },
+    {
+      "slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+      "cluster": "PEP / perfurocortante / acidente biológico",
+      "pedagogical_branch_proposed": "trabalho_pep_trap",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A ANVISA estabelece algumas medidas de prevenção de acidentes ocupacionais que visam garantir um amb"
+    },
+    {
+      "slug": "copese-ufpi-geral-enfermagem-do-trabalho-1777103554284-3",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Alguns fatores de risco são inerentes às condições de trabalho do Agente de Combate a Endemias (ACE)"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "As medidas de prevenção de doenças e de agravos e proteção da saúde do trabalhador devem considerar "
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-seguranca-do-paciente-1777102678563-4",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "No que se refere à saúde e segurança ocupacional, \"sinalizadores de segurança, como placas e cartaze"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-4",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "protocolo",
+      "instruction_preview": "Em uma situação de exposição de emergência nuclear ou radiológica, resultante de um acidente, ato ma"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-6",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Ao compreender as atividades e as funções que o enfermeiro do trabalho pode executar em uma empresa,"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-7",
+      "cluster": "Ergonomia / LER-DORT / burnout",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "As doenças osteomusculares relacionadas ao trabalho (DORTs) e as lesões por esforços repetitivos (LE"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-8",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Todos devemos tomar muita precaução ao lidar com emissores de radiação, principalmente os trabalhado"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-9",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "calc",
+      "instruction_preview": "Quanto à natureza, os efeitos biológicos podem ser classificados em reações teciduais, anteriormente"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-1",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A radiação solar (exposição natural à radiação UV) pode atingir as pessoas de três maneiras: diretam"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Os(as) trabalhadores(as) compartilham com o conjunto da população formas de adoecer e morrer em um d"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-3",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_pep_trap",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A investigação epidemiológica das doenças e dos agravos relacionados ao trabalho constitui uma ativi"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-5",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "As dermatoses ocupacionais são quaisquer alterações da pele, da mucosa e dos anexos (glândulas, unha"
+    },
+    {
+      "slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-6",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A enfermagem na assistência ao trabalhador possui uma função importante no planejamento das ações di"
+    },
+    {
+      "slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Um profissional de saúde que trabalha com radiação não ionizante está exposto a risco ambiental"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Sobre a atuação do técnico em enfermagem na promoção e prevenção em saúde do trabalhador, avalie as "
+    },
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Assinale a alternativa que indica o tempo máximo da exposição diária permissível para o trabalhador "
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+      "cluster": "Ergonomia / LER-DORT / burnout",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "certo_errado",
+      "instruction_preview": "Reduzir o excesso de força, talvez seja um dos princípios mais básicos da ergonomia. Assim como a po"
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-7",
+      "cluster": "NR-32 / PCMSO / V-F normativo",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "certo_errado",
+      "instruction_preview": "Leia o enunciado e depois responda: Iluminação pobre é um dos fatores mais comuns encontrados nos am"
+    },
+    {
+      "slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-8",
+      "cluster": "NR-32 / PCMSO / V-F normativo",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "certo_errado",
+      "instruction_preview": "Estão entre as causas mais comuns de acidente de trabalho: quedas, trabalhos com repetições, exposiç"
+    },
+    {
+      "slug": "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Quando falamos de relacionamento interpessoal profis-sional, devemos compreender a importância de se"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-2",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "vf",
+      "instruction_preview": "Há inúmeros tipos de patologias que podem afligir o trabalhador durante a execução de suas atividade"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3",
+      "cluster": "NR-32 / PCMSO / V-F normativo",
+      "pedagogical_branch_proposed": "trabalho_vf_nr32",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "O Programa de Controle Médico de Saúde Ocupacional (PCMSO) é uma importante ferramenta para a preser"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+      "cluster": "NR-32 / PCMSO / V-F normativo",
+      "pedagogical_branch_proposed": "trabalho_vf_nr32",
+      "meta_pedagogical_branch": null,
+      "family": "vf",
+      "instruction_preview": "Sobre os exames médicos contemplados no Programa de Controle Médico de Saúde Ocupacional (PCMSO), ma"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+      "cluster": "NR-32 / PCMSO / V-F normativo",
+      "pedagogical_branch_proposed": "trabalho_vf_nr32",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Sobre o Atestado de Saúde Ocupacional (ASO), assinale a afirmativa correta."
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+      "cluster": "Ergonomia / LER-DORT / burnout",
+      "pedagogical_branch_proposed": "trabalho_ergonomia",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Sobre a síndrome de Burnout, reconhecida como um fenômeno relacionado ao trabalho pela Organização M"
+    },
+    {
+      "slug": "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_pep_trap",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "De acordo com a RDC 32, que trata da segurança e saúde do trabalhador em serviços de saúde, em locai"
+    },
+    {
+      "slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Em relação à exposição radiológica no setor de hemodinâmica, assinale a alternativa correta sobre o "
+    },
+    {
+      "slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1",
+      "cluster": "Outros / tema misto",
+      "pedagogical_branch_proposed": "trabalho_generico",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Ao fazer a triagem no ambulatório de saúde do trabalhador, você atende uma funcionária que trabalha "
+    },
+    {
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-5",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Sobre perda auditiva relacionada ao trabalho por exposição a ruído, qual ação integra abordagem prev"
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "A Norma Regulamentadora 9 (NR-9), Avaliação e controle das exposições ocupacionais a agentes físicos"
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "cluster": "NR-15 / agentes físicos (calor, ruído, radiação)",
+      "pedagogical_branch_proposed": "trabalho_nr15_reference",
+      "meta_pedagogical_branch": null,
+      "family": "conceito",
+      "instruction_preview": "Em uma instituição é utilizado o Mapa de Riscos como instrumento para a identificação e registro da "
+    }
+  ]
+}

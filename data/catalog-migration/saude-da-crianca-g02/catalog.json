@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T15:58:15.544Z",
+  "lote": "saude-da-crianca-g02",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 617
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-7",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 2700
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 728
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4750
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4751
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3644
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3123
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3148
+    }
+  ]
+}

@@ -206,6 +206,20 @@ export const BIOSSEGURANCA_ANVISA: GuidelineTable = {
       sourceId: 'biosseguranca-anvisa',
     },
     {
+      id: 'hh-reducao-70',
+      label: 'Redução de transmissão — higiene das mãos',
+      value: 'até 70% de redução na transmissão de microrganismos com HH adequada',
+      detail: 'OMS/MS — HH nos 5 momentos é a medida mais eficaz contra IRAS.',
+      sourceId: 'biosseguranca-anvisa',
+    },
+    {
+      id: 'sf-09-periferico',
+      label: 'SF 0,9% — cateter periférico',
+      value: 'solução salina 0,9% para flushing e lock de cateter venoso periférico',
+      detail: 'Não usar água estéril no lugar do SF 0,9% para manutenção do acesso periférico.',
+      sourceId: 'biosseguranca-anvisa',
+    },
+    {
       id: 'pegadinha-recapear-agulha',
       label: 'Pegadinha — recapear agulha',
       value: 'nunca recapear agulha usada — risco de perfuração acidental',

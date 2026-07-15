@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T23:42:37.869Z",
+  "generated_at": "2026-07-14T14:43:31.316Z",
   "lote": "processamento-g02",
   "anchor_slug": "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
   "subtopico": "Processamento de Artigos e Produtos de Saúde",
@@ -10,7 +10,7 @@
     "automated_pass": true,
     "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
   "checklist": [
     {
       "id": 1,

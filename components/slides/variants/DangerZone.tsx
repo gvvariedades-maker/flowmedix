@@ -24,7 +24,14 @@ import { DangerZoneLabSpecimenArena } from './DangerZoneLabSpecimenArena';
 import { DangerZoneDressingChoiceArena } from './DangerZoneDressingChoiceArena';
 import { DangerZoneBurnTrapArena } from './DangerZoneBurnTrapArena';
 import { DangerZoneTrabalhoPepTrapArena } from './DangerZoneTrabalhoPepTrapArena';
+import { DangerZoneSpSafetyTrapArena } from './DangerZoneSpSafetyTrapArena';
 import { DangerZoneRespiratorioSpo2TrapArena } from './DangerZoneRespiratorioSpo2TrapArena';
+import { DangerZoneMentalRapsTrapArena } from './DangerZoneMentalRapsTrapArena';
+import { DangerZoneMentalCrisisCoercionTrap } from './DangerZoneMentalCrisisCoercionTrap';
+import { DangerZonePeriPreopTrapArena } from './DangerZonePeriPreopTrapArena';
+import { DangerZonePeriSrpaTrapArena } from './DangerZonePeriSrpaTrapArena';
+import { DangerZonePeriProtocolTrapArena } from './DangerZonePeriProtocolTrapArena';
+import { DangerZonePeriVfTrapChips } from './DangerZonePeriVfTrapChips';
 import { DangerZoneUrgenciasRcpTrapArena } from './DangerZoneUrgenciasRcpTrapArena';
 import { DangerZoneUrgenciasTraumaTrapArena } from './DangerZoneUrgenciasTraumaTrapArena';
 import { DangerZoneUrgenciasStrokeTrapArena } from './DangerZoneUrgenciasStrokeTrapArena';
@@ -36,7 +43,9 @@ import { DangerZoneUrgenciasProtocolTrapArena } from './DangerZoneUrgenciasProto
 import { DangerZoneUrgenciasExcetoTrapArena } from './DangerZoneUrgenciasExcetoTrapArena';
 import { DangerZonePniTrapChips } from './DangerZonePniTrapChips';
 import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
+import { DangerZoneBiossegTrapChips } from './DangerZoneBiossegTrapChips';
 import { DangerZoneEtiologyIntruderChips } from './DangerZoneEtiologyIntruderChips';
+import { DangerZoneTbTransmissionTrap } from './DangerZoneTbTransmissionTrap';
 import { DangerZoneItuCatheterTrap } from './DangerZoneItuCatheterTrap';
 import { DangerZoneAdolescentConsentGate } from './DangerZoneAdolescentConsentGate';
 import { DangerZoneAdolescentZThresholdTrap } from './DangerZoneAdolescentZThresholdTrap';
@@ -46,6 +55,15 @@ import { DangerZoneMulherScreeningTrapArena } from './DangerZoneMulherScreeningT
 import { DangerZoneMulherMamaTrapArena } from './DangerZoneMulherMamaTrapArena';
 import { DangerZoneMulherPuerperioTrapArena } from './DangerZoneMulherPuerperioTrapArena';
 import { DangerZoneMulherPlanejamentoTrapArena } from './DangerZoneMulherPlanejamentoTrapArena';
+import {
+  DangerZoneCriancaFeedingTrapArena,
+  DangerZoneCriancaScreeningTrapArena,
+  DangerZoneCriancaPediatricTrapArena,
+  DangerZoneCriancaDehydrationTrapArena,
+  DangerZoneCriancaPuericulturaTrapArena,
+  DangerZoneCriancaNeonatalTrapArena,
+  DangerZoneCriancaDevTrapArena,
+} from './criancaVariants';
 import { DangerZoneCamCertosTrapArena } from './DangerZoneCamCertosTrapArena';
 import { DangerZoneCamHighRiskTrapArena } from './DangerZoneCamHighRiskTrapArena';
 import { DangerZoneCamExcetoTrapArena } from './DangerZoneCamExcetoTrapArena';
@@ -375,6 +393,17 @@ export const DangerZone = ({
     );
   }
 
+  if (explicitVariant === 'sp-safety-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneSpSafetyTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
   if (explicitVariant === 'respiratorio-spo2-trap-arena' && items && items.length > 0) {
     return (
       <DangerZoneRespiratorioSpo2TrapArena
@@ -382,6 +411,78 @@ export const DangerZone = ({
         items={items}
         theme={theme}
         footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'mental-raps-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneMentalRapsTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'mental-crisis-coercion-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneMentalCrisisCoercionTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'peri-preop-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZonePeriPreopTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'peri-srpa-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZonePeriSrpaTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'peri-protocol-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZonePeriProtocolTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'peri-vf-trap-chips' && items && items.length > 0) {
+    return (
+      <DangerZonePeriVfTrapChips
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
       />
     );
   }
@@ -569,6 +670,84 @@ export const DangerZone = ({
     );
   }
 
+  if (explicitVariant === 'crianca-feeding-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCriancaFeedingTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+  if (explicitVariant === 'crianca-screening-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCriancaScreeningTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+  if (explicitVariant === 'crianca-pediatric-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCriancaPediatricTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+  if (explicitVariant === 'crianca-dehydration-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCriancaDehydrationTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+  if (explicitVariant === 'crianca-puericultura-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCriancaPuericulturaTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+  if (explicitVariant === 'crianca-neonatal-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCriancaNeonatalTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+  if (explicitVariant === 'crianca-dev-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCriancaDevTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
   if (explicitVariant === 'cam-certos-trap-arena' && items && items.length > 0) {
     return (
       <DangerZoneCamCertosTrapArena
@@ -700,9 +879,33 @@ export const DangerZone = ({
     );
   }
 
+  if (explicitVariant === 'biosseg-trap-chips' && items && items.length > 0) {
+    return (
+      <DangerZoneBiossegTrapChips
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
   if (explicitVariant === 'etiology-intruder-chips' && items && items.length > 0) {
     return (
       <DangerZoneEtiologyIntruderChips
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'tb-transmission-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneTbTransmissionTrap
         content={content}
         items={items}
         theme={theme}

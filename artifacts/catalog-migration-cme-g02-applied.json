@@ -1,13 +1,14 @@
 {
-  "generated_at": "2026-06-30T00:18:47.693Z",
+  "generated_at": "2026-07-14T20:37:22.888Z",
   "lote": "cme-g02",
   "mode": "apply",
-  "total_files": 10,
-  "ok": 10,
+  "total_files": 11,
+  "ok": 11,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
     "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+    "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
     "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
     "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
     "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
@@ -21,6 +22,12 @@
   "results": [
     {
       "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
       "status": "ok",
       "mode": "update",
       "detail": "conteudo_json aplicado"

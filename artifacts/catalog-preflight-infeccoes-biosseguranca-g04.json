@@ -1,7 +1,9 @@
 {
   "lote": "infeccoes-biosseguranca-g04",
-  "generated_at": "2026-06-30T15:08:16.977Z",
+  "generated_at": "2026-07-15T09:49:10.094Z",
   "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
   "total": 1,
   "passed": 1,
   "failed": 0,

@@ -72,6 +72,24 @@ export const VIAS_CLAIM_WHITELIST: readonly ViasWhitelistClaim[] = [
     groundsNumeric: false,
   },
   {
+    id: 'vo-desvantagens-vf',
+    axis: 'vo',
+    match:
+      /desvantagen.{0,50}via\s+oral|paladar.{0,40}medicamento|absor[cç][aã]o\s+n[aã]o\s+imediata|fracionamento.{0,40}(c[aá]psula|dr[aá]gea|comprimido)/i,
+    canonical: 'Desvantagens VO: paladar, absorção não imediata, fracionamento difícil',
+    guidelineEntryId: 'vo-com-alimento',
+    groundsNumeric: false,
+  },
+  {
+    id: 'vo-vantagens-sublingual',
+    axis: 'vo',
+    match:
+      /vantagen.{0,50}via\s+oral|conforto.{0,40}(?:oral|sublingual)|gases?\s+anest[eé]sicos?.{0,40}inalat|inalat[oó]ri.{0,30}n[aã]o\s+oral/i,
+    canonical: 'Vantagens VO/sublingual; gases anestésicos = via inalatória (não oral)',
+    guidelineEntryId: 'via-inalatoria',
+    groundsNumeric: false,
+  },
+  {
     id: 'sublingual-bypass-irritante',
     axis: 'primeira_passagem',
     match:

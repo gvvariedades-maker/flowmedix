@@ -21,7 +21,7 @@ export default function AdminBrandPreviewPage() {
               Logo AE — preview light / dark
             </h1>
             <p className="mt-2 max-w-xl text-sm text-slate-400">
-              Modelo ouro + esmeralda: monograma Ae (estrela) · wordmark AVANT enf 3D.
+              Monograma A azul metal em card verde neon · wordmark AVANT + enf.
             </p>
           </div>
           <Link

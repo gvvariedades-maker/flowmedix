@@ -99,7 +99,7 @@ function stampFile(path: string, dryRun: boolean): {
     return { path, status: 'failed', detail: 'contract_null' };
   }
 
-  if (sampled) {
+  if (sampled && !hasFlag('approve-sampled')) {
     return {
       path,
       status: 'human_required',

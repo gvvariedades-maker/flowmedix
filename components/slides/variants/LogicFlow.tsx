@@ -20,7 +20,16 @@ import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
 import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
 import { LogicFlowBurnTriageTapFlow } from './LogicFlowBurnTriageTapFlow';
 import { LogicFlowTrabalhoVfJuggleTap } from './LogicFlowTrabalhoVfJuggleTap';
+import { LogicFlowSegurancaVfJuggleTap } from './LogicFlowSegurancaVfJuggleTap';
+import { LogicFlowSpProtocolTapFlow } from './LogicFlowSpProtocolTapFlow';
+import { LogicFlowBiossegVfJuggleTap } from './LogicFlowBiossegVfJuggleTap';
 import { LogicFlowRespiratorioVfJuggleTap } from './LogicFlowRespiratorioVfJuggleTap';
+import { LogicFlowMentalRapsClassifyTap } from './LogicFlowMentalRapsClassifyTap';
+import { LogicFlowMentalCrisisDecisionTap } from './LogicFlowMentalCrisisDecisionTap';
+import { LogicFlowPeriPreopDecisionTap } from './LogicFlowPeriPreopDecisionTap';
+import { LogicFlowPeriSrpaDecisionTap } from './LogicFlowPeriSrpaDecisionTap';
+import { LogicFlowPeriProtocolTapFlow } from './LogicFlowPeriProtocolTapFlow';
+import { LogicFlowPeriVfJuggleTap } from './LogicFlowPeriVfJuggleTap';
 import { LogicFlowUrgenciasRcpTapFlow } from './LogicFlowUrgenciasRcpTapFlow';
 import { LogicFlowUrgenciasXabcdeTapFlow } from './LogicFlowUrgenciasXabcdeTapFlow';
 import { LogicFlowUrgenciasStrokeEliminationTap } from './LogicFlowUrgenciasStrokeEliminationTap';
@@ -30,6 +39,7 @@ import { LogicFlowUrgenciasPediatricTapFlow } from './LogicFlowUrgenciasPediatri
 import { LogicFlowUrgenciasProtocolTapFlow } from './LogicFlowUrgenciasProtocolTapFlow';
 import { LogicFlowUrgenciasExcetoTapFlow } from './LogicFlowUrgenciasExcetoTapFlow';
 import { LogicFlowEtiologyEliminationTap } from './LogicFlowEtiologyEliminationTap';
+import { LogicFlowTbVfEliminationTap } from './LogicFlowTbVfEliminationTap';
 import { LogicFlowItuExcetoTap } from './LogicFlowItuExcetoTap';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
 import { LogicFlowCamVfJuggleTap } from './LogicFlowCamVfJuggleTap';
@@ -57,6 +67,15 @@ import { LogicFlowMulherScreeningTapFlow } from './LogicFlowMulherScreeningTapFl
 import { LogicFlowMulherMamaTapFlow } from './LogicFlowMulherMamaTapFlow';
 import { LogicFlowMulherPuerperioTapFlow } from './LogicFlowMulherPuerperioTapFlow';
 import { LogicFlowMulherPlanejamentoTapFlow } from './LogicFlowMulherPlanejamentoTapFlow';
+import {
+  LogicFlowCriancaFeedingTapFlow,
+  LogicFlowCriancaScreeningTapFlow,
+  LogicFlowCriancaPediatricTapFlow,
+  LogicFlowCriancaDehydrationTapFlow,
+  LogicFlowCriancaPuericulturaTapFlow,
+  LogicFlowCriancaNeonatalTapFlow,
+  LogicFlowCriancaDevTapFlow,
+} from './criancaVariants';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
   getLogicFlowStepVisual,
@@ -221,8 +240,88 @@ export const LogicFlow = ({
     return <LogicFlowTrabalhoVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
+  if (variant === 'sp-vf-juggle-tap') {
+    return <LogicFlowSegurancaVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'sp-protocol-tap-flow') {
+    return (
+      <LogicFlowSpProtocolTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'biosseg-vf-juggle-tap') {
+    return <LogicFlowBiossegVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
   if (variant === 'respiratorio-vf-juggle-tap') {
     return <LogicFlowRespiratorioVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'mental-raps-classify-tap') {
+    return (
+      <LogicFlowMentalRapsClassifyTap
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'mental-crisis-decision-tap') {
+    return (
+      <LogicFlowMentalCrisisDecisionTap
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'peri-preop-decision-tap') {
+    return (
+      <LogicFlowPeriPreopDecisionTap
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'peri-srpa-decision-tap') {
+    return (
+      <LogicFlowPeriSrpaDecisionTap
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'peri-protocol-tap-flow') {
+    return (
+      <LogicFlowPeriProtocolTapFlow
+        steps={steps}
+        theme={theme}
+        revealMode={revealMode}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (variant === 'peri-vf-juggle-tap') {
+    return (
+      <LogicFlowPeriVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />
+    );
   }
 
   if (variant === 'urgencias-rcp-tap-flow') {
@@ -315,6 +414,10 @@ export const LogicFlow = ({
 
   if (variant === 'etiology-elimination-tap') {
     return <LogicFlowEtiologyEliminationTap steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'tb-vf-elimination-tap') {
+    return <LogicFlowTbVfEliminationTap steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'itu-exceto-tap') {
@@ -419,6 +522,28 @@ export const LogicFlow = ({
 
   if (variant === 'mulher-planejamento-tap-flow') {
     return <LogicFlowMulherPlanejamentoTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'crianca-feeding-tap-flow') {
+    return <LogicFlowCriancaFeedingTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-screening-tap-flow') {
+    return <LogicFlowCriancaScreeningTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-pediatric-tap-flow') {
+    return <LogicFlowCriancaPediatricTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-dehydration-tap-flow') {
+    return <LogicFlowCriancaDehydrationTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-puericultura-tap-flow') {
+    return <LogicFlowCriancaPuericulturaTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-neonatal-tap-flow') {
+    return <LogicFlowCriancaNeonatalTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+  if (variant === 'crianca-dev-tap-flow') {
+    return <LogicFlowCriancaDevTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'pni-cold-chain-tap') {

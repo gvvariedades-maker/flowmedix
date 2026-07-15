@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T23:08:09.024Z",
+  "generated_at": "2026-07-14T16:44:05.226Z",
   "lote": "vias-de-administracao-g01",
   "anchor_slug": "amauc-enfermagem-vias-de-administracao-1778968768987-6",
   "subtopico": "Vias de Administração",
@@ -10,7 +10,7 @@
     "automated_pass": true,
     "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/amauc-enfermagem-vias-de-administracao-1778968768987-6",
   "checklist": [
     {
       "id": 1,

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T18:07:08.269Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-2",
+    "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-3",
+    "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-3",
+    "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-4",
+    "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-5",
+    "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-1",
+    "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-1",
+    "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

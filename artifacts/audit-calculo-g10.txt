@@ -1,0 +1,23 @@
+﻿
+> avant@0.1.0 audit:questao-readiness
+> tsx scripts/audit-questao-readiness.ts --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g10 --strict-v2-pedagogy
+
+[READY] objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-1 branch=calc_dose_equivalencia risk=alto/human_required errors=none
+[READY] objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7 branch=calc_dose_equivalencia risk=alto/human_required errors=none
+[FAIL] omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-8 branch=calc_dose_equivalencia risk=alto/human_required errors=align_instruction_terms
+  [A2.5] align_instruction_terms: Slides citam 4/15 termos do enunciado (m├¡nimo 5 = 30%).
+[READY] omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-0 branch=calc_dose_equivalencia risk=alto/human_required errors=none
+[FAIL] omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-1 branch=calc_conceito risk=medio/auto_conditional errors=l3_branch_inference_mismatch
+  [A3] l3_branch_inference_mismatch: meta.pedagogical_branch="calc_conceito" Ôëá inferido="calc_dose_equivalencia" ÔÇö rodar catalog:patch-pedagogical-branch --reconcile-branch
+[FAIL] quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7 branch=calc_dose_equivalencia risk=alto/human_required errors=align_calc_units
+  [A2.5] align_calc_units: Unidade "ampolas" do enunciado ausente em logic_flow.
+[FAIL] quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780000237780-2 branch=calc_dose_equivalencia risk=alto/human_required errors=align_instruction_terms,align_calc_units
+  [A2.5] align_instruction_terms: Slides citam 15/56 termos do enunciado (m├¡nimo 17 = 30%).
+  [A2.5] align_calc_units: Unidade "mg" do enunciado ausente em logic_flow.
+[FAIL] unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0 branch=calc_dose_equivalencia risk=alto/human_required errors=align_instruction_terms
+  [A2.5] align_instruction_terms: Slides citam 7/24 termos do enunciado (m├¡nimo 8 = 30%).
+
+[audit:questao-readiness] subt├│pico="C├ílculo de Administra├º├úo de Medicamentos e Infus├Áes" ready=3/8 (37.5%)
+[audit:questao-readiness] registry status=in_progress handcraft=8/85 complete=false
+[audit:questao-readiness] falhas por tier A1=0 A2=0 A3=1
+[audit:questao-readiness] relat├│rio=D:\AVANT\artifacts\questao-readiness-audit.json

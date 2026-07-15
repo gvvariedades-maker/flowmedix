@@ -1,0 +1,24 @@
+{
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g11",
+  "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+  "handcraft_batch": 11,
+  "slug_count": 5,
+  "status": "applied",
+  "validate_command": "npm run validate:goldens -- --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g11 --strict",
+  "workflow": [
+    "npx tsx scripts/plan-calculo-de-administracao-de-medicamentos-e-infusoes-batch.ts --batch=11 --start=80 --count=5",
+    "npm run catalog:export-lote -- --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g11 --from-manifest=data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g11/manifest.json",
+    "npx tsx scripts/handcraft-calculo-de-administracao-de-medicamentos-e-infusoes-g11.ts",
+    "npm run audit:questao-readiness -- --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g11 --strict-v2-pedagogy"
+  ],
+  "anchor_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4",
+  "golden_reference": "examples/questao-premium-idecan-calculo-equivalencias-gotas.json",
+  "mode": "handcraft-golden-v1",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "handcraft-qc",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/calculo-de-administracao-de-medicamentos-e-infusoes-g11.json"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "banca": "CEV",
+    "prova": "Tec Enf",
+    "ano": "2024",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Criança",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "pedagogical_branch": "crianca_desidratacao"
+  },
+  "question_data": {
+    "instruction": "Sobre desidratação na diarreia aguda infantil, analise as afirmativas.\n\nI - Plano A é indicado para desidratação leve, com maior oferta de líquidos em casa.\nII - Plano B utiliza Terapia de Reidratação Oral sob supervisão.\nIII - Plano C é reservado para desidratação leve com boa aceitação oral.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": { "subtopico": "Saúde da Criança" },
+      "items": [
+        { "label": "Plano A", "detail": "Sem desidratação ou leve — soro caseiro/mais líquidos.", "icon": "Droplets" },
+        { "label": "Plano B", "detail": "Moderada — TRO 50–100 mL/kg em 4h supervisionada.", "icon": "GlassWater" },
+        { "label": "Plano C", "detail": "Grave — hidratação venosa em serviço de urgência.", "icon": "Syringe" },
+        { "label": "Sinais", "detail": "Fontanela, mucosas, turgor, diurese.", "icon": "AlertTriangle" }
+      ],
+      "footer_rule": "A leve · B moderada · C grave"
+    },
+    {
+      "type": "golden_rule",
+      "content": "PLANOS MS",
+      "rows": [
+        { "label": "Plano A", "value": "Leve / sem desidratação", "badge": "hot" },
+        { "label": "Plano B", "value": "Moderada — TRO supervisionada", "badge": "ok" },
+        { "label": "Plano C leve", "value": "Falso — C é grave", "badge": "warn", "emphasis": "alert" }
+      ],
+      "footer_rule": "III inverte plano C"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "steps": [
+        "I: plano A leve → verdadeira.",
+        "II: plano B TRO → verdadeira.",
+        "III: plano C para leve → falsa.",
+        "Letra B."
+      ],
+      "footer_rule": "Diarreia: classificar grau primeiro"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "content": "PEGADINHAS — DESIDRATAÇÃO",
+      "items": [
+        { "label": "TRO no plano A", "detail": "A é domiciliar.", "correct": "Plano A — mais líquidos em casa." },
+        { "label": "EV no plano B", "detail": "B é TRO supervisionada.", "correct": "Plano B com TRO." },
+        { "label": "Plano C leve", "detail": "III troca gravidade.", "correct": "Plano C para desidratação grave." }
+      ],
+      "footer_rule": "A/B/C — não inverter gravidade"
+    }
+  ]
+}

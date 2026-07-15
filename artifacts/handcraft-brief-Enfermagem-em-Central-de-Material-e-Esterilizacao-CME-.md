@@ -5,6 +5,7 @@
 ## Escopo
 
 - **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3
+- **Primeiro lote:** `cme-g01`
 
 ## Pacote (registry)
 

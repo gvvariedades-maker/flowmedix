@@ -1,0 +1,20 @@
+﻿
+> avant@0.1.0 audit:questao-readiness
+> tsx scripts/audit-questao-readiness.ts --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g11 --strict-v2-pedagogy
+
+[FAIL] unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4 branch=calc_conceito risk=medio/auto_conditional errors=golden_rule_gabarito_spoiler,l3_branch_inference_mismatch
+  [A2] golden_rule_gabarito_spoiler: golden_rule cont├®m row de gabarito/combina├º├úo ÔÇö em v2 o gabarito fica s├│ no logic_flow (playbook ┬º2.1).
+  [A3] l3_branch_inference_mismatch: meta.pedagogical_branch="calc_conceito" Ôëá inferido="calc_dose_equivalencia" ÔÇö rodar catalog:patch-pedagogical-branch --reconcile-branch
+[FAIL] unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-5 branch=calc_dose_equivalencia risk=alto/human_required errors=golden_rule_gabarito_spoiler
+  [A2] golden_rule_gabarito_spoiler: golden_rule cont├®m row de gabarito/combina├º├úo ÔÇö em v2 o gabarito fica s├│ no logic_flow (playbook ┬º2.1).
+[FAIL] vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-5 branch=calc_dose_equivalencia risk=alto/human_required errors=align_instruction_terms
+  [A2.5] align_instruction_terms: Slides citam 7/25 termos do enunciado (m├¡nimo 8 = 30%).
+[FAIL] vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-6 branch=calc_dose_equivalencia risk=alto/human_required errors=align_calc_units
+  [A2.5] align_calc_units: Unidade "ampolas" do enunciado ausente em logic_flow.
+[FAIL] vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7 branch=calc_conceito risk=medio/auto_conditional errors=l3_branch_inference_mismatch
+  [A3] l3_branch_inference_mismatch: meta.pedagogical_branch="calc_conceito" Ôëá inferido="calc_dose_equivalencia" ÔÇö rodar catalog:patch-pedagogical-branch --reconcile-branch
+
+[audit:questao-readiness] subt├│pico="C├ílculo de Administra├º├úo de Medicamentos e Infus├Áes" ready=0/5 (0%)
+[audit:questao-readiness] registry status=in_progress handcraft=8/85 complete=false
+[audit:questao-readiness] falhas por tier A1=0 A2=2 A3=2
+[audit:questao-readiness] relat├│rio=D:\AVANT\artifacts\questao-readiness-audit.json

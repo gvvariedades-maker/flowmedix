@@ -767,11 +767,13 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 - [`.cursor/rules/handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) — trigger `Handcraft: <subtópico>`
 - [`.cursor/rules/quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) — trigger `Qualidade vendável: <subtópico>`
 - [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) — trigger `Pipeline completo: <subtópico>`
+- [`.cursor/rules/paridade-adolescente.mdc`](.cursor/rules/paridade-adolescente.mdc) — trigger `Paridade Adolescente: <subtópico>`
 - [`.cursor/rules/l3-mapeamento.mdc`](.cursor/rules/l3-mapeamento.mdc) — trigger `Mapeamento L3: <subtópico>`
 - [`docs/cursor/l3-mapeamento.mdc`](docs/cursor/l3-mapeamento.mdc) — cópia versionada do mapeamento L3
 - [`docs/cursor/avant-agent-json.mdc`](docs/cursor/avant-agent-json.mdc) — cópia versionada da rule de JSON (copiar para `.cursor/rules/` se faltar no clone)
 - [`docs/cursor/quality-vendavel.mdc`](docs/cursor/quality-vendavel.mdc) — cópia versionada da rule vendável
 - [`docs/cursor/pipeline-completo.mdc`](docs/cursor/pipeline-completo.mdc) — cópia versionada pipeline completo
+- [`docs/PROMPT_PARIDADE_ADOLESCENTE.md`](docs/PROMPT_PARIDADE_ADOLESCENTE.md) · [`docs/cursor/paridade-adolescente.mdc`](docs/cursor/paridade-adolescente.mdc) — paridade pedagógica proporcional
 
 ### Outros
 

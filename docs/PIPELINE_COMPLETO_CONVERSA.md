@@ -28,6 +28,8 @@ SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
 | `Pipeline completo: <subtópico>` + linha `Slug: …` | Reparo pontual → readiness → retomar Fase 2 |
 | `Pipeline completo: <subtópico>` + `Só qualidade` | Pular Fase 1 se já `applied` |
 | `Pipeline completo: <subtópico>` + `Só handcraft` | Parar em `applied`; não promover |
+| `Paridade Adolescente: <subtópico>` | Paridade pedagógica proporcional (L2+L3+A4 substantivo+L6) — [`PROMPT_PARIDADE_ADOLESCENTE.md`](PROMPT_PARIDADE_ADOLESCENTE.md) |
+| `Pipeline + paridade Adolescente: <subtópico>` | Pipeline completo + paridade na mesma conversa |
 
 Pré-requisito de taxonomia: se o bucket tem drift, `Classify: <subtópico>` antes — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md).
 

@@ -1,0 +1,499 @@
+{
+  "generated_at": "2026-07-14T18:55:42.555Z",
+  "total": 110,
+  "handcraft_qc": 42,
+  "agent": 68,
+  "blocker_counts": {
+    "unmatched_sensitive": 18,
+    "exam_vs_current_divergence": 3
+  },
+  "handcraft_qc_slugs": [
+    {
+      "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g01",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-7",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g01",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "conceito",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-5",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g01",
+      "blockers": [
+        "exam_vs_current_divergence"
+      ],
+      "family": "conceito",
+      "exam_vs_current": "FAU usa “flebite” como nome popular da infiltração de soro; na norma técnica infiltração ≠ flebite."
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-5",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g02",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g03",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "certo_errado",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g03",
+      "blockers": [],
+      "family": "certo_errado",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g03",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g04",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g04",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "certo_errado",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g04",
+      "blockers": [
+        "exam_vs_current_divergence"
+      ],
+      "family": "conceito",
+      "exam_vs_current": "Gabarito cita troca em janela de alguns dias; guideline atual prioriza observação diária e troca por indicação"
+    },
+    {
+      "slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g05",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-8",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g05",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-3",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g05",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "vf",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g06",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g06",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g06",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "certo_errado",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g07",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "certo_errado",
+      "exam_vs_current": "tempos_pvpi_clorexidina_invertidos_cebraspe"
+    },
+    {
+      "slug": "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g07",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "certo_errado",
+      "exam_vs_current": "Gabarito prova = 1 minuto; ensinar tempo curto e sinais de congestão venosa"
+    },
+    {
+      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "grafia_shilley_shunt_prova"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "conceito",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+      "blockers": [],
+      "family": "vf",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g09",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "obstrucao_cateter_agua_destilada_unifil"
+    },
+    {
+      "slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-1",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g10",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-6",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g10",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "conceito",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "Prova cobra desinfecção da conexão do cateter central com álcool setenta por cento após cada medicação — prática do bundle de manutenção."
+    },
+    {
+      "slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "certo_errado",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-3",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+      "blockers": [],
+      "family": "vf",
+      "exam_vs_current": "Item II (ingestão com meta fixa de líquidos) marcado F no gabarito da prova — hidratação sem meta universal em todos os protocolos."
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "blockers": [],
+      "family": "certo_errado",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "Distância do garrote (cinco a quinze cm) e ângulo de inserção baixo cobrados na prova FUNPAR/ANVISA."
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "Prova VUNESP limita uso do garrote a um minuto na coleta — alguns protocolos atuais citam até dois minutos; ensinar o gabarito da questão."
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "blockers": [],
+      "family": "certo_errado",
+      "exam_vs_current": "Afirmativa B cobra álcool setenta por cento, bisel para cima e ângulo de dez a trinta graus — padrão clássico de prova."
+    },
+    {
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "Prova Gama cita calibres 21G/23G (scalp) e 14–24G (jelco) — valores do enunciado, não norma numérica universal."
+    },
+    {
+      "slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "Prova IBADE ancora calibre vinte e cinco G para veias pequenas em crianças — referência do gabarito, não tabela única de protocolo."
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "conceito",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "blockers": [],
+      "family": "certo_errado",
+      "exam_vs_current": "Letra B cobra álcool 70% ou clorexidina 0,5% e condutas clássicas de prova (FAV proibida, troca após 2ª falha). Guidelines atuais podem diferir em periodicidade de troca do cateter."
+    },
+    {
+      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "Questão de sonda vesical no lote de punção — ensinar prevenção de ITU-AC: esvaziamento regular, recipiente individual e bolsa abaixo da bexiga."
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "blockers": [
+        "exam_vs_current_divergence"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "Letra D (cateter novo a cada tentativa) é o gabarito VUNESP. Letra E (troca a cada 48h) e avaliação só a cada 24h (B) podem divergir de protocolos que priorizam necessidade clínica sobre calendário."
+    },
+    {
+      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+      "blockers": [],
+      "family": "vf",
+      "exam_vs_current": "Item III (máximo 6h) reflete texto de prova — guidelines atuais priorizam avaliação clínica sobre tempo fixo curto."
+    },
+    {
+      "slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "vf",
+      "exam_vs_current": "none"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+      "blockers": [],
+      "family": "vf",
+      "exam_vs_current": "none"
+    }
+  ],
+  "calc": [],
+  "exam_divergence": [
+    {
+      "slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-5",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g01",
+      "reviewer": "handcraft-qc",
+      "blockers": [
+        "exam_vs_current_divergence"
+      ],
+      "family": "conceito",
+      "exam_vs_current": "FAU usa “flebite” como nome popular da infiltração de soro; na norma técnica infiltração ≠ flebite."
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g04",
+      "reviewer": "handcraft-qc",
+      "blockers": [
+        "exam_vs_current_divergence"
+      ],
+      "family": "conceito",
+      "exam_vs_current": "Gabarito cita troca em janela de alguns dias; guideline atual prioriza observação diária e troca por indicação"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g07",
+      "reviewer": "handcraft-qc",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "certo_errado",
+      "exam_vs_current": "tempos_pvpi_clorexidina_invertidos_cebraspe"
+    },
+    {
+      "slug": "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g07",
+      "reviewer": "handcraft-qc",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "certo_errado",
+      "exam_vs_current": "Gabarito prova = 1 minuto; ensinar tempo curto e sinais de congestão venosa"
+    },
+    {
+      "slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "grafia_shilley_shunt_prova"
+    },
+    {
+      "slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g09",
+      "reviewer": "handcraft-qc",
+      "blockers": [
+        "unmatched_sensitive:claim_sensivel_sem_match_whitelist"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "obstrucao_cateter_agua_destilada_unifil"
+    },
+    {
+      "slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "Prova cobra desinfecção da conexão do cateter central com álcool setenta por cento após cada medicação — prática do bundle de manutenção."
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "vf",
+      "exam_vs_current": "Item II (ingestão com meta fixa de líquidos) marcado F no gabarito da prova — hidratação sem meta universal em todos os protocolos."
+    },
+    {
+      "slug": "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "Distância do garrote (cinco a quinze cm) e ângulo de inserção baixo cobrados na prova FUNPAR/ANVISA."
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "Prova VUNESP limita uso do garrote a um minuto na coleta — alguns protocolos atuais citam até dois minutos; ensinar o gabarito da questão."
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "certo_errado",
+      "exam_vs_current": "Afirmativa B cobra álcool setenta por cento, bisel para cima e ângulo de dez a trinta graus — padrão clássico de prova."
+    },
+    {
+      "slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "Prova Gama cita calibres 21G/23G (scalp) e 14–24G (jelco) — valores do enunciado, não norma numérica universal."
+    },
+    {
+      "slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "conceito",
+      "exam_vs_current": "Prova IBADE ancora calibre vinte e cinco G para veias pequenas em crianças — referência do gabarito, não tabela única de protocolo."
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "certo_errado",
+      "exam_vs_current": "Letra B cobra álcool 70% ou clorexidina 0,5% e condutas clássicas de prova (FAV proibida, troca após 2ª falha). Guidelines atuais podem diferir em periodicidade de troca do cateter."
+    },
+    {
+      "slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "protocolo",
+      "exam_vs_current": "Questão de sonda vesical no lote de punção — ensinar prevenção de ITU-AC: esvaziamento regular, recipiente individual e bolsa abaixo da bexiga."
+    },
+    {
+      "slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "reviewer": "handcraft-qc",
+      "blockers": [
+        "exam_vs_current_divergence"
+      ],
+      "family": "protocolo",
+      "exam_vs_current": "Letra D (cateter novo a cada tentativa) é o gabarito VUNESP. Letra E (troca a cada 48h) e avaliação só a cada 24h (B) podem divergir de protocolos que priorizam necessidade clínica sobre calendário."
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+      "reviewer": "handcraft-qc",
+      "blockers": [],
+      "family": "vf",
+      "exam_vs_current": "Item III (máximo 6h) reflete texto de prova — guidelines atuais priorizam avaliação clínica sobre tempo fixo curto."
+    }
+  ]
+}

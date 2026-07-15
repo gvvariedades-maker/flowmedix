@@ -1,17 +1,66 @@
 {
-  "generated_at": "2026-07-13T15:38:15.382Z",
+  "generated_at": "2026-07-14T18:52:08.706Z",
   "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
   "mode": "apply",
-  "total_files": 1,
-  "ok": 1,
+  "total_files": 8,
+  "ok": 8,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
-    "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2"
+    "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+    "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+    "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-1",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
+    "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-3",
+    "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6"
   ],
   "results": [
     {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
       "modulo_slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
       "status": "ok",
       "mode": "update",
       "detail": "conteudo_json aplicado"

@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-07-14T17:49:47.168Z",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "total": 110,
+  "by_assigned": {
+    "puncao_flebite": 31,
+    "puncao_dispositivo": 25,
+    "puncao_ipcs_cvc": 11,
+    "puncao_generico": 21,
+    "puncao_exceto": 9,
+    "puncao_tempo": 5,
+    "puncao_periferica_antissepsia": 8
+  },
+  "by_inferred": {
+    "puncao_flebite": 31,
+    "puncao_dispositivo": 25,
+    "puncao_ipcs_cvc": 11,
+    "puncao_generico": 21,
+    "puncao_exceto": 9,
+    "puncao_tempo": 5,
+    "puncao_periferica_antissepsia": 8
+  },
+  "mismatch_count": 0,
+  "mismatches": [],
+  "thin_branch_assigned": {
+    "puncao_tempo": [
+      "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+      "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+      "iaupe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-1",
+      "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9"
+    ],
+    "puncao_ipcs_cvc": [
+      "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
+      "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
+      "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
+      "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+      "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
+      "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0",
+      "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
+      "idib-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778934890864-3",
+      "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6"
+    ],
+    "puncao_exceto": [
+      "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+      "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
+      "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
+      "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
+      "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
+      "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
+      "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+      "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8"
+    ]
+  },
+  "thin_branch_inferred": {
+    "puncao_tempo": [
+      "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+      "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+      "iaupe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-1",
+      "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9"
+    ],
+    "puncao_ipcs_cvc": [
+      "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
+      "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
+      "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
+      "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+      "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
+      "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0",
+      "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
+      "idib-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778934890864-3",
+      "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6"
+    ],
+    "puncao_exceto": [
+      "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+      "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
+      "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
+      "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
+      "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
+      "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
+      "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+      "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8"
+    ]
+  }
+}

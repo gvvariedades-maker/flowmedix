@@ -11,7 +11,7 @@
 
 | Slide | `layout_variant` | Componente proposto |
 |-------|------------------|---------------------|
-| concept_map | `iv-complication-orbit` | `IvComplicationOrbitConceptMap.tsx` |
+| concept_map | `iv-complication-tissue-layers` | `IvComplicationTissueLayersConceptMap.tsx` |
 | golden_rule | `iv-differential-board` | `GoldenRuleIvDifferentialBoard.tsx` |
 | logic_flow | `iv-complication-tap-flow` | `LogicFlowIvComplicationTapFlow.tsx` |
 | danger_zone | `iv-label-swap-trap` | `DangerZoneIvLabelSwapTrap.tsx` |
@@ -42,9 +42,9 @@ Universo visual: ícones de veia/cateter, chips de mecanismo (`SUBCUTÂNEO` · `
 
 ## 2. Slide 1 — `concept_map`
 
-- **`layout_variant`:** `iv-complication-orbit`
-- **Metáfora:** órbita com nós: infiltração · flebite · hematoma · extravasamento · esclerose
-- **Componente:** `IvComplicationOrbitConceptMap.tsx`
+- **`layout_variant`:** `iv-complication-tissue-layers`
+- **Metáfora:** camadas teciduais (pele → subcutâneo → veia) com chips por complicação
+- **Componente:** `IvComplicationTissueLayersConceptMap.tsx`
 
 **Wire (375px):**
 
@@ -120,7 +120,7 @@ Cada `correct` **único** — gate `detectDuplicateDangerJustifications`.
 
 | Molde | Gatilhos |
 |-------|----------|
-| `iv-complication-orbit` | `infiltração\|flebite\|hematoma\|extravasamento\|esclerose` em `items[].detail` |
+| `iv-complication-tissue-layers` | `infiltração\|flebite\|hematoma\|extravasamento\|esclerose` em `items[].detail` |
 | `iv-differential-board` | `rows` com mecanismo + sinal |
 | `iv-complication-tap-flow` | `steps` com `mecanismo`, `eliminar`, `Em similares` |
 | `iv-label-swap-trap` | `items[].detail` cita complicação errada; `correct` reposiciona |

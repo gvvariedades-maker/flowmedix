@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+  "pacote_prefix": "calculo-de-administracao-de-medicamentos-e-infusoes",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-calculo-*.json,examples/questao-premium-idecan-calculo-equivalencias-gotas.json,examples/questao-premium-idecan-calculo-ml-gotas-microgotas.json",
+  "golden_anchors_registry": "data/catalog-migration/calculo-golden-anchors.json",
+  "handcraft_meta": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g01/lote-meta.json",
+  "slug_selection": "Cluster dose/equivalência; audit [READY]; slug segment calculo-de-administracao only",
+  "clusters": [
+    "Equivalências gts/mL — 20 · 60 · 3 · U-100 (âncora IDECAN equivalências)",
+    "Regra de três / diluição C₁V₁",
+    "Infusão gts/min ou ml/h",
+    "Conceito sem conta (cauda longa)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "calc_dose_equivalencia",
+      "when": "calcul, gota, ml, mg, equivalência, regra de três, gts/min, ml/h, diluição",
+      "mold": "dose-equivalence-rail · soft-lens-board · dose-calc-tap · dose-trap",
+      "anchors": [
+        "examples/questao-premium-idecan-calculo-equivalencias-gotas.json",
+        "examples/questao-premium-idecan-calculo-ml-gotas-microgotas.json"
+      ]
+    },
+    {
+      "id": "calc_conceito",
+      "when": "Conceito/definição sem conta numérica",
+      "mold": "morphological · reference_table · horizontal · compare (ok_generico 3/3)",
+      "anchors": ["examples/questao-premium-idecan-calculo-equivalencias-gotas.json"]
+    },
+    {
+      "id": "calc_generico",
+      "when": "Cauda longa sem fit claro",
+      "mold": "genérico",
+      "anchors": ["examples/questao-premium-idecan-calculo-equivalencias-gotas.json"]
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy"
+  },
+  "proibido": ["ai:generate", "catalog:upgrade-premium"]
+}

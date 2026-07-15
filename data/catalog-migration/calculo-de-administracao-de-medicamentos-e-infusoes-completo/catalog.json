@@ -1,0 +1,1099 @@
+{
+  "exported_at": "2026-07-15T16:56:15.453Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+  "total": 156,
+  "entries": [
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 295
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 299
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 300
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 301
+    },
+    {
+      "modulo_slug": "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 302
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 262
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4146
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4803
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 313
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 314
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 315
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 316
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 321
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4289
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4290
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4391
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4401
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4402
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4407
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4630
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4633
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5030
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 286
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 344
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 326
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 338
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 341
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 4678
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 4679
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 324
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 325
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 352
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 353
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 354
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 288
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 323
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 4242
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 4247
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 4953
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4389
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4753
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 4756
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1779563443877-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3048
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 4909
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 331
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 332
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 333
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 336
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 337
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4272
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 342
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4486
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4487
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4657
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4658
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 308
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 309
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 334
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 335
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 343
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 345
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 346
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4218
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4814
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 310
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 311
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 322
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 4209
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 4210
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 293
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 294
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 304
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 305
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 320
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780001903454-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4193
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4727
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4729
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4731
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4735
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 4738
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 5102
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 317
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 347
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5058
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5062
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5064
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5068
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5071
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5078
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 5081
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "GRUPO TALENT",
+      "avant_codigo": 4881
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "GRUPO TALENT",
+      "avant_codigo": 4882
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "GRUPO TALENT",
+      "avant_codigo": 4883
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 289
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 330
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 1144
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 141
+    },
+    {
+      "modulo_slug": "ibfc-geral-procedimentos-diversos-1777103988389-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 1183
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBGP",
+      "avant_codigo": 351
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 340
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1505
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1506
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1524
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5119
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5120
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5121
+    },
+    {
+      "modulo_slug": "idecan-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 339
+    },
+    {
+      "modulo_slug": "idib-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778934863952-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1728
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004280851-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4449
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4451
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4452
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5045
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 297
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 298
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 4617
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 663
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 290
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 291
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 292
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 307
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4420
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4423
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4427
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4582
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4597
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4567
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006486032-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4671
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003637054-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 4362
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4509
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4523
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 4780
+    },
+    {
+      "modulo_slug": "isba-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISBA",
+      "avant_codigo": 287
+    },
+    {
+      "modulo_slug": "itame-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 279
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 280
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 282
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 283
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 284
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 285
+    },
+    {
+      "modulo_slug": "nao-informado-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 278
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 306
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 312
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 4945
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 4948
+    },
+    {
+      "modulo_slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 348
+    },
+    {
+      "modulo_slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 349
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 303
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780000237780-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4047
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 296
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 318
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 319
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4470
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 4981
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 4993
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 327
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 328
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 329
+    }
+  ]
+}

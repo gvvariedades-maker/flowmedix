@@ -48,9 +48,9 @@
   ],
   "notes": "Export por subtopico retornou 26 slugs — maioria mis-tagged (curativos, urgências). g01 = núcleo queimaduras/feridas curado (8 slugs).",
   "anchor_second_review": {
-    "reviewed_at": "2026-06-29",
-    "reviewer": "agent",
-    "method": "agent",
+    "reviewed_at": "2026-07-15",
+    "reviewer": "handcraft-qc",
+    "method": "both",
     "status": "pass",
     "artifact": "artifacts/anchor-review/feridas-e-queimaduras-g01.json"
   }

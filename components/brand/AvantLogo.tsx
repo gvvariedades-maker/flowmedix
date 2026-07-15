@@ -21,8 +21,8 @@ export type { AvantLogoSizeToken } from '@/lib/brand/avantLogoConstants';
 export type AvantLogoVariant = 'lockup' | 'icon';
 
 /**
- * - `default` — cyber (shell + monograma Ae + wordmark raster)
- * - `light` / `brand` — editorial (monograma Ae + wordmark raster, sem shell)
+ * - `default` — cyber (shell + monograma azul 3D + wordmark raster)
+ * - `light` / `brand` — editorial (monograma + wordmark raster, sem shell)
  */
 export type AvantLogoTone = 'default' | 'light' | 'brand';
 
@@ -37,8 +37,7 @@ export type AvantLogoProps = {
 };
 
 /**
- * Abaixo de `AVANT_LOGO_ICON_FLAT_BELOW` (ex.: nav/favicon), o glass 3D some
- * em ruído visual — trocar para o monograma flat (mesmas cores, sem vidro/bisel).
+ * Abaixo de `AVANT_LOGO_ICON_FLAT_BELOW` (ex.: nav), usa flat para nitidez em tamanho pequeno.
  */
 function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
   const iconPx = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.size, size);
@@ -57,7 +56,7 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
         alt=""
         width={insetPx}
         height={insetPx}
-        className="h-full w-full max-h-[90%] max-w-[90%] select-none object-contain"
+        className="h-full w-full select-none object-contain"
         draggable={false}
       />
     </div>
@@ -65,8 +64,7 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
 }
 
 /**
- * Wordmark "AVANT enf" — modelo canônico ouro + esmeralda 3D:
- * AVANT serif brushed gold · enf face esmeralda com borda ouro.
+ * Wordmark "AVANT enf" — AVANT azul metal 3D + enf verde glass (Canva v4).
  */
 function AvantLogoWordmarkStack({ size }: { size: AvantLogoSizeToken }) {
   const { width: widthPx, height: heightPx } = getAvantLogoWordmarkRasterSize(size);

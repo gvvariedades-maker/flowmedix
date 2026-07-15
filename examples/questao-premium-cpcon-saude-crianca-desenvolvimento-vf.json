@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "banca": "CPCON",
+    "prova": "Tec Enf",
+    "ano": "2024",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Criança",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "pedagogical_branch": "crianca_desenvolvimento"
+  },
+  "question_data": {
+    "instruction": "Sobre desenvolvimento infantil, analise as afirmativas.\n\nI - Aos 6 meses, espera-se que a criança sente sem apoio.\nII - O M-CHAT é instrumento de rastreio para Transtorno do Espectro Autista.\nIII - Estrabismo detectado após 6 meses não requer encaminhamento.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": { "subtopico": "Saúde da Criança" },
+      "items": [
+        { "label": "6 meses", "detail": "Marco motor — sentar sem apoio.", "icon": "Baby" },
+        { "label": "M-CHAT", "detail": "Rastreio TEA — aplicar na puericultura.", "icon": "Scan" },
+        { "label": "Estrabismo", "detail": "Teste de Hirschberg — encaminhar se persistente.", "icon": "Eye" },
+        { "label": "Estimulação", "detail": "AIDPI e orientação à família.", "icon": "Sparkles" }
+      ],
+      "footer_rule": "Marcos + M-CHAT na consulta"
+    },
+    {
+      "type": "golden_rule",
+      "content": "DESENVOLVIMENTO",
+      "rows": [
+        { "label": "Sentar 6m", "value": "Marco motor esperado", "badge": "hot" },
+        { "label": "M-CHAT", "value": "Rastreio TEA", "badge": "ok" },
+        { "label": "Estrabismo tardio", "value": "Falso — encaminhar", "badge": "warn" }
+      ],
+      "footer_rule": "III minimiza estrabismo"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "steps": [
+        "I: sentar 6 meses → verdadeira.",
+        "II: M-CHAT para TEA → verdadeira.",
+        "III: dispensar encaminhamento → falsa.",
+        "Letra B."
+      ],
+      "footer_rule": "Marcos + rastreios na puericultura"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "content": "PEGADINHAS — DESENVOLVIMENTO",
+      "items": [
+        { "label": "Sentar aos 3m", "detail": "I fixa 6 meses.", "correct": "Sentar sem apoio aos 6 meses." },
+        { "label": "Dispensar M-CHAT", "detail": "II cobra rastreio TEA.", "correct": "Aplicar M-CHAT na consulta." },
+        { "label": "Estrabismo benigno", "detail": "III nega encaminhamento.", "correct": "Encaminhar estrabismo persistente." }
+      ],
+      "footer_rule": "Marcos OMS + rastreios"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g02",
+  "exported_at": "2026-07-15T17:18:57.902Z",
+  "source": "completo",
+  "filters": {
+    "from_manifest": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/manifest.json",
+    "indices": "8-15"
+  },
+  "slugs": [
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-2",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-7",
+    "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-8",
+    "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-4",
+    "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-4",
+    "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-7",
+    "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-1",
+    "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-2"
+  ]
+}

@@ -1,12 +1,16 @@
 /**
- * AVANT Enf logo — Protocolo AE Ultra Premium.
+ * AVANT Enf logo — identidade oficial "Brushed Blue" (adotada 2026-07-15).
  *
- * Pesquisa (monogram/luxury/healthcare):
- * - Monograma = letras fundidas (interlock), não lettermark lado a lado
- * - Contraste vertical/horizontal (tradição Didone em geometria)
- * - Selagem circular (enclosed) > squircle de app icon
- * - Tracking aéreo no wordmark; ENF em small-caps sem bullet
- * - Verde dual: forest profundo + lima só no CTA/accent
+ * Direção de marca:
+ * - Ícone: card squircle verde (`iconCardGreen`) + monograma "A" fragmentado
+ *   em metal azul escovado (`brandBlue`) — ver `public/brand/avant-logo-shield.png`.
+ * - Wordmark "AVANT": mesmo metal azul escovado do monograma (raster,
+ *   `avant-logo-wordmark-raster.png`).
+ * - Sufixo "enf": verde glass/neon, contraste com o azul do "AVANT".
+ * - `brandBlue` é cor de marca oficial (3ª cor, ao lado do verde/lima e do
+ *   cyan do tema Cyber Clinical) — usar `AVANT_LOGO_COLORS.brandBlue*` em
+ *   qualquer novo ponto de UI que precise ecoar a marca (nunca hardcodear hex).
+ * - Tracking aéreo no wordmark; "enf" em minúsculas sem bullet.
  */
 
 export type AvantLogoSizeToken = 'nav' | 'md' | 'lg';
@@ -44,9 +48,17 @@ export const AVANT_LOGO_COLORS = {
   iconForestGradient: 'linear-gradient(165deg, #1a7a3e 0%, #166534 42%, #14532d 100%)',
   iconCyberBg: '#0d0d18',
   iconCyberRing: '#8fe020',
-  /** Vidro do monograma Ae (tile) — verde lima forte da marca editorial. */
-  iconGlassLime: '#8fe020',
+  /** Card do monograma — verde neon do ícone (fundo do squircle). */
+  iconCardGreen: '#0cc93a',
   monogramFill: '#ffffff',
+  /**
+   * Azul de marca oficial — metal escovado do monograma "A" e do wordmark
+   * "AVANT" (`avant-logo-shield.png` / `avant-logo-wordmark-raster.png`).
+   * Sampleado do asset: highlight ~#46aaf2, mid ~#48a3b4, sombra ~#033d4b.
+   */
+  brandBlue: '#2f9fe0',
+  brandBlueLight: '#7dd3fc',
+  brandBlueDeep: '#0b4a63',
   /** Anel interno (emboss / selo). */
   iconInsetHighlight: 'inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.18)',
   iconOuterShadowEditorial: '0 1px 2px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(22, 101, 52, 0.12)',
@@ -54,8 +66,8 @@ export const AVANT_LOGO_COLORS = {
   lockupInnerBg: '#0d0d18',
   lockupInnerInsetShadow:
     'inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.20)',
-  accentBar: '#8fe020',
-  accentBarGlow: 'rgba(143, 224, 32, 0.28)',
+  accentBar: '#38bdf8',
+  accentBarGlow: 'rgba(56, 189, 248, 0.28)',
   wordmarkLight: '#0f172a',
   wordmarkEditorial: '#0f172a',
   wordmarkCyber: '#f8fafc',
@@ -65,9 +77,9 @@ export const AVANT_LOGO_COLORS = {
   hairlineEditorial: 'rgba(22, 101, 52, 0.28)',
   hairlineCyber: 'rgba(143, 224, 32, 0.35)',
   wordmarkGlow: 'rgba(143, 224, 32, 0.18)',
-  /** Brasao dourado/esmeralda (mesmo modelo do emblema) — "AVANT" metalizado dourado. */
-  wordmarkGoldSolid: '#d4af37',
-  /** "enf" em verde esmeralda vivo, tom sólido para e-mail (sem gradiente). */
+  /** "AVANT" metal azul escovado (mesmo modelo do emblema) — tom sólido para e-mail. */
+  wordmarkBrandBlueSolid: '#2f9fe0',
+  /** "enf" em verde vivo, tom sólido para e-mail (sem gradiente). */
   wordmarkEnfGreen: '#0b7a53',
   wordmarkEnfGreenDeep: '#054a33',
 } as const;
@@ -78,9 +90,9 @@ export const AVANT_LOGO_GRADIENTS = {
   wordmarkStops: ['#ecfdf5', '#86efac', '#8fe020'] as const,
   shellBorder:
     'linear-gradient(160deg, rgba(255,255,255,0.14) 0%, rgba(143, 224, 32, 0.35) 50%, rgba(22, 101, 52, 0.45) 100%)',
-  /** Texto "AVANT" metalizado — mesmo brasao dourado do emblema (foil gradient). */
-  wordmarkGoldText:
-    'linear-gradient(135deg, #fbe9ac 0%, #e9c460 22%, #d4af37 45%, #a9791a 62%, #f2d478 80%, #d4af37 100%)',
+  /** Texto "AVANT" metalizado — mesmo metal azul escovado do emblema (foil gradient). */
+  wordmarkBrandGradient:
+    'linear-gradient(135deg, #bfe6fb 0%, #7dd3fc 22%, #2f9fe0 45%, #0b4a63 62%, #46aaf2 80%, #2f9fe0 100%)',
   /** Verde esmeralda de "enf" — combina com o fundo do brasao. */
   wordmarkEnfGreen: 'linear-gradient(160deg, #109466 0%, #0b7a53 55%, #054a33 100%)',
 } as const;
@@ -124,15 +136,15 @@ export const AVANT_LOGO_DIMENSIONS = {
   },
 } as const;
 
-/** Wordmark raster PNG — proporção do arquivo em public/brand (com espaço real AVANT · enf). */
+/** Wordmark raster PNG — proporção do lockup AVANT + enf (Canva v4). */
 export const AVANT_LOGO_WORDMARK_RASTER = {
   /** Altura relativa ao fontSize base (1.5 ≈ legível sem estourar sidebar 16rem). */
   scale: 1.5,
-  aspect: 1488 / 279,
+  aspect: 3750 / 640,
 } as const;
 
-/** Glass Ae monogram — escala interna para sombra/bevel não clipar no lockup. */
-export const AVANT_LOGO_ICON_INSET_SCALE = 0.9;
+/** Monograma squircle — quase full-bleed no slot do ícone. */
+export const AVANT_LOGO_ICON_INSET_SCALE = 0.96;
 
 /**
  * Abaixo deste token, o monograma de vidro (glass 3D) fica detalhado demais

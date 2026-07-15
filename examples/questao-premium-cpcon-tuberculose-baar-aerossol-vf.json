@@ -6,7 +6,27 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)"
+    "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "pedagogical_branch": "bacterianas_tuberculose",
+    "content_review": {
+      "reviewed_at": "2026-07-15",
+      "reviewer": "handcraft-agent",
+      "guideline_snapshot": "Manual MS TB 2ª ed. — notificação, BAAR, precaução aerossóis",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "tuberculose-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Recomendações para o Controle da Tuberculose no Brasil",
+        "year": 2019,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_recomendacoes_controle_tuberculose_brasil_2_ed.pdf",
+        "covers": ["notificação", "BAAR", "aerossóis", "bacilífero"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre tuberculose e vigilância epidemiológica, analise as afirmativas.\n\nI - A tuberculose é doença de notificação compulsória e exige investigação de contactantes.\nII - O Bacilo Álcool-Ácido Resistente (BAAR) no escarro é exame utilizado na investigação diagnóstica.\nIII - Pacientes com tuberculose pulmonar bacilífera não precisam de precaução de aerossóis, pois a transmissão ocorre apenas por contato direto com pele.\n\nÉ CORRETO o que se afirma em:",
@@ -22,7 +42,11 @@
     {
       "type": "concept_map",
       "slide_title": "Tuberculose — mapa",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+        "pedagogical_branch": "bacterianas_tuberculose"
+      },
       "items": [
         { "label": "Notificação", "detail": "Compulsória — vigilância e busca de contactantes.", "icon": "FileWarning" },
         { "label": "BAAR", "detail": "Pesquisa de bacilo no escarro — exame diagnóstico clássico.", "icon": "Microscope" },
@@ -34,20 +58,28 @@
     {
       "type": "golden_rule",
       "slide_title": "TB — referência",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" },
-      "content": "BAAR",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+        "pedagogical_branch": "bacterianas_tuberculose"
+      },
+      "content": "Vigilância TB",
       "rows": [
         { "label": "Notificação", "value": "Compulsória + contactantes", "badge": "ok" },
         { "label": "BAAR", "value": "Escarro — investigação", "badge": "ok" },
         { "label": "Só contato pele", "value": "Falso — aerossóis/gotículas", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+        { "label": "Precaução bacilífero", "value": "Aerossóis + quarto adequado", "badge": "ok" }
       ],
       "footer_rule": "III inverte via de transmissão — erro clássico"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+        "pedagogical_branch": "bacterianas_tuberculose"
+      },
       "steps": [
         "I: notificação e contactantes → verdadeira.",
         "II: BAAR no escarro → verdadeira.",
@@ -60,7 +92,11 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+        "pedagogical_branch": "bacterianas_tuberculose"
+      },
       "content": "PEGADINHAS — TB",
       "items": [
         { "label": "TB = contato", "detail": "III descreve via errada.", "correct": "Transmissão por gotículas/aerossóis." },

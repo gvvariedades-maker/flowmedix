@@ -5,19 +5,20 @@
 ## Escopo
 
 - **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3
+- **Primeiro lote:** `enfermagem-do-trabalho-g01`
 
 ## Pacote (registry)
 
 | Campo | Valor |
 |-------|-------|
 | pacote_prefix | `enfermagem-do-trabalho` |
-| status | applied (14/14 slugs) |
-| manifest | `data/catalog-migration/enfermagem-do-trabalho-lote-01/manifest.json` |
+| status | applied (33/33 slugs) |
+| manifest | `data/catalog-migration/enfermagem-do-trabalho-completo/manifest.json` |
 | lote_pattern | `enfermagem-do-trabalho-g{NN}` |
 | lote_size | 8 |
 | anchor_glob | `examples/questao-premium-*-enfermagem-trabalho-*.json` |
 | guideline | `lib/guidelines/enfermagemTrabalho.ts` |
-| handcraft_meta | `data/catalog-migration/enfermagem-do-trabalho-g01/lote-meta.json` |
+| handcraft_meta | `data/catalog-migration/enfermagem-do-trabalho-g05/lote-meta.json` |
 
 ## Ramos L3 (pedagogical_branch)
 

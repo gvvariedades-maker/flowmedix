@@ -1,54 +1,83 @@
 {
-  "generated_at": "2026-07-14T06:47:53.251Z",
-  "scanned": 9,
-  "passed": 9,
+  "generated_at": "2026-07-15T16:21:45.518Z",
+  "scanned": 6,
+  "passed": 6,
   "failed": 0,
-  "warn_only": 0,
+  "warn_only": 2,
   "results": [
     {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
       "ok": true,
-      "issues": []
+      "issues": [
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"180 mg\" não encontrado na guideline de Saúde da Criança.",
+          "severity": "warn",
+          "claim": "180 mg",
+          "path": "reverse_study_slides"
+        },
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"200 mg\" não encontrado na guideline de Saúde da Criança.",
+          "severity": "warn",
+          "claim": "200 mg",
+          "path": "reverse_study_slides"
+        }
+      ]
     },
     {
-      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
       "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
-      "ok": true,
-      "issues": []
+      "issues": [
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"100 mL\" não encontrado na guideline de Saúde da Criança.",
+          "severity": "warn",
+          "claim": "100 mL",
+          "path": "reverse_study_slides"
+        },
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"6 hora\" não encontrado na guideline de Saúde da Criança.",
+          "severity": "warn",
+          "claim": "6 hora",
+          "path": "reverse_study_slides"
+        },
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"4 mg\" não encontrado na guideline de Saúde da Criança.",
+          "severity": "warn",
+          "claim": "4 mg",
+          "path": "reverse_study_slides"
+        },
+        {
+          "code": "numeric_fact_mismatch",
+          "message": "Claim \"70 mL\" não encontrado na guideline de Saúde da Criança.",
+          "severity": "warn",
+          "claim": "70 mL",
+          "path": "reverse_study_slides"
+        }
+      ]
     }
   ]
 }

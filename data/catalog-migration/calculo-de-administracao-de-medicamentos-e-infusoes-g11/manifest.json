@@ -1,0 +1,15 @@
+{
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g11",
+  "exported_at": "2026-07-15T17:38:33.001Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g11/manifest.json"
+  },
+  "slugs": [
+    "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4",
+    "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-5",
+    "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-5",
+    "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-6",
+    "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7"
+  ]
+}

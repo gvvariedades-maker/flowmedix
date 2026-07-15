@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T18:57:12.934Z",
+  "generated_at": "2026-07-14T16:57:57.976Z",
   "subtopico": "Vias de Administração",
   "lote": "vias-de-administracao-completo",
   "total": 235,
@@ -12,9 +12,9 @@
     "questao-premium-cpcon-vias-im-vf.json"
   ],
   "branch_counts_inferred": {
-    "via_vf_absorcao": 214,
-    "via_tecnica_admin": 20,
-    "via_generico": 1
+    "via_vf_absorcao": 199,
+    "via_tecnica_admin": 23,
+    "via_generico": 13
   },
   "family_counts": {
     "calc": 9,
@@ -24,15 +24,15 @@
     "certo_errado": 8
   },
   "premium_status_counts": {
-    "hybrid_ok": 231,
+    "golden": 9,
+    "hybrid_ok": 223,
     "stub": 1,
-    "legacy": 2,
-    "golden": 1
+    "legacy": 2
   },
   "stub_total": 1,
-  "golden_total": 1,
-  "contract_fail_total": 202,
-  "branch_backfill_needed": 234,
+  "golden_total": 9,
+  "contract_fail_total": 196,
+  "branch_backfill_needed": 226,
   "cluster_decisions": [
     {
       "cluster": "Técnica de punção IM/IV",
@@ -58,7 +58,7 @@
       "count": 57,
       "pct": 24.3,
       "slide_topic_drift": 0,
-      "slide_contract_failures": 43,
+      "slide_contract_failures": 42,
       "instruction_artifacts": 1,
       "has_golden": true,
       "golden_file": "questao-premium-cpcon-vias-im-vf.json",
@@ -77,7 +77,7 @@
       "count": 26,
       "pct": 11.1,
       "slide_topic_drift": 0,
-      "slide_contract_failures": 26,
+      "slide_contract_failures": 23,
       "instruction_artifacts": 0,
       "has_golden": true,
       "golden_file": "questao-premium-consulpam-vias-absorcao-oral.json",
@@ -115,7 +115,7 @@
       "count": 19,
       "pct": 8.1,
       "slide_topic_drift": 0,
-      "slide_contract_failures": 19,
+      "slide_contract_failures": 17,
       "instruction_artifacts": 0,
       "has_golden": true,
       "golden_file": "questao-premium-vunesp-via-subcutanea.json",
@@ -216,8 +216,8 @@
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
-      "premium_status": "hybrid_ok",
-      "meta_pedagogical_branch": null,
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "via_vf_absorcao",
       "instruction_preview": "Sobre a Administração de Medicamentos por via subcutânea, analise os itens abaixo. I- A longo prazo, pode causar irritaç"
     },
     {
@@ -231,8 +231,8 @@
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
-      "premium_status": "hybrid_ok",
-      "meta_pedagogical_branch": null,
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "via_vf_absorcao",
       "instruction_preview": "Sobre vias de administração de medicamentos, julgue as seguintes afirmativas: I- A administração de medicamentos via ora"
     },
     {
@@ -279,11 +279,9 @@
       "pedagogical_branch_inferred": "via_vf_absorcao",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
-      "slide_contract_issues": [
-        "danger_duplicate_justifications"
-      ],
-      "premium_status": "hybrid_ok",
-      "meta_pedagogical_branch": null,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "via_vf_absorcao",
       "instruction_preview": "Com base na via parental, marque verdadeiro (V) ou falso (F) nos itens abaixo: ( )Como o tecido subcutâneo não é tão ric"
     },
     {
@@ -296,11 +294,9 @@
       "pedagogical_branch_inferred": "via_vf_absorcao",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
-      "slide_contract_issues": [
-        "danger_duplicate_justifications"
-      ],
-      "premium_status": "hybrid_ok",
-      "meta_pedagogical_branch": null,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "via_vf_absorcao",
       "instruction_preview": "A Insulina é um medicamento utilizado para o tratamento do Diabetes Mellitus e sua aplicação para o tratamento domicilia"
     },
     {
@@ -415,11 +411,9 @@
       "pedagogical_branch_inferred": "via_vf_absorcao",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
-      "slide_contract_issues": [
-        "danger_duplicate_justifications"
-      ],
-      "premium_status": "hybrid_ok",
-      "meta_pedagogical_branch": null,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "via_vf_absorcao",
       "instruction_preview": "Um paciente idoso com dificuldade de deglutição é internado em unidade clínica. A prescrição inclui medicamentos via ora"
     },
     {
@@ -466,11 +460,9 @@
       "pedagogical_branch_inferred": "via_vf_absorcao",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
-      "slide_contract_issues": [
-        "danger_duplicate_justifications"
-      ],
-      "premium_status": "hybrid_ok",
-      "meta_pedagogical_branch": null,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "via_vf_absorcao",
       "instruction_preview": "Para que o tratamento farmacológico cumpra os objetivos propostos, deve-se considerar a via de administração e analisar "
     },
     {
@@ -548,14 +540,12 @@
       "builder_topic": "Indicação da via",
       "pedagogical_cluster": "Indicação da via (velocidade SC/IM/IV)",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_tecnica_admin",
+      "pedagogical_branch_inferred": "via_vf_absorcao",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
-      "slide_contract_issues": [
-        "danger_duplicate_justifications"
-      ],
-      "premium_status": "hybrid_ok",
-      "meta_pedagogical_branch": null,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "via_vf_absorcao",
       "instruction_preview": "Em relação aos modos e tempos de administração de medicamentos por via intravenosa (IV), assinale a alternativa CORRETA "
     },
     {
@@ -649,11 +639,9 @@
       "pedagogical_branch_inferred": "via_vf_absorcao",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
-      "slide_contract_issues": [
-        "danger_duplicate_justifications"
-      ],
-      "premium_status": "hybrid_ok",
-      "meta_pedagogical_branch": null,
+      "slide_contract_issues": [],
+      "premium_status": "golden",
+      "meta_pedagogical_branch": "via_vf_absorcao",
       "instruction_preview": "Quanto na administração de medicação por via subcutânea, o máximo de volume indicado é:"
     },
     {
@@ -697,7 +685,7 @@
       "builder_topic": "Perfis de via",
       "pedagogical_cluster": "V/F — absorção e perfil de vias",
       "pedagogical_branch_proposed": "via_vf_absorcao",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_tecnica_admin",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
@@ -712,7 +700,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -829,7 +817,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -908,7 +896,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -1197,7 +1185,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_tecnica_admin",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -1281,7 +1269,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "Técnica de punção IM/IV",
       "pedagogical_branch_proposed": "via_tecnica_admin",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_tecnica_admin",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
@@ -1496,7 +1484,7 @@
       "builder_topic": "Perfis de via",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -1581,7 +1569,7 @@
       "builder_topic": "Técnica de punção",
       "pedagogical_cluster": "Técnica de punção IM/IV",
       "pedagogical_branch_proposed": "via_tecnica_admin",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_tecnica_admin",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
@@ -1919,7 +1907,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "V/F — absorção e perfil de vias",
       "pedagogical_branch_proposed": "via_vf_absorcao",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_tecnica_admin",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
@@ -2019,7 +2007,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -2323,7 +2311,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -2374,7 +2362,7 @@
       "builder_topic": "Perfis de via",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -2391,7 +2379,7 @@
       "builder_topic": "Técnica de punção",
       "pedagogical_cluster": "Técnica de punção IM/IV",
       "pedagogical_branch_proposed": "via_tecnica_admin",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_tecnica_admin",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
@@ -2406,7 +2394,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "Técnica de punção IM/IV",
       "pedagogical_branch_proposed": "via_tecnica_admin",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_tecnica_admin",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
@@ -2421,7 +2409,7 @@
       "builder_topic": "Absorção farmacocinética",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -3240,7 +3228,7 @@
       "builder_topic": "Técnica de punção",
       "pedagogical_cluster": "Certo ou errado",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_tecnica_admin",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],
@@ -3476,7 +3464,7 @@
       "builder_topic": "Técnica de punção",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_tecnica_admin",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -3510,7 +3498,7 @@
       "builder_topic": "Técnica de punção",
       "pedagogical_cluster": "INCORRETA / EXCETO",
       "pedagogical_branch_proposed": "via_generico",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_generico",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [
@@ -3578,7 +3566,7 @@
       "builder_topic": "Técnica de punção",
       "pedagogical_cluster": "Técnica de punção IM/IV",
       "pedagogical_branch_proposed": "via_tecnica_admin",
-      "pedagogical_branch_inferred": "via_vf_absorcao",
+      "pedagogical_branch_inferred": "via_tecnica_admin",
       "has_instruction_artifacts": false,
       "slide_topic_drift": false,
       "slide_contract_issues": [],

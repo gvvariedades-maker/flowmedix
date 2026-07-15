@@ -1,0 +1,108 @@
+{
+  "lote": "processo-de-enfermagem-g06",
+  "generated_at": "2026-07-15T09:20:49.157Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006486032-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

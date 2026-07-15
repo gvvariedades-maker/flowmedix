@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T16:34:33.467Z",
+  "lote": "saude-da-crianca-g07",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0",
+    "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1",
+    "intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7",
+    "quadrix-enfermagem-saude-da-crianca-1780001362784-6",
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+    "selecon-enfermagem-exames-complementares-1779563668619-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-crianca-1780001362784-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563668619-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

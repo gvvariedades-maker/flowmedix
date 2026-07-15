@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T08:57:58.977Z",
+  "lote": "processo-de-enfermagem-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1776056158507-0",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+    "funatec-enfermagem-processo-de-enfermagem-1776055865890-3",
+    "funatec-enfermagem-processo-de-enfermagem-1776055865890-5",
+    "funatec-enfermagem-processo-de-enfermagem-1776055865890-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

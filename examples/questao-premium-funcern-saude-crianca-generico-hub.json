@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "banca": "FUNCERN",
+    "prova": "Tec Enf",
+    "ano": "2024",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Criança",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "crianca_generico"
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa correta sobre cuidados gerais à criança em ambiente hospitalar.",
+    "options": [
+      { "id": "A", "text": "A criança deve ser tratada como adulto em miniatura, sem adaptação de linguagem.", "is_correct": false },
+      { "id": "B", "text": "O acompanhante é direito da criança hospitalizada, conforme legislação vigente.", "is_correct": true },
+      { "id": "C", "text": "Sinais vitais pediátricos seguem os mesmos parâmetros do adulto jovem.", "is_correct": false },
+      { "id": "D", "text": "Brincar é dispensável durante a internação.", "is_correct": false },
+      { "id": "E", "text": "Avaliação da dor não é prioridade em lactentes.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": { "subtopico": "Saúde da Criança" },
+      "items": [
+        { "label": "Acompanhante", "detail": "Direito da criança — ECA e humanização.", "icon": "Users" },
+        { "label": "Linguagem", "detail": "Adaptar comunicação à faixa etária.", "icon": "MessageCircle" },
+        { "label": "Brincar", "detail": "Terapia lúdica — reduz ansiedade.", "icon": "Gamepad2" },
+        { "label": "Dor", "detail": "Avaliar e tratar — escala adequada à idade.", "icon": "Heart" }
+      ],
+      "footer_rule": "Criança não é adulto pequeno"
+    },
+    {
+      "type": "golden_rule",
+      "content": "HUB PEDIÁTRICO",
+      "rows": [
+        { "label": "Acompanhante", "value": "Direito legal", "badge": "hot" },
+        { "label": "SV pediátricos", "value": "FC/FR diferentes do adulto", "badge": "ok" },
+        { "label": "Ludoterapia", "value": "Brincar é cuidado", "badge": "ok" }
+      ],
+      "footer_rule": "Humanização pediátrica"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "steps": [
+        "Eliminar A — linguagem adaptada.",
+        "Eliminar C — parâmetros pediátricos.",
+        "Eliminar D e E.",
+        "Letra B — acompanhante é direito."
+      ],
+      "footer_rule": "ECA + cuidado centrado na criança"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "content": "PEGADINHAS — PEDIATRIA GERAL",
+      "items": [
+        { "label": "Adulto miniatura", "detail": "A ignora desenvolvimento.", "correct": "Adaptar cuidado à idade." },
+        { "label": "SV iguais", "detail": "C confunde parâmetros.", "correct": "Usar referenciais pediátricos." },
+        { "label": "Dispensar brincar", "detail": "D nega ludoterapia.", "correct": "Brincar faz parte do cuidado." }
+      ],
+      "footer_rule": "Criança = direitos + ludoterapia"
+    }
+  ]
+}

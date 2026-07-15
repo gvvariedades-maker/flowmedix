@@ -1,0 +1,18 @@
+{
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g10",
+  "exported_at": "2026-07-15T17:38:16.993Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g10/manifest.json"
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-1",
+    "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7",
+    "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-8",
+    "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-0",
+    "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-1",
+    "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7",
+    "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780000237780-2",
+    "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0"
+  ]
+}

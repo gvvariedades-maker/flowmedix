@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-07-14T16:50:03.393Z",
+  "lote": "vias-de-administracao-g13",
+  "mode": "dry-run",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056401060-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

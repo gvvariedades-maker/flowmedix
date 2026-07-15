@@ -1,10 +1,10 @@
 {
   "lote": "cme-completo",
-  "exported_at": "2026-06-23T16:53:43.872Z",
+  "exported_at": "2026-07-14T20:15:51.946Z",
   "source": "supabase",
   "filters": {
     "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
-    "limit": 200,
+    "limit": 10000,
     "exclude_count": 0
   },
   "slugs": [
@@ -44,7 +44,7 @@
     "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
     "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4"
   ],
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-07-14",
   "reconciled_from": [
     "cme-g01",
     "cme-g02",

@@ -1,27 +1,84 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-14T01:33:17.096Z
+Gerado em: 2026-07-15T18:18:42.985Z
 
 ## Resumo
 
 | Métrica | Valor |
 |---------|-------|
-| Fonte slugs | Supabase (vivo) |
-| Clusters mapeados | 189 |
-| Slugs auditados | 13 |
-| ok_existente | 19 |
-| ok_generico | 97 |
-| ramo_novo | 49 |
-| molde_inedito | 15 |
-| Pacotes inéditos únicos | 11 |
-| Slugs com mismatch L3 | 0 |
+| Fonte slugs | lotes locais |
+| Clusters mapeados | 208 |
+| Slugs auditados | 2789 |
+| ok_existente | 14 |
+| ok_generico | 100 |
+| ramo_novo | 55 |
+| molde_inedito | 25 |
+| Pacotes inéditos únicos | 18 |
+| Slugs com mismatch L3 | 96 |
+
+## Mismatch por subtópico
+
+| Subtópico | Slugs com mismatch |
+|-----------|-------------------|
+| Cálculo de Administração de Medicamentos e Infusões | 19 |
+| Saúde do Adolescente | 6 |
 
 ## Candidatos a molde inédito (pacote de 4 variantes)
+
+### Assistência Perioperatória (Inclui SRPA) — Pré-operatório / preparo
+- **Slugs:** 21 · **Ramo:** `perioperatorio_pre_operatorio`
+- **Pacote proposto:** peri-preop-phase-deck · peri-preop-prep-board · peri-preop-decision-tap · peri-preop-trap-arena
+- Pré-op — trilho fases × preparo (jejum/tricotomia); âncora AVANÇASP.
+
+### Assistência Perioperatória (Inclui SRPA) — Pós-operatório / cuidados
+- **Slugs:** 15 · **Ramo:** `perioperatorio_pos_operatorio`
+- **Pacote proposto:** peri-srpa-monitor-deck · peri-aldrete-board · peri-srpa-decision-tap · peri-srpa-trap-arena
+- Pós-op/SRPA — monitorização × Aldrete × EXCETO; âncoras IDECAN/Fundatec.
+
+### Assistência Perioperatória (Inclui SRPA) — Protocolo / sequência
+- **Slugs:** 13 · **Ramo:** `perioperatorio_protocolo`
+- **Pacote proposto:** peri-protocol-checklist-deck · peri-protocol-reference-board · peri-protocol-tap-flow · peri-protocol-trap-arena
+- Protocolo/WHO/CDC — checklist espacial × tap; âncora COGEPS.
+
+### Assistência Perioperatória (Inclui SRPA) — Certo ou errado
+- **Slugs:** 9 · **Ramo:** `perioperatorio_vf`
+- **Pacote proposto:** peri-vf-assertions-deck · peri-vf-reference-board · peri-vf-juggle-tap · peri-vf-trap-chips
+- V/F Cebraspe I–III — juggle tap violet bespoke.
+
+### Assistência Perioperatória (Inclui SRPA) — SRPA / atribuição do técnico
+- **Slugs:** 1 · **Ramo:** `perioperatorio_pos_operatorio`
+- **Pacote proposto:** peri-srpa-monitor-deck · peri-aldrete-board · peri-srpa-decision-tap · peri-srpa-trap-arena
+- Pós-op/SRPA — monitorização × Aldrete × EXCETO; âncoras IDECAN/Fundatec.
+
+### Assistência Perioperatória (Inclui SRPA) — SRPA / CPD e atribuição (C/E)
+- **Slugs:** 1 · **Ramo:** `perioperatorio_pos_operatorio`
+- **Pacote proposto:** peri-srpa-monitor-deck · peri-aldrete-board · peri-srpa-decision-tap · peri-srpa-trap-arena
+- Pós-op/SRPA — monitorização × Aldrete × EXCETO; âncoras IDECAN/Fundatec.
 
 ### Enfermagem em Central de Material e Esterilização (CME) — Autoclave e métodos de esterilização
 - **Slugs:** 10 · **Ramo:** `cme_autoclave_metodos`
 - **Pacote proposto:** morphological · reference_table · vertical · compare (genérico) — ou pacote inédito parâmetros/ciclo
 - Parâmetros de ciclo — tabela pode bastar; molde inédito só se interação espacial repetir em provas.
+
+### Saúde Mental — RAPS / Reforma Psiquiátrica / SRT
+- **Slugs:** 3 · **Ramo:** `mental_raps_legis`
+- **Pacote proposto:** mental-raps-network-rail · mental-raps-tier-board · mental-raps-classify-tap · mental-raps-trap-arena
+- RAPS/legis — pacote violet bespoke 4/4 (rede × componente).
+
+### Saúde Mental — SRT / Reforma Psiquiátrica (dispositivo)
+- **Slugs:** 1 · **Ramo:** `mental_raps_legis`
+- **Pacote proposto:** mental-raps-network-rail · mental-raps-tier-board · mental-raps-classify-tap · mental-raps-trap-arena
+- RAPS/legis — pacote violet bespoke 4/4 (rede × componente).
+
+### Segurança do Paciente — Prevenção de quedas
+- **Slugs:** 11 · **Ramo:** `sp_prevencao_quedas`
+- **Pacote proposto:** sp-fall-risk-rail · sp-nsp-reference-board · sp-protocol-tap-flow · sp-safety-trap-arena (bespoke)
+- Prevenção de quedas — trilho Morse + protocol tap + trap arena (âncora VUNESP).
+
+### Segurança do Paciente — Eventos adversos e incidentes
+- **Slugs:** 9 · **Ramo:** `sp_eventos_adversos`
+- **Pacote proposto:** sp-incident-taxonomy-deck · sp-nsp-reference-board · sp-protocol-tap-flow · sp-safety-trap-arena (bespoke)
+- PNSP 4 grupos — taxonomy deck + protocol tap + trap arena (âncora FCM).
 
 ### Urgências e Emergências — Default — sem âncora temática
 - **Slugs:** 63 · **Ramo:** `urgencias_generico`
@@ -97,14 +154,14 @@ Gerado em: 2026-07-14T01:33:17.096Z
 
 | Subtópico | Cluster | Slugs | % | Decisão | Ramo | Ideal |
 |-----------|---------|-------|---|---------|------|-------|
-| Assistência Perioperatória (Inclui SRPA) | Pré-operatório / preparo | 21 | 30.9% | ok_generico | `perioperatorio_pre_operatorio` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | Pós-operatório / cuidados | 15 | 22.1% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | Protocolo / sequência | 13 | 19.1% | ok_generico | `perioperatorio_protocolo` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | Certo ou errado | 9 | 13.2% | ok_generico | `perioperatorio_vf` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | Pré-operatório / preparo | 21 | 30.9% | molde_inedito | `perioperatorio_pre_operatorio` | peri-preop-phase-deck · peri-preop-prep-board · peri-preop-d… |
+| Assistência Perioperatória (Inclui SRPA) | Pós-operatório / cuidados | 15 | 22.1% | molde_inedito | `perioperatorio_pos_operatorio` | peri-srpa-monitor-deck · peri-aldrete-board · peri-srpa-deci… |
+| Assistência Perioperatória (Inclui SRPA) | Protocolo / sequência | 13 | 19.1% | molde_inedito | `perioperatorio_protocolo` | peri-protocol-checklist-deck · peri-protocol-reference-board… |
+| Assistência Perioperatória (Inclui SRPA) | Certo ou errado | 9 | 13.2% | molde_inedito | `perioperatorio_vf` | peri-vf-assertions-deck · peri-vf-reference-board · peri-vf-… |
 | Assistência Perioperatória (Inclui SRPA) | Default — sem âncora temática | 4 | 5.9% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | ISC / classificação e prevenção | 2 | 2.9% | ok_generico | `perioperatorio_isc` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | SRPA / atribuição do técnico | 1 | 1.5% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
-| Assistência Perioperatória (Inclui SRPA) | SRPA / CPD e atribuição (C/E) | 1 | 1.5% | ok_generico | `perioperatorio_pos_operatorio` | morphological · reference_table · vertical · compare (genéri… |
+| Assistência Perioperatória (Inclui SRPA) | SRPA / atribuição do técnico | 1 | 1.5% | molde_inedito | `perioperatorio_pos_operatorio` | peri-srpa-monitor-deck · peri-aldrete-board · peri-srpa-deci… |
+| Assistência Perioperatória (Inclui SRPA) | SRPA / CPD e atribuição (C/E) | 1 | 1.5% | molde_inedito | `perioperatorio_pos_operatorio` | peri-srpa-monitor-deck · peri-aldrete-board · peri-srpa-deci… |
 | Assistência Perioperatória (Inclui SRPA) | Fases perioperatórias | 1 | 1.5% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Assistência Perioperatória (Inclui SRPA) | Centro cirúrgico / asséptica | 1 | 1.5% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Enfermagem em Central de Material e Esterilização (CME) | Preparo e limpeza de instrumentais | 12 | 34.3% | ok_generico | `cme_preparo_limpeza` | bridge · minimal · cards · list (genérico)… |
@@ -117,33 +174,38 @@ Gerado em: 2026-07-14T01:33:17.096Z
 | Saúde Mental | Depressão / epidemiologia | 5 | 13.5% | ok_generico | `mental_depressao` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde Mental | Dependência química / álcool | 3 | 8.1% | ok_generico | `mental_dependencia_tabagismo` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde Mental | Esquizofrenia / psicofármacos | 3 | 8.1% | ok_generico | `mental_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Saúde Mental | RAPS / Reforma Psiquiátrica / SRT | 3 | 8.1% | ok_generico | `mental_raps_legis` | bridge · reference_table · vertical · compare (genérico)… |
+| Saúde Mental | RAPS / Reforma Psiquiátrica / SRT | 3 | 8.1% | molde_inedito | `mental_raps_legis` | mental-raps-network-rail · mental-raps-tier-board · mental-r… |
 | Saúde Mental | Tabagismo / PNCT | 3 | 8.1% | ok_generico | `mental_dependencia_tabagismo` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde Mental | Sono / epilepsia | 3 | 8.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Saúde Mental | Crise / agitação / de-escalada | 2 | 5.4% | ok_existente | `mental_crise_caps` | morphological · center · sae-decision-tap · norm-reveal (bes… |
+| Saúde Mental | Crise / agitação / de-escalada | 2 | 5.4% | molde_redesign | `mental_crise_caps` | mental-crisis-signal-deck · mental-crisis-ladder-board · men… |
 | Saúde Mental | Acolhimento / biopsicossocial na APS | 2 | 5.4% | ok_generico | `mental_aps_acolhimento` | morphological · reference_table · vertical · compare (genéri… |
-| Saúde Mental | CAPS / acolhimento em crise | 2 | 5.4% | ok_existente | `mental_crise_caps` | morphological · center · sae-decision-tap · norm-reveal (bes… |
+| Saúde Mental | CAPS / acolhimento em crise | 2 | 5.4% | molde_redesign | `mental_crise_caps` | mental-crisis-signal-deck · mental-crisis-ladder-board · men… |
 | Saúde Mental | Redução de danos / entrevista motivacional | 2 | 5.4% | ok_generico | `mental_dependencia_tabagismo` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde Mental | Certo ou errado | 2 | 5.4% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde Mental | Default — sem âncora temática | 1 | 2.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Saúde Mental | SRT / Reforma Psiquiátrica (dispositivo) | 1 | 2.7% | ok_generico | `mental_raps_legis` | bridge · reference_table · vertical · compare (genérico)… |
+| Saúde Mental | SRT / Reforma Psiquiátrica (dispositivo) | 1 | 2.7% | molde_inedito | `mental_raps_legis` | mental-raps-network-rail · mental-raps-tier-board · mental-r… |
 | Saúde Mental | Risco suicida / sinais de alerta | 1 | 2.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Saúde Mental | Agitação / crise / contenção (EXCETO) | 1 | 2.7% | ok_existente | `mental_crise_caps` | morphological · center · sae-decision-tap · norm-reveal (bes… |
+| Saúde Mental | Agitação / crise / contenção (EXCETO) | 1 | 2.7% | molde_redesign | `mental_crise_caps` | mental-crisis-signal-deck · mental-crisis-ladder-board · men… |
 | Saúde Mental | EXCETO — conduta / conceito | 1 | 2.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde Mental | Demência / Alzheimer | 1 | 2.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Saúde Mental | CAPS / dispositivo de rede | 1 | 2.7% | ok_existente | `mental_crise_caps` | morphological · center · sae-decision-tap · norm-reveal (bes… |
+| Saúde Mental | CAPS / dispositivo de rede | 1 | 2.7% | molde_redesign | `mental_crise_caps` | mental-crisis-signal-deck · mental-crisis-ladder-board · men… |
 | Saúde do Adolescente | Gravidez / pré-natal / riscos | 2 | 12.5% | ok_existente | `adolescente_etica_sigilo` | adolescent-privacy-curtain · adolescent-sigilo-spectrum · ad… |
 | Saúde do Adolescente | Escuta, sigilo e ética (V/F) | 2 | 12.5% | ok_existente | `adolescente_etica_sigilo` | adolescent-privacy-curtain · adolescent-sigilo-spectrum · ad… |
 | Saúde do Adolescente | Violência sexual e indicadores | 2 | 12.5% | ok_generico | `adolescente_violencia_protecao` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Transtornos alimentares / imagem corporal | 2 | 12.5% | ok_generico | `adolescente_saude_mental` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Diretrizes MS adolescente (EXCETO) | 2 | 12.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde do Adolescente | Saúde bucal / promoção | 2 | 12.5% | ok_generico | `adolescente_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Farmacodinâmica e Farmacocinética | Protocolo / administração clínica (EV, infusão) | 4 | 36.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Farmacodinâmica e Farmacocinética | Default — sem âncora temática | 2 | 18.2% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Farmacodinâmica e Farmacocinética | Conceito — farmacocinética (ADME) | 2 | 18.2% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Farmacodinâmica e Farmacocinética | Conceito — meia-vida e concentração | 1 | 9.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Farmacodinâmica e Farmacocinética | INCORRETA / EXCETO | 1 | 9.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
-| Farmacodinâmica e Farmacocinética | Conceito — farmacodinâmica clínica | 1 | 9.1% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| História da Enfermagem | Humanização | 0 | 0% | ok_generico | `historia_humanizacao` | morphological · reference_table · vertical · compare (genéri… |
+| História da Enfermagem | Ética COFEN | 0 | 0% | ok_generico | `historia_comunicacao_etica` | bridge · reference_table · vertical · compare (genérico prem… |
+| História da Enfermagem | Marcos históricos | 0 | 0% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| História da Enfermagem | Cauda | 0 | 0% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Protocolo / administração clínica (EV, infusão) | 4 | 30.8% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Conceito — farmacodinâmica clínica | 2 | 15.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Default — sem âncora temática | 2 | 15.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Conceito — farmacocinética (ADME) | 2 | 15.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | Conceito — meia-vida e concentração | 1 | 7.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | INCORRETA / EXCETO | 1 | 7.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Farmacodinâmica e Farmacocinética | V/F — ADME e definições PK/PD | 1 | 7.7% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Tuberculose — controle, TDO e vigilância | 23 | 45.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Outros / tema misto | 6 | 11.8% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | Meningite bacteriana | 4 | 7.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
@@ -172,9 +234,9 @@ Gerado em: 2026-07-14T01:33:17.096Z
 | Infecções no Contexto da Biossegurança | Biossegurança e contenção (conceitos) | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Infecções no Contexto da Biossegurança | Cuidados em paciente imunossuprimido / comorbidades | 4 | 16% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | DRIFT — auditoria/gestão | 16 | 27.1% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Prevenção de quedas | 11 | 18.6% | ok_generico | `sp_prevencao_quedas` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Eventos adversos e incidentes | 9 | 15.3% | ok_generico | `sp_eventos_adversos` | morphological · reference_table · vertical · compare (genéri… |
-| Segurança do Paciente | Identificação do paciente | 7 | 11.9% | ok_existente | `sp_identificacao` | morphological · reference_table · vertical · compare (genéri… |
+| Segurança do Paciente | Prevenção de quedas | 11 | 18.6% | molde_inedito | `sp_prevencao_quedas` | sp-fall-risk-rail · sp-nsp-reference-board · sp-protocol-tap… |
+| Segurança do Paciente | Eventos adversos e incidentes | 9 | 15.3% | molde_inedito | `sp_eventos_adversos` | sp-incident-taxonomy-deck · sp-nsp-reference-board · sp-prot… |
+| Segurança do Paciente | Identificação do paciente | 7 | 11.9% | molde_redesign | `sp_identificacao` | sp-id-verify-deck · sp-nsp-reference-board · sp-vf-juggle-ta… |
 | Segurança do Paciente | DRIFT — processo de enfermagem | 6 | 10.2% | ok_generico | `sp_generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | Segurança do paciente — conceito geral | 2 | 3.4% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Segurança do Paciente | Metas internacionais JCI/OMS | 2 | 3.4% | ok_generico | `sp_metas_internacionais` | morphological · reference_table · vertical · compare (genéri… |
@@ -264,6 +326,20 @@ Gerado em: 2026-07-14T01:33:17.096Z
 | Imunização | Técnica de aplicação / sala de vacinação | 11 | 1.9% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Conceito — tipos de vacina / imunobiológicos | 8 | 1.4% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Imunização | Contraindicações / eventos adversos | 1 | 0.2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Aleitamento / nutrição infantil | 14 | 22.6% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Triagem neonatal (pezinho / coraçãozinho) | 10 | 16.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Saúde da criança — conceito geral | 10 | 16.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Desidratação / diarreia aguda | 7 | 11.3% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | APS / puericultura | 5 | 8.1% | ramo_novo | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Neonatologia clínica | 3 | 4.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Dor pediátrica | 3 | 4.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Desenvolvimento infantil | 3 | 4.8% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | APGAR / reanimação neonatal | 2 | 3.2% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Sinais vitais pediátricos | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Crescimento / curvas OMS | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Vacinação infantil | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Saúde bucal infantil | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
+| Saúde da Criança | Violência / proteção infantil | 1 | 1.6% | ok_generico | `generico` | morphological · reference_table · vertical · compare (genéri… |
 | Saúde da Mulher | Pré-natal / gestação | 75 | 28.5% | ok_existente | `mulher_prenatal` | mulher-gestation-timeline · mulher-prenatal-board · mulher-p… |
 | Saúde da Mulher | Parto / trabalho de parto | 62 | 23.6% | ok_existente | `mulher_parto` | mulher-labor-phase-deck · mulher-parto-humanizado-board · mu… |
 | Saúde da Mulher | Rastreio câncer de colo | 37 | 14.1% | ok_existente | `mulher_papanicolau` | mulher-screening-spectrum · mulher-papanicolau-board · mulhe… |
@@ -289,6 +365,111 @@ Gerado em: 2026-07-14T01:33:17.096Z
 
 ## Slugs (amostra com branch inferido)
 
-- `farmaco_generico`: 6
-- `farmaco_clinico_protocolo`: 6
+- `—`: 547
+- `imunizacao_calendario`: 475
+- `via_vf_absorcao`: 206
+- `urgencias_generico`: 155
+- `calc_dose_equivalencia`: 123
+- `mulher_prenatal`: 118
+- `cam_certos_vf_caso`: 79
+- `urgencias_rcp_sbv`: 60
+- `imunizacao_cadeia_frio`: 56
+- `biosseg_generico`: 51
+- `mulher_papanicolau`: 39
+- `urgencias_choque`: 38
+- `mulher_generico`: 35
+- `bacterianas_tuberculose`: 28
+- `imunizacao_exceto`: 28
+- `cam_generico`: 25
+- `mulher_puerperio`: 25
+- `perioperatorio_pre_operatorio`: 24
+- `sp_generico`: 24
+- `perioperatorio_pos_operatorio`: 23
+- `sae_documentacao`: 21
+- `mulher_parto`: 21
+- `urgencias_exceto_conduta`: 20
+- `bacterianas_generico`: 19
+- `cme_vf_ce`: 18
+- `urgencias_avc_iam`: 18
+- `trabalho_ergonomia`: 17
+- `via_tecnica_admin`: 17
+- `crianca_generico`: 16
+- `mulher_mama`: 16
+- `cme_autoclave_metodos`: 15
+- `imunizacao_vf_intervalos`: 14
+- `perioperatorio_isc`: 14
+- `crianca_aleitamento_nutricao`: 14
+- `urgencias_engasgo`: 14
+- `sae_etapas`: 12
+- `sp_prevencao_quedas`: 12
+- `urgencias_xabcde_trauma`: 12
+- `via_generico`: 12
+- `cam_exceto_conduta`: 11
+- `crianca_triagem_neonatal`: 11
+- `mental_raps_legis`: 11
+- `sp_eventos_adversos`: 11
+- `mulher_planejamento`: 10
+- `sp_identificacao`: 10
+- `cam_documentacao`: 9
+- `cme_generico`: 9
+- `trabalho_nr15_reference`: 9
+- `sae_exceto`: 9
+- `sae_generico`: 9
+- `calc_conceito`: 8
+- `farmaco_clinico_protocolo`: 8
+- `cam_alto_risco`: 8
+- `historia_humanizacao`: 8
+- `crianca_desidratacao`: 8
+- `urgencias_rcp_pediatrico`: 8
+- `farmaco_generico`: 7
+- `crianca_aps_puericultura`: 7
+- `mental_depressao`: 7
+- `urgencias_convulsao`: 7
+- `calc_generico`: 6
+- `cme_preparo_limpeza`: 6
+- `respiratorio_dpoc_oxigenio`: 6
+- `adolescente_etica_sigilo`: 6
+- `mental_generico`: 6
+- `mental_dependencia_tabagismo`: 6
+- `urgencias_anafilaxia`: 6
+- `trabalho_vf_nr32`: 5
+- `cme_processamento_conceito`: 5
+- `historia_comunicacao_etica`: 5
+- `perioperatorio_generico`: 5
+- `adolescente_antropometria`: 5
+- `vitals_pa_tecnica`: 5
+- `urgencias_manchester_triagem`: 5
+- `bacterianas_agente_etiologico`: 4
+- `historia_nightingale`: 4
+- `biosseg_iras_itu_cateter`: 4
+- `mental_crise_caps`: 4
+- `trabalho_pep_trap`: 3
+- `historia_generico`: 3
+- `crianca_neonatologia`: 3
+- `crianca_desenvolvimento`: 3
+- `mental_aps_acolhimento`: 3
+- `vitals_pediatrico_faixas`: 3
+- `imunizacao_generico`: 2
+- `perioperatorio_protocolo`: 2
+- `adolescente_violencia_protecao`: 2
+- `adolescente_generico`: 2
+- `sp_metas_internacionais`: 2
+- `vitals_temperatura`: 2
+- `vitals_spo2`: 2
+- `vitals_glasgow`: 2
+- `trabalho_generico`: 1
 - `farmaco_pk_pd_vf`: 1
+- `feridas_atendimento_inicial`: 1
+- `feridas_grau_profundidade`: 1
+- `feridas_classificacao`: 1
+- `feridas_cicatrizacao`: 1
+- `feridas_curativo_tipo`: 1
+- `feridas_scq_calculo`: 1
+- `feridas_grande_queimado`: 1
+- `feridas_scq_regra9`: 1
+- `respiratorio_tecnica_inalador`: 1
+- `respiratorio_generico`: 1
+- `respiratorio_asma_crise`: 1
+- `respiratorio_vf_asma_dpoc`: 1
+- `adolescente_desenvolvimento`: 1
+- `vitals_fc_faixas`: 1

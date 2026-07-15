@@ -63,6 +63,8 @@ Substitua pelo nome **exato** de `CLAUDE.md` §9 (ex.: `Punção Venosa e Cuidad
 | `Mapeamento L3: <subtópico>` | **Antes** do 1º lote — cluster + brief 4/4 |
 | `Classify: <subtópico>` | Se bucket com drift de taxonomia |
 | `Handcraft: <subtópico>` + `gNN` | Um lote por mensagem (como Vias g01–g26) |
+| `Paridade Adolescente: <subtópico>` | Paridade pedagógica proporcional — [`PROMPT_PARIDADE_ADOLESCENTE.md`](PROMPT_PARIDADE_ADOLESCENTE.md) |
+| `Pipeline + paridade Adolescente: <subtópico>` | Pipeline completo + paridade na mesma conversa |
 
 ---
 

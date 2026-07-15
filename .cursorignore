@@ -1,0 +1,29 @@
+﻿# Build / deps / gerados
+node_modules/
+.next/
+out/
+build/
+coverage/
+.vercel/
+.swc/
+*.tsbuildinfo
+
+# Relatórios de teste
+playwright-report/
+test-results/
+.playwright-mcp/
+e2e/.auth/
+
+# Pipeline / peso morto (não usado pelo app em runtime)
+artifacts/
+backups/
+legacy/
+
+# Cópias de trabalho handcraft (já no .gitignore)
+data/catalog-migration/*/questions/
+
+# Design audit pesado
+docs/auditoria-visual-v2/
+
+# Screenshots soltos na raiz
+/*.png

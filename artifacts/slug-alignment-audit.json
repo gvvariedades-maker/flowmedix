@@ -1,73 +1,51 @@
 {
-  "generated_at": "2026-07-14T06:47:20.921Z",
+  "generated_at": "2026-07-15T16:21:01.363Z",
   "strict": true,
-  "scanned": 9,
-  "passed": 9,
+  "scanned": 6,
+  "passed": 6,
   "failed": 0,
   "results": [
     {
-      "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
-      "ok": true,
-      "issues": []
-    },
-    {
-      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
       "ok": true,
       "issues": [
         {
           "code": "align_branch_declared",
-          "message": "meta.pedagogical_branch=\"respiratorio_generico\" ≠ inferido=\"respiratorio_tecnica_inalador\"",
+          "message": "meta.pedagogical_branch=\"crianca_desenvolvimento\" ≠ inferido=\"crianca_aleitamento_nutricao\"",
           "severity": "warn",
           "path": "meta.pedagogical_branch"
         }
       ]
     },
     {
-      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
       "ok": true,
       "issues": [
         {
           "code": "align_branch_declared",
-          "message": "meta.pedagogical_branch=\"respiratorio_asma_crise\" ≠ inferido=\"respiratorio_generico\"",
+          "message": "meta.pedagogical_branch=\"crianca_dor\" ≠ inferido=\"crianca_generico\"",
           "severity": "warn",
           "path": "meta.pedagogical_branch"
         }
       ]
     },
     {
-      "slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
-      "ok": true,
-      "issues": [
-        {
-          "code": "align_correct_option_ref",
-          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
-          "severity": "warn",
-          "path": "reverse_study_slides"
-        }
-      ]
-    },
-    {
-      "slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
       "ok": true,
       "issues": []
     }

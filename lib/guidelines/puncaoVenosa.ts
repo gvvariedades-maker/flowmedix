@@ -20,6 +20,13 @@ export const PUNCAO_CATETER_ANVISA: GuidelineTable = {
       sourceId: 'puncao-cateter-anvisa',
     },
     {
+      id: 'antissepsia-alcool-70-puncao',
+      label: 'Antissepsia punção periférica (prova)',
+      value: 'álcool 70% — assepsia ampla no sítio',
+      detail: 'Padrão cobrado em concursos brasileiros; aguardar secagem antes da punção.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
       id: 'bundle-cvc',
       label: 'Bundle CVC — prevenção IPCS',
       value: 'assepsia + barreira máxima + sítio adequado + curativo + remoção precoce',

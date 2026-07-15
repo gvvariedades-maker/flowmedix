@@ -1,0 +1,702 @@
+{
+  "generated_at": "2026-07-15T18:19:34.840Z",
+  "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+  "total_slugs_manifest": 85,
+  "analyzed": 83,
+  "missing_json": 2,
+  "strong_branch_threshold": 9,
+  "strong_branches": [
+    "calc_dose_equivalencia"
+  ],
+  "branch_summaries": [
+    {
+      "branch": "calc_dose_equivalencia",
+      "count": 81,
+      "pct": 97.6,
+      "is_strong": true,
+      "l3_decision": "molde_redesign",
+      "mold_package": "dose-equivalence-rail · soft-lens-board · dose-calc-tap · dose-trap"
+    },
+    {
+      "branch": "calc_conceito",
+      "count": 2,
+      "pct": 2.4,
+      "is_strong": false,
+      "l3_decision": "ok_generico",
+      "mold_package": "morphological · reference_table · horizontal · compare"
+    }
+  ],
+  "family_counts": {
+    "calc": 73,
+    "certo_errado": 2,
+    "protocolo": 5,
+    "conceito": 3
+  },
+  "rows": [
+    {
+      "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Após consulta médica a paciente apresentou a receita de Gentamicina 7,5mg/kg/dia, em três tomadas diárias. A paciente pe"
+    },
+    {
+      "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Uma ampola de Sulfato Ferroso de 20mL foi diluída em 160mL de solução fisiológica 0,9% para infusão em 40 minutos. O got"
+    },
+    {
+      "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Uma ampola de dexametasona, com apresentação de 10 mg/2,5mL foi dispensada à unidade. A Técnica em Enfermagem, aspirou d"
+    },
+    {
+      "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "A Técnica em Enfermagem diluiu uma ampola de omeprazol 20 mg, em 6 mL de água destilada. Dessa diluição, ela aspirou, ap"
+    },
+    {
+      "slug": "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito 300 mL de soro glicosado 5%, acrescido de 20 mL de glicose 50%, 10 mL de Kcl, 10 mL de NaCl, 10 mL de vita"
+    },
+    {
+      "slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-8",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Diante de uma prescrição médica com 250ml de uma determinada solução, para correr em 4 (quatro) horas, assinale a altern"
+    },
+    {
+      "slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "A farmácia de uma determinada unidade de saúde possui Frasco-ampola de Cefalotina Sódica de 1g. Ao se diluir com um volu"
+    },
+    {
+      "slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-1",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito a um determinado paciente a administração de 50 gotas de um analgésico. Diante desse dado, tem-se que o té"
+    },
+    {
+      "slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-2",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Diante da seguinte prescrição, assinale a alternativa relacionada à dosagem que deverá ser administrada:\n- Tramadol 60mg"
+    },
+    {
+      "slug": "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-7",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "A um determinado paciente está prescrito garamicina 200 mg para ser administrada por via intramuscular. Considerando que"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-8",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Assinale a opção correspondente à quantidade de glicose que se tem em uma ampola de 50% com 20 mL."
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-4",
+      "family": "certo_errado",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Considerando o Protocolo de Segurança na Prescrição, Uso e Administração de Medicamentos, as medidas de prevenção da cor"
+    },
+    {
+      "slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-4",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Para um paciente internado em clínica médica, foi prescrito, se dor, dipirona 80mg, VO. A farmácia dispõe de frasco-gota"
+    },
+    {
+      "slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-7",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Uma ampola de cloreto de potássio de 10 mL foi diluída em 190 mL de solução fisiológica 0,9% para infusão em 40 minutos."
+    },
+    {
+      "slug": "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-1",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Uma ampola de cloreto de potássio de 10 mL foi diluída em 190 mL de solução fisiológica 0,9% para infusão em 40 minutos."
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-2",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Para o paciente S., foi prescrito um soro glicosado a 5% com volume de 500 ml, para ser infundido em oito horas.\nEsse so"
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-3",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito 600 mg de Keflin para um paciente da unidade de clínica médica. O medicamento tem apresentação liofilizada"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-3",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O cálculo de medicação é uma parte importante do trabalho da enfermagem. Tem- se o seguinte caso como exemplo: prescriçã"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-4",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "A prescrição médica indica Rocefin 750 mg endovenoso. A apresentação do medicamento enviada pela farmácia é de frasco de"
+    },
+    {
+      "slug": "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Os antibióticos, para serem administrados por via venosa, devem ser diluídos. No caso de uma prescrição médica que prevê"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-1",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Manoel, de 32 anos, é insulinodependente há 5 anos. Faz parte da sua rotina diária a administração da medicação e, norma"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-1",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "A via de administração de medicamentos intravenosa possibilita ministrar medicamentos diretamente na corrente sanguínea "
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "P. A. M. é auxiliar de enfermagem. Ao verificar a prescrição médica, observa que está prescrito oxacilina 140mg, duas ve"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-1",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foram prescritos 1.000ml para serem administrados em 12 horas. Qual deve ser o gotejamento por minuto aproximado, consid"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-2",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foram prescritos 500ml para serem administrados em 20 horas para um paciente pediátrico. Qual deve ser o gotejamento por"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Estão prescritos 3.500U de heparina para um paciente. No posto de enfermagem existem frascos de 5.000UI/ml.\nA quantidade"
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Para administrar 5.000ml de soro glicosado a 5% em 24 horas, o cálculo em gotas por minuto deverá ser de:"
+    },
+    {
+      "slug": "fauel-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-2",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito 5 mg de Cloridrato de Metoclopramida (Plasil) via oral para um paciente. O frasco possui 4 mg/ml. Consider"
+    },
+    {
+      "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-3",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O paciente José precisa receber 500 ml de solução fisiológica 0,9% em 12 horas.\nQuantas gotas por minuto, aproximadament"
+    },
+    {
+      "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-4",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Um paciente precisará receber 200 mg de ampicilina. Considerando que o frasco ampola contem 500 mg em 5 ml, quantos ml o"
+    },
+    {
+      "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-3",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O paciente J.M.S, 60 anos, precisa receber 500 mg de Cefalotina Sódica. Na unidade existem frascosampolas de 1 grama (5 "
+    },
+    {
+      "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-4",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito ao paciente Soro Fisiológico 0,9%, 1.000 ml, para correr em 12 horas.\nQuantas gotas por minuto, aproximada"
+    },
+    {
+      "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-3",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O Senhor João, de 65 anos, precisa receber Amoxicilina suspensão, por via oral, devendo ser administrados 500 mg de 8/8 "
+    },
+    {
+      "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O paciente precisa receber 200 mg de uma medicação e na unidade só existem frascos de 500 mg em 5 ml.\nQuantos ml da medi"
+    },
+    {
+      "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O paciente precisa receber 500 ml de soro glicosado a 5% em 12 horas. Quantas gotas por minuto você irá precisar program"
+    },
+    {
+      "slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O médico prescreveu 20mg de uma medicação cuja apresentação é ampola de 10 mL – 5mg/mL.\nNesse caso, o profissional de en"
+    },
+    {
+      "slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O médico prescreveu 20 mg de uma medicação cuja apresentação é ampola de 10 mL – 5mg/mL.\nNesse caso, o profissional de e"
+    },
+    {
+      "slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Um frasco de 250 mL de solução glicosada a 5% contém a seguinte quantidade de glicose:"
+    },
+    {
+      "slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Para administrar 500 ml de soro glicosado a 5% em 12 horas, considerando o arredondamento padrão, o cálculo do gotejamen"
+    },
+    {
+      "slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-7",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Assinale a alternativa correta relacionada à dosagem a ser administrada, conforme a seguinte prescrição:\n• Tramadol 60 m"
+    },
+    {
+      "slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-8",
+      "family": "protocolo",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O Serviço de Atendimento Médico de Urgência, dentro de suas atribuições, realiza transporte de paciente crítico entre ho"
+    },
+    {
+      "slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Consta na prescrição médica administrar Insulina NPH 40UI por via subcutânea. No posto de enfermagem, dispomos somente d"
+    },
+    {
+      "slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "A Enfermeira de uma Unidade realizou a administração de uma medicação com volume total de 500 mL, foi infundida com um g"
+    },
+    {
+      "slug": "fundep-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-3",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Considere que houve uma prescrição médica de 2 mg de Dexametasona EV a um paciente. Na farmácia do hospital, está dispon"
+    },
+    {
+      "slug": "fundep-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-7",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Considere que o médico prescreveu 1.000 mL de solução de glicose a 5%, acrescida de 40 mL de Nacl a 20% e 10 mL de Kcl a"
+    },
+    {
+      "slug": "iaupe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-2",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O paciente Sr Frederico Santos está internado na Clínica Médica com seguinte prescrição: Administrar 1000 mL de Soro Fis"
+    },
+    {
+      "slug": "ibade-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-8",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Paciente J. H. C encontra-se internado em observação na unidade de pronto atendimento (UPA) aguardando transferência par"
+    },
+    {
+      "slug": "ibgp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-2",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Uma ampola de dexametasona 10mg, foi diluída em soro fisiológico 0,9%, dando um total de volume final de 25mL. Após a di"
+    },
+    {
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Com base em convenções sobre medidas e equivalências adotadas no Brasil, com exceção de alguns medicamentos que fogem ao"
+    },
+    {
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito para um paciente internado em uma unidade de queimados o seguinte: 2.000 de solução Ringer Lactato para se"
+    },
+    {
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-1",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Com base em convenções sobre medidas e equivalências adotadas no Brasil, com exceção de alguns medicamentos que fogem ao"
+    },
+    {
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+      "family": "certo_errado",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Em relação a diluição e administração de medicamentos, em se tratando de equivalências, podemos afirmar que 1 ml é igual"
+    },
+    {
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "\"Instalou-se no paciente uma solução fisiológica 0,9% de 750 ml para correr em duas horas.\" Qual deverá ser o número de "
+    },
+    {
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-7",
+      "family": "conceito",
+      "pedagogical_branch": "calc_conceito",
+      "l3_decision": "ok_generico",
+      "is_strong_branch": false,
+      "instruction_preview": "\"As preparações de insulina disponíveis no Brasil são comercializadas na concentração U-100, significando que em cada de"
+    },
+    {
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-8",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "\"Uma mãe relata ao técnico em enfermagem, durante uma visita domiciliar, que não sabe como fazer a medida de 5 ml de sus"
+    },
+    {
+      "slug": "idecan-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-8",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito para um paciente internado em uma unidade de queimados o seguinte: 2.000 de solução Ringer Lactato para se"
+    },
+    {
+      "slug": "idib-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778934863952-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Em uma unidade de clínica médica foi prescrito ao paciente R.S.J, 52 anos, 60 mg de diclofenaco de sódio. Na unidade tem"
+    },
+    {
+      "slug": "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-1",
+      "family": "protocolo",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Carlos, 33 anos, estava em observação na emergência de um hospital e foi prescrito a este paciente Decadron 12mg, EV. Na"
+    },
+    {
+      "slug": "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-2",
+      "family": "protocolo",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O cálculo de medicamentos faz parte do Protocolo de Segurança do paciente na administração de medicamentos. Nessa perspe"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-3",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito a um lactente com peso de 8 kg 0,2 ml de dipirona sódica por via intramuscular. Sabendo que a unidade poss"
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-4",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foram prescritos 100 mg de Keflex por via oral. Sabe-se que o frasco contém suspensão de 250 mg / 5ml. Assim, é correto "
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito soro glicosado 5% 1.000 ml para correr em 8 horas. Assim, para administrar corretamente o soro, o técnico "
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-2",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Um hospital privado aplicou uma prova para selecionar profissionais de enfermagem para trabalharem no setor de pediatria"
+    },
+    {
+      "slug": "isba-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O equivalente de 5 ml em gotas é:"
+    },
+    {
+      "slug": "itame-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-1",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Uma ampola de Gluconato de Cálcio 8%/10mL foi diluída em 50 mL de soro glicosado 5%. Se dessa solução, o paciente recebe"
+    },
+    {
+      "slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-2",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "R.J.S. deu entrada na Unidade de Pronto Atendimento com diagnóstico de exacerbação de asma, na prescrição médica foi sol"
+    },
+    {
+      "slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-4",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Foi prescrito 2000 ml de Soro Fisiológico 0,9%, para ser infundido por via endovenosa em 24 horas, nesse caso, o técnico"
+    },
+    {
+      "slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5",
+      "family": "conceito",
+      "pedagogical_branch": "calc_conceito",
+      "l3_decision": "ok_generico",
+      "is_strong_branch": false,
+      "instruction_preview": "Dentre as recomendações para o uso de hemocomponentes, nenhuma transfusão deve exceder o período de infusão de:"
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "A posologia de um determinado medicamento analgésico que é recomendada para crianças a partir de 6 meses é de 1 gota/Kg "
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-7",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O médico prescreveu para uma criança de 6 anos a administração de 10 ml de um determinado medicamento por via oral. Para"
+    },
+    {
+      "slug": "nao-informado-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Sabendo que a ampola tem apresentação comercial de 10 mg/2,5 mL e o técnico em enfermagem administrou, por via intramusc"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-1",
+      "family": "protocolo",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Paciente comparece à emergência com quadro de desidratação. Foi prescrita reposição hídrica e de eletrólitos em volume t"
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7",
+      "family": "conceito",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O médico prescreveu heparina sódica 8.000U via subcutânea de 12/12 horas. Porém, o medicamento disponível é em 10.000U/m"
+    },
+    {
+      "slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-8",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Uma paciente, com diagnóstico de infecção pélvica, precisa receber, a cada 4 horas, 1250 mg de ceftriaxone intravenoso. "
+    },
+    {
+      "slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "10 mg de dexametasona foram diluídas em 50 mL de soro fisiológico. Dessa solução, a prescrição médica é de infusão de, a"
+    },
+    {
+      "slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Ao consultar a prescrição médica, um técnico em enfermagem observou que estão prescritos 500 mL de SG a 10%. No entanto,"
+    },
+    {
+      "slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780000237780-2",
+      "family": "protocolo",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Caso clínico hipotético para a questão\nUm paciente chegou à unidade com queixa de dor de cabeça, tontura, náusea e estoc"
+    },
+    {
+      "slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Paciente idosa, sexo feminino, 67 anos, encontra-se internada na clínica médica devido infecção do trato respiratório. O"
+    },
+    {
+      "slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O cuidado a administração de medicamentos é de responsabilidade do técnico de enfermagem, analise as assertivas e assina"
+    },
+    {
+      "slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Para administrar um soro fisiológico de 0,9% de 1000ml em um período de 08 horas, o gotejamento em gotas/min. Será de:"
+    },
+    {
+      "slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-5",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "O profissional de enfermagem deve possui a competência técnica de realizar cálculos de medicação precisos a fim de garan"
+    },
+    {
+      "slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-6",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "A médica plantonista da Unidade de Terapia Intensiva solicitou a administração de 10 mg de dormonid em bolus em um pacie"
+    },
+    {
+      "slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7",
+      "family": "calc",
+      "pedagogical_branch": "calc_dose_equivalencia",
+      "l3_decision": "molde_redesign",
+      "is_strong_branch": true,
+      "instruction_preview": "Considere a correta sequência do preparo e da administração de uma dose da medicação metilprednisolona 5 mg (via endoven"
+    }
+  ]
+}

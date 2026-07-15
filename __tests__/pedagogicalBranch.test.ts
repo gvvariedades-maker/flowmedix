@@ -89,6 +89,34 @@ describe('pedagogicalBranch — Saúde Mental', () => {
   });
 });
 
+describe('pedagogicalBranch — Processo de Enfermagem / SAE', () => {
+  const subtopico = 'Processo de Enfermagem';
+
+  it('infere sae_documentacao para anotação/prontuário', () => {
+    const instruction =
+      'O registro adequado das informações em prontuários e documentos hospitalares é essencial.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sae_documentacao');
+    expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'sae_documentacao')).toBe(
+      'sae-documentation',
+    );
+  });
+
+  it('infere sae_etapas para 5 etapas SAE', () => {
+    const instruction =
+      'O Processo de Enfermagem pode ser definido como método de trabalho com cinco etapas integradas.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sae_etapas');
+    expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'sae_etapas')).toBe(
+      'sae-responsibility-matrix',
+    );
+  });
+
+  it('infere sae_exceto somente no enunciado EXCETO/INCORRETA', () => {
+    const instruction = 'Assinale a alternativa INCORRETA sobre o Processo de Enfermagem.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sae_exceto');
+    expect(getLayoutVariantForBranch(subtopico, 'danger_zone', 'sae_exceto')).toBe('norm-reveal');
+  });
+});
+
 describe('pedagogicalBranch — Sondas', () => {
   const subtopico = 'Instalação e Manejo de Sondas';
 
@@ -712,7 +740,7 @@ describe('pedagogicalBranch — Saúde da Mulher', () => {
       'puncao_flebite',
     );
     const design = getPresentationDesign(puncaoSubtopico, 'puncao_flebite');
-    expect(design?.conceptMap).toBe('iv-complication-orbit');
+    expect(design?.conceptMap).toBe('iv-complication-tissue-layers');
     expect(design?.goldenRule).toBe('iv-differential-board');
     expect(design?.logicFlow).toBe('iv-complication-tap-flow');
     expect(design?.dangerZone).toBe('iv-label-swap-trap');

@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T17:25:35.375Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g05",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 343
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 345
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 346
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 310
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 311
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 322
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 293
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 294
+    }
+  ]
+}

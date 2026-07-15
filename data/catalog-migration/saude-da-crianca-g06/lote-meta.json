@@ -1,0 +1,38 @@
+{
+  "lote": "saude-da-crianca-g06",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-15",
+  "subtopico": "Saúde da Criança",
+  "cluster": "Desidratação / diarreia aguda",
+  "pedagogical_branch_target": "crianca_desidratacao",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+  "golden_reference": "examples/questao-premium-cev-saude-crianca-desidratacao-vf.json",
+  "guideline": "lib/guidelines/saudeCrianca.ts (SAUDE_CRIANCA_MS)",
+  "slugs": [
+    "idib-enfermagem-saude-da-crianca-1778934936220-7",
+    "idib-enfermagem-saude-da-crianca-1778934936220-8",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-8",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-6"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=saude-da-crianca-g06 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/saude-da-crianca-g06/questions/",
+    "2. Âncora L6: igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+    "3. npm run audit:anchor-review -- --lote=saude-da-crianca-g06 --record-pass --reviewer=agent --skip-capture",
+    "4. npm run catalog:apply-lote -- --lote=saude-da-crianca-g06 --apply (só quando pedido)"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-crianca-g06.json"
+  }
+}

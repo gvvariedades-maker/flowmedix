@@ -35,6 +35,12 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'burn-trap-arena' ||
     layoutVariant === 'trabalho-pep-trap-arena' ||
     layoutVariant === 'respiratorio-spo2-trap-arena' ||
+    layoutVariant === 'mental-raps-trap-arena' ||
+    layoutVariant === 'mental-crisis-coercion-trap' ||
+    layoutVariant === 'peri-preop-trap-arena' ||
+    layoutVariant === 'peri-srpa-trap-arena' ||
+    layoutVariant === 'peri-protocol-trap-arena' ||
+    layoutVariant === 'peri-vf-trap-chips' ||
     layoutVariant === 'urgencias-rcp-trap-arena' ||
     layoutVariant === 'urgencias-trauma-trap-arena' ||
     layoutVariant === 'urgencias-stroke-trap-arena' ||
@@ -43,6 +49,7 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'urgencias-pediatric-trap-arena' ||
     layoutVariant === 'urgencias-manchester-trap' ||
     layoutVariant === 'itu-catheter-trap' ||
+    layoutVariant === 'biosseg-trap-chips' ||
     layoutVariant === 'iv-label-swap-trap' ||
     layoutVariant === 'iv-gauge-mismatch-trap' ||
     layoutVariant === 'iv-exceto-intruder-trap' ||

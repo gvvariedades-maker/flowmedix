@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-07-15T08:19:51.809Z",
+  "pacote_prefix": "processo-de-enfermagem",
+  "lotes": [
+    {
+      "lote": "processo-de-enfermagem-g01",
+      "count": 8
+    },
+    {
+      "lote": "processo-de-enfermagem-g02",
+      "count": 8
+    },
+    {
+      "lote": "processo-de-enfermagem-g03",
+      "count": 8
+    },
+    {
+      "lote": "processo-de-enfermagem-g04",
+      "count": 8
+    },
+    {
+      "lote": "processo-de-enfermagem-g05",
+      "count": 7
+    }
+  ],
+  "union_count": 39,
+  "registry_total_slugs": 39,
+  "match": true,
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1776056158507-0",
+    "ameosc-enfermagem-processo-de-enfermagem-1780001613305-5",
+    "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-6",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+    "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+    "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1776056129848-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-2",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-9",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+    "funatec-enfermagem-processo-de-enfermagem-1776055865890-3",
+    "funatec-enfermagem-processo-de-enfermagem-1776055865890-5",
+    "funatec-enfermagem-processo-de-enfermagem-1776055865890-6",
+    "funatec-enfermagem-processo-de-enfermagem-1776056173194-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011961798-0",
+    "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056149404-3",
+    "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-1",
+    "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-4",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-2",
+    "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934944659-8",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1776056140199-7",
+    "instituto-access-enfermagem-processo-de-enfermagem-1776056140199-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-4",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005320352-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1776056149404-6",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-2",
+    "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+    "ufmt-enfermagem-processo-de-enfermagem-1776055865890-2",
+    "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8"
+  ]
+}

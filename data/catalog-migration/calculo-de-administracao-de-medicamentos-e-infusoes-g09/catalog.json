@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T17:37:43.689Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g09",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "itame-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 279
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-2",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 280
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 281
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 282
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 283
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 284
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 285
+    },
+    {
+      "modulo_slug": "nao-informado-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 278
+    }
+  ]
+}

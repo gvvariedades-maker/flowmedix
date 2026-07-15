@@ -1,17 +1,66 @@
 {
-  "generated_at": "2026-07-13T17:08:24.649Z",
+  "generated_at": "2026-07-14T18:45:30.596Z",
   "lote": "vias-de-administracao-g19",
   "mode": "apply",
-  "total_files": 1,
-  "ok": 1,
+  "total_files": 8,
+  "ok": 8,
   "skipped": 0,
   "failed": 0,
   "applied_slugs": [
-    "cotec-fadenor-enfermagem-vias-de-administracao-1778968666352-3"
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968768987-2",
+    "contemax-enfermagem-vias-de-administracao-1778968598934-5",
+    "cotec-fadenor-enfermagem-vias-de-administracao-1778968666352-3",
+    "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+    "idecan-enfermagem-vias-de-administracao-1778712108887-6",
+    "idecan-enfermagem-vias-de-administracao-1778968997293-4",
+    "idecan-enfermagem-vias-de-administracao-1780066924385-0",
+    "instituto-consulplan-enfermagem-vias-de-administracao-1778968687469-8"
   ],
   "results": [
     {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968768987-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "contemax-enfermagem-vias-de-administracao-1778968598934-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
       "modulo_slug": "cotec-fadenor-enfermagem-vias-de-administracao-1778968666352-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778968997293-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1780066924385-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968687469-8",
       "status": "ok",
       "mode": "update",
       "detail": "conteudo_json aplicado"

@@ -121,6 +121,36 @@ export const SAUDE_MULHER_BRANCHES = [
 /** Ramos Saúde da Mulher com pacote bespoke 4/4 completo. */
 export const SAUDE_MULHER_BESPOKE_BRANCHES = [...SAUDE_MULHER_BRANCHES] as const;
 
+/** Ramos Saúde da Criança — regressão L3 (7 ramos bespoke 4/4). */
+export const CRIANCA_BRANCHES = [
+  'crianca_aleitamento_nutricao',
+  'crianca_triagem_neonatal',
+  'crianca_generico',
+  'crianca_desidratacao',
+  'crianca_aps_puericultura',
+  'crianca_neonatologia',
+  'crianca_desenvolvimento',
+] as const;
+
+/** Ramos Saúde da Criança com pacote bespoke 4/4 completo. */
+export const CRIANCA_BESPOKE_BRANCHES = [...CRIANCA_BRANCHES] as const;
+
+/** Ramos Processamento / CME — regressão L3 (5 ramos). */
+export const PROCESSAMENTO_BRANCHES = [
+  'cme_preparo_limpeza',
+  'cme_autoclave_metodos',
+  'cme_processamento_conceito',
+  'cme_vf_ce',
+  'cme_generico',
+] as const;
+
+/** Ramos Processamento com pacote reference_table / compare premium. */
+export const PROCESSAMENTO_BESPOKE_BRANCHES = ['cme_autoclave_metodos', 'cme_vf_ce'] as const;
+
+/** Ramos CME — alias semântico (mesmos 5 ramos que Processamento). */
+export const CME_BRANCHES = [...PROCESSAMENTO_BRANCHES] as const;
+export const CME_BESPOKE_BRANCHES = [...PROCESSAMENTO_BESPOKE_BRANCHES] as const;
+
 /** Ramos Farmacodinâmica — regressão L3 (clínico bespoke + PK/PD VF + genérico). */
 export const FARMACO_BRANCHES = [
   'farmaco_clinico_protocolo',
@@ -133,6 +163,12 @@ export const FARMACO_BESPOKE_BRANCHES = [
   'farmaco_clinico_protocolo',
   'farmaco_pk_pd_vf',
 ] as const;
+
+/** Ramos Cálculo — regressão L3 (dose bespoke + conceito genérico; calc_generico cauda vazia no pacote). */
+export const CALCULO_BRANCHES = ['calc_dose_equivalencia', 'calc_conceito'] as const;
+
+/** Ramo Cálculo com pacote bespoke dose-* 4/4. */
+export const CALCULO_BESPOKE_BRANCHES = ['calc_dose_equivalencia'] as const;
 
 /** Ramos Doenças Respiratórias Crônicas — regressão L3 (5 ramos). */
 export const RESPIRATORIO_BRANCHES = [
@@ -149,12 +185,127 @@ export const RESPIRATORIO_BESPOKE_BRANCHES = [
   'respiratorio_dpoc_oxigenio',
 ] as const;
 
+/** Ramos Infecções / Biossegurança — regressão L3 (2 ramos). */
+export const BIOSSEG_BRANCHES = ['biosseg_iras_itu_cateter', 'biosseg_generico'] as const;
+
+/** Ramos com molde bespoke 4/4 (ITU + genérico IRAS/precauções). */
+export const BIOSSEG_BESPOKE_BRANCHES = [...BIOSSEG_BRANCHES] as const;
+
+/** Ramos Doenças Bacterianas — regressão L3 (3 ramos). */
+export const BACTERIANAS_BRANCHES = [
+  'bacterianas_agente_etiologico',
+  'bacterianas_tuberculose',
+  'bacterianas_generico',
+] as const;
+
+/** Ramos com molde bespoke 4/4 (etiologia + TB vigilância). */
+export const BACTERIANAS_BESPOKE_BRANCHES = [
+  'bacterianas_agente_etiologico',
+  'bacterianas_tuberculose',
+] as const;
+
+/** Ramos Assistência Perioperatória — regressão L3 (4 bespoke + cauda). */
+export const PERIOPERATORIA_BRANCHES = [
+  'perioperatorio_pre_operatorio',
+  'perioperatorio_pos_operatorio',
+  'perioperatorio_protocolo',
+  'perioperatorio_vf',
+  'perioperatorio_isc',
+  'perioperatorio_generico',
+] as const;
+
+/** Ramos Perioperatória com pacote bespoke 4/4 (ramos fortes). */
+export const PERIOPERATORIA_BESPOKE_BRANCHES = [
+  'perioperatorio_pre_operatorio',
+  'perioperatorio_pos_operatorio',
+  'perioperatorio_protocolo',
+  'perioperatorio_vf',
+] as const;
+
+/** Ramos Saúde Mental — regressão L3 (6 ramos). */
+export const MENTAL_BRANCHES = [
+  'mental_raps_legis',
+  'mental_crise_caps',
+  'mental_dependencia_tabagismo',
+  'mental_depressao',
+  'mental_aps_acolhimento',
+  'mental_generico',
+] as const;
+
+/** Ramos Saúde Mental com molde bespoke (crise SAE-tap + legis bridge). */
+export const MENTAL_BESPOKE_BRANCHES = ['mental_raps_legis', 'mental_crise_caps'] as const;
+
+/** Ramos Processo de Enfermagem / SAE — regressão L3 (4 ramos). */
+export const SAE_BRANCHES = [
+  'sae_documentacao',
+  'sae_etapas',
+  'sae_exceto',
+  'sae_generico',
+] as const;
+
+/** Ramos SAE com pacote bespoke 4/4 (molde_redesign — não ok_existente). */
+export const SAE_BESPOKE_BRANCHES = [
+  'sae_documentacao',
+  'sae_etapas',
+  'sae_exceto',
+  'sae_generico',
+] as const;
+
+/** Ramos Feridas e Queimaduras — regressão L3 (8 ramos). */
+export const FERIDAS_BRANCHES = [
+  'feridas_grau_profundidade',
+  'feridas_scq_calculo',
+  'feridas_scq_regra9',
+  'feridas_grande_queimado',
+  'feridas_atendimento_inicial',
+  'feridas_classificacao',
+  'feridas_cicatrizacao',
+  'feridas_curativo_tipo',
+] as const;
+
+/** Ramos Feridas com moldes burn-* bespoke (depth-deck + rule-nine-board). */
+export const FERIDAS_BESPOKE_BRANCHES = [
+  'feridas_grau_profundidade',
+  'feridas_scq_calculo',
+  'feridas_scq_regra9',
+  'feridas_grande_queimado',
+  'feridas_atendimento_inicial',
+] as const;
+
 /** Ramos História da Enfermagem — regressão L3 (4 ramos). */
 export const HISTORIA_BRANCHES = [
   'historia_nightingale',
   'historia_humanizacao',
   'historia_comunicacao_etica',
   'historia_generico',
+] as const;
+
+/** Ramos Enfermagem do Trabalho — regressão L3 (5 ramos). */
+export const TRABALHO_BRANCHES = [
+  'trabalho_vf_nr32',
+  'trabalho_pep_trap',
+  'trabalho_nr15_reference',
+  'trabalho_ergonomia',
+  'trabalho_generico',
+] as const;
+
+/** Ramos Trabalho com pacote bespoke NR-32 4/4. */
+export const TRABALHO_BESPOKE_BRANCHES = ['trabalho_vf_nr32', 'trabalho_pep_trap'] as const;
+
+/** Ramos Segurança do Paciente — regressão L3 (5 ramos). */
+export const SEGURANCA_BRANCHES = [
+  'sp_identificacao',
+  'sp_prevencao_quedas',
+  'sp_eventos_adversos',
+  'sp_metas_internacionais',
+  'sp_generico',
+] as const;
+
+/** Ramos Segurança com pacote bespoke NSP 4/4 (ramos fortes ≥5 slugs). */
+export const SEGURANCA_BESPOKE_BRANCHES = [
+  'sp_identificacao',
+  'sp_prevencao_quedas',
+  'sp_eventos_adversos',
 ] as const;
 
 /** Ramos História com concept_map bridge (marcos / ética COFEN). */

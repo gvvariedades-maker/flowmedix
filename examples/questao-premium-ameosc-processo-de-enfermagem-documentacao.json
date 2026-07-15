@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "Ameosc",
+    "orgao": "Pref Palma Sola",
+    "prova": "Tec Enf (Palma Sola)",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Processo de Enfermagem",
+    "pedagogical_branch": "sae_documentacao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-15",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "Registro de enfermagem — COFEN 358/2009",
+      "exam_vs_current": "none",
+      "catalog_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7"
+    },
+    "sources": [
+      {
+        "id": "sae-cofen-358",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Processo de Enfermagem e SAE",
+        "year": 2009,
+        "url": "https://www.cofen.gov.br/",
+        "covers": [
+          "anotação de enfermagem",
+          "identificação no registro",
+          "integridade do registro"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O registro adequado das informações em prontuários e documentos hospitalares é essencial para garantir a continuidade do cuidado ao paciente e a segurança das\ninformações. Acerca do assunto, marque V para as afirmativas verdadeiras e F para as falsas.\n(__)O prontuário do paciente pode ser alterado livremente pelo profissional de saúde caso haja necessidade de correção de informações previamente registradas.\n(__)As anotações de enfermagem devem ser objetivas, claras e registradas no momento em que o cuidado é realizado, garantindo a veracidade das informações.\n(__)O preenchimento correto dos relatórios e boletins diários é fundamental para a comunicação entre a equipe de saúde e a tomada de decisões clínicas.\n(__)Relatórios de enfermagem não precisam conter a identificação do profissional responsável, desde que a equipe esteja ciente da autoria da anotação.\nA sequência está correta em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "V − F − F − F.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "F − F − V − V.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "V − V − V − V.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "F − V − V − F.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Registro em prontuário — V/F",
+      "chip_label": "DOCUMENTAÇÃO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "items": [
+        {
+          "label": "Tema",
+          "detail": "Integridade, veracidade e identificação no registro de enfermagem.",
+          "icon": "Target"
+        },
+        {
+          "label": "Item 1 — alteração livre",
+          "detail": "Prontuário não se corrige “livremente” — exige protocolo de retificação.",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Item 2 — objetividade",
+          "detail": "Anotação objetiva no momento do cuidado — veracidade.",
+          "icon": "CheckCircle"
+        },
+        {
+          "label": "Item 3 — comunicação",
+          "detail": "Relatórios e boletins integram a comunicação interprofissional.",
+          "icon": "MessageSquare"
+        },
+        {
+          "label": "Item 4 — identificação",
+          "detail": "Autoria deve constar no registro — não basta “a equipe saber”.",
+          "icon": "Stamp"
+        },
+        {
+          "label": "COFEN 358",
+          "detail": "Base normativa para julgar cada afirmativa V ou F.",
+          "icon": "Scale"
+        }
+      ],
+      "footer_rule": "Julgue item a item antes de montar a sequência V-F"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Raciocínio clínico — passo a passo",
+      "chip_label": "DECISÃO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Ler o comando: julgar cada afirmativa V ou F antes de montar a sequência.",
+        "Tema: O registro adequado das informações em prontuários e documentos hospitalares é essencial para garantir a continuidade do",
+        "Item 1: “O prontuário do paciente pode ser alterado livremente pelo profissi…” → F (viola integridade/identificação/veracidade).",
+        "Item 2: “As anotações de enfermagem devem ser objetivas, claras e registrada…” → V (alinhado à COFEN 358).",
+        "Item 3: “O preenchimento correto dos relatórios e boletins diários é fundame…” → V (alinhado à COFEN 358).",
+        "Item 4: “Relatórios de enfermagem não precisam conter a identificação do pro…” → F (viola integridade/identificação/veracidade).",
+        "Montar sequência: F − V − V − F.",
+        "Eliminar letra A: sequência não reflete o julgamento V/F item a item.",
+        "Eliminar letra B: sequência não reflete o julgamento V/F item a item.",
+        "Eliminar letra C: sequência não reflete o julgamento V/F item a item.",
+        "Marcar letra D: única sequência coerente com Res. COFEN 358/2009.",
+        "Fixação: em V/F de registro — teste identificação, integridade, veracidade e cronologia antes de escolher a letra."
+      ],
+      "footer_rule": "COFEN 358/2009 + Lei 7.498/86 quando couber privativa"
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "slide_title": "Referência — registro de enfermagem",
+      "chip_label": "NORMA",
+      "content": "ANOTAÇÃO DE ENFERMAGEM — COFEN 358/2009",
+      "rows": [
+        {
+          "label": "Definição",
+          "value": "Registro das ações executadas pela equipe de enfermagem",
+          "badge": "info"
+        },
+        {
+          "label": "Identificação",
+          "value": "Carimbo, nome legível e assinatura obrigatórios",
+          "badge": "hot"
+        },
+        {
+          "label": "Integridade",
+          "value": "Permanente, legível, sem rasura indevida",
+          "badge": "warn"
+        },
+        {
+          "label": "Veracidade",
+          "value": "Contemporâneo ao cuidado — sem registro fictício",
+          "badge": "ok"
+        },
+        {
+          "label": "Prontuário",
+          "value": "Documento compartilhado da equipe multiprofissional",
+          "badge": "info"
+        },
+        {
+          "label": "Privativa",
+          "value": "Diagnóstico + evolução/avaliação → enfermeiro",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Mnemônico DEA: Diagnóstico + Evolução/Avaliação = Enfermeiro"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas desta questão",
+      "chip_label": "PEGADINHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "content": "PEGADINHAS — DOCUMENTACAO",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A",
+          "detail": "V − F − F − F.",
+          "correct": "critério da letra A não fecha com COFEN 358 — por isso não é o gabarito (D)."
+        },
+        {
+          "label": "Letra B",
+          "detail": "F − F − V − V.",
+          "correct": "critério da letra B não fecha com COFEN 358 — por isso não é o gabarito (D)."
+        },
+        {
+          "label": "Letra C",
+          "detail": "V − V − V − V.",
+          "correct": "critério da letra C não fecha com COFEN 358 — por isso não é o gabarito (D)."
+        }
+      ],
+      "footer_rule": "Cada distrator merece justificativa única — não recicle texto do gabarito"
+    }
+  ],
+  "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7"
+}

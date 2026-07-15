@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-07-15T09:27:26.388Z",
+  "lote": "processo-de-enfermagem-g06",
+  "mode": "apply",
+  "total_files": 12,
+  "ok": 12,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-0",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-6",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-1",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010566816-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-8",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006486032-4",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-5",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-4",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006486032-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

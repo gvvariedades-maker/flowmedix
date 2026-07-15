@@ -1,0 +1,25 @@
+{
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair",
+  "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+  "handcraft_batch": "g12-repair",
+  "slug_count": 3,
+  "status": "applied",
+  "note": "Repair — slugs excluded from g01–g11 union",
+  "validate_command": "npm run audit:questao-readiness -- --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair --strict-v2-pedagogy",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair --from-manifest=data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair/manifest.json",
+    "npx tsx scripts/handcraft-calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair.ts",
+    "npm run audit:questao-readiness -- --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair --strict-v2-pedagogy",
+    "npm run catalog:apply-lote -- --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair --dry-run"
+  ],
+  "anchor_slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-4",
+  "golden_reference": "examples/questao-premium-idecan-calculo-equivalencias-gotas.json",
+  "mode": "handcraft-golden-v1",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "handcraft-qc",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair.json"
+  }
+}

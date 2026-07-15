@@ -236,10 +236,12 @@ export function scanLoteQuestions(lote: string): L3MoldGapSlugRow[] {
   return readdirSync(dir)
     .filter((f) => f.endsWith('.json'))
     .map((file) => {
-      const payload = readJson<QuestaoPayload>(resolve(dir, file))!;
+      const payload = readJson<QuestaoPayload>(resolve(dir, file));
+      if (!payload) return null;
       const slug = payload.modulo_slug ?? file.replace(/\.json$/, '');
       return auditQuestaoPayload(slug, lote, payload);
-    });
+    })
+    .filter((row): row is L3MoldGapSlugRow => row !== null);
 }
 
 function listCompletoLotes(): string[] {

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+  "anchors": {
+    "calc_dose_equivalencia": {
+      "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+      "file": "examples/questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "family": "calc",
+      "note": "Equivalências 20/60/3 + U-100 — molde dose-* 4/4"
+    },
+    "calc_conceito": {
+      "slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5",
+      "file": "examples/questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "family": "conceito",
+      "note": "ok_generico — compare semântico"
+    }
+  }
+}

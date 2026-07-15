@@ -1,0 +1,144 @@
+{
+  "generated_at": "2026-07-15T18:06:25.460Z",
+  "pacote_prefix": "calculo-de-administracao-de-medicamentos-e-infusoes",
+  "lotes": [
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g01",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g02",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g03",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g04",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g05",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g06",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g07",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g08",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g09",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g10",
+      "count": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g11",
+      "count": 5
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair",
+      "count": 3
+    }
+  ],
+  "union_count": 85,
+  "registry_total_slugs": 85,
+  "match": true,
+  "slugs": [
+    "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+    "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+    "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+    "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+    "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-8",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-0",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-1",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-2",
+    "avancasp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-7",
+    "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-8",
+    "cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-4",
+    "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-4",
+    "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-7",
+    "cetrede-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-1",
+    "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-2",
+    "cogeps-unioeste-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-3",
+    "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-3",
+    "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-4",
+    "coseac-uff-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-5",
+    "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-1",
+    "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-1",
+    "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-0",
+    "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-1",
+    "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-2",
+    "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-5",
+    "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-6",
+    "fauel-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-2",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-3",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-4",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-3",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-4",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-3",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-5",
+    "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-6",
+    "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-5",
+    "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-6",
+    "fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-0",
+    "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-6",
+    "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-7",
+    "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-8",
+    "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-0",
+    "fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-6",
+    "fundep-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-3",
+    "fundep-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-7",
+    "iaupe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-2",
+    "ibade-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-8",
+    "ibgp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-2",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-0",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-1",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-6",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-7",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-8",
+    "idecan-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-8",
+    "idib-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778934863952-5",
+    "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-1",
+    "imparh-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-2",
+    "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-3",
+    "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-4",
+    "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-5",
+    "instituto-aocp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-2",
+    "isba-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-0",
+    "itame-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-1",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-2",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-4",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5",
+    "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-6",
+    "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-7",
+    "nao-informado-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-0",
+    "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-1",
+    "objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7",
+    "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-8",
+    "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-0",
+    "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-1",
+    "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7",
+    "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780000237780-2",
+    "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0",
+    "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4",
+    "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-5",
+    "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-5",
+    "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-6",
+    "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7"
+  ]
+}

@@ -19,11 +19,12 @@
     "npm run catalog:patch-pedagogical-branch -- --lote=puncao-venosa-e-cuidados-com-cateteres-g01 --reconcile-branch --apply"
   ],
   "anchor_second_review": {
-    "reviewed_at": "2026-07-11",
-    "reviewer": "agent",
-    "method": "agent",
+    "reviewed_at": "2026-07-14",
+    "reviewer": "handcraft-qc",
+    "method": "both",
     "status": "pass",
-    "artifact": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g01.json"
+    "artifact": "artifacts/anchor-review/puncao-venosa-e-cuidados-com-cateteres-g01.json",
+    "notes": "Onda 2 L6 humano — flebite/complicações; PNGs questao-review OK (captures prévios + revalidação checklist 15/15)."
   },
   "applied_at": "2026-07-11"
 }

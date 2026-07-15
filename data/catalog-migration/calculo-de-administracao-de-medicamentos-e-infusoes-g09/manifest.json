@@ -1,0 +1,18 @@
+{
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g09",
+  "exported_at": "2026-07-15T17:37:43.689Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g09/manifest.json"
+  },
+  "slugs": [
+    "itame-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-1",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-2",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-4",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5",
+    "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-6",
+    "lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-7",
+    "nao-informado-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-0"
+  ]
+}

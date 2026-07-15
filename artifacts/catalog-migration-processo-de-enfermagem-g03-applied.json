@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-15T08:19:09.128Z",
+  "lote": "processo-de-enfermagem-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-6",
+    "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+    "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+    "ufmt-enfermagem-processo-de-enfermagem-1776055865890-2",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-processo-de-enfermagem-1776055865890-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

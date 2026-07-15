@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "Copese-Uft",
+    "orgao": "Pref Palmas",
+    "prova": "TEnf",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Processo de Enfermagem",
+    "pedagogical_branch": "sae_exceto",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-07-15",
+      "reviewer": "handcraft",
+      "guideline_snapshot": "Res. COFEN 358/2009 · 5 etapas SAE · pegadinha privativa × técnico · EXCETO — privativa enfermeiro × anotação técnico",
+      "exam_vs_current": "none",
+      "catalog_slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8"
+    },
+    "sources": [
+      {
+        "id": "sae-cofen-358",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Processo de Enfermagem e SAE",
+        "year": 2009,
+        "url": "https://www.cofen.gov.br/",
+        "covers": [
+          "anotação de enfermagem",
+          "avaliação de enfermagem",
+          "coleta de dados",
+          "implementação",
+          "planejamento",
+          "SAE — 5 etapas",
+          "competências por categoria",
+          "pegadinha EXCETO"
+        ]
+      },
+      {
+        "id": "lei-7498-86",
+        "tier": "A",
+        "issuer": "Presidência da República",
+        "title": "Lei nº 7.498/86 — exercício profissional de enfermagem (Art. 11)",
+        "year": 2009,
+        "covers": [
+          "Art. 11 — privativas do enfermeiro",
+          "competências técnico/auxiliar"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O Processo de Enfermagem (PE) pode ser definido como método de trabalho que orienta o cuidado profissional de enfermagem e a documentação da prática\nprofissional, promovendo assim o cuidado seguro.\nAinda sobre a afirmação apresentada, assinale a alternativa INCORRETA.",
+    "options": [
+      {
+        "id": "A",
+        "text": "O PE é constituído por cinco etapas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Toda a equipe de enfermagem tem um papel específico no PE.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O técnico de enfermagem participa da implementação das intervenções de enfermagem e da avaliação.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "A coleta de dados, diagnósticos de enfermagem, planejamento de metas e intervenções, implementação das intervenções de enfermagem e avaliação de enfermagem são as etapas do PE.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "De acordo com o Art. 5º da Resolução COFEN 358/2009 o técnico e o auxiliar de Enfermagem participam da execução do PE, naquilo que lhes couber, sob a supervisão e orientação do Enfermeiro.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "SAE — pegadinha EXCETO",
+      "chip_label": "EXCETO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "O Processo de Enfermagem (PE) pode ser definido como método de trabalho que orienta o cuidado profissional de enfermagem",
+          "icon": "Target"
+        },
+        {
+          "label": "Lógica EXCETO",
+          "detail": "Três alternativas corretas + uma exceção — não inverta o raciocínio.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Anotação × evolução",
+          "detail": "Técnico anota cuidado; evolução reflexiva é camada distinta.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Privativa",
+          "detail": "Diagnóstico, prescrição e evolução — enfermeiro (Lei 7.498/86).",
+          "icon": "UserCheck"
+        },
+        {
+          "label": "Art. 5º COFEN 358",
+          "detail": "Técnico/auxiliar executam o que lhes couber, supervisionados.",
+          "icon": "Scale"
+        }
+      ],
+      "footer_rule": "EXCETO: valide cada letra como conduta correta antes de achar a exceção"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Raciocínio clínico — passo a passo",
+      "chip_label": "DECISÃO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Comando INCORRETA sobre o Processo de Enfermagem — uma alternativa falsa entre quatro verdadeiras.",
+        "Confirmar A: PE tem 5 etapas integradas (COFEN 358) — correta.",
+        "Confirmar B: cada categoria tem papel no PE — correta.",
+        "Confirmar D: lista completa das 5 etapas — correta.",
+        "Confirmar E: Art. 5º COFEN 358 — técnico/auxiliar sob supervisão — correta.",
+        "Testar C: “técnico participa da implementação e da avaliação” — avaliação de enfermagem é privativa do enfermeiro.",
+        "Letra C é a INCORRETA: técnico implementa e anota; não realiza avaliação privativa.",
+        "Marcar letra C.",
+        "Fixação: implementação = técnico pode; avaliação/evolução = enfermeiro."
+      ],
+      "footer_rule": "COFEN 358/2009 + Lei 7.498/86 quando couber privativa"
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "slide_title": "EXCETO — privativa × técnico",
+      "chip_label": "PEGADINHA",
+      "content": "ANOTAÇÃO DO TÉCNICO — O QUE NÃO ENTRA",
+      "rows": [
+        {
+          "label": "Pode anotar",
+          "value": "Cuidados executados, sinais observados, intercorrências",
+          "badge": "ok"
+        },
+        {
+          "label": "Não anota",
+          "value": "Evolução reflexiva, diagnóstico, anamnese completa formal",
+          "badge": "hot"
+        },
+        {
+          "label": "Enfermeiro",
+          "value": "Diagnóstico, prescrição, evolução/avaliação",
+          "badge": "warn"
+        },
+        {
+          "label": "Lei 7.498/86",
+          "value": "Art. 11 — privativas do enfermeiro",
+          "badge": "info"
+        },
+        {
+          "label": "EXCETO na prova",
+          "value": "Três corretas + uma que extrapola competência do técnico",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Na dúvida: se exige julgamento clínico privativo → é exceção na anotação do técnico"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas desta questão",
+      "chip_label": "PEGADINHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "content": "PEGADINHAS — EXCETO",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — cinco etapas",
+          "detail": "Afirmativa correta sobre estrutura do PE.",
+          "correct": "PE = coleta, diagnóstico, planejamento, implementação, avaliação — manter como distrator válido."
+        },
+        {
+          "label": "Letra B — papel da equipe",
+          "detail": "Cada profissional tem função no PE.",
+          "correct": "Verdadeira: equipe participa conforme competência — não é o gabarito INCORRETA."
+        },
+        {
+          "label": "Letra C — técnico na avaliação",
+          "detail": "Pegadinha clássica: mistura implementação com avaliação privativa.",
+          "correct": "INCORRETA: avaliação de enfermagem é privativa do enfermeiro — técnico não “avalia” o plano."
+        },
+        {
+          "label": "Letra D — etapas listadas",
+          "detail": "Descrição completa e correta das etapas.",
+          "correct": "Verdadeira — distrator que confunde por ser texto longo."
+        },
+        {
+          "label": "Letra E — Art. 5º",
+          "detail": "Cita a resolução corretamente.",
+          "correct": "Verdadeira: execução supervisionada conforme Art. 5º da Res. COFEN 358/2009."
+        }
+      ],
+      "footer_rule": "Cada distrator merece justificativa única — não recicle texto do gabarito"
+    }
+  ],
+  "modulo_slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8"
+}

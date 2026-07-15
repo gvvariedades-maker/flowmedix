@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-07-15T18:02:17.696Z",
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g11",
+  "mode": "dry-run",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [],
+  "results": [
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

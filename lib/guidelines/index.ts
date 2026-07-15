@@ -24,6 +24,7 @@ import { PROMOCAO_SAUDE_SUS } from '@/lib/guidelines/promocaoSaude';
 import { RESPIRATORIO_CRONICO_MS } from '@/lib/guidelines/respiratorioCronico';
 import { SAUDE_ADOLESCENTE_MS } from '@/lib/guidelines/saudeAdolescente';
 import { SAUDE_MENTAL_MS } from '@/lib/guidelines/saudeMental';
+import { SEGURANCA_PACIENTE_PNSP } from '@/lib/guidelines/segurancaPaciente';
 import { PNI_CALENDARIO_2025 } from '@/lib/guidelines/pniCalendario';
 import { PNI_INTERVALOS_2025 } from '@/lib/guidelines/pni';
 import { POTTER_PERRY_FUNDAMENTOS_11ED } from '@/lib/guidelines/potterPerryFundamentos';
@@ -79,6 +80,7 @@ export { MOBILIZACAO_POSICIONAMENTO } from '@/lib/guidelines/mobilizacaoPosicion
 export { ATENCAO_BASICA_PNAB } from '@/lib/guidelines/atencaoBasica';
 export { RESPIRATORIO_CRONICO_MS } from '@/lib/guidelines/respiratorioCronico';
 export { SAUDE_MENTAL_MS } from '@/lib/guidelines/saudeMental';
+export { SEGURANCA_PACIENTE_PNSP } from '@/lib/guidelines/segurancaPaciente';
 
 /** Índice de tabelas oficiais — builders só devem usar entradas deste mapa. */
 export const GUIDELINE_TABLES: Record<string, GuidelineTable> = {
@@ -110,6 +112,7 @@ export const GUIDELINE_TABLES: Record<string, GuidelineTable> = {
   [ATENCAO_BASICA_PNAB.id]: ATENCAO_BASICA_PNAB,
   [RESPIRATORIO_CRONICO_MS.id]: RESPIRATORIO_CRONICO_MS,
   [SAUDE_MENTAL_MS.id]: SAUDE_MENTAL_MS,
+  [SEGURANCA_PACIENTE_PNSP.id]: SEGURANCA_PACIENTE_PNSP,
   [PROMOCAO_SAUDE_SUS.id]: PROMOCAO_SAUDE_SUS,
   [ENFERMAGEM_TRABALHO_NR32.id]: ENFERMAGEM_TRABALHO_NR32,
   [SAUDE_ADOLESCENTE_MS.id]: SAUDE_ADOLESCENTE_MS,
@@ -146,7 +149,7 @@ export const SUBTOPICO_GUIDELINE_IDS: Record<string, string[]> = {
   'Processo de Enfermagem': [SAE_COFEN_358.id],
   'Medidas de Prevenção e Precaução de Contato': [BIOSSEGURANCA_ANVISA.id],
   'Infecções no Contexto da Biossegurança': [BIOSSEGURANCA_ANVISA.id],
-  'Segurança do Paciente': [BIOSSEGURANCA_ANVISA.id],
+  'Segurança do Paciente': [SEGURANCA_PACIENTE_PNSP.id, BIOSSEGURANCA_ANVISA.id],
   'Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)': [
     DOENCAS_VIRAIS_MS.id,
     PNI_CALENDARIO_2025.id,

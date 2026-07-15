@@ -30,6 +30,7 @@ import {
   loteQuestionsDir,
   questionFilePath,
 } from '@/lib/catalogMigration/paths';
+import { unwrapCatalogPayload } from '@/lib/catalogMigration/unwrapCatalogPayload';
 import { validateAndNormalizeQuestao } from '@/lib/catalogMigration/validatePayload';
 
 const PAGE_SIZE = 200;
@@ -175,7 +176,7 @@ async function main() {
       continue;
     }
 
-    const validated = validateAndNormalizeQuestao(slug, data.conteudo_json);
+    const validated = validateAndNormalizeQuestao(slug, unwrapCatalogPayload(data.conteudo_json));
     if (!validated.ok) {
       console.warn(`[catalog:export-lote] FAIL ${slug}:`, validated.reason);
       fail += 1;

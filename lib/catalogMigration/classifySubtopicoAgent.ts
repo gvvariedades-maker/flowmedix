@@ -489,6 +489,23 @@ export function classifySubtopicoAgent(input: AgentClassifyInput): SubtopicoInfe
     };
   }
 
+  // Slug legado processo-de-enfermagem com conteúdo de vias (mis-tag de URL)
+  if (
+    /processo-de-enfermagem/.test(slug) &&
+    /via intramuscular|via intrad[eé]rmica|via subcut[aâ]nea|vias de administra|administra[cç][aã]o de medic|intravenosa|endovenosa|dorsogl[uú]tea|deltoide|ventroglute/i.test(
+      blob,
+    ) &&
+    !isSaeCore(blob)
+  ) {
+    return {
+      suggested_subtopico: 'Vias de Administração',
+      confidence: 0.91,
+      rationale: 'Agente: slug processo-de-enfermagem com enunciado de vias/IM/ID — mover para Vias',
+      keep_current: false,
+      source: 'agent',
+    };
+  }
+
   // Segurança do Paciente bucket mas slug é processo-de-enfermagem com SAE
   if (
     current === 'Segurança do Paciente' &&

@@ -1,0 +1,33 @@
+{
+  "subtopico": "Saúde da Criança",
+  "pacote_prefix": "saude-da-crianca",
+  "exported_at": "2026-07-15",
+  "total_slugs": 62,
+  "strong_threshold": 7,
+  "strong_branches": [
+    "crianca_aleitamento_nutricao",
+    "crianca_triagem_neonatal",
+    "crianca_generico",
+    "crianca_desidratacao",
+    "crianca_aps_puericultura"
+  ],
+  "bespoke_branches": [
+    "crianca_aleitamento_nutricao",
+    "crianca_triagem_neonatal",
+    "crianca_generico",
+    "crianca_desidratacao",
+    "crianca_aps_puericultura",
+    "crianca_neonatologia",
+    "crianca_desenvolvimento"
+  ],
+  "golden_anchors": [
+    "examples/questao-premium-cpcon-saude-crianca-aleitamento-vf.json",
+    "examples/questao-premium-cpcon-saude-crianca-triagem-neonatal-vf.json",
+    "examples/questao-premium-funcern-saude-crianca-generico-hub.json",
+    "examples/questao-premium-cev-saude-crianca-desidratacao-vf.json",
+    "examples/questao-premium-consulplan-saude-crianca-puericultura-vf.json",
+    "examples/questao-premium-idecan-saude-crianca-neonatologia-vf.json",
+    "examples/questao-premium-cpcon-saude-crianca-desenvolvimento-vf.json"
+  ],
+  "lote_plan": "scripts/plan-saude-da-crianca-batches.ts → g01-g08"
+}

@@ -1,0 +1,30 @@
+{
+    "policy":  "onda_2_pedagogica",
+    "divergence_human":  4,
+    "slugs":  [
+                  "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+                  "avancasp-enfermagem-vias-de-administracao-1776056391403-1",
+                  "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-1",
+                  "cpcon-uepb-enfermagem-vias-de-administracao-1778968687469-2",
+                  "fgv-enfermagem-vias-de-administracao-1778968968468-0",
+                  "ibade-enfermagem-vias-de-administracao-1778968862077-5",
+                  "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-6",
+                  "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-3",
+                  "funatec-enfermagem-vias-de-administracao-1776056418941-3",
+                  "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-3",
+                  "fcc-enfermagem-vias-de-administracao-1776056418941-0",
+                  "fepese-enfermagem-vias-de-administracao-1778968997293-1",
+                  "maranatha-assessoria-enfermagem-vias-de-administracao-1776056348175-4",
+                  "omni-enfermagem-vias-de-administracao-1778969007166-1",
+                  "cotec-fadenor-enfermagem-vias-de-administracao-1778968666352-3",
+                  "agirh-enfermagem-vias-de-administracao-1778968787431-0",
+                  "ameosc-enfermagem-vias-de-administracao-1778968968468-5",
+                  "sc-treinamentos-enfermagem-vias-de-administracao-1778968666352-5",
+                  "vunesp-enfermagem-vias-de-administracao-1776056366158-8"
+              ],
+    "human_total":  19,
+    "subtopico":  "Vias de Administra��o",
+    "generated_at":  "2026-07-14T15:40:37.7963559-03:00",
+    "player_captures":  19,
+    "medio_sample":  15
+}

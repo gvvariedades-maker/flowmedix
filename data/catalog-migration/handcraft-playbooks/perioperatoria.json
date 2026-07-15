@@ -22,7 +22,7 @@
     {
       "id": "perioperatorio_pos_operatorio",
       "when": "Pós-operatório, SRPA, anestesia regional, bloqueio, EXCETO de conduta, analgesia, retenção urinária",
-      "mold": "genérico morphological · reference_table · vertical · compare",
+      "mold": "peri-srpa-monitor-deck · peri-aldrete-board · peri-srpa-decision-tap · peri-srpa-trap-arena",
       "anchors": [
         "examples/questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
         "examples/questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json"
@@ -31,13 +31,13 @@
     {
       "id": "perioperatorio_pre_operatorio",
       "when": "Pré-operatório, preparo, jejum, tricotomia, orientação",
-      "mold": "genérico",
+      "mold": "peri-preop-phase-deck · peri-preop-prep-board · peri-preop-decision-tap · peri-preop-trap-arena",
       "anchors": ["examples/questao-premium-avancasp-perioperatoria-pre-operatorio.json"]
     },
     {
       "id": "perioperatorio_protocolo",
       "when": "Protocolo, sequência, checklist, cirurgia segura, CDC",
-      "mold": "genérico",
+      "mold": "peri-protocol-checklist-deck · peri-protocol-reference-board · peri-protocol-tap-flow · peri-protocol-trap-arena",
       "anchors": ["examples/questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json"]
     },
     {
@@ -49,7 +49,7 @@
     {
       "id": "perioperatorio_vf",
       "when": "Certo ou errado, I/II/III, assertivas C/E",
-      "mold": "genérico",
+      "mold": "peri-vf-assertions-deck · peri-vf-reference-board · peri-vf-juggle-tap · peri-vf-trap-chips",
       "anchors": ["examples/questao-premium-idecan-srpa-curativo-cpd-ce.json"]
     },
     {

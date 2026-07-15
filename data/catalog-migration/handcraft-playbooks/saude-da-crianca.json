@@ -1,0 +1,84 @@
+{
+  "version": 2,
+  "subtopico": "Saúde da Criança",
+  "pacote_prefix": "saude-da-crianca",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-saude-crianca-*.json",
+  "guideline": "lib/guidelines/saudeCrianca.ts",
+  "handcraft_meta": "data/catalog-migration/saude-da-crianca-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/saude-da-crianca-topic-cluster-report.json",
+  "l3_brief_pattern": "artifacts/l3-brief-saude-da-crianca-<branch_id>.md",
+  "slug_selection": "62 slugs exportados; ramos fortes ≥5: aleitamento (14), triagem (10), genérico (10), desidratação (7), APS (5); L3 bespoke 7 pacotes 4/4; por slug [READY] strict-v2",
+  "clusters": [
+    "Aleitamento / nutrição infantil (14 · crianca_aleitamento_nutricao · bespoke 4/4)",
+    "Triagem neonatal pezinho/coraçãozinho (10 · crianca_triagem_neonatal · bespoke 4/4)",
+    "Saúde da criança — conceito geral (10 · crianca_generico · bespoke pediatric-hub 4/4)",
+    "Desidratação / diarreia aguda (7 · crianca_desidratacao · bespoke 4/4)",
+    "APS / puericultura (5 · crianca_aps_puericultura · bespoke 4/4)",
+    "Neonatologia clínica (3 · crianca_neonatologia · bespoke 4/4)",
+    "Desenvolvimento infantil (3 · crianca_desenvolvimento · bespoke 4/4)",
+    "Cauda longa (dor, APGAR, SV, crescimento, vacina, bucal, violência · ok_generico)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "crianca_aleitamento_nutricao",
+      "when": "AME, introdução alimentar, PNAE, lactose, leite ordenhado, nutrição infantil",
+      "mold": "crianca-feeding-timeline · crianca-feeding-board · crianca-feeding-tap-flow · crianca-feeding-trap-arena",
+      "anchors": ["examples/questao-premium-cpcon-saude-crianca-aleitamento-vf.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-crianca-crianca_aleitamento_nutricao.md"
+    },
+    {
+      "id": "crianca_triagem_neonatal",
+      "when": "Pezinho, coraçãozinho, PKU, PNTN, oximetria RN",
+      "mold": "crianca-screening-timeline · crianca-screening-board · crianca-screening-tap-flow · crianca-screening-trap-arena",
+      "anchors": ["examples/questao-premium-cpcon-saude-crianca-triagem-neonatal-vf.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-crianca-crianca_triagem_neonatal.md"
+    },
+    {
+      "id": "crianca_generico",
+      "when": "Conceito geral pediátrico sem fit nos ramos temáticos",
+      "mold": "crianca-pediatric-hub · crianca-pediatric-board · crianca-pediatric-tap-flow · crianca-pediatric-trap-arena",
+      "anchors": ["examples/questao-premium-funcern-saude-crianca-generico-hub.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-crianca-crianca_generico.md"
+    },
+    {
+      "id": "crianca_desidratacao",
+      "when": "Plano A/B/C, desidratação, diarreia aguda, sinais clínicos",
+      "mold": "crianca-dehydration-spectrum · crianca-dehydration-board · crianca-dehydration-tap-flow · crianca-dehydration-trap-arena",
+      "anchors": ["examples/questao-premium-cev-saude-crianca-desidratacao-vf.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-crianca-crianca_desidratacao.md"
+    },
+    {
+      "id": "crianca_aps_puericultura",
+      "when": "Visita domiciliar, puericultura, caderneta, calendário consultas",
+      "mold": "crianca-puericultura-timeline · crianca-puericultura-board · crianca-puericultura-tap-flow · crianca-puericultura-trap-arena",
+      "anchors": ["examples/questao-premium-consulplan-saude-crianca-puericultura-vf.json"],
+      "l3_brief": "artifacts/l3-brief-saude-da-crianca-crianca_aps_puericultura.md"
+    },
+    {
+      "id": "crianca_neonatologia",
+      "when": "Icterícia, SDR, surfactante, cefalohematoma, banho RN",
+      "mold": "crianca-neonatal-deck · crianca-neonatal-board · crianca-neonatal-tap-flow · crianca-neonatal-trap-arena",
+      "anchors": ["examples/questao-premium-idecan-saude-crianca-neonatologia-vf.json"]
+    },
+    {
+      "id": "crianca_desenvolvimento",
+      "when": "TEA, M-CHAT, estrabismo, marcos desenvolvimento, AIDPI",
+      "mold": "crianca-dev-milestones-rail · crianca-dev-board · crianca-dev-tap-flow · crianca-dev-trap-arena",
+      "anchors": ["examples/questao-premium-cpcon-saude-crianca-desenvolvimento-vf.json"]
+    },
+    {
+      "id": "crianca_generico_fallback",
+      "when": "Cauda longa — dor, APGAR, SV ped, bucal, vacina, violência",
+      "mold": "morphological · reference_table · vertical · compare (genérico)"
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=agent",
+    "a4_minimo": "npm run stamp:a4-minimo -- --lote=<lote>"
+  }
+}

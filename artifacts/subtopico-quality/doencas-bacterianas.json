@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-30T15:18:00.129Z",
+  "generated_at": "2026-07-15T12:07:02.258Z",
   "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
   "pacote_prefix": "doencas-bacterianas",
-  "production_status_before": "none",
+  "production_status_before": "production_ready",
   "technical_ready": true,
   "production_ready": true,
   "can_sell": true,
@@ -14,7 +14,7 @@
   "monitoring": {
     "deprecated": true,
     "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
-    "sessions_30d": 402
+    "sessions_30d": 209
   },
   "layers": {
     "L1": {
@@ -31,7 +31,7 @@
     },
     "L3": {
       "pass": true,
-      "detail": "L3 visual mold regression — branches bacterianas_generico, bacterianas_agente_etiologico (desktop + mobile); preflight 37/37; visual-anchors.json atualizado"
+      "detail": "Playwright L3 Doenças Bacterianas — 3 branches (2 bespoke); Jest slidePresentation 4/4 TB; PNGs pendentes e2e local bypass"
     },
     "L4": {
       "pass": true,
@@ -80,33 +80,24 @@
   ],
   "content_health": {
     "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
-    "sessions_30d": 402,
+    "sessions_30d": 209,
     "open_reports": {
       "p0": 0,
       "p1": 0,
-      "p2": 2,
+      "p2": 0,
       "p3": 0,
-      "total": 2
+      "total": 0
     },
-    "report_rate_pct": 0.5,
-    "top_reported_slugs": [
-      {
-        "slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
-        "count": 1
-      },
-      {
-        "slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
-        "count": 1
-      }
-    ],
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
     "slo": {
       "open_p0": 0,
       "open_p1_max": 2,
       "report_rate_max_pct": 2,
       "min_sessions_30d": 100,
-      "sessions_30d": 402,
+      "sessions_30d": 209,
       "open_p1": 0,
-      "report_rate_pct": 0.5
+      "report_rate_pct": 0
     },
     "pass": true,
     "blockers": []

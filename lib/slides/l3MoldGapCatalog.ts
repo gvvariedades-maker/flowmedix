@@ -63,7 +63,18 @@ const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · comp
 const HISTORIA_BRIDGE = 'bridge · reference_table · vertical · compare (genérico premium)';
 const HISTORIA_GENERIC = 'morphological · reference_table · vertical · compare (genérico premium)';
 const SP_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const SP_IDENTIFICACAO_BESPOKE =
+  'sp-id-verify-deck · sp-nsp-reference-board · sp-vf-juggle-tap · sp-safety-trap-arena (bespoke)';
+const SP_QUEDAS_BESPOKE =
+  'sp-fall-risk-rail · sp-nsp-reference-board · sp-protocol-tap-flow · sp-safety-trap-arena (bespoke)';
+const SP_EVENTOS_BESPOKE =
+  'sp-incident-taxonomy-deck · sp-nsp-reference-board · sp-protocol-tap-flow · sp-safety-trap-arena (bespoke)';
 const PERI_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+
+const SAE_BESPOKE_PKG =
+  'sae-responsibility-matrix · sae-reference-board · sae-decision-tap · norm-reveal (bespoke)';
+const SAE_DOC_BESPOKE_PKG =
+  'sae-documentation · sae-reference-board · sae-decision-tap · norm-reveal (bespoke)';
 const URGENCIAS_LEGACY =
   'survival-chain · center · vertical · trap-reveal (legado subtópico — redesign obrigatório)';
 const URGENCIAS_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
@@ -215,22 +226,58 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Cauda longa — tabela de referência.',
     },
   ],
+  'processo de enfermagem': [
+    {
+      pattern: /documenta[cç][aã]o|anota[cç][aã]o|prontu[aá]rio|registro|soapi/i,
+      branch_id: 'sae_documentacao',
+      branch_implemented: true,
+      ideal_mold_package: SAE_DOC_BESPOKE_PKG,
+      base_decision: 'molde_redesign',
+      rationale: 'Documentação/anotação — pacote sae-documentation 4/4.',
+    },
+    {
+      pattern: /etapa|coleta|planejamento|implementa[cç][aã]o|avalia[cç][aã]o|nanda|diagn[oó]stico/i,
+      branch_id: 'sae_etapas',
+      branch_implemented: true,
+      ideal_mold_package: SAE_BESPOKE_PKG,
+      base_decision: 'molde_redesign',
+      rationale: 'Etapas SAE / NANDA-NIC-NOC — matriz de responsabilidades.',
+    },
+    {
+      pattern: /exceto|incorret[oa]/i,
+      branch_id: 'sae_exceto',
+      branch_implemented: true,
+      ideal_mold_package: SAE_BESPOKE_PKG,
+      base_decision: 'molde_redesign',
+      rationale: 'EXCETO conduta SAE — norm-reveal.',
+    },
+    {
+      pattern: /.*/,
+      branch_id: 'sae_generico',
+      branch_implemented: true,
+      ideal_mold_package: SAE_BESPOKE_PKG,
+      base_decision: 'molde_redesign',
+      rationale: 'Cauda SAE — pacote violet bespoke.',
+    },
+  ],
   'saude mental': [
     {
       pattern: /raps|reforma|srt/i,
       branch_id: 'mental_raps_legis',
       branch_implemented: true,
-      ideal_mold_package: 'bridge · reference_table · vertical · compare (genérico)',
-      base_decision: 'ok_generico',
-      rationale: 'Legislação/RAPS — tabela + compare.',
+      ideal_mold_package:
+        'mental-raps-network-rail · mental-raps-tier-board · mental-raps-classify-tap · mental-raps-trap-arena',
+      base_decision: 'molde_inedito',
+      rationale: 'RAPS/legis — pacote violet bespoke 4/4 (rede × componente).',
     },
     {
       pattern: /crise|agita[cç][aã]o|conten[cç][aã]o|caps/i,
       branch_id: 'mental_crise_caps',
       branch_implemented: true,
-      ideal_mold_package: 'morphological · center · sae-decision-tap · norm-reveal (bespoke parcial)',
-      base_decision: 'ok_existente',
-      rationale: 'Crise/CAPS — moldes SAE já wired.',
+      ideal_mold_package:
+        'mental-crisis-signal-deck · mental-crisis-ladder-board · mental-crisis-decision-tap · mental-crisis-coercion-trap',
+      base_decision: 'molde_redesign',
+      rationale: 'Crise/CAPS — molde_redesign (não ok_existente SAE).',
     },
     {
       pattern: /tabagismo|pnct|depend[eê]ncia|redu[cç][aã]o de danos|álcool/i,
@@ -270,33 +317,37 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       pattern: /pr[eé][\s-]?operat|preparo/i,
       branch_id: 'perioperatorio_pre_operatorio',
       branch_implemented: true,
-      ideal_mold_package: PERI_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'Pré-op — reference_table + compare bastam (âncora AVANÇASP).',
+      ideal_mold_package:
+        'peri-preop-phase-deck · peri-preop-prep-board · peri-preop-decision-tap · peri-preop-trap-arena',
+      base_decision: 'molde_inedito',
+      rationale: 'Pré-op — trilho fases × preparo (jejum/tricotomia); âncora AVANÇASP.',
     },
     {
       pattern: /p[oó]s[\s-]?operat|srpa|aldrete/i,
       branch_id: 'perioperatorio_pos_operatorio',
       branch_implemented: true,
-      ideal_mold_package: PERI_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'Pós-op/SRPA — rows Aldrete + compare; sem molde espacial no volume atual.',
+      ideal_mold_package:
+        'peri-srpa-monitor-deck · peri-aldrete-board · peri-srpa-decision-tap · peri-srpa-trap-arena',
+      base_decision: 'molde_inedito',
+      rationale: 'Pós-op/SRPA — monitorização × Aldrete × EXCETO; âncoras IDECAN/Fundatec.',
     },
     {
       pattern: /protocolo|sequ[eê]ncia|cirurgia segura/i,
       branch_id: 'perioperatorio_protocolo',
       branch_implemented: true,
-      ideal_mold_package: PERI_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'Protocolo/CDC — tabela + tap; checklist WHO não exige UI bespoke.',
+      ideal_mold_package:
+        'peri-protocol-checklist-deck · peri-protocol-reference-board · peri-protocol-tap-flow · peri-protocol-trap-arena',
+      base_decision: 'molde_inedito',
+      rationale: 'Protocolo/WHO/CDC — checklist espacial × tap; âncora COGEPS.',
     },
     {
       pattern: /certo ou errado/i,
       branch_id: 'perioperatorio_vf',
       branch_implemented: true,
-      ideal_mold_package: PERI_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'V/F Cebraspe — pacote genérico premium.',
+      ideal_mold_package:
+        'peri-vf-assertions-deck · peri-vf-reference-board · peri-vf-juggle-tap · peri-vf-trap-chips',
+      base_decision: 'molde_inedito',
+      rationale: 'V/F Cebraspe I–III — juggle tap violet bespoke.',
     },
     {
       pattern: /isc|classifica[cç][aã]o.*ferida/i,
@@ -304,7 +355,7 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       branch_implemented: true,
       ideal_mold_package: PERI_GENERIC,
       base_decision: 'ok_generico',
-      rationale: 'ISC/CDC ferida — reference_table (âncora FURB/COGEPS).',
+      rationale: 'ISC/CDC ferida — cauda longa (2 slugs); reference_table (âncora FURB).',
     },
   ],
   sondas: [
@@ -432,8 +483,8 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       branch_id: 'calc_dose_equivalencia',
       branch_implemented: true,
       ideal_mold_package: 'dose-equivalence-rail · soft-lens-board · dose-calc-tap · dose-trap (bespoke)',
-      base_decision: 'ok_existente',
-      rationale: 'Cálculo numérico — trilho dose.',
+      base_decision: 'molde_redesign',
+      rationale: 'Cálculo numérico — trilho dose (bespoke 4/4 implementado).',
     },
     {
       pattern: /conceito|defini[cç][aã]o/i,
@@ -485,25 +536,25 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       pattern: /identificac|dois identificador|pulseira/i,
       branch_id: 'sp_identificacao',
       branch_implemented: true,
-      ideal_mold_package: SP_GENERIC,
-      base_decision: 'ok_existente',
-      rationale: 'Identificação segura — golden CESGRANRIO + reference_table + compare.',
+      ideal_mold_package: SP_IDENTIFICACAO_BESPOKE,
+      base_decision: 'molde_redesign',
+      rationale: 'Identificação segura — deck 2 IDs + VF juggle NSP + trap arena (âncora IDECAN).',
     },
     {
       pattern: /queda|morse|grades da cama/i,
       branch_id: 'sp_prevencao_quedas',
       branch_implemented: true,
-      ideal_mold_package: SP_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'Prevenção de quedas — escala/protocolo; compare + rows bastam.',
+      ideal_mold_package: SP_QUEDAS_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'Prevenção de quedas — trilho Morse + protocol tap + trap arena (âncora VUNESP).',
     },
     {
       pattern: /evento adverso|incidente|pnsp|portaria.*529|near miss/i,
       branch_id: 'sp_eventos_adversos',
       branch_implemented: true,
-      ideal_mold_package: SP_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'PNSP / 4 grupos de incidente — compare + tabela de definições.',
+      ideal_mold_package: SP_EVENTOS_BESPOKE,
+      base_decision: 'molde_inedito',
+      rationale: 'PNSP 4 grupos — taxonomy deck + protocol tap + trap arena (âncora FCM).',
     },
     {
       pattern: /metas internacionais|jci|joint commission/i,
@@ -788,6 +839,7 @@ function subtopicKey(subtopico: string): string | undefined {
   if (key.includes('central de material') || key === 'cme' || key.includes('esterilizacao'))
     return 'cme';
   if (key.includes('saude mental') || key.includes('psiquiatria')) return 'saude mental';
+  if (key.includes('processo de enfermagem') || key === 'sae') return 'processo de enfermagem';
   if (key.includes('perioperator') || key.includes('srpa')) return 'perioperatoria';
   if (key.includes('sonda')) return 'sondas';
   if (key.includes('imunizacao') || key.includes('vacinacao')) return 'imunizacao';

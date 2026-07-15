@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-15T16:19:30.810Z",
+  "lote": "saude-da-crianca-g05",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1708
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1709
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1710
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5166
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5167
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5168
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1800
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1816
+    }
+  ]
+}

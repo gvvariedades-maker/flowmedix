@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-07-14T18:22:04.066Z",
+  "anchors": [
+    {
+      "branch": "via_vf_absorcao",
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1778968666352-2",
+      "lote": "vias-de-administracao-g05",
+      "artifact": "artifacts/anchor-review/vias-l6-human-via_vf_absorcao.json",
+      "captures_dir": "artifacts/questao-review/instituto-consulpam-enfermagem-vias-de-administracao-1778968666352-2"
+    },
+    {
+      "branch": "via_tecnica_admin",
+      "slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7",
+      "lote": "vias-de-administracao-g14",
+      "artifact": "artifacts/anchor-review/vias-l6-human-via_tecnica_admin.json",
+      "captures_dir": "artifacts/questao-review/cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7"
+    },
+    {
+      "branch": "via_generico",
+      "slug": "cetrede-enfermagem-vias-de-administracao-1776056391403-4",
+      "lote": "vias-de-administracao-g20",
+      "artifact": "artifacts/anchor-review/vias-l6-human-via_generico.json",
+      "captures_dir": "artifacts/questao-review/cetrede-enfermagem-vias-de-administracao-1776056391403-4"
+    }
+  ]
+}

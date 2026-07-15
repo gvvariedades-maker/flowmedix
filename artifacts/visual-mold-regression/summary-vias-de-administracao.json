@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-07-14T16:44:47.060Z",
+  "pacote_prefix": "vias-de-administracao",
+  "pass": true,
+  "detail": "Playwright L3 Vias — 3 branches (desktop + mobile-375 + DoD via_vf_absorcao); PNGs em artifacts/visual-mold-regression/",
+  "branches": [
+    "via_vf_absorcao",
+    "via_tecnica_admin",
+    "via_generico"
+  ]
+}

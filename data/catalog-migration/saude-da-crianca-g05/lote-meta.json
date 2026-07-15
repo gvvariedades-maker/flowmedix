@@ -1,0 +1,38 @@
+{
+  "lote": "saude-da-crianca-g05",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-15",
+  "subtopico": "Saúde da Criança",
+  "cluster": "Saúde da criança — conceito geral",
+  "pedagogical_branch_target": "crianca_generico",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+  "golden_reference": "examples/questao-premium-funcern-saude-crianca-generico-hub.json",
+  "guideline": "lib/guidelines/saudeCrianca.ts (SAUDE_CRIANCA_MS)",
+  "slugs": [
+    "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=saude-da-crianca-g05 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/saude-da-crianca-g05/questions/",
+    "2. Âncora L6: idecan-enfermagem-saude-da-crianca-1778712426701-3",
+    "3. npm run audit:anchor-review -- --lote=saude-da-crianca-g05 --record-pass --reviewer=agent --skip-capture",
+    "4. npm run catalog:apply-lote -- --lote=saude-da-crianca-g05 --apply (só quando pedido)"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-crianca-g05.json"
+  }
+}

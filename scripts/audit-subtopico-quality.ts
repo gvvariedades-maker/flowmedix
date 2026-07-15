@@ -11,6 +11,10 @@ import { loadEnvConfig } from '@next/env';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, statSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+const TSX_CLI = require.resolve('tsx/cli');
 
 loadEnvConfig(process.cwd());
 
@@ -48,9 +52,9 @@ import { createServerSupabase } from '@/lib/supabase/server';
 
 function runHandcraftDod(subtopico: string): LayerResult {
   const result = spawnSync(
-    'npx',
-    ['tsx', 'scripts/audit-handcraft-dod.ts', `--subtopico=${subtopico}`],
-    { encoding: 'utf8', shell: true, cwd: process.cwd() },
+    process.execPath,
+    [TSX_CLI, 'scripts/audit-handcraft-dod.ts', `--subtopico=${subtopico}`],
+    { encoding: 'utf8', cwd: process.cwd() },
   );
   return {
     pass: result.status === 0,

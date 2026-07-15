@@ -23,7 +23,7 @@
     {
       "id": "puncao_flebite",
       "when": "Infiltração, flebite, extravasamento, hematoma, complicações locais do acesso",
-      "mold": "iv-complication-orbit · iv-differential-board · iv-complication-tap-flow · iv-label-swap-trap",
+      "mold": "iv-complication-tissue-layers · iv-differential-board · iv-complication-tap-flow · iv-label-swap-trap",
       "anchors": ["examples/questao-premium-avancasp-puncao-infiltracao-flebite.json"]
     },
     {
@@ -118,5 +118,27 @@
     "reconcile:handcraft-manifest",
     "catalog:preflight em todos g*",
     "audit:subtopico-quality -- --subtopico=\"Punção Venosa e Cuidados com Cateteres\" --promote"
-  ]
+  ],
+  "branch_inference_onda2": {
+    "updated_at": "2026-07-14",
+    "rule": "Comando ancora IPCS/tempo/periférica/dispositivo antes de flebite incidental nas alternativas",
+    "examples": [
+      {
+        "signal": "bundle, barreira máxima, corrente sanguínea, CVC no enunciado",
+        "branch": "puncao_ipcs_cvc"
+      },
+      {
+        "signal": "troca de equipos, permanência, flush/manutenção no comando",
+        "branch": "puncao_tempo"
+      },
+      {
+        "signal": "antissepsia, álcool 70%, técnica de punção periférica",
+        "branch": "puncao_periferica_antissepsia"
+      },
+      {
+        "signal": "flebite só nas alternativas; comando sobre intervalo/hub",
+        "branch": "puncao_tempo ou puncao_ipcs_cvc (não puncao_flebite)"
+      }
+    ]
+  }
 }

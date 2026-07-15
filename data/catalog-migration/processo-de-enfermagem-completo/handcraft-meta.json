@@ -1,0 +1,20 @@
+{
+  "subtopico": "Processo de Enfermagem",
+  "pacote_prefix": "processo-de-enfermagem",
+  "total_exportable": 39,
+  "tecconcursos_blocked": 12,
+  "legacy_url_mis_tag_note": "1066 slugs com segmento processo-de-enfermagem na URL são mis-tag — pacote handcraft usa titulo_aula canônico (39 exportáveis)",
+  "branches": {
+    "sae_documentacao": 21,
+    "sae_etapas": 11,
+    "sae_exceto": 7,
+    "sae_generico": 0
+  },
+  "lote_plan": {
+    "g01": 8,
+    "g02": 8,
+    "g03": 8,
+    "g04": 8,
+    "g05": 7
+  }
+}

@@ -273,8 +273,8 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // ---- Infecções e Biossegurança ----
   'infecções no contexto da biossegurança': { template: 'lime', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
 
-  // ---- Segurança do Paciente ----
-  'segurança do paciente': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
+  // ---- Segurança do Paciente (default genérico; ramos fortes em BRANCH_DESIGN_MAP) ----
+  'segurança do paciente': { template: 'amber', conceptMap: 'morphological', goldenRule: 'reference_table', logicFlow: 'vertical', dangerZone: 'compare' },
 
   // ============================================================
   // SAÚDE PÚBLICA E EPIDEMIOLOGIA
@@ -395,9 +395,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // SAÚDE MENTAL
   // ============================================================
 
-  // Ramo SM-4 crise/CAPS (golden: fundatec EXCETO · ibade CAPS · morphological · reference_table · sae-decision-tap · norm-reveal)
-  'saúde mental': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'sae-decision-tap', dangerZone: 'norm-reveal' },
-  'psiquiatria': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'sae-decision-tap', dangerZone: 'norm-reveal' },
+  // Ramo SM bespoke RAPS/legis + crise/CAPS (golden: mental-raps-network-rail · mental-raps-tier-board · mental-raps-classify-tap · mental-raps-trap-arena)
+  'saúde mental': { template: 'violet', conceptMap: 'mental-raps-network-rail', goldenRule: 'mental-raps-tier-board', logicFlow: 'mental-raps-classify-tap', dangerZone: 'mental-raps-trap-arena' },
+  'psiquiatria': { template: 'violet', conceptMap: 'mental-raps-network-rail', goldenRule: 'mental-raps-tier-board', logicFlow: 'mental-raps-classify-tap', dangerZone: 'mental-raps-trap-arena' },
 
   // ============================================================
   // SAÚDE DA FAMÍLIA E CICLOS DE VIDA

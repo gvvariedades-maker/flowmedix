@@ -1,0 +1,81 @@
+---
+description: Ativa paridade pedagógica proporcional ao Adolescente quando o usuário enviar "Paridade Adolescente:", "Pipeline + paridade Adolescente:", "L3 bespoke:" ou "+ L3 bespoke", ou anexar docs/PROMPT_PARIDADE_ADOLESCENTE.md / PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md
+alwaysApply: false
+---
+
+# Paridade Adolescente — conversa nova
+
+> **Objetivo:** conteúdo pedagógico alto nível (L2 golden-v1) **+** slides alinhados ao ramo (L3) **+** A4 substantivo **+** L6/captures — paridade **proporcional** com [`artifacts/saude-adolescente-nota10-report.md`](../artifacts/saude-adolescente-nota10-report.md).
+
+Quando a mensagem começar com **`Paridade Adolescente:`**, **`Pipeline + paridade Adolescente:`**, **`L3 bespoke:`**, ou incluir **`+ L3 bespoke`** (ou anexar [`docs/PROMPT_PARIDADE_ADOLESCENTE.md`](../PROMPT_PARIDADE_ADOLESCENTE.md) / [`docs/PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md`](../PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md)), executar **sem pedir modo**:
+
+## 1. Resolver trigger
+
+| Trigger | Modo L3 | Runbook |
+|---------|---------|---------|
+| `Paridade Adolescente:` / `Pipeline + paridade Adolescente:` | genérico permitido | [`PROMPT_PARIDADE_ADOLESCENTE.md`](../PROMPT_PARIDADE_ADOLESCENTE.md) |
+| `+ L3 bespoke` / `L3 bespoke:` | **bespoke_obrigatorio_ramoforte** | [`PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md`](../PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md) |
+
+- Formato: nome exato `CLAUDE.md` §9
+- Pacote: [`data/catalog-migration/handcraft-registry.json`](../data/catalog-migration/handcraft-registry.json)
+
+```bash
+npm run handcraft:brief -- --subtopico="<subtópico>"
+npm run audit:l3-mold-gap -- --subtopico="<subtópico>"   # modo L3 bespoke
+```
+
+## 2. O que é “igual proporcionalmente”
+
+Copiar **política**, não números absolutos (16 slugs, 6 ramos):
+
+| Dimensão | Replicar |
+|----------|----------|
+| L2 | golden-v1 bespoke; anti-reciclagem; sources A/B |
+| L2.5/L3 | ramos + briefs + moldes + Playwright; ≥1 slug/ramo |
+| **L3 bespoke (modo +L3 bespoke)** | ramo forte → molde React 4/4 ou ok_generico com teste espacial 3/3 |
+| A4 | 100% stamped; humano só calc + divergência + ~20% **medio** |
+| L6 | pass + captures; humano conforme escala do pacote |
+| Ship | applied + `production_ready` + relatório paridade |
+
+**Ramo forte:** ≥5 slugs **ou** ≥10% do pacote.
+
+**Proibido:** quota artificial 20% do **total** de slugs como `handcraft-qc`; `ok_existente`; paridade com `molde_inedito|molde_redesign` pendente (modo bespoke).
+
+### Escala L6 humano
+
+| Slugs | L6 humano |
+|-------|-----------|
+| ≤20 | Todos os lotes `g*` (modelo Adolescente) |
+| 21–80 | Agent em `g*` + 1 âncora humana/ramo |
+| 80+ | Agent em `g*` + 1 âncora humana/ramo do mapa |
+
+## 3. Ordem de execução
+
+1. **Fase 0** — L3: cluster, ramos, briefs INDEX, visual-anchors, branch reconcile 0 mismatch
+2. **Fase 0b** — Moldes bespoke (**obrigatório** se trigger `+ L3 bespoke`): [`VARIANT_MOLDS.md`](../VARIANT_MOLDS.md) · gate `audit:l3-mold-gap` 0 pendências em ramos fortes
+3. **Fase 1** — Handcraft golden-v1 100% (se `handcraft_applied < total_slugs`)
+4. **Fase 1b** — A4-mínimo substantivo
+5. **Fase 2** — reconcile, preflight, L1–L6, captures, apply, `--promote`
+6. **Fase 3** — `artifacts/<pacote>-nota10-report.md`
+
+Se já `production_ready`: auditar gaps; não repetir handcraft desnecessário.
+
+## 4. Proibido
+
+- `ai:generate`, `catalog:upgrade-premium`
+- Declarar paridade sem tabela no relatório
+- Encerrar sem checklist 100% verde
+- Modo bespoke: ship com ramo forte sem React 4/4 (salvo ok_generico 3/3 documentado)
+- `catalog:apply-lote --apply` sem dry-run OK (salvo autorização explícita no prompt)
+
+## 5. Encerramento
+
+**Modo padrão:**
+
+`| applied | A4 100% | A4 humano substantivo | ramos com slug | Playwright | L6+captures | apply | production_ready | paridade Adolescente | blockers |`
+
+**Modo + L3 bespoke:**
+
+`| applied | bespoke 4/4 ramos fortes | ok_generico 3/3 | A4 100% | A4 humano | Playwright | L6+captures | apply | production_ready | paridade | blockers |`
+
+Path: `artifacts/<pacote_prefix>-nota10-report.md`

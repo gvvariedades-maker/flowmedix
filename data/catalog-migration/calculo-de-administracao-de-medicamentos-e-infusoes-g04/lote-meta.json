@@ -1,0 +1,18 @@
+{
+  "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g04",
+  "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+  "handcraft_batch": 4,
+  "slug_count": 8,
+  "status": "applied",
+  "validate_command": "npm run validate:goldens -- --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g04 --strict",
+  "anchor_slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-1",
+  "golden_reference": "examples/questao-premium-idecan-calculo-equivalencias-gotas.json",
+  "mode": "handcraft-golden-v1",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "handcraft-qc",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/calculo-de-administracao-de-medicamentos-e-infusoes-g04.json"
+  }
+}

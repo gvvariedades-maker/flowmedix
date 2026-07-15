@@ -1,8 +1,9 @@
 {
   "lote": "seguranca-do-paciente-g01",
-  "generated_at": "2026-07-01T00:44:07.550Z",
+  "generated_at": "2026-07-15T14:51:18.409Z",
   "strict": true,
   "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
   "total": 7,
   "passed": 7,
   "failed": 0,

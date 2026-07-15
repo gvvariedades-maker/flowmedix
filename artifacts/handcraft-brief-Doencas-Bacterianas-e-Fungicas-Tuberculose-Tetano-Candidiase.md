@@ -5,10 +5,20 @@
 ## Escopo
 
 - **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3
+- **Primeiro lote:** `doencas-bacterianas-g01`
 
 ## Pacote (registry)
 
-_Subtópico não está em handcraft-registry.json → seguir fallback_novo_pacote no registry._
+| Campo | Valor |
+|-------|-------|
+| pacote_prefix | `doencas-bacterianas` |
+| status | applied (37/37 slugs) |
+| manifest | `data/catalog-migration/doencas-bacterianas-completo/manifest.json` |
+| lote_pattern | `doencas-bacterianas-g{NN}` |
+| lote_size | 8 |
+| anchor_glob | `examples/questao-premium-*-bacterianas*.json` |
+| guideline | `lib/guidelines/tuberculose.ts` |
+| handcraft_meta | `data/catalog-migration/doencas-bacterianas-g05/lote-meta.json` |
 
 ## Ramos L3 (pedagogical_branch)
 
@@ -22,11 +32,11 @@ Se subtópico tem BRANCH_DESIGN_MAP, ver .cursor/skills/avant-json-template/SKIL
 4. **Proibido:** `ai:generate`, `catalog:upgrade-premium`.
 
 ```bash
-npm run catalog:export-lote -- --lote=<pacote>-completo --subtopico="Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" --limit=10000
-# Handcraft → data/catalog-migration/<pacote>-g01/questions/*.json
-npm run validate:goldens -- --lote=<pacote>-g01 --strict
-npm run audit:questao-readiness -- --lote=<pacote>-g01
-npm run catalog:apply-lote -- --lote=<pacote>-g01 --dry-run
+npm run catalog:export-lote -- --lote=doencas-bacterianas-completo --subtopico="Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" --limit=10000
+# Handcraft → data/catalog-migration/doencas-bacterianas-g01/questions/*.json
+npm run validate:goldens -- --lote=doencas-bacterianas-g01 --strict
+npm run audit:questao-readiness -- --lote=doencas-bacterianas-g01
+npm run catalog:apply-lote -- --lote=doencas-bacterianas-g01 --dry-run
 # apply + patch branch só se o usuário pedir
 ```
 

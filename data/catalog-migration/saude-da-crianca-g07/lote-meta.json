@@ -1,0 +1,38 @@
+{
+  "lote": "saude-da-crianca-g07",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-15",
+  "subtopico": "Saúde da Criança",
+  "cluster": "Triagem neonatal pezinho/coraçãozinho",
+  "pedagogical_branch_target": "crianca_triagem_neonatal",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+  "golden_reference": "examples/questao-premium-cpcon-saude-crianca-triagem-neonatal-vf.json",
+  "guideline": "lib/guidelines/saudeCrianca.ts (SAUDE_CRIANCA_MS)",
+  "slugs": [
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0",
+    "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1",
+    "intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7",
+    "quadrix-enfermagem-saude-da-crianca-1780001362784-6",
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+    "selecon-enfermagem-exames-complementares-1779563668619-4"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=saude-da-crianca-g07 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/saude-da-crianca-g07/questions/",
+    "2. Âncora L6: instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+    "3. npm run audit:anchor-review -- --lote=saude-da-crianca-g07 --record-pass --reviewer=agent --skip-capture",
+    "4. npm run catalog:apply-lote -- --lote=saude-da-crianca-g07 --apply (só quando pedido)"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/saude-da-crianca-g07.json"
+  }
+}

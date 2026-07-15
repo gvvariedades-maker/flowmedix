@@ -22,6 +22,7 @@ const SUBTOPICO = 'Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candi
 
 const GOLDEN_BY_CLUSTER: Record<string, string> = {
   'Agente etiológico — bactéria × vírus × fungo': 'questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json',
+  'Tuberculose — controle, TDO e vigilância': 'questao-premium-cpcon-tuberculose-baar-aerossol-vf.json',
 };
 
 const COVERED_CLUSTERS = new Set(Object.keys(GOLDEN_BY_CLUSTER));
@@ -173,7 +174,9 @@ function main() {
         l3_package:
           dominantBranch === 'bacterianas_agente_etiologico'
             ? 'etiology-kingdom-rail · etiology-letter-spectrum · etiology-elimination-tap · etiology-intruder-chips'
-            : 'molecular · reference_table · vertical · compare (genérico)',
+            : dominantBranch === 'bacterianas_tuberculose'
+              ? 'tb-vigilance-rail · tb-precaution-board · tb-vf-elimination-tap · tb-transmission-trap'
+              : 'molecular · reference_table · vertical · compare (genérico)',
       };
     })
     .sort((a, b) => b.count - a.count);

@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "banca": "CPCON",
+    "prova": "Tec Enf",
+    "orgao": "UEPB",
+    "ano": "2024",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Criança",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "pedagogical_branch": "crianca_triagem_neonatal"
+  },
+  "question_data": {
+    "instruction": "Sobre triagem neonatal, analise as afirmativas.\n\nI - O teste do pezinho deve ser coletado preferencialmente entre o 3º e o 5º dia de vida.\nII - O teste do coraçãozinho (oximetria) é realizado antes da alta hospitalar.\nIII - A triagem do pezinho pode ser adiada para o primeiro ano de vida sem prejuízo.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": { "subtopico": "Saúde da Criança" },
+      "items": [
+        { "label": "Pezinho", "detail": "Coleta 3º–5º dia — fenilcetonúria, TSH, hemoglobinopatias.", "icon": "Activity" },
+        { "label": "Coraçãozinho", "detail": "Oximetria de pulso antes da alta — cardiopatias congênitas críticas.", "icon": "HeartPulse" },
+        { "label": "48h", "detail": "Janela mínima para coleta confiável do pezinho.", "icon": "Clock" },
+        { "label": "PNTN", "detail": "Programa Nacional de Triagem Neonatal — cobertura SUS.", "icon": "Shield" }
+      ],
+      "footer_rule": "Triagem neonatal — não adiar pezinho"
+    },
+    {
+      "type": "golden_rule",
+      "content": "TRIAGEM RN",
+      "rows": [
+        { "label": "Pezinho", "value": "3º–5º dia de vida", "badge": "hot" },
+        { "label": "Coraçãozinho", "value": "Oximetria antes da alta", "badge": "ok" },
+        { "label": "Adiar 1 ano", "value": "Falso — III incorreta", "badge": "warn", "emphasis": "alert" }
+      ],
+      "footer_rule": "III é pegadinha — triagem precoce"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "steps": [
+        "I: janela 3º–5º dia → verdadeira.",
+        "II: oximetria antes da alta → verdadeira.",
+        "III: adiar para 1 ano → falsa.",
+        "Letra B."
+      ],
+      "footer_rule": "Pezinho + coraçãozinho na maternidade"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "content": "PEGADINHAS — TRIAGEM",
+      "items": [
+        { "label": "Adiar pezinho", "detail": "III sugere adiar.", "correct": "Coletar entre 3º e 5º dia." },
+        { "label": "Só ao nascer", "detail": "Antes de 48h pode dar falso resultado.", "correct": "Preferir 3º–5º dia." },
+        { "label": "Dispensar oximetria", "detail": "II cobra coraçãozinho.", "correct": "Oximetria antes da alta." }
+      ],
+      "footer_rule": "RN: pezinho + coraçãozinho"
+    }
+  ]
+}

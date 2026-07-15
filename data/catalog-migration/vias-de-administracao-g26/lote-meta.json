@@ -13,8 +13,8 @@
   "handcraft_script": "scripts/handcraft-vias-de-administracao-g26.ts",
   "notes": "Handcraft golden-v1 concluído 2026-07-04 — 7/7 [READY] audit:questao-readiness --strict-v2-pedagogy; validate:goldens --strict OK; slug-alignment + numeric-factcheck pass; enrich:vias-guideline-meta em 7 slugs; patch-pedagogical-branch reconcile aplicado. Ramos: via_tecnica_admin (4), via_vf_absorcao (3). Cauda export vias-only fechada (208/208). Sem apply Supabase.",
   "anchor_second_review": {
-    "reviewed_at": "2026-07-04",
-    "reviewer": "agent",
+    "reviewed_at": "2026-07-14",
+    "reviewer": "handcraft-qc",
     "method": "agent",
     "status": "pass",
     "artifact": "artifacts/anchor-review/vias-de-administracao-g26.json"

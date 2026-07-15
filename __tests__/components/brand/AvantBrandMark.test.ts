@@ -60,7 +60,7 @@ describe('AvantBrandMark', () => {
     expect(email).toMatch(/>\s*AE\s*<\/Text>/);
     expect(email).toContain('borderRadius: \'50%\'');
     expect(email).toContain('subtitleLabel');
-    expect(email).toContain('wordmarkGoldSolid');
+    expect(email).toContain('wordmarkBrandBlueSolid');
     expect(email).toContain('wordmarkEnfGreen');
   });
 });

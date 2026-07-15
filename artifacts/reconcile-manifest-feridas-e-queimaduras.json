@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T23:26:26.154Z",
+  "generated_at": "2026-07-15T00:32:11.979Z",
   "pacote_prefix": "feridas-e-queimaduras",
   "lotes": [
     {
@@ -8,7 +8,7 @@
     }
   ],
   "union_count": 8,
-  "registry_total_slugs": 8,
+  "registry_total_slugs": null,
   "match": true,
   "slugs": [
     "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",

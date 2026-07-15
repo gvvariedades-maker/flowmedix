@@ -1,0 +1,904 @@
+{
+  "generated_at": "2026-07-15T15:20:44.517Z",
+  "subtopico": "Saúde da Criança",
+  "lote": "saude-da-crianca-completo",
+  "total": 62,
+  "strong_threshold": 7,
+  "drift_total": 0,
+  "branch_totals": {
+    "crianca_triagem_neonatal": 10,
+    "crianca_neonatologia": 3,
+    "crianca_dor": 3,
+    "crianca_generico": 10,
+    "crianca_aleitamento_nutricao": 14,
+    "crianca_desidratacao": 7,
+    "crianca_aps_puericultura": 5,
+    "crianca_desenvolvimento": 3,
+    "crianca_apgar_reanimacao": 2,
+    "crianca_sinais_vitais": 1,
+    "crianca_crescimento_curvas": 1,
+    "crianca_vacinacao": 1,
+    "crianca_saude_bucal": 1,
+    "crianca_violencia_protecao": 1
+  },
+  "strong_branches": [
+    {
+      "branch": "crianca_triagem_neonatal",
+      "count": 10,
+      "l3": "crianca-screening-timeline · crianca-screening-board · crianca-screening-tap-flow · crianca-screening-trap-arena (bespoke)"
+    },
+    {
+      "branch": "crianca_generico",
+      "count": 10,
+      "l3": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "branch": "crianca_aleitamento_nutricao",
+      "count": 14,
+      "l3": "crianca-feeding-timeline · crianca-feeding-board · crianca-feeding-tap-flow · crianca-feeding-trap-arena (bespoke)"
+    },
+    {
+      "branch": "crianca_desidratacao",
+      "count": 7,
+      "l3": "crianca-dehydration-spectrum · crianca-dehydration-board · crianca-dehydration-tap-flow · crianca-dehydration-trap-arena (bespoke)"
+    }
+  ],
+  "inedito_packages_needed": 7,
+  "handcrafts_needed": 62,
+  "cluster_decisions": [
+    {
+      "cluster": "Aleitamento / nutrição infantil",
+      "count": 14,
+      "pct": 22.6,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cpcon-saude-crianca-aleitamento-vf.json",
+      "branch_id": "crianca_aleitamento_nutricao",
+      "family_counts": {
+        "conceito": 13,
+        "vf": 1
+      },
+      "sample_slugs": [
+        "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+        "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+        "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-4"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "molde_inedito",
+      "l3_package": "crianca-feeding-timeline · crianca-feeding-board · crianca-feeding-tap-flow · crianca-feeding-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "count": 10,
+      "pct": 16.1,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cpcon-saude-crianca-triagem-neonatal-vf.json",
+      "branch_id": "crianca_triagem_neonatal",
+      "family_counts": {
+        "conceito": 8,
+        "calc": 1,
+        "protocolo": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+        "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+        "cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-5",
+        "cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-7"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "molde_inedito",
+      "l3_package": "crianca-screening-timeline · crianca-screening-board · crianca-screening-tap-flow · crianca-screening-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "Saúde da criança — conceito geral",
+      "count": 10,
+      "pct": 16.1,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "crianca_generico",
+      "family_counts": {
+        "conceito": 8,
+        "certo_errado": 1,
+        "protocolo": 1
+      },
+      "sample_slugs": [
+        "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5",
+        "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+        "educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1",
+        "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2"
+      ],
+      "decision": "novo_ramo",
+      "strong": true,
+      "l3_decision": "molde_redesign",
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Desidratação / diarreia aguda",
+      "count": 7,
+      "pct": 11.3,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cev-saude-crianca-desidratacao-vf.json",
+      "branch_id": "crianca_desidratacao",
+      "family_counts": {
+        "conceito": 7
+      },
+      "sample_slugs": [
+        "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3",
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5",
+        "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2"
+      ],
+      "decision": "coberto",
+      "strong": true,
+      "l3_decision": "molde_inedito",
+      "l3_package": "crianca-dehydration-spectrum · crianca-dehydration-board · crianca-dehydration-tap-flow · crianca-dehydration-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "APS / puericultura",
+      "count": 5,
+      "pct": 8.1,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-consulplan-saude-crianca-puericultura-vf.json",
+      "branch_id": "crianca_aps_puericultura",
+      "family_counts": {
+        "conceito": 5
+      },
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-3",
+        "idib-enfermagem-saude-da-crianca-1778934936220-8",
+        "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1",
+        "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8"
+      ],
+      "decision": "coberto",
+      "strong": false,
+      "l3_decision": "molde_inedito",
+      "l3_package": "crianca-puericultura-timeline · crianca-puericultura-board · crianca-puericultura-tap-flow · crianca-puericultura-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "Neonatologia clínica",
+      "count": 3,
+      "pct": 4.8,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-idecan-saude-crianca-neonatologia-vf.json",
+      "branch_id": "crianca_neonatologia",
+      "family_counts": {
+        "conceito": 3
+      },
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780004982901-8",
+        "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+        "idecan-enfermagem-saude-da-crianca-1780067024707-4"
+      ],
+      "decision": "coberto",
+      "strong": false,
+      "l3_decision": "molde_inedito",
+      "l3_package": "crianca-neonatal-deck · crianca-neonatal-board · crianca-neonatal-tap-flow · crianca-neonatal-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "Dor pediátrica",
+      "count": 3,
+      "pct": 4.8,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "crianca_dor",
+      "family_counts": {
+        "conceito": 3
+      },
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+        "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+        "vunesp-enfermagem-exames-laboratoriais-1779563621885-2"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Desenvolvimento infantil",
+      "count": 3,
+      "pct": 4.8,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-cpcon-saude-crianca-desenvolvimento-vf.json",
+      "branch_id": "crianca_desenvolvimento",
+      "family_counts": {
+        "vf": 1,
+        "conceito": 2
+      },
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-4",
+        "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
+        "unifil-enfermagem-vias-de-administracao-1778968956139-6"
+      ],
+      "decision": "coberto",
+      "strong": false,
+      "l3_decision": "molde_inedito",
+      "l3_package": "crianca-dev-milestones-rail · crianca-dev-board · crianca-dev-tap-flow · crianca-dev-trap-arena (bespoke)"
+    },
+    {
+      "cluster": "APGAR / reanimação neonatal",
+      "count": 2,
+      "pct": 3.2,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "crianca_apgar_reanimacao",
+      "family_counts": {
+        "protocolo": 2
+      },
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006962671-5"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Sinais vitais pediátricos",
+      "count": 1,
+      "pct": 1.6,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "crianca_sinais_vitais",
+      "family_counts": {
+        "protocolo": 1
+      },
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-8"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Crescimento / curvas OMS",
+      "count": 1,
+      "pct": 1.6,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "crianca_crescimento_curvas",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "idecan-enfermagem-saude-da-crianca-1778712426701-0"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Vacinação infantil",
+      "count": 1,
+      "pct": 1.6,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "crianca_vacinacao",
+      "family_counts": {
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "idecan-enfermagem-saude-da-crianca-1778712426701-5"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Saúde bucal infantil",
+      "count": 1,
+      "pct": 1.6,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "crianca_saude_bucal",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    },
+    {
+      "cluster": "Violência / proteção infantil",
+      "count": 1,
+      "pct": 1.6,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "crianca_violencia_protecao",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · vertical · compare (genérico)"
+    }
+  ],
+  "rows": [
+    {
+      "slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+      "family": "conceito",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "O Teste do Pezinho é um exame obrigatório para todos os recém-nascidos e gratuito na rede pública de",
+      "drift": false
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-8",
+      "family": "conceito",
+      "topic": "Neonatologia clínica",
+      "pedagogical_cluster": "Neonatologia clínica",
+      "pedagogical_branch_proposed": "crianca_neonatologia",
+      "instruction_preview": "O banho do recém-nascido é um momento de cuidado que envolve higiene, conforto e segurança, exigindo",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+      "family": "conceito",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "Na primeira semana de vida, um recém-nascido é levado à unidade de saúde para realização do teste do",
+      "drift": false
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+      "family": "conceito",
+      "topic": "Dor pediátrica",
+      "pedagogical_cluster": "Dor pediátrica",
+      "pedagogical_branch_proposed": "crianca_dor",
+      "instruction_preview": "Na abordagem de uma criança em um pronto-socorro, a classificação da dor é uma parte essencial da av",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5",
+      "family": "conceito",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "No Brasil e em muitos países, a febre é definida quando a temperatura axilar ultrapassa (SOCIEDADE B",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "family": "certo_errado",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "Julgue o item que se segue de acordo com saberes do campo da enfermagem para recém-nascidos, criança",
+      "drift": false
+    },
+    {
+      "slug": "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "A desidratação é depleção significativa da água do corpo e, geralmente, de eletrólitos. Nos lactente",
+      "drift": false
+    },
+    {
+      "slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3",
+      "family": "conceito",
+      "topic": "Desidratação / diarreia aguda",
+      "pedagogical_cluster": "Desidratação / diarreia aguda",
+      "pedagogical_branch_proposed": "crianca_desidratacao",
+      "instruction_preview": "A visita domiciliar, no contexto da saúde da família, é uma atribuição de todos os profissionais da ",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-5",
+      "family": "conceito",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "O \"teste do coraçãozinho\" consiste na aferição da saturação de oxigênio em recém-nascidos aparenteme",
+      "drift": false
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-7",
+      "family": "conceito",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "A Portaria n.o 1.940, de 28 de junho de 2018, inclui na tabela de procedimentos, medicamentos, órtes",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "Joana, 18 anos, está amamentando sua primogênita de 5 meses e encontra-se frustrada e preocupada, po",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-3",
+      "family": "conceito",
+      "topic": "APS / puericultura",
+      "pedagogical_cluster": "APS / puericultura",
+      "pedagogical_branch_proposed": "crianca_aps_puericultura",
+      "instruction_preview": "Durante uma visita domiciliar, a técnica de enfermagem observa a interação e as habilidades globais ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-4",
+      "family": "vf",
+      "topic": "Desenvolvimento infantil",
+      "pedagogical_cluster": "Desenvolvimento infantil",
+      "pedagogical_branch_proposed": "crianca_desenvolvimento",
+      "instruction_preview": "Considerando a Linha de Cuidado para Atenção às Pessoas com Transtorno do Espectro Autista (TEA) do ",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "family": "vf",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "Desde os primeiros dias de vida, a adoção de cuidados com a saúde bucal deve ser estimulada e motiva",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5",
+      "family": "conceito",
+      "topic": "Desidratação / diarreia aguda",
+      "pedagogical_cluster": "Desidratação / diarreia aguda",
+      "pedagogical_branch_proposed": "crianca_desidratacao",
+      "instruction_preview": "A síndrome do desconforto respiratório (SDR), também conhecida como doença da membrana hialina, é um",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3",
+      "family": "protocolo",
+      "topic": "APGAR / reanimação neonatal",
+      "pedagogical_cluster": "APGAR / reanimação neonatal",
+      "pedagogical_branch_proposed": "crianca_apgar_reanimacao",
+      "instruction_preview": "Joana, que é técnica de enfermagem, presta assistência a um recém-nascido com peso de 1750g (ao nasc",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-8",
+      "family": "protocolo",
+      "topic": "Sinais vitais pediátricos",
+      "pedagogical_cluster": "Sinais vitais pediátricos",
+      "pedagogical_branch_proposed": "crianca_sinais_vitais",
+      "instruction_preview": "Com base no Protocolo Samu 192 Protocolos de Procedimentos em SBV SUPORTE BÁSICO DE VIDA: BP11 – Afe",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1",
+      "family": "protocolo",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "As crianças sempre ficarão doentes em algum momento de sua infância. Isso é normal, porque o sistema",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-4",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "Conforme a Organização Mundial de Saúde e o Ministério da Saúde, assinale a alternativa que apresent",
+      "drift": false
+    },
+    {
+      "slug": "fepese-geral-saude-da-crianca-1777104415052-9",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "O leite materno traz muitos benefícios para saúde física da mãe e da criança, não só para o período ",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-5",
+      "family": "protocolo",
+      "topic": "APGAR / reanimação neonatal",
+      "pedagogical_cluster": "APGAR / reanimação neonatal",
+      "pedagogical_branch_proposed": "crianca_apgar_reanimacao",
+      "instruction_preview": "Durante o atendimento imediato ao recém-nascido com suspeita de asfixia neonatal, conforme os protoc",
+      "drift": false
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2",
+      "family": "conceito",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "As infecções do trato respiratório são comuns em crianças e podem levar a uma variedade de sintomas ",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "A amamentação exclusiva nos primeiros seis meses de vida é fundamental para a saúde do bebê. O leite",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
+      "family": "conceito",
+      "topic": "Desenvolvimento infantil",
+      "pedagogical_cluster": "Desenvolvimento infantil",
+      "pedagogical_branch_proposed": "crianca_desenvolvimento",
+      "instruction_preview": "A respeito do teste de Hirschberg, indique a afirmativa correta.",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+      "family": "conceito",
+      "topic": "Neonatologia clínica",
+      "pedagogical_cluster": "Neonatologia clínica",
+      "pedagogical_branch_proposed": "crianca_neonatologia",
+      "instruction_preview": "Com relação aos cuidados de enfermagem em neonatologia, o método mais apropriado para a administraçã",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-4",
+      "family": "conceito",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "Com relação ao manejo da fenilcetonúria (PKU) em crianças, indique a alternativa correta.",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-5",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "Em relação ao diagnóstico de estrabismo em crianças a partir dos 4 meses de idade, analise as altern",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-6",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "Sobre a saúde da criança, que deve ter o crescimento e desenvolvimento acompanhados regularmente pel",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-7",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "A diarreia se caracteriza pela presença de evacuações frequentes e líquidas, acompanhada ou não de d",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-0",
+      "family": "conceito",
+      "topic": "Crescimento / curvas OMS",
+      "pedagogical_cluster": "Crescimento / curvas OMS",
+      "pedagogical_branch_proposed": "crianca_crescimento_curvas",
+      "instruction_preview": "Um dos pilares do programa de saúde da criança é o acompanhamento do seu crescimento e desenvolvimen",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-1",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "Crianças alimentadas adequadamente desde o nascimento adoecem menos, desenvolvem-se melhor, atingem ",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-2",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "O Programa Nacional de Alimentação Escolar (PNAE) tem como objetivo contribuir para o crescimento e ",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+      "family": "conceito",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "Intolerância à lactose é a incapacidade de digerir a lactose (açúcar do leite). O problema é resulta",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+      "family": "conceito",
+      "topic": "Dor pediátrica",
+      "pedagogical_cluster": "Dor pediátrica",
+      "pedagogical_branch_proposed": "crianca_dor",
+      "instruction_preview": "O cuidar e o educar da primeira infância começa pela criação de um ambiente facilitador, da constitu",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+      "family": "certo_errado",
+      "topic": "Vacinação infantil",
+      "pedagogical_cluster": "Vacinação infantil",
+      "pedagogical_branch_proposed": "crianca_vacinacao",
+      "instruction_preview": "O tétano neonatal pode ser controlado e evitado principalmente por meio da assepsia no parto e vacin",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+      "family": "conceito",
+      "topic": "Desidratação / diarreia aguda",
+      "pedagogical_cluster": "Desidratação / diarreia aguda",
+      "pedagogical_branch_proposed": "crianca_desidratacao",
+      "instruction_preview": "Os cuidados com os recém-nascidos de mães diabéticas devem ser levados em consideração devido ao aum",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+      "family": "conceito",
+      "topic": "Neonatologia clínica",
+      "pedagogical_cluster": "Neonatologia clínica",
+      "pedagogical_branch_proposed": "crianca_neonatologia",
+      "instruction_preview": "A icterícia é uma ocorrência comum no período neonatal. Dois entre três recém-nascidos a termo e uma",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+      "family": "calc",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "A triagem neonatal, conhecida popularmente como teste do pezinho, possibilita, através da coleta de ",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+      "family": "conceito",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "Uma criança com mais de 4 meses, com contagem de plaquetas de 25.000/mm3, foi diagnosticada com falh",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5",
+      "family": "conceito",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "A respeito das convulsões neonatais, aponte a alternativa correta sobre a etiologia dessas convulsõe",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-crianca-1778934936220-7",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "A alimentação nos primeiros anos de vida é crucial para o desenvolvimento saudável da criança, e dev",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-crianca-1778934936220-8",
+      "family": "conceito",
+      "topic": "APS / puericultura",
+      "pedagogical_cluster": "APS / puericultura",
+      "pedagogical_branch_proposed": "crianca_aps_puericultura",
+      "instruction_preview": "Durante o processo de estratificação de risco em pediatria, a avaliação da duração dos fatores estre",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+      "family": "conceito",
+      "topic": "Desidratação / diarreia aguda",
+      "pedagogical_cluster": "Desidratação / diarreia aguda",
+      "pedagogical_branch_proposed": "crianca_desidratacao",
+      "instruction_preview": "A assistência à criança na Atenção Básica envolve ações de promoção da saúde, prevenção de agravos e",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-8",
+      "family": "conceito",
+      "topic": "Desidratação / diarreia aguda",
+      "pedagogical_cluster": "Desidratação / diarreia aguda",
+      "pedagogical_branch_proposed": "crianca_desidratacao",
+      "instruction_preview": "A assistência à criança na Atenção Básica envolve ações de promoção da saúde, prevenção de agravos e",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+      "family": "conceito",
+      "topic": "Saúde bucal infantil",
+      "pedagogical_cluster": "Saúde bucal infantil",
+      "pedagogical_branch_proposed": "crianca_saude_bucal",
+      "instruction_preview": "Durante uma campanha de saúde bucal em uma comunidade de baixa renda, foi identificado um aumento si",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1",
+      "family": "conceito",
+      "topic": "APS / puericultura",
+      "pedagogical_cluster": "APS / puericultura",
+      "pedagogical_branch_proposed": "crianca_aps_puericultura",
+      "instruction_preview": "Durante uma consulta de puericultura, o técnico em enfermagem auxilia no atendimento de uma criança ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4",
+      "family": "conceito",
+      "topic": "Violência / proteção infantil",
+      "pedagogical_cluster": "Violência / proteção infantil",
+      "pedagogical_branch_proposed": "crianca_violencia_protecao",
+      "instruction_preview": "O Agente Comunitário de Saúde (ACS), por estar inserido na comunidade e visitar mais frequentemente ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-6",
+      "family": "conceito",
+      "topic": "Desidratação / diarreia aguda",
+      "pedagogical_cluster": "Desidratação / diarreia aguda",
+      "pedagogical_branch_proposed": "crianca_desidratacao",
+      "instruction_preview": "As visitas domiciliares são recomendadas às famílias de gestantes e crianças na primeira semana pós-",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+      "family": "conceito",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "Entre o 3o e 5o dia de vida do RN (5o Dia de Saúde Integral), os pais devem comparecer à UBS para a ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8",
+      "family": "conceito",
+      "topic": "APS / puericultura",
+      "pedagogical_cluster": "APS / puericultura",
+      "pedagogical_branch_proposed": "crianca_aps_puericultura",
+      "instruction_preview": "A puericultura refere-se ao acompanhamento do crescimento e desenvolvimento da criança. É importante",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "Os principais objetivos da primeira visita domiciliar ao recém-nascido e à sua família são, EXCETO:",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1",
+      "family": "conceito",
+      "topic": "Aleitamento / nutrição infantil",
+      "pedagogical_cluster": "Aleitamento / nutrição infantil",
+      "pedagogical_branch_proposed": "crianca_aleitamento_nutricao",
+      "instruction_preview": "A visita domiciliar após o parto da mulher é de extrema importância para avaliação do recém-nascido.",
+      "drift": false
+    },
+    {
+      "slug": "intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7",
+      "family": "conceito",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "O Programa Nacional de Triagem Neonatal (PNTN) preconiza que o seja realizado em todas as crianças r",
+      "drift": false
+    },
+    {
+      "slug": "quadrix-enfermagem-saude-da-crianca-1780001362784-6",
+      "family": "conceito",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "Um dos cuidados ao recém‐nascido é a coleta dos dados antropométricos, sendo o perímetro torácico, m",
+      "drift": false
+    },
+    {
+      "slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+      "family": "conceito",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "Coleção sanguínea na superfície da abóboda craniana do recém‐nascido que pode surgir após parto labo",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-exames-complementares-1779563668619-4",
+      "family": "conceito",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "A doença de Perthes caracteriza-se por uma perda temporária do fluxo sanguíneo na região do quadril,",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "family": "conceito",
+      "topic": "APS / puericultura",
+      "pedagogical_cluster": "APS / puericultura",
+      "pedagogical_branch_proposed": "crianca_aps_puericultura",
+      "instruction_preview": "No âmbito da atenção básica, de acordo com o caderno de atenção básica- Saúde da criança, do Ministé",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
+      "family": "conceito",
+      "topic": "Desenvolvimento infantil",
+      "pedagogical_cluster": "Desenvolvimento infantil",
+      "pedagogical_branch_proposed": "crianca_desenvolvimento",
+      "instruction_preview": "Sobre a administração de medicamentos via intramuscular em crianças menores de 3 anos, o local de ap",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "family": "protocolo",
+      "topic": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_cluster": "Triagem neonatal (pezinho / coraçãozinho)",
+      "pedagogical_branch_proposed": "crianca_triagem_neonatal",
+      "instruction_preview": "Em uma maternidade, a mãe e o recém-nascido estão de alta. Considerando que o bebê, eutrófico, estav",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "family": "conceito",
+      "topic": "Saúde da criança — conceito geral",
+      "pedagogical_cluster": "Saúde da criança — conceito geral",
+      "pedagogical_branch_proposed": "crianca_generico",
+      "instruction_preview": "Um recém-nascido, em seu primeiro dia de vida, é diagnosticado com uma doença que figura na listagem",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "family": "conceito",
+      "topic": "Dor pediátrica",
+      "pedagogical_cluster": "Dor pediátrica",
+      "pedagogical_branch_proposed": "crianca_dor",
+      "instruction_preview": "Diariamente, vários usuários portadores de diabete melito procuram a unidade básica de saúde (UBS), ",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "family": "conceito",
+      "topic": "Desidratação / diarreia aguda",
+      "pedagogical_cluster": "Desidratação / diarreia aguda",
+      "pedagogical_branch_proposed": "crianca_desidratacao",
+      "instruction_preview": "Em uma unidade de pronto atendimento (UPA), ao avaliar B.A., sexo feminino, 4 anos, com história de ",
+      "drift": false
+    }
+  ]
+}

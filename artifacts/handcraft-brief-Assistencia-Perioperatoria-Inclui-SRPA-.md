@@ -4,7 +4,9 @@
 
 ## Escopo
 
-- **Subtópico inteiro** — handcraft golden-v1 A1+A2+A3
+- **Subtópico inteiro** — Repair clinical-depth-v3 — slugs do cluster pós-operatório e âncoras pré-v3
+- Seleção: Cluster pós-operatório/EXCETO sem v3; audit --strict-v2-pedagogy com warn/error; ou Slug: explícito do usuário
+- **Primeiro lote:** `perioperatoria-repair-v3-g01`
 
 ## Pacote (registry)
 
@@ -18,6 +20,8 @@
 | anchor_glob | `examples/questao-premium-*-perioperatoria-*.json` |
 | guideline | `—` |
 | handcraft_meta | `data/catalog-migration/perioperatoria-completo/handcraft-meta.json` |
+
+**Padrão de lotes repair:** `perioperatoria-repair-v3-g{NN}` · 1º lote: `perioperatoria-repair-v3-g01`
 
 ## Ramos L3 (pedagogical_branch)
 
@@ -59,11 +63,9 @@
 
 ```bash
 npm run catalog:export-lote -- --lote=perioperatoria-completo --subtopico="Assistência Perioperatória (Inclui SRPA)" --limit=10000
-# Handcraft → data/catalog-migration/perioperatoria-g01/questions/*.json
-npm run validate:goldens -- --lote=perioperatoria-g01 --strict
-npm run audit:questao-readiness -- --lote=perioperatoria-g01 --strict-v2-pedagogy
-npm run catalog:apply-lote -- --lote=perioperatoria-g01 --dry-run
-# apply + patch branch só se o usuário pedir
+# Handcraft → data/catalog-migration/perioperatoria-repair-v3-g01/questions/*.json
+npm run audit:questao-readiness -- --lote=perioperatoria-repair-v3-g01 --strict-v2-pedagogy
+npm run catalog:apply-lote -- --lote=perioperatoria-repair-v3-g01 --dry-run
 ```
 
 ## Critério de pronto (automático)

@@ -1,0 +1,23 @@
+{
+  "lote": "processo-de-enfermagem-g06",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "created_at": "2026-07-15",
+  "applied_at": "2026-07-15",
+  "subtopico": "Processo de Enfermagem",
+  "total": 12,
+  "status": "applied",
+  "parent": "data/catalog-migration/processo-de-enfermagem-completo/handcraft-meta.json",
+  "anchor_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+  "validate_command": "npm run validate:goldens -- --lote=processo-de-enfermagem-g06 --strict",
+  "apply_command": "npm run catalog:apply-lote -- --lote=processo-de-enfermagem-g06 --apply",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-15",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/processo-de-enfermagem-g06.json"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "lote": "saude-da-crianca-g05",
+  "exported_at": "2026-07-15T16:19:30.810Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/saude-da-crianca-g05/manifest.json"
+  },
+  "slugs": [
+    "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5"
+  ]
+}

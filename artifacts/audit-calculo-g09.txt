@@ -1,0 +1,19 @@
+﻿
+> avant@0.1.0 audit:questao-readiness
+> tsx scripts/audit-questao-readiness.ts --lote=calculo-de-administracao-de-medicamentos-e-infusoes-g09 --strict-v2-pedagogy
+
+[READY] itame-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-1 branch=calc_dose_equivalencia risk=alto/human_required errors=none
+[READY] ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-2 branch=calc_dose_equivalencia risk=alto/human_required errors=none
+[READY] ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3 branch=calc_conceito risk=medio/auto_conditional errors=none
+[READY] ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-4 branch=calc_dose_equivalencia risk=alto/human_required errors=none
+[FAIL] ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-5 branch=calc_conceito risk=medio/auto_conditional errors=l3_branch_inference_mismatch
+  [A3] l3_branch_inference_mismatch: meta.pedagogical_branch="calc_conceito" Ôëá inferido="calc_dose_equivalencia" ÔÇö rodar catalog:patch-pedagogical-branch --reconcile-branch
+[READY] lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-6 branch=calc_dose_equivalencia risk=alto/human_required errors=none
+[READY] lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-7 branch=calc_dose_equivalencia risk=alto/human_required errors=none
+[FAIL] nao-informado-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-0 branch=calc_dose_equivalencia risk=alto/human_required errors=align_calc_units
+  [A2.5] align_calc_units: Unidade "ampola" do enunciado ausente em logic_flow.
+
+[audit:questao-readiness] subt├│pico="C├ílculo de Administra├º├úo de Medicamentos e Infus├Áes" ready=6/8 (75%)
+[audit:questao-readiness] registry status=in_progress handcraft=8/85 complete=false
+[audit:questao-readiness] falhas por tier A1=0 A2=0 A3=1
+[audit:questao-readiness] relat├│rio=D:\AVANT\artifacts\questao-readiness-audit.json

@@ -1,0 +1,76 @@
+{
+  "lote": "saude-da-crianca-g06",
+  "generated_at": "2026-07-15T16:21:52.863Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "idib-enfermagem-saude-da-crianca-1778934936220-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-crianca-1778934936220-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

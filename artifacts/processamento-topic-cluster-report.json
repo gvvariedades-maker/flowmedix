@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-07-14T14:33:24.928Z",
+  "subtopico": "Processamento de Artigos e Produtos de Saúde",
+  "total": 18,
+  "branch_counts": {
+    "cme_generico": 7,
+    "cme_vf_ce": 10,
+    "cme_autoclave_metodos": 1
+  },
+  "contract_fail": 0,
+  "drift": 0,
+  "rows": [
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+      "family": "conceito",
+      "branch": "cme_generico"
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+      "family": "conceito",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+      "family": "conceito",
+      "branch": "cme_generico"
+    },
+    {
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4",
+      "family": "conceito",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+      "family": "conceito",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+      "family": "conceito",
+      "branch": "cme_autoclave_metodos"
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+      "family": "conceito",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-7",
+      "family": "protocolo",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+      "family": "certo_errado",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+      "family": "certo_errado",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+      "family": "conceito",
+      "branch": "cme_generico"
+    },
+    {
+      "slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+      "family": "certo_errado",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+      "family": "conceito",
+      "branch": "cme_generico"
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+      "family": "conceito",
+      "branch": "cme_generico"
+    },
+    {
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+      "family": "conceito",
+      "branch": "cme_generico"
+    },
+    {
+      "slug": "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
+      "family": "conceito",
+      "branch": "cme_generico"
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-8",
+      "family": "certo_errado",
+      "branch": "cme_vf_ce"
+    },
+    {
+      "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0",
+      "family": "certo_errado",
+      "branch": "cme_vf_ce"
+    }
+  ]
+}

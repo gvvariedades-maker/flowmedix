@@ -1,0 +1,67 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "Tec Enf",
+    "ano": "2024",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Criança",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "pedagogical_branch": "crianca_neonatologia"
+  },
+  "question_data": {
+    "instruction": "Sobre cuidados ao recém-nascido, analise as afirmativas.\n\nI - O banho do RN deve ser adiado até estabilização da temperatura e vínculo mãe-bebê.\nII - Icterícia fisiológica costuma surgir após 24 horas de vida.\nIII - Glicemia de rotina é obrigatória para todo RN a termo sem fator de risco.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": { "subtopico": "Saúde da Criança" },
+      "items": [
+        { "label": "Banho", "detail": "Adiar — pele imatura, termorregulação e vínculo.", "icon": "Droplets" },
+        { "label": "Icterícia", "detail": "Fisiológica após 24h — monitorar zona de Kramer.", "icon": "Sun" },
+        { "label": "Temperatura", "detail": "Manter RN em temperatura estável antes de procedimentos.", "icon": "Thermometer" },
+        { "label": "Glicemia", "detail": "Rastrear só com fator de risco — DM gestacional, RN grande/pequeno.", "icon": "Activity" }
+      ],
+      "footer_rule": "RN: banho tardio + icterícia após 24h"
+    },
+    {
+      "type": "golden_rule",
+      "content": "NEONATOLOGIA",
+      "rows": [
+        { "label": "Banho", "value": "Adiar até estabilização", "badge": "hot" },
+        { "label": "Icterícia", "value": "Após 24h — fisiológica", "badge": "ok" },
+        { "label": "Glicemia rotina", "value": "Falso — só com risco", "badge": "warn" }
+      ],
+      "footer_rule": "III generaliza glicemia"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "steps": [
+        "I: adiar banho → verdadeira.",
+        "II: icterícia após 24h → verdadeira.",
+        "III: glicemia em todo RN → falsa.",
+        "Letra B."
+      ],
+      "footer_rule": "Cuidados imediatos ao RN"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "content": "PEGADINHAS — RN",
+      "items": [
+        { "label": "Banho imediato", "detail": "I contraria banho precoce.", "correct": "Adiar banho até estabilização." },
+        { "label": "Icterícia ao nascer", "detail": "II fala após 24h.", "correct": "Icterícia fisiológica após 24h." },
+        { "label": "Glicemia universal", "detail": "III exagera rastreio.", "correct": "Glicemia se fator de risco." }
+      ],
+      "footer_rule": "RN estável antes de procedimentos"
+    }
+  ]
+}

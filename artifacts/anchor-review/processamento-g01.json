@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T23:42:33.653Z",
+  "generated_at": "2026-07-14T14:41:17.322Z",
   "lote": "processamento-g01",
   "anchor_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
   "subtopico": "Processamento de Artigos e Produtos de Saúde",
@@ -10,7 +10,7 @@
     "automated_pass": true,
     "issues": []
   },
-  "captures_dir": null,
+  "captures_dir": "artifacts/questao-review/idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
   "checklist": [
     {
       "id": 1,
