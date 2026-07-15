@@ -2,7 +2,7 @@ import type { ThemeColors } from '../core/themeGenerator';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
 
 interface LogicFlowBiossegVfJuggleTapProps {
-  steps: string[];
+  steps: string[] | Array<{ id?: string; text: string }>;
   theme: ThemeColors;
   footerRule?: string;
   chipLabel?: string;
