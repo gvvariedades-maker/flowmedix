@@ -144,7 +144,6 @@ export function lintSaePedagogy(payload: {
         issues.push({
           code: 'sae_concept_gabarito_spoiler',
           message: 'concept_map não deve revelar gabarito/letra',
-          severity: 'error',
           path: 'reverse_study_slides.concept_map',
         });
         break;
@@ -163,7 +162,6 @@ export function lintSaePedagogy(payload: {
         issues.push({
           code: 'sae_danger_mirror',
           message: 'danger_zone.items[].correct duplicado',
-          severity: 'error',
           path: 'reverse_study_slides.danger_zone',
         });
         break;
@@ -181,7 +179,6 @@ export function lintSaePedagogy(payload: {
             issues.push({
               code: 'sae_exceto_semantic',
               message: 'EXCETO: card do gabarito deve apontar a exceção, não conduta correta genérica',
-              severity: 'error',
               path: 'reverse_study_slides.danger_zone',
             });
           }
