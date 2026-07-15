@@ -11,8 +11,8 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: '/',
     display: 'standalone',
     orientation: 'portrait',
-    background_color: '#010409',
-    theme_color: '#010409',
+    background_color: '#0cc93a',
+    theme_color: '#0cc93a',
     lang: 'pt-BR',
     categories: ['education'],
     icons: [
@@ -29,7 +29,7 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: 'any',
       },
       {
-        src: '/brand/avant-pwa-icon.png',
+        src: '/brand/avant-pwa-icon-maskable.png',
         sizes: '512x512',
         type: 'image/png',
         purpose: 'maskable',

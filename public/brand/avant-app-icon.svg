@@ -1,5 +1,5 @@
-<!-- AVANT Enf app icon: brasao dourado/esmeralda sobre fundo cyber. -->
+<!-- AVANT Enf v4 — ícone app/PWA: verde full-bleed + monograma na safe zone maskable -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" fill="none" aria-label="AVANT Enf">
-  <rect width="512" height="512" rx="114" fill="#010409"/>
-  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="96" y="96" width="320" height="320" preserveAspectRatio="xMidYMid meet"/>
+  <rect width="512" height="512" fill="#0cc93a"/>
+  <image href="avant-logo-shield.png" xlink:href="avant-logo-shield.png" x="51" y="51" width="410" height="410" preserveAspectRatio="xMidYMid meet"/>
 </svg>
