@@ -10,7 +10,7 @@ const phone = heroCaptureScreenPx('phone');
 export const HERO_MOCKUP_ASSETS = {
   laptop: {
     src: `/mockups/laptop-player.png?v=${HERO_MOCKUP_VERSION}`,
-    alt: 'Player AVANT Enf no desktop — Curativos e Manejo de Feridas, CPCON UEPB 2025',
+    alt: 'Player AVANT enf no desktop — Curativos e Manejo de Feridas, CPCON UEPB 2025',
     width: laptop.width,
     height: laptop.height,
     objectPosition: 'object-top',

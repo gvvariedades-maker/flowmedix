@@ -308,7 +308,7 @@ export function validateProPriceEnv(): void {
   const raw = current.STRIPE_PRICE_ID_PRO;
   if (!raw) {
     const message =
-      'STRIPE_PRICE_ID_PRO não configurado. Defina o Price ID recorrente do AVANT Enf Pro (Stripe → Produtos).';
+      'STRIPE_PRICE_ID_PRO não configurado. Defina o Price ID recorrente do AVANT enf Pro (Stripe → Produtos).';
 
     if (current.NODE_ENV === 'production') {
       throw new Error(`❌ ${message}`);

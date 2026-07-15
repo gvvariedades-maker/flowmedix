@@ -378,7 +378,7 @@ function PresetPreview({ preset, batchCount }: { preset: QuickAddPreset; batchCo
           Sua banca: <span className="text-[#166534]">{preset.banca}</span>
         </p>
       ) : (
-        <p className="text-sm font-bold text-slate-900">Sugestões do catálogo AVANT Enf</p>
+        <p className="text-sm font-bold text-slate-900">Sugestões do catálogo AVANT enf</p>
       )}
 
       {preset.assuntosTop3.length > 0 ? (

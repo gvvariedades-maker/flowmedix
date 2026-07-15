@@ -232,7 +232,7 @@ export default function AdminEmailsPage() {
 
         <header>
           <h1 className="text-3xl font-[1000] italic uppercase tracking-tighter">
-            E-mails <span className="text-[#4F46E5]">AVANT Enf</span>
+            E-mails <span className="text-[#4F46E5]">AVANT enf</span>
           </h1>
           <p className="mt-2 text-sm text-slate-500">
             Edite textos de boas-vindas e campanhas de marketing. Layout e cores permanecem no
@@ -282,7 +282,7 @@ export default function AdminEmailsPage() {
               {selectedSlug === 'welcome' ? (
                 <p className="text-xs text-slate-500">
                   Use <code className="rounded bg-slate-100 px-1">{'{{firstName}}'}</code> no título
-                  (ex.: Olá, {'{{firstName}}'}!). Sem nome no cadastro, o AVANT Enf usa «técnico de
+                  (ex.: Olá, {'{{firstName}}'}!). Sem nome no cadastro, o AVANT enf usa «técnico de
                   enfermagem». Este template é usado no cadastro e em «Reenviar boas-vindas».
                 </p>
               ) : null}

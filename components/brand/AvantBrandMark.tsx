@@ -9,13 +9,13 @@ type AvantBrandMarkProps = {
 };
 
 const BRAND_MARK_SIZE: Record<NonNullable<AvantBrandMarkProps['size']>, AvantLogoSizeToken> = {
-  sm: 'nav',
-  md: 'md',
+  sm: 'md',
+  md: 'lg',
 };
 
 /**
- * Lockup compacto do dashboard — delega a `AvantLogo` (AE + AVANT / Enf).
- * Editorial: wordmark `#166534` + Enf; cyber: lockup com glow mínimo.
+ * Lockup compacto do dashboard — delega a `AvantLogo` (AE + AVANT / enf).
+ * Editorial: wordmark `#166534` + enf; cyber: lockup com glow mínimo.
  */
 export function AvantBrandMark({
   size = 'md',

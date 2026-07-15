@@ -130,7 +130,7 @@ export function EditableMessageEmail({
             color: MUTED,
           }}
         >
-          Dica: comece por uma questão da sua banca — o AVANT Enf monta os 4 NeuroSlides na hora.
+          Dica: comece por uma questão da sua banca — o AVANT enf monta os 4 NeuroSlides na hora.
         </Text>
       ) : null}
     </>

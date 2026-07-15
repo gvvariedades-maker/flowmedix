@@ -2,7 +2,7 @@ import type { LessonMeta } from '@/types/lesson';
 
 /**
  * Remove a enumeração global do caderno no início do enunciado (ex.: `1) `, `12) `).
- * PDF costuma trazer "1) De acordo..."; no AVANT Enf exibe-se sem esse prefixo.
+ * PDF costuma trazer "1) De acordo..."; no AVANT enf exibe-se sem esse prefixo.
  * Também trata `<p>1) ` ou `<div>1) ` após tag de abertura.
  */
 export function stripLeadingQuestionEnumeration(text: string): string {

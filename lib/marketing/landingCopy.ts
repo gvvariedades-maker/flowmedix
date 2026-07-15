@@ -7,7 +7,7 @@ import {
 } from '@/lib/freemium/constants';
 import { BRAND_NAME, BRAND_PRO_NAME, brandCopyright } from '@/lib/brand/brandName';
 
-/** Preço mensal AVANT Enf Pro (Stripe). */
+/** Preço mensal AVANT enf Pro (Stripe). */
 export const LANDING_PRECO_PRO = '14,90';
 
 export const LANDING_HERO = {

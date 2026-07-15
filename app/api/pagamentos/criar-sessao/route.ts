@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
   if (concursoSlug !== GERAL_CONCURSO_SLUG) {
     return NextResponse.json(
       {
-        error: 'A assinatura AVANT Enf Pro é adquirida pela landing ou em /assinar-pro.',
+        error: 'A assinatura AVANT enf Pro é adquirida pela landing ou em /assinar-pro.',
         redirectUrl: '/assinar-pro',
       },
       { status: 400 },
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
       const redirectUrl = isAdminSessionEmail(sessionEmail) ? '/admin' : '/estudar';
       return NextResponse.json(
         {
-          error: 'Você já tem acesso completo ao AVANT Enf.',
+          error: 'Você já tem acesso completo ao AVANT enf.',
           redirectUrl,
         },
         { status: 409 },
@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
   try {
     priceId = requireStripePriceIdPro();
   } catch (error) {
-    logger.error('Checkout AVANT Enf Pro sem STRIPE_PRICE_ID_PRO', error, { userId });
+    logger.error('Checkout AVANT enf Pro sem STRIPE_PRICE_ID_PRO', error, { userId });
     return NextResponse.json(
       { error: 'Assinatura Pro indisponível no momento. Tente novamente mais tarde.' },
       { status: 503 },
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ url: checkoutSession.url });
   } catch (error) {
-    logger.error('Falha ao criar sessão Stripe AVANT Enf Pro', error, { userId });
+    logger.error('Falha ao criar sessão Stripe AVANT enf Pro', error, { userId });
     return NextResponse.json({ error: 'Não foi possível iniciar o pagamento.' }, { status: 502 });
   }
 }

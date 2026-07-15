@@ -23,7 +23,7 @@ export type PublicDarkSiteHeaderProps = {
   ctaHref?: string;
   /** Botão secundário «Assinar Pro» (checkout Stripe). */
   showProSubscribe?: boolean;
-  /** Link «AVANT Enf Pro» no nav (ocultar na homepage, onde o destino é `/`). */
+  /** Link «AVANT enf Pro» no nav (ocultar na homepage, onde o destino é `/`). */
   showAvantProLink?: boolean;
   /** Link «Concursos abertos» (ocultar em `/planos`). */
   showPlanosLink?: boolean;
@@ -90,7 +90,7 @@ export function PublicDarkSiteHeader({
       href={AVANT_PRO_LP_HREF}
       className={`${navLinkClass} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
     >
-      AVANT Enf Pro
+      AVANT enf Pro
     </Link>
   ) : null;
 
@@ -129,7 +129,7 @@ export function PublicDarkSiteHeader({
               ) : null}
               {avantProLink ? (
                 <Link href={AVANT_PRO_LP_HREF} className={navLinkClassMobile}>
-                  AVANT Enf Pro
+                  AVANT enf Pro
                 </Link>
               ) : null}
               {showProSubscribe ? <ProSubscribeNavButton /> : null}

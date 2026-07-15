@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Criar conta grátis | AVANT Enf',
+  title: 'Criar conta grátis | AVANT enf',
   robots: {
     index: false,
     follow: true,

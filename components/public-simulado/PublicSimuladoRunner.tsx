@@ -171,7 +171,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
             href={ctaHref}
             className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-6 py-4 text-sm font-black uppercase tracking-widest text-slate-950"
           >
-            Garantir acesso AVANT Enf · Campina Grande
+            Garantir acesso AVANT enf · Campina Grande
             <ChevronRight className="h-4 w-4" />
           </Link>
         </div>
@@ -188,7 +188,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 text-lg">
               ⚡
             </div>
-            <span className="text-xl font-black tracking-wide text-white">AVANT Enf</span>
+            <span className="text-xl font-black tracking-wide text-white">AVANT enf</span>
           </div>
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3 py-1.5 text-xs font-bold text-blue-300">
             📍 {manifest.cidade} · {manifest.uf} · {manifest.dataProvaFormatada}
@@ -221,7 +221,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
 
           <p className="mt-4 rounded-xl border border-white/10 bg-slate-900/50 px-4 py-3 text-xs leading-relaxed text-slate-400">
             Conteúdo específico de técnico de enfermagem (IDECAN). Estudo reverso com NeuroSlides em
-            todas as questões — mesmo formato do app AVANT Enf.
+            todas as questões — mesmo formato do app AVANT enf.
           </p>
 
           <button
@@ -239,7 +239,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
         <>
           <div className="sticky top-0 z-40 border-b border-white/10 bg-[#0c0c16] px-4 py-3">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-bold text-cyan-400">AVANT Enf</span>
+              <span className="text-sm font-bold text-cyan-400">AVANT enf</span>
               <span className="text-sm font-bold text-cyan-400">{formatTimer(timerSec)}</span>
             </div>
             <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/10">
@@ -476,7 +476,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
               href={ctaHref}
               className="flex w-full items-center justify-center rounded-2xl bg-[#BEF264] py-4 text-sm font-black uppercase tracking-widest text-slate-950"
             >
-              Garantir acesso AVANT Enf
+              Garantir acesso AVANT enf
             </Link>
             <button
               type="button"
@@ -496,7 +496,7 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 text-xs">
               ⚡
             </div>
-            <span className="text-sm font-black text-white">AVANT Enf</span>
+            <span className="text-sm font-black text-white">AVANT enf</span>
           </div>
           <Link href={ctaHref} className="rounded-full bg-[#BEF264] px-4 py-1.5 text-xs font-black text-slate-950">
             Campina Grande →

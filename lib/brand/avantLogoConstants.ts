@@ -1,5 +1,5 @@
 /**
- * AVANT Enf logo — identidade oficial "Brushed Blue" (adotada 2026-07-15).
+ * AVANT enf logo — identidade oficial "Brushed Blue" (adotada 2026-07-15).
  *
  * Direção de marca:
  * - Ícone: card squircle verde (`iconCardGreen`) + monograma "A" fragmentado
@@ -16,9 +16,9 @@
 export type AvantLogoSizeToken = 'nav' | 'md' | 'lg';
 
 export const AVANT_LOGO_SIZE_SCALE: Record<AvantLogoSizeToken, number> = {
-  nav: 0.72,
-  md: 0.86,
-  lg: 1,
+  nav: 0.9,
+  md: 1.02,
+  lg: 1.12,
 } as const;
 
 export function getAvantLogoScale(size: AvantLogoSizeToken): number {
@@ -138,8 +138,8 @@ export const AVANT_LOGO_DIMENSIONS = {
 
 /** Wordmark raster PNG — proporção do lockup AVANT + enf (Canva v4). */
 export const AVANT_LOGO_WORDMARK_RASTER = {
-  /** Altura relativa ao fontSize base (1.5 ≈ legível sem estourar sidebar 16rem). */
-  scale: 1.5,
+  /** Altura relativa ao fontSize base (legível no header mobile e sidebar). */
+  scale: 1.62,
   aspect: 3750 / 640,
 } as const;
 

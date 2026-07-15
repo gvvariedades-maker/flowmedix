@@ -113,12 +113,12 @@ const BENEFICIOS_PRO = [
 
 const FAQ_ITEMS = [
   {
-    q: 'O AVANT Enf Pro serve só para Campina Grande?',
+    q: 'O AVANT enf Pro serve só para Campina Grande?',
     a: 'Não. Você prepara para Campina com foco IDECAN e ainda acessa questões de EBSERH, prefeituras e demais bancas — tudo no mesmo plano.',
   },
   {
-    q: 'Já tenho apostila. Preciso do AVANT Enf?',
-    a: 'Apostila dá base; a prova cobra raciocínio sob pressão. O AVANT Enf treina com questões reais e fixa o erro na hora com NeuroSlides — o que apostila sozinha não faz.',
+    q: 'Já tenho apostila. Preciso do AVANT enf?',
+    a: 'Apostila dá base; a prova cobra raciocínio sob pressão. O AVANT enf treina com questões reais e fixa o erro na hora com NeuroSlides — o que apostila sozinha não faz.',
   },
   {
     q: 'Posso cancelar quando quiser?',
@@ -341,7 +341,7 @@ export function LPCampinaV2() {
                   <ArrowRight size={18} aria-hidden />
                 </BrandCta>
                 <OutlineCta onClick={scrollToPricing} className="w-full sm:w-auto">
-                  Assinar AVANT Enf Pro — R$ {PRECO_PRO}/mês
+                  Assinar AVANT enf Pro — R$ {PRECO_PRO}/mês
                 </OutlineCta>
               </div>
 
@@ -360,7 +360,7 @@ export function LPCampinaV2() {
                 <div className="overflow-hidden rounded-[1.5rem] border border-slate-100 bg-slate-950">
                   <Image
                     src="/images/campina-grande/walk-01.jpg"
-                    alt="Questão real IDECAN no player AVANT Enf"
+                    alt="Questão real IDECAN no player AVANT enf"
                     width={390}
                     height={540}
                     className="aspect-[13/18] w-full object-cover"
@@ -401,7 +401,7 @@ export function LPCampinaV2() {
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-slate-400">
                   Resultado na hora, análise por eixo e estudo reverso em todas as questões. Você vê onde
-                  trava — e entende por que o AVANT Enf Pro faz diferença.
+                  trava — e entende por que o AVANT enf Pro faz diferença.
                 </p>
                 <ul className="mt-6 flex flex-wrap gap-2">
                   {['10 questões reais', 'Resultado na hora', 'Análise por eixo'].map((item) => (
@@ -427,7 +427,7 @@ export function LPCampinaV2() {
                     >
                       <Image
                         src={src}
-                        alt={`Passo ${i + 1} do ciclo de estudo AVANT Enf`}
+                        alt={`Passo ${i + 1} do ciclo de estudo AVANT enf`}
                         width={200}
                         height={280}
                         className="aspect-[5/7] w-full object-cover"
@@ -484,7 +484,7 @@ export function LPCampinaV2() {
         {/* Método */}
         <section className="px-4 py-16 sm:px-6 sm:py-20">
           <div className="mx-auto max-w-6xl">
-            <SectionLabel>Método AVANT Enf</SectionLabel>
+            <SectionLabel>Método AVANT enf</SectionLabel>
             <h2 className="text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
               Do erro ao aprendizado — em 4 passos
             </h2>
@@ -564,18 +564,18 @@ export function LPCampinaV2() {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="px-4 py-16 sm:px-6 sm:py-24" aria-label="Assinar AVANT Enf Pro">
+        <section id="pricing" className="px-4 py-16 sm:px-6 sm:py-24" aria-label="Assinar AVANT enf Pro">
           <div className="mx-auto max-w-4xl">
             <div className="overflow-hidden rounded-[2rem] bg-[#0f172a] p-6 shadow-2xl sm:p-10">
               <div className="text-center">
                 <span className="inline-flex rounded-full bg-[#8fe020]/15 px-3 py-1 text-xs font-black uppercase tracking-wider text-[#8fe020]">
-                  AVANT Enf Pro
+                  AVANT enf Pro
                 </span>
                 <h2 className="mt-4 text-2xl font-[1000] tracking-tight text-white sm:text-3xl">
                   Prepare-se para Campina Grande com acesso completo
                 </h2>
                 <p className="mt-3 text-slate-400">
-                  A inscrição custou {TAXA_INSCRICAO}. O AVANT Enf Pro custa R$ {PRECO_PRO}/mês — menos que um
+                  A inscrição custou {TAXA_INSCRICAO}. O AVANT enf Pro custa R$ {PRECO_PRO}/mês — menos que um
                   lanche por semana de estudo direcionado.
                 </p>
               </div>
@@ -597,7 +597,7 @@ export function LPCampinaV2() {
                 </ul>
 
                 <ProCheckoutCta
-                  label={`Assinar AVANT Enf Pro — R$ ${PRECO_PRO}/mês`}
+                  label={`Assinar AVANT enf Pro — R$ ${PRECO_PRO}/mês`}
                   className="mt-8 [&_button]:w-full"
                 />
 
@@ -651,9 +651,9 @@ export function LPCampinaV2() {
       <footer className="border-t border-slate-200 bg-white px-4 py-10 sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <p className="max-w-3xl text-sm leading-relaxed text-slate-500">
-            O AVANT Enf é uma plataforma de estudo independente. Não somos órgão público, banca examinadora nem
+            O AVANT enf é uma plataforma de estudo independente. Não somos órgão público, banca examinadora nem
             afiliados a órgãos ou empresas de concurso. Conteúdo focado em Conhecimentos Específicos de
-            Enfermagem para Técnico via assinatura AVANT Enf Pro.
+            Enfermagem para Técnico via assinatura AVANT enf Pro.
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-slate-600">
             <Link className="hover:text-[#3d6b0f]" href="/politica-de-privacidade">

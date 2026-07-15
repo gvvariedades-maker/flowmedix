@@ -14,7 +14,7 @@ import {
 } from './ajudaComponents';
 
 export const metadata = {
-  title: 'Como usar o AVANT Enf | Tutorial rápido',
+  title: 'Como usar o AVANT enf | Tutorial rápido',
   description:
     'Tutorial claro para primeiro acesso: checklist inicial, foco único por passo, texto principal e figuras de apoio.',
   alternates: {
@@ -22,9 +22,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Como usar o AVANT Enf | Tutorial rápido',
+    title: 'Como usar o AVANT enf | Tutorial rápido',
     description:
-      'Tutorial claro para começar no AVANT Enf: escolha uma questão, veja o diagnóstico e avance no estudo reverso.',
+      'Tutorial claro para começar no AVANT enf: escolha uma questão, veja o diagnóstico e avance no estudo reverso.',
   },
 };
 
@@ -91,7 +91,7 @@ const STEPS: {
     clique: 'Clique em uma alternativa (A, B, C, D ou E). Depois clique em “Confirmar resposta”.',
     actionHref: '/estudar',
     actionLabel: 'Escolher uma questão na vitrine',
-    depois: 'O AVANT Enf mostra se sua resposta estava certa ou errada e libera o estudo reverso.',
+    depois: 'O AVANT enf mostra se sua resposta estava certa ou errada e libera o estudo reverso.',
   },
   {
     id: 'passo-04',
@@ -151,7 +151,7 @@ const STEPS: {
     title: 'Use o Plano diário',
     file: 'seq-04.png',
     alt: 'Plano diário: em dia, link para a vitrine no topo',
-    caption: 'Figura 8 — se não houver revisão, o AVANT Enf informa que você está em dia.',
+    caption: 'Figura 8 — se não houver revisão, o AVANT enf informa que você está em dia.',
     objetivo: 'Cumprir as revisões agendadas pela plataforma.',
     clique: 'No menu lateral, clique em “Plano diário”. Se aparecer “Você está em dia”, use “Voltar para a Vitrine” no topo para estudar novos assuntos.',
     actionHref: '/plano-diario',
@@ -202,7 +202,7 @@ export default function AjudaPage() {
         <Sparkles className="h-3.5 w-3.5 text-[#166534]" aria-hidden />
         Guia do aluno — início rápido
       </div>
-      <h1 className="text-balance text-2xl font-black tracking-tight text-slate-900 md:text-4xl">Como usar o AVANT Enf</h1>
+      <h1 className="text-balance text-2xl font-black tracking-tight text-slate-900 md:text-4xl">Como usar o AVANT enf</h1>
       <p className="mt-3 text-pretty text-base font-medium leading-relaxed text-slate-600">
         Este tutorial foi pensado para quem acabou de chegar. Cada etapa tem <strong className="text-slate-900">um único foco</strong>:
         primeiro o que fazer,
@@ -215,7 +215,7 @@ export default function AjudaPage() {
           Se você preferir ver tudo em 2–3 minutos, este vídeo mostra o fluxo completo (vitrine → questão → estudo reverso → desempenho).
         </p>
         <div className="mt-4">
-          <TutorialVideo file="tutorial-avant.mp4" title="Como usar o AVANT Enf — tutorial rápido" poster="seq-01.png" />
+          <TutorialVideo file="tutorial-avant.mp4" title="Como usar o AVANT enf — tutorial rápido" poster="seq-01.png" />
         </div>
         <p className="mt-3 text-xs font-semibold text-slate-500">
           Arquivo esperado em <code>public/tutorial/tutorial-avant.mp4</code>.

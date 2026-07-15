@@ -243,7 +243,7 @@ export async function matricularUsuarioEmConcurso(
 }
 
 function isPaidConcurso(concurso: ConcursoRow): boolean {
-  // `geral`: price_cents é vitrine do AVANT Enf Pro (Stripe); acesso free usa matrícula `cadastro`.
+  // `geral`: price_cents é vitrine do AVANT enf Pro (Stripe); acesso free usa matrícula `cadastro`.
   if (concurso.slug === GERAL_CONCURSO_SLUG) return false;
   return (concurso.price_cents ?? 0) > 0;
 }

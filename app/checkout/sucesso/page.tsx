@@ -6,8 +6,8 @@ import { isAdminSessionEmail } from '@/lib/constants';
 import { getServerSession } from '@/lib/supabase/server-auth';
 
 export const metadata: Metadata = {
-  title: 'Acesso liberado | AVANT Enf',
-  description: 'Pagamento confirmado. Verifique seu e-mail para entrar no AVANT Enf.',
+  title: 'Acesso liberado | AVANT enf',
+  description: 'Pagamento confirmado. Verifique seu e-mail para entrar no AVANT enf.',
   robots: { index: false, follow: false },
   alternates: { canonical: '/checkout/sucesso' },
 };
@@ -33,7 +33,7 @@ export default async function CheckoutSucessoPage() {
           Acesso liberado.
         </h1>
         <p className="mt-4 text-base font-medium leading-relaxed text-slate-400">
-          Enviamos um link de acesso para o seu e-mail. Clique nele para entrar direto no AVANT Enf.
+          Enviamos um link de acesso para o seu e-mail. Clique nele para entrar direto no AVANT enf.
         </p>
         <p className="mt-3 text-sm text-slate-500">
           Se não encontrar, verifique a caixa de spam.

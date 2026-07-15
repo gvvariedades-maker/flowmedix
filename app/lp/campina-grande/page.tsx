@@ -3,14 +3,14 @@ import { LPCampinaV2 } from '@/components/lp/campina/LPCampinaV2';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
 export const metadata: Metadata = {
-  title: 'Campina Grande 2026 — Técnico Enfermagem IDECAN | AVANT Enf Pro',
+  title: 'Campina Grande 2026 — Técnico Enfermagem IDECAN | AVANT enf Pro',
   description:
-    '50 vagas IDECAN em Campina Grande. Simulado grátis com 10 questões reais, estudo reverso e NeuroSlides. Assine o AVANT Enf Pro e prepare-se para a prova.',
+    '50 vagas IDECAN em Campina Grande. Simulado grátis com 10 questões reais, estudo reverso e NeuroSlides. Assine o AVANT enf Pro e prepare-se para a prova.',
   alternates: { canonical: '/lp/campina-grande' },
   openGraph: {
     title: 'Campina Grande 2026 — Você sabe o que a IDECAN cobra?',
     description:
-      'Diagnóstico grátis com 10 questões IDECAN + estudo reverso. AVANT Enf Pro a partir de R$ 14,90/mês.',
+      'Diagnóstico grátis com 10 questões IDECAN + estudo reverso. AVANT enf Pro a partir de R$ 14,90/mês.',
     url: getAbsoluteUrl('/lp/campina-grande'),
     type: 'website',
     locale: 'pt_BR',

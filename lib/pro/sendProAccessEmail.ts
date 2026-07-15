@@ -35,7 +35,7 @@ export async function sendProAccessMagicLinkEmail(
 
   await sendEmail(
     normalized,
-    'Seu acesso AVANT Enf Pro está liberado',
+    'Seu acesso AVANT enf Pro está liberado',
     createElement(ProAccessLinkEmail, { accessLink: actionLink }),
   );
 

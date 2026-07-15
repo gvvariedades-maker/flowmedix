@@ -9,8 +9,8 @@ type PageProps = {
 };
 
 export const metadata: Metadata = {
-  title: 'Pagamento confirmado | AVANT Enf',
-  description: 'Seu acesso ao AVANT Enf foi registrado. Entre na plataforma para começar.',
+  title: 'Pagamento confirmado | AVANT enf',
+  description: 'Seu acesso ao AVANT enf foi registrado. Entre na plataforma para começar.',
   robots: { index: false, follow: false },
   alternates: { canonical: '/sucesso' },
 };
@@ -28,7 +28,7 @@ export default async function SucessoPage({ searchParams }: PageProps) {
           Abra o link enviado após o checkout ou tente assinar novamente.
         </p>
         <Button asChild className="mt-8" variant="secondary">
-          <Link href="/assinar-pro">Assinar AVANT Enf Pro</Link>
+          <Link href="/assinar-pro">Assinar AVANT enf Pro</Link>
         </Button>
       </div>
     );
@@ -97,7 +97,7 @@ export default async function SucessoPage({ searchParams }: PageProps) {
                   <span className="font-semibold text-slate-200">{greeting}</span>{' '}
                 </>
               ) : null}
-              seu acesso <span className="font-semibold text-emerald-300">AVANT Enf Pro</span> está ativo. O limite diário
+              seu acesso <span className="font-semibold text-emerald-300">AVANT enf Pro</span> está ativo. O limite diário
               de questões foi removido — pode estudar sem interrupções.
               <span className="mt-2 block text-sm text-slate-500">
                 Se o Pro ainda não aparecer na conta, aguarde alguns instantes (ativação automática após o pagamento).

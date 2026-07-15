@@ -24,9 +24,9 @@ export const EMPTY_LP_CONFIG: LpPageConfigInput = {
     listaBeneficios: [
       'Questões reais de concursos para Técnico em Enfermagem',
       'NeuroSlides após cada questão',
-      'Acesso completo com assinatura AVANT Enf Pro',
+      'Acesso completo com assinatura AVANT enf Pro',
     ],
-    disclaimer: 'Conteúdo focado em Conhecimentos Específicos de Enfermagem via assinatura AVANT Enf Pro.',
+    disclaimer: 'Conteúdo focado em Conhecimentos Específicos de Enfermagem via assinatura AVANT enf Pro.',
     disclaimerLegal:
       `O ${BRAND_NAME} é uma plataforma de estudo independente. Não somos órgão público nem banca examinadora.`,
   },

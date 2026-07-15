@@ -15,7 +15,7 @@ export default function AdminBrandPreviewPage() {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
-              Brand · AVANT Enf
+              Brand · AVANT enf
             </p>
             <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-white">
               Logo AE — preview light / dark

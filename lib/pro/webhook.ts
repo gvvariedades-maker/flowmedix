@@ -63,7 +63,7 @@ async function resolveProCheckoutUserId(
 }
 
 /**
- * Fulfillment AVANT Enf Pro após checkout.session.completed (assinatura).
+ * Fulfillment AVANT enf Pro após checkout.session.completed (assinatura).
  */
 export async function processProCheckoutCompleted(
   admin: SupabaseClient,
@@ -130,7 +130,7 @@ export async function processProCheckoutCompleted(
     });
   }
 
-  logger.info('Matrícula AVANT Enf Pro ativada via webhook', { userId, sessionId: session.id, created });
+  logger.info('Matrícula AVANT enf Pro ativada via webhook', { userId, sessionId: session.id, created });
   return { handled: true, userId };
 }
 

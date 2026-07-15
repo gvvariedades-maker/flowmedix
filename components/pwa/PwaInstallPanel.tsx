@@ -35,7 +35,7 @@ export function PwaInstallPanel({
         </div>
         <div className="min-w-0 flex-1">
           <p id="pwa-install-title" className="text-sm font-black tracking-tight text-slate-900">
-            Instale o AVANT Enf no celular
+            Instale o AVANT enf no celular
           </p>
           <p id="pwa-install-desc" className="mt-1 text-xs leading-relaxed text-slate-600">
             {isIos ? (
@@ -46,7 +46,7 @@ export function PwaInstallPanel({
                 Abre como app, sem barra do navegador.
               </>
             ) : canNativeInstall ? (
-              'Adicione um atalho na tela inicial e abra o AVANT Enf com um toque — ideal para estudar nos intervalos.'
+              'Adicione um atalho na tela inicial e abra o AVANT enf com um toque — ideal para estudar nos intervalos.'
             ) : (
               'No menu do navegador, escolha «Instalar app» ou «Adicionar à tela inicial» para acesso rápido.'
             )}

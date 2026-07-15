@@ -5,21 +5,21 @@ export const COMPARE_AVANT_VERSION = 'mobile-v2';
 export const COMPARE_AVANT_SLIDES = [
   {
     src: `/images/compare-avant-1.png?v=${COMPARE_AVANT_VERSION}`,
-    alt: 'NeuroSlide Mapa de Conceitos — Imunização, estudo reverso AVANT Enf no celular',
+    alt: 'NeuroSlide Mapa de Conceitos — Imunização, estudo reverso AVANT enf no celular',
     width: 390,
     height: 844,
     objectPosition: 'object-top',
   },
   {
     src: `/images/compare-avant-2.png?v=${COMPARE_AVANT_VERSION}`,
-    alt: 'NeuroSlide Fluxo Lógico — Verificação de Sinais Vitais, estudo reverso AVANT Enf no celular',
+    alt: 'NeuroSlide Fluxo Lógico — Verificação de Sinais Vitais, estudo reverso AVANT enf no celular',
     width: 390,
     height: 844,
     objectPosition: 'object-top',
   },
   {
     src: `/images/compare-avant-3.png?v=${COMPARE_AVANT_VERSION}`,
-    alt: 'NeuroSlide Zona de Perigo — Oxigenoterapia e Sinais Vitais, estudo reverso AVANT Enf no celular',
+    alt: 'NeuroSlide Zona de Perigo — Oxigenoterapia e Sinais Vitais, estudo reverso AVANT enf no celular',
     width: 390,
     height: 844,
     objectPosition: 'object-top',

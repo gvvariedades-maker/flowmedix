@@ -10,10 +10,10 @@ type PageProps = { params: Promise<{ path: string }> };
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { path } = await params;
   const page = await getPublishedLpPageByPath(path);
-  if (!page) return { title: 'AVANT Enf' };
+  if (!page) return { title: 'AVANT enf' };
 
   const seo = resolveLpSeo(page, page.path);
-  if (!seo) return { title: 'AVANT Enf' };
+  if (!seo) return { title: 'AVANT enf' };
 
   const canonical = seo.canonical ?? `/lp/${page.path}`;
   const ogTitle = seo.ogTitle ?? seo.title;

@@ -217,7 +217,7 @@ export function LpPageEditor({ mode, pageId, initial }: LpPageEditorProps) {
           {mode === 'create' ? 'Nova landing' : 'Editar landing'}
         </h1>
         <p className="mt-2 text-sm text-slate-500">
-          Funil AVANT Enf Pro — status:{' '}
+          Funil AVANT enf Pro — status:{' '}
           <span className="font-bold text-slate-700">{status}</span>
         </p>
       </header>

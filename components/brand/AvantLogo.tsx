@@ -94,7 +94,7 @@ export function AvantLogo({
   animated,
   href,
   className,
-  'aria-label': ariaLabel = 'AVANT Enf - inicio',
+  'aria-label': ariaLabel = 'AVANT enf - inicio',
 }: AvantLogoProps) {
   const isLight = tone === 'light' || tone === 'brand';
   const pulse =

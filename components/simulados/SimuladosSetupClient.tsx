@@ -423,7 +423,7 @@ export function SimuladosSetupClient() {
         onClick={() => setPaywallOpen(true)}
         className="h-12 w-full rounded-2xl border border-amber-300 bg-amber-50 text-base font-semibold text-amber-900 hover:bg-amber-100"
       >
-        Limite diário atingido — ver AVANT Enf Pro
+        Limite diário atingido — ver AVANT enf Pro
       </Button>
     ) : (
       <Button

@@ -14,14 +14,14 @@ import { lpPublicHref, type LpCatalogItem } from '@/lib/lp/shared';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
 export const metadata: Metadata = {
-  title: 'Concursos abertos | AVANT Enf',
+  title: 'Concursos abertos | AVANT enf',
   description:
-    'Editais de Técnico em Enfermagem em destaque no AVANT Enf. Estudo Reverso com questões reais e NeuroSlides — assinatura AVANT Enf Pro.',
+    'Editais de Técnico em Enfermagem em destaque no AVANT enf. Estudo Reverso com questões reais e NeuroSlides — assinatura AVANT enf Pro.',
   alternates: { canonical: '/planos' },
   openGraph: {
-    title: 'Concursos abertos | AVANT Enf',
+    title: 'Concursos abertos | AVANT enf',
     description:
-      'Veja os concursos em destaque e prepare-se com o padrão de cada banca no AVANT Enf Pro.',
+      'Veja os concursos em destaque e prepare-se com o padrão de cada banca no AVANT enf Pro.',
     url: getAbsoluteUrl('/planos'),
     type: 'website',
     locale: 'pt_BR',
@@ -118,7 +118,7 @@ export default async function PlanosPage() {
             <p className="mt-4 text-base leading-relaxed text-slate-400">
               Escolha o concurso que você está acompanhando. Cada página traz o contexto do edital e
               o caminho para assinar o{' '}
-              <span className="font-semibold text-white">AVANT Enf Pro</span> — estudo com questões
+              <span className="font-semibold text-white">AVANT enf Pro</span> — estudo com questões
               reais e NeuroSlides.
             </p>
             <p className="mt-4 text-sm text-slate-500">
@@ -135,14 +135,14 @@ export default async function PlanosPage() {
                 Nenhum concurso em destaque no momento.
               </p>
               <p className="mx-auto mt-2 max-w-md text-sm text-slate-500">
-                Volte em breve ou assine o AVANT Enf Pro para estudar com acesso completo à plataforma.
+                Volte em breve ou assine o AVANT enf Pro para estudar com acesso completo à plataforma.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Link
                   href="/assinar-pro"
                   className="inline-flex items-center gap-2 rounded-xl bg-[#BEF264] px-5 py-3 text-xs font-black uppercase tracking-wider text-slate-950"
                 >
-                  Assinar AVANT Enf Pro
+                  Assinar AVANT enf Pro
                   <ArrowRight size={16} aria-hidden />
                 </Link>
                 <Link
@@ -172,7 +172,7 @@ export default async function PlanosPage() {
                 href="/assinar-pro"
                 className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#BEF264] px-6 py-3 text-xs font-black uppercase tracking-wider text-slate-950 transition-transform hover:scale-[1.02]"
               >
-                Assinar AVANT Enf Pro
+                Assinar AVANT enf Pro
                 <ArrowRight size={16} aria-hidden />
               </Link>
             </section>

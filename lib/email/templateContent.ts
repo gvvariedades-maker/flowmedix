@@ -15,16 +15,16 @@ export type EmailTemplateContent = z.infer<typeof EmailTemplateContentSchema>;
 export const DEFAULT_WELCOME_CONTENT: EmailTemplateContent = {
   headline: 'Olá, {{firstName}}!',
   paragraph1:
-    'Você entrou no AVANT Enf — estudo reverso feito para Técnicos de Enfermagem em concursos públicos. Cada questão vira um NeuroSlide que fixa o raciocínio clínico em poucos minutos.',
+    'Você entrou no AVANT enf — estudo reverso feito para Técnicos de Enfermagem em concursos públicos. Cada questão vira um NeuroSlide que fixa o raciocínio clínico em poucos minutos.',
   paragraph2:
     'Mapas conceituais, regras de ouro e fluxos de decisão na ordem da sua banca — sem reler PDF inteiro.',
-  ctaLabel: 'Começar no AVANT Enf',
+  ctaLabel: 'Começar no AVANT enf',
   ctaUrl: '/estudar',
 };
 
 export const DEFAULT_MARKETING_CONTENT: EmailTemplateContent = {
   headline: 'Olá!',
-  paragraph1: 'Temos novidades no AVANT Enf para acelerar sua preparação em Técnico de Enfermagem.',
+  paragraph1: 'Temos novidades no AVANT enf para acelerar sua preparação em Técnico de Enfermagem.',
   paragraph2: 'Abra o app e confira os concursos e o estudo reverso com NeuroSlides.',
   ctaLabel: 'Ver concursos abertos',
   ctaUrl: '/planos',

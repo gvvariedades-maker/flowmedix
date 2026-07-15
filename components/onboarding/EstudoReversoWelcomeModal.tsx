@@ -21,7 +21,7 @@ const SLIDES = [
   {
     eyebrow: '3 de 4',
     title: 'O erro vira aprendizado',
-    body: 'Depois da tentativa, o AVANT Enf mostra o diagnóstico e libera mapa, regra de ouro, fluxo lógico e zona de perigo.',
+    body: 'Depois da tentativa, o AVANT enf mostra o diagnóstico e libera mapa, regra de ouro, fluxo lógico e zona de perigo.',
   },
   {
     eyebrow: '4 de 4',

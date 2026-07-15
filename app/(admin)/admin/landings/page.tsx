@@ -61,7 +61,7 @@ export default function AdminLandingsPage() {
               Landings <span className="text-[#4F46E5]">de concurso</span>
             </h1>
             <p className="mt-2 text-sm text-slate-500">
-              Páginas de marketing reutilizáveis — funil AVANT Enf Pro.
+              Páginas de marketing reutilizáveis — funil AVANT enf Pro.
             </p>
           </div>
           <Link

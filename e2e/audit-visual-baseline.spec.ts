@@ -1,5 +1,5 @@
 /**
- * Captura screenshots do AVANT Enf Cyber Clinical v1 para auditoria visual.
+ * Captura screenshots do AVANT enf Cyber Clinical v1 para auditoria visual.
  * Saída: docs/auditoria-visual-v2/screenshots/avant-baseline/
  *
  * Requer E2E_DASHBOARD_BYPASS (playwright.config webServer).

@@ -666,7 +666,7 @@ export const ConcursoRegraModulosSchema = z.object({
 });
 
 // ============================================================================
-// LP PAGES (CMS — funil AVANT Enf Pro)
+// LP PAGES (CMS — funil AVANT enf Pro)
 // ============================================================================
 
 export const LpPathSchema = z

@@ -17,7 +17,7 @@ export function PwaInstallNavButton({ onNavigate }: PwaInstallNavButtonProps) {
   return (
     <button
       type="button"
-      title="Instalar o AVANT Enf no celular"
+      title="Instalar o AVANT enf no celular"
       onClick={() => {
         open();
         onNavigate?.();

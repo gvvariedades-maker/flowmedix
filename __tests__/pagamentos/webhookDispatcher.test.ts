@@ -46,7 +46,7 @@ describe('dispatchStripeWebhookEvent', () => {
     });
   });
 
-  it('encaminha checkout AVANT Enf Pro para processProCheckoutCompleted', async () => {
+  it('encaminha checkout AVANT enf Pro para processProCheckoutCompleted', async () => {
     const session = {
       id: 'cs_pro_123',
       payment_status: 'paid',

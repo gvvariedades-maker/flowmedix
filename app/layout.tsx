@@ -121,7 +121,7 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'black-translucent',
+    statusBarStyle: 'default',
     title: siteName,
   },
   applicationName: siteName,
@@ -133,8 +133,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#010409' },
-    { media: '(prefers-color-scheme: dark)', color: '#010409' },
+    { media: '(prefers-color-scheme: light)', color: '#f1f5f9' },
+    { media: '(prefers-color-scheme: dark)', color: '#f1f5f9' },
   ],
 };
 

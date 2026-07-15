@@ -148,7 +148,7 @@ export function PublicDarkAuthHeader({
         Concursos abertos
       </Link>
       <Link href={AVANT_PRO_LP_HREF} className={linkMobile}>
-        AVANT Enf Pro
+        AVANT enf Pro
       </Link>
     </>
   );
@@ -221,7 +221,7 @@ export function PublicDarkAuthHeader({
               href={AVANT_PRO_LP_HREF}
               className={`${linkDesktop} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
             >
-              AVANT Enf Pro
+              AVANT enf Pro
             </Link>
             <nav className="flex shrink-0 flex-nowrap items-center justify-end gap-1.5 sm:gap-2">
               <AuthNavActions

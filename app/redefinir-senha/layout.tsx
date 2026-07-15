@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Redefinir senha | AVANT Enf',
+  title: 'Redefinir senha | AVANT enf',
   robots: {
     index: false,
     follow: false,

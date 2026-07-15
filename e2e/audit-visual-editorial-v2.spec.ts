@@ -1,5 +1,5 @@
 /**
- * Captura screenshots do AVANT Enf Editorial v2 para auditoria visual.
+ * Captura screenshots do AVANT enf Editorial v2 para auditoria visual.
  * Saída: docs/auditoria-visual-v2/screenshots/avant-editorial-v2/
  *
  * Requer E2E_DASHBOARD_BYPASS (playwright.config webServer ou dev com bypass).

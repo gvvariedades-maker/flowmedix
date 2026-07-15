@@ -22,7 +22,7 @@ export function WelcomeEmail({ firstName }: WelcomeEmailProps) {
   const name = resolveWelcomeSalutation(firstName);
 
   return (
-    <BaseLayout preview="Bem-vindo ao AVANT Enf — estudo reverso para Técnico de Enfermagem" brandTagline="Estudo reverso · Técnico de Enfermagem">
+    <BaseLayout preview="Bem-vindo ao AVANT enf — estudo reverso para Técnico de Enfermagem" brandTagline="Estudo reverso · Técnico de Enfermagem">
       <Section
         style={{
           padding: '24px 22px',
@@ -64,7 +64,7 @@ export function WelcomeEmail({ firstName }: WelcomeEmailProps) {
         </Heading>
 
         <Text style={{ margin: '0 0 12px', color: '#e2e8f0', fontSize: '16px', lineHeight: '26px' }}>
-          Você entrou no AVANT Enf — estudo reverso feito para Técnicos de Enfermagem em concursos
+          Você entrou no AVANT enf — estudo reverso feito para Técnicos de Enfermagem em concursos
           públicos. Cada questão vira um NeuroSlide que fixa o raciocínio clínico em poucos minutos.
         </Text>
 
@@ -97,11 +97,11 @@ export function WelcomeEmail({ firstName }: WelcomeEmailProps) {
             boxShadow: `0 0 24px ${ACCENT}44`,
           }}
         >
-          Começar no AVANT Enf
+          Começar no AVANT enf
         </Button>
 
         <Text style={{ margin: '24px 0 0', fontSize: '12px', lineHeight: '20px', color: '#94a3b8' }}>
-          Dica: comece por uma questão da sua banca — o AVANT Enf monta os 4 NeuroSlides na hora.
+          Dica: comece por uma questão da sua banca — o AVANT enf monta os 4 NeuroSlides na hora.
         </Text>
       </Section>
     </BaseLayout>

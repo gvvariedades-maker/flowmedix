@@ -1,13 +1,13 @@
 /**
  * Nome público da plataforma — fonte única para copy, SEO e metadata.
- * O lockup visual mantém wordmark «AVANT» + subtítulo «Enf» (ver AvantLogo).
+ * O lockup visual mantém wordmark «AVANT» + subtítulo «enf» (ver AvantLogo).
  */
 
 /** Nome completo da plataforma */
-export const BRAND_NAME = 'AVANT Enf';
+export const BRAND_NAME = 'AVANT enf';
 
 /** Assinatura paga (Stripe) */
-export const BRAND_PRO_NAME = 'AVANT Enf Pro';
+export const BRAND_PRO_NAME = 'AVANT enf Pro';
 
 /** Wordmark no logo (sem subtítulo) */
 export const BRAND_WORDMARK = 'AVANT';
@@ -16,10 +16,10 @@ export const BRAND_WORDMARK = 'AVANT';
 export const BRAND_LOGO_SUBTITLE = 'enf';
 
 /** PWA / apple-mobile-web-app-title (curto) */
-export const BRAND_SHORT_NAME = 'AVANT Enf';
+export const BRAND_SHORT_NAME = 'AVANT enf';
 
 /** Sufixo em `<title>` de páginas internas */
-export const BRAND_TITLE_SUFFIX = ' | AVANT Enf';
+export const BRAND_TITLE_SUFFIX = ' | AVANT enf';
 
 export function brandPageTitle(page: string): string {
   return `${page}${BRAND_TITLE_SUFFIX}`;

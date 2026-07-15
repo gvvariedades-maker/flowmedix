@@ -33,7 +33,7 @@ export function LandingHeroShowcase({ className }: LandingHeroShowcaseProps) {
         >
           <DeviceFrame
             variant="laptop"
-            label="Player AVANT Enf no desktop"
+            label="Player AVANT enf no desktop"
             minimalChrome
             screenMode="cover"
           >
@@ -83,7 +83,7 @@ export function LandingHeroShowcase({ className }: LandingHeroShowcaseProps) {
           className="relative transform-gpu lg:[transform:rotateY(-12deg)_rotateX(4deg)]"
           style={{ transformStyle: 'preserve-3d' }}
         >
-          <DeviceFrame variant="phone" label="Questão no player AVANT Enf" screenMode="cover">
+          <DeviceFrame variant="phone" label="Questão no player AVANT enf" screenMode="cover">
             <DeviceScreenImage
               src={phone.src}
               alt={phone.alt}

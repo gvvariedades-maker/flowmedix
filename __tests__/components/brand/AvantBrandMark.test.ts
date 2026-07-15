@@ -8,11 +8,11 @@ const brandAssetsDir = join(process.cwd(), 'public', 'brand');
 const emailLogoPath = join(process.cwd(), 'emails', 'AvantLogoEmail.tsx');
 
 describe('AvantBrandMark', () => {
-  it('delega a AvantLogo com escala sm→nav e md→md', () => {
+  it('delega a AvantLogo com escala sm→md e md→lg', () => {
     const source = readFileSync(brandPath, 'utf8');
     expect(source).toContain("from '@/components/brand/AvantLogo'");
-    expect(source).toContain("sm: 'nav'");
-    expect(source).toContain("md: 'md'");
+    expect(source).toContain("sm: 'md'");
+    expect(source).toContain("md: 'lg'");
     expect(source).toContain("tone={variant === 'editorial' ? 'brand' : 'default'}");
   });
 
@@ -20,7 +20,7 @@ describe('AvantBrandMark', () => {
     const logo = readFileSync(logoPath, 'utf8');
     expect(logo).toContain('/brand/avant-logo-shield.png');
     expect(logo).toContain('/brand/avant-logo-wordmark-raster.png');
-    expect(logo).toContain('AVANT Enf - inicio');
+    expect(logo).toContain('AVANT enf - inicio');
     expect(logo).not.toContain('<Zap');
     expect(logo).not.toContain('⚡');
   });
@@ -38,14 +38,14 @@ describe('AvantBrandMark', () => {
 
     const symbol = readFileSync(join(brandAssetsDir, 'avant-logo-symbol.svg'), 'utf8');
     expect(symbol).toContain('avant-logo-shield.png');
-    expect(symbol).toContain('AVANT Enf');
+    expect(symbol).toContain('AVANT enf');
 
     const wordmarkLight = readFileSync(
       join(brandAssetsDir, 'avant-logo-wordmark-light.svg'),
       'utf8',
     );
     expect(wordmarkLight).toContain('avant-logo-wordmark-raster.png');
-    expect(wordmarkLight).toContain('AVANT Enf');
+    expect(wordmarkLight).toContain('AVANT enf');
   });
 
   it('AvantLogo usa AvantLogoWordmarkStack como wordmark', () => {
