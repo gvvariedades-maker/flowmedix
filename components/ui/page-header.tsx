@@ -22,32 +22,32 @@ export function PageHeader({
     <div className="mb-6 flex flex-col gap-3 sm:mb-8 sm:flex-row sm:items-start sm:justify-between">
       <div className="min-w-0 flex-1">
         {breadcrumb && (
-          <nav className="flex items-center gap-1.5 mb-2" aria-label="Breadcrumb">
+          <nav className="mb-2 flex items-center gap-1.5" aria-label="Breadcrumb">
             {breadcrumb.map((crumb, i) => (
               <span key={i} className="flex items-center gap-1.5">
-                {i > 0 && <span className="text-white/20 text-xs">/</span>}
+                {i > 0 && <span className="text-xs text-muted-foreground/40">/</span>}
                 {crumb.href ? (
                   <Link
                     href={crumb.href}
-                    className="text-xs text-[#8b949e] hover:text-[#e6edf3] transition-colors"
+                    className="text-xs text-muted-foreground transition-colors hover:text-foreground"
                   >
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="text-xs text-[#8b949e]">{crumb.label}</span>
+                  <span className="text-xs text-muted-foreground">{crumb.label}</span>
                 )}
               </span>
             ))}
           </nav>
         )}
         <h1
-          className={titleClassName ?? "text-2xl font-bold text-[#e6edf3] truncate"}
+          className={titleClassName ?? 'truncate text-2xl font-bold text-foreground'}
           style={{ fontFamily: 'var(--font-plus-jakarta-sans)' }}
         >
           {title}
         </h1>
         {description && (
-          <p className={descriptionClassName ?? 'text-sm text-[#8b949e] mt-1'}>{description}</p>
+          <p className={descriptionClassName ?? 'mt-1 text-sm text-muted-foreground'}>{description}</p>
         )}
       </div>
       {action ? <div className="w-full shrink-0 sm:ml-4 sm:w-auto">{action}</div> : null}
