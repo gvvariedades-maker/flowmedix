@@ -14,6 +14,16 @@ const BRAND_MARK_SIZE: Record<NonNullable<AvantBrandMarkProps['size']>, AvantLog
 };
 
 /**
+ * `md` = sidebar fixa (16rem/256px, `PlanStatusCard`) — sem essa redução o
+ * wordmark "AVANT enf" em `lg` (~287px com ícone+gap) não cabe no espaço
+ * disponível (~240px) e é cortado.
+ */
+const BRAND_MARK_WORDMARK_SCALE: Record<NonNullable<AvantBrandMarkProps['size']>, number> = {
+  sm: 1,
+  md: 0.75,
+};
+
+/**
  * Lockup compacto do dashboard — delega a `AvantLogo` (AE + AVANT / enf).
  * Editorial: wordmark `#166534` + enf; cyber: lockup com glow mínimo.
  */
@@ -26,6 +36,7 @@ export function AvantBrandMark({
     <AvantLogo
       variant="lockup"
       size={BRAND_MARK_SIZE[size]}
+      wordmarkScale={BRAND_MARK_WORDMARK_SCALE[size]}
       tone={variant === 'editorial' ? 'brand' : 'default'}
       animated={false}
       className={cn(className)}

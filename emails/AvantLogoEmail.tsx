@@ -111,7 +111,7 @@ export function AvantLogoEmail() {
                               &nbsp;
                             </td>
                             <td style={{ verticalAlign: 'middle' }}>
-                              {/* Mesmo lockup "AVANT enf" do emblema azul/verde (sem gradiente — clientes de e-mail nao suportam background-clip:text de forma confiavel). */}
+                              {/* Mesmo lockup "AVANT enf" do emblema cobre/verde (sem gradiente — clientes de e-mail nao suportam background-clip:text de forma confiavel). */}
                               <Text
                                 style={{
                                   margin: 0,

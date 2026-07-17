@@ -1,15 +1,17 @@
 /**
- * AVANT enf logo — identidade oficial "Brushed Blue" (adotada 2026-07-15).
+ * AVANT enf logo — identidade oficial "Brushed Copper" (recolorida 2026-07-17).
  *
  * Direção de marca:
  * - Ícone: card squircle verde (`iconCardGreen`) + monograma "A" fragmentado
- *   em metal azul escovado (`brandBlue`) — ver `public/brand/avant-logo-shield.png`.
- * - Wordmark "AVANT": mesmo metal azul escovado do monograma (raster,
+ *   em metal cobre/laranja escovado (`brandBlue`, nome legado mantido) — ver
+ *   `public/brand/avant-logo-shield.png`.
+ * - Wordmark "AVANT": mesmo metal cobre escovado do monograma (raster,
  *   `avant-logo-wordmark-raster.png`).
- * - Sufixo "enf": verde glass/neon, contraste com o azul do "AVANT".
+ * - Sufixo "enf": verde glass/neon, contraste com o cobre do "AVANT".
  * - `brandBlue` é cor de marca oficial (3ª cor, ao lado do verde/lima e do
  *   cyan do tema Cyber Clinical) — usar `AVANT_LOGO_COLORS.brandBlue*` em
  *   qualquer novo ponto de UI que precise ecoar a marca (nunca hardcodear hex).
+ *   Nome da constante mantido por compatibilidade; o valor agora é cobre/laranja.
  * - Tracking aéreo no wordmark; "enf" em minúsculas sem bullet.
  */
 
@@ -52,13 +54,14 @@ export const AVANT_LOGO_COLORS = {
   iconCardGreen: '#0cc93a',
   monogramFill: '#ffffff',
   /**
-   * Azul de marca oficial — metal escovado do monograma "A" e do wordmark
-   * "AVANT" (`avant-logo-shield.png` / `avant-logo-wordmark-raster.png`).
-   * Sampleado do asset: highlight ~#46aaf2, mid ~#48a3b4, sombra ~#033d4b.
+   * Cobre/laranja de marca oficial — metal escovado do monograma "A" e do
+   * wordmark "AVANT" (`avant-logo-shield.png` / `avant-logo-wordmark-raster.png`).
+   * Sampleado do asset: highlight ~#f2ad46, mid ~#b46c48, sombra ~#4b1e03.
+   * Nome da constante (`brandBlue*`) mantido por compatibilidade histórica.
    */
-  brandBlue: '#2f9fe0',
-  brandBlueLight: '#7dd3fc',
-  brandBlueDeep: '#0b4a63',
+  brandBlue: '#e08f2f',
+  brandBlueLight: '#fcbd7d',
+  brandBlueDeep: '#63340b',
   /** Anel interno (emboss / selo). */
   iconInsetHighlight: 'inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.18)',
   iconOuterShadowEditorial: '0 1px 2px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(22, 101, 52, 0.12)',
@@ -77,8 +80,8 @@ export const AVANT_LOGO_COLORS = {
   hairlineEditorial: 'rgba(22, 101, 52, 0.28)',
   hairlineCyber: 'rgba(143, 224, 32, 0.35)',
   wordmarkGlow: 'rgba(143, 224, 32, 0.18)',
-  /** "AVANT" metal azul escovado (mesmo modelo do emblema) — tom sólido para e-mail. */
-  wordmarkBrandBlueSolid: '#2f9fe0',
+  /** "AVANT" metal cobre escovado (mesmo modelo do emblema) — tom sólido para e-mail. */
+  wordmarkBrandBlueSolid: '#e08f2f',
   /** "enf" em verde vivo, tom sólido para e-mail (sem gradiente). */
   wordmarkEnfGreen: '#0b7a53',
   wordmarkEnfGreenDeep: '#054a33',
@@ -90,9 +93,9 @@ export const AVANT_LOGO_GRADIENTS = {
   wordmarkStops: ['#ecfdf5', '#86efac', '#8fe020'] as const,
   shellBorder:
     'linear-gradient(160deg, rgba(255,255,255,0.14) 0%, rgba(143, 224, 32, 0.35) 50%, rgba(22, 101, 52, 0.45) 100%)',
-  /** Texto "AVANT" metalizado — mesmo metal azul escovado do emblema (foil gradient). */
+  /** Texto "AVANT" metalizado — mesmo metal cobre escovado do emblema (foil gradient). */
   wordmarkBrandGradient:
-    'linear-gradient(135deg, #bfe6fb 0%, #7dd3fc 22%, #2f9fe0 45%, #0b4a63 62%, #46aaf2 80%, #2f9fe0 100%)',
+    'linear-gradient(135deg, #fbdfbf 0%, #fcbd7d 22%, #e08f2f 45%, #63340b 62%, #f2ad46 80%, #e08f2f 100%)',
   /** Verde esmeralda de "enf" — combina com o fundo do brasao. */
   wordmarkEnfGreen: 'linear-gradient(160deg, #109466 0%, #0b7a53 55%, #054a33 100%)',
 } as const;

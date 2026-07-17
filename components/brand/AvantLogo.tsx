@@ -21,7 +21,7 @@ export type { AvantLogoSizeToken } from '@/lib/brand/avantLogoConstants';
 export type AvantLogoVariant = 'lockup' | 'icon';
 
 /**
- * - `default` — cyber (shell + monograma azul 3D + wordmark raster)
+ * - `default` — cyber (shell + monograma cobre 3D + wordmark raster)
  * - `light` / `brand` — editorial (monograma + wordmark raster, sem shell)
  */
 export type AvantLogoTone = 'default' | 'light' | 'brand';
@@ -34,6 +34,12 @@ export type AvantLogoProps = {
   href?: string;
   className?: string;
   'aria-label'?: string;
+  /**
+   * Reduz só o wordmark "AVANT enf" (e o gap até o ícone), sem afetar o
+   * ícone — usar quando o lockup precisa caber num espaço estreito (ex.:
+   * sidebar). `1` = tamanho padrão do `size`.
+   */
+  wordmarkScale?: number;
 };
 
 /**
@@ -64,10 +70,18 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
 }
 
 /**
- * Wordmark "AVANT enf" — AVANT azul metal 3D + enf verde glass (Canva v4).
+ * Wordmark "AVANT enf" — AVANT cobre metal 3D + enf verde glass (Canva v4).
  */
-function AvantLogoWordmarkStack({ size }: { size: AvantLogoSizeToken }) {
-  const { width: widthPx, height: heightPx } = getAvantLogoWordmarkRasterSize(size);
+function AvantLogoWordmarkStack({
+  size,
+  wordmarkScale = 1,
+}: {
+  size: AvantLogoSizeToken;
+  wordmarkScale?: number;
+}) {
+  const raster = getAvantLogoWordmarkRasterSize(size);
+  const widthPx = Math.round(raster.width * wordmarkScale);
+  const heightPx = Math.round(raster.height * wordmarkScale);
 
   return (
     <span
@@ -95,22 +109,26 @@ export function AvantLogo({
   href,
   className,
   'aria-label': ariaLabel = 'AVANT enf - inicio',
+  wordmarkScale = 1,
 }: AvantLogoProps) {
   const isLight = tone === 'light' || tone === 'brand';
   const pulse =
     animated ?? (variant === 'lockup' && size === 'lg' && tone === 'default');
 
   const iconOnly = variant === 'icon';
+  const lockupGap = Math.round(
+    scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.gap, size) * wordmarkScale,
+  );
 
   const lightLockup = (
     <div
       className="inline-flex shrink-0 items-center overflow-visible"
       style={{
-        gap: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.gap, size),
+        gap: lockupGap,
       }}
     >
       <AvantLogoIcon size={size} />
-      <AvantLogoWordmarkStack size={size} />
+      <AvantLogoWordmarkStack size={size} wordmarkScale={wordmarkScale} />
     </div>
   );
 
@@ -130,7 +148,7 @@ export function AvantLogo({
       <div
         className="flex items-center"
         style={{
-          gap: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.gap, size),
+          gap: lockupGap,
           padding: getAvantLogoLockupPadding(size),
           borderRadius: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.radius, size),
           background: AVANT_LOGO_COLORS.lockupInnerBg,
@@ -147,7 +165,7 @@ export function AvantLogo({
           aria-hidden
         />
         <AvantLogoIcon size={size} />
-        <AvantLogoWordmarkStack size={size} />
+        <AvantLogoWordmarkStack size={size} wordmarkScale={wordmarkScale} />
       </div>
     </div>
   );
