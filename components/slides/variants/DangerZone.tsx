@@ -65,6 +65,7 @@ import {
   DangerZoneCriancaDevTrapArena,
 } from './criancaVariants';
 import { DangerZoneCamCertosTrapArena } from './DangerZoneCamCertosTrapArena';
+import { DangerZonePtCraseTrapArena } from './DangerZonePtCraseTrapArena';
 import { DangerZoneCamHighRiskTrapArena } from './DangerZoneCamHighRiskTrapArena';
 import { DangerZoneCamExcetoTrapArena } from './DangerZoneCamExcetoTrapArena';
 import { DangerZoneCamDocumentacaoTrapArena } from './DangerZoneCamDocumentacaoTrapArena';
@@ -751,6 +752,18 @@ export const DangerZone = ({
   if (explicitVariant === 'cam-certos-trap-arena' && items && items.length > 0) {
     return (
       <DangerZoneCamCertosTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'pt-crase-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZonePtCraseTrapArena
         content={content}
         items={items}
         theme={theme}

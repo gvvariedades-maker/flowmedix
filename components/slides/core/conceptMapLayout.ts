@@ -81,6 +81,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'iv-interval-timeline',
   'iv-puncture-rail',
   'iv-bundle-orbit',
+  'pt-crase-funnel-deck',
 ]);
 
 function countConceptItems(slide?: {

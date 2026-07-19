@@ -1,0 +1,246 @@
+{
+  "version": 2,
+  "subtopico": "Língua Portuguesa",
+  "disciplina": "Conhecimentos Básicos",
+  "pacote_prefix": "lingua-portuguesa",
+  "modulo_nome": "Língua Portuguesa",
+  "scope_default": "subtopico_handcraft",
+  "source_manifest": "data/sources/lingua-portuguesa/manifest.json",
+  "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+  "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+  "anchor_glob": "examples/questao-premium-*-portugues-*.json,examples/questao-oracao-subordinada-final.json,examples/questao-formacao-palavras-siglas.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/index.ts",
+  "guidelines": {
+    "P0": [
+      "lib/guidelines/linguaPortuguesa/crase.ts",
+      "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts"
+    ],
+    "note": "Expandir ramo a ramo no handcraft; guideline NÃO bloqueia g01"
+  },
+  "cluster_command": "npm run cluster:lingua-portuguesa",
+  "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+  "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-index.md",
+  "l3_visual_gallery_index": "artifacts/l3-visual-gallery-lingua-portuguesa-index.md",
+  "slug_selection": "PDF ordenado Por Matéria e Assunto — lotes gNN sequenciais (8/slug); meta.subtopico = titulo_aula do cluster; reclassificar tema real quando divergir do Tec",
+  "classification": {
+    "meta.topico": "Língua Portuguesa",
+    "meta.subtopico": "titulo_aula canônico (17 cards — ver cluster report)",
+    "titulo_aula": "igual a meta.subtopico",
+    "modulo_nome": "Língua Portuguesa",
+    "source_assunto_tec": "rótulo TecConcursos do PDF — metadado interno apenas",
+    "policy": "tema_real_no_handcraft; prova primeiro (docs/TAXONOMIA_MODEL.md)"
+  },
+  "study_cards": [
+    "Tipologia e gêneros textuais",
+    "Coesão, coerência e conectivos",
+    "Classes de palavras",
+    "Verbos — tempos, modos e vozes",
+    "Pronomes e colocação pronominal",
+    "Frase, oração e período",
+    "Sujeito e predicado",
+    "Termos da oração",
+    "Orações coordenadas e subordinadas",
+    "Sintaxe — questões mescladas",
+    "Concordância verbal e nominal",
+    "Regência verbal e nominal",
+    "Crase",
+    "Pontuação",
+    "Sinônimos, antônimos e polissemia",
+    "Denotação, conotação e figuras de linguagem",
+    "Vocábulo \"que\" e partícula \"se\""
+  ],
+  "clusters": [
+    "Tipologia (57 · 8.5% — pt_tipologia)",
+    "Coesão/conectivos (35 · 5.2% — pt_coesao_conectivos)",
+    "Classes de palavras (93 · 13.9% — pt_classes_palavras · split no handcraft)",
+    "Verbos (45 · 6.7% — pt_verbos)",
+    "Pronomes+colocação (68 · 10.1% — pt_pronomes_colocacao · L3 P0)",
+    "Sintaxe núcleo (4+14+31+38+8 — vários ramos · merges mescladas)",
+    "Norma: concordância+regência+crase+pontuação (170 · 25.3%)",
+    "Vocabulário (63+33+12 — sinônimos, denotação, que/se)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "pt_crase",
+      "when": "Uso de crase, a/à, testes de crase, locuções adverbiais femininas",
+      "mold": "morphological · reference_table (funil 3 testes) · tap · compare",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pt-crase-funnel",
+      "brief": "artifacts/l3-brief-lingua-portuguesa-pt_crase.md",
+      "anchor_prompt_doc": "docs/PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md",
+      "anchors": [
+        "examples/questao-premium-vunesp-portugues-crase-funil.json",
+        "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json"
+      ],
+      "anchor_styles": {
+        "eliminacao": {
+          "golden_reference": "examples/questao-premium-vunesp-portugues-crase-funil.json",
+          "anchor_slug": "questao-premium-vunesp-portugues-crase-funil",
+          "catalog_slug": "vunesp-osasco-crase-serra-capivara"
+        },
+        "lacunas": {
+          "golden_reference": "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json",
+          "anchor_slug": "questao-premium-vunesp-portugues-crase-lacunas-ioga",
+          "catalog_slug": "vunesp-osasco-crase-ioga-lacunas-3840787"
+        }
+      },
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "questao-premium-vunesp-portugues-crase-funil",
+        "layouts": [
+          "pt-crase-funnel-deck",
+          "pt-crase-funnel-board",
+          "pt-crase-funnel-tap-flow",
+          "pt-crase-trap-arena"
+        ],
+        "captures_dir": "artifacts/questao-review/questao-premium-vunesp-portugues-crase-funil",
+        "secondary_captures_dir": "artifacts/questao-review/questao-premium-vunesp-portugues-crase-lacunas-ioga",
+        "note": "READY 2026-07-19: âncoras eliminação (Q506) + lacunas (ioga tec 3840787); moldes pt-crase-funnel 4/4."
+      }
+    },
+    {
+      "id": "pt_pronomes_colocacao",
+      "when": "Próclise, ênclise, mesóclise, colocação pronominal, átonos",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pt-clitic-rail",
+      "anchors": []
+    },
+    {
+      "id": "pt_pontuacao",
+      "when": "Vírgula, ponto, travessão, sujeito|verbo, aposto, oração restritiva",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "molde_redesign",
+      "anchors": []
+    },
+    {
+      "id": "pt_termos_oracao",
+      "when": "Adjunto, complemento, aposto, vocativo, objeto, agente da passiva",
+      "mold": "bridge · reference_table · tap · compare",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pt-term-matrix",
+      "anchors": []
+    },
+    {
+      "id": "pt_exceto_incorreta",
+      "when": "Comando EXCETO ou INCORRETA em qualquer eixo gramatical",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pt-exceto-arena",
+      "anchors": []
+    },
+    {
+      "id": "pt_oracoes_subordinadas",
+      "when": "Coordenadas, subordinadas adjetivas/adverbiais/substantivas, reduzidas",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pt-period-rail",
+      "anchors": ["examples/questao-oracao-subordinada-final.json"]
+    },
+    {
+      "id": "pt_concordancia",
+      "when": "Concordância verbal e nominal, núcleo do sujeito, casos especiais",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pt-subject-focus",
+      "anchors": []
+    },
+    {
+      "id": "pt_regencia",
+      "when": "Regência verbal e nominal, preposição exigida, sentidos do verbo",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pt-regency-arrow",
+      "anchors": []
+    },
+    {
+      "id": "pt_tipologia",
+      "when": "Gêneros textuais, tipologia, função do texto",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "57 slugs; morphological + rows; bespoke text-zones se text_fragment dominante"
+    },
+    {
+      "id": "pt_coesao_conectivos",
+      "when": "Coesão, coerência, anáfora, conectivos, pronomes relativos como elo",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "anchors": []
+    },
+    {
+      "id": "pt_classes_palavras",
+      "when": "Classes gramaticais, formação de palavras, artigo a numeral",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "anchors": ["examples/questao-formacao-palavras-siglas.json"]
+    },
+    {
+      "id": "pt_verbos",
+      "when": "Tempos, modos, vozes, locução verbal, correlação",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "anchors": []
+    },
+    {
+      "id": "pt_sinonimos_polissemia",
+      "when": "Sinônimos, antônimos, polissemia, homônimos, parônimos",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "anchors": []
+    },
+    {
+      "id": "pt_denotacao_conotacao",
+      "when": "Denotação, conotação, figuras de linguagem",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "anchors": []
+    },
+    {
+      "id": "pt_vocabulo_que_se",
+      "when": "Vocábulo que, partícula se",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "ok_generico",
+      "anchors": []
+    },
+    {
+      "id": "pt_sintaxe_mesclada",
+      "when": "Questões mescladas de sintaxe — classificar pelo enunciado",
+      "mold": "morphological · reference_table · tap · compare",
+      "l3_decision": "audit",
+      "anchors": []
+    }
+  ],
+  "proibido": [
+    "ai:generate",
+    "catalog:upgrade-premium",
+    "catalog:apply-lote --apply sem pedido explícito",
+    "publicar referência TecConcursos no JSON"
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "cluster": "npm run cluster:lingua-portuguesa"
+  },
+  "first_lote": "lingua-portuguesa-g01",
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Handcraft golden-v1 — 671 questões PDF em lotes lingua-portuguesa-gNN (fonte: data/sources/lingua-portuguesa/)",
+      "first_lote": "lingua-portuguesa-g01",
+      "batch_size": 8,
+      "after_handcraft": [
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+        "npm run validate:goldens -- --lote=<lote> --strict",
+        "npm run cluster:lingua-portuguesa",
+        "npm run catalog:apply-lote -- --lote=<lote> --dry-run"
+      ]
+    }
+  },
+  "skills": [
+    ".cursor/skills/professor-lingua-portuguesa-concurso/SKILL.md",
+    ".cursor/skills/avant-golden-anchor-handcraft/SKILL.md",
+    ".cursor/skills/brief-lingua-portuguesa/SKILL.md",
+    ".cursor/skills/avant-neuroslides-visual/SKILL.md",
+    ".cursor/skills/avant-json-template/SKILL.md"
+  ]
+}

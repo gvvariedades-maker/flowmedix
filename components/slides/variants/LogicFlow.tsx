@@ -19,6 +19,7 @@ import { LogicFlowSoftStack } from './LogicFlowSoftStack';
 import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
 import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
 import { LogicFlowBurnTriageTapFlow } from './LogicFlowBurnTriageTapFlow';
+import { LogicFlowPtCraseFunnelTapFlow } from './LogicFlowPtCraseFunnelTapFlow';
 import { LogicFlowTrabalhoVfJuggleTap } from './LogicFlowTrabalhoVfJuggleTap';
 import { LogicFlowSegurancaVfJuggleTap } from './LogicFlowSegurancaVfJuggleTap';
 import { LogicFlowSpProtocolTapFlow } from './LogicFlowSpProtocolTapFlow';
@@ -234,6 +235,10 @@ export const LogicFlow = ({
 
   if (variant === 'burn-triage-tap-flow') {
     return <LogicFlowBurnTriageTapFlow steps={steps} theme={theme} />;
+  }
+
+  if (variant === 'pt-crase-funnel-tap-flow') {
+    return <LogicFlowPtCraseFunnelTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'trabalho-vf-juggle-tap') {

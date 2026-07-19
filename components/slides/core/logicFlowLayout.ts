@@ -66,6 +66,7 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'iv-interval-tap-flow',
   'iv-puncture-tap-flow',
   'iv-bundle-tap-flow',
+  'pt-crase-funnel-tap-flow',
 ]);
 
 const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
@@ -130,6 +131,7 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'iv-interval-tap-flow',
   'iv-puncture-tap-flow',
   'iv-bundle-tap-flow',
+  'pt-crase-funnel-tap-flow',
 ]);
 
 /**

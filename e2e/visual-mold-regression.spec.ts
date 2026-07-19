@@ -41,6 +41,8 @@ import {
   SAE_BESPOKE_BRANCHES,
   FERIDAS_BRANCHES,
   FERIDAS_BESPOKE_BRANCHES,
+  CURATIVOS_BRANCHES,
+  CURATIVOS_BESPOKE_BRANCHES,
   PROCESSAMENTO_BRANCHES,
   PROCESSAMENTO_BESPOKE_BRANCHES,
   CME_BRANCHES,
@@ -1161,6 +1163,53 @@ test.describe('Processo de Enfermagem — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('processo-de-enfermagem');
+  });
+});
+
+test.describe('Curativos e Manejo de Feridas — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Curativos — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  for (const branch of CURATIVOS_BRANCHES) {
+    test(`Curativos ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Curativos ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Curativos — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'curativos-e-manejo-de-feridas',
+      branches: CURATIVOS_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Curativos — ${CURATIVOS_BRANCHES.length} branches (${CURATIVOS_BESPOKE_BRANCHES.length} bespoke/redesign); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('curativos-e-manejo-de-feridas');
   });
 });
 

@@ -75,6 +75,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'iv-interval-swap-trap',
   'iv-order-invert-trap',
   'iv-bundle-break-trap',
+  'pt-crase-trap-arena',
 ]);
 
 /**
@@ -144,6 +145,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'iv-interval-swap-trap') return 'iv-interval-swap-trap';
   if (explicitVariant === 'iv-order-invert-trap') return 'iv-order-invert-trap';
   if (explicitVariant === 'iv-bundle-break-trap') return 'iv-bundle-break-trap';
+  if (explicitVariant === 'pt-crase-trap-arena') return 'pt-crase-trap-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -334,6 +336,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'iv-bundle-break-trap') {
       return 'iv-bundle-break-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-crase-trap-arena') {
+      return 'pt-crase-trap-arena';
     }
     return 'compare';
   }

@@ -1,0 +1,81 @@
+{
+  "generated_at": "2026-07-19T06:24:33.925Z",
+  "lote": "lingua-portuguesa-g02",
+  "mode": "apply",
+  "total_files": 10,
+  "ok": 8,
+  "skipped": 2,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-jeriquara-crase-facultativo-3886649",
+    "avancasp-nova-odessa-crase-sacrificios-3962466",
+    "avancasp-vinhedo-crase-correta-3826747",
+    "caderno-pt-crase-premiacao-mundial-3839868",
+    "vunesp-osasco-crase-ioga-lacunas-3840787",
+    "vunesp-sjrp-crase-a-qual",
+    "vunesp-sjrp-crase-lacunas-agricultura-3789364",
+    "vunesp-sjrp-crase-nelson-rodrigues-3799251"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-jeriquara-crase-facultativo-3886649",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-nova-odessa-crase-sacrificios-3962466",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-potim-crase-premiacao-mundial-3839721",
+      "status": "skipped",
+      "mode": "skip",
+      "detail": "slug não encontrado (use --allow-insert)"
+    },
+    {
+      "modulo_slug": "avancasp-vinhedo-crase-correta-3826747",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-premiacao-mundial-3839868",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-jundiai-crase-tira-qual-3776323",
+      "status": "skipped",
+      "mode": "skip",
+      "detail": "slug não encontrado (use --allow-insert)"
+    },
+    {
+      "modulo_slug": "vunesp-osasco-crase-ioga-lacunas-3840787",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sjrp-crase-a-qual",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sjrp-crase-lacunas-agricultura-3789364",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sjrp-crase-nelson-rodrigues-3799251",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

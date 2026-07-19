@@ -288,6 +288,13 @@ const VIA_VF_VARIANTS = new Set([
   'route-trap',
 ]);
 
+export const PT_CRASE_VARIANTS = new Set([
+  'pt-crase-funnel-deck',
+  'pt-crase-funnel-board',
+  'pt-crase-funnel-tap-flow',
+  'pt-crase-trap-arena',
+]);
+
 const CAM_CERTOS_VF_VARIANTS = new Set([
   'cam-certos-deck',
   'cam-nine-rights-board',
@@ -639,8 +646,11 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
 
   // ---- Sondas ----
   'procedure-protocol': {
-    homeSubtopicFragments: ['sonda', 'manejo de sondas'],
-    positivePatterns: [/sonda|nasog[aá]strica|nasoenteral|\bnex\b|bal[aã]o|gastrostomia|jejunostomia/i],
+    homeSubtopicFragments: ['sonda', 'manejo de sondas', 'curativos', 'manejo de feridas'],
+    positivePatterns: [
+      /sonda|nasog[aá]strica|nasoenteral|\bnex\b|bal[aã]o|gastrostomia|jejunostomia/i,
+      /p[oó]s[- ]?op|ferida operat|pontos|sutura|deisc[eê]ncia|cir[uú]rgic/i,
+    ],
   },
   'sonda-measurement-board': {
     homeSubtopicFragments: ['sonda', 'manejo de sondas'],
@@ -1759,6 +1769,45 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
   'urgencias-manchester-trap': {
     homeSubtopicFragments: ['urgencias e emergencias', 'urgencia', 'emergencia'],
     positivePatterns: [/manchester|amarel|azul|verde|monitor|inst[aá]vel|triagem/i],
+  },
+
+  // ---- Língua Portuguesa — Crase (pt-crase-funnel) ----
+  'pt-crase-funnel-deck': {
+    homeSubtopicFragments: ['crase', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /\bcrase\b/i,
+      /funil|masculino|verbo|a\s*\+\s*a|artigo\s+a/i,
+      /autom[aá]tica|prep[oó]si[cç][aã]o\s+a\b|teste\s*(1|2|3|ao)/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-crase-funnel-board': {
+    homeSubtopicFragments: ['crase', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /\bcrase\b/i,
+      /funil|teste\s*(1|2|3|ao)|ao\b|à\b|às\b|masculino|verbo|a\s*\+\s*a/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-crase-funnel-tap-flow': {
+    homeSubtopicFragments: ['crase', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /\bcrase\b/i,
+      /funil|em similares|gabarito.*(letra|c\b)|verbo|masculino|a\s*\+\s*a/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-crase-trap-arena': {
+    homeSubtopicFragments: ['crase', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /\bcrase\b/i,
+      /autom[aá]tica|funil|verbo|todos|ferramentas|à\b|às\b/i,
+    ],
+    minPositive: 1,
   },
 };
 

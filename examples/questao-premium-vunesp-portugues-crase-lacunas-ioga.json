@@ -1,0 +1,236 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "TEnf (Pref Osasco)",
+    "orgao": "Pref. Osasco",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Crase",
+    "pedagogical_branch": "pt_crase",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-19",
+      "reviewer": "agent:elias-m11-te-simples-lacunas",
+      "guideline_snapshot": "M11 Elias TE-simples — lacunas: pergunta «Tem a + a?» por buraco; pronome / intervalo / hora / plural (Bechara / Cunha & Cintra; pt-crase-concursos)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-crase-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Crase (a + a) — funil por lacuna + pronome + hora",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "definição a+a",
+          "plural às",
+          "pronome pessoal a ela",
+          "intervalo de segunda a sexta",
+          "hora às 10h",
+          "crase automática em horas"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3840787",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Crase lacunas — VUNESP TEnf Pref. Osasco 2026 (ioga) tec 3840787",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito A",
+          "4 lacunas no texto"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m11-te-simples-lacunas",
+      "a4_reviewed_at": "2026-07-19"
+    }
+  },
+  "question_data": {
+    "instruction": "Leia o texto a seguir: Quando amigas de Charlotte vão ___ aulas de ioga, proporcionam ___ ela a companhia de que precisa. Alentada por isso, ela ministra suas aulas de segunda ___ sexta-feira, sempre ___ 10h. De acordo com a norma-padrão de regência e emprego do sinal de crase, as lacunas são preenchidas respectivamente por:",
+    "options": [
+      {
+        "id": "A",
+        "text": "às ... a ... a ... às",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "às ... à ... a ... as",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "às ... a ... à ... às",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "as ... a ... à ... as",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "as ... à ... a ... às",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "4 lacunas — um funil por buraco",
+      "chip_label": "Funil simples",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Crase"
+      },
+      "items": [
+        {
+          "label": "1. Olhe o verbo",
+          "detail": "O verbo pede a? Ex.: vão a… / proporcionam a…",
+          "icon": "GitBranch"
+        },
+        {
+          "label": "2. Pergunte: a + a?",
+          "detail": "Tem prep. a + artigo feminino (a ou as)? Só aí nasce à/às.",
+          "icon": "Filter"
+        },
+        {
+          "label": "Lacuna 1 — às aulas",
+          "detail": "a + as aulas → às (plural feminino com artigo).",
+          "icon": "GraduationCap"
+        },
+        {
+          "label": "Corte: pronome",
+          "detail": "Antes de ela/mim/ti/você — só a, sem crase.",
+          "icon": "User"
+        },
+        {
+          "label": "Corte: intervalo",
+          "detail": "De segunda a sexta — liga dias, não artigo feminino.",
+          "icon": "Calendar"
+        },
+        {
+          "label": "Passa: às 10h",
+          "detail": "Hora cheia — crase automática: às + hora.",
+          "icon": "Clock"
+        }
+      ],
+      "footer_rule": "Cada lacuna: verbo → a+a? → pronome? intervalo? hora?"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Lacuna a lacuna",
+      "chip_label": "Um toque = um corte",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Crase"
+      },
+      "steps": [
+        "Comando: 4 buracos — só uma sequência passa no funil inteiro.",
+        "Lacuna 1: «vão ___ aulas» — a + as → às. Corta D e E (abrem com as).",
+        "Lacuna 2: «proporcionam ___ ela» — pronome pessoal → só a. Corta B e E (à ela).",
+        "Lacuna 3: «de segunda ___ sexta» — intervalo de dias → a simples. Corta C (à sexta).",
+        "Lacuna 4: «sempre ___ 10h» — hora cheia → às. B troca por as — fora.",
+        "Sequência que sobrou: às / a / a / às.",
+        "Gabarito A — única que não cai em pronome, intervalo ou hora errada.",
+        "Em similares: a ela nunca vira à ela; de… a… nunca leva crase."
+      ],
+      "footer_rule": "às … a … a … às — guarde a ordem."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Funil de bolso — lacunas",
+      "chip_label": "Decore isto",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Crase"
+      },
+      "content": "PERGUNTE: TEM A + A?",
+      "rows": [
+        {
+          "label": "Pergunta-chave",
+          "value": "Tem a (liga) + a/as (artigo feminino)? → à / às",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Plural feminino",
+          "value": "às aulas — a + as",
+          "emphasis": "success"
+        },
+        {
+          "label": "Pronome pessoal",
+          "value": "a ela / a mim / a você — sem crase",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Intervalo",
+          "value": "de segunda a sexta — prep. a simples",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Hora cheia",
+          "value": "às 10h — crase automática",
+          "emphasis": "success"
+        },
+        {
+          "label": "Nesta questão",
+          "value": "Sequência: às / a / a / às"
+        }
+      ],
+      "footer_rule": "Sem a + artigo = sem crase. Hora é exceção automática."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Armadilhas",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Crase"
+      },
+      "content": "Cada erro = um corte do funil",
+      "items": [
+        {
+          "label": "B — à ela",
+          "detail": "«Proporcionam à» imita regência culta.",
+          "correct": "Pronome pessoal: a ela — nunca à ela."
+        },
+        {
+          "label": "C — à sexta",
+          "detail": "Crase no dia da semana parece elegante.",
+          "correct": "De segunda a sexta — ligação, não artigo."
+        },
+        {
+          "label": "D — as aulas",
+          "detail": "Abre sem fusão no plural feminino.",
+          "correct": "Vão às aulas — a + as → às."
+        },
+        {
+          "label": "E — à … as",
+          "detail": "Crase no pronome + hora sem às.",
+          "correct": "2ª lacuna: a ela; 4ª: às 10h."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam ioga por UBS ou plantão.",
+          "correct": "Mesmo funil: às aulas / a ela / a sexta / às 8h."
+        }
+      ],
+      "footer_rule": "A passa: às aulas · a ela · a sexta · às 10h."
+    }
+  ]
+}

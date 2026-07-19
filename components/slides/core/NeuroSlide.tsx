@@ -16,6 +16,7 @@ import { MulherContraceptionSpectrumConceptMap } from '../variants/MulherContrac
 import { ColdChainHubConceptMap } from '../variants/ColdChainHubConceptMap';
 import { PniRulesDeckConceptMap } from '../variants/PniRulesDeckConceptMap';
 import { CamCertosDeckConceptMap } from '../variants/CamCertosDeckConceptMap';
+import { PtCraseFunnelDeckConceptMap } from '../variants/PtCraseFunnelDeckConceptMap';
 import { CamHighRiskDuoDeckConceptMap } from '../variants/CamHighRiskDuoDeckConceptMap';
 import { CamExcetoRailConceptMap } from '../variants/CamExcetoRailConceptMap';
 import { CamDocumentacaoDeckConceptMap } from '../variants/CamDocumentacaoDeckConceptMap';
@@ -252,6 +253,15 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'cam-certos-deck') {
         return <CamCertosDeckConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'pt-crase-funnel-deck') {
+        return (
+          <PtCraseFunnelDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
       }
       if (layoutVariant === 'cam-high-risk-duo-deck') {
         return <CamHighRiskDuoDeckConceptMap concepts={getConcepts()} theme={theme} />;

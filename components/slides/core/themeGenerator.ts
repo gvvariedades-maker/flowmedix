@@ -439,6 +439,13 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'raciocínio lógico': { template: 'teal', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
   'informática': { template: 'fuchsia', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
   'imobilização ortopédica': { template: 'rose', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
+
+  // ============================================================
+  // LÍNGUA PORTUGUESA (pacote bespoke pt-crase-funnel)
+  // ============================================================
+
+  // ---- Crase (golden: pt-crase-funnel-deck · pt-crase-funnel-board · pt-crase-funnel-tap-flow · pt-crase-trap-arena) ----
+  'crase': { template: 'amber', conceptMap: 'pt-crase-funnel-deck', goldenRule: 'pt-crase-funnel-board', logicFlow: 'pt-crase-funnel-tap-flow', dangerZone: 'pt-crase-trap-arena' },
 };
 
 /** Normaliza string de subtópico para busca no mapa */

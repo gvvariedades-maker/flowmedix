@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "ACS (Pref Osasco)",
+    "orgao": "Pref. Osasco",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Crase",
+    "pedagogical_branch": "pt_crase",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-19",
+      "reviewer": "agent:elias-m11-te-simples-nota10",
+      "guideline_snapshot": "M11 Elias TE-simples — pergunta «Tem a + a?» → funil masculino/verbo/fusão + teste ao (Bechara / Cunha & Cintra; pt-crase-concursos)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-crase-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Crase (a + a) — funil de 3 testes + regência",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "definição a+a",
+          "teste masculino",
+          "teste verbo",
+          "teste a+a feminino",
+          "teste ao",
+          "crase automática",
+          "antes de pronome",
+          "plural às × à",
+          "dirigir-se a + topônimo com artigo"
+        ]
+      },
+      {
+        "id": "portugues-caderno-2025-2026-q401-600",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT 2025–2026 — Q506 / tec 3607076 (VUNESP ACS Pref. Osasco 2025)",
+        "year": 2025,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito C"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m11-te-simples-nota10",
+      "a4_reviewed_at": "2026-07-19"
+    }
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa redigida em conformidade com a norma-padrão de emprego do acento indicativo de crase.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Os pesquisadores dedicam-se à estudar o comportamento dos macacos-pregos.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Os estudos abordam à versatilidade das ferramentas dos macacos-pregos.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Os arqueólogos dirigem-se à Serra da Capivara para estudar pinturas rupestres.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "O uso de ferramentas é um comportamento comum à todos os macacos-pregos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "As lascas de pedras dos humanos são comparadas à ferramentas de outros animais.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Como achar a crase certa",
+      "chip_label": "Funil simples",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Crase"
+      },
+      "items": [
+        {
+          "label": "1. Olhe o verbo",
+          "detail": "O verbo pede a palavra «a»? Ex.: dirigir-se a…",
+          "icon": "GitBranch"
+        },
+        {
+          "label": "2. Pergunte: a + a?",
+          "detail": "Tem a (liga) + a (artigo da palavra feminina)? Só aí nasce à.",
+          "icon": "Filter"
+        },
+        {
+          "label": "Corte: masculino",
+          "detail": "Se for palavra masculina, não use à (no masculino vira ao).",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Corte: verbo",
+          "detail": "Antes de verbo (estudar, fazer…), use só a — sem crase.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Passa: a + a",
+          "detail": "a + a Serra (= a Serra) → à Serra. Aqui a crase está certa.",
+          "icon": "CheckCircle2"
+        },
+        {
+          "label": "Armadilha comum",
+          "detail": "Não marque à só porque «parece culto» ou a palavra é feminina.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Ordem: verbo → tem a+a? → masculino? verbo? fusão?"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Corte letra a letra",
+      "chip_label": "Um toque = um corte",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Crase"
+      },
+      "steps": [
+        "Comando: só uma frase usa à do jeito certo. As outras caem no funil.",
+        "A: «à estudar» — estudar é verbo → use só a → sem crase.",
+        "B: «abordam à versatilidade» — o verbo pede o quê? (versatilidade). Não é a+a → sem crase.",
+        "D: «comum à todos» — todos não aceita artigo a → sem crase.",
+        "E: «à ferramentas» — à é singular; ferramentas é plural → errou o número.",
+        "C: dirigir-se pede a + a Serra → a+a. Teste: ao Monte → à Serra. Passa.",
+        "Gabarito C — única com a + artigo da Serra da Capivara.",
+        "Em similares: verbo pede a? masculino/verbo/pronome? a+a? Só então use à."
+      ],
+      "footer_rule": "Cada toque = 1 corte. Não chute o à."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Funil de bolso",
+      "chip_label": "Decore isto",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Crase"
+      },
+      "content": "PERGUNTE: TEM A + A?",
+      "rows": [
+        {
+          "label": "Pergunta-chave",
+          "value": "Tem a (liga) + a (artigo feminino)? Se sim → à / às",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Pode usar à",
+          "value": "a + palavra feminina com artigo (à Serra; às + plural)",
+          "emphasis": "success"
+        },
+        {
+          "label": "Não use à",
+          "value": "antes de verbo, masculino, todos/mim/ti, ou à + plural",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Teste rápido",
+          "value": "Troque por masculino: se virar ao, no feminino é à",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Nesta questão",
+          "value": "Só C: dirigir-se à Serra da Capivara"
+        }
+      ],
+      "footer_rule": "Sem a + a = sem crase. Guarde esta frase."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Armadilhas",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Crase"
+      },
+      "content": "Cada erro = um corte do funil",
+      "items": [
+        {
+          "label": "A — à + verbo",
+          "detail": "«À estudar» parece certo, mas verbo barra.",
+          "correct": "Antes de verbo: só a. Ex.: a estudar — sem à."
+        },
+        {
+          "label": "B — à no «o quê?»",
+          "detail": "À grudado em versatilidade sem a+a.",
+          "correct": "Abordar o quê? a versatilidade — artigo, não crase."
+        },
+        {
+          "label": "D — à todos",
+          "detail": "À antes de todos imita norma culta.",
+          "correct": "Comum a todos: sem artigo feminino → sem à."
+        },
+        {
+          "label": "E — à + plural",
+          "detail": "À (uma) + ferramentas (várias) não combina.",
+          "correct": "Plural: às ferramentas ou a ferramentas — nunca à."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Podem trocar Serra por à noite, às 8h ou a Paris.",
+          "correct": "Mesmo funil: à noite ≠ a Paris ≠ à Serra (com artigo)."
+        }
+      ],
+      "footer_rule": "C sobrou: dirigir-se à Serra — a+a + teste ao."
+    }
+  ]
+}

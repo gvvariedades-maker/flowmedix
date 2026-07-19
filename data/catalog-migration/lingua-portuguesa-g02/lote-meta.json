@@ -1,0 +1,60 @@
+{
+  "lote": "lingua-portuguesa-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-18",
+  "subtopico": "Crase",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_crase",
+  "cluster": "Norma — Crase (lote 2/6)",
+  "total": 8,
+  "status": "applied",
+  "applied_at": "2026-07-19",
+  "slug_aliases": {
+    "vunesp-jundiai-crase-tira-qual-3776323": "vunesp-sjrp-crase-a-qual",
+    "avancasp-potim-crase-premiacao-mundial-3839721": "caderno-pt-crase-premiacao-mundial-3839868"
+  },
+  "apply_note": "2026-07-19: 6 inserts + 2 updates (content_hash duplicado com g01 — mesmo enunciado)",
+  "anchor_slug": "questao-premium-vunesp-portugues-crase-funil",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-crase-funil.json",
+  "golden_references": {
+    "eliminacao": "examples/questao-premium-vunesp-portugues-crase-funil.json",
+    "lacunas": "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json"
+  },
+  "slug_anchor_style": {
+    "vunesp-jundiai-crase-tira-qual-3776323": "eliminacao",
+    "vunesp-sjrp-crase-lacunas-agricultura-3789364": "lacunas",
+    "vunesp-sjrp-crase-nelson-rodrigues-3799251": "eliminacao",
+    "avancasp-vinhedo-crase-correta-3826747": "eliminacao",
+    "avancasp-potim-crase-premiacao-mundial-3839721": "eliminacao",
+    "vunesp-osasco-crase-ioga-lacunas-3840787": "lacunas",
+    "avancasp-nova-odessa-crase-sacrificios-3962466": "lacunas",
+    "avancasp-jeriquara-crase-facultativo-3886649": "eliminacao"
+  },
+  "guideline": "lib/guidelines/linguaPortuguesa/crase.ts",
+  "slugs": [
+    "vunesp-jundiai-crase-tira-qual-3776323",
+    "vunesp-sjrp-crase-lacunas-agricultura-3789364",
+    "vunesp-sjrp-crase-nelson-rodrigues-3799251",
+    "avancasp-vinhedo-crase-correta-3826747",
+    "avancasp-potim-crase-premiacao-mundial-3839721",
+    "vunesp-osasco-crase-ioga-lacunas-3840787",
+    "avancasp-nova-odessa-crase-sacrificios-3962466",
+    "avancasp-jeriquara-crase-facultativo-3886649"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g02 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g02.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g02 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=lingua-portuguesa-g02 --strict",
+    "4. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g02 --dry-run",
+    "5. apply só com pedido explícito"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/lingua-portuguesa-g02.json"
+  }
+}

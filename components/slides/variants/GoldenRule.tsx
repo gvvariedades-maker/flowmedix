@@ -39,6 +39,7 @@ import { GoldenRuleViaReferenceBoard } from './GoldenRuleViaReferenceBoard';
 import { GoldenRulePkPdReferenceBoard } from './GoldenRulePkPdReferenceBoard';
 import { GoldenRuleFarmacoClinicoReferenceBoard } from './GoldenRuleFarmacoClinicoReferenceBoard';
 import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
+import { GoldenRulePtCraseFunnelBoard } from './GoldenRulePtCraseFunnelBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
 import { GoldenRuleAdolescentZBandBoard } from './GoldenRuleAdolescentZBandBoard';
 import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
@@ -532,6 +533,12 @@ export const GoldenRule = ({
   if (variant === 'burn-rule-nine-board' && rows && rows.length > 0) {
     return (
       <GoldenRuleBurnRuleNineBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'pt-crase-funnel-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePtCraseFunnelBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

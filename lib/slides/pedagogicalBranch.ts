@@ -114,6 +114,18 @@ export type PedagogicalBranchId =
   | 'puncao_periferica_antissepsia'
   | 'puncao_ipcs_cvc'
   | 'puncao_generico'
+  // Curativos e Manejo de Feridas
+  | 'curativos_cobertura_selecao'
+  | 'curativos_ferida_cirurgica'
+  | 'curativos_lpp'
+  | 'curativos_tecnica_assepsia'
+  | 'curativos_desbridamento'
+  | 'curativos_exceto_incorreta'
+  | 'curativos_estomia'
+  | 'curativos_bandagem_imobilizacao'
+  | 'curativos_dreno'
+  | 'curativos_termoterapia'
+  | 'curativos_generico'
   // Saúde da Mulher
   | 'mulher_prenatal'
   | 'mulher_parto'
@@ -145,7 +157,10 @@ export type PedagogicalBranchId =
   | 'historia_nightingale'
   | 'historia_humanizacao'
   | 'historia_comunicacao_etica'
-  | 'historia_generico';
+  | 'historia_generico'
+  // Língua Portuguesa — Crase
+  | 'pt_crase'
+  | 'pt_crase_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -496,6 +511,59 @@ const RESPIRATORIO_TECNICA_MOLD: SubtopicDesign = {
 
 const RESPIRATORIO_GENERIC_MOLD: SubtopicDesign = {
   template: 'cyan',
+  conceptMap: 'morphological',
+  goldenRule: 'center',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Cobertura / exsudato / meio úmido — bespoke 4/4 (wound-stage · dressing-matrix · prep-tap · choice-arena). */
+const CURATIVOS_COBERTURA_BESPOKE: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'wound-stage-tissue-deck',
+  goldenRule: 'dressing-match-matrix',
+  logicFlow: 'wound-prep-tap-flow',
+  dangerZone: 'dressing-choice-arena',
+};
+
+/** LPP prevenção + estágio — estágios NPUAP + arena LPP. */
+const CURATIVOS_LPP_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'wound-stage-tissue-deck',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'dressing-choice-arena',
+};
+
+/** Ferida operatória / pós-op / pontos — trilho procedural. */
+const CURATIVOS_FO_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'procedure-protocol',
+  goldenRule: 'reference_table',
+  logicFlow: 'wound-prep-tap-flow',
+  dangerZone: 'compare',
+};
+
+/** EXCETO / INCORRETA em técnica de curativo. */
+const CURATIVOS_EXCETO_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+/** Ramos médios / cauda — genérico premium laranja. */
+const CURATIVOS_REFERENCE_MOLD: SubtopicDesign = {
+  template: 'orange',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+const CURATIVOS_GENERIC_MOLD: SubtopicDesign = {
+  template: 'orange',
   conceptMap: 'morphological',
   goldenRule: 'center',
   logicFlow: 'vertical',
@@ -982,6 +1050,23 @@ const URGENCIAS_EMERGENCY_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'urgencias-protocol-trap-arena',
 };
 
+// ---- Língua Portuguesa — Crase (pacote bespoke pt-crase-funnel) ----
+const PT_CRASE_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'pt-crase-funnel-deck',
+  goldenRule: 'pt-crase-funnel-board',
+  logicFlow: 'pt-crase-funnel-tap-flow',
+  dangerZone: 'pt-crase-trap-arena',
+};
+
+const PT_CRASE_GENERIC_MOLD: SubtopicDesign = {
+  template: 'amber',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -1372,6 +1457,45 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     historia_comunicacao_etica: HISTORIA_ETICA_MOLD,
     historia_generico: HISTORIA_GENERIC_DESIGN,
   },
+  'curativos e manejo de feridas': {
+    curativos_cobertura_selecao: CURATIVOS_COBERTURA_BESPOKE,
+    curativos_ferida_cirurgica: CURATIVOS_FO_MOLD,
+    curativos_lpp: CURATIVOS_LPP_MOLD,
+    curativos_tecnica_assepsia: CURATIVOS_REFERENCE_MOLD,
+    curativos_desbridamento: CURATIVOS_REFERENCE_MOLD,
+    curativos_exceto_incorreta: CURATIVOS_EXCETO_MOLD,
+    curativos_estomia: CURATIVOS_REFERENCE_MOLD,
+    curativos_bandagem_imobilizacao: CURATIVOS_REFERENCE_MOLD,
+    curativos_dreno: CURATIVOS_REFERENCE_MOLD,
+    curativos_termoterapia: CURATIVOS_REFERENCE_MOLD,
+    curativos_generico: CURATIVOS_GENERIC_MOLD,
+  },
+  curativos: {
+    curativos_cobertura_selecao: CURATIVOS_COBERTURA_BESPOKE,
+    curativos_ferida_cirurgica: CURATIVOS_FO_MOLD,
+    curativos_lpp: CURATIVOS_LPP_MOLD,
+    curativos_tecnica_assepsia: CURATIVOS_REFERENCE_MOLD,
+    curativos_desbridamento: CURATIVOS_REFERENCE_MOLD,
+    curativos_exceto_incorreta: CURATIVOS_EXCETO_MOLD,
+    curativos_estomia: CURATIVOS_REFERENCE_MOLD,
+    curativos_bandagem_imobilizacao: CURATIVOS_REFERENCE_MOLD,
+    curativos_dreno: CURATIVOS_REFERENCE_MOLD,
+    curativos_termoterapia: CURATIVOS_REFERENCE_MOLD,
+    curativos_generico: CURATIVOS_GENERIC_MOLD,
+  },
+  'manejo de feridas': {
+    curativos_cobertura_selecao: CURATIVOS_COBERTURA_BESPOKE,
+    curativos_ferida_cirurgica: CURATIVOS_FO_MOLD,
+    curativos_lpp: CURATIVOS_LPP_MOLD,
+    curativos_tecnica_assepsia: CURATIVOS_REFERENCE_MOLD,
+    curativos_desbridamento: CURATIVOS_REFERENCE_MOLD,
+    curativos_exceto_incorreta: CURATIVOS_EXCETO_MOLD,
+    curativos_estomia: CURATIVOS_REFERENCE_MOLD,
+    curativos_bandagem_imobilizacao: CURATIVOS_REFERENCE_MOLD,
+    curativos_dreno: CURATIVOS_REFERENCE_MOLD,
+    curativos_termoterapia: CURATIVOS_REFERENCE_MOLD,
+    curativos_generico: CURATIVOS_GENERIC_MOLD,
+  },
   'feridas e queimaduras': {
     feridas_grau_profundidade: FERIDAS_GRAU_MOLD,
     feridas_scq_calculo: FERIDAS_SCQ_MOLD,
@@ -1418,6 +1542,14 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     trabalho_nr15_reference: TRABALHO_NR15_MOLD,
     trabalho_ergonomia: TRABALHO_ERGONOMIA_MOLD,
     trabalho_generico: TRABALHO_GENERIC_MOLD,
+  },
+  crase: {
+    pt_crase: PT_CRASE_MOLD,
+    pt_crase_generico: PT_CRASE_GENERIC_MOLD,
+  },
+  'acento indicativo de crase': {
+    pt_crase: PT_CRASE_MOLD,
+    pt_crase_generico: PT_CRASE_GENERIC_MOLD,
   },
 };
 
@@ -1848,6 +1980,16 @@ const HISTORIA_HUMANIZACAO: RegExp[] = [
   /peplau|watson|leininger|horta|hol[ií]stic|interdisciplinar|intersubjetiv/i,
   /teoria.*enfermagem|lideran[cç]a democr[aá]tica|abordagem hol[ií]stica/i,
   /cuidado centrado|terap[eê]utico|promo[cç][aã]o da humaniza/i,
+];
+
+const PT_CRASE_SIGNALS: RegExp[] = [
+  /\bcrase\b/i,
+  /acento\s+indicativo\s+de\s+crase/i,
+  /a\s*\+\s*a\b/i,
+  /funil/i,
+  /teste\s*(1|2|3|ao)|t[123]\b/i,
+  /norma[\s-]padr[aã]o.*crase/i,
+  /prep[oó]si[cç][aã]o\s+a\s+.*artigo\s+a/i,
 ];
 
 function branchMapKey(subtopico: string): string | undefined {
@@ -2301,6 +2443,78 @@ function inferRespiratorioBranch(corpus: string, familyId?: FamilyId): Pedagogic
   return 'respiratorio_generico';
 }
 
+const CURATIVOS_ESTOMIA: RegExp[] = [
+  /estom[ií]a|colostomia|ileostomia|urostomia|periestomal|bolsa\s+coletora/i,
+];
+const CURATIVOS_DRENO: RegExp[] = [
+  /dreno\s+de\s+penrose|\bpenrose\b|dreno\s+ativo|dreno\s+passivo/i,
+];
+const CURATIVOS_BANDAGEM: RegExp[] = [
+  /bandagem|gesso\b|imobiliza[cç][aã]o|tra[cç][aã]o\s+esquel[eé]tica|tipoia/i,
+];
+const CURATIVOS_TERMOTERAPIA: RegExp[] = [
+  /termoterapia|calor\s+[úu]mido|compressa\s+fria|crioterapia|hipertermia/i,
+];
+const CURATIVOS_LPP: RegExp[] = [
+  /les[aã]o\s+por\s+press[aã]o|\blpp\b|úlcera\s+de\s+press[aã]o|escala\s+de\s+braden|\bbraden\b/i,
+  /est[aá]gio\s+(i|ii|iii|iv)\b|eritema\s+n[aã]o\s+branque[aá]vel/i,
+];
+const CURATIVOS_FO: RegExp[] = [
+  /ferida\s+operat[oó]ria|p[oó]s[\s-]?operat[oó]rio|\bpontos\b|retirada\s+de\s+pontos|deisc[eê]ncia/i,
+  /sutura|incis[aã]o\s+cir[uú]rgica|ferida\s+cir[uú]rgica/i,
+];
+const CURATIVOS_DESBRIDAMENTO: RegExp[] = [
+  /desbridamento|autol[ií]tico|enzim[aá]tico|mec[aâ]nico|esfacelo|necrose/i,
+];
+const CURATIVOS_COBERTURA: RegExp[] = [
+  /alginato|hidrogel|hidrocol[oó]ide|espuma\s+de\s+poliuretano|semi[\s-]?oclusiv/i,
+  /exsudato|tipos?\s+de\s+cobertura|sele[cç][aã]o\s+do\s+curativo|meio\s+[úu]mido/i,
+];
+const CURATIVOS_ASSEPSIA: RegExp[] = [
+  /assepsia|antissepsia|sequ[eê]ncia\s+do\s+curativo|t[eé]cnica\s+ass[eé]ptica|soro\s+fisiol[oó]gico/i,
+];
+
+function isCurativosExcetoCommand(instruction: string, familyId?: FamilyId): boolean {
+  if (/\bexceto\b|alternativa\s+incorreta|incorret[oa]\s+sobre|assinale.*incorreta/i.test(instruction)) {
+    return true;
+  }
+  return familyId === 'certo_errado' && /incorret/i.test(instruction);
+}
+
+function inferCurativosBranch(corpus: string, familyId?: FamilyId, instruction?: string): PedagogicalBranchId {
+  if (instruction && isCurativosExcetoCommand(instruction, familyId)) {
+    return 'curativos_exceto_incorreta';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_ESTOMIA) > 0) {
+    return 'curativos_estomia';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_DRENO) > 0) {
+    return 'curativos_dreno';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_BANDAGEM) > 0) {
+    return 'curativos_bandagem_imobilizacao';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_TERMOTERAPIA) > 0) {
+    return 'curativos_termoterapia';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_LPP) > 0) {
+    return 'curativos_lpp';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_FO) > 0) {
+    return 'curativos_ferida_cirurgica';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_DESBRIDAMENTO) > 0) {
+    return 'curativos_desbridamento';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_COBERTURA) > 0) {
+    return 'curativos_cobertura_selecao';
+  }
+  if (countPatternMatches(corpus, CURATIVOS_ASSEPSIA) > 0) {
+    return 'curativos_tecnica_assepsia';
+  }
+  return 'curativos_generico';
+}
+
 const FERIDAS_SCQ: RegExp[] = [
   /regra\s+dos\s*9|wallace|pulaski/i,
   /superf[ií]cie\s+corporal\s+queimada|\bscq\b/i,
@@ -2596,6 +2810,13 @@ function inferHistoriaBranch(corpus: string, familyId?: FamilyId): PedagogicalBr
   return 'historia_generico';
 }
 
+function inferCraseBranch(corpus: string): PedagogicalBranchId {
+  if (countPatternMatches(corpus, PT_CRASE_SIGNALS) >= 1) {
+    return 'pt_crase';
+  }
+  return 'pt_crase_generico';
+}
+
 function inferCriancaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   if (countPatternMatches(corpus, CRIANCA_TRIAGEM) > 0) {
     return 'crianca_triagem_neonatal';
@@ -2746,6 +2967,13 @@ function inferBranchForBucket(
     return inferTrabalhoBranch(corpus, familyId, instruction);
   }
   if (
+    mapKey.includes('curativos e manejo de feridas') ||
+    mapKey.includes('curativos') ||
+    mapKey.includes('manejo de feridas')
+  ) {
+    return inferCurativosBranch(corpus, familyId, instruction);
+  }
+  if (
     mapKey.includes('feridas e queimaduras') ||
     mapKey === 'feridas' ||
     mapKey === 'queimaduras'
@@ -2761,6 +2989,13 @@ function inferBranchForBucket(
   }
   if (mapKey.includes('saude da crianca') || mapKey === 'pediatria') {
     return inferCriancaBranch(corpus, familyId);
+  }
+  if (
+    mapKey.includes('crase') ||
+    mapKey.includes('acento indicativo de crase') ||
+    (mapKey.includes('lingua portuguesa') && countPatternMatches(corpus, PT_CRASE_SIGNALS) >= 1)
+  ) {
+    return inferCraseBranch(corpus);
   }
   return undefined;
 }

@@ -258,7 +258,8 @@ function resolveCore(
       layoutVariant === 'iv-exceto-intruder-trap' ||
       layoutVariant === 'iv-interval-swap-trap' ||
       layoutVariant === 'iv-order-invert-trap' ||
-      layoutVariant === 'iv-bundle-break-trap')
+      layoutVariant === 'iv-bundle-break-trap' ||
+      layoutVariant === 'pt-crase-trap-arena')
       ? 'x_icon'
       : 'numbered');
 

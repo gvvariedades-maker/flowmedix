@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-15",
+  "updated_at": "2026-07-16",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -367,6 +367,67 @@
           "last_audit_at": "2026-07-14T01:58:51.365Z",
           "last_audit_pass": true,
           "health_streak_days": 5,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Curativos e Manejo de Feridas": {
+      "pacote_prefix": "curativos-e-manejo-de-feridas",
+      "manifest": "data/catalog-migration/curativos-e-manejo-de-feridas-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/curativos-e-manejo-de-feridas-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/curativos-e-manejo-de-feridas-completo/README.md",
+      "cluster_command": "npm run cluster:curativos-e-manejo-de-feridas",
+      "cluster_report": "artifacts/curativos-topic-cluster-report.json",
+      "lote_pattern": "curativos-e-manejo-de-feridas-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 94,
+      "handcraft_applied": 94,
+      "g01_ready": 8,
+      "g01_status": "ready",
+      "g02_g12_ready": 67,
+      "readiness_strict_v2": 75,
+      "g01_lote_meta": "data/catalog-migration/curativos-e-manejo-de-feridas-g01/lote-meta.json",
+      "anchor_glob": "examples/questao-premium-*-curativos-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/curativos-e-manejo-de-feridas.json",
+      "guideline": "lib/guidelines/curativos.ts",
+      "production_status": "production_ready",
+      "auto_approval": {
+        "enabled": false,
+        "default_max_tier_auto": "medio",
+        "sample_rate": {
+          "baixo": 0.05,
+          "medio": 0.2
+        },
+        "downgrade_on_report_rate_pct": 2,
+        "last_calibrated_at": null
+      },
+      "quality": {
+        "technical_ready_at": "2026-07-16",
+        "production_ready_at": "2026-07-16",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 50,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-16T03:13:05.411Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null
         }
@@ -1152,6 +1213,58 @@
           "enabled": true,
           "last_audit_at": "2026-07-10T19:18:49.869Z",
           "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Língua Portuguesa": {
+      "pacote_prefix": "lingua-portuguesa",
+      "manifest": "data/sources/lingua-portuguesa/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_command": "npm run cluster:lingua-portuguesa",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-index.md",
+      "l3_visual_gallery_index": "artifacts/l3-visual-gallery-lingua-portuguesa-index.md",
+      "lote_pattern": "lingua-portuguesa-g{NN}",
+      "lote_size": 8,
+      "status": "source_only",
+      "total_slugs": 671,
+      "handcraft_applied": 0,
+      "anchor_glob": "examples/questao-premium-*-portugues-*.json,examples/questao-oracao-subordinada-final.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "guideline": "lib/guidelines/linguaPortuguesa/index.ts",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "note": "Fora dos 41 subtópicos de Enfermagem (CLAUDE.md §9). meta.topico=Língua Portuguesa; meta.subtopico=titulo_aula (17 cards). Fonte: PDF TecConcursos interno. 2026-07-18: pt_crase L3 ready; g01 Crase 8/8 [READY]; g02 Crase 8/8 [READY] — apply só com pedido explícito.",
+      "production_status": "none",
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": false,
+          "L4": false,
+          "L5": false,
+          "L6": false
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 50,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": false,
+          "last_audit_at": null,
+          "last_audit_pass": null,
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null

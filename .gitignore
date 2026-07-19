@@ -43,8 +43,12 @@ types/.database.supabase.generated.tmp.ts
 /playwright/.cache/
 /e2e/.auth/
 
-# Cursor
-.cursor/
+# Cursor (skill versionada: professor-elias-santana-metodo)
+.cursor/*
+!.cursor/skills/
+.cursor/skills/*
+!.cursor/skills/professor-elias-santana-metodo/
+!.cursor/skills/professor-elias-santana-metodo/**
 
 # Supabase CLI
 supabase/.temp/
@@ -57,5 +61,17 @@ supabase/.temp/
 
 # Pacotes de backup local (env + dados Supabase — upload manual no Drive)
 /backups/
+
+# Onda 1 — evidência regenerável / peso morto (não runtime do app)
+# Screenshots E2E soltos na raiz (não confundir com public/ ou app/icon.png)
+/*.png
+/artifacts/visual-mold-regression/
+/artifacts/questao-review/
+/artifacts/reclass/
+/artifacts/brand-maison-ae-v2/
+/artifacts/ai-generation/
+/artifacts/premium-upgrade-lotes/
+/artifacts/*dry-run*
+/artifacts/**/*dry-run*
 
 .env*
