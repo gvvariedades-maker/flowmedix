@@ -1,0 +1,40 @@
+{
+  "lote": "termos-oracao-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Termos da oração",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_termos_oracao",
+  "cluster": "Termos da oração — lote 3/4 (card 31)",
+  "total": 8,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "8/8 PASS --strict",
+    "apply_dry_run": "pending"
+  },
+  "source": "artifacts/lingua-portuguesa-topic-cluster-report.json + PDF caderno PT",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json",
+  "slugs": [
+    "apice-monteiro-termos-aposto-faculdade-4024905",
+    "ibfc-ses-se-termos-vocativo-liduina-3450774",
+    "cpcon-nova-palmeira-termos-adjuntos-aipim-3599766",
+    "selecon-nova-mutum-termos-adjunto-sensivel-3649276",
+    "educa-pb-umbuzeiro-termos-adv-maio-3661932",
+    "cpcon-olivedos-termos-vocativos-vovo-3709443",
+    "apice-bacamarte-termos-vf-virgula-adv-3793442",
+    "apice-bacamarte-termos-vocativo-junior-3793473"
+  ],
+  "workflow": [
+    "1. npx tsx scripts/handcraft-termos-oracao-g03.ts",
+    "2. npm run audit:questao-readiness -- --lote=termos-oracao-g03 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=termos-oracao-g03 --strict",
+    "4. npm run catalog:apply-lote -- --lote=termos-oracao-g03 --dry-run --allow-insert",
+    "5. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Terceiro lote Termos da oração — 8 questões tec 4024905…3793473 (adjuntos, aposto, vocativo, VF)."
+}

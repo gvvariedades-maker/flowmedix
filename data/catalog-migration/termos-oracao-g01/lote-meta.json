@@ -1,0 +1,40 @@
+{
+  "lote": "termos-oracao-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Termos da oração",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_termos_oracao",
+  "cluster": "Termos da oração — lote 1/4 (card 31)",
+  "total": 8,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "8/8 PASS --strict",
+    "apply_dry_run": "pending"
+  },
+  "source": "artifacts/lingua-portuguesa-topic-cluster-report.json + PDF caderno PT",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json",
+  "slugs": [
+    "selecon-porto-gauchos-termos-missao-3852270",
+    "selecon-lrv-termos-agente-passiva-1360962",
+    "selecon-hemominas-termos-agente-passiva-3416691",
+    "avancasp-fusam-termos-excepto-adnominal-3460242",
+    "cpcon-uepb-nazarezinho-termos-regencia-explicar-3483810",
+    "educa-pb-pedras-fogo-termos-objeto-direto-3576833",
+    "cpcon-olivedos-termos-complemento-nominal-3709441",
+    "avancasp-sm-arcanjo-termos-transitivo-direto-3709806"
+  ],
+  "workflow": [
+    "1. npx tsx scripts/handcraft-termos-oracao-g01.ts",
+    "2. npm run audit:questao-readiness -- --lote=termos-oracao-g01 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=termos-oracao-g01 --strict",
+    "4. npm run catalog:apply-lote -- --lote=termos-oracao-g01 --dry-run --allow-insert",
+    "5. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Primeiro lote Termos da oração — 8 primeiras questões do cluster PDF (tec 3852270…3709806). Âncora Q326 (3789304) já em examples/."
+}

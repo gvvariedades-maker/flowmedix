@@ -1,0 +1,39 @@
+{
+  "lote": "termos-oracao-g04",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Termos da oração",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_termos_oracao",
+  "cluster": "Termos da oração — lote 4/4 (card 31/31 · slugs 25–31)",
+  "total": 7,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "gates": {
+    "questao_readiness": "7/7 READY strict-v2-pedagogy",
+    "validate_goldens": "7/7 PASS --strict",
+    "apply_dry_run": "pending"
+  },
+  "source": "artifacts/lingua-portuguesa-topic-cluster-report.json + PDF caderno PT",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json",
+  "slugs": [
+    "educa-pb-ibiara-termos-virgula-sim-3820032",
+    "apice-boa-vista-termos-vocativo-gente-3951799",
+    "apice-monteiro-termos-cn-embora-tardio-4024901",
+    "avancasp-sm-arcanjo-termos-comparativo-igualdade-3709824",
+    "apice-pocinhos-termos-vf-pronome-relativo-3558977",
+    "educa-pb-santa-cecilia-termos-pronome-relativo-mao-3746601",
+    "educa-pb-ibiara-termos-pronome-relativo-que-3819879"
+  ],
+  "workflow": [
+    "1. npx tsx scripts/handcraft-termos-oracao-g04.ts",
+    "2. npm run audit:questao-readiness -- --lote=termos-oracao-g04 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=termos-oracao-g04 --strict",
+    "4. npm run catalog:apply-lote -- --lote=termos-oracao-g04 --dry-run --allow-insert",
+    "5. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Quarto e último lote Termos da oração — 7 questões tec 3820032…3819879 (vírgula, vocativo, CN, comparativo, VF relativo, pronomes relativos). Card 31/31 completo."
+}
