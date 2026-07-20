@@ -35,5 +35,12 @@
     "4. npm run catalog:apply-lote -- --lote=termos-oracao-g04 --dry-run --allow-insert",
     "5. apply com --allow-insert só com pedido explícito"
   ],
-  "note": "Quarto e último lote Termos da oração — 7 questões tec 3820032…3819879 (vírgula, vocativo, CN, comparativo, VF relativo, pronomes relativos). Card 31/31 completo."
+  "note": "Quarto e último lote Termos da oração — 7 questões tec 3820032…3819879 (vírgula, vocativo, CN, comparativo, VF relativo, pronomes relativos). Card 31/31 completo.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/termos-oracao-g04.json"
+  }
 }

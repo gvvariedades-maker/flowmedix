@@ -20,6 +20,23 @@ export const VIAS_BRANCHES = [
   'via_generico',
 ] as const;
 
+/** Ramos Língua Portuguesa — Crase (funil bespoke + genérico). */
+export const PT_CRASE_BESPOKE_BRANCHES = ['pt_crase'] as const;
+
+export const PT_CRASE_BRANCHES = ['pt_crase', 'pt_crase_generico'] as const;
+
+export const PT_CLITIC_BESPOKE_BRANCHES = ['pt_pronomes_colocacao'] as const;
+
+export const PT_CLITIC_BRANCHES = [
+  'pt_pronomes_colocacao',
+  'pt_pronomes_colocacao_generico',
+] as const;
+
+/** Ramos Língua Portuguesa — Termos da oração (matriz bespoke + genérico). */
+export const PT_TERMOS_BESPOKE_BRANCHES = ['pt_termos_oracao'] as const;
+
+export const PT_TERMOS_BRANCHES = ['pt_termos_oracao', 'pt_termos_oracao_generico'] as const;
+
 /** Ramos Saúde do Adolescente (ética bespoke + genéricos por eixo). */
 export const ADOLESCENTE_BRANCHES = [
   'adolescente_etica_sigilo',
@@ -251,6 +268,19 @@ export const SAE_BESPOKE_BRANCHES = [
   'sae_generico',
 ] as const;
 
+/** Ramos Curativos e Manejo de Feridas — regressão L3 (ramos fortes + LPP). */
+export const CURATIVOS_BRANCHES = [
+  'curativos_cobertura_selecao',
+  'curativos_ferida_cirurgica',
+  'curativos_lpp',
+] as const;
+
+/** Ramos Curativos com pacote bespoke/redesign 4/4 (ramos fortes). */
+export const CURATIVOS_BESPOKE_BRANCHES = [
+  'curativos_cobertura_selecao',
+  'curativos_ferida_cirurgica',
+] as const;
+
 /** Ramos Feridas e Queimaduras — regressão L3 (8 ramos). */
 export const FERIDAS_BRANCHES = [
   'feridas_grau_profundidade',
@@ -307,6 +337,17 @@ export const SEGURANCA_BESPOKE_BRANCHES = [
   'sp_prevencao_quedas',
   'sp_eventos_adversos',
 ] as const;
+
+/** Ramos Promoção à Saúde — regressão L3 (4 ramos cluster). */
+export const PROMOCAO_BRANCHES = [
+  'promocao_art4_composicao',
+  'promocao_educacao_prevencao',
+  'promocao_principios_direitos',
+  'promocao_generico',
+] as const;
+
+/** Promoção — molde bespoke sus-art4-orbit (Art. 4º Lei 8.080). */
+export const PROMOCAO_BESPOKE_BRANCHES = ['promocao_art4_composicao'] as const;
 
 /** Ramos História com concept_map bridge (marcos / ética COFEN). */
 export const HISTORIA_BESPOKE_BRANCHES = [

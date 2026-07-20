@@ -17,6 +17,7 @@ import {
   MOBILE_NARROW_VIEWPORT,
   onboardingDismissScript,
   PNI_IMUNIZACAO_BRANCHES,
+  PNI_BESPOKE_BRANCHES,
   CAM_BRANCHES,
   CAM_BESPOKE_BRANCHES,
   PUNCAO_BRANCHES,
@@ -27,6 +28,12 @@ import {
   URGENCIAS_BRANCHES,
   VIAS_BRANCHES,
   ADOLESCENTE_BRANCHES,
+  PT_CRASE_BRANCHES,
+  PT_CRASE_BESPOKE_BRANCHES,
+  PT_CLITIC_BRANCHES,
+  PT_CLITIC_BESPOKE_BRANCHES,
+  PT_TERMOS_BRANCHES,
+  PT_TERMOS_BESPOKE_BRANCHES,
   FARMACO_BRANCHES,
   FARMACO_BESPOKE_BRANCHES,
   CALCULO_BRANCHES,
@@ -53,6 +60,8 @@ import {
   TRABALHO_BESPOKE_BRANCHES,
   SEGURANCA_BRANCHES,
   SEGURANCA_BESPOKE_BRANCHES,
+  PROMOCAO_BRANCHES,
+  PROMOCAO_BESPOKE_BRANCHES,
   BIOSSEG_BRANCHES,
   BIOSSEG_BESPOKE_BRANCHES,
   BACTERIANAS_BRANCHES,
@@ -109,7 +118,7 @@ test.describe('Visual mold regression — L3 branches', () => {
 });
 
 test.describe('PNI Imunização — 4 moldes bespoke', () => {
-  test.describe.configure({ mode: 'parallel', timeout: 120_000 });
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
 
   test.beforeAll(() => {
     if (process.env.CI) {
@@ -154,6 +163,18 @@ test.describe('PNI Imunização — 4 moldes bespoke', () => {
     await assertSlidePanelsLegibleAt375(page, footerRules);
 
     await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('PNI — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'imunizacao',
+      branches: PNI_IMUNIZACAO_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 PNI — ${PNI_IMUNIZACAO_BRANCHES.length} branches (${PNI_BESPOKE_BRANCHES.length} bespoke + genérico/exceto); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('imunizacao');
   });
 });
 
@@ -219,6 +240,153 @@ test.describe('Vias de Administração — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('vias-de-administracao');
+  });
+});
+
+test.describe('Língua Portuguesa — Crase moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression PT Crase — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!browserName.includes('chromium') && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PT_CRASE_BRANCHES) {
+    test(`PT Crase ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PT Crase ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  for (const branch of PT_CLITIC_BRANCHES) {
+    test(`PT Colocação ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PT Colocação ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('PT Crase pt_crase — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'pt_crase';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('PT Colocação pt_pronomes_colocacao — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'pt_pronomes_colocacao';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Língua Portuguesa — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'lingua-portuguesa',
+      branches: [...PT_CRASE_BRANCHES, ...PT_CLITIC_BRANCHES],
+      pass: true,
+      detail: `Playwright L3 PT — Crase ${PT_CRASE_BRANCHES.length} (${PT_CRASE_BESPOKE_BRANCHES.length} funil) + Colocação ${PT_CLITIC_BRANCHES.length} (${PT_CLITIC_BESPOKE_BRANCHES.length} trilho); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('lingua-portuguesa');
+  });
+});
+
+test.describe('Termos da oração — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression PT Termos — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!browserName.includes('chromium') && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PT_TERMOS_BRANCHES) {
+    test(`PT Termos ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PT Termos ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('PT Termos pt_termos_oracao — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'pt_termos_oracao';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Termos da oração — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'termos-oracao',
+      branches: [...PT_TERMOS_BRANCHES],
+      pass: true,
+      detail: `Playwright L3 PT Termos — ${PT_TERMOS_BRANCHES.length} branches (${PT_TERMOS_BESPOKE_BRANCHES.length} matriz pt-term-matrix 4/4); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('termos-oracao');
   });
 });
 
@@ -383,14 +551,14 @@ test.describe('Urgências e Emergências — moldes L3', () => {
 
   test('Urgências — grava summary.json (audit:subtopico-quality L3)', () => {
     const outPath = writeVisualMoldSummary({
-      pacotePrefix: 'urgencias-e-emergencias',
+      pacotePrefix: 'urgencias',
       branches: URGENCIAS_BRANCHES,
       pass: true,
       detail: `Playwright L3 Urgências — ${URGENCIAS_BRANCHES.length} branches (desktop + mobile-375 + DoD urgencias_rcp_sbv); PNGs em artifacts/visual-mold-regression/`,
     });
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
-    expect(summary.pacote_prefix).toBe('urgencias-e-emergencias');
+    expect(summary.pacote_prefix).toBe('urgencias');
   });
 });
 
@@ -1551,5 +1719,69 @@ test.describe('Segurança do Paciente — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('seguranca-do-paciente');
+  });
+});
+
+test.describe('Promoção à Saúde e Prevenção de Agravos — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression Promoção — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!process.env.CI && browserName !== 'chromium' && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  for (const branch of PROMOCAO_BRANCHES) {
+    test(`Promoção ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`Promoção ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Promoção promocao_art4_composicao — 375px legível (DoD sus-art4-orbit)', async ({ page }) => {
+    const branch = 'promocao_art4_composicao';
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await expectSlidePanels(page);
+
+    const panel = page.getByTestId('mold-slide-1');
+    await panel.scrollIntoViewIfNeeded();
+    const overflowX = await panel.evaluate((el) => el.scrollWidth > el.clientWidth + 2);
+    expect(overflowX).toBe(false);
+    const text = (await panel.innerText()).toLowerCase();
+    expect(text).toMatch(/art\.?\s*4|composi[cç][aã]o|sus|8\.080|princ[ií]pio/i);
+
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Promoção — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'promocao-a-saude-e-prevencao-de-agravos',
+      branches: PROMOCAO_BRANCHES,
+      pass: true,
+      detail: `Playwright L3 Promoção — ${PROMOCAO_BRANCHES.length} branches (${PROMOCAO_BESPOKE_BRANCHES.length} bespoke sus-art4-orbit); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('promocao-a-saude-e-prevencao-de-agravos');
   });
 });

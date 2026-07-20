@@ -207,6 +207,24 @@
       "lote": "feridas-e-queimaduras-completo",
       "json_path": "data/catalog-migration/feridas-e-queimaduras-completo/questions/idecan-enfermagem-feridas-e-queimaduras-1780067013432-9.json"
     },
+    "curativos_cobertura_selecao": {
+      "pedagogical_branch": "curativos_cobertura_selecao",
+      "slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-5",
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "json_path": "examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json"
+    },
+    "curativos_ferida_cirurgica": {
+      "pedagogical_branch": "curativos_ferida_cirurgica",
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340178514-0",
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "json_path": "examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json"
+    },
+    "curativos_lpp": {
+      "pedagogical_branch": "curativos_lpp",
+      "slug": "cpcon-curativos-lpp-prevencao-vf",
+      "lote": "examples",
+      "json_path": "examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json"
+    },
     "trabalho_vf_nr32": {
       "pedagogical_branch": "trabalho_vf_nr32",
       "slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
@@ -221,9 +239,9 @@
     },
     "trabalho_nr15_reference": {
       "pedagogical_branch": "trabalho_nr15_reference",
-      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
-      "lote": "enfermagem-do-trabalho-g05",
-      "json_path": "data/catalog-migration/enfermagem-do-trabalho-g05/questions/ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8.json"
+      "slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+      "lote": "enfermagem-do-trabalho-g01",
+      "json_path": "data/catalog-migration/enfermagem-do-trabalho-g01/questions/copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1.json"
     },
     "trabalho_ergonomia": {
       "pedagogical_branch": "trabalho_ergonomia",
@@ -386,6 +404,30 @@
       "slug": "agirh-imunizacao-incorreta-antibiotico",
       "lote": "imunizacao-golden",
       "json_path": "examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"
+    },
+    "promocao_art4_composicao": {
+      "pedagogical_branch": "promocao_art4_composicao",
+      "slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-golden",
+      "json_path": "examples/questao-premium-sus-lei-8080-cesgranrio.json"
+    },
+    "promocao_educacao_prevencao": {
+      "pedagogical_branch": "promocao_educacao_prevencao",
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g01",
+      "json_path": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g01/questions/cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0.json"
+    },
+    "promocao_principios_direitos": {
+      "pedagogical_branch": "promocao_principios_direitos",
+      "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-completo",
+      "json_path": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4.json"
+    },
+    "promocao_generico": {
+      "pedagogical_branch": "promocao_generico",
+      "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-completo",
+      "json_path": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1.json"
     },
     "cam_certos_vf_caso": {
       "pedagogical_branch": "cam_certos_vf_caso",
@@ -698,6 +740,42 @@
       "slug": "cpcon-saude-crianca-desenvolvimento-vf",
       "lote": "saude-da-crianca-g07",
       "json_path": "examples/questao-premium-cpcon-saude-crianca-desenvolvimento-vf.json"
+    },
+    "pt_crase": {
+      "pedagogical_branch": "pt_crase",
+      "slug": "questao-premium-vunesp-portugues-crase-funil",
+      "lote": "lingua-portuguesa-g01",
+      "json_path": "examples/questao-premium-vunesp-portugues-crase-funil.json"
+    },
+    "pt_crase_generico": {
+      "pedagogical_branch": "pt_crase_generico",
+      "slug": "questao-premium-vunesp-portugues-crase-lacunas-ioga",
+      "lote": "lingua-portuguesa-g02",
+      "json_path": "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json"
+    },
+    "pt_pronomes_colocacao": {
+      "pedagogical_branch": "pt_pronomes_colocacao",
+      "slug": "questao-premium-vunesp-portugues-colocacao-trilho",
+      "lote": "lingua-portuguesa-anchors",
+      "json_path": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json"
+    },
+    "pt_pronomes_colocacao_generico": {
+      "pedagogical_branch": "pt_pronomes_colocacao_generico",
+      "slug": "questao-premium-vunesp-portugues-colocacao-trilho",
+      "lote": "lingua-portuguesa-anchors",
+      "json_path": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json"
+    },
+    "pt_termos_oracao": {
+      "pedagogical_branch": "pt_termos_oracao",
+      "slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+      "lote": "lingua-portuguesa-termos-anchor",
+      "json_path": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json"
+    },
+    "pt_termos_oracao_generico": {
+      "pedagogical_branch": "pt_termos_oracao_generico",
+      "slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+      "lote": "lingua-portuguesa-termos-anchor",
+      "json_path": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json"
     }
   }
 }

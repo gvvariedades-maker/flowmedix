@@ -36,5 +36,12 @@
     "4. npm run catalog:apply-lote -- --lote=termos-oracao-g03 --dry-run --allow-insert",
     "5. apply com --allow-insert só com pedido explícito"
   ],
-  "note": "Terceiro lote Termos da oração — 8 questões tec 4024905…3793473 (adjuntos, aposto, vocativo, VF)."
+  "note": "Terceiro lote Termos da oração — 8 questões tec 4024905…3793473 (adjuntos, aposto, vocativo, VF).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/termos-oracao-g03.json"
+  }
 }

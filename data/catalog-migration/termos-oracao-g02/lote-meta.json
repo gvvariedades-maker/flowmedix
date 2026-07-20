@@ -1,80 +1,47 @@
 {
-
   "lote": "termos-oracao-g02",
-
   "mode": "handcraft-golden-v1",
-
   "gemini": false,
-
   "created_at": "2026-07-20",
-
   "subtopico": "Termos da oração",
-
   "topico": "Língua Portuguesa",
-
   "pedagogical_branch": "pt_termos_oracao",
-
   "cluster": "Termos da oração — lote 2/4 (card 31 · questões 9–16)",
-
   "total": 8,
-
   "status": "handcraft",
-
   "handcraft_at": "2026-07-20",
-
   "gates": {
-
     "questao_readiness": "8/8 READY strict-v2-pedagogy",
-
     "validate_goldens": "8/8 PASS --strict",
-
     "apply_dry_run": "pending"
-
   },
-
   "source": "artifacts/lingua-portuguesa-topic-cluster-report.json + PDF caderno PT",
-
   "apply_requires": "--allow-insert",
-
   "anchor_slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
-
   "golden_reference": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json",
-
   "slugs": [
-
-    "quadrix-ses-sp-termos-folhetos-enquanto-3779634",
-
+    "vunesp-sjrp-termos-folhetos-enquanto-3789304",
     "vunesp-sjrp-termos-parenteses-acessoria-3789304",
-
     "aocp-unirio-termos-travessao-brinquedos-3840834",
-
     "avancasp-odessa-termos-so-adjetiva-3962452",
-
     "selecon-fesaude-termos-adv-intercalados-3990813",
-
     "cpcon-itabaiana-termos-conta-luz-4014460",
-
     "cpcon-nova-floresta-termos-aposto-quintal-4018200",
-
     "apice-monteiro-termos-tardiamente-4024881"
-
   ],
-
   "workflow": [
-
     "1. npx tsx scripts/handcraft-termos-oracao-g02.ts",
-
     "2. npm run audit:questao-readiness -- --lote=termos-oracao-g02 --strict-v2-pedagogy",
-
     "3. npm run validate:goldens -- --lote=termos-oracao-g02 --strict",
-
     "4. npm run catalog:apply-lote -- --lote=termos-oracao-g02 --dry-run --allow-insert",
-
     "5. apply com --allow-insert só com pedido explícito"
-
   ],
-
-  "note": "Segundo lote Termos da oração — 8 questões tec 3779634…4024881 (questões 9–16 do cluster PDF). Âncora folhetos/Enquanto isso replicada em QUADRIX."
-
+  "note": "Segundo lote Termos da oração — 8 questões tec 3779634…4024881 (questões 9–16). Slug folhetos = âncora piloto (dedupe content_hash vs quadrix 3779634).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/termos-oracao-g02.json"
+  }
 }
-

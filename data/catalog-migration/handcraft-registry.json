@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-16",
+  "updated_at": "2026-07-20",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -342,6 +342,14 @@
         "downgrade_on_report_rate_pct": 2,
         "last_calibrated_at": "2026-07-14"
       },
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-06-28",
+        "closed_artifact": "artifacts/taxonomy-closed-farmacodinamica-e-farmacocinetica.json",
+        "audit_artifact": "artifacts/taxonomy-gate-farmacodinamica-e-farmacocinetica.json",
+        "mismatch_count_at_close": 0,
+        "notes": "Classify 2026-06-28 — bucket estabilizado em 12 slugs"
+      },
       "quality": {
         "technical_ready_at": "2026-06-29",
         "production_ready_at": "2026-06-29",
@@ -565,6 +573,45 @@
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null
+        }
+      }
+    },
+    "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis": {
+      "pacote_prefix": "dtrans-mescladas",
+      "manifest": "data/catalog-migration/dtrans-mescladas-g02/manifest.json",
+      "handcraft_meta": "data/catalog-migration/dtrans-mescladas-g02/lote-meta.json",
+      "readme": "data/catalog-migration/dtrans-mescladas/README.md",
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "dtrans-mescladas-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 16,
+      "handcraft_applied": 16,
+      "anchor_glob": "examples/questao-premium-*-dtrans-*.json",
+      "guideline": null,
+      "production_status": "none",
+      "taxonomy": {
+        "status": "closed",
+        "catch_all_mode": "A",
+        "closed_at": "2026-07-20",
+        "audit_artifact": "artifacts/taxonomy-gate-dtrans-mescladas.json",
+        "closed_artifact": "artifacts/taxonomy-closed-dtrans-mescladas.json",
+        "mismatch_count_at_close": 0,
+        "notes": "Bucket esvaziado no Supabase — 16/16 slugs reclassificados. Handcraft g01+g02 válido; vitrine agrupa por titulo_aula canônico (Virais, ISTs, Parasitárias…)."
+      },
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": false,
+          "L4": false,
+          "L5": false,
+          "L6": false
         }
       }
     },
@@ -1024,7 +1071,7 @@
       }
     },
     "Urgências e Emergências": {
-      "pacote_prefix": "urgencias-e-emergencias",
+      "pacote_prefix": "urgencias",
       "manifest": "data/catalog-migration/urgencias-e-emergencias-completo/manifest.json",
       "handcraft_meta": "data/catalog-migration/urgencias-e-emergencias-completo/handcraft-meta.json",
       "readme": "data/catalog-migration/urgencias-e-emergencias-completo/README.md",
@@ -1039,19 +1086,19 @@
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/urgencias-e-emergencias.json",
       "golden_anchors_registry": "data/catalog-migration/urgencias-golden-anchors.json",
       "guideline": "lib/guidelines/urgencias.ts + lib/guidelines/urgenciasProtocolos.ts",
-      "production_status": "none",
+      "production_status": "production_ready",
       "quality": {
-        "technical_ready_at": null,
-        "production_ready_at": null,
+        "technical_ready_at": "2026-07-19",
+        "production_ready_at": "2026-07-19",
         "monitoring_until": null,
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
-          "L3": false,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
         },
         "slo": {
           "open_p0": 0,
@@ -1061,9 +1108,9 @@
           "p0_block_after_hours": 24
         },
         "continuous": {
-          "enabled": false,
-          "last_audit_at": null,
-          "last_audit_pass": null,
+          "enabled": true,
+          "last_audit_at": "2026-07-19T14:34:21.107Z",
+          "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null
@@ -1079,26 +1126,26 @@
       "cluster_report": "artifacts/imunizacao-topic-cluster-report.json",
       "lote_pattern": "imunizacao-g{NN}",
       "lote_size": 8,
-      "status": "in_progress",
+      "status": "applied",
       "total_slugs": 575,
-      "handcraft_applied": 59,
+      "handcraft_applied": 575,
       "anchor_glob": "examples/questao-premium-*-imunizacao-*.json,examples/questao-premium-decorp-imunizacao-triplice-viral-via.json,examples/questao-premium-fundatec-meningococica-3meses.json,examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json,examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json,examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json,examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/imunizacao.json",
       "golden_anchors_registry": "data/catalog-migration/imunizacao-golden-anchors.json",
       "guideline": "lib/guidelines/pniCalendario.ts",
-      "production_status": "none",
+      "production_status": "production_ready",
       "quality": {
-        "technical_ready_at": null,
-        "production_ready_at": null,
+        "technical_ready_at": "2026-07-19",
+        "production_ready_at": "2026-07-19",
         "monitoring_until": null,
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
-          "L3": false,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
         },
         "slo": {
           "open_p0": 0,
@@ -1108,12 +1155,52 @@
           "p0_block_after_hours": 24
         },
         "continuous": {
-          "enabled": false,
-          "last_audit_at": null,
-          "last_audit_pass": null,
+          "enabled": true,
+          "last_audit_at": "2026-07-19T13:05:39.859Z",
+          "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null
+        }
+      }
+    },
+    "Promoção à Saúde e Prevenção de Agravos": {
+      "pacote_prefix": "promocao-a-saude-e-prevencao-de-agravos",
+      "manifest": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/README.md",
+      "cluster_command": "npm run cluster:promocao",
+      "cluster_report": "artifacts/promocao-a-saude-e-prevencao-de-agravos-topic-cluster-report.json",
+      "lote_pattern": "promocao-a-saude-e-prevencao-de-agravos-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 101,
+      "handcraft_applied": 101,
+      "anchor_glob": "examples/questao-premium-sus-lei-8080-cesgranrio.json,examples/questao-premium-*-sus-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/promocao-a-saude-e-prevencao-de-agravos.json",
+      "l3_brief_index": "artifacts/l3-brief-promocao-a-saude-e-prevencao-de-agravos-INDEX.md",
+      "guideline": "lib/guidelines/promocaoSaude.ts",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-07-20",
+        "closed_artifact": "artifacts/taxonomy-closed-promocao-a-saude-e-prevencao-de-agravos.json",
+        "audit_artifact": "artifacts/taxonomy-gate-promocao-a-saude-e-prevencao-de-agravos.json",
+        "mismatch_count_at_close": 0,
+        "notes": "Manifest 101 slugs — 25 cross-package/taxonomy drift excluídos; gate_blockers=0."
+      },
+      "production_status": "none",
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": true,
+          "L4": false,
+          "L5": false,
+          "L6": false
         }
       }
     },
@@ -1219,6 +1306,161 @@
         }
       }
     },
+    "Pronomes e colocação pronominal": {
+      "pacote_prefix": "colocacao-pronominal",
+      "manifest": "data/catalog-migration/colocacao-pronominal-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_pronomes_colocacao.md",
+      "lote_pattern": "colocacao-pronominal-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 31,
+      "handcraft_applied": 31,
+      "anchor_glob": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "guideline": "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Pronomes e colocação pronominal",
+      "pedagogical_branch": "pt_pronomes_colocacao",
+      "note": "Card Colocação — 31/31 handcraft lingua-portuguesa-g07+g14+g15+g16 espelhado em colocacao-pronominal-g01–g04. Âncora trilho (tec 3999766).",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-07-20",
+        "production_ready_at": "2026-07-20",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-20T16:54:43.474Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        }
+      }
+    },
+    "Termos da oração": {
+      "pacote_prefix": "termos-oracao",
+      "manifest": "data/catalog-migration/termos-oracao-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_termos_oracao.md",
+      "lote_pattern": "termos-oracao-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 31,
+      "handcraft_applied": 31,
+      "anchor_glob": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Termos da oração",
+      "pedagogical_branch": "pt_termos_oracao",
+      "note": "Card Termos da oração — 31/31 handcraft termos-oracao-g01–g04. Âncora matriz pt-term-matrix (Q326 / tec 3789304).",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-07-20",
+        "production_ready_at": "2026-07-20",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-20T17:31:35.213Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 100,
+          "p0_block_after_hours": 24
+        }
+      }
+    },
+    "Pontuação": {
+      "pacote_prefix": "pontuacao",
+      "manifest": "data/catalog-migration/pontuacao-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_pontuacao.md",
+      "lote_pattern": "pontuacao-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 48,
+      "handcraft_applied": 48,
+      "anchor_glob": "examples/questao-premium-*-portugues-pontuacao-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "guideline": "lib/guidelines/linguaPortuguesa/pontuacao.ts",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Pontuação",
+      "pedagogical_branch": "pt_pontuacao",
+      "note": "Card Pontuação — 48/48 handcraft g08–g13 (lingua-portuguesa) espelhado em pontuacao-g01–g06 para ship gate. Âncoras Rita + VF tirinha.",
+      "production_status": "production_ready",
+      "quality": {
+        "technical_ready_at": "2026-07-20",
+        "production_ready_at": "2026-07-20",
+        "monitoring_until": null,
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "slo": {
+          "open_p0": 0,
+          "open_p1_max": 2,
+          "report_rate_max_pct": 2,
+          "min_sessions_30d": 50,
+          "p0_block_after_hours": 24
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-20T15:35:25.269Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
     "Língua Portuguesa": {
       "pacote_prefix": "lingua-portuguesa",
       "manifest": "data/sources/lingua-portuguesa/manifest.json",
@@ -1239,20 +1481,20 @@
       "guideline": "lib/guidelines/linguaPortuguesa/index.ts",
       "disciplina": "Conhecimentos Básicos",
       "modulo_nome": "Língua Portuguesa",
-      "note": "Fora dos 41 subtópicos de Enfermagem (CLAUDE.md §9). meta.topico=Língua Portuguesa; meta.subtopico=titulo_aula (17 cards). Fonte: PDF TecConcursos interno. 2026-07-18: pt_crase L3 ready; g01 Crase 8/8 [READY]; g02 Crase 8/8 [READY] — apply só com pedido explícito.",
-      "production_status": "none",
+      "note": "Fora dos 41 subtópicos de Enfermagem (CLAUDE.md §9). meta.topico=Língua Portuguesa; meta.subtopico=titulo_aula (17 cards). Fonte: PDF TecConcursos interno. 2026-07-19: pt_crase L3 ready; cluster Crase g01–g06 applied (43 slugs DB, 2 dupes PDF skipped) — cluster PDF 45/45 fechado.",
+      "production_status": "production_ready",
       "quality": {
-        "technical_ready_at": null,
-        "production_ready_at": null,
+        "technical_ready_at": "2026-07-19",
+        "production_ready_at": "2026-07-19",
         "monitoring_until": null,
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
-          "L3": false,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
         },
         "slo": {
           "open_p0": 0,
@@ -1262,9 +1504,9 @@
           "p0_block_after_hours": 24
         },
         "continuous": {
-          "enabled": false,
-          "last_audit_at": null,
-          "last_audit_pass": null,
+          "enabled": true,
+          "last_audit_at": "2026-07-19T07:40:02.525Z",
+          "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null
@@ -1329,7 +1571,8 @@
     "steps": [
       "Confirmar nome exato em CLAUDE.md §9",
       "npm run catalog:export-lote -- --lote=<slug>-completo --subtopico=\"Nome\" --limit=10000",
-      "Criar entrada em handcraft-registry.json (pacote_prefix, manifest, lote_pattern, lote_size: 8)",
+      "Criar entrada em handcraft-registry.json (pacote_prefix, manifest, lote_pattern, lote_size: 8, taxonomy)",
+      "Rodar npm run audit:taxonomy-gate antes do 1º lote",
       "Preencher production_status: none e quality.* (ver quality_schema)",
       "Seguir docs/GOLDEN_HANDCRAFT_MODEL.md e perioperatoria-completo/README.md como molde",
       "Handcraft em lotes g01, g02… até esgotar manifest — sem catalog:upgrade-premium"
@@ -1338,6 +1581,28 @@
   },
   "quality_model_doc": "docs/QUALITY_LAYERS_MODEL.md",
   "auto_approval_doc": "docs/DECISAO_AUTO_APROVACAO_RISCO.md",
+  "taxonomy_model_doc": "docs/TAXONOMIA_MODEL.md",
+  "taxonomy_schema": {
+    "status": [
+      "open",
+      "closed",
+      "catch_all_provisional"
+    ],
+    "catch_all_mode": [
+      "A",
+      "B"
+    ],
+    "fields": {
+      "status": "open | closed | catch_all_provisional",
+      "catch_all_mode": "A (Classify antes) | B (handcraft provisório no catch-all)",
+      "closed_at": "ISO date | null",
+      "audit_artifact": "artifacts/taxonomy-gate-<pacote_prefix>.json",
+      "closed_artifact": "artifacts/taxonomy-closed-<pacote_prefix>.json",
+      "mismatch_count_at_close": "number",
+      "notes": "string"
+    },
+    "gate_command": "npm run audit:taxonomy-gate -- --subtopico=\"<Nome canônico>\""
+  },
   "quality_schema": {
     "production_status": [
       "none",

@@ -36,5 +36,12 @@
     "4. npm run catalog:apply-lote -- --lote=termos-oracao-g01 --dry-run --allow-insert",
     "5. apply com --allow-insert só com pedido explícito"
   ],
-  "note": "Primeiro lote Termos da oração — 8 primeiras questões do cluster PDF (tec 3852270…3709806). Âncora Q326 (3789304) já em examples/."
+  "note": "Primeiro lote Termos da oração — 8 primeiras questões do cluster PDF (tec 3852270…3709806). Âncora Q326 (3789304) já em examples/.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/termos-oracao-g01.json"
+  }
 }
