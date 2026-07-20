@@ -15,6 +15,7 @@
       "lib/guidelines/linguaPortuguesa/crase.ts",
       "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts"
     ],
+    "P1": ["lib/guidelines/linguaPortuguesa/pontuacao.ts"],
     "note": "Expandir ramo a ramo no handcraft; guideline NÃO bloqueia g01"
   },
   "cluster_command": "npm run cluster:lingua-portuguesa",
@@ -104,14 +105,67 @@
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "molde_redesign",
       "bespoke_target": "pt-clitic-rail",
-      "anchors": []
+      "brief": "artifacts/l3-brief-lingua-portuguesa-pt_pronomes_colocacao.md",
+      "anchors": [
+        "examples/questao-premium-vunesp-portugues-colocacao-trilho.json"
+      ],
+      "anchor_styles": {
+        "eliminacao": {
+          "golden_reference": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+          "anchor_slug": "questao-premium-vunesp-portugues-colocacao-trilho",
+          "catalog_slug": "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
+          "note": "Âncora golden READY 2026-07-19 — Q178 caderno · tec 3999766 · VUNESP TEnf Sorocaba 2026 · gab. A · Elias M09 TE-simples"
+        }
+      },
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "questao-premium-vunesp-portugues-colocacao-trilho",
+        "layouts": [
+          "pt-clitic-rail-deck",
+          "pt-clitic-rail-board",
+          "pt-clitic-rail-tap-flow",
+          "pt-clitic-trap-arena"
+        ],
+        "note": "READY 2026-07-19: âncora trilho (tec 3999766) + moldes pt-clitic-rail 4/4 wired."
+      }
     },
     {
       "id": "pt_pontuacao",
       "when": "Vírgula, ponto, travessão, sujeito|verbo, aposto, oração restritiva",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "molde_redesign",
-      "anchors": []
+      "bespoke_target": "pt-comma-rail",
+      "brief": "artifacts/l3-brief-lingua-portuguesa-pt_pontuacao.md",
+      "anchors": [
+        "examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json",
+        "examples/questao-premium-cpcon-portugues-pontuacao-tirinha-vf.json"
+      ],
+      "anchor_styles": {
+        "eliminacao": {
+          "golden_reference": "examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json",
+          "anchor_slug": "questao-premium-avancasp-portugues-pontuacao-vocativo-rita",
+          "catalog_slug": "avancasp-aae-pref-potim-pontuacao-rita-3839712",
+          "note": "Âncora M08 2026-07-20 — tec 3839712 · AVANÇASP Potim 2026 · gab. B · vocativo Rita"
+        },
+        "vf": {
+          "golden_reference": "examples/questao-premium-cpcon-portugues-pontuacao-tirinha-vf.json",
+          "anchor_slug": "questao-premium-cpcon-portugues-pontuacao-tirinha-vf",
+          "catalog_slug": "cpcon-condado-pontuacao-tirinha-vf-3836507",
+          "note": "Âncora M08 VF 2026-07-20 — tec 3836507 · CPCON Condado PB 2026 · gab. D · tirinha I/II/III"
+        }
+      },
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "questao-premium-avancasp-portugues-pontuacao-vocativo-rita",
+        "layouts": [
+          "pt-comma-rail-deck",
+          "pt-comma-rail-board",
+          "pt-comma-rail-tap-flow",
+          "pt-comma-trap-arena"
+        ],
+        "secondary_captures_dir": "artifacts/questao-review/questao-premium-cpcon-portugues-pontuacao-tirinha-vf",
+        "note": "READY 2026-07-20: âncoras eliminação (Rita) + VF (tirinha tec 3836507); moldes pt-comma-rail 4/4 wired."
+      }
     },
     {
       "id": "pt_termos_oracao",
@@ -119,7 +173,30 @@
       "mold": "bridge · reference_table · tap · compare",
       "l3_decision": "molde_redesign",
       "bespoke_target": "pt-term-matrix",
-      "anchors": []
+      "anchors": [
+        "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json"
+      ],
+      "brief": "artifacts/l3-brief-lingua-portuguesa-pt_termos_oracao.md",
+      "anchor_styles": {
+        "eliminacao": {
+          "golden_reference": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json",
+          "anchor_slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+          "catalog_slug": "vunesp-sjrp-termos-folhetos-enquanto-3789304",
+          "note": "Âncora golden READY 2026-07-20 — Q326 caderno q201-400 · tec 3789304 · VUNESP SJRP 2026 · gab. E · Elias M05 TE-simples"
+        }
+      },
+      "visual_gallery": {
+        "status": "ready",
+        "anchor_slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+        "layouts": [
+          "pt-term-matrix-deck",
+          "pt-term-matrix-board",
+          "pt-term-matrix-tap-flow",
+          "pt-term-trap-arena"
+        ],
+        "captures_dir": "artifacts/questao-review/questao-premium-vunesp-portugues-termos-matrix-folhetos",
+        "note": "READY 2026-07-20: âncora Q326 golden + moldes pt-term-matrix 4/4 wired."
+      }
     },
     {
       "id": "pt_exceto_incorreta",
@@ -135,7 +212,9 @@
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "molde_redesign",
       "bespoke_target": "pt-period-rail",
-      "anchors": ["examples/questao-oracao-subordinada-final.json"]
+      "anchors": [
+        "examples/questao-oracao-subordinada-final.json"
+      ]
     },
     {
       "id": "pt_concordancia",
@@ -172,7 +251,9 @@
       "when": "Classes gramaticais, formação de palavras, artigo a numeral",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "ok_generico",
-      "anchors": ["examples/questao-formacao-palavras-siglas.json"]
+      "anchors": [
+        "examples/questao-formacao-palavras-siglas.json"
+      ]
     },
     {
       "id": "pt_verbos",
@@ -237,6 +318,7 @@
     }
   },
   "skills": [
+    ".cursor/skills/avant-classify-family/SKILL.md",
     ".cursor/skills/professor-lingua-portuguesa-concurso/SKILL.md",
     ".cursor/skills/avant-golden-anchor-handcraft/SKILL.md",
     ".cursor/skills/brief-lingua-portuguesa/SKILL.md",

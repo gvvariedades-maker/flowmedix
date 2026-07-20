@@ -160,7 +160,13 @@ export type PedagogicalBranchId =
   | 'historia_generico'
   // Língua Portuguesa — Crase
   | 'pt_crase'
-  | 'pt_crase_generico';
+  | 'pt_crase_generico'
+  | 'pt_pronomes_colocacao'
+  | 'pt_pronomes_colocacao_generico'
+  | 'pt_pontuacao'
+  | 'pt_pontuacao_generico'
+  | 'pt_termos_oracao'
+  | 'pt_termos_oracao_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -1067,6 +1073,57 @@ const PT_CRASE_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+// ---- Língua Portuguesa — Colocação (pacote bespoke pt-clitic-rail) ----
+const PT_CLITIC_RAIL_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'pt-clitic-rail-deck',
+  goldenRule: 'pt-clitic-rail-board',
+  logicFlow: 'pt-clitic-rail-tap-flow',
+  dangerZone: 'pt-clitic-trap-arena',
+};
+
+const PT_CLITIC_RAIL_GENERIC_MOLD: SubtopicDesign = {
+  template: 'sky',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+// ---- Língua Portuguesa — Pontuação (pacote bespoke pt-comma-rail) ----
+const PT_COMMA_RAIL_MOLD: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'pt-comma-rail-deck',
+  goldenRule: 'pt-comma-rail-board',
+  logicFlow: 'pt-comma-rail-tap-flow',
+  dangerZone: 'pt-comma-trap-arena',
+};
+
+const PT_COMMA_RAIL_GENERIC_MOLD: SubtopicDesign = {
+  template: 'violet',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
+// ---- Língua Portuguesa — Termos da oração (pacote bespoke pt-term-matrix) ----
+const PT_TERM_MATRIX_MOLD: SubtopicDesign = {
+  template: 'teal',
+  conceptMap: 'pt-term-matrix-deck',
+  goldenRule: 'pt-term-matrix-board',
+  logicFlow: 'pt-term-matrix-tap-flow',
+  dangerZone: 'pt-term-trap-arena',
+};
+
+const PT_TERM_MATRIX_GENERIC_MOLD: SubtopicDesign = {
+  template: 'teal',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -1551,6 +1608,30 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     pt_crase: PT_CRASE_MOLD,
     pt_crase_generico: PT_CRASE_GENERIC_MOLD,
   },
+  'pronomes e colocacao pronominal': {
+    pt_pronomes_colocacao: PT_CLITIC_RAIL_MOLD,
+    pt_pronomes_colocacao_generico: PT_CLITIC_RAIL_GENERIC_MOLD,
+  },
+  'colocacao pronominal': {
+    pt_pronomes_colocacao: PT_CLITIC_RAIL_MOLD,
+    pt_pronomes_colocacao_generico: PT_CLITIC_RAIL_GENERIC_MOLD,
+  },
+  pronomes: {
+    pt_pronomes_colocacao: PT_CLITIC_RAIL_MOLD,
+    pt_pronomes_colocacao_generico: PT_CLITIC_RAIL_GENERIC_MOLD,
+  },
+  pontuacao: {
+    pt_pontuacao: PT_COMMA_RAIL_MOLD,
+    pt_pontuacao_generico: PT_COMMA_RAIL_GENERIC_MOLD,
+  },
+  'termos da oracao': {
+    pt_termos_oracao: PT_TERM_MATRIX_MOLD,
+    pt_termos_oracao_generico: PT_TERM_MATRIX_GENERIC_MOLD,
+  },
+  termos: {
+    pt_termos_oracao: PT_TERM_MATRIX_MOLD,
+    pt_termos_oracao_generico: PT_TERM_MATRIX_GENERIC_MOLD,
+  },
 };
 
 function normalizeKey(str: string): string {
@@ -1992,6 +2073,35 @@ const PT_CRASE_SIGNALS: RegExp[] = [
   /prep[oó]si[cç][aã]o\s+a\s+.*artigo\s+a/i,
 ];
 
+const PT_CLITIC_SIGNALS: RegExp[] = [
+  /coloca[cç][aã]o\s+pronominal/i,
+  /pr[oó]clise|ênclise|enclise|mes[oó]clise/i,
+  /\batrativo\b|\b[aá]tono\b/i,
+  /pronome\s+obl[ií]quo/i,
+  /trilho\s+cl[ií]tico|h[aá]\s+fator\s+de\s+pr[oó]clise/i,
+  /norma[\s-]padr[aã]o.*coloca[cç][aã]o/i,
+];
+
+const PT_COMMA_SIGNALS: RegExp[] = [
+  /pontua[cç][aã]o/i,
+  /v[ií]rgula|virgula/i,
+  /vocativo|aposto/i,
+  /sujeito\s*[|/]\s*verbo|trilho livre/i,
+  /o que (a )?v[ií]rgula isola/i,
+  /norma[\s-]padr[aã]o.*pontua/i,
+  /frase correta.*pontua/i,
+];
+
+const PT_TERMOS_SIGNALS: RegExp[] = [
+  /termos da ora[cç][aã]o/i,
+  /adjunto adverbial|adjunto adnominal/i,
+  /complemento nominal/i,
+  /locu[cç][aã]o adverbial/i,
+  /classificam-se, respectivamente/i,
+  /modifica verbo|modifica nome|de qu[eê]\?/i,
+  /circunst[aâ]ncia|funcao sint[aá]tica/i,
+];
+
 function branchMapKey(subtopico: string): string | undefined {
   const key = normalizeKey(subtopico);
   const matches = Object.keys(BRANCH_DESIGN_MAP).filter(
@@ -2117,7 +2227,23 @@ function inferFarmacoBranch(corpus: string, familyId?: FamilyId): PedagogicalBra
   return 'farmaco_generico';
 }
 
-function inferImunizacaoBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
+function inferImunizacaoBranch(
+  corpus: string,
+  familyId?: FamilyId,
+  instruction?: string,
+): PedagogicalBranchId {
+  const anchor = instruction?.trim() || corpus.slice(0, 800);
+
+  // Campanhas normativas APS no bucket Imunização (prova) — não calendário PNI
+  if (
+    /diabetes\s+mellitus|detec[cç][aã]o de casos suspeitos de diabetes|portaria\s*(n[ºo°]\s*)?2\.?048/i.test(
+      anchor,
+    ) &&
+    !/\bvacina\b|\bimunobiol[oó]g|\besquema\s+vacinal/i.test(anchor)
+  ) {
+    return 'imunizacao_generico';
+  }
+
   const isExceto =
     countPatternMatches(corpus, IMUNIZACAO_EXCETO) >= 1 ||
     (familyId === 'certo_errado' && /\b(exceto|incorret[oa])\b/i.test(corpus));
@@ -2817,6 +2943,27 @@ function inferCraseBranch(corpus: string): PedagogicalBranchId {
   return 'pt_crase_generico';
 }
 
+function inferCliticBranch(corpus: string): PedagogicalBranchId {
+  if (countPatternMatches(corpus, PT_CLITIC_SIGNALS) >= 1) {
+    return 'pt_pronomes_colocacao';
+  }
+  return 'pt_pronomes_colocacao_generico';
+}
+
+function inferCommaBranch(corpus: string): PedagogicalBranchId {
+  if (countPatternMatches(corpus, PT_COMMA_SIGNALS) >= 1) {
+    return 'pt_pontuacao';
+  }
+  return 'pt_pontuacao_generico';
+}
+
+function inferTermosBranch(corpus: string): PedagogicalBranchId {
+  if (countPatternMatches(corpus, PT_TERMOS_SIGNALS) >= 1) {
+    return 'pt_termos_oracao';
+  }
+  return 'pt_termos_oracao_generico';
+}
+
 function inferCriancaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   if (countPatternMatches(corpus, CRIANCA_TRIAGEM) > 0) {
     return 'crianca_triagem_neonatal';
@@ -2904,7 +3051,7 @@ function inferBranchForBucket(
     return inferFarmacoBranch(corpus, familyId);
   }
   if (mapKey.includes('imunizacao') || mapKey.includes('vacinacao')) {
-    return inferImunizacaoBranch(corpus, familyId);
+    return inferImunizacaoBranch(corpus, familyId, instruction);
   }
   if (mapKey.includes('vias de administracao')) {
     return inferViaBranch(corpus, familyId);
@@ -2996,6 +3143,25 @@ function inferBranchForBucket(
     (mapKey.includes('lingua portuguesa') && countPatternMatches(corpus, PT_CRASE_SIGNALS) >= 1)
   ) {
     return inferCraseBranch(corpus);
+  }
+  if (
+    mapKey.includes('pronomes') ||
+    mapKey.includes('colocacao') ||
+    (mapKey.includes('lingua portuguesa') && countPatternMatches(corpus, PT_CLITIC_SIGNALS) >= 1)
+  ) {
+    return inferCliticBranch(corpus);
+  }
+  if (
+    mapKey.includes('pontuacao') ||
+    (mapKey.includes('lingua portuguesa') && countPatternMatches(corpus, PT_COMMA_SIGNALS) >= 1)
+  ) {
+    return inferCommaBranch(corpus);
+  }
+  if (
+    mapKey.includes('termos') ||
+    (mapKey.includes('lingua portuguesa') && countPatternMatches(corpus, PT_TERMOS_SIGNALS) >= 1)
+  ) {
+    return inferTermosBranch(corpus);
   }
   return undefined;
 }

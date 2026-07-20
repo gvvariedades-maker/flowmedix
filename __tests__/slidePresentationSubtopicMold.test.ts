@@ -2987,4 +2987,515 @@ describe('slidePresentation — molde por subtópico', () => {
       expect(['bridge', 'grid', 'molecular', 'morphological', 'stack']).toContain(result.layoutVariant);
     });
   });
+
+  describe('Crase / pt_crase — pacote bespoke pt-crase-funnel', () => {
+    const subtopico = 'Crase';
+    const slug = 'vunesp-pref-itatiba-transito-2025-crase-funil';
+
+    it('concept_map → pt-crase-funnel-deck com pedagogical_branch pt_crase', () => {
+      const slide = {
+        type: 'concept_map' as const,
+        meta: { subtopico },
+        items: [
+          { label: 'Crase = a + a', detail: 'Fusão prep. a + artigo a → à/às.', icon: 'Filter' },
+          { label: 'Teste 1 — masculino', detail: 'Antes de masculino = sem crase (vira ao).', icon: 'XCircle' },
+          { label: 'Teste 2 — verbo', detail: 'Antes de verbo/infinitivo = só prep. a.', icon: 'Ban' },
+          { label: 'Teste 3 — a + a', detail: 'Prep. a + artigo a feminino = à.', icon: 'CheckCircle2' },
+          { label: 'Crase automática', detail: 'Marcar à porque parece culto — sem funil.', icon: 'AlertTriangle' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 0, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_crase' },
+        'Assinale a alternativa redigida em conformidade com a norma-padrão de emprego do acento indicativo de crase.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_crase' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_crase');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-crase-funnel-deck');
+    });
+
+    it('logic_flow → pt-crase-funnel-tap-flow com reveal_mode tap', () => {
+      const slide = {
+        type: 'logic_flow' as const,
+        meta: { subtopico },
+        reveal_mode: 'tap' as const,
+        steps: [
+          'A: «à estudar» — verbo no T2 → sem crase.',
+          'B: «abordam à» — sem a+a → crase automática.',
+          'D: «à todos» — pronome/masc. → T1 barra.',
+          'E: «à ferramentas» — plural: às ou a — nunca à.',
+          'C: dirigem-se à Serra da Capivara — a+a → passa T3.',
+          'Gabarito C — única que sobrevive ao funil.',
+          'Em similares: masculino? verbo? a+a? — só então marque à.',
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 1, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_crase' },
+        'Assinale a alternativa em conformidade com o emprego do acento indicativo de crase.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_crase' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_crase');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-crase-funnel-tap-flow');
+      expect(result.revealMode).toBe('tap');
+    });
+
+    it('golden_rule → pt-crase-funnel-board com rows do funil', () => {
+      const slide = {
+        type: 'golden_rule' as const,
+        meta: { subtopico },
+        content: 'FUNIL: MASC → VERBO → A+A',
+        rows: [
+          { label: 'Teste 1', value: 'masculino → sem crase' },
+          { label: 'Teste 2', value: 'verbo/infinitivo → sem crase' },
+          { label: 'Teste 3', value: 'a + a feminino → à / às', emphasis: 'success' as const },
+          { label: 'Teste ao', value: 'ao no masc. → à no feminino', emphasis: 'highlight' as const },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 2, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_crase' },
+        'Assinale a alternativa em conformidade com o emprego do acento indicativo de crase.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_crase' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_crase');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-crase-funnel-board');
+    });
+
+    it('danger_zone → pt-crase-trap-arena com items.correct, bulletStyle x_icon, revealMode tap', () => {
+      const slide = {
+        type: 'danger_zone' as const,
+        meta: { subtopico },
+        bullet_style: 'x_icon' as const,
+        content: 'Funil barra a crase automática',
+        items: [
+          {
+            label: 'A — à + verbo',
+            detail: '«À estudar» parece culto, mas T2 barra.',
+            correct: 'Antes de verbo = só prep. a (sem crase).',
+          },
+          {
+            label: 'B — à + OD',
+            detail: 'À colado em «versatilidade» sem a+a.',
+            correct: 'Abordar pede OD: a versatilidade — sem crase.',
+          },
+          {
+            label: 'D — à todos',
+            detail: 'À antes de «todos» soa norma, mas falha.',
+            correct: 'Pronome rejeita artigo a → sem crase.',
+          },
+          {
+            label: 'E — à + plural',
+            detail: 'À + «ferramentas» sem acordo de número.',
+            correct: 'Plural: às (c/ artigo) ou a (sem) — nunca à.',
+          },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 3, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_crase' },
+        'Assinale a alternativa em conformidade com o emprego do acento indicativo de crase.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_crase' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_crase');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-crase-trap-arena');
+      expect(result.bulletStyle).toBe('x_icon');
+      expect(result.dangerRevealMode).toBe('tap');
+    });
+
+    it('Crase sem pedagogical_branch explícito: inferência marca pt_crase pelos sinais', () => {
+      const slide = {
+        type: 'concept_map' as const,
+        meta: { subtopico },
+        items: [
+          { label: 'Crase = a + a', detail: 'Fusão prep. a + artigo a → à.' },
+          { label: 'Teste 1', detail: 'masculino → sem crase (vira ao).' },
+          { label: 'Teste 2', detail: 'verbo → sem crase.' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 0, familyId: 'conceito' },
+        slide.meta,
+        'Assinale a alternativa redigida em conformidade com a norma-padrão de emprego do acento indicativo de crase.',
+        [slide],
+        { subtopico },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_crase');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-crase-funnel-deck');
+    });
+  });
+
+  describe('Colocação / pt_pronomes_colocacao — pacote bespoke pt-clitic-rail', () => {
+    const subtopico = 'Pronomes e colocação pronominal';
+    const slug = 'vunesp-sorocaba-colocacao-alcool-reescrita-3999766';
+
+    it('concept_map → pt-clitic-rail-deck com pedagogical_branch pt_pronomes_colocacao', () => {
+      const slide = {
+        type: 'concept_map' as const,
+        meta: { subtopico },
+        items: [
+          { label: '1. Pergunte: atrativo?', detail: 'Há palavra à esquerda que puxa o átono?', icon: 'Filter' },
+          { label: '2. Estação próclise', detail: 'Com atrativo → pronome ANTES.', icon: 'ArrowLeft' },
+          { label: '3. Estação ênclise', detail: 'Sem atrativo → pronome DEPOIS.', icon: 'ArrowRight' },
+          { label: 'Armadilha comum', detail: 'Não enclise só porque parece culto.', icon: 'AlertTriangle' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 0, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_pronomes_colocacao' },
+        'Assinale a alternativa em que a reescrita está em conformidade com a norma-padrão de colocação pronominal.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_pronomes_colocacao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pronomes_colocacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-clitic-rail-deck');
+    });
+
+    it('logic_flow → pt-clitic-rail-tap-flow com reveal_mode tap', () => {
+      const slide = {
+        type: 'logic_flow' as const,
+        meta: { subtopico },
+        reveal_mode: 'tap' as const,
+        steps: [
+          'B: «Já bebia-se» — Já atrai → precisa próclise.',
+          'C: «Quando fala-se» — Quando atrai → Quando se fala.',
+          'E: «tem dedicado-se» — particípio não admite ênclise.',
+          'A: «a manifestar-se» — infinitivo; ênclise ok.',
+          'Gabarito A — única que embarca na estação certa.',
+          'Em similares: há atrativo? → pró / ên / meso.',
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 1, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_pronomes_colocacao' },
+        'Assinale a alternativa em conformidade com a norma-padrão de colocação pronominal.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_pronomes_colocacao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pronomes_colocacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-clitic-rail-tap-flow');
+      expect(result.revealMode).toBe('tap');
+    });
+
+    it('golden_rule → pt-clitic-rail-board com rows do trilho', () => {
+      const slide = {
+        type: 'golden_rule' as const,
+        meta: { subtopico },
+        content: 'PERGUNTE: HÁ ATRATIVO?',
+        rows: [
+          { label: 'Pergunta-chave', value: 'há atrativo? → próclise', emphasis: 'highlight' as const },
+          { label: 'Próclise', value: 'não, já, quando…', emphasis: 'success' as const },
+          { label: 'Ênclise', value: 'início OU sem atrativo' },
+          { label: 'Cuidado especial', value: 'particípio sem ênclise', emphasis: 'alert' as const },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 2, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_pronomes_colocacao' },
+        'Assinale a alternativa em conformidade com a norma-padrão de colocação pronominal.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_pronomes_colocacao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pronomes_colocacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-clitic-rail-board');
+    });
+
+    it('danger_zone → pt-clitic-trap-arena com items.correct, bulletStyle x_icon, revealMode tap', () => {
+      const slide = {
+        type: 'danger_zone' as const,
+        meta: { subtopico },
+        bullet_style: 'x_icon' as const,
+        content: 'Trilho barra a ênclise automática',
+        items: [
+          {
+            label: 'B — Já + ênclise',
+            detail: '«Já bebia-se» parece culto, mas Já atrai.',
+            correct: 'Advérbio atrai → Já se bebia (próclise).',
+          },
+          {
+            label: 'C — Quando + ênclise',
+            detail: 'Ênclise depois de Quando ignora a atração.',
+            correct: 'Conjunção atrai → Quando se fala.',
+          },
+          {
+            label: 'E — particípio + -se',
+            detail: 'tem dedicado-se cola ênclise onde não cabe.',
+            correct: 'Particípio não enclisa → tem-se dedicado.',
+          },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 3, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_pronomes_colocacao' },
+        'Assinale a alternativa em conformidade com a norma-padrão de colocação pronominal.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_pronomes_colocacao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pronomes_colocacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-clitic-trap-arena');
+      expect(result.bulletStyle).toBe('x_icon');
+      expect(result.dangerRevealMode).toBe('tap');
+    });
+
+    it('Colocação sem pedagogical_branch explícito: inferência marca pt_pronomes_colocacao pelos sinais', () => {
+      const slide = {
+        type: 'concept_map' as const,
+        meta: { subtopico },
+        items: [
+          { label: 'Próclise', detail: 'Antes do verbo — atrativo à esquerda.' },
+          { label: 'Ênclise', detail: 'Depois do verbo — início ou sem atrativo.' },
+          { label: 'Há atrativo?', detail: 'Pergunta-teste do trilho clítico.' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 0, familyId: 'conceito' },
+        slide.meta,
+        'Assinale a alternativa em conformidade com a norma-padrão de colocação pronominal.',
+        [slide],
+        { subtopico },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pronomes_colocacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-clitic-rail-deck');
+    });
+  });
+
+  describe('Pontuação / pt_pontuacao — pacote bespoke pt-comma-rail', () => {
+    const subtopico = 'Pontuação';
+    const slug = 'avancasp-aae-pref-potim-pontuacao-rita-3839712';
+
+    it('concept_map → pt-comma-rail-deck com pedagogical_branch pt_pontuacao', () => {
+      const slide = {
+        type: 'concept_map' as const,
+        meta: { subtopico },
+        items: [
+          { label: '1. Ache a vírgula', detail: 'Localize o que a vírgula tenta isolar.', icon: 'ScanSearch' },
+          { label: '2. Pergunte: isola o quê?', detail: 'Vocativo? Aposto? Ou corta sujeito|verbo?', icon: 'HelpCircle' },
+          { label: 'Trilho livre: sujeito|verbo', detail: 'Núcleo colado ao verbo — sem vírgula no meio.', icon: 'GitCommitHorizontal' },
+          { label: 'Armadilha comum', detail: 'Pausa na fala não autoriza vírgula entre Eu e farei.', icon: 'AlertTriangle' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 0, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_pontuacao' },
+        'Assinale a alternativa que contém a frase correta em relação à pontuação.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_pontuacao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pontuacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-comma-rail-deck');
+    });
+
+    it('logic_flow → pt-comma-rail-tap-flow com reveal_mode tap', () => {
+      const slide = {
+        type: 'logic_flow' as const,
+        reveal_mode: 'tap' as const,
+        meta: { subtopico },
+        steps: [
+          'D: «Eu, farei» — vírgula entre sujeito e verbo. Proibido.',
+          'B: «Rita,» chama a pessoa (vocativo) + pergunta. Isola certo.',
+          'Gabarito B — única com vocativo isolado e trilho sujeito|verbo intacto.',
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 1, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_pontuacao' },
+        'Assinale a alternativa que contém a frase correta em relação à pontuação.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_pontuacao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pontuacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-comma-rail-tap-flow');
+      expect(result.revealMode).toBe('tap');
+    });
+
+    it('golden_rule → pt-comma-rail-board com rows do trilho', () => {
+      const slide = {
+        type: 'golden_rule' as const,
+        meta: { subtopico },
+        content: 'O QUE A VÍRGULA ISOLA?',
+        rows: [
+          { label: 'Pergunta-chave', value: 'A vírgula isola vocativo/aposto — ou corta sujeito|verbo?', emphasis: 'highlight' },
+          { label: 'Não pode', value: 'Sujeito|verbo: Eu farei — nunca Eu, farei.', emphasis: 'alert' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 2, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_pontuacao' },
+        'Assinale a alternativa que contém a frase correta em relação à pontuação.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_pontuacao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pontuacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-comma-rail-board');
+    });
+
+    it('danger_zone → pt-comma-trap-arena com compare tap + x_icon', () => {
+      const slide = {
+        type: 'danger_zone' as const,
+        bullet_style: 'x_icon' as const,
+        meta: { subtopico },
+        content: 'Cada erro = um corte do trilho',
+        items: [
+          {
+            label: 'D — Eu, farei',
+            detail: 'Pausa na fala parece justificar a vírgula.',
+            correct: 'Sujeito|verbo nunca se separam: Eu farei.',
+          },
+          {
+            label: 'E — você, irá',
+            detail: 'Corta o verbo e esquece o vocativo.',
+            correct: 'Vocativo isolado; trilho você irá intacto.',
+          },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 3, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_pontuacao' },
+        'Assinale a alternativa que contém a frase correta em relação à pontuação.',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_pontuacao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pontuacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-comma-trap-arena');
+      expect(result.bulletStyle).toBe('x_icon');
+      expect(result.dangerRevealMode).toBe('tap');
+    });
+
+    it('Pontuação sem pedagogical_branch explícito: inferência marca pt_pontuacao pelos sinais', () => {
+      const slide = {
+        type: 'concept_map' as const,
+        meta: { subtopico },
+        items: [
+          { label: 'O que isola?', detail: 'Vocativo, aposto ou sujeito|verbo?' },
+          { label: 'Trilho livre', detail: 'Sujeito colado ao verbo — sem vírgula.' },
+          { label: 'Vírgula', detail: 'Pontuação na frase correta.' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 0, familyId: 'conceito' },
+        slide.meta,
+        'Assinale a alternativa que contém a frase correta em relação à pontuação.',
+        [slide],
+        { subtopico },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_pontuacao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-comma-rail-deck');
+    });
+  });
+
+  describe('Termos da oração / pt_termos_oracao — pacote bespoke pt-term-matrix', () => {
+    const subtopico = 'Termos da oração';
+    const slug = 'vunesp-sjrp-termos-folhetos-enquanto-3789304';
+
+    it('concept_map → pt-term-matrix-deck com pedagogical_branch pt_termos_oracao', () => {
+      const slide = {
+        type: 'concept_map' as const,
+        meta: { subtopico },
+        items: [
+          { label: '1. Termo = cargo', detail: 'Cada destacado tem uma função na oração.', icon: 'Boxes' },
+          { label: '2. Modifica verbo?', detail: 'Circunstância → adjunto adverbial.', icon: 'CornerDownRight' },
+          { label: 'Pegadinha: vizinho', detail: 'Colar o rótulo do termo ao lado.', icon: 'AlertTriangle' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 0, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_termos_oracao' },
+        'Em «No grupo que só recebeu os folhetos» os termos classificam-se como',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_termos_oracao' },
+      );
+      expect(ctx.pedagogicalBranch).toBe('pt_termos_oracao');
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-term-matrix-deck');
+    });
+
+    it('logic_flow → pt-term-matrix-tap-flow com reveal_mode tap', () => {
+      const slide = {
+        type: 'logic_flow' as const,
+        reveal_mode: 'tap' as const,
+        meta: { subtopico },
+        steps: [
+          'T1 «No grupo… folhetos»: circunstância do verbo «foi» — adjunto adverbial deslocado.',
+          'Gabarito E — adj. adverbial deslocado + loc. adverbial de tempo.',
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 1, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_termos_oracao' },
+        'classificam-se, respectivamente, como',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_termos_oracao' },
+      );
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-term-matrix-tap-flow');
+      expect(result.revealMode).toBe('tap');
+    });
+
+    it('golden_rule → pt-term-matrix-board com rows da matriz', () => {
+      const slide = {
+        type: 'golden_rule' as const,
+        meta: { subtopico },
+        content: 'PERGUNTA → CARGO (×2)',
+        rows: [
+          { label: 'Modifica verbo?', value: 'Adjunto adverbial', emphasis: 'success' },
+          { label: 'Enquanto / quando', value: 'Locução adverbial de tempo', emphasis: 'success' },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 2, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_termos_oracao' },
+        'adjunto adverbial deslocado',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_termos_oracao' },
+      );
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-term-matrix-board');
+    });
+
+    it('danger_zone → pt-term-trap-arena com compare tap + x_icon', () => {
+      const slide = {
+        type: 'danger_zone' as const,
+        bullet_style: 'x_icon' as const,
+        meta: { subtopico },
+        content: 'Rótulo do vizinho — onde a matriz barra',
+        items: [
+          {
+            label: 'A — CN em T1',
+            detail: '«No grupo… folhetos» parece completar «taxa».',
+            correct: 'T1 circunstancia «foi» — adjunto adverbial deslocado.',
+          },
+        ],
+      };
+      const ctx = enrichPresentationContext(
+        { questionSlug: slug, slideIndex: 3, familyId: 'conceito' },
+        { ...slide.meta, pedagogical_branch: 'pt_termos_oracao' },
+        'complemento nominal e adjunto adverbial',
+        [slide],
+        { subtopico, pedagogical_branch: 'pt_termos_oracao' },
+      );
+      const result = resolveSlidePresentation(slide, ctx);
+      expect(result.layoutVariant).toBe('pt-term-trap-arena');
+      expect(result.bulletStyle).toBe('x_icon');
+      expect(result.dangerRevealMode).toBe('tap');
+    });
+  });
 });

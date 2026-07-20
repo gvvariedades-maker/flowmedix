@@ -76,6 +76,9 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'iv-order-invert-trap',
   'iv-bundle-break-trap',
   'pt-crase-trap-arena',
+  'pt-clitic-trap-arena',
+  'pt-comma-trap-arena',
+  'pt-term-trap-arena',
 ]);
 
 /**
@@ -146,6 +149,9 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'iv-order-invert-trap') return 'iv-order-invert-trap';
   if (explicitVariant === 'iv-bundle-break-trap') return 'iv-bundle-break-trap';
   if (explicitVariant === 'pt-crase-trap-arena') return 'pt-crase-trap-arena';
+  if (explicitVariant === 'pt-clitic-trap-arena') return 'pt-clitic-trap-arena';
+  if (explicitVariant === 'pt-comma-trap-arena') return 'pt-comma-trap-arena';
+  if (explicitVariant === 'pt-term-trap-arena') return 'pt-term-trap-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -339,6 +345,15 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'pt-crase-trap-arena') {
       return 'pt-crase-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-clitic-trap-arena') {
+      return 'pt-clitic-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-comma-trap-arena') {
+      return 'pt-comma-trap-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'pt-term-trap-arena') {
+      return 'pt-term-trap-arena';
     }
     return 'compare';
   }

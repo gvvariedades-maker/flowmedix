@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Ag Adm (Pref SJRP)",
+    "orgao": "Pref. São José do Rio Preto",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Termos da oração",
+    "pedagogical_branch": "pt_termos_oracao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "agent:elias-m05-te-simples-nota10",
+      "guideline_snapshot": "M05 Elias TE-simples — pergunta «Modifica verbo? Modifica nome? De quê?» → matriz de cargos (Bechara / Cunha & Cintra; termos da oração)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-termos-oracao-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Termos da oração — adjuntos, complementos, locuções adverbiais",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "adjunto adverbial e circunstância",
+          "adjunto adnominal e modificação do nome",
+          "complemento nominal e regência de quê",
+          "locução adverbial de tempo",
+          "termo deslocado anteposto",
+          "classificação em pares de termos"
+        ]
+      },
+      {
+        "id": "portugues-caderno-2025-2026-q201-400",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT 2025–2026 — Q326 / tec 3789304 (VUNESP Ag Adm Pref. SJRP 2026)",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito E",
+          "folhetos",
+          "Enquanto isso"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m05-te-simples-nota10",
+      "a4_reviewed_at": "2026-07-20"
+    }
+  },
+  "question_data": {
+    "instruction": "Em «No grupo que só recebeu os folhetos, essa taxa foi de 74%» e «Enquanto isso, oito anos após o início do tratamento contra o câncer:», os termos «No grupo que só recebeu os folhetos» e «Enquanto isso» classificam-se, respectivamente, como",
+    "options": [
+      {
+        "id": "A",
+        "text": "complemento nominal e adjunto adverbial.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "adjunto adverbial e adjunto adnominal.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "locução conjuntiva e adjunto adverbial deslocado.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "adjunto adnominal e adjunto adverbial.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "adjunto adverbial deslocado e locução adverbial de tempo.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Dois termos — duas células",
+      "chip_label": "Matriz simples",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Termos da oração"
+      },
+      "items": [
+        {
+          "label": "1. Termo = cargo",
+          "detail": "Cada trecho destacado tem uma função na oração — classifique um por vez.",
+          "icon": "Boxes"
+        },
+        {
+          "label": "2. Modifica verbo?",
+          "detail": "Circunstância de quando, onde, como → adjunto adverbial.",
+          "icon": "CornerDownRight"
+        },
+        {
+          "label": "3. Modifica nome?",
+          "detail": "Característica de um substantivo → adjunto adnominal.",
+          "icon": "Box"
+        },
+        {
+          "label": "4. De quê? + prep.",
+          "detail": "Completa um nome com preposição → complemento nominal.",
+          "icon": "User"
+        },
+        {
+          "label": "Pegadinha: vizinho",
+          "detail": "Colar o rótulo do termo ao lado sem aplicar a pergunta-teste.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Dois termos destacados = duas perguntas-teste separadas."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "T1 → T2 → letras",
+      "chip_label": "Um toque = uma célula",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Termos da oração"
+      },
+      "steps": [
+        "Comando: classificar «No grupo que só recebeu os folhetos» e «Enquanto isso» — par de cargos.",
+        "T1 «No grupo… folhetos»: circunstância do verbo «foi» — adjunto adverbial deslocado.",
+        "T2 «Enquanto isso»: marca tempo da situação — locução adverbial de tempo.",
+        "A: T1 não é complemento nominal (não completa nome com de quê?) — eliminar.",
+        "B/D: trocam adnominal × adverbial entre T1 e T2 — eliminar.",
+        "C: T1 não é locução conjuntiva (não liga orações por conjunção) — eliminar.",
+        "Gabarito E — adj. adverbial deslocado + loc. adverbial de tempo.",
+        "Em similares: matriz — pergunta-teste por termo; não copie o rótulo do vizinho."
+      ],
+      "footer_rule": "Classifique T1 antes de olhar T2."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Matriz de bolso",
+      "chip_label": "Decore isto",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Termos da oração"
+      },
+      "content": "PERGUNTA → CARGO (×2)",
+      "rows": [
+        {
+          "label": "Pergunta-chave",
+          "value": "Modifica verbo? nome? De quê? — uma por termo destacado.",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Modifica verbo?",
+          "value": "Circunstância → adjunto adverbial (pode ser deslocado).",
+          "emphasis": "success"
+        },
+        {
+          "label": "Modifica nome?",
+          "value": "Característica do substantivo → adjunto adnominal.",
+          "emphasis": "default"
+        },
+        {
+          "label": "De quê? + prep.",
+          "value": "Completa nome → complemento nominal.",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Enquanto / quando",
+          "value": "Tempo → locução adverbial de tempo.",
+          "emphasis": "success"
+        },
+        {
+          "label": "Deslocado",
+          "value": "Anteposto à oração principal — ainda é o mesmo cargo.",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Nesta questão",
+          "value": "T1 folhetos: adv. deslocado · T2 Enquanto isso: loc. tempo"
+        }
+      ],
+      "footer_rule": "Par de termos = duas células na matriz."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Armadilhas",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Termos da oração"
+      },
+      "content": "Rótulo do vizinho — onde a matriz barra",
+      "items": [
+        {
+          "label": "A — CN em T1",
+          "detail": "«No grupo… folhetos» parece completar «taxa».",
+          "correct": "T1 circunstancia «foi» — adjunto adverbial deslocado, não CN."
+        },
+        {
+          "label": "B — AAdj em T2",
+          "detail": "«Enquanto isso» parece caracterizar «oito anos».",
+          "correct": "T2 marca tempo da situação — locução adverbial de tempo."
+        },
+        {
+          "label": "C — conjuntiva em T1",
+          "detail": "Trecho inicial parece conjunção ligando orações.",
+          "correct": "É circunstância posicional do verbo, não locução conjuntiva."
+        },
+        {
+          "label": "D — AAdj em T1",
+          "detail": "«folhetos» perto de «taxa» induz adnominal.",
+          "correct": "Modifica a situação de «foi», não o núcleo de «taxa»."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Podem trocar folhetos por UBS ou plantão.",
+          "correct": "Mesma matriz: T1 circunstância · T2 tempo (enquanto/quando)."
+        }
+      ],
+      "footer_rule": "E sobrou: adv. deslocado + loc. adverbial de tempo."
+    }
+  ]
+}

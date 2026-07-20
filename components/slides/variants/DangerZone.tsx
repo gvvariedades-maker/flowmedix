@@ -66,6 +66,9 @@ import {
 } from './criancaVariants';
 import { DangerZoneCamCertosTrapArena } from './DangerZoneCamCertosTrapArena';
 import { DangerZonePtCraseTrapArena } from './DangerZonePtCraseTrapArena';
+import { DangerZonePtCliticTrapArena } from './DangerZonePtCliticTrapArena';
+import { DangerZonePtCommaTrapArena } from './DangerZonePtCommaTrapArena';
+import { DangerZonePtTermTrapArena } from './DangerZonePtTermTrapArena';
 import { DangerZoneCamHighRiskTrapArena } from './DangerZoneCamHighRiskTrapArena';
 import { DangerZoneCamExcetoTrapArena } from './DangerZoneCamExcetoTrapArena';
 import { DangerZoneCamDocumentacaoTrapArena } from './DangerZoneCamDocumentacaoTrapArena';
@@ -764,6 +767,42 @@ export const DangerZone = ({
   if (explicitVariant === 'pt-crase-trap-arena' && items && items.length > 0) {
     return (
       <DangerZonePtCraseTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'pt-clitic-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZonePtCliticTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'pt-comma-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZonePtCommaTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'pt-term-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZonePtTermTrapArena
         content={content}
         items={items}
         theme={theme}

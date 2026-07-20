@@ -40,6 +40,9 @@ import { GoldenRulePkPdReferenceBoard } from './GoldenRulePkPdReferenceBoard';
 import { GoldenRuleFarmacoClinicoReferenceBoard } from './GoldenRuleFarmacoClinicoReferenceBoard';
 import { GoldenRuleBurnRuleNineBoard } from './GoldenRuleBurnRuleNineBoard';
 import { GoldenRulePtCraseFunnelBoard } from './GoldenRulePtCraseFunnelBoard';
+import { GoldenRulePtCliticRailBoard } from './GoldenRulePtCliticRailBoard';
+import { GoldenRulePtCommaRailBoard } from './GoldenRulePtCommaRailBoard';
+import { GoldenRulePtTermMatrixBoard } from './GoldenRulePtTermMatrixBoard';
 import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
 import { GoldenRuleAdolescentZBandBoard } from './GoldenRuleAdolescentZBandBoard';
 import { GoldenRuleTrabalhoNr32ReferenceBoard } from './GoldenRuleTrabalhoNr32ReferenceBoard';
@@ -539,6 +542,24 @@ export const GoldenRule = ({
   if (variant === 'pt-crase-funnel-board' && rows && rows.length > 0) {
     return (
       <GoldenRulePtCraseFunnelBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'pt-clitic-rail-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePtCliticRailBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'pt-comma-rail-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePtCommaRailBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'pt-term-matrix-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePtTermMatrixBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

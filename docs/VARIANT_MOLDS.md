@@ -225,6 +225,9 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `peri-protocol-checklist-deck` | Perioperatória (`perioperatorio_protocolo`) | Checklist WHO sign in / time out / sign out | `questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json` |
 | `peri-vf-assertions-deck` | Perioperatória (`perioperatorio_vf`) | Chips I/II/III + V/F | `data/catalog-migration/perioperatoria-g04/questions/cebraspe-*.json` |
 | `pt-crase-funnel-deck` | Língua Portuguesa / Crase (`pt_crase`) | Deck funil 3 testes + pegadinha automática | `examples/questao-premium-vunesp-portugues-crase-funil.json` |
+| `pt-clitic-rail-deck` | Língua Portuguesa / Colocação (`pt_pronomes_colocacao`) | Deck trilho pró · ên · meso + atrativo? | `examples/questao-premium-vunesp-portugues-colocacao-trilho.json` |
+| `pt-comma-rail-deck` | Língua Portuguesa / Pontuação (`pt_pontuacao`) | Deck trilho vírgula — o que isola? · S\|V livre | `examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` |
+| `pt-term-matrix-deck` | Língua Portuguesa / Termos (`pt_termos_oracao`) | Deck matriz de cargos — verbo? · nome? · de quê? | `examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json` |
 
 ### Danger zone
 
@@ -245,6 +248,8 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `peri-protocol-trap-arena` | `peri-protocol-checklist-deck` | WHO/CDC violado × checklist | sign in, time out, letra A–E |
 | `peri-vf-trap-chips` | `peri-vf-assertions-deck` | Item V/F errado × combinação | I, II, III, verdadeira, falsa |
 | `pt-crase-trap-arena` | `pt-crase-funnel-deck` | Arena compare — estágio do funil que barra cada letra | verbo, masculino, todos, ferramentas, automática, letra A–E |
+| `pt-clitic-trap-arena` | `pt-clitic-rail-deck` | Arena compare — estação do trilho que barra cada letra | Já, Quando, particípio, atrativo, ênclise automática, letra A–E |
+| `pt-comma-trap-arena` | `pt-comma-rail-deck` | Arena compare — estação do trilho que barra cada letra | pausa oral, sujeito\|verbo, vocativo, aposto, letra A–E |
 
 Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md).
 
@@ -257,12 +262,16 @@ Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPL
 | `pni-calendar-elimination-tap` | Imunização (`imunizacao_calendario`) | Eliminação MCQ por mês/conduta | `questao-premium-fundatec-meningococica-3meses.json` |
 | `pni-cold-chain-tap` | Imunização (`imunizacao_cadeia_frio`) | Tap V/F ou eliminação por faixa térmica | `questao-premium-avancasp-imunizacao-rede-frio-temperatura.json` |
 | `pt-crase-funnel-tap-flow` | Língua Portuguesa / Crase (`pt_crase`) | Pipeline tap — um estágio/letra por passo | `questao-premium-vunesp-portugues-crase-funil.json` |
+| `pt-clitic-rail-tap-flow` | Língua Portuguesa / Colocação (`pt_pronomes_colocacao`) | Pipeline tap — atrativo?/letra por passo | `questao-premium-vunesp-portugues-colocacao-trilho.json` |
+| `pt-comma-rail-tap-flow` | Língua Portuguesa / Pontuação (`pt_pontuacao`) | Pipeline tap — isola?/letra por passo | `questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` |
 
 ### Golden rule (slide 2)
 
 | `layout_variant` | Subtópico(s) | Interação | Golden |
 |------------------|--------------|-----------|--------|
 | `pt-crase-funnel-board` | Língua Portuguesa / Crase (`pt_crase`) | Painel funil MASC → VERBO → A+A + teste ao | `questao-premium-vunesp-portugues-crase-funil.json` |
+| `pt-clitic-rail-board` | Língua Portuguesa / Colocação (`pt_pronomes_colocacao`) | Painel trilho ATRATIVO? → pró / ên / meso | `questao-premium-vunesp-portugues-colocacao-trilho.json` |
+| `pt-comma-rail-board` | Língua Portuguesa / Pontuação (`pt_pontuacao`) | Painel trilho O QUE ISOLA? → vocativo / S\|V livre | `questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` |
 | `soft-lens-board` | Cálculo de Administração de Medicamentos e Infusões | Painel de lentes suaves — toque em cada `row` | `questao-premium-idecan-calculo-equivalencias-gotas.json` |
 | `itu-bundle-letter-board` | Infecções no Contexto da Biossegurança (`biosseg_iras_itu_cateter`) | Espectro de letras bundle ok × EXCETO | `questao-premium-idib-umirim-itu-cateter-exceto.json` |
 | `etiology-letter-spectrum` | Doenças Bacterianas e Fúngicas | Espectro letras bacteriana × intruso | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |

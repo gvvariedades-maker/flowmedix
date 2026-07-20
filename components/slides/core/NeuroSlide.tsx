@@ -17,6 +17,9 @@ import { ColdChainHubConceptMap } from '../variants/ColdChainHubConceptMap';
 import { PniRulesDeckConceptMap } from '../variants/PniRulesDeckConceptMap';
 import { CamCertosDeckConceptMap } from '../variants/CamCertosDeckConceptMap';
 import { PtCraseFunnelDeckConceptMap } from '../variants/PtCraseFunnelDeckConceptMap';
+import { PtCliticRailDeckConceptMap } from '../variants/PtCliticRailDeckConceptMap';
+import { PtCommaRailDeckConceptMap } from '../variants/PtCommaRailDeckConceptMap';
+import { PtTermMatrixDeckConceptMap } from '../variants/PtTermMatrixDeckConceptMap';
 import { CamHighRiskDuoDeckConceptMap } from '../variants/CamHighRiskDuoDeckConceptMap';
 import { CamExcetoRailConceptMap } from '../variants/CamExcetoRailConceptMap';
 import { CamDocumentacaoDeckConceptMap } from '../variants/CamDocumentacaoDeckConceptMap';
@@ -257,6 +260,33 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'pt-crase-funnel-deck') {
         return (
           <PtCraseFunnelDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'pt-clitic-rail-deck') {
+        return (
+          <PtCliticRailDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'pt-comma-rail-deck') {
+        return (
+          <PtCommaRailDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'pt-term-matrix-deck') {
+        return (
+          <PtTermMatrixDeckConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}

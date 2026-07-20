@@ -75,6 +75,9 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'iv-interval-board',
   'iv-antisepsis-board',
   'pt-crase-funnel-board',
+  'pt-clitic-rail-board',
+  'pt-comma-rail-board',
+  'pt-term-matrix-board',
 ]);
 
 /**
@@ -149,6 +152,9 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'iv-interval-board') return 'iv-interval-board';
   if (explicitVariant === 'iv-antisepsis-board') return 'iv-antisepsis-board';
   if (explicitVariant === 'pt-crase-funnel-board') return 'pt-crase-funnel-board';
+  if (explicitVariant === 'pt-clitic-rail-board') return 'pt-clitic-rail-board';
+  if (explicitVariant === 'pt-comma-rail-board') return 'pt-comma-rail-board';
+  if (explicitVariant === 'pt-term-matrix-board') return 'pt-term-matrix-board';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

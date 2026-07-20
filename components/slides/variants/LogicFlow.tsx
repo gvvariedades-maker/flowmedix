@@ -20,6 +20,9 @@ import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
 import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
 import { LogicFlowBurnTriageTapFlow } from './LogicFlowBurnTriageTapFlow';
 import { LogicFlowPtCraseFunnelTapFlow } from './LogicFlowPtCraseFunnelTapFlow';
+import { LogicFlowPtCliticRailTapFlow } from './LogicFlowPtCliticRailTapFlow';
+import { LogicFlowPtCommaRailTapFlow } from './LogicFlowPtCommaRailTapFlow';
+import { LogicFlowPtTermMatrixTapFlow } from './LogicFlowPtTermMatrixTapFlow';
 import { LogicFlowTrabalhoVfJuggleTap } from './LogicFlowTrabalhoVfJuggleTap';
 import { LogicFlowSegurancaVfJuggleTap } from './LogicFlowSegurancaVfJuggleTap';
 import { LogicFlowSpProtocolTapFlow } from './LogicFlowSpProtocolTapFlow';
@@ -239,6 +242,18 @@ export const LogicFlow = ({
 
   if (variant === 'pt-crase-funnel-tap-flow') {
     return <LogicFlowPtCraseFunnelTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'pt-clitic-rail-tap-flow') {
+    return <LogicFlowPtCliticRailTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'pt-comma-rail-tap-flow') {
+    return <LogicFlowPtCommaRailTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
+  if (variant === 'pt-term-matrix-tap-flow') {
+    return <LogicFlowPtTermMatrixTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'trabalho-vf-juggle-tap') {

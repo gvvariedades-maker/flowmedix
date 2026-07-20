@@ -43,6 +43,7 @@ describe('handcraftPlaybook', () => {
     expect(brief).toContain('respiratorio_vf_asma_dpoc');
     expect(brief).toContain('respiratorio_asma_crise');
     expect(brief).toContain('audit:questao-readiness');
+    expect(brief).toContain('--strict-v2-pedagogy');
     expect(brief).toContain('repair-l3');
     expect(brief).toContain('**Primeiro lote:** `respiratorio-cronico-repair-l3-g01`');
     expect(brief).toContain('catalog:patch-pedagogical-branch');
@@ -103,5 +104,54 @@ describe('handcraftPlaybook', () => {
     });
     expect(brief).toContain('test-slug-1');
     expect(brief).toContain('Uma questão');
+  });
+
+  it('buildHandcraftBrief Língua Portuguesa inclui galeria visual pt_crase', () => {
+    const playbook = loadHandcraftPlaybook('Língua Portuguesa');
+    const crase = playbook?.pedagogical_branches?.find((b) => b.id === 'pt_crase');
+    expect(crase?.visual_gallery?.status).toBe('ready');
+    expect(crase?.brief).toContain('l3-brief-lingua-portuguesa-pt_crase');
+
+    const coloc = playbook?.pedagogical_branches?.find(
+      (b) => b.id === 'pt_pronomes_colocacao',
+    );
+    expect(coloc?.brief).toContain('l3-brief-lingua-portuguesa-pt_pronomes_colocacao');
+    expect(coloc?.bespoke_target).toBe('pt-clitic-rail');
+    expect(coloc?.visual_gallery?.layouts).toEqual([
+      'pt-clitic-rail-deck',
+      'pt-clitic-rail-board',
+      'pt-clitic-rail-tap-flow',
+      'pt-clitic-trap-arena',
+    ]);
+
+    const pont = playbook?.pedagogical_branches?.find((b) => b.id === 'pt_pontuacao');
+    expect(pont?.brief).toContain('l3-brief-lingua-portuguesa-pt_pontuacao');
+    expect(pont?.bespoke_target).toBe('pt-comma-rail');
+    expect(pont?.anchors).toHaveLength(2);
+    expect(pont?.anchor_styles?.vf?.catalog_slug).toBe(
+      'cpcon-condado-pontuacao-tirinha-vf-3836507',
+    );
+    expect(pont?.visual_gallery?.status).toBe('ready');
+    expect(pont?.visual_gallery?.layouts).toEqual([
+      'pt-comma-rail-deck',
+      'pt-comma-rail-board',
+      'pt-comma-rail-tap-flow',
+      'pt-comma-trap-arena',
+    ]);
+
+    const termos = playbook?.pedagogical_branches?.find((b) => b.id === 'pt_termos_oracao');
+    expect(termos?.brief).toContain('l3-brief-lingua-portuguesa-pt_termos_oracao');
+    expect(termos?.bespoke_target).toBe('pt-term-matrix');
+    expect(termos?.visual_gallery?.status).toBe('ready');
+    expect(termos?.visual_gallery?.layouts).toEqual([
+      'pt-term-matrix-deck',
+      'pt-term-matrix-board',
+      'pt-term-matrix-tap-flow',
+      'pt-term-trap-arena',
+    ]);
+
+    const brief = buildHandcraftBrief('Língua Portuguesa');
+    expect(brief).toContain('pt_crase');
+    expect(brief).toContain('Galeria visual');
   });
 });

@@ -82,6 +82,9 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'iv-puncture-rail',
   'iv-bundle-orbit',
   'pt-crase-funnel-deck',
+  'pt-clitic-rail-deck',
+  'pt-comma-rail-deck',
+  'pt-term-matrix-deck',
 ]);
 
 function countConceptItems(slide?: {

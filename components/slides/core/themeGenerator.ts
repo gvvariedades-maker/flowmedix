@@ -441,11 +441,21 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'imobilização ortopédica': { template: 'rose', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
 
   // ============================================================
-  // LÍNGUA PORTUGUESA (pacote bespoke pt-crase-funnel)
+  // LÍNGUA PORTUGUESA (pacote bespoke pt-crase-funnel + pt-clitic-rail + pt-comma-rail + pt-term-matrix)
   // ============================================================
 
   // ---- Crase (golden: pt-crase-funnel-deck · pt-crase-funnel-board · pt-crase-funnel-tap-flow · pt-crase-trap-arena) ----
   'crase': { template: 'amber', conceptMap: 'pt-crase-funnel-deck', goldenRule: 'pt-crase-funnel-board', logicFlow: 'pt-crase-funnel-tap-flow', dangerZone: 'pt-crase-trap-arena' },
+  // ---- Pronomes e colocação (golden: pt-clitic-rail 4/4) ----
+  'pronomes e colocação pronominal': { template: 'sky', conceptMap: 'pt-clitic-rail-deck', goldenRule: 'pt-clitic-rail-board', logicFlow: 'pt-clitic-rail-tap-flow', dangerZone: 'pt-clitic-trap-arena' },
+  'colocação pronominal': { template: 'sky', conceptMap: 'pt-clitic-rail-deck', goldenRule: 'pt-clitic-rail-board', logicFlow: 'pt-clitic-rail-tap-flow', dangerZone: 'pt-clitic-trap-arena' },
+  'pronomes': { template: 'sky', conceptMap: 'pt-clitic-rail-deck', goldenRule: 'pt-clitic-rail-board', logicFlow: 'pt-clitic-rail-tap-flow', dangerZone: 'pt-clitic-trap-arena' },
+  // ---- Pontuação (golden: pt-comma-rail 4/4) ----
+  'pontuação': { template: 'violet', conceptMap: 'pt-comma-rail-deck', goldenRule: 'pt-comma-rail-board', logicFlow: 'pt-comma-rail-tap-flow', dangerZone: 'pt-comma-trap-arena' },
+  'pontuacao': { template: 'violet', conceptMap: 'pt-comma-rail-deck', goldenRule: 'pt-comma-rail-board', logicFlow: 'pt-comma-rail-tap-flow', dangerZone: 'pt-comma-trap-arena' },
+  // ---- Termos da oração (golden: pt-term-matrix 4/4) ----
+  'termos da oração': { template: 'teal', conceptMap: 'pt-term-matrix-deck', goldenRule: 'pt-term-matrix-board', logicFlow: 'pt-term-matrix-tap-flow', dangerZone: 'pt-term-trap-arena' },
+  'termos da oracao': { template: 'teal', conceptMap: 'pt-term-matrix-deck', goldenRule: 'pt-term-matrix-board', logicFlow: 'pt-term-matrix-tap-flow', dangerZone: 'pt-term-trap-arena' },
 };
 
 /** Normaliza string de subtópico para busca no mapa */

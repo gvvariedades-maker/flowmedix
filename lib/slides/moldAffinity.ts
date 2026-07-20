@@ -295,6 +295,27 @@ export const PT_CRASE_VARIANTS = new Set([
   'pt-crase-trap-arena',
 ]);
 
+export const PT_CLITIC_RAIL_VARIANTS = new Set([
+  'pt-clitic-rail-deck',
+  'pt-clitic-rail-board',
+  'pt-clitic-rail-tap-flow',
+  'pt-clitic-trap-arena',
+]);
+
+export const PT_COMMA_RAIL_VARIANTS = new Set([
+  'pt-comma-rail-deck',
+  'pt-comma-rail-board',
+  'pt-comma-rail-tap-flow',
+  'pt-comma-trap-arena',
+]);
+
+export const PT_TERM_MATRIX_VARIANTS = new Set([
+  'pt-term-matrix-deck',
+  'pt-term-matrix-board',
+  'pt-term-matrix-tap-flow',
+  'pt-term-trap-arena',
+]);
+
 const CAM_CERTOS_VF_VARIANTS = new Set([
   'cam-certos-deck',
   'cam-nine-rights-board',
@@ -1806,6 +1827,120 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     positivePatterns: [
       /\bcrase\b/i,
       /autom[aá]tica|funil|verbo|todos|ferramentas|à\b|às\b/i,
+    ],
+    minPositive: 1,
+  },
+
+  // ---- Língua Portuguesa — Colocação (pt-clitic-rail) ----
+  'pt-clitic-rail-deck': {
+    homeSubtopicFragments: ['pronomes', 'colocacao', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /coloca[cç][aã]o|pr[oó]clise|ênclise|enclise|mes[oó]clise/i,
+      /atrativo|[aá]tono|trilho/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-clitic-rail-board': {
+    homeSubtopicFragments: ['pronomes', 'colocacao', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /atrativo|pr[oó]clise|ênclise|enclise|mes[oó]clise|trilho/i,
+      /infinitivo|partic[ií]pio/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-clitic-rail-tap-flow': {
+    homeSubtopicFragments: ['pronomes', 'colocacao', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /atrativo|pr[oó]clise|ênclise|enclise|em similares|gabarito/i,
+      /manifestar-se|dedicado-se|bebia-se|fala-se/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-clitic-trap-arena': {
+    homeSubtopicFragments: ['pronomes', 'colocacao', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /atrativo|pr[oó]clise|ênclise|enclise|partic[ií]pio|autom[aá]tica/i,
+      /j[aá]\b|quando|exigem|trilho/i,
+    ],
+    minPositive: 1,
+  },
+
+  // ---- Língua Portuguesa — Pontuação (pt-comma-rail) ----
+  'pt-comma-rail-deck': {
+    homeSubtopicFragments: ['pontuacao', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /pontua[cç][aã]o|v[ií]rgula|virgula/i,
+      /vocativo|aposto|sujeito|verbo|trilho|isola/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-comma-rail-board': {
+    homeSubtopicFragments: ['pontuacao', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /v[ií]rgula|vocativo|aposto|sujeito|verbo|isola|trilho/i,
+      /nao pode|pode\b|pergunta/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-comma-rail-tap-flow': {
+    homeSubtopicFragments: ['pontuacao', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /v[ií]rgula|vocativo|sujeito|verbo|gabarito|em similares/i,
+      /rita\b|farei|ir[aá]/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-comma-trap-arena': {
+    homeSubtopicFragments: ['pontuacao', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /v[ií]rgula|vocativo|sujeito|verbo|pausa|pegadinha|trilho/i,
+      /letra\s+[a-e]|eu,\s*farei/i,
+    ],
+    minPositive: 1,
+  },
+
+  // ---- Língua Portuguesa — Termos da oração (pt-term-matrix) ----
+  'pt-term-matrix-deck': {
+    homeSubtopicFragments: ['termos', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /termos da ora[cç][aã]o|adjunto|complemento|circunst[aâ]ncia|funcao/i,
+      /modifica verbo|modifica nome|matriz|cargo/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-term-matrix-board': {
+    homeSubtopicFragments: ['termos', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /adjunto|complemento|adverbial|adnominal|de qu[eê]|enquanto/i,
+      /pergunta|cargo|matriz/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-term-matrix-tap-flow': {
+    homeSubtopicFragments: ['termos', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /t1|t2|gabarito|em similares|adjunto|adverbial/i,
+      /folhetos|enquanto isso|classifica/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-term-trap-arena': {
+    homeSubtopicFragments: ['termos', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /adjunto|adnominal|adverbial|complemento|conjun|matriz|pegadinha/i,
+      /letra\s+[a-e]|rotulo|vizinho/i,
     ],
     minPositive: 1,
   },
