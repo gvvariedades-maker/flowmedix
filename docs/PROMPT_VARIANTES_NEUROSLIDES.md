@@ -13,7 +13,8 @@
 
 **Quando usar este prompt**
 
-- **Fase 3b obrigatória** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) — todo ramo forte (`molde_redesign` ou `molde_inedito`)
+- **Fase 3b obrigatória** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) — todo ramo forte (`molde_redesign` ou `molde_inedito`). Limiar e checklist: [`RAMO_FORTE_QUICK_REF.md`](RAMO_FORTE_QUICK_REF.md).
+- Orquestração Cursor: skill [`brief-enfermagem`](../.cursor/skills/brief-enfermagem/SKILL.md) (TE) ou [`brief-lingua-portuguesa`](../.cursor/skills/brief-lingua-portuguesa/SKILL.md) (PT) — gates/inputs; **este doc** continua sendo o corpo do brief
 - Antes de implementar React ([`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) §3) para qualquer pacote bespoke 4/4
 - Para briefing de designer ou agente externo que **não** vai codar — só projeta a metáfora visual
 
@@ -26,6 +27,10 @@
 ```text
 Mapeamento L3 (Fases 0–3) → Questão âncora → Prompt (brief 4/4, Fase 3b) → VARIANT_MOLDS §3 → golden em examples/ → Handcraft:
 ```
+
+**Ordem do player (v2 — canônica):** `concept_map` → `logic_flow` → `golden_rule` → `danger_zone` — [`lib/reverseStudySlideOrder.ts`](../lib/reverseStudySlideOrder.ts). Briefs e JSON novo seguem **esta** sequência. Perfil `legacy` (golden_rule antes de logic_flow) existe só no catálogo antigo.
+
+**Calibração:** briefs flagship em [`artifacts/l3-brief-FLAGSHIP-INDEX.md`](../artifacts/l3-brief-FLAGSHIP-INDEX.md) · template 1 página: [`L3_BRIEF_TEMPLATE.md`](L3_BRIEF_TEMPLATE.md).
 
 ---
 
@@ -77,12 +82,12 @@ Copie o bloco abaixo integralmente.
 # PAPEL
 Designer instrucional sênior — slides de alta retenção para Técnico de Enfermagem (concursos BR). Projeta variantes visuais (`layout_variant`) para estudo reverso pós-questão. Não escreve código; entrega brief de molde para dev implementar.
 
-# PRODUTO — 4 NeuroSlides (ordem fixa)
-| Slide | type | Função | Regra |
-|-------|------|--------|-------|
+# PRODUTO — 4 NeuroSlides (ordem v2 do player)
+| # player | type | Função | Regra |
+|---------|------|--------|-------|
 | 1 | concept_map | Enquadrar tema | Sem gabarito |
-| 2 | golden_rule | Decore / tabela normativa | Sem "Letra X" |
-| 3 | logic_flow | Raciocínio até gabarito | Único que cita letras; `reveal_mode: "tap"` |
+| 2 | logic_flow | Raciocínio até gabarito | Único que cita letras; `reveal_mode: "tap"` |
+| 3 | golden_rule | Decore / tabela normativa | Sem "Letra X" |
 | 4 | danger_zone | Pegadinhas da banca | Cada `correct` único por alternativa |
 
 Conteúdo = **esta questão**, nunca texto genérico reciclado.
@@ -138,7 +143,7 @@ Para cada slide informe:
 - Anti-padrões + DoD (375px legível, 0 hardcode, slots preenchidos)
 
 # PROIBIDO
-Gabarito nos slides 1–2 · `correct` repetido · >7 elementos na tela · drift de tema · animação sem significado · nomes vagos (`custom-map`)
+Gabarito em concept_map ou golden_rule · `correct` repetido · >7 elementos na tela · drift de tema · animação sem significado · nomes vagos (`custom-map`)
 
 # REGRA FINAL
 Cada decisão de design responde: (1) Que erro previne? (2) Que gesto fixa? (3) Que JSON alimenta cada slot? Sem resposta → layout genérico + justificativa.
@@ -166,13 +171,13 @@ Sua entrega é sempre um **brief de design de molde** — metáfora visual + int
 
 # CONTEXTO DO PRODUTO
 
-Cada questão de concurso gera exatamente **4 slides** em sequência fixa:
+Cada questão de concurso gera exatamente **4 slides** em sequência fixa (**ordem v2**):
 
-| # | `type` | Função pedagógica | Momento cognitivo |
-|---|--------|-------------------|-------------------|
+| # player | `type` | Função pedagógica | Momento cognitivo |
+|---------|--------|-------------------|-------------------|
 | 1 | `concept_map` | Enquadrar o tema — mapa mental, não gabarito | **Ativação** — “onde isso mora na minha cabeça?” |
-| 2 | `golden_rule` | Uma regra decore / tabela normativa inesquecível | **Consolidação** — “o que eu preciso levar pra prova” |
-| 3 | `logic_flow` | Raciocínio passo a passo até o gabarito | **Elaboração** — “como eu penso na hora H” |
+| 2 | `logic_flow` | Raciocínio passo a passo até o gabarito | **Elaboração** — “como eu penso na hora H” |
+| 3 | `golden_rule` | Uma regra decore / tabela normativa inesquecível | **Síntese** — “o que eu levo pra prova” |
 | 4 | `danger_zone` | Pegadinhas e erros típicos da banca | **Contraste** — “o que me faz cair” |
 
 O aluno acabou de responder uma questão real (banca, ano, alternativas A–E). Os slides devem ensinar **esta questão**, nunca um texto genérico reciclado.
@@ -203,11 +208,11 @@ Os 4 slides de um subtópico/ramo devem compartilhar o **mesmo universo visual**
 
 Não misture metáforas entre slides do mesmo pacote.
 
-## 3. Progressão cognitiva fixa
+## 3. Progressão cognitiva fixa (ordem v2)
 ```
-CONCEITO (amplo) → REGRA (núcleo) → RACIOCÍNIO (passos) → PEGADINHA (contraste)
+CONCEITO (amplo) → RACIOCÍNIO (passos) → REGRA (núcleo) → PEGADINHA (contraste)
 ```
-Slide 1 **não** revela gabarito. Slide 3 é o **único** que cita letras e gabarito. Slide 2 é decore/tabela, sem “Letra X”.
+`concept_map` **não** revela gabarito. `logic_flow` é o **único** que cita letras e gabarito (`reveal_mode: "tap"`). `golden_rule` é decore/tabela, sem “Letra X”.
 
 ## 4. Chunking para memória de trabalho
 - Máx. **5–7 slots** visíveis por tela
@@ -375,11 +380,11 @@ Uma frase que une os 4 slides.
 - **Mobile:** comportamento em 375px
 - **Reduced motion:** fallback
 
-### 3. Slide 2 — `golden_rule`
-(mesma estrutura)
-
-### 4. Slide 3 — `logic_flow`
+### 3. Slide 2 — `logic_flow`
 (mesma estrutura + especificar `reveal_mode: tap` e quantos passos)
+
+### 4. Slide 3 — `golden_rule`
+(mesma estrutura)
 
 ### 5. Slide 4 — `danger_zone`
 (mesma estrutura + par com slide 1)
@@ -406,7 +411,7 @@ O que NÃO fazer.
 
 | Proibido | Motivo |
 |----------|--------|
-| Gabarito no slide 1 ou 2 | Mata o estudo reverso |
+| Gabarito em `concept_map` ou `golden_rule` | Mata o estudo reverso |
 | Mesma frase em todos os `correct` | Aluno não aprende por alternativa |
 | Molde sem questão âncora real | UI bonita, conteúdo genérico |
 | >7 elementos competindo na tela | Estoura memória de trabalho |
@@ -440,14 +445,14 @@ Família: vf
 Âncora: CPCON — assertivas I–IV sobre intervalos VPC/VPP
 ```
 
-**Saída esperada (resumo):**
+**Saída esperada (resumo — ordem v2 do player):**
 
-| Slide | `layout_variant` sugerido | Metáfora |
-|-------|--------------------------|----------|
-| concept_map | `pni-rules-deck` | Deck de regras PNI por vacina |
-| golden_rule | `pni-interval-matrix` | Matriz I–IV com chips VERDADEIRA/FALSA |
-| logic_flow | `pni-vf-juggle-tap` | Navegação V/F com resumo final |
-| danger_zone | `pni-trap-chips` | Chips de intervalo errado × correto |
+| # player | `type` | `layout_variant` sugerido | Metáfora |
+|---------|--------|--------------------------|----------|
+| 1 | concept_map | `pni-rules-deck` | Deck de regras PNI por vacina |
+| 2 | logic_flow | `pni-vf-juggle-tap` | Navegação V/F com resumo final |
+| 3 | golden_rule | `pni-interval-matrix` | Matriz I–IV com chips VERDADEIRA/FALSA |
+| 4 | danger_zone | `pni-trap-chips` | Chips de intervalo errado × correto |
 
 Golden de referência no repo: `examples/questao-premium-cpcon-imunizacao-intervalos-vf.json`
 
@@ -480,4 +485,4 @@ Quando o brief 4/4 estiver aprovado:
 
 ---
 
-*Última atualização: 2026-07-02 — Fase 3b L3 obrigatória por ramo forte*
+*Última atualização: 2026-07-20 — ordem v2 do player alinhada; briefs flagship em `artifacts/`*

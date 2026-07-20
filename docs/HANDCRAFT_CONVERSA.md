@@ -27,11 +27,20 @@ SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
 
 **Decisão de produto:** único trilho de produção = handcraft golden-v1 por slug. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
 
-**Pré-requisito:** subtópico estável (taxonomia). Se o bucket ainda tem drift, use `Classify: <subtópico>` — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md).
+**Pré-requisito (obrigatório):** antes do **1º lote** handcraft, rodar inventário + gate de taxonomia:
+
+```bash
+npm run audit:subtopico-inventory -- --subtopico="<Nome canônico exato>"
+npm run audit:taxonomy-gate -- --subtopico="<Nome canônico exato>"
+```
+
+Só iniciar handcraft quando `audit:taxonomy-gate` retornar `gate=pass` ou `gate=warn` com `handcraft_allowed=true`. Se `gate=block`, use `Classify: <subtópico>` — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md). Buckets catch-all: ver política A/B em [`TAXONOMIA_MODEL.md`](TAXONOMIA_MODEL.md) §6.
 
 **Obrigatório antes do 1º lote** (subtópico novo ou re-handcraft): `Mapeamento L3: <subtópico>` com **Fase 3b** concluída — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md).
 
-**GATE handcraft (ramos fortes):** para cada `pedagogical_branch` com volume ≥5 slugs ou ≥10%, deve existir `artifacts/l3-brief-<pacote>-<branch_id>.md` (brief 4/4 via [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md)). **Cauda longa** (`ok_generico`) não exige brief.
+**GATE handcraft (ramos fortes):** para cada `pedagogical_branch` com volume ≥5 slugs ou ≥10%, deve existir `artifacts/l3-brief-<pacote>-<branch_id>.md` (brief 4/4 via [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md)). Calibração: [`artifacts/l3-brief-FLAGSHIP-INDEX.md`](../artifacts/l3-brief-FLAGSHIP-INDEX.md). Template mínimo: [`L3_BRIEF_TEMPLATE.md`](L3_BRIEF_TEMPLATE.md). **Cauda longa** (`ok_generico`) não exige brief. Quick ref: [`RAMO_FORTE_QUICK_REF.md`](RAMO_FORTE_QUICK_REF.md).
+
+**Anexos recomendados (1º lote / ramo forte):** `@docs/RAMO_FORTE_QUICK_REF.md` · `@docs/L3_MAPEAMENTO_CONVERSA.md` · `@data/catalog-migration/handcraft-registry.json` · `@.cursor/skills/brief-enfermagem/SKILL.md`
 
 **Recomendado** se o subtópico já tem cluster/L3 audit antigo: re-rodar `Mapeamento L3:` para classificar moldes legados como `molde_redesign`.
 
@@ -84,7 +93,7 @@ Se o playbook do subtópico tiver `proibido[]`, o briefing (`handcraft:brief`) l
 ```bash
 npm run catalog:export-lote -- --lote=<lote> --slugs=...
 # handcraft: data/catalog-migration/<lote>/questions/<slug>.json
-# Por slug: family → âncora → slots (skill avant-golden-anchor-handcraft) + meta.pedagogical_branch (avant-json-template § L2.5+L3)
+# Por slug: avant-classify-family → avant-golden-anchor-handcraft + meta.pedagogical_branch (avant-json-template § L2.5+L3)
 npm run validate:goldens -- --lote=<lote> --strict
 npm run audit:questao-readiness -- --lote=<lote>
 npm run catalog:apply-lote -- --lote=<lote> --dry-run
@@ -107,14 +116,15 @@ Usar **`npm run`** no Windows (não `npx tsx`).
 ### Handcraft por slug (A1+A2+A3 num prompt)
 
 1. Ler export do slug (enunciado + gabarito reais).
-2. Classificar **família** (`meta.family`) e identificar **ramo** (`pedagogical_branch`) pelo cluster/enunciado.
-3. Abrir golden âncora da família/ramo em `examples/` ou `*-golden-anchors.json` — seguir skill `.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`.
-4. Gerar JSON com L1+L2+L3 declarados (`logic_flow` primeiro na autoria).
-5. Validar:
+2. Classificar **família** — skill `.cursor/skills/avant-classify-family/SKILL.md` → gravar `meta.family`.
+3. Identificar **ramo** (`pedagogical_branch`) pelo cluster/enunciado.
+4. Abrir golden âncora da família/ramo em `examples/` ou `*-golden-anchors.json` — skill `.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`.
+5. Gerar JSON com L1+L2+L3 declarados (`logic_flow` primeiro na autoria).
+6. Validar:
    ```bash
    npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json
    ```
-6. Corrigir até `[READY]`; só então incluir no lote para `validate:goldens --strict`.
+7. Corrigir até `[READY]`; só então incluir no lote para `validate:goldens --strict`.
 
 ### Entregáveis por lote
 

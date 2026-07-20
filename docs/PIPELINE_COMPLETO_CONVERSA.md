@@ -30,10 +30,18 @@ SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
 | `Pipeline completo: <subtópico>` + `Só handcraft` | Parar em `applied`; não promover |
 | `Paridade Adolescente: <subtópico>` | Paridade pedagógica proporcional (L2+L3+A4 substantivo+L6) — [`PROMPT_PARIDADE_ADOLESCENTE.md`](PROMPT_PARIDADE_ADOLESCENTE.md) |
 | `Pipeline + paridade Adolescente: <subtópico>` | Pipeline completo + paridade na mesma conversa |
+| `Pipeline completo: Língua Portuguesa — Crase (âncora Q506)` | Âncora golden-v1 Q506 + Elias M11 TE-simples; **parar antes de `--apply`** — [`PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md`](PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md) |
 
-Pré-requisito de taxonomia: se o bucket tem drift, `Classify: <subtópico>` antes — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md).
+Pré-requisito de taxonomia (obrigatório antes da Fase 1):
 
-**Pré-requisito L3 (obrigatório antes da Fase 1 handcraft):** `Mapeamento L3: <subtópico>` com **Fase 3b** (brief 4/4 por ramo forte) — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md). Cauda longa (`ok_generico`) dispensa brief. Bypass só com `--skip-l3` documentado como emergência.
+```bash
+npm run audit:subtopico-inventory -- --subtopico="<Nome canônico exato>"
+npm run audit:taxonomy-gate -- --subtopico="<Nome canônico exato>"
+```
+
+Só prosseguir com `gate=pass` ou `gate=warn` + `handcraft_allowed=true`. Se `gate=block` → `Classify: <subtópico>` — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md). Catch-all (ex. `dtrans-mescladas-*`): [`TAXONOMIA_MODEL.md`](TAXONOMIA_MODEL.md) §6.
+
+**Pré-requisito L3 (obrigatório antes da Fase 1 handcraft):** `Mapeamento L3: <subtópico>` com **Fase 3b** (brief 4/4 por ramo forte) — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md). Cauda longa (`ok_generico`) dispensa brief. Bypass só com `--skip-l3` documentado como emergência. Quick ref: [`RAMO_FORTE_QUICK_REF.md`](RAMO_FORTE_QUICK_REF.md).
 
 ---
 
@@ -219,7 +227,13 @@ Nunca confundir `applied` com vendável.
 ```text
 Pipeline completo: <Subtópico canônico>
 
-Anexos: @docs/PIPELINE_COMPLETO_CONVERSA.md @data/catalog-migration/handcraft-registry.json
+Anexos obrigatórios:
+@docs/RAMO_FORTE_QUICK_REF.md
+@docs/L3_MAPEAMENTO_CONVERSA.md
+@docs/PIPELINE_COMPLETO_CONVERSA.md
+@data/catalog-migration/handcraft-registry.json
+@.cursor/skills/brief-enfermagem/SKILL.md
+@artifacts/l3-brief-FLAGSHIP-INDEX.md
 
 FASE 1 — Handcraft (pular se já applied 100%):
 - handcraft:brief + playbook

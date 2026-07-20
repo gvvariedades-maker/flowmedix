@@ -55,7 +55,8 @@ Paths podem variar (`INDEX` vs `index`). Confirmar no disco antes de editar.
 
 | Pacote | Índice / docs úteis |
 |--------|---------------------|
-| Saúde do Adolescente | `artifacts/l3-brief-saude-adolescente-INDEX.md` · `docs/MOLD_AFFINITY_RESOLVER.md` · `artifacts/saude-adolescente-nota10-report.md` |
+| **Calibração (3 briefs)** | [`artifacts/l3-brief-FLAGSHIP-INDEX.md`](../../../artifacts/l3-brief-FLAGSHIP-INDEX.md) |
+| Saúde do Adolescente | `artifacts/l3-brief-saude-adolescente-INDEX.md` · brief ética/sigilo flagship |
 | Farmacodinâmica | `artifacts/l3-brief-farmacodinamica-e-farmacocinetica-INDEX.md` · `artifacts/farmacodinamica-nota10-report.md` |
 | Cálculo | `artifacts/l3-brief-calculo-de-administracao-de-medicamentos-e-infusoes-INDEX.md` |
 | Respiratório crônico | `artifacts/l3-brief-respiratorio-cronico-INDEX.md` |

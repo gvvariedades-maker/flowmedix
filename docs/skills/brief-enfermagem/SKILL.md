@@ -10,7 +10,6 @@ description: >-
 ---
 > **Cópia versionada (fonte Git).** Edite aqui; sincronize o runtime com `npm run sync:skills`. Exceção Elias: versionada direto em `.cursor/skills/professor-elias-santana-metodo/`. Ver `docs/SKILLS_GOVERNANCE.md`.
 
-
 # Brief — Enfermagem / Técnico de Enfermagem (AVANT)
 
 Skill **orquestradora** de L3 para os **41 subtópicos canônicos** (CLAUDE.md §9).
@@ -29,6 +28,8 @@ Fluxo: decisão → brief formal (ramo forte) → contrato de slots no handcraft
 
 **Não** lista metáfora dos 41 pacotes aqui — ver playbook + briefs existentes ([`reference-pacotes.md`](reference-pacotes.md)).
 
+**Mapeamento L3:** Modo **B** obrigatório por ramo forte (`molde_redesign` / `molde_inedito`). Com **>3 ramos fortes**, usar `artifacts/l3-brief-<pacote>-INDEX.md` + um brief por `branch_id` — ver [`docs/L3_MAPEAMENTO_CONVERSA.md`](../../../docs/L3_MAPEAMENTO_CONVERSA.md).
+
 ---
 
 ## Triggers
@@ -36,7 +37,7 @@ Fluxo: decisão → brief formal (ramo forte) → contrato de slots no handcraft
 | Usuário diz / contexto | Modo |
 |------------------------|------|
 | `Brief TE: <ramo>` / `Brief: <Subtópico> — <branch_id>` | **B** — brief 4/4 formal |
-| `Mapeamento L3: <Subtópico>` (+ Fase 3b) | **B** por ramo forte |
+| `Mapeamento L3: <Subtópico>` (+ Fase 3b) | **B** por ramo forte — **obrigatório** nesta conversa |
 | `Pipeline completo:` / `Paridade Adolescente:` / `+ L3 bespoke` | Resolver briefs pendentes (**B**) antes de escalar |
 | Handcraft / lote gNN / estudo reverso TE | **A** — metáfora + slots no JSON |
 | `Implementar molde: <ramo>` | Ler brief existente → `@docs/VARIANT_MOLDS.md` (não codar sem pedido) |
@@ -202,8 +203,11 @@ Falha → reescrever; **não** escalar handcraft do ramo nem React.
 ## Invocação rápida (copiar)
 
 ```text
-@docs/PROMPT_VARIANTES_NEUROSLIDES.md
+@docs/RAMO_FORTE_QUICK_REF.md
 @docs/L3_MAPEAMENTO_CONVERSA.md
+@docs/L3_BRIEF_TEMPLATE.md
+@artifacts/l3-brief-FLAGSHIP-INDEX.md
+@docs/PROMPT_VARIANTES_NEUROSLIDES.md
 @.cursor/skills/brief-enfermagem/SKILL.md
 @.cursor/skills/brief-enfermagem/reference-pacotes.md
 @data/catalog-migration/handcraft-registry.json
