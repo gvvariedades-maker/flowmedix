@@ -51,6 +51,8 @@ Refs locais: [`reference-metaforas.md`](reference-metaforas.md) · [`reference-r
 Playbook: `data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json`  
 Guideline: `docs/LINGUA_PORTUGUESA_GUIDELINES.md`
 
+Corpo do brief (taxonomia `*-funnel`/trilhos PT, contrato `correct`/EXCETO, densidade, handoff): `@docs/PROMPT_VARIANTES_NEUROSLIDES.md` — **linkar**, não copiar.
+
 ---
 
 ## Dois modos (eficiência)
@@ -161,9 +163,9 @@ Detalhe + ícones: [`reference-metaforas.md`](reference-metaforas.md).
 | `concept_map` | Terreno + pegadinha-âncora | Gabarito / letra |
 | `logic_flow` | Decisões + gabarito + “Em similares…” | Só paráfrase de option |
 | `golden_rule` | `rows` portátil | Row “Gabarito letra X” |
-| `danger_zone` | 1 card/letra errada + transferência | `correct` repetido |
+| `danger_zone` | 1 card/letra errada + transferência | `correct` repetido; frase-coringa EXCETO |
 
-Densidade alvo ≤110 chars (`detail` / `step` / `value`).
+Densidade alvo ≤110 chars (`detail` / `step` / `value`). Taxonomia kebab completa: `@docs/PROMPT_VARIANTES_NEUROSLIDES.md` § taxonomia.
 
 ---
 
@@ -172,8 +174,9 @@ Densidade alvo ≤110 chars (`detail` / `step` / `value`).
 | `layout_variant` / pacote | Uso |
 |---------------------------|-----|
 | `pt-text-zones` | Dito / inferido / extrapolado |
-| `pt-crase-funnel` | Funil 3 testes |
+| `pt-crase-funnel` | Funil 3 testes (crase a/à) |
 | `pt-clitic-rail` | Próclise / ênclise / mesóclise |
+| `pt-comma-rail` | Vírgula — o que isola; S\|V livre; vocativo |
 | `pt-period-rail` | Período → oração → tipo |
 | `pt-subject-focus` | Núcleo do sujeito |
 | `pt-regency-arrow` | Regente → prep → complemento |
@@ -181,7 +184,7 @@ Densidade alvo ≤110 chars (`detail` / `step` / `value`).
 | `pt-exceto-arena` | 4 corretas × 1 intrusa |
 | `pt-rewrite-diff` | Reescrita semântica |
 
-Prioridade React sugerida: crase / colocação → EXCETO → período / núcleos → text-zones.
+Prioridade React sugerida: crase / colocação / pontuação → EXCETO → período / núcleos → text-zones.
 
 ---
 
@@ -195,9 +198,10 @@ Antes de declarar brief OK:
 - [ ] Contrato JSON + palavras-gatilho por slot
 - [ ] Wire: gesto, estado inicial → final (cada slide)
 - [ ] Par concept_map ↔ danger_zone
-- [ ] DoD: 375px legível, 0 hardcode de gabarito no componente, ≤7 slots/tela
+- [ ] DoD: 375px legível, 0 hardcode de gabarito no componente, ≤7 slots/tela, slots ≤110c
 - [ ] Path salvo: `artifacts/l3-brief-lingua-portuguesa-<branch_id>.md`
 - [ ] Barra TE: tap = decisão; vontade de estudar
+- [ ] (Flagship) opcional: `Design visual: <ramo>` via `avant-neuroslides-visual` antes de React
 
 Falha → reescrever brief; **não** escalar handcraft do ramo nem React.
 
@@ -243,7 +247,11 @@ Brief: <path> | n/a (genérico)
 
 1. Arquivo `artifacts/l3-brief-lingua-portuguesa-<branch_id>.md`
 2. Checklist Gate 3b marcado
-3. Próximo passo: `Handcraft:` âncora **ou** `Implementar molde: <ramo>` (só se usuário pedir)
+3. (Opcional flagship) `Design visual: <ramo>` — `avant-neuroslides-visual`
+4. Próximo passo: `Handcraft:` âncora **ou** `Implementar molde: <ramo>` (só se usuário pedir)
+5. Se React: `@docs/VARIANT_MOLDS.md` §3 + gates pacote — `audit:l3-mold-gap` · `e2e/visual-mold-regression` · `capture:questao-review` (ver `@docs/PROMPT_VARIANTES_NEUROSLIDES.md` §5)
+
+**Wiring:** brief **nomeia** `layout_variant`; JSON handcraft **omite** — player resolve via mapa do ramo/subtópico.
 
 ---
 

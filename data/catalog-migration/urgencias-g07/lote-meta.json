@@ -13,5 +13,11 @@
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
     "examples/questao-premium-urgencias-rcp.json"
   ],
-  "notes": "g07 — SAVC acesso IV/IO · vasopressores PCR · vasopressor SAVC · ventilação pós-RCP SAMU · opioides naloxona · SAMU hipoglicemia · C/E superfície firme · C/E frequência compressões"
+  "notes": "g07 — SAVC acesso IV/IO · vasopressores PCR · vasopressor SAVC · ventilação pós-RCP SAMU · opioides naloxona · SAMU hipoglicemia · C/E superfície firme · C/E frequência compressões",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

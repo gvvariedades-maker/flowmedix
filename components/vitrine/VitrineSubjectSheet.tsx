@@ -9,6 +9,7 @@ import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 import type { VitrineGrupoSubtopico } from '@/lib/vitrine/types';
 import { labelQuestoes } from '@/lib/labelQuestoes';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { cn } from '@/lib/utils';
 import { VitrineProgressRing } from '@/components/vitrine/VitrineProgressRing';
 import { VitrineQuestaoList } from '@/components/vitrine/VitrineQuestaoList';
@@ -191,7 +192,8 @@ export function VitrineSubjectSheet({
                     slug={firstSlug}
                     estudarQuery={estudarQuery}
                     className={cn(
-                      'btn-editorial-primary flex min-h-[48px] w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-black uppercase tracking-wider',
+                      vitrineBrand.buttonPrimary,
+                      'flex min-h-[48px] w-full items-center justify-center rounded-xl px-4 py-3 text-sm font-black uppercase tracking-wider',
                     )}
                   >
                     Entrar no assunto

@@ -1,0 +1,33 @@
+{
+  "lote": "concordancia-verbal-e-nominal-g05",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Concordância verbal e nominal",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_concordancia",
+  "cluster": "Concordância — lote 5/6",
+  "total": 8,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-concordancia-nucleo-sjrp.json",
+  "slugs": [
+    "cebraspe-ces-concordancia-texto-cg1a1a-relacao-entre-sustentab-3698155",
+    "cebraspe-ces-concordancia-texto-cg2a1imagino-que-a-escrita-nas-3705180",
+    "avancasp-ag-concordancia-leia-o-texto-a-seguir-para-responder-3709814",
+    "avancasp-of-concordancia-era-uma-hora-e-quarenta-e-um-minutos-3725105",
+    "avancasp-tla-concordancia-a-maior-parte-dos-torcedores-aderiu-3726057",
+    "avancasp-ag-concordancia-mal-iniciara-seu-discurso-o-deputado-3727002",
+    "quadrix-aux-concordancia-texto-para-a-questao-imagine-um-time-3738655",
+    "avancasp-aco-concordancia-havia-alguma-coisa-errada-com-o-rei-3738890"
+  ],
+  "note": "Lote 5/6 pt_concordancia M13",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/concordancia-verbal-e-nominal-g05.json"
+  }
+}

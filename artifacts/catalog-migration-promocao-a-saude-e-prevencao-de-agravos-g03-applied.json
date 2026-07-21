@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T17:25:53.570Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+    "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+    "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+    "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+    "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:58:50.468Z",
+  "lote": "classes-de-palavras-g07",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-tec-classes-cazo-presenca-de-animais-selvagens-b-3835993",
+    "cpcon-uepb-a-classes-para-responder-a-questao-texto-ii-fi-3836484",
+    "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913820",
+    "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393",
+    "instituto-ao-classes-15-07-2026-19-33-55-88-130-131-leia-3840780",
+    "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840898",
+    "instituto-ao-classes-o-texto-a-seguir-refere-se-a-questao-3841143",
+    "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3840776"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-tec-classes-cazo-presenca-de-animais-selvagens-b-3835993",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-classes-para-responder-a-questao-texto-ii-fi-3836484",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913820",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ao-classes-15-07-2026-19-33-55-88-130-131-leia-3840780",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840898",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ao-classes-o-texto-a-seguir-refere-se-a-questao-3841143",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3840776",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

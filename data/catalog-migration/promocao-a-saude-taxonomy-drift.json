@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-07-20T15:01:53.377Z",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "slug_segment": "promocao-a-saude-e-prevencao-de-agravos",
+  "manifest_slugs": 110,
+  "catalog_rows_titulo_promocao": 234,
+  "missing_meta_subtopico": [],
+  "infer_summary": {
+    "available": true,
+    "scanned": 236,
+    "same_subtopico": 129,
+    "applicable_moves": 0,
+    "errors": 18,
+    "by_destination": {}
+  },
+  "manifest_infer_exits": [],
+  "cross_package_slug_refs": [
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "lote": "saude-da-crianca-g01",
+      "pacote_subtopico": "Saúde da Criança",
+      "role": "slug"
+    },
+    {
+      "slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "lote": "saude-da-mulher-g27",
+      "pacote_subtopico": "Saúde da Mulher",
+      "role": "anchor_slug"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "lote": "enfermagem-do-trabalho-g03",
+      "pacote_subtopico": "Enfermagem do Trabalho",
+      "role": "slug"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "lote": "saude-adolescente-g02",
+      "pacote_subtopico": "Saúde do Adolescente",
+      "role": "slug"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "lote": "saude-da-crianca-g02",
+      "pacote_subtopico": "Saúde da Criança",
+      "role": "slug"
+    },
+    {
+      "slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "lote": "enfermagem-do-trabalho-g04",
+      "pacote_subtopico": "Enfermagem do Trabalho",
+      "role": "slug"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "lote": "historia-enfermagem-g01",
+      "pacote_subtopico": "História da Enfermagem",
+      "role": "slug"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+      "lote": "enfermagem-do-trabalho-g04",
+      "pacote_subtopico": "Enfermagem do Trabalho",
+      "role": "slug"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+      "lote": "saude-da-crianca-g03",
+      "pacote_subtopico": "Saúde da Criança",
+      "role": "slug"
+    },
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "lote": "enfermagem-do-trabalho-g04",
+      "pacote_subtopico": "Enfermagem do Trabalho",
+      "role": "slug"
+    },
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "lote": "enfermagem-do-trabalho-g05",
+      "pacote_subtopico": "Enfermagem do Trabalho",
+      "role": "anchor_slug"
+    },
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "lote": "enfermagem-do-trabalho-g05",
+      "pacote_subtopico": "Enfermagem do Trabalho",
+      "role": "golden_reference"
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "lote": "urgencias-g37",
+      "pacote_subtopico": "Urgências e Emergências",
+      "role": "slug"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+      "lote": "saude-da-crianca-g06",
+      "pacote_subtopico": "Saúde da Criança",
+      "role": "slug"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "lote": "saude-adolescente-g02",
+      "pacote_subtopico": "Saúde do Adolescente",
+      "role": "slug"
+    },
+    {
+      "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "lote": "doencas-bacterianas-g05",
+      "pacote_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "role": "slug"
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+      "lote": "enfermagem-do-trabalho-g05",
+      "pacote_subtopico": "Enfermagem do Trabalho",
+      "role": "slug"
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "lote": "enfermagem-do-trabalho-g05",
+      "pacote_subtopico": "Enfermagem do Trabalho",
+      "role": "slug"
+    }
+  ],
+  "manifest_overlap_other_pacotes": [],
+  "gate_blockers": [],
+  "next_steps": [
+    "npm run audit:subtopico-inventory -- \"--subtopico=Promoção à Saúde e Prevenção de Agravos\"",
+    "npm run audit:taxonomy-gate -- \"--subtopico=Promoção à Saúde e Prevenção de Agravos\"",
+    "npm run catalog:infer-subtopico -- \"--subtopico=Promoção à Saúde e Prevenção de Agravos\" --dry-run",
+    "Revisar tier amarelo/vermelho; catalog:infer-subtopico --apply somente com pedido explícito",
+    "Remover do manifest Promoção slugs que saírem para outro pacote (manifest_infer_exits)",
+    "Cross-package: manter meta.subtopico canônico do pacote dono — não renomear modulo_slug (padrão Adolescente/Vias)",
+    "Corrigir missing_meta_subtopico antes de re-rodar taxonomy-gate"
+  ]
+}

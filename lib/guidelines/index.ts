@@ -38,6 +38,24 @@ import { TUBERCULOSE_MS } from '@/lib/guidelines/tuberculose';
 import { URGENCIAS_RCP_SBV } from '@/lib/guidelines/urgencias';
 import { URGENCIAS_PROTOCOLOS_EMERGENCIA } from '@/lib/guidelines/urgenciasProtocolos';
 import { VIAS_ADMINISTRACAO_COFEN } from '@/lib/guidelines/viasAdministracao';
+import {
+  PT_CLASSES_PALAVRAS,
+  PT_COESAO_CONECTIVOS,
+  PT_COLOCACAO_PRONOMINAL,
+  PT_CONCORDANCIA,
+  PT_CRASE_CONCURSOS,
+  PT_DENOTACAO_CONOTACAO,
+  PT_FORMACAO_PALAVRAS,
+  PT_ORACOES_SUBORDINADAS,
+  PT_PONTUACAO,
+  PT_REGENCIA,
+  PT_SINONIMOS_POLISSEMIA,
+  PT_SUJEITO_PREDICADO,
+  PT_TERMOS_ORACAO,
+  PT_TIPOLOGIA,
+  PT_VOCABULO_QUE_SE,
+  PT_VERBOS,
+} from '@/lib/guidelines/linguaPortuguesa';
 import type { GuidelineTable } from '@/lib/guidelines/types';
 
 export type { GuidelineEntry, GuidelineTable } from '@/lib/guidelines/types';
@@ -81,6 +99,29 @@ export { ATENCAO_BASICA_PNAB } from '@/lib/guidelines/atencaoBasica';
 export { RESPIRATORIO_CRONICO_MS } from '@/lib/guidelines/respiratorioCronico';
 export { SAUDE_MENTAL_MS } from '@/lib/guidelines/saudeMental';
 export { SEGURANCA_PACIENTE_PNSP } from '@/lib/guidelines/segurancaPaciente';
+export {
+  PT_CLASSES_PALAVRAS,
+  PT_COESAO_CONECTIVOS,
+  PT_COLOCACAO_PRONOMINAL,
+  PT_CONCORDANCIA,
+  PT_CRASE_CONCURSOS,
+  PT_DENOTACAO_CONOTACAO,
+  PT_FORMACAO_PALAVRAS,
+  PT_ORACOES_SUBORDINADAS,
+  PT_PONTUACAO,
+  PT_REGENCIA,
+  PT_SINONIMOS_POLISSEMIA,
+  PT_SUJEITO_PREDICADO,
+  PT_TERMOS_ORACAO,
+  PT_TIPOLOGIA,
+  PT_VOCABULO_QUE_SE,
+  PT_VERBOS,
+  getLinguaPortuguesaGuidelineP0,
+  getLinguaPortuguesaGuidelineP1,
+  getLinguaPortuguesaGuidelineP2,
+  getLinguaPortuguesaGuidelineP3,
+  getLinguaPortuguesaGuidelineAll,
+} from '@/lib/guidelines/linguaPortuguesa';
 
 /** Índice de tabelas oficiais — builders só devem usar entradas deste mapa. */
 export const GUIDELINE_TABLES: Record<string, GuidelineTable> = {
@@ -123,6 +164,22 @@ export const GUIDELINE_TABLES: Record<string, GuidelineTable> = {
   [ANATOMIA_TERMINOLOGIA.id]: ANATOMIA_TERMINOLOGIA,
   [FISIOLOGIA_HOMEOSTASE.id]: FISIOLOGIA_HOMEOSTASE,
   [PROCEDIMENTOS_DIVERSOS_ASSEPSIA.id]: PROCEDIMENTOS_DIVERSOS_ASSEPSIA,
+  [PT_CRASE_CONCURSOS.id]: PT_CRASE_CONCURSOS,
+  [PT_COLOCACAO_PRONOMINAL.id]: PT_COLOCACAO_PRONOMINAL,
+  [PT_PONTUACAO.id]: PT_PONTUACAO,
+  [PT_CONCORDANCIA.id]: PT_CONCORDANCIA,
+  [PT_REGENCIA.id]: PT_REGENCIA,
+  [PT_TERMOS_ORACAO.id]: PT_TERMOS_ORACAO,
+  [PT_ORACOES_SUBORDINADAS.id]: PT_ORACOES_SUBORDINADAS,
+  [PT_TIPOLOGIA.id]: PT_TIPOLOGIA,
+  [PT_SUJEITO_PREDICADO.id]: PT_SUJEITO_PREDICADO,
+  [PT_CLASSES_PALAVRAS.id]: PT_CLASSES_PALAVRAS,
+  [PT_FORMACAO_PALAVRAS.id]: PT_FORMACAO_PALAVRAS,
+  [PT_VERBOS.id]: PT_VERBOS,
+  [PT_COESAO_CONECTIVOS.id]: PT_COESAO_CONECTIVOS,
+  [PT_SINONIMOS_POLISSEMIA.id]: PT_SINONIMOS_POLISSEMIA,
+  [PT_DENOTACAO_CONOTACAO.id]: PT_DENOTACAO_CONOTACAO,
+  [PT_VOCABULO_QUE_SE.id]: PT_VOCABULO_QUE_SE,
 };
 
 /** Subtópico → uma ou mais tabelas (mescladas em runtime). */
@@ -193,6 +250,46 @@ export const SUBTOPICO_GUIDELINE_IDS: Record<string, string[]> = {
     RESPIRATORIO_CRONICO_MS.id,
     FERIDAS_QUEIMADURAS_MS.id,
   ],
+  /** Conhecimentos Básicos — fora dos 41 de Enfermagem; cards PT (17 cards) */
+  'Língua Portuguesa': [
+    PT_CRASE_CONCURSOS.id,
+    PT_COLOCACAO_PRONOMINAL.id,
+    PT_PONTUACAO.id,
+    PT_CONCORDANCIA.id,
+    PT_REGENCIA.id,
+    PT_TERMOS_ORACAO.id,
+    PT_ORACOES_SUBORDINADAS.id,
+    PT_TIPOLOGIA.id,
+    PT_SUJEITO_PREDICADO.id,
+    PT_CLASSES_PALAVRAS.id,
+    PT_FORMACAO_PALAVRAS.id,
+    PT_VERBOS.id,
+    PT_COESAO_CONECTIVOS.id,
+    PT_SINONIMOS_POLISSEMIA.id,
+    PT_DENOTACAO_CONOTACAO.id,
+    PT_VOCABULO_QUE_SE.id,
+  ],
+  Crase: [PT_CRASE_CONCURSOS.id],
+  'Pronomes e colocação pronominal': [PT_COLOCACAO_PRONOMINAL.id],
+  Pontuação: [PT_PONTUACAO.id],
+  'Concordância verbal e nominal': [PT_CONCORDANCIA.id],
+  'Regência verbal e nominal': [PT_REGENCIA.id],
+  'Termos da oração': [PT_TERMOS_ORACAO.id],
+  'Orações coordenadas e subordinadas': [PT_ORACOES_SUBORDINADAS.id],
+  'Tipologia e gêneros textuais': [PT_TIPOLOGIA.id],
+  'Coesão, coerência e conectivos': [PT_COESAO_CONECTIVOS.id],
+  'Classes de palavras': [PT_CLASSES_PALAVRAS.id, PT_FORMACAO_PALAVRAS.id],
+  'Verbos — tempos, modos e vozes': [PT_VERBOS.id],
+  'Frase, oração e período': [PT_SUJEITO_PREDICADO.id],
+  'Sujeito e predicado': [PT_SUJEITO_PREDICADO.id],
+  'Sintaxe — questões mescladas': [
+    PT_SUJEITO_PREDICADO.id,
+    PT_TERMOS_ORACAO.id,
+    PT_ORACOES_SUBORDINADAS.id,
+  ],
+  'Sinônimos, antônimos e polissemia': [PT_SINONIMOS_POLISSEMIA.id],
+  'Denotação, conotação e figuras de linguagem': [PT_DENOTACAO_CONOTACAO.id],
+  'Vocábulo "que" e partícula "se"': [PT_VOCABULO_QUE_SE.id],
 };
 
 export function getGuidelineTablesForSubtopico(subtopico: string): GuidelineTable[] {

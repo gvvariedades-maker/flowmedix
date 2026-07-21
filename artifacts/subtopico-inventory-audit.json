@@ -1,40 +1,23 @@
 {
-  "generated_at": "2026-07-10T16:06:28.793Z",
-  "total_scanned": 191,
+  "generated_at": "2026-07-21T07:31:53.107Z",
+  "total_scanned": 0,
   "filters": {
-    "subtopico_contains": "cuidados na administração de medicamentos"
+    "subtopico_contains": "verbos — tempos, modos e vozes"
   },
   "summary": {
-    "unique_titulo_aula": 1,
-    "unique_meta_subtopico": 2,
+    "unique_titulo_aula": 0,
+    "unique_meta_subtopico": 0,
     "mismatch_count": 0,
     "missing_titulo_aula": 0,
-    "missing_meta_subtopico": 7,
+    "missing_meta_subtopico": 0,
     "non_canonical_titulo_aula": 0,
     "non_canonical_meta_subtopico": 0,
     "catch_all_bucket_count": 0,
-    "canonical_titulo_rows": 191,
-    "canonical_meta_rows": 184
+    "canonical_titulo_rows": 0,
+    "canonical_meta_rows": 0
   },
-  "by_titulo_aula": [
-    {
-      "label": "Cuidados na Administração de Medicamentos",
-      "count": 191,
-      "canonical": true
-    }
-  ],
-  "by_meta_subtopico": [
-    {
-      "label": "Cuidados na Administração de Medicamentos",
-      "count": 184,
-      "canonical": true
-    },
-    {
-      "label": "(vazio)",
-      "count": 7,
-      "canonical": false
-    }
-  ],
+  "by_titulo_aula": [],
+  "by_meta_subtopico": [],
   "non_canonical_titulo_aula": [],
   "non_canonical_meta_subtopico": [],
   "catch_all_buckets": [],

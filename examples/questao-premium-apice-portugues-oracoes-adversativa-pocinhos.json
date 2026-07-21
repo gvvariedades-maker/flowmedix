@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "banca": "ÁPICE",
+    "prova": "ACE (Pref Pocinhos)",
+    "orgao": "Pref. Pocinhos",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Orações coordenadas e subordinadas",
+    "pedagogical_branch": "pt_oracoes_subordinadas",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "agent:elias-m07c-te-simples-nota10",
+      "guideline_snapshot": "M07c Elias TE-simples — trilho período → dependência → conectivo → tipo · âncora coordenada adversativa",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-oracoes-subordinadas-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Orações coordenadas e subordinadas — dependência, conectivos e classificação",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "coordenação × subordinação",
+          "oração coordenada sindética adversativa",
+          "conectivos adversativos (mas, porém, contudo)",
+          "conectivos aditivos (e, nem)",
+          "conectivos alternativos (ora…ora, quer…quer)",
+          "conectivos conclusivos (portanto, por isso)",
+          "pergunta-teste de dependência"
+        ]
+      },
+      {
+        "id": "portugues-caderno-2025-2026-q201-400",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT 2025–2026 — tec 3558979 (Ápice ACE Pref. Pocinhos 2025)",
+        "year": 2025,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito A",
+          "coordenada adversativa"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m07c-te-simples-nota10",
+      "a4_reviewed_at": "2026-07-20"
+    }
+  },
+  "question_data": {
+    "instruction": "Sabendo que o período composto por coordenação apresenta orações sintaticamente independentes, assinale a alternativa que apresenta uma oração coordenada sindética adversativa.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Você prega lealdade, e age de modo desleal?",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Tanto leciona quanto advoga.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A mulher ora o agradava, ora o ofendia.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Vocês são especiais em minha vida, por isso não vivo sem vocês.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Dezenove sem-terra morreram no local, e dois, a caminho do hospital.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Trilho do período",
+      "chip_label": "Dependência primeiro",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Orações coordenadas e subordinadas"
+      },
+      "items": [
+        {
+          "label": "1. Dependência",
+          "detail": "Coordenada = orações independentes. Subordinada = uma depende da outra.",
+          "icon": "GitBranch"
+        },
+        {
+          "label": "2. Conectivo",
+          "detail": "O conectivo revela o sentido: adição, oposição, conclusão, alternância…",
+          "icon": "Link"
+        },
+        {
+          "label": "3. Pergunta-teste",
+          "detail": "«Para quê?» / «Embora?» → subordinada. «E agora?» oposição → adversativa.",
+          "icon": "HelpCircle"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Confundir «e» aditivo com adversativo — teste a oposição de ideias.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Coordenação: nenhuma oração é termo da outra."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Orações coordenadas e subordinadas"
+      },
+      "steps": [
+        "Comando pede coordenada sindética adversativa — primeiro confirmar coordenação (orações independentes).",
+        "B: «tanto…quanto» = adição correlata → eliminar.",
+        "C: «ora…ora» = alternância → eliminar.",
+        "D: «por isso» = conclusão → eliminar.",
+        "E: «e» liga fatos paralelos (adição), sem oposição clara → eliminar.",
+        "A: «prega lealdade» × «age desleal» + «e» com sentido oposto → adversativa.",
+        "Em similares: marque dependência → leia o conectivo → só então rotule o tipo."
+      ],
+      "footer_rule": "Adversativa = oposição de ideias entre orações coordenadas."
+    },
+    {
+      "type": "golden_rule",
+      "content": "Conectivos de coordenação — decore o sentido",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Orações coordenadas e subordinadas"
+      },
+      "rows": [
+        {
+          "label": "Aditiva",
+          "value": "e, nem, tanto…quanto — soma ideias"
+        },
+        {
+          "label": "Adversativa",
+          "value": "mas, porém, contudo, todavia — opõe ideias"
+        },
+        {
+          "label": "Alternativa",
+          "value": "ora…ora, quer…quer, seja…seja — alternância"
+        },
+        {
+          "label": "Conclusiva",
+          "value": "portanto, por isso, logo, então — conclusão"
+        },
+        {
+          "label": "Teste",
+          "value": "Coordenada: orações autônomas; subordinada: uma funciona como termo"
+        }
+      ],
+      "footer_rule": "Sindética = com conectivo explícito."
+    },
+    {
+      "type": "danger_zone",
+      "content": "Trocar o valor do conectivo",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Orações coordenadas e subordinadas"
+      },
+      "items": [
+        {
+          "label": "B — tanto…quanto",
+          "detail": "Parece coordenação forte.",
+          "correct": "É coordenada aditiva correlata — soma, não opõe."
+        },
+        {
+          "label": "C — ora…ora",
+          "detail": "Tem dois verbos coordenados.",
+          "correct": "Alternativa — alterna ações, não adversativa."
+        },
+        {
+          "label": "D — por isso",
+          "detail": "Liga duas orações.",
+          "correct": "Conclusiva — indica consequência, não oposição."
+        },
+        {
+          "label": "E — e",
+          "detail": "«e» sempre parece adversativo na fala.",
+          "correct": "Aqui é aditivo (dois fatos paralelos) — sem contraste lealdade × deslealdade."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Podem usar «mas» explícito.",
+          "correct": "Mesmo trilho: oposição clara entre orações independentes."
+        }
+      ],
+      "footer_rule": "Leia o sentido do conectivo — não rotule pelo formato."
+    }
+  ]
+}

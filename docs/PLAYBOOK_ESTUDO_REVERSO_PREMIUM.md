@@ -15,7 +15,7 @@ Leitura estimada: **~12 minutos**. Guia para produzir e refatorar `reverse_study
 | Objetivo | Aluno **entender a questão** e **não errar questões parecidas** em provas de concurso |
 | Jornada | `pergunta` (prova real) → `gabarito` → `estudo reverso` (4 NeuroSlides) |
 | Questão | Espelho fiel do caderno: `instruction` + `options` — **sem** cola legal/didática |
-| `text_fragment` | Só se existir **literalmente** no PDF (texto base, caso do caderno) — **não** usar para Art./mnemônico |
+| `text_fragment` | Só se existir **literalmente** no PDF (texto base, caso do caderno) — **não** usar para Art./mnemônico. **Não** substitui `figures[]` para charge/tirinha raster — ver `docs/DECISAO_QUESTAO_FIGURES.md` |
 | Fora de escopo | Plantão, conduta clínica, “onde o TEC atua na UBS” — outro produto |
 
 Referências legais, tabelas e mnemônicos ficam **nos slides**, depois da tentativa.

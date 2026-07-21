@@ -4,9 +4,8 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, ChevronRight, Loader2 } from 'lucide-react';
+import { QuestionHeaderBlock } from '@/components/lesson/QuestionHeaderBlock';
 import {
-  buildDerivedQuestionHeaderLine,
-  buildQuestionSubjectLine,
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
 import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
@@ -257,13 +256,11 @@ export function PublicSimuladoRunner({ bundle }: PublicSimuladoRunnerProps) {
             <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5">
               {slimDados.meta && (
                 <>
-                  <p className="text-[11px] font-bold uppercase tracking-wide text-cyan-400">
-                    {slimDados.meta.header_line?.trim() ||
-                      buildDerivedQuestionHeaderLine(slimDados.meta)}
-                  </p>
-                  <p className="mt-1 text-sm font-bold text-white">
-                    {buildQuestionSubjectLine(slimDados.meta)}
-                  </p>
+                  <QuestionHeaderBlock
+                    meta={slimDados.meta}
+                    subjectClassName="border-l-[3px] pl-2 text-sm font-bold leading-snug text-white"
+                    provenanceClassName="text-[11px] font-bold uppercase tracking-wide text-cyan-400"
+                  />
                   <div className="my-4 h-px bg-white/10" />
                 </>
               )}

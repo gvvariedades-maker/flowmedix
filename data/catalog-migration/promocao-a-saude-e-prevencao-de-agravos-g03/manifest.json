@@ -1,0 +1,18 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g03",
+  "exported_at": "2026-07-20T16:04:54.139Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g03/manifest.json"
+  },
+  "slugs": [
+    "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+    "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+    "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+    "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5"
+  ]
+}

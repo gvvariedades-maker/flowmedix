@@ -23,5 +23,11 @@
     "Urgências — conceito geral": 7,
     "Default — sem âncora temática": 1
   },
-  "notes": "g30 — 1º lote cauda urgencias_generico · 8/8 READY strict-v2 · organofosforados colinérgica qualitativa · fratura exposta → trauma inferido · demais generico"
+  "notes": "g30 — 1º lote cauda urgencias_generico · 8/8 READY strict-v2 · organofosforados colinérgica qualitativa · fratura exposta → trauma inferido · demais generico",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

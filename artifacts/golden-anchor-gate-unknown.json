@@ -1,0 +1,18 @@
+{
+  "subtopico": "Verbos — tempos, modos e vozes",
+  "pacote_prefix": "unknown",
+  "gate": "warn",
+  "handcraft_allowed": true,
+  "cluster_report": null,
+  "goldens_needed": 0,
+  "missing": [],
+  "covered": [],
+  "warnings": [
+    "Cluster report ausente — rode cluster:<pacote> ou Mapeamento L3 antes do g01."
+  ],
+  "reasons": [
+    "Sem cluster_report não há lista goldens_needed; handcraft permitido com aviso.",
+    "Skill: avant-golden-anchor-bootstrap após gerar o cluster."
+  ],
+  "artifact": "artifacts/golden-anchor-gate-unknown.json"
+}

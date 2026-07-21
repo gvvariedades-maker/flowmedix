@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-20T15:59:47.670Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g02",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3536
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3534
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3575
+    },
+    {
+      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3529
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 3581
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3545
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3614
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3584
+    }
+  ]
+}

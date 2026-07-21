@@ -1,5 +1,5 @@
 {
-  "description": "Promoção à Saúde e Prevenção de Agravos — migração híbrida completa (130 questões)",
+  "description": "Promoção à Saúde e Prevenção de Agravos — 110 questões (2 Crônicas + 16 cross-package + 2 Imunização excluídas 2026-07-20)",
   "questoes": [
     "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
     "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
@@ -14,20 +14,15 @@
     "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
     "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
     "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-1",
-    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
     "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
     "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4",
     "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
-    "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
     "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
     "cogeps-unioeste-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-7",
     "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
     "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
-    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
-    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
     "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
     "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
-    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
     "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
     "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
     "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
@@ -43,10 +38,8 @@
     "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
     "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
     "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
-    "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
     "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
     "fepese-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-6",
-    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
     "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
     "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
     "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
@@ -61,26 +54,19 @@
     "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0",
     "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1",
     "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2",
-    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
-    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
     "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-6",
     "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0",
-    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
     "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2",
     "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8",
-    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
     "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2",
     "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
     "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
     "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-5",
     "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
-    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-2",
     "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-3",
-    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
     "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
     "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
     "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
-    "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
     "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
     "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
     "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4",
@@ -88,9 +74,7 @@
     "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
     "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
     "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
-    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
     "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
-    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
     "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
     "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
     "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
@@ -107,7 +91,6 @@
     "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0",
     "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0",
     "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
-    "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
     "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1",
     "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
     "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
@@ -121,15 +104,136 @@
     "ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3",
     "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
     "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2",
-    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
     "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-2",
     "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
-    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
-    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
     "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5",
     "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-7",
     "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8",
     "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-2",
     "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3"
+  ],
+  "reclassified_out": [
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-2",
+      "to": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "to": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "at": "2026-07-20"
+    }
+  ],
+  "cross_package_excluded": [
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "owner_subtopico": "Saúde da Criança",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "owner_subtopico": "Saúde da Mulher",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "owner_subtopico": "Saúde do Adolescente",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "owner_subtopico": "Saúde da Criança",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "owner_subtopico": "História da Enfermagem",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+      "owner_subtopico": "Saúde da Criança",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "owner_subtopico": "Urgências e Emergências",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+      "owner_subtopico": "Saúde da Criança",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "owner_subtopico": "Saúde do Adolescente",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "owner_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    }
+  ],
+  "imunizacao_overlap_excluded": [
+    {
+      "slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
+      "owner_subtopico": "Imunização",
+      "reason": "manifest_overlap_imunizacao",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+      "owner_subtopico": "Imunização",
+      "reason": "manifest_overlap_imunizacao",
+      "at": "2026-07-20"
+    }
   ]
 }

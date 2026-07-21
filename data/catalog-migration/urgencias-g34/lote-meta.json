@@ -24,5 +24,11 @@
     "Urgências — conceito geral": 3,
     "Default — sem âncora temática": 4
   },
-  "notes": "g34 — 5º lote cauda urgencias_generico · 8/8 READY strict-v2 · 6 generico + 2 trauma (APH sinalização · fratura úmero/radial) · deterioração UTI · emergência hipertensiva · hipercalemia · broncoaspiração · abdome agudo · obstrução intestinal"
+  "notes": "g34 — 5º lote cauda urgencias_generico · 8/8 READY strict-v2 · 6 generico + 2 trauma (APH sinalização · fratura úmero/radial) · deterioração UTI · emergência hipertensiva · hipercalemia · broncoaspiração · abdome agudo · obstrução intestinal",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

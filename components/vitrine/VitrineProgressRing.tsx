@@ -1,6 +1,8 @@
 'use client';
 
 import { ProgressRing } from '@/components/ui/progress-ring';
+import { VITRINE_BRAND_HEX, vitrineBrand } from '@/lib/vitrine/vitrineBrand';
+import { cn } from '@/lib/utils';
 
 type VitrineProgressRingProps = {
   trabalhadas: number;
@@ -25,6 +27,7 @@ export function VitrineProgressRing({
         size={size}
         strokeWidth={strokeWidth}
         variant={todas ? 'success' : 'brand'}
+        strokeColor={todas ? undefined : VITRINE_BRAND_HEX}
       />
       <div className="absolute inset-0 flex select-none flex-col items-center justify-center">
         <span
@@ -37,7 +40,7 @@ export function VitrineProgressRing({
           de {total}
         </span>
         {todas ? (
-          <span className="mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide text-green-600">
+          <span className={cn('mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide', vitrineBrand.text)}>
             Completo
           </span>
         ) : null}

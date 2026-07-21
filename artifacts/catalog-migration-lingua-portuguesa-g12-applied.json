@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T15:24:23.460Z",
+  "lote": "lingua-portuguesa-g12",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-cerquilho-pontuacao-adjunto-3661696",
+    "avancasp-cerquilho-pontuacao-virgula-domingo-3662933",
+    "avancasp-fmsrc-pontuacao-reescrita-3665295",
+    "cebraspe-boa-vista-pontuacao-antes-3705140",
+    "consulplan-indaiatuba-pontuacao-adjunto-3694433",
+    "consulplan-indaiatuba-pontuacao-aposto-3694727",
+    "educapb-umbuzeiro-pontuacao-vf-reborn-3661906",
+    "selecon-tapurah-pontuacao-dois-pontos-3692813"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-cerquilho-pontuacao-adjunto-3661696",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-cerquilho-pontuacao-virgula-domingo-3662933",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-fmsrc-pontuacao-reescrita-3665295",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cebraspe-boa-vista-pontuacao-antes-3705140",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "consulplan-indaiatuba-pontuacao-adjunto-3694433",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "consulplan-indaiatuba-pontuacao-aposto-3694727",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educapb-umbuzeiro-pontuacao-vf-reborn-3661906",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-tapurah-pontuacao-dois-pontos-3692813",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

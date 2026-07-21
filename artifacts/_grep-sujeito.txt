@@ -1,0 +1,58 @@
+﻿python : Traceback (most recent call last):
+No C:\Users\TecnoInfo\AppData\Local\Temp\ps-script-f3f3b555-07b4-4e63-9c7f-7307e20f37da.ps1:77 caractere:1
++ python -c "
++ ~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<string>", line 15, in <module>
+    print(t[:2500])
+    ~~~~~^^^^^^^^^^
+  File "C:\Users\TecnoInfo\AppData\Local\Programs\Python\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2011' in position 547: character maps to <undefined>
+=== d:\AVANT\data\sources\lingua-portuguesa\portugues-caderno-2025-2026-q201-400.pdf page 47 ===
+305) 
+306) 
+ As universidades e o desafio da desigualdade social Cesar MartinsVice-reitor da Unesp (Universidade Estadual Paulista) Desde o surgimento dos primeiros agrupamentos humanos, a desigualdade tem sido uma marca das sociedades. Embora hoje esteja entre as prioridades de aþÒo demuitos governos, ela persiste como um paradoxo que alimenta a concentraþÒo de riquezas. Poucas naþ§es encontraram caminhos capazes de construir sociedades maisigualitßrias e com baixa vulnerabilidade socioecon¶mica. Atualmente, a desigualdade Ú tema de debate em universidades de vßrias partes do mundo. No entanto, durante boa parte de sua hist¾ria, essas instituiþ§es atenderam aum segmento especÝfico da populaþÒo, a elite econ¶mica, contribuindo para a estratificaþÒo social. No Brasil, nÒo foi diferente. As universidades chegaram tardiamente aopaÝs. A primeira faculdade criada, a Escola de Cirurgia da Bahia, surgiu em 1808, e o acesso ao ensino superior permaneceu, por muito tempo, restrito Ós elites. Embora tardio, o Brasil adotou relativamente cedo o modelo de universidades p·blicas, em princÝpio abertas a todos. Na prßtica, porÚm, essas instituiþ§es continuaramacessÝveis a uma parcela reduzida da sociedade, formada por jovens com boa escolarizaþÒo bßsica, o que nÒo correspondia Ó realidade da maior parte da populaþÒo. AtÚmeados do sÚculo 21, as universidades p·blicas eram poucas, e os cursos noturnos, quase inexistentes, dificultavam o acesso de pessoas de baixa renda que precisavamtrabalhar. Embora o sistema p·blico de ensino superior tenha crescido na segunda metade do sÚculo 20, o padrÒo elitizado permaneceu. Foi apenas a partir da primeira dÚcada dosÚculo 21, com polÝticas como Sisu, Prouni, Fies e a Lei de Cotas, que houve ampliaþÒo do acesso de estudantes de baixa renda, pretos, pardos, indÝgenas e egressos deescolas p·blicas, especialmente nas universidades p·blicas. Essas polÝticas alteraram o perfil do estudante universitßrio brasileiro. Hoje, a maioria das universidades p·blicas conta com programas de inclusÒo, apoio estudantil epermanÛncia, tornando esse espaþo historicamente elitista mais diverso e representativo da sociedade brasileira. Apesar dos avanþos, persistem barreiras importantes: a menor presenþa de estudantes socialmente vulnerßveis nos cursos mais concorridos, como medicina, direito eengenharias; a limitaþÒo de recursos para polÝticas de permanÛncia, como moradia, alimentaþÒo, transporte e materiais acadÛmicos; e as dificuldades adicionais deacesso
+---
+=== d:\AVANT\data\sources\lingua-portuguesa\portugues-caderno-2025-2026-q201-400.pdf page 50 ===
+310) 
+311) 
+www.tecconcursos.com.br/questoes/3698158
+CEBRASPE (CESPE) - Ana Sau (Pref Boa Vista)/Pref Boa Vista/Analista ClÝnico/2025
+LÝngua Portuguesa (PortuguÛs) - Sujeito
+Texto CG1A1A relaþÒo entre sustentabilidade e sa·de nÒo Ú nova. Desde quest§es ocupacionais, passando pela qualidade do ar, da ßgua, do solo, do uso de pesticidas, resÝduosperigosos e radioativos, os impactos do modo de produþÒo e consumo sobre o meio ambiente tÛm sempre retornado ao ser humano na forma de danos Ó sa·de. Asmudanþas climßticas sÒo um divisor de ßguas nesse processo. Eventos extremos como ondas de calor, secas e inundaþ§es modificam os habitats naturais, forþandoanimais a migrarem para novas ßreas. Essa movimentaþÒo aumenta as chances de contato entre espÚcies, inclusive a humana, e facilita a transmissÒo de pat¾genos.AlÚm disso, as alteraþ§es climßticas influenciam a distribuiþÒo de vetores, como mosquitos e carrapatos, expandindo a ßrea geogrßfica de doenþas como a malßria e adengue. Doenþas cr¶nicas, cardiovasculares e respirat¾rias tambÚm sÒo acentuadas por altas temperaturas e poluiþÒo do ar.Na linha das notÝcias aterradoras sobre o futuro, o relat¾rio Qualificando o impacto das mudanþas climßticas na sa·de humana, lanþado pelo F¾rum Econ¶micoMundial em janeiro de 2024, aponta que a mudanþa do clima pode causar atÚ 14,5 milh§es de mortes adicionais e perdas econ¶micas da ordem de 12,5 trilh§es ded¾lares ao redor do mundo atÚ 2050. A pressÒo sobre os sistemas de sa·de serß imensa, somando 1,1 trilhÒo de d¾lares em custos extras. Entre os impactos projetados,79% relacionam-se a condiþ§es de sa·de que se desenvolvem ap¾s os eventos climßticos e afetam o bem-estar de indivÝduos e comunidades. Ainda, desastres climßticose o sofrimento geradopor eventos como ondas de calor extremas e o processo de degradaþÒo dos ecossistemas exacerbam os riscos para aqueles com transtornosmentais preexistentes, o que aumenta as taxas de suicÝdio e internaþ§es hospitalares. Assim, as novas geraþ§es, que herdarÒo as consequÛncias mais duras das mudanþas climßticas, estÒo experimentando um aumento significativo de ansiedade, estresse eoutros problemas de sa·de mental, conhecidos como ansiedade climßtica ou ecoansiedade. O conceito Ú definido pela AssociaþÒo Americana de Psicologia (APA) comoum medo cr¶nico da destruiþÒo ambiental, que varia de estresse leve a transtornos clÝnicos como depressÒo, ansiedade, transtorno de estresse p¾s-traumßtico, e podeenvolver efeitos intergeracionais, em esp
+---
+=== d:\AVANT\data\sources\lingua-portuguesa\portugues-caderno-2025-2026-q201-400.pdf page 51 ===
+312) 
+313) 
+314) 
+Gabarito: A
+www.tecconcursos.com.br/questoes/3793465
+┴pice - Ag Adm (Pref R Bacamarte)/Pref R Bacamarte/2025
+LÝngua Portuguesa (PortuguÛs) - Sujeito
+Leia a charge abaixo e responda a questÒo.
+Fonte: https://blogdoaftm.com.br/charge-enem/. Analise o trecho ôEstou preparado para o Enemö e identifique a alternativa que apresenta a classificaþÒo correta do sujeito dessa oraþÒo:
+a)  composto (explÝcito).b)  indeterminado.c)  nÒo hß sujeito na oraþÒo.d)  simples (explÝcito).e)  elÝptico (ou desinencial).
+Gabarito: E
+www.tecconcursos.com.br/questoes/4024951
+┴pice - ACS (Pref Monteiro)/Pref Monteiro/2026
+LÝngua Portuguesa (PortuguÛs) - Predicado
+Leia e analise a charge a seguir para responder a questÒo 
+ Fonte: https://blogdoaftm.com.br/charge-noticiario-2/ Na oraþÒo: ôEla jß vem blindada.ö, do ponto de vista sintßtico, Ú correto afirmar que:
+a)  hß um predicado verbal na oraþÒo.b)  hß um predicado verbo-nominal na oraþÒo.c)  hß um predicado nominal na oraþÒo.d)  hß um sujeito composto na oraþÒo.e)  hß um predicado verbal e um sujeito inexistente.
+Gabarito: C
+www.tecconcursos.com.br/questoes/3450771
+IBFC - Tec Enf (SES SE)/SES SE/2025
+LÝngua Portuguesa (PortuguÛs) - Predicado
+Analise o texto e responda Ó questÒo abaixo. Texto IBordado em branco (fragmento)Querida tia LiduÝna, Hoje Ú um dia pÚssimo, como a senhora sabe. Setembro Ú, invariavelmente, um mÛs em que sinto meu corpo doer. Em meus pÚs, tenho dores que, imagino, parecemdores de quando pregos sÒo martelados contra a carne. Minha cabeþa lateja e, se o seu interior pudesse ser visto, certamente pareceria com o asfalto quente que se
+15/07/2026, 19:38 Tec Concursos - Quest§es para concursos, provas, editais, simulados.
+https://www.tecconcursos.com.br/questoes/cadernos/98534448/imprimir 51/98
+---
+=== d:\AVANT\data\sources\lingua-portuguesa\portugues-caderno-2025-2026-q201-400.pdf page 91 ===
+388) 
+Um coelho Todo mundo sabe: uma agÛncia de publicidade comemorou a Pßscoa oferecendo um coelho vivo a 20 personalidades do Rio de Janeiro. Mas o que ninguÚm sabe Ú ques¾ depois da Pßscoa o meu coelho conseguiu me encontrar. Dentro de uma gaiola, o coelho era pesado e assustadiþo. Chamava-se Osvaldo ù Osvaldo Coelho. No primeiro dia fiquei algumas horas com aquele bicho orelhudo Óminha mercÛ, num restaurante. Providenciei cenouras para Osvaldo e pensei que nÒo havia novidade alguma em tudo aquilo, pois atÚ Hollywood jß havia feito um filmemostrando um coelho num bar. O filme era Meu amigo Harvey e James Stewart, o protagonista. Quando chegou a madrugada conduzi Osvaldo para o meu lar. Apresentei-lhe o meu melhor amigo, Nelsinho Mota, que Ú um passarinho inteligente e terno, mas Osvaldoteve medo de Nelsinho e vice-versa. Decidi, entÒo, que a cada um caberia um aposento especial. Nelsinho ficaria na sala e Osvaldo no escrit¾rio. [...] Minha cozinheira foi a primeira pessoa a perceber o absurdo da situaþÒo. NÒo se pode viver com um coelho dentro de um apartamento ù disse ela. ôAzar, azia, azeiteö,respondi. ôNÒo se pode viver de maneira alguma. O coelho Ú apenas uma demonstraþÒo particularmente cruel dessa evidÛnciaö. Passaram-se dois dias: simplesmente fiquei dois dias sem voltar para casa, na esperanþa de que o coelho e a cozinheira entrassem em algum acordo. Mas o lar Ú umacoisa a que estamos tÒo habituados que sempre acabamos voltando a ele. Voltei fatigado, deitei-me, e na manhÒ seguinte me pus a assoviar enquanto aparava a barba.Ao cafÚ, a cozinheira disse: ù E o coelho?ù NÒo sei. NÒo tenho jogado no bicho ù respondi. ù Estou falando Ú no nosso coelho. (Ela disse ônossoö coelho! O malandro jß pertencia Ó minha famÝlia). ù Ah... O Osvaldo? ù disse eu. ù Faþamos o seguinte: passemos a navalha no pescoþo dele e jantemos civet de lapin! Coelho esquartejado! ù ╔ pecado comer bicho que tem nome cristÒo ù sentenciou ela. E estava certÝssima: a minha saudosa galinha, AmÚlia, morreu de velha; ninguÚm ousou preparß-la aomolho pardo. Eis senÒo quando o pr¾prio Osvaldo tomou uma atitude singular. Depois de roer a gaiola e de devorar o Canto n·mero dois, de Lautreamont ù deixando intacto o Canton·mero um, que estß impresso nas pßginas anteriores ù ele se esgueirou pelo corredor e, na sala, ficou ouvindo a nossa conversa. Alißs, o nosso silÛncio: quando ovimos, a cozinheira e eu nos calamos. Eu, principalmente, estava encabuladÝssimo, pois acabava de sugerir uma n
+---
+=== d:\AVANT\data\sources\lingua-portuguesa\portugues-caderno-2025-2026-q201-400.pdf page 92 ===

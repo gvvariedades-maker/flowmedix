@@ -13,5 +13,11 @@
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
     "examples/questao-premium-urgencias-rcp.json"
   ],
-  "notes": "g09 final RCP/SBV — VAA pós-intubação C/E · limpeza: avancasp/idecan→g24/g31 · vunesp pediátrico→g25"
+  "notes": "g09 final RCP/SBV — VAA pós-intubação C/E · limpeza: avancasp/idecan→g24/g31 · vunesp pediátrico→g25",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

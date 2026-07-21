@@ -1,0 +1,12 @@
+## O que ainda não existe (próximos passos)
+
+- [x] Guideline P0 — Crase + Colocação (`lib/guidelines/linguaPortuguesa/`)
+- [ ] Guideline P1 — Pontuação, Concordância, Regência, Termos, Orações
+- [ ] `BRANCH_DESIGN_MAP` / `SUBTOPIC_DESIGN_MAP` para PT em código
+- [x] Âncoras golden Crase em `examples/questao-premium-*-portugues-*.json` (colocação pendente)
+- [ ] Handcraft g01+ e apply Supabase
+- [x] Brief 4/4 `pt_crase` + `pt_pronomes_colocacao` + `pt_pontuacao` (`artifacts/l3-brief-lingua-portuguesa-*.md`)
+- [x] Brief pt_pontuacao (`artifacts/l3-brief-lingua-portuguesa-pt_pontuacao.md` → `pt-punct-rail`)
+- [x] Brief 4/4 `pt_pontuacao` (`artifacts/l3-brief-lingua-portuguesa-pt_pontuacao.md` · target `pt-comma-rail`)
+- [ ] Brief 4/4 demais ramos fortes (termos, EXCETO, orações…)
+

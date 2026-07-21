@@ -1,7 +1,7 @@
 {
   "version": 2,
   "subtopico": "Urgências e Emergências",
-  "pacote_prefix": "urgencias-e-emergencias",
+  "pacote_prefix": "urgencias",
   "scope_default": "subtopico_handcraft",
   "anchor_glob": "examples/questao-premium-*-urgencias-*.json,examples/questao-premium-urgencias-rcp.json,examples/questao-premium-fau-unicentro-urgencias-generico-glasgow-domains.json",
   "guideline": "lib/guidelines/urgencias.ts + lib/guidelines/urgenciasProtocolos.ts",

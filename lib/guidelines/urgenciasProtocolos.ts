@@ -363,5 +363,12 @@ export const URGENCIAS_PROTOCOLOS_EMERGENCIA: GuidelineTable = {
       detail: 'Em prova de técnico: não prescrever anti-hipertensivo oral de rotina sem protocolo.',
       sourceId: 'urgencias-protocolos-emergencia-ms',
     },
+    {
+      id: 'avc-isquemico-85',
+      label: 'AVC — tipo isquêmico',
+      value: 'Maioria dos AVCs (~85%) é isquêmica por obstrução vascular',
+      detail: 'Hemorrágico é minoria; Cincinnati/FAST acionam 192 independente do subtipo.',
+      sourceId: 'urgencias-protocolos-emergencia-ms',
+    },
   ],
 };

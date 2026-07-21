@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-20T15:01:42.957Z",
+  "description": "Slugs removidos do manifest Promoção — pertencem ao pacote Imunização (production_ready).",
+  "count": 2,
+  "slugs": [
+    {
+      "slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
+      "owner_subtopico": "Imunização",
+      "reason": "manifest_overlap_imunizacao",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+      "owner_subtopico": "Imunização",
+      "reason": "manifest_overlap_imunizacao",
+      "at": "2026-07-20"
+    }
+  ]
+}

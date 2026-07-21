@@ -1,0 +1,13 @@
+{
+  "lote": "urgencias-supabase-l3-sync-repair",
+  "subtopico": "Urgências e Emergências",
+  "status": "ready",
+  "slug_count": 6,
+  "notes": "Repair L3 Supabase drift — mold_l3 conflicts",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel",
+    "method": "agent",
+    "status": "pass"
+  }
+}

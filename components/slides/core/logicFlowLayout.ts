@@ -70,6 +70,7 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'pt-clitic-rail-tap-flow',
   'pt-comma-rail-tap-flow',
   'pt-term-matrix-tap-flow',
+  'pt-subject-focus-tap-flow',
 ]);
 
 const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
@@ -138,6 +139,7 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'pt-clitic-rail-tap-flow',
   'pt-comma-rail-tap-flow',
   'pt-term-matrix-tap-flow',
+  'pt-subject-focus-tap-flow',
 ]);
 
 /**

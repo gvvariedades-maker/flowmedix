@@ -1,0 +1,27 @@
+{
+  "lote": "curativos-e-manejo-de-feridas-g12",
+  "handcraft_at": "2026-07-16",
+  "slug_count": 6,
+  "branch_mix": [
+    "curativos_generico"
+  ],
+  "status": "handcrafted",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "anchor_slug": "instituto-consulpam-enfermagem-curativos-e-manejo-de-feridas-1779269305691-6",
+  "total": 6,
+  "slugs": [
+    "instituto-consulpam-enfermagem-curativos-e-manejo-de-feridas-1779269305691-6",
+    "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779269315587-7",
+    "omni-enfermagem-curativos-e-manejo-de-feridas-1779340178514-7",
+    "unesc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-5",
+    "unesc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-6",
+    "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-2"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-16",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/curativos-e-manejo-de-feridas-g12.json"
+  }
+}

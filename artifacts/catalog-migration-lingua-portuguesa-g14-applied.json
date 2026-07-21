@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T16:22:30.172Z",
+  "lote": "lingua-portuguesa-g14",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-amparo-colocacao-enclise-levou-me-3352965",
+    "avancasp-amparo-colocacao-proclise-se-3353968",
+    "avancasp-caieiras-colocacao-angustia-3374794",
+    "avancasp-caieiras-colocacao-enclise-norma-3375896",
+    "avancasp-morungaba-colocacao-proclise-vetada-3376869",
+    "avancasp-varginha-colocacao-quantos-norma-3727518",
+    "educa-pb-colocacao-versos-intimos-3746604",
+    "vunesp-sertaozinho-colocacao-bibliifilas-3352589"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-amparo-colocacao-enclise-levou-me-3352965",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-amparo-colocacao-proclise-se-3353968",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-caieiras-colocacao-angustia-3374794",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-caieiras-colocacao-enclise-norma-3375896",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-morungaba-colocacao-proclise-vetada-3376869",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-varginha-colocacao-quantos-norma-3727518",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-colocacao-versos-intimos-3746604",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-sertaozinho-colocacao-bibliifilas-3352589",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

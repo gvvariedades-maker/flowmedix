@@ -16,5 +16,11 @@
   "readiness": "7/7",
   "readiness_strict_v2": "7/7",
   "preflight_artifact": "artifacts/catalog-preflight-urgencias-g48.json",
-  "notes": "g48 — FINAL lote partial (7 slugs) · 340/340 COMPLETE · pulso femoral · compartimental · TEP VF · OVACE · ambulância tipo D · crise reativa · adrenalina"
+  "notes": "g48 — FINAL lote partial (7 slugs) · 340/340 COMPLETE · pulso femoral · compartimental · TEP VF · OVACE · ambulância tipo D · crise reativa · adrenalina",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

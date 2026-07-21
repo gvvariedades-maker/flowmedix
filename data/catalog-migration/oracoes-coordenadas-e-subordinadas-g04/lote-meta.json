@@ -1,0 +1,30 @@
+{
+  "lote": "oracoes-coordenadas-e-subordinadas-g04",
+  "subtopico": "Orações coordenadas e subordinadas",
+  "status": "applied",
+  "slugs": [
+    "avancasp-esc-oracoes-leia-o-texto-a-seguir-para-responder-3826729",
+    "instituto-ao-oracoes-o-texto-a-seguir-refere-se-a-questao-3841113",
+    "instituto-ao-oracoes-o-texto-a-seguir-refere-se-a-questao-3841158",
+    "educa-pb-ag-oracoes-leia-o-texto-a-seguir-para-responder-3913759",
+    "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913803",
+    "cpcon-uepb-a-oracoes-leia-o-texto-03-para-responder-a-que-4014476",
+    "fgv-ag-st-pr-oracoes-texto-i-a-escrita-a-nossa-civilizaca-3432856",
+    "avancasp-ana-oracoes-a-construcao-tao-que-imprime-ao-cont-3460173"
+  ],
+  "note": "Fase 0 pipeline 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "topico": "Lingua Portuguesa",
+  "pedagogical_branch": "pt_oracoes_subordinadas",
+  "anchor_slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
+  "golden_reference": "examples/questao-premium-apice-portugues-oracoes-adversativa-pocinhos.json",
+  "handcraft_at": "2026-07-20",
+  "apply_requires": "--allow-insert",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-21",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/oracoes-coordenadas-e-subordinadas-g04.json"
+  }
+}

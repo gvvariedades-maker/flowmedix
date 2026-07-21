@@ -80,6 +80,7 @@ export function QuestaoFilterChipsRow({
         onClearBancas={onClearBancas}
         onClearAssuntos={onClearAssuntos}
         onClearAll={onClearAll}
+        accent="vitrine"
       />
 
       <QuestaoFilterDesktopFacetPopover

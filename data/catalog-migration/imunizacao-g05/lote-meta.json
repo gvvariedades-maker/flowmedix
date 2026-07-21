@@ -11,5 +11,14 @@
     "imunizacao_cadeia_frio": 2
   },
   "priority": "calendário infantil/HPV/gestante (3) + cadeia frio (2) + sala/vias/tipos vacina (3)",
-  "notes": "Piloto g05 — tipos vacina V/F, FA antes 3m, HPV 2024, gestante EXCETO HepB, campanha gripe, sala INCORRETA, HepA IM, cadeia frio V/F"
+  "notes": "Piloto g05 — tipos vacina V/F, FA antes 3m, HPV 2024, gestante EXCETO HepB, campanha gripe, sala INCORRETA, HepA IM, cadeia frio V/F",
+  "anchor_slug": "fundatec-enfermagem-imunizacao-1779564006577-0",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel-imunizacao",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g05.json",
+    "notes": "L6 batch quality-vendavel"
+  }
 }

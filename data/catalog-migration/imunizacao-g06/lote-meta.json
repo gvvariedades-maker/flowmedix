@@ -10,5 +10,14 @@
     "imunizacao_generico": 4
   },
   "priority": "calendário infantil SCR/polio (2) + calendário 2024 VIP (1) + V/F imunologia/vigilância (2) + PNI sistemas/pneumo (2) + campanha diabetes (1)",
-  "notes": "Piloto g06 — SCR 29a, polio VIP/VOP, Portaria 2048 diabetes ≥40a, vigilância V/V/F, pneumococo, EDI logística, imunidade I/II/III, CPCON calendário 2024 VIP"
+  "notes": "Piloto g06 — SCR 29a, polio VIP/VOP, Portaria 2048 diabetes ≥40a, vigilância V/V/F, pneumococo, EDI logística, imunidade I/II/III, CPCON calendário 2024 VIP",
+  "anchor_slug": "fundatec-enfermagem-imunizacao-1779564125198-2",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel-imunizacao",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g06.json",
+    "notes": "L6 batch quality-vendavel"
+  }
 }

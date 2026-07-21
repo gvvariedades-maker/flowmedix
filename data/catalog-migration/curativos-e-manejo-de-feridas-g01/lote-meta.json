@@ -1,0 +1,48 @@
+{
+  "lote": "curativos-e-manejo-de-feridas-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-16",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "cluster": "Cobertura e seleção (P0)",
+  "pedagogical_branch_target": "curativos_cobertura_selecao",
+  "priority": "P0 — curativos_cobertura_selecao",
+  "total": 8,
+  "status": "ready",
+  "anchor_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344759089-0",
+  "golden_reference": "examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+  "guideline": "lib/guidelines/curativos.ts (CURATIVOS_LPP_NPUAP)",
+  "slugs": [
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344759089-0"
+  ],
+  "slug_note": "cev-urca (LPP-borderline) substituído por facet (exsudato alto × alginato) para alinhar inferPedagogicalBranch",
+  "validate_command": "npm run validate:goldens -- --lote=curativos-e-manejo-de-feridas-g01 --strict",
+  "workflow": [
+    "npm run catalog:export-lote -- --lote=curativos-e-manejo-de-feridas-g01 --from-manifest=data/catalog-migration/curativos-e-manejo-de-feridas-g01/manifest.json",
+    "npx tsx scripts/handcraft-curativos-e-manejo-de-feridas-g01.ts",
+    "npm run validate:goldens -- --lote=curativos-e-manejo-de-feridas-g01 --strict",
+    "npm run audit:questao-readiness -- --lote=curativos-e-manejo-de-feridas-g01 --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=curativos-e-manejo-de-feridas-g01 --strict",
+    "npm run catalog:apply-lote -- --lote=curativos-e-manejo-de-feridas-g01 --apply (somente quando pedido)"
+  ],
+  "gates": {
+    "validate_goldens": "PASS 8/8",
+    "questao_readiness": "READY 8/8",
+    "slug_alignment": "PASS 8/8",
+    "apply_dry_run": "ok=8 failed=0"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-16",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/curativos-e-manejo-de-feridas-g01.json"
+  }
+}

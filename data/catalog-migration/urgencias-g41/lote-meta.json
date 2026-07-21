@@ -12,5 +12,11 @@
   },
   "readiness": "8/8",
   "readiness_strict_v2": "8/8",
-  "notes": "12º lote cauda — 6 generico + 1 vf_protocolo + 1 exceto · coluna cervical C/E · APH/PS ESF · V/F primeiros socorros · picada abelha · Access urgência · SAMU CRMU EXCETO"
+  "notes": "12º lote cauda — 6 generico + 1 vf_protocolo + 1 exceto · coluna cervical C/E · APH/PS ESF · V/F primeiros socorros · picada abelha · Access urgência · SAMU CRMU EXCETO",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

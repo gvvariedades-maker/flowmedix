@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T05:00:26.524Z",
+  "lote": "lingua-portuguesa-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "aocp-ses-sc-pontuacao-dois-pontos-3804106",
+    "aocp-unirio-pontuacao-enumeracao-3840868",
+    "avancasp-aae-pref-potim-pontuacao-rita-3839712",
+    "avancasp-potim-pontuacao-travessao-dois-pontos-3839857",
+    "cpcon-condado-pontuacao-tirinha-vf-3836507",
+    "cpcon-cuite-pontuacao-enumeracao-numeros-3912868",
+    "selecon-porto-gauchos-pontuacao-adjunto-3852273",
+    "vunesp-jundiai-pontuacao-travessao-3776215"
+  ],
+  "results": [
+    {
+      "modulo_slug": "aocp-ses-sc-pontuacao-dois-pontos-3804106",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "aocp-unirio-pontuacao-enumeracao-3840868",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-aae-pref-potim-pontuacao-rita-3839712",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-potim-pontuacao-travessao-dois-pontos-3839857",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-condado-pontuacao-tirinha-vf-3836507",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-cuite-pontuacao-enumeracao-numeros-3912868",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-porto-gauchos-pontuacao-adjunto-3852273",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-jundiai-pontuacao-travessao-3776215",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

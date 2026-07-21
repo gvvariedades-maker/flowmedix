@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "AAE (Pref Potim)",
+    "orgao": "Pref. Potim",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Pontuação",
+    "pedagogical_branch": "pt_pontuacao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "agent:elias-m08-te-simples-nota10",
+      "guideline_snapshot": "M08 Elias TE-simples — pergunta «O que a vírgula isola?» → trilho sujeito|verbo + vocativo (Bechara / Cunha & Cintra; aulas GC 44–45)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-pontuacao-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Pontuação — vírgula: vocativo, proibição sujeito–verbo, aposto",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "vocativo isolado por vírgula",
+          "proibição vírgula sujeito–verbo",
+          "aposto × vocativo",
+          "vírgula entre substantivo e adjunto",
+          "interrogação × exclamação no diálogo",
+          "pergunta-teste: o que a vírgula isola?"
+        ]
+      },
+      {
+        "id": "portugues-caderno-2025-2026-q201-400",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT 2025–2026 — Q399 / tec 3839712 (AVANÇASP AAE Pref. Potim 2026)",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito B"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m08-te-simples-nota10",
+      "a4_reviewed_at": "2026-07-20"
+    }
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa que contém a frase correta em relação à pontuação.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Esta manhã eu me matriculei na faculdade? Essa, faculdade é conceituada!",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Rita, quando você irá me visitar?",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Aonde! Perguntou minha, filha.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Eu, farei um excelente trabalho.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Olha vó Ernestina você, irá comigo na formatura.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "O que a vírgula isola?",
+      "chip_label": "Trilho simples",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pontuação"
+      },
+      "items": [
+        {
+          "label": "1. Ache a vírgula",
+          "detail": "Antes de julgar a frase, localize o que a vírgula tenta isolar.",
+          "icon": "ScanSearch"
+        },
+        {
+          "label": "2. Pergunte: isola o quê?",
+          "detail": "Vocativo (chama alguém)? Aposto? Ou corta sujeito|verbo?",
+          "icon": "HelpCircle"
+        },
+        {
+          "label": "Trilho livre: sujeito|verbo",
+          "detail": "Núcleo do sujeito colado ao verbo — sem vírgula no meio.",
+          "icon": "GitCommitHorizontal"
+        },
+        {
+          "label": "Isola: vocativo",
+          "detail": "Chama o interlocutor → vírgula(s). Ex.: Rita, venha cá.",
+          "icon": "Megaphone"
+        },
+        {
+          "label": "Armadilha comum",
+          "detail": "Pausa na fala não autoriza vírgula entre Eu e farei.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Ordem: achar vírgula → o que isola? → sujeito|verbo livre?"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Corte letra a letra",
+      "chip_label": "Um toque = um corte",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pontuação"
+      },
+      "steps": [
+        "Comando: só uma frase está certa na pontuação. As outras ferem a norma.",
+        "A: «Essa, faculdade» — vírgula corta o nome da coisa. Errado.",
+        "C: «Aonde!» + «minha, filha» — exclamação e vírgula no lugar errado.",
+        "D: «Eu, farei» — vírgula entre sujeito e verbo. Proibido.",
+        "E: «você, irá» — de novo sujeito|verbo cortado; falta vírgula no vocativo.",
+        "B: «Rita,» chama a pessoa (vocativo) + pergunta. Isola certo.",
+        "Gabarito B — única com vocativo isolado e trilho sujeito|verbo intacto.",
+        "Em similares: o que a vírgula isola? Se for sujeito|verbo → tire."
+      ],
+      "footer_rule": "Cada toque = 1 corte. Não confunda pausa com norma."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Trilho de bolso",
+      "chip_label": "Decore isto",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pontuação"
+      },
+      "content": "O QUE A VÍRGULA ISOLA?",
+      "rows": [
+        {
+          "label": "Pergunta-chave",
+          "value": "A vírgula isola vocativo/aposto — ou corta sujeito|verbo?",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Pode (vírgula)",
+          "value": "Vocativo: Rita, venha. Aposto explicativo com vírgulas.",
+          "emphasis": "success"
+        },
+        {
+          "label": "Não pode",
+          "value": "Sujeito|verbo: Eu farei — nunca Eu, farei.",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Teste rápido",
+          "value": "Tire a vírgula: o sentido some ou só some a chamada?",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Nesta questão",
+          "value": "Só B: Rita, quando você irá me visitar?"
+        }
+      ],
+      "footer_rule": "Sujeito|verbo = trilho livre. Vocativo = isola."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Armadilhas",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pontuação"
+      },
+      "content": "Cada erro = um corte do trilho",
+      "items": [
+        {
+          "label": "A — vírgula no nome",
+          "detail": "«Essa, faculdade» imita pausa oral.",
+          "correct": "Não separe o determinante do substantivo com vírgula."
+        },
+        {
+          "label": "C — pontuação do diálogo",
+          "detail": "«Aonde!» e «minha, filha» misturam sinais.",
+          "correct": "Diálogo: interrogação/travessão certos; sem vírgula no meio do SN."
+        },
+        {
+          "label": "D — Eu, farei",
+          "detail": "Pausa na fala parece justificar a vírgula.",
+          "correct": "Sujeito|verbo nunca se separam: Eu farei."
+        },
+        {
+          "label": "E — você, irá",
+          "detail": "Corta o verbo e esquece o vocativo.",
+          "correct": "Vocativo isolado; trilho você irá intacto."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Podem trocar Rita por aposto ou oração intercalada.",
+          "correct": "Mesmo teste: o que isola? sujeito|verbo livre?"
+        }
+      ],
+      "footer_rule": "B sobrou: Rita, = vocativo; você irá = trilho livre."
+    }
+  ]
+}

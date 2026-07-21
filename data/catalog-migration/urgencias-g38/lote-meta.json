@@ -25,5 +25,11 @@
     "Certo ou errado": 3,
     "Default — sem âncora temática": 1
   },
-  "notes": "g38 — 9º lote cauda urgencias_generico · 8/8 READY strict-v2 · fratura imobilização · politrauma primário · peçonhento C/E · gestão risco · SCO · PS V/F · hipoglicemia · raiva limpeza"
+  "notes": "g38 — 9º lote cauda urgencias_generico · 8/8 READY strict-v2 · fratura imobilização · politrauma primário · peçonhento C/E · gestão risco · SCO · PS V/F · hipoglicemia · raiva limpeza",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

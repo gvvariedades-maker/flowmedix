@@ -12,5 +12,11 @@
     "examples/questao-premium-access-urgencias-rcp-pediatrica-15-2.json",
     "examples/questao-premium-consulpam-urgencias-pcr-pediatrica-conceito.json"
   ],
-  "notes": "g24 RCP pediátrica — 8/9 cluster (VF adulto · AHA gravidez · anafilaxia CPCON · 30:2 FCPC · IDIB adulto · Access 15:2 · Consulpam · Quadrix afogamento)"
+  "notes": "g24 RCP pediátrica — 8/9 cluster (VF adulto · AHA gravidez · anafilaxia CPCON · 30:2 FCPC · IDIB adulto · Access 15:2 · Consulpam · Quadrix afogamento)",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

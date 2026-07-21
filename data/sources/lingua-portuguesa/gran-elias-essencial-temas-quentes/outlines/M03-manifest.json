@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "aula-12-sujeito",
+    "title": "12 - Sujeito",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/aula-12-sujeito.json",
+    "enriched_module": ".cursor/skills/professor-elias-santana-metodo/modules/M03-sujeito-enriquecido.md#aula-12--sujeito-teoria-i"
+  },
+  {
+    "slug": "aula-13-sujeito-ii",
+    "title": "13 - Sujeito II",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/aula-13-sujeito-ii.json",
+    "enriched_module": ".cursor/skills/professor-elias-santana-metodo/modules/M03-sujeito-enriquecido.md#aula-13--sujeito-ii-tipos-nucleares"
+  },
+  {
+    "slug": "aula-14-sujeito-iii",
+    "title": "14 - Sujeito III",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/aula-14-sujeito-iii.json",
+    "enriched_module": ".cursor/skills/professor-elias-santana-metodo/modules/M03-sujeito-enriquecido.md#aula-14--sujeito-iii-sem-sujeito--indeterminado--infinitivo"
+  },
+  {
+    "slug": "aula-15-sujeito-iv",
+    "title": "15 - Sujeito IV",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/aula-15-sujeito-iv.json",
+    "enriched_module": ".cursor/skills/professor-elias-santana-metodo/modules/M03-sujeito-enriquecido.md#aula-15--sujeito-iv-haver-fazer-fenômenos"
+  },
+  {
+    "slug": "aula-16-sujeito-v",
+    "title": "16 - Sujeito V",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/aula-16-sujeito-v.json",
+    "enriched_module": ".cursor/skills/professor-elias-santana-metodo/modules/M03-sujeito-enriquecido.md#aula-16--sujeito-v-concordância-do-sujeito"
+  },
+  {
+    "slug": "aula-17-sujeito-exercicios",
+    "title": "17 - Sujeito Exercícios",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/aula-17-sujeito-exercicios.json",
+    "enriched_module": ".cursor/skills/professor-elias-santana-metodo/modules/M03-sujeito-enriquecido.md#aula-17--sujeito-exercícios-padrão-banca"
+  }
+]

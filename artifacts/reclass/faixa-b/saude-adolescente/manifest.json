@@ -1,9 +1,0 @@
-{
-  "generated_at": "2026-06-16T09:34:53.977Z",
-  "bucket": "Saúde do Adolescente",
-  "batch_size": 50,
-  "total": 11,
-  "batch_files": [
-    "artifacts/reclass/faixa-b/saude-adolescente/batch-01.json"
-  ]
-}

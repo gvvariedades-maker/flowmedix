@@ -1,0 +1,49 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "Níveis de prevenção + vigilância + educação ACS + saneamento + atividade física (g03)",
+  "total": 8,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3": "promocao_educacao_prevencao",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7": "promocao_educacao_prevencao",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1": "promocao_educacao_prevencao",
+    "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9": "promocao_educacao_prevencao",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7": "promocao_educacao_prevencao",
+    "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7": "promocao_educacao_prevencao",
+    "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0": "promocao_generico",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5": "promocao_educacao_prevencao"
+  },
+  "slugs": [
+    "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+    "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+    "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+    "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g03 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g03/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g03 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g03 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g03 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g03 --apply (só quando pedido)"
+  ],
+  "next_lote": "promocao-a-saude-e-prevencao-de-agravos-g04 — PICS + ACS + saneamento + bucal (~8 slugs)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g03.json"
+  }
+}

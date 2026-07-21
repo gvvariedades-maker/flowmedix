@@ -11,5 +11,11 @@
   "anchors_used": [
     "examples/questao-premium-ameosc-urgencias-triagem-etiquetas.json"
   ],
-  "notes": "g28 Manchester final — AMEOSC etiquetas massa · FUNDATEC origem militar · VERBENA dor torácica isquêmica · SELECON verde pouco urgente · cluster 4/4 fechado"
+  "notes": "g28 Manchester final — AMEOSC etiquetas massa · FUNDATEC origem militar · VERBENA dor torácica isquêmica · SELECON verde pouco urgente · cluster 4/4 fechado",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

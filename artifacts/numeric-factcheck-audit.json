@@ -1,83 +1,39 @@
 {
-  "generated_at": "2026-07-15T16:21:45.518Z",
+  "generated_at": "2026-07-21T01:16:21.025Z",
   "scanned": 6,
   "passed": 6,
   "failed": 0,
-  "warn_only": 2,
+  "warn_only": 0,
   "results": [
     {
-      "slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "slug": "apice-acs-pr-oracoes-pestana-2023-p-619-aponta-que-as-ora-3951856",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
+      "slug": "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793433",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "slug": "avancasp-acs-oracoes-leia-o-texto-a-seguir-para-responder-3661687",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "slug": "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913806",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "slug": "educa-pb-ag-oracoes-texto-1-a-inteligencia-artificial-ja-3711355",
       "ok": true,
-      "issues": [
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"180 mg\" não encontrado na guideline de Saúde da Criança.",
-          "severity": "warn",
-          "claim": "180 mg",
-          "path": "reverse_study_slides"
-        },
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"200 mg\" não encontrado na guideline de Saúde da Criança.",
-          "severity": "warn",
-          "claim": "200 mg",
-          "path": "reverse_study_slides"
-        }
-      ]
+      "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "slug": "vunesp-acs-p-oracoes-leia-o-texto-a-seguir-para-responder-3845002",
       "ok": true,
-      "issues": [
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"100 mL\" não encontrado na guideline de Saúde da Criança.",
-          "severity": "warn",
-          "claim": "100 mL",
-          "path": "reverse_study_slides"
-        },
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"6 hora\" não encontrado na guideline de Saúde da Criança.",
-          "severity": "warn",
-          "claim": "6 hora",
-          "path": "reverse_study_slides"
-        },
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"4 mg\" não encontrado na guideline de Saúde da Criança.",
-          "severity": "warn",
-          "claim": "4 mg",
-          "path": "reverse_study_slides"
-        },
-        {
-          "code": "numeric_fact_mismatch",
-          "message": "Claim \"70 mL\" não encontrado na guideline de Saúde da Criança.",
-          "severity": "warn",
-          "claim": "70 mL",
-          "path": "reverse_study_slides"
-        }
-      ]
+      "issues": []
     }
   ]
 }

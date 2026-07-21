@@ -1,0 +1,15 @@
+{
+  "lote": "imunizacao-amauc-diabetes-branch-repair",
+  "subtopico": "Imunização",
+  "status": "ready",
+  "slug_count": 1,
+  "anchor_slug": "amauc-enfermagem-imunizacao-1779564109452-2",
+  "notes": "Mis-tag imunizacao_calendario → imunizacao_generico (legis/campanha APS)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-amauc-diabetes-branch-repair.json"
+  }
+}

@@ -11,5 +11,11 @@
   "anchors_used": [
     "examples/questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal.json"
   ],
-  "notes": "g23 engasgo final — Heimlich consciente Verbena/Sarmento · técnica VUNESP · OVACE grave domiciliar (cluster 12/12 fechado)"
+  "notes": "g23 engasgo final — Heimlich consciente Verbena/Sarmento · técnica VUNESP · OVACE grave domiciliar (cluster 12/12 fechado)",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

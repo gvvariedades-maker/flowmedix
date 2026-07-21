@@ -157,6 +157,19 @@ PNG do fluxo completo: enunciado → feedback → 4 slides.
 
 Gatilho pós-apply: `anchor_slug` do `lote-meta.json`.
 
+#### Galeria visual leve por ramo (espelho das âncoras)
+
+Indexa no playbook o mesmo capture como **âncora visual operacional** (não posters externos):
+
+| Campo | Onde |
+|-------|------|
+| `pedagogical_branches[].visual_gallery` | Playbook (`status`, `anchor_slug`, `layouts`, `captures_dir`) |
+| Índice humano | `l3_visual_gallery_index` no playbook (ex. `artifacts/l3-visual-gallery-lingua-portuguesa-index.md`) |
+| Skill | `avant-neuroslides-visual` |
+
+Fluxo: JSON âncora `[READY]` → `capture:questao-review` → `status: pilot` → React bespoke → re-capture → `ready`.  
+Piloto: `pt_crase` em `handcraft-playbooks/lingua-portuguesa.json`.
+
 ### L5 — Reporte + saúde de conteúdo
 
 Métricas de `error_reports` + `historico_questoes` por subtópico/slug.

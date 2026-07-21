@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-19T12:44:33.606Z",
+  "lote": "imunizacao-amauc-diabetes-branch-repair",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-imunizacao-1779564109452-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564109452-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

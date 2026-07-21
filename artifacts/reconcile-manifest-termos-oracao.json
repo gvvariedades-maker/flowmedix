@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-07-20T17:26:59.265Z",
+  "pacote_prefix": "termos-oracao",
+  "lotes": [
+    {
+      "lote": "termos-oracao-g01",
+      "count": 8
+    },
+    {
+      "lote": "termos-oracao-g02",
+      "count": 8
+    },
+    {
+      "lote": "termos-oracao-g03",
+      "count": 8
+    },
+    {
+      "lote": "termos-oracao-g04",
+      "count": 7
+    }
+  ],
+  "union_count": 31,
+  "registry_total_slugs": 31,
+  "match": true,
+  "slugs": [
+    "aocp-unirio-termos-travessao-brinquedos-3840834",
+    "apice-bacamarte-termos-vf-virgula-adv-3793442",
+    "apice-bacamarte-termos-vocativo-junior-3793473",
+    "apice-boa-vista-termos-vocativo-gente-3951799",
+    "apice-monteiro-termos-aposto-faculdade-4024905",
+    "apice-monteiro-termos-cn-embora-tardio-4024901",
+    "apice-monteiro-termos-tardiamente-4024881",
+    "apice-pocinhos-termos-vf-pronome-relativo-3558977",
+    "avancasp-fusam-termos-excepto-adnominal-3460242",
+    "avancasp-odessa-termos-so-adjetiva-3962452",
+    "avancasp-sm-arcanjo-termos-comparativo-igualdade-3709824",
+    "avancasp-sm-arcanjo-termos-transitivo-direto-3709806",
+    "cpcon-itabaiana-termos-conta-luz-4014460",
+    "cpcon-nova-floresta-termos-aposto-quintal-4018200",
+    "cpcon-nova-palmeira-termos-adjuntos-aipim-3599766",
+    "cpcon-olivedos-termos-complemento-nominal-3709441",
+    "cpcon-olivedos-termos-vocativos-vovo-3709443",
+    "cpcon-uepb-nazarezinho-termos-regencia-explicar-3483810",
+    "educa-pb-ibiara-termos-pronome-relativo-que-3819879",
+    "educa-pb-ibiara-termos-virgula-sim-3820032",
+    "educa-pb-pedras-fogo-termos-objeto-direto-3576833",
+    "educa-pb-santa-cecilia-termos-pronome-relativo-mao-3746601",
+    "educa-pb-umbuzeiro-termos-adv-maio-3661932",
+    "ibfc-ses-se-termos-vocativo-liduina-3450774",
+    "selecon-fesaude-termos-adv-intercalados-3990813",
+    "selecon-hemominas-termos-agente-passiva-3416691",
+    "selecon-lrv-termos-agente-passiva-1360962",
+    "selecon-nova-mutum-termos-adjunto-sensivel-3649276",
+    "selecon-porto-gauchos-termos-missao-3852270",
+    "vunesp-sjrp-termos-folhetos-enquanto-3789304",
+    "vunesp-sjrp-termos-parenteses-acessoria-3789304"
+  ]
+}

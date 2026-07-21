@@ -1,0 +1,30 @@
+{
+  "lote": "lingua-portuguesa-g14",
+  "mode": "handcraft-golden-v1",
+  "subtopico": "Pronomes e colocação pronominal",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pronomes_colocacao",
+  "cluster": "Colocação Pronominal — lote 2/4 (PDF · 16/31)",
+  "total": 8,
+  "status": "applied",
+  "source": "data/catalog-migration/lingua-portuguesa-g14/extracted-source.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+  "tec_ids": [
+    "3727518",
+    "3746604",
+    "3352589",
+    "3352965",
+    "3353968",
+    "3374794",
+    "3375896",
+    "3376869"
+  ],
+  "plan": "data/catalog-migration/lingua-portuguesa-colocacao/cluster-plan.json",
+  "workflow": [
+    "1. python scripts/tools/extract_pt_colocacao_g14.py",
+    "2. npx tsx scripts/handcraft-lingua-portuguesa-g14.ts",
+    "3. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g14 --strict-v2-pedagogy",
+    "4. npm run validate:goldens -- --lote=lingua-portuguesa-g14 --strict"
+  ]
+}

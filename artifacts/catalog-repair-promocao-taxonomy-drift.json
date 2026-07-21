@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-07-20T14:30:15.209Z",
+  "mode": "apply",
+  "lines": [
+    {
+      "slug": "idecan-enfermagem-saude-do-idoso-1778712437306-6",
+      "subtopico_after": "Promoção à Saúde e Prevenção de Agravos",
+      "titulo_before": "Promoção à Saúde e Prevenção de Agravos",
+      "titulo_after": "Promoção à Saúde e Prevenção de Agravos",
+      "zod_valid": false,
+      "applied": true
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-2",
+      "subtopico_before": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "subtopico_after": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "titulo_before": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "titulo_after": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "zod_valid": true,
+      "applied": false,
+      "skip_reason": "already_ok"
+    },
+    {
+      "slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "subtopico_before": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "subtopico_after": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "titulo_before": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "titulo_after": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "zod_valid": true,
+      "applied": false,
+      "skip_reason": "already_ok"
+    }
+  ]
+}

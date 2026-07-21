@@ -17,6 +17,10 @@ import {
 import { hasPremiumStubMarkers } from '@/lib/catalogMigration/premiumStubMarkers';
 import { premiumGateErrors } from '@/lib/catalogMigration/premiumGate';
 import { parseArg } from '@/lib/catalogMigration/cliArgs';
+import {
+  resolveClusterDecision,
+  strongBranchThreshold,
+} from '@/lib/catalogMigration/clusterReportContract';
 
 const SUBTOPICO = 'Enfermagem em Central de Material e Esterilização (CME)';
 
@@ -197,6 +201,7 @@ async function main() {
   }
 
   const total = rows.length;
+  const strongThreshold = strongBranchThreshold(total);
   const clusterSummaries = [...clusterMap.entries()]
     .map(([cluster, stats]) => {
       const pct = Math.round((stats.count / total) * 1000) / 10;
@@ -210,13 +215,7 @@ async function main() {
         has_golden: hasGolden,
         golden_file: GOLDEN_BY_CLUSTER[cluster] ?? null,
         sample_slugs: stats.slugs.slice(0, 5),
-        decision: hasGolden
-          ? 'coberto'
-          : stats.count >= Math.ceil(total * 0.1)
-            ? 'novo_ramo'
-            : stats.count >= 3
-              ? 'absorver'
-              : 'cauda_longa',
+        decision: resolveClusterDecision({ hasGolden, count: stats.count, total }),
       };
     })
     .sort((a, b) => b.count - a.count);
@@ -244,6 +243,8 @@ async function main() {
     ),
     stub_total: rows.filter((r) => r.premium_status === 'stub').length,
     contract_fail_total: rows.filter((r) => r.slide_contract_issues.length > 0).length,
+    strong_threshold: strongThreshold,
+    goldens_needed: clusterSummaries.filter((c) => c.decision === 'novo_ramo' && !c.has_golden).length,
     cluster_decisions: clusterSummaries,
     rows,
   };

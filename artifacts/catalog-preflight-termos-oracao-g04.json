@@ -1,0 +1,68 @@
+{
+  "lote": "termos-oracao-g04",
+  "generated_at": "2026-07-20T17:27:37.176Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 7,
+  "passed": 7,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "apice-boa-vista-termos-vocativo-gente-3951799",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "apice-monteiro-termos-cn-embora-tardio-4024901",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "apice-pocinhos-termos-vf-pronome-relativo-3558977",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-sm-arcanjo-termos-comparativo-igualdade-3709824",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ibiara-termos-pronome-relativo-que-3819879",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ibiara-termos-virgula-sim-3820032",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-santa-cecilia-termos-pronome-relativo-mao-3746601",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

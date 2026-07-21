@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-07-14T02:15:11.872Z",
-  "mode": "apply",
-  "scanned": 13,
-  "patched": 1,
-  "skipped": 0,
-  "subtopico_filter": "farmacodinâmica e farmacocinética",
+  "generated_at": "2026-07-19T12:34:49.096Z",
+  "mode": "dry-run",
+  "scanned": 576,
+  "patched": 4,
+  "skipped": 9,
+  "subtopico_filter": "imunização",
   "flags": {
     "only_premium": false,
-    "only_golden_v1": false,
+    "only_golden_v1": true,
     "force_family": false,
     "force_branch": false,
     "reconcile_branch": true

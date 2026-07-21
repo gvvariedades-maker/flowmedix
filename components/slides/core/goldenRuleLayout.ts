@@ -78,6 +78,7 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'pt-clitic-rail-board',
   'pt-comma-rail-board',
   'pt-term-matrix-board',
+  'pt-subject-focus-board',
 ]);
 
 /**
@@ -155,6 +156,7 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'pt-clitic-rail-board') return 'pt-clitic-rail-board';
   if (explicitVariant === 'pt-comma-rail-board') return 'pt-comma-rail-board';
   if (explicitVariant === 'pt-term-matrix-board') return 'pt-term-matrix-board';
+  if (explicitVariant === 'pt-subject-focus-board') return 'pt-subject-focus-board';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

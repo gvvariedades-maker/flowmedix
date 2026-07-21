@@ -4,6 +4,7 @@ export type VitrinePageCacheFilters = {
   bancas?: string[];
   assuntos?: string[];
   q?: string;
+  disciplina?: string;
 };
 
 export type VitrineFacetsCacheFilters = {
@@ -35,6 +36,7 @@ export function getVitrinePageFiltersHash(filters: VitrinePageCacheFilters = {})
     normalizeVitrineArrayFilter(filters.bancas),
     normalizeVitrineArrayFilter(filters.assuntos),
     normalizeVitrineTextFilter(filters.q),
+    normalizeVitrineTextFilter(filters.disciplina),
   ]);
 }
 

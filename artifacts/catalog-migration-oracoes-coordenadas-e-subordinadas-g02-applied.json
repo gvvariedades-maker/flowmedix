@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:07:55.657Z",
+  "lote": "oracoes-coordenadas-e-subordinadas-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-ap-ei-oracoes-fonte-acesso-em-06-mar-2026-no-trech-4037436",
+    "avancasp-gcm-oracoes-nao-ha-nada-na-escrita-tudo-o-que-vo-4001118",
+    "cpcon-uepb-a-oracoes-leia-o-texto-01-para-responder-a-que-4014452",
+    "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3912828",
+    "educa-pb-ace-oracoes-considere-o-texto-a-seguir-para-resp-3820016",
+    "selecon-acs-oracoes-considere-o-texto-a-seguir-para-resp-3990840",
+    "selecon-athh-oracoes-quando-eu-deixei-de-acreditar-em-mim-3416687",
+    "selecon-fisc-oracoes-inteligencia-artificial-consegue-dec-3352887"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-ap-ei-oracoes-fonte-acesso-em-06-mar-2026-no-trech-4037436",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-gcm-oracoes-nao-ha-nada-na-escrita-tudo-o-que-vo-4001118",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-oracoes-leia-o-texto-01-para-responder-a-que-4014452",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3912828",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ace-oracoes-considere-o-texto-a-seguir-para-resp-3820016",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-acs-oracoes-considere-o-texto-a-seguir-para-resp-3990840",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-athh-oracoes-quando-eu-deixei-de-acreditar-em-mim-3416687",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-fisc-oracoes-inteligencia-artificial-consegue-dec-3352887",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

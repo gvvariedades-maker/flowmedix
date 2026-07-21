@@ -1,0 +1,31 @@
+{
+  "lote": "classes-de-palavras-g07",
+  "subtopico": "Classes de palavras",
+  "status": "handcraft",
+  "slugs": [
+    "avancasp-tec-classes-cazo-presenca-de-animais-selvagens-b-3835993",
+    "cpcon-uepb-a-classes-para-responder-a-questao-texto-ii-fi-3836484",
+    "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3840776",
+    "instituto-ao-classes-15-07-2026-19-33-55-88-130-131-leia-3840780",
+    "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840898",
+    "instituto-ao-classes-o-texto-a-seguir-refere-se-a-questao-3841143",
+    "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393",
+    "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913820"
+  ],
+  "note": "Fase 0 pipeline Classes de palavras 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+  "golden_reference": "examples/questao-formacao-palavras-siglas.json",
+  "gates": {
+    "questao_readiness": "READY strict-v2-pedagogy",
+    "validate_goldens": "PASS --strict"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/classes-de-palavras-g07.json"
+  }
+}

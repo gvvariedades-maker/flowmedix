@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { ChevronDown, ChevronRight, ChevronUp, CheckCircle2, Circle } from 'lucide-react';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { cn } from '@/lib/utils';
 import type { VitrineQuestaoItem } from '@/lib/vitrine/types';
 import { buildVitrineResolveQuestaoSearchParams } from '@/lib/vitrine/resolveQuestaoUrl';
@@ -22,7 +23,7 @@ import {
 
 function StatusBadge({ status }: { status: VitrineQuestaoItem['status'] }) {
   if (status === 'estudada') {
-    return <CheckCircle2 size={15} className="shrink-0 text-green-600" aria-hidden />;
+    return <CheckCircle2 size={15} className={cn('shrink-0', vitrineBrand.icon)} aria-hidden />;
   }
   return <Circle size={15} className="shrink-0 text-slate-300" aria-hidden />;
 }
@@ -122,7 +123,7 @@ export function VitrineQuestaoList({
             variant="outline"
             size="sm"
             disabled={jumpLoading || !jumpAlvo.trim()}
-            className="h-11 min-h-[44px] shrink-0 rounded-xl border-slate-200 px-4 text-slate-700 hover:border-[rgba(34,197,94,0.35)] hover:bg-[rgba(34,197,94,0.06)] hover:text-[#166534]"
+            className={cn('h-11 min-h-[44px] shrink-0 rounded-xl border-slate-200 px-4 text-slate-700', vitrineBrand.hoverBorder, vitrineBrand.hoverBgLight, vitrineBrand.hoverText)}
           >
             {jumpLoading ? '…' : 'Ir'}
           </Button>
@@ -177,7 +178,7 @@ export function VitrineQuestaoList({
                     'group flex min-h-[44px] items-center gap-3 rounded-xl border px-3 py-2.5 transition-all',
                     estudada
                       ? 'border-green-200 bg-green-50 hover:border-green-300'
-                      : 'border-slate-200 bg-white hover:border-[rgba(34, 197, 94,0.3)] hover:bg-[rgba(34, 197, 94,0.04)]',
+                      : cn('border-slate-200 bg-white', vitrineBrand.hoverBorderLight, vitrineBrand.hoverBgDim),
                   )}
                 >
                   <StatusBadge status={q.status} />
@@ -197,7 +198,7 @@ export function VitrineQuestaoList({
                   {!estudada ? (
                     <span className="text-[10px] font-medium text-slate-500">Iniciar</span>
                   ) : (
-                    <span className="text-[10px] font-medium text-[#166534]">Revisitar</span>
+                    <span className={cn('text-[10px] font-medium', vitrineBrand.text)}>Revisitar</span>
                   )}
                   <ChevronRight
                     size={12}

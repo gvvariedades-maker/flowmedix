@@ -11,5 +11,11 @@
   "anchors_used": [
     "examples/questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal.json"
   ],
-  "notes": "g22 engasgo lote 1 — sinal universal FAU ×2 · Heimlich · OVACE criança · corpo estranho impactado · consulplan consciente"
+  "notes": "g22 engasgo lote 1 — sinal universal FAU ×2 · Heimlich · OVACE criança · corpo estranho impactado · consulplan consciente",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

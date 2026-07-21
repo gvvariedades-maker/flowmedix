@@ -1,9 +1,0 @@
-{
-  "generated_at": "2026-06-16T09:35:15.097Z",
-  "bucket": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-  "batch_size": 50,
-  "total": 2,
-  "batch_files": [
-    "artifacts/reclass/faixa-a/drc/batch-01.json"
-  ]
-}

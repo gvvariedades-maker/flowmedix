@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-16T03:11:09.417Z",
+  "lote": "curativos-e-manejo-de-feridas-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344759089-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-4",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-0",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-4",
+    "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-7",
+    "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344759089-4",
+    "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344773456-4",
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779340178514-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344759089-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344759089-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344773456-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779340178514-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -45,11 +45,8 @@ import { ProvaTimerBar } from '@/components/simulados/ProvaTimerBar';
 import { SimuladoProvaInstrucoes } from '@/components/simulados/SimuladoProvaInstrucoes';
 import { cn } from '@/lib/utils';
 import { sanitizeHTML } from '@/lib/validations';
-import {
-  buildDerivedQuestionHeaderLine,
-  buildQuestionSubjectLine,
-  stripLeadingQuestionEnumeration,
-} from '@/lib/questionHeader';
+import { QuestionHeaderBlock } from '@/components/lesson/QuestionHeaderBlock';
+import { stripLeadingQuestionEnumeration } from '@/lib/questionHeader';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { DASHBOARD_PAGE_CENTER, DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
@@ -550,11 +547,6 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     );
   }
 
-  const examHeaderLine = questionData?.meta
-    ? (questionData.meta.header_line?.trim() || buildDerivedQuestionHeaderLine(questionData.meta))
-    : activeItem?.meta.banca ?? '';
-  const subjectLine = questionData?.meta ? buildQuestionSubjectLine(questionData.meta) : null;
-  const textFragment = questionData?.question_data?.text_fragment ?? '';
   const instruction = stripLeadingQuestionEnumeration(questionData?.question_data?.instruction ?? '');
   const hasPending = sessionData.questoes.some((q) => !q.respondida);
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
@@ -715,14 +707,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           </div>
         ) : (
           <div className="card-elevated-lg space-y-6 p-6 sm:p-8">
-            {examHeaderLine && (
-              <div className="space-y-2 border-b border-slate-200 pb-4">
-                <p className="text-xs font-medium uppercase tracking-wider text-[#166534]">
-                  {examHeaderLine}
-                </p>
-                {subjectLine && <p className="text-sm font-semibold text-slate-900">{subjectLine}</p>}
+            {questionData?.meta ? (
+              <div className="border-b border-slate-200 pb-4">
+                <QuestionHeaderBlock meta={questionData.meta} />
               </div>
-            )}
+            ) : null}
 
             {textFragment && (
               <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm italic text-slate-700">

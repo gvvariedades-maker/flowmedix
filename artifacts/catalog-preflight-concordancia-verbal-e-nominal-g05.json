@@ -1,0 +1,76 @@
+{
+  "lote": "concordancia-verbal-e-nominal-g05",
+  "generated_at": "2026-07-20T18:26:18.141Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-aco-concordancia-havia-alguma-coisa-errada-com-o-rei-3738890",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-ag-concordancia-leia-o-texto-a-seguir-para-responder-3709814",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-ag-concordancia-mal-iniciara-seu-discurso-o-deputado-3727002",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-of-concordancia-era-uma-hora-e-quarenta-e-um-minutos-3725105",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-tla-concordancia-a-maior-parte-dos-torcedores-aderiu-3726057",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cebraspe-ces-concordancia-texto-cg1a1a-relacao-entre-sustentab-3698155",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cebraspe-ces-concordancia-texto-cg2a1imagino-que-a-escrita-nas-3705180",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "quadrix-aux-concordancia-texto-para-a-questao-imagine-um-time-3738655",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

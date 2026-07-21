@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+  "pacote_prefix": "dtrans-mescladas",
+  "mode": "full",
+  "total_slugs": 16,
+  "handcraft_applied": 16,
+  "production_status": "none",
+  "next_unit": {
+    "type": "l3_map",
+    "id": "briefs",
+    "detail": "Falta artifacts/l3-brief-dtrans-mescladas-INDEX.md — Mapeamento L3 Fase 3b"
+  },
+  "completed_units": [],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-07-21T06:20:59.132Z",
+  "notes": null
+}

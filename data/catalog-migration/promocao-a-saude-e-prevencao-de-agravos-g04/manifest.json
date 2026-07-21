@@ -1,0 +1,18 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g04",
+  "exported_at": "2026-07-20T16:14:20.818Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g04/manifest.json"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+    "avancasp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-7",
+    "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
+    "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-0",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-0",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-1"
+  ]
+}

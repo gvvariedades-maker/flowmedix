@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:10:55.341Z",
+  "lote": "concordancia-verbal-e-nominal-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-ace-pr-concordancia-no-que-diz-respeito-a-concordancia-n-3558981",
+    "avancasp-acd-concordancia-em-qual-das-alternativas-abaixo-a-fr-3554865",
+    "avancasp-acs-concordancia-assinale-a-alternativa-que-contem-a-3452381",
+    "avancasp-ag-concordancia-a-sentenca-em-que-as-concordancias-v-3457300",
+    "vunesp-acs-p-concordancia-leia-o-texto-a-seguir-para-responder-3607135",
+    "vunesp-ag-pr-concordancia-esta-em-conformidade-com-a-norma-pad-3583302",
+    "vunesp-ro-sa-concordancia-leia-o-texto-a-seguir-para-responder-3558391",
+    "vunesp-tec-h-concordancia-a-norma-padrao-de-concordancia-nomin-3572925"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-ace-pr-concordancia-no-que-diz-respeito-a-concordancia-n-3558981",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acd-concordancia-em-qual-das-alternativas-abaixo-a-fr-3554865",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acs-concordancia-assinale-a-alternativa-que-contem-a-3452381",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-ag-concordancia-a-sentenca-em-que-as-concordancias-v-3457300",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-acs-p-concordancia-leia-o-texto-a-seguir-para-responder-3607135",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-concordancia-esta-em-conformidade-com-a-norma-pad-3583302",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-ro-sa-concordancia-leia-o-texto-a-seguir-para-responder-3558391",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-tec-h-concordancia-a-norma-padrao-de-concordancia-nomin-3572925",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

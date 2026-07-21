@@ -1,0 +1,32 @@
+{
+  "lote": "concordancia-verbal-e-nominal-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Concordância verbal e nominal",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_concordancia",
+  "cluster": "Concordância — lote 3/6",
+  "total": 7,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-concordancia-nucleo-sjrp.json",
+  "slugs": [
+    "apice-acs-pr-concordancia-considere-o-texto-a-seguir-para-resp-4024938",
+    "vunesp-ag-as-concordancia-a-concordancia-nominal-e-verbal-esta-3345661",
+    "vunesp-ag-pr-concordancia-assinale-a-alternativa-redigida-em-c-3352593",
+    "avancasp-ace-concordancia-de-acordo-com-o-gramatico-evanildo-b-3353963",
+    "vunesp-an-op-concordancia-assinale-a-alternativa-cuja-frase-es-3354420",
+    "vunesp-ag-pr-concordancia-a-frase-que-esta-em-conformidade-com-3419181",
+    "ibfc-tec-enf-concordancia-analise-o-texto-a-seguir-e-responda-3450785"
+  ],
+  "note": "Lote 3/6 pt_concordancia M13 PDF dupe 3352960 skipped (same content as 3353963).",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/concordancia-verbal-e-nominal-g03.json"
+  }
+}

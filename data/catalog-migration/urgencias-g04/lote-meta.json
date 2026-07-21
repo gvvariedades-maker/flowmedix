@@ -13,5 +13,11 @@
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
     "examples/questao-premium-urgencias-rcp.json"
   ],
-  "notes": "g04 — PCR gestante AHA · 2º elo cadeia intra-hospitalar · equipe PCREH AHA 2025 · V/F PCR · qualidade compressões SBC · cadeia extra-hospitalar · avaliação primária SBV · ritmo chocável FV"
+  "notes": "g04 — PCR gestante AHA · 2º elo cadeia intra-hospitalar · equipe PCREH AHA 2025 · V/F PCR · qualidade compressões SBC · cadeia extra-hospitalar · avaliação primária SBV · ritmo chocável FV",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

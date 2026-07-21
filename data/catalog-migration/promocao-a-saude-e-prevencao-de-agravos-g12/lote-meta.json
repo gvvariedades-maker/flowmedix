@@ -1,0 +1,64 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g12",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "Lote final — Objetiva larvicida/anemia + SC DM + Selecon PN DST + UFMT/Unesc prevenção + UNIFIL Pacto/diarreia/autocuidado + VUNESP saneamento/educação/HAS/PF (g12)",
+  "total": 13,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8": "promocao_educacao_prevencao",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-0": "promocao_educacao_prevencao",
+    "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1": "promocao_educacao_prevencao",
+    "selecon-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-4": "promocao_educacao_prevencao",
+    "ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3": "promocao_educacao_prevencao",
+    "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8": "promocao_educacao_prevencao",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2": "promocao_principios_direitos",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-2": "promocao_educacao_prevencao",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3": "promocao_educacao_prevencao",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-7": "promocao_educacao_prevencao",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8": "promocao_educacao_prevencao",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-2": "promocao_educacao_prevencao",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3": "promocao_educacao_prevencao"
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-0",
+    "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+    "selecon-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-4",
+    "ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3",
+    "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-2",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-7",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-2",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3"
+  ],
+  "notes": [
+    "objetiva-3941226-8: gabarito reparado C→A (larvicida elimina larvas); apply com --no-strict-gabarito.",
+    "vunesp-3932216-2: HAS 18 anos / 24 meses — risk alto (numeric).",
+    "Pacote completo: 101 slugs handcraft (g01–g12), excl. pilot + cetrede Saúde Mental."
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g12 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g12/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g12 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g12 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g12 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g12 --apply --no-strict-gabarito (só quando pedido)"
+  ],
+  "next_lote": null,
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g12.json"
+  }
+}

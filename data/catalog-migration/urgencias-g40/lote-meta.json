@@ -12,5 +12,11 @@
   },
   "readiness": "8/8",
   "readiness_strict_v2": "8/8",
-  "notes": "11º lote cauda — 5 generico + 2 choque + 1 engasgo · C/E IGEDUC · hipertensiva/HDA/XABCDE/APH · choque distributivo · hemorragia qualitativa"
+  "notes": "11º lote cauda — 5 generico + 2 choque + 1 engasgo · C/E IGEDUC · hipertensiva/HDA/XABCDE/APH · choque distributivo · hemorragia qualitativa",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

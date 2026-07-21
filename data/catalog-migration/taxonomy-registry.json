@@ -28,6 +28,7 @@
   },
   "commands": {
     "inventory": "npm run audit:subtopico-inventory",
+    "taxonomy_gate": "npm run audit:taxonomy-gate -- --subtopico=\"<Nome canônico>\"",
     "normalize_legacy": "npm run catalog:reclassify-subtopico -- --dry-run",
     "infer_bucket": "npm run catalog:infer-subtopico -- --subtopico=\"<bucket>\" --dry-run",
     "agent_classify": "npm run taxonomy:agent-classify -- --dry-run",
@@ -38,6 +39,8 @@
   "artifacts": {
     "inventory": "artifacts/subtopico-inventory-audit.json",
     "mismatches_csv": "artifacts/subtopico-inventory-mismatches.csv",
+    "taxonomy_gate_pattern": "artifacts/taxonomy-gate-{pacote_prefix}.json",
+    "taxonomy_closed_pattern": "artifacts/taxonomy-closed-{pacote_prefix}.json",
     "infer_report_pattern": "artifacts/catalog-infer-subtopico-{bucket-slug}.json",
     "agent_report": "artifacts/catalog-infer-subtopico-taxonomy-agent.json"
   },
@@ -66,5 +69,5 @@
       "decisions": "artifacts/taxonomy-edge-final-decisions.json"
     }
   },
-  "handcraft_prerequisite": "docs/DECISAO_TRILHO_A_UNICO.md — taxonomia estável antes de handcraft por slug"
+  "handcraft_prerequisite": "npm run audit:taxonomy-gate antes do 1º lote — docs/TAXONOMIA_MODEL.md §5–§6"
 }

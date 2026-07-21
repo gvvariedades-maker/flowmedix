@@ -1,0 +1,18 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g08",
+  "exported_at": "2026-07-20T17:03:59.810Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g08/manifest.json"
+  },
+  "slugs": [
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
+    "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+    "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+    "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4"
+  ]
+}

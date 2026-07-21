@@ -1,0 +1,28 @@
+{
+  "lote": "oracoes-coordenadas-e-subordinadas-g05",
+  "subtopico": "Orações coordenadas e subordinadas",
+  "status": "applied",
+  "slugs": [
+    "avancasp-acs-oracoes-leia-o-texto-a-seguir-para-responder-3661687",
+    "educa-pb-ag-oracoes-texto-1-a-inteligencia-artificial-ja-3711355",
+    "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793433",
+    "vunesp-acs-p-oracoes-leia-o-texto-a-seguir-para-responder-3845002",
+    "apice-acs-pr-oracoes-pestana-2023-p-619-aponta-que-as-ora-3951856",
+    "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913806"
+  ],
+  "note": "Fase 0 pipeline 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "topico": "Lingua Portuguesa",
+  "pedagogical_branch": "pt_oracoes_subordinadas",
+  "anchor_slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
+  "golden_reference": "examples/questao-premium-apice-portugues-oracoes-adversativa-pocinhos.json",
+  "handcraft_at": "2026-07-20",
+  "apply_requires": "--allow-insert",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-21",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/oracoes-coordenadas-e-subordinadas-g05.json"
+  }
+}

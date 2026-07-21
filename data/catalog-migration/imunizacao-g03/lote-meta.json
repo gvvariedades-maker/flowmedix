@@ -11,5 +11,14 @@
     "imunizacao_generico": 4
   },
   "priority": "V/F intervalos (1) + calendário infantil/FA (3) + EXCETO/INCORRETA/sala (4)",
-  "notes": "Piloto g03 — CPCON intervalos, BCG V/F, FA esquema, calendário 2022, HepB 30d, boas práticas, antibiótico mito, EXCETO fatores imunes"
+  "notes": "Piloto g03 — CPCON intervalos, BCG V/F, FA esquema, calendário 2022, HepB 30d, boas práticas, antibiótico mito, EXCETO fatores imunes",
+  "anchor_slug": "amauc-enfermagem-imunizacao-1779572227744-8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel-imunizacao",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g03.json",
+    "notes": "L6 batch quality-vendavel"
+  }
 }

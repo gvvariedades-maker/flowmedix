@@ -13,5 +13,11 @@
     "examples/questao-premium-selecon-urgencias-bt16-esmagamento.json",
     "examples/questao-premium-ameosc-urgencias-trauma-imobilizacao-vf.json"
   ],
-  "notes": "g18 XABCDE final — obstrução VAA Heimlich · choque hipovolêmico hemorragia IV · TCE admissão coluna · APH ABC · prancha rígida coluna · síndrome compartimental dor pós-imobilização"
+  "notes": "g18 XABCDE final — obstrução VAA Heimlich · choque hipovolêmico hemorragia IV · TCE admissão coluna · APH ABC · prancha rígida coluna · síndrome compartimental dor pós-imobilização",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

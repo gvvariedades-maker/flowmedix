@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-15T18:16:20.448Z",
-  "pacote_prefix": "calculo-de-administracao-de-medicamentos-e-infusoes",
+  "generated_at": "2026-07-21T01:23:09.734Z",
+  "pacote_prefix": "oracoes-coordenadas-e-subordinadas",
   "pass": true,
-  "detail": "Playwright L3 Cálculo — 2 branches (1 bespoke + conceito ok_generico); unit tests __tests__/slidePresentationSubtopicMold.test.ts calc 4/4",
+  "detail": "Playwright L3 PT Orações — 2 branches (1 núcleo pt-period-rail 4/4); PNGs em artifacts/visual-mold-regression/",
   "branches": [
-    "calc_dose_equivalencia",
-    "calc_conceito"
+    "pt_oracoes_subordinadas",
+    "pt_oracoes_subordinadas_generico"
   ]
 }

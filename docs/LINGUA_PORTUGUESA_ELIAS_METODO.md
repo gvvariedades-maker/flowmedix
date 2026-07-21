@@ -18,9 +18,10 @@ A skill completa vive em [`.cursor/skills/professor-elias-santana-metodo/`](../.
 **Encadeamento handcraft:**
 
 1. `professor-elias-santana-metodo` (ou PT genérico)
-2. `avant-golden-anchor-handcraft`
-3. `brief-lingua-portuguesa`
-4. `avant-json-template`
+2. `avant-classify-family`
+3. `avant-golden-anchor-handcraft`
+4. `brief-lingua-portuguesa`
+5. `avant-json-template`
 
 ---
 
@@ -55,6 +56,7 @@ A skill completa vive em [`.cursor/skills/professor-elias-santana-metodo/`](../.
 | Módulo | Âncora | Prompt conversa |
 |--------|--------|-----------------|
 | M03 Sujeito | [`questao-premium-epice-portugues-sujeito-eliptico.json`](../examples/questao-premium-epice-portugues-sujeito-eliptico.json) | trigger Handcraft + módulo M03 |
+| M08 Pontuação | [`questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json`](../examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json) (eliminação · vocativo) · [`questao-premium-cpcon-portugues-pontuacao-tirinha-vf.json`](../examples/questao-premium-cpcon-portugues-pontuacao-tirinha-vf.json) (VF I/II/III) | brief L3 `pt_pontuacao` · target `pt-comma-rail` |
 | M11 Crase (Q506) | [`questao-premium-vunesp-portugues-crase-funil.json`](../examples/questao-premium-vunesp-portugues-crase-funil.json) | [`PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md`](PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md) |
 
 ---
@@ -96,6 +98,7 @@ Anexos:
 @.cursor/skills/professor-elias-santana-metodo/SKILL.md
 @.cursor/skills/professor-elias-santana-metodo/modules/M03-sujeito-enriquecido.md
 @docs/LINGUA_PORTUGUESA_ELIAS_METODO.md
+@.cursor/skills/avant-classify-family/SKILL.md
 @.cursor/skills/avant-golden-anchor-handcraft/SKILL.md
 @.cursor/skills/brief-lingua-portuguesa/SKILL.md
 @.cursor/skills/avant-json-template/SKILL.md
@@ -120,3 +123,4 @@ Anexos:
 |------|------|
 | 2026-07-19 | M01–M16 enriquecidos; 32 outlines Essencial; skill versionada no git |
 | 2026-07-19 | Prompt âncora Q506 — [`PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md`](PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md) |
+| 2026-07-20 | M08 enriquecido + âncoras Pontuação (Rita + VF tirinha) + brief `pt_pontuacao` (`pt-comma-rail`) |

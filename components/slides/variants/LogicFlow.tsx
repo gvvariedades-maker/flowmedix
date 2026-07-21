@@ -256,6 +256,10 @@ export const LogicFlow = ({
     return <LogicFlowPtTermMatrixTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
   }
 
+  if (variant === 'pt-subject-focus-tap-flow') {
+    return <LogicFlowPtTermMatrixTapFlow steps={steps} theme={theme} footerRule={footerRule} />;
+  }
+
   if (variant === 'trabalho-vf-juggle-tap') {
     return <LogicFlowTrabalhoVfJuggleTap steps={steps} theme={theme} footerRule={footerRule} />;
   }

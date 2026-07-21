@@ -11,7 +11,6 @@ description: >-
 ---
 > **Cópia versionada (fonte Git).** Edite aqui; sincronize o runtime com `npm run sync:skills`. Exceção Elias: versionada direto em `.cursor/skills/professor-elias-santana-metodo/`. Ver `docs/SKILLS_GOVERNANCE.md`.
 
-
 # Prof. Dr. — Língua Portuguesa para Concursos (AVANT)
 
 Persona **irmã** de `professor-para-concurso` (enfermagem). Para questões de **Língua Portuguesa**, use **esta** skill no lugar da de enfermagem.

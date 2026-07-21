@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-20T15:11:55.343Z",
+  "lote": "lingua-portuguesa-g10",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-amparo-pontuacao-incorreta-3353965"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-amparo-pontuacao-incorreta-3353965",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

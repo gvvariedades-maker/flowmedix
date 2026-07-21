@@ -3,6 +3,7 @@
 import { createElement } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, CheckCircle2 } from 'lucide-react';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { cn } from '@/lib/utils';
 import type { VitrineGrupoSubtopico } from '@/lib/vitrine/types';
 import { getTopicIcon } from '@/lib/vitrine/vitrineTopicIcon';
@@ -145,7 +146,7 @@ export function VitrineSubjectCard({
               <span
                 className={cn(
                   'shrink-0 text-sm font-bold tabular-nums',
-                  trabalhadas > 0 ? 'text-[#166534]' : 'text-slate-300',
+                  trabalhadas > 0 ? vitrineBrand.text : 'text-slate-300',
                 )}
               >
                 {progressoPct}%
@@ -200,7 +201,7 @@ export function VitrineSubjectCard({
         </button>
 
         {mostrarCheckConclusao ? (
-          <CheckCircle2 size={compact ? 16 : 18} className="shrink-0 text-green-600" aria-hidden />
+          <CheckCircle2 size={compact ? 16 : 18} className={cn('shrink-0', vitrineBrand.icon)} aria-hidden />
         ) : null}
 
         {hasQuestions && !compact ? (
@@ -208,7 +209,7 @@ export function VitrineSubjectCard({
             variant="ghost"
             size="sm"
             asChild
-            className="hidden shrink-0 text-xs font-medium text-[#166534] hover:bg-[rgba(34, 197, 94,0.08)] hover:text-[#166534] sm:inline-flex"
+            className={cn('hidden shrink-0 text-xs font-medium sm:inline-flex', vitrineBrand.text, vitrineBrand.hoverBg, vitrineBrand.hoverText)}
           >
             <VitrineQuestaoLink
               slug={ctaSlug}
@@ -239,7 +240,7 @@ export function VitrineSubjectCard({
 
       {hasQuestions && !compact ? (
         <div className="px-4 pb-3 sm:hidden">
-          <Button variant="ghost" size="sm" asChild className="w-full text-[#166534]">
+          <Button variant="ghost" size="sm" asChild className={cn('w-full', vitrineBrand.text)}>
             <VitrineQuestaoLink slug={ctaSlug} estudarQuery={estudarQuery}>
               {ctaLabel}
             </VitrineQuestaoLink>
@@ -264,7 +265,7 @@ export function VitrineSubjectCard({
             <div
               className={cn(
                 'h-full transition-[width] duration-300 ease-out',
-                todas ? 'bg-green-500' : 'bg-[#22c55e]',
+                vitrineBrand.bar,
               )}
               style={{ width: `${progressoPct}%` }}
             />
@@ -297,7 +298,7 @@ export function VitrineSubjectCard({
                   asChild
                   variant="outline"
                   size="sm"
-                  className="ml-auto rounded-xl border-slate-200 text-slate-700 hover:border-[rgba(34, 197, 94,0.35)] hover:bg-[rgba(34, 197, 94,0.06)] hover:text-[#166534]"
+                  className={cn('ml-auto rounded-xl border-slate-200 text-slate-700', vitrineBrand.hoverBorderLight, vitrineBrand.hoverBgLight, vitrineBrand.hoverText)}
                 >
                   <VitrineQuestaoLink slug={firstSlug} estudarQuery={estudarQuery}>
                     Entrar no assunto

@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-07-20T17:40:03.645Z",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "pacote_prefix": "promocao-a-saude-e-prevencao-de-agravos",
+  "production_status_before": "none",
+  "technical_ready": true,
+  "production_ready": true,
+  "can_sell": true,
+  "continuous_eligible": true,
+  "ship_gate": {
+    "ok": true,
+    "blockers": []
+  },
+  "monitoring": {
+    "deprecated": true,
+    "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
+    "sessions_30d": 192
+  },
+  "layers": {
+    "L1": {
+      "pass": true,
+      "detail": "handcraft-dod PASS"
+    },
+    "L2": {
+      "pass": true,
+      "detail": "alignment OK (101 slugs)"
+    },
+    "L2b": {
+      "pass": true,
+      "detail": "numeric factcheck OK"
+    },
+    "L3": {
+      "pass": true,
+      "detail": "Playwright L3 Promoção — 4 branches (1 bespoke sus-art4-orbit); PNGs em artifacts/visual-mold-regression/"
+    },
+    "L4": {
+      "pass": true,
+      "detail": "capture cirúrgico — warn only (não bloqueia ship)"
+    },
+    "L5": {
+      "pass": true,
+      "detail": "content health OK"
+    },
+    "L6": {
+      "pass": true,
+      "detail": "all 12 lotes anchor pass"
+    }
+  },
+  "lote_stats": [
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g01",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g02",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g03",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g04",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g05",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g06",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g07",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g08",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g09",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g10",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g11",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g12",
+      "scanned": 13,
+      "alignment_fail": 0,
+      "numeric_fail": 0
+    }
+  ],
+  "content_health": {
+    "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+    "sessions_30d": 192,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 0,
+      "total": 0
+    },
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 192,
+      "open_p1": 0,
+      "report_rate_pct": 0
+    },
+    "pass": true,
+    "blockers": []
+  },
+  "blockers": []
+}

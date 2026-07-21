@@ -27,11 +27,29 @@ export type HandcraftRegistryPackage = {
   production_status?: string;
 };
 
+/** Galeria visual leve por ramo — capturas do player AVANT (não posters externos). */
+export type BranchVisualGallery = {
+  /** pending → pilot (JSON+capture genérico) → ready (bespoke wired + re-capture) */
+  status: 'pending' | 'pilot' | 'ready';
+  /** Slug no player / capture:questao-review */
+  anchor_slug?: string | null;
+  /** layout_variant 4/4 alvo (mesmo genérico no piloto) */
+  layouts?: string[];
+  /** Pasta PNG: artifacts/questao-review/<anchor_slug>/ */
+  captures_dir?: string | null;
+  note?: string;
+};
+
 export type PedagogicalBranchPlaybook = {
   id: string;
   when: string;
   mold?: string;
   anchors?: string[];
+  l3_decision?: string;
+  bespoke_target?: string;
+  /** Path do brief Fase 3b, se existir */
+  brief?: string;
+  visual_gallery?: BranchVisualGallery;
 };
 
 export type HandcraftModeConfig = {
@@ -321,7 +339,11 @@ function formatBranches(playbook: HandcraftPlaybook): string {
   return branches
     .map((b) => {
       const anchors = b.anchors?.length ? `\n    Âncoras: ${b.anchors.join(', ')}` : '';
-      return `  - **${b.id}** — ${b.when}${b.mold ? ` · ${b.mold}` : ''}${anchors}`;
+      const vg = b.visual_gallery;
+      const gallery = vg
+        ? `\n    Galeria visual: \`${vg.status}\`${vg.captures_dir ? ` · \`${vg.captures_dir}\`` : ''}${b.brief ? ` · brief \`${b.brief}\`` : ''}`
+        : '';
+      return `  - **${b.id}** — ${b.when}${b.mold ? ` · ${b.mold}` : ''}${anchors}${gallery}`;
     })
     .join('\n');
 }

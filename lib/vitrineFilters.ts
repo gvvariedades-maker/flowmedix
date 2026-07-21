@@ -6,12 +6,20 @@
 import type { AccessibleModulosNavSqlFilters } from '@/lib/concursos/entitlements';
 import { compareModuloCurriculum } from '@/lib/vitrineOrder';
 
+import {
+  parseVitrineDisciplina,
+  resolveVitrineDisciplinaId,
+  type VitrineDisciplinaId,
+} from '@/lib/vitrine/disciplina';
+
 export type VitrineFilterParams = {
   banca?: string;
   assunto?: string;
   bancas?: string[];
   assuntos?: string[];
   q?: string;
+  /** Filtro por disciplina da vitrine (`enfermagem` | `portugues`). */
+  disciplina?: VitrineDisciplinaId | string;
 };
 
 function resolveBancas(filters: VitrineFilterParams): string[] {
@@ -109,6 +117,12 @@ export function filterModulosLikeVitrine(
 
   if (bancas.length) result = result.filter((m) => bancas.includes(m.banca));
   if (assuntos.length) result = result.filter((m) => assuntos.includes(m.titulo_aula ?? ''));
+  const disciplina = parseVitrineDisciplina(
+    typeof filters.disciplina === 'string' ? filters.disciplina : undefined,
+  );
+  if (disciplina) {
+    result = result.filter((m) => resolveVitrineDisciplinaId(m.modulo_nome) === disciplina);
+  }
   if (qRaw) {
     const q = qRaw.toLowerCase();
     const soNumero = q.replace(/^q-?/, '');

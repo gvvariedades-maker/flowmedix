@@ -13,5 +13,11 @@
   ],
   "readiness": "8/8",
   "preflight_artifact": "artifacts/catalog-preflight-urgencias-g15.json",
-  "notes": "g15 AVC/IAM — admissão AVE técnico · caso Marcos IAM · linha cuidado MS exclusão · condutas auxiliar IAM · sinais AVC semiologia · tipos isquêmico/hemorrágico · clopidogrel transporte · IAM dor torácica"
+  "notes": "g15 AVC/IAM — admissão AVE técnico · caso Marcos IAM · linha cuidado MS exclusão · condutas auxiliar IAM · sinais AVC semiologia · tipos isquêmico/hemorrágico · clopidogrel transporte · IAM dor torácica",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

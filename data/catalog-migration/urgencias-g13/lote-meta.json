@@ -11,5 +11,11 @@
   "anchors_used": [
     "examples/questao-premium-admtec-urgencias-fratura-exposta-imobilizacao.json"
   ],
-  "notes": "g13 EXCETO final — fratura exposta imobilização (âncora ADM&TEC) · 22/22 cluster EXCETO fechado"
+  "notes": "g13 EXCETO final — fratura exposta imobilização (âncora ADM&TEC) · 22/22 cluster EXCETO fechado",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

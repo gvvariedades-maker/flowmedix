@@ -1,0 +1,661 @@
+{
+  "generated_at": "2026-07-21T03:46:09.043Z",
+  "total": 93,
+  "missing": 0,
+  "ok_figures": 5,
+  "ok_transcribed": 2,
+  "no_reference": 86,
+  "rows": [
+    {
+      "slug": "avancasp-ace-classes-substantivos-sao-palavras-que-design-3353964",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Substantivos são palavras que designam os seres. Relacione cada substantivo à sua classificação. I. Fizeram uma viagem …"
+    },
+    {
+      "slug": "avancasp-acs-classes-15-07-2026-19-33-1-88-3-4-5-6-dispon-3839425",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Na sentença abaixo, a palavra «essencial» funciona como um:"
+    },
+    {
+      "slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cuja palavra destacada está sendo substantivada, dando nome a uma categoria."
+    },
+    {
+      "slug": "avancasp-acs-classes-sao-palavras-que-designam-os-seres-r-3352961",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Substantivos são palavras que designam os seres. Relacione cada substantivo à sua classificação. I. Ela finalmente real…"
+    },
+    {
+      "slug": "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho a seguir: “Um caquizeiro foi plantado na Fazenda Santa Elisa ao lado de dois gigantescos pés de lichia qu…"
+    },
+    {
+      "slug": "avancasp-mon-classes-schulz-charles-m-snoopy-jornal-da-ta-3739268",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "SCHULZ, Charles M. Snoopy. Jornal da Tarde. São Paulo, 29 ago. 2003. Na tirinha abaixo, a mudança de «um» para «o» pode…"
+    },
+    {
+      "slug": "avancasp-tla-classes-quando-o-verde-dos-teus-olhosse-espa-3726050",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "“Quando o verde dos teus olhos Se espalhar na plantação Eu te asseguro, não chore não, viu? Que eu voltarei, viu, meu c…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-utilize-o-texto-05-para-responder-a-3599763",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Utilize o Texto 05 para responder à questão abaixo. Texto 05 Fonte: OLIVEIRA, Louise. Variação linguística: o que é e e…"
+    },
+    {
+      "slug": "avancasp-acr-classes-considere-o-trecho-abaixo-divirto-me-3839861",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o trecho abaixo: “Divirto-me pensando no que encontraremos; sei que quando chegarmos será como se eu já tives…"
+    },
+    {
+      "slug": "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661683",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Um coelho Todo mundo sabe: uma agência de publicidade comemorou a Pásco…"
+    },
+    {
+      "slug": "avancasp-aee-classes-o-que-e-angustia-um-rapaz-fez-me-ess-3374787",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "O que é angústia Um rapaz fez-me essa pergunta difícil de ser respondida. Pois depende do angustiado. Para alguns incau…"
+    },
+    {
+      "slug": "avancasp-ana-classes-dentre-as-palavras-a-seguir-a-unica-3460039",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Dentre as palavras a seguir, a única que admite a flexão de gênero e que pode, portanto, receber o morfema de gênero ma…"
+    },
+    {
+      "slug": "avancasp-fon-classes-cartazes-publicitarios-disponivel-em-3665303",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "CARTAZES PUBLICITÁRIOS. No cartaz publicitário abaixo, é correto afirmar que:"
+    },
+    {
+      "slug": "avancasp-fon-classes-era-daltonico-1-e-nao-sabia-chegou-a-3665299",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "“Era daltônico(1) e não sabia. Chegou assim à idade adulta(2), sem se queixar das cores que não via. (...) E aos seus o…"
+    },
+    {
+      "slug": "idecan-atas-classes-leia-o-texto-para-responder-a-questa-3531596",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto para responder a questão abaixo. VALE DO PARAÍBA TEM RELAÇÃO CULTURAL COM O ARROZ E OUSA COM TIPOS ESPECIA…"
+    },
+    {
+      "slug": "vunesp-ag-pr-classes-leia-o-texto-para-responder-a-questa-3352592",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Existem as pessoas bibliófilas (do grego biblíon, “livro”, e philos, “amigo”): q…"
+    },
+    {
+      "slug": "apice-acs-pr-classes-considere-o-texto-a-seguir-para-resp-4024888",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. As universidades e o desafio da desigualdade social (Cesar Martins…"
+    },
+    {
+      "slug": "avancasp-acr-classes-era-daltonico-1-e-nao-sabia-chegou-a-3727513",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "“Era daltônico(1) e não sabia. Chegou assim à idade adulta(2), sem se queixar das cores que não via. (...) E aos seus o…"
+    },
+    {
+      "slug": "avancasp-afa-classes-assinale-a-alternativa-cujo-termo-de-3962475",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cujo termo destacado possui natureza adverbial, indicando alguma circunstância em relação à ação…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-04-para-responder-a-que-4014478",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto 04 para responder à questão. Texto 04 Disponível em: https://www.instagram.com.br/niquel.nausea. Acesso em…"
+    },
+    {
+      "slug": "educa-pb-acs-classes-considere-o-texto-a-seguir-para-resp-3819856",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "ok_transcribed",
+      "instruction_snippet": "Considere o trecho transcrito abaixo para responder à questão. No cartum, o termo «rápida», presente na expressão «Dest…"
+    },
+    {
+      "slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e responda à questão. TEXTO II — Casamento, uma invenção cristã (Rainer Gonçalves Sousa / Histori…"
+    },
+    {
+      "slug": "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840838",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Texto 1 — «Bons motivos para não se levar tão a sério…» (Folha/UOL, ada…"
+    },
+    {
+      "slug": "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336126",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Estratégias de sobrevivência (Kalaf Epalanga, adaptado) [...] O termo destacado …"
+    },
+    {
+      "slug": "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661685",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Trecho de «Um coelho» (Rubem Braga): o narrador recebe Osvaldo Coelho d…"
+    },
+    {
+      "slug": "avancasp-acs-classes-os-adverbios-sao-palavras-que-modifi-3452344",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Os advérbios são palavras que modificam o verbo, o adjetivo ou outro advérbio. Eles recebem a denominação da circunstân…"
+    },
+    {
+      "slug": "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Em todas as construções a seguir, os elementos destacados têm valor de advérbio, exceto em:"
+    },
+    {
+      "slug": "avancasp-ag-classes-identifique-em-qual-das-sentencas-a-3457304",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Identifique em qual das sentenças a seguir a expressão em destaque é uma locução adverbial."
+    },
+    {
+      "slug": "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376854",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão abaixo. Carlos Chagas foi a primeira e até hoje única pessoa a descrever…"
+    },
+    {
+      "slug": "avancasp-con-classes-leia-o-texto-a-seguir-para-responder-3460251",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão abaixo. «O homem rouco» (Rubem Braga). Trecho: o narrador perde a voz, t…"
+    },
+    {
+      "slug": "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Um adjetivo funciona como advérbio apenas em:"
+    },
+    {
+      "slug": "quadrix-aux-classes-15-07-2026-19-33-47-88-110-111-112-t-3738663",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto para a questão. Trecho sobre doenças autoimunes: o sistema imunológico ataca o próprio corpo; a incidência aument…"
+    },
+    {
+      "slug": "apice-ag-adm-classes-leia-a-charge-abaixo-e-responda-a-qu-3793476",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a charge abaixo e responda à questão. Em «é que o Enem é uma data muito especial, quero acordar bem cedo para me a…"
+    },
+    {
+      "slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Inteligência artificial e a transformação das profissões do futuro. Por Unifor — 15/07/2025. A inteligência artificial …"
+    },
+    {
+      "slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o vocábulo «a» em destaque NÃO exerce a função de artigo."
+    },
+    {
+      "slug": "avancasp-ace-classes-marque-a-alternativa-que-preenche-as-3353967",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Marque a alternativa que preenche as lacunas a seguir conforme a regência verbal e nominal da língua portuguesa: No fim…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-3-para-responder-a-ques-3483808",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto 3 para responder à questão abaixo. TEXTO 3 O papa vai ao banheiro? Por Tiago Germano No terceiro mês do ca…"
+    },
+    {
+      "slug": "fgv-ass-adm-classes-use-o-texto-a-seguir-para-responder-3382225",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Use o texto a seguir para responder à questão. Texto 2 Economizar água Apesar de parecer muita, devido ao aumento exces…"
+    },
+    {
+      "slug": "quadrix-aux-classes-texto-para-a-questao-imagine-um-time-3738680",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto para a questão. Imagine um time de futebol atacado por um surto enlouquecedor, em que os jogadores saem marcando …"
+    },
+    {
+      "slug": "selecon-rece-classes-leia-o-texto-a-seguir-ceo-da-empresa-3852269",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: CEO da empresa sul-coreana responsável por foguete que explodiu em Alcântara pede desculpas. Fal…"
+    },
+    {
+      "slug": "fgv-acs-pref-classes-assinale-a-opcao-a-seguir-em-que-o-t-3719032",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a opção a seguir em que o termo destacado apresenta um valor de causa."
+    },
+    {
+      "slug": "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Assinale a alternativa que apresenta, entre parênteses, o valor se…"
+    },
+    {
+      "slug": "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto para a questão. Assinale a opção correta, quanto à análise semântica e sintática do segundo parágrafo do texto (t…"
+    },
+    {
+      "slug": "vunesp-acs-p-classes-ainda-que-seja-utilizada-frequenteme-3776327",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Ainda que seja utilizada frequentemente com valor semântico de adição, no trecho «Fui para homenagear o menino João e a…"
+    },
+    {
+      "slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. No trecho «Fazia bastante tempo eu tinha ido a um show dele, __________…"
+    },
+    {
+      "slug": "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789284",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Assinale a alternativa em cujo trecho há uma comparação."
+    },
+    {
+      "slug": "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789333",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. O sentido indicado entre colchetes associa-se corretamente à expressão …"
+    },
+    {
+      "slug": "vunesp-ag-cs-classes-leia-o-trecho-a-seguir-da-cronica-de-3799252",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho a seguir, da crônica de Nelson Rodrigues, para responder à questão. No trecho «Sob o estímulo da pusilani…"
+    },
+    {
+      "slug": "avancasp-tec-classes-cazo-presenca-de-animais-selvagens-b-3835993",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "CAZO. Presença de animais selvagens. Blog do AFTM. A conjunção «como», empregada na fala da charge abaixo, possui o sen…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-para-responder-a-questao-texto-ii-fi-3836484",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto II — Filho do dono (trecho da canção) «Morre a criatura e o planeta sente a dor O desespero no olhar de uma crian…"
+    },
+    {
+      "slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913820",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e responda à questão. TEXTO II — Casamento, uma invenção cristã (Rainer Gonçalves Sousa — adaptad…"
+    },
+    {
+      "slug": "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto abaixo para responder à questão. Trecho sobre envelhecimento (adaptado de reflexão clínica e Montaign…"
+    },
+    {
+      "slug": "instituto-ao-classes-15-07-2026-19-33-55-88-130-131-leia-3840780",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Texto 1 — Bons motivos para não se levar tão a sério (Folha de S.Paulo,…"
+    },
+    {
+      "slug": "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840898",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. (HQ em quadrinhos — adaptado) Assinale a alternativa que analisa corret…"
+    },
+    {
+      "slug": "instituto-ao-classes-o-texto-a-seguir-refere-se-a-questao-3841143",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "O texto a seguir refere-se à questão. Texto 1 — ENTENDA POR QUE SER MULTITAREFA É UM MITO QUE FAZ MAL AO CÉREBRO (adapt…"
+    },
+    {
+      "slug": "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3840776",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Professora de ioga de 102 anos ensina sua abordagem simples para envelh…"
+    },
+    {
+      "slug": "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376862",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Carlos Chagas: há 90 anos morria o único cientista a descrever completa…"
+    },
+    {
+      "slug": "avancasp-esc-classes-considere-o-texto-a-seguir-para-resp-3963891",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Nascer, crescer e evoluir... Muita gente diz que conviver com adul…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-01-para-responder-a-que-4014454",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto 01 para responder à questão. Texto 01 — Não foi sempre azul: como a cor do céu mudou «dramaticamente» no p…"
+    },
+    {
+      "slug": "selecon-acs-classes-considere-o-texto-a-seguir-para-resp-3990848",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Ipea faz pesquisa para combater desinformação sobre políticas públ…"
+    },
+    {
+      "slug": "vunesp-ag-pr-classes-por-que-agora-a-solidao-nos-adoece-p-3419024",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Por que agora a solidão nos adoece? (Leon Ferrari — Estadão, adaptado.) [...] Hoje, todavia, segundo os especialistas, …"
+    },
+    {
+      "slug": "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336089",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. A tragédia das crianças sem saneamento. A falta de saneamento básico afasta milh…"
+    },
+    {
+      "slug": "vunesp-aux-s-classes-leia-o-texto-para-responder-a-questa-3323733",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. A Santa Casa de Misericórdia de São Paulo anunciou a venda de sete imóveis [...]…"
+    },
+    {
+      "slug": "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3999759",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Consumo abusivo de álcool é desafio nacional. [...] Segundo a OMS, não …"
+    },
+    {
+      "slug": "avancasp-ace-classes-leia-o-texto-a-seguir-para-responder-3662931",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Domingo Um dia sem jornais é como um domingo chuvoso. Há tempo para tud…"
+    },
+    {
+      "slug": "avancasp-aco-classes-se-ando-cheio-me-dilua-se-estou-no-m-3738889",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "«Se ando cheio, me dilua. Se estou no meio, conclua. Se perco o freio, me obstrua. Se me arruinei, reconstrua.» (Arnald…"
+    },
+    {
+      "slug": "avancasp-acr-classes-as-criancas-devem-ser-acompanhadas-c-3727509",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "«As crianças devem ser acompanhadas com muito zelo _____ aprendam os valores necessários para uma boa sociedade, isso c…"
+    },
+    {
+      "slug": "consulplan-a-classes-leia-o-texto-para-responder-a-questa-3694420",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto para responder à questão abaixo. Memória cheia? Entenda se cérebro humano pode ficar sem espaço [...] Mesm…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-3-para-responder-a-ques-3483811",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Com base no Texto 3, responda à questão abaixo. TEXTO 3 O papa vai ao banheiro? Por Tiago Germano [...] A última imagem…"
+    },
+    {
+      "slug": "educa-pb-acd-classes-leia-o-texto-a-seguir-para-responder-3746555",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. TEXTO I Setembro lilás e o direito a uma chance Laura Brito O setembro …"
+    },
+    {
+      "slug": "educa-pb-ate-classes-texto-ii-governo-federal-lanca-campa-3576929",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto II Governo federal lança campanha Feminicídio Zero na Sapucaí O Ministério das Mulheres lançou a campanha Feminic…"
+    },
+    {
+      "slug": "fgv-acs-pref-classes-assinale-a-opcao-em-que-o-valor-do-e-3719042",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a opção em que o valor do elemento destacado está corretamente indicado."
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-i-para-responder-a-ques-3836456",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto I para responder à questão. Texto I — A sociedade do cansaço é cada vez mais realidade. Como se blindar? (…"
+    },
+    {
+      "slug": "educa-pb-acd-classes-leia-o-texto-a-seguir-e-responda-a-q-3746576",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e responda à questão. TEXTO II — Chocolate faz bem para a saúde? [...] O Brasil já foi um dos gra…"
+    },
+    {
+      "slug": "educa-pb-ace-classes-considere-o-texto-a-seguir-para-resp-3820003",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. TEXTO I — O poder da mente na cura de doenças [...] Os testes clín…"
+    },
+    {
+      "slug": "instituto-ao-classes-leia-o-texto-abaixo-pesquisa-revela-3754329",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto abaixo. Pesquisa revela desafios do transporte público no Brasil Uma pesquisa nacional sobre mobilidade ur…"
+    },
+    {
+      "slug": "selecon-acs-classes-leia-o-texto-a-seguir-populacao-bras-1360966",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: População brasileira chega a 213,4 milhões em julho de 2025 A população brasileira alcançou 213,…"
+    },
+    {
+      "slug": "selecon-ag-f-classes-leia-o-texto-a-seguir-ses-distribui-3754251",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: SES distribui 500 mil doses e incentiva campanha de multivacinação de crianças e adolescentes de…"
+    },
+    {
+      "slug": "selecon-fisc-classes-inteligencia-artificial-consegue-dec-3352885",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Inteligência artificial consegue decifrar o que dizem textos de papiros históricos [...] Para que uma inteligência arti…"
+    },
+    {
+      "slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3844984",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Democracia digital (Revista E, 01.09.2025 — adaptado) [...] Por um lado…"
+    },
+    {
+      "slug": "avancasp-acd-classes-analise-o-termo-destacado-na-frase-e-3554862",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Analise o termo destacado em cada frase e relacione-o à sua correta classe gramatical: I. «Ele arrumou um problema com …"
+    },
+    {
+      "slug": "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "ok_transcribed",
+      "instruction_snippet": "Com base nos trechos transcritos abaixo (extraídos da tirinha), analise as afirmativas e classifique-as em verdadeiro (…"
+    },
+    {
+      "slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a tirinha abaixo para responder à questão. Em relação aos trechos a seguir, retirados da tirinha, analise as afirm…"
+    },
+    {
+      "slug": "avancasp-aux-classes-ate-breve-ha-temperamentos-urbanos-p-3375895",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Até breve Há temperamentos urbanos por nascimento, mas há, igualmente, …"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-2-para-responder-a-ques-3483805",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto 2 para responder à questão abaixo. TEXTO 2 «Cuidar da saúde também é coisa de homem!» Fonte: adaptado. No …"
+    },
+    {
+      "slug": "facet-acs-pr-classes-identifique-a-alternativa-em-que-a-c-3358522",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Identifique a alternativa em que a classe gramatical está identificada de maneira incorreta:"
+    },
+    {
+      "slug": "facet-acs-pr-classes-leia-o-trecho-a-seguir-e-macabea-com-3358539",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho a seguir: E Macabéa, com medo de que o silêncio já significasse uma ruptura, disse ao recém-namorado: – E…"
+    },
+    {
+      "slug": "selecon-athh-classes-quando-eu-deixei-de-acreditar-em-mim-3416683",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Quando eu deixei de acreditar em mim Mayara Godoy [...] Lá pela sexta s…"
+    },
+    {
+      "slug": "apice-ace-pr-classes-leia-o-texto-a-seguir-e-responda-da-3558963",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e responda à questão. A última crônica — Fernando Sabino [...] Ao fundo do botequim um casal de p…"
+    },
+    {
+      "slug": "apice-ag-adm-classes-leia-o-poema-abaixo-e-responda-a-que-3793483",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o poema abaixo e responda à questão. Mágoas — Augusto dos Anjos Quando nasci num mês de tantas flores Todas murcha…"
+    },
+    {
+      "slug": "avancasp-ace-classes-nao-podemos-pensar-tanto-nessas-cois-3662937",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "«Não podemos pensar tanto nessas coisas, afinal, só temos controle sobre uma parte da situação.» Em relação à sentença …"
+    },
+    {
+      "slug": "fgv-ass-ts-p-classes-observe-a-seguinte-frase-a-pessoa-a-3587458",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Observe a seguinte frase: A pessoa a quem entregaram a medalha, foi a que a homenageou no discurso de encerramento. Nes…"
+    },
+    {
+      "slug": "selecon-ag-p-classes-leia-o-texto-a-seguir-ainda-estou-aq-3649272",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: «Ainda Estou Aqui» é escolhido melhor filme do ano pela crítica internacional. O longa-metragem …"
+    }
+  ]
+}

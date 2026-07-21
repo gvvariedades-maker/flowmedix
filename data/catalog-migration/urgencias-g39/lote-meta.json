@@ -11,5 +11,11 @@
   },
   "readiness": "8/8",
   "readiness_strict_v2": "8/8",
-  "notes": "10º lote cauda — 7 generico + 1 choque (escorpionismo arritmias/vit C) · peçonhentos C/E · XABCDE · evisceração · Glasgow TCE"
+  "notes": "10º lote cauda — 7 generico + 1 choque (escorpionismo arritmias/vit C) · peçonhentos C/E · XABCDE · evisceração · Glasgow TCE",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

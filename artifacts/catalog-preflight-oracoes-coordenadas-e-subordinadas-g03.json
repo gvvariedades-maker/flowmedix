@@ -1,0 +1,76 @@
+{
+  "lote": "oracoes-coordenadas-e-subordinadas-g03",
+  "generated_at": "2026-07-21T01:14:09.604Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "apice-acs-pr-oracoes-15-07-2026-19-38-80-98-369-370-apos-3951882",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3651723",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3654542",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-acs-oracoes-considere-o-texto-a-seguir-para-resp-3819886",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "facet-moto-p-oracoes-leia-o-periodo-as-criancas-que-brinc-3670230",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-ao-oracoes-analise-as-duas-versoes-do-comunicad-3754333",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "quadrix-aux-oracoes-texto-para-a-questao-imagine-um-time-3738648",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-ass-oracoes-leia-o-texto-a-seguir-a-fruta-que-aj-3692802",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

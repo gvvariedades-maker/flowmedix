@@ -27,5 +27,13 @@
     "npm run validate:goldens -- --strict --lote=imunizacao-g46"
   ],
   "validated_at": "2026-07-03",
-  "readiness": "8/8"
+  "readiness": "8/8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel-imunizacao",
+    "method": "agent",
+    "status": "pass",
+    "artifact": null,
+    "notes": "superseded — anchor N/A"
+  }
 }

@@ -13,5 +13,11 @@
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
     "examples/questao-premium-urgencias-rcp.json"
   ],
-  "notes": "g02 — 30:2 pré-VAA · ambulância tipo B · sequência C-A-B IDECAN · PCR intubado UTI · cadeia intra-hospitalar · vasopressor · carrinho/tábua · DEA FV/TVSP"
+  "notes": "g02 — 30:2 pré-VAA · ambulância tipo B · sequência C-A-B IDECAN · PCR intubado UTI · cadeia intra-hospitalar · vasopressor · carrinho/tábua · DEA FV/TVSP",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

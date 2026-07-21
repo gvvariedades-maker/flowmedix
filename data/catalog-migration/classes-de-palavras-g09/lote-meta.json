@@ -1,0 +1,31 @@
+{
+  "lote": "classes-de-palavras-g09",
+  "subtopico": "Classes de palavras",
+  "status": "handcraft",
+  "slugs": [
+    "cpcon-uepb-a-classes-leia-o-texto-3-para-responder-a-ques-3483811",
+    "educa-pb-ate-classes-texto-ii-governo-federal-lanca-campa-3576929",
+    "avancasp-ace-classes-leia-o-texto-a-seguir-para-responder-3662931",
+    "consulplan-a-classes-leia-o-texto-para-responder-a-questa-3694420",
+    "fgv-acs-pref-classes-assinale-a-opcao-em-que-o-valor-do-e-3719042",
+    "avancasp-acr-classes-as-criancas-devem-ser-acompanhadas-c-3727509",
+    "avancasp-aco-classes-se-ando-cheio-me-dilua-se-estou-no-m-3738889",
+    "educa-pb-acd-classes-leia-o-texto-a-seguir-para-responder-3746555"
+  ],
+  "note": "Fase 0 pipeline Classes de palavras 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+  "golden_reference": "examples/questao-formacao-palavras-siglas.json",
+  "gates": {
+    "questao_readiness": "READY strict-v2-pedagogy",
+    "validate_goldens": "PASS --strict"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/classes-de-palavras-g09.json"
+  }
+}

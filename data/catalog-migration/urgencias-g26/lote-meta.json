@@ -12,5 +12,11 @@
     "examples/questao-premium-ameosc-urgencias-trauma-imobilizacao-vf.json",
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json"
   ],
-  "notes": "g26 V/F protocolo final — imobilização AMEOSC · vasoativas COTEC · dor torácica CPCON · convulsão CPCON (vf) · trauma pélvico GAMA · primeiros socorros IGEDUC ×2 · SAMU Consulplan · cluster urgencias_vf_protocolo 8/8 fechado"
+  "notes": "g26 V/F protocolo final — imobilização AMEOSC · vasoativas COTEC · dor torácica CPCON · convulsão CPCON (vf) · trauma pélvico GAMA · primeiros socorros IGEDUC ×2 · SAMU Consulplan · cluster urgencias_vf_protocolo 8/8 fechado",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

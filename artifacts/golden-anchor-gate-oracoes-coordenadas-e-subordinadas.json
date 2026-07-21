@@ -1,0 +1,15 @@
+{
+  "subtopico": "Orações coordenadas e subordinadas",
+  "pacote_prefix": "oracoes-coordenadas-e-subordinadas",
+  "gate": "pass",
+  "handcraft_allowed": true,
+  "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+  "goldens_needed": 0,
+  "missing": [],
+  "covered": [],
+  "warnings": [],
+  "reasons": [
+    "Todos os ramos novo_ramo/coberto com golden presente em examples/."
+  ],
+  "artifact": "artifacts/golden-anchor-gate-oracoes-coordenadas-e-subordinadas.json"
+}

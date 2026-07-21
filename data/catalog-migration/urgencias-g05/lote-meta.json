@@ -13,5 +13,11 @@
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
     "examples/questao-premium-urgencias-rcp.json"
   ],
-  "notes": "g05 — PCR emergência · naloxona opioides · AHA 2020 30:2 · identificação PCR · AHA 2020 qualidade compressões · 30:2 extra-hospitalar · SBV monitorização · ILCOR RCP mecânica"
+  "notes": "g05 — PCR emergência · naloxona opioides · AHA 2020 30:2 · identificação PCR · AHA 2020 qualidade compressões · 30:2 extra-hospitalar · SBV monitorização · ILCOR RCP mecânica",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

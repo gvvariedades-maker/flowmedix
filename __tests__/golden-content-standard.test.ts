@@ -2,14 +2,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import {
+  CARD_DENSITY_LIMITS,
   GOLDEN_BANNED_PHRASES,
   GOLDEN_CONTENT_STANDARD_VERSION,
+  dangerItemBoundLetter,
   hasQuestionSpecificity,
   isGoldenContentCompliant,
+  lintCardDensity,
   lintClaimSourceBinding,
+  lintDangerZoneMcqCoverage,
   lintGabaritoConsistency,
   lintGoldenContent,
   lintGoldenRuleGabaritoSpoiler,
+  lintGoldenV2Pedagogy,
+  lintLogicFlowPortableFixation,
   lintLogicFlowRecycling,
   lintSlideLayerRedundancy,
 } from '@/lib/goldenContentStandard';
@@ -310,5 +316,141 @@ describe('golden-content-standard v1', () => {
     };
     const codes = lintGoldenContent(broken).map((i) => i.code);
     expect(codes).toContain('meta_sources');
+  });
+
+  describe('handcraft v2 (strict-v2-pedagogy)', () => {
+    const mcqQ = {
+      meta: { family: 'conceito' as const },
+      question_data: {
+        instruction: 'Assinale a alternativa correta sobre absorção.',
+        options: [
+          { id: 'A', text: 'a', is_correct: false },
+          { id: 'B', text: 'b', is_correct: true },
+          { id: 'C', text: 'c', is_correct: false },
+          { id: 'D', text: 'd', is_correct: false },
+        ],
+      },
+    };
+
+    it('dangerItemBoundLetter parseia label Letra X', () => {
+      expect(dangerItemBoundLetter({ label: 'Letra B — IV' })).toBe('B');
+      expect(dangerItemBoundLetter({ label: 'Confundir vias' })).toBeNull();
+    });
+
+    it('reprova danger_zone sem letra errada e sem transferência', () => {
+      const slides = [
+        {
+          type: 'danger_zone',
+          items: [
+            { label: 'Letra A — x', detail: 'd', correct: 'c1' },
+            { label: 'Letra B — gabarito', detail: 'd', correct: 'c2' },
+          ],
+        },
+      ];
+      const codes = lintDangerZoneMcqCoverage(slides, mcqQ, 'conceito').map((i) => i.code);
+      expect(codes).toContain('danger_zone_letter_coverage');
+      expect(codes).toContain('danger_zone_transfer_missing');
+    });
+
+    it('aceita danger_zone com letras erradas + transferência', () => {
+      const slides = [
+        {
+          type: 'danger_zone',
+          items: [
+            { label: 'Letra A — x', detail: 'd', correct: 'c1' },
+            { label: 'Letra C — y', detail: 'd', correct: 'c2' },
+            { label: 'Letra D — z', detail: 'd', correct: 'c3' },
+            {
+              label: 'Confundir oral e retal',
+              detail: 'Transferência: banca inverte 1ª passagem.',
+              correct: 'Pergunte: passa pelo fígado?',
+            },
+          ],
+        },
+      ];
+      expect(lintDangerZoneMcqCoverage(slides, mcqQ, 'conceito')).toEqual([]);
+    });
+
+    it('não exige letras em danger_zone temático (legado)', () => {
+      const slides = [
+        {
+          type: 'danger_zone',
+          items: [
+            { label: 'Pulso a cada ciclo', detail: 'd', correct: 'c1' },
+            { label: 'Hiperventilar', detail: 'd', correct: 'c2' },
+          ],
+        },
+      ];
+      expect(lintDangerZoneMcqCoverage(slides, mcqQ, 'protocolo')).toEqual([]);
+    });
+
+    it('reprova logic_flow MCQ sem fixação no último step', () => {
+      const slides = [
+        {
+          type: 'logic_flow',
+          steps: ['Eliminar A', 'Eliminar C', 'Marcar B'],
+        },
+      ];
+      expect(lintLogicFlowPortableFixation(slides).map((i) => i.code)).toContain(
+        'logic_flow_fixation_missing',
+      );
+    });
+
+    it('aceita fixação no último step', () => {
+      const slides = [
+        {
+          type: 'logic_flow',
+          steps: ['Eliminar A', 'Marcar B', 'Em similares: teste mecanismo antes da letra.'],
+        },
+      ];
+      expect(lintLogicFlowPortableFixation(slides)).toEqual([]);
+    });
+
+    it('ignora fixação em fluxo procedural sem eliminação por letra', () => {
+      const slides = [
+        {
+          type: 'logic_flow',
+          steps: ['Garantir segurança', 'Iniciar compressões', 'Aplicar DEA'],
+        },
+      ];
+      expect(lintLogicFlowPortableFixation(slides)).toEqual([]);
+    });
+
+    it('reprova campo acima do limite duro §3b', () => {
+      const long = 'x'.repeat(CARD_DENSITY_LIMITS.logic_flow_step.hard + 1);
+      const slides = [{ type: 'logic_flow', steps: [long] }];
+      expect(lintCardDensity(slides).map((i) => i.code)).toContain('card_density_logic_step');
+    });
+
+    it('âncoras FAMILY_GOLDEN_FILE passam gates handcraft v2 novos', () => {
+      const handcraftCodes = new Set([
+        'card_density_concept_label',
+        'card_density_logic_step',
+        'card_density_golden_value',
+        'card_density_danger_detail',
+        'card_density_danger_correct',
+        'card_density_footer_rule',
+        'danger_zone_letter_coverage',
+        'danger_zone_transfer_missing',
+        'logic_flow_fixation_missing',
+      ]);
+      for (const [, filename] of Object.entries(FAMILY_GOLDEN_FILE)) {
+        const data = JSON.parse(
+          fs.readFileSync(path.join(EXAMPLES_DIR, filename), 'utf8'),
+        ) as {
+          meta?: { family?: string };
+          reverse_study_slides?: unknown[];
+          study_slides?: unknown[];
+        };
+        const slides = data.reverse_study_slides ?? data.study_slides ?? [];
+        const issues = lintGoldenV2Pedagogy(slides as never[], {
+          q: data as never,
+          family: data.meta?.family as never,
+        }).filter((i) => handcraftCodes.has(i.code));
+        if (issues.length > 0) {
+          throw new Error(`${filename}: ${issues.map((i) => i.code).join(', ')}`);
+        }
+      }
+    });
   });
 });

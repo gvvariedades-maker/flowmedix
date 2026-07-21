@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T17:27:04.890Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g09",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
+    "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

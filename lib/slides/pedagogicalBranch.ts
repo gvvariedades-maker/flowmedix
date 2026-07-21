@@ -166,7 +166,9 @@ export type PedagogicalBranchId =
   | 'pt_pontuacao'
   | 'pt_pontuacao_generico'
   | 'pt_termos_oracao'
-  | 'pt_termos_oracao_generico';
+  | 'pt_termos_oracao_generico'
+  | 'pt_concordancia'
+  | 'pt_concordancia_generico';
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
@@ -1124,6 +1126,23 @@ const PT_TERM_MATRIX_GENERIC_MOLD: SubtopicDesign = {
   dangerZone: 'compare',
 };
 
+// ---- Língua Portuguesa — Concordância (pacote bespoke pt-subject-focus) ----
+const PT_SUBJECT_FOCUS_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'pt-subject-focus-deck',
+  goldenRule: 'pt-subject-focus-board',
+  logicFlow: 'pt-subject-focus-tap-flow',
+  dangerZone: 'pt-subject-trap-arena',
+};
+
+const PT_SUBJECT_FOCUS_GENERIC_MOLD: SubtopicDesign = {
+  template: 'indigo',
+  conceptMap: 'morphological',
+  goldenRule: 'reference_table',
+  logicFlow: 'vertical',
+  dangerZone: 'compare',
+};
+
 /**
  * Mapa ramo → pacote L3 por subtópico.
  * Chave externa: fragmento normalizado do subtópico canônico.
@@ -1632,6 +1651,14 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
     pt_termos_oracao: PT_TERM_MATRIX_MOLD,
     pt_termos_oracao_generico: PT_TERM_MATRIX_GENERIC_MOLD,
   },
+  concordancia: {
+    pt_concordancia: PT_SUBJECT_FOCUS_MOLD,
+    pt_concordancia_generico: PT_SUBJECT_FOCUS_GENERIC_MOLD,
+  },
+  'concordancia verbal e nominal': {
+    pt_concordancia: PT_SUBJECT_FOCUS_MOLD,
+    pt_concordancia_generico: PT_SUBJECT_FOCUS_GENERIC_MOLD,
+  },
 };
 
 function normalizeKey(str: string): string {
@@ -2100,6 +2127,15 @@ const PT_TERMOS_SIGNALS: RegExp[] = [
   /classificam-se, respectivamente/i,
   /modifica verbo|modifica nome|de qu[eê]\?/i,
   /circunst[aâ]ncia|funcao sint[aá]tica/i,
+];
+
+const PT_CONCORDANCIA_SIGNALS: RegExp[] = [
+  /concord[aâ]ncia verbal|concord[aâ]ncia nominal/i,
+  /n[uú]cleo do sujeito|n[uú]cleo concordante/i,
+  /sujeito composto|sujeito partitivo|um dos que/i,
+  /haver existencial|impessoal|ideol[oó]gica/i,
+  /norma[\s-]padr[aã]o.*concord/i,
+  /pergunta[\s-]teste.*n[uú]cleo/i,
 ];
 
 function branchMapKey(subtopico: string): string | undefined {
@@ -2964,6 +3000,13 @@ function inferTermosBranch(corpus: string): PedagogicalBranchId {
   return 'pt_termos_oracao_generico';
 }
 
+function inferConcordanciaBranch(corpus: string): PedagogicalBranchId {
+  if (countPatternMatches(corpus, PT_CONCORDANCIA_SIGNALS) >= 1) {
+    return 'pt_concordancia';
+  }
+  return 'pt_concordancia_generico';
+}
+
 function inferCriancaBranch(corpus: string, familyId?: FamilyId): PedagogicalBranchId {
   if (countPatternMatches(corpus, CRIANCA_TRIAGEM) > 0) {
     return 'crianca_triagem_neonatal';
@@ -3162,6 +3205,12 @@ function inferBranchForBucket(
     (mapKey.includes('lingua portuguesa') && countPatternMatches(corpus, PT_TERMOS_SIGNALS) >= 1)
   ) {
     return inferTermosBranch(corpus);
+  }
+  if (
+    mapKey.includes('concordancia') ||
+    (mapKey.includes('lingua portuguesa') && countPatternMatches(corpus, PT_CONCORDANCIA_SIGNALS) >= 1)
+  ) {
+    return inferConcordanciaBranch(corpus);
   }
   return undefined;
 }

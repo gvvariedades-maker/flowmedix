@@ -40,6 +40,9 @@ export function normalizeCargoHeader(cargo?: string): string {
   return trimmed;
 }
 
+/** Separador visual entre metadados de proveniência (banca, ano, cargo, órgão). */
+export const QUESTION_PROVENANCE_SEP = ' · ';
+
 /**
  * Infere rótulo de cargo para a linha de prova (ex.: PDF "Tec Enf" → Técnico de Enfermagem).
  * Use `meta.cargo_header` quando quiser forçar outro texto (ex.: ENFERMEIRO).
@@ -56,6 +59,48 @@ export function inferCargoHeaderFromProva(prova?: string): string {
   return '';
 }
 
+/** Cargo explícito ou inferido de `prova` — usado na linha de proveniência. */
+export function resolveCargoHeader(meta: Pick<LessonMeta, 'cargo_header' | 'prova'>): string {
+  return normalizeCargoHeader(meta.cargo_header) || inferCargoHeaderFromProva(meta.prova);
+}
+
+/**
+ * Partes de proveniência na ordem canônica: banca → ano → cargo → órgão.
+ * Campos ausentes são omitidos (sem placeholders).
+ */
+export function buildQuestionProvenanceParts(meta: LessonMeta): string[] {
+  const banca = meta.banca?.trim() || '';
+  const ano = meta.ano?.trim() || '';
+  const cargo = resolveCargoHeader(meta);
+  const orgao = stripOuterParens(meta.orgao?.trim() || '');
+  const prova = meta.prova?.trim() || '';
+
+  const parts: string[] = [];
+  if (banca) parts.push(banca);
+  if (ano) parts.push(ano);
+  if (cargo) parts.push(cargo);
+  if (orgao) parts.push(orgao);
+
+  if (!cargo && !orgao && prova && prova !== banca) {
+    parts.push(prova);
+  }
+
+  return parts;
+}
+
+/**
+ * Linha de proveniência — `Banca · Ano · Cargo · Órgão`.
+ * Respeita `meta.header_line` quando presente (texto literal da prova).
+ */
+export function buildQuestionProvenanceLine(meta: LessonMeta): string | null {
+  const custom = meta.header_line?.trim();
+  if (custom) return custom;
+
+  const parts = buildQuestionProvenanceParts(meta);
+  if (parts.length === 0) return null;
+  return parts.join(QUESTION_PROVENANCE_SEP);
+}
+
 /**
  * Linha 1 — formato AVANT (concurso técnico enfermagem):
  * `BANCA – Técnico de Enfermagem (Órgão) ANO`
@@ -67,9 +112,7 @@ export function buildDerivedQuestionHeaderLine(meta: LessonMeta): string {
   const banca = meta.banca?.trim() || '';
   const orgaoInner = stripOuterParens(meta.orgao?.trim() || '');
   const ano = meta.ano?.trim() || '';
-  const cargo =
-    normalizeCargoHeader(meta.cargo_header) ||
-    inferCargoHeaderFromProva(meta.prova);
+  const cargo = resolveCargoHeader(meta);
 
   if (banca && cargo && orgaoInner) {
     const anoPart = ano ? ` ${ano}` : '';
@@ -101,11 +144,9 @@ export function buildQuestionHeaderChips(meta: LessonMeta): QuestionHeaderChip[]
   return chips;
 }
 
-/** Cargo, órgão ou prova — complemento textual aos chips (não repetir banca/ano). */
+/** Cargo, órgão ou prova — complemento textual (legado chips). Preferir `buildQuestionProvenanceLine`. */
 export function buildQuestionExamDetailLine(meta: LessonMeta): string | null {
-  const cargo =
-    normalizeCargoHeader(meta.cargo_header) ||
-    inferCargoHeaderFromProva(meta.prova);
+  const cargo = resolveCargoHeader(meta);
   const orgao = stripOuterParens(meta.orgao?.trim() || '');
   const prova = meta.prova?.trim();
 

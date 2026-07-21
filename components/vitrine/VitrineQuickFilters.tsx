@@ -2,6 +2,7 @@
 
 import { LayoutGrid, List } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import type { VitrineStatusFilter } from '@/lib/vitrine/filterGroups';
 import type { VitrineViewMode } from '@/lib/vitrine/parseListQuery';
 
@@ -49,7 +50,7 @@ export function VitrineQuickFilters({
               className={cn(
                 'min-h-[36px] flex-1 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors sm:flex-none sm:text-sm',
                 status === option.value
-                  ? 'bg-white text-[#166534] shadow-sm'
+                  ? cn('bg-white shadow-sm', vitrineBrand.text)
                   : 'text-slate-600 hover:text-slate-900',
               )}
             >
@@ -76,7 +77,7 @@ export function VitrineQuickFilters({
           className={cn(
             'flex size-9 items-center justify-center rounded-lg transition-colors',
             view === 'grid'
-              ? 'bg-white text-[#166534] shadow-sm'
+              ? cn('bg-white shadow-sm', vitrineBrand.text)
               : 'text-slate-400 hover:text-slate-700',
           )}
         >
@@ -92,7 +93,7 @@ export function VitrineQuickFilters({
           className={cn(
             'flex size-9 items-center justify-center rounded-lg transition-colors',
             view === 'compact'
-              ? 'bg-white text-[#166534] shadow-sm'
+              ? cn('bg-white shadow-sm', vitrineBrand.text)
               : 'text-slate-400 hover:text-slate-700',
           )}
         >

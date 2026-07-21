@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Ag Adm (Pref SJRP)",
+    "orgao": "Pref. São José do Rio Preto",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Concordância verbal e nominal",
+    "pedagogical_branch": "pt_concordancia",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "agent:elias-m13-te-simples-nota10",
+      "guideline_snapshot": "M13 Elias TE-simples — pergunta «Qual o núcleo do sujeito? Com o que concorda?» · núcleo em foco",
+      "exam_vs_current": "none",
+      "catalog_slug": "vunesp-sjrp-concordancia-verbal-registram-se-3789256"
+    },
+    "sources": [
+      {
+        "id": "pt-concordancia-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Concordância verbal e nominal — núcleo do sujeito e casos especiais",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "núcleo do sujeito",
+          "concordância verbal",
+          "sujeito pós-verbo",
+          "impessoal com se",
+          "haver existencial",
+          "existe/existem",
+          "subjuntivo com sujeito plural"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3789256",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT — tec 3789256 (VUNESP Ag Adm Pref. SJRP 2026)",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito B",
+          "Registram-se",
+          "histórias de famílias"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m13-te-simples-nota10",
+      "a4_reviewed_at": "2026-07-20"
+    }
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa redigida em conformidade com a norma-padrão de concordância verbal.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sempre houveram crianças interessadas nas histórias de avós que já morreram.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Registram-se em diários, cadernos e álbuns fotográficos, as histórias de muitas famílias.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Existe famílias cujos membros gostam de conversar sobre seus antepassados.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "É comum que apareça, nos mais diferentes relatos de família, histórias de muito sofrimento.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "É interessante que os mais velhos procure contar aos mais novos histórias de família.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Núcleo em foco",
+      "chip_label": "M13 — concordância",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Concordância verbal e nominal"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "Qual o núcleo do sujeito? Com o que o verbo concorda?",
+          "icon": "Focus"
+        },
+        {
+          "label": "Núcleo",
+          "detail": "Termo que determina número e pessoa do verbo — ignore adjuntos colados ao verbo.",
+          "icon": "Target"
+        },
+        {
+          "label": "Sujeito pós-verbo",
+          "detail": "«Registram-se … as histórias» — o núcleo vem depois; concorda no plural.",
+          "icon": "Link2"
+        },
+        {
+          "label": "Haver / existir",
+          "detail": "Existencial → verbo no singular; sujeito é o que existe.",
+          "icon": "Users"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Concordar com o termo mais próximo do verbo em vez do núcleo real.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Achar o núcleo antes de julgar a letra."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Núcleo → verbo → letras",
+      "chip_label": "Um toque = um foco",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Concordância verbal e nominal"
+      },
+      "steps": [
+        "Comando: frase com concordância verbal correta — marcar núcleo de cada opção.",
+        "A «haveram crianças»: haver existencial → singular «houve/havia»; «haveram» errado — eliminar.",
+        "B «Registram-se … as histórias»: sujeito posposto «as histórias» (plural) → «registram-se» correto.",
+        "C «Existe famílias»: núcleo plural «famílias» exige «existem» — eliminar.",
+        "D «apareça … histórias»: subjuntivo deve acompanhar núcleo plural → «apareçam» — eliminar.",
+        "E «procure … os mais velhos»: núcleo plural «os mais velhos» → «procurem» — eliminar.",
+        "Gabarito B — impessoal com se + sujeito posposto no plural.",
+        "Em similares: isole o núcleo; o resto é ruído circunstancial."
+      ],
+      "footer_rule": "Núcleo em foco — não o vizinho do verbo."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore de bolso",
+      "chip_label": "Casos da prova",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Concordância verbal e nominal"
+      },
+      "content": "NÚCLEO → VERBO",
+      "rows": [
+        {
+          "label": "Pergunta-teste",
+          "value": "Qual o núcleo do sujeito? Com o que concorda?",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Núcleo",
+          "value": "Determina número/pessoa — adjuntos não mandam sozinhos.",
+          "emphasis": "success"
+        },
+        {
+          "label": "Haver / existir",
+          "value": "Existencial → verbo singular; plural no sujeito posposto.",
+          "emphasis": "default"
+        },
+        {
+          "label": "Impessoal com se",
+          "value": "Verbo concorda com o sujeito lógico (pode vir depois).",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Subjuntivo",
+          "value": "Concorda com o núcleo do sujeito da oração subordinada.",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Nesta questão",
+          "value": "B: «as histórias» (pl.) → «registram-se»."
+        }
+      ],
+      "footer_rule": "Mais de um núcleo? Regra do composto ou partitivo."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Pegadinhas desta prova",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Concordância verbal e nominal"
+      },
+      "content": "Cada letra erra por confundir núcleo ou regra especial.",
+      "items": [
+        {
+          "label": "A — haver no plural",
+          "detail": "«Houveram» trata haver como existencial no plural.",
+          "correct": "Haver existencial → «Havia crianças» / «Houve crianças»."
+        },
+        {
+          "label": "C — existe + plural",
+          "detail": "Concorda com «famílias» vizinha, mas usa «existe» no singular.",
+          "correct": "Núcleo plural → «Existem famílias…»."
+        },
+        {
+          "label": "D — subjuntivo no singular",
+          "detail": "«Apareça» não acompanha núcleo plural «histórias».",
+          "correct": "«…que apareçam… histórias…»."
+        },
+        {
+          "label": "E — subjuntivo sem plural",
+          "detail": "«Procure» isolado diante de sujeito «os mais velhos».",
+          "correct": "«…que os mais velhos procurem contar…»."
+        },
+        {
+          "label": "Transferência — sujeito posposto",
+          "detail": "Em outra banca, o núcleo pode vir depois de «Faz-se», «Vendem-se», «Registram-se».",
+          "correct": "Sempre localize o núcleo lógico antes de julgar número do verbo."
+        }
+      ],
+      "footer_rule": "Só B mantém núcleo e verbo alinhados."
+    }
+  ]
+}

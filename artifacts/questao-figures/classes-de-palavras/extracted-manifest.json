@@ -1,0 +1,72 @@
+[
+  {
+    "tec_id": "3739268",
+    "status": "ok",
+    "page": 1,
+    "file": "artifacts/questao-figures/classes-de-palavras/3739268.webp",
+    "bytes": 36774,
+    "bbox": [
+      207.09722900390625,
+      425.1392517089844,
+      399.39056396484375,
+      657.4252319335938
+    ],
+    "source_ext": "png"
+  },
+  {
+    "tec_id": "3665303",
+    "status": "ok",
+    "page": 6,
+    "file": "artifacts/questao-figures/classes-de-palavras/3665303.webp",
+    "bytes": 15218,
+    "bbox": [
+      237.77650451660156,
+      217.50633239746094,
+      372.54620361328125,
+      420.2087097167969
+    ],
+    "source_ext": "png"
+  },
+  {
+    "tec_id": "3793476",
+    "status": "ok",
+    "page": 48,
+    "file": "artifacts/questao-figures/classes-de-palavras/3793476.webp",
+    "bytes": 42298,
+    "bbox": [
+      170.93951416015625,
+      386.2425231933594,
+      425.6871337890625,
+      581.2750854492188
+    ],
+    "source_ext": "png"
+  },
+  {
+    "tec_id": "3835993",
+    "status": "ok",
+    "page": 54,
+    "file": "artifacts/questao-figures/classes-de-palavras/3835993.webp",
+    "bytes": 34292,
+    "bbox": [
+      179.70501708984375,
+      501.8362731933594,
+      435.00042724609375,
+      683.1727294921875
+    ],
+    "source_ext": "png"
+  },
+  {
+    "tec_id": "3352957",
+    "status": "ok",
+    "page": 72,
+    "file": "artifacts/questao-figures/classes-de-palavras/3352957.webp",
+    "bytes": 43246,
+    "bbox": [
+      187.9226837158203,
+      210.92999267578125,
+      408.70391845703125,
+      506.7658996582031
+    ],
+    "source_ext": "png"
+  }
+]

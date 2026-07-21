@@ -1,0 +1,31 @@
+{
+  "lote": "classes-de-palavras-g11",
+  "subtopico": "Classes de palavras",
+  "status": "handcraft",
+  "slugs": [
+    "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+    "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
+    "facet-acs-pr-classes-identifique-a-alternativa-em-que-a-c-3358522",
+    "facet-acs-pr-classes-leia-o-trecho-a-seguir-e-macabea-com-3358539",
+    "avancasp-aux-classes-ate-breve-ha-temperamentos-urbanos-p-3375895",
+    "selecon-athh-classes-quando-eu-deixei-de-acreditar-em-mim-3416683",
+    "cpcon-uepb-a-classes-leia-o-texto-2-para-responder-a-ques-3483805",
+    "avancasp-acd-classes-analise-o-termo-destacado-na-frase-e-3554862"
+  ],
+  "note": "Fase 0 pipeline Classes de palavras 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+  "golden_reference": "examples/questao-formacao-palavras-siglas.json",
+  "gates": {
+    "questao_readiness": "READY strict-v2-pedagogy",
+    "validate_goldens": "PASS --strict"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/classes-de-palavras-g11.json"
+  }
+}

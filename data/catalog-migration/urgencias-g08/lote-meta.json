@@ -13,5 +13,11 @@
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
     "examples/questao-premium-urgencias-rcp.json"
   ],
-  "notes": "g08 — ventilação PCR INCORRETA · qualidade RCP INCORRETA · SBV INCORRETA ×2 · posição RCP · cuidados pós-PCR · C/E DEA · C/E C-A-B"
+  "notes": "g08 — ventilação PCR INCORRETA · qualidade RCP INCORRETA · SBV INCORRETA ×2 · posição RCP · cuidados pós-PCR · C/E DEA · C/E C-A-B",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

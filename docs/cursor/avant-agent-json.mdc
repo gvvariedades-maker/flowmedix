@@ -21,6 +21,14 @@ Ao gerar ou editar JSON de questão para o Laboratório ou `QuestaoCompletaSchem
 - Quebras de linha entre **I -**, **II -**, **III -**; comando final da questão na mesma string.
 - Alternativas em **`options`**, não no `instruction`.
 
+## Figuras no enunciado (`question_data.figures[]`)
+
+- Campo tipado `figures[]` + `figure_policy` (`required` | `transcribed`) — **não** `<img>` solto em `text_fragment`.
+- `required`: WebP no bucket Supabase `questao-figures/` (`npm run figures:upload`).
+- `transcribed`: `text_fragment` fiel + reescrever comando (“Na sentença abaixo…”).
+- Gate: `l2_missing_figure` bloqueia apply/preflight com `--strict-v2-pedagogy`.
+- Player: ordem `figures[]` → `text_fragment` → `instruction`. Ver `docs/DECISAO_QUESTAO_FIGURES.md`.
+
 ## Estudo reverso (`reverse_study_slides`)
 
 - Exatamente **4 slides** na ordem canônica: `concept_map`, `logic_flow`, `golden_rule`, `danger_zone`.

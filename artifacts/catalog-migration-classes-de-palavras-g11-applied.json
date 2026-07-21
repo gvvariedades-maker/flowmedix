@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:59:02.679Z",
+  "lote": "classes-de-palavras-g11",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-acd-classes-analise-o-termo-destacado-na-frase-e-3554862",
+    "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
+    "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+    "avancasp-aux-classes-ate-breve-ha-temperamentos-urbanos-p-3375895",
+    "cpcon-uepb-a-classes-leia-o-texto-2-para-responder-a-ques-3483805",
+    "facet-acs-pr-classes-identifique-a-alternativa-em-que-a-c-3358522",
+    "facet-acs-pr-classes-leia-o-trecho-a-seguir-e-macabea-com-3358539",
+    "selecon-athh-classes-quando-eu-deixei-de-acreditar-em-mim-3416683"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-acd-classes-analise-o-termo-destacado-na-frase-e-3554862",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-aux-classes-ate-breve-ha-temperamentos-urbanos-p-3375895",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-classes-leia-o-texto-2-para-responder-a-ques-3483805",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-acs-pr-classes-identifique-a-alternativa-em-que-a-c-3358522",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-acs-pr-classes-leia-o-trecho-a-seguir-e-macabea-com-3358539",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-athh-classes-quando-eu-deixei-de-acreditar-em-mim-3416683",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

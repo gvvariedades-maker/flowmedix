@@ -1,0 +1,49 @@
+{
+  "lote": "lingua-portuguesa-g08",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Pontuação",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pontuacao",
+  "cluster": "Pontuação — lote 1/6 (PDF Pontuação · 8/48)",
+  "total": 8,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "pending",
+    "apply_dry_run": "pending"
+  },
+  "source": "artifacts/lingua-portuguesa-g08/extracted-source.json + PDF caderno PT",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "avancasp-aae-pref-potim-pontuacao-rita-3839712",
+  "golden_reference": "examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/pontuacao.ts",
+  "slugs": [
+    "vunesp-jundiai-pontuacao-travessao-3776215",
+    "aocp-ses-sc-pontuacao-dois-pontos-3804106",
+    "cpcon-condado-pontuacao-tirinha-vf-3836507",
+    "avancasp-aae-pref-potim-pontuacao-rita-3839712",
+    "avancasp-potim-pontuacao-travessao-dois-pontos-3839857",
+    "aocp-unirio-pontuacao-enumeracao-3840868",
+    "selecon-porto-gauchos-pontuacao-adjunto-3852273",
+    "cpcon-cuite-pontuacao-enumeracao-numeros-3912868"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g08 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g08.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g08 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=lingua-portuguesa-g08 --strict",
+    "4. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g08 --dry-run --allow-insert",
+    "5. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Primeiro lote Pontuação — 48 questões no PDF; g08 pega 8 por ordem de caderno (tec 3776215…3912868). Âncora Rita 3839712 com payload golden completo.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/lingua-portuguesa-g08.json"
+  }
+}

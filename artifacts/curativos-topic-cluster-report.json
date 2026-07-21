@@ -1,0 +1,322 @@
+{
+  "subtopico": "Curativos e Manejo de Feridas",
+  "total": 157,
+  "generated_at": "2026-07-16T01:15:33.210Z",
+  "clusters": [
+    {
+      "branch": "curativos_generico",
+      "count": 44,
+      "pct": 28,
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344779828-6",
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562699843-5",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-2",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269291153-7"
+      ],
+      "all_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344779828-6",
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562699843-5",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-2",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269291153-7",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-9",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344759089-1",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-4",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003793968-0",
+        "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+        "avancasp-enfermagem-processo-de-enfermagem-1780006456417-1",
+        "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-1",
+        "cogeps-unioeste-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-0",
+        "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-4",
+        "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-7",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-0",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-9",
+        "fepese-enfermagem-curativos-e-manejo-de-feridas-1779340178514-6",
+        "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344779828-7",
+        "furb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-1",
+        "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+        "ibade-enfermagem-processo-de-enfermagem-1780005137458-7",
+        "ibgp-enfermagem-curativos-e-manejo-de-feridas-1779340178514-8",
+        "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-5",
+        "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+        "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+        "idecan-enfermagem-seguranca-do-paciente-1778712242196-0",
+        "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344766321-0",
+        "igeduc-enfermagem-processo-de-enfermagem-1780010559720-1",
+        "igeduc-enfermagem-processo-de-enfermagem-1780011872350-8",
+        "imparh-enfermagem-seguranca-do-paciente-1777102936764-7",
+        "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269305691-0",
+        "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-2",
+        "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-9",
+        "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779269315587-7",
+        "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-2",
+        "quadrix-enfermagem-processo-de-enfermagem-1780009294428-9",
+        "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-2",
+        "selecon-enfermagem-processo-de-enfermagem-1780009310940-9",
+        "unesc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-5",
+        "unesc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-6",
+        "unifil-enfermagem-processo-de-enfermagem-1780004452857-4",
+        "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-2",
+        "vunesp-enfermagem-processo-de-enfermagem-1780001742844-4"
+      ]
+    },
+    {
+      "branch": "curativos_ferida_cirurgica",
+      "count": 20,
+      "pct": 12.7,
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340178514-0",
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-0",
+        "atame-enfermagem-curativos-e-manejo-de-feridas-1779269228428-3",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003137298-7"
+      ],
+      "all_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340178514-0",
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-0",
+        "atame-enfermagem-curativos-e-manejo-de-feridas-1779269228428-3",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003137298-7",
+        "avancasp-enfermagem-processo-de-enfermagem-1780006456417-5",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-5",
+        "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-1",
+        "facet-enfermagem-curativos-e-manejo-de-feridas-1779344751294-9",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006954613-8",
+        "fundep-enfermagem-curativos-e-manejo-de-feridas-1779269212740-6",
+        "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-1",
+        "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-7",
+        "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269244710-7",
+        "instituto-consulpam-enfermagem-curativos-e-manejo-de-feridas-1779269305691-6",
+        "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+        "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344813448-4",
+        "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-6",
+        "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-7",
+        "univali-enfermagem-curativos-e-manejo-de-feridas-1779269255793-4"
+      ]
+    },
+    {
+      "branch": "curativos_cobertura_selecao",
+      "count": 20,
+      "pct": 12.7,
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-1",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+        "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+        "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3"
+      ],
+      "all_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-1",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+        "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+        "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+        "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+        "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+        "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779344773456-2",
+        "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-3",
+        "coseac-uff-enfermagem-curativos-e-manejo-de-feridas-1779340178514-9",
+        "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-0",
+        "facet-enfermagem-curativos-e-manejo-de-feridas-1779344759089-0",
+        "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344773456-4",
+        "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-2",
+        "igeduc-enfermagem-processo-de-enfermagem-1780009392850-9",
+        "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344779828-8",
+        "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-8",
+        "omni-enfermagem-curativos-e-manejo-de-feridas-1779340178514-7",
+        "unifil-enfermagem-processo-de-enfermagem-1780004469060-9",
+        "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-5"
+      ]
+    },
+    {
+      "branch": "curativos_lpp",
+      "count": 17,
+      "pct": 10.8,
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780001440222-5",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-3",
+        "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779269212740-7",
+        "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-5",
+        "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-0"
+      ],
+      "all_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780001440222-5",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-3",
+        "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779269212740-7",
+        "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-5",
+        "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-0",
+        "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+        "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269228428-0",
+        "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269305691-2",
+        "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-8",
+        "quadrix-enfermagem-processo-de-enfermagem-1780009281546-2",
+        "quadrix-enfermagem-processo-de-enfermagem-1780009281546-3",
+        "quadrix-enfermagem-processo-de-enfermagem-1780009281546-4",
+        "quadrix-enfermagem-processo-de-enfermagem-1780009281546-5",
+        "quadrix-enfermagem-processo-de-enfermagem-1780009281546-6",
+        "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344773456-5",
+        "selecon-enfermagem-processo-de-enfermagem-1780009322055-0",
+        "unifil-enfermagem-curativos-e-manejo-de-feridas-1779344813448-3"
+      ]
+    },
+    {
+      "branch": "curativos_desbridamento",
+      "count": 17,
+      "pct": 10.8,
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-7",
+        "ameosc-enfermagem-processo-de-enfermagem-1780003031246-3",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-7",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-0",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-3"
+      ],
+      "all_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-7",
+        "ameosc-enfermagem-processo-de-enfermagem-1780003031246-3",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-7",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-0",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-3",
+        "facet-enfermagem-curativos-e-manejo-de-feridas-1779344779828-5",
+        "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-9",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004602717-5",
+        "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-3",
+        "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-5",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-6",
+        "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779269228428-1",
+        "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+        "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344759089-7",
+        "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269291153-8",
+        "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344773456-6",
+        "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-2"
+      ]
+    },
+    {
+      "branch": "curativos_tecnica_assepsia",
+      "count": 12,
+      "pct": 7.6,
+      "sample_slugs": [
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344813448-0",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002834059-0",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003031246-9",
+        "avancasp-enfermagem-processo-de-enfermagem-1780006456417-8",
+        "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344759089-4"
+      ],
+      "all_slugs": [
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344813448-0",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002834059-0",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003031246-9",
+        "avancasp-enfermagem-processo-de-enfermagem-1780006456417-8",
+        "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344759089-4",
+        "funtef-enfermagem-curativos-e-manejo-de-feridas-1779269305691-4",
+        "gama-enfermagem-curativos-e-manejo-de-feridas-1779269291153-4",
+        "ibade-enfermagem-curativos-e-manejo-de-feridas-1779344819753-6",
+        "igeduc-enfermagem-processo-de-enfermagem-1780011872350-7",
+        "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+        "selecon-enfermagem-processo-de-enfermagem-1780009322055-8",
+        "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0"
+      ]
+    },
+    {
+      "branch": "curativos_exceto_incorreta",
+      "count": 10,
+      "pct": 6.4,
+      "sample_slugs": [
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-2",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-3",
+        "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-2",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-1",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3"
+      ],
+      "all_slugs": [
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-2",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-3",
+        "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-2",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-1",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+        "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-1",
+        "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-7",
+        "unesc-enfermagem-curativos-e-manejo-de-feridas-1780000535393-1",
+        "unifil-enfermagem-processo-de-enfermagem-1780003654722-2",
+        "unifil-enfermagem-processo-de-enfermagem-1780004469060-8"
+      ]
+    },
+    {
+      "branch": "curativos_bandagem_imobilizacao",
+      "count": 8,
+      "pct": 5.1,
+      "sample_slugs": [
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-1",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-3",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002845055-3",
+        "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-1",
+        "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-2"
+      ],
+      "all_slugs": [
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-1",
+        "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-3",
+        "avancasp-enfermagem-processo-de-enfermagem-1780002845055-3",
+        "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-1",
+        "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-2",
+        "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269305691-3",
+        "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344759089-6",
+        "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-0"
+      ]
+    },
+    {
+      "branch": "curativos_estomia",
+      "count": 5,
+      "pct": 3.2,
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-1",
+        "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344819753-5",
+        "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-0",
+        "instituto-aocp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-0",
+        "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-4"
+      ],
+      "all_slugs": [
+        "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-1",
+        "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344819753-5",
+        "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-0",
+        "instituto-aocp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-0",
+        "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-4"
+      ]
+    },
+    {
+      "branch": "curativos_termoterapia",
+      "count": 2,
+      "pct": 1.3,
+      "sample_slugs": [
+        "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2"
+      ],
+      "all_slugs": [
+        "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+        "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2"
+      ]
+    },
+    {
+      "branch": "curativos_dreno",
+      "count": 2,
+      "pct": 1.3,
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780006456417-3",
+        "facet-enfermagem-curativos-e-manejo-de-feridas-1779269305691-5"
+      ],
+      "all_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780006456417-3",
+        "facet-enfermagem-curativos-e-manejo-de-feridas-1779269305691-5"
+      ]
+    }
+  ],
+  "g01_curativos_cobertura_selecao": [
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+    "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779344773456-2"
+  ]
+}

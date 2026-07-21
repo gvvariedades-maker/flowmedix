@@ -1,0 +1,76 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g08",
+  "generated_at": "2026-07-20T17:34:15.010Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

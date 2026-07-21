@@ -11,5 +11,14 @@
     "imunizacao_generico": 1
   },
   "priority": "cadeia frio (3) + calendário adulto/gestante/HPV (4) + tipos vacina (1)",
-  "notes": "Piloto g02 — temperatura PNI, mapa diário, dT revacinação, gestante dTpa, campanhas polio, HPV V/F"
+  "notes": "Piloto g02 — temperatura PNI, mapa diário, dT revacinação, gestante dTpa, campanhas polio, HPV V/F",
+  "anchor_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel-imunizacao",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g02.json",
+    "notes": "L6 batch quality-vendavel"
+  }
 }

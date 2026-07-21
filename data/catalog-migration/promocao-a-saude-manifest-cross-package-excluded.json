@@ -1,0 +1,157 @@
+{
+  "generated_at": "2026-07-20T15:42:37.342Z",
+  "description": "Slugs removidos do manifest Promoção — URL legada promocao-a-saude; handcraft no pacote dono (production_ready).",
+  "count": 25,
+  "slugs": [
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "owner_subtopico": "Saúde da Criança",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "owner_subtopico": "Saúde da Mulher",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "owner_subtopico": "Saúde do Adolescente",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "owner_subtopico": "Saúde da Criança",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "owner_subtopico": "História da Enfermagem",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+      "owner_subtopico": "Saúde da Criança",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "owner_subtopico": "Urgências e Emergências",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+      "owner_subtopico": "Saúde da Criança",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "owner_subtopico": "Saúde do Adolescente",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "owner_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "owner_subtopico": "Enfermagem do Trabalho",
+      "reason": "cross_package_url_legado",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "cogeps-unioeste-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-7",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-6",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-5",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-3",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-6",
+      "owner_subtopico": "Doenças Parasitárias e Zoonoses",
+      "reason": "taxonomy_drift_meta_zoonoses",
+      "at": "2026-07-20"
+    }
+  ]
+}

@@ -13,5 +13,11 @@
   ],
   "readiness": "8/8",
   "preflight_artifact": "artifacts/catalog-preflight-urgencias-g14.json",
-  "notes": "g14 AVC/IAM — Cincinnati critérios · Cincinnati caso UPA · sinais AVC espúrio · AVE achados típicos · conduta respiratória AVC · Sinal Levine IAM · caso IAM UPA · aspirina APH IAM"
+  "notes": "g14 AVC/IAM — Cincinnati critérios · Cincinnati caso UPA · sinais AVC espúrio · AVE achados típicos · conduta respiratória AVC · Sinal Levine IAM · caso IAM UPA · aspirina APH IAM",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

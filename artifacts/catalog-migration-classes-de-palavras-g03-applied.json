@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:58:24.669Z",
+  "lote": "classes-de-palavras-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-acs-pr-classes-considere-o-texto-a-seguir-para-resp-4024888",
+    "avancasp-acr-classes-era-daltonico-1-e-nao-sabia-chegou-a-3727513",
+    "avancasp-afa-classes-assinale-a-alternativa-cujo-termo-de-3962475",
+    "cpcon-uepb-a-classes-leia-o-texto-04-para-responder-a-que-4014478",
+    "educa-pb-acs-classes-considere-o-texto-a-seguir-para-resp-3819856",
+    "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810",
+    "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840838",
+    "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336126"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-acs-pr-classes-considere-o-texto-a-seguir-para-resp-4024888",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acr-classes-era-daltonico-1-e-nao-sabia-chegou-a-3727513",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-afa-classes-assinale-a-alternativa-cujo-termo-de-3962475",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-classes-leia-o-texto-04-para-responder-a-que-4014478",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-acs-classes-considere-o-texto-a-seguir-para-resp-3819856",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840838",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336126",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

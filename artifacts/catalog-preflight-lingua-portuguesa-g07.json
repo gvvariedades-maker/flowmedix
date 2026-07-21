@@ -1,0 +1,78 @@
+{
+  "lote": "lingua-portuguesa-g07",
+  "generated_at": "2026-07-20T16:54:01.523Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 7,
+  "failed": 1,
+  "slugs": [
+    {
+      "slug": "aocp-unirio-colocacao-multitarefa-3841117",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-estiva-gerbi-colocacao-faca-favor-3835994",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-nova-odessa-colocacao-ce-3962471",
+      "ok": false,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": false,
+      "issues": [
+        "[A2] l2_family_mismatch: meta.family=\"certo_errado\" diverge do funil (inferido: conceito)"
+      ]
+    },
+    {
+      "slug": "avancasp-potim-colocacao-apresentar-lhe-3839370",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-itabaiana-colocacao-se-proclise-4014453",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-presidente-prudente-colocacao-feira-3336128",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-sorocaba-colocacao-charles-tira-3999721",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

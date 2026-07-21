@@ -26,5 +26,11 @@
     "Default — sem âncora temática": 4,
     "Urgências — conceito geral": 3
   },
-  "notes": "g36 — 7º lote cauda urgencias_generico · 8/8 READY strict-v2 · 5 generico + 1 avc_iam + 1 rcp_pediatrico + 1 vf_protocolo"
+  "notes": "g36 — 7º lote cauda urgencias_generico · 8/8 READY strict-v2 · 5 generico + 1 avc_iam + 1 rcp_pediatrico + 1 vf_protocolo",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

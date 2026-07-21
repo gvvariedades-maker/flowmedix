@@ -1,0 +1,55 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g09",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "INAZ saúde bucal + ACS Access + Consulplan mulher/DN/HAS/acesso SUS (g09)",
+  "total": 8,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8": "promocao_educacao_prevencao",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0": "promocao_educacao_prevencao",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2": "promocao_educacao_prevencao",
+    "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1": "promocao_educacao_prevencao",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9": "promocao_educacao_prevencao",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9": "promocao_educacao_prevencao",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4": "promocao_educacao_prevencao",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3": "promocao_principios_direitos"
+  },
+  "slugs": [
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
+    "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3"
+  ],
+  "notes": [
+    "inaz-3932216-7 já em g03 — g09 inicia em 3932216-8.",
+    "consulplan-3863195-9: meta legada Saúde da Mulher — subtopico canônico; family protocolo.",
+    "consulplan-3868300-9: meta legada ISTs — EXCETO HIV/AIDS (B).",
+    "consulplan-3927625-3: family legis (I/II/III acesso SUS)."
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g09 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g09/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g09 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g09 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g09 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g09 --apply (só quando pedido)"
+  ],
+  "next_lote": "promocao-a-saude-e-prevencao-de-agravos-g10",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g09.json"
+  }
+}

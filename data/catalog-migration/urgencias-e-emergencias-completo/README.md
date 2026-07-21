@@ -1,23 +1,22 @@
-# Urgências e Emergências — handcraft golden-v1 (bootstrap)
+# Urgências e Emergências — handcraft golden-v1
 
 **Subtópico:** Urgências e Emergências  
 **Modo:** Handcraft golden-v1 (legacy builder → re-handcraft)  
-**Status:** **in_progress** — 12/340 âncoras P0 aplicadas · próximo `urgencias-g01` (RCP adulto)
+**Status:** **`production_ready`** — **339/339** handcraft · lotes **g01–g49** · vendável desde **2026-07-19**
 
-Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../docs/GOLDEN_HANDCRAFT_MODEL.md) · [`docs/HANDCRAFT_CONVERSA.md`](../../docs/HANDCRAFT_CONVERSA.md)
+Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../docs/GOLDEN_HANDCRAFT_MODEL.md) · [`docs/HANDCRAFT_CONVERSA.md`](../../docs/HANDCRAFT_CONVERSA.md) · [`docs/QUALITY_VENDAVEL_CONVERSA.md`](../../docs/QUALITY_VENDAVEL_CONVERSA.md)
 
 ## Catálogo
 
 | Item | Valor |
 |------|--------|
-| Slugs no manifest | 340 (`urgencias-e-emergencias-completo/manifest.json`) |
-| Handcraft golden aplicado | 12 (repairs de âncora P0) |
-| Âncoras P0 | **12/12** READY — ver [`urgencias-golden-anchors.json`](../urgencias-golden-anchors.json) |
+| Slugs no manifest | 339 (`urgencias-e-emergencias-completo/manifest.json`) |
+| Handcraft aplicado | **339/339** (`handcraft-meta.json` · 2026-07-08) |
+| `production_status` | **`production_ready`** (2026-07-19) |
+| `pacote_prefix` | **`urgencias`** (lotes `urgencias-g{NN}`) |
+| Ramos L3 | 13 ramos (`urgencias_rcp_sbv` … `urgencias_generico`) |
 | Playbook | [`handcraft-playbooks/urgencias-e-emergencias.json`](../handcraft-playbooks/urgencias-e-emergencias.json) |
-| Cluster | `npm run cluster:urgencias-e-emergencias` |
-| Próximo lote | **`urgencias-g01`** — ramo `urgencias_rcp_sbv` (68 slugs) |
-| Brief L3 pronto | RCP adulto — `artifacts/l3-brief-urgencias-e-emergencias-urgencias_rcp_sbv.md` |
-| Gramática ROI | [`urgencias-pedagogy-errors.json`](../urgencias-pedagogy-errors.json) |
+| Próximo passo | Monitoramento: `audit:subtopico-health -- --subtopico="Urgências e Emergências"` |
 | **Não usar** | `ai:generate` · `catalog:upgrade-premium` |
 
 ## Disparar handcraft

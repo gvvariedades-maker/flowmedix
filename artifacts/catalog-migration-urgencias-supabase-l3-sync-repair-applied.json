@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-19T14:29:01.525Z",
+  "lote": "urgencias-supabase-l3-sync-repair",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

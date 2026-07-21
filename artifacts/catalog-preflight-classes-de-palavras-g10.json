@@ -1,0 +1,76 @@
+{
+  "lote": "classes-de-palavras-g10",
+  "generated_at": "2026-07-20T19:00:24.607Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-i-para-responder-a-ques-3836456",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-acd-classes-leia-o-texto-a-seguir-e-responda-a-q-3746576",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ace-classes-considere-o-texto-a-seguir-para-resp-3820003",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-ao-classes-leia-o-texto-abaixo-pesquisa-revela-3754329",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-acs-classes-leia-o-texto-a-seguir-populacao-bras-1360966",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-ag-f-classes-leia-o-texto-a-seguir-ses-distribui-3754251",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-fisc-classes-inteligencia-artificial-consegue-dec-3352885",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3844984",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

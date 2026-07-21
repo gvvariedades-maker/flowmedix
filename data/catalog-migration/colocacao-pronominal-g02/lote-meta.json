@@ -1,0 +1,22 @@
+{
+  "lote": "colocacao-pronominal-g02",
+  "mode": "handcraft-golden-v1",
+  "created_at": "2026-07-20",
+  "subtopico": "Pronomes e colocação pronominal",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pronomes_colocacao",
+  "cluster": "Colocação Pronominal — lote 2/4 (31/31)",
+  "total": 8,
+  "status": "applied",
+  "source_lote": "lingua-portuguesa-g14",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "note": "Lote sem anchor_slug dedicado — âncora trilho no playbook"
+  },
+  "note": "Espelho ship gate — handcraft/apply em lingua-portuguesa-g14"
+}

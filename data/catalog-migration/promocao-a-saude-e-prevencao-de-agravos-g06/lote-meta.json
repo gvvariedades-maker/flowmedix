@@ -1,0 +1,54 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g06",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "Diário cuidador + HAS EXCETO + história natural + habitação + acolhimento + saúde-doença + Leavell + oficinas (g06)",
+  "total": 8,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8": "promocao_generico",
+    "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4": "promocao_educacao_prevencao",
+    "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5": "promocao_educacao_prevencao",
+    "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6": "promocao_educacao_prevencao",
+    "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-0": "promocao_principios_direitos",
+    "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-5": "promocao_educacao_prevencao",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-3": "promocao_educacao_prevencao",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6": "promocao_educacao_prevencao"
+  },
+  "slugs": [
+    "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+    "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4",
+    "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5",
+    "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6",
+    "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-0",
+    "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-5",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-3",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6"
+  ],
+  "notes": [
+    "furb-3914208-5: vf_roman exige rótulos I/II/III nos slides (saúde-doença V-V-V).",
+    "fundep-3927625-4: danger_zone com card Letra C (EXCETO sedentarismo).",
+    "furb-3868300-0: meta legada AB/SF — subtopico canônico no handcraft."
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g06 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g06/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g06 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g06 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g06 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g06 --apply (só quando pedido)"
+  ],
+  "next_lote": "promocao-a-saude-e-prevencao-de-agravos-g07",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g06.json"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g05",
+  "exported_at": "2026-07-20T16:51:54.431Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g05/manifest.json"
+  },
+  "slugs": [
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-6",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-4",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
+    "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
+    "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
+    "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+    "fepese-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-6",
+    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-21T01:09:51.210Z",
+  "lote": "oracoes-coordenadas-e-subordinadas-g05",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-acs-pr-oracoes-pestana-2023-p-619-aponta-que-as-ora-3951856",
+    "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793433",
+    "avancasp-acs-oracoes-leia-o-texto-a-seguir-para-responder-3661687",
+    "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913806",
+    "educa-pb-ag-oracoes-texto-1-a-inteligencia-artificial-ja-3711355",
+    "vunesp-acs-p-oracoes-leia-o-texto-a-seguir-para-responder-3845002"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-acs-pr-oracoes-pestana-2023-p-619-aponta-que-as-ora-3951856",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793433",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acs-oracoes-leia-o-texto-a-seguir-para-responder-3661687",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913806",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ag-oracoes-texto-1-a-inteligencia-artificial-ja-3711355",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-acs-p-oracoes-leia-o-texto-a-seguir-para-responder-3845002",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

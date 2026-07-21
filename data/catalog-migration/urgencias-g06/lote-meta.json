@@ -13,5 +13,11 @@
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
     "examples/questao-premium-urgencias-rcp.json"
   ],
-  "notes": "g06 — 30:2 dois socorristas · sequência RCP hospitalar · pulso carotídeo · qualidade compressões · UBS PCR · trauma SBV 1º passo · DEA técnico · Ambu com reservatório O2"
+  "notes": "g06 — 30:2 dois socorristas · sequência RCP hospitalar · pulso carotídeo · qualidade compressões · UBS PCR · trauma SBV 1º passo · DEA técnico · Ambu com reservatório O2",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

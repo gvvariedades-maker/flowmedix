@@ -1,0 +1,9 @@
+## Briefs gerados
+
+| branch_id | Arquivo | ├éncora | Status |
+|-----------|---------|--------|--------|
+| pt_crase | `artifacts/l3-brief-lingua-portuguesa-pt_crase.md` | Q506 VUNESP Itatiba Tr├ónsito 2025 (gab. C) | PASS Fase 3b ÔÇö React pendente |
+
+**Pr├│ximo brief sugerido:** `pt_pronomes_colocacao` (ordem P0 do ├¡ndice).
+
+**Pr├│ximo conte├║do:** `Handcraft: L├¡ngua Portuguesa` ÔÇö ├óncora 506 / `pt_crase` (slots alinhados ao brief).

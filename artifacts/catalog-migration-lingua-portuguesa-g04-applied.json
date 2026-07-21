@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T05:00:03.862Z",
+  "lote": "lingua-portuguesa-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "caderno-pt-crase-erro-acento-segunda-sexta-3374822",
+    "caderno-pt-crase-pronome-demonstrativo-3554846",
+    "caderno-pt-crase-solidao-lacunas-3460044",
+    "vunesp-itapevi-crase-pronome-demonstrativo-3419180",
+    "vunesp-itatiba-crase-lacunas-demencia-3583296",
+    "vunesp-itatiba-crase-lacunas-obras-arte-3583413",
+    "vunesp-osasco-crase-lacunas-tira-3607078",
+    "vunesp-sertaozinho-crase-lacunas-armandinho-3352615"
+  ],
+  "results": [
+    {
+      "modulo_slug": "caderno-pt-crase-erro-acento-segunda-sexta-3374822",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-pronome-demonstrativo-3554846",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-solidao-lacunas-3460044",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-itapevi-crase-pronome-demonstrativo-3419180",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-itatiba-crase-lacunas-demencia-3583296",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-itatiba-crase-lacunas-obras-arte-3583413",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-osasco-crase-lacunas-tira-3607078",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sertaozinho-crase-lacunas-armandinho-3352615",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

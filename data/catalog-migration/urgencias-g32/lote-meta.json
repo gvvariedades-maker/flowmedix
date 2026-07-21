@@ -28,5 +28,11 @@
     "RCP / SBV adulto (V/F ou protocolo)": 3,
     "XABCDE / trauma e hemorragia": 1
   },
-  "notes": "g32 — 3º lote cauda urgencias_generico · 8/8 READY strict-v2 · ameosc-5556782-6 VF primeiros socorros → rcp_sbv (não trauma por hemorragia+queimadura no enunciado) · fgv BT1 → xabcde_trauma (não generico) · fenix responsividade/acionamento → rcp_sbv"
+  "notes": "g32 — 3º lote cauda urgencias_generico · 8/8 READY strict-v2 · ameosc-5556782-6 VF primeiros socorros → rcp_sbv (não trauma por hemorragia+queimadura no enunciado) · fgv BT1 → xabcde_trauma (não generico) · fenix responsividade/acionamento → rcp_sbv",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

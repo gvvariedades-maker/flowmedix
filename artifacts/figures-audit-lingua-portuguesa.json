@@ -1,0 +1,2678 @@
+{
+  "generated_at": "2026-07-21T04:37:48.229Z",
+  "scope": "lingua-portuguesa",
+  "total": 381,
+  "missing": 0,
+  "ok_figures": 18,
+  "ok_transcribed": 2,
+  "no_reference": 361,
+  "rows": [
+    {
+      "slug": "avancasp-ace-classes-substantivos-sao-palavras-que-design-3353964",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Substantivos são palavras que designam os seres. Relacione cada substantivo à sua classificação. I. Fizeram uma viagem …"
+    },
+    {
+      "slug": "avancasp-acs-classes-15-07-2026-19-33-1-88-3-4-5-6-dispon-3839425",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Na sentença abaixo, a palavra «essencial» funciona como um:"
+    },
+    {
+      "slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cuja palavra destacada está sendo substantivada, dando nome a uma categoria."
+    },
+    {
+      "slug": "avancasp-acs-classes-sao-palavras-que-designam-os-seres-r-3352961",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Substantivos são palavras que designam os seres. Relacione cada substantivo à sua classificação. I. Ela finalmente real…"
+    },
+    {
+      "slug": "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho a seguir: “Um caquizeiro foi plantado na Fazenda Santa Elisa ao lado de dois gigantescos pés de lichia qu…"
+    },
+    {
+      "slug": "avancasp-mon-classes-schulz-charles-m-snoopy-jornal-da-ta-3739268",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "SCHULZ, Charles M. Snoopy. Jornal da Tarde. São Paulo, 29 ago. 2003. Na tirinha abaixo, a mudança de «um» para «o» pode…"
+    },
+    {
+      "slug": "avancasp-tla-classes-quando-o-verde-dos-teus-olhosse-espa-3726050",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "“Quando o verde dos teus olhos Se espalhar na plantação Eu te asseguro, não chore não, viu? Que eu voltarei, viu, meu c…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-utilize-o-texto-05-para-responder-a-3599763",
+      "lote": "classes-de-palavras-g01",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Utilize o Texto 05 para responder à questão abaixo. Texto 05 Fonte: OLIVEIRA, Louise. Variação linguística: o que é e e…"
+    },
+    {
+      "slug": "avancasp-acr-classes-considere-o-trecho-abaixo-divirto-me-3839861",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o trecho abaixo: “Divirto-me pensando no que encontraremos; sei que quando chegarmos será como se eu já tives…"
+    },
+    {
+      "slug": "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661683",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Um coelho Todo mundo sabe: uma agência de publicidade comemorou a Pásco…"
+    },
+    {
+      "slug": "avancasp-aee-classes-o-que-e-angustia-um-rapaz-fez-me-ess-3374787",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "O que é angústia Um rapaz fez-me essa pergunta difícil de ser respondida. Pois depende do angustiado. Para alguns incau…"
+    },
+    {
+      "slug": "avancasp-ana-classes-dentre-as-palavras-a-seguir-a-unica-3460039",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Dentre as palavras a seguir, a única que admite a flexão de gênero e que pode, portanto, receber o morfema de gênero ma…"
+    },
+    {
+      "slug": "avancasp-fon-classes-cartazes-publicitarios-disponivel-em-3665303",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "CARTAZES PUBLICITÁRIOS. No cartaz publicitário abaixo, é correto afirmar que:"
+    },
+    {
+      "slug": "avancasp-fon-classes-era-daltonico-1-e-nao-sabia-chegou-a-3665299",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "“Era daltônico(1) e não sabia. Chegou assim à idade adulta(2), sem se queixar das cores que não via. (...) E aos seus o…"
+    },
+    {
+      "slug": "idecan-atas-classes-leia-o-texto-para-responder-a-questa-3531596",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto para responder a questão abaixo. VALE DO PARAÍBA TEM RELAÇÃO CULTURAL COM O ARROZ E OUSA COM TIPOS ESPECIA…"
+    },
+    {
+      "slug": "vunesp-ag-pr-classes-leia-o-texto-para-responder-a-questa-3352592",
+      "lote": "classes-de-palavras-g02",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Existem as pessoas bibliófilas (do grego biblíon, “livro”, e philos, “amigo”): q…"
+    },
+    {
+      "slug": "apice-acs-pr-classes-considere-o-texto-a-seguir-para-resp-4024888",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. As universidades e o desafio da desigualdade social (Cesar Martins…"
+    },
+    {
+      "slug": "avancasp-acr-classes-era-daltonico-1-e-nao-sabia-chegou-a-3727513",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "“Era daltônico(1) e não sabia. Chegou assim à idade adulta(2), sem se queixar das cores que não via. (...) E aos seus o…"
+    },
+    {
+      "slug": "avancasp-afa-classes-assinale-a-alternativa-cujo-termo-de-3962475",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cujo termo destacado possui natureza adverbial, indicando alguma circunstância em relação à ação…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-04-para-responder-a-que-4014478",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia o Texto 04 para responder à questão. Texto 04 Disponível em: https://www.instagram.com.br/niquel.nausea. Acesso em…"
+    },
+    {
+      "slug": "educa-pb-acs-classes-considere-o-texto-a-seguir-para-resp-3819856",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "ok_transcribed",
+      "instruction_snippet": "Considere o trecho transcrito abaixo para responder à questão. No cartum, o termo «rápida», presente na expressão «Dest…"
+    },
+    {
+      "slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913810",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e responda à questão. TEXTO II — Casamento, uma invenção cristã (Rainer Gonçalves Sousa / Histori…"
+    },
+    {
+      "slug": "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840838",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Texto 1 — «Bons motivos para não se levar tão a sério…» (Folha/UOL, ada…"
+    },
+    {
+      "slug": "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336126",
+      "lote": "classes-de-palavras-g03",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Estratégias de sobrevivência (Kalaf Epalanga, adaptado) [...] O termo destacado …"
+    },
+    {
+      "slug": "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661685",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Trecho de «Um coelho» (Rubem Braga): o narrador recebe Osvaldo Coelho d…"
+    },
+    {
+      "slug": "avancasp-acs-classes-os-adverbios-sao-palavras-que-modifi-3452344",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Os advérbios são palavras que modificam o verbo, o adjetivo ou outro advérbio. Eles recebem a denominação da circunstân…"
+    },
+    {
+      "slug": "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Em todas as construções a seguir, os elementos destacados têm valor de advérbio, exceto em:"
+    },
+    {
+      "slug": "avancasp-ag-classes-identifique-em-qual-das-sentencas-a-3457304",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Identifique em qual das sentenças a seguir a expressão em destaque é uma locução adverbial."
+    },
+    {
+      "slug": "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376854",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão abaixo. Carlos Chagas foi a primeira e até hoje única pessoa a descrever…"
+    },
+    {
+      "slug": "avancasp-con-classes-leia-o-texto-a-seguir-para-responder-3460251",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão abaixo. «O homem rouco» (Rubem Braga). Trecho: o narrador perde a voz, t…"
+    },
+    {
+      "slug": "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Um adjetivo funciona como advérbio apenas em:"
+    },
+    {
+      "slug": "quadrix-aux-classes-15-07-2026-19-33-47-88-110-111-112-t-3738663",
+      "lote": "classes-de-palavras-g04",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto para a questão. Trecho sobre doenças autoimunes: o sistema imunológico ataca o próprio corpo; a incidência aument…"
+    },
+    {
+      "slug": "apice-ag-adm-classes-leia-a-charge-abaixo-e-responda-a-qu-3793476",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a charge abaixo e responda à questão. Em «é que o Enem é uma data muito especial, quero acordar bem cedo para me a…"
+    },
+    {
+      "slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Inteligência artificial e a transformação das profissões do futuro. Por Unifor — 15/07/2025. A inteligência artificial …"
+    },
+    {
+      "slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o vocábulo «a» em destaque NÃO exerce a função de artigo."
+    },
+    {
+      "slug": "avancasp-ace-classes-marque-a-alternativa-que-preenche-as-3353967",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Marque a alternativa que preenche as lacunas a seguir conforme a regência verbal e nominal da língua portuguesa: No fim…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-3-para-responder-a-ques-3483808",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto 3 para responder à questão abaixo. TEXTO 3 O papa vai ao banheiro? Por Tiago Germano No terceiro mês do ca…"
+    },
+    {
+      "slug": "fgv-ass-adm-classes-use-o-texto-a-seguir-para-responder-3382225",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Use o texto a seguir para responder à questão. Texto 2 Economizar água Apesar de parecer muita, devido ao aumento exces…"
+    },
+    {
+      "slug": "quadrix-aux-classes-texto-para-a-questao-imagine-um-time-3738680",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto para a questão. Imagine um time de futebol atacado por um surto enlouquecedor, em que os jogadores saem marcando …"
+    },
+    {
+      "slug": "selecon-rece-classes-leia-o-texto-a-seguir-ceo-da-empresa-3852269",
+      "lote": "classes-de-palavras-g05",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: CEO da empresa sul-coreana responsável por foguete que explodiu em Alcântara pede desculpas. Fal…"
+    },
+    {
+      "slug": "fgv-acs-pref-classes-assinale-a-opcao-a-seguir-em-que-o-t-3719032",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a opção a seguir em que o termo destacado apresenta um valor de causa."
+    },
+    {
+      "slug": "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Assinale a alternativa que apresenta, entre parênteses, o valor se…"
+    },
+    {
+      "slug": "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto para a questão. Assinale a opção correta, quanto à análise semântica e sintática do segundo parágrafo do texto (t…"
+    },
+    {
+      "slug": "vunesp-acs-p-classes-ainda-que-seja-utilizada-frequenteme-3776327",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Ainda que seja utilizada frequentemente com valor semântico de adição, no trecho «Fui para homenagear o menino João e a…"
+    },
+    {
+      "slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. No trecho «Fazia bastante tempo eu tinha ido a um show dele, __________…"
+    },
+    {
+      "slug": "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789284",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Assinale a alternativa em cujo trecho há uma comparação."
+    },
+    {
+      "slug": "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789333",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. O sentido indicado entre colchetes associa-se corretamente à expressão …"
+    },
+    {
+      "slug": "vunesp-ag-cs-classes-leia-o-trecho-a-seguir-da-cronica-de-3799252",
+      "lote": "classes-de-palavras-g06",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho a seguir, da crônica de Nelson Rodrigues, para responder à questão. No trecho «Sob o estímulo da pusilani…"
+    },
+    {
+      "slug": "avancasp-tec-classes-cazo-presenca-de-animais-selvagens-b-3835993",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "CAZO. Presença de animais selvagens. Blog do AFTM. A conjunção «como», empregada na fala da charge abaixo, possui o sen…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-para-responder-a-questao-texto-ii-fi-3836484",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto II — Filho do dono (trecho da canção) «Morre a criatura e o planeta sente a dor O desespero no olhar de uma crian…"
+    },
+    {
+      "slug": "educa-pb-ag-classes-leia-o-texto-a-seguir-e-responda-a-q-3913820",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e responda à questão. TEXTO II — Casamento, uma invenção cristã (Rainer Gonçalves Sousa — adaptad…"
+    },
+    {
+      "slug": "fcc-tec-classes-considere-o-texto-abaixo-para-respon-3908393",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto abaixo para responder à questão. Trecho sobre envelhecimento (adaptado de reflexão clínica e Montaign…"
+    },
+    {
+      "slug": "instituto-ao-classes-15-07-2026-19-33-55-88-130-131-leia-3840780",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Texto 1 — Bons motivos para não se levar tão a sério (Folha de S.Paulo,…"
+    },
+    {
+      "slug": "instituto-ao-classes-leia-o-texto-a-seguir-para-responder-3840898",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a HQ abaixo para responder à questão. Assinale a alternativa que analisa corretamente a expressão «por isso», pres…"
+    },
+    {
+      "slug": "instituto-ao-classes-o-texto-a-seguir-refere-se-a-questao-3841143",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "O texto a seguir refere-se à questão. Texto 1 — ENTENDA POR QUE SER MULTITAREFA É UM MITO QUE FAZ MAL AO CÉREBRO (adapt…"
+    },
+    {
+      "slug": "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3840776",
+      "lote": "classes-de-palavras-g07",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Professora de ioga de 102 anos ensina sua abordagem simples para envelh…"
+    },
+    {
+      "slug": "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376862",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Carlos Chagas: há 90 anos morria o único cientista a descrever completa…"
+    },
+    {
+      "slug": "avancasp-esc-classes-considere-o-texto-a-seguir-para-resp-3963891",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Nascer, crescer e evoluir... Muita gente diz que conviver com adul…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-01-para-responder-a-que-4014454",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto 01 para responder à questão. Texto 01 — Não foi sempre azul: como a cor do céu mudou «dramaticamente» no p…"
+    },
+    {
+      "slug": "selecon-acs-classes-considere-o-texto-a-seguir-para-resp-3990848",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Ipea faz pesquisa para combater desinformação sobre políticas públ…"
+    },
+    {
+      "slug": "vunesp-ag-pr-classes-por-que-agora-a-solidao-nos-adoece-p-3419024",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Por que agora a solidão nos adoece? (Leon Ferrari — Estadão, adaptado.) [...] Hoje, todavia, segundo os especialistas, …"
+    },
+    {
+      "slug": "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336089",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. A tragédia das crianças sem saneamento. A falta de saneamento básico afasta milh…"
+    },
+    {
+      "slug": "vunesp-aux-s-classes-leia-o-texto-para-responder-a-questa-3323733",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. A Santa Casa de Misericórdia de São Paulo anunciou a venda de sete imóveis [...]…"
+    },
+    {
+      "slug": "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3999759",
+      "lote": "classes-de-palavras-g08",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Consumo abusivo de álcool é desafio nacional. [...] Segundo a OMS, não …"
+    },
+    {
+      "slug": "avancasp-ace-classes-leia-o-texto-a-seguir-para-responder-3662931",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Domingo Um dia sem jornais é como um domingo chuvoso. Há tempo para tud…"
+    },
+    {
+      "slug": "avancasp-aco-classes-se-ando-cheio-me-dilua-se-estou-no-m-3738889",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "«Se ando cheio, me dilua. Se estou no meio, conclua. Se perco o freio, me obstrua. Se me arruinei, reconstrua.» (Arnald…"
+    },
+    {
+      "slug": "avancasp-acr-classes-as-criancas-devem-ser-acompanhadas-c-3727509",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "«As crianças devem ser acompanhadas com muito zelo _____ aprendam os valores necessários para uma boa sociedade, isso c…"
+    },
+    {
+      "slug": "consulplan-a-classes-leia-o-texto-para-responder-a-questa-3694420",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto para responder à questão abaixo. Memória cheia? Entenda se cérebro humano pode ficar sem espaço [...] Mesm…"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-3-para-responder-a-ques-3483811",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Com base no Texto 3, responda à questão abaixo. TEXTO 3 O papa vai ao banheiro? Por Tiago Germano [...] A última imagem…"
+    },
+    {
+      "slug": "educa-pb-acd-classes-leia-o-texto-a-seguir-para-responder-3746555",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. TEXTO I Setembro lilás e o direito a uma chance Laura Brito O setembro …"
+    },
+    {
+      "slug": "educa-pb-ate-classes-texto-ii-governo-federal-lanca-campa-3576929",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Texto II Governo federal lança campanha Feminicídio Zero na Sapucaí O Ministério das Mulheres lançou a campanha Feminic…"
+    },
+    {
+      "slug": "fgv-acs-pref-classes-assinale-a-opcao-em-que-o-valor-do-e-3719042",
+      "lote": "classes-de-palavras-g09",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a opção em que o valor do elemento destacado está corretamente indicado."
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-i-para-responder-a-ques-3836456",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto I para responder à questão. Texto I — A sociedade do cansaço é cada vez mais realidade. Como se blindar? (…"
+    },
+    {
+      "slug": "educa-pb-acd-classes-leia-o-texto-a-seguir-e-responda-a-q-3746576",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e responda à questão. TEXTO II — Chocolate faz bem para a saúde? [...] O Brasil já foi um dos gra…"
+    },
+    {
+      "slug": "educa-pb-ace-classes-considere-o-texto-a-seguir-para-resp-3820003",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. TEXTO I — O poder da mente na cura de doenças [...] Os testes clín…"
+    },
+    {
+      "slug": "instituto-ao-classes-leia-o-texto-abaixo-pesquisa-revela-3754329",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto abaixo. Pesquisa revela desafios do transporte público no Brasil Uma pesquisa nacional sobre mobilidade ur…"
+    },
+    {
+      "slug": "selecon-acs-classes-leia-o-texto-a-seguir-populacao-bras-1360966",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: População brasileira chega a 213,4 milhões em julho de 2025 A população brasileira alcançou 213,…"
+    },
+    {
+      "slug": "selecon-ag-f-classes-leia-o-texto-a-seguir-ses-distribui-3754251",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: SES distribui 500 mil doses e incentiva campanha de multivacinação de crianças e adolescentes de…"
+    },
+    {
+      "slug": "selecon-fisc-classes-inteligencia-artificial-consegue-dec-3352885",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Inteligência artificial consegue decifrar o que dizem textos de papiros históricos [...] Para que uma inteligência arti…"
+    },
+    {
+      "slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3844984",
+      "lote": "classes-de-palavras-g10",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Democracia digital (Revista E, 01.09.2025 — adaptado) [...] Por um lado…"
+    },
+    {
+      "slug": "avancasp-acd-classes-analise-o-termo-destacado-na-frase-e-3554862",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Analise o termo destacado em cada frase e relacione-o à sua correta classe gramatical: I. «Ele arrumou um problema com …"
+    },
+    {
+      "slug": "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "ok_transcribed",
+      "instruction_snippet": "Com base nos trechos transcritos abaixo (extraídos da tirinha), analise as afirmativas e classifique-as em verdadeiro (…"
+    },
+    {
+      "slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a tirinha abaixo para responder à questão. Em relação aos trechos a seguir, retirados da tirinha, analise as afirm…"
+    },
+    {
+      "slug": "avancasp-aux-classes-ate-breve-ha-temperamentos-urbanos-p-3375895",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Até breve Há temperamentos urbanos por nascimento, mas há, igualmente, …"
+    },
+    {
+      "slug": "cpcon-uepb-a-classes-leia-o-texto-2-para-responder-a-ques-3483805",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto 2 para responder à questão abaixo. TEXTO 2 «Cuidar da saúde também é coisa de homem!» Fonte: adaptado. No …"
+    },
+    {
+      "slug": "facet-acs-pr-classes-identifique-a-alternativa-em-que-a-c-3358522",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Identifique a alternativa em que a classe gramatical está identificada de maneira incorreta:"
+    },
+    {
+      "slug": "facet-acs-pr-classes-leia-o-trecho-a-seguir-e-macabea-com-3358539",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho a seguir: E Macabéa, com medo de que o silêncio já significasse uma ruptura, disse ao recém-namorado: – E…"
+    },
+    {
+      "slug": "selecon-athh-classes-quando-eu-deixei-de-acreditar-em-mim-3416683",
+      "lote": "classes-de-palavras-g11",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Quando eu deixei de acreditar em mim Mayara Godoy [...] Lá pela sexta s…"
+    },
+    {
+      "slug": "apice-ace-pr-classes-leia-o-texto-a-seguir-e-responda-da-3558963",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e responda à questão. A última crônica — Fernando Sabino [...] Ao fundo do botequim um casal de p…"
+    },
+    {
+      "slug": "apice-ag-adm-classes-leia-o-poema-abaixo-e-responda-a-que-3793483",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o poema abaixo e responda à questão. Mágoas — Augusto dos Anjos Quando nasci num mês de tantas flores Todas murcha…"
+    },
+    {
+      "slug": "avancasp-ace-classes-nao-podemos-pensar-tanto-nessas-cois-3662937",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "«Não podemos pensar tanto nessas coisas, afinal, só temos controle sobre uma parte da situação.» Em relação à sentença …"
+    },
+    {
+      "slug": "fgv-ass-ts-p-classes-observe-a-seguinte-frase-a-pessoa-a-3587458",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Observe a seguinte frase: A pessoa a quem entregaram a medalha, foi a que a homenageou no discurso de encerramento. Nes…"
+    },
+    {
+      "slug": "selecon-ag-p-classes-leia-o-texto-a-seguir-ainda-estou-aq-3649272",
+      "lote": "classes-de-palavras-g12",
+      "subtopico": "Classes de palavras",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: «Ainda Estou Aqui» é escolhido melhor filme do ano pela crítica internacional. O longa-metragem …"
+    },
+    {
+      "slug": "avancasp-aae-concordancia-amarelos-singular-3839711",
+      "lote": "concordancia-verbal-e-nominal-g01",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão."
+    },
+    {
+      "slug": "avancasp-acr-concordancia-incorreta-passam-3839870",
+      "lote": "concordancia-verbal-e-nominal-g01",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Analise a concordância nas frases abaixo e assinale a alternativa INCORRETA."
+    },
+    {
+      "slug": "avancasp-esc-concordancia-armandinho-existem-3826754",
+      "lote": "concordancia-verbal-e-nominal-g01",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "ok_figures",
+      "instruction_snippet": "BECK, Alexandre. Tiras de Armandinho. Disponível em <de-armandinho>. Reescrevendo a frase \"Na verdade um motivo existe.…"
+    },
+    {
+      "slug": "avancasp-esc-concordancia-maioria-veio-3826756",
+      "lote": "concordancia-verbal-e-nominal-g01",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o espaço em branco pode ser preenchido corretamente pelas duas formas apresentadas entre …"
+    },
+    {
+      "slug": "avancasp-tec-concordancia-haver-casas-3835995",
+      "lote": "concordancia-verbal-e-nominal-g01",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "\"_______ várias casas na rua que _______ paredes coloridas e janelas decoradas.\" Assinale a alternativa cujas formas ve…"
+    },
+    {
+      "slug": "cpcon-uepb-concordancia-paes-franceses-3836503",
+      "lote": "concordancia-verbal-e-nominal-g01",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "ok_figures",
+      "instruction_snippet": "Para responder à questão, leia o texto que segue. Texto III Fonte: @abaixadaegua. Disponível em: Acesso em: 23 out. 202…"
+    },
+    {
+      "slug": "vunesp-acs-concordancia-texto-nominal-verbal-3776326",
+      "lote": "concordancia-verbal-e-nominal-g01",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "A frase, baseada no texto, que está redigida de acordo com a norma-padrão de concordância nominal e verbal é:"
+    },
+    {
+      "slug": "vunesp-sjrp-concordancia-verbal-registram-se-3789256",
+      "lote": "concordancia-verbal-e-nominal-g01",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa redigida em conformidade com a norma-padrão de concordância verbal."
+    },
+    {
+      "slug": "avancasp-acs-concordancia-existem-havia-4003524",
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cujas formas verbais preenchem corretamente as lacunas abaixo, na mesma ordem: - _______ muitas …"
+    },
+    {
+      "slug": "avancasp-afa-concordancia-mafalda-existem-3962461",
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "ok_figures",
+      "instruction_snippet": "QUINO. Mafalda. Disponível em <content/uploads/2011/05/mafalda-quino.pdf>. \"(...) há mundos que têm discos voadores\" Re…"
+    },
+    {
+      "slug": "avancasp-esc-concordancia-lacunas-chegou-3963915",
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cujas palavras preenchem corretamente as lacunas a seguir, de acordo com a concordância correta …"
+    },
+    {
+      "slug": "avancasp-gcm-concordancia-c-e-choveram-4001123",
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale C ou E conforme cada enunciado abaixo esteja respectivamente certo ou errado em relação à concordância do verb…"
+    },
+    {
+      "slug": "cpcon-uepb-concordancia-haviam-pedreiros-4018203",
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto II e responda à questão. Texto II O Jardim e o Quintal Por Roberto Menezes [trecho] Esses senhores brutos …"
+    },
+    {
+      "slug": "selecon-rece-concordancia-houve-danos-3852271",
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: CEO da empresa sul-coreana responsável por foguete que explodiu em Alcântara pede desculpas. […]…"
+    },
+    {
+      "slug": "vunesp-tenf-concordancia-adolescentes-lazer-3999762",
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder a questão. Assinale a alternativa que atende à norma-padrão de concordância."
+    },
+    {
+      "slug": "vunesp-tenf-concordancia-charlotte-alunas-3840783",
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder a questão. Assinale a alternativa em que o enunciado, adaptado do texto, está redi…"
+    },
+    {
+      "slug": "apice-acs-pr-concordancia-considere-o-texto-a-seguir-para-resp-4024938",
+      "lote": "concordancia-verbal-e-nominal-g03",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Sobre o trecho: «Hoje, a maioria das universidades públicas conta …"
+    },
+    {
+      "slug": "avancasp-ace-concordancia-de-acordo-com-o-gramatico-evanildo-b-3353963",
+      "lote": "concordancia-verbal-e-nominal-g03",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "De acordo com o gramático Evanildo Bechara, «Diz-se concordância verbal a que se verifica em número e pessoa entre o su…"
+    },
+    {
+      "slug": "ibfc-tec-enf-concordancia-analise-o-texto-a-seguir-e-responda-3450785",
+      "lote": "concordancia-verbal-e-nominal-g03",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Analise o texto a seguir e responda à questão abaixo. Considere a concordância que ocorre em «Faz 30 anos» (1º §). Assi…"
+    },
+    {
+      "slug": "vunesp-ag-as-concordancia-a-concordancia-nominal-e-verbal-esta-3345661",
+      "lote": "concordancia-verbal-e-nominal-g03",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "A concordância nominal e verbal está em conformidade com a norma-padrão na frase:"
+    },
+    {
+      "slug": "vunesp-ag-pr-concordancia-a-frase-que-esta-em-conformidade-com-3419181",
+      "lote": "concordancia-verbal-e-nominal-g03",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "A frase que está em conformidade com a norma-padrão de concordância verbal se encontra na alternativa:"
+    },
+    {
+      "slug": "vunesp-ag-pr-concordancia-assinale-a-alternativa-redigida-em-c-3352593",
+      "lote": "concordancia-verbal-e-nominal-g03",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa redigida em conformidade com a norma-padrão de concordância."
+    },
+    {
+      "slug": "vunesp-an-op-concordancia-assinale-a-alternativa-cuja-frase-es-3354420",
+      "lote": "concordancia-verbal-e-nominal-g03",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cuja frase está em conformidade com a norma-padrão de concordância verbal."
+    },
+    {
+      "slug": "apice-ace-pr-concordancia-no-que-diz-respeito-a-concordancia-n-3558981",
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "No que diz respeito à concordância nominal, assinale, a seguir, a alternativa que apresenta um problema de concordância."
+    },
+    {
+      "slug": "avancasp-acd-concordancia-em-qual-das-alternativas-abaixo-a-fr-3554865",
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Em qual das alternativas abaixo a frase a seguir foi reescrita no plural com a concordância correta? “A criança ganhou …"
+    },
+    {
+      "slug": "avancasp-acs-concordancia-assinale-a-alternativa-que-contem-a-3452381",
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que contém a frase INCORRETA em relação à concordância nominal."
+    },
+    {
+      "slug": "avancasp-ag-concordancia-a-sentenca-em-que-as-concordancias-v-3457300",
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "A sentença em que as concordâncias verbal e nominal estão incorretas é:"
+    },
+    {
+      "slug": "vunesp-acs-p-concordancia-leia-o-texto-a-seguir-para-responder-3607135",
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir e assinale a alternativa que apresenta uma frase reescrita em conformidade com a norma-padrão de …"
+    },
+    {
+      "slug": "vunesp-ag-pr-concordancia-esta-em-conformidade-com-a-norma-pad-3583302",
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Está em conformidade com a norma-padrão de concordância nominal e verbal a frase:"
+    },
+    {
+      "slug": "vunesp-ro-sa-concordancia-leia-o-texto-a-seguir-para-responder-3558391",
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão abaixo."
+    },
+    {
+      "slug": "vunesp-tec-h-concordancia-a-norma-padrao-de-concordancia-nomin-3572925",
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "A norma-padrão de concordância nominal e verbal, assim como a de emprego do acento indicativo de crase, está respeitada…"
+    },
+    {
+      "slug": "avancasp-aco-concordancia-havia-alguma-coisa-errada-com-o-rei-3738890",
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "«Havia alguma coisa errada com o rei» (RPM) Assinale a alternativa em que as duas formas reescritas do trecho destacado…"
+    },
+    {
+      "slug": "avancasp-ag-concordancia-leia-o-texto-a-seguir-para-responder-3709814",
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Assinale a alternativa correta a respeito da concordância no primeiro p…"
+    },
+    {
+      "slug": "avancasp-ag-concordancia-mal-iniciara-seu-discurso-o-deputado-3727002",
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "«Mal iniciara seu discurso, o deputado embatucou: – Senhor Presidente: não sou daqueles que... O verbo ia para o singul…"
+    },
+    {
+      "slug": "avancasp-of-concordancia-era-uma-hora-e-quarenta-e-um-minutos-3725105",
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "- Era uma hora e quarenta e um minutos. - A lista das autoridades especiais convidadas foram feitas com muito carinho. …"
+    },
+    {
+      "slug": "avancasp-tla-concordancia-a-maior-parte-dos-torcedores-aderiu-3726057",
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "«A maior parte dos torcedores (aderiu/aderiram) às medidas do clube.» Assinale a alternativa que preenche corretamente …"
+    },
+    {
+      "slug": "cebraspe-ces-concordancia-texto-cg1a1a-relacao-entre-sustentab-3698155",
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "No que diz respeito à concordância nominal e verbal no texto CG1A1, assinale a opção correta."
+    },
+    {
+      "slug": "cebraspe-ces-concordancia-texto-cg2a1imagino-que-a-escrita-nas-3705180",
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "A respeito das relações de concordância verbal estabelecidas no texto CG2A1, assinale a opção correta."
+    },
+    {
+      "slug": "quadrix-aux-concordancia-texto-para-a-questao-imagine-um-time-3738655",
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Na oração «O sistema de defesa do organismo (sistema imunológico) deixa de reconhecer o próprio corpo», a forma verbal …"
+    },
+    {
+      "slug": "avancasp-mon-concordancia-a-maioria-das-mulheres-por-melhores-3739269",
+      "lote": "concordancia-verbal-e-nominal-g06",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "«A maioria das mulheres __________ por melhores condições de vida.» Em relação à frase acima, analise cada afirmativa a…"
+    },
+    {
+      "slug": "avancasp-mon-concordancia-assinale-a-alternativa-que-apresenta-3739270",
+      "lote": "concordancia-verbal-e-nominal-g06",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que apresenta uma frase totalmente correta, de acordo com a concordância."
+    },
+    {
+      "slug": "educa-pb-ace-concordancia-considere-o-texto-a-seguir-para-resp-3820040",
+      "lote": "concordancia-verbal-e-nominal-g06",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa CORRETA quanto à concordância verbal e/ou nominal presente no texto."
+    },
+    {
+      "slug": "educa-pb-acs-concordancia-considere-o-texto-a-seguir-para-resp-3819891",
+      "lote": "concordancia-verbal-e-nominal-g06",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «valores e atitudes fundamentais para o convívio social democrático», o termo «fundamentais» concorda:"
+    },
+    {
+      "slug": "vunesp-acs-p-concordancia-leia-a-tira-a-seguir-para-responder-3844945",
+      "lote": "concordancia-verbal-e-nominal-g06",
+      "subtopico": "Concordância verbal e nominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia a tira a seguir para responder à questão. Assinale a alternativa que reescreve o 3° quadro em conformidade com a n…"
+    },
+    {
+      "slug": "caderno-pt-crase-obedecer-ordem-3840782",
+      "lote": "lingua-portuguesa-g01",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que apresenta uso correto da crase:"
+    },
+    {
+      "slug": "caderno-pt-crase-pediu-a-todos-3665301",
+      "lote": "lingua-portuguesa-g01",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "O emprego do acento indicativo de crase está incorreto apenas em:"
+    },
+    {
+      "slug": "caderno-pt-crase-premiacao-mundial-3839868",
+      "lote": "lingua-portuguesa-g01",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que indica o emprego correto de crase."
+    },
+    {
+      "slug": "caderno-pt-crase-vf-a-ele-3353966",
+      "lote": "lingua-portuguesa-g01",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Analise o uso do acento indicativo de crase nas frases abaixo e destaque, posteriormente, a alternativa correta. I. Ret…"
+    },
+    {
+      "slug": "vunesp-osasco-crase-serra-capivara",
+      "lote": "lingua-portuguesa-g01",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa redigida em conformidade com a norma-padrão de emprego do acento indicativo de crase."
+    },
+    {
+      "slug": "vunesp-samu-osasco-crase-a-remo-incorreta",
+      "lote": "lingua-portuguesa-g01",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Marque a alternativa em que o uso do acento indicativo de crase está INCORRETO:"
+    },
+    {
+      "slug": "vunesp-sertaozinho-crase-vf-rodoviaria-carnaval",
+      "lote": "lingua-portuguesa-g01",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Analise o uso do acento indicativo de crase nas frases abaixo e destaque, posteriormente, a alternativa correta. I. Ele…"
+    },
+    {
+      "slug": "vunesp-sjrp-crase-a-qual",
+      "lote": "lingua-portuguesa-g01",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o sinal de crase está corretamente empregado na frase adaptada da tira."
+    },
+    {
+      "slug": "avancasp-jeriquara-crase-facultativo-3886649",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cuja lacuna pode ser preenchida tanto com «a» quanto com «à», de acordo com a norma-padrão."
+    },
+    {
+      "slug": "avancasp-nova-odessa-crase-sacrificios-3962466",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cujos elementos preenchem as lacunas corretamente, na mesma ordem. - Estou disposto ___ muitos s…"
+    },
+    {
+      "slug": "avancasp-potim-crase-premiacao-mundial-3839721",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que indica o emprego correto de crase."
+    },
+    {
+      "slug": "avancasp-vinhedo-crase-correta-3826747",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que se apresenta totalmente correta em relação à ocorrência ou não de crase."
+    },
+    {
+      "slug": "caderno-pt-crase-premiacao-mundial-3839868",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que indica o emprego correto de crase."
+    },
+    {
+      "slug": "vunesp-jundiai-crase-tira-qual-3776323",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o sinal de crase está corretamente empregado na frase adaptada da tira."
+    },
+    {
+      "slug": "vunesp-osasco-crase-ioga-lacunas-3840787",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: Quando amigas de Charlotte vão ___ aulas de ioga, proporcionam ___ ela a companhia de que precis…"
+    },
+    {
+      "slug": "vunesp-sjrp-crase-a-qual",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o sinal de crase está corretamente empregado na frase adaptada da tira."
+    },
+    {
+      "slug": "vunesp-sjrp-crase-lacunas-agricultura-3789364",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que completa, correta e respectivamente, as lacunas do texto. Há pessoas que se dedicam ___ inve…"
+    },
+    {
+      "slug": "vunesp-sjrp-crase-nelson-rodrigues-3799251",
+      "lote": "lingua-portuguesa-g02",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "A construção entre parênteses que substitui o trecho destacado, de acordo com a norma-padrão de regência verbal e crase…"
+    },
+    {
+      "slug": "caderno-pt-crase-alcool-lacunas-4001120",
+      "lote": "lingua-portuguesa-g03",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Considere as frases a seguir: O músico Nando Reis abriu o jogo e falou com detalhes sobre os maus bocados que passou de…"
+    },
+    {
+      "slug": "caderno-pt-crase-biblioteca-lacunas-3352963",
+      "lote": "lingua-portuguesa-g03",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que completa, correta e respectivamente, as lacunas da frase. Quando fui ___ biblioteca pública …"
+    },
+    {
+      "slug": "caderno-pt-crase-facultativo-joana-4024877",
+      "lote": "lingua-portuguesa-g03",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cuja lacuna pode ser preenchida tanto com \"a\" quanto com \"à\", resultando numa frase correta com …"
+    },
+    {
+      "slug": "caderno-pt-crase-neurociencia-lacunas-3358515",
+      "lote": "lingua-portuguesa-g03",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Na neurociência, a relação entre ___ manutenção de padrões e a criatividade também é mediada principalmente pelo córtex…"
+    },
+    {
+      "slug": "caderno-pt-crase-tendencia-suspender-4003508",
+      "lote": "lingua-portuguesa-g03",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cujas palavras preenchem corretamente as lacunas a seguir, na mesma ordem: - Havia uma grande te…"
+    },
+    {
+      "slug": "caderno-pt-crase-universidades-elites-4024955",
+      "lote": "lingua-portuguesa-g03",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho: \"A primeira faculdade criada, a Escola de Cirurgia da Bahia, surgiu em 1808, e o acesso ao ensino superior p…"
+    },
+    {
+      "slug": "vunesp-osasco-crase-charge-prova-balas-3323742",
+      "lote": "lingua-portuguesa-g03",
+      "subtopico": "Crase",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia e analise a charge a seguir para responder a questão. Em: \"Ela já vem blindada e com vidros à prova de balas.\", o …"
+    },
+    {
+      "slug": "vunesp-sorocaba-crase-lacunas-3999773",
+      "lote": "lingua-portuguesa-g03",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cujos elementos preenchem corretamente as lacunas abaixo, na mesma ordem: - ___ princípio, tudo …"
+    },
+    {
+      "slug": "caderno-pt-crase-erro-acento-segunda-sexta-3374822",
+      "lote": "lingua-portuguesa-g04",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Identifique a alternativa que possui erro no acento grave:"
+    },
+    {
+      "slug": "caderno-pt-crase-pronome-demonstrativo-3554846",
+      "lote": "lingua-portuguesa-g04",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "As sentenças a seguir apresentam casos de inadequação no emprego do acento indicativo de crase: I. Enviei cartas à toda…"
+    },
+    {
+      "slug": "caderno-pt-crase-solidao-lacunas-3460044",
+      "lote": "lingua-portuguesa-g04",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Considere as frases elaboradas a partir do texto. A solidão pode ser um estímulo para que estejamos atentos ___ uma nec…"
+    },
+    {
+      "slug": "vunesp-itapevi-crase-pronome-demonstrativo-3419180",
+      "lote": "lingua-portuguesa-g04",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Segundo a norma gramatical, não se deve empregar o acento indicador de crase diante de qualquer pronome demonstrativo. …"
+    },
+    {
+      "slug": "vunesp-itatiba-crase-lacunas-demencia-3583296",
+      "lote": "lingua-portuguesa-g04",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir: Foram encaminhados convites ___ pessoas interessadas em conhecer mais sobre demência, para compa…"
+    },
+    {
+      "slug": "vunesp-itatiba-crase-lacunas-obras-arte-3583413",
+      "lote": "lingua-portuguesa-g04",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "As obras de arte são essenciais ___ humanidade, pois nos conectam ___ essência da nossa história e cultura. Apesar de a…"
+    },
+    {
+      "slug": "vunesp-osasco-crase-lacunas-tira-3607078",
+      "lote": "lingua-portuguesa-g04",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Leia a tira a seguir para responder à questão. Assinale a alternativa que preenche, correta e respectivamente, as lacun…"
+    },
+    {
+      "slug": "vunesp-sertaozinho-crase-lacunas-armandinho-3352615",
+      "lote": "lingua-portuguesa-g04",
+      "subtopico": "Crase",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a tirinha a seguir para responder à questão. (Alexandre Beck. Armandinho.) Assinale a alternativa que preenche, co…"
+    },
+    {
+      "slug": "caderno-pt-crase-constituicao-lacunas-3614637",
+      "lote": "lingua-portuguesa-g05",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Coube ___ Constituição federal firmar compromissos com o povo, garantindo ___ todos os cidadãos a erradicação da pobrez…"
+    },
+    {
+      "slug": "caderno-pt-crase-erro-compramos-prazo-3614663",
+      "lote": "lingua-portuguesa-g05",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Identifique qual das alternativas a seguir possui um erro quanto ao acento grave (`):"
+    },
+    {
+      "slug": "caderno-pt-crase-previdencia-lacunas-3661931",
+      "lote": "lingua-portuguesa-g05",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que completa, correta e respectivamente, as lacunas do trecho seguinte: Proibido para menores de…"
+    },
+    {
+      "slug": "caderno-pt-crase-semelhante-propostas-3662939",
+      "lote": "lingua-portuguesa-g05",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "«Na Câmara Municipal de João Pessoa, o vereador Guguinha Moov Jampa (PSD) apresentou, no dia 21 de maio, o PLO 269/2025…"
+    },
+    {
+      "slug": "cebraspe-clima-reescrita-crase-3705197",
+      "lote": "lingua-portuguesa-g05",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Cada uma das próximas opções apresenta um trecho do texto CG1A1 seguido de uma proposta de reescrita. Assinale a opção …"
+    },
+    {
+      "slug": "cebraspe-radio-apaixonado-crase-aquilo-3698162",
+      "lote": "lingua-portuguesa-g05",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "A crônica «O rádio apaixonado» aborda o relacionamento entre o ser humano e a tecnologia. Em relação ao texto, assinale…"
+    },
+    {
+      "slug": "consulplan-indaiatuba-crase-lacunas-pressas-3694717",
+      "lote": "lingua-portuguesa-g05",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "«Vestiu-se ___ pressas, foi ___ porta da sua casa e apontou ___ alguém que tinha acabado de sair correndo ___ todo vapo…"
+    },
+    {
+      "slug": "vunesp-guararapes-crase-lacunas-tira-3607407",
+      "lote": "lingua-portuguesa-g05",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Leia a tira a seguir para responder à questão. Assinale a alternativa que preenche, correta e respectivamente, as lacun…"
+    },
+    {
+      "slug": "avancasp-crase-facultativo-evidencias-3951800",
+      "lote": "lingua-portuguesa-g06",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cuja lacuna pode ser preenchida com \"a\" ou \"à\", de acordo com a norma-padrão da Língua Portugues…"
+    },
+    {
+      "slug": "caderno-pt-crase-penha-escrever-caneta",
+      "lote": "lingua-portuguesa-g06",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "No que diz respeito ao uso da crase, assinale a alternativa na qual o uso da crase assemelha-se ao caso em destaque na …"
+    },
+    {
+      "slug": "cebraspe-verissimo-crase-vf-itens-3739266",
+      "lote": "lingua-portuguesa-g06",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Julgue os seguintes itens, relativos ao emprego do sinal indicativo de crase no texto CG2A1. I. O emprego do sinal indi…"
+    },
+    {
+      "slug": "epice-crase-adultizacao-regencia-3951857",
+      "lote": "lingua-portuguesa-g06",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "É possível observar que no período «Que a nossa própria \"adultização\" seja, portanto, a melhor homenagem à infância que…"
+    },
+    {
+      "slug": "epice-crase-facultativo-pestana-3951877",
+      "lote": "lingua-portuguesa-g06",
+      "subtopico": "Crase",
+      "status": "no_reference",
+      "instruction_snippet": "Analise as frases abaixo, retiradas de Pestana (2023), e assinale a alternativa em que o uso do acento grave, represent…"
+    },
+    {
+      "slug": "aocp-unirio-colocacao-multitarefa-3841117",
+      "lote": "lingua-portuguesa-g07",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Tendo em vista as regras de colocação pronominal da língua portuguesa, assinale a alternativa em que a reescrita propos…"
+    },
+    {
+      "slug": "avancasp-estiva-gerbi-colocacao-faca-favor-3835994",
+      "lote": "lingua-portuguesa-g07",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "“Me faz um favor, Carlos. Quero que você me acorde assim que sair de casa pela manhã.” No enunciado acima, substituindo…"
+    },
+    {
+      "slug": "avancasp-nova-odessa-colocacao-ce-3962471",
+      "lote": "lingua-portuguesa-g07",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale C ou E em cada frase abaixo conforme esteja respectivamente certa ou errada quanto à colocação do pronome dest…"
+    },
+    {
+      "slug": "avancasp-potim-colocacao-apresentar-lhe-3839370",
+      "lote": "lingua-portuguesa-g07",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que apresenta uma frase correta em relação à colocação do pronome junto ao verbo."
+    },
+    {
+      "slug": "cpcon-itabaiana-colocacao-se-proclise-4014453",
+      "lote": "lingua-portuguesa-g07",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia os seguintes fragmentos do Texto 01. I - “Por isso, não se tem aquele azul forte e bonito que vemos aqui”. II - “O…"
+    },
+    {
+      "slug": "vunesp-presidente-prudente-colocacao-feira-3336128",
+      "lote": "lingua-portuguesa-g07",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "A colocação pronominal está de acordo com a norma-padrão em:"
+    },
+    {
+      "slug": "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
+      "lote": "lingua-portuguesa-g07",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que a reescrita de informações do texto está em conformidade com a norma-padrão de colocação …"
+    },
+    {
+      "slug": "vunesp-sorocaba-colocacao-charles-tira-3999721",
+      "lote": "lingua-portuguesa-g07",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a tira a seguir para responder à questão. (M. Schulz, “Minduim Charles”, 06.03.2026. Disponível em: https://cultur…"
+    },
+    {
+      "slug": "aocp-ses-sc-pontuacao-dois-pontos-3804106",
+      "lote": "lingua-portuguesa-g08",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. No título, «Ele tem 22 anos e uma missão: varrer o lixo espacial d…"
+    },
+    {
+      "slug": "aocp-unirio-pontuacao-enumeracao-3840868",
+      "lote": "lingua-portuguesa-g08",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Assinale a alternativa em que o emprego das vírgulas é obrigatório porq…"
+    },
+    {
+      "slug": "avancasp-aae-pref-potim-pontuacao-rita-3839712",
+      "lote": "lingua-portuguesa-g08",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que contém a frase correta em relação à pontuação."
+    },
+    {
+      "slug": "avancasp-potim-pontuacao-travessao-dois-pontos-3839857",
+      "lote": "lingua-portuguesa-g08",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho a seguir. «Digo, mas não acredito, ou pelo menos desconfio que esse impulso que tive ao ler a notícia fic…"
+    },
+    {
+      "slug": "cpcon-condado-pontuacao-tirinha-vf-3836507",
+      "lote": "lingua-portuguesa-g08",
+      "subtopico": "Pontuação",
+      "status": "ok_figures",
+      "instruction_snippet": "Para responder à questão, leia o texto que segue. Leia o trecho da tirinha: «5 pães franceses? Muito formal. 5 pão fran…"
+    },
+    {
+      "slug": "cpcon-cuite-pontuacao-enumeracao-numeros-3912868",
+      "lote": "lingua-portuguesa-g08",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto II para responder à questão. Sobre as regras de pontuação, observe a fala da avó: «É 'cinco, quatro, três,…"
+    },
+    {
+      "slug": "selecon-porto-gauchos-pontuacao-adjunto-3852273",
+      "lote": "lingua-portuguesa-g08",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir. «De acordo com Soo-jong, a Innospace está analisando os dados de voo, rastreamento e monitoramen…"
+    },
+    {
+      "slug": "vunesp-jundiai-pontuacao-travessao-3776215",
+      "lote": "lingua-portuguesa-g08",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. O uso dos travessões, no segundo parágrafo, indica a"
+    },
+    {
+      "slug": "avancasp-amparo-pontuacao-incorreta-3352962",
+      "lote": "lingua-portuguesa-g09",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Qual das frases a seguir está INCORRETA em relação à pontuação?"
+    },
+    {
+      "slug": "avancasp-nova-odessa-pontuacao-reescrita-3963918",
+      "lote": "lingua-portuguesa-g09",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "«O estudante perguntou ao professor, com muito receio: «Que dia será a prova?»» Assinale a alternativa que apresenta um…"
+    },
+    {
+      "slug": "epice-monteiro-pontuacao-atualmente-4024909",
+      "lote": "lingua-portuguesa-g09",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Analise o uso da vírgula após «atualmente» no seguinte trecho: «At…"
+    },
+    {
+      "slug": "epice-monteiro-pontuacao-hoje-4024933",
+      "lote": "lingua-portuguesa-g09",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Sobre o trecho: «Essas políticas alteraram o perfil do estudante u…"
+    },
+    {
+      "slug": "epice-sj-cordeiros-pontuacao-meme-4037433",
+      "lote": "lingua-portuguesa-g09",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Imagem, vídeo, frase, expressão, parte de um texto etc.», o uso das vírgulas tem a função de:"
+    },
+    {
+      "slug": "vunesp-campinas-pontuacao-virgula-citacao-3345654",
+      "lote": "lingua-portuguesa-g09",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão abaixo. Assinale a alternativa em que a vírgula acrescentada ao trecho p…"
+    },
+    {
+      "slug": "vunesp-osasco-pontuacao-virgula-adjunto-3323730",
+      "lote": "lingua-portuguesa-g09",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Assinale a alternativa em que o acréscimo de vírgulas preserva a norma-padrão de…"
+    },
+    {
+      "slug": "vunesp-sertaozinho-pontuacao-enumeracao-3352588",
+      "lote": "lingua-portuguesa-g09",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Assinale a alternativa em que as vírgulas foram empregadas para separar os termo…"
+    },
+    {
+      "slug": "avancasp-amparo-pontuacao-incorreta-3353965",
+      "lote": "lingua-portuguesa-g10",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Qual das frases a seguir está INCORRETA quanto ao emprego dos sinais de pontuação?"
+    },
+    {
+      "slug": "avancasp-morungaba-pontuacao-dois-pontos-3452341",
+      "lote": "lingua-portuguesa-g10",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder a questão abaixo. Em «Sei dizer não senhor: não tomo café.» e «Sei dizer não senho…"
+    },
+    {
+      "slug": "fgv-ebserh-pontuacao-correta-3385123",
+      "lote": "lingua-portuguesa-g10",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a frase cuja pontuação está correta."
+    },
+    {
+      "slug": "fgv-ebserh-pontuacao-reticencias-3385117",
+      "lote": "lingua-portuguesa-g10",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a frase em que, comparativamente, as reticências mostram a expressão de uma emoção intensa."
+    },
+    {
+      "slug": "ibfc-ses-se-pontuacao-concessiva-3450786",
+      "lote": "lingua-portuguesa-g10",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Analise o texto a seguir e responda à questão abaixo. No último parágrafo, a oração entre vírgulas possui um valor semâ…"
+    },
+    {
+      "slug": "selecon-hemominas-pontuacao-enumeracao-3416694",
+      "lote": "lingua-portuguesa-g10",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. «Sempre segui estudando, me dedicando, dando o meu melhor» (7º par…"
+    },
+    {
+      "slug": "vunesp-itapevi-pontuacao-parenteses-3419140",
+      "lote": "lingua-portuguesa-g10",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Os parênteses permitem introduzir observação adicional que pode ser suprimida sem interferir na compreensão do texto. É…"
+    },
+    {
+      "slug": "vunesp-sertaozinho-pontuacao-omissao-3354418",
+      "lote": "lingua-portuguesa-g10",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Assinale a alternativa em cujo trecho a vírgula marca a omissão de um vocábulo."
+    },
+    {
+      "slug": "avancasp-fusam-pontuacao-incorreta-3460046",
+      "lote": "lingua-portuguesa-g11",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "O emprego da vírgula está INCORRETO apenas em:"
+    },
+    {
+      "slug": "avancasp-fusam-pontuacao-reescrita-3460254",
+      "lote": "lingua-portuguesa-g11",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "O excerto a seguir não apresenta sinais de pontuação. Analise-o e assinale a alternativa que o reescreve corretamente, …"
+    },
+    {
+      "slug": "avancasp-vinhedo-pontuacao-reticencias-3554844",
+      "lote": "lingua-portuguesa-g11",
+      "subtopico": "Pontuação",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a HQ abaixo para responder à questão. No fim da frase do segundo quadrinho e no início da frase do terceiro, há re…"
+    },
+    {
+      "slug": "facet-bom-jardim-pontuacao-incorreta-3614676",
+      "lote": "lingua-portuguesa-g11",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Marque a alternativa incorreta quanto ao emprego da vírgula, de acordo com as normas gramaticais."
+    },
+    {
+      "slug": "fgv-sjc-pontuacao-dois-pontos-3587457",
+      "lote": "lingua-portuguesa-g11",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a frase a seguir em que o uso de dois-pontos (:) está empregado por preceder um esclarecimento."
+    },
+    {
+      "slug": "vunesp-itatiba-pontuacao-travessao-3583375",
+      "lote": "lingua-portuguesa-g11",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o poema a seguir para responder à questão. No poema, os travessões indicam"
+    },
+    {
+      "slug": "vunesp-itatiba-pontuacao-virgula-3583301",
+      "lote": "lingua-portuguesa-g11",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. O acréscimo de uma vírgula ao trecho manteve a norma-padrão do emprego …"
+    },
+    {
+      "slug": "vunesp-osasco-pontuacao-virgula-3607149",
+      "lote": "lingua-portuguesa-g11",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Assinale a alternativa em que a inclusão de vírgula(s) no trecho origin…"
+    },
+    {
+      "slug": "avancasp-cerquilho-pontuacao-adjunto-3661696",
+      "lote": "lingua-portuguesa-g12",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "A vírgula está corretamente empregada em:"
+    },
+    {
+      "slug": "avancasp-cerquilho-pontuacao-virgula-domingo-3662933",
+      "lote": "lingua-portuguesa-g12",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. A segunda vírgula empregada no excerto «O meu domingo é pobre, chove no…"
+    },
+    {
+      "slug": "avancasp-fmsrc-pontuacao-reescrita-3665295",
+      "lote": "lingua-portuguesa-g12",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "«A vida parece cruel aos olhos de alguns homens, mas o que ela requer de todo mundo é coragem. Coragem para continuar e…"
+    },
+    {
+      "slug": "cebraspe-boa-vista-pontuacao-antes-3705140",
+      "lote": "lingua-portuguesa-g12",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto CG2A1 de Luís Fernando Verissimo. No que se refere à pontuação, é correto afirmar que a correção gramatica…"
+    },
+    {
+      "slug": "consulplan-indaiatuba-pontuacao-adjunto-3694433",
+      "lote": "lingua-portuguesa-g12",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão abaixo. Sobre a presença da vírgula no excerto «Com rotinas agitadas e a facilida…"
+    },
+    {
+      "slug": "consulplan-indaiatuba-pontuacao-aposto-3694727",
+      "lote": "lingua-portuguesa-g12",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "No fragmento «O Bentinho, do Machado de Assis, aquele que desconfiava da Capitu, não sofreu tanto», as vírgulas foram e…"
+    },
+    {
+      "slug": "educapb-umbuzeiro-pontuacao-vf-reborn-3661906",
+      "lote": "lingua-portuguesa-g12",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão abaixo. Sobre o emprego das vírgulas no trecho «Na última semana, o uso de boneco…"
+    },
+    {
+      "slug": "selecon-tapurah-pontuacao-dois-pontos-3692813",
+      "lote": "lingua-portuguesa-g12",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto sobre laranjas e vitamina C. Nesse trecho, a função dos dois-pontos é:"
+    },
+    {
+      "slug": "apice-boa-vista-pb-pontuacao-incorreta-3951884",
+      "lote": "lingua-portuguesa-g13",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Sabendo que o uso da vírgula tem mais a ver com a sintaxe do que com a prosódia, assinale, a seguir, a alternativa em q…"
+    },
+    {
+      "slug": "avancasp-cunha-pontuacao-correta-3738882",
+      "lote": "lingua-portuguesa-g13",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cuja sentença se apresenta totalmente correta em relação à pontuação."
+    },
+    {
+      "slug": "avancasp-varginha-pontuacao-reescrita-coragem-3727507",
+      "lote": "lingua-portuguesa-g13",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "«A vida parece cruel aos olhos de alguns homens, mas o que ela requer de todo mundo é coragem. Coragem para continuar e…"
+    },
+    {
+      "slug": "avancasp-varginha-pontuacao-reescrita-erico-3726048",
+      "lote": "lingua-portuguesa-g13",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "«Na véspera à noite notara-se uma certa alegria talvez um tanto infantil quando as luzes as lâmpadas das ruas tornaram …"
+    },
+    {
+      "slug": "cebraspe-boa-vista-pontuacao-dois-pontos-3705151",
+      "lote": "lingua-portuguesa-g13",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto CG2A1 de Luís Fernando Verissimo. O sinal de dois-pontos no penúltimo período do texto CG2A1 está empregad…"
+    },
+    {
+      "slug": "educapb-santa-cecilia-pontuacao-chocolate-3746565",
+      "lote": "lingua-portuguesa-g13",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto sobre chocolate. Quanto ao uso das vírgulas no trecho «…Mas o que para alguns é um prazer incontrolável, p…"
+    },
+    {
+      "slug": "educapb-sj-rio-peixe-pontuacao-meme-3711365",
+      "lote": "lingua-portuguesa-g13",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto sobre o meme de nostalgia. O meme traz uma pergunta e, em seguida, a resposta. Pensando nisso, a pontuação…"
+    },
+    {
+      "slug": "quadrix-fuabc-pontuacao-virgula-facultativa-3721193",
+      "lote": "lingua-portuguesa-g13",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Com relação ao conteúdo textual sobre imunização e o PNI, assinale a opção cuja reescrita do trecho apresenta emprego f…"
+    },
+    {
+      "slug": "avancasp-amparo-colocacao-enclise-levou-me-3352965",
+      "lote": "lingua-portuguesa-g14",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Em \"Levou-me para jantar no meu restaurante favorito.\" o pronome \"me\" está após o verbo (ênclise). Em qual das frases a…"
+    },
+    {
+      "slug": "avancasp-amparo-colocacao-proclise-se-3353968",
+      "lote": "lingua-portuguesa-g14",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Em \"Quando se lembrou do aniversário, já era tarde demais.\" o pronome \"se\" está antes do verbo (próclise). Em qual das …"
+    },
+    {
+      "slug": "avancasp-caieiras-colocacao-angustia-3374794",
+      "lote": "lingua-portuguesa-g14",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Analise a colocação pronominal dos excertos apresentados a seguir: I. Ou não se confessar nem a si próprio. II. Mas ang…"
+    },
+    {
+      "slug": "avancasp-caieiras-colocacao-enclise-norma-3375896",
+      "lote": "lingua-portuguesa-g14",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "A ênclise está aplicada em conformidade com a norma-padrão da língua portuguesa apenas em:"
+    },
+    {
+      "slug": "avancasp-morungaba-colocacao-proclise-vetada-3376869",
+      "lote": "lingua-portuguesa-g14",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Em relação à colocação pronominal, de acordo com a norma-padrão da língua portuguesa, o único caso em que não se poderi…"
+    },
+    {
+      "slug": "avancasp-varginha-colocacao-quantos-norma-3727518",
+      "lote": "lingua-portuguesa-g14",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "- \"Ela jamais me perdoaria uma falta.\" - \"Nunca faltou-me quem ajudasse.\" - \"Se ligue nas ondas do rádio.\" - \"Os convid…"
+    },
+    {
+      "slug": "educa-pb-colocacao-versos-intimos-3746604",
+      "lote": "lingua-portuguesa-g14",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho do poema \"Versos Íntimos\": \"Se a alguém causa inda pena a tua chaga, Apedreja essa mão vil que te afaga, …"
+    },
+    {
+      "slug": "vunesp-sertaozinho-colocacao-bibliifilas-3352589",
+      "lote": "lingua-portuguesa-g14",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Em \"... pessoas que acumulam itens porque simplesmente não conseguem jogá-los fora\", o trecho em destaque pode ser subs…"
+    },
+    {
+      "slug": "avancasp-caconde-colocacao-vista-cansada-3457294",
+      "lote": "lingua-portuguesa-g15",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "As colocações pronominais em «Dava-lhe bom-dia e às vezes lhe passava um recado ou uma correspondência» correspondem, r…"
+    },
+    {
+      "slug": "avancasp-morungaba-colocacao-tipo-i-ii-iii-3452377",
+      "lote": "lingua-portuguesa-g15",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Quanto à posição dos pronomes oblíquos átonos em relação ao verbo, pode ocorrer próclise se o pronome estiver antes do …"
+    },
+    {
+      "slug": "avancasp-vinhedo-colocacao-jamais-3554847",
+      "lote": "lingua-portuguesa-g15",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Em língua portuguesa, o pronome pode ser colocado antes do verbo, intercalado com o verbo ou depois do verbo, de acordo…"
+    },
+    {
+      "slug": "fgv-ebserh-colocacao-deram-me-3385122",
+      "lote": "lingua-portuguesa-g15",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a frase em que a colocação do pronome oblíquo está correta."
+    },
+    {
+      "slug": "idecan-sesap-colocacao-arroz-3531587",
+      "lote": "lingua-portuguesa-g15",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Levando em consideração os elementos destacados no trecho do texto: «Afinal, os arredores tiveram papel fundamental no …"
+    },
+    {
+      "slug": "vunesp-itapevi-colocacao-solidao-3419183",
+      "lote": "lingua-portuguesa-g15",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Considere as seguintes frases: O especialista e seu grupo realizaram a pesquisa com 8 mil pacientes, e esta surpreenden…"
+    },
+    {
+      "slug": "vunesp-itatiba-colocacao-carnaval-3583308",
+      "lote": "lingua-portuguesa-g15",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que a expressão destacada pode ser substituída pela que está entre colchetes, preservando-se …"
+    },
+    {
+      "slug": "vunesp-osasco-colocacao-cerebro-3558396",
+      "lote": "lingua-portuguesa-g15",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que a expressão entre colchetes substitui a destacada conforme a norma-padrão de colocação pr…"
+    },
+    {
+      "slug": "avancasp-cerquilho-colocacao-domingo-3662934",
+      "lote": "lingua-portuguesa-g16",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Quanto à colocação pronominal, nos excertos I. «Falta-me um terremoto sem grandes consequências ali no Alasca ou mais a…"
+    },
+    {
+      "slug": "avancasp-cerquilho-colocacao-enclise-vetada-3661739",
+      "lote": "lingua-portuguesa-g16",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "A ênclise é vetada apenas em:"
+    },
+    {
+      "slug": "avancasp-fmsrc-colocacao-quantos-norma-3665306",
+      "lote": "lingua-portuguesa-g16",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Quanto à colocação pronominal, analise os enunciados: I - \"Ela jamais me perdoaria uma falta.\" II - \"Nunca faltou-me qu…"
+    },
+    {
+      "slug": "avancasp-sm-arcanjo-colocacao-afirmativas-3709831",
+      "lote": "lingua-portuguesa-g16",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Com relação à colocação pronominal, analise as afirmativas a seguir sobre a ênclise e, em seguida, assinale a alternati…"
+    },
+    {
+      "slug": "cespe-boa-vista-colocacao-memoria-3705166",
+      "lote": "lingua-portuguesa-g16",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Considerando o texto CG2A1, julgue os itens a seguir, relativos à colocação pronominal. I O trecho «e botei a ideia num…"
+    },
+    {
+      "slug": "facet-bom-jardim-colocacao-obliquo-3614688",
+      "lote": "lingua-portuguesa-g16",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Quando estudamos os pronomes, conhecemos um procedimento como colocação pronominal. A estrutura que está de acordo com …"
+    },
+    {
+      "slug": "vunesp-osasco-colocacao-alma-gemea-3607134",
+      "lote": "lingua-portuguesa-g16",
+      "subtopico": "Pronomes e colocação pronominal",
+      "status": "no_reference",
+      "instruction_snippet": "Em «Um argumento bem simples demonstra que não devemos nos limitar aos seres humanos do passado…» (2º parágrafo), o tre…"
+    },
+    {
+      "slug": "apice-ace-pr-oracoes-sabendo-que-o-periodo-composto-por-c-3558979",
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Sabendo que o período composto por coordenação apresenta orações sintaticamente independentes, assinale a alternativa q…"
+    },
+    {
+      "slug": "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793451",
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Em «Não obedecemos a um sistema, somos o próprio sistema.», a vírgula foi usada para:"
+    },
+    {
+      "slug": "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037413",
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Observe o trecho adaptado: «Funções que exigem reflexão crítica se beneficiam da tecnologia, mas profissões burocrática…"
+    },
+    {
+      "slug": "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037421",
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "«O profissional deve estar pronto para desenvolver habilidades além da sua área de atuação, bem como realizar transiçõe…"
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-3-para-responder-a-ques-3483809",
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Minha avó tentou me explicar que Jesus não era Deus, mas que também podia ser.», a oração em destaque é:"
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-utilize-o-texto-01-para-responder-a-3598926",
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No período «Ela trouxe uma 'surpresa' esse ano. Mas a ciência também tem novas armas», sobre a oração em destaque, assi…"
+    },
+    {
+      "slug": "educa-pb-acd-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3746572",
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Releia: «Cristóvão Colombo [...] foi o primeiro europeu a tomar conhecimento do chocolate, mas o sucesso do chocolate n…"
+    },
+    {
+      "slug": "instituto-ao-oracoes-leia-o-texto-a-seguir-para-responder-3840852",
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que a função do «que» é introduzir oração subordinada substantiva objetiva direta (complement…"
+    },
+    {
+      "slug": "apice-ap-ei-oracoes-fonte-acesso-em-06-mar-2026-no-trech-4037436",
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Elemento cultural, geralmente comportamental, que é passado de um indivíduo para outro por meio da imitação …"
+    },
+    {
+      "slug": "avancasp-gcm-oracoes-nao-ha-nada-na-escrita-tudo-o-que-vo-4001118",
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "«Não há nada na escrita. Tudo o que você precisa fazer é sentar-se diante da máquina de escrever e sangrar.» (Ernest He…"
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-01-para-responder-a-que-4014452",
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto 01 para responder à questão. No fragmento «A luz azul é então dispersada com tanta intensidade que é desvi…"
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3912828",
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto I para responder à questão. No período retirado do texto: «Instrumentos de observação detectaram que ele a…"
+    },
+    {
+      "slug": "educa-pb-ace-oracoes-considere-o-texto-a-seguir-para-resp-3820016",
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder a questão. Releia o trecho do poema: «Mas o que sinto escrevo.» É CORRETO afi…"
+    },
+    {
+      "slug": "selecon-acs-oracoes-considere-o-texto-a-seguir-para-resp-3990840",
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder a questão. No período «Servidores públicos que ocupam cargo em comissão ou fu…"
+    },
+    {
+      "slug": "selecon-athh-oracoes-quando-eu-deixei-de-acreditar-em-mim-3416687",
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "«Não sei se foi um acúmulo de experiências negativas com o passar dos anos, ou se foi alguma situação pontual, mas sint…"
+    },
+    {
+      "slug": "selecon-fisc-oracoes-inteligencia-artificial-consegue-dec-3352887",
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "«É assim que a inteligência artificial ajuda a decifrar essas folhas» (5º parágrafo). A oração em destaque classifica-s…"
+    },
+    {
+      "slug": "apice-acs-pr-oracoes-15-07-2026-19-38-80-98-369-370-apos-3951882",
+      "lote": "oracoes-coordenadas-e-subordinadas-g03",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "ok_figures",
+      "instruction_snippet": "Após leitura da tirinha da Mafalda, analise, como verdadeiras (V) ou falsas (F), as afirmativas a seguir. ( ) A palavra…"
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3651723",
+      "lote": "oracoes-coordenadas-e-subordinadas-g03",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Demorei para reconhecer minha prima que me segurava pelos cotovelos», a oração introduzida pelo conectivo «q…"
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3654542",
+      "lote": "oracoes-coordenadas-e-subordinadas-g03",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Demorei para reconhecer minha prima que me segurava pelos cotovelos», a oração introduzida pelo conectivo «q…"
+    },
+    {
+      "slug": "educa-pb-acs-oracoes-considere-o-texto-a-seguir-para-resp-3819886",
+      "lote": "oracoes-coordenadas-e-subordinadas-g03",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Um outro é o da participação, que fundamenta a mobilização da sociedade para organizar-se em torno dos probl…"
+    },
+    {
+      "slug": "facet-moto-p-oracoes-leia-o-periodo-as-criancas-que-brinc-3670230",
+      "lote": "oracoes-coordenadas-e-subordinadas-g03",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o período: «As crianças, que brincavam na praça, alegravam a tarde com suas vozes.» O trecho «que brincavam na pra…"
+    },
+    {
+      "slug": "instituto-ao-oracoes-analise-as-duas-versoes-do-comunicad-3754333",
+      "lote": "oracoes-coordenadas-e-subordinadas-g03",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Analise as duas versões do comunicado a seguir e assinale a alternativa que apresenta corretamente a diferença de senti…"
+    },
+    {
+      "slug": "quadrix-aux-oracoes-texto-para-a-questao-imagine-um-time-3738648",
+      "lote": "oracoes-coordenadas-e-subordinadas-g03",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No período «Imagine um time de futebol atacado por um surto enlouquecedor, em que os jogadores saem marcando gol desvai…"
+    },
+    {
+      "slug": "selecon-ass-oracoes-leia-o-texto-a-seguir-a-fruta-que-aj-3692802",
+      "lote": "oracoes-coordenadas-e-subordinadas-g03",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Excerto: «A exposição constante a poluentes atmosféricos, fumaça de cigarro ou partículas em suspensão gera radicais li…"
+    },
+    {
+      "slug": "avancasp-ana-oracoes-a-construcao-tao-que-imprime-ao-cont-3460173",
+      "lote": "oracoes-coordenadas-e-subordinadas-g04",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "A construção «tão... que» imprime ao contexto em que ocorre – «e a primavera é tão linda que eles esquecem» – um sentid…"
+    },
+    {
+      "slug": "avancasp-esc-oracoes-leia-o-texto-a-seguir-para-responder-3826729",
+      "lote": "oracoes-coordenadas-e-subordinadas-g04",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «pai e filho saíram no fim da tarde para pegar apenas peixes cuja captura estava liberada», a palavra destaca…"
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-03-para-responder-a-que-4014476",
+      "lote": "oracoes-coordenadas-e-subordinadas-g04",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Analise as assertivas sobre o período do Texto 03: «Reuniões internacionais como a cúpula de IA desta semana oferecem u…"
+    },
+    {
+      "slug": "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913803",
+      "lote": "oracoes-coordenadas-e-subordinadas-g04",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Releia o trecho: «Se uma esposa morresse, o viúvo se casaria com a irmã dela.» É CORRETO afirmar que sua estrutura é co…"
+    },
+    {
+      "slug": "educa-pb-ag-oracoes-leia-o-texto-a-seguir-para-responder-3913759",
+      "lote": "oracoes-coordenadas-e-subordinadas-g04",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Observe o trecho: «[...] e, se as alucinações forem controladas e não houver muitos novos danos, o chatGPT permanecerá …"
+    },
+    {
+      "slug": "fgv-ag-st-pr-oracoes-texto-i-a-escrita-a-nossa-civilizaca-3432856",
+      "lote": "oracoes-coordenadas-e-subordinadas-g04",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Releia o trecho: «Mesmo a televisão – e mais do que ela o cinema – lança mão dos recursos da linguagem escrita (legenda…"
+    },
+    {
+      "slug": "instituto-ao-oracoes-o-texto-a-seguir-refere-se-a-questao-3841113",
+      "lote": "oracoes-coordenadas-e-subordinadas-g04",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o termo «ao» NÃO introduz um segmento textual que veicula uma circunstância de tempo."
+    },
+    {
+      "slug": "instituto-ao-oracoes-o-texto-a-seguir-refere-se-a-questao-3841158",
+      "lote": "oracoes-coordenadas-e-subordinadas-g04",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o uso da(s) vírgula(s) se justifica porque ela(s) isola(m) uma oração adverbial deslocada…"
+    },
+    {
+      "slug": "apice-acs-pr-oracoes-pestana-2023-p-619-aponta-que-as-ora-3951856",
+      "lote": "oracoes-coordenadas-e-subordinadas-g05",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Pestana (2023, p. 619) aponta que \"As orações subordinadas adverbiais são chamadas assim porque exercem função sintátic…"
+    },
+    {
+      "slug": "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793433",
+      "lote": "oracoes-coordenadas-e-subordinadas-g05",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que classifica corretamente a oração subordinada adverbial presente no seguinte período: «Estamo…"
+    },
+    {
+      "slug": "avancasp-acs-oracoes-leia-o-texto-a-seguir-para-responder-3661687",
+      "lote": "oracoes-coordenadas-e-subordinadas-g05",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Mas o lar é uma coisa a que estamos tão habituados que sempre acabamos voltando a ele», a construção em dest…"
+    },
+    {
+      "slug": "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913806",
+      "lote": "oracoes-coordenadas-e-subordinadas-g05",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Releia o trecho: «Essas uniões eram essencialmente políticas e sociais, decididas pelos pais.» Quanto ao uso da vírgula…"
+    },
+    {
+      "slug": "educa-pb-ag-oracoes-texto-1-a-inteligencia-artificial-ja-3711355",
+      "lote": "oracoes-coordenadas-e-subordinadas-g05",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Releia o trecho extraído do último parágrafo do texto: «Ela é moldada por quem a desenha, por quem a financia e por que…"
+    },
+    {
+      "slug": "vunesp-acs-p-oracoes-leia-o-texto-a-seguir-para-responder-3845002",
+      "lote": "oracoes-coordenadas-e-subordinadas-g05",
+      "subtopico": "Orações coordenadas e subordinadas",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa em que o acréscimo de vírgula(s) ao trecho original segue a norma-padrão de emprego desse sinal …"
+    },
+    {
+      "slug": "aocp-ses-sc-pontuacao-dois-pontos-3804106",
+      "lote": "pontuacao-g01",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. No título, «Ele tem 22 anos e uma missão: varrer o lixo espacial d…"
+    },
+    {
+      "slug": "aocp-unirio-pontuacao-enumeracao-3840868",
+      "lote": "pontuacao-g01",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Assinale a alternativa em que o emprego das vírgulas é obrigatório porq…"
+    },
+    {
+      "slug": "avancasp-aae-pref-potim-pontuacao-rita-3839712",
+      "lote": "pontuacao-g01",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que contém a frase correta em relação à pontuação."
+    },
+    {
+      "slug": "avancasp-potim-pontuacao-travessao-dois-pontos-3839857",
+      "lote": "pontuacao-g01",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o trecho a seguir. «Digo, mas não acredito, ou pelo menos desconfio que esse impulso que tive ao ler a notícia fic…"
+    },
+    {
+      "slug": "cpcon-condado-pontuacao-tirinha-vf-3836507",
+      "lote": "pontuacao-g01",
+      "subtopico": "Pontuação",
+      "status": "ok_figures",
+      "instruction_snippet": "Para responder à questão, leia o texto que segue. Leia o trecho da tirinha: «5 pães franceses? Muito formal. 5 pão fran…"
+    },
+    {
+      "slug": "cpcon-cuite-pontuacao-enumeracao-numeros-3912868",
+      "lote": "pontuacao-g01",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o Texto II para responder à questão. Sobre as regras de pontuação, observe a fala da avó: «É 'cinco, quatro, três,…"
+    },
+    {
+      "slug": "selecon-porto-gauchos-pontuacao-adjunto-3852273",
+      "lote": "pontuacao-g01",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir. «De acordo com Soo-jong, a Innospace está analisando os dados de voo, rastreamento e monitoramen…"
+    },
+    {
+      "slug": "vunesp-jundiai-pontuacao-travessao-3776215",
+      "lote": "pontuacao-g01",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. O uso dos travessões, no segundo parágrafo, indica a"
+    },
+    {
+      "slug": "avancasp-amparo-pontuacao-incorreta-3352962",
+      "lote": "pontuacao-g02",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Qual das frases a seguir está INCORRETA em relação à pontuação?"
+    },
+    {
+      "slug": "avancasp-nova-odessa-pontuacao-reescrita-3963918",
+      "lote": "pontuacao-g02",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "«O estudante perguntou ao professor, com muito receio: «Que dia será a prova?»» Assinale a alternativa que apresenta um…"
+    },
+    {
+      "slug": "epice-monteiro-pontuacao-atualmente-4024909",
+      "lote": "pontuacao-g02",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Analise o uso da vírgula após «atualmente» no seguinte trecho: «At…"
+    },
+    {
+      "slug": "epice-monteiro-pontuacao-hoje-4024933",
+      "lote": "pontuacao-g02",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. Sobre o trecho: «Essas políticas alteraram o perfil do estudante u…"
+    },
+    {
+      "slug": "epice-sj-cordeiros-pontuacao-meme-4037433",
+      "lote": "pontuacao-g02",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Imagem, vídeo, frase, expressão, parte de um texto etc.», o uso das vírgulas tem a função de:"
+    },
+    {
+      "slug": "vunesp-campinas-pontuacao-virgula-citacao-3345654",
+      "lote": "pontuacao-g02",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão abaixo. Assinale a alternativa em que a vírgula acrescentada ao trecho p…"
+    },
+    {
+      "slug": "vunesp-osasco-pontuacao-virgula-adjunto-3323730",
+      "lote": "pontuacao-g02",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Assinale a alternativa em que o acréscimo de vírgulas preserva a norma-padrão de…"
+    },
+    {
+      "slug": "vunesp-sertaozinho-pontuacao-enumeracao-3352588",
+      "lote": "pontuacao-g02",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Assinale a alternativa em que as vírgulas foram empregadas para separar os termo…"
+    },
+    {
+      "slug": "avancasp-amparo-pontuacao-incorreta-3353965",
+      "lote": "pontuacao-g03",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Qual das frases a seguir está INCORRETA quanto ao emprego dos sinais de pontuação?"
+    },
+    {
+      "slug": "avancasp-morungaba-pontuacao-dois-pontos-3452341",
+      "lote": "pontuacao-g03",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder a questão abaixo. Em «Sei dizer não senhor: não tomo café.» e «Sei dizer não senho…"
+    },
+    {
+      "slug": "fgv-ebserh-pontuacao-correta-3385123",
+      "lote": "pontuacao-g03",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a frase cuja pontuação está correta."
+    },
+    {
+      "slug": "fgv-ebserh-pontuacao-reticencias-3385117",
+      "lote": "pontuacao-g03",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a frase em que, comparativamente, as reticências mostram a expressão de uma emoção intensa."
+    },
+    {
+      "slug": "ibfc-ses-se-pontuacao-concessiva-3450786",
+      "lote": "pontuacao-g03",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Analise o texto a seguir e responda à questão abaixo. No último parágrafo, a oração entre vírgulas possui um valor semâ…"
+    },
+    {
+      "slug": "selecon-hemominas-pontuacao-enumeracao-3416694",
+      "lote": "pontuacao-g03",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o texto a seguir para responder à questão. «Sempre segui estudando, me dedicando, dando o meu melhor» (7º par…"
+    },
+    {
+      "slug": "vunesp-itapevi-pontuacao-parenteses-3419140",
+      "lote": "pontuacao-g03",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Os parênteses permitem introduzir observação adicional que pode ser suprimida sem interferir na compreensão do texto. É…"
+    },
+    {
+      "slug": "vunesp-sertaozinho-pontuacao-omissao-3354418",
+      "lote": "pontuacao-g03",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão. Assinale a alternativa em cujo trecho a vírgula marca a omissão de um vocábulo."
+    },
+    {
+      "slug": "avancasp-fusam-pontuacao-incorreta-3460046",
+      "lote": "pontuacao-g04",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "O emprego da vírgula está INCORRETO apenas em:"
+    },
+    {
+      "slug": "avancasp-fusam-pontuacao-reescrita-3460254",
+      "lote": "pontuacao-g04",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "O excerto a seguir não apresenta sinais de pontuação. Analise-o e assinale a alternativa que o reescreve corretamente, …"
+    },
+    {
+      "slug": "avancasp-vinhedo-pontuacao-reticencias-3554844",
+      "lote": "pontuacao-g04",
+      "subtopico": "Pontuação",
+      "status": "ok_figures",
+      "instruction_snippet": "Leia a HQ abaixo para responder à questão. No fim da frase do segundo quadrinho e no início da frase do terceiro, há re…"
+    },
+    {
+      "slug": "facet-bom-jardim-pontuacao-incorreta-3614676",
+      "lote": "pontuacao-g04",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Marque a alternativa incorreta quanto ao emprego da vírgula, de acordo com as normas gramaticais."
+    },
+    {
+      "slug": "fgv-sjc-pontuacao-dois-pontos-3587457",
+      "lote": "pontuacao-g04",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a frase a seguir em que o uso de dois-pontos (:) está empregado por preceder um esclarecimento."
+    },
+    {
+      "slug": "vunesp-itatiba-pontuacao-travessao-3583375",
+      "lote": "pontuacao-g04",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o poema a seguir para responder à questão. No poema, os travessões indicam"
+    },
+    {
+      "slug": "vunesp-itatiba-pontuacao-virgula-3583301",
+      "lote": "pontuacao-g04",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. O acréscimo de uma vírgula ao trecho manteve a norma-padrão do emprego …"
+    },
+    {
+      "slug": "vunesp-osasco-pontuacao-virgula-3607149",
+      "lote": "pontuacao-g04",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. Assinale a alternativa em que a inclusão de vírgula(s) no trecho origin…"
+    },
+    {
+      "slug": "avancasp-cerquilho-pontuacao-adjunto-3661696",
+      "lote": "pontuacao-g05",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "A vírgula está corretamente empregada em:"
+    },
+    {
+      "slug": "avancasp-cerquilho-pontuacao-virgula-domingo-3662933",
+      "lote": "pontuacao-g05",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto a seguir para responder à questão. A segunda vírgula empregada no excerto «O meu domingo é pobre, chove no…"
+    },
+    {
+      "slug": "avancasp-fmsrc-pontuacao-reescrita-3665295",
+      "lote": "pontuacao-g05",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "«A vida parece cruel aos olhos de alguns homens, mas o que ela requer de todo mundo é coragem. Coragem para continuar e…"
+    },
+    {
+      "slug": "cebraspe-boa-vista-pontuacao-antes-3705140",
+      "lote": "pontuacao-g05",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto CG2A1 de Luís Fernando Verissimo. No que se refere à pontuação, é correto afirmar que a correção gramatica…"
+    },
+    {
+      "slug": "consulplan-indaiatuba-pontuacao-adjunto-3694433",
+      "lote": "pontuacao-g05",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão abaixo. Sobre a presença da vírgula no excerto «Com rotinas agitadas e a facilida…"
+    },
+    {
+      "slug": "consulplan-indaiatuba-pontuacao-aposto-3694727",
+      "lote": "pontuacao-g05",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "No fragmento «O Bentinho, do Machado de Assis, aquele que desconfiava da Capitu, não sofreu tanto», as vírgulas foram e…"
+    },
+    {
+      "slug": "educapb-umbuzeiro-pontuacao-vf-reborn-3661906",
+      "lote": "pontuacao-g05",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto para responder à questão abaixo. Sobre o emprego das vírgulas no trecho «Na última semana, o uso de boneco…"
+    },
+    {
+      "slug": "selecon-tapurah-pontuacao-dois-pontos-3692813",
+      "lote": "pontuacao-g05",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto sobre laranjas e vitamina C. Nesse trecho, a função dos dois-pontos é:"
+    },
+    {
+      "slug": "apice-boa-vista-pb-pontuacao-incorreta-3951884",
+      "lote": "pontuacao-g06",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Sabendo que o uso da vírgula tem mais a ver com a sintaxe do que com a prosódia, assinale, a seguir, a alternativa em q…"
+    },
+    {
+      "slug": "avancasp-cunha-pontuacao-correta-3738882",
+      "lote": "pontuacao-g06",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa cuja sentença se apresenta totalmente correta em relação à pontuação."
+    },
+    {
+      "slug": "avancasp-varginha-pontuacao-reescrita-coragem-3727507",
+      "lote": "pontuacao-g06",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "«A vida parece cruel aos olhos de alguns homens, mas o que ela requer de todo mundo é coragem. Coragem para continuar e…"
+    },
+    {
+      "slug": "avancasp-varginha-pontuacao-reescrita-erico-3726048",
+      "lote": "pontuacao-g06",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "«Na véspera à noite notara-se uma certa alegria talvez um tanto infantil quando as luzes as lâmpadas das ruas tornaram …"
+    },
+    {
+      "slug": "cebraspe-boa-vista-pontuacao-dois-pontos-3705151",
+      "lote": "pontuacao-g06",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto CG2A1 de Luís Fernando Verissimo. O sinal de dois-pontos no penúltimo período do texto CG2A1 está empregad…"
+    },
+    {
+      "slug": "educapb-santa-cecilia-pontuacao-chocolate-3746565",
+      "lote": "pontuacao-g06",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto sobre chocolate. Quanto ao uso das vírgulas no trecho «…Mas o que para alguns é um prazer incontrolável, p…"
+    },
+    {
+      "slug": "educapb-sj-rio-peixe-pontuacao-meme-3711365",
+      "lote": "pontuacao-g06",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto sobre o meme de nostalgia. O meme traz uma pergunta e, em seguida, a resposta. Pensando nisso, a pontuação…"
+    },
+    {
+      "slug": "quadrix-fuabc-pontuacao-virgula-facultativa-3721193",
+      "lote": "pontuacao-g06",
+      "subtopico": "Pontuação",
+      "status": "no_reference",
+      "instruction_snippet": "Com relação ao conteúdo textual sobre imunização e o PNI, assinale a opção cuja reescrita do trecho apresenta emprego f…"
+    },
+    {
+      "slug": "avancasp-fusam-termos-excepto-adnominal-3460242",
+      "lote": "termos-oracao-g01",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Em todas as sentenças a seguir, a expressão em destaque desempenha a mesma função, qualificando o nome a que se refere,…"
+    },
+    {
+      "slug": "avancasp-sm-arcanjo-termos-transitivo-direto-3709806",
+      "lote": "termos-oracao-g01",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Releia o trecho: «Não posso mais produzir abotoaduras de punho para camisas sem punho (…).» Em relação à regência verba…"
+    },
+    {
+      "slug": "cpcon-olivedos-termos-complemento-nominal-3709441",
+      "lote": "termos-oracao-g01",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Observe o trecho «A leitura também desempenha um papel importante na saúde mental, oferecendo uma forma de escapismo sa…"
+    },
+    {
+      "slug": "cpcon-uepb-nazarezinho-termos-regencia-explicar-3483810",
+      "lote": "termos-oracao-g01",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Minha avó tentou me explicar que Jesus não era Deus», a regência do verbo «explicar» exige, neste contexto:"
+    },
+    {
+      "slug": "educa-pb-pedras-fogo-termos-objeto-direto-3576833",
+      "lote": "termos-oracao-g01",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "«Procure o conselho tutelar, delegacia ou disque 100.» O termo destacado exerce a função de:"
+    },
+    {
+      "slug": "selecon-hemominas-termos-agente-passiva-3416691",
+      "lote": "termos-oracao-g01",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "«Ao me formar, rapidamente consegui empregos, sempre fui bem recomendada pelos ex-chefes, e sempre fui adiante de cabeç…"
+    },
+    {
+      "slug": "selecon-lrv-termos-agente-passiva-1360962",
+      "lote": "termos-oracao-g01",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «A estimativa foi divulgada nesta quinta-feira (28) pelo Instituto Brasileiro de Geografia e Estatística (IBG…"
+    },
+    {
+      "slug": "selecon-porto-gauchos-termos-missao-3852270",
+      "lote": "termos-oracao-g01",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Em «Em carta enviada aos acionistas da Innospace, Soo-jong disse que lamentava transmitir resultados que não atenderam …"
+    },
+    {
+      "slug": "aocp-unirio-termos-travessao-brinquedos-3840834",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Assinale a alternativa que analisa corretamente o excerto «[os brinquedos] funcionam como uma ponte de volta aos moment…"
+    },
+    {
+      "slug": "apice-monteiro-termos-tardiamente-4024881",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho: «As universidades chegaram tardiamente ao país.», os segmentos destacados exercem, respectivamente, papel si…"
+    },
+    {
+      "slug": "avancasp-odessa-termos-so-adjetiva-3962452",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "«Isso é parte da beleza de toda a literatura. Você descobre que seus desejos são universais, que você não está só e iso…"
+    },
+    {
+      "slug": "cpcon-itabaiana-termos-conta-luz-4014460",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Na oração «Por que a conta de luz subiu de novo?!», é CORRETO afirmar que os elementos em destaque são:"
+    },
+    {
+      "slug": "cpcon-nova-floresta-termos-aposto-quintal-4018200",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Observe o trecho: «O quintal, esquecido quase sempre, virou chão enervurado das raízes das árvores com troncos empantur…"
+    },
+    {
+      "slug": "quadrix-ses-sp-termos-folhetos-enquanto-3779634",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Em «No grupo que só recebeu os folhetos, essa taxa foi de 74%» e «Enquanto isso, oito anos após o início do tratamento …"
+    },
+    {
+      "slug": "selecon-fesaude-termos-adv-intercalados-3990813",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «[...] receberam, no começo de abril, pelo aplicativo SouGov, convite para participar do estudo», as vírgulas…"
+    },
+    {
+      "slug": "vunesp-sjrp-termos-folhetos-enquanto-3789304",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Em «No grupo que só recebeu os folhetos, essa taxa foi de 74%» e «Enquanto isso, oito anos após o início do tratamento …"
+    },
+    {
+      "slug": "vunesp-sjrp-termos-parenteses-acessoria-3789304",
+      "lote": "termos-oracao-g02",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho do 3º parágrafo «... ultrapassava 2 mil calorias por pessoa (média que inclui crianças e idosos).», os parênt…"
+    },
+    {
+      "slug": "apice-bacamarte-termos-vf-virgula-adv-3793442",
+      "lote": "termos-oracao-g03",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Leia o texto abaixo e responda da questão. Sociedade do cansaço: estamos cansados demais para perceber? Mesmo no descan…"
+    },
+    {
+      "slug": "apice-bacamarte-termos-vocativo-junior-3793473",
+      "lote": "termos-oracao-g03",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Em «Parabéns, Júnior, você nunca acordou nesse horário.», sobre o vocábulo «Júnior», no contexto em que se encontra, é …"
+    },
+    {
+      "slug": "apice-monteiro-termos-aposto-faculdade-4024905",
+      "lote": "termos-oracao-g03",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "No seguinte trecho: «As universidades chegaram tardiamente ao país. A primeira faculdade criada, a Escola de Cirurgia d…"
+    },
+    {
+      "slug": "cpcon-nova-palmeira-termos-adjuntos-aipim-3599766",
+      "lote": "termos-oracao-g03",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Do ponto de vista sintático, de aipim, de mandioca e de macaxeira são exemplos de:"
+    },
+    {
+      "slug": "cpcon-olivedos-termos-vocativos-vovo-3709443",
+      "lote": "termos-oracao-g03",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Observe as falas dos dois primeiros balões e as palavras que foram destacadas: «Vovô, você está velho demais para frequ…"
+    },
+    {
+      "slug": "educa-pb-umbuzeiro-termos-adv-maio-3661932",
+      "lote": "termos-oracao-g03",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "«Na Câmara Municipal de Campina Grande, o vereador Sargento Wellington Cobra (PSB) apresentou o PL 529/2025, também em …"
+    },
+    {
+      "slug": "ibfc-ses-se-termos-vocativo-liduina-3450774",
+      "lote": "termos-oracao-g03",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Ainda que o texto não seja um exemplo de correspondência oficial, é possível identificar um elemento que, guardadas as …"
+    },
+    {
+      "slug": "selecon-nova-mutum-termos-adjunto-sensivel-3649276",
+      "lote": "termos-oracao-g03",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "«A narrativa sensível conquistou público e crítica, acumulando prêmios em dezenas de festivais e premiações ao redor do…"
+    },
+    {
+      "slug": "apice-boa-vista-termos-vocativo-gente-3951799",
+      "lote": "termos-oracao-g04",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Sobre o uso da vírgula no seguinte trecho: «Gente, eu só queria paz e um boleto pago. É pedir muito?», presente no 5º p…"
+    },
+    {
+      "slug": "apice-monteiro-termos-cn-embora-tardio-4024901",
+      "lote": "termos-oracao-g04",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho: «Embora tardio, o Brasil adotou relativamente cedo o modelo de universidades públicas, em princípio abertas …"
+    },
+    {
+      "slug": "apice-pocinhos-termos-vf-pronome-relativo-3558977",
+      "lote": "termos-oracao-g04",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Quanto às funções sintáticas do pronome relativo, analise as orações a seguir e classificações correspondentes. I - Com…"
+    },
+    {
+      "slug": "avancasp-sm-arcanjo-termos-comparativo-igualdade-3709824",
+      "lote": "termos-oracao-g04",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Considere o exemplo abaixo: A sala de Clarice é tão bonita quanto a sala de Ruth. Assinale a alternativa que indica a c…"
+    },
+    {
+      "slug": "educa-pb-ibiara-termos-pronome-relativo-que-3819879",
+      "lote": "termos-oracao-g04",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "No trecho «Finalmente, o princípio da corresponsabilidade pela vida social, que diz respeito à formação de atitudes e a…"
+    },
+    {
+      "slug": "educa-pb-ibiara-termos-virgula-sim-3820032",
+      "lote": "termos-oracao-g04",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Na fala do planeta — «Sim, e o meu atual sonho de consumo é ter consumidores mais conscientes.» — a vírgula após a pala…"
+    },
+    {
+      "slug": "educa-pb-santa-cecilia-termos-pronome-relativo-mao-3746601",
+      "lote": "termos-oracao-g04",
+      "subtopico": "Termos da oração",
+      "status": "no_reference",
+      "instruction_snippet": "Releia: «A mão que afaga é a mesma que apedreja.» No trecho acima, os termos destacados têm a função de:"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g08",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "Sanitização hortaliças + desratização + primária IDECAN + saúde bucal INCORRETA + técnico educador + Igeduc C/E (g08)",
+  "total": 8,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4": "promocao_educacao_prevencao",
+    "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4": "promocao_educacao_prevencao",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1": "promocao_educacao_prevencao",
+    "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7": "promocao_educacao_prevencao",
+    "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3": "promocao_educacao_prevencao",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1": "promocao_educacao_prevencao",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2": "promocao_principios_direitos",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4": "promocao_educacao_prevencao"
+  },
+  "slugs": [
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
+    "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+    "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+    "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4"
+  ],
+  "notes": [
+    "idcap-3868300-4: meta legada Epidemiologia — subtopico canônico no handcraft.",
+    "ieses-3923516-3: gabarito reparado D→A (residência médica fora do escopo do técnico). Apply com --no-strict-gabarito.",
+    "idib-1778934900821-7: INCORRETA — flúor, não cálcio do dentifrício (B).",
+    "igeduc-3909811-1: secundária ≠ reduzir incidência (Errado)."
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g08 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g08/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g08 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g08 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g08 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g08 --apply --no-strict-gabarito (ieses; só quando pedido)"
+  ],
+  "next_lote": "promocao-a-saude-e-prevencao-de-agravos-g09",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g08.json"
+  }
+}

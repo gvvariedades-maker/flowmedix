@@ -1,51 +1,37 @@
 {
-  "generated_at": "2026-07-15T16:21:01.363Z",
+  "generated_at": "2026-07-21T01:16:18.698Z",
   "strict": true,
   "scanned": 6,
   "passed": 6,
   "failed": 0,
   "results": [
     {
-      "slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "slug": "apice-acs-pr-oracoes-pestana-2023-p-619-aponta-que-as-ora-3951856",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
-      "ok": true,
-      "issues": [
-        {
-          "code": "align_branch_declared",
-          "message": "meta.pedagogical_branch=\"crianca_desenvolvimento\" ≠ inferido=\"crianca_aleitamento_nutricao\"",
-          "severity": "warn",
-          "path": "meta.pedagogical_branch"
-        }
-      ]
-    },
-    {
-      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "slug": "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793433",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "slug": "avancasp-acs-oracoes-leia-o-texto-a-seguir-para-responder-3661687",
       "ok": true,
       "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "slug": "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913806",
       "ok": true,
-      "issues": [
-        {
-          "code": "align_branch_declared",
-          "message": "meta.pedagogical_branch=\"crianca_dor\" ≠ inferido=\"crianca_generico\"",
-          "severity": "warn",
-          "path": "meta.pedagogical_branch"
-        }
-      ]
+      "issues": []
     },
     {
-      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "slug": "educa-pb-ag-oracoes-texto-1-a-inteligencia-artificial-ja-3711355",
+      "ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-acs-p-oracoes-leia-o-texto-a-seguir-para-responder-3845002",
       "ok": true,
       "issues": []
     }

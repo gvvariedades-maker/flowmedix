@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "subtopico": "Curativos e Manejo de Feridas",
+  "pacote_prefix": "curativos-e-manejo-de-feridas",
+  "scope_default": "subtopico_handcraft",
+  "anchor_glob": "examples/questao-premium-*-curativos-*.json",
+  "guideline": "lib/guidelines/curativos.ts",
+  "handcraft_meta": "data/catalog-migration/curativos-e-manejo-de-feridas-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/curativos-topic-cluster-report.json",
+  "slug_selection": "P0 cobertura → g01; FO → g02; LPP → g03; técnica → g04; desbridamento → g05; EXCETO → g06; cauda → g07+",
+  "clusters": [
+    "Cobertura e seleção (23 · 24.7% — curativos_cobertura_selecao · g01)",
+    "Ferida cirúrgica / pós-op (13 · 14.0% — curativos_ferida_cirurgica · g02)",
+    "LPP prevenção+tratamento (9 · 9.7% — curativos_lpp · g03)",
+    "Técnica asséptica / sequência (6 · 6.5% — curativos_tecnica_assepsia · g04)",
+    "Desbridamento (6 · 6.5% — curativos_desbridamento · g05)",
+    "EXCETO — conduta curativo (4 · 4.3% — curativos_exceto_incorreta · g06)",
+    "Cauda: estomia+bandagem+dreno+termo+genérico (25 · 26.6% — sub-ramos · g07+)"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "curativos_cobertura_selecao",
+      "when": "Seleção de cobertura, exsudato, meio úmido, hidrocoloide/alginato/espuma",
+      "mold": "wound-stage-tissue-deck · dressing-match-matrix · wound-prep-tap-flow · dressing-choice-arena",
+      "l3_decision": "molde_redesign",
+      "anchors": ["examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json"]
+    },
+    {
+      "id": "curativos_ferida_cirurgica",
+      "when": "Ferida operatória, pós-op, pontos, deiscência, sutura",
+      "mold": "procedure-protocol · reference_table · wound-prep-tap-flow · compare",
+      "l3_decision": "molde_redesign",
+      "anchors": []
+    },
+    {
+      "id": "curativos_lpp",
+      "when": "LPP prevenção, estágios NPUAP, Braden, úlcera por pressão",
+      "mold": "wound-stage-tissue-deck · reference_table · vertical · dressing-choice-arena",
+      "l3_decision": "molde_redesign",
+      "anchors": ["examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json"]
+    },
+    {
+      "id": "curativos_exceto_incorreta",
+      "when": "EXCETO / INCORRETA em técnica de curativo",
+      "mold": "morphological · reference_table · vertical · compare",
+      "l3_decision": "molde_redesign",
+      "anchors": []
+    },
+    {
+      "id": "curativos_tecnica_assepsia",
+      "when": "Sequência asséptica, limpeza SF, técnica de curativo",
+      "mold": "morphological · reference_table · vertical · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "Pegadinha textual (ordem invertida sem UI); <10% (6.5%); compare ensina sem bespoke"
+    },
+    {
+      "id": "curativos_desbridamento",
+      "when": "Tipos de desbridamento autolítico/mecânico/enzimático/cirúrgico",
+      "mold": "morphological · reference_table · vertical · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "Espectro textual; <10% (6.5%); compare + rows suficiente"
+    },
+    {
+      "id": "curativos_estomia",
+      "when": "Estomia, periestoma, bolsa coletora",
+      "mold": "morphological · reference_table · vertical · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "5 slugs; pegadinha textual; compare ensina"
+    },
+    {
+      "id": "curativos_bandagem_imobilizacao",
+      "when": "Bandagem, gesso, imobilização",
+      "mold": "morphological · reference_table · vertical · compare",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "8 slugs borderline; técnica descritiva sem UI espacial obrigatória"
+    },
+    {
+      "id": "curativos_generico",
+      "when": "Cauda misc. sem cluster forte único",
+      "mold": "morphological · center · vertical · compare",
+      "l3_decision": "cauda_longa",
+      "anchors": []
+    }
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>"
+  },
+  "first_lote": "curativos-e-manejo-de-feridas-g01",
+  "modes": {
+    "subtopico_handcraft": {
+      "label": "Handcraft golden-v1 — 94 slugs em lotes curativos-e-manejo-de-feridas-gNN",
+      "first_lote": "curativos-e-manejo-de-feridas-g01",
+      "batch_size": 8
+    }
+  }
+}

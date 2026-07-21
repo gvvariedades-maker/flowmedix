@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-20T17:11:00.165Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g11",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3631
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 3578
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "MARANATHA ASSESSORIA",
+      "avant_codigo": 3543
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 3586
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 3587
+    },
+    {
+      "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "NÃO INFORMADO",
+      "avant_codigo": 3560
+    },
+    {
+      "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "NÃO INFORMADO",
+      "avant_codigo": 3566
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3577
+    }
+  ]
+}

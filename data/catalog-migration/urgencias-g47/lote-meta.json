@@ -14,5 +14,11 @@
   "readiness": "8/8",
   "readiness_strict_v2": "8/8",
   "preflight_artifact": "artifacts/catalog-preflight-urgencias-g47.json",
-  "notes": "g47 — 18º lote · 6 generico tail + fundatec Cushing (choque) + furb AHA VF · 8/8 READY strict-v2 · generico tail closed"
+  "notes": "g47 — 18º lote · 6 generico tail + fundatec Cushing (choque) + furb AHA VF · 8/8 READY strict-v2 · generico tail closed",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

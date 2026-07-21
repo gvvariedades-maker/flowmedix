@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:08:58.884Z",
+  "lote": "classes-de-palavras-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376862",
+    "avancasp-esc-classes-considere-o-texto-a-seguir-para-resp-3963891",
+    "cpcon-uepb-a-classes-leia-o-texto-01-para-responder-a-que-4014454",
+    "selecon-acs-classes-considere-o-texto-a-seguir-para-resp-3990848",
+    "vunesp-ag-pr-classes-por-que-agora-a-solidao-nos-adoece-p-3419024",
+    "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336089",
+    "vunesp-aux-s-classes-leia-o-texto-para-responder-a-questa-3323733",
+    "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3999759"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376862",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-esc-classes-considere-o-texto-a-seguir-para-resp-3963891",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-classes-leia-o-texto-01-para-responder-a-que-4014454",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-acs-classes-considere-o-texto-a-seguir-para-resp-3990848",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-classes-por-que-agora-a-solidao-nos-adoece-p-3419024",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-age-p-classes-leia-o-texto-para-responder-a-questa-3336089",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-aux-s-classes-leia-o-texto-para-responder-a-questa-3323733",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-tenf-classes-leia-o-texto-a-seguir-para-responder-3999759",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

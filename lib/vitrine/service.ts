@@ -16,6 +16,12 @@ import { buildVitrineFacets, getVitrineFacets } from '@/lib/vitrine/facets';
 import { VITRINE_ASSUNTOS_POR_PAGINA } from '@/lib/vitrine/constants';
 import { fetchVitrinePageFromRpc } from '@/lib/vitrine/rpc';
 import { fetchSlideCountsByModuloIds } from '@/lib/vitrine/slideCounts';
+import {
+  buildDisciplinaSummaries,
+  parseVitrineDisciplina,
+  resolveVitrineDisciplinaId,
+  type VitrineDisciplinaId,
+} from '@/lib/vitrine/disciplina';
 import { logApiStrategy } from '@/lib/api/logApiStrategy';
 import { logger } from '@/lib/logger';
 import { SCALE_LIMITS } from '@/lib/scale/constants';
@@ -34,6 +40,7 @@ export type VitrineListFilters = {
   /** @deprecated use assuntos */
   assunto?: string;
   q?: string;
+  disciplina?: VitrineDisciplinaId;
 };
 
 export type GetVitrinePageParams = {
@@ -59,10 +66,12 @@ function normalizeVitrineListFilters(filters: VitrineListFilters = {}): VitrineL
     ...(filters.assuntos?.map((a) => a.trim()).filter(Boolean) ?? []),
     ...(filters.assunto?.trim() ? [filters.assunto.trim()] : []),
   ];
+  const disciplina = parseVitrineDisciplina(filters.disciplina);
   return {
     bancas: bancas.length ? [...new Set(bancas)] : undefined,
     assuntos: assuntos.length ? [...new Set(assuntos)] : undefined,
     q: filters.q?.trim() || undefined,
+    ...(disciplina ? { disciplina } : {}),
   };
 }
 
@@ -76,6 +85,62 @@ function paginateGroups<T>(items: T[], page: number, perPage: number): { slice: 
     slice: items.slice(start, start + perPage),
     totalPages,
   };
+}
+
+/**
+ * Contagens por disciplina sem historico (caminho RPC).
+ * Progresso fica 0 até o pipeline JS (filtro disciplina / fallback).
+ */
+async function buildDisciplinaSummariesLite(
+  userId: string,
+  filters: VitrineListFilters,
+  isAdmin: boolean,
+) {
+  const modulosRaw = filterModulosByVitrineQualityGate(
+    await loadModulosForVitrine(userId, { ...filters, disciplina: undefined }, isAdmin),
+    { isAdmin },
+  );
+  const placeholders = modulosRaw.map((m) => ({
+    ...m,
+    estudoReversoConcluido: false,
+    stats: { acertos: 0, total: 0, percentual: 0, priorityScore: 0 },
+  }));
+  const filtered = filterModulosLikeVitrine(placeholders, {
+    bancas: filters.bancas,
+    assuntos: filters.assuntos,
+    q: filters.q,
+  });
+  const byAssunto = new Map<
+    string,
+    { modulo_nome: string; totalQuestoes: number }
+  >();
+  for (const m of filtered) {
+    const key = m.titulo_aula || 'Sem subtópico';
+    const prev = byAssunto.get(key);
+    if (prev) {
+      prev.totalQuestoes += 1;
+    } else {
+      byAssunto.set(key, {
+        modulo_nome: m.modulo_nome || 'Geral',
+        totalQuestoes: 1,
+      });
+    }
+  }
+  const groups = [...byAssunto.entries()].map(([titulo_aula, info]) => ({
+    titulo_aula,
+    modulo_nome: info.modulo_nome,
+    banca: '',
+    questoes: [],
+    acertos: 0,
+    erros: 0,
+    totalResolvidas: 0,
+    totalQuestoes: info.totalQuestoes,
+    totalNeuroSlides: 0,
+    trabalhadas: 0,
+    percentual: 0,
+    firstSlug: titulo_aula,
+  }));
+  return buildDisciplinaSummaries(groups);
 }
 
 async function loadModulosForVitrine(
@@ -136,47 +201,76 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
     stats: { acertos: 0, total: 0, percentual: 0, priorityScore: 0 },
   }));
 
-  const filtered = filterModulosLikeVitrine(modulosComStatsPlaceholder, filters);
-  logger.warn('getVitrinePageViaJs: filtered count', { count: filtered.length });
+  /** Filtros sem disciplina — resumo do picker precisa das duas prateleiras. */
+  const filtersForSummaries = { ...filters, disciplina: undefined };
+  const filteredForSummaries = filterModulosLikeVitrine(
+    modulosComStatsPlaceholder,
+    filtersForSummaries,
+  );
 
-  const slugs = filtered.map((m) => m.modulo_slug);
+  logger.warn('getVitrinePageViaJs: filtered count', {
+    count: filteredForSummaries.length,
+    disciplina: filters.disciplina ?? null,
+  });
+
+  const slugsForStats = filteredForSummaries.map((m) => m.modulo_slug);
+  const modulosForStats = filteredForSummaries;
   const [historico, slideCounts] = await Promise.all([
-    getHistoricoQuestoesForSlugsCached(userId, slugs),
-    fetchSlideCountsByModuloIds(filtered.map((m) => m.id)),
+    getHistoricoQuestoesForSlugsCached(userId, slugsForStats),
+    fetchSlideCountsByModuloIds(modulosForStats.map((m) => m.id)),
   ]);
 
-  const withStats = attachHistoricoStats(
-    filtered.map(({ estudoReversoConcluido: _e, stats: _s, ...m }) => m),
+  const withStatsAll = attachHistoricoStats(
+    modulosForStats.map(({ estudoReversoConcluido: _e, stats: _s, ...m }) => m),
     historico,
   ).map((modulo) => ({
     ...modulo,
     slide_count: slideCounts.get(modulo.id) ?? 0,
   }));
 
-  const allGroups = buildVitrineGroups(withStats).map((group) => ({
+  const allGroups = buildVitrineGroups(withStatsAll).map((group) => ({
     ...group,
     questoes: group.questoes.slice(0, SCALE_LIMITS.QUESTOES_POR_ASSUNTO),
   }));
+  const disciplinas = buildDisciplinaSummaries(allGroups);
 
-  logger.warn('getVitrinePageViaJs: total groups built', { 
-    totalGroups: allGroups.length, 
-    userId, 
-    isAdmin 
+  const groupsScoped = filters.disciplina
+    ? allGroups.filter(
+        (g) => resolveVitrineDisciplinaId(g.modulo_nome) === filters.disciplina,
+      )
+    : allGroups;
+
+  logger.warn('getVitrinePageViaJs: total groups built', {
+    totalGroups: groupsScoped.length,
+    userId,
+    isAdmin,
+    disciplina: filters.disciplina ?? null,
   });
 
-  const { slice, totalPages } = paginateGroups(allGroups, page, VITRINE_ASSUNTOS_POR_PAGINA);
+  const { slice, totalPages } = paginateGroups(
+    groupsScoped,
+    page,
+    VITRINE_ASSUNTOS_POR_PAGINA,
+  );
   const pageClamped = Math.min(Math.max(1, page), totalPages);
+
+  const withStatsScoped = filters.disciplina
+    ? withStatsAll.filter(
+        (m) => resolveVitrineDisciplinaId(m.modulo_nome) === filters.disciplina,
+      )
+    : withStatsAll;
 
   return {
     groups: slice,
     facets,
+    disciplinas,
     pagination: {
       page: pageClamped,
       perPage: VITRINE_ASSUNTOS_POR_PAGINA,
-      totalGroups: allGroups.length,
+      totalGroups: groupsScoped.length,
       totalPages,
     },
-    totalModulosFiltrados: withStats.length,
+    totalModulosFiltrados: withStatsScoped.length,
   };
 }
 
@@ -191,6 +285,26 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
   const startAt = Date.now();
 
   logger.warn('getVitrinePage called', { userId, page, isAdmin, filters: normalizedFilters });
+
+  /** Filtro por disciplina ainda não existe na RPC — pipeline JS. */
+  if (filters.disciplina) {
+    const jsStartAt = Date.now();
+    const jsPage = await getVitrinePageViaJs(params);
+    logApiStrategy({
+      event: 'vitrine_page',
+      strategy: 'js',
+      durationMs: Date.now() - jsStartAt,
+      context: {
+        userId,
+        page,
+        filters: normalizedFilters,
+        rowCount: jsPage.totalModulosFiltrados,
+        isAdmin,
+        reason: 'disciplina_filter',
+      },
+    });
+    return applyVitrineQualityGateToPage(jsPage, { isAdmin });
+  }
 
   try {
     const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
@@ -223,6 +337,8 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
       { isAdmin },
     );
 
+    const disciplinas = await buildDisciplinaSummariesLite(userId, filters, isAdmin);
+
     logApiStrategy({
       event: 'vitrine_page',
       strategy: 'rpc',
@@ -250,6 +366,7 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
       {
         ...rpcPage,
         facets,
+        disciplinas,
       },
       { isAdmin },
     );

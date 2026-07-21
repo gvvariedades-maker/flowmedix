@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-07-21T01:08:11.167Z",
+  "lote": "concordancia-verbal-e-nominal-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 7,
+  "skipped": 0,
+  "failed": 1,
+  "applied_slugs": [
+    "apice-acs-pr-concordancia-considere-o-texto-a-seguir-para-resp-4024938",
+    "avancasp-ace-concordancia-de-acordo-com-o-gramatico-evanildo-b-3353963",
+    "ibfc-tec-enf-concordancia-analise-o-texto-a-seguir-e-responda-3450785",
+    "vunesp-ag-as-concordancia-a-concordancia-nominal-e-verbal-esta-3345661",
+    "vunesp-ag-pr-concordancia-a-frase-que-esta-em-conformidade-com-3419181",
+    "vunesp-ag-pr-concordancia-assinale-a-alternativa-redigida-em-c-3352593",
+    "vunesp-an-op-concordancia-assinale-a-alternativa-cuja-frase-es-3354420"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-acs-pr-concordancia-considere-o-texto-a-seguir-para-resp-4024938",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ace-concordancia-de-acordo-com-o-gramatico-evanildo-b-3353963",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acs-concordancia-de-acordo-com-o-gramatico-evanildo-b-3352960",
+      "status": "failed",
+      "mode": "insert",
+      "detail": "duplicate key value violates unique constraint \"uniq_modulos_estudo_content_hash\""
+    },
+    {
+      "modulo_slug": "ibfc-tec-enf-concordancia-analise-o-texto-a-seguir-e-responda-3450785",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-as-concordancia-a-concordancia-nominal-e-verbal-esta-3345661",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-concordancia-a-frase-que-esta-em-conformidade-com-3419181",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-concordancia-assinale-a-alternativa-redigida-em-c-3352593",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-an-op-concordancia-assinale-a-alternativa-cuja-frase-es-3354420",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

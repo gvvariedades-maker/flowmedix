@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T05:00:16.117Z",
+  "lote": "lingua-portuguesa-g07",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "aocp-unirio-colocacao-multitarefa-3841117",
+    "avancasp-estiva-gerbi-colocacao-faca-favor-3835994",
+    "avancasp-nova-odessa-colocacao-ce-3962471",
+    "avancasp-potim-colocacao-apresentar-lhe-3839370",
+    "cpcon-itabaiana-colocacao-se-proclise-4014453",
+    "vunesp-presidente-prudente-colocacao-feira-3336128",
+    "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
+    "vunesp-sorocaba-colocacao-charles-tira-3999721"
+  ],
+  "results": [
+    {
+      "modulo_slug": "aocp-unirio-colocacao-multitarefa-3841117",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-estiva-gerbi-colocacao-faca-favor-3835994",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-nova-odessa-colocacao-ce-3962471",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-potim-colocacao-apresentar-lhe-3839370",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-itabaiana-colocacao-se-proclise-4014453",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-presidente-prudente-colocacao-feira-3336128",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sorocaba-colocacao-charles-tira-3999721",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

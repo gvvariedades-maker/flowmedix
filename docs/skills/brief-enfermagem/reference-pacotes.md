@@ -119,7 +119,7 @@ Fonte: `handcraft-playbooks/promocao-a-saude-e-prevencao-de-agravos.json` + `art
 | `promocao_educacao_prevencao` | `ok_generico` | morphological · reference_table · tap · compare | educação em saúde · prevenção |
 | `promocao_generico` | `cauda_longa` | genérico premium | fallback subtópico |
 
-**Status pacote:** `none` · 0/130 handcraft · manifest `promocao-a-saude-e-prevencao-de-agravos-completo` · mis-tags cross-pacote pendentes.
+**Status pacote:** `none` · 8/110 handcraft · manifest `promocao-a-saude-e-prevencao-de-agravos-completo` · cluster 2026-07-20.
 
 ---
 

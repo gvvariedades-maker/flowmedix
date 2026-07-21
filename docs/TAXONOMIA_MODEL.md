@@ -114,7 +114,14 @@ Critério: `mismatch_count` → 0 (ou justificado); catch-all buckets encolhendo
 
 ### Fase 5 — Handcraft (depois)
 
-Só iniciar handcraft quando o subtópico estiver estável. Ver [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md).
+Só iniciar handcraft quando o gate passar:
+
+```bash
+npm run audit:subtopico-inventory -- --subtopico="<Nome canônico>"
+npm run audit:taxonomy-gate -- --subtopico="<Nome canônico>"
+```
+
+Critério: `gate=pass` ou `gate=warn` com `handcraft_allowed=true`. Ver [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) e §6 (catch-all).
 
 ---
 
@@ -123,6 +130,7 @@ Só iniciar handcraft quando o subtópico estiver estável. Ver [`GOLDEN_HANDCRA
 | Comando | Função |
 |---------|--------|
 | `npm run audit:subtopico-inventory` | Inventário titulo_aula × meta × canônicos |
+| `npm run audit:taxonomy-gate` | Gate pass \| warn \| block antes do 1º lote handcraft |
 | `npm run catalog:reclassify-subtopico` | Aliases legados → canônico |
 | `npm run catalog:infer-subtopico` | Gemini/heurística por enunciado |
 | `npx tsx scripts/catalog-merge-agent-infer.ts` | Mesclar inferências do agente |
@@ -132,18 +140,58 @@ Implementação inferência: [`lib/catalogMigration/inferSubtopicoFromEnunciado.
 
 Inventário: [`lib/catalogMigration/subtopicoInventory.ts`](../lib/catalogMigration/subtopicoInventory.ts)
 
+Gate: [`lib/catalogMigration/taxonomyGate.ts`](../lib/catalogMigration/taxonomyGate.ts) · `handcraft-registry.json` → `taxonomy_schema`
+
 ---
 
 ## 5. Definition of Done — taxonomia fechada (subtópico ou catálogo)
 
 - [ ] `audit:subtopico-inventory` → `mismatch_count` = 0
+- [ ] `audit:taxonomy-gate` → `gate=pass` ou `gate=warn` com `handcraft_allowed=true`
 - [ ] 0 labels não canônicos em `titulo_aula` (salvo DCNT legado em consolidação)
-- [ ] Catch-all buckets abaixo do limiar acordado ou vazios
+- [ ] Catch-all: modo A ou B declarado em `handcraft-registry.json` → `taxonomy`
+- [ ] Artefato `artifacts/taxonomy-closed-<pacote_prefix>.json` (ou `--write-closed`)
 - [ ] Amostra ≥5% revisada manualmente por bucket migrado
 - [ ] `handcraft-registry` pode receber export `*-completo` confiável
 
 ---
 
+## 6. Política catch-all — modos A e B
+
+Buckets catch-all (`taxonomy-registry.json` → `catch_all_buckets`) concentram questões ainda sem destino canônico. Dois modos **explícitos** no `handcraft-registry.json` → `taxonomy`:
+
+| Modo | `catch_all_mode` | `taxonomy.status` | Quando usar | Handcraft | Antes de `--promote` |
+|------|------------------|-------------------|-------------|-----------|----------------------|
+| **A — Fechar primeiro** | `A` | `closed` | Pacote novo; export `*-completo` | Só após `Classify:` esvaziar/reclassificar o bucket | Bucket vazio ou justificado |
+| **B — Handcraft provisório** | `B` | `catch_all_provisional` | Lote já em andamento no catch-all (ex. `dtrans-mescladas-g01/g02`) | Permitido com `gate=warn` | `infer-subtopico` / `Classify:` para destinos canônicos |
+
+**Exemplo modo B (dtrans):** `handcraft-registry.json` → `Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis` · artefato `artifacts/taxonomy-closed-dtrans-mescladas.json`.
+
+**Exemplo modo A concluído (dtrans, 2026-07):** bucket catch-all vazio no Supabase; 16/16 slugs do manifest em destinos canônicos. Gate detecta `manifest.reclassified=true` mesmo com `total_scanned=0` no inventário por `titulo_aula`. Ver [`data/catalog-migration/dtrans-mescladas/README.md`](../data/catalog-migration/dtrans-mescladas/README.md).
+
+### Vitrine após reclassificação (catch-all → canônico)
+
+Quando o modo A esvazia o bucket, os slugs **permanecem** no catálogo com URL legada, mas `titulo_aula` + `meta.subtopico` apontam para subtópicos canônicos. A vitrine `/estudar` agrupa por `titulo_aula` — os cards **não** aparecem no catch-all. O handcraft local do pacote (`dtrans-mescladas-g*`) continua válido; `--promote` não exige novo `infer` se `audit:taxonomy-gate` retornar `reclassified=true`.
+
+**Proibido:** handcraft em catch-all sem `taxonomy.status` declarado — `audit:taxonomy-gate` retorna `block`.
+
+### Gate executável
+
+```bash
+npm run audit:taxonomy-gate -- --subtopico="Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+npm run audit:taxonomy-gate -- --subtopico="Farmacodinâmica e Farmacocinética" --write-closed
+```
+
+| `gate` | Significado | Exit code |
+|--------|-------------|-----------|
+| `pass` | Inventário ok + taxonomia fechada (ou não catch-all) | 0 |
+| `warn` | Inventário ok; catch-all modo B ou registry ainda `open` | 0 |
+| `block` | mismatch, labels não canônicos ou catch-all sem declaração | 1 |
+
+Saídas: `artifacts/taxonomy-gate-<pacote_prefix>.json` · opcional `--write-closed` → `artifacts/taxonomy-closed-<pacote_prefix>.json`.
+
+---
+
 ## Resumo executivo
 
-**Taxonomia** classifica; **handcraft** ensina. Inventário → normalizar → inferir catch-all → revisar → apply → validar → só então handcraft.
+**Taxonomia** classifica; **handcraft** ensina. Inventário → gate → normalizar → inferir catch-all → revisar → apply → validar → handcraft.

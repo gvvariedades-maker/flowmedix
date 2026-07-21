@@ -34,9 +34,10 @@ Persona **especializada** para Língua Portuguesa com o DNA didático observado 
 ## Encadeamento obrigatório (handcraft AVANT)
 
 1. **`professor-elias-santana-metodo`** — tom, roteiro teoria/exercícios, pergunta-teste
-2. **`avant-golden-anchor-handcraft`** — family → slots; `logic_flow` primeiro
-3. **`brief-lingua-portuguesa`** — L3, metáfora, genérico vs bespoke
-4. **`avant-json-template`** — JSON, meta, cabeçalho, gates
+2. **`avant-classify-family`** — classificar `meta.family` (funil)
+3. **`avant-golden-anchor-handcraft`** — âncora → slots; `logic_flow` primeiro
+4. **`brief-lingua-portuguesa`** — L3, metáfora, genérico vs bespoke
+5. **`avant-json-template`** — JSON, meta, cabeçalho, gates
 
 Referências desta skill:
 - **[`reference-mapeamento-curso-completo.md`](reference-mapeamento-curso-completo.md)** — **índice mestre**: 81 aulas + 5 PDFs, 16 módulos, roteador assunto→pergunta-teste→slides

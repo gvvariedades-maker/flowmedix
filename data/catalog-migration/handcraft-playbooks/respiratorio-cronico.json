@@ -57,19 +57,32 @@
       "anchors": []
     }
   ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]"
+  },
+  "skills": [
+    ".cursor/skills/avant-classify-family/SKILL.md",
+    ".cursor/skills/avant-golden-anchor-handcraft/SKILL.md",
+    ".cursor/skills/professor-para-concurso/SKILL.md",
+    ".cursor/skills/avant-json-template/SKILL.md",
+    ".cursor/skills/brief-enfermagem/SKILL.md"
+  ],
   "modes": {
     "subtopico_repair_l3": {
       "first_lote": "respiratorio-cronico-repair-l3-g01",
       "batch_size": 8,
       "after_handcraft": [
-        "npm run audit:questao-readiness -- --lote=<lote>",
+        "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
         "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"Doenças Respiratórias Crônicas (Asma, DPOC)\" --only-premium --apply"
       ]
     },
     "single_slug": {
       "lote_dir": "data/catalog-migration/respiratorio-cronico-repair-l3-g01/questions",
       "after_handcraft": [
-        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json"
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
       ]
     }
   }

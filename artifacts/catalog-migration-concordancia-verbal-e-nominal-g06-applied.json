@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-21T01:08:56.312Z",
+  "lote": "concordancia-verbal-e-nominal-g06",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-mon-concordancia-a-maioria-das-mulheres-por-melhores-3739269",
+    "avancasp-mon-concordancia-assinale-a-alternativa-que-apresenta-3739270",
+    "educa-pb-ace-concordancia-considere-o-texto-a-seguir-para-resp-3820040",
+    "educa-pb-acs-concordancia-considere-o-texto-a-seguir-para-resp-3819891",
+    "vunesp-acs-p-concordancia-leia-a-tira-a-seguir-para-responder-3844945"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-mon-concordancia-a-maioria-das-mulheres-por-melhores-3739269",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-mon-concordancia-assinale-a-alternativa-que-apresenta-3739270",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ace-concordancia-considere-o-texto-a-seguir-para-resp-3820040",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-acs-concordancia-considere-o-texto-a-seguir-para-resp-3819891",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-acs-p-concordancia-leia-a-tira-a-seguir-para-responder-3844945",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

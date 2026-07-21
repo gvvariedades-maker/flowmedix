@@ -13,5 +13,11 @@
     "examples/questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
     "examples/questao-premium-urgencias-rcp.json"
   ],
-  "notes": "g03 — emergência×urgência · 30:2 solo · 100–120/min · conduta PCR AHA · DEA extra-hospitalar · qualidade compressões · V/F RCP · cadeia sobrevivência AHA 2025"
+  "notes": "g03 — emergência×urgência · 30:2 solo · 100–120/min · conduta PCR AHA · DEA extra-hospitalar · qualidade compressões · V/F RCP · cadeia sobrevivência AHA 2025",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

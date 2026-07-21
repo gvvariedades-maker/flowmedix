@@ -1,0 +1,48 @@
+{
+  "lote": "pontuacao-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Pontuação",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pontuacao",
+  "cluster": "Pontuação — lote 2/6 (card 48/48)",
+  "total": 8,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "8/8 PASS strict",
+    "apply_dry_run": "pending"
+  },
+  "source": "data/catalog-migration/lingua-portuguesa-g09/extracted-source.json + PDF caderno PT",
+  "apply_requires": "--allow-insert",
+  "golden_reference": "examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/pontuacao.ts",
+  "slugs": [
+    "avancasp-nova-odessa-pontuacao-reescrita-3963918",
+    "epice-monteiro-pontuacao-atualmente-4024909",
+    "epice-monteiro-pontuacao-hoje-4024933",
+    "epice-sj-cordeiros-pontuacao-meme-4037433",
+    "vunesp-osasco-pontuacao-virgula-adjunto-3323730",
+    "vunesp-campinas-pontuacao-virgula-citacao-3345654",
+    "vunesp-sertaozinho-pontuacao-enumeracao-3352588",
+    "avancasp-amparo-pontuacao-incorreta-3352962"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g09 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g09.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g09 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=lingua-portuguesa-g09 --strict",
+    "4. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g09 --dry-run --allow-insert",
+    "5. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Segundo lote Pontuação — 48 questões no PDF; g09 pega tec 3963918…3352962. Referência Rita só em meta; sem use_anchor_payload.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "note": "Lote sem anchor_slug dedicado — dual-anchor Rita/VF por slug no handcraft"
+  }
+}

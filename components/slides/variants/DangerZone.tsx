@@ -812,6 +812,18 @@ export const DangerZone = ({
     );
   }
 
+  if (explicitVariant === 'pt-subject-trap-arena' && items && items.length > 0) {
+    return (
+      <DangerZonePtTermTrapArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
   if (explicitVariant === 'cam-high-risk-trap-arena' && items && items.length > 0) {
     return (
       <DangerZoneCamHighRiskTrapArena

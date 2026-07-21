@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "subtopico": "Verbos — tempos, modos e vozes",
+  "pacote_prefix": "unknown",
+  "mode": "full",
+  "total_slugs": 0,
+  "handcraft_applied": 0,
+  "production_status": null,
+  "next_unit": {
+    "type": "bootstrap",
+    "id": "registry",
+    "detail": "Pacote ausente no handcraft-registry — Classify + export + fallback_novo_pacote"
+  },
+  "completed_units": [],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-07-21T07:32:13.148Z",
+  "notes": null
+}

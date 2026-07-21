@@ -85,6 +85,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'pt-clitic-rail-deck',
   'pt-comma-rail-deck',
   'pt-term-matrix-deck',
+  'pt-subject-focus-deck',
 ]);
 
 function countConceptItems(slide?: {

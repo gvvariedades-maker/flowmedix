@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:58:11.852Z",
+  "lote": "classes-de-palavras-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-acr-classes-considere-o-trecho-abaixo-divirto-me-3839861",
+    "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661683",
+    "avancasp-aee-classes-o-que-e-angustia-um-rapaz-fez-me-ess-3374787",
+    "avancasp-ana-classes-dentre-as-palavras-a-seguir-a-unica-3460039",
+    "avancasp-fon-classes-cartazes-publicitarios-disponivel-em-3665303",
+    "avancasp-fon-classes-era-daltonico-1-e-nao-sabia-chegou-a-3665299",
+    "idecan-atas-classes-leia-o-texto-para-responder-a-questa-3531596",
+    "vunesp-ag-pr-classes-leia-o-texto-para-responder-a-questa-3352592"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-acr-classes-considere-o-trecho-abaixo-divirto-me-3839861",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661683",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-aee-classes-o-que-e-angustia-um-rapaz-fez-me-ess-3374787",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-ana-classes-dentre-as-palavras-a-seguir-a-unica-3460039",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-fon-classes-cartazes-publicitarios-disponivel-em-3665303",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-fon-classes-era-daltonico-1-e-nao-sabia-chegou-a-3665299",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-atas-classes-leia-o-texto-para-responder-a-questa-3531596",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-classes-leia-o-texto-para-responder-a-questa-3352592",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

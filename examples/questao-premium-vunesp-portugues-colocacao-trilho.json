@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "TEnf (Pref Sorocaba)",
+    "orgao": "Pref. Sorocaba",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Pronomes e colocação pronominal",
+    "pedagogical_branch": "pt_pronomes_colocacao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-19",
+      "reviewer": "agent:elias-m09-te-simples-nota10",
+      "guideline_snapshot": "M09 Elias TE-simples — pergunta «Há fator de próclise?» → trilho pró/ên/meso + infinitivo × particípio (Bechara / Cunha & Cintra; pt-colocacao-pronominal)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-colocacao-pronominal",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Colocação pronominal — próclise / ênclise / mesóclise + atrativos",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "definição colocação",
+          "próclise com atrativo",
+          "ênclise início / sem atrativo",
+          "mesóclise futuro sem atrativo",
+          "atrativos Já / Quando / não",
+          "infinitivo com ênclise",
+          "particípio sem ênclise",
+          "se apassivador Exigem-se",
+          "pegadinha ênclise automática"
+        ]
+      },
+      {
+        "id": "portugues-caderno-2025-2026",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT 2025–2026 — Q178 / tec 3999766 (VUNESP TEnf Pref. Sorocaba 2026)",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito A"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m09-te-simples-nota10",
+      "a4_reviewed_at": "2026-07-19"
+    }
+  },
+  "question_data": {
+    "instruction": "Assinale a alternativa em que a reescrita de informações do texto está em conformidade com a norma-padrão de colocação pronominal.",
+    "options": [
+      {
+        "id": "A",
+        "text": "O tempo passa e os danos do perigoso hábito começam a manifestar-se na vida adulta.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Já bebia-se muito cedo, na adolescência, sem qualquer problematização ou julgamento dos pais e demais responsáveis.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Quando fala-se no combate ao consumo abusivo de álcool, o depoimento das pessoas é fundamental.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Se exigem, portanto, estratégias atualizadas e eficazes para vencer esses e outros obstáculos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A geração formada por pessoas nascidas a partir de 1997 tem dedicado-se a novos rumos para o lazer e para as celebrações.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Onde o átono embarca",
+      "chip_label": "Trilho simples",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pronomes e colocação pronominal"
+      },
+      "items": [
+        {
+          "label": "1. Pergunte: atrativo?",
+          "detail": "Há palavra à esquerda que puxa o átono? (não, já, quando, que…)",
+          "icon": "Filter"
+        },
+        {
+          "label": "2. Estação próclise",
+          "detail": "Com atrativo → pronome ANTES: Já se bebia / Quando se fala.",
+          "icon": "ArrowLeft"
+        },
+        {
+          "label": "3. Estação ênclise",
+          "detail": "Sem atrativo (ou início) → pronome DEPOIS: diga-me / Exigem-se.",
+          "icon": "ArrowRight"
+        },
+        {
+          "label": "Infinitivo vs particípio",
+          "detail": "a manifestar-se ok; tem dedicado-se não (particípio não enclisa).",
+          "icon": "Split"
+        },
+        {
+          "label": "Armadilha comum",
+          "detail": "Não enclise só porque «parece culto» — pergunte o atrativo primeiro.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Ordem: há atrativo? → pró ou ên → infinitivo/particípio."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Corte letra a letra",
+      "chip_label": "Um toque = um corte",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pronomes e colocação pronominal"
+      },
+      "steps": [
+        "Comando: só uma reescrita coloca o átono no lugar certo. As outras caem no trilho.",
+        "B: «Já bebia-se» — Já atrai → precisa próclise: Já se bebia.",
+        "C: «Quando fala-se» — Quando atrai → Quando se fala (não ênclise).",
+        "D: «Se exigem» — no texto era passiva Exigem-se; «Se» aqui desvia ou erra a posição.",
+        "E: «tem dedicado-se» — particípio não admite ênclise → tem-se dedicado.",
+        "A: «a manifestar-se» — infinitivo após a; sem atrativo no átono → ênclise ok.",
+        "Gabarito A — única que embarca na estação certa do trilho.",
+        "Em similares: há atrativo? → pró. Sem? → ên. Particípio? sem ênclise."
+      ],
+      "footer_rule": "Cada toque = 1 corte. Não chute a ênclise."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Trilho de bolso",
+      "chip_label": "Decore isto",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pronomes e colocação pronominal"
+      },
+      "content": "PERGUNTE: HÁ ATRATIVO?",
+      "rows": [
+        {
+          "label": "Pergunta-chave",
+          "value": "Há atrativo à esquerda? Se sim → próclise (antes)",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Próclise",
+          "value": "não, nunca, já, quando, que, quem, se… puxam o átono",
+          "emphasis": "success"
+        },
+        {
+          "label": "Ênclise",
+          "value": "início de oração OU sem atrativo → diga-me / Exigem-se",
+          "emphasis": "default"
+        },
+        {
+          "label": "Cuidado especial",
+          "value": "Infinitivo: -se ok. Particípio: sem ênclise (tem-se dito)",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Nesta questão",
+          "value": "Só A: começam a manifestar-se"
+        }
+      ],
+      "footer_rule": "Sem atrativo no infinitivo = ênclise ok. Guarde."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Armadilhas",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pronomes e colocação pronominal"
+      },
+      "content": "Cada erro = uma estação errada do trilho",
+      "items": [
+        {
+          "label": "B — Já + ênclise",
+          "detail": "«Já bebia-se» parece culto, mas Já atrai.",
+          "correct": "Advérbio atrai → Já se bebia (próclise)."
+        },
+        {
+          "label": "C — Quando + ênclise",
+          "detail": "Ênclise depois de Quando ignora a atração.",
+          "correct": "Conjunção atrai → Quando se fala."
+        },
+        {
+          "label": "D — Se exigem",
+          "detail": "Ordem invertida foge à passiva do texto.",
+          "correct": "Passiva no início: Exigem-se (ênclise)."
+        },
+        {
+          "label": "E — particípio + -se",
+          "detail": "tem dedicado-se cola ênclise onde não cabe.",
+          "correct": "Particípio não enclisa → tem-se dedicado."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Podem cobrar mesóclise (dir-lhe-ei) ou Me diga no início.",
+          "correct": "Mesmo trilho: atrativo? futuro sem atrativo = meso; início = ên."
+        }
+      ],
+      "footer_rule": "A sobrou: a manifestar-se — infinitivo no trilho."
+    }
+  ]
+}

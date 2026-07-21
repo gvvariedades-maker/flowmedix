@@ -30,6 +30,7 @@
   },
   "question_data": {
     "instruction": "Enunciado FIEL ao caderno.\nI - Primeira afirmativa.\nII - Segunda afirmativa.\nIII - Terceira afirmativa.\nÉ CORRETO o que se afirma em:",
+    "_figures_comment": "Figuras: (A) figure_policy=required + figures[{id,url,alt,kind?}] WebP no bucket questao-figures; (B) figure_policy=transcribed + text_fragment fiel. Gate l2_missing_figure bloqueia apply. Ver docs/DECISAO_QUESTAO_FIGURES.md",
     "options": [
       { "id": "A", "text": "I apenas.", "is_correct": false },
       { "id": "B", "text": "II e III apenas.", "is_correct": true },
@@ -79,7 +80,7 @@
         "Localizar alternativa B.",
         "Eliminar A (…), C (…), D (…), E (…).",
         "Marcar B.",
-        "Fixação: regra reproduzível para questões similares deste tema."
+        "Em similares: julgar I–III antes de montar combinação — só então cruzar com as letras."
       ],
       "footer_rule": "Roteiro: I → II → III → conjunto → letra"
     },

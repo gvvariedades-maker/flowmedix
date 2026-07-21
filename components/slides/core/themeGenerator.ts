@@ -456,6 +456,8 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // ---- Termos da oração (golden: pt-term-matrix 4/4) ----
   'termos da oração': { template: 'teal', conceptMap: 'pt-term-matrix-deck', goldenRule: 'pt-term-matrix-board', logicFlow: 'pt-term-matrix-tap-flow', dangerZone: 'pt-term-trap-arena' },
   'termos da oracao': { template: 'teal', conceptMap: 'pt-term-matrix-deck', goldenRule: 'pt-term-matrix-board', logicFlow: 'pt-term-matrix-tap-flow', dangerZone: 'pt-term-trap-arena' },
+  'concordância verbal e nominal': { template: 'indigo', conceptMap: 'pt-subject-focus-deck', goldenRule: 'pt-subject-focus-board', logicFlow: 'pt-subject-focus-tap-flow', dangerZone: 'pt-subject-trap-arena' },
+  'concordancia verbal e nominal': { template: 'indigo', conceptMap: 'pt-subject-focus-deck', goldenRule: 'pt-subject-focus-board', logicFlow: 'pt-subject-focus-tap-flow', dangerZone: 'pt-subject-trap-arena' },
 };
 
 /** Normaliza string de subtópico para busca no mapa */

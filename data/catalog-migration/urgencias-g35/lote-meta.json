@@ -22,5 +22,11 @@
     "Default — sem âncora temática": 2,
     "Urgências — conceito geral": 5
   },
-  "notes": "g35 — 6º lote cauda urgencias_generico · 7/7 READY strict-v2 · 6 generico + 1 vf_protocolo (pupilar) · Battle · naloxona · atropina · ESP · Glasgow desmaio · avaliação primária ABC · limpeza 2026-07-08: removido fauel (Centro Cirúrgico, fora do completo urgencias)"
+  "notes": "g35 — 6º lote cauda urgencias_generico · 7/7 READY strict-v2 · 6 generico + 1 vf_protocolo (pupilar) · Battle · naloxona · atropina · ESP · Glasgow desmaio · avaliação primária ABC · limpeza 2026-07-08: removido fauel (Centro Cirúrgico, fora do completo urgencias)",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

@@ -1,3 +1,5 @@
+import type { VitrineDisciplinaSummary } from '@/lib/vitrine/disciplina';
+
 /** Item de questão dentro de um grupo (assunto) na vitrine. */
 export type VitrineQuestaoItem = {
   slug: string;
@@ -42,4 +44,9 @@ export type VitrinePageResponse = {
   pagination: VitrinePagination;
   /** Total de módulos (questões) após filtros, antes da paginação por assunto. */
   totalModulosFiltrados: number;
+  /**
+   * Resumo por disciplina (Enfermagem / Português / futuras), calculado
+   * sobre os grupos **antes** do filtro `disciplina` — para o picker da vitrine.
+   */
+  disciplinas?: VitrineDisciplinaSummary[];
 };

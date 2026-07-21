@@ -1,0 +1,14 @@
+{
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "pacote_prefix": "promocao-a-saude-e-prevencao-de-agravos",
+  "status": "closed",
+  "catch_all_mode": null,
+  "closed_at": "2026-07-20",
+  "inventory_snapshot": "artifacts/subtopico-inventory-audit.json",
+  "mismatch_count": 0,
+  "total_scanned": 110,
+  "manifest_slugs": 110,
+  "reclassified": false,
+  "signed_by": "audit:taxonomy-gate",
+  "notes": "Inventário ok, mas taxonomy.status ainda não é closed no registry. Handcraft permitido; fechar com npm run audit:taxonomy-gate -- --write-closed após validar."
+}

@@ -69,6 +69,7 @@ export default async function VitrinePage({
     bancas: listQuery.bancas.length ? listQuery.bancas : undefined,
     assuntos: listQuery.assuntos.length ? listQuery.assuntos : undefined,
     q: listQuery.q,
+    ...(listQuery.disciplina ? { disciplina: listQuery.disciplina } : {}),
   };
 
   const facetsFilters = {

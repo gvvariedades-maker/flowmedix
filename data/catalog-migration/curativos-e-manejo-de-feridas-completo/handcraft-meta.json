@@ -1,0 +1,24 @@
+{
+  "subtopico": "Curativos e Manejo de Feridas",
+  "pacote_prefix": "curativos-e-manejo-de-feridas",
+  "total_slugs": 94,
+  "manifest": "data/catalog-migration/curativos-e-manejo-de-feridas-completo/manifest.json",
+  "playbook": "data/catalog-migration/handcraft-playbooks/curativos-e-manejo-de-feridas.json",
+  "guideline": "lib/guidelines/curativos.ts",
+  "golden_reference": "examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+  "legacy_builder_note": "139 slugs em builder legado (curativos-e-manejo-de-feridas-exclude-done.json) — re-handcraft golden-v1 obrigatório",
+  "ramo_forte_threshold": 10,
+  "strong_branches": [
+    "curativos_cobertura_selecao",
+    "curativos_ferida_cirurgica"
+  ],
+  "lote_pattern": "curativos-e-manejo-de-feridas-g{NN}",
+  "lote_size": 8,
+  "status": "partial",
+  "handcraft_applied": 94,
+  "g01_ready": 8,
+  "g01_status": "ready",
+  "g01_lote": "data/catalog-migration/curativos-e-manejo-de-feridas-g01/lote-meta.json",
+  "g02_g12_ready": 67,
+  "readiness_total": 75
+}

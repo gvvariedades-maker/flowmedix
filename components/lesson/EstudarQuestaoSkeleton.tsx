@@ -12,7 +12,7 @@ export default function EstudarQuestaoSkeleton() {
       data-testid="estudar-questao-skeleton"
     >
       <div className="h-2 w-full shrink-0 bg-slate-200">
-        <div className="h-full w-[8%] animate-pulse bg-[#22c55e]/70" />
+        <div className="h-full w-[8%] animate-pulse bg-[var(--color-brand)]/70" />
       </div>
 
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b border-slate-200 px-4 py-3 sm:px-6">
@@ -28,7 +28,7 @@ export default function EstudarQuestaoSkeleton() {
 
       <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
         <div className="border-b border-slate-200 bg-slate-50 px-6 py-4 md:px-8 md:py-5">
-          <div className="h-5 w-4/5 max-w-lg rounded border-l-4 border-[rgba(34,197,94,0.35)] bg-muted/50 pl-3 animate-pulse" />
+          <div className="h-5 w-4/5 max-w-lg rounded border-l-4 border-[var(--color-brand)]/35 bg-muted/50 pl-3 animate-pulse" />
           <div className="mt-2 flex flex-wrap items-center gap-1.5">
             <div className="h-5 w-24 rounded-md border border-sky-100 bg-sky-50/80 animate-pulse" />
             <div className="h-5 w-10 rounded-md border border-slate-200 bg-white animate-pulse" />

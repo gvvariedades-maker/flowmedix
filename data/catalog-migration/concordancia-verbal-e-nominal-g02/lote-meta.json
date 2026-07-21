@@ -1,0 +1,33 @@
+{
+  "lote": "concordancia-verbal-e-nominal-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Concordância verbal e nominal",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_concordancia",
+  "cluster": "Concordância — lote 2/6",
+  "total": 8,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-concordancia-nucleo-sjrp.json",
+  "slugs": [
+    "vunesp-tenf-concordancia-charlotte-alunas-3840783",
+    "selecon-rece-concordancia-houve-danos-3852271",
+    "avancasp-afa-concordancia-mafalda-existem-3962461",
+    "avancasp-esc-concordancia-lacunas-chegou-3963915",
+    "vunesp-tenf-concordancia-adolescentes-lazer-3999762",
+    "avancasp-gcm-concordancia-c-e-choveram-4001123",
+    "avancasp-acs-concordancia-existem-havia-4003524",
+    "cpcon-uepb-concordancia-haviam-pedreiros-4018203"
+  ],
+  "note": "Lote 2/6 pt_concordancia M13",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/concordancia-verbal-e-nominal-g02.json"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "pacote_prefix": "promocao-a-saude-e-prevencao-de-agravos",
+  "gate": "warn",
+  "is_catch_all_bucket": false,
+  "catch_all_mode": null,
+  "registry_taxonomy_status": "open",
+  "inventory": {
+    "total_scanned": 234,
+    "mismatch_count": 0,
+    "non_canonical_titulo_aula": 0,
+    "non_canonical_meta_subtopico": 0,
+    "missing_titulo_aula": 0,
+    "missing_meta_subtopico": 0
+  },
+  "manifest": {
+    "manifest_slugs": 110,
+    "found_in_catalog": 110,
+    "missing_slugs": [],
+    "still_in_catch_all": 77,
+    "mismatch_count": 0,
+    "non_canonical_titulo": 0,
+    "reclassified": false,
+    "destinations": [
+      {
+        "titulo_aula": "Doenças Parasitárias e Zoonoses",
+        "count": 10
+      },
+      {
+        "titulo_aula": "Atenção Básica / Saúde da Família",
+        "count": 7
+      },
+      {
+        "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+        "count": 4
+      },
+      {
+        "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+        "count": 3
+      },
+      {
+        "titulo_aula": "Saúde da Mulher",
+        "count": 3
+      },
+      {
+        "titulo_aula": "Mobilização e Posicionamento do Paciente",
+        "count": 2
+      },
+      {
+        "titulo_aula": "Cuidados na Administração de Medicamentos",
+        "count": 1
+      },
+      {
+        "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+        "count": 1
+      },
+      {
+        "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+        "count": 1
+      },
+      {
+        "titulo_aula": "Saúde Mental",
+        "count": 1
+      }
+    ]
+  },
+  "reasons": [
+    "Inventário ok, mas taxonomy.status ainda não é closed no registry.",
+    "Handcraft permitido; fechar com npm run audit:taxonomy-gate -- --write-closed após validar."
+  ],
+  "handcraft_allowed": true,
+  "promote_requires_infer": false,
+  "vitrine_groups_by_canonical_titulo": false,
+  "generated_at": "2026-07-20T15:09:24.597Z",
+  "artifact": "artifacts/taxonomy-gate-promocao-a-saude-e-prevencao-de-agravos.json",
+  "closed_artifact": null,
+  "registry_closed_artifact": null
+}

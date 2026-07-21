@@ -30,12 +30,15 @@ A skill `docs/skills/avant-classify-family/SKILL.md` documenta o funil para o ag
 
 Gate de consistência: `audit:questao-readiness` emite `l2_family_mismatch` quando `meta.family` ≠ `classifyFamily()` (`warn`; `error` com `--strict-v2-pedagogy`).
 
+Validação rápida antes do handcraft: `npm run classify:family -- --file=<path.json>` (`scripts/classify-family-cli.ts`).
+
 ## Inventário (skills de um arquivo)
 
 | Skill | `docs/skills/` | Elias-style `.cursor/` |
 |-------|----------------|-------------------------|
 | avant-classify-family | sim | — |
 | avant-golden-anchor-handcraft | sim | — |
+| avant-golden-anchor-bootstrap | sim | — |
 | professor-para-concurso | sim | — |
 | avant-json-template | sim | — |
 | avant-ui-visual | sim | — |

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:09:31.016Z",
+  "lote": "classes-de-palavras-g10",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-uepb-a-classes-leia-o-texto-i-para-responder-a-ques-3836456",
+    "educa-pb-acd-classes-leia-o-texto-a-seguir-e-responda-a-q-3746576",
+    "educa-pb-ace-classes-considere-o-texto-a-seguir-para-resp-3820003",
+    "instituto-ao-classes-leia-o-texto-abaixo-pesquisa-revela-3754329",
+    "selecon-acs-classes-leia-o-texto-a-seguir-populacao-bras-1360966",
+    "selecon-ag-f-classes-leia-o-texto-a-seguir-ses-distribui-3754251",
+    "selecon-fisc-classes-inteligencia-artificial-consegue-dec-3352885",
+    "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3844984"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-a-classes-leia-o-texto-i-para-responder-a-ques-3836456",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-acd-classes-leia-o-texto-a-seguir-e-responda-a-q-3746576",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ace-classes-considere-o-texto-a-seguir-para-resp-3820003",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-classes-leia-o-texto-abaixo-pesquisa-revela-3754329",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-acs-classes-leia-o-texto-a-seguir-populacao-bras-1360966",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-ag-f-classes-leia-o-texto-a-seguir-ses-distribui-3754251",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-fisc-classes-inteligencia-artificial-consegue-dec-3352885",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3844984",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

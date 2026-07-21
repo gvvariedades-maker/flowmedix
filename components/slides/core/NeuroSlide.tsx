@@ -293,6 +293,15 @@ export const NeuroSlideHub = ({
           />
         );
       }
+      if (layoutVariant === 'pt-subject-focus-deck') {
+        return (
+          <PtTermMatrixDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
       if (layoutVariant === 'cam-high-risk-duo-deck') {
         return <CamHighRiskDuoDeckConceptMap concepts={getConcepts()} theme={theme} />;
       }

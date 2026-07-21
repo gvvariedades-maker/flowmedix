@@ -1,0 +1,25 @@
+{
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "trilho": "A",
+  "total_slugs": 110,
+  "lote_size": 8,
+  "lote_pattern": "promocao-a-saude-e-prevencao-de-agravos-g{NN}",
+  "anchor_glob": "examples/questao-premium-sus-lei-8080-cesgranrio.json,examples/questao-premium-*-sus-*.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "clusters": [
+    "Lei 8.080 — Art. 4º composição do SUS",
+    "Princípios e direitos (CF Art. 196, universalidade, integralidade)",
+    "Promoção × prevenção × proteção × recuperação",
+    "Atenção básica e educação em saúde",
+    "Determinantes sociais e políticas públicas",
+    "Lei 8.142 — controle social / CNS",
+    "EXCETO / INCORRETA sobre SUS",
+    "V/F I–II–III sobre legislação sanitária"
+  ],
+  "taxonomy": {
+    "status": "closed",
+    "closed_at": "2026-07-20",
+    "manifest_slugs": 110
+  },
+  "nota_manifest": "110 slugs após exclusão de 16 cross-package, 2 Imunização e 2 Crônicas (2026-07-20)."
+}

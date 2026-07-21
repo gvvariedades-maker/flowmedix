@@ -1,0 +1,54 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g10",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "Consulplan NÃO corresponde + IACP água/autocuidado + Verbena DSS/EPS + Ivin ACE/ETA/educação (g10)",
+  "total": 8,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8": "promocao_educacao_prevencao",
+    "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-0": "promocao_educacao_prevencao",
+    "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1": "promocao_educacao_prevencao",
+    "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4": "promocao_principios_direitos",
+    "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-5": "promocao_educacao_prevencao",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7": "promocao_educacao_prevencao",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8": "promocao_educacao_prevencao",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9": "promocao_educacao_prevencao"
+  },
+  "slugs": [
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8",
+    "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-0",
+    "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1",
+    "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4",
+    "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-5",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9"
+  ],
+  "notes": [
+    "consulplan-3946005-8: NÃO corresponde — exigir escolaridade materna (D).",
+    "iacp-3961175-0: evitar percentual literal no slide (numeric_factcheck).",
+    "ivin-3937068-9: I+II+III corretas — family conceito (funil)."
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g10 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g10/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g10 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g10 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g10 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g10 --apply (só quando pedido)"
+  ],
+  "next_lote": "promocao-a-saude-e-prevencao-de-agravos-g11 — FECHADO 8/8 READY",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g10.json"
+  }
+}

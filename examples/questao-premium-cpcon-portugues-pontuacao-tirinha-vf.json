@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "ACS (Pref Condado)",
+    "orgao": "Pref. Condado",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Pontuação",
+    "pedagogical_branch": "pt_pontuacao",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-07-20",
+      "reviewer": "agent:elias-m08-te-simples-nota10",
+      "guideline_snapshot": "M08 Elias TE-simples — VF I/II/III: função de cada sinal no contexto da fala (?, . e vírgula oral) · tirinha @abaixadaegua",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-pontuacao-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra / ABL Formulário Ortográfico)",
+        "title": "Pontuação — interrogação, ponto final, vírgula na oralidade",
+        "year": 2024,
+        "url": "https://www.academia.org.br/nossa-lingua/formulario-ortografico",
+        "covers": [
+          "ponto de interrogação — dúvida",
+          "ponto final — conclusão",
+          "vírgula — pausa expressiva oral",
+          "VF I/II/III no contexto",
+          "pergunta-teste: o que o sinal faz na fala?"
+        ]
+      },
+      {
+        "id": "portugues-caderno-2025-2026-q201-400",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT 2025–2026 — tec 3836507 (CPCON ACS Pref. Condado PB 2026)",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito D",
+          "tirinha plural formal"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m08-te-simples-nota10",
+      "a4_reviewed_at": "2026-07-20"
+    }
+  },
+  "question_data": {
+    "instruction": "Para responder à questão, leia o texto que segue.\n\nLeia o trecho da tirinha: «5 pães franceses? Muito formal. 5 pão francês? Oxe, e eu num sei português não, é?» Observe que o humor depende, em parte, da pontuação. Sobre o uso dos sinais, analise as afirmativas:\n\nI - O ponto de interrogação expressa a dúvida do personagem quanto à forma correta.\nII - O ponto final em «Muito formal.» sugere conclusão e julgamento do falante.\nIII - A vírgula antes de «Oxe» marca pausa expressiva da oralidade regional.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Três sinais na tirinha",
+      "chip_label": "VF no contexto",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pontuação"
+      },
+      "items": [
+        {
+          "label": "I — ?",
+          "detail": "«5 pães?» / «5 pão?» — interrogação = dúvida sobre o plural formal.",
+          "icon": "HelpCircle"
+        },
+        {
+          "label": "II — .",
+          "detail": "«Muito formal.» — ponto final fecha julgamento sobre o registro.",
+          "icon": "Check"
+        },
+        {
+          "label": "III — ,",
+          "detail": "Vírgula antes de «Oxe» — pausa oral expressiva, tom regional.",
+          "icon": "Pause"
+        },
+        {
+          "label": "Comando VF",
+          "detail": "Julgue cada item no contexto da fala do personagem — não no abstrato.",
+          "icon": "ListOrdered"
+        },
+        {
+          "label": "Sequência",
+          "detail": "I + II + III corretas → alternativa com as três.",
+          "icon": "Layers"
+        }
+      ],
+      "footer_rule": "VF: função do sinal na fala da tirinha."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "I, II e III — um toque cada",
+      "chip_label": "Pipeline VF",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pontuação"
+      },
+      "steps": [
+        "Tirinha: humor pela pontuação — plural formal × oralidade nordestina.",
+        "I: interrogação nas perguntas «5 pães?» / «5 pão?» = dúvida sobre a forma → CERTO.",
+        "II: «Muito formal.» — ponto final conclui o julgamento do registro → CERTO.",
+        "III: vírgula antes de «Oxe» — pausa expressiva típica da oralidade → CERTO.",
+        "Combinações: A ignora II e III; B ignora III; C ignora I; E ignora I e II.",
+        "Gabarito D — I, II e III.",
+        "Em similares: em VF, leia o trecho e pergunte o que cada sinal faz na fala."
+      ],
+      "footer_rule": "D = todas as afirmativas corretas no contexto."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Trilho VF — tirinha",
+      "chip_label": "Decore isto",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pontuação"
+      },
+      "content": "VF: SINAL × FUNÇÃO NA FALA",
+      "rows": [
+        {
+          "label": "? — interrogação",
+          "value": "dúvida / pergunta do personagem",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": ". — ponto final",
+          "value": "conclusão ou julgamento («Muito formal.»)",
+          "emphasis": "success"
+        },
+        {
+          "label": ", — vírgula",
+          "value": "pausa oral expressiva (antes de «Oxe»)",
+          "emphasis": "success"
+        },
+        {
+          "label": "Método VF",
+          "value": "I → II → III; some só as certas",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Nesta questão",
+          "value": "D — I, II e III"
+        }
+      ],
+      "footer_rule": "Três sinais, três leituras certas no contexto."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Combinações que faltam item",
+      "chip_label": "Armadilhas VF",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pontuação"
+      },
+      "content": "Subestimar um dos três sinais",
+      "items": [
+        {
+          "label": "A — só I",
+          "detail": "Reconhece a dúvida, mas ignora ponto e vírgula.",
+          "correct": "II e III também estão corretas no contexto da tirinha."
+        },
+        {
+          "label": "B — I e II",
+          "detail": "Descarta a pausa antes de «Oxe».",
+          "correct": "III também vale — oralidade regional com vírgula."
+        },
+        {
+          "label": "C — II e III",
+          "detail": "Esquece a função das interrogações.",
+          "correct": "I também é correta — dúvida sobre o plural."
+        },
+        {
+          "label": "E — só III",
+          "detail": "Reduz tudo à oralidade.",
+          "correct": "I e II têm leituras corretas independentes."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Podem trocar tirinha por charge ou meme.",
+          "correct": "Mesmo método: função de cada sinal no texto dado."
+        }
+      ],
+      "footer_rule": "D passa: I, II e III no contexto da fala."
+    }
+  ]
+}

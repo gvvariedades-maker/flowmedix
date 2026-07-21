@@ -1,0 +1,36 @@
+{
+  "subtopico": "Classes de palavras",
+  "pacote_prefix": "classes-de-palavras",
+  "gate": "block",
+  "is_catch_all_bucket": false,
+  "catch_all_mode": null,
+  "registry_taxonomy_status": "closed",
+  "inventory": {
+    "total_scanned": 93,
+    "mismatch_count": 0,
+    "non_canonical_titulo_aula": 1,
+    "non_canonical_meta_subtopico": 1,
+    "missing_titulo_aula": 0,
+    "missing_meta_subtopico": 0
+  },
+  "manifest": {
+    "manifest_slugs": 93,
+    "found_in_catalog": 93,
+    "missing_slugs": [],
+    "still_in_catch_all": 93,
+    "mismatch_count": 0,
+    "non_canonical_titulo": 93,
+    "reclassified": false,
+    "destinations": []
+  },
+  "reasons": [
+    "Manifest: 93 slug(s) com titulo_aula não canônico."
+  ],
+  "handcraft_allowed": false,
+  "promote_requires_infer": false,
+  "vitrine_groups_by_canonical_titulo": false,
+  "generated_at": "2026-07-21T01:11:18.416Z",
+  "artifact": "artifacts/taxonomy-gate-classes-de-palavras.json",
+  "closed_artifact": null,
+  "registry_closed_artifact": null
+}

@@ -15,5 +15,11 @@
   ],
   "readiness": "8/8",
   "preflight_artifact": "artifacts/catalog-preflight-urgencias-g17.json",
-  "notes": "g17 XABCDE lote 2 — queimadura APH · ABCDE letra A · VF coluna/jaw thrust/TEC · jaw thrust cervical · politrauma compressão · segurança cena extremidades · colar SAMU · X-ABCDE letra X (16/22 trauma)"
+  "notes": "g17 XABCDE lote 2 — queimadura APH · ABCDE letra A · VF coluna/jaw thrust/TEC · jaw thrust cervical · politrauma compressão · segurança cena extremidades · colar SAMU · X-ABCDE letra X (16/22 trauma)",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

@@ -11,5 +11,11 @@
   "anchors_used": [
     "examples/questao-premium-admtec-urgencias-convulsao-crise.json"
   ],
-  "notes": "g27 convulsão final — ADM&TEC objeto boca · FAUEL envenenamento infantil · FEPESE lateralizar · FUNTEF UBS adolescente · IVIN hipoglicemia · VUNESP manobra × convulsão febril · VUNESP orientações SAMU (lençol/calço) · cluster urgencias_convulsao 7/7 fechado"
+  "notes": "g27 convulsão final — ADM&TEC objeto boca · FAUEL envenenamento infantil · FEPESE lateralizar · FUNTEF UBS adolescente · IVIN hipoglicemia · VUNESP manobra × convulsão febril · VUNESP orientações SAMU (lençol/calço) · cluster urgencias_convulsao 7/7 fechado",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

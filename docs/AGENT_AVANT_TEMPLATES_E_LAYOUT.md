@@ -176,10 +176,11 @@ O `meta.subtopico` do JSON é usado para resolver automaticamente o design compl
 | Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
 |---|---|---|---|---|---|
 | Epidemiologia e Vigilância Epidemiológica | lime | grid | compact | horizontal | compact |
-| Promoção à Saúde e Prevenção de Agravos | emerald | grid | compact | horizontal | compact |
+| Promoção à Saúde e Prevenção de Agravos | emerald | **sus-art4-orbit** | center / `reference_table` | cards | **scope-trap** |
 | Imunização | lime | morphological* | compact* | horizontal* | compact* |
 
-\*Fallback do subtópico — ver §4.1 ramos `imunizacao_*` quando `meta.pedagogical_branch` estiver declarado.
+\*Fallback do subtópico — ver §4.1 ramos `imunizacao_*` quando `meta.pedagogical_branch` estiver declarado.  
+Promoção: ramo forte `promocao_art4_composicao` usa `sus-art4-orbit` + `scope-trap` (já wired); demais ramos → genérico premium — ver [`artifacts/l3-brief-promocao-a-saude-e-prevencao-de-agravos-INDEX.md`](../artifacts/l3-brief-promocao-a-saude-e-prevencao-de-agravos-INDEX.md).
 | Atenção Básica / Saúde da Família | emerald | morphological | center | vertical | list |
 
 ### 6.6 Doenças Transmissíveis

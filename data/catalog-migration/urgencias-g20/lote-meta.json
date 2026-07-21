@@ -12,5 +12,11 @@
     "examples/questao-premium-admtec-urgencias-choque-eletrico.json",
     "examples/questao-premium-fepese-urgencias-choque-hipovolemico.json"
   ],
-  "notes": "g20 choque lote 2 — cardiogênico · séptico vasopressina · hematêmese hipovolêmico · distributivo · IRA gravidade · elétrico Consulplan · organofosforado · hemorragia II-IV"
+  "notes": "g20 choque lote 2 — cardiogênico · séptico vasopressina · hematêmese hipovolêmico · distributivo · IRA gravidade · elétrico Consulplan · organofosforado · hemorragia II-IV",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

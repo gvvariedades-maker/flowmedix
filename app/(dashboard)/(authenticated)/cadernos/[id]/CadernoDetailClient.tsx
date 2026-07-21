@@ -41,6 +41,7 @@ import {
   filterModulosForQuestaoPanel,
   hasQuestaoPanelFilterCriteria,
 } from '@/lib/questao-filter/matchModulos';
+import type { VitrineDisciplinaId } from '@/lib/vitrine/disciplina';
 import { useToast } from '@/lib/toast-context';
 
 // ── Componente: item do caderno ────────────────────────────────────────────
@@ -169,6 +170,8 @@ function BuilderPanel({
   highlightFilters?: boolean;
 }) {
   const [searchTerm, setSearchTerm] = useState('');
+  const [disciplinaSelecionada, setDisciplinaSelecionada] =
+    useState<VitrineDisciplinaId | null>(null);
   const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>(initialBancas);
   const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>(initialAssuntos);
   const [adding, setAdding] = useState<string | null>(null);
@@ -184,11 +187,12 @@ function BuilderPanel({
 
   const filterParams = useMemo(
     () => ({
+      disciplina: disciplinaSelecionada,
       bancas: bancasSelecionadas,
       assuntos: assuntosSelecionados,
       q: searchTerm,
     }),
-    [assuntosSelecionados, bancasSelecionadas, searchTerm],
+    [assuntosSelecionados, bancasSelecionadas, disciplinaSelecionada, searchTerm],
   );
 
   const filtradosCompletos = useMemo(
@@ -273,9 +277,11 @@ function BuilderPanel({
           bancasSelected={bancasSelecionadas}
           assuntosSelected={assuntosSelecionados}
           searchTerm={searchTerm}
+          disciplinaSelected={disciplinaSelecionada}
           onBancasChange={setBancasSelecionadas}
           onAssuntosChange={setAssuntosSelecionados}
           onSearchChange={setSearchTerm}
+          onDisciplinaChange={setDisciplinaSelecionada}
           modulosForFallback={modulos}
           resultCount={filtradosCompletos.length}
           highlightActiveFilters={highlightFilters}
@@ -311,7 +317,8 @@ function BuilderPanel({
               ) : null}
               {!criterioLoteAtivo && modulos.length > 0 ? (
                 <p className="text-[10px] leading-relaxed text-slate-500">
-                  Escolha um <strong className="text-slate-700">assunto</strong> e/ou{' '}
+                  Escolha <strong className="text-slate-700">disciplina</strong>,{' '}
+                  <strong className="text-slate-700">assunto</strong> e/ou{' '}
                   <strong className="text-slate-700">banca</strong> ou use a{' '}
                   <strong className="text-slate-700">busca</strong> para ativar a opção de adicionar o lote inteiro de
                   uma vez.

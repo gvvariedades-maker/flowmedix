@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-07-20T17:03:59.810Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g08",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3645
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 3546
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1605
+    },
+    {
+      "modulo_slug": "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1750
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 3588
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3561
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3562
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3564
+    }
+  ]
+}

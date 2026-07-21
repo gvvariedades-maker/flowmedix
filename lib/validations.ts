@@ -8,6 +8,12 @@ import { EmailTemplateContentSchema } from '@/lib/email/templateContent';
 import { ONBOARDING_BANCAS, ONBOARDING_TOPIC_AREAS } from '@/lib/onboarding/constants';
 import { normalizeQuestaoSlideArrays } from './reverseStudySlidesNormalize';
 import { GOLDEN_CONTENT_STANDARD_VERSION } from './goldenContentStandard';
+import {
+  getAllowedQuestaoFigureHosts,
+  hasUsefulFigureTranscription,
+  QUESTAO_FIGURE_KINDS,
+  QUESTAO_FIGURE_POLICIES,
+} from './questaoFigures';
 
 // ============================================================================
 // CONSTANTES E HELPERS
@@ -181,6 +187,36 @@ export const QuestaoOptionSchema = z.object({
   is_correct: z.boolean(),
 });
 
+const allowedFigureHosts = () => getAllowedQuestaoFigureHosts();
+
+export const QuestaoFigureSchema = z.object({
+  id: z.string().min(1).max(32),
+  url: z
+    .string()
+    .url('URL da figura deve ser válida')
+    .refine(
+      (url) => {
+        try {
+          const parsed = new URL(url);
+          if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return false;
+          if (parsed.protocol === 'http:' && !['localhost', '127.0.0.1'].includes(parsed.hostname)) {
+            return false;
+          }
+          return allowedFigureHosts().includes(parsed.hostname);
+        } catch {
+          return false;
+        }
+      },
+      () => ({
+        message: `URL da figura deve ser HTTPS no Supabase Storage (${allowedFigureHosts().join(', ') || 'configure NEXT_PUBLIC_SUPABASE_URL'})`,
+      }),
+    ),
+  alt: z.string().min(8).max(300),
+  caption: z.string().max(200).optional(),
+  kind: z.enum(QUESTAO_FIGURE_KINDS).default('crop'),
+  source_page: z.number().int().positive().optional(),
+});
+
 export const QuestaoDataSchema = z
   .object({
     instruction: z.string()
@@ -194,6 +230,8 @@ export const QuestaoDataSchema = z
       })
       .nullable()
       .optional(),
+    figures: z.array(QuestaoFigureSchema).max(3).optional(),
+    figure_policy: z.enum(QUESTAO_FIGURE_POLICIES).optional(),
     options: z.array(QuestaoOptionSchema).min(1, 'Deve ter pelo menos uma alternativa').max(10, 'Máximo de 10 alternativas'),
   })
   .superRefine((data, ctx) => {
@@ -211,6 +249,22 @@ export const QuestaoDataSchema = z
         code: z.ZodIssueCode.custom,
         message: `IDs de alternativa duplicados: ${duplicateIds.join(', ')}. Cada item em "options" deve ter um "id" único (ex.: A, B, C...).`,
         path: ['options'],
+      });
+    }
+
+    if (data.figure_policy === 'required' && (!data.figures || data.figures.length < 1)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'figure_policy "required" exige ao menos uma entrada em figures[]',
+        path: ['figures'],
+      });
+    }
+
+    if (data.figure_policy === 'transcribed' && !hasUsefulFigureTranscription(data.text_fragment)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'figure_policy "transcribed" exige text_fragment com transcrição útil (≥20 caracteres)',
+        path: ['text_fragment'],
       });
     }
   });
@@ -874,6 +928,7 @@ export const VitrineQuerySchema = z
     page: z.coerce.number().int().min(1).max(500).default(1),
     ...vitrineBancaAssuntoQueryBase,
     q: z.string().trim().max(200).optional(),
+    disciplina: z.enum(['enfermagem', 'portugues']).optional(),
   })
   .transform(mergeBancaAssuntoFields);
 

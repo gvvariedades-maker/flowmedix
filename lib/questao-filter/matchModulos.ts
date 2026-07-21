@@ -1,3 +1,6 @@
+import type { VitrineDisciplinaId } from '@/lib/vitrine/disciplina';
+import { resolveVitrineDisciplinaId } from '@/lib/vitrine/disciplina';
+
 export type QuestaoPanelModulo = {
   modulo_slug: string;
   modulo_nome?: string | null;
@@ -10,6 +13,8 @@ export type QuestaoPanelFilterParams = {
   bancas?: string[];
   assuntos?: string[];
   q?: string;
+  /** Escopo por disciplina (Enfermagem | Português) — paridade com a vitrine. */
+  disciplina?: VitrineDisciplinaId | null;
 };
 
 function resolveBancas(filters: QuestaoPanelFilterParams): string[] {
@@ -33,6 +38,11 @@ export function filterModulosForQuestaoPanel<T extends QuestaoPanelModulo>(
   const qRaw = filters.q?.trim();
   let result = modulos;
 
+  if (filters.disciplina) {
+    result = result.filter(
+      (m) => resolveVitrineDisciplinaId(m.modulo_nome) === filters.disciplina,
+    );
+  }
   if (bancas.length) {
     result = result.filter((m) => bancas.includes(m.banca ?? ''));
   }
@@ -60,6 +70,7 @@ export function filterModulosForQuestaoPanel<T extends QuestaoPanelModulo>(
 
 export function hasQuestaoPanelFilterCriteria(filters: QuestaoPanelFilterParams): boolean {
   return (
+    Boolean(filters.disciplina) ||
     resolveBancas(filters).length > 0 ||
     resolveAssuntos(filters).length > 0 ||
     Boolean(filters.q?.trim())

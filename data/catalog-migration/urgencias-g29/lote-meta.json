@@ -19,5 +19,11 @@
     "examples/questao-premium-fepese-urgencias-choque-hipovolemico.json",
     "examples/questao-premium-selecon-urgencias-bt16-esmagamento.json"
   ],
-  "notes": "g29 micro-clusters fechados — FEPESE E choque hipovolêmico (drift cluster anafilaxia) · SELECON C BT16 esmagamento (drift cluster queimadura) · P0 âncoras cpcon/ameosc já aplicadas · 2/2 READY strict-v2"
+  "notes": "g29 micro-clusters fechados — FEPESE E choque hipovolêmico (drift cluster anafilaxia) · SELECON C BT16 esmagamento (drift cluster queimadura) · P0 âncoras cpcon/ameosc já aplicadas · 2/2 READY strict-v2",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

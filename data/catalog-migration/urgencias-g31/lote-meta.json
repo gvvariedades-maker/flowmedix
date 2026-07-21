@@ -25,5 +25,11 @@
     "Default — sem âncora temática": 4,
     "Certo ou errado": 2
   },
-  "notes": "g31 — 2º lote cauda urgencias_generico · 8/8 READY strict-v2 · avancasp-3571-4 → rcp_pediatrico (VAA 2–3 s, não drift adulto 6 s) · cpcon figura RCP → rcp_sbv · idecan-5 USA → generico (não rcp_sbv)"
+  "notes": "g31 — 2º lote cauda urgencias_generico · 8/8 READY strict-v2 · avancasp-3571-4 → rcp_pediatrico (VAA 2–3 s, não drift adulto 6 s) · cpcon figura RCP → rcp_sbv · idecan-5 USA → generico (não rcp_sbv)",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

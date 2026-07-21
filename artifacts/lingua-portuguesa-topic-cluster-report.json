@@ -1,0 +1,3952 @@
+{
+  "disciplina": "Língua Portuguesa",
+  "modulo_nome": "Língua Portuguesa",
+  "total_questoes": 671,
+  "unique_assuntos_tec": 45,
+  "study_cards_count": 17,
+  "generated_at": "2026-07-20T18:20:41.549675+00:00",
+  "classification_policy": "tema_real_no_handcraft; tec_label_como_source_assunto_tec; card_por_titulo_aula",
+  "card_rules": {
+    "min_questoes_por_card": 12,
+    "max_questoes_por_card": 60,
+    "merge_candidate": "count < 12 — fundir no handcraft se persistir",
+    "split_candidate": "count > 60 — dividir no handcraft se persistir"
+  },
+  "unmapped_assuntos_tec": [],
+  "source_assuntos_tec": [
+    {
+      "source_assunto_tec": "Tipologia e Gênero Textual",
+      "count": 57,
+      "titulo_aula": "Tipologia e gêneros textuais"
+    },
+    {
+      "source_assunto_tec": "Sinônimos e Antônimos",
+      "count": 55,
+      "titulo_aula": "Sinônimos, antônimos e polissemia"
+    },
+    {
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+      "count": 48,
+      "titulo_aula": "Pontuação"
+    },
+    {
+      "source_assunto_tec": "Crase",
+      "count": 45,
+      "titulo_aula": "Crase"
+    },
+    {
+      "source_assunto_tec": "Concordância (Verbal e Nominal)",
+      "count": 45,
+      "titulo_aula": "Concordância verbal e nominal"
+    },
+    {
+      "source_assunto_tec": "Conjunção",
+      "count": 36,
+      "titulo_aula": "Classes de palavras"
+    },
+    {
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais",
+      "count": 35,
+      "titulo_aula": "Verbos — tempos, modos e vozes"
+    },
+    {
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)",
+      "count": 35,
+      "titulo_aula": "Coesão, coerência e conectivos"
+    },
+    {
+      "source_assunto_tec": "Denotação e Conotação",
+      "count": 33,
+      "titulo_aula": "Denotação, conotação e figuras de linguagem"
+    },
+    {
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)",
+      "count": 32,
+      "titulo_aula": "Regência verbal e nominal"
+    },
+    {
+      "source_assunto_tec": "Colocação Pronominal",
+      "count": 31,
+      "titulo_aula": "Pronomes e colocação pronominal"
+    },
+    {
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo",
+      "count": 18,
+      "titulo_aula": "Termos da oração"
+    },
+    {
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes",
+      "count": 17,
+      "titulo_aula": "Pronomes e colocação pronominal"
+    },
+    {
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras",
+      "count": 16,
+      "titulo_aula": "Classes de palavras"
+    },
+    {
+      "source_assunto_tec": "Advérbio",
+      "count": 15,
+      "titulo_aula": "Classes de palavras"
+    },
+    {
+      "source_assunto_tec": "Orações Subordinadas Adverbiais",
+      "count": 13,
+      "titulo_aula": "Orações coordenadas e subordinadas"
+    },
+    {
+      "source_assunto_tec": "Orações Subordinadas Adjetivas",
+      "count": 12,
+      "titulo_aula": "Orações coordenadas e subordinadas"
+    },
+    {
+      "source_assunto_tec": "Adjetivo",
+      "count": 10,
+      "titulo_aula": "Classes de palavras"
+    },
+    {
+      "source_assunto_tec": "Sujeito",
+      "count": 10,
+      "titulo_aula": "Sujeito e predicado"
+    },
+    {
+      "source_assunto_tec": "Vocábulo \"Que\"",
+      "count": 9,
+      "titulo_aula": "Vocábulo \"que\" e partícula \"se\""
+    },
+    {
+      "source_assunto_tec": "Pronomes Pessoais",
+      "count": 8,
+      "titulo_aula": "Pronomes e colocação pronominal"
+    },
+    {
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)",
+      "count": 8,
+      "titulo_aula": "Termos da oração"
+    },
+    {
+      "source_assunto_tec": "Questões Mescladas de Sintaxe",
+      "count": 8,
+      "titulo_aula": "Sintaxe — questões mescladas"
+    },
+    {
+      "source_assunto_tec": "Pronomes Relativos",
+      "count": 7,
+      "titulo_aula": "Pronomes e colocação pronominal"
+    },
+    {
+      "source_assunto_tec": "Orações Coordenadas",
+      "count": 7,
+      "titulo_aula": "Orações coordenadas e subordinadas"
+    },
+    {
+      "source_assunto_tec": "Substantivo",
+      "count": 6,
+      "titulo_aula": "Classes de palavras"
+    },
+    {
+      "source_assunto_tec": "Preposição",
+      "count": 6,
+      "titulo_aula": "Classes de palavras"
+    },
+    {
+      "source_assunto_tec": "Polissemia",
+      "count": 6,
+      "titulo_aula": "Sinônimos, antônimos e polissemia"
+    },
+    {
+      "source_assunto_tec": "Orações Subordinadas Substantivas",
+      "count": 5,
+      "titulo_aula": "Orações coordenadas e subordinadas"
+    },
+    {
+      "source_assunto_tec": "Frase, Oração e Período",
+      "count": 4,
+      "titulo_aula": "Frase, oração e período"
+    },
+    {
+      "source_assunto_tec": "Predicado",
+      "count": 4,
+      "titulo_aula": "Sujeito e predicado"
+    },
+    {
+      "source_assunto_tec": "Locução Verbal",
+      "count": 3,
+      "titulo_aula": "Verbos — tempos, modos e vozes"
+    },
+    {
+      "source_assunto_tec": "Questões Variadas de Verbo",
+      "count": 3,
+      "titulo_aula": "Verbos — tempos, modos e vozes"
+    },
+    {
+      "source_assunto_tec": "Funções Sintáticas dos Pronomes Relativos",
+      "count": 3,
+      "titulo_aula": "Termos da oração"
+    },
+    {
+      "source_assunto_tec": "Partícula \"Se\"",
+      "count": 3,
+      "titulo_aula": "Vocábulo \"que\" e partícula \"se\""
+    },
+    {
+      "source_assunto_tec": "Artigo",
+      "count": 2,
+      "titulo_aula": "Classes de palavras"
+    },
+    {
+      "source_assunto_tec": "Correlação Verbal",
+      "count": 2,
+      "titulo_aula": "Verbos — tempos, modos e vozes"
+    },
+    {
+      "source_assunto_tec": "Pronomes Possessivos",
+      "count": 2,
+      "titulo_aula": "Pronomes e colocação pronominal"
+    },
+    {
+      "source_assunto_tec": "Numeral",
+      "count": 2,
+      "titulo_aula": "Classes de palavras"
+    },
+    {
+      "source_assunto_tec": "Homônimos e Parônimos",
+      "count": 2,
+      "titulo_aula": "Sinônimos, antônimos e polissemia"
+    },
+    {
+      "source_assunto_tec": "Adjunto adnominal x Complemento Nominal",
+      "count": 2,
+      "titulo_aula": "Termos da oração"
+    },
+    {
+      "source_assunto_tec": "Função Sintática dos Pronomes Pessoais Átonos",
+      "count": 2,
+      "titulo_aula": "Pronomes e colocação pronominal"
+    },
+    {
+      "source_assunto_tec": "Vozes (Voz Passiva e Voz Ativa)",
+      "count": 2,
+      "titulo_aula": "Verbos — tempos, modos e vozes"
+    },
+    {
+      "source_assunto_tec": "Pronomes Indefinidos",
+      "count": 1,
+      "titulo_aula": "Pronomes e colocação pronominal"
+    },
+    {
+      "source_assunto_tec": "Orações Reduzidas",
+      "count": 1,
+      "titulo_aula": "Orações coordenadas e subordinadas"
+    }
+  ],
+  "study_cards": [
+    {
+      "titulo_aula": "Tipologia e gêneros textuais",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "A — Texto",
+      "count": 57,
+      "pct": 8.5,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Tipologia e Gênero Textual",
+          "count": 57
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Coesão, coerência e conectivos",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "A — Texto",
+      "count": 35,
+      "pct": 5.2,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)",
+          "count": 35
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "B — Morfologia",
+      "count": 93,
+      "pct": 13.9,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Conjunção",
+          "count": 36
+        },
+        {
+          "source_assunto_tec": "Questões Variadas de Classe de Palavras",
+          "count": 16
+        },
+        {
+          "source_assunto_tec": "Advérbio",
+          "count": 15
+        },
+        {
+          "source_assunto_tec": "Adjetivo",
+          "count": 10
+        },
+        {
+          "source_assunto_tec": "Preposição",
+          "count": 6
+        },
+        {
+          "source_assunto_tec": "Substantivo",
+          "count": 6
+        },
+        {
+          "source_assunto_tec": "Artigo",
+          "count": 2
+        },
+        {
+          "source_assunto_tec": "Numeral",
+          "count": 2
+        }
+      ],
+      "status": "split_candidate"
+    },
+    {
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "B — Morfologia",
+      "count": 45,
+      "pct": 6.7,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais",
+          "count": 35
+        },
+        {
+          "source_assunto_tec": "Locução Verbal",
+          "count": 3
+        },
+        {
+          "source_assunto_tec": "Questões Variadas de Verbo",
+          "count": 3
+        },
+        {
+          "source_assunto_tec": "Correlação Verbal",
+          "count": 2
+        },
+        {
+          "source_assunto_tec": "Vozes (Voz Passiva e Voz Ativa)",
+          "count": 2
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "B — Morfologia",
+      "count": 68,
+      "pct": 10.1,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Colocação Pronominal",
+          "count": 31
+        },
+        {
+          "source_assunto_tec": "Questões Mescladas sobre Pronomes",
+          "count": 17
+        },
+        {
+          "source_assunto_tec": "Pronomes Pessoais",
+          "count": 8
+        },
+        {
+          "source_assunto_tec": "Pronomes Relativos",
+          "count": 7
+        },
+        {
+          "source_assunto_tec": "Função Sintática dos Pronomes Pessoais Átonos",
+          "count": 2
+        },
+        {
+          "source_assunto_tec": "Pronomes Possessivos",
+          "count": 2
+        },
+        {
+          "source_assunto_tec": "Pronomes Indefinidos",
+          "count": 1
+        }
+      ],
+      "status": "split_candidate"
+    },
+    {
+      "titulo_aula": "Frase, oração e período",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "C — Sintaxe",
+      "count": 4,
+      "pct": 0.6,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Frase, Oração e Período",
+          "count": 4
+        }
+      ],
+      "status": "merge_candidate"
+    },
+    {
+      "titulo_aula": "Sujeito e predicado",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "C — Sintaxe",
+      "count": 14,
+      "pct": 2.1,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Sujeito",
+          "count": 10
+        },
+        {
+          "source_assunto_tec": "Predicado",
+          "count": 4
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "C — Sintaxe",
+      "count": 31,
+      "pct": 4.6,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo",
+          "count": 18
+        },
+        {
+          "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)",
+          "count": 8
+        },
+        {
+          "source_assunto_tec": "Funções Sintáticas dos Pronomes Relativos",
+          "count": 3
+        },
+        {
+          "source_assunto_tec": "Adjunto adnominal x Complemento Nominal",
+          "count": 2
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "C — Sintaxe",
+      "count": 38,
+      "pct": 5.7,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Orações Subordinadas Adverbiais",
+          "count": 13
+        },
+        {
+          "source_assunto_tec": "Orações Subordinadas Adjetivas",
+          "count": 12
+        },
+        {
+          "source_assunto_tec": "Orações Coordenadas",
+          "count": 7
+        },
+        {
+          "source_assunto_tec": "Orações Subordinadas Substantivas",
+          "count": 5
+        },
+        {
+          "source_assunto_tec": "Orações Reduzidas",
+          "count": 1
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Sintaxe — questões mescladas",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "C — Sintaxe",
+      "count": 8,
+      "pct": 1.2,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Questões Mescladas de Sintaxe",
+          "count": 8
+        }
+      ],
+      "status": "merge_candidate"
+    },
+    {
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "D — Norma",
+      "count": 45,
+      "pct": 6.7,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Concordância (Verbal e Nominal)",
+          "count": 45
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Regência verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "D — Norma",
+      "count": 32,
+      "pct": 4.8,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)",
+          "count": 32
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Crase",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "D — Norma",
+      "count": 45,
+      "pct": 6.7,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Crase",
+          "count": 45
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Pontuação",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "D — Norma",
+      "count": 48,
+      "pct": 7.2,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+          "count": 48
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "E — Vocabulário",
+      "count": 63,
+      "pct": 9.4,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Sinônimos e Antônimos",
+          "count": 55
+        },
+        {
+          "source_assunto_tec": "Polissemia",
+          "count": 6
+        },
+        {
+          "source_assunto_tec": "Homônimos e Parônimos",
+          "count": 2
+        }
+      ],
+      "status": "split_candidate"
+    },
+    {
+      "titulo_aula": "Denotação, conotação e figuras de linguagem",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "E — Vocabulário",
+      "count": 33,
+      "pct": 4.9,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Denotação e Conotação",
+          "count": 33
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "titulo_aula": "Vocábulo \"que\" e partícula \"se\"",
+      "modulo_nome": "Língua Portuguesa",
+      "eixo": "E — Vocabulário",
+      "count": 12,
+      "pct": 1.8,
+      "source_assuntos_tec": [
+        {
+          "source_assunto_tec": "Vocábulo \"Que\"",
+          "count": 9
+        },
+        {
+          "source_assunto_tec": "Partícula \"Se\"",
+          "count": 3
+        }
+      ],
+      "status": "ok"
+    }
+  ],
+  "questions_index": [
+    {
+      "tec_id": "3709821",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Artigo"
+    },
+    {
+      "tec_id": "3739268",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Artigo"
+    },
+    {
+      "tec_id": "3839425",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Substantivo"
+    },
+    {
+      "tec_id": "4003512",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Substantivo"
+    },
+    {
+      "tec_id": "3352961",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Substantivo"
+    },
+    {
+      "tec_id": "3353964",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Substantivo"
+    },
+    {
+      "tec_id": "3599763",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Substantivo"
+    },
+    {
+      "tec_id": "3726050",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Substantivo"
+    },
+    {
+      "tec_id": "3839861",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3352592",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3374787",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3460039",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3531596",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3661683",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3665299",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3665303",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3727513",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3819856",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Adjetivo"
+    },
+    {
+      "tec_id": "3789241",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3835991",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3839413",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3886648",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3886651",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3912873",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3913860",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3990829",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "4001122",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "4003501",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "4003519",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "4024894",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3323735",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3352883",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3354410",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3374802",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3385119",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3416674",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3450762",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3460031",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3586919",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3607391",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3651721",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3654541",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3662932",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3692789",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3694424",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3694741",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3709452",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3725104",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3746597",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3754252",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3770517",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3793471",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3820024",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjugação. Reconhecimento e Emprego dos Modos e Tempos Verbais"
+    },
+    {
+      "tec_id": "3908381",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Correlação Verbal"
+    },
+    {
+      "tec_id": "3374820",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Correlação Verbal"
+    },
+    {
+      "tec_id": "3840829",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Locução Verbal"
+    },
+    {
+      "tec_id": "3841123",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Locução Verbal"
+    },
+    {
+      "tec_id": "3738674",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Locução Verbal"
+    },
+    {
+      "tec_id": "3841168",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Verbo"
+    },
+    {
+      "tec_id": "4037450",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Verbo"
+    },
+    {
+      "tec_id": "3358535",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Verbo"
+    },
+    {
+      "tec_id": "3826743",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Pessoais"
+    },
+    {
+      "tec_id": "3840819",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Pessoais"
+    },
+    {
+      "tec_id": "3352959",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Pessoais"
+    },
+    {
+      "tec_id": "3353962",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Pessoais"
+    },
+    {
+      "tec_id": "3460036",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Pessoais"
+    },
+    {
+      "tec_id": "3460040",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Pessoais"
+    },
+    {
+      "tec_id": "3460043",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Pessoais"
+    },
+    {
+      "tec_id": "3770516",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Pessoais"
+    },
+    {
+      "tec_id": "3839716",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Possessivos"
+    },
+    {
+      "tec_id": "3460248",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Possessivos"
+    },
+    {
+      "tec_id": "3793406",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Indefinidos"
+    },
+    {
+      "tec_id": "3789252",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Relativos"
+    },
+    {
+      "tec_id": "3799260",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Relativos"
+    },
+    {
+      "tec_id": "4024885",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Relativos"
+    },
+    {
+      "tec_id": "3376866",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Relativos"
+    },
+    {
+      "tec_id": "3419182",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Relativos"
+    },
+    {
+      "tec_id": "3651730",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Relativos"
+    },
+    {
+      "tec_id": "3654553",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Pronomes Relativos"
+    },
+    {
+      "tec_id": "3839369",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3839865",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3839877",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3840764",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3840781",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3908397",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3912833",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "4022697",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3375894",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3376852",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3457297",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3661742",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3709829",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3727000",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3727006",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3738880",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3738884",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Mescladas sobre Pronomes"
+    },
+    {
+      "tec_id": "3840838",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3913810",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3962475",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "4014478",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "4024888",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3336126",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3374812",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3376854",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3452344",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3457304",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3460251",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3460253",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3661685",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3738663",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3793476",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Advérbio"
+    },
+    {
+      "tec_id": "3483808",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Numeral"
+    },
+    {
+      "tec_id": "3738680",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Numeral"
+    },
+    {
+      "tec_id": "3839714",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Preposição"
+    },
+    {
+      "tec_id": "3852269",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Preposição"
+    },
+    {
+      "tec_id": "4037406",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Preposição"
+    },
+    {
+      "tec_id": "3353967",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Preposição"
+    },
+    {
+      "tec_id": "3382225",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Preposição"
+    },
+    {
+      "tec_id": "3719032",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Preposição"
+    },
+    {
+      "tec_id": "3776325",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3776327",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3779677",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3789284",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3789333",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3799252",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3804085",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3835993",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3836484",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3840776",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3840780",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3840898",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3841143",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3908393",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3913820",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3963891",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3990848",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3999759",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "4014454",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3323733",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3336089",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3376862",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3419024",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3483811",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3576929",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3662931",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3694420",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3719042",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3727509",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3738889",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3746555",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3746576",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3754251",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3754329",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3820003",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3844984",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Conjunção"
+    },
+    {
+      "tec_id": "3836456",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "1360966",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3352885",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3352957",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3353960",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3358522",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3358539",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3375895",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3416683",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3483805",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3554862",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3558963",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3587458",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3649272",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3662937",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3793483",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Questões Variadas de Classe de Palavras"
+    },
+    {
+      "tec_id": "3835994",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3839370",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3841117",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3962471",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3999721",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3999766",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "4014453",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3336128",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3352589",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3352965",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3353968",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3374794",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3375896",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3376869",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3385122",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3419183",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3452377",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3457294",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3531587",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3554847",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3558396",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3583308",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3607134",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3614688",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3661739",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3662934",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3665306",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3705166",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3709831",
+      "source_file": "portugues-caderno-2025-2026.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3727518",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3746604",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Colocação Pronominal"
+    },
+    {
+      "tec_id": "3789292",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3835988",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3835990",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3836462",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3839361",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3839707",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3839851",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3840872",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3841144",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3912840",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3913852",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3913867",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3962439",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3963895",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3999723",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "4001113",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "4003498",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "4037426",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "1360970",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3345649",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3352583",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3352587",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3352958",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3354409",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3375891",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3457305",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3554843",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3558409",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3558948",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3576912",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3583294",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3583379",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3583390",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3586810",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3607115",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3607399",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3651720",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3654539",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3665282",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3692804",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3698157",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3705106",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3705120",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3709442",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3709795",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3725102",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3727038",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3727505",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3738879",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3739261",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3746595",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3793485",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3820027",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3844988",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3951867",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sinônimos e Antônimos"
+    },
+    {
+      "tec_id": "3587479",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Homônimos e Parônimos"
+    },
+    {
+      "tec_id": "3614658",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Homônimos e Parônimos"
+    },
+    {
+      "tec_id": "3789297",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3799250",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3826734",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3835992",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3836440",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3886650",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3886652",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3908391",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3999753",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "4001115",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "4018186",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3323729",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3336079",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3345640",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3354412",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3430191",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3554834",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3572890",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3583300",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3583381",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3607113",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3607397",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3651731",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3654555",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3661903",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3665290",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3670228",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3721172",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3725107",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3726045",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3727032",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3727506",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3844966",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Denotação e Conotação"
+    },
+    {
+      "tec_id": "3840788",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Polissemia"
+    },
+    {
+      "tec_id": "4018183",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Polissemia"
+    },
+    {
+      "tec_id": "4037423",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Polissemia"
+    },
+    {
+      "tec_id": "4037448",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Polissemia"
+    },
+    {
+      "tec_id": "3820034",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Polissemia"
+    },
+    {
+      "tec_id": "3951883",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Polissemia"
+    },
+    {
+      "tec_id": "1360974",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Frase, Oração e Período"
+    },
+    {
+      "tec_id": "3460171",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Frase, Oração e Período"
+    },
+    {
+      "tec_id": "3576816",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Frase, Oração e Período"
+    },
+    {
+      "tec_id": "3951873",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Frase, Oração e Período"
+    },
+    {
+      "tec_id": "3840878",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "4024920",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "3450756",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "3460038",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "3460181",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "3661912",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "3661916",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "3698158",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "3754255",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "3793465",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Sujeito"
+    },
+    {
+      "tec_id": "4024951",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Predicado"
+    },
+    {
+      "tec_id": "3450771",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Predicado"
+    },
+    {
+      "tec_id": "3598929",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Predicado"
+    },
+    {
+      "tec_id": "3951848",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Predicado"
+    },
+    {
+      "tec_id": "3852270",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)"
+    },
+    {
+      "tec_id": "1360962",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)"
+    },
+    {
+      "tec_id": "3416691",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)"
+    },
+    {
+      "tec_id": "3460242",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)"
+    },
+    {
+      "tec_id": "3483810",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)"
+    },
+    {
+      "tec_id": "3576833",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)"
+    },
+    {
+      "tec_id": "3709441",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)"
+    },
+    {
+      "tec_id": "3709806",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Integrantes (Objeto Direto e Indireto, Complemento Nominal e Agente da Passiva)"
+    },
+    {
+      "tec_id": "3779634",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3789304",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3840834",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3962452",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3990813",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "4014460",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "4018200",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "4024881",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "4024905",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3450774",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3599766",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3649276",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3661932",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3709443",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3793442",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3793473",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3820032",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "3951799",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Termos Acessórios (Adjunto Adnominal, Adjunto Adverbial e Aposto). Vocativo"
+    },
+    {
+      "tec_id": "4024901",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Adjunto adnominal x Complemento Nominal"
+    },
+    {
+      "tec_id": "3709824",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Adjunto adnominal x Complemento Nominal"
+    },
+    {
+      "tec_id": "4037413",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Coordenadas"
+    },
+    {
+      "tec_id": "4037421",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Coordenadas"
+    },
+    {
+      "tec_id": "3483809",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Coordenadas"
+    },
+    {
+      "tec_id": "3558979",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Coordenadas"
+    },
+    {
+      "tec_id": "3598926",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Coordenadas"
+    },
+    {
+      "tec_id": "3746572",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Coordenadas"
+    },
+    {
+      "tec_id": "3793451",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Coordenadas"
+    },
+    {
+      "tec_id": "3840852",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Substantivas"
+    },
+    {
+      "tec_id": "3912828",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Substantivas"
+    },
+    {
+      "tec_id": "3352887",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Substantivas"
+    },
+    {
+      "tec_id": "3416687",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Substantivas"
+    },
+    {
+      "tec_id": "3820016",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Substantivas"
+    },
+    {
+      "tec_id": "3990840",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "4001118",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "4014452",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "4037436",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3651723",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3654542",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3670230",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3692802",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3738648",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3754333",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3819886",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3951882",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adjetivas"
+    },
+    {
+      "tec_id": "3826729",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3841113",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3841158",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3913759",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3913803",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "4014476",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3432856",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3460173",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3661687",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3711355",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3793433",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3845002",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3951856",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Subordinadas Adverbiais"
+    },
+    {
+      "tec_id": "3913806",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Orações Reduzidas"
+    },
+    {
+      "tec_id": "3558977",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Funções Sintáticas dos Pronomes Relativos"
+    },
+    {
+      "tec_id": "3746601",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Funções Sintáticas dos Pronomes Relativos"
+    },
+    {
+      "tec_id": "3819879",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Funções Sintáticas dos Pronomes Relativos"
+    },
+    {
+      "tec_id": "3345641",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Função Sintática dos Pronomes Pessoais Átonos"
+    },
+    {
+      "tec_id": "3661692",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Função Sintática dos Pronomes Pessoais Átonos"
+    },
+    {
+      "tec_id": "3779621",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Questões Mescladas de Sintaxe"
+    },
+    {
+      "tec_id": "3804100",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Questões Mescladas de Sintaxe"
+    },
+    {
+      "tec_id": "3352884",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Questões Mescladas de Sintaxe"
+    },
+    {
+      "tec_id": "3598927",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Questões Mescladas de Sintaxe"
+    },
+    {
+      "tec_id": "3599743",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Questões Mescladas de Sintaxe"
+    },
+    {
+      "tec_id": "3709450",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Questões Mescladas de Sintaxe"
+    },
+    {
+      "tec_id": "3711362",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Questões Mescladas de Sintaxe"
+    },
+    {
+      "tec_id": "3738682",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Questões Mescladas de Sintaxe"
+    },
+    {
+      "tec_id": "3776215",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3804106",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3836507",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3839712",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3839857",
+      "source_file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3840868",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3852273",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3912868",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3963918",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "4024909",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "4024933",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "4037433",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3323730",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3345654",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3352588",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3352962",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3353965",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3354418",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3385117",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3385123",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3416694",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3419140",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3450786",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3452341",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3460046",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3460254",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3554844",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3583301",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3583375",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3587457",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3607149",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3614676",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3661696",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3661906",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3662933",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3665295",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3692813",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3694433",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3694727",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3705140",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3705151",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3711365",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3721193",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3726048",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3727507",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3738882",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3746565",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3951884",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)"
+    },
+    {
+      "tec_id": "3789345",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3839417",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3839719",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3886655",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "4001124",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "4024957",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "4037416",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3323736",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3336084",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3352964",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3358534",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3375900",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3376867",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3419073",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3460183",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3555441",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3576826",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3583309",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3583388",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3599726",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3607404",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3651718",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3651746",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3654538",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3654563",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3661738",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3662936",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3670231",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3692806",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3705202",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3738678",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3951852",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Regência Nominal e Verbal (Casos Gerais)"
+    },
+    {
+      "tec_id": "3776323",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3789364",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3799251",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3826747",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3839721",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3839868",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3840782",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3840787",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3841141",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3886649",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3962466",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3963910",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3999773",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "4001120",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "4003508",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "4024877",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "4024955",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3323742",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3352615",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3352963",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3353966",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3354421",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3358515",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3374822",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3419180",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3460044",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3554846",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3558412",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3583296",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3583413",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3607076",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3607078",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3607407",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3614637",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3614663",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3661931",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3662939",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3665301",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3694717",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3698162",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3705197",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3739266",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3951800",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3951857",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3951877",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Crase"
+    },
+    {
+      "tec_id": "3776326",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3789256",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3826754",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3826756",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3835995",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3836503",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3839711",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3839870",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3840783",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3852271",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3962461",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3963915",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3999762",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "4001123",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "4003524",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "4018203",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "4024938",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3345661",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3352593",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3352960",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3353963",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3354420",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3419181",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3450785",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3452381",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3457300",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3554865",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3558391",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3558981",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3572925",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3583302",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3607135",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3698155",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3705180",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3709814",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3725105",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3726057",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3727002",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3738655",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3738890",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3739269",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3739270",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3819891",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3820040",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3844945",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Concordância (Verbal e Nominal)"
+    },
+    {
+      "tec_id": "3430169",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Vozes (Voz Passiva e Voz Ativa)"
+    },
+    {
+      "tec_id": "3432846",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Vozes (Voz Passiva e Voz Ativa)"
+    },
+    {
+      "tec_id": "3804091",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3836446",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3839422",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3840749",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3841149",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3912823",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3913870",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "4018237",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3323731",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3345659",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3352880",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3352881",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3430163",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3430167",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3450751",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3450780",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3460178",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3483794",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3576906",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3586929",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3587447",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3598925",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3649264",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3658354",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3661924",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3661927",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3698160",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3705127",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3705189",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3709440",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3719037",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3721196",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3738684",
+      "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3754244",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3754246",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Coerência. Coesão (Anáfora, Catáfora, Uso dos Conectores - Pronomes Relativos, Conjunções, etc)"
+    },
+    {
+      "tec_id": "3358532",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Partícula \"Se\""
+    },
+    {
+      "tec_id": "3457298",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Partícula \"Se\""
+    },
+    {
+      "tec_id": "3819997",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Partícula \"Se\""
+    },
+    {
+      "tec_id": "3841176",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3375893",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3576902",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3583408",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3587456",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3694425",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3711364",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3754249",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3793402",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Vocábulo \"Que\""
+    },
+    {
+      "tec_id": "3779616",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3779655",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3836450",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3839360",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3840866",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3852267",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3886646",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3912813",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3912818",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3912886",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3913744",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3962432",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3963888",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3990802",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3990808",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "4001109",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "4003489",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "4014450",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "4014473",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "4018236",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "1360960",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3352878",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3358537",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3382215",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3385116",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3416670",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3430159",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3432860",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3450746",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3450766",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3483803",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3483807",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3565114",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3565153",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3576811",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3576872",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3586802",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3586913",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3599736",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3649258",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3658356",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3661905",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3670229",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3692782",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3705112",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3705172",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3709438",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3709446",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3709447",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3711343",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3711351",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3725097",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3726044",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3727502",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3746547",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3819842",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    },
+    {
+      "tec_id": "3819993",
+      "source_file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "source_assunto_tec": "Tipologia e Gênero Textual"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "lote": "colocacao-pronominal-g01",
+  "mode": "handcraft-golden-v1",
+  "created_at": "2026-07-20",
+  "subtopico": "Pronomes e colocação pronominal",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pronomes_colocacao",
+  "cluster": "Colocação Pronominal — lote 1/4 (31/31)",
+  "total": 8,
+  "status": "applied",
+  "source_lote": "lingua-portuguesa-g07",
+  "anchor_slug": "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "handcraft-agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/lingua-portuguesa-g07.json"
+  },
+  "note": "Espelho ship gate — handcraft/apply em lingua-portuguesa-g07"
+}

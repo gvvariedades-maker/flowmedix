@@ -1,14 +1,10 @@
 'use client';
 
 import { Scissors } from 'lucide-react';
+import { QuestionHeaderBlock } from '@/components/lesson/QuestionHeaderBlock';
 import { landingDemoQuestao } from '@/lib/landingDemoQuestao';
 import { LandingDemoJourneyChip } from '@/components/marketing/LandingDemoJourneyChip';
-import {
-  buildQuestionExamDetailLine,
-  buildQuestionHeaderChips,
-  buildQuestionSubjectLine,
-  stripLeadingQuestionEnumeration,
-} from '@/lib/questionHeader';
+import { stripLeadingQuestionEnumeration } from '@/lib/questionHeader';
 import { cn } from '@/lib/utils';
 
 const QUESTION_TYPO = 'text-[11px] leading-snug font-medium md:font-normal';
@@ -22,9 +18,6 @@ export function LandingQuestionPreview({ className }: { className?: string }) {
   const instruction = stripLeadingQuestionEnumeration(
     landingDemoQuestao.question_data.instruction,
   );
-  const subjectLine = buildQuestionSubjectLine(meta);
-  const chips = buildQuestionHeaderChips(meta);
-  const examDetailLine = buildQuestionExamDetailLine(meta);
   const options = landingDemoQuestao.question_data.options;
 
   return (
@@ -41,31 +34,11 @@ export function LandingQuestionPreview({ className }: { className?: string }) {
       </div>
 
       <div className="border-b border-slate-200 bg-slate-50 px-3 py-2.5">
-        {subjectLine ? (
-          <p className="border-l-[3px] border-[#22c55e] pl-2 text-[11px] font-semibold leading-snug text-slate-900">
-            {subjectLine}
-          </p>
-        ) : null}
-        {chips.length > 0 ? (
-          <div className="mt-1.5 flex flex-wrap items-center gap-1">
-            {chips.map((chip) => (
-              <span
-                key={chip.id}
-                className={cn(
-                  'rounded-md border px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wide',
-                  chip.tone === 'banca'
-                    ? 'border-sky-200 bg-sky-50 text-sky-800'
-                    : 'border-slate-200 bg-white text-slate-600',
-                )}
-              >
-                {chip.label}
-              </span>
-            ))}
-            {examDetailLine ? (
-              <span className="text-[8px] text-slate-500">{examDetailLine}</span>
-            ) : null}
-          </div>
-        ) : null}
+        <QuestionHeaderBlock
+          meta={meta}
+          subjectClassName="border-l-[3px] pl-2 text-[11px] font-semibold leading-snug text-slate-900"
+          provenanceClassName="text-[10px] font-medium text-slate-500"
+        />
       </div>
 
       <div className="flex-1 overflow-hidden px-3 pt-2.5">

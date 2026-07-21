@@ -13,6 +13,7 @@ describe('parseVitrineListQuery', () => {
       q: undefined,
       status: 'all',
       view: 'grid',
+      disciplina: null,
     });
   });
 
@@ -31,14 +32,16 @@ describe('parseVitrineListQuery', () => {
       q: 'feridas',
       status: 'all',
       view: 'grid',
+      disciplina: null,
     });
   });
 
-  it('parseia status e view', () => {
+  it('parseia status, view e disciplina', () => {
     expect(
       parseVitrineListQuery({
         status: 'pending',
         view: 'compact',
+        disciplina: 'portugues',
       }),
     ).toEqual({
       page: 1,
@@ -47,6 +50,7 @@ describe('parseVitrineListQuery', () => {
       q: undefined,
       status: 'pending',
       view: 'compact',
+      disciplina: 'portugues',
     });
   });
 });
@@ -58,14 +62,29 @@ describe('vitrine query keys', () => {
       bancas: ['B', 'A'],
       assuntos: ['Y', 'X'],
       q: 'test',
+      disciplina: null,
     });
     const b = vitrineListQueryKey({
       page: 1,
       bancas: ['A', 'B'],
       assuntos: ['X', 'Y'],
       q: 'test',
+      disciplina: null,
     });
     expect(a).toBe(b);
+  });
+
+  it('list key muda com disciplina', () => {
+    const base = {
+      page: 1,
+      bancas: [] as string[],
+      assuntos: [] as string[],
+      q: undefined as string | undefined,
+      disciplina: null as null,
+    };
+    expect(vitrineListQueryKey(base)).not.toBe(
+      vitrineListQueryKey({ ...base, disciplina: 'portugues' }),
+    );
   });
 
   it('facets key sorts bancas', () => {

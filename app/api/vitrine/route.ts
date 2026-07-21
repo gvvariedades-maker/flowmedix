@@ -42,13 +42,14 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { page, bancas, assuntos, q } = parsed.data;
+    const { page, bancas, assuntos, q, disciplina } = parsed.data;
     const isAdmin = isAdminSessionEmail(auth.user.email ?? null);
 
     const normalizedFilters = {
       bancas,
       assuntos,
       q: q || undefined,
+      ...(disciplina ? { disciplina } : {}),
     };
 
     const payload = await getVitrinePageCached(auth.user.id, page, {

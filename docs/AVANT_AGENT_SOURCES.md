@@ -22,9 +22,11 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 ## Convenções para o agente (prompt / subtópico / layout)
 
 - **`docs/PREMIUM_QUESTAO.md`** — definição canônica: L1 estrutural, L2 conteúdo premium, L3 experiência (moldes)
-- **`.cursor/skills/avant-json-template/SKILL.md`** (geração de JSON; pasta `.cursor` pode estar no `.gitignore` — manter cópia ou sincronizar com o time).
-- **`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`** — handcraft L2: family → âncora → slots; cópia versionada em `docs/skills/avant-golden-anchor-handcraft/SKILL.md`.
-- **`.cursor/skills/professor-para-concurso/SKILL.md`** — tom de professor; cópia em `docs/skills/professor-para-concurso/SKILL.md`.
+- **`.cursor/skills/avant-json-template/SKILL.md`** (geração de JSON; fonte versionada em `docs/skills/avant-json-template/SKILL.md` — sincronizar com `npm run sync:skills`).
+- **`.cursor/skills/avant-classify-family/SKILL.md`** — classificar `meta.family` (funil 7 famílias); fonte Git: `docs/skills/avant-classify-family/SKILL.md` (funil canônico em `lib/catalogMigration/classifyFamily.ts`).
+- **`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`** — handcraft L2: após `meta.family` — âncora → slots; fonte Git: `docs/skills/avant-golden-anchor-handcraft/SKILL.md`.
+- **`.cursor/skills/professor-para-concurso/SKILL.md`** — tom de professor; fonte Git: `docs/skills/professor-para-concurso/SKILL.md`.
+- **`docs/SKILLS_GOVERNANCE.md`** — política de versionamento skills (`docs/skills/` + `npm run sync:skills`; exceção Elias).
 - **`.cursor/rules/avant-agent-json.mdc`** — regra **alwaysApply** com `meta`, cabeçalho, `instruction` e slides. **Cópia versionada no Git:** `docs/cursor/avant-agent-json.mdc` (se a rule local sumir após clone, copiar esse arquivo para `.cursor/rules/`).
 - **`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`**
 - **`docs/GOLDEN_CONTENT_STANDARD.md`** — gramática golden-v1, fontes, gates de lint
@@ -32,6 +34,11 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 - **`docs/GOLDEN_ROLLOUT_CATALOGO.md`** — programa catálogo inteiro
 - **`docs/VARIANT_MOLDS.md`** — pipeline para moldes interativos bespoke (concept_map / danger_zone), contrato de conteúdo por molde, wiring no player e catálogo atual
 - **`docs/PROMPT_VARIANTES_NEUROSLIDES.md`** — **system prompt** (versão enxuta + completa) para brief 4/4; **Fase 3b** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) (obrigatório por ramo forte; cauda longa dispensa)
+- **`.cursor/skills/brief-enfermagem/SKILL.md`** — brief L3 orquestrador (41 subtópicos TE): decisão `ok_generico` / bespoke, brief 4/4; fonte Git: `docs/skills/brief-enfermagem/SKILL.md` (+ `reference-pacotes.md`).
+- **`.cursor/skills/brief-lingua-portuguesa/SKILL.md`** — brief L3 + metáfora visual (Português); fonte Git: `docs/skills/brief-lingua-portuguesa/SKILL.md` (+ `reference-metaforas.md`, `reference-ramos.md`).
+- **`.cursor/skills/avant-neuroslides-visual/SKILL.md`** — barra de retenção pós-brief (`Design visual:` / Modo A): gesto espacial, Lei 7, DoD visual, handoff `VARIANT_MOLDS` (sem React sem pedido); fonte Git: `docs/skills/avant-neuroslides-visual/SKILL.md` (+ `reference-retencao.md`). Galeria: `pedagogical_branches[].visual_gallery` nos playbooks.
+- **`.cursor/skills/avant-ui-visual/SKILL.md`** — craft UI do app (vitrine, player shell, dashboard); **não** moldes de aula; fonte Git: `docs/skills/avant-ui-visual/SKILL.md`.
+- **`.cursor/rules/avant-ui-visual.mdc`** — trigger `Visual:` / `Polish vitrine` / `Polish player` / `craft UI`; cópia versionada: `docs/cursor/avant-ui-visual.mdc`.
 
 ## Migração de catálogo e visual
 

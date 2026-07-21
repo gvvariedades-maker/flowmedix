@@ -138,8 +138,8 @@ describe('AvantLessonPlayer elimination', () => {
       <AvantLessonPlayer dados={baseDados} mode="live" moduloSlug="questao-a" />,
     );
 
-    expect(screen.getByText('IBFC')).toBeInTheDocument();
-    expect(screen.getByText('2024')).toBeInTheDocument();
+    expect(screen.getByText(/IBFC/)).toBeInTheDocument();
+    expect(screen.getByText(/2024/)).toBeInTheDocument();
     expect(screen.getByText(/Hospital Teste/)).toBeInTheDocument();
   });
 

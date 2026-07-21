@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:07:48.606Z",
+  "lote": "classes-de-palavras-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661685",
+    "avancasp-acs-classes-os-adverbios-sao-palavras-que-modifi-3452344",
+    "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+    "avancasp-ag-classes-identifique-em-qual-das-sentencas-a-3457304",
+    "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376854",
+    "avancasp-con-classes-leia-o-texto-a-seguir-para-responder-3460251",
+    "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
+    "quadrix-aux-classes-15-07-2026-19-33-47-88-110-111-112-t-3738663"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661685",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-os-adverbios-sao-palavras-que-modifi-3452344",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ag-classes-identifique-em-qual-das-sentencas-a-3457304",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376854",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-con-classes-leia-o-texto-a-seguir-para-responder-3460251",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "quadrix-aux-classes-15-07-2026-19-33-47-88-110-111-112-t-3738663",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

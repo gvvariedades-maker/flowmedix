@@ -8,6 +8,8 @@ Complementa:
 - [`TAXONOMIA_MODEL.md`](TAXONOMIA_MODEL.md) — **classificar subtópico antes** do handcraft (`Classify:`)
 - [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) — prompt de conversa nova (`Handcraft: <subtópico>`)
 - [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) — gramática de slots e gates de lint
+- [`.cursor/skills/avant-classify-family/SKILL.md`](../.cursor/skills/avant-classify-family/SKILL.md) — funil `meta.family` (antes dos slides)
+- [`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`](../.cursor/skills/avant-golden-anchor-handcraft/SKILL.md) — family → âncora → slots; barra 10/10; gate `[READY]` strict-v2
 - [`GOLDEN_ROLLOUT_CATALOGO.md`](GOLDEN_ROLLOUT_CATALOGO.md) — programa catálogo inteiro
 - [`QUALITY_LAYERS_MODEL.md`](QUALITY_LAYERS_MODEL.md) — camadas L1–L6, `production_ready` vs `applied`
 - [`DECISAO_QUALITY_HIBRIDA.md`](DECISAO_QUALITY_HIBRIDA.md) — ship = venda; monitoramento contínuo
@@ -102,7 +104,7 @@ Ordem **obrigatória**:
 1. Criar ou reutilizar `scripts/cluster-<pacote>-topics.ts`.
 2. Mapear `GOLDEN_BY_CLUSTER` → arquivo em `examples/`.
 3. Rodar `npm run cluster:<pacote>`.
-4. Ler `artifacts/<pacote>-topic-cluster-report.json`.
+4. Ler `artifacts/<pacote>-topic-cluster-report.json` — contrato e fallbacks em [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) § Contrato do cluster report; limiar em [`lib/catalogMigration/clusterReportContract.ts`](../lib/catalogMigration/clusterReportContract.ts).
 
 **Regra de bolso (ramo):** volume ≥ **10%** do subtópico **ou** ≥ **5 questões** com tema coeso → **1 golden âncora de estilo** + **brief 4/4** ([`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) Fase 3b).
 
@@ -118,10 +120,20 @@ Ordem **obrigatória**:
 Para cada ramo `novo_ramo` ou piloto prioritário:
 
 1. Escolher **1 questão real** do cluster (`sample_slugs[0]`).
-2. Copiar [`examples/_TEMPLATE-golden-v1.json`](../examples/_TEMPLATE-golden-v1.json).
-3. Preencher seguindo §4 e [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md).
-4. Validar: `npm run validate:goldens` + `npm test -- golden-content-standard`.
-5. Registrar no cluster script em `GOLDEN_BY_CLUSTER`.
+2. Classificar família — skill `avant-classify-family` → `meta.family` (ou `npm run classify:family -- --file=<path>`).
+3. Copiar [`examples/_TEMPLATE-golden-v1.json`](../examples/_TEMPLATE-golden-v1.json).
+4. Preencher com skill `avant-golden-anchor-handcraft` (`logic_flow` primeiro) + §4 e [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md).
+5. Validar: `npm run validate:goldens` + `npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy` → `[READY]`.
+6. Registrar no cluster script em `GOLDEN_BY_CLUSTER`.
+
+**Orquestração (agente na frente):** skill [`avant-golden-anchor-bootstrap`](../docs/skills/avant-golden-anchor-bootstrap/SKILL.md) · gate:
+
+```bash
+npm run audit:golden-anchor-gate -- --subtopico="<nome canônico>"
+npm run anchor:brief -- --subtopico="<nome canônico>"
+```
+
+`gate=block` → criar âncoras antes do `g01`. Triggers: `Criar âncoras:` / `Antes do g01:`.
 
 ### Fase 1c — Handcraft por questão
 
@@ -130,12 +142,16 @@ Para **cada slug** do subtópico (lotes de 8):
 | Passo | Ação |
 |-------|------|
 | 1 | Ler export — **não** inventar enunciado |
-| 2 | `meta.content_standard: "golden-v1"` + `family` + `sources[]` |
-| 3 | 4 slides **planos** — sem `template` / `layout_variant` |
-| 4 | `danger_zone.items[].correct` — **justificativa distinta por distrator** |
-| 5 | `logic_flow`: `reveal_mode: "tap"`, steps em strings |
-| 6 | `npm run validate:goldens -- --lote=<lote> --strict` |
-| 7 | Salvar em `data/catalog-migration/<pacote>-gNN/questions/<slug>.json` |
+| 2 | Classificar família — `avant-classify-family` → gravar `meta.family` |
+| 3 | Ramo L3 (se `BRANCH_DESIGN_MAP`) — `meta.pedagogical_branch` (`avant-json-template` § L2.5+L3) |
+| 4 | Resolver âncora do ramo — `avant-golden-anchor-handcraft` (gramática, não copiar texto) |
+| 5 | Escrever slides **planos** — ordem v2 no array: `concept_map` → `logic_flow` → `golden_rule` → `danger_zone`; autoria: `logic_flow` **primeiro** |
+| 6 | `meta.content_standard: "golden-v1"` + `sources[]`; sem `template` / `layout_variant` |
+| 7 | `danger_zone.items[].correct` — **justificativa distinta por distrator** + transferência |
+| 8 | `logic_flow`: `reveal_mode: "tap"`, steps de decisão; último MCQ com `Em similares: …` |
+| 9 | `npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy` → `[READY]` |
+| 10 | `npm run validate:goldens -- --lote=<lote> --strict` (lote) |
+| 11 | Salvar em `data/catalog-migration/<pacote>-gNN/questions/<slug>.json` |
 
 ### Fase 4 — Piloto player
 
@@ -154,8 +170,8 @@ Relatório: `artifacts/catalog-migration-<lote>-applied.json`.
 **Ordem por lote:**
 
 ```text
-export-lote → handcraft N JSONs → validate:goldens --lote=X --strict
-→ apply-lote --dry-run → amostra player → apply-lote --apply
+export-lote → handcraft N JSONs → audit:questao-readiness --strict-v2-pedagogy → [READY]
+→ validate:goldens --lote=X --strict → apply-lote --dry-run → amostra player → apply-lote --apply
 ```
 
 **Referência:** Perioperatória — 9 lotes, 68 questões — [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md).
@@ -205,7 +221,9 @@ Detalhe: [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) §6–7b.
 |------|------------------|-----------------|
 | Zod + forma | `QuestaoCompletaSchema` | Sim |
 | Stub / molde | `premiumGate` em `applyLote` | Sim |
-| Golden-v1 lint | `lintGoldenContent` (`validate:goldens --strict`) | Sim (modo strict) |
+| **L2 ship (handcraft novo)** | `audit:questao-readiness --strict-v2-pedagogy` → `[READY]` | **Sim** |
+| Golden-v1 lint (base) | `lintGoldenContent` (`validate:goldens --strict`) | Sim (modo strict); não substitui strict-v2 |
+| Família | `classifyFamily()` vs `meta.family` (`l2_family_mismatch`) | Error com strict-v2 |
 | Contrato L2 | `detectDuplicateDangerJustifications`, `detectSlideTopicDrift` | Warn na auditoria |
 | Gabarito | `gabarito_mismatch` | Blocker manual |
 
@@ -229,7 +247,10 @@ Detalhe: [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) §6–7b.
 | Comando | Função |
 |---------|--------|
 | `npm run catalog:export-lote` | Supabase → `data/catalog-migration/{lote}/` |
-| `npm run validate:goldens -- --lote=<lote> --strict` | Lint golden-v1 — **obrigatório antes do apply** |
+| `npm run classify:family -- --file=<path>` | Funil `meta.family` + golden de referência |
+| `npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy` | Gate **ship** por slug → `[READY]` |
+| `npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy` | Gate **ship** por lote |
+| `npm run validate:goldens -- --lote=<lote> --strict` | Lint golden-v1 estrutural — **obrigatório antes do apply** |
 | `npm run catalog:apply-lote` | Grava `conteudo_json` no Supabase |
 | `npm test -- golden-content-standard` | Regressão dos gates |
 
@@ -270,7 +291,9 @@ Dois níveis distintos. **Não confundir** `applied` (handcraft no DB) com `prod
 Critério mínimo de produção — mesmo checklist histórico:
 
 - [ ] 100% dos slugs com `meta.content_standard: "golden-v1"`
+- [ ] 100% passam `audit:questao-readiness --strict-v2-pedagogy` → `[READY]` (barra 10/10)
 - [ ] 100% passam `validate:goldens --strict` (0 falhas)
+- [ ] `meta.family` alinhada ao funil (`classify:family` ou `l2_family_mismatch` = 0)
 - [ ] `danger_duplicate_justifications` = 0
 - [ ] `slide_topic_drift` ≈ 0
 - [ ] Amostra humana ≥5% aprovada no player

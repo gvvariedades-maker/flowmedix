@@ -1,0 +1,31 @@
+{
+  "lote": "classes-de-palavras-g04",
+  "subtopico": "Classes de palavras",
+  "status": "handcraft",
+  "slugs": [
+    "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+    "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376854",
+    "avancasp-acs-classes-os-adverbios-sao-palavras-que-modifi-3452344",
+    "avancasp-ag-classes-identifique-em-qual-das-sentencas-a-3457304",
+    "avancasp-con-classes-leia-o-texto-a-seguir-para-responder-3460251",
+    "avancasp-con-classes-um-adjetivo-funciona-como-adverbio-a-3460253",
+    "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661685",
+    "quadrix-aux-classes-15-07-2026-19-33-47-88-110-111-112-t-3738663"
+  ],
+  "note": "Fase 0 pipeline Classes de palavras 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+  "golden_reference": "examples/questao-formacao-palavras-siglas.json",
+  "gates": {
+    "questao_readiness": "READY strict-v2-pedagogy",
+    "validate_goldens": "PASS --strict"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/classes-de-palavras-g04.json"
+  }
+}

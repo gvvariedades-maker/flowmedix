@@ -62,6 +62,8 @@ Resolver pacote: `data/catalog-migration/handcraft-registry.json`
 Playbook: `data/catalog-migration/handcraft-playbooks/<pacote_prefix>.json` ou `_default.json`  
 Índice de briefs: [`reference-pacotes.md`](reference-pacotes.md)
 
+Corpo do brief (taxonomia, contrato `correct`/EXCETO, densidade, handoff gates): `@docs/PROMPT_VARIANTES_NEUROSLIDES.md` — **linkar**, não copiar nesta skill.
+
 ---
 
 ## Dois modos (eficiência)
@@ -191,10 +193,11 @@ Formatos kebab (`*-rail`, `*-matrix`, `*-arena`…): `@docs/PROMPT_VARIANTES_NEU
 - [ ] Contrato JSON + palavras-gatilho por slot
 - [ ] Wire: gesto, estado inicial → final (cada slide)
 - [ ] Par concept_map ↔ danger_zone
-- [ ] DoD: 375px legível, 0 hardcode de gabarito no componente, ≤7 slots/tela
+- [ ] DoD: 375px legível, 0 hardcode de gabarito no componente, ≤7 slots/tela, slots ≤110c (`detail`/`step`/`value`)
 - [ ] Path: `artifacts/l3-brief-<pacote_prefix>-<branch_id>.md`
 - [ ] Números/doses com fonte Tier A/B no contrato (quando aplicável)
 - [ ] Barra TE: tap = decisão; vontade de estudar
+- [ ] (Flagship) opcional: `Design visual: <ramo>` via `avant-neuroslides-visual` antes de React
 
 Falha → reescrever; **não** escalar handcraft do ramo nem React.
 
@@ -247,7 +250,11 @@ Brief: <path> | n/a (genérico)
 
 1. `artifacts/l3-brief-<pacote_prefix>-<branch_id>.md`
 2. Gate 3b marcado
-3. Próximo: `Handcraft:` âncora **ou** `Implementar molde: <ramo>` (só se usuário pedir)
+3. (Opcional flagship) `Design visual: <ramo>` — `avant-neuroslides-visual`
+4. Próximo: `Handcraft:` âncora **ou** `Implementar molde: <ramo>` (só se usuário pedir)
+5. Se React: `@docs/VARIANT_MOLDS.md` §3 + gates pacote — `audit:l3-mold-gap` · `e2e/visual-mold-regression` · `capture:questao-review` (ver `@docs/PROMPT_VARIANTES_NEUROSLIDES.md` §5)
+
+**Wiring:** brief **nomeia** `layout_variant`; JSON handcraft **omite** — player resolve via mapa do ramo/subtópico.
 
 ---
 

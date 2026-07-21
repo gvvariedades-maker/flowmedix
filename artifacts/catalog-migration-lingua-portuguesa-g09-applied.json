@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T15:10:26.149Z",
+  "lote": "lingua-portuguesa-g09",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-amparo-pontuacao-incorreta-3352962",
+    "avancasp-nova-odessa-pontuacao-reescrita-3963918",
+    "epice-monteiro-pontuacao-atualmente-4024909",
+    "epice-monteiro-pontuacao-hoje-4024933",
+    "epice-sj-cordeiros-pontuacao-meme-4037433",
+    "vunesp-campinas-pontuacao-virgula-citacao-3345654",
+    "vunesp-osasco-pontuacao-virgula-adjunto-3323730",
+    "vunesp-sertaozinho-pontuacao-enumeracao-3352588"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-amparo-pontuacao-incorreta-3352962",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-nova-odessa-pontuacao-reescrita-3963918",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "epice-monteiro-pontuacao-atualmente-4024909",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "epice-monteiro-pontuacao-hoje-4024933",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "epice-sj-cordeiros-pontuacao-meme-4037433",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-campinas-pontuacao-virgula-citacao-3345654",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-osasco-pontuacao-virgula-adjunto-3323730",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-sertaozinho-pontuacao-enumeracao-3352588",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

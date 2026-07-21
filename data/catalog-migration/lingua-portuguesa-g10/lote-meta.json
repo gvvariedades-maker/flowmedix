@@ -1,0 +1,41 @@
+{
+  "lote": "lingua-portuguesa-g10",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Pontuação",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pontuacao",
+  "cluster": "Pontuação — lote 3/6 (PDF Pontuação · 24/48)",
+  "total": 8,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "8/8 PASS strict",
+    "apply_dry_run": "pending"
+  },
+  "source": "data/catalog-migration/lingua-portuguesa-g10/extracted-source.json + PDF caderno PT",
+  "apply_requires": "--allow-insert",
+  "golden_reference": "examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/pontuacao.ts",
+  "slugs": [
+    "avancasp-amparo-pontuacao-incorreta-3353965",
+    "vunesp-sertaozinho-pontuacao-omissao-3354418",
+    "fgv-ebserh-pontuacao-reticencias-3385117",
+    "fgv-ebserh-pontuacao-correta-3385123",
+    "selecon-hemominas-pontuacao-enumeracao-3416694",
+    "vunesp-itapevi-pontuacao-parenteses-3419140",
+    "ibfc-ses-se-pontuacao-concessiva-3450786",
+    "avancasp-morungaba-pontuacao-dois-pontos-3452341"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g10 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g10.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g10 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=lingua-portuguesa-g10 --strict",
+    "4. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g10 --dry-run --allow-insert",
+    "5. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Terceiro lote Pontuação — 48 questões no PDF; g10 pega tec 3353965…3452341. Referência Rita só em meta; sem use_anchor_payload."
+}

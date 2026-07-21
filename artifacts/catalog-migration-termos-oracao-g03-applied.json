@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T17:20:49.435Z",
+  "lote": "termos-oracao-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-bacamarte-termos-vf-virgula-adv-3793442",
+    "apice-bacamarte-termos-vocativo-junior-3793473",
+    "apice-monteiro-termos-aposto-faculdade-4024905",
+    "cpcon-nova-palmeira-termos-adjuntos-aipim-3599766",
+    "cpcon-olivedos-termos-vocativos-vovo-3709443",
+    "educa-pb-umbuzeiro-termos-adv-maio-3661932",
+    "ibfc-ses-se-termos-vocativo-liduina-3450774",
+    "selecon-nova-mutum-termos-adjunto-sensivel-3649276"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-bacamarte-termos-vf-virgula-adv-3793442",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "apice-bacamarte-termos-vocativo-junior-3793473",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "apice-monteiro-termos-aposto-faculdade-4024905",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-nova-palmeira-termos-adjuntos-aipim-3599766",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-olivedos-termos-vocativos-vovo-3709443",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-umbuzeiro-termos-adv-maio-3661932",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "ibfc-ses-se-termos-vocativo-liduina-3450774",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-nova-mutum-termos-adjunto-sensivel-3649276",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

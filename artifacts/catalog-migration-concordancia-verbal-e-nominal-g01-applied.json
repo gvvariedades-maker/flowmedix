@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:59:15.491Z",
+  "lote": "concordancia-verbal-e-nominal-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-aae-concordancia-amarelos-singular-3839711",
+    "avancasp-acr-concordancia-incorreta-passam-3839870",
+    "avancasp-esc-concordancia-armandinho-existem-3826754",
+    "avancasp-esc-concordancia-maioria-veio-3826756",
+    "avancasp-tec-concordancia-haver-casas-3835995",
+    "cpcon-uepb-concordancia-paes-franceses-3836503",
+    "vunesp-acs-concordancia-texto-nominal-verbal-3776326",
+    "vunesp-sjrp-concordancia-verbal-registram-se-3789256"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-aae-concordancia-amarelos-singular-3839711",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acr-concordancia-incorreta-passam-3839870",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-esc-concordancia-armandinho-existem-3826754",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-esc-concordancia-maioria-veio-3826756",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-tec-concordancia-haver-casas-3835995",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-concordancia-paes-franceses-3836503",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-acs-concordancia-texto-nominal-verbal-3776326",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sjrp-concordancia-verbal-registram-se-3789256",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

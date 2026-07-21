@@ -9,7 +9,7 @@
   "handcraft_meta": "data/catalog-migration/imunizacao-completo/handcraft-meta.json",
   "cluster_report": "artifacts/imunizacao-topic-cluster-report.json",
   "repair_lote_pattern": "imunizacao-*-repair",
-  "slug_selection": "Âncoras P0 fechadas (6/6): escalar lotes imunizacao-g08+ por volume — calendário ~62% · cadeia frio ~12% · V/F intervalos ~3% · EXCETO/C/E em generico (P2 deliberado, sem âncora dedicada); por slug [READY]; por lote L2 (slug-alignment --strict) + L2b (numeric-factcheck); ou Slug: explícito",
+  "slug_selection": "Handcraft **applied 575/575** (g01–g83 + repairs). Próximo: Fase 2 vendável — preflight L1–L6 em todos g* · `test:e2e:visual-molds --grep=\"PNI\"` · `audit:subtopico-quality --promote`. Repair pontual: Slug: explícito.",
   "clusters": [
     "Calendário vacinal — adolescente/adulto/idoso (137 · 23,8% — âncora ADM&TEC cartão perdido)",
     "Calendário vacinal — infantil (135 · 23,5% — âncora Fundatec 3 meses)",
@@ -29,12 +29,16 @@
       "id": "imunizacao_vf_intervalos",
       "when": "I/II/III/IV, intervalos entre doses, simultaneidade, grace period, reforço × intervalo mínimo",
       "mold": "pni-rules-deck · pni-interval-matrix · pni-vf-juggle-tap · pni-trap-chips",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pni-vf-intervalos",
       "anchors": ["examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"]
     },
     {
       "id": "imunizacao_calendario",
       "when": "Marco idade × vacina, esquema infantil/adolescente/adulto/idoso, gestante/puérpera, HPV, campanha, dose de reforço por faixa etária",
       "mold": "vaccine-timeline · pni-calendar-board · pni-calendar-elimination-tap · calendar-mismatch",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pni-calendar-board",
       "anchors": [
         "examples/questao-premium-fundatec-meningococica-3meses.json",
         "examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json"
@@ -44,6 +48,8 @@
       "id": "imunizacao_cadeia_frio",
       "when": "Cadeia de frio, conservação, refrigeração/congelamento, validade, SI-PNI, caixa térmica, gelo, transporte de imunobiológico",
       "mold": "cold-chain-hub · pni-temperature-rail · pni-cold-chain-tap · temperature-mismatch",
+      "l3_decision": "molde_redesign",
+      "bespoke_target": "pni-temperature-rail",
       "anchors": [
         "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
         "examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json"
@@ -53,12 +59,15 @@
       "id": "imunizacao_exceto",
       "when": "Comando EXCETO ou INCORRETA — marcar afirmativa falsa entre condutas corretas",
       "mold": "morphological · reference_table · tap · compare semântico",
+      "l3_decision": "ok_generico",
+      "ok_generico_3_3": "Pegadinha semântica por letra; ~7% (42 slugs); compare + correct por distrator ensina sem UI bespoke — gate imunizacao_exceto_semantic",
       "anchors": ["examples/questao-premium-agirh-imunizacao-incorreta-antibiotico.json"]
     },
     {
       "id": "imunizacao_generico",
       "when": "Técnica de sala/via (6 certos), certo ou errado isolado, tipos de vacina/imunobiológico, contraindicações — sem fit nos ramos acima",
       "mold": "genérico morphological · reference_table · tap · compare",
+      "l3_decision": "cauda_longa",
       "anchors": ["examples/questao-premium-decorp-imunizacao-triplice-viral-via.json"]
     }
   ],
@@ -80,12 +89,12 @@
     "danger_zone": "Erro reproduzível × correção específica (espelha concept_map)"
   },
   "roi_priorities": [
-    { "priority": "P0", "action": "Handcraft g08+ calendário + patch pedagogical_branch", "why": "~62% do volume Imunização" },
-    { "priority": "P0", "action": "audit:slug-alignment --strict em todo lote", "why": "Evita reciclagem e compare vazio" },
-    { "priority": "P1", "action": "Lote dedicado cadeia frio (68 slugs) âncoras A+B", "why": "Molde imunizacao_cadeia_frio pronto" },
-    { "priority": "P1", "action": "audit:numeric-factcheck + guideline rede de frio", "why": "Temperaturas/doses = pegadinha #1" },
-    { "priority": "P2", "action": "Ramo imunizacao_exceto + lint semântico (Agirh)", "why": "42 slugs compare genérico → gate imunizacao_exceto_semantic" },
-    { "priority": "P2", "action": "test:e2e:visual-molds PNI + audit:subtopico-quality --promote", "why": "Fecha vendável L3–L6" }
+    { "priority": "P0", "action": "Fase 2 — reconcile:handcraft-manifest + catalog:preflight --strict-v2-pedagogy em g01–g83", "why": "Handcraft applied 575/575; gate L1 antes do promote" },
+    { "priority": "P0", "action": "audit:handcraft-dod + slug-alignment --strict + numeric-factcheck (subtópico inteiro)", "why": "L2 + L2b vendável" },
+    { "priority": "P1", "action": "audit:anchor-review --record-pass em todos g* + L6 checklist", "why": "Âncoras P0 fechadas; escalar L6 por lote" },
+    { "priority": "P1", "action": "test:e2e:visual-molds --grep=\"PNI Imunização\"", "why": "3 ramos bespoke wired (vf · calendário · cadeia frio)" },
+    { "priority": "P2", "action": "Ramo imunizacao_exceto — gate compare semântico (Agirh)", "why": "42 slugs ok_generico; validar danger_zone por letra" },
+    { "priority": "P2", "action": "audit:subtopico-quality --promote", "why": "Fecha production_ready" }
   ],
   "proibido": ["ai:generate", "catalog:upgrade-premium"],
   "modes": {
@@ -111,7 +120,7 @@
     "single_slug": {
       "lote_dir": "data/catalog-migration/imunizacao-g01/questions",
       "after_handcraft": [
-        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json"
+        "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
       ]
     }
   }

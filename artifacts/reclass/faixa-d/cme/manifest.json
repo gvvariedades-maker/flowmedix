@@ -1,9 +1,0 @@
-{
-  "generated_at": "2026-06-16T09:45:40.207Z",
-  "bucket": "Enfermagem em Central de Material e Esterilização (CME)",
-  "batch_size": 50,
-  "total": 43,
-  "batch_files": [
-    "artifacts/reclass/faixa-d/cme/batch-01.json"
-  ]
-}

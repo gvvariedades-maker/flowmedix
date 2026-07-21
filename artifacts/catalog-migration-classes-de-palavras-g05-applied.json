@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:58:36.661Z",
+  "lote": "classes-de-palavras-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-ag-adm-classes-leia-a-charge-abaixo-e-responda-a-qu-3793476",
+    "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
+    "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
+    "avancasp-ace-classes-marque-a-alternativa-que-preenche-as-3353967",
+    "cpcon-uepb-a-classes-leia-o-texto-3-para-responder-a-ques-3483808",
+    "fgv-ass-adm-classes-use-o-texto-a-seguir-para-responder-3382225",
+    "quadrix-aux-classes-texto-para-a-questao-imagine-um-time-3738680",
+    "selecon-rece-classes-leia-o-texto-a-seguir-ceo-da-empresa-3852269"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-ag-adm-classes-leia-a-charge-abaixo-e-responda-a-qu-3793476",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-ace-classes-marque-a-alternativa-que-preenche-as-3353967",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-classes-leia-o-texto-3-para-responder-a-ques-3483808",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-ass-adm-classes-use-o-texto-a-seguir-para-responder-3382225",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-aux-classes-texto-para-a-questao-imagine-um-time-3738680",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-rece-classes-leia-o-texto-a-seguir-ceo-da-empresa-3852269",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

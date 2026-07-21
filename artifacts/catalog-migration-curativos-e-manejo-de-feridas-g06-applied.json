@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-16T03:09:43.580Z",
+  "lote": "curativos-e-manejo-de-feridas-g06",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-3",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-2",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-3",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344779828-5",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-9",
+    "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779269228428-1",
+    "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269291153-8",
+    "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269305691-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344779828-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779269228428-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269291153-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269305691-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

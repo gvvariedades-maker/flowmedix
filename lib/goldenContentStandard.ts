@@ -5,6 +5,7 @@
  */
 
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
+import { detectMissingFigure } from '@/lib/catalogMigration/figureContract';
 import { lintVitalsGoldenContent } from '@/lib/slides/vitalsGoldenLint';
 
 export const GOLDEN_CONTENT_STANDARD_VERSION = 'golden-v1' as const;
@@ -68,6 +69,9 @@ type QuestaoLike = {
   meta?: GoldenMetaExtensions & Record<string, unknown>;
   question_data?: {
     instruction?: string;
+    text_fragment?: string | null;
+    figure_policy?: 'required' | 'transcribed';
+    figures?: { id: string; url: string; alt: string }[];
     options?: { id: string; text: string; is_correct: boolean }[];
   };
   reverse_study_slides?: SlideLike[];
@@ -660,12 +664,273 @@ function lintSlidePackage(slides: SlideLike[], q: QuestaoLike, family?: GoldenFa
   return issues;
 }
 
+/** Limites §3b — alvo (soft) e duro (strict-v2). @see avant-golden-anchor-handcraft §3b */
+export const CARD_DENSITY_LIMITS = {
+  concept_map_label: { soft: 40, hard: 60 },
+  concept_map_detail: { soft: 110, hard: 140 },
+  logic_flow_step: { soft: 110, hard: 160 },
+  golden_rule_value: { soft: 110, hard: 140 },
+  danger_zone_field: { soft: 100, hard: 130 },
+  footer_rule: { soft: 90, hard: 120 },
+} as const;
+
+const EXCETO_COMMAND_RE = /\bexceto\b|\bincorreta\b|\bincorreto\b/i;
+
+const TRANSFER_ITEM_RE =
+  /transfer[eê]ncia|em outra banca|outras bancas|se o comando|em similares|mudar o comando|na pr[oó]xima|confundir\b/i;
+
+const LOGIC_FLOW_FIXATION_RE =
+  /em similares|fixa[cç][aã]o|port[aá]til|em outra|transfer|trilho|na pr[oó]xima|levar para a prova|roteiro/i;
+
+function densityIssue(
+  code: string,
+  path: string,
+  field: string,
+  len: number,
+  hard: number,
+): GoldenContentLintIssue {
+  return {
+    code,
+    message: `${field} com ${len} chars (máx. ${hard} no player — §3b). Encurte para 1 ideia por card.`,
+    path,
+  };
+}
+
+/** Densidade de card (§3b) — error em limites duros (strict-v2). VF: steps podem ser mais longos (julgar I–IV). */
+export function lintCardDensity(slides: SlideLike[], family?: GoldenFamilyId): GoldenContentLintIssue[] {
+  const issues: GoldenContentLintIssue[] = [];
+
+  const concept = findSlide(slides, 'concept_map');
+  if (concept && Array.isArray(concept.items)) {
+    (concept.items as Record<string, unknown>[]).forEach((it, i) => {
+      const label = String(it.label ?? '');
+      if (label.length > CARD_DENSITY_LIMITS.concept_map_label.hard) {
+        issues.push(
+          densityIssue(
+            'card_density_concept_label',
+            `reverse_study_slides.concept_map.items[${i}].label`,
+            'concept_map.label',
+            label.length,
+            CARD_DENSITY_LIMITS.concept_map_label.hard,
+          ),
+        );
+      }
+    });
+  }
+
+  const logic = findSlide(slides, 'logic_flow');
+  if (family !== 'vf' && logic && Array.isArray(logic.steps)) {
+    (logic.steps as unknown[]).forEach((step, i) => {
+      if (typeof step !== 'string') return;
+      if (step.length > CARD_DENSITY_LIMITS.logic_flow_step.hard) {
+        issues.push(
+          densityIssue(
+            'card_density_logic_step',
+            `reverse_study_slides.logic_flow.steps[${i}]`,
+            'logic_flow.step',
+            step.length,
+            CARD_DENSITY_LIMITS.logic_flow_step.hard,
+          ),
+        );
+      }
+    });
+  }
+
+  const golden = findSlide(slides, 'golden_rule');
+  if (golden && Array.isArray(golden.rows)) {
+    (golden.rows as Record<string, unknown>[]).forEach((row, i) => {
+      const value = String(row.value ?? '');
+      if (value.length > CARD_DENSITY_LIMITS.golden_rule_value.hard) {
+        issues.push(
+          densityIssue(
+            'card_density_golden_value',
+            `reverse_study_slides.golden_rule.rows[${i}].value`,
+            'golden_rule.rows[].value',
+            value.length,
+            CARD_DENSITY_LIMITS.golden_rule_value.hard,
+          ),
+        );
+      }
+    });
+  }
+
+  const danger = findSlide(slides, 'danger_zone');
+  if (danger && Array.isArray(danger.items)) {
+    (danger.items as Record<string, unknown>[]).forEach((it, i) => {
+      for (const [field, val] of [
+        ['detail', String(it.detail ?? '')],
+        ['correct', String(it.correct ?? '')],
+      ] as const) {
+        if (val.length > CARD_DENSITY_LIMITS.danger_zone_field.hard) {
+          issues.push(
+            densityIssue(
+              `card_density_danger_${field}`,
+              `reverse_study_slides.danger_zone.items[${i}].${field}`,
+              `danger_zone.${field}`,
+              val.length,
+              CARD_DENSITY_LIMITS.danger_zone_field.hard,
+            ),
+          );
+        }
+      }
+    });
+  }
+
+  for (const slide of slides) {
+    const footer = typeof slide.footer_rule === 'string' ? slide.footer_rule : '';
+    if (footer.length > CARD_DENSITY_LIMITS.footer_rule.hard) {
+      issues.push(
+        densityIssue(
+          'card_density_footer_rule',
+          `reverse_study_slides.${slide.type}.footer_rule`,
+          'footer_rule',
+          footer.length,
+          CARD_DENSITY_LIMITS.footer_rule.hard,
+        ),
+      );
+    }
+  }
+
+  return issues;
+}
+
+/** Letra A–E ligada ao label do item (ex.: "Letra B — …"). */
+export function dangerItemBoundLetter(item: Record<string, unknown>): string | null {
+  const label = String(item.label ?? '');
+  const byLetra = label.match(/\bletra\s+([a-e])\b/i);
+  if (byLetra) return byLetra[1].toUpperCase();
+  const leading = label.match(/^\s*([a-e])\s*[-–—:]/i);
+  return leading ? leading[1].toUpperCase() : null;
+}
+
 /**
- * Lint pedagógico v2 (warn no readiness): redundância entre camadas e gabarito no golden_rule.
- * Separado de lintGoldenContent para não quebrar goldens legados até repair em massa.
+ * MCQ: todas as letras erradas no danger_zone + ≥1 item de transferência.
+ * VF / protocolo / danger_zone temático (sem "Letra X"): não aplica.
  */
-export function lintGoldenV2Pedagogy(slides: SlideLike[]): GoldenContentLintIssue[] {
-  return [...lintSlideLayerRedundancy(slides), ...lintGoldenRuleGabaritoSpoiler(slides)];
+export function lintDangerZoneMcqCoverage(
+  slides: SlideLike[],
+  q: QuestaoLike,
+  family?: GoldenFamilyId,
+): GoldenContentLintIssue[] {
+  if (family === 'vf' || family === 'protocolo' || family === 'text_fragment') return [];
+
+  const options = q.question_data?.options ?? [];
+  if (options.length < 3) return [];
+
+  const danger = findSlide(slides, 'danger_zone');
+  const items = Array.isArray(danger?.items) ? (danger!.items as Record<string, unknown>[]) : [];
+  if (items.length === 0) return [];
+
+  const letterBoundCount = items.filter((it) => dangerItemBoundLetter(it) != null).length;
+  if (letterBoundCount === 0) return [];
+
+  const issues: GoldenContentLintIssue[] = [];
+  const instruction = q.question_data?.instruction ?? '';
+  const correctId = correctOptionId(q);
+  const wrongIds = optionIds(q).filter((id) => id !== correctId);
+  const isExceto = EXCETO_COMMAND_RE.test(instruction);
+
+  const requiredLetters = new Set(isExceto ? optionIds(q) : wrongIds);
+  const covered = new Set<string>();
+
+  for (const item of items) {
+    const letter = dangerItemBoundLetter(item);
+    if (letter && requiredLetters.has(letter)) covered.add(letter);
+  }
+
+  const missing = [...requiredLetters].filter((id) => !covered.has(id));
+  if (missing.length > 0) {
+    issues.push({
+      code: 'danger_zone_letter_coverage',
+      message: `danger_zone: faltam cards para letra(s) ${missing.join(', ')} (barra handcraft — 1 item por letra${isExceto ? ' do enunciado' : ' errada'}).`,
+      path: 'reverse_study_slides.danger_zone.items',
+    });
+  }
+
+  const hasTransfer = items.some((it) => {
+    const blob = `${it.label ?? ''} ${it.detail ?? ''} ${it.correct ?? ''}`;
+    return TRANSFER_ITEM_RE.test(blob);
+  });
+  if (!hasTransfer) {
+    issues.push({
+      code: 'danger_zone_transfer_missing',
+      message:
+        'danger_zone: falta ≥1 item de transferência separado (ex.: "Em outra banca…", "Transferência…", "Em similares…").',
+      path: 'reverse_study_slides.danger_zone.items',
+    });
+  }
+
+  return issues;
+}
+
+/** Último step do logic_flow deve fixar regra portátil quando o fluxo elimina por letra. */
+export function lintLogicFlowPortableFixation(
+  slides: SlideLike[],
+  family?: GoldenFamilyId,
+): GoldenContentLintIssue[] {
+  const logic = findSlide(slides, 'logic_flow');
+  const steps = Array.isArray(logic?.steps)
+    ? (logic!.steps as unknown[]).filter((s): s is string => typeof s === 'string')
+    : [];
+  if (steps.length === 0) return [];
+
+  const corpus = steps.join(' ');
+  const isMcqEliminationFlow = /\b(?:eliminar|marcar|letra\s+[a-e]|alternativa\s+[a-e])\b/i.test(corpus);
+  if (!isMcqEliminationFlow) return [];
+
+  const isVfRomanFlow =
+    family === 'vf' || /\bjulgar\s+(?:i{1,3}|iv)\b/i.test(corpus) || /\bafirmativa\s+[iiv]+/i.test(corpus);
+  if (isVfRomanFlow) return [];
+
+  const last = steps[steps.length - 1].trim();
+  if (LOGIC_FLOW_FIXATION_RE.test(last)) return [];
+
+  return [
+    {
+      code: 'logic_flow_fixation_missing',
+      message:
+        'logic_flow: último step deve fixar regra portátil (ex.: "Em similares: …" / "Fixação: …") — não só marcar letra.',
+      path: 'reverse_study_slides.logic_flow.steps',
+    },
+  ];
+}
+
+export type LintGoldenV2PedagogyOptions = {
+  q?: QuestaoLike;
+  family?: GoldenFamilyId;
+};
+
+/**
+ * Lint pedagógico v2 (warn no readiness; error com --strict-v2-pedagogy):
+ * redundância, spoiler, densidade §3b, cobertura danger_zone e fixação portátil.
+ */
+export function lintGoldenV2Pedagogy(
+  slides: SlideLike[],
+  options?: LintGoldenV2PedagogyOptions,
+): GoldenContentLintIssue[] {
+  const q = options?.q;
+  const family = options?.family ?? (q?.meta as GoldenMetaExtensions | undefined)?.family;
+
+  const handcraft =
+    q != null
+      ? [
+          ...lintCardDensity(slides, family),
+          ...lintDangerZoneMcqCoverage(slides, q, family),
+          ...lintLogicFlowPortableFixation(slides, family),
+        ]
+      : [];
+
+  return [
+    ...lintSlideLayerRedundancy(slides),
+    ...lintGoldenRuleGabaritoSpoiler(slides),
+    ...handcraft,
+  ];
+}
+
+export function lintMissingFigure(q: QuestaoLike): GoldenContentLintIssue[] {
+  const issue = detectMissingFigure(q);
+  if (!issue) return [];
+  return [{ code: issue.code, message: issue.message, path: 'question_data' }];
 }
 
 /**
@@ -683,6 +948,7 @@ export function lintGoldenContent(payload: unknown): GoldenContentLintIssue[] {
   return [
     ...lintGoldenMeta(meta),
     ...lintBannedPhrases(slides),
+    ...lintMissingFigure(q),
     ...lintSlidePackage(slides, q, meta.family),
     ...lintGabaritoConsistency(slides, q),
     ...lintLogicFlowRecycling(slides, q),

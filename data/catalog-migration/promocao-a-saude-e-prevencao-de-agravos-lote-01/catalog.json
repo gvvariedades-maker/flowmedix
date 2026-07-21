@@ -95,13 +95,6 @@
       "avant_codigo": 3570
     },
     {
-      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
-      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
-      "modulo_nome": "Enfermagem",
-      "banca": "CEBRASPE (CESPE)",
-      "avant_codigo": 3571
-    },
-    {
       "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
       "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
       "modulo_nome": "Enfermagem",
@@ -121,13 +114,6 @@
       "modulo_nome": "Saúde Pública",
       "banca": "CESGRANRIO",
       "avant_codigo": 5183
-    },
-    {
-      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
-      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
-      "modulo_nome": "Enfermagem",
-      "banca": "CETREDE",
-      "avant_codigo": 3550
     },
     {
       "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
@@ -158,20 +144,6 @@
       "avant_codigo": 3581
     },
     {
-      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
-      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
-      "modulo_nome": "Enfermagem",
-      "banca": "CPCON UEPB",
-      "avant_codigo": 3537
-    },
-    {
-      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
-      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
-      "modulo_nome": "Enfermagem",
-      "banca": "CPCON UEPB",
-      "avant_codigo": 3618
-    },
-    {
       "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
       "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
       "modulo_nome": "Enfermagem",
@@ -184,13 +156,6 @@
       "modulo_nome": "Enfermagem",
       "banca": "CPCON UEPB",
       "avant_codigo": 3636
-    },
-    {
-      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
-      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
-      "modulo_nome": "Enfermagem",
-      "banca": "CPCON UEPB",
-      "avant_codigo": 3644
     },
     {
       "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
@@ -298,13 +263,6 @@
       "avant_codigo": 3593
     },
     {
-      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
-      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
-      "modulo_nome": "Enfermagem",
-      "banca": "FÊNIX INSTITUTO",
-      "avant_codigo": 3526
-    },
-    {
       "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
       "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
       "modulo_nome": "Enfermagem",
@@ -317,13 +275,6 @@
       "modulo_nome": "Enfermagem",
       "banca": "FEPESE",
       "avant_codigo": 3637
-    },
-    {
-      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
-      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
-      "modulo_nome": "Enfermagem",
-      "banca": "FGV",
-      "avant_codigo": 3539
     },
     {
       "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",

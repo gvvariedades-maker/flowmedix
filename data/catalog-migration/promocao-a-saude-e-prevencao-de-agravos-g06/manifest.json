@@ -1,0 +1,18 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g06",
+  "exported_at": "2026-07-20T16:57:06.625Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g06/manifest.json"
+  },
+  "slugs": [
+    "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+    "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4",
+    "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5",
+    "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6",
+    "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-0",
+    "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-5",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-3",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6"
+  ]
+}

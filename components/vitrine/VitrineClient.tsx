@@ -16,6 +16,7 @@ import {
   Search,
   RefreshCw,
 } from 'lucide-react';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { cn } from '@/lib/utils';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import {
@@ -46,7 +47,14 @@ import VitrineResumeCard from '@/components/vitrine/VitrineResumeCard';
 import SimuladoDiagnosticoCard from '@/components/vitrine/SimuladoDiagnosticoCard';
 import WeeklySimuladoMissionCard from '@/components/vitrine/WeeklySimuladoMissionCard';
 import VitrineQuickFilters from '@/components/vitrine/VitrineQuickFilters';
+import VitrineDisciplinePicker from '@/components/vitrine/VitrineDisciplinePicker';
 import type { VitrineResumeHint } from '@/lib/vitrine/resume';
+import {
+  guessDisciplinaFromTituloAula,
+  isVitrineDisciplineHubMode,
+  parseVitrineDisciplina,
+  type VitrineDisciplinaId,
+} from '@/lib/vitrine/disciplina';
 import type { DiagnosticoSimuladoCardState, WeeklySimuladoMission } from '@/lib/simulado/types';
 import { vitrineContainerVariants } from '@/components/vitrine/vitrineMotion';
 import { multiFilterResumo } from '@/lib/questao-filter/multiFilterResumo';
@@ -68,6 +76,7 @@ const VITRINE_FILTER_QUERY_KEYS = new Set([
   'page',
   'status',
   'view',
+  'disciplina',
 ]);
 
 function readMultiQueryParam(
@@ -104,6 +113,7 @@ function vitrineResponseMatchesListKey(
       bancas: requested.bancas,
       assuntos: requested.assuntos,
       q: requested.q,
+      disciplina: requested.disciplina,
     }) === vitrineListQueryKey(requested)
   );
 }
@@ -118,6 +128,7 @@ function buildVitrineLocationSearch(
     pagina: number;
     status: VitrineStatusFilter;
     view: VitrineViewMode;
+    disciplina: VitrineDisciplinaId | null;
   },
 ): string {
   const params = new URLSearchParams();
@@ -132,6 +143,7 @@ function buildVitrineLocationSearch(
   if (filters.pagina > 1) params.set('page', String(filters.pagina));
   if (filters.status !== 'all') params.set('status', filters.status);
   if (filters.view === 'compact') params.set('view', 'compact');
+  if (filters.disciplina) params.set('disciplina', filters.disciplina);
   const query = params.toString();
   return query ? `?${query}` : '';
 }
@@ -199,6 +211,7 @@ export default function VitrineClient({
     q: undefined as string | undefined,
     status: 'all' as VitrineStatusFilter,
     view: 'grid' as VitrineViewMode,
+    disciplina: null as VitrineDisciplinaId | null,
   };
 
   /**
@@ -212,6 +225,7 @@ export default function VitrineClient({
   const [pagina, setPagina] = useState(ssrQuery.page);
   const [statusFilter, setStatusFilter] = useState<VitrineStatusFilter>(ssrQuery.status);
   const [viewMode, setViewMode] = useState<VitrineViewMode>(ssrQuery.view);
+  const [disciplina, setDisciplina] = useState<VitrineDisciplinaId | null>(ssrQuery.disciplina);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [bancas, setBancas] = useState<string[]>(() => initialFacetsData?.bancas ?? []);
   const [assuntos, setAssuntos] = useState<string[]>(() => initialFacetsData?.assuntos ?? []);
@@ -245,8 +259,17 @@ export default function VitrineClient({
       q: debouncedSearch || undefined,
       status: statusFilter,
       view: viewMode,
+      disciplina,
     }),
-    [pagina, bancasSelecionadas, assuntosSelecionados, debouncedSearch, statusFilter, viewMode],
+    [
+      pagina,
+      bancasSelecionadas,
+      assuntosSelecionados,
+      debouncedSearch,
+      statusFilter,
+      viewMode,
+      disciplina,
+    ],
   );
 
   const {
@@ -336,6 +359,9 @@ export default function VitrineClient({
         ? parseVitrineView(viewParam)
         : readStoredVitrineView();
     setViewMode((prev) => (prev === nextView ? prev : nextView));
+
+    const disciplinaFromUrl = parseVitrineDisciplina(searchParams.get('disciplina'));
+    setDisciplina((prev) => (prev === disciplinaFromUrl ? prev : disciplinaFromUrl));
 
     filtersHydratedFromUrlRef.current = true;
   }, [searchParamsString, searchParams]);
@@ -454,6 +480,7 @@ export default function VitrineClient({
         pagina: nextPagina,
         status: statusFilter,
         view: viewMode,
+        disciplina,
       });
       vitrineUrlSyncedRef.current = newSearch.startsWith('?') ? newSearch.slice(1) : newSearch;
 
@@ -464,7 +491,16 @@ export default function VitrineClient({
         router.replace(`${pathname}${newSearch}`, { scroll: false });
       }
     },
-    [assuntosSelecionados, bancasSelecionadas, pathname, router, searchTerm, statusFilter, viewMode],
+    [
+      assuntosSelecionados,
+      bancasSelecionadas,
+      disciplina,
+      pathname,
+      router,
+      searchTerm,
+      statusFilter,
+      viewMode,
+    ],
   );
 
   const goToPagina = useCallback(
@@ -488,6 +524,7 @@ export default function VitrineClient({
       pagina,
       status: statusFilter,
       view: viewMode,
+      disciplina,
     });
     vitrineUrlSyncedRef.current = newSearch.startsWith('?') ? newSearch.slice(1) : newSearch;
 
@@ -497,10 +534,27 @@ export default function VitrineClient({
     ) {
       router.replace(`${pathname}${newSearch}`, { scroll: false });
     }
-  }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina, statusFilter, viewMode, pathname, router]);
+  }, [
+    bancasSelecionadas,
+    assuntosSelecionados,
+    searchTerm,
+    pagina,
+    statusFilter,
+    viewMode,
+    disciplina,
+    pathname,
+    router,
+  ]);
 
   const handleStatusFilterChange = useCallback((next: VitrineStatusFilter) => {
     setStatusFilter(next);
+  }, []);
+
+  const handleDisciplinaChange = useCallback((next: VitrineDisciplinaId | null) => {
+    paginaViaFiltroRef.current = true;
+    setDisciplina(next);
+    setPagina(1);
+    setExpandedPanelSlug(null);
   }, []);
 
   const handleViewModeChange = useCallback((next: VitrineViewMode) => {
@@ -519,8 +573,9 @@ export default function VitrineClient({
         assuntos: assuntosSelecionados,
         q: debouncedSearch || undefined,
         page: paginaEfetiva,
+        disciplina,
       }),
-    [bancasSelecionadas, assuntosSelecionados, debouncedSearch, paginaEfetiva],
+    [bancasSelecionadas, assuntosSelecionados, debouncedSearch, paginaEfetiva, disciplina],
   );
 
   useEffect(() => {
@@ -547,7 +602,14 @@ export default function VitrineClient({
     return () => window.removeEventListener('avant:open-search', handler);
   }, []);
 
-  const pageSectionTitle = 'Vitrine de questões';
+  const disciplinaSummaries = vitrinePageData?.disciplinas ?? [];
+  const hubMode = isVitrineDisciplineHubMode(disciplinaSummaries, disciplina);
+  const showSubjectCatalog = !hubMode;
+  const pageSectionTitle = hubMode
+    ? 'Vitrine de disciplinas'
+    : disciplina
+      ? 'Assuntos'
+      : 'Vitrine de questões';
 
   const listBusy = loading || isRefreshing;
   const listDataMatchesQuery =
@@ -557,15 +619,23 @@ export default function VitrineClient({
   const paginationBusy = listBusy || !listDataMatchesQuery;
 
   useVitrineVisiblePrefetch(vitrineListaRef, {
-    enabled: gruposPagina.length > 0 && !listBusy,
-    observeKey: `p${paginaEfetiva}-${gruposPagina.length}`,
+    enabled: showSubjectCatalog && gruposPagina.length > 0 && !listBusy,
+    observeKey: `p${paginaEfetiva}-${gruposPagina.length}-${disciplina ?? 'all'}`,
   });
 
   const pageSectionDescription = (() => {
     if (fetchError) return fetchError;
 
+    if (hubMode) {
+      return 'Escolha uma disciplina para ver os assuntos';
+    }
+
     const segments: string[] = [];
     const trimmedSearch = searchTerm.trim();
+
+    if (disciplina) {
+      segments.push(disciplina === 'portugues' ? 'Português' : 'Enfermagem');
+    }
 
     if (trimmedSearch) {
       segments.push(`Resultados para "${trimmedSearch}"`);
@@ -604,13 +674,20 @@ export default function VitrineClient({
   const showSsrErrorBanner =
     Boolean(initialPayloadError) && !ssrErrorDismissed && !initialPageData;
 
+  const resumeMatchesDisciplina =
+    initialResume != null &&
+    (!disciplina ||
+      guessDisciplinaFromTituloAula(initialResume.tituloAula) === disciplina);
+
   const showResumeCard =
     initialResume != null &&
+    resumeMatchesDisciplina &&
     bancasSelecionadas.length === 0 &&
     assuntosSelecionados.length === 0 &&
     !debouncedSearch &&
     statusFilter === 'all' &&
-    pagina === 1;
+    pagina === 1 &&
+    (hubMode || Boolean(disciplina) || disciplinaSummaries.length <= 1);
 
   const showWeeklyMissionCard =
     weeklyMission != null &&
@@ -618,7 +695,8 @@ export default function VitrineClient({
     assuntosSelecionados.length === 0 &&
     !debouncedSearch &&
     statusFilter === 'all' &&
-    pagina === 1;
+    pagina === 1 &&
+    (hubMode || !disciplina);
 
   const showDiagnosticoCard =
     initialDiagnostico?.show_card === true &&
@@ -626,7 +704,8 @@ export default function VitrineClient({
     assuntosSelecionados.length === 0 &&
     !debouncedSearch &&
     statusFilter === 'all' &&
-    pagina === 1;
+    pagina === 1 &&
+    (hubMode || !disciplina);
 
   const handleRetryLoad = useCallback(() => {
     setSsrErrorDismissed(true);
@@ -642,51 +721,61 @@ export default function VitrineClient({
   return (
     <div
       className={cn(
-        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground selection:bg-[#22c55e]/20 selection:text-[#1a2e05] md:min-h-screen md:pb-8',
+        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground selection:text-[#1a2e05] md:min-h-screen md:pb-8',
+        vitrineBrand.selection,
       )}
     >
-      <VitrineToolbar
-        searchTerm={searchTerm}
-        onSearchChange={(term) => {
-          setSearchTerm(term);
-          paginaViaFiltroRef.current = true;
-          setPagina(1);
-        }}
-        onSearchClear={() => {
-          setSearchTerm('');
-          paginaViaFiltroRef.current = true;
-          setPagina(1);
-        }}
-        mobileSearchOpen={mobileSearchOpen}
-        bancasSelected={bancasSelecionadas}
-        assuntosSelected={assuntosSelecionados}
-        onBancasChange={(next) => {
-          setBancasSelecionadas(next);
-          markFilterPaginaReset();
-        }}
-        onAssuntosChange={(next) => {
-          setAssuntosSelecionados(next);
-          markFilterPaginaReset();
-        }}
-        onClearBancas={() => {
-          setBancasSelecionadas([]);
-          markFilterPaginaReset();
-        }}
-        onClearAssuntos={() => {
-          setAssuntosSelecionados([]);
-          markFilterPaginaReset();
-        }}
-        onClearAllFilters={() => {
-          setBancasSelecionadas([]);
-          setAssuntosSelecionados([]);
-          setSearchTerm('');
-          markFilterPaginaReset();
-        }}
-        facets={{ bancas, assuntos }}
-        facetsLoading={facetsLoading}
-      />
+      {!hubMode ? (
+        <VitrineToolbar
+          searchTerm={searchTerm}
+          onSearchChange={(term) => {
+            setSearchTerm(term);
+            paginaViaFiltroRef.current = true;
+            setPagina(1);
+          }}
+          onSearchClear={() => {
+            setSearchTerm('');
+            paginaViaFiltroRef.current = true;
+            setPagina(1);
+          }}
+          mobileSearchOpen={mobileSearchOpen}
+          bancasSelected={bancasSelecionadas}
+          assuntosSelected={assuntosSelecionados}
+          onBancasChange={(next) => {
+            setBancasSelecionadas(next);
+            markFilterPaginaReset();
+          }}
+          onAssuntosChange={(next) => {
+            setAssuntosSelecionados(next);
+            markFilterPaginaReset();
+          }}
+          onClearBancas={() => {
+            setBancasSelecionadas([]);
+            markFilterPaginaReset();
+          }}
+          onClearAssuntos={() => {
+            setAssuntosSelecionados([]);
+            markFilterPaginaReset();
+          }}
+          onClearAllFilters={() => {
+            setBancasSelecionadas([]);
+            setAssuntosSelecionados([]);
+            setSearchTerm('');
+            markFilterPaginaReset();
+          }}
+          facets={{ bancas, assuntos }}
+          facetsLoading={facetsLoading}
+        />
+      ) : null}
 
-      <main className="mx-auto max-w-7xl space-y-5 px-4 pt-3 md:space-y-8 md:px-6 md:pt-6">
+      <main
+        className={cn(
+          'w-full px-4 md:px-6 lg:px-8',
+          hubMode
+            ? 'max-w-none space-y-6 pt-4 md:space-y-8 md:pt-8'
+            : 'mx-auto max-w-7xl space-y-5 pt-3 md:space-y-8 md:pt-6',
+        )}
+      >
         {showSsrErrorBanner && (
           <div
             role="alert"
@@ -705,102 +794,133 @@ export default function VitrineClient({
             </Button>
           </div>
         )}
-        <section className="space-y-5 md:space-y-8">
+        <section className={cn(hubMode ? 'space-y-6 md:space-y-8' : 'space-y-5 md:space-y-8')}>
           <VitrinePageHeader
             title={pageSectionTitle}
             description={pageSectionDescription || null}
           />
-          {children ? <div className="mb-4 md:mb-6">{children}</div> : null}
-          {showWeeklyMissionCard && !showDiagnosticoCard && weeklyMission ? (
-            <WeeklySimuladoMissionCard
-              mission={weeklyMission}
-              onMissionUpdate={setWeeklyMission}
+          {children ? <div className={hubMode ? 'mb-0' : 'mb-4 md:mb-6'}>{children}</div> : null}
+          {disciplinaSummaries.length > 0 ? (
+            <VitrineDisciplinePicker
+              summaries={disciplinaSummaries}
+              selected={disciplina}
+              onSelect={handleDisciplinaChange}
             />
           ) : null}
-          {showDiagnosticoCard && initialDiagnostico ? (
-            <SimuladoDiagnosticoCard state={initialDiagnostico} />
-          ) : null}
-          {showResumeCard ? (
-            <VitrineResumeCard resume={initialResume} estudarQuery={estudarQuery} />
-          ) : null}
-          {!loading && gruposPagina.length > 0 ? (
-            <VitrineQuickFilters
-              status={statusFilter}
-              onStatusChange={handleStatusFilterChange}
-              view={viewMode}
-              onViewChange={handleViewModeChange}
-              counts={statusCounts}
-            />
-          ) : null}
-          {loading && gruposPagina.length === 0 ? (
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="h-72 animate-pulse rounded-2xl bg-muted/50" />
-              ))}
-            </div>
-          ) : gruposFiltrados.length > 0 ? (
-            <>
-              <motion.div
-                key={`${bancasSelecionadas.join('|')}-${assuntosSelecionados.join('|')}-${searchTerm}-${statusFilter}-${viewMode}`}
-                ref={vitrineListaRef}
-                data-vitrine-list-ready={listBusy ? 'false' : 'true'}
-                aria-busy={listBusy || undefined}
-                variants={vitrineContainerVariants}
-                initial={false}
-                animate="animate"
-                className={cn(
-                  viewMode === 'compact'
-                    ? 'flex flex-col gap-2'
-                    : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5',
-                  MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
-                  isRefreshing && 'opacity-80',
-                )}
-              >
-                {gruposFiltrados.map((grupo, idx) => (
-                  <VitrineSubjectCard
-                    key={grupo.titulo_aula}
-                    grupo={grupo}
-                    estudarQuery={estudarQuery}
-                    index={idx}
-                    compact={viewMode === 'compact'}
-                    assuntoExpandido={expandedPanelSlug === grupo.firstSlug}
-                    onAssuntoExpandedChange={(open) =>
-                      setExpandedPanelSlug(open ? grupo.firstSlug : null)
-                    }
-                  />
-                ))}
-              </motion.div>
-              {totalPaginas > 1 ? (
-                <VitrinePaginationBar
-                  ref={vitrinePaginationInlineRef}
-                  pagina={pagina}
-                  paginaEfetiva={paginaEfetiva}
-                  totalPaginas={totalPaginas}
-                  listBusy={paginationBusy}
-                  onPrev={() => goToPagina(pagina - 1)}
-                  onNext={() => goToPagina(pagina + 1)}
+          {hubMode && (showDiagnosticoCard || showWeeklyMissionCard || showResumeCard) ? (
+            <div className="space-y-3 border-t border-slate-200/80 pt-6">
+              {showWeeklyMissionCard && !showDiagnosticoCard && weeklyMission ? (
+                <WeeklySimuladoMissionCard
+                  mission={weeklyMission}
+                  onMissionUpdate={setWeeklyMission}
                 />
               ) : null}
+              {showDiagnosticoCard && initialDiagnostico ? (
+                <SimuladoDiagnosticoCard state={initialDiagnostico} />
+              ) : null}
+              {showResumeCard ? (
+                <VitrineResumeCard resume={initialResume} estudarQuery={estudarQuery} />
+              ) : null}
+            </div>
+          ) : null}
+          {!hubMode ? (
+            <>
+              {showWeeklyMissionCard && !showDiagnosticoCard && weeklyMission ? (
+                <WeeklySimuladoMissionCard
+                  mission={weeklyMission}
+                  onMissionUpdate={setWeeklyMission}
+                />
+              ) : null}
+              {showDiagnosticoCard && initialDiagnostico ? (
+                <SimuladoDiagnosticoCard state={initialDiagnostico} />
+              ) : null}
+              {showResumeCard ? (
+                <VitrineResumeCard resume={initialResume} estudarQuery={estudarQuery} />
+              ) : null}
             </>
-          ) : gruposPagina.length > 0 && statusFilter !== 'all' ? (
-            <EmptyState
-              icon={Search}
-              title={`Nenhum assunto ${statusFilter === 'pending' ? 'pendente' : 'novo'} nesta página`}
-              description="Avance para outra página ou volte para Todos para ver o catálogo completo."
-            />
-          ) : fetchError ? (
-            <EmptyState
-              icon={Search}
-              title="Não foi possível carregar a vitrine"
-              description="Verifique sua conexão e tente novamente. Se persistir, recarregue a página."
-            />
-          ) : (
-            <EmptyState
-              icon={Search}
-              title="Nenhum assunto encontrado"
-              description="Tente ajustar os filtros ou limpar a busca para ver todos os assuntos disponíveis."
-            />
-          )}
+          ) : null}
+          {showSubjectCatalog ? (
+            <>
+              {!loading && gruposPagina.length > 0 ? (
+                <VitrineQuickFilters
+                  status={statusFilter}
+                  onStatusChange={handleStatusFilterChange}
+                  view={viewMode}
+                  onViewChange={handleViewModeChange}
+                  counts={statusCounts}
+                />
+              ) : null}
+              {loading && gruposPagina.length === 0 ? (
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5">
+                  {Array.from({ length: 8 }).map((_, i) => (
+                    <div key={i} className="h-72 animate-pulse rounded-2xl bg-muted/50" />
+                  ))}
+                </div>
+              ) : gruposFiltrados.length > 0 ? (
+                <>
+                  <motion.div
+                    key={`${disciplina ?? 'all'}-${bancasSelecionadas.join('|')}-${assuntosSelecionados.join('|')}-${searchTerm}-${statusFilter}-${viewMode}`}
+                    ref={vitrineListaRef}
+                    data-vitrine-list-ready={listBusy ? 'false' : 'true'}
+                    aria-busy={listBusy || undefined}
+                    variants={vitrineContainerVariants}
+                    initial={false}
+                    animate="animate"
+                    className={cn(
+                      viewMode === 'compact'
+                        ? 'flex flex-col gap-2'
+                        : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5',
+                      MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
+                      isRefreshing && 'opacity-80',
+                    )}
+                  >
+                    {gruposFiltrados.map((grupo, idx) => (
+                      <VitrineSubjectCard
+                        key={grupo.titulo_aula}
+                        grupo={grupo}
+                        estudarQuery={estudarQuery}
+                        index={idx}
+                        compact={viewMode === 'compact'}
+                        assuntoExpandido={expandedPanelSlug === grupo.firstSlug}
+                        onAssuntoExpandedChange={(open) =>
+                          setExpandedPanelSlug(open ? grupo.firstSlug : null)
+                        }
+                      />
+                    ))}
+                  </motion.div>
+                  {totalPaginas > 1 ? (
+                    <VitrinePaginationBar
+                      ref={vitrinePaginationInlineRef}
+                      pagina={pagina}
+                      paginaEfetiva={paginaEfetiva}
+                      totalPaginas={totalPaginas}
+                      listBusy={paginationBusy}
+                      onPrev={() => goToPagina(pagina - 1)}
+                      onNext={() => goToPagina(pagina + 1)}
+                    />
+                  ) : null}
+                </>
+              ) : gruposPagina.length > 0 && statusFilter !== 'all' ? (
+                <EmptyState
+                  icon={Search}
+                  title={`Nenhum assunto ${statusFilter === 'pending' ? 'pendente' : 'novo'} nesta página`}
+                  description="Avance para outra página ou volte para Todos para ver o catálogo completo."
+                />
+              ) : fetchError ? (
+                <EmptyState
+                  icon={Search}
+                  title="Não foi possível carregar a vitrine"
+                  description="Verifique sua conexão e tente novamente. Se persistir, recarregue a página."
+                />
+              ) : (
+                <EmptyState
+                  icon={Search}
+                  title="Nenhum assunto encontrado"
+                  description="Tente ajustar os filtros ou limpar a busca para ver todos os assuntos disponíveis."
+                />
+              )}
+            </>
+          ) : null}
         </section>
       </main>
     </div>

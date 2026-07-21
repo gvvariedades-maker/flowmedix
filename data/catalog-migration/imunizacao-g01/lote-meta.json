@@ -15,5 +15,14 @@
     "examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
     "examples/questao-premium-cpcon-imunizacao-intervalos-vf.json"
   ],
-  "notes": "Piloto g01 — calendário infantil/adulto, cadeia frio PNI, EXCETO atenuados, vias vacinais, BCG V/F"
+  "notes": "Piloto g01 — calendário infantil/adulto, cadeia frio PNI, EXCETO atenuados, vias vacinais, BCG V/F",
+  "anchor_slug": "fundatec-enfermagem-imunizacao-1777103182944-8",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel-imunizacao",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g01.json",
+    "notes": "L6 batch quality-vendavel"
+  }
 }

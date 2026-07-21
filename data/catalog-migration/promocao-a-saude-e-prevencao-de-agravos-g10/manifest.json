@@ -1,0 +1,18 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g10",
+  "exported_at": "2026-07-20T17:09:01.590Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g10/manifest.json"
+  },
+  "slugs": [
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8",
+    "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-0",
+    "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1",
+    "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4",
+    "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-5",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9"
+  ]
+}

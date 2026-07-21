@@ -9,7 +9,8 @@ O renderer é `lib/catalogMigration/handcraftPlaybook.ts` → `buildHandcraftBri
 Antes do **1º lote** de handcraft em subtópico novo ou re-handcraft:
 
 1. `Mapeamento L3: <subtópico>` — [`docs/L3_MAPEAMENTO_CONVERSA.md`](../../docs/L3_MAPEAMENTO_CONVERSA.md)
-2. **Fase 3b:** brief 4/4 por ramo forte → `artifacts/l3-brief-<pacote>-<branch_id>.md`
+2. **Fase 3b:** brief 4/4 por ramo forte → `artifacts/l3-brief-<pacote>-<branch_id>.md`  
+   Skills: `brief-enfermagem` (TE) · `brief-lingua-portuguesa` (PT) · corpo em [`PROMPT_VARIANTES_NEUROSLIDES.md`](../../docs/PROMPT_VARIANTES_NEUROSLIDES.md)
 3. Cauda longa (`ok_generico` no relatório L3): **sem** brief — layouts genéricos no handcraft
 
 O playbook lista `pedagogical_branches[].mold` como **referência**; moldes legados exigem `molde_redesign` no mapeamento L3.
@@ -47,7 +48,9 @@ npm run handcraft:brief -- --subtopico="Doenças Respiratórias Crônicas (Asma,
 | `_default.json` | Fallback — subtópicos sem playbook dedicado |
 | `vias-de-administracao.json` | Vias de Administração — absorção / técnica / indicação |
 | `urgencias-e-emergencias.json` | Urgências e Emergências — RCP / trauma / EXCETO / triagem (12 âncoras P0) |
+| `promocao-a-saude-e-prevencao-de-agravos.json` | Promoção à Saúde — Lei 8.080 Art. 4º (`sus-art4-orbit` + `scope-trap`) |
 | `farmacodinamica-e-farmacocinetica.json` | Farmacodinâmica — PK/PD V/F e clínico EV (omeprazol) |
+| `lingua-portuguesa.json` | Língua Portuguesa — 671 PDFs, 17 cards, classificação tema real |
 | `<pacote_prefix>.json` | Playbook por pacote (ex.: `respiratorio-cronico.json`) |
 | `../handcraft-registry.json` | Campo opcional `handcraft_playbook` |
 
@@ -107,14 +110,14 @@ Comandos **pós-handcraft** no bloco `bash` do briefing. Substituem o pipeline g
 "modes": {
   "subtopico_repair_l3": {
     "after_handcraft": [
-      "npm run audit:questao-readiness -- --lote=<lote>",
+      "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
       "npm run catalog:patch-pedagogical-branch -- --from-supabase --subtopico=\"<canônico>\" --only-premium --apply"
     ]
   },
   "single_slug": {
     "lote_dir": "data/catalog-migration/respiratorio-cronico-repair-l3-g01/questions",
     "after_handcraft": [
-      "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json"
+      "npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy"
     ]
   }
 }
@@ -131,8 +134,10 @@ Comandos **pós-handcraft** no bloco `bash` do briefing. Substituem o pipeline g
 
 **Fallback** (playbook sem `after_handcraft`):
 
-- Subtópico: `validate:goldens --strict` → `audit:questao-readiness` → `catalog:apply-lote --dry-run`
-- `single_slug`: `audit:questao-readiness --file=...`
+- Subtópico: `audit:questao-readiness --strict-v2-pedagogy` → `[READY]` → `validate:goldens --strict` → `catalog:apply-lote --dry-run`
+- `single_slug`: `audit:questao-readiness --file=... --strict-v2-pedagogy`
+
+Playbooks com bloco `validation` contendo `strict-v2-pedagogy` ativam o gate strict-v2 no fallback automático (`handcraftPlaybook.ts`).
 
 O bloco `bash` sempre inclui, antes dos `after_handcraft`:
 
@@ -166,6 +171,35 @@ Ver `respiratorio-cronico.json`:
 
 Ver `farmacodinamica-e-farmacocinetica.json` e `vias-de-administracao.json`.
 
+### `pedagogical_branches[].visual_gallery` (opcional)
+
+Galeria visual leve — espelho das âncoras de conteúdo. Capturas = `capture:questao-review` (player AVANT), não posters externos.
+
+```json
+{
+  "id": "pt_crase",
+  "brief": "artifacts/l3-brief-lingua-portuguesa-pt_crase.md",
+  "anchors": ["examples/questao-premium-….json"],
+  "visual_gallery": {
+    "status": "pending",
+    "anchor_slug": null,
+    "layouts": ["pt-crase-funnel-deck", "pt-crase-funnel-board", "pt-crase-funnel-tap-flow", "pt-crase-trap-arena"],
+    "captures_dir": null,
+    "note": "Após [READY] + capture → pilot; após React → ready"
+  }
+}
+```
+
+| `status` | Quando |
+|----------|--------|
+| `pending` | Brief ok; falta JSON/capture |
+| `pilot` | JSON em `anchors` + PNGs em `captures_dir` (genérico ok) |
+| `ready` | Bespoke wired + re-capture |
+
+Índice humano (opcional na raiz do playbook): `l3_visual_gallery_index` → ex. `artifacts/l3-visual-gallery-lingua-portuguesa-index.md`.  
+Renderizado no briefing (`Galeria visual: status · path`). Skill: `avant-neuroslides-visual`. Doc: `QUALITY_LAYERS_MODEL.md` § L4 · `VARIANT_MOLDS.md` § 8b.  
+Piloto: `lingua-portuguesa.json` → `pt_crase`.
+
 ## Mapeamento L3 (antes do 1º lote — recomendado)
 
 Subtópico novo ou sem cluster / auditoria L3:
@@ -198,6 +232,8 @@ Docs: `docs/QUALITY_VENDAVEL_CONVERSA.md` · `docs/PIPELINE_COMPLETO_CONVERSA.md
 
 - `docs/HANDCRAFT_CONVERSA.md` — runbook handcraft
 - `docs/QUALITY_VENDAVEL_CONVERSA.md` — runbook vendável
+- `docs/VARIANT_MOLDS.md` § 8b — galeria visual leve
+- `.cursor/skills/avant-neuroslides-visual/SKILL.md` — retenção + galeria
 - `.cursor/skills/avant-json-template/SKILL.md` § L2.5+L3 — tabela global de ramos
 - `lib/catalogMigration/handcraftPlaybook.ts` — `buildHandcraftBrief`, `resolveFirstLote`, `formatProibidoList`, `substitutePlaybookPlaceholders`
 - `__tests__/lib/catalogMigration/handcraftPlaybook.test.ts` — contrato de renderização

@@ -1,152 +1,213 @@
 ---
 name: avant-golden-anchor-handcraft
-description: Ponte family → âncora golden → slots por slide para handcraft golden-v1/v2 no AVANT. Use SEMPRE ao escrever ou editar reverse_study_slides de uma questão (handcraft, lote gNN, reparo por slug, âncora nova). Classifica a família de prova, abre a âncora de referência da gramática, escreve o logic_flow primeiro e preenche cada slide com sua função única (sem spoiler, com transferência e fixação portátil). Encadeia a persona professor-para-concurso para o tom.
+description: >-
+  Handcraft golden-v1: family → âncora → slots. Use SEMPRE ao escrever/editar
+  reverse_study_slides (lote gNN, reparo, ou conteúdo de uma âncora de estilo).
+  Ative após avant-classify-family. Para criar âncoras faltantes antes do g01
+  (fila / gate), use avant-golden-anchor-bootstrap primeiro. Escreve logic_flow
+  primeiro; barra 10/10; gate audit:questao-readiness --strict-v2-pedagogy.
+  Encadeia professor-* + avant-json-template (+ brief-* se ramo L3 forte).
 ---
+> **Fonte Git:** edite em `docs/skills/`; runtime via `npm run sync:skills`. Ver `docs/SKILLS_GOVERNANCE.md`.
 
-> **Cópia versionada** para edição no explorador. Runtime do agente: `.cursor/skills/avant-golden-anchor-handcraft/SKILL.md` (pasta `.cursor/` está no `.gitignore` e pode ficar oculta no IDE).
+# Âncora-Handcraft — executar, não ler como manual
 
-# Âncora-Handcraft — family → âncora → slots
+**Missão:** cada slide = 1 fala de professor com função única. Aluno, após 1 leitura, explica o gabarito a um colega.
 
-Objetivo: cada slide vira **uma fala de professor** com função única — não "preencher schema".
-Complementa (não substitui): skill `avant-json-template` (forma/L3) e `professor-para-concurso` (tom).
-
-> Trilho único: handcraft golden-v1 por slug. **Proibido** `ai:generate` / `catalog:upgrade-premium`.
-> Fonte de verdade de conteúdo: `docs/GOLDEN_CONTENT_STANDARD.md`. Contrato de escrita: `lib/questaoSpec/validateQuestaoForWrite.ts`.
-
----
-
-## 0. Ativação e ordem de trabalho
-
-Ative junto com `professor-para-concurso` (tom) e `avant-json-template` (forma).
-
-Fluxo fixo por questão:
-
-1. **Classificar família** (§1) a partir do `instruction` + `options`.
-2. **Abrir a âncora** da família/ramo (§2) — ler os 4 slides dela como gramática, não como texto a copiar.
-3. **Escrever `logic_flow` PRIMEIRO** (§3) — é o esqueleto do raciocínio.
-4. Preencher `concept_map`, `golden_rule`, `danger_zone` (§3) sem repetir o eixo do fluxo.
-5. **Autoauditar** (§5) → `audit:questao-readiness --strict-v2-pedagogy`.
-
-Regra de ouro (herdada do professor): *após ler uma vez, o aluno explica o gabarito para um colega.*
-
-> **Nota:** `logic_flow` primeiro é regra de **autoria**. No JSON, a ordem de render continua v2 (`concept_map` → `logic_flow` → `golden_rule` → `danger_zone`); o player reordena por `type`.
+**Contrato de conteúdo:** `docs/GOLDEN_CONTENT_STANDARD.md` (não reescrever regras de lint aqui).  
+**Proibido:** `ai:generate` · `catalog:upgrade-premium` · `content_standard: "golden-v2"` (v2 = só write-spec).
 
 ---
 
-## 1. Classificar a família de prova
+## HARD FAIL (reescrever antes de entregar)
 
-| `meta.family` | Gatilho no enunciado |
-|---------------|----------------------|
-| `vf` | I, II, III + "É correto o que se afirma em" |
-| `certo_errado` | 2 opções Certo/Errado, ou EXCETO/INCORRETA com afirmativas |
-| `protocolo` | sequência de conduta, números (RCP 30:2, SpO₂, doses, tempo) |
-| `calc` | conta: mL, gts/min, regra de três, diluição |
-| `legis` | lei, artigo, COFEN, 8.080/7.498, "de acordo com" |
-| `conceito` | "assinale a correta sobre…", definição/comparação |
-| `text_fragment` | caso clínico literal do caderno (>80 chars de base) |
+| # | Falha | Correção |
+|---|--------|----------|
+| 1 | Gabarito/letra no `concept_map` ou row "Gabarito letra X" no `golden_rule` | Spoiler só no `logic_flow` + labels da `danger_zone` |
+| 2 | `logic_flow` parafraseia alternativas (≥8 palavras de uma `option`) | Steps de **decisão**; último = `"Em similares: …"` |
+| 3 | `danger_zone` com letra omitida, `correct` repetido, ou sem transferência | 1 item/letra errada + ≥1 transferência separada |
+| 4 | EXCETO: distrator espelha o texto do gabarito | Distrator = por que é **correto**; só o gabarito = a exceção |
+| 5 | Texto genérico da família / copiado da âncora | Vocabulário **desta** prova; imitar **estrutura**, não frase |
+| 6 | Drift de ramo (ex. IPCS/CVC sem âncora no enunciado) | Só termos do enunciado + tema da questão |
+| 7 | Card com 2 ideias / texto longo | Densidade §3b — 1 ideia/string |
+| 8 | Entregar sem `[READY]` strict-v2 | Rodar gate § Ship |
+| 9 | Enunciado cita figura/tirinha/charge sem `figures[]` nem `transcribed` | `figure_policy` + asset ou `text_fragment` — gate `l2_missing_figure` |
 
-Referência de código: `classifyFamily()` e `FAMILY_GOLDEN_FILE` em `lib/catalogMigration/classifyFamily.ts`.
-
----
-
-## 2. Matriz family → âncora (copie a GRAMÁTICA, nunca o texto)
-
-Abra a âncora do ramo, entenda **como** ela ensina, e escreva conteúdo bespoke DA SUA questão.
-
-| Família / recorte | Âncora de referência (`examples/`) | O que imitar |
-|-------------------|-------------------------------------|--------------|
-| `vf` (afirmativas I–IV) | `questao-premium-cpcon-vias-im-vf.json` | julgar item a item; combinação só no fluxo |
-| `vf` (intervalos/normas PNI) | `questao-premium-cpcon-imunizacao-intervalos-vf.json` | pegadinha-âncora nomeada; padrão da banca |
-| `certo_errado` (C/E) | `questao-premium-cpcon-poliomielite-pfa-vf.json` | critério + faixa oficial |
-| `certo_errado` / **EXCETO / INCORRETA** | `questao-premium-cetrede-vias-injetaveis-incorreta.json` · `questao-premium-idib-umirim-itu-cateter-exceto.json` · `questao-premium-agirh-imunizacao-incorreta-antibiotico.json` | distratores = por que é CORRETO; só o gabarito = a exceção |
-| `protocolo` (parâmetros) | `questao-premium-urgencias-rcp.json` · `questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im.json` | `rows` com números + fonte; pegadinha de inversão |
-| `calc` | `questao-premium-idecan-calculo-equivalencias-gotas.json` | dados → fórmula → resultado; unidade |
-| `legis` | `questao-premium-sus-lei-8080-cesgranrio.json` | lei/artigo; direito × dever × proibição |
-| `conceito` | `questao-premium-fundatec-meningococica-3meses.json` · `questao-premium-consulpam-vias-absorcao-oral.json` | 3–6 conceitos; exclusão por termo-chave |
-| `text_fragment` | `questao-premium-fepese-anotacao-enfermagem-sae.json` | ler caso → decisão ancorada no fragmento |
-
-Se o subtópico tiver `*-golden-anchors.json` no registry, ele **vence** esta tabela (âncora por ramo local).
+**Barra 10/10 ≠ mínimo do lint.** Metade dos distratores no lint base = incompleto. Handcraft novo = cobertura completa + strict-v2.
 
 ---
 
-## 3. Contrato por slide (uma pergunta cada)
+## Fluxo (ordem fixa — 1 questão)
 
-### `logic_flow` — "Como decido?" (escrever PRIMEIRO)
+```text
+1. avant-classify-family          → meta.family
+2. Ramo L3 (se BRANCH_DESIGN_MAP) → meta.pedagogical_branch (avant-json-template § L2.5+L3)
+3. Resolver âncora (§ Âncora)     → abrir 1 JSON; ler GRAMÁTICA, não copiar texto
+4. Escrever logic_flow PRIMEIRO   → ≥4 steps decisão + fixação "Em similares:"
+5. concept_map → golden_rule → danger_zone  (sem repetir o eixo do fluxo)
+6. Checklist 10/10 → audit:questao-readiness --strict-v2-pedagogy → [READY]
+```
 
-- `reveal_mode: "tap"`, ≥4 steps de **decisão** (não paráfrase de alternativa).
-- Ordem: identificar formato → julgar item/letra a letra → montar → localizar letra → **eliminar por letra** → **fixação portátil**.
-- **Último step = fixação transferível:** "Em similares: <regra do tema>".
-- Nunca copiar ≥8 palavras contíguas de uma `option` (gate `logic_flow_recycled`).
+Render no player continua v2: `concept_map` → `logic_flow` → `golden_rule` → `danger_zone`. Autoria ≠ ordem do array.
 
-### `concept_map` — "Qual o terreno?"
+### Skills junto
 
-- 3–6 `items` (`label`, `detail`, `icon` Lucide distinto e semântico).
-- 1 item = **pegadinha-âncora** (o erro que a banca induz), **sem revelar letra**.
-- **Proibido:** "gabarito", "letra X", "combinação correta = …".
-
-### `golden_rule` — "O que decoro?"
-
-- Preferir `rows[]` (rótulo × valor oficial); `content` = mnemônico/título curto.
-- Cada número com fonte em `meta.sources[].covers`.
-- **Proibido:** row "Gabarito letra X" (fica no fluxo); resumir o que já está no concept_map.
-
-### `danger_zone` — "Onde caio na próxima?"
-
-- 1 item por letra errada desta prova + **≥1 item de transferência** ("em outra banca trocam X por Y").
-- Cada `items[].correct` **único** e ligado à alternativa daquele card.
-- EXCETO/INCORRETA: distrator = por que é conduta correta; só o gabarito = a exceção.
+| Contexto | Tom | Forma |
+|----------|-----|-------|
+| TE (41 subtópicos) | `professor-para-concurso` | `avant-json-template` |
+| PT geral | `professor-lingua-portuguesa-concurso` | `avant-json-template` |
+| PT morfossintaxe | Elias **+** professor-lingua | json-template + `brief-lingua-portuguesa` se ramo forte |
+| Ramo L3 forte | acima | `brief-enfermagem` ou `brief-lingua-portuguesa` |
 
 ---
 
-## 4. Meta obrigatória (golden-v1/v2)
+## Âncora (resolver em 30s)
+
+```text
+1. handcraft-registry.json → subtópico → golden_anchors_registry ou anchor_glob
+2. Registry: family + pedagogical_branch + command (EXCETO, PNI…)
+3. Senão: matriz + “quando usar qual” em reference-ancoras.md
+4. Fallback: FAMILY_GOLDEN_FILE[family] em classifyFamily.ts (último recurso)
+5. Subtópico sem registry: ver lista dos 15 em reference-ancoras.md (matriz + `examples/questao-premium-*` por tema)
+```
+
+- EXCETO/INCORRETA → âncora EXCETO (mesmo se `family=certo_errado`).
+- VF intervalos PNI → âncora de intervalos, não VF genérica.
+- PT: `anchor_glob` do playbook (`*-portugues-*.json`) por tema.
+- **Nunca** copiar ≥8 palavras da âncora.
+
+Detalhe: [`reference-ancoras.md`](reference-ancoras.md) — matriz · disambiguação · subtópico→registry · fallback `FAMILY_GOLDEN_FILE`.
+
+---
+
+## 3. Contrato por slide
+
+| Slide | Pergunta | Obrigatório | Proibido |
+|-------|----------|-------------|----------|
+| `logic_flow` | Como decido? | `reveal_mode:"tap"`; ≥4 steps; último `"Em similares: …"`; eliminar por letra | Listar alternativas |
+| `concept_map` | Qual o terreno? | 3–6 items; 1 = pegadinha-âncora **sem letra**; ícones Lucide distintos | Gabarito / combinação |
+| `golden_rule` | O que decoro? | Preferir `rows[]`; números com `sources[].covers` | Row "Gabarito letra X" |
+| `danger_zone` | Onde caio? | 1 item/letra errada + ≥1 transferência; `correct` únicos | Letra omitida; `correct` clonado |
+
+**Ênfase do fluxo por família** (núcleo dos steps):
+
+| family | Núcleo |
+|--------|--------|
+| `vf` | I→II→III→IV → combinar → letra |
+| `certo_errado` + EXCETO | Isolar exceção; distratores = conduta correta |
+| `protocolo` | Parâmetro → sequência → letras |
+| `calc` | Dados → fórmula → conta → unidade → letra |
+| `legis` | Lei → artigo → direito/dever/proibição |
+| `conceito` | Termo-chave → exclusão → letra |
+| `text_fragment` | Ler caso → dado do fragmento → decisão |
+
+**VF (I–IV):** cobertura por afirmativa no fluxo/`concept_map`; no `danger_zone` = combinações erradas + transferência (não forçar "Letra B" se a prova é por romanos).
+
+**Antes de fechar MCQ:**
+
+```text
+Gabarito: ___
+Letras erradas: [...]
+Cada letra tem item "Letra X — …" + correct único?  S/N
+Transferência separada?  S/N
+EXCETO: distratores justificam conduta correta?  S/N
+```
+
+### 3b. Densidade (UI = card, não apostila)
+
+| Campo | Alvo | Duro |
+|-------|------|------|
+| `concept_map.label` | ≤40 | ≤60 |
+| `concept_map.detail` / `golden_rule.rows[].value` | ≤110 | ≤140 |
+| `logic_flow.steps[]` | ≤110 | ≤160 |
+| `danger_zone` detail/correct | ≤100 | ≤130 |
+| `footer_rule` | ≤90 | ≤120 |
+
+1 ideia por string. Preferir *"Eliminar B — manutenção reativa é tardia."* a parágrafo.
+
+---
+
+## Bom vs ruim (calibragem rápida)
+
+Mini JSON completo (VF + EXCETO) + anti-exemplos: [`reference-exemplos.md`](reference-exemplos.md).
+
+**`logic_flow` — RUIM** (reciclagem):
+```text
+"A afirma que o curativo é semanal — incorreto"
+```
+**BOM** (decisão):
+```text
+"Curativo CVC: troca por protocolo/sujo — não por calendário fixo inventado"
+"Em similares: prazo de curativo ≠ prazo de flush"
+```
+
+**`danger_zone` EXCETO — RUIM**:
+```json
+{ "label": "Letra A", "correct": "Errado porque não é a exceção" }
+```
+**BOM**:
+```json
+{ "label": "Letra A — assepsia do hub", "detail": "Parece falha", "correct": "É conduta correta: desinfetar o hub antes do acesso" }
+```
+
+**`concept_map` — RUIM:** `"Gabarito: combinação V F V F"`  
+**BOM:** `"Pegadinha: trocar intervalo de reforço pelo de primovacinação"`
+
+---
+
+## Meta (mínimo)
 
 ```jsonc
 "meta": {
-  "subtopico": "<canônico — CLAUDE.md §9>",
-  "content_standard": "golden-v1",     // ou "golden-v2" quando aplicável
-  "family": "<§1>",
-  "pedagogical_branch": "<ramo se subtópico em BRANCH_DESIGN_MAP>",
+  "subtopico": "<canônico CLAUDE.md §9>",
+  "content_standard": "golden-v1",
+  "family": "<classify-family>",
+  "pedagogical_branch": "<se BRANCH_DESIGN_MAP>",
   "content_review": { "reviewed_at": "AAAA-MM-DD", "guideline_snapshot": "<fonte+ano>", "exam_vs_current": "none" },
-  "sources": [ { "id": "...", "tier": "A", "issuer": "...", "title": "...", "year": 2025, "covers": ["dose", "via", "..."] } ]
+  "sources": [{ "id": "...", "tier": "A", "issuer": "...", "title": "...", "year": 2025, "covers": ["..."] }]
 }
 ```
 
-Números normativos exigem `sources[].covers` — senão o risco sobe (ver `docs/DECISAO_AUTO_APROVACAO_RISCO.md`).
-Não enviar `template` / `layout_variant` — o app resolve por subtópico/ramo.
+Sem `template` / `layout_variant`. Número normativo → `covers` ou risco sobe.
+
+| Campo | Significado |
+|-------|-------------|
+| `content_standard: "golden-v1"` | Barra de **conteúdo** |
+| write-spec `golden-v2` | Pipeline Zod — **não** vai em `content_standard` |
+| `a4_reviewer: "agent:golden-v2"` | Quem fechou A4 — não é versão de conteúdo |
 
 ---
 
-## 5. Autoauditar antes de entregar
+## Ship
+
+### Checklist 10/10 (obrigatório mesmo com gate verde)
+
+- [ ] Função única por slide
+- [ ] Densidade respeitada
+- [ ] `danger_zone`: todas letras erradas (ou VF por afirmativa) + transferência
+- [ ] Último step = `"Em similares: …"`
+- [ ] Vocabulário desta prova; sem drift
+- [ ] EXCETO: sem espelho do gabarito nos distratores
+- [ ] Protocolo/conduta: eixo mental nomeado quando couber
+
+### Gate
 
 ```bash
 npm run audit:questao-readiness -- --file=<caminho> --strict-v2-pedagogy
 ```
 
-Critério: `[READY]` + `ready_100: true`. O relatório também traz `risk` (baixo/medio/alto):
+Ship = `[READY]` + `ready_100: true`.  
+Risco `alto` (dose/conduta/divergência) → A4 humano. `baixo`/`medio` → agente pode fechar.
 
-- `alto` (dose/conduta/protocolo/divergência) → **exige revisão humana** (`meta.efficacy_contract.a4_reviewer` humano).
-- `baixo`/`medio` → agente pode fechar A4 (`a4_reviewer: "agent:golden-v2"`).
-
-Ver `lib/catalogMigration/riskScoring.ts`.
+O que o lint cobre vs o que não: [`reference-gates.md`](reference-gates.md).
 
 ---
 
-## 6. Anti-padrões (rejeitar e reescrever)
+## Referências
 
-- Slide que serve para qualquer questão da família (genérico) → reescrever com vocabulário DESTA prova.
-- Gabarito/letra no `concept_map` ou `golden_rule` → spoiler (v2 error).
-- `logic_flow` que lista as alternativas em vez de ensinar estratégia.
-- `danger_zone` sem transferência ou com `correct` repetido.
-- EXCETO derivado do texto do gabarito em todas as letras.
-- Molde/vocabulário de outro ramo sem âncora no enunciado (drift).
-
----
-
-## 7. Referências
-
-- `docs/GOLDEN_CONTENT_STANDARD.md` — slots, fontes, lint golden-v1
-- `docs/PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md` §3 — famílias
-- `.cursor/skills/professor-para-concurso/SKILL.md` — tom e método em camadas
-- `.cursor/skills/avant-json-template/SKILL.md` — forma, L3, cabeçalho
-- `lib/catalogMigration/classifyFamily.ts` — `FAMILY_GOLDEN_FILE`
-- `data/catalog-migration/*-golden-anchors.json` — âncoras por ramo
+- `docs/GOLDEN_CONTENT_STANDARD.md` — contrato + lint
+- `reference-ancoras.md` — matriz family → arquivo
+- `reference-exemplos.md` — mini VF + EXCETO (estrutura, não copiar)
+- `reference-gates.md` — lint vs humano
+- `avant-classify-family` · `avant-json-template` · `professor-*` · `brief-*`
+- `lib/catalogMigration/classifyFamily.ts` · `*-golden-anchors.json` · `handcraft-registry.json`

@@ -1,5 +1,5 @@
 // Jest setup file
-import '@testing-library/jest-dom';
+require('@testing-library/jest-dom');
 
 // Mínimo para lib/env.ts (obrigatórias no schema) quando .env.local não carrega no CI unitário
 const jestEnvDefaults = {

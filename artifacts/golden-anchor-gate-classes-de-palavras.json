@@ -1,0 +1,15 @@
+{
+  "subtopico": "Classes de palavras",
+  "pacote_prefix": "classes-de-palavras",
+  "gate": "pass",
+  "handcraft_allowed": true,
+  "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+  "goldens_needed": 0,
+  "missing": [],
+  "covered": [],
+  "warnings": [],
+  "reasons": [
+    "Todos os ramos novo_ramo/coberto com golden presente em examples/."
+  ],
+  "artifact": "artifacts/golden-anchor-gate-classes-de-palavras.json"
+}

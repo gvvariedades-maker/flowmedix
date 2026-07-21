@@ -28,6 +28,7 @@
   },
   "question_data": {
     "instruction": "A anotação de enfermagem compreende o registro das ações realizadas em prol do paciente/cliente pela equipe de enfermagem.\nSobre esse tema, é correto afirmar:",
+    "text_fragment": "<p>Paciente masculino, 68 anos, internado na enfermaria clínica há 3 dias por descompensação de insuficiência cardíaca. Durante o turno da tarde, o técnico de enfermagem registra aferição de pressão arterial, administração de diurético conforme prescrição e orientações de ingesta hídrica restrita. A equipe discute o que deve constar na anotação de enfermagem para garantir continuidade do cuidado e respaldo legal do registro.</p>",
     "options": [
       {
         "id": "A",

@@ -32,5 +32,13 @@
     "npm run audit:slug-alignment -- --lote=imunizacao-g57 --strict",
     "npm run audit:numeric-factcheck -- --lote=imunizacao-g57",
     "npm run validate:goldens -- --strict --lote=imunizacao-g57"
-  ]
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel-imunizacao",
+    "method": "agent",
+    "status": "pass",
+    "artifact": null,
+    "notes": "superseded — anchor N/A"
+  }
 }

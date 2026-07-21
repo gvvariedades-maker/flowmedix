@@ -1,1468 +1,2378 @@
 {
-  "generated_at": "2026-06-10T10:58:56.529Z",
   "mode": "infer",
   "bucket": "Promoção à Saúde e Prevenção de Agravos",
   "min_confidence_apply": 0.85,
   "limit": 10000,
-  "inference_source": "heuristic",
+  "inference_source": "gemini",
   "summary": {
-    "scanned": 145,
-    "inferred": 145,
-    "errors": 0,
-    "keep_current": 77,
-    "same_subtopico": 77,
-    "applicable": 68
+    "scanned": 236,
+    "inferred": 218,
+    "errors": 18,
+    "keep_current": 0,
+    "same_subtopico": 129,
+    "applicable": 60
   },
   "proposals": [
     {
       "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a implementação de Práticas Integrativas e Complementares (PICS) em uma comunidade com alta incidência de doenças crônicas, focando na educação em saúde e na participação comunitária para fortalecer a saúde coletiva.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a prevenção de doenças crônicas e a adesão a práticas integrativas, que são temas centrais da promoção à saúde.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a integração de práticas de saúde complementares e o favorecimento de sua consolidação junto à população, o que se alinha diretamente com a promoção à saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o impacto das práticas integrativas na saúde coletiva, focando na prevenção de agravos e no manejo complementar de condições crônicas, o que se alinha diretamente com o subtópico.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de programas de educação em saúde para mudança de comportamento e hábitos saudáveis na comunidade.",
       "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda os benefícios da atividade física para a saúde, o que se alinha diretamente com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "rationale": "O enunciado aborda a comunicação e humanização na atenção à saúde, temas centrais da Atenção Básica e da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-instalacao-e-manejo-de-sondas-1777102983353-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda alimentação e nutrição como fatores de saúde e prevenção de doenças.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância da alimentação e nutrição para a saúde, que são temas centrais de promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente a antropometria pediátrica e suas técnicas de mensuração em crianças.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o monitoramento de anticoagulante oral e a conduta de enfermagem associada, que se enquadra na prevenção de agravos e promoção da saúde do paciente em uso dessa medicação.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma intoxicação por organofosforados, que é uma condição aguda e não uma doença viral.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a atuação do Agente Comunitário de Saúde na educação para hábitos alimentares saudáveis, visando a prevenção de doenças crônicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a poluição da água e seus impactos, que se enquadra na prevenção de agravos ambientais à saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância da documentação e registro de intercorrências no prontuário, que é parte integrante do Processo de Enfermagem (SAE).",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a definição de saúde pela OMS, que é um conceito fundamental para a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata de cálculo de dose de insulina para administração subcutânea.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a prevenção de infecções hospitalares (pneumonia relacionada à assistência à saúde), que se enquadra em biossegurança.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca nos cuidados e complicações da terapia nutricional enteral via SNG/SNE.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata da notificação compulsória de doenças e agravos, que é um pilar da vigilância epidemiológica.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado foca em uma gestante e cuidados pré-natais, que se enquadram em Saúde da Mulher.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Cuidados na Administração de Medicamentos\",\"confidence\":0.9,\"rationale\":\"O enunciado foca nos cuidados e protocolos para administração segura de medicamentos, incluindo verifi…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve detalhadamente os cuidados na administração de medicamentos, incluindo a verificação dos 6 certos e a conduta diante de alergia.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
-      "confidence": 0.88,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "rationale": "O enunciado aborda a relação entre saneamento e saúde, focando na prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância do consumo de água para a hidratação diária, que é um tema central em promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O cálculo do IMC é uma ferramenta de rastreamento e avaliação de risco para a saúde, inserido na promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata da verificação do peso como um parâmetro de acompanhamento diário, similar à verificação de outros sinais vitais.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a higiene corporal como medida de prevenção de infecções e promoção do conforto, que são pilares da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a promoção da saúde e a prevenção de agravos, que é o foco do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a higiene corporal como medida de bem-estar e prevenção de infecções, que são pilares da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância da hidratação para o equilíbrio do organismo, que é um conceito central da fisiologia.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda orientação sobre promoção da saúde e medidas preventivas para hipertensão arterial.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados específicos com a dieta enteral por sonda, que é um procedimento de manejo de sondas.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda as consequências fisiológicas da hipocalemia no sistema cardiovascular.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a posição do paciente para prevenir broncoaspiração durante a administração de dieta, o que se relaciona diretamente com o posicionamento adequado.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "avancasp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado trata diretamente sobre educação em saúde, que é um componente central da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
+      "modulo_slug": "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Doenças Parasitárias e Zoonoses",
-      "confidence": 0.88,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "rationale": "O enunciado aborda especificamente a técnica correta para aferição da pressão arterial, um dos sinais vitais.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a aferição de sinais vitais e antropometria, com foco na classificação nutricional infantil comparada à adulta.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a orientação sobre higiene e alimentação para prevenção de doenças diarreicas, que é um tema central de promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
-      "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda determinantes sociais da saúde e sua relação com o adoecimento e a morte, temas centrais da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de campanhas de prevenção de agravos à saúde, focando em orientações para grupos específicos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda estratégias de prevenção da obesidade, que é um agravo à saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
+      "suggested": "Saúde da Mulher",
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "rationale": "O enunciado aborda especificamente a assistência de enfermagem à saúde da mulher durante o pré-natal, parto e puerpério.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Enfermagem em Central de Material e Esterilização (CME)",
-      "confidence": 0.88,
-      "keep_current": false,
-      "rationale": "Heurística (CME): enunciado indica Enfermagem em Central de Material e Esterilização (CME)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "cogeps-unioeste-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-7",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Doenças Parasitárias e Zoonoses",
-      "confidence": 0.88,
-      "keep_current": false,
-      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
-      "applicable": true,
-      "source": "heuristic"
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     },
     {
       "modulo_slug": "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda ações educativas e de educação em saúde na comunidade, que são centrais para a promoção da saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "modulo_slug": "copese-uft-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Medidas de Prevenção e Precaução de Contato",
-      "confidence": 0.85,
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a Terapia Nutricional Enteral, que envolve a instalação e manejo de sondas, bem como os métodos de infusão e cuidados relacionados.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "modulo_slug": "cotec-fadenor-enfermagem-exames-laboratoriais-1779563621885-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "rationale": "O enunciado aborda o uso de testes rápidos para diagnóstico na Atenção Primária à Saúde, o que se alinha diretamente com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Doenças Parasitárias e Zoonoses\",\"confidence\":1.0,\"rationale\":\"O enunciado descreve detalhadamente a Doença de Chagas, suas fases, sintomas e formas de transmissão, que é uma…"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado descreve detalhadamente a sondagem transpilórica/jejunal, suas indicações, tipos de sonda e cuidados relacionados, que se encaixam perfeitamente no subtópico 'Instalação e Manejo de Sondas'.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563613404-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância da monitorização glicêmica como fator de prevenção de mortalidade prematura e diagnóstico de diabetes, o que se alinha com a prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados com pacientes acamados, focando em posicionamento, mobilização e prevenção de complicações como feridas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a nutrição enteral como um método de suporte nutricional, que se insere no contexto de garantir a ingestão adequada de nutrientes quando a via oral não é possível, sendo uma forma de prevenção de agravos nutricionais.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma atividade educativa sobre câncer de mama, focando na identificação de fatores de risco, o que se alinha diretamente com a prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um caso clínico de transtorno alimentar em uma adolescente, com foco em comportamentos e sintomas específicos de anorexia e bulimia nervosa, que são condições frequentemente abordadas no contexto da saúde da mulher e do adolescente.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a prevenção primária da hipertensão arterial através da modificação do estilo de vida e educação em saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Doenças Parasitárias e Zoonoses",
-      "confidence": 0.88,
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda múltiplas condições crônicas (DM2, DRC) e seus impactos no sistema urinário, com foco nas complicações e sintomas relacionados.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Saúde da Criança",
-      "confidence": 0.87,
-      "keep_current": false,
-      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados paliativos e conforto em fase agonizante, que se enquadra na promoção do bem-estar e prevenção de sofrimento adicional.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado foca em educação em saúde na comunidade e ações preventivas.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a educação em saúde como ferramenta da enfermagem para aprimorar o cuidado e a integração ensino-serviço-comunidade, o que se alinha diretamente com o subtópico de Promoção à Saúde e Prevenção de Agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o levantamento de condições de vida e saúde pela ACS para planejamento de ações, o que se alinha diretamente com a promoção à saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6",
+      "modulo_slug": "fafipa-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "rationale": "O enunciado aborda a linha de cuidado materno infantil, com foco em pré-natal, parto e puerpério, que são temas centrais da Saúde da Mulher.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a orientação sobre aleitamento materno, que é uma prática de promoção à saúde e prevenção de agravos na infância.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente a hipertensão gestacional, um tema central na saúde da mulher durante a gravidez.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a função do ferro no organismo, que é um tema central da fisiologia.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado se refere a medidas corporais, sendo a Escala de Glasgow uma medida de avaliação neurológica, que se enquadra na verificação de sinais vitais.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a vitamina D, cuja principal fonte é a exposição solar, um hábito de promoção à saúde e prevenção de deficiências.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a restrição de um nutriente específico na dieta de pacientes com Hipertensão Arterial, que é uma Doença Crônica Não Transmissível (DCNT).",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Vias de Administração",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as vias de administração de nutrição enteral.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda estratégias de saneamento básico e controle de vetores, que são pilares da promoção à saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-0",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "O enunciado aborda a prevenção de acidentes com animais peçonhentos, que se enquadra em zoonoses.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o tártaro, que é a calcificação da placa bacteriana, levando a problemas como cáries e gengivite, que são condições infecciosas de origem bacteriana.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     },
     {
       "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
-      "confidence": 0.9,
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-4",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Saúde da Mulher",
-      "confidence": 0.88,
-      "keep_current": false,
-      "rationale": "Heurística (mulher): enunciado indica Saúde da Mulher",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "O enunciado descreve a hidratação oral como tratamento para uma doença, que é uma medida de prevenção e controle para doenças diarreicas, frequentemente associadas a parasitas e zoonoses.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a higiene oral como medida de prevenção de agravos e promoção da saúde, focando em orientações práticas para cuidadores.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda uma habilidade interpessoal fundamental para a promoção da saúde e prevenção de agravos, como a empatia.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Verificação de Sinais Vitais",
-      "confidence": 0.92,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a importância do registro e acompanhamento do estado de saúde do indivíduo cuidado, o que se alinha com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Imunização",
-      "confidence": 0.92,
-      "keep_current": false,
-      "rationale": "Heurística (imunização): enunciado indica Imunização",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "fepese-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-6",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Saúde da Mulher",
-      "confidence": 0.88,
-      "keep_current": false,
-      "rationale": "Heurística (mulher): enunciado indica Saúde da Mulher",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a conduta de enfermagem em uma unidade básica para uma criança com diarreia, focando na reidratação e orientação, que são pilares da promoção à saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda um paciente com diabetes mellitus e hipoglicemia, que são doenças crônicas não transmissíveis.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na reinstalação de sonda nasoenteral e na confirmação de seu posicionamento antes da administração da dieta.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda medidas para minimizar o risco de infecção em pacientes com acesso central, o que se alinha diretamente com o tema de infecções e biossegurança.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na prevenção de lesões por pressão através da mobilização e mudança de decúbito.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001903454-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda medidas não farmacológicas para prevenção de complicações em pacientes com hipertensão arterial sistêmica, o que se alinha diretamente com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente com dispneia e baixa saturação de oxigênio, focando na dificuldade de oxigenação.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância do balanço hídrico e da observação da aceitação alimentar/hídrica para a monitorização e cuidado do paciente, o que se alinha com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a nutrição oferecida por sonda nasoenteral e via parenteral, focando na via de administração e local de direcionamento do alimento.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a vigilância de DCNT e seus fatores de risco modificáveis, tema central deste subtópico.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado discute as ações do enfermeiro do trabalho focando nas diferentes níveis de prevenção (primária, secundária e terciária) para promover a saúde e segurança do trabalhador, o que se alinha diretamente com o subtópico 'Promoção à Saúde e Prevenção de Agravos'.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Enfermagem do Trabalho",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a relação entre o trabalho, as condições de exposição a riscos e o adoecimento, com foco em patologias relacionadas a gestos repetitivos e posições forçadas, características da enfermagem do trabalho.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a avaliação de risco para complicações metabólicas e cardiovasculares com base na circunferência abdominal, que é uma medida de prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "modulo_slug": "funatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a promoção da saúde e prevenção de doenças na comunidade, que é o cerne do subtópico.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda orientações para um paciente com obesidade buscar um processo de perda de peso saudável, o que se alinha diretamente com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente de exemplos de prevenção secundária, que é um subtópico dentro de Promoção à Saúde e Prevenção de Agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um paciente recém-transferido do centro cirúrgico para a UTI, com foco em cuidados pós-operatórios imediatos e prevenção de complicações relacionadas à ventilação mecânica e via aérea artificial.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um cenário de alta pressão inspiratória em paciente em ventilação mecânica, exigindo avaliação da via aérea e do circuito, o que se alinha diretamente com cuidados respiratórios.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Verificação de Sinais Vitais",
-      "confidence": 0.92,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda ações de prevenção e orientação para indivíduos com fatores de risco para hipertensão, o que se alinha diretamente com o subtópico.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado discute a história natural das doenças e suas fases, que é um conceito fundamental para entender a prevenção e a promoção da saúde.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as ações de promoção da saúde e prevenção de agravos, como educação em saúde e atuação em questões ambientais e sociais que afetam a saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-0",
+      "modulo_slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado discute modelos de saúde-doença e cuidado em relação às necessidades de uma população em um território, o que se alinha com a prevenção de agravos e promoção da saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca nos riscos e complicações da inserção de SNG/SNE, especificamente a broncoaspiração, que está diretamente ligada ao manejo da sonda.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente a educação em saúde como estratégia de promoção da saúde e prevenção de doenças.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "rationale": "O enunciado discute o processo saúde-doença e a história natural da doença, que são conceitos centrais na promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-exames-complementares-1779563674260-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde Mental",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na avaliação de sintomas depressivos em adultos, que é um tema central da Saúde Mental.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a prescrição e implementação de dietas para atender necessidades nutricionais específicas, o que se alinha com a prevenção de agravos à saúde através da nutrição adequada.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda fatores de risco e níveis de cuidados preventivos, temas centrais da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente ações de promoção e prevenção em saúde comunitária, com foco em alimentação saudável, que é um pilar da promoção.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a participação comunitária na organização de ações de promoção à saúde, que é um tema central deste subtópico.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um quadro clínico de pré-eclâmpsia em uma gestante, que é uma condição específica da saúde da mulher durante a gestação.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005311822-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados de enfermagem focados na prevenção de complicações em um paciente idoso acamado, com foco em higiene, mobilidade e nutrição, que se enquadram na promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente estratégias de promoção da saúde e prevenção de doenças.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Curativos e Manejo de Feridas",
-      "confidence": 0.87,
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "rationale": "O enunciado aborda a comunicação eficaz com a comunidade para conscientização e prevenção de DSTs, o que se alinha diretamente com a promoção à saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-6",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Doenças Parasitárias e Zoonoses",
-      "confidence": 0.88,
-      "keep_current": false,
-      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
-      "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda as consequências da falta de saneamento básico na saúde pública, focando na prevenção de doenças.",
       "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
-      "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente práticas educativas em saúde, promoção da saúde e consideração dos contextos socioculturais, que são os pilares deste subtópico.",
       "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
-      "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a higiene dos alimentos como medida de prevenção de agravos à saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+      "modulo_slug": "idcap-enfermagem-atencao-basica-saude-da-familia-1778968112153-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a prevenção de problemas bucais, que se enquadra diretamente na promoção da saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-5",
+      "modulo_slug": "idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Medidas de Prevenção e Precaução de Contato",
-      "confidence": 0.85,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "rationale": "O enunciado aborda a classificação do estado nutricional (IMC), que é uma ferramenta de rastreamento e prevenção de agravos à saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-processo-de-enfermagem-1776056021381-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a anamnese, exame físico e coleta de dados, que são etapas fundamentais do Processo de Enfermagem.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na prevenção de DCNTs através de hábitos alimentares, que é o cerne da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a hipertensão arterial como fator de risco cardiovascular, que é uma doença crônica não transmissível.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1780067001671-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a hipertensão arterial, uma doença crônica não transmissível, e sua classificação, que se encaixa melhor neste subtópico do que em prevenção.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066977710-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda doenças relacionadas ao saneamento básico, como leptospirose e hepatite A, que se encaixam melhor em doenças parasitárias e zoonoses do que em promoção à saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a quantidade de sal recomendada por dia, o que se relaciona com a prevenção de agravos à saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância da nutrição para a prevenção de doenças e manutenção da vida, o que se alinha diretamente com a promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado foca na verificação de sinais vitais, coleta de glicemia capilar e medidas antropométricas, sendo a verificação de sinais vitais o ponto central e mais detalhado nas alternativas.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Promoção à Saúde e Prevenção de Agravos\",\"confidence\":1.0,\"rationale\":\"O enunciado aborda diretamente os níveis de prevenção de doenças, com foco na prevenção primária, que se…"
     },
     {
       "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-2",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Verificação de Sinais Vitais",
-      "confidence": 0.92,
-      "keep_current": false,
-      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-3",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
-      "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Saúde da Criança",
-      "confidence": 0.87,
-      "keep_current": false,
-      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Doenças Parasitárias e Zoonoses",
-      "confidence": 0.88,
-      "keep_current": false,
-      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-8",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-9",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Medidas de Prevenção e Precaução de Contato",
-      "confidence": 0.85,
-      "keep_current": false,
-      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067036141-9",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
       "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "rationale": "O enunciado aborda a hipertensão arterial, uma doença crônica não transmissível, e seus fatores de risco e complicações.",
       "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
-      "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "idecan-enfermagem-saude-do-homem-1780067036141-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     },
     {
       "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Verificação de Sinais Vitais",
-      "confidence": 0.92,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a assistência de enfermagem ao idoso, focando em adaptações para garantir conforto, segurança e precisão clínica, o que se alinha com a prevenção de agravos e promoção da saúde nessa faixa etária.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-7",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Imunização",
-      "confidence": 0.92,
-      "keep_current": false,
-      "rationale": "Heurística (imunização): enunciado indica Imunização",
-      "applicable": true,
-      "source": "heuristic"
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "enunciado vazio",
+      "applicable": false,
+      "error": "instruction vazia"
     },
     {
       "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o diabetes mellitus, uma doença crônica não transmissível, detalhando suas causas, consequências e a importância do acompanhamento médico.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado foca na prevenção de problemas de saúde bucal através de cuidados diários, o que se alinha diretamente com o subtópico de Promoção à Saúde e Prevenção de Agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "idib-enfermagem-saude-do-homem-1778934944659-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-6",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Medidas de Prevenção e Precaução de Contato",
-      "confidence": 0.85,
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda diversas doenças crônicas não transmissíveis, saúde mental e ISTs, com foco na observação da população masculina.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a avaliação geriátrica, focando em aspectos de senescência e senilidade, que se relacionam com o envelhecimento e suas particularidades, frequentemente associadas a doenças crônicas não transmissíveis.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda diretamente a educação para a saúde como uma função do técnico de enfermagem, que se enquadra perfeitamente no subtópico de Promoção à Saúde e Prevenção de Agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Imunização",
-      "confidence": 0.92,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "rationale": "O enunciado foca em ações educativas para redução de complicações da hipertensão arterial sistêmica, que é uma condição crônica, abordando o manejo e a adesão ao tratamento, o que se alinha diretamente com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca nas ações de promoção, prevenção e detecção precoce do câncer na Atenção Básica, que são os pilares do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca nas ações de promoção, prevenção e detecção precoce do câncer na Atenção Básica, que são temas centrais do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância da nutrição para a saúde e prevenção de doenças, bem como o papel do técnico de enfermagem na orientação e acompanhamento nutricional.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis\",\"confidence\":0.8,\"rationale\":\"O enunciado descreve uma dieta terapêutica utilizada em condições…"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda recomendações de estilo de vida para pacientes com diabetes, focando em prevenção e promoção da saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1780000630425-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância da nutrição para a promoção da saúde e prevenção de doenças, bem como o papel do técnico de enfermagem nesse contexto.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca no manejo e complicações de uma sonda nasoenteral, incluindo seu deslocamento e a consequente necessidade de intervenção.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda de forma central o desenvolvimento infantil, avaliação pediátrica, procedimentos pediátricos, sinais de alerta em crianças, vacinação infantil e prevenção de acidentes em crianças.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     },
     {
       "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado discute a transição do conceito de saúde e a persistência de um foco curativo em detrimento da prevenção e promoção.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a divulgação de ações preventivas para doenças contagiosas, que é o foco principal do subtópico.",
       "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-1",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
-      "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-2",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a promoção da autonomia, prevenção de agravos, acompanhamento de doenças crônicas e qualidade de vida no cuidado ao idoso, com foco em prevenção de quedas e orientação sobre medicamentos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-6",
+      "modulo_slug": "igeduc-enfermagem-vias-de-administracao-1778968646731-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.7,
+      "keep_current": false,
+      "rationale": "O enunciado aborda uma forma de suporte nutricional que visa garantir a ingesta adequada, prevenindo o agravamento do estado nutricional do paciente.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Imunização",
-      "confidence": 0.92,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (imunização): enunciado indica Imunização",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a educação em saúde e ações educativas do Agente Comunitário de Saúde, focando na orientação sobre vacinação, que é um pilar da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente estratégias de promoção de saúde e prevenção de agravos no contexto da saúde bucal comunitária.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Saúde da Criança",
-      "confidence": 0.87,
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda diretamente a educação em saúde bucal como estratégia de promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca em estratégias para melhorar a adesão ao tratamento e controle de doenças, o que se alinha diretamente com a promoção da saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Segurança do Paciente",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as Metas Internacionais de Segurança do Paciente, com foco na prevenção de infecções e na higienização das mãos, que são componentes centrais da segurança do paciente.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
+      "error": "Resposta Gemini inválida: { \"suggested_subtopico\": \"Doenças Crônicas Não Transmissíveis (DCNT) e suas complicações\", \"confidence\": 0.9, \"rationale\": \"O enunciado aborda o acompanhamento e diagnóstico do Diabetes Mellitus tipo…"
     },
     {
       "modulo_slug": "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as ações de educação em saúde promovidas pelo Agente Comunitário de Saúde, que são pilares da promoção à saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a Terapia Nutricional Parenteral (TNP), que é um tratamento para pacientes com incapacidade de absorção intestinal, frequentemente associada a doenças crônicas não transmissíveis ou condições que afetam o trato gastrointestinal.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a dificuldade na aferição da pressão arterial em um paciente obeso e busca a alternativa correta para realizar o procedimento.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968323839-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o planejamento, acompanhamento e avaliação de ações de saúde, bem como o levantamento de condições de vida e saúde da população, o que se alinha diretamente com a promoção da saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+      "modulo_slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "rationale": "O enunciado aborda o tratamento de diabetes mellitus com medicamentos hipoglicemiantes orais.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Promoção à Saúde e Prevenção de Agravos\",\"confidence\":0.9,\"rationale\":\"O cálculo do IMC é uma ferramenta de rastreamento para identificar riscos à saúde.\",\"keep_current\":false…"
     },
     {
       "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Verificação de Sinais Vitais",
-      "confidence": 0.92,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado foca na orientação sobre hábitos saudáveis e prevenção de comorbidades em pacientes com hipertensão arterial sistêmica.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado discute o acesso à saúde como um pré-requisito para a promoção da saúde e aborda a organização dos serviços de saúde e a postura da equipe, temas centrais da promoção e prevenção.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre ações de prevenção de doenças e promoção à saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-teorias-em-enfermagem-1776056009428-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância do tratamento adequado e da empatia no lidar com o público, o que se alinha com a promoção de um ambiente saudável e a prevenção de conflitos ou agravos interpessoais.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o diabetes mellitus, uma doença crônica não transmissível, e suas particularidades de tratamento com insulina.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca no posicionamento do paciente para administração de dieta enteral e prevenção de broncoaspiração.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a mensuração da pressão venosa jugular, que é um sinal vital.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve o uso de cateter nasal para oxigenoterapia e compara suas vantagens com a máscara facial, focando na administração de oxigênio e seus efeitos no paciente.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma complicação respiratória grave (aspiração pulmonar) durante a nutrição enteral, focando nos sinais clínicos associados a essa dificuldade respiratória.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado trata de um problema de saúde pública relacionado ao saneamento básico e à prevenção de doenças.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na participação ativa do usuário em seu tratamento, que é um pilar do autocuidado e da promoção da saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata diretamente sobre vigilância epidemiológica e notificação compulsória de agravos.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a alimentação enteral e pergunta sobre a comprovação do posicionamento de sonda gástrica/enteral.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda os determinantes sociais da saúde, que são um conceito central na promoção da saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a Educação Permanente em Saúde, que é uma estratégia de promoção e qualificação do cuidado.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "A visita domiciliar para controle de endemias se encaixa na prevenção de agravos e promoção da saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o controle da qualidade da água como medida de saneamento básico e saúde pública, o que se alinha diretamente com a prevenção de agravos e promoção da saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a importância da educação em saúde, educação sexual e educação social como políticas para a redução de problemas de saúde, o que se alinha diretamente com o subtópico de Promoção à Saúde e Prevenção de Agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma estratégia educativa focada na comunidade e em seus entornos, o que se alinha diretamente com a promoção à saúde e prevenção de agravos.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o controle glicêmico e suas metas no manejo do Diabetes Mellitus, uma Doença Crônica Não Transmissível.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a promoção do aleitamento materno e seus benefícios, que se enquadra diretamente na promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a Hipertensão Arterial Sistêmica, uma Doença Crônica Não Transmissível (DCNT), e suas complicações, que se encaixam melhor neste subtópico do que em prevenção geral.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a obesidade como um problema de saúde pública e seus fatores associados, que se enquadra em doenças crônicas não transmissíveis.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Enfermagem do Trabalho",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente as doenças do trabalho e seus fatores de risco ocupacionais.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o Diabetes Mellitus tipo 2, uma Doença Crônica Não Transmissível (DCNT).",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Medidas de Prevenção e Precaução de Contato",
-      "confidence": 0.85,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a articulação de políticas e programas intersetoriais focados em saúde e bem-estar, o que se alinha diretamente com a promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Curativos e Manejo de Feridas",
-      "confidence": 0.87,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
       "keep_current": false,
-      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda orientação preventiva e autocuidado para pé diabético, focando na prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "modulo_slug": "ms-sarmento-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "rationale": "O enunciado descreve a nutrição por sonda, que se relaciona diretamente com a instalação e manejo de sondas.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a avaliação de um recém-nascido em aleitamento materno, focando em aspectos de crescimento e desenvolvimento infantil.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve os sintomas clássicos do Diabetes Mellitus, uma Doença Crônica Não Transmissível.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda as diferenças entre Diabetes Mellitus tipo 1 e tipo 2, que são doenças crônicas não transmissíveis.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda saneamento básico como indicador de qualidade de vida e desenvolvimento, focando em ações essenciais que incluem educação em saúde e promoção de saúde, diretamente ligadas à prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata de uma medida de prevenção de hipertensão arterial, que é um agravo à saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda os diversos tipos de poluição e seus impactos negativos na saúde humana e no meio ambiente, o que se alinha diretamente com a prevenção de agravos à saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563549311-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda valores de referência para glicemia, que é um indicador de saúde e prevenção de agravos como o diabetes.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a classificação do IMC e suas implicações para a obesidade, que é uma Doença Crônica Não Transmissível (DCNT).",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado trata da transmissão de doenças diarreicas agudas, que frequentemente estão associadas a parasitas e contaminação fecal-oral.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.94,
-      "keep_current": true,
-      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente os campos de ação da promoção da saúde conforme a Carta de Ottawa.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente os níveis de prevenção em saúde pública.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado trata do controle de vetores (Aedes aegypti) e suas formas larvais, o que se relaciona diretamente com a prevenção de doenças transmitidas por parasitas e vetores.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-0",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Saúde da Criança",
-      "confidence": 0.87,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a anemia como um problema de saúde e lista estratégias de promoção e prevenção relacionadas à nutrição e suplementação.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
-      "confidence": 0.88,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda o autocuidado para portadores de diabetes, focando em prevenção e manutenção da saúde.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "selecon-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-4",
+      "modulo_slug": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "rationale": "O enunciado discute a definição de saúde pela OMS e introduz o conceito de Determinantes Sociais da Saúde, que são abordados no subtópico de Promoção à Saúde e Prevenção de Agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda cuidados de enfermagem em oncologia, focando na prevenção e manejo de complicações como a mucosite oral, que se alinha com a prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado foca nos cuidados de enfermagem relacionados à instalação, posicionamento, verificação e manutenção de sondas nasogástrica e nasoenteral.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata de consulta de puericultura e acompanhamento do crescimento infantil, temas centrais de Saúde da Criança.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o mecanismo do diabetes mellitus, uma doença crônica não transmissível.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata de um dado epidemiológico (prevalência) e sua relação com a vigilância de doenças.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda diretamente os níveis de prevenção, que é o foco principal do subtópico.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-1",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Curativos e Manejo de Feridas",
-      "confidence": 0.87,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a antropometria, que é uma ferramenta de avaliação e monitoramento da saúde, diretamente ligada à promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2",
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-5",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "rationale": "O enunciado aborda diferentes tipos de alimentação (parenteral e enteral) e suas aplicações, o que se alinha com a prevenção de agravos nutricionais e promoção da saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda alimentação e nutrição, que são pilares da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a prevenção do câncer de mama através de ações educativas e exames preventivos, que são temas centrais deste subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a relação entre saneamento básico e doenças, focando em ações de prevenção e controle de agravos à saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve cuidados específicos com diferentes tipos de estomias e sondas, que se encaixam no manejo e instalação desses dispositivos.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda fatores que influenciam a pressão arterial, tema central em doenças crônicas não transmissíveis como a hipertensão.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-2",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Verificação de Sinais Vitais",
-      "confidence": 0.92,
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda o manejo de pacientes com diarreia, mencionando parasitose e desnutrição, o que se alinha com doenças parasitárias.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda o autocuidado em doenças crônicas, que é um pilar da promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5",
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a insuficiência renal crônica, uma doença crônica não transmissível, e os cuidados de enfermagem relacionados a ela.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na assistência ao paciente diabético na atenção básica, com ênfase em educação em saúde e mudanças de estilo de vida.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda comunicação terapêutica no contexto da adesão ao tratamento de diabetes, focando em educação em saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca em cuidados com recém-nascidos, prematuridade e sinais de alerta neonatais.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado foca na assistência a um paciente hipertenso, abordando monitoramento, adesão ao tratamento e educação em saúde, que são pilares da promoção e prevenção.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a educação em saúde e a troca de informações no contexto da Atenção Básica, que são pilares da promoção à saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda educação em saúde e autocuidado para diabéticos, focando na prevenção de complicações nos pés.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um tipo de dieta, que se enquadra em cuidados nutricionais para promoção da saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado trata de uma recomendação de saúde para o consumo de sal, o que se enquadra diretamente em promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056009428-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a associação de termos técnicos com seus significados, focando em sensações e dificuldades relacionadas ao sistema digestório e à linguagem, o que se alinha com a descrição de funções orgânicas e fisiologia aplicada.",
+      "applicable": true,
+      "source": "gemini"
     },
     {
       "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-7",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "confidence": 0.91,
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda saneamento ambiental, que é um pilar fundamental para a promoção da saúde e prevenção de doenças.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later."
     },
     {
       "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-2",
       "from": "Promoção à Saúde e Prevenção de Agravos",
-      "suggested": "Verificação de Sinais Vitais",
-      "confidence": 0.92,
-      "keep_current": false,
-      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3",
-      "from": "Promoção à Saúde e Prevenção de Agravos",
       "suggested": "Promoção à Saúde e Prevenção de Agravos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata de rastreamento de hipertensão arterial, que é uma ação de prevenção de agravos à saúde.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     }
-  ]
+  ],
+  "generated_at": "2026-07-20T13:11:30.197Z"
 }

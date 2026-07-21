@@ -1,32 +1,29 @@
 {
-  "generated_at": "2026-07-15T18:18:10.298Z",
+  "generated_at": "2026-07-21T01:23:49.235Z",
   "subtopicos_ready": 1,
   "subtopicos_pass": 1,
   "subtopicos_fail": 0,
   "items": [
     {
-      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "subtopico": "Orações coordenadas e subordinadas",
       "registry_status": "applied",
-      "total_slugs": 85,
-      "handcraft_applied": 85,
-      "manifest_slugs": 85,
-      "supabase_found": 85,
-      "golden_v1": 85,
-      "four_slides": 85,
-      "premium_gate_ok": 85,
-      "local_json_count": 329,
+      "total_slugs": 38,
+      "handcraft_applied": 38,
+      "manifest_slugs": 38,
+      "supabase_found": 38,
+      "golden_v1": 38,
+      "four_slides": 38,
+      "premium_gate_ok": 38,
+      "local_json_count": 38,
       "slug_issues": [],
       "pilot_sample": [
-        "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
-        "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
-        "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
-        "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
-        "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6"
+        "apice-ace-pr-oracoes-sabendo-que-o-periodo-composto-por-c-3558979",
+        "apice-acs-pr-oracoes-15-07-2026-19-38-80-98-369-370-apos-3951882"
       ],
-      "pilot_min": 5,
+      "pilot_min": 2,
       "dod_pass": true,
       "dod_notes": [
-        "Piloto humano sugerido: revisar 5 slug(s) no player (≥5%)"
+        "Piloto humano sugerido: revisar 2 slug(s) no player (≥5%)"
       ]
     }
   ]

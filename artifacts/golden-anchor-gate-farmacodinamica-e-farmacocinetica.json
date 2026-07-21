@@ -1,0 +1,30 @@
+{
+  "subtopico": "Farmacodinâmica e Farmacocinética",
+  "pacote_prefix": "farmacodinamica-e-farmacocinetica",
+  "gate": "pass",
+  "handcraft_allowed": true,
+  "cluster_report": "artifacts/farmacodinamica-topic-cluster-report.json",
+  "goldens_needed": 0,
+  "missing": [],
+  "covered": [
+    {
+      "cluster": "Protocolo / administração clínica (EV, infusão)",
+      "golden_file": "questao-premium-idecan-omeprazol-ev-ulcera.json",
+      "path": "examples/questao-premium-idecan-omeprazol-ev-ulcera.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "V/F — ADME e definições PK/PD",
+      "golden_file": "questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+      "path": "examples/questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+      "content_standard_ok": true,
+      "issues": []
+    }
+  ],
+  "warnings": [],
+  "reasons": [
+    "Todos os ramos novo_ramo/coberto com golden presente em examples/."
+  ],
+  "artifact": "artifacts/golden-anchor-gate-farmacodinamica-e-farmacocinetica.json"
+}

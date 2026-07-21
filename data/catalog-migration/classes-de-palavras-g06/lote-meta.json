@@ -1,0 +1,31 @@
+{
+  "lote": "classes-de-palavras-g06",
+  "subtopico": "Classes de palavras",
+  "status": "handcraft",
+  "slugs": [
+    "fgv-acs-pref-classes-assinale-a-opcao-a-seguir-em-que-o-t-3719032",
+    "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+    "vunesp-acs-p-classes-ainda-que-seja-utilizada-frequenteme-3776327",
+    "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
+    "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789284",
+    "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789333",
+    "vunesp-ag-cs-classes-leia-o-trecho-a-seguir-da-cronica-de-3799252",
+    "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085"
+  ],
+  "note": "Fase 0 pipeline Classes de palavras 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+  "golden_reference": "examples/questao-formacao-palavras-siglas.json",
+  "gates": {
+    "questao_readiness": "READY strict-v2-pedagogy",
+    "validate_goldens": "PASS --strict"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/classes-de-palavras-g06.json"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "lote": "lingua-portuguesa-g04",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-19",
+  "subtopico": "Crase",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_crase",
+  "cluster": "Norma — Crase (lote 4/6 · ingestão PDF)",
+  "total": 8,
+  "status": "handcraft",
+  "source": "artifacts/lingua-portuguesa-crase-extracted.json",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "questao-premium-vunesp-portugues-crase-funil",
+  "golden_references": {
+    "eliminacao": "examples/questao-premium-vunesp-portugues-crase-funil.json",
+    "lacunas": "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json"
+  },
+  "slug_anchor_style": {
+    "vunesp-sertaozinho-crase-lacunas-armandinho-3352615": "lacunas",
+    "caderno-pt-crase-erro-acento-segunda-sexta-3374822": "eliminacao",
+    "vunesp-itapevi-crase-pronome-demonstrativo-3419180": "eliminacao",
+    "caderno-pt-crase-solidao-lacunas-3460044": "lacunas",
+    "caderno-pt-crase-pronome-demonstrativo-3554846": "eliminacao",
+    "vunesp-itatiba-crase-lacunas-demencia-3583296": "lacunas",
+    "vunesp-itatiba-crase-lacunas-obras-arte-3583413": "lacunas",
+    "vunesp-osasco-crase-lacunas-tira-3607078": "lacunas"
+  },
+  "guideline": "lib/guidelines/linguaPortuguesa/crase.ts",
+  "slugs": [
+    "vunesp-sertaozinho-crase-lacunas-armandinho-3352615",
+    "caderno-pt-crase-erro-acento-segunda-sexta-3374822",
+    "vunesp-itapevi-crase-pronome-demonstrativo-3419180",
+    "caderno-pt-crase-solidao-lacunas-3460044",
+    "caderno-pt-crase-pronome-demonstrativo-3554846",
+    "vunesp-itatiba-crase-lacunas-demencia-3583296",
+    "vunesp-itatiba-crase-lacunas-obras-arte-3583413",
+    "vunesp-osasco-crase-lacunas-tira-3607078"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g04 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g04.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g04 --strict-v2-pedagogy",
+    "3. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g04 --dry-run --allow-insert",
+    "4. apply com --allow-insert só com pedido explícito"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/lingua-portuguesa-g04.json"
+  }
+}

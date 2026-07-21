@@ -1,0 +1,18 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g07",
+  "exported_at": "2026-07-20T17:01:17.591Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g07/manifest.json"
+  },
+  "slugs": [
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2",
+    "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2"
+  ]
+}

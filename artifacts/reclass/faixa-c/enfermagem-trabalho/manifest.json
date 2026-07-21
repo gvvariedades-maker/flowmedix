@@ -1,9 +1,0 @@
-{
-  "generated_at": "2026-06-16T09:27:26.395Z",
-  "bucket": "Enfermagem do Trabalho",
-  "batch_size": 50,
-  "total": 25,
-  "batch_files": [
-    "artifacts/reclass/faixa-c/enfermagem-trabalho/batch-01.json"
-  ]
-}

@@ -1,0 +1,28 @@
+{
+  "lote": "classes-de-palavras-g12",
+  "subtopico": "Classes de palavras",
+  "status": "handcraft",
+  "slugs": [
+    "apice-ace-pr-classes-leia-o-texto-a-seguir-e-responda-da-3558963",
+    "fgv-ass-ts-p-classes-observe-a-seguinte-frase-a-pessoa-a-3587458",
+    "selecon-ag-p-classes-leia-o-texto-a-seguir-ainda-estou-aq-3649272",
+    "avancasp-ace-classes-nao-podemos-pensar-tanto-nessas-cois-3662937",
+    "apice-ag-adm-classes-leia-o-poema-abaixo-e-responda-a-que-3793483"
+  ],
+  "note": "Fase 0 pipeline Classes de palavras 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "handcraft_at": "2026-07-20",
+  "anchor_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+  "golden_reference": "examples/questao-formacao-palavras-siglas.json",
+  "gates": {
+    "questao_readiness": "READY strict-v2-pedagogy",
+    "validate_goldens": "PASS --strict"
+  },
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/classes-de-palavras-g12.json"
+  }
+}

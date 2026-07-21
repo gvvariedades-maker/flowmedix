@@ -9,7 +9,7 @@
     "subtopico": "Processo de Enfermagem",
     "pedagogical_branch": "sae_documentacao",
     "content_standard": "golden-v1",
-    "family": "conceito",
+    "family": "vf",
     "content_review": {
       "reviewed_at": "2026-07-15",
       "reviewer": "handcraft",
@@ -111,7 +111,7 @@
       },
       "reveal_mode": "tap",
       "steps": [
-        "Ler o comando: julgar cada afirmativa V ou F antes de montar a sequência.",
+        "Ler o comando: julgar cada afirmativa I a IV (V ou F) antes de montar a sequência.",
         "Tema: O registro adequado das informações em prontuários e documentos hospitalares é essencial para garantir a continuidade do",
         "Item 1: “O prontuário do paciente pode ser alterado livremente pelo profissi…” → F (viola integridade/identificação/veracidade).",
         "Item 2: “As anotações de enfermagem devem ser objetivas, claras e registrada…” → V (alinhado à COFEN 358).",

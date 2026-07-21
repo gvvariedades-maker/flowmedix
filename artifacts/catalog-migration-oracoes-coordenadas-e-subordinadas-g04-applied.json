@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:09:39.190Z",
+  "lote": "oracoes-coordenadas-e-subordinadas-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-ana-oracoes-a-construcao-tao-que-imprime-ao-cont-3460173",
+    "avancasp-esc-oracoes-leia-o-texto-a-seguir-para-responder-3826729",
+    "cpcon-uepb-a-oracoes-leia-o-texto-03-para-responder-a-que-4014476",
+    "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913803",
+    "educa-pb-ag-oracoes-leia-o-texto-a-seguir-para-responder-3913759",
+    "fgv-ag-st-pr-oracoes-texto-i-a-escrita-a-nossa-civilizaca-3432856",
+    "instituto-ao-oracoes-o-texto-a-seguir-refere-se-a-questao-3841113",
+    "instituto-ao-oracoes-o-texto-a-seguir-refere-se-a-questao-3841158"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-ana-oracoes-a-construcao-tao-que-imprime-ao-cont-3460173",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-esc-oracoes-leia-o-texto-a-seguir-para-responder-3826729",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-oracoes-leia-o-texto-03-para-responder-a-que-4014476",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ag-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3913803",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ag-oracoes-leia-o-texto-a-seguir-para-responder-3913759",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fgv-ag-st-pr-oracoes-texto-i-a-escrita-a-nossa-civilizaca-3432856",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-oracoes-o-texto-a-seguir-refere-se-a-questao-3841113",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-oracoes-o-texto-a-seguir-refere-se-a-questao-3841158",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

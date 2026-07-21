@@ -12,6 +12,15 @@ Padrão canônico de **conteúdo pedagógico** para handcraft golden-v1 (`exampl
 
 **Implementação:** [`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts) · [`lib/guidelines/`](../lib/guidelines/) · gate [`__tests__/golden-content-standard.test.ts`](../__tests__/golden-content-standard.test.ts)
 
+> **Agente (handcraft / âncora):** este arquivo é o **contrato** do que conta como conteúdo alto nível (slots, fontes, lints). **Não** é o manual completo de autoria.
+>
+> 1. Classificar família → [`.cursor/skills/avant-classify-family/SKILL.md`](../.cursor/skills/avant-classify-family/SKILL.md)
+> 2. Escrever slides → [`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`](../.cursor/skills/avant-golden-anchor-handcraft/SKILL.md) (`logic_flow` primeiro; HARD FAIL + checklist 10/10)
+> 3. Forma / L3 → [`.cursor/skills/avant-json-template/SKILL.md`](../.cursor/skills/avant-json-template/SKILL.md)
+> 4. Gate de ship → `npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy` → `[READY]`
+>
+> **Barra 10/10 ≠ mínimo do lint.** Passar em `lintGoldenContent` (ex.: metade dos distratores em `conceito`/`legis`) **não** fecha handcraft novo. Exija cobertura completa de letras erradas + transferência + fixação portátil (skill §3 / strict-v2). Não altere `content_standard` para `"golden-v2"` — v2 é só o write-spec em §11.
+
 ---
 
 ## 1. North star
@@ -136,18 +145,41 @@ Obrigatório: `reveal_mode: "tap"`, ≥3 `steps` (strings).
 
 Obrigatório: `content`, cada item com `label`, `detail`, **`correct`** (únicos entre itens).
 
-> **Barra de autoria (skills):** cobertura completa de letras erradas + item de transferência. O lint `danger_distractors_coverage` hoje exige metade em `conceito`/`legis` (gate mínimo); handcraft novo deve ir **além** do lint.
+> **Barra 10/10 (autoria) ≠ gate mínimo (lint).**  
+> - **Ship handcraft:** 1 item por **cada** letra errada + ≥1 transferência separada (skill `avant-golden-anchor-handcraft`).  
+> - **Lint `danger_distractors_coverage`:** hoje só exige **metade** em `conceito`/`legis` (VF por romanos). Fechar no mínimo do lint = conteúdo incompleto.  
+> - Com `--strict-v2-pedagogy`: `danger_zone_letter_coverage` + `danger_zone_transfer_missing` elevam a barra automática — use sempre em handcraft novo.
+
+### 5c. Recortes de comando: EXCETO e VF
+
+Comandos que mudam a **gramática** dos slides (não só `meta.family`):
+
+#### EXCETO / INCORRETA / INCORRETO
+
+- `meta.family` costuma ser `certo_errado`, mas o formato é **MCQ A–E com uma exceção**.
+- **`logic_flow`:** identificar o comando → tratar cada distrator como conduta **correta** → isolar a única incorreta.
+- **`danger_zone`:** em cada letra **errada** (distrator), `correct` explica por que aquela alternativa é **certa** na prática; só o card do **gabarito** aponta a falha.
+- **Proibido:** frase-coringa (“errado porque não é a exceção”) ou mesmo `correct` em todos os distratores.
+
+#### VF (afirmativas I–IV)
+
+- Julgar **cada romano** no `logic_flow` e no `concept_map` (1 item por afirmativa quando couber).
+- **Combinar** só depois de I→II→III→IV; letra correta no fluxo.
+- **`danger_zone`:** combinações erradas frequentes + transferência — **não** forçar cards “Letra B/C/D” se a prova é por itens I–IV.
+- Lint `danger_distractors_coverage` em VF checa **afirmativas**, não letras A–E.
+
+**Exemplos mini (estrutura, não copiar texto):** [`reference-exemplos.md`](../docs/skills/avant-golden-anchor-handcraft/reference-exemplos.md).
 
 ### Densidade de card (UI)
 
-Alvo de autoria (player / estudo reverso) — contrato nas skills `avant-golden-anchor-handcraft` §3b:
+Alvo de autoria (player / estudo reverso). Tabela **resumida** aqui; limites por campo (incl. `label`, `correct`, steps) na skill `avant-golden-anchor-handcraft` (seção Densidade) — prevalece a skill em caso de divergência.
 
 | Campo | Alvo | Duro |
 |-------|------|------|
 | `detail` / `steps[]` / `rows[].value` | ≤110 chars | ≤140 |
 | `footer_rule` | ≤90 chars | ≤120 |
 
-1 ideia por string; preferir conduta portátil a “decorar letra”.
+1 ideia por string; preferir conduta portátil a “decorar letra”. Limites **duros** viram `card_density_*` com `--strict-v2-pedagogy`.
 
 ---
 
@@ -163,7 +195,8 @@ Alvo de autoria (player / estudo reverso) — contrato nas skills `avant-golden-
 | `conceito` | 3–6 conceitos | Exclusão por termo-chave |
 | `text_fragment` | caso + dados do fragmento | Ler caso → decisão |
 
-Detalhe por família: Playbook §3.
+**Exemplos mini por recorte (VF + EXCETO):** [`reference-exemplos.md`](../docs/skills/avant-golden-anchor-handcraft/reference-exemplos.md).  
+Detalhe por família: [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) §3.
 
 ---
 
@@ -187,7 +220,7 @@ Além da estrutura, o lint golden-v1 verifica **corretude pedagógica** — defe
 | **Especificidade semântica** | `specificity_semantic` | Slides citam menos de **3 termos** do vocabulário da questão (enunciado **+ alternativa correta**). Mata o "genérico que ecoa 1 palavra". Limiar adaptativo para enunciados curtos. |
 | **Cobertura de distratores** | `danger_distractors_coverage` | Em `conceito`/`legis`, menos da **metade** das letras erradas é ensinada. (Em `vf` a checagem é por afirmativa I–IV, não por letra.) |
 | **Claim↔source binding** | `numeric_claim_unsourced` | Slides afirmam número normativo (dose/intervalo/%/escore) sem ao menos uma `source` substantiva (com `covers`). Vincula o número a uma fonte — não verifica veracidade. |
-| **Pedagogia v2 (opt-in strict)** | `slide_layer_redundancy_*`, `golden_rule_gabarito_spoiler` | Redundância entre camadas; gabarito no `golden_rule` — **error** com `audit:questao-readiness --strict-v2-pedagogy`. |
+| **Pedagogia v2 (opt-in strict)** | `slide_layer_redundancy_*`, `golden_rule_gabarito_spoiler`, `card_density_*`, `danger_zone_letter_coverage`, `danger_zone_transfer_missing`, `logic_flow_fixation_missing` | Redundância entre camadas; spoiler no `golden_rule`; densidade §3b (limites duros); cobertura completa de letras no `danger_zone` compare + transferência; fixação portátil no último step MCQ — **error** com `audit:questao-readiness --strict-v2-pedagogy`. |
 
 A extração de gabarito lê **campos estruturados** (não JSON concatenado), evitando que o `"…gabarito."` de um item case com o `"Letra X"` do distrator seguinte. A especificidade e o claim‑source leem apenas os **valores string** dos slides (ignoram chaves do JSON). Implementação: `lintGabaritoConsistency`, `lintLogicFlowRecycling`, `lintClaimSourceBinding` + checagens em `lintSlidePackage` ([`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts)).
 
@@ -195,33 +228,66 @@ A extração de gabarito lê **campos estruturados** (não JSON concatenado), ev
 
 ---
 
-## 8. Builders (legado — não usar em produção nova)
+## 7c. Figuras no enunciado
 
-> **Decisão 2026-06-27:** produção = handcraft por slug. Ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md).
+Quando o caderno traz tirinha, charge, cartaz ou figura tipográfica:
 
-| Aspecto | Handcraft (produção) | Builder (legado) |
-|---------|----------------------|------------------|
-| Procedimento | [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | Deprecado — re-handcraft |
-| Gramática de slots | 100% | 100% (quando existia) |
-| Fontes | `meta.sources[]` por revisão | `lib/guidelines/*` ou strings embutidas |
-| `content_standard` | `golden-v1` obrigatório | Não emitia golden-v1 |
-| Revisão | Item a item | Amostra ~5% |
+| Caminho | JSON | Gate |
+|---------|------|------|
+| **Raster** | `figure_policy: "required"` + `figures[]` (WebP, bucket `questao-figures`) | `l2_missing_figure` se URL inválida |
+| **Transcrição** | `figure_policy: "transcribed"` + `text_fragment` fiel (≥20 chars) | `l2_missing_figure` se fragmento vazio |
+| **Sem visual** | Omitir `figure_policy` | — |
 
-Handcraft **não inventa** número normativo — exige `meta.sources` tier A/B com `covers` adequado.
+- **Proibido:** publicar “figura/tirinha acima” sem asset nem transcrição.
+- **Player:** `figures[]` → `text_fragment` → `instruction` (não misturar figura em `text_fragment` como `<img>`).
+- CLI: `npm run figures:upload`, `figures:audit`.
+- ADR: [`DECISAO_QUESTAO_FIGURES.md`](DECISAO_QUESTAO_FIGURES.md).
+
+---
+
+## 8. Legado (builder)
+
+Produção atual = **handcraft golden-v1 por slug** — ver [`DECISAO_TRILHO_A_UNICO.md`](DECISAO_TRILHO_A_UNICO.md) e runbook [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md). Builder/hybrid (`catalog:upgrade-premium`, `ai:generate`) **não** entram em conteúdo novo; subtópicos legados exigem re-handcraft. Handcraft **não inventa** número normativo — exige `meta.sources` tier A/B com `covers` adequado.
 
 ---
 
 ## 9. Gates de publicação
 
-| Gate | O quê |
-|------|--------|
-| `QuestaoCompletaSchema` | Forma, limites, ícones |
-| `premium-no-stub` | Sem hybrid genérico |
-| `lintGoldenContent` | Quando `content_standard: golden-v1` |
-| `lintVitalsGoldenContent` | SV golden-v1: gabarito, `sv_kind`, compatibilidade molde |
-| Revisão humana | Fonte + vigência assinada em `content_review` |
+### Ship handcraft novo (obrigatório)
 
 ```bash
+npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy
+```
+
+Critério: **`[READY]`** + `ready_100: true`. Este é o gate de **conteúdo pedagógico** para handcraft e âncoras novas.
+
+### Camadas (ordem)
+
+| Camada | Gate | Bloqueia ship? |
+|--------|------|----------------|
+| L1 forma | `QuestaoCompletaSchema` | Sim |
+| L1 premium | `premium-no-stub` / `premiumGate` | Sim (Laboratório / apply) |
+| L2 conteúdo (base) | `lintGoldenContent` | Avisos por padrão; não substitui strict-v2 |
+| **L2 conteúdo (ship)** | `audit:questao-readiness --strict-v2-pedagogy` | **Sim** — eleva §7b a **error** |
+| SV bespoke | `lintVitalsGoldenContent` | Sim quando molde SV |
+| Revisão humana | `content_review` + A4 se `risk: alto` | Sim em dose/conduta/divergência |
+
+### Lint base vs strict-v2 (resumo)
+
+| Regra | Só `lintGoldenContent` | Com `--strict-v2-pedagogy` |
+|-------|------------------------|----------------------------|
+| `danger_distractors_coverage` | Metade das letras (`conceito`/`legis`) | + cobertura completa (`danger_zone_letter_coverage`) |
+| Transferência no `danger_zone` | Não exige | `danger_zone_transfer_missing` → error |
+| Fixação portátil (`Em similares:`) | Não exige | `logic_flow_fixation_missing` → error |
+| Spoiler no `golden_rule` | Warn | `golden_rule_gabarito_spoiler` → error |
+| Densidade §5 | Soft | `card_density_*` → error (limites duros) |
+
+Tabela completa lint vs humano: [`reference-gates.md`](../docs/skills/avant-golden-anchor-handcraft/reference-gates.md).
+
+### Comandos complementares
+
+```bash
+npm run validate:goldens -- --lote=<lote> --strict   # lote / examples
 npm test -- __tests__/golden-content-standard.test.ts
 ```
 
@@ -236,31 +302,16 @@ npm test -- __tests__/golden-content-standard.test.ts
 
 ---
 
-## 11. Write spec golden-v2 (contrato de escrita)
+## 11. Nota: write-spec `golden-v2` (≠ conteúdo)
 
-**Distinto** de `meta.content_standard: "golden-v1"` nos goldens de referência em `examples/`.
+**Não confundir** com `meta.content_standard: "golden-v1"` (este doc).
 
-| Camada | O que é | Onde |
-|--------|---------|------|
-| **golden-v1** | Barra de conteúdo pedagógico (família, fontes, lint) | `meta.content_standard` nos examples |
-| **golden-v2** | Pipeline de escrita unificado | `lib/questaoSpec/validateQuestaoForWrite.ts` |
+| Camada | O que é |
+|--------|---------|
+| **golden-v1** | Barra de **conteúdo** pedagógico (família, fontes, slots, lint §7b) |
+| **golden-v2** | Pipeline **técnico** de escrita (Zod + premium gate + risk score) — **não** alterar `content_standard` |
 
-### Pipeline (ordem fixa)
-
-1. Bloqueio TecConcursos  
-2. `normalizeQuestaoSlideArrays` + `QuestaoCompletaSchema`  
-3. **Premium gate** (`premiumGate.ts`) — stubs + contrato de molde bespoke  
-4. **Lint golden-v1** — só se `meta.content_standard = golden-v1` (avisos, não bloqueia por padrão)  
-5. **Risk score** (`riskScoring.ts`) — classifica `baixo|medio|alto`; gate de apply opt-in via `riskApprovalGate` — ver [`DECISAO_AUTO_APROVACAO_RISCO.md`](DECISAO_AUTO_APROVACAO_RISCO.md)
-
-### Onde roda
-
-- **Laboratório** — bloqueia publicação em erros do premium gate  
-- **`POST /api/admin/questions`** — mesma regra  
-- **`POST /api/validate-question`** — mesma regra  
-- **`catalog:apply-lote`** — premium gate no apply (export usa Zod sem gate); risk gate opt-in
-
-Implementação: [`lib/questaoSpec/`](../lib/questaoSpec/) · testes [`__tests__/lib/questaoSpec/`](../__tests__/lib/questaoSpec/) · risco [`lib/catalogMigration/riskScoring.ts`](../lib/catalogMigration/riskScoring.ts)
+Implementação: [`lib/questaoSpec/validateQuestaoForWrite.ts`](../lib/questaoSpec/validateQuestaoForWrite.ts) · risco/A4: [`DECISAO_AUTO_APROVACAO_RISCO.md`](DECISAO_AUTO_APROVACAO_RISCO.md) · testes: [`__tests__/lib/questaoSpec/`](../__tests__/lib/questaoSpec/).
 
 ---
 
@@ -269,3 +320,6 @@ Implementação: [`lib/questaoSpec/`](../lib/questaoSpec/) · testes [`__tests__
 - [`examples/questao-premium-cpcon-imunizacao-intervalos-vf.json`](../examples/questao-premium-cpcon-imunizacao-intervalos-vf.json) — piloto GOLDEN v1 completo
 - [`lib/validations.ts`](../lib/validations.ts) — `ContentSourceSchema`, `ContentReviewSchema`
 - [`.cursor/rules/avant-agent-json.mdc`](../.cursor/rules/avant-agent-json.mdc) — JSON para agentes
+- [`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`](../.cursor/skills/avant-golden-anchor-handcraft/SKILL.md) — autoria (family → âncora → slots; barra 10/10)
+- [`docs/skills/avant-golden-anchor-handcraft/reference-exemplos.md`](../docs/skills/avant-golden-anchor-handcraft/reference-exemplos.md) — mini VF + EXCETO
+- [`.cursor/skills/avant-classify-family/SKILL.md`](../.cursor/skills/avant-classify-family/SKILL.md) — funil `meta.family` antes de escrever slides

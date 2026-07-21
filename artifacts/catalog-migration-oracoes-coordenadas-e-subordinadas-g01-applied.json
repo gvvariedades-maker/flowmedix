@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:07:30.121Z",
+  "lote": "oracoes-coordenadas-e-subordinadas-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-ace-pr-oracoes-sabendo-que-o-periodo-composto-por-c-3558979",
+    "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793451",
+    "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037413",
+    "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037421",
+    "cpcon-uepb-a-oracoes-leia-o-texto-3-para-responder-a-ques-3483809",
+    "cpcon-uepb-a-oracoes-utilize-o-texto-01-para-responder-a-3598926",
+    "educa-pb-acd-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3746572",
+    "instituto-ao-oracoes-leia-o-texto-a-seguir-para-responder-3840852"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-ace-pr-oracoes-sabendo-que-o-periodo-composto-por-c-3558979",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793451",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037413",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037421",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-oracoes-leia-o-texto-3-para-responder-a-ques-3483809",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-oracoes-utilize-o-texto-01-para-responder-a-3598926",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-acd-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3746572",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-oracoes-leia-o-texto-a-seguir-para-responder-3840852",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

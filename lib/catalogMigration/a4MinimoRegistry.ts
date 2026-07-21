@@ -25,6 +25,7 @@ import { BACTERIANAS_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/bacterianas
 import { CRIANCA_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/criancaA4Minimo';
 import { PROCESSO_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/processoA4Minimo';
 import { VIAS_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/viasA4Minimo';
+import { CURATIVOS_A4_MINIMO_CONFIG } from '@/lib/catalogMigration/curativosA4Minimo';
 import type { RiskResult } from '@/lib/catalogMigration/riskScoring';
 
 /** Pacotes com A4-mínimo ligado (expandir nas ondas). */
@@ -43,6 +44,7 @@ export const A4_MINIMO_PACKAGES: readonly A4MinimoPackageConfig[] = [
   BACTERIANAS_A4_MINIMO_CONFIG,
   PROCESSO_A4_MINIMO_CONFIG,
   FERIDAS_A4_MINIMO_CONFIG,
+  CURATIVOS_A4_MINIMO_CONFIG,
   PROCESSAMENTO_A4_MINIMO_CONFIG,
   TRABALHO_A4_MINIMO_CONFIG,
 ];

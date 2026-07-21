@@ -1,0 +1,49 @@
+{
+  "lote": "lingua-portuguesa-g06",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-19",
+  "subtopico": "Crase",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_crase",
+  "cluster": "Norma — Crase (lote 6/6 · fechamento PDF 45/45)",
+  "total": 5,
+  "status": "handcraft",
+  "source": "artifacts/lingua-portuguesa-crase-extracted.json + PDF q401-600",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "questao-premium-vunesp-portugues-crase-funil",
+  "golden_references": {
+    "eliminacao": "examples/questao-premium-vunesp-portugues-crase-funil.json",
+    "lacunas": "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json"
+  },
+  "slug_anchor_style": {
+    "cebraspe-verissimo-crase-vf-itens-3739266": "eliminacao",
+    "avancasp-crase-facultativo-evidencias-3951800": "eliminacao",
+    "epice-crase-adultizacao-regencia-3951857": "eliminacao",
+    "epice-crase-facultativo-pestana-3951877": "eliminacao",
+    "caderno-pt-crase-penha-escrever-caneta": "eliminacao"
+  },
+  "guideline": "lib/guidelines/linguaPortuguesa/crase.ts",
+  "slugs": [
+    "cebraspe-verissimo-crase-vf-itens-3739266",
+    "avancasp-crase-facultativo-evidencias-3951800",
+    "epice-crase-adultizacao-regencia-3951857",
+    "epice-crase-facultativo-pestana-3951877",
+    "caderno-pt-crase-penha-escrever-caneta"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g06 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g06.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g06 --strict-v2-pedagogy",
+    "3. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g06 --dry-run --allow-insert",
+    "4. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Penha (CartaCapital): caderno Tec não expõe tec_id isolado — slug sem número Tec.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/lingua-portuguesa-g06.json"
+  }
+}

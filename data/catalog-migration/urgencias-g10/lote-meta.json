@@ -15,5 +15,11 @@
   "anchors_used": [
     "examples/questao-premium-admtec-urgencias-fratura-exposta-imobilizacao.json"
   ],
-  "notes": "g10 EXCETO — TCE primária · objeto perfurante · fratura exposta fêmur · manobra cabeça-queixo · IAM oxigênio · triagem acolhimento · Glasgow EXCETO · ABCDE INCORRETA"
+  "notes": "g10 EXCETO — TCE primária · objeto perfurante · fratura exposta fêmur · manobra cabeça-queixo · IAM oxigênio · triagem acolhimento · Glasgow EXCETO · ABCDE INCORRETA",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

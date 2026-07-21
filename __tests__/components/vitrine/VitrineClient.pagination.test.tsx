@@ -35,4 +35,13 @@ describe('VitrineClient paginação', () => {
     expect(source).not.toContain('MOBILE_MAIN_SCROLL_PADDING');
     expect(source).not.toMatch(/calc\(5rem/);
   });
+
+  it('hub de disciplina esconde o catálogo até escolher', () => {
+    expect(source).toContain('isVitrineDisciplineHubMode');
+    expect(source).toContain('showSubjectCatalog');
+    expect(source).toContain('hubMode');
+    expect(source).toMatch(/!hubMode\s*\?\s*\(\s*<VitrineToolbar/);
+    expect(source).toContain("Vitrine de disciplinas");
+    expect(source).toContain('max-w-none');
+  });
 });

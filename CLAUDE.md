@@ -1,6 +1,29 @@
 # AVANT — Guia de onboarding (IA e devs)
 
-Leitura estimada: **~5 minutos**. Este arquivo é a referência canônica para não quebrar padrões do projeto. Para aprofundar, use o mapa em [Referências](#referências).
+Leitura estimada: **~5 min** (atalho + um perfil) · **~30–40 min** (arquivo inteiro). Este arquivo é a referência canônica para não quebrar padrões do projeto. Para aprofundar, use o mapa em [Referências](#referências).
+
+## Atalhos por perfil
+
+| Perfil | Leia primeiro | Depois |
+|--------|---------------|--------|
+| **Iniciante** | Este bloco → [§1 Produto](#1-visão-geral-do-produto-e-stack) → [§8 NeuroSlides](#8-sistema-neuroslides) → [§10 Nunca fazer](#10-o-que-nunca-fazer) | `README.md` (instalar) · [`docs/PREMIUM_QUESTAO.md`](docs/PREMIUM_QUESTAO.md) |
+| **Handcraft / conteúdo** | [Fontes de verdade](#fontes-de-verdade-código) (tabela abaixo) → [§8](#8-sistema-neuroslides) → [§9 Subtópicos](#9-subtópicos-válidos) | [`docs/PIPELINE_COMPLETO_CONVERSA.md`](docs/PIPELINE_COMPLETO_CONVERSA.md) · [`docs/HANDCRAFT_CONVERSA.md`](docs/HANDCRAFT_CONVERSA.md) · [`handcraft-registry.json`](data/catalog-migration/handcraft-registry.json) |
+| **Código / app** | [§2 Arquitetura](#2-padrões-arquiteturais-obrigatórios) → [§5 Cache](#5-regras-de-cache) → [§7 Zod](#7-validação-zod) | [`lib/cache.ts`](lib/cache.ts) · [`lib/validations.ts`](lib/validations.ts) · [`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md) |
+
+### O que pedir ao Agent (Cursor)
+
+| Objetivo | Escreva na conversa |
+|----------|---------------------|
+| Subtópico novo ou continuar lote | `Pipeline completo: <Subtópico canônico>` ou `Handcraft: <Subtópico> gNN` |
+| Paridade + L3 bespoke + SDK (programa completo) | `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: SUBTÓPICO: <Subtópico>` — [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](docs/PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
+| Continuar 1 unidade (run-state) | `Continuar pipeline: <Subtópico>` + `@artifacts/pipeline-run-state-*.json` |
+| Só qualidade (já applied 100%) | `Qualidade vendável: <Subtópico>` |
+| Moldes antes do 1º lote | `Mapeamento L3: <Subtópico>` |
+| Uma questão quebrada | `Handcraft: <Subtópico>` + linha `Slug: ...` |
+| Polish UI (vitrine, player, dashboard) | `Visual:` · `Polish vitrine` · `Polish player` · `craft UI` |
+| Feature de UI / bug no app | Descreva a tela + anexe arquivos; **não** use trigger de handcraft |
+
+**Triggers completos:** [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) · [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) · [`quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) · [`avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc)
 
 ## Comandos rápidos
 
@@ -18,6 +41,9 @@ npm run build            # validate:env + next build
 | `npm run enrich:puncao-guideline-meta -- --lote=<lote> --write` | Punção — Anvisa + Potter 11ª ed. + COFEN 358 |
 | `npm run handcraft:puncao-venosa-e-cuidados-com-cateteres-g01` | Punção g01 (`puncao_flebite`) |
 | `npm run catalog:apply-lote -- --lote=<lote> --apply` | Apply Supabase (somente com pedido explícito) |
+| `npm run pipeline:next-unit -- --subtopico="..."` | Próxima unidade + run-state (anti-estouro) |
+| `npm run pipeline:sdk-check` | Verifica `@cursor/sdk` + `CURSOR_API_KEY` — [`PIPELINE_SDK_SETUP.md`](docs/PIPELINE_SDK_SETUP.md) |
+| `npm run pipeline:orchestrate -- --subtopico="..." --sdk --max-units=1` | Worker Cursor SDK (1 unidade) — [`PIPELINE_ORCHESTRATOR.md`](docs/PIPELINE_ORCHESTRATOR.md) |
 
 Ver playbook: [`data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json`](data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuidados-com-cateteres.json)
 
@@ -32,7 +58,7 @@ Ver playbook: [`data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuida
 | **Decisão handcraft único** | [`docs/DECISAO_TRILHO_A_UNICO.md`](docs/DECISAO_TRILHO_A_UNICO.md) |
 | Pacote premium (checklist + legado) | [`docs/PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) |
 | Golden no catálogo inteiro (programa) | [`docs/GOLDEN_ROLLOUT_CATALOGO.md`](docs/GOLDEN_ROLLOUT_CATALOGO.md) |
-| **Taxonomia** (`Classify: <bucket>`) | [`docs/TAXONOMIA_MODEL.md`](docs/TAXONOMIA_MODEL.md) · [`docs/TAXONOMIA_CONVERSA.md`](docs/TAXONOMIA_CONVERSA.md) |
+| **Taxonomia** (`Classify: <bucket>` · `Taxonomy gate: <subtópico>` · `Fechar taxonomia: <subtópico>`) | [`docs/TAXONOMIA_MODEL.md`](docs/TAXONOMIA_MODEL.md) · [`docs/TAXONOMIA_CONVERSA.md`](docs/TAXONOMIA_CONVERSA.md) · rule [`.cursor/rules/taxonomy-classify.mdc`](.cursor/rules/taxonomy-classify.mdc) |
 | **Handcraft golden-v1** (runbook operacional) | [`docs/GOLDEN_HANDCRAFT_MODEL.md`](docs/GOLDEN_HANDCRAFT_MODEL.md) |
 | **Nova conversa handcraft** (`Handcraft: <subtópico>`) | [`docs/HANDCRAFT_CONVERSA.md`](docs/HANDCRAFT_CONVERSA.md) |
 | **Qualidade vendável** (L1–L6, modelo híbrido) | [`docs/QUALITY_LAYERS_MODEL.md`](docs/QUALITY_LAYERS_MODEL.md) · ADR [`docs/DECISAO_QUALITY_HIBRIDA.md`](docs/DECISAO_QUALITY_HIBRIDA.md) |
@@ -299,8 +325,6 @@ proxy.ts                # Auth na borda (Next 16)
 | `/api/pagamentos/webhook` | Stripe concursos |
 | `/convite/[token]` | Resgate de convite |
 | `/analytics` | Meu desempenho |
-
-> **Nota:** O [`README.md`](README.md) ainda menciona `(auth)` e `/study` — no código atual auth está em rotas soltas e estudo em `(dashboard)/estudar`.
 
 ---
 
@@ -708,7 +732,7 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 - ✗ `danger_zone` sem `content`; `golden_rule` sem `content` nem `rows`
 - ✗ **Reciclar conteúdo entre alternativas/questões** — cada `danger_zone.items[].correct` deve explicar a alternativa daquele card; dois itens não podem repetir a mesma justificativa (gate `detectDuplicateDangerJustifications` em `lib/catalogMigration/slideContract.ts`)
 - ✗ **Vazar tema de outro ramo** — vocabulário como `bundle`/`IPCS`/`CVC`/`barreira estéril máxima` só se o enunciado ancorar o tema (`detectSlideTopicDrift`)
-- ✗ **EXCETO com frase-coringa** — no comando EXCETO/INCORRETA, cada distrator explica por que é conduta correta; só o card do gabarito aponta a exceção (nunca usar o texto do gabarito como base para todas as letras)
+- ✗ **Publicar “figura/tirinha acima” sem asset** — usar `figures[]` ou `figure_policy: transcribed` + `text_fragment` (gate `l2_missing_figure`)
 
 ### Workflow (agentes e devs)
 
@@ -738,8 +762,12 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`CONTINUOUS_QUALITY_RUNBOOK.md`](docs/CONTINUOUS_QUALITY_RUNBOOK.md) | Ops diária — `audit:subtopico-health` |
 | [`RUNBOOK_ERROR_REPORT_TRIAGE.md`](docs/RUNBOOK_ERROR_REPORT_TRIAGE.md) | Triagem P0/P1 e repair pós-publicação |
 | [`AVANT_AGENT_SOURCES.md`](docs/AVANT_AGENT_SOURCES.md) | Índice para agente de questões |
+| [`LINGUA_PORTUGUESA_CLASSIFICACAO.md`](docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md) | Cards vitrine PT, cluster Tec, handcraft |
+| [`LINGUA_PORTUGUESA_ELIAS_METODO.md`](docs/LINGUA_PORTUGUESA_ELIAS_METODO.md) | Persona morfossintaxe Gran (Elias) — M01–M16, fontes, scripts |
+| [`LINGUA_PORTUGUESA_GUIDELINES.md`](docs/LINGUA_PORTUGUESA_GUIDELINES.md) | Guidelines P0 PT (crase, colocação) |
 | [`AVANT_AGENT_PROMPT_EXPORT.md`](docs/AVANT_AGENT_PROMPT_EXPORT.md) | System prompt exportável (agente externo) |
 | [`JSON_FORMAT_SEMANTICO.md`](docs/JSON_FORMAT_SEMANTICO.md) | Formato enxuto vs legado |
+| [`LEGADO_INDEX.md`](docs/LEGADO_INDEX.md) | Índice de docs históricos — **não usar em produção nova** |
 | [`VALIDACAO_ZOD.md`](docs/VALIDACAO_ZOD.md) | Validação detalhada |
 | [`SISTEMA_CACHE.md`](docs/SISTEMA_CACHE.md) | Cache aprofundado (cuidado com APIs obsoletas) |
 | [`SISTEMA_TEMAS_UNICOS.md`](docs/SISTEMA_TEMAS_UNICOS.md) | Temas por slide |
@@ -755,10 +783,16 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | Skill | Quando usar |
 |-------|-------------|
 | [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md) | Melhorar visual de componentes/telas (vitrine, player, dashboard); tokens editorial + cyber |
+| [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](.cursor/skills/avant-neuroslides-visual/SKILL.md) | Design visual dos NeuroSlides para retenção (gesto = decisão); inspiração ≠ cópia de feed; pós-brief / molde |
 | [`.cursor/skills/avant-json-template/SKILL.md`](.cursor/skills/avant-json-template/SKILL.md) | Gerar/editar JSON de questões e NeuroSlides |
-| [`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`](.cursor/skills/avant-golden-anchor-handcraft/SKILL.md) | Handcraft L2: family → âncora → slots por slide |
-| [`.cursor/skills/professor-para-concurso/SKILL.md`](.cursor/skills/professor-para-concurso/SKILL.md) | Tom de professor para comentários e estudo reverso |
-| [`.cursor/skills/ebook-enfermagem-premium/SKILL.md`](.cursor/skills/ebook-enfermagem-premium/SKILL.md) | Ebooks HTML offline (fora do app Next) |
+| [`.cursor/skills/avant-classify-family/SKILL.md`](.cursor/skills/avant-classify-family/SKILL.md) | Classificar `meta.family` (funil 7 famílias); fonte Git `docs/skills/` + `npm run sync:skills` — funil canônico em `lib/catalogMigration/classifyFamily.ts` |
+| [`.cursor/skills/avant-golden-anchor-handcraft/SKILL.md`](.cursor/skills/avant-golden-anchor-handcraft/SKILL.md) | Handcraft L2: após `meta.family` — âncora → slots por slide |
+| [`.cursor/skills/avant-golden-anchor-bootstrap/SKILL.md`](.cursor/skills/avant-golden-anchor-bootstrap/SKILL.md) | Antes do g01: criar golden âncoras em `examples/` (agente na frente) + `audit:golden-anchor-gate` |
+| [`.cursor/skills/professor-para-concurso/SKILL.md`](.cursor/skills/professor-para-concurso/SKILL.md) | Tom de professor (enfermagem) para comentários e estudo reverso |
+| [`.cursor/skills/professor-lingua-portuguesa-concurso/SKILL.md`](.cursor/skills/professor-lingua-portuguesa-concurso/SKILL.md) | Prof. Dr. PT + bancas; handcraft Língua Portuguesa |
+| [`.cursor/skills/professor-elias-santana-metodo/SKILL.md`](.cursor/skills/professor-elias-santana-metodo/SKILL.md) | Morfossintaxe Gran (Elias): pergunta-teste, M01–M16 — ver [`docs/LINGUA_PORTUGUESA_ELIAS_METODO.md`](docs/LINGUA_PORTUGUESA_ELIAS_METODO.md) |
+| [`.cursor/skills/brief-lingua-portuguesa/SKILL.md`](.cursor/skills/brief-lingua-portuguesa/SKILL.md) | Brief L3 + metáforas / decisão genérico vs bespoke (Português) |
+| [`.cursor/skills/brief-enfermagem/SKILL.md`](.cursor/skills/brief-enfermagem/SKILL.md) | Brief L3 orquestrador (41 subtópicos TE) — Fase 3b / gates / handoff moldes |
 
 ### Regras Cursor (não duplicar aqui)
 
@@ -767,12 +801,16 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 - [`.cursor/rules/handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) — trigger `Handcraft: <subtópico>`
 - [`.cursor/rules/quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) — trigger `Qualidade vendável: <subtópico>`
 - [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) — trigger `Pipeline completo: <subtópico>`
+- [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) — trigger `Pipeline + paridade Adolescente + L3 bespoke + orquestrador:`
 - [`.cursor/rules/paridade-adolescente.mdc`](.cursor/rules/paridade-adolescente.mdc) — trigger `Paridade Adolescente: <subtópico>`
 - [`.cursor/rules/l3-mapeamento.mdc`](.cursor/rules/l3-mapeamento.mdc) — trigger `Mapeamento L3: <subtópico>`
+- [`.cursor/rules/avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) — trigger `Visual:` / `Polish vitrine` / `Polish player` / `craft UI`
 - [`docs/cursor/l3-mapeamento.mdc`](docs/cursor/l3-mapeamento.mdc) — cópia versionada do mapeamento L3
+- [`docs/cursor/avant-ui-visual.mdc`](docs/cursor/avant-ui-visual.mdc) — cópia versionada da rule UI visual
 - [`docs/cursor/avant-agent-json.mdc`](docs/cursor/avant-agent-json.mdc) — cópia versionada da rule de JSON (copiar para `.cursor/rules/` se faltar no clone)
 - [`docs/cursor/quality-vendavel.mdc`](docs/cursor/quality-vendavel.mdc) — cópia versionada da rule vendável
 - [`docs/cursor/pipeline-completo.mdc`](docs/cursor/pipeline-completo.mdc) — cópia versionada pipeline completo
+- [`docs/cursor/handcraft-conversa.mdc`](docs/cursor/handcraft-conversa.mdc) — cópia versionada handcraft Fase 1
 - [`docs/PROMPT_PARIDADE_ADOLESCENTE.md`](docs/PROMPT_PARIDADE_ADOLESCENTE.md) · [`docs/cursor/paridade-adolescente.mdc`](docs/cursor/paridade-adolescente.mdc) — paridade pedagógica proporcional
 
 ### Outros

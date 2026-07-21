@@ -1,0 +1,49 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "Princípios SUS + educação em saúde + prevenção (g02)",
+  "total": 8,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4": "promocao_educacao_prevencao",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2": "promocao_educacao_prevencao",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6": "promocao_educacao_prevencao",
+    "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6": "promocao_educacao_prevencao",
+    "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3": "promocao_educacao_prevencao",
+    "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3": "promocao_principios_direitos",
+    "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1": "promocao_educacao_prevencao",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6": "promocao_educacao_prevencao"
+  },
+  "slugs": [
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+    "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6",
+    "copose-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
+    "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
+    "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g02 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g02/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g02 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g02 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g02 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g02 --apply (só quando pedido)"
+  ],
+  "next_lote": "promocao-a-saude-e-prevencao-de-agravos-g03 — níveis prevenção + vigilância + educação ACS (~8 slugs)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g02.json"
+  }
+}

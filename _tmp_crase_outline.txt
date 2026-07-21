@@ -1,0 +1,12 @@
+﻿0 # BRIEF DE VARIANTES ù Crase / pt_crase
+16 ## 0. QuestÒo Ôncora
+55 ## 1. Metßfora do pacote
+63 ## 2. Slide 1 ù `concept_map`
+105 ## 3. Slide 2 ù `golden_rule`
+145 ## 4. Slide 3 ù `logic_flow`
+185 ## 5. Slide 4 ù `danger_zone`
+222 ## 6. Contrato de inferÛncia
+245 ## 7. Exemplo JSON mÝnimo
+333 ## 8. Anti-padr§es deste pacote
+348 ## 9. CritÚrios de aceite (DoD) ù Gate Fase 3b
+367 ## Handoff

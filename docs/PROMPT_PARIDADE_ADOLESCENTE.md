@@ -86,7 +86,9 @@ Humano `handcraft-qc` + `a4_human_notes` **somente** quando:
 | `Paridade Adolescente: <subtópico>` | Pacote já `applied` ou `production_ready` — fechar gaps pedagógicos + relatório |
 | `Paridade Adolescente: <subtópico>` + `Só onda pedagógica` | Pular handcraft se 100% applied; executar Fases 0b + 1b + 2 + relatório |
 | `Pipeline + paridade Adolescente: <subtópico>` | Pacote incompleto — pipeline completo + paridade na mesma conversa |
+| **`Pipeline + paridade Adolescente + L3 bespoke + orquestrador: <subtópico>`** | Bootstrap IDE + workers SDK — [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
 | **`Pipeline + paridade Adolescente + L3 bespoke: <subtópico>`** | **Fase 0b obrigatória** — React 4/4 em ramos fortes antes do ship |
+| **`Pipeline + paridade Adolescente + L3 bespoke + orquestrador: <subtópico>`** | Bootstrap IDE + workers SDK — [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
 | `L3 bespoke: <subtópico>` | Só implementação VARIANT_MOLDS (conversa 2 do fluxo 3-passos) |
 | `Mapeamento L3: <subtópico>` (antes) | Se ainda não existem ramos/briefs/moldes — ver [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) |
 

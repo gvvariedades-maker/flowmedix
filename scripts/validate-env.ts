@@ -62,4 +62,11 @@ if (hasSentryDsn) {
   console.log('ℹ️  Sentry desativado (defina SENTRY_DSN ou NEXT_PUBLIC_SENTRY_DSN para habilitar; app usa /api/client-error).');
 }
 
+const cursorKey = process.env.CURSOR_API_KEY?.trim();
+if (cursorKey) {
+  console.log('✅ CURSOR_API_KEY configurada (pipeline:orchestrate --sdk)');
+} else {
+  console.log('ℹ️  CURSOR_API_KEY ausente (opcional; necessária para npm run pipeline:orchestrate -- --sdk) — docs/PIPELINE_SDK_SETUP.md');
+}
+
 console.log('✅ Variáveis de ambiente OK');

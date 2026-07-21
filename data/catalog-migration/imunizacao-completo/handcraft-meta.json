@@ -736,7 +736,7 @@
     }
   },
   "total_slugs_estimate": 575,
-  "updated_at": "2026-07-03",
+  "updated_at": "2026-07-19",
   "anchor_glob": "examples/questao-premium-*-imunizacao-*.json,examples/questao-premium-decorp-imunizacao-triplice-viral-via.json,examples/questao-premium-fundatec-meningococica-3meses.json,examples/questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json,examples/questao-premium-ameosc-imunizacao-vf-cadeia-frio.json,examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
   "golden_anchors_registry": "data/catalog-migration/imunizacao-golden-anchors.json",
   "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/imunizacao.json",

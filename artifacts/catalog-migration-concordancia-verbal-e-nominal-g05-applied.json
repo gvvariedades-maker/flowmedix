@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:08:42.977Z",
+  "lote": "concordancia-verbal-e-nominal-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-aco-concordancia-havia-alguma-coisa-errada-com-o-rei-3738890",
+    "avancasp-ag-concordancia-leia-o-texto-a-seguir-para-responder-3709814",
+    "avancasp-ag-concordancia-mal-iniciara-seu-discurso-o-deputado-3727002",
+    "avancasp-of-concordancia-era-uma-hora-e-quarenta-e-um-minutos-3725105",
+    "avancasp-tla-concordancia-a-maior-parte-dos-torcedores-aderiu-3726057",
+    "cebraspe-ces-concordancia-texto-cg1a1a-relacao-entre-sustentab-3698155",
+    "cebraspe-ces-concordancia-texto-cg2a1imagino-que-a-escrita-nas-3705180",
+    "quadrix-aux-concordancia-texto-para-a-questao-imagine-um-time-3738655"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-aco-concordancia-havia-alguma-coisa-errada-com-o-rei-3738890",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ag-concordancia-leia-o-texto-a-seguir-para-responder-3709814",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ag-concordancia-mal-iniciara-seu-discurso-o-deputado-3727002",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-of-concordancia-era-uma-hora-e-quarenta-e-um-minutos-3725105",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-tla-concordancia-a-maior-parte-dos-torcedores-aderiu-3726057",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cebraspe-ces-concordancia-texto-cg1a1a-relacao-entre-sustentab-3698155",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cebraspe-ces-concordancia-texto-cg2a1imagino-que-a-escrita-nas-3705180",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "quadrix-aux-concordancia-texto-para-a-questao-imagine-um-time-3738655",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

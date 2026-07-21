@@ -8,7 +8,7 @@
     "topico": "Enfermagem",
     "subtopico": "Punção Venosa e Cuidados com Cateteres",
     "content_standard": "golden-v1",
-    "family": "conceito",
+    "family": "certo_errado",
     "content_review": {
       "reviewed_at": "2026-06-22",
       "reviewer": "content-pilot",

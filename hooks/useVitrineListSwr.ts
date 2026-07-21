@@ -22,6 +22,7 @@ async function fetchVitrinePage(query: VitrineListQuery): Promise<VitrinePageRes
   query.bancas.forEach((b) => params.append('bancas', b));
   query.assuntos.forEach((a) => params.append('assuntos', a));
   if (query.q?.trim()) params.set('q', query.q.trim());
+  if (query.disciplina) params.set('disciplina', query.disciplina);
 
   const res = await fetchWithAuth(`/api/vitrine?${params.toString()}`);
   if (!res.ok) {

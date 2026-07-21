@@ -1,0 +1,36 @@
+{
+  "subtopico": "Concordância verbal e nominal",
+  "pacote_prefix": "concordancia-verbal-e-nominal",
+  "gate": "block",
+  "is_catch_all_bucket": false,
+  "catch_all_mode": null,
+  "registry_taxonomy_status": "closed",
+  "inventory": {
+    "total_scanned": 44,
+    "mismatch_count": 0,
+    "non_canonical_titulo_aula": 1,
+    "non_canonical_meta_subtopico": 1,
+    "missing_titulo_aula": 0,
+    "missing_meta_subtopico": 0
+  },
+  "manifest": {
+    "manifest_slugs": 44,
+    "found_in_catalog": 44,
+    "missing_slugs": [],
+    "still_in_catch_all": 44,
+    "mismatch_count": 0,
+    "non_canonical_titulo": 44,
+    "reclassified": false,
+    "destinations": []
+  },
+  "reasons": [
+    "Manifest: 44 slug(s) com titulo_aula não canônico."
+  ],
+  "handcraft_allowed": false,
+  "promote_requires_infer": false,
+  "vitrine_groups_by_canonical_titulo": false,
+  "generated_at": "2026-07-21T01:16:25.983Z",
+  "artifact": "artifacts/taxonomy-gate-concordancia-verbal-e-nominal.json",
+  "closed_artifact": null,
+  "registry_closed_artifact": null
+}

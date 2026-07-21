@@ -34,6 +34,10 @@ import {
   PT_CLITIC_BESPOKE_BRANCHES,
   PT_TERMOS_BRANCHES,
   PT_TERMOS_BESPOKE_BRANCHES,
+  PT_CONCORDANCIA_BRANCHES,
+  PT_CONCORDANCIA_BESPOKE_BRANCHES,
+  PT_ORACOES_BRANCHES,
+  PT_ORACOES_BESPOKE_BRANCHES,
   FARMACO_BRANCHES,
   FARMACO_BESPOKE_BRANCHES,
   CALCULO_BRANCHES,
@@ -387,6 +391,115 @@ test.describe('Termos da oração — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('termos-oracao');
+  });
+});
+
+test.describe('Concordância verbal e nominal — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression PT Concordância — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!browserName.includes('chromium') && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PT_CONCORDANCIA_BRANCHES) {
+    test(`PT Concordância ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PT Concordância ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('PT Concordância pt_concordancia — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'pt_concordancia';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Concordância verbal e nominal — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'concordancia-verbal-e-nominal',
+      branches: [...PT_CONCORDANCIA_BRANCHES],
+      pass: true,
+      detail: `Playwright L3 PT Concordância — ${PT_CONCORDANCIA_BRANCHES.length} branches (${PT_CONCORDANCIA_BESPOKE_BRANCHES.length} núcleo pt-subject-focus 4/4); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('concordancia-verbal-e-nominal');
+  });
+});
+
+test.describe('Orações coordenadas e subordinadas — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression PT Orações — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!browserName.includes('chromium') && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PT_ORACOES_BRANCHES) {
+    test(`PT Orações ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PT Orações ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('Orações coordenadas e subordinadas — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'oracoes-coordenadas-e-subordinadas',
+      branches: [...PT_ORACOES_BRANCHES],
+      pass: true,
+      detail: `Playwright L3 PT Orações — ${PT_ORACOES_BRANCHES.length} branches (${PT_ORACOES_BESPOKE_BRANCHES.length} núcleo pt-period-rail 4/4); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('oracoes-coordenadas-e-subordinadas');
   });
 });
 

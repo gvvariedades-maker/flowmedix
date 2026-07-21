@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:59:38.106Z",
+  "lote": "concordancia-verbal-e-nominal-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-acs-concordancia-existem-havia-4003524",
+    "avancasp-afa-concordancia-mafalda-existem-3962461",
+    "avancasp-esc-concordancia-lacunas-chegou-3963915",
+    "avancasp-gcm-concordancia-c-e-choveram-4001123",
+    "cpcon-uepb-concordancia-haviam-pedreiros-4018203",
+    "selecon-rece-concordancia-houve-danos-3852271",
+    "vunesp-tenf-concordancia-adolescentes-lazer-3999762",
+    "vunesp-tenf-concordancia-charlotte-alunas-3840783"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-acs-concordancia-existem-havia-4003524",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-afa-concordancia-mafalda-existem-3962461",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-esc-concordancia-lacunas-chegou-3963915",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-gcm-concordancia-c-e-choveram-4001123",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-concordancia-haviam-pedreiros-4018203",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-rece-concordancia-houve-danos-3852271",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-tenf-concordancia-adolescentes-lazer-3999762",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-tenf-concordancia-charlotte-alunas-3840783",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T05:00:39.276Z",
+  "lote": "lingua-portuguesa-g11",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-fusam-pontuacao-incorreta-3460046",
+    "avancasp-fusam-pontuacao-reescrita-3460254",
+    "avancasp-vinhedo-pontuacao-reticencias-3554844",
+    "facet-bom-jardim-pontuacao-incorreta-3614676",
+    "fgv-sjc-pontuacao-dois-pontos-3587457",
+    "vunesp-itatiba-pontuacao-travessao-3583375",
+    "vunesp-itatiba-pontuacao-virgula-3583301",
+    "vunesp-osasco-pontuacao-virgula-3607149"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-fusam-pontuacao-incorreta-3460046",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-fusam-pontuacao-reescrita-3460254",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-vinhedo-pontuacao-reticencias-3554844",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-bom-jardim-pontuacao-incorreta-3614676",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-sjc-pontuacao-dois-pontos-3587457",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-itatiba-pontuacao-travessao-3583375",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-itatiba-pontuacao-virgula-3583301",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-osasco-pontuacao-virgula-3607149",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

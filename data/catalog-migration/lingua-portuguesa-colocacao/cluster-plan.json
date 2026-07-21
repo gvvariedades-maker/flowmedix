@@ -1,0 +1,103 @@
+{
+  "card": "Pronomes e colocação pronominal",
+  "tec_cluster": "Colocação Pronominal",
+  "pedagogical_branch": "pt_pronomes_colocacao",
+  "total_pdf_cluster": 31,
+  "total_card_cluster": 68,
+  "note": "Handcraft por rótulo Tec «Colocação Pronominal» (31). Card completo inclui Pronomes Pessoais/Relativos etc. — fase 2 após fechar colocação.",
+  "anchor": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts",
+  "l3_mold": "pt-clitic-rail",
+  "lotes": {
+    "lingua-portuguesa-g07": {
+      "status": "handcraft_ready",
+      "range": "1/4 · 8/31",
+      "tec_ids": [
+        "3835994",
+        "3839370",
+        "3841117",
+        "3962471",
+        "3999721",
+        "3999766",
+        "4014453",
+        "3336128"
+      ]
+    },
+    "lingua-portuguesa-g14": {
+      "status": "handcraft_ready",
+      "range": "2/4 · 16/31",
+      "tec_ids": [
+        "3727518",
+        "3746604",
+        "3352589",
+        "3352965",
+        "3353968",
+        "3374794",
+        "3375896",
+        "3376869"
+      ]
+    },
+    "lingua-portuguesa-g15": {
+      "status": "handcraft_ready",
+      "range": "3/4 · 24/31",
+      "tec_ids": [
+        "3385122",
+        "3419183",
+        "3452377",
+        "3457294",
+        "3531587",
+        "3554847",
+        "3558396",
+        "3583308"
+      ]
+    },
+    "lingua-portuguesa-g16": {
+      "status": "handcraft_ready",
+      "range": "4/4 · 31/31",
+      "tec_ids": [
+        "3607134",
+        "3614688",
+        "3661739",
+        "3662934",
+        "3665306",
+        "3705166",
+        "3709831"
+      ],
+      "note": "Último lote — 7 questões (não múltiplo de 8)"
+    }
+  },
+  "pdf_order_all_31": [
+    "3727518",
+    "3746604",
+    "3835994",
+    "3839370",
+    "3841117",
+    "3962471",
+    "3999721",
+    "3999766",
+    "4014453",
+    "3336128",
+    "3352589",
+    "3352965",
+    "3353968",
+    "3374794",
+    "3375896",
+    "3376869",
+    "3385122",
+    "3419183",
+    "3452377",
+    "3457294",
+    "3531587",
+    "3554847",
+    "3558396",
+    "3583308",
+    "3607134",
+    "3614688",
+    "3661739",
+    "3662934",
+    "3665306",
+    "3705166",
+    "3709831"
+  ],
+  "updated_at": "2026-07-20"
+}

@@ -37,6 +37,19 @@ export const PT_TERMOS_BESPOKE_BRANCHES = ['pt_termos_oracao'] as const;
 
 export const PT_TERMOS_BRANCHES = ['pt_termos_oracao', 'pt_termos_oracao_generico'] as const;
 
+/** Ramos Língua Portuguesa — Concordância (núcleo em foco bespoke + genérico). */
+export const PT_CONCORDANCIA_BESPOKE_BRANCHES = ['pt_concordancia'] as const;
+
+export const PT_CONCORDANCIA_BRANCHES = ['pt_concordancia', 'pt_concordancia_generico'] as const;
+
+/** Ramos Língua Portuguesa — Orações coord./subord. (pt-period-rail bespoke + genérico). */
+export const PT_ORACOES_BESPOKE_BRANCHES = ['pt_oracoes_subordinadas'] as const;
+
+export const PT_ORACOES_BRANCHES = [
+  'pt_oracoes_subordinadas',
+  'pt_oracoes_subordinadas_generico',
+] as const;
+
 /** Ramos Saúde do Adolescente (ética bespoke + genéricos por eixo). */
 export const ADOLESCENTE_BRANCHES = [
   'adolescente_etica_sigilo',

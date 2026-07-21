@@ -1,0 +1,17 @@
+{
+  "lote": "lingua-portuguesa-g11",
+  "subtopico": "Pontuação",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pontuacao",
+  "total": 8,
+  "slugs": [
+    "avancasp-fusam-pontuacao-incorreta-3460046",
+    "avancasp-fusam-pontuacao-reescrita-3460254",
+    "avancasp-vinhedo-pontuacao-reticencias-3554844",
+    "vunesp-itatiba-pontuacao-virgula-3583301",
+    "vunesp-itatiba-pontuacao-travessao-3583375",
+    "fgv-sjc-pontuacao-dois-pontos-3587457",
+    "vunesp-osasco-pontuacao-virgula-3607149",
+    "facet-bom-jardim-pontuacao-incorreta-3614676"
+  ]
+}

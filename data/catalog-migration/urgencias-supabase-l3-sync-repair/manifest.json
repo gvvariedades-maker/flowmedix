@@ -1,0 +1,14 @@
+{
+  "lote": "urgencias-supabase-l3-sync-repair",
+  "exported_at": "2026-07-19T14:28:01.320Z",
+  "source": "quality-vendavel-repair",
+  "description": "Sync Supabase L3 — 6 slugs stale vs repo golden-v1",
+  "slugs": [
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-1"
+  ]
+}

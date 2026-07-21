@@ -13,5 +13,11 @@
   ],
   "readiness": "6/6",
   "preflight_artifact": "artifacts/catalog-preflight-urgencias-g16.json",
-  "notes": "g16 AVC/IAM final — choque UPA sinais · trauma epidemiologia VF · IAM O2 SAMU 94% · choque hipovolêmico hemorragia · colecistite vs IAM · IAM angina sudorese — cluster 23/23 fechado"
+  "notes": "g16 AVC/IAM final — choque UPA sinais · trauma epidemiologia VF · IAM O2 SAMU 94% · choque hipovolêmico hemorragia · colecistite vs IAM · IAM angina sudorese — cluster 23/23 fechado",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

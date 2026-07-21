@@ -1,0 +1,54 @@
+{
+  "lote": "lingua-portuguesa-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-19",
+  "subtopico": "Crase",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_crase",
+  "cluster": "Norma — Crase (lote 3/6 · ingestão PDF)",
+  "total": 8,
+  "status": "handcraft",
+  "source": "artifacts/lingua-portuguesa-crase-extracted.json",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "questao-premium-vunesp-portugues-crase-funil",
+  "golden_references": {
+    "eliminacao": "examples/questao-premium-vunesp-portugues-crase-funil.json",
+    "lacunas": "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json"
+  },
+  "slug_anchor_style": {
+    "vunesp-sorocaba-crase-lacunas-3999773": "lacunas",
+    "caderno-pt-crase-alcool-lacunas-4001120": "lacunas",
+    "caderno-pt-crase-tendencia-suspender-4003508": "lacunas",
+    "caderno-pt-crase-facultativo-joana-4024877": "eliminacao",
+    "caderno-pt-crase-universidades-elites-4024955": "eliminacao",
+    "vunesp-osasco-crase-charge-prova-balas-3323742": "eliminacao",
+    "caderno-pt-crase-biblioteca-lacunas-3352963": "lacunas",
+    "caderno-pt-crase-neurociencia-lacunas-3358515": "lacunas"
+  },
+  "guideline": "lib/guidelines/linguaPortuguesa/crase.ts",
+  "slugs": [
+    "vunesp-sorocaba-crase-lacunas-3999773",
+    "caderno-pt-crase-alcool-lacunas-4001120",
+    "caderno-pt-crase-tendencia-suspender-4003508",
+    "caderno-pt-crase-facultativo-joana-4024877",
+    "caderno-pt-crase-universidades-elites-4024955",
+    "vunesp-osasco-crase-charge-prova-balas-3323742",
+    "caderno-pt-crase-biblioteca-lacunas-3352963",
+    "caderno-pt-crase-neurociencia-lacunas-3358515"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g03 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g03.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g03 --strict-v2-pedagogy",
+    "3. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g03 --dry-run --allow-insert",
+    "4. apply com --allow-insert só com pedido explícito"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/lingua-portuguesa-g03.json"
+  }
+}

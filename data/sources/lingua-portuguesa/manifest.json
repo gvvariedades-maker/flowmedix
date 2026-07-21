@@ -1,0 +1,126 @@
+{
+  "disciplina": "Língua Portuguesa",
+  "pacote_prefix": "lingua-portuguesa",
+  "sources": [
+    {
+      "id": "portugues-caderno-2025-2026",
+      "file": "portugues-caderno-2025-2026.pdf",
+      "original_filename": "PORTUGUÊS tec concursos - 2025 e 2026.pdf",
+      "original_path": "c:\\Users\\TecnoInfo\\Documents\\AVANT\\PORTUGUÊS tec concursos - 2025 e 2026.pdf",
+      "size_bytes": 6243800,
+      "years": [2025, 2026],
+      "imported_at": "2026-07-15",
+      "usage": "Fonte interna para handcraft golden-v1 — processar em lotes g01, g02… (lote_size: 8)",
+      "publication_rules": [
+        "Não publicar referência a TecConcursos no JSON (enunciado, slides, meta)",
+        "Remover numeração global do caderno (1), 2)…) do instruction",
+        "Transcrever enunciado fiel; estudo reverso só nos slides"
+      ],
+      "questao_range": [1, 200]
+    },
+    {
+      "id": "portugues-caderno-2025-2026-q201-400",
+      "file": "portugues-caderno-2025-2026-q201-400.pdf",
+      "original_filename": "PORTUGUÊS tec concursos - 2025 e 2026 - 201 a 400.pdf",
+      "original_path": "c:\\Users\\TecnoInfo\\Documents\\AVANT\\PORTUGUÊS tec concursos - 2025 e 2026 - 201 a 400.pdf",
+      "size_bytes": 6590279,
+      "years": [2025, 2026],
+      "imported_at": "2026-07-15",
+      "usage": "Fonte interna — continuação do caderno (questões 201–400); lotes gNN em sequência",
+      "publication_rules": [
+        "Não publicar referência a TecConcursos no JSON (enunciado, slides, meta)",
+        "Remover numeração global do caderno (201), 202)…) do instruction",
+        "Transcrever enunciado fiel; estudo reverso só nos slides"
+      ],
+      "questao_range": [201, 400]
+    },
+    {
+      "id": "portugues-caderno-2025-2026-q401-600",
+      "file": "portugues-caderno-2025-2026-q401-600.pdf",
+      "original_filename": "PORTUGUÊS tec concursos - 2025 e 2026 - 401 a 600.pdf",
+      "original_path": "c:\\Users\\TecnoInfo\\Documents\\AVANT\\PORTUGUÊS tec concursos - 2025 e 2026 - 401 a 600.pdf",
+      "size_bytes": 5761359,
+      "years": [2025, 2026],
+      "imported_at": "2026-07-15",
+      "usage": "Fonte interna — continuação do caderno (questões 401–600); lotes gNN em sequência",
+      "publication_rules": [
+        "Não publicar referência a TecConcursos no JSON (enunciado, slides, meta)",
+        "Remover numeração global do caderno (401), 402)…) do instruction",
+        "Transcrever enunciado fiel; estudo reverso só nos slides"
+      ],
+      "questao_range": [401, 600]
+    },
+    {
+      "id": "portugues-caderno-2025-2026-q601-671",
+      "file": "portugues-caderno-2025-2026-q601-671.pdf",
+      "original_filename": "PORTUGUÊS tec concursos - 2025 e 2026 - 601 a 671.pdf",
+      "original_path": "c:\\Users\\TecnoInfo\\Documents\\AVANT\\PORTUGUÊS tec concursos - 2025 e 2026 - 601 a 671.pdf",
+      "size_bytes": 3019566,
+      "years": [2025, 2026],
+      "imported_at": "2026-07-15",
+      "usage": "Fonte interna — volume final do caderno (questões 601–671); lotes gNN em sequência",
+      "publication_rules": [
+        "Não publicar referência a TecConcursos no JSON (enunciado, slides, meta)",
+        "Remover numeração global do caderno (601), 602)…) do instruction",
+        "Transcrever enunciado fiel; estudo reverso só nos slides"
+      ],
+      "questao_range": [601, 671]
+    }
+  ],
+  "total_questoes": 671,
+  "lote_size": 8,
+  "handcraft_output": "data/catalog-migration/lingua-portuguesa-gNN/questions/",
+  "skills": [
+    ".cursor/skills/professor-lingua-portuguesa-concurso/SKILL.md",
+    ".cursor/skills/avant-golden-anchor-handcraft/SKILL.md",
+    ".cursor/skills/brief-lingua-portuguesa/SKILL.md",
+    ".cursor/skills/avant-json-template/SKILL.md"
+  ],
+  "subtopicos_sugeridos": [
+    "Interpretação e compreensão de texto",
+    "Tipologia e gêneros textuais",
+    "Ortografia e acentuação (AO1990)",
+    "Morfologia (classes / formação de palavras)",
+    "Sintaxe do período (coordenação / subordinação)",
+    "Termos da oração",
+    "Concordância verbal e nominal",
+    "Regência verbal e nominal",
+    "Crase",
+    "Pontuação",
+    "Coesão, coerência e conectivos",
+    "Semântica, sinonímia e figuras de linguagem"
+  ],
+  "modulo_nome": "Língua Portuguesa",
+  "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+  "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-index.md",
+  "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+  "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+  "guideline": "lib/guidelines/linguaPortuguesa/index.ts",
+  "guidelines_p0": [
+    "lib/guidelines/linguaPortuguesa/crase.ts",
+    "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts"
+  ],
+  "classification_policy": "tema_real_no_handcraft; source_assunto_tec_do_pdf; titulo_aula_para_vitrine_e_caderno",
+  "titulo_aula_canonicos": [
+    { "titulo_aula": "Tipologia e gêneros textuais", "eixo": "A — Texto", "count": 57 },
+    { "titulo_aula": "Coesão, coerência e conectivos", "eixo": "A — Texto", "count": 35 },
+    { "titulo_aula": "Classes de palavras", "eixo": "B — Morfologia", "count": 93, "note": "split_candidate — dividir no handcraft se persistir >60" },
+    { "titulo_aula": "Verbos — tempos, modos e vozes", "eixo": "B — Morfologia", "count": 45 },
+    { "titulo_aula": "Pronomes e colocação pronominal", "eixo": "B — Morfologia", "count": 68, "note": "split_candidate" },
+    { "titulo_aula": "Frase, oração e período", "eixo": "C — Sintaxe", "count": 4, "note": "merge_candidate — fundir com Sujeito e predicado no handcraft" },
+    { "titulo_aula": "Sujeito e predicado", "eixo": "C — Sintaxe", "count": 14 },
+    { "titulo_aula": "Termos da oração", "eixo": "C — Sintaxe", "count": 31 },
+    { "titulo_aula": "Orações coordenadas e subordinadas", "eixo": "C — Sintaxe", "count": 38 },
+    { "titulo_aula": "Sintaxe — questões mescladas", "eixo": "C — Sintaxe", "count": 8, "note": "classificar pelo enunciado no handcraft" },
+    { "titulo_aula": "Concordância verbal e nominal", "eixo": "D — Norma", "count": 45 },
+    { "titulo_aula": "Regência verbal e nominal", "eixo": "D — Norma", "count": 32 },
+    { "titulo_aula": "Crase", "eixo": "D — Norma", "count": 45 },
+    { "titulo_aula": "Pontuação", "eixo": "D — Norma", "count": 48 },
+    { "titulo_aula": "Sinônimos, antônimos e polissemia", "eixo": "E — Vocabulário", "count": 63, "note": "split_candidate" },
+    { "titulo_aula": "Denotação, conotação e figuras de linguagem", "eixo": "E — Vocabulário", "count": 33 },
+    { "titulo_aula": "Vocábulo \"que\" e partícula \"se\"", "eixo": "E — Vocabulário", "count": 12 }
+  ],
+  "source_assuntos_tec_total": 45,
+  "status": "source_only",
+  "questoes_indexadas": []
+}

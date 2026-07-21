@@ -1944,6 +1944,44 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     ],
     minPositive: 1,
   },
+
+  // ---- Língua Portuguesa — Concordância (pt-subject-focus) ----
+  'pt-subject-focus-deck': {
+    homeSubtopicFragments: ['concordancia', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /concord[aâ]ncia|n[uú]cleo|sujeito|verbo|foco/i,
+      /partitivo|impessoal|haver|ideol[oó]gica/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-subject-focus-board': {
+    homeSubtopicFragments: ['concordancia', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /n[uú]cleo|sujeito|verbo|plural|singular|concord/i,
+      /haver|partitivo|um dos que/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-subject-focus-tap-flow': {
+    homeSubtopicFragments: ['concordancia', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /n[uú]cleo|eliminar|gabarito|concord|sujeito/i,
+      /registram|existem|haver|impessoal/i,
+    ],
+    minPositive: 1,
+  },
+  'pt-subject-trap-arena': {
+    homeSubtopicFragments: ['concordancia', 'lingua portuguesa'],
+    blockFamilies: ['calc'],
+    positivePatterns: [
+      /concord|n[uú]cleo|vizinho|pegadinha|partitivo/i,
+      /letra\s+[a-e]|plural|singular/i,
+    ],
+    minPositive: 1,
+  },
 };
 
 function isOnHomeSubtopic(

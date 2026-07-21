@@ -10,6 +10,7 @@ describe('buildVitrineEstudarQuery', () => {
         assuntos: ['Urgências'],
         q: 'rcp',
         page: 2,
+        disciplina: null,
       }),
     ).toBe('?banca=FGV&banca=CESPE&assunto=Urg%C3%AAncias&q=rcp&page=2');
   });
@@ -21,8 +22,20 @@ describe('buildVitrineEstudarQuery', () => {
         assuntos: [],
         q: undefined,
         page: 1,
+        disciplina: null,
       }),
     ).toBe('');
+  });
+
+  it('inclui disciplina na query', () => {
+    expect(
+      buildVitrineEstudarQuery({
+        bancas: [],
+        assuntos: [],
+        page: 1,
+        disciplina: 'portugues',
+      }),
+    ).toBe('?disciplina=portugues');
   });
 
   it('alinha chave de prefetch com lista (debounced q + page efetiva)', () => {
@@ -31,6 +44,7 @@ describe('buildVitrineEstudarQuery', () => {
       bancas: ['IBFC'],
       assuntos: ['Farmacologia'],
       q: 'dose',
+      disciplina: null as null,
     };
     const estudarQuery = buildVitrineEstudarQuery(listQuery);
     const slugComQuery = buildVitrineSlugComQueryFromList('slug-x', listQuery);

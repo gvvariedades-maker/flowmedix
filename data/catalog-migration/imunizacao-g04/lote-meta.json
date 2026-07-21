@@ -10,5 +10,14 @@
     "imunizacao_generico": 5
   },
   "priority": "calendário infantil/adolescente (3) + SIS/soros/técnica/INCORRETA (5)",
-  "notes": "Piloto g04 — SIS atraso vacinal, colostro passiva, MenACWY 11-14, pentavalente 2m, malária INCORRETA, deltóide, soros V/F, calendário indígena"
+  "notes": "Piloto g04 — SIS atraso vacinal, colostro passiva, MenACWY 11-14, pentavalente 2m, malária INCORRETA, deltóide, soros V/F, calendário indígena",
+  "anchor_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "quality-vendavel-imunizacao",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/imunizacao-g04.json",
+    "notes": "L6 batch quality-vendavel"
+  }
 }

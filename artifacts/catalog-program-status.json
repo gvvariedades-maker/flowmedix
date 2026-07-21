@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-13T17:44:47.334Z",
+  "generated_at": "2026-07-20T03:48:20.508Z",
   "total_canonicos": 41,
   "counts": {
-    "production_ready": 18,
-    "applied_not_vendavel": 1,
+    "production_ready": 24,
+    "applied_not_vendavel": 0,
     "in_progress": 1,
-    "no_package": 21,
-    "legacy_builder": 4
+    "no_package": 16,
+    "legacy_builder": 0
   },
   "rows": [
     {
@@ -38,10 +38,16 @@
     },
     {
       "subtopico": "Processo de Enfermagem",
-      "onda": "A",
+      "onda": "done",
       "legacy_builder": true,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Processo de Enfermagem"
+      "in_registry": true,
+      "pacote_prefix": "processo-de-enfermagem",
+      "total_slugs": 51,
+      "handcraft_applied": 51,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Farmacodinâmica e Farmacocinética",
@@ -49,8 +55,8 @@
       "legacy_builder": false,
       "in_registry": true,
       "pacote_prefix": "farmacodinamica-e-farmacocinetica",
-      "total_slugs": 11,
-      "handcraft_applied": 11,
+      "total_slugs": 13,
+      "handcraft_applied": 13,
       "status": "applied",
       "production_status": "production_ready",
       "pct_handcraft": 100,
@@ -58,10 +64,16 @@
     },
     {
       "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
-      "onda": "B",
+      "onda": "done",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Cálculo de Administração de Medicamentos e Infusões"
+      "in_registry": true,
+      "pacote_prefix": "calculo-de-administracao-de-medicamentos-e-infusoes",
+      "total_slugs": 85,
+      "handcraft_applied": 85,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Vias de Administração",
@@ -118,10 +130,16 @@
     },
     {
       "subtopico": "Curativos e Manejo de Feridas",
-      "onda": "A",
+      "onda": "done",
       "legacy_builder": true,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Curativos e Manejo de Feridas"
+      "in_registry": true,
+      "pacote_prefix": "curativos-e-manejo-de-feridas",
+      "total_slugs": 94,
+      "handcraft_applied": 94,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Punção Venosa e Cuidados com Cateteres",
@@ -240,21 +258,27 @@
       "subtopico": "Promoção à Saúde e Prevenção de Agravos",
       "onda": "B",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Promoção à Saúde e Prevenção de Agravos"
+      "in_registry": true,
+      "pacote_prefix": "promocao-a-saude-e-prevencao-de-agravos",
+      "total_slugs": 130,
+      "handcraft_applied": 0,
+      "status": "none",
+      "production_status": "none",
+      "pct_handcraft": 0,
+      "next_trigger": "Pipeline completo: Promoção à Saúde e Prevenção de Agravos"
     },
     {
       "subtopico": "Imunização",
-      "onda": "A",
+      "onda": "done",
       "legacy_builder": true,
       "in_registry": true,
       "pacote_prefix": "imunizacao",
       "total_slugs": 575,
-      "handcraft_applied": 59,
-      "status": "in_progress",
-      "production_status": "none",
-      "pct_handcraft": 10.3,
-      "next_trigger": "Pipeline completo: Imunização"
+      "handcraft_applied": 575,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Atenção Básica / Saúde da Família",
@@ -346,16 +370,16 @@
     },
     {
       "subtopico": "Urgências e Emergências",
-      "onda": "A",
+      "onda": "done",
       "legacy_builder": true,
       "in_registry": true,
-      "pacote_prefix": "urgencias-e-emergencias",
+      "pacote_prefix": "urgencias",
       "total_slugs": 339,
       "handcraft_applied": 339,
       "status": "applied",
-      "production_status": "none",
+      "production_status": "production_ready",
       "pct_handcraft": 100,
-      "next_trigger": "Pipeline completo: Urgências e Emergências + Só qualidade"
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Enfermagem do Trabalho",
@@ -385,10 +409,16 @@
     },
     {
       "subtopico": "Saúde da Criança",
-      "onda": "B",
+      "onda": "done",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Saúde da Criança"
+      "in_registry": true,
+      "pacote_prefix": "saude-da-crianca",
+      "total_slugs": 62,
+      "handcraft_applied": 62,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Saúde do Adolescente",

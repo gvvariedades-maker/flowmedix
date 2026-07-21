@@ -1,0 +1,76 @@
+{
+  "lote": "concordancia-verbal-e-nominal-g03",
+  "generated_at": "2026-07-20T18:26:12.010Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "apice-acs-pr-concordancia-considere-o-texto-a-seguir-para-resp-4024938",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-ace-concordancia-de-acordo-com-o-gramatico-evanildo-b-3353963",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-acs-concordancia-de-acordo-com-o-gramatico-evanildo-b-3352960",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ibfc-tec-enf-concordancia-analise-o-texto-a-seguir-e-responda-3450785",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-as-concordancia-a-concordancia-nominal-e-verbal-esta-3345661",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-pr-concordancia-a-frase-que-esta-em-conformidade-com-3419181",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-pr-concordancia-assinale-a-alternativa-redigida-em-c-3352593",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-an-op-concordancia-assinale-a-alternativa-cuja-frase-es-3354420",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

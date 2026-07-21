@@ -1,0 +1,55 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g11",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "Ivin educação popular + Lj EXCETO intersetorial + Maranatha pé diabético + MS Sarmento saneamento/LPP + Não informado HAS/poluição + Objetiva Ottawa (g11)",
+  "total": 8,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0": "promocao_educacao_prevencao",
+    "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0": "promocao_principios_direitos",
+    "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1": "promocao_educacao_prevencao",
+    "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1": "promocao_educacao_prevencao",
+    "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2": "promocao_educacao_prevencao",
+    "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0": "promocao_educacao_prevencao",
+    "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6": "promocao_educacao_prevencao",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8": "promocao_principios_direitos"
+  },
+  "slugs": [
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0",
+    "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0",
+    "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
+    "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1",
+    "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
+    "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
+    "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8"
+  ],
+  "notes": [
+    "lj-3919067-0: EXCETO intersetorial — family certo_errado; B ciência e cultural.",
+    "maranatha-3868300-1: pé diabético autocuidado — family conceito (A).",
+    "ms-sarmento-3923516-2: LPP prevenção — meta legada Mobilização; conteúdo promoção.",
+    "nao-informado-3909811-0: Certo/Errado HAS sal — family certo_errado."
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g11 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g11/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g11 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g11 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g11 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g11 --apply (só quando pedido)"
+  ],
+  "next_lote": "promocao-a-saude-e-prevencao-de-agravos-g12 — FECHADO 13/13 READY (lote final)",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g11.json"
+  }
+}

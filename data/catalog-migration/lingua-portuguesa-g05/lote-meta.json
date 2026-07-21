@@ -1,0 +1,54 @@
+{
+  "lote": "lingua-portuguesa-g05",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-19",
+  "subtopico": "Crase",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_crase",
+  "cluster": "Norma — Crase (lote 5/6 · ingestão PDF)",
+  "total": 8,
+  "status": "handcraft",
+  "source": "artifacts/lingua-portuguesa-crase-extracted.json",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "questao-premium-vunesp-portugues-crase-funil",
+  "golden_references": {
+    "eliminacao": "examples/questao-premium-vunesp-portugues-crase-funil.json",
+    "lacunas": "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json"
+  },
+  "slug_anchor_style": {
+    "vunesp-guararapes-crase-lacunas-tira-3607407": "lacunas",
+    "caderno-pt-crase-constituicao-lacunas-3614637": "lacunas",
+    "caderno-pt-crase-erro-compramos-prazo-3614663": "eliminacao",
+    "caderno-pt-crase-previdencia-lacunas-3661931": "lacunas",
+    "caderno-pt-crase-semelhante-propostas-3662939": "eliminacao",
+    "consulplan-indaiatuba-crase-lacunas-pressas-3694717": "lacunas",
+    "cebraspe-radio-apaixonado-crase-aquilo-3698162": "eliminacao",
+    "cebraspe-clima-reescrita-crase-3705197": "eliminacao"
+  },
+  "guideline": "lib/guidelines/linguaPortuguesa/crase.ts",
+  "slugs": [
+    "vunesp-guararapes-crase-lacunas-tira-3607407",
+    "caderno-pt-crase-constituicao-lacunas-3614637",
+    "caderno-pt-crase-erro-compramos-prazo-3614663",
+    "caderno-pt-crase-previdencia-lacunas-3661931",
+    "caderno-pt-crase-semelhante-propostas-3662939",
+    "consulplan-indaiatuba-crase-lacunas-pressas-3694717",
+    "cebraspe-radio-apaixonado-crase-aquilo-3698162",
+    "cebraspe-clima-reescrita-crase-3705197"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g05 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g05.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g05 --strict-v2-pedagogy",
+    "3. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g05 --dry-run --allow-insert",
+    "4. apply com --allow-insert só com pedido explícito"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/lingua-portuguesa-g05.json"
+  }
+}

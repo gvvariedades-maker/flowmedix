@@ -79,6 +79,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'pt-clitic-trap-arena',
   'pt-comma-trap-arena',
   'pt-term-trap-arena',
+  'pt-subject-trap-arena',
 ]);
 
 /**
@@ -152,6 +153,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'pt-clitic-trap-arena') return 'pt-clitic-trap-arena';
   if (explicitVariant === 'pt-comma-trap-arena') return 'pt-comma-trap-arena';
   if (explicitVariant === 'pt-term-trap-arena') return 'pt-term-trap-arena';
+  if (explicitVariant === 'pt-subject-trap-arena') return 'pt-subject-trap-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {

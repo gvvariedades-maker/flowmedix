@@ -60,6 +60,20 @@ export type AutoApprovalConfig = {
   last_calibrated_at?: string | null;
 };
 
+export type TaxonomyStatus = 'open' | 'closed' | 'catch_all_provisional';
+export type CatchAllMode = 'A' | 'B';
+
+/** Gate de taxonomia antes do 1º lote — @see docs/TAXONOMIA_MODEL.md §6 */
+export type PacoteTaxonomy = {
+  status: TaxonomyStatus;
+  catch_all_mode?: CatchAllMode | null;
+  closed_at?: string | null;
+  audit_artifact?: string | null;
+  closed_artifact?: string | null;
+  mismatch_count_at_close?: number | null;
+  notes?: string | null;
+};
+
 export type RegistryPacote = {
   pacote_prefix: string;
   manifest: string;
@@ -68,6 +82,7 @@ export type RegistryPacote = {
   handcraft_applied: number;
   production_status?: ProductionStatus;
   quality?: PacoteQuality;
+  taxonomy?: PacoteTaxonomy;
   /** Kill-switch: default false até histórico limpo. */
   auto_approval?: AutoApprovalConfig;
 };

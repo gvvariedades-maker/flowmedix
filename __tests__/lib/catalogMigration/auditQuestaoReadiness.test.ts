@@ -244,4 +244,39 @@ describe('auditQuestaoReadiness', () => {
     expect(spoilerErr?.severity).toBe('error');
     expect(strictV2.ready_100).toBe(false);
   });
+
+  it('emite l2_family_mismatch quando meta.family diverge do funil', () => {
+    const payload = {
+      meta: {
+        subtopico: 'Punção Venosa e Cuidados com Cateteres',
+        content_standard: 'golden-v1',
+        family: 'protocolo',
+        content_review: { reviewed_at: '2026-01-01' },
+        sources: [{ tier: 'A', label: 'teste' }],
+      },
+      question_data: {
+        instruction: 'Assinale a alternativa correta sobre flebite.',
+        options: [
+          { id: 'A', text: 'Opção A', is_correct: true },
+          { id: 'B', text: 'Opção B', is_correct: false },
+        ],
+      },
+      reverse_study_slides: [
+        { type: 'concept_map', items: [{ label: 'A', detail: 'b' }] },
+        { type: 'logic_flow', reveal_mode: 'tap', steps: ['a', 'b', 'c', 'd'] },
+        { type: 'golden_rule', content: 'Regra' },
+        { type: 'danger_zone', content: 'z', items: [{ label: 'A', detail: 'b', correct: 'c' }] },
+      ],
+    };
+
+    const warnOnly = auditQuestaoReadiness(payload as never, { strictV2Pedagogy: false });
+    const strictV2 = auditQuestaoReadiness(payload as never, { strictV2Pedagogy: true });
+
+    const mismatchWarn = warnOnly.checks.find((c) => c.code === 'l2_family_mismatch');
+    expect(mismatchWarn?.severity).toBe('warn');
+    expect(mismatchWarn?.message).toContain('inferido: conceito');
+
+    const mismatchErr = strictV2.checks.find((c) => c.code === 'l2_family_mismatch');
+    expect(mismatchErr?.severity).toBe('error');
+  });
 });

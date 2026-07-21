@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T01:08:25.910Z",
+  "lote": "classes-de-palavras-g06",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fgv-acs-pref-classes-assinale-a-opcao-a-seguir-em-que-o-t-3719032",
+    "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085",
+    "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
+    "vunesp-acs-p-classes-ainda-que-seja-utilizada-frequenteme-3776327",
+    "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+    "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789284",
+    "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789333",
+    "vunesp-ag-cs-classes-leia-o-trecho-a-seguir-da-cronica-de-3799252"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fgv-acs-pref-classes-assinale-a-opcao-a-seguir-em-que-o-t-3719032",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-classes-considere-o-texto-a-seguir-para-resp-3804085",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "quadrix-tec-classes-texto-para-a-questao-leandro-karnal-3779677",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-acs-p-classes-ainda-que-seja-utilizada-frequenteme-3776327",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-acs-p-classes-leia-o-texto-a-seguir-para-responder-3776325",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789284",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-ad-classes-leia-o-texto-a-seguir-para-responder-3789333",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-cs-classes-leia-o-trecho-a-seguir-da-cronica-de-3799252",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

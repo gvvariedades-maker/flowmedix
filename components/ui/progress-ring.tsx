@@ -3,6 +3,8 @@
   size?: number;
   strokeWidth?: number;
   variant?: 'brand' | 'success' | 'warning';
+  /** Sobrescreve a cor do arco (ex.: verde do ícone AVANT na vitrine). */
+  strokeColor?: string;
 }
 
 const colors = {
@@ -16,11 +18,12 @@ export function ProgressRing({
   size = 48,
   strokeWidth = 4,
   variant = 'brand',
+  strokeColor,
 }: ProgressRingProps) {
   const r = (size - strokeWidth) / 2;
   const circ = 2 * Math.PI * r;
   const dash = (Math.min(100, Math.max(0, value)) / 100) * circ;
-  const color = colors[variant];
+  const color = strokeColor ?? colors[variant];
 
   return (
     <svg

@@ -1,0 +1,20 @@
+{
+  "lote": "imunizacao-amauc-diabetes-branch-repair",
+  "generated_at": "2026-07-19T12:43:50.165Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "amauc-enfermagem-imunizacao-1779564109452-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

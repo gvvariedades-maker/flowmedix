@@ -7,8 +7,9 @@
       "steps": [
         "Exportar catálogo se manifest ausente ou desatualizado",
         "Cluster report se existir cluster_command no registry",
+        "Por slug: avant-classify-family → avant-golden-anchor-handcraft (logic_flow primeiro)",
         "Handcraft em lotes de lote_size (padrão 8)",
-        "validate:goldens --strict + audit:questao-readiness por lote",
+        "audit:questao-readiness --strict-v2-pedagogy → [READY] + validate:goldens --strict por lote",
         "apply-lote --dry-run; apply só com pedido explícito do usuário"
       ]
     },
@@ -16,8 +17,8 @@
       "label": "Uma questão — reparo ou atualização L3",
       "steps": [
         "Buscar JSON no Supabase pelo modulo_slug",
-        "Handcraft A1+A2+A3 com pedagogical_branch se subtópico tem ramos L3",
-        "audit:questao-readiness --file até READY",
+        "avant-classify-family → avant-golden-anchor-handcraft + meta.pedagogical_branch se ramo L3",
+        "audit:questao-readiness --file --strict-v2-pedagogy até [READY]",
         "apply pontual só com pedido explícito"
       ]
     },
@@ -31,9 +32,18 @@
     }
   },
   "pedagogical_branches_note": "Se subtópico tem BRANCH_DESIGN_MAP, ver .cursor/skills/avant-json-template/SKILL.md § L2.5+L3",
+  "skills": [
+    ".cursor/skills/avant-classify-family/SKILL.md",
+    ".cursor/skills/avant-golden-anchor-handcraft/SKILL.md",
+    ".cursor/skills/professor-para-concurso/SKILL.md",
+    ".cursor/skills/avant-json-template/SKILL.md",
+    ".cursor/skills/brief-enfermagem/SKILL.md"
+  ],
   "validation": {
-    "per_slug": "npm run audit:questao-readiness -- --file=<path>",
-    "per_lote": "npm run audit:questao-readiness -- --lote=<lote>",
-    "per_subtopico_supabase": "npm run audit:questao-readiness -- --from-supabase --subtopico=\"<canônico>\""
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote": "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_subtopico_supabase": "npm run audit:questao-readiness -- --from-supabase --subtopico=\"<canônico>\" --strict-v2-pedagogy",
+    "anchors_gate": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy → [READY]"
   }
 }

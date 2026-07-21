@@ -12,5 +12,11 @@
     "examples/questao-premium-access-urgencias-rcp-pediatrica-15-2.json",
     "examples/questao-premium-consulpam-urgencias-pcr-pediatrica-conceito.json"
   ],
-  "notes": "g25 RCP pediátrica final — engasgo→PCR · RCP extra-hospitalar lactente dois dedos (reconcile g09)"
+  "notes": "g25 RCP pediátrica final — engasgo→PCR · RCP extra-hospitalar lactente dois dedos (reconcile g09)",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

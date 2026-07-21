@@ -7,9 +7,19 @@ import { QuestaoFilterChips } from '@/components/questao-filter/QuestaoFilterChi
 import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
 import { deriveFacetsFromModulos, useQuestaoFacets } from '@/components/questao-filter/useQuestaoFacets';
 import type { VitrineFacets } from '@/lib/vitrine/types';
+import {
+  disciplinasPresentesEmModulos,
+  getVitrineDisciplinaMeta,
+  resolveVitrineDisciplinaId,
+  type VitrineDisciplinaId,
+} from '@/lib/vitrine/disciplina';
 import { cn } from '@/lib/utils';
 
-const EMPTY_MODULOS: { banca?: string | null; titulo_aula?: string | null }[] = [];
+const EMPTY_MODULOS: {
+  banca?: string | null;
+  titulo_aula?: string | null;
+  modulo_nome?: string | null;
+}[] = [];
 
 export type QuestaoFilterBarProps = {
   variant: 'vitrine' | 'caderno-panel';
@@ -19,8 +29,15 @@ export type QuestaoFilterBarProps = {
   onBancasChange: (bancas: string[]) => void;
   onAssuntosChange: (assuntos: string[]) => void;
   onSearchChange: (term: string) => void;
+  /** Escopo disciplina (caderno) — null = todas. */
+  disciplinaSelected?: VitrineDisciplinaId | null;
+  onDisciplinaChange?: (disciplina: VitrineDisciplinaId | null) => void;
   /** Módulos locais para fallback de facets no painel do caderno. */
-  modulosForFallback?: { banca?: string | null; titulo_aula?: string | null }[];
+  modulosForFallback?: {
+    banca?: string | null;
+    titulo_aula?: string | null;
+    modulo_nome?: string | null;
+  }[];
   /** Facets controlados pelo pai (vitrine SSR) — desliga fetch interno. */
   facets?: VitrineFacets;
   facetsLoading?: boolean;
@@ -40,6 +57,8 @@ export function QuestaoFilterBar({
   onBancasChange,
   onAssuntosChange,
   onSearchChange,
+  disciplinaSelected = null,
+  onDisciplinaChange,
   modulosForFallback = EMPTY_MODULOS,
   facets: facetsProp,
   facetsLoading: facetsLoadingProp,
@@ -51,32 +70,67 @@ export function QuestaoFilterBar({
 }: QuestaoFilterBarProps) {
   const isCaderno = variant === 'caderno-panel';
   const useExternalFacets = facetsProp !== undefined;
-  const fallbackFacets = useMemo(
-    () => deriveFacetsFromModulos(modulosForFallback),
+
+  const disciplinasDisponiveis = useMemo(
+    () => disciplinasPresentesEmModulos(modulosForFallback),
     [modulosForFallback],
+  );
+  const showDisciplinaFilter =
+    isCaderno && Boolean(onDisciplinaChange) && disciplinasDisponiveis.length > 1;
+
+  const scopedModulos = useMemo(() => {
+    if (!disciplinaSelected) return modulosForFallback;
+    return modulosForFallback.filter(
+      (m) => resolveVitrineDisciplinaId(m.modulo_nome) === disciplinaSelected,
+    );
+  }, [disciplinaSelected, modulosForFallback]);
+
+  const fallbackFacets = useMemo(
+    () => deriveFacetsFromModulos(scopedModulos),
+    [scopedModulos],
   );
   const { facets: loadedFacets, facetsLoading: loadedFacetsLoading } = useQuestaoFacets(
     bancasSelected,
-    { fallbackFacets, enabled: !useExternalFacets },
+    {
+      fallbackFacets,
+      // Caderno: facets só locais (lista do pacote), sem misturar API da vitrine.
+      enabled: !useExternalFacets && !isCaderno,
+    },
   );
-  const facets = facetsProp ?? loadedFacets;
-  const facetsLoading = facetsLoadingProp ?? loadedFacetsLoading;
+  const facets = facetsProp ?? (isCaderno ? fallbackFacets : loadedFacets);
+  const facetsLoading = facetsLoadingProp ?? (isCaderno ? false : loadedFacetsLoading);
   const showSearchField = showSearch ?? isCaderno;
 
   const [bancaSheetOpen, setBancaSheetOpen] = useState(false);
   const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
 
   useEffect(() => {
-    if (useExternalFacets || !assuntosSelected.length) return;
+    if (!assuntosSelected.length) return;
     const valid = assuntosSelected.filter((a) => facets.assuntos.includes(a));
     if (valid.length !== assuntosSelected.length) {
       onAssuntosChange(valid);
     }
-  }, [assuntosSelected, facets.assuntos, onAssuntosChange, useExternalFacets]);
+  }, [assuntosSelected, facets.assuntos, onAssuntosChange]);
+
+  useEffect(() => {
+    if (!bancasSelected.length) return;
+    const valid = bancasSelected.filter((b) => facets.bancas.includes(b));
+    if (valid.length !== bancasSelected.length) {
+      onBancasChange(valid);
+    }
+  }, [bancasSelected, facets.bancas, onBancasChange]);
+
+  const handleDisciplinaChange = (id: VitrineDisciplinaId | null) => {
+    if (!onDisciplinaChange) return;
+    onDisciplinaChange(id);
+    onBancasChange([]);
+    onAssuntosChange([]);
+  };
 
   const clearFilterSelections = () => {
     onBancasChange([]);
     onAssuntosChange([]);
+    if (showDisciplinaFilter) handleDisciplinaChange(null);
   };
 
   const clearAll = () => {
@@ -88,6 +142,51 @@ export function QuestaoFilterBar({
     ? 'ring-2 ring-[rgba(34, 197, 94,0.35)] ring-offset-0 ring-offset-white'
     : undefined;
 
+  const disciplinaSegment = showDisciplinaFilter ? (
+    <div
+      role="group"
+      aria-label="Disciplina"
+      className={cn(
+        'flex flex-wrap gap-2',
+        disciplinaSelected && highlightRing && 'rounded-xl p-0.5',
+        disciplinaSelected && highlightRing,
+      )}
+    >
+      <button
+        type="button"
+        aria-pressed={disciplinaSelected === null}
+        onClick={() => handleDisciplinaChange(null)}
+        className={cn(
+          'min-h-[44px] rounded-xl border px-3.5 text-xs font-bold tracking-wide transition-colors',
+          disciplinaSelected === null
+            ? 'border-[rgba(143,224,32,0.55)] bg-[rgba(143,224,32,0.14)] text-[#3d6b0f]'
+            : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50',
+        )}
+      >
+        Todas
+      </button>
+      {disciplinasDisponiveis.map((id) => {
+        const active = disciplinaSelected === id;
+        return (
+          <button
+            key={id}
+            type="button"
+            aria-pressed={active}
+            onClick={() => handleDisciplinaChange(id)}
+            className={cn(
+              'min-h-[44px] rounded-xl border px-3.5 text-xs font-bold tracking-wide transition-colors',
+              active
+                ? 'border-[rgba(143,224,32,0.55)] bg-[rgba(143,224,32,0.14)] text-[#3d6b0f]'
+                : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50',
+            )}
+          >
+            {getVitrineDisciplinaMeta(id).label}
+          </button>
+        );
+      })}
+    </div>
+  ) : null;
+
   if (isCaderno) {
     return (
       <div className={cn('space-y-3', className)}>
@@ -96,6 +195,8 @@ export function QuestaoFilterBar({
           value={searchTerm}
           onChange={onSearchChange}
         />
+
+        {disciplinaSegment}
 
         <div className="lg:hidden">
           <QuestaoFilterChips

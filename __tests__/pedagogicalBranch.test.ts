@@ -245,6 +245,27 @@ describe('enrichPresentationContext — meta da questão', () => {
     expect(design?.dangerZone).toBe('compare');
   });
 
+  it('infere imunizacao_generico para campanha diabetes Portaria 2.048 (não calendário PNI)', () => {
+    const instruction =
+      'A Campanha Nacional de Detecção de Casos Suspeitos de Diabetes Mellitus será realizada em unidades básicas de saúde (Portaria nº 2.048/09). É CORRETO afirmar que o público alvo é constituído por pessoas com idade igual ou superior a:';
+    const slides = [
+      {
+        type: 'danger_zone' as const,
+        content: 'PEGADINHAS',
+        items: [
+          {
+            label: 'Confundir com calendário',
+            detail: 'Não é vacina.',
+            correct: 'Campanha APS diabetes — 40 anos.',
+          },
+        ],
+      },
+    ];
+    expect(inferPedagogicalBranch(imunizacaoSubtopico, instruction, slides, 'legis')).toBe(
+      'imunizacao_generico',
+    );
+  });
+
   it('PNI ramos bespoke — pacotes 4/4 distintos (calendário ≠ cadeia frio ≠ V/F intervalos)', () => {
     const cal = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_calendario');
     const frio = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_cadeia_frio');

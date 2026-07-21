@@ -13,17 +13,9 @@ import { resolve } from 'node:path';
 
 loadEnvConfig(process.cwd());
 
+import { classifyFamily, type FamilyId } from '@/lib/catalogMigration/classifyFamily';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { QuestaoCompletaSchema, payloadContainsTecconcursosReference } from '@/lib/validations';
-
-type FamilyId =
-  | 'legis'
-  | 'protocolo'
-  | 'calc'
-  | 'vf'
-  | 'certo_errado'
-  | 'conceito'
-  | 'text_fragment';
 
 type CandidateRow = {
   modulo_slug: string;
@@ -75,62 +67,6 @@ function genericSlides(slides: unknown): boolean {
     txt.includes('conceito central') ||
     txt.includes('regra essencial')
   );
-}
-
-function classifyFamily(
-  instruction: string,
-  subtopico: string,
-  options: { text?: string }[],
-  textFragment: string,
-): FamilyId {
-  const blob = `${instruction} ${subtopico}`.toLowerCase();
-
-  if (textFragment.trim().length > 80) return 'text_fragment';
-
-  if (
-    /I\s*[-–]/.test(instruction) &&
-    /II\s*[-–]/.test(instruction) &&
-    /(III|IV)\s*[-–]/.test(instruction) &&
-    /correto o que se afirma|assertivas|afirmativas|julgue os itens/i.test(instruction)
-  ) {
-    return 'vf';
-  }
-
-  if (
-    options.length === 2 &&
-    options.some((o) => /certo/i.test(o.text ?? '')) &&
-    options.some((o) => /errado/i.test(o.text ?? ''))
-  ) {
-    return 'certo_errado';
-  }
-
-  if (
-    /lei\s*(n[ºo°]\s*)?\d|art\.|decreto|cofen|coren|resolução|código de ética|8\.080|7\.498|cf\/88|de acordo com a lei|conforme a lei|dispõe sobre/i.test(
-      blob,
-    ) ||
-    (/sus\b/i.test(blob) && /lei|art\.|decreto|8\.080|7\.498/i.test(blob))
-  ) {
-    return 'legis';
-  }
-
-  if (
-    /rcp|compressão|30:2|sinais vitais|oxigen|protocolo|parâmetro|bpm|mmhg|frequência cardíaca|pressão arterial|urgência|emergência/i.test(
-      blob,
-    )
-  ) {
-    return 'protocolo';
-  }
-
-  if (
-    /calcul|dose|gts|gotas|comprimido|infus|equiv|dilui|regra de três|microgotas|quantos?\s+ml|quantas?\s+gotas/i.test(
-      blob,
-    ) ||
-    (/mg|ml/i.test(instruction) && /quant|calcule|determine|prescri/i.test(instruction))
-  ) {
-    return 'calc';
-  }
-
-  return 'conceito';
 }
 
 function scoreCandidate(input: {

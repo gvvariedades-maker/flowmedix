@@ -14,8 +14,10 @@ import {
   detectSlideTopicDrift,
   detectWeakFooterRules,
 } from '@/lib/catalogMigration/slideContract';
+import { detectMissingFigure } from '@/lib/catalogMigration/figureContract';
 import { isPremiumSubtopico } from '@/lib/catalogMigration/premiumGate';
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
+import { inferFamilyMismatch } from '@/lib/catalogMigration/classifyFamily';
 import { detectMoldL3WriteBlockers } from '@/lib/slides/detectMoldL3WriteBlockers';
 import {
   lintSlugAlignment,
@@ -129,7 +131,10 @@ type QuestaoPayload = {
   };
   question_data?: {
     instruction?: string;
-    options?: { id: string; is_correct?: boolean }[];
+    text_fragment?: string;
+    figure_policy?: 'required' | 'transcribed';
+    figures?: { id: string; url: string; alt: string }[];
+    options?: { id: string; text?: string; is_correct?: boolean }[];
   };
   reverse_study_slides?: unknown;
   study_slides?: unknown;
@@ -240,6 +245,29 @@ export function auditQuestaoReadiness(
     push(checks, 'A2', 'l2_family', 'meta.family ausente em golden-v1', 'error');
   }
 
+  if (isGoldenV1 && payload.meta?.family?.trim()) {
+    const optionsList = (payload.question_data?.options ?? []).map((o, i) => ({
+      id: o.id ?? String.fromCharCode(65 + i),
+      text: o.text ?? '',
+      is_correct: Boolean(o.is_correct),
+    }));
+    const inferredMismatch = inferFamilyMismatch(
+      payload.meta.family,
+      instruction,
+      optionsList,
+      String(payload.question_data?.text_fragment ?? ''),
+    );
+    if (inferredMismatch) {
+      push(
+        checks,
+        'A2',
+        'l2_family_mismatch',
+        `meta.family="${payload.meta.family}" diverge do funil (inferido: ${inferredMismatch})`,
+        strictV2Pedagogy ? 'error' : 'warn',
+      );
+    }
+  }
+
   if (isGoldenV1 && !payload.meta?.content_review) {
     push(
       checks,
@@ -262,6 +290,17 @@ export function auditQuestaoReadiness(
 
   if (hasPremiumStubMarkers(slides)) {
     push(checks, 'A2', 'l2_stub', 'Slides contêm marcadores stub/genéricos', 'error');
+  }
+
+  const missingFigure = detectMissingFigure(payload);
+  if (missingFigure) {
+    push(
+      checks,
+      'A2',
+      missingFigure.code,
+      missingFigure.message,
+      strictV2Pedagogy ? 'error' : 'warn',
+    );
   }
 
   const dup = detectDuplicateDangerJustifications(slides);
@@ -340,7 +379,10 @@ export function auditQuestaoReadiness(
         strict ? 'error' : 'warn',
       );
     }
-    for (const issue of lintGoldenV2Pedagogy(slides as never[])) {
+    for (const issue of lintGoldenV2Pedagogy(slides as never[], {
+      q: payload as never,
+      family: payload.meta?.family as FamilyId | undefined,
+    })) {
       const already = checks.some((c) => c.code === issue.code);
       if (already) continue;
       push(checks, 'A2', issue.code, issue.message, strictV2Pedagogy ? 'error' : 'warn');

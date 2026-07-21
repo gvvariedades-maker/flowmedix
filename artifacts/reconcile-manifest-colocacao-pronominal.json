@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-07-20T16:53:55.422Z",
+  "pacote_prefix": "colocacao-pronominal",
+  "lotes": [
+    {
+      "lote": "colocacao-pronominal-g01",
+      "count": 8
+    },
+    {
+      "lote": "colocacao-pronominal-g02",
+      "count": 8
+    },
+    {
+      "lote": "colocacao-pronominal-g03",
+      "count": 8
+    },
+    {
+      "lote": "colocacao-pronominal-g04",
+      "count": 7
+    }
+  ],
+  "union_count": 31,
+  "registry_total_slugs": 31,
+  "match": true,
+  "slugs": [
+    "aocp-unirio-colocacao-multitarefa-3841117",
+    "avancasp-amparo-colocacao-enclise-levou-me-3352965",
+    "avancasp-amparo-colocacao-proclise-se-3353968",
+    "avancasp-caconde-colocacao-vista-cansada-3457294",
+    "avancasp-caieiras-colocacao-angustia-3374794",
+    "avancasp-caieiras-colocacao-enclise-norma-3375896",
+    "avancasp-cerquilho-colocacao-domingo-3662934",
+    "avancasp-cerquilho-colocacao-enclise-vetada-3661739",
+    "avancasp-estiva-gerbi-colocacao-faca-favor-3835994",
+    "avancasp-fmsrc-colocacao-quantos-norma-3665306",
+    "avancasp-morungaba-colocacao-proclise-vetada-3376869",
+    "avancasp-morungaba-colocacao-tipo-i-ii-iii-3452377",
+    "avancasp-nova-odessa-colocacao-ce-3962471",
+    "avancasp-potim-colocacao-apresentar-lhe-3839370",
+    "avancasp-sm-arcanjo-colocacao-afirmativas-3709831",
+    "avancasp-varginha-colocacao-quantos-norma-3727518",
+    "avancasp-vinhedo-colocacao-jamais-3554847",
+    "cespe-boa-vista-colocacao-memoria-3705166",
+    "cpcon-itabaiana-colocacao-se-proclise-4014453",
+    "educa-pb-colocacao-versos-intimos-3746604",
+    "facet-bom-jardim-colocacao-obliquo-3614688",
+    "fgv-ebserh-colocacao-deram-me-3385122",
+    "idecan-sesap-colocacao-arroz-3531587",
+    "vunesp-itapevi-colocacao-solidao-3419183",
+    "vunesp-itatiba-colocacao-carnaval-3583308",
+    "vunesp-osasco-colocacao-alma-gemea-3607134",
+    "vunesp-osasco-colocacao-cerebro-3558396",
+    "vunesp-presidente-prudente-colocacao-feira-3336128",
+    "vunesp-sertaozinho-colocacao-bibliifilas-3352589",
+    "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
+    "vunesp-sorocaba-colocacao-charles-tira-3999721"
+  ]
+}

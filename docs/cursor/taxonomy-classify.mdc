@@ -1,0 +1,97 @@
+---
+description: Ativa taxonomia quando o usuário enviar Classify:, Taxonomy gate:, Fechar taxonomia:, ou anexar docs/TAXONOMIA_CONVERSA.md
+alwaysApply: false
+---
+
+# Taxonomia — classificar subtópico + gate antes do handcraft
+
+> **Não confundir** com `Classify family:` / skill `avant-classify-family` — isso decide `meta.family` (vf, calc…). Esta rule é **subtópico canônico** (`titulo_aula` + `meta.subtopico`).
+
+## Triggers
+
+| Mensagem | Ação |
+|----------|------|
+| `Classify: <bucket ou catálogo inteiro>` | Inventário + infer/reclassify (não handcraft) |
+| `Taxonomy gate: <subtópico canônico>` | Só inventário + gate + interpretar relatório |
+| `Fechar taxonomia: <subtópico>` | Gate + `--write-closed` se `handcraft_allowed` |
+| Anexar `docs/TAXONOMIA_CONVERSA.md` | Mesmo escopo de `Classify:` |
+
+Nome do subtópico: **exato** `CLAUDE.md` §9.
+
+## Ler antes
+
+1. [`docs/TAXONOMIA_CONVERSA.md`](../TAXONOMIA_CONVERSA.md) — pipeline Classify
+2. [`docs/TAXONOMIA_MODEL.md`](../TAXONOMIA_MODEL.md) §5–§6 — DoD + catch-all A/B
+3. [`data/catalog-migration/taxonomy-registry.json`](../../data/catalog-migration/taxonomy-registry.json)
+4. [`data/catalog-migration/handcraft-registry.json`](../../data/catalog-migration/handcraft-registry.json) → `taxonomy` / `taxonomy_schema`
+5. Código: [`lib/catalogMigration/taxonomyGate.ts`](../../lib/catalogMigration/taxonomyGate.ts)
+
+## Comandos (Windows — aspas no argumento)
+
+```bash
+npm run audit:subtopico-inventory -- "--subtopico=<Nome canônico exato>"
+npm run audit:taxonomy-gate -- "--subtopico=<Nome canônico exato>"
+npm run audit:taxonomy-gate -- "--subtopico=<Nome canônico exato>" --write-closed
+```
+
+Sem aspas extras no PowerShell, `--subtopico=` quebra no primeiro espaço.
+
+## Ordem — conversa `Classify:`
+
+1. `audit:subtopico-inventory` (filtrado ou catch-all)
+2. `audit:taxonomy-gate`
+3. `catalog:reclassify-subtopico` dry-run
+4. `catalog:infer-subtopico` dry-run
+5. Revisão tier amarelo/vermelho
+6. `--apply` **somente** se o usuário pedir
+
+**Proibido nesta conversa:** handcraft slides, `ai:generate`, `catalog:upgrade-premium`, `apply-lote` sem pedido explícito.
+
+Handcraft → conversa separada `Handcraft: <subtópico>` só após gate `pass` ou `warn` com `handcraft_allowed=true`.
+
+## Interpretar `audit:taxonomy-gate`
+
+| `gate` | Exit | Handcraft | Significado |
+|--------|------|-----------|-------------|
+| `pass` | 0 | sim | Inventário ok + taxonomia fechada ou **reclassificação detectada** |
+| `warn` | 0 | sim* | Modo B provisório ou registry ainda `open` |
+| `block` | 1 | não | mismatch, catch-all sem declaração, slugs do manifest ausentes |
+
+\* `warn` com `promote_requires_infer=true` → infer/Classify antes de `--promote`.
+
+Relatório: `artifacts/taxonomy-gate-<pacote_prefix>.json`.
+
+### `total_scanned=0` no catch-all
+
+Não assumir “pacote inexistente”. Ler `manifest` no relatório:
+
+| Campo | Significado |
+|-------|-------------|
+| `manifest.reclassified=true` | Bucket vazio no DB; slugs do pacote já em subtópicos canônicos → **modo A concluído** |
+| `manifest.missing_slugs[]` | Slugs do manifest não estão no Supabase → **block** |
+| `manifest.still_in_catch_all > 0` | Ainda no catch-all → modo B ou continuar Classify |
+
+Exemplo fechado: [`data/catalog-migration/dtrans-mescladas/README.md`](../../data/catalog-migration/dtrans-mescladas/README.md).
+
+### Vitrine após reclassificação
+
+- URL/slug pode ser legado (ex. `…-doencas-transmissiveis-…`)
+- Vitrine agrupa por **`titulo_aula` canônico** — cards em Virais, ISTs, etc.
+- Handcraft local do pacote (`dtrans-mescladas-g*`) permanece válido
+- `promote_requires_infer=false` quando `reclassified=true`
+
+## Catch-all — registry `taxonomy`
+
+| Modo | `catch_all_mode` | `status` | Uso |
+|------|------------------|----------|-----|
+| **A** | `A` | `closed` | Classify primeiro; bucket esvaziado |
+| **B** | `B` | `catch_all_provisional` | Handcraft provisório no catch-all |
+
+Fechar: atualizar `handcraft-registry.json` + `artifacts/taxonomy-closed-<pacote_prefix>.json` (ou `--write-closed`).
+
+## Entregáveis (Classify)
+
+- Resumo inventário (mismatch, catch-all, não canônicos)
+- Relatório gate (`gate`, `manifest`, destinos)
+- Infer dry-run (keep / mudanças / erros)
+- Slugs tier amarelo/vermelho para revisão

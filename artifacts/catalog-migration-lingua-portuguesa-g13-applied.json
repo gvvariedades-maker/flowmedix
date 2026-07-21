@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T15:30:32.251Z",
+  "lote": "lingua-portuguesa-g13",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-boa-vista-pb-pontuacao-incorreta-3951884",
+    "avancasp-cunha-pontuacao-correta-3738882",
+    "avancasp-varginha-pontuacao-reescrita-coragem-3727507",
+    "avancasp-varginha-pontuacao-reescrita-erico-3726048",
+    "cebraspe-boa-vista-pontuacao-dois-pontos-3705151",
+    "educapb-santa-cecilia-pontuacao-chocolate-3746565",
+    "educapb-sj-rio-peixe-pontuacao-meme-3711365",
+    "quadrix-fuabc-pontuacao-virgula-facultativa-3721193"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-boa-vista-pb-pontuacao-incorreta-3951884",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-cunha-pontuacao-correta-3738882",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-varginha-pontuacao-reescrita-coragem-3727507",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-varginha-pontuacao-reescrita-erico-3726048",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cebraspe-boa-vista-pontuacao-dois-pontos-3705151",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educapb-santa-cecilia-pontuacao-chocolate-3746565",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educapb-sj-rio-peixe-pontuacao-meme-3711365",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "quadrix-fuabc-pontuacao-virgula-facultativa-3721193",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

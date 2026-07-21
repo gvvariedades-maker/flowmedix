@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-19T07:25:03.394Z",
+  "lote": "lingua-portuguesa-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "caderno-pt-crase-constituicao-lacunas-3614637",
+    "caderno-pt-crase-erro-compramos-prazo-3614663",
+    "caderno-pt-crase-previdencia-lacunas-3661931",
+    "caderno-pt-crase-semelhante-propostas-3662939",
+    "cebraspe-clima-reescrita-crase-3705197",
+    "cebraspe-radio-apaixonado-crase-aquilo-3698162",
+    "consulplan-indaiatuba-crase-lacunas-pressas-3694717",
+    "vunesp-guararapes-crase-lacunas-tira-3607407"
+  ],
+  "results": [
+    {
+      "modulo_slug": "caderno-pt-crase-constituicao-lacunas-3614637",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-erro-compramos-prazo-3614663",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-previdencia-lacunas-3661931",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-semelhante-propostas-3662939",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-clima-reescrita-crase-3705197",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-radio-apaixonado-crase-aquilo-3698162",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "consulplan-indaiatuba-crase-lacunas-pressas-3694717",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-guararapes-crase-lacunas-tira-3607407",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

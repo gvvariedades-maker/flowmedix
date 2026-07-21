@@ -6,9 +6,9 @@ import { cn } from '@/lib/utils';
 export const MENU_ICON_STROKE = 2 as const;
 
 export const MENU_NAV_ACTIVE = {
-  row: 'bg-[#22c55e]/10',
-  bar: 'bg-[#22c55e]',
-  label: 'text-[#166534]',
+  row: 'bg-[var(--color-brand)]/10',
+  bar: 'bg-[var(--color-brand)]',
+  label: 'text-[var(--color-brand-text)]',
 } as const;
 
 /** Linha de nav inativa — hover mais legível que slate-100 sobre branco. */
@@ -48,13 +48,13 @@ export const MENU_ACCENT_STYLES: Record<
 > = {
   brand: {
     chip: 'bg-slate-100',
-    chipActive: 'bg-[#22c55e]/18',
+    chipActive: 'bg-[var(--color-brand)]/18',
     icon: 'text-slate-500',
-    iconActive: 'text-[#166534]',
+    iconActive: 'text-[var(--color-brand-text)]',
     glow: 'shadow-sm',
-    rowActive: 'bg-[#22c55e]/10',
-    bar: 'bg-[#22c55e]',
-    labelActive: 'text-[#166534]',
+    rowActive: 'bg-[var(--color-brand)]/10',
+    bar: 'bg-[var(--color-brand)]',
+    labelActive: 'text-[var(--color-brand-text)]',
   },
   cyan: {
     chip: 'bg-cyan-50',
@@ -173,7 +173,7 @@ export function MenuNavIconChip({
           ? cn(
               styles.chipActive,
               styles.glow,
-              accent === 'brand' ? 'border-[#22c55e]/40' : 'border-slate-300',
+              accent === 'brand' ? 'border-[var(--color-brand)]/40' : 'border-slate-300',
             )
           : cn(MENU_CHIP_IDLE.chip, 'border-slate-200/90'),
       )}

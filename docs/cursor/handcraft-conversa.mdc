@@ -1,0 +1,15 @@
+---
+description: Ativa o runbook handcraft golden-v1 quando o usuário enviar "Handcraft:" seguido do subtópico canônico, ou anexar docs/HANDCRAFT_CONVERSA.md
+alwaysApply: false
+---
+
+# Handcraft golden-v1 — agente (Fase 1)
+
+> **Escopo:** handcraft por slug até `status: applied`. Cópia versionada — espelhar em `.cursor/rules/handcraft-golden-v1.mdc`.
+
+Conteúdo canônico:
+
+- Prompt de conversa: [`docs/HANDCRAFT_CONVERSA.md`](../HANDCRAFT_CONVERSA.md)
+- Rule operacional: [`.cursor/rules/handcraft-golden-v1.mdc`](../../.cursor/rules/handcraft-golden-v1.mdc)
+- Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../GOLDEN_HANDCRAFT_MODEL.md)
+- Briefing dinâmico: `npm run handcraft:brief -- --subtopico="..."`

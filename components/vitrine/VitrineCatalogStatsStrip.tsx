@@ -1,5 +1,7 @@
 ﻿'use client';
 
+import { cn } from '@/lib/utils';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 import { formatCatalogCount } from '@/lib/vitrine/catalogStatsAnimation';
 import { useCatalogStatsCountUp } from '@/hooks/useCatalogStatsCountUp';
 
@@ -25,14 +27,14 @@ export default function VitrineCatalogStatsStrip({
       aria-busy={animating || undefined}
     >
       <div className="flex items-baseline gap-2">
-        <strong className="text-2xl font-black tabular-nums leading-none text-[#166534]">
+        <strong className={cn('text-2xl font-black tabular-nums leading-none', vitrineBrand.text)}>
           {formatCatalogCount(displayQuestions)}
         </strong>
         <span className="text-xs text-slate-500">questões com estudo reverso</span>
       </div>
       <div className="hidden h-6 w-px shrink-0 bg-slate-200 sm:block" aria-hidden />
       <div className="flex items-baseline gap-2">
-        <strong className="text-2xl font-black tabular-nums leading-none text-[#166534]">
+        <strong className={cn('text-2xl font-black tabular-nums leading-none', vitrineBrand.text)}>
           {formatCatalogCount(displaySlides)}
         </strong>
         <span className="text-xs text-slate-500">NeuroSlides</span>

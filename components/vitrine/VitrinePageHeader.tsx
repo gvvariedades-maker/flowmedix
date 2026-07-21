@@ -1,4 +1,6 @@
 ﻿import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 
 type VitrinePageHeaderProps = {
   title: string;
@@ -9,7 +11,7 @@ export default function VitrinePageHeader({ title, description }: VitrinePageHea
   return (
     <section aria-labelledby="vitrine-page-title">
       <div className="flex items-stretch gap-3">
-        <div className="w-1 shrink-0 rounded-full bg-[#22c55e]" aria-hidden />
+        <div className={cn('w-1 shrink-0 rounded-full', vitrineBrand.bg)} aria-hidden />
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
@@ -20,7 +22,7 @@ export default function VitrinePageHeader({ title, description }: VitrinePageHea
             </span>
             <Link
               href="/ajuda/estudo-reverso"
-              className="text-[11px] font-medium text-[#166534] hover:underline"
+              className={cn('text-[11px] font-medium hover:underline', vitrineBrand.text)}
             >
               Como funciona
             </Link>

@@ -43,7 +43,7 @@ types/.database.supabase.generated.tmp.ts
 /playwright/.cache/
 /e2e/.auth/
 
-# Cursor (skill versionada: professor-elias-santana-metodo)
+# Cursor (skill versionada: professor-elias-santana-metodo; demais: docs/skills/ + npm run sync:skills)
 .cursor/*
 !.cursor/skills/
 .cursor/skills/*

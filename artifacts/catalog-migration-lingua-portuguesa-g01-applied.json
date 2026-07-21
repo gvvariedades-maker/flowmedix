@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-18T22:40:34.039Z",
+  "lote": "lingua-portuguesa-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "caderno-pt-crase-obedecer-ordem-3840782",
+    "caderno-pt-crase-pediu-a-todos-3665301",
+    "caderno-pt-crase-premiacao-mundial-3839868",
+    "caderno-pt-crase-vf-a-ele-3353966",
+    "vunesp-osasco-crase-serra-capivara",
+    "vunesp-samu-osasco-crase-a-remo-incorreta",
+    "vunesp-sertaozinho-crase-vf-rodoviaria-carnaval",
+    "vunesp-sjrp-crase-a-qual"
+  ],
+  "results": [
+    {
+      "modulo_slug": "caderno-pt-crase-obedecer-ordem-3840782",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-pediu-a-todos-3665301",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-premiacao-mundial-3839868",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-vf-a-ele-3353966",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-osasco-crase-serra-capivara",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-samu-osasco-crase-a-remo-incorreta",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sertaozinho-crase-vf-rodoviaria-carnaval",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sjrp-crase-a-qual",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

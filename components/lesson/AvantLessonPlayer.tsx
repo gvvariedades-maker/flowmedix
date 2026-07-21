@@ -53,11 +53,9 @@ import {
   sortReverseStudySlides,
 } from '@/lib/reverseStudySlideOrder';
 import { sanitizeHTML } from '@/lib/validations';
+import { QuestionHeaderBlock } from '@/components/lesson/QuestionHeaderBlock';
+import { QuestaoFiguresBlock } from '@/components/lesson/QuestaoFiguresBlock';
 import {
-  buildDerivedQuestionHeaderLine,
-  buildQuestionExamDetailLine,
-  buildQuestionHeaderChips,
-  buildQuestionSubjectLine,
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
 import { isCertoErradoQuestion } from '@/lib/questionKind';
@@ -103,9 +101,6 @@ const QUESTION_TEXT_TYPOGRAPHY =
 
 const QUESTION_HEADER_TITLE_TYPOGRAPHY =
   'text-base md:text-lg font-bold leading-snug';
-
-const QUESTION_HEADER_CHIP_TYPOGRAPHY =
-  'text-xs font-bold leading-tight';
 
 const QUESTION_HEADER_META_TYPOGRAPHY =
   'text-sm md:text-base font-medium leading-snug';
@@ -647,30 +642,6 @@ export default function AvantLessonPlayer({
     questaoNav,
     slidesFetchTrigger,
   ]);
-
-  const examHeaderLine = useMemo(() => {
-    if (!activeDados?.meta) return '';
-    const raw = activeDados.meta.header_line?.trim();
-    if (raw) return raw;
-    return buildDerivedQuestionHeaderLine(activeDados.meta);
-  }, [activeDados.meta]);
-
-  const subjectLine = useMemo(() => {
-    if (!activeDados?.meta) return null;
-    return buildQuestionSubjectLine(activeDados.meta);
-  }, [activeDados.meta]);
-
-  const usesHeaderChips = Boolean(activeDados?.meta && !activeDados.meta.header_line?.trim());
-
-  const headerChips = useMemo(() => {
-    if (!usesHeaderChips || !activeDados?.meta) return [];
-    return buildQuestionHeaderChips(activeDados.meta);
-  }, [activeDados.meta, usesHeaderChips]);
-
-  const examDetailLine = useMemo(() => {
-    if (!usesHeaderChips || !activeDados?.meta) return null;
-    return buildQuestionExamDetailLine(activeDados.meta);
-  }, [activeDados.meta, usesHeaderChips]);
 
   const instructionParaExibicao = useMemo(() => {
     const raw = activeDados?.question_data?.instruction;
@@ -1372,9 +1343,9 @@ export default function AvantLessonPlayer({
           type="button"
           onClick={handleVoltarLista}
           aria-label={`Voltar para ${voltarDestino}`}
-          className="group flex min-w-0 shrink-0 items-center gap-2 rounded-xl px-1 -ml-1 text-slate-500 transition-colors hover:text-[#166534] min-h-[44px] min-w-[44px] sm:max-w-none"
+          className="group flex min-w-0 shrink-0 items-center gap-2 rounded-xl px-1 -ml-1 text-slate-500 transition-colors hover:text-[var(--color-brand-text)] min-h-[44px] min-w-[44px] sm:max-w-none"
         >
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all group-hover:border-[rgba(34,197,94,0.35)] group-hover:bg-[rgba(34,197,94,0.08)]">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all group-hover:border-[var(--color-brand)]/35 group-hover:bg-[var(--color-brand-dim)]">
             <ArrowLeft size={16} />
           </div>
           <span className="max-w-[5rem] truncate text-sm font-semibold sm:max-w-none sm:text-base">
@@ -1414,8 +1385,15 @@ export default function AvantLessonPlayer({
   };
 
   const renderQuestionScrollBody = (withZoom: boolean) => {
+    const figures = activeDados.question_data.figures ?? [];
     const zoomableContent = (
       <>
+        {figures.length > 0 ? (
+          <div className="px-6 pt-4 pb-2 md:px-8">
+            <QuestaoFiguresBlock figures={figures} />
+          </div>
+        ) : null}
+
         {activeDados.question_data.text_fragment && (
           <div className="px-6 pt-4 pb-2 md:px-8">
             <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm font-serif leading-relaxed italic text-slate-600">
@@ -1656,52 +1634,18 @@ export default function AvantLessonPlayer({
           variants={fadeInUp}
           className="border-b border-slate-200 bg-slate-50 px-6 py-4 md:px-8 md:py-5"
         >
-          {subjectLine && (
-            <p className={`${QUESTION_HEADER_TITLE_TYPOGRAPHY} text-slate-900 border-l-4 border-[#22c55e] pl-3`}>
-              {subjectLine}
-            </p>
-          )}
-          {usesHeaderChips && headerChips.length > 0 ? (
-            <div
-              className={cn(
-                'flex flex-wrap items-center gap-x-2 gap-y-1.5',
-                subjectLine ? 'mt-2' : '',
-              )}
-            >
-              {headerChips.map((chip) => (
-                <span
-                  key={chip.id}
-                  className={cn(
-                    'inline-flex items-center rounded-md border px-2 py-0.5',
-                    QUESTION_HEADER_CHIP_TYPOGRAPHY,
-                    chip.tone === 'banca'
-                      ? 'border-sky-200 bg-sky-50 text-sky-800'
-                      : 'border-slate-200 bg-white text-slate-600',
-                  )}
-                >
-                  {chip.label}
-                </span>
-              ))}
-              {examDetailLine ? (
-                <span className={`${QUESTION_HEADER_META_TYPOGRAPHY} text-slate-500`}>{examDetailLine}</span>
-              ) : null}
-            </div>
-          ) : examHeaderLine ? (
-            <p
-              className={cn(
-                QUESTION_HEADER_META_TYPOGRAPHY,
-                'text-slate-500',
-                subjectLine ? 'mt-2' : '',
-              )}
-            >
-              {examHeaderLine}
-            </p>
+          {activeDados?.meta ? (
+            <QuestionHeaderBlock
+              meta={activeDados.meta}
+              subjectClassName={QUESTION_HEADER_TITLE_TYPOGRAPHY}
+              provenanceClassName={QUESTION_HEADER_META_TYPOGRAPHY}
+            />
           ) : null}
           {mode !== 'live' && formatAvantCodigo(avantCodigo) && (
             <p
               className={cn(
                 'text-[10px] font-mono text-slate-400',
-                subjectLine || examHeaderLine || headerChips.length > 0 ? 'mt-1.5' : '',
+                activeDados?.meta ? 'mt-1.5' : '',
               )}
               title="Código da questão (igual ao painel admin)"
             >
@@ -1757,7 +1701,7 @@ export default function AvantLessonPlayer({
         }
       >
         <div
-          className="h-full bg-[#22c55e] transition-all duration-500 ease-out"
+          className="h-full bg-[var(--color-brand)] transition-all duration-500 ease-out"
           style={{
             width:
               questionListProgressVisualPercent != null
@@ -1953,15 +1897,15 @@ export default function AvantLessonPlayer({
                             <span
                               className={`flex items-center justify-center rounded-full transition-all duration-200 ${
                                 isCurrent
-                                  ? 'h-7 w-7 bg-[#22c55e] ring-2 ring-[rgba(34,197,94,0.40)] ring-offset-1 ring-offset-white shadow-md'
+                                  ? 'h-7 w-7 bg-[var(--color-brand)] ring-2 ring-[var(--color-brand-glow)] ring-offset-1 ring-offset-white shadow-md'
                                   : q.estudada
-                                    ? 'h-5 w-5 bg-emerald-500 hover:bg-emerald-600'
+                                    ? 'h-5 w-5 bg-[var(--color-success)] hover:opacity-90'
                                     : 'h-5 w-5 bg-slate-300 hover:bg-slate-400'
                               }`}
                               aria-hidden
                             >
                               {isCurrent && (
-                                <span className="text-[10px] font-black leading-none text-slate-900">
+                                <span className="text-[10px] font-black leading-none text-[#1a2e05]">
                                   {posicaoLista}
                                 </span>
                               )}
@@ -2012,7 +1956,7 @@ export default function AvantLessonPlayer({
                     fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'
                   }
                   onClick={handleConcluir}
-                  className="flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#22c55e] px-3 font-black uppercase text-[10px] tracking-wide text-slate-900 transition-all hover:bg-[#7acc1a] hover:shadow-md active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
+                  className="btn-editorial-primary flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl px-3 font-black uppercase text-[10px] tracking-wide transition-all hover:shadow-md active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   <span className="hidden sm:inline">
                     {fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
@@ -2156,7 +2100,7 @@ export default function AvantLessonPlayer({
                     aria-busy="true"
                     aria-live="polite"
                   >
-                    <Loader2 className="h-10 w-10 animate-spin text-[#22c55e]" aria-hidden />
+                    <Loader2 className="h-10 w-10 animate-spin text-[var(--color-brand)]" aria-hidden />
                     <p className="text-center text-sm font-semibold text-slate-600">
                       Carregando material…
                     </p>
@@ -2269,7 +2213,7 @@ export default function AvantLessonPlayer({
                         key={i} 
                         className={`h-1.5 rounded-full transition-all duration-500 ${
                           i === slideAtual 
-                            ? 'w-8 sm:w-10 bg-[#22c55e]' 
+                            ? 'w-8 sm:w-10 bg-[var(--color-brand)]' 
                             : 'w-2 bg-slate-200'
                         }`} 
                       />

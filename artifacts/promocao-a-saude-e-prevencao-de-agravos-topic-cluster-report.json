@@ -1,0 +1,1201 @@
+{
+  "generated_at": "2026-07-20T15:42:46.211Z",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-completo",
+  "total": 101,
+  "strong_threshold": 11,
+  "drift_total": 0,
+  "branch_totals": {
+    "promocao_generico": 30,
+    "promocao_educacao_prevencao": 64,
+    "promocao_principios_direitos": 6,
+    "promocao_art4_composicao": 1
+  },
+  "strong_branches": [
+    {
+      "branch": "promocao_generico",
+      "count": 30,
+      "l3": "genérico premium (SUBTOPIC_DESIGN_MAP sus-art4-orbit fallback)"
+    },
+    {
+      "branch": "promocao_educacao_prevencao",
+      "count": 64,
+      "l3": "morphological · reference_table · tap · compare (genérico)"
+    }
+  ],
+  "inedito_packages_needed": 4,
+  "handcrafts_needed": 101,
+  "cluster_decisions": [
+    {
+      "cluster": "Promoção à saúde — conceito geral",
+      "count": 30,
+      "pct": 29.7,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_generico",
+      "family_counts": {
+        "conceito": 27,
+        "certo_errado": 3
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+        "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+        "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+        "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0"
+      ],
+      "decision": "novo_ramo",
+      "strong": true,
+      "l3_decision": "molde_redesign",
+      "l3_package": "genérico premium (SUBTOPIC_DESIGN_MAP sus-art4-orbit fallback)"
+    },
+    {
+      "cluster": "Atenção básica e educação em saúde",
+      "count": 24,
+      "pct": 23.8,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_educacao_prevencao",
+      "family_counts": {
+        "conceito": 18,
+        "certo_errado": 4,
+        "vf": 1,
+        "protocolo": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+        "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+        "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+        "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3"
+      ],
+      "decision": "novo_ramo",
+      "strong": true,
+      "l3_decision": "molde_redesign",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Promoção × prevenção × proteção × recuperação",
+      "count": 20,
+      "pct": 19.8,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_educacao_prevencao",
+      "family_counts": {
+        "certo_errado": 4,
+        "protocolo": 2,
+        "conceito": 13,
+        "vf": 1
+      },
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
+        "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4",
+        "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
+        "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6"
+      ],
+      "decision": "novo_ramo",
+      "strong": true,
+      "l3_decision": "molde_redesign",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Determinantes sociais e políticas públicas",
+      "count": 10,
+      "pct": 9.9,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_educacao_prevencao",
+      "family_counts": {
+        "conceito": 9,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+        "avancasp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-7",
+        "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
+        "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Cuidador familiar e autocuidado na comunidade",
+      "count": 5,
+      "pct": 5,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_educacao_prevencao",
+      "family_counts": {
+        "conceito": 3,
+        "vf": 1,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
+        "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+        "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+        "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "V/F I–II–III sobre legislação sanitária",
+      "count": 3,
+      "pct": 3,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_principios_direitos",
+      "family_counts": {
+        "conceito": 2,
+        "legis": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+        "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3",
+        "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Vigilância em saúde e políticas de vigilância",
+      "count": 3,
+      "pct": 3,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_educacao_prevencao",
+      "family_counts": {
+        "conceito": 2,
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+        "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+        "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0"
+      ],
+      "decision": "absorver",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Campanhas — zoonoses e acidentes por animais peçonhentos",
+      "count": 2,
+      "pct": 2,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_educacao_prevencao",
+      "family_counts": {
+        "conceito": 2
+      },
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6",
+        "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Princípios e direitos (CF Art. 196, universalidade, integralidade)",
+      "count": 1,
+      "pct": 1,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_principios_direitos",
+      "family_counts": {
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "Lei 8.080 — Art. 4º composição do SUS",
+      "count": 1,
+      "pct": 1,
+      "drift_in_cluster": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-sus-lei-8080-cesgranrio.json",
+      "branch_id": "promocao_art4_composicao",
+      "family_counts": {
+        "legis": 1
+      },
+      "sample_slugs": [
+        "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot"
+      ],
+      "decision": "coberto",
+      "strong": false,
+      "l3_decision": "molde_redesign",
+      "l3_package": "sus-art4-orbit · center · cards · scope-trap (bespoke wired)"
+    },
+    {
+      "cluster": "Lei 8.142 — controle social / CNS",
+      "count": 1,
+      "pct": 1,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_principios_direitos",
+      "family_counts": {
+        "conceito": 1
+      },
+      "sample_slugs": [
+        "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    },
+    {
+      "cluster": "EXCETO / INCORRETA sobre SUS",
+      "count": 1,
+      "pct": 1,
+      "drift_in_cluster": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "branch_id": "promocao_principios_direitos",
+      "family_counts": {
+        "certo_errado": 1
+      },
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5"
+      ],
+      "decision": "cauda_longa",
+      "strong": false,
+      "l3_decision": "ok_generico",
+      "l3_package": "morphological · reference_table · tap · compare (genérico)"
+    }
+  ],
+  "rows": [
+    {
+      "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Uma equipe multidisciplinar foi designada para implementar ações de saúde pública relacionadas às Pr",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Um centro de atenção primária desenvolveu um projeto para prevenir doenças crônicas, incentivando pr",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Em relatórios sobre iniciativas de sucesso em diversos países, equipes multiprofissionais relataram ",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "family": "conceito",
+      "topic": "V/F I–II–III sobre legislação sanitária",
+      "pedagogical_cluster": "V/F I–II–III sobre legislação sanitária",
+      "pedagogical_branch_proposed": "promocao_principios_direitos",
+      "instruction_preview": "Sobre os impactos das práticas integrativas na saúde coletiva, avalie as afirmativas: I. As práticas",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Na implementação de programas de Educação em Saúde, qual dos seguintes métodos é mais eficaz para pr",
+      "drift": false
+    },
+    {
+      "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+      "family": "conceito",
+      "topic": "Vigilância em saúde e políticas de vigilância",
+      "pedagogical_cluster": "Vigilância em saúde e políticas de vigilância",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Qual o objetivo da Vigilância em Saúde?",
+      "drift": false
+    },
+    {
+      "slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Entre os benefícios biológicos, psicológicos e sociais proporcionados pelo desempenho de atividades ",
+      "drift": false
+    },
+    {
+      "slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+      "family": "certo_errado",
+      "topic": "Princípios e direitos (CF Art. 196, universalidade, integralidade)",
+      "pedagogical_cluster": "Princípios e direitos (CF Art. 196, universalidade, integralidade)",
+      "pedagogical_branch_proposed": "promocao_principios_direitos",
+      "instruction_preview": "Sobre a comunicação nos serviços de atenção à saúde, é INCORRETO afirmar que:",
+      "drift": false
+    },
+    {
+      "slug": "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A concepção ampliada de saúde, que inclui a determinação social como algo fundamental para a compree",
+      "drift": false
+    },
+    {
+      "slug": "avancasp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-7",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Alguns ponderamentos sobre educação em saúde foram descritos abaixo. Analise cada afirmativa e desta",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
+      "family": "certo_errado",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Considerados saberes validados pelo Ministério da Saúde acerca de assistência em saúde coletiva, jul",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-1",
+      "family": "certo_errado",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Considerados saberes validados pelo Ministério da Saúde acerca de assistência em saúde coletiva, jul",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
+      "family": "certo_errado",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Acerca das campanhas de prevenção de agravos à saúde, julgue o item subsequente. Em campanhas de pre",
+      "drift": false
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4",
+      "family": "certo_errado",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Acerca das campanhas de prevenção de agravos à saúde, julgue o item subsequente. As estratégias de p",
+      "drift": false
+    },
+    {
+      "slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+      "family": "legis",
+      "topic": "Lei 8.080 — Art. 4º composição do SUS",
+      "pedagogical_cluster": "Lei 8.080 — Art. 4º composição do SUS",
+      "pedagogical_branch_proposed": "promocao_art4_composicao",
+      "instruction_preview": "O Sistema Único de Saúde, SUS, é um dos maiores e mais complexos sistemas de saúde pública do mundo.",
+      "drift": false
+    },
+    {
+      "slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Mesmo os profissionais especialistas em saúde mental elaboram suas intervenções a partir das vivênci",
+      "drift": false
+    },
+    {
+      "slug": "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
+      "family": "certo_errado",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "As ações educativas fazem parte do dia a dia do ACS e têm como objetivo final contribuir para a melh",
+      "drift": false
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
+      "family": "protocolo",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A prevenção primária da HAS pode ser feita mediante controle de seus fatores de risco por meio da pr",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
+      "family": "conceito",
+      "topic": "Lei 8.142 — controle social / CNS",
+      "pedagogical_cluster": "Lei 8.142 — controle social / CNS",
+      "pedagogical_branch_proposed": "promocao_principios_direitos",
+      "instruction_preview": "Durante uma reunião no Conselho Municipal de Saúde, a Técnica de Enfermagem é convidada a explicar o",
+      "drift": false
+    },
+    {
+      "slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "O trabalho de educação sobre saúde na comunidade é vital para a população. As ações que visam compar",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "O levantamento das condições de vida e saúde da população é uma atividade central para o planejament",
+      "drift": false
+    },
+    {
+      "slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "As úlceras de pressão representam um desafio significativo no manejo de pacientes acamados, especial",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Analise os itens e posteriormente assinale a alternativa correta: I - Abastecimento de água potável.",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6",
+      "family": "conceito",
+      "topic": "Campanhas — zoonoses e acidentes por animais peçonhentos",
+      "pedagogical_cluster": "Campanhas — zoonoses e acidentes por animais peçonhentos",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Durante uma visita na casa da Sra. Emiliana Silva, o ACS identificou a presença de alto risco para a",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-0",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A figura abaixo demostra um instrumento importante de trabalho na rotina do Agente Comunitário de Sa",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-0",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Corresponde à calcificação da placa bacteriana que recobre os dentes e parte das gengivas, formando ",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-1",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Os itens abaixo relacionam-se a medidas de prevenção a complicações bucais. Analise-os e posteriorme",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-6",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A definição do tratamento a seguir diz respeito a qual doença, importante que o agente comunitário d",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-4",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Situações de risco são aquelas em que uma pessoa ou grupo de pessoas \"corre perigo\", isto é, tem mai",
+      "drift": false
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Sobre métodos contraceptivos no planejamento familiar (figura: preservativo de barreira), assinale a",
+      "drift": false
+    },
+    {
+      "slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
+      "family": "conceito",
+      "topic": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_cluster": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A higiene oral é importante para evitar complicações como cáries, dor de dente, tártaro, inflamação ",
+      "drift": false
+    },
+    {
+      "slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Assinale a alternativa que indica \"a capacidade de se colocar no lugar do outro, perceber o sentimen",
+      "drift": false
+    },
+    {
+      "slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+      "family": "vf",
+      "topic": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_cluster": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Sobre a elaboração do diário do cuidador, analise as afirmativas a seguir. I – O diário deve conter ",
+      "drift": false
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+      "family": "conceito",
+      "topic": "Vigilância em saúde e políticas de vigilância",
+      "pedagogical_cluster": "Vigilância em saúde e políticas de vigilância",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "No manejo das doenças, o tratamento adequado deve ser acompanhado de orientações claras ao paciente,",
+      "drift": false
+    },
+    {
+      "slug": "fepese-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-6",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "O SUS tem seus atendimentos divididos em três níveis de atenção: primário, secundário e terciário. A",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Um paciente masculino, com circunferência abdominal = 83 cm, apresenta um risco de complicações meta",
+      "drift": false
+    },
+    {
+      "slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Uma equipe de saúde realizou um trabalho de busca ativa de sintomáticos respiratórios em sua área de",
+      "drift": false
+    },
+    {
+      "slug": "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Assinale a alternativa que apresenta um exemplo de prevenção secundária.",
+      "drift": false
+    },
+    {
+      "slug": "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4",
+      "family": "certo_errado",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "São ações que os técnicos de Enfermagem podem realizar junto às pessoas que não têm diagnóstico de h",
+      "drift": false
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Saúde e doença, como um processo presença/ausência, é uma forma simplista para algo bem mais complex",
+      "drift": false
+    },
+    {
+      "slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Dentre as possibilidades de atuação na perspectiva da promoção da saúde, inclui-se:",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-0",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Reconhecer as necessidades de saúde do outro como legítimas e singulares, fortalecendo relações entr",
+      "drift": false
+    },
+    {
+      "slug": "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-5",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "O processo saúde-doença representa o conjunto de relações e variáveis que produzem e condicionam o e",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-3",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Os fatores de risco fisiológicos envolvem o funcionamento físico. Certas condições físicas, como o s",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Em programas de saúde comunitária, a abordagem integrada de promoção, prevenção e proteção à saúde é",
+      "drift": false
+    },
+    {
+      "slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Durante uma reunião com a comunidade, o agente comunitário de saúde incentiva a participação dos mor",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Sobre estratégias interdisciplinares para promoção da saúde e prevenção de doenças, marque a alterna",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "No que diz respeito às técnicas de comunicação eficaz com a comunidade, considere o seguinte cenário",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "No que concerne à identificação de situações de risco e vulnerabilidade em uma comunidade, considere",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Considerando a relação entre a falta de saneamento básico e as repercussões na saúde pública, a afir",
+      "drift": false
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "O estilo de vida é claramente um dos maiores responsáveis pela morbidade e pela alta prevalência das",
+      "drift": false
+    },
+    {
+      "slug": "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8",
+      "family": "vf",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "As práticas educativas em saúde, quando alinhadas aos princípios da promoção da saúde, ultrapassam a",
+      "drift": false
+    },
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2",
+      "family": "vf",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A probabilidade de apresentar diabetes ou um estado intermediário de glicemia depende da presença de",
+      "drift": false
+    },
+    {
+      "slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "A higiene dos alimentos depende de muitos fatores, tais como higiene pessoal e do ambiente; caracter",
+      "drift": false
+    },
+    {
+      "slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "A presença dos roedores em ambientes urbanos e rurais acarreta impactos econômicos e de saúde signif",
+      "drift": false
+    },
+    {
+      "slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A prevenção de doenças é uma estratégia fundamental para a promoção da saúde e a redução da morbimor",
+      "drift": false
+    },
+    {
+      "slug": "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+      "family": "certo_errado",
+      "topic": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_cluster": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Manter dentes e gengivas saudáveis é fundamental para o bem-estar geral das pessoas. Os cuidados diá",
+      "drift": false
+    },
+    {
+      "slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "A educação para a saúde é também uma das funções dos técnicos em enfermagem. Como eles podem contrib",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
+      "family": "certo_errado",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "O nível de prevenção secundária compreende quaisquer atos destinados a diminuir a incidência de uma ",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
+      "family": "certo_errado",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Julgue o item subsequente. Atualmente, apesar de a saúde não mais ser considerada apenas como a inex",
+      "drift": false
+    },
+    {
+      "slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4",
+      "family": "certo_errado",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A promoção da saúde em uma comunidade compreende a divulgação de ações e medidas preventivas em rela",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Sendo a educação em saúde uma atividade de extrema importância desempenhada pelo Agente Comunitário ",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
+      "family": "conceito",
+      "topic": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_cluster": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Sobre a promoção de saúde em saúde coletiva, qual é a principal estratégia para aumentar a adesão à ",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
+      "family": "conceito",
+      "topic": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_cluster": "Cuidador familiar e autocuidado na comunidade",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Sobre a educação em saúde bucal, qual é a abordagem mais eficaz para engajar pacientes na prática de",
+      "drift": false
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Em uma clínica odontológica de um município com alta prevalência de doenças periodontais, foi identi",
+      "drift": false
+    },
+    {
+      "slug": "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Como o Agente Comunitário de Saúde deve agir para promover ações de educação em saúde?",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+      "family": "protocolo",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Segundo o Protocolo de Atenção à Saúde das Mulheres (2016), é uma ação de rotina recomendada na Aten",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+      "family": "certo_errado",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "As doenças negligenciadas constituem um grupo de enfermidades causadas por agentes infecciosos e par",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4",
+      "family": "certo_errado",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Uma das atuações fundamentais dos profissionais de enfermagem junto às pessoas portadoras de hiperte",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3",
+      "family": "legis",
+      "topic": "V/F I–II–III sobre legislação sanitária",
+      "pedagogical_cluster": "V/F I–II–III sobre legislação sanitária",
+      "pedagogical_branch_proposed": "promocao_principios_direitos",
+      "instruction_preview": "Considerando que o acesso à saúde é pré-requisito fundamental para a Promoção da Saúde, analise as a",
+      "drift": false
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "As ações de prevenção de doenças, agravos e promoção à saúde são consideradas atividades de extrema ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-0",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Das causas de descontinuidade no abastecimento de água, de acordo com o Ministério da Saúde, 37,91% ",
+      "drift": false
+    },
+    {
+      "slug": "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "O sucesso do tratamento depende fortemente da participação e do envolvimento do usuário enquanto suj",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Segundo a Organização Mundial de Saúde, as condições em que as pessoas nascem, crescem, trabalham, v",
+      "drift": false
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-5",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "A Educação Permanente em Saúde (EPS) é aprendizagem no trabalho, baseia-se no conhecimento significa",
+      "drift": false
+    },
+    {
+      "slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A visita domiciliar efetuada pelos agentes de controle de endemias é uma medida avaliada dentro do p",
+      "drift": false
+    },
+    {
+      "slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "O controle da qualidade da água é de extrema importância para propiciar o saneamento básico e a saúd",
+      "drift": false
+    },
+    {
+      "slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Uma das formas de reduzir os problemas de saúde na população seria com aumento das políticas educaci",
+      "drift": false
+    },
+    {
+      "slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "É uma estratégia educativa, cujo material humano é a matéria-prima básica, a comunidade e seus entor",
+      "drift": false
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0",
+      "family": "certo_errado",
+      "topic": "Vigilância em saúde e políticas de vigilância",
+      "pedagogical_cluster": "Vigilância em saúde e políticas de vigilância",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A articulação das políticas e programas, a cargo das comissões intersetoriais, abrangerá, em especia",
+      "drift": false
+    },
+    {
+      "slug": "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Em orientação preventiva para pé diabético na Atenção Primária à Saúde, qual conjunto de cuidados es",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "O saneamento básico é um dos principais indicadores da qualidade de vida e do desenvolvimento econôm",
+      "drift": false
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A lesão por pressão é um dano localizado na pele, ou em tecidos mais profundos, podendo alcançar mús",
+      "drift": false
+    },
+    {
+      "slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
+      "family": "certo_errado",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "IGEDUC - Ag (Pref Jatobá)/Pref Jatobá/Combate às Endemias/2023 Julgue o item a seguir. Reduzir o con",
+      "drift": false
+    },
+    {
+      "slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Instituto Consulplan - ACS (Pref Nova Friburgo)/Pref Nova Friburgo/2023 A poluição constitui um fato",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A promoção da saúde segundo a Carta de Ottawa, realizada em 1986, contempla alguns campos de ação. A",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5",
+      "family": "certo_errado",
+      "topic": "EXCETO / INCORRETA sobre SUS",
+      "pedagogical_cluster": "EXCETO / INCORRETA sobre SUS",
+      "pedagogical_branch_proposed": "promocao_principios_direitos",
+      "instruction_preview": "Quanto aos níveis de prevenção em saúde pública, assinalar a alternativa INCORRETA.",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Assinalar a alternativa que melhor descreve o objetivo principal da aplicação de larvicidas nos cria",
+      "drift": false
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-0",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "A anemia é uma condição de saúde na qual a presença de hemoglobinas sanguíneas é baixa, sendo result",
+      "drift": false
+    },
+    {
+      "slug": "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "Fazem parte do autocuidado para portadores de diabetes mellitus: I - Segmento de um plano alimentar.",
+      "drift": false
+    },
+    {
+      "slug": "selecon-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-4",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "O Programa Nacional de DST/Aids integra três componentes que se articulam entre si para que, assim, ",
+      "drift": false
+    },
+    {
+      "slug": "ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "É considerado um dos níveis da prevenção primária:",
+      "drift": false
+    },
+    {
+      "slug": "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
+      "family": "conceito",
+      "topic": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_cluster": "Promoção × prevenção × proteção × recuperação",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "O controle de surtos de dengue em uma comunidade exige medidas epidemiológicas eficazes. O enfermeir",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2",
+      "family": "conceito",
+      "topic": "V/F I–II–III sobre legislação sanitária",
+      "pedagogical_cluster": "V/F I–II–III sobre legislação sanitária",
+      "pedagogical_branch_proposed": "promocao_principios_direitos",
+      "instruction_preview": "O Pacto em Defesa do SUS envolve ações estratégicas voltadas ao fortalecimento da saúde como direito",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-2",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A respeito do manejo dos pacientes com diarreia, é correto afirmar que",
+      "drift": false
+    },
+    {
+      "slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+      "family": "conceito",
+      "topic": "Promoção à saúde — conceito geral",
+      "pedagogical_cluster": "Promoção à saúde — conceito geral",
+      "pedagogical_branch_proposed": "promocao_generico",
+      "instruction_preview": "É fundamental o autocuidado quando abordamos um indivíduo com problema crônico. Analise as assertiva",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5",
+      "family": "conceito",
+      "topic": "Campanhas — zoonoses e acidentes por animais peçonhentos",
+      "pedagogical_cluster": "Campanhas — zoonoses e acidentes por animais peçonhentos",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "No Município de Taubaté, para atingir os objetivos propostos no Plano de Ação para Manejo e Controle",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-7",
+      "family": "conceito",
+      "topic": "Determinantes sociais e políticas públicas",
+      "pedagogical_cluster": "Determinantes sociais e políticas públicas",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "O saneamento ambiental é um dos temas mais relevante para a Organização das Nações Unidas (ONU), abr",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "A educação em saúde de pessoas portadoras de doenças crônicas tem por objetivo estimular a aquisição",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-2",
+      "family": "protocolo",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Para o rastreamento da hipertensão arterial, o Ministério da Saúde recomenda a aferição e registro d",
+      "drift": false
+    },
+    {
+      "slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3",
+      "family": "conceito",
+      "topic": "Atenção básica e educação em saúde",
+      "pedagogical_cluster": "Atenção básica e educação em saúde",
+      "pedagogical_branch_proposed": "promocao_educacao_prevencao",
+      "instruction_preview": "Como membro da equipe de saúde, o técnico de enfermagem participa de grupos de educação em saúde. Ao",
+      "drift": false
+    }
+  ]
+}

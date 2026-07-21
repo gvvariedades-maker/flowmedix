@@ -9,7 +9,7 @@
     "subtopico": "Verificação de Sinais Vitais",
     "pedagogical_branch": "vitals_exceto_tecnica",
     "content_standard": "golden-v1",
-    "family": "protocolo",
+    "family": "certo_errado",
     "content_review": {
       "reviewed_at": "2026-07-04",
       "reviewer": "professor-para-concurso",
@@ -140,7 +140,7 @@
         },
         {
           "label": "Braço",
-          "value": "Artéria braquial — fossa antecubital",
+          "value": "Artéria braquial — esfigmomanômetro + estetoscópio",
           "sv_kind": "pa",
           "badge": "ok"
         },
@@ -148,12 +148,6 @@
           "label": "Perna",
           "value": "Artéria pediosa — membro inferior",
           "sv_kind": "pa",
-          "badge": "ok"
-        },
-        {
-          "label": "Material",
-          "value": "Esfigmomanômetro + estetoscópio",
-          "sv_kind": "meta",
           "badge": "ok"
         },
         {

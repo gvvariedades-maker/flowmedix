@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T05:00:52.500Z",
+  "lote": "oracoes-coordenadas-e-subordinadas-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-acs-pr-oracoes-15-07-2026-19-38-80-98-369-370-apos-3951882",
+    "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3651723",
+    "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3654542",
+    "educa-pb-acs-oracoes-considere-o-texto-a-seguir-para-resp-3819886",
+    "facet-moto-p-oracoes-leia-o-periodo-as-criancas-que-brinc-3670230",
+    "instituto-ao-oracoes-analise-as-duas-versoes-do-comunicad-3754333",
+    "quadrix-aux-oracoes-texto-para-a-questao-imagine-um-time-3738648",
+    "selecon-ass-oracoes-leia-o-texto-a-seguir-a-fruta-que-aj-3692802"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-acs-pr-oracoes-15-07-2026-19-38-80-98-369-370-apos-3951882",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3651723",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3654542",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-acs-oracoes-considere-o-texto-a-seguir-para-resp-3819886",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-moto-p-oracoes-leia-o-periodo-as-criancas-que-brinc-3670230",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ao-oracoes-analise-as-duas-versoes-do-comunicad-3754333",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-aux-oracoes-texto-para-a-questao-imagine-um-time-3738648",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-ass-oracoes-leia-o-texto-a-seguir-a-fruta-que-aj-3692802",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

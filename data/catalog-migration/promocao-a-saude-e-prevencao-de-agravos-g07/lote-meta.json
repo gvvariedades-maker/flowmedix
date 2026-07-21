@@ -1,0 +1,54 @@
+{
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-g07",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+  "cluster": "Participação comunitária + interdisciplinar + comunicação DST + DCNT + saneamento + Dez passos MS + educação V/F + risco DM (g07)",
+  "total": 8,
+  "status": "handcraft_applied",
+  "anchor_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+  "golden_reference": "examples/questao-premium-sus-lei-8080-cesgranrio.json",
+  "guideline": "lib/guidelines/promocaoSaude.ts",
+  "branch_by_slug": {
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7": "promocao_educacao_prevencao",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0": "promocao_educacao_prevencao",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1": "promocao_educacao_prevencao",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2": "promocao_educacao_prevencao",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0": "promocao_educacao_prevencao",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2": "promocao_educacao_prevencao",
+    "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8": "promocao_educacao_prevencao",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2": "promocao_educacao_prevencao"
+  },
+  "slugs": [
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2",
+    "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2"
+  ],
+  "notes": [
+    "Bloco Ibade 2024 (5 slugs) — transferência obrigatória no danger_zone (strict-v2).",
+    "ibam-3863195-8: vf V-V-F-V (educação em saúde).",
+    "ibfc-3919067-2: vf V-V-V-F-V (fatores risco DM) — risk alto/human_required."
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g07 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g07/questions/",
+    "2. npm run audit:questao-readiness -- --lote=promocao-a-saude-e-prevencao-de-agravos-g07 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=promocao-a-saude-e-prevencao-de-agravos-g07 --strict",
+    "4. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g07 --dry-run",
+    "5. npm run catalog:apply-lote -- --lote=promocao-a-saude-e-prevencao-de-agravos-g07 --apply (só quando pedido)"
+  ],
+  "next_lote": "promocao-a-saude-e-prevencao-de-agravos-g08",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/promocao-a-saude-e-prevencao-de-agravos-g07.json"
+  }
+}

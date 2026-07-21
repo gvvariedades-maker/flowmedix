@@ -12,5 +12,11 @@
     "examples/questao-premium-admtec-urgencias-choque-eletrico.json",
     "examples/questao-premium-fepese-urgencias-choque-hipovolemico.json"
   ],
-  "notes": "g19 choque lote 1 — choque elétrico segurança cena · descerebração TCE · hipovolêmico trauma · sinais hipoperfusão · semiologia choque · elétrico CPCON · APH neuro antes transporte"
+  "notes": "g19 choque lote 1 — choque elétrico segurança cena · descerebração TCE · hipovolêmico trauma · sinais hipoperfusão · semiologia choque · elétrico CPCON · APH neuro antes transporte",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

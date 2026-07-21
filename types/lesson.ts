@@ -6,6 +6,7 @@
  */
 
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
+import type { QuestaoFigure, QuestaoFigurePolicy } from '@/lib/questaoFigures';
 
 // ============================================================================
 // SLIDE ITEM (Componente base do NeuroSlide)
@@ -150,6 +151,10 @@ export interface QuestionOption {
 export interface QuestionData {
   instruction: string; // Instrução da questão
   text_fragment?: string; // Fragmento de texto em HTML
+  /** Figuras raster do enunciado (bucket questao-figures). */
+  figures?: QuestaoFigure[];
+  /** required = precisa figures[]; transcribed = tipografia em text_fragment. */
+  figure_policy?: QuestaoFigurePolicy;
   options: QuestionOption[]; // Array de alternativas
 }
 

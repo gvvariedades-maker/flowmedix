@@ -8,10 +8,10 @@ Pipeline completo: Enfermagem em Central de Material e Esterilização (CME)
 
 **Programa 41 subtópicos:** [`PROGRAMA_CATALOGO_41.md`](PROGRAMA_CATALOGO_41.md) · `npm run catalog:program-status` · `npm run pipeline:brief -- --subtopico="..."`
 
-ou anexe este arquivo (`@docs/PIPELINE_COMPLETO_CONVERSA.md`) após editar **só** a linha:
+ou anexe este arquivo (`@docs/PIPELINE_COMPLETO_CONVERSA.md`) — equivalente a escrever `Pipeline completo: <subtópico>` — e edite **só** a linha:
 
 ```text
-SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
+Pipeline completo: Enfermagem em Central de Material e Esterilização (CME)
 ```
 
 **Escopo:** 1 subtópico canônico = 1 pacote no registry (todos os lotes `g*` e todos os slugs). **Não** usar para os 41 subtópicos numa única conversa.
@@ -30,6 +30,7 @@ SUBTÓPICO: Enfermagem em Central de Material e Esterilização (CME)
 | `Pipeline completo: <subtópico>` + `Só handcraft` | Parar em `applied`; não promover |
 | `Paridade Adolescente: <subtópico>` | Paridade pedagógica proporcional (L2+L3+A4 substantivo+L6) — [`PROMPT_PARIDADE_ADOLESCENTE.md`](PROMPT_PARIDADE_ADOLESCENTE.md) |
 | `Pipeline + paridade Adolescente: <subtópico>` | Pipeline completo + paridade na mesma conversa |
+| `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: <subtópico>` | Bootstrap IDE + workers SDK — [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
 | `Pipeline completo: Língua Portuguesa — Crase (âncora Q506)` | Âncora golden-v1 Q506 + Elias M11 TE-simples; **parar antes de `--apply`** — [`PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md`](PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md) |
 
 Pré-requisito de taxonomia (obrigatório antes da Fase 1):
@@ -42,6 +43,15 @@ npm run audit:taxonomy-gate -- --subtopico="<Nome canônico exato>"
 Só prosseguir com `gate=pass` ou `gate=warn` + `handcraft_allowed=true`. Se `gate=block` → `Classify: <subtópico>` — [`TAXONOMIA_CONVERSA.md`](TAXONOMIA_CONVERSA.md). Catch-all (ex. `dtrans-mescladas-*`): [`TAXONOMIA_MODEL.md`](TAXONOMIA_MODEL.md) §6.
 
 **Pré-requisito L3 (obrigatório antes da Fase 1 handcraft):** `Mapeamento L3: <subtópico>` com **Fase 3b** (brief 4/4 por ramo forte) — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md). Cauda longa (`ok_generico`) dispensa brief. Bypass só com `--skip-l3` documentado como emergência. Quick ref: [`RAMO_FORTE_QUICK_REF.md`](RAMO_FORTE_QUICK_REF.md).
+
+**Pré-requisito âncoras (Fase 0.5 — agente na frente):** antes do `g01`, ramos `novo_ramo` precisam de golden em `examples/`.
+
+```bash
+npm run audit:golden-anchor-gate -- --subtopico="<Nome canônico exato>"
+npm run anchor:brief -- --subtopico="<Nome canônico exato>"
+```
+
+Se `gate=block` → `Criar âncoras: <subtópico>` (skill [`avant-golden-anchor-bootstrap`](skills/avant-golden-anchor-bootstrap/SKILL.md)) → handcraft 1 JSON por ramo → re-rodar gate. Bypass só com `--skip-golden-anchor-gate` documentado como emergência. **Não** usar `FAMILY_GOLDEN_FILE` para fechar `novo_ramo`.
 
 ---
 
@@ -107,9 +117,17 @@ Rollback temporário no ambiente: `NEXT_PUBLIC_REVERSE_STUDY_SLIDE_ORDER=legacy`
 └───────────────────────────┬─────────────────────────────────┘
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
+│ FASE 0.5 — Golden âncoras (agente na frente)                │
+│   audit:golden-anchor-gate → Criar âncoras: se block        │
+│   skill avant-golden-anchor-bootstrap → examples/ por ramo  │
+│   GATE: gate=pass|warn + handcraft_allowed=true             │
+└───────────────────────────┬─────────────────────────────────┘
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
 │ FASE 1 — Handcraft (se handcraft_applied < total_slugs)      │
-│   export → JSON por slug → readiness → validate strict      │
-│   → dry-run → apply (só se usuário: "pode aplicar")         │
+│   handcraft:brief → JSON/slug → readiness --strict-v2       │
+│   → validate strict → preflight → dry-run → apply           │
+│   (apply só se usuário: "pode aplicar")                     │
 │   GATE: status=applied, handcraft_applied=total_slugs       │
 └───────────────────────────┬─────────────────────────────────┘
                             ▼
@@ -137,18 +155,25 @@ Se já `production_status: production_ready`, executar só Fase 3 (`audit:subtop
 
 Seguir [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md). Resumo operacional:
 
-1. `npm run handcraft:brief -- --subtopico="<nome>"` (opcional — escopo da conversa)
-2. Descobrir próximo lote `gNN` ou continuar lote em aberto
-3. Por slug: `pedagogical_branch` + golden-v1 + `audit:questao-readiness` → `[READY]`
-4. Por lote:
+1. `npm run handcraft:brief -- --subtopico="<nome>"` — **obrigatório**; executar literalmente o bloco `## Pipeline (executar)` do briefing (`after_handcraft` do playbook substitui o bash genérico abaixo)
+2. Descobrir próximo lote `gNN` ou continuar lote em aberto (ver HANDCRAFT § Descobrir próximo lote)
+3. Por slug: `pedagogical_branch` + golden-v1 + readiness com pedagogy v2:
+   ```bash
+   npm run audit:questao-readiness -- --file=data/catalog-migration/<lote>/questions/<slug>.json --strict-v2-pedagogy
+   ```
+   Corrigir até `[READY]` antes de fechar o lote.
+4. Piloto A4: 2–3 slugs em `/estudar/[slug]` antes do apply (HANDCRAFT § Piloto no player)
+5. Por lote — **fallback genérico** (só se playbook sem `after_handcraft`):
    ```bash
    npm run validate:goldens -- --lote=<lote> --strict
-   npm run audit:questao-readiness -- --lote=<lote>
+   npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy
+   npm run catalog:preflight -- --lote=<lote> --strict-v2-pedagogy
    npm run catalog:apply-lote -- --lote=<lote> --dry-run
-   # apply somente após "pode aplicar":
+   # apply SOMENTE após o usuário escrever "pode aplicar":
    npm run catalog:apply-lote -- --lote=<lote> --apply
    ```
-5. Repetir até `handcraft_applied === total_slugs`
+6. Pós-apply: atualizar `lote-meta.json` (`status: applied`), incrementar `handcraft_applied` no registry (HANDCRAFT § Pós-apply)
+7. Repetir até `handcraft_applied === total_slugs`
 
 **Checkpoint Fase 1** (reportar antes de Fase 2):
 
@@ -157,6 +182,8 @@ Seguir [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md). Resumo operacional:
 | `status` | `applied` |
 | `handcraft_applied` / `total_slugs` | 100% |
 | `production_status` | ainda `none` (normal) |
+| Readiness | `[READY]` com `--strict-v2-pedagogy` em todos os slugs |
+| Piloto A4 | 2–3 slugs revisados no player por lote (recomendado) |
 
 ---
 
@@ -168,7 +195,7 @@ Seguir Parte A de [`QUALITY_VENDAVEL_CONVERSA.md`](QUALITY_VENDAVEL_CONVERSA.md)
 npm run reconcile:handcraft-manifest -- --subtopico="<nome canônico>"
 
 # cada lote g* do pacote:
-npm run catalog:preflight -- --lote=<pacote>-g01
+npm run catalog:preflight -- --lote=<pacote>-g01 --strict-v2-pedagogy
 
 npm run audit:handcraft-dod -- --subtopico="<nome canônico>"
 npm run audit:slug-alignment -- --subtopico="<nome canônico>" --strict
@@ -210,6 +237,28 @@ Pós-venda em outros dias: só `audit:subtopico-health`; `--recover` após repai
 
 ---
 
+## Pacotes grandes (80+ slugs) — orquestrador / SDK
+
+Não tente fechar 100–200 slugs num único chat. Use **uma unidade por run**:
+
+```bash
+npm run pipeline:next-unit -- --subtopico="<nome>"
+npm run pipeline:orchestrate -- --subtopico="<nome>" --dry-run
+# com CURSOR_API_KEY + @cursor/sdk:
+npm run pipeline:orchestrate -- --subtopico="<nome>" --sdk --mode=handcraft --verify --max-units=1
+```
+
+Estado: `artifacts/pipeline-run-state-<pacote_prefix>.json` · doc: [`PIPELINE_ORCHESTRATOR.md`](PIPELINE_ORCHESTRATOR.md).
+
+Handoff no chat IDE:
+
+```text
+Continuar pipeline: <Subtópico>
+@artifacts/pipeline-run-state-<prefix>.json
+```
+
+---
+
 ## Critérios de encerramento
 
 Reportar **separadamente** handcraft vs vendável:
@@ -236,17 +285,20 @@ Anexos obrigatórios:
 @artifacts/l3-brief-FLAGSHIP-INDEX.md
 
 FASE 1 — Handcraft (pular se já applied 100%):
-- handcraft:brief + playbook
+- handcraft:brief obrigatório + executar after_handcraft do playbook
 - JSON golden-v1 por slug (ordem v2: concept_map → logic_flow → golden_rule → danger_zone)
 - concept_map sem gabarito; logic_flow com eliminação + letra; golden_rule sem row de gabarito
-- audit:questao-readiness [READY]
-- validate:goldens --strict por lote
+- audit:questao-readiness --strict-v2-pedagogy → [READY] por slug
+- figures:audit --subtopico="..." → 0 missing (tirinha/charge/cartaz)
+- validate:goldens --strict + catalog:preflight --strict-v2-pedagogy por lote
+- piloto A4: 2–3 slugs no player antes do apply
 - catalog:apply-lote --apply SOMENTE se eu escrever "pode aplicar"
+- pós-apply: lote-meta + handcraft_applied no registry
 - GATE: handcraft_applied === total_slugs
 
 FASE 2 — Qualidade vendável (pacote inteiro):
 1. reconcile:handcraft-manifest
-2. catalog:preflight em todos g*
+2. catalog:preflight --strict-v2-pedagogy em todos g*
 3. audit:handcraft-dod + slug-alignment --strict + numeric-factcheck
 4. audit:anchor-review + revisor B em cada g*
 5. visual-mold-regression
@@ -269,4 +321,5 @@ Proibido: ai:generate, upgrade-premium, segundo --promote rotineiro pós-venda.
 | Onda nota-10 Farmacodinâmica | [`artifacts/farmacodinamica-nota10-report.md`](../artifacts/farmacodinamica-nota10-report.md) · briefs L3 [`artifacts/l3-brief-farmacodinamica-e-farmacocinetica-INDEX.md`](../artifacts/l3-brief-farmacodinamica-e-farmacocinetica-INDEX.md) · README [`data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/README.md`](../data/catalog-migration/farmacodinamica-e-farmacocinetica-completo/README.md) |
 | Mapeamento L3 (antes de moldes) | `Mapeamento L3: <subtópico>` — [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) |
 | Ordem slides v2 | [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) §2 · [`lib/reverseStudySlideOrder.ts`](../lib/reverseStudySlideOrder.ts) |
+| Handcraft Fase 1 (detalhe) | [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md) · [`docs/cursor/handcraft-conversa.mdc`](cursor/handcraft-conversa.mdc) |
 | Rule Cursor | `.cursor/rules/pipeline-completo.mdc` |

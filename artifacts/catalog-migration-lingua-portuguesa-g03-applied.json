@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:59:50.467Z",
+  "lote": "lingua-portuguesa-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "caderno-pt-crase-alcool-lacunas-4001120",
+    "caderno-pt-crase-biblioteca-lacunas-3352963",
+    "caderno-pt-crase-facultativo-joana-4024877",
+    "caderno-pt-crase-neurociencia-lacunas-3358515",
+    "caderno-pt-crase-tendencia-suspender-4003508",
+    "caderno-pt-crase-universidades-elites-4024955",
+    "vunesp-osasco-crase-charge-prova-balas-3323742",
+    "vunesp-sorocaba-crase-lacunas-3999773"
+  ],
+  "results": [
+    {
+      "modulo_slug": "caderno-pt-crase-alcool-lacunas-4001120",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-biblioteca-lacunas-3352963",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-facultativo-joana-4024877",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-neurociencia-lacunas-3358515",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-tendencia-suspender-4003508",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-universidades-elites-4024955",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-osasco-crase-charge-prova-balas-3323742",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-sorocaba-crase-lacunas-3999773",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

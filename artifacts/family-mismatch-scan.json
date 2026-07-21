@@ -1,0 +1,402 @@
+{
+  "scanned_at": "2026-07-20T05:49:37.574Z",
+  "files_scanned": 13608,
+  "golden_v1": 3191,
+  "with_meta_family": 3191,
+  "aligned": 2137,
+  "mismatch_count": 1054,
+  "mismatch_pct": 33,
+  "top_pairs": [
+    {
+      "pair": "protocolo -> conceito",
+      "count": 404
+    },
+    {
+      "pair": "vf -> conceito",
+      "count": 173
+    },
+    {
+      "pair": "conceito -> protocolo",
+      "count": 124
+    },
+    {
+      "pair": "conceito -> certo_errado",
+      "count": 91
+    },
+    {
+      "pair": "vf -> protocolo",
+      "count": 56
+    },
+    {
+      "pair": "protocolo -> certo_errado",
+      "count": 44
+    },
+    {
+      "pair": "conceito -> calc",
+      "count": 33
+    },
+    {
+      "pair": "certo_errado -> conceito",
+      "count": 32
+    },
+    {
+      "pair": "vf -> calc",
+      "count": 15
+    },
+    {
+      "pair": "protocolo -> calc",
+      "count": 14
+    },
+    {
+      "pair": "conceito -> legis",
+      "count": 13
+    },
+    {
+      "pair": "calc -> conceito",
+      "count": 12
+    },
+    {
+      "pair": "legis -> conceito",
+      "count": 11
+    },
+    {
+      "pair": "text_fragment -> conceito",
+      "count": 10
+    },
+    {
+      "pair": "protocolo -> legis",
+      "count": 4
+    },
+    {
+      "pair": "vf -> legis",
+      "count": 3
+    },
+    {
+      "pair": "certo_errado -> legis",
+      "count": 3
+    },
+    {
+      "pair": "calc -> certo_errado",
+      "count": 2
+    },
+    {
+      "pair": "legis -> certo_errado",
+      "count": 2
+    },
+    {
+      "pair": "conceito -> text_fragment",
+      "count": 1
+    }
+  ],
+  "by_declared": {
+    "protocolo": 674,
+    "conceito": 1752,
+    "certo_errado": 272,
+    "vf": 356,
+    "calc": 86,
+    "legis": 23,
+    "text_fragment": 28
+  },
+  "sample": [
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1780008225255-6.json",
+      "declared": "protocolo",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-1.json",
+      "declared": "conceito",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/fepese-enfermagem-processo-de-enfermagem-1780008232871-7.json",
+      "declared": "conceito",
+      "inferred": "legis",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/fgv-enfermagem-processo-de-enfermagem-1780001988576-8.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/fgv-enfermagem-processo-de-enfermagem-1780001988576-9.json",
+      "declared": "vf",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/fundatec-enfermagem-processo-de-enfermagem-1780006976703-4.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/fundatec-enfermagem-processo-de-enfermagem-1780006976703-8.json",
+      "declared": "protocolo",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-6.json",
+      "declared": "protocolo",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9.json",
+      "declared": "vf",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g02/questions/cebraspe-cespe-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-4.json",
+      "declared": "calc",
+      "inferred": "certo_errado",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g03/questions/cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-1.json",
+      "declared": "calc",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g05/questions/fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-5.json",
+      "declared": "calc",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g05/questions/fgv-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-6.json",
+      "declared": "calc",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g05/questions/fundatec-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-6.json",
+      "declared": "calc",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g07/questions/idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0.json",
+      "declared": "conceito",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g07/questions/idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-1.json",
+      "declared": "conceito",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g07/questions/idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9.json",
+      "declared": "calc",
+      "inferred": "certo_errado",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g09/questions/lj-assessoria-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-6.json",
+      "declared": "calc",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g10/questions/objetiva-concursos-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056284398-7.json",
+      "declared": "calc",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g10/questions/unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-0.json",
+      "declared": "calc",
+      "inferred": "conceito",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g11/questions/unifil-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056292978-4.json",
+      "declared": "conceito",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-g11/questions/vunesp-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056301382-7.json",
+      "declared": "conceito",
+      "inferred": "calc",
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1780001613305-2.json",
+      "declared": "conceito",
+      "inferred": "certo_errado",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1780005791580-0.json",
+      "declared": "vf",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/fcpc-enfermagem-processo-de-enfermagem-1780004906875-7.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7.json",
+      "declared": "conceito",
+      "inferred": "certo_errado",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0.json",
+      "declared": "conceito",
+      "inferred": "certo_errado",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1.json",
+      "declared": "vf",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3.json",
+      "declared": "vf",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-completo/questions/quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0.json",
+      "declared": "legis",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g01/questions/fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g01/questions/idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g01/questions/igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1.json",
+      "declared": "vf",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g01/questions/igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3.json",
+      "declared": "vf",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g02/questions/ameosc-enfermagem-processo-de-enfermagem-1780001613305-2.json",
+      "declared": "conceito",
+      "inferred": "certo_errado",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g02/questions/ameosc-enfermagem-processo-de-enfermagem-1780005791580-0.json",
+      "declared": "vf",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g02/questions/instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g03/questions/instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g04/questions/ameosc-enfermagem-processo-de-enfermagem-1780001613305-2.json",
+      "declared": "conceito",
+      "inferred": "certo_errado",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g04/questions/idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7.json",
+      "declared": "conceito",
+      "inferred": "certo_errado",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g04/questions/idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0.json",
+      "declared": "conceito",
+      "inferred": "certo_errado",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g05/questions/fcpc-enfermagem-processo-de-enfermagem-1780004906875-7.json",
+      "declared": "protocolo",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cme-g05/questions/quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0.json",
+      "declared": "legis",
+      "inferred": "conceito",
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cuidados-na-administracao-de-medicamentos-g01/questions/cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5.json",
+      "declared": "conceito",
+      "inferred": "calc",
+      "subtopico": "Cuidados na Administração de Medicamentos"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cuidados-na-administracao-de-medicamentos-g01/questions/fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-4.json",
+      "declared": "vf",
+      "inferred": "conceito",
+      "subtopico": "Cuidados na Administração de Medicamentos"
+    },
+    {
+      "file": "D:/AVANT/data/catalog-migration/cuidados-na-administracao-de-medicamentos-g01/questions/fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-4.json",
+      "declared": "conceito",
+      "inferred": "calc",
+      "subtopico": "Cuidados na Administração de Medicamentos"
+    }
+  ]
+}

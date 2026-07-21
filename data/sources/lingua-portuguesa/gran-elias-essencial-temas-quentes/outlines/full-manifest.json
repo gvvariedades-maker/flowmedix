@@ -1,0 +1,194 @@
+[
+  {
+    "module": "M01",
+    "slug": "5-ortografia-h-fen-exerc-cios",
+    "title": "5 - Ortografia - Hífen - Exercícios",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M01/5-ortografia-h-fen-exerc-cios.json"
+  },
+  {
+    "module": "M02",
+    "slug": "6-morfologia",
+    "title": "6 - Morfologia",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M02/6-morfologia.json"
+  },
+  {
+    "module": "M02",
+    "slug": "7-morfologia-ii",
+    "title": "7 - Morfologia II",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M02/7-morfologia-ii.json"
+  },
+  {
+    "module": "M02",
+    "slug": "8-morfologia-iii",
+    "title": "8 - Morfologia III",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M02/8-morfologia-iii.json"
+  },
+  {
+    "module": "M02",
+    "slug": "9-morfologia-iv",
+    "title": "9 - Morfologia IV",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M02/9-morfologia-iv.json"
+  },
+  {
+    "module": "M02",
+    "slug": "10-morfologia-exerc-cios",
+    "title": "10 - Morfologia Exercícios",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M02/10-morfologia-exerc-cios.json"
+  },
+  {
+    "module": "M03",
+    "slug": "11-introdu-o-sintaxe",
+    "title": "11 - Introdução à Sintaxe",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M03/11-introdu-o-sintaxe.json"
+  },
+  {
+    "module": "M03",
+    "slug": "12-sujeito",
+    "title": "12 - Sujeito",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M03/12-sujeito.json"
+  },
+  {
+    "module": "M03",
+    "slug": "13-sujeito-ii",
+    "title": "13 - Sujeito II",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M03/13-sujeito-ii.json"
+  },
+  {
+    "module": "M03",
+    "slug": "14-sujeito-iii",
+    "title": "14 - Sujeito III",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M03/14-sujeito-iii.json"
+  },
+  {
+    "module": "M03",
+    "slug": "15-sujeito-iv",
+    "title": "15 - Sujeito IV",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M03/15-sujeito-iv.json"
+  },
+  {
+    "module": "M03",
+    "slug": "16-sujeito-v",
+    "title": "16 - Sujeito V",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M03/16-sujeito-v.json"
+  },
+  {
+    "module": "M03",
+    "slug": "17-sujeito-exerc-cios",
+    "title": "17 - Sujeito - Exercícios",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M03/17-sujeito-exerc-cios.json"
+  },
+  {
+    "module": "M04",
+    "slug": "18-predica-o-verbal",
+    "title": "18 - Predicação Verbal",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M04/18-predica-o-verbal.json"
+  },
+  {
+    "module": "M04",
+    "slug": "19-predica-o-verbal-ii",
+    "title": "19 - Predicação Verbal II",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M04/19-predica-o-verbal-ii.json"
+  },
+  {
+    "module": "M04",
+    "slug": "20-predica-o-verbal-iii",
+    "title": "20 - Predicação Verbal III",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M04/20-predica-o-verbal-iii.json"
+  },
+  {
+    "module": "M04",
+    "slug": "21-predica-o-verbal-iv",
+    "title": "21 - Predicação Verbal IV",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M04/21-predica-o-verbal-iv.json"
+  },
+  {
+    "module": "M04",
+    "slug": "22-predica-o-verbal-exerc-cios",
+    "title": "22 - Predicação Verbal - Exercícios",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M04/22-predica-o-verbal-exerc-cios.json"
+  },
+  {
+    "module": "M05",
+    "slug": "23-termos-ligados-ao-nome",
+    "title": "23 - Termos Ligados ao Nome",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M05/23-termos-ligados-ao-nome.json"
+  },
+  {
+    "module": "M05",
+    "slug": "24-termos-ligados-ao-nome-ii",
+    "title": "24 - Termos Ligados ao Nome II",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M05/24-termos-ligados-ao-nome-ii.json"
+  },
+  {
+    "module": "M05",
+    "slug": "25-termos-ligados-ao-nome-exerc-cios",
+    "title": "25 - Termos Ligados ao Nome - Exercícios",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M05/25-termos-ligados-ao-nome-exerc-cios.json"
+  },
+  {
+    "module": "M06",
+    "slug": "26-demais-fun-es-sint-ticas-do-p-s",
+    "title": "26 - Demais Funções Sintáticas do P.S.",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M06/26-demais-fun-es-sint-ticas-do-p-s.json"
+  },
+  {
+    "module": "M07",
+    "slug": "27-introdu-o-ao-per-odo-composto",
+    "title": "27 - Introdução Ao Período Composto",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M07/27-introdu-o-ao-per-odo-composto.json"
+  },
+  {
+    "module": "M07a",
+    "slug": "28-ora-es-subordinadas-substantivas-i",
+    "title": "28 - Orações Subordinadas Substantivas I",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M07a/28-ora-es-subordinadas-substantivas-i.json"
+  },
+  {
+    "module": "M07a",
+    "slug": "29-ora-es-subordinadas-substantivas-ii",
+    "title": "29 - Orações Subordinadas Substantivas II",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M07a/29-ora-es-subordinadas-substantivas-ii.json"
+  },
+  {
+    "module": "M07a",
+    "slug": "30-ora-es-subordinadas-substantivas-exerc-cios",
+    "title": "30 - Orações Subordinadas Substantivas - Exercícios",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M07a/30-ora-es-subordinadas-substantivas-exerc-cios.json"
+  },
+  {
+    "module": "M11",
+    "slug": "1-crase",
+    "title": "1 - Crase",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M11/1-crase.json"
+  },
+  {
+    "module": "M11",
+    "slug": "2-crase-ii",
+    "title": "2 - Crase II",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M11/2-crase-ii.json"
+  },
+  {
+    "module": "M11",
+    "slug": "3-crase-iii",
+    "title": "3 - Crase III",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M11/3-crase-iii.json"
+  },
+  {
+    "module": "M09",
+    "slug": "1-coloca-o-pronominal",
+    "title": "1 - Colocação Pronominal",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M09/1-coloca-o-pronominal.json"
+  },
+  {
+    "module": "M09",
+    "slug": "2-coloca-o-pronominal-ii",
+    "title": "2 - Colocação Pronominal II",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M09/2-coloca-o-pronominal-ii.json"
+  },
+  {
+    "module": "M09",
+    "slug": "3-coloca-o-pronominal-iii",
+    "title": "3 - Colocação Pronominal III",
+    "outline": "data/sources/lingua-portuguesa/gran-elias-essencial-temas-quentes/outlines/M09/3-coloca-o-pronominal-iii.json"
+  }
+]

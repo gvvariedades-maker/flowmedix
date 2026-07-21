@@ -1,0 +1,51 @@
+{
+  "lote": "pontuacao-g06",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-20",
+  "subtopico": "Pontuação",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pontuacao",
+  "cluster": "Pontuação — lote 6/6 (card 48/48)",
+  "total": 8,
+  "status": "handcraft",
+  "handcraft_at": "2026-07-20",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "8/8 PASS strict",
+    "apply_dry_run": "pending"
+  },
+  "source": "data/catalog-migration/lingua-portuguesa-g13/extracted-source.json + PDF caderno PT",
+  "apply_requires": "--allow-insert",
+  "golden_references": {
+    "eliminacao": "examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json",
+    "vf": "examples/questao-premium-cpcon-portugues-pontuacao-tirinha-vf.json"
+  },
+  "guideline": "lib/guidelines/linguaPortuguesa/pontuacao.ts",
+  "slugs": [
+    "cebraspe-boa-vista-pontuacao-dois-pontos-3705151",
+    "educapb-sj-rio-peixe-pontuacao-meme-3711365",
+    "quadrix-fuabc-pontuacao-virgula-facultativa-3721193",
+    "avancasp-varginha-pontuacao-reescrita-erico-3726048",
+    "avancasp-varginha-pontuacao-reescrita-coragem-3727507",
+    "avancasp-cunha-pontuacao-correta-3738882",
+    "educapb-santa-cecilia-pontuacao-chocolate-3746565",
+    "apice-boa-vista-pb-pontuacao-incorreta-3951884"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g13 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g13.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g13 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=lingua-portuguesa-g13 --strict",
+    "4. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g13 --dry-run --allow-insert",
+    "5. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Sexto e último lote Pontuação — 48/48 no PDF; g13 pega tec 3705151…3951884. Dual anchor eliminacao + vf; lote 100% eliminacao.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "note": "Lote sem anchor_slug dedicado — dual-anchor Rita/VF por slug no handcraft"
+  }
+}

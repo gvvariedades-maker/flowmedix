@@ -1,0 +1,30 @@
+{
+  "lote": "oracoes-coordenadas-e-subordinadas-g01",
+  "subtopico": "Orações coordenadas e subordinadas",
+  "status": "applied",
+  "slugs": [
+    "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037413",
+    "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037421",
+    "cpcon-uepb-a-oracoes-leia-o-texto-3-para-responder-a-ques-3483809",
+    "apice-ace-pr-oracoes-sabendo-que-o-periodo-composto-por-c-3558979",
+    "cpcon-uepb-a-oracoes-utilize-o-texto-01-para-responder-a-3598926",
+    "educa-pb-acd-oracoes-leia-o-texto-a-seguir-e-responda-a-q-3746572",
+    "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793451",
+    "instituto-ao-oracoes-leia-o-texto-a-seguir-para-responder-3840852"
+  ],
+  "note": "Fase 0 pipeline 2026-07-20",
+  "mode": "handcraft-golden-v1",
+  "topico": "Lingua Portuguesa",
+  "pedagogical_branch": "pt_oracoes_subordinadas",
+  "anchor_slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
+  "golden_reference": "examples/questao-premium-apice-portugues-oracoes-adversativa-pocinhos.json",
+  "handcraft_at": "2026-07-20",
+  "apply_requires": "--allow-insert",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-21",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/oracoes-coordenadas-e-subordinadas-g01.json"
+  }
+}

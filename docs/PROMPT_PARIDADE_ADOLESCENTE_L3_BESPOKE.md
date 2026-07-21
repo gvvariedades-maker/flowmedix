@@ -18,9 +18,12 @@ Variantes:
 
 ```text
 Paridade Adolescente + L3 bespoke: <Subtópico canônico>
+Pipeline + paridade Adolescente + L3 bespoke + orquestrador: SUBTÓPICO: <Subtópico canônico>  → bootstrap IDE + SDK workers
 L3 bespoke: <Subtópico canônico>          → só Fase 0b (implementação React)
 Mapeamento L3: <Subtópico canônico>        → conversa 1 (decisões + briefs 4/4)
 ```
+
+> **Programa completo com orquestrador:** [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md)
 
 Substitua pelo nome **exato** de `CLAUDE.md` §9.
 

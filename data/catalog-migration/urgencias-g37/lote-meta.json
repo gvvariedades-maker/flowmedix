@@ -22,5 +22,11 @@
     "Default — sem âncora temática": 4,
     "Urgências — conceito geral": 4
   },
-  "notes": "g37 — 8º lote cauda urgencias_generico · 8/8 READY strict-v2 · TCE Battle · escorpião · O− transfusão · PS escolar · água sanitária · PEP · AVE/Glasgow · desastres"
+  "notes": "g37 — 8º lote cauda urgencias_generico · 8/8 READY strict-v2 · TCE Battle · escorpião · O− transfusão · PS escolar · água sanitária · PEP · AVE/Glasgow · desastres",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

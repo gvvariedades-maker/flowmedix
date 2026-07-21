@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-20",
+  "updated_at": "2026-07-21",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -1174,8 +1174,8 @@
       "lote_pattern": "promocao-a-saude-e-prevencao-de-agravos-g{NN}",
       "lote_size": 8,
       "status": "applied",
-      "total_slugs": 101,
-      "handcraft_applied": 101,
+      "total_slugs": 100,
+      "handcraft_applied": 100,
       "anchor_glob": "examples/questao-premium-sus-lei-8080-cesgranrio.json,examples/questao-premium-*-sus-*.json",
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/promocao-a-saude-e-prevencao-de-agravos.json",
       "l3_brief_index": "artifacts/l3-brief-promocao-a-saude-e-prevencao-de-agravos-INDEX.md",
@@ -1188,19 +1188,27 @@
         "mismatch_count_at_close": 0,
         "notes": "Manifest 101 slugs — 25 cross-package/taxonomy drift excluídos; gate_blockers=0."
       },
-      "production_status": "none",
+      "production_status": "production_ready",
       "quality": {
-        "technical_ready_at": null,
-        "production_ready_at": null,
+        "technical_ready_at": "2026-07-20",
+        "production_ready_at": "2026-07-20",
         "monitoring_until": null,
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
+          "L1": true,
+          "L2": true,
+          "L2b": true,
           "L3": true,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-20T17:40:03.648Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
         }
       }
     },
@@ -1406,6 +1414,188 @@
           "report_rate_max_pct": 2,
           "min_sessions_30d": 100,
           "p0_block_after_hours": 24
+        }
+      }
+    },
+    "Classes de palavras": {
+      "pacote_prefix": "classes-de-palavras",
+      "manifest": "data/catalog-migration/classes-de-palavras-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_classes_palavras.md",
+      "lote_pattern": "classes-de-palavras-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 93,
+      "handcraft_applied": 93,
+      "anchor_glob": "examples/questao-premium-*-portugues-classes-*.json,examples/questao-formacao-palavras-siglas.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Classes de palavras",
+      "pedagogical_branch": "pt_classes_palavras",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-07-20",
+        "source": "cluster:lingua-portuguesa"
+      },
+      "note": "Card Classes de palavras — 93 slugs PDF cluster B—Morfologia. Âncora formação/siglas (pt_classes_palavras). Fase 0 pipeline 2026-07-20.",
+      "production_status": "production_ready",
+      "quality": {
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "technical_ready_at": "2026-07-20",
+        "production_ready_at": "2026-07-20",
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-20T19:02:02.162Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Verbos — tempos, modos e vozes": {
+      "pacote_prefix": "verbos-tempos-modos-e-vozes",
+      "manifest": "data/catalog-migration/verbos-tempos-modos-e-vozes-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_verbos.md",
+      "lote_pattern": "verbos-tempos-modos-e-vozes-g{NN}",
+      "lote_size": 8,
+      "status": "pending",
+      "total_slugs": 45,
+      "handcraft_applied": 0,
+      "anchor_glob": "examples/questao-premium-*-portugues-verbos-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Verbos — tempos, modos e vozes",
+      "pedagogical_branch": "pt_verbos",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-07-21",
+        "source": "cluster:lingua-portuguesa"
+      },
+      "note": "Card Verbos — 45 slugs PDF cluster B—Morfologia (Conjugação 35 + Locução 3 + Variadas 3 + Correlação 2 + Vozes 2). Ramo pt_verbos ok_generico. Bootstrap pipeline paridade 2026-07-21.",
+      "production_status": "none",
+      "quality": {
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": false,
+          "L4": false,
+          "L5": false,
+          "L6": false
+        }
+      }
+    },
+    "Concordância verbal e nominal": {
+      "pacote_prefix": "concordancia-verbal-e-nominal",
+      "manifest": "data/catalog-migration/concordancia-verbal-e-nominal-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_concordancia.md",
+      "lote_pattern": "concordancia-verbal-e-nominal-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 44,
+      "handcraft_applied": 44,
+      "anchor_glob": "examples/questao-premium-*-portugues-concordancia-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Concordância verbal e nominal",
+      "pedagogical_branch": "pt_concordancia",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-07-20",
+        "source": "cluster:lingua-portuguesa"
+      },
+      "note": "Card Concordância — 44 slugs DB (PDF 45; dupe 3352960≡3353963 skipped). Âncora pt-subject-focus (tec 3789256). applied 2026-07-20.",
+      "production_status": "production_ready",
+      "quality": {
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "technical_ready_at": "2026-07-21",
+        "production_ready_at": "2026-07-21",
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-21T01:16:13.447Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Orações coordenadas e subordinadas": {
+      "pacote_prefix": "oracoes-coordenadas-e-subordinadas",
+      "manifest": "data/catalog-migration/oracoes-coordenadas-e-subordinadas-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_oracoes_subordinadas.md",
+      "lote_pattern": "oracoes-coordenadas-e-subordinadas-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 38,
+      "handcraft_applied": 38,
+      "anchor_glob": "examples/questao-premium-apice-portugues-oracoes-adversativa-pocinhos.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Orações coordenadas e subordinadas",
+      "pedagogical_branch": "pt_oracoes_subordinadas",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-07-20",
+        "source": "cluster:lingua-portuguesa"
+      },
+      "note": "Card Orações coordenadas e subordinadas — 38/38 handcraft g01–g05 applied + production_ready 2026-07-21. Âncora pt-period-rail (tec 3558979).",
+      "production_status": "production_ready",
+      "quality": {
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "technical_ready_at": "2026-07-21",
+        "production_ready_at": "2026-07-21",
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-21T01:23:50.567Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
         }
       }
     },

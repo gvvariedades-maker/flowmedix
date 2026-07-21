@@ -1,0 +1,29 @@
+{
+  "lote": "curativos-e-manejo-de-feridas-g10",
+  "handcraft_at": "2026-07-16",
+  "slug_count": 8,
+  "branch_mix": [
+    "curativos_generico"
+  ],
+  "status": "handcrafted",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "anchor_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344759089-1",
+  "total": 8,
+  "slugs": [
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344759089-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-4",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-0",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-4",
+    "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-7",
+    "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344759089-4",
+    "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344773456-4",
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779340178514-6"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-16",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/curativos-e-manejo-de-feridas-g10.json"
+  }
+}

@@ -97,6 +97,14 @@ const EnvSchema = z.object({
   SENTRY_AUTH_TOKEN: z.string().min(1).optional(),
   SENTRY_ORG: z.string().min(1).optional(),
   SENTRY_PROJECT: z.string().min(1).optional(),
+  /**
+   * Cursor SDK — orquestrador de pipeline (`npm run pipeline:orchestrate -- --sdk`).
+   * Opcional no app Next; obrigatória só ao disparar agents via SDK.
+   * @see docs/PIPELINE_ORCHESTRATOR.md
+   */
+  CURSOR_API_KEY: z.string().min(1).optional(),
+  /** Modelo do orquestrador (default composer-2.5 se omitido no CLI). */
+  CURSOR_ORCHESTRATOR_MODEL: z.string().min(1).optional(),
 }).superRefine((data, ctx) => {
   /**
    * Na Vercel, Preview/Development também rodam `next build` com NODE_ENV=production.
@@ -174,6 +182,8 @@ const ENV_KEYS = [
   'SENTRY_AUTH_TOKEN',
   'SENTRY_ORG',
   'SENTRY_PROJECT',
+  'CURSOR_API_KEY',
+  'CURSOR_ORCHESTRATOR_MODEL',
 ] as const;
 
 function readTrimmedEnv(key: string): string | undefined {

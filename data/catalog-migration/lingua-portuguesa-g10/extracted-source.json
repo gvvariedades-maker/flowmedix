@@ -1,0 +1,120 @@
+[
+  {
+    "tec_id": "3353965",
+    "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+    "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+    "banca_line": "AVANÇASP - ACEVA (Pref Amparo (SP))/Pref Amparo (SP)/2025",
+    "gabarito": "E",
+    "instruction": "Qual das frases a seguir está INCORRETA em relação à pontuação?",
+    "options": {
+      "A": "Cuidado! Há um buraco na calçada.",
+      "B": "Eu vou levar alguns produtos de higiene pessoal: sabonete, pasta de dente e papel higiênico.",
+      "C": "Luana, venha até a minha sala.",
+      "D": "Por que você não foi ao casamento?",
+      "E": "A minha professora, ganhou muitos presentes no dia dos professores."
+    }
+  },
+  {
+    "tec_id": "3354418",
+    "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+    "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+    "banca_line": "VUNESP - An OP (Sertãozinho)/Pref Sertãozinho SP/2025",
+    "gabarito": "D",
+    "instruction": "Leia o texto para responder à questão. A humanidade se divide em dois grupos. Um com bilhões de pessoas, que sabem que o futuro da espécie está fadado a ocorrer aqui(a) na superfície da Terra. O outro grupo, minúsculo, acredita que nosso futuro está em outros planetas, talvez Marte, onde deveríamos estabelecer colônias.(b) Construir o foguete e pousar em Marte é factível com a tecnologia atual. Mas será que o ser humano aguenta a viagem de meses? Se não aguentar, o plano vai por águaabaixo, pois não existe no horizonte engenharia capaz de criar um ser humano adaptado à vida no foguete ou em Marte. A novidade é um estudo que demonstrou quenosso coração já começa a deteriorar com menos de um mês funcionando sem gravidade. Para esse estudo foram construídos pequenos corações humanos capazes de funcionar fora do corpo. São feitos de tecido cardíaco vivo, ligados a dois pontos de fixaçãodentro de um aparelho que tem um reservatório de alimentos. Como o tecido muscular cardíaco está ligado a sensores presentes nos pontos de fixação, a frequência e a força de cada batimento cardíaco podem ser medidas.(c) Tudoem tempo real. O resultado é uma caixa lacrada contendo um pequeno coração vivo. Os cientistas enviaram para a estação espacial uma dessas caixas e mantiveram outra idêntica na Terra. A única diferença entre as duas é que uma operava na ausência de gravidade e a outra, com gravidade normal.(d) A que foi para o espaço ficou 30 dias sem gravidade e retornou à Terra. Durante esses 30 dias, o funcionamento dessesdois pequenos corações pôde ser comparado. A conclusão é que o coração humano deteriora e envelhece rapidamente na ausência de gravidade. Isso, é claro, se torna um grande risco para viagens que durammeses, como a que pretende levar seres humanos até Marte. Problemas semelhantes ocorrem nos rins dos astronautas e no sistema imune, mas ainda não foram bemestudados. Me parece que resolver esses problemas antes de enviar pessoas a Marte é um desafio mais complicado do que construir os foguetes. E pode atrasar muito, ou mesmo tornar impossível,(e) longas viagens espaciais. (Fernando Reinach. www.estadao.com.br, 28.10.2024. Adaptado) Assinale a alternativa em cujo trecho a vírgula marca a omissão de um vocábulo.",
+    "options": {
+      "A": "na superfície da Terra. O outro grupo, minúsculo, acredita que nosso futuro está em outros planetas, talvez Marte, onde deveríamos estabelecer colônias.(",
+      "B": "Construir o foguete e pousar em Marte é factível com a tecnologia atual. Mas será que o ser humano aguenta a viagem de meses? Se não aguentar, o plano vai por águaabaixo, pois não existe no horizonte engenharia capaz de criar um ser humano adaptado à vida no foguete ou em Marte. A novidade é um estudo que demonstrou quenosso coração já começa a deteriorar com menos de um mês funcionando sem gravidade. Para esse estudo foram construídos pequenos corações humanos capazes de funcionar fora do corpo. São feitos de tecido cardíaco vivo, ligados a dois pontos de fixaçãodentro de um aparelho que tem um reservatório de alimentos. Como o tecido muscular cardíaco está ligado a sensores presentes nos pontos de fixação, a frequência e a força de cada batimento cardíaco podem ser medidas.(",
+      "C": "Tudoem tempo real. O resultado é uma caixa lacrada contendo um pequeno coração vivo. Os cientistas enviaram para a estação espacial uma dessas caixas e mantiveram outra idêntica na Terra. A única diferença entre as duas é que uma operava na ausência de gravidade e a outra, com gravidade normal.(",
+      "D": "A que foi para o espaço ficou 30 dias sem gravidade e retornou à Terra. Durante esses 30 dias, o funcionamento dessesdois pequenos corações pôde ser comparado. A conclusão é que o coração humano deteriora e envelhece rapidamente na ausência de gravidade. Isso, é claro, se torna um grande risco para viagens que durammeses, como a que pretende levar seres humanos até Marte. Problemas semelhantes ocorrem nos rins dos astronautas e no sistema imune, mas ainda não foram bemestudados. Me parece que resolver esses problemas antes de enviar pessoas a Marte é um desafio mais complicado do que construir os foguetes. E pode atrasar muito, ou mesmo tornar impossível,(",
+      "E": "longas viagens espaciais. (Fernando Reinach. www.estadao.com.br, 28.10.2024. Adaptado) Assinale a alternativa em cujo trecho a vírgula marca a omissão de um vocábulo."
+    }
+  },
+  {
+    "tec_id": "3385117",
+    "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+    "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+    "banca_line": "FGV - Tec (EBSERH)/EBSERH/Citopatologia/2025",
+    "gabarito": "B",
+    "instruction": "Assinale a frase em que, comparativamente, as reticências mostram a expressão de uma emoção intensa.",
+    "options": {
+      "A": "O quadro não é ... um pouco ... como dizer?",
+      "B": "Mas a barata ... a barata ... você a matou?",
+      "C": "Quem diria...",
+      "D": "Você já sabe, né? O casamento dele...",
+      "E": "Comprei o carro barato... barato ..."
+    }
+  },
+  {
+    "tec_id": "3385123",
+    "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+    "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+    "banca_line": "FGV - Tec (EBSERH)/EBSERH/Citopatologia/2025",
+    "gabarito": "C",
+    "instruction": "Assinale a frase cuja pontuação está correta.",
+    "options": {
+      "A": "A verdade, como todos sabem incomoda.",
+      "B": "Você Paulo, me deve um grande favor.",
+      "C": "Eis a verdade: nada dura a vida toda.",
+      "D": "Eu, cumpri o meu dever.",
+      "E": "Nós, graças a Deus, estamos, bem."
+    }
+  },
+  {
+    "tec_id": "3416694",
+    "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+    "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+    "banca_line": "SELECON - ATHH (HEMOMINAS)/HEMOMINAS/Auxiliar Administrativo/2025",
+    "gabarito": "A",
+    "instruction": "Quando eu deixei de acreditar em mim Mayara Godoy Quando foi que essa dúvida se abateu sobre minhas tão sólidas certezas? Quando foi que deixei de acreditar na única pessoa em quem deveria confiar sempre? Dia desses, me peguei tentando me lembrar quando foi que eu deixei de acreditar em mim mesma. Eu sempre fui uma pessoa autoconfiante. Pelo menos em alguns aspectos da vida. Desde pequena, eu sempre fui estudiosa, e ia bem na escola. Isso não foi umproblema para mim, nem mesmo quando tive de pular um ano no prezinho e acabei ficando adiantada, estudando com crianças mais velhas que eu. Lá pela sexta série, eu já tinha uma clareza de qual carreira gostaria de seguir, e me matriculei na faculdade sem nenhuma dúvida de que aquele seria meu caminho. Fiz estágios, trabalhos voluntários, me metia em tudo que era evento aleatório, apenas na ânsia de aprender. Tinha sede do mundo, sede de conhecimento, pressa deavançar. Tinha um brilho no olhar que parecia difícil de apagar. Ao me formar, rapidamente consegui empregos, sempre fui bem recomendada pelos ex-chefes, e sempre fui adiante de cabeça erguida. Olhando hoje, é muito nítido o quanto eu seguia em frente sem hesitar, o quanto eu tinha certeza de cada passo que dava. Talvez, fosse só imaturidade juvenil, aquelapseudoarrogância típica de quem não viveu muito ainda, aquela ingenuidade que chega a ser bonita. Talvez. Com o passar dos anos, eu sempre continuei perseguindo o conhecimento, as experiências, o crescimento. Sempre segui estudando, me dedicando, dando o meumelhor. Mas, em algum momento, isso mudou. Hoje me olho no espelho e não sei mais quem sou. E percebo que não é uma crise com a minha profissão especificamente, écomigo mesma. Aquela autoconfiança, aquela segurança, aquela ousadia, tudo sumiu. Hoje me sinto incapaz, obsoleta, perdida e irrelevante. Em que momento eu deixei de acreditar em mim? Em que momento meu espírito foi quebrado dessa maneira? Eu sinceramente não sei responder. Não sei se foi umacúmulo de experiências negativas com o passar dos anos, ou se foi alguma situação pontual, mas sinto que algo em mim morreu; o combustível que alimentava essefogo acabou. Alguma parte fundamental do meu ser, algum elemento estrutural que me sustentava, ruiu. Como uma coluna de sustentação de um prédio derrubada por engano, sintoque algum dos meus pilares cedeu. Talvez seja o que as pessoas chamam de crise existencial, crise de meia idade, crise dos 30 (e poucos), ou talvez alguma outra aindanão nominada. M",
+    "options": {
+      "A": "coordenar orações",
+      "B": "inserir uma explicação",
+      "C": "apresentar o uso de um aposto",
+      "D": "indicar uma inversão na ordem dos termos da oração"
+    }
+  },
+  {
+    "tec_id": "3419140",
+    "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+    "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+    "banca_line": "VUNESP - Ag (Pref Itapevi)/Pref Itapevi/Administração Pública/2025",
+    "gabarito": "B",
+    "instruction": "Por que agora a solidão nos adoece? Para Vivek Murthy, cirurgião-geral e principal autoridade de saúde pública dos EUA, “a teoria evolutiva da solidão de John Cacioppo* está enraizada na observação de queos humanos sobreviveram como espécie não porque temos vantagens físicas como tamanho, força ou velocidade, mas por causa de nossa capacidade de nos conectarem grupos sociais”. Essa teoria define a solidão como um estímulo para uma necessidade básica: a de nos conectar. “Assim temos uma maior chance de adaptação ao nosso ambiente”,defendeu o psiquiatra Thyago Antonelli-Salgado, da Universidade Federal do Rio Grande do Sul (UFRGS). “Se pensarmos nos primatas, humanos e não-humanos, com um comportamento de grupo, eles se protegeram contra a ameaça de predação, a escassez de recursos, e,assim, houve uma seleção natural desses indivíduos”, explicou. Hoje, todavia, segundo os especialistas, a solidão é mais prevalente e intensa do que nunca e se configura como um grave problema de saúde pública. Em relatório de2023, Murthy destaca que essa condição está associada a um risco maior de doença cardiovascular, demência, AVC, depressão, ansiedade e morte prematura. “O impactode estar socialmente desconectado na mortalidade é semelhante ao causado por fumar até 15 cigarros por dia.” Por enquanto, as principais evidências não são capazes de cravar essa relação de causa e efeito. De qualquer forma, o crescente arcabouço científico tem deixado paísesem alerta. O Japão criou um “Ministério da Solidão”, e, no Reino Unido, uma secretária foi nomeada para combatê-la. O ponto chave que envolve a solidão é o sofrimento. Entretanto a redução de interações pode ser feita com um objetivo maior, como autoconhecimento ou necessidade profissional (escrever um livro, por exemplo), nãoestando, portanto, associada a alguma repercussão negativa. Nesse caso, falamos de solitude. Antonelli-Salgado aponta que a solidão não pode ser tema abordado apenas na velhice. A importância da conexão social precisa ser ensinada desde cedo. “Muitas vezes,a gente ensina às crianças que, mesmo sem fome, é importante comer para crescer forte. É preciso tomar água para se hidratar. Mas não falamos sobre a importância deter boas conexões sociais para que haja uma maior qualidade de vida.” Para ele, bons vínculos têm a ver com profundidade, com estabelecer efetivas relações sociais epensar que elas são sempre uma troca. (Leon Ferrari. Disponível em: www.estadao.com.br/saude/a-solidao-nosajudou- a-sobreviver-p",
+    "options": {
+      "A": "“Assim temos (uma maior chanc",
+      "B": "Hoje, todavia, segundo os especialistas, a solidão é mais prevalente (e intens",
+      "C": "Em relatório de 2023, Murthy destaca que essa condição (está associad",
+      "D": "O Japão criou um “Ministério da Solidão”, e, no Reino Unido, (uma secretári",
+      "E": "de adaptação ao nosso ambiente”, defendeu o psiquiatra…"
+    }
+  },
+  {
+    "tec_id": "3450786",
+    "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+    "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+    "banca_line": "IBFC - Tec Enf (SES SE)/SES SE/2025",
+    "gabarito": "B",
+    "instruction": "Analise o texto a seguir e responda à questão abaixo. Texto II \"As dores são muito interessantes porque sabemos muito pouco sobre elas. Faz 30 anos que trabalho na área e ainda aprendo algo novo todo dia\", diz a médica AnneMacGregor, pesquisadora especialista nos efeitos hormonais das cefaleias. Ela explica que a dor funciona como um sistema de advertência: ela avisa que estamos fazendo algo prejudicial ao nosso corpo, e espera uma reação para solucionar oproblema. Nesse sentido, a dor de cabeça não é diferente das outras. Pode ser mais ou menos aguda, pode diminuir com um analgésico ou nos obrigar a ficar em um quarto escuro,no caso de uma enxaqueca, mas o mecanismo é o mesmo. No entanto, embora o cérebro seja o órgão que recebe os sinais de dor captados pelo corpo, ele mesmo não tem terminações nervosas que captam a dor. [...] (Disponível em: Acesso em 12/02/2025.Adaptado) No último parágrafo, a oração entre vírgulas possui um valor semântico:",
+    "options": {
+      "A": "conclusivo.",
+      "B": "concessivo.",
+      "C": "conformativo.",
+      "D": "consecutivo."
+    }
+  },
+  {
+    "tec_id": "3452341",
+    "source_file": "portugues-caderno-2025-2026-q401-600.pdf",
+    "source_assunto_tec": "Pontuação (Ponto, Vírgula, Travessão, Aspas, Parênteses, etc)",
+    "banca_line": "AVANÇASP - ACS (Pref Morungaba)/Pref Morungaba/2025",
+    "gabarito": "A",
+    "instruction": "Leia o texto a seguir para responder a questão abaixo. Conversinha mineira — É bom mesmo o cafezinho daqui, meu amigo? — Sei dizer não senhor: não tomo café. — Você é dono do café, não sabe dizer? — Ninguém tem reclamado dele não senhor. — Então me dá café com leite, pão e manteiga. — Café com leite só se for sem leite. — Não tem leite? — Hoje, não senhor. — Por que hoje não? — Porque hoje o leiteiro não veio. — Ontem ele veio? — Ontem não. — Quando é que ele vem? — Tem dia certo não senhor. Às vezes vem, às vezes não vem. Só que no dia que devia vir em geral não vem. — Mas ali fora está escrito “Leiteria”! — Ah, isso está, sim senhor. — Quando é que tem leite? — Quando o leiteiro vem. — Tem ali um sujeito comendo coalhada. É feita de quê? — O quê: coalhada? Então o senhor não sabe de que é feita a coalhada? — Está bem, você ganhou. Me traz um café com leite sem leite. Escuta uma coisa: como é que vai indo a política aqui na sua cidade? — Sei dizer não senhor: eu não sou daqui. — E há quanto tempo o senhor mora aqui? — Vai para uns quinze anos. Isto é, não posso agarantir com certeza: um pouco mais, um pouco menos. — Já dava para saber como vai indo a situação, não acha? — Ah, o senhor fala da situação? Dizem que vai bem. — Para que Partido? — Para todos os Partidos, parece. — Eu gostaria de saber quem é que vai ganhar a eleição aqui. — Eu também gostaria. Uns falam que é um, outros falam que outro. Nessa mexida... — E o Prefeito? — Que é que tem o Prefeito? — Que tal o Prefeito daqui? — O Prefeito? É tal e qual eles falam dele. — Que é que falam dele? — Dele? Uai, esse trem todo que falam de tudo quanto é Prefeito. — Você, certamente, já tem candidato. — Quem, eu? Estou esperando as plataformas. — Mas tem ali o retrato de um candidato dependurado na parede, que história é essa? — Aonde, ali? Uê, gente: penduraram isso aí... SABINO, Fernando. Conversinha mineira. In: A mulher do vizinho. Editora do Autor, 1962, p. 144-146. Disponível em: Acesso em: 04 abr. 2025 15/07/2026, 19:40 9/77 420) 421) 422) 423) Em “Sei dizer não senhor: não tomo café.” e “Sei dizer não senhor: eu não sou daqui.” O emprego de dois-pontos serve para:",
+    "options": {
+      "A": "Indicar um esclarecimento, um resultado ou resumo do que se disse.",
+      "B": "Anunciar a fala dos personagens nas histórias de ficção.",
+      "C": "Anteceder uma citação direta.",
+      "D": "Indicar a elipse de um termo.",
+      "E": "Indicar pergunta direta."
+    }
+  }
+]

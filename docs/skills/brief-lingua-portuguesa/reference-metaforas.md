@@ -159,7 +159,8 @@ Ramos × decisão: [`reference-ramos.md`](reference-ramos.md).
 | **Ícones** | `ScanSearch`, `HelpCircle`, `GitCommitHorizontal`, `Megaphone`, `AlertTriangle` |
 | **golden_rule** | rows: “O que isola?” · sujeito\|verbo = sem vírgula · vocativo = com vírgula |
 | **L3** | `molde_redesign` · target `pt-comma-rail` · brief `artifacts/l3-brief-lingua-portuguesa-pt_pontuacao.md` |
-| **Âncora** | `examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` (AVANÇASP Potim 2026 · gab. B) |
+| **Âncora eliminação** | `examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` (AVANÇASP Potim 2026 · gab. B · vocativo) |
+| **Âncora VF** | `examples/questao-premium-cpcon-portugues-pontuacao-tirinha-vf.json` (CPCON Condado 2026 · gab. D · I/II/III na tirinha) |
 
 ---
 

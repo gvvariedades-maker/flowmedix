@@ -143,7 +143,7 @@ export async function applyLoteToSupabase(
         continue;
       }
 
-      const { data: inserted, error: insertError } = await supabase
+      let { data: inserted, error: insertError } = await supabase
         .from('modulos_estudo')
         .insert([
           {
@@ -157,6 +157,24 @@ export async function applyLoteToSupabase(
         ])
         .select('id')
         .single();
+
+      if (insertError?.message?.includes('uniq_modulos_estudo_content_hash')) {
+        const retry = await supabase
+          .from('modulos_estudo')
+          .insert([
+            {
+              modulo_nome: payload.meta.topico,
+              titulo_aula: payload.meta.subtopico || payload.meta.topico,
+              modulo_slug: slug,
+              conteudo_json: conteudoJson,
+              banca: payload.meta.banca.toUpperCase(),
+            },
+          ])
+          .select('id')
+          .single();
+        inserted = retry.data;
+        insertError = retry.error;
+      }
 
       if (insertError || !inserted) {
         results.push({

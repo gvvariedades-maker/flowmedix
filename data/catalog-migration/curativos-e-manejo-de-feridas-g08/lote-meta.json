@@ -1,0 +1,31 @@
+{
+  "lote": "curativos-e-manejo-de-feridas-g08",
+  "handcraft_at": "2026-07-16",
+  "slug_count": 8,
+  "branch_mix": [
+    "curativos_bandagem_imobilizacao",
+    "curativos_dreno",
+    "curativos_termoterapia"
+  ],
+  "status": "handcrafted",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "anchor_slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+  "total": 8,
+  "slugs": [
+    "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-3",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779269305691-5",
+    "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-1",
+    "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-2",
+    "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344759089-6",
+    "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-0"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-16",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/curativos-e-manejo-de-feridas-g08.json"
+  }
+}

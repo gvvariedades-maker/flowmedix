@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T16:22:49.569Z",
+  "lote": "lingua-portuguesa-g15",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-caconde-colocacao-vista-cansada-3457294",
+    "avancasp-morungaba-colocacao-tipo-i-ii-iii-3452377",
+    "avancasp-vinhedo-colocacao-jamais-3554847",
+    "fgv-ebserh-colocacao-deram-me-3385122",
+    "idecan-sesap-colocacao-arroz-3531587",
+    "vunesp-itapevi-colocacao-solidao-3419183",
+    "vunesp-itatiba-colocacao-carnaval-3583308",
+    "vunesp-osasco-colocacao-cerebro-3558396"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-caconde-colocacao-vista-cansada-3457294",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-morungaba-colocacao-tipo-i-ii-iii-3452377",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-vinhedo-colocacao-jamais-3554847",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fgv-ebserh-colocacao-deram-me-3385122",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "idecan-sesap-colocacao-arroz-3531587",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-itapevi-colocacao-solidao-3419183",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-itatiba-colocacao-carnaval-3583308",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-osasco-colocacao-cerebro-3558396",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

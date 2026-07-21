@@ -92,6 +92,10 @@ Para propostas com `confidence` < 0.90 ou mudança de macro-área:
 
 ### Depois da taxonomia
 
-Quando o bucket estiver estável → nova conversa `Handcraft: <subtópico>`.
+Quando `audit:taxonomy-gate` retornar `pass` ou `warn` com `handcraft_allowed=true` → nova conversa `Handcraft: <subtópico>`.
+
+```bash
+npm run audit:taxonomy-gate -- --subtopico="<Nome canônico>" --write-closed
+```
 
 Referência handcraft: [`HANDCRAFT_CONVERSA.md`](HANDCRAFT_CONVERSA.md)

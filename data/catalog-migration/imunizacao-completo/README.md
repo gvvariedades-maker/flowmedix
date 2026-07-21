@@ -1,35 +1,37 @@
-# Imunização — handcraft golden-v1 (bootstrap)
+# Imunização — handcraft golden-v1
 
 **Subtópico:** Imunização  
 **Modo:** Handcraft golden-v1 (legacy builder → re-handcraft)  
-**Status:** **in_progress** — 517/575 handcraft · **`g76`–`g83`** `handcraft_ready` (cauda final 64 slugs) · ver registry
+**Status:** **`production_ready`** — **575/575** handcraft · lotes **g01–g83** · vendável desde **2026-07-19**
 
-Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../docs/GOLDEN_HANDCRAFT_MODEL.md) · [`docs/HANDCRAFT_CONVERSA.md`](../../docs/HANDCRAFT_CONVERSA.md)
+Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../docs/GOLDEN_HANDCRAFT_MODEL.md) · [`docs/HANDCRAFT_CONVERSA.md`](../../docs/HANDCRAFT_CONVERSA.md) · [`docs/QUALITY_VENDAVEL_CONVERSA.md`](../../docs/QUALITY_VENDAVEL_CONVERSA.md)
 
 ## Catálogo
 
 | Item | Valor |
 |------|--------|
 | Slugs no manifest | 575 (`imunizacao-completo/manifest.json`) |
-| Handcraft aplicado | 99 (~17%) |
-| Handcraft ready (pendente apply) | `g11`, `g14`–`g55`, **`g50`**, **`g58`**, **`g60`**, **`g62`**, **`g65`–`g70`**, **`g74`**, **`g75`** exc. superseded/exported |
-| Superseded (não apply) | `g43`, `g44`, `g49` → `g42` · **`g46`** → **`g50`** · **`g51`** → **`g56`** |
-| Exported only (sem questions/) | **`g53`**, **`g56`**, **`g61`**, **`g63`**, **`g64`** |
-| Último lote concluído | **`imunizacao-g83`** — cauda final · **64** slugs em **`g76`–`g83`** · 8/8 [READY] cada |
-| Próximo passo | `apply:imunizacao-ready-batch` ou apply manual **`g76`–`g83`** |
-| Ramos L3 | `imunizacao_vf_intervalos` · `imunizacao_calendario` · `imunizacao_cadeia_frio` · `imunizacao_generico` |
-| Âncora via SCR | [`examples/questao-premium-decorp-imunizacao-triplice-viral-via.json`](../../examples/questao-premium-decorp-imunizacao-triplice-viral-via.json) |
-| Âncora calendário | [`examples/questao-premium-fundatec-meningococica-3meses.json`](../../examples/questao-premium-fundatec-meningococica-3meses.json) |
-| Âncora V/F intervalos | [`examples/questao-premium-cpcon-imunizacao-intervalos-vf.json`](../../examples/questao-premium-cpcon-imunizacao-intervalos-vf.json) |
-| Âncora cadeia de frio | [`examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json`](../../examples/questao-premium-avancasp-imunizacao-rede-frio-temperatura.json) |
-| Registry âncoras | [`imunizacao-golden-anchors.json`](../imunizacao-golden-anchors.json) |
-| Repair DECORP | [`imunizacao-decorp-triplice-viral-repair`](../imunizacao-decorp-triplice-viral-repair/README.md) |
+| Handcraft aplicado | **575/575** (`handcraft-meta.json` · 2026-07-03) |
+| `production_status` | **`production_ready`** (2026-07-19) |
+| Ramos L3 | `imunizacao_vf_intervalos` · `imunizacao_calendario` · `imunizacao_cadeia_frio` · `imunizacao_exceto` · `imunizacao_generico` |
+| Playbook | [`handcraft-playbooks/imunizacao.json`](../handcraft-playbooks/imunizacao.json) |
+| Moldes bespoke wired | PNI vf · calendário · cadeia frio (`lib/slides/pedagogicalBranch.ts`) |
+| Próximo passo | Monitoramento: `audit:subtopico-health -- --subtopico="Imunização"` |
 | **Não usar** | `ai:generate` · `catalog:upgrade-premium` |
 
-## Lotes handcraft_ready (g11 + g14–g55 + g50)
+## Disparar qualidade vendável
 
-`g11` · `g14` · … · **`g75`** · **`g76`**–**`g83`** (cauda final)
+```text
+Qualidade vendável: Imunização
+```
 
+```bash
+npm run reconcile:handcraft-manifest -- --subtopico="Imunização"
+npm run audit:handcraft-dod -- --subtopico="Imunização"
+npm run audit:subtopico-quality -- --subtopico="Imunização" --promote
+```
+
+---
 ## imunizacao-g69 (exported — handcraft pendente)
 
 | Slug | Banca | Cluster | Ramo | Gabarito |

@@ -1,0 +1,18 @@
+{
+  "lote": "curativos-e-manejo-de-feridas-g01",
+  "exported_at": "2026-07-16T01:24:59.295Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/curativos-e-manejo-de-feridas-g01/manifest.json"
+  },
+  "slugs": [
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344759089-0"
+  ]
+}

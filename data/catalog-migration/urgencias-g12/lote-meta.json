@@ -15,5 +15,11 @@
   ],
   "readiness": "8/8",
   "preflight_artifact": "artifacts/catalog-preflight-urgencias-g12.json",
-  "notes": "g12 XABCDE — letra X hemorragia · compressão corte · X prioridade · VAA trauma · imobilização coluna · Glasgow D · hemorragia C · amputação controle"
+  "notes": "g12 XABCDE — letra X hemorragia · compressão corte · X prioridade · VAA trauma · imobilização coluna · Glasgow D · hemorragia C · amputação controle",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

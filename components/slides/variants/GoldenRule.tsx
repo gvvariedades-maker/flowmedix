@@ -563,6 +563,12 @@ export const GoldenRule = ({
     );
   }
 
+  if (variant === 'pt-subject-focus-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRulePtTermMatrixBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
   if (variant === 'trabalho-nr32-reference-board' && rows && rows.length > 0) {
     return (
       <GoldenRuleTrabalhoNr32ReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />

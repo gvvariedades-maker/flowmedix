@@ -1,0 +1,73 @@
+---
+description: >-
+  Ativa design UI do app AVANT (Cyber Clinical + Editorial v2) quando o usuário
+  enviar Visual:, Polish vitrine, Polish player, micro-SaaS, craft UI, ou pedir
+  melhoria visual de vitrine/player/dashboard. Público: Técnico de Enfermagem em
+  concurso — mobile-first, baixa carga cognitiva, WCAG AA.
+alwaysApply: false
+---
+
+# AVANT UI Visual — rule operacional
+
+> **Cópia versionada** — espelhar em [`.cursor/rules/avant-ui-visual.mdc`](../../.cursor/rules/avant-ui-visual.mdc).  
+> **Skill canônica:** [`docs/skills/avant-ui-visual/SKILL.md`](../skills/avant-ui-visual/SKILL.md)  
+> **Reference craft:** [`docs/skills/avant-ui-visual/reference-microsaas-craft.md`](../skills/avant-ui-visual/reference-microsaas-craft.md)
+
+Quando a mensagem contiver **`Visual:`**, **`Polish vitrine`**, **`Polish player`**, **`micro-SaaS`**, **`craft UI`**, ou pedido explícito de melhoria visual do app, executar **sem pedir modo**:
+
+## 1. Resolver trigger
+
+| Trigger | Exemplo |
+|---------|---------|
+| `Visual:` | `Visual: vitrine mobile` |
+| `Polish vitrine` / `Polish player` | Polish player — feedback acerto/erro |
+| `micro-SaaS` / `craft UI` | craft UI no dashboard |
+| Melhoria visual explícita | “melhorar contraste das alternativas” |
+
+**Fora de escopo:** moldes NeuroSlides (`avant-neuroslides-visual`), JSON/golden (`avant-json-template`), copy/CRO da landing, ebooks HTML offline.
+
+## 2. Público e princípios (enfermagem + educação)
+
+O usuário é **Técnico de Enfermagem** em concurso — **celular, cansado, micro-sessões (10–15 min)**:
+
+1. Reduzir carga cognitiva — um foco por tela.
+2. Retomada imediata — `Continuar` / `Retomar` visível.
+3. Thumb zone — CTAs na metade inferior; alvos ≥44×44px.
+4. Calma visual — amber/danger só para risco real.
+5. Confiança via produto — progresso real, não stock art.
+6. Player: enunciado + alternativas dominam o viewport.
+
+## 3. Antes de codar
+
+1. Estender componente adjacente — não duplicar.
+2. Tema: **Editorial v2** (vitrine/dashboard/player shell) vs **Cyber Clinical** (NeuroSlides/admin).
+3. Capturas: `docs/auditoria-visual-v2/screenshots/avant-editorial-v2/`.
+4. Prioridade: vitrine → player → dashboard → landing (tokens).
+
+## 4. Tokens (`app/globals.css` + Visual Direction v3)
+
+Editorial: `.card-elevated`, `.btn-editorial-primary`, `#8fe020`.  
+Cyber: `.glass-panel`, `#010409`, cyan `#00f2ff`.  
+Mobile: `pb-safe`, `pt-safe`. Ícones: Lucide.
+
+**Proibido:** paleta Tailwind genérica, indigo/roxo legado, glass em `main`/`body`.
+
+## 5. Superfícies
+
+**Vitrine:** stats compactos; grid 1/2/3 colunas; card com um CTA; skeleton/empty/zero-filtro.  
+**Player:** shell editorial → reverso cyber; feedback com borda+fundo; um CTA por passo.  
+**NeuroSlides:** `meta.subtopico`; retenção visual → `avant-neuroslides-visual`.
+
+## 6. Checklist ship
+
+1440 + 375 · WCAG AA · ≥44px · tema correto · um CTA/viewport · loading/empty · `focus-visible`.
+
+## 7. Formato de entrega
+
+**[DECISÃO]** · **[CÓDIGO]** · **[VERIFICAÇÃO]** — ver rule completa em `.cursor/rules/avant-ui-visual.mdc`.
+
+## 8. Anti-padrões
+
+Linearizar cyber · três CTAs no card · feedback só cor de texto · card-dentro-de-card · CDN font nova · misturar polish vitrine com molde NeuroSlides.
+
+Conteúdo operacional completo: [`.cursor/rules/avant-ui-visual.mdc`](../../.cursor/rules/avant-ui-visual.mdc)

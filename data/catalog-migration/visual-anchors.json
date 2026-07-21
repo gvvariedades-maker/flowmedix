@@ -776,6 +776,30 @@
       "slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
       "lote": "lingua-portuguesa-termos-anchor",
       "json_path": "examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json"
+    },
+    "pt_concordancia": {
+      "pedagogical_branch": "pt_concordancia",
+      "slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+      "lote": "concordancia-verbal-e-nominal-anchors",
+      "json_path": "examples/questao-premium-vunesp-portugues-concordancia-nucleo-sjrp.json"
+    },
+    "pt_concordancia_generico": {
+      "pedagogical_branch": "pt_concordancia_generico",
+      "slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+      "lote": "concordancia-verbal-e-nominal-anchors",
+      "json_path": "examples/questao-premium-vunesp-portugues-concordancia-nucleo-sjrp.json"
+    },
+    "pt_oracoes_subordinadas": {
+      "pedagogical_branch": "pt_oracoes_subordinadas",
+      "slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
+      "lote": "oracoes-coordenadas-e-subordinadas-anchors",
+      "json_path": "examples/questao-premium-apice-portugues-oracoes-adversativa-pocinhos.json"
+    },
+    "pt_oracoes_subordinadas_generico": {
+      "pedagogical_branch": "pt_oracoes_subordinadas_generico",
+      "slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
+      "lote": "oracoes-coordenadas-e-subordinadas-anchors",
+      "json_path": "examples/questao-premium-apice-portugues-oracoes-adversativa-pocinhos.json"
     }
   }
 }

@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "banca": "ÉPICE",
+    "prova": "Ag Adm (Pref R Bacamarte)",
+    "orgao": "Pref. R. Bacamarte",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Sintaxe do período simples",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-19",
+      "reviewer": "agent:elias-metodo-piloto",
+      "guideline_snapshot": "Morfossintaxe — sujeito: pergunta-teste Quem? + elíptico × indeterminado (Bechara / gramática escolar)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "gramatica-tradicional-sujeito",
+        "tier": "B",
+        "issuer": "Gramática escolar de concurso",
+        "title": "Classificação do sujeito — expresso, elíptico, indeterminado, oração sem sujeito",
+        "year": 2024,
+        "covers": ["sujeito elíptico", "sujeito desinencial", "pergunta-teste Quem?"]
+      },
+      {
+        "id": "portugues-caderno-2025-2026-q201-400",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT 2025–2026 — Sujeito (Épice Pref R Bacamarte 2025)",
+        "year": 2025,
+        "covers": ["enunciado", "alternativas", "gabarito E"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Analise o trecho \"Estou preparado para o Enem\" e assinale a alternativa que apresenta a classificação correta do sujeito dessa oração.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Composto (explícito).",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Indeterminado.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Não há sujeito na oração.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Simples (explícito).",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Elíptico (ou desinencial).",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Mapa do sujeito — terreno da prova",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sintaxe do período simples"
+      },
+      "items": [
+        {
+          "label": "Verbo primeiro",
+          "detail": "Ache ESTOU antes de classificar — morfossintaxe.",
+          "icon": "Play"
+        },
+        {
+          "label": "Pergunta-teste",
+          "detail": "Quem? / O quê? — quem pratica «estar preparado»?",
+          "icon": "HelpCircle"
+        },
+        {
+          "label": "Expresso × oculto",
+          "detail": "Visível na frase vs marcado só na desinência verbal.",
+          "icon": "Eye"
+        },
+        {
+          "label": "Pegadinha-âncora",
+          "detail": "B confunde elíptico (1ª pessoa) com indeterminado (3ª pl.).",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Na prova: elíptico tem referente no discurso; indeterminado não."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Verbo → Quem? → letra",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sintaxe do período simples"
+      },
+      "steps": [
+        "Comando: classificar o sujeito de «Estou preparado para o Enem».",
+        "Verbo: ESTOU — 1ª pessoa do singular (desinência -o).",
+        "Quem? → EU — sujeito na desinência, não escrito na frase.",
+        "Letra B: elimina — indeterminado = 3ª pl. sem referente; aqui é 1ª pessoa.",
+        "Letra D: elimina — simples explícito exige pronome/nome visível (eu).",
+        "Letra C: elimina — há sujeito; verbo «estar» não é impessoal.",
+        "Gabarito E — elíptico/desinencial: EU recuperável pelo verbo.",
+        "Em similares: 1ª ou 2ª pessoa no verbo → elíptico; 3ª pl. sem referente → indeterminado."
+      ],
+      "footer_rule": "Ordem: verbo → Quem? → referente no discurso?"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore seletivo — sujeito",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sintaxe do período simples"
+      },
+      "content": "PERGUNTA: QUEM? + ONDE ESTÁ?",
+      "rows": [
+        {
+          "label": "Elíptico",
+          "value": "Quem? na desinência — eu/tu/nós ou referente no texto"
+        },
+        {
+          "label": "Indeterminado",
+          "value": "3ª pl. no verbo + sem referente recuperável"
+        },
+        {
+          "label": "Explícito",
+          "value": "Quem? visível: eu, Maria, os alunos…"
+        },
+        {
+          "label": "Sem sujeito",
+          "value": "Verbo impessoal — fenômenos, «há», chove…"
+        }
+      ],
+      "footer_rule": "Estou = eu oculto. Disseram (sozinho) = indeterminado."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Elíptico × indeterminado",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sintaxe do período simples"
+      },
+      "content": "Por que cada letra errada atrai",
+      "items": [
+        {
+          "label": "A — composto explícito",
+          "detail": "Dois núcleos coordenados visíveis — não há na frase.",
+          "correct": "Só um agente (eu); nenhum segundo núcleo explícito."
+        },
+        {
+          "label": "B — indeterminado",
+          "detail": "Parece «sujeito escondido», mas o verbo denuncia 1ª pessoa.",
+          "correct": "Indeterminado = 3ª pl. sem referente; aqui EU está na desinência."
+        },
+        {
+          "label": "C — sem sujeito",
+          "detail": "Confunde oculto com impessoal.",
+          "correct": "«Estar preparado» exige agente — sujeito elíptico, não oração sem sujeito."
+        },
+        {
+          "label": "D — simples explícito",
+          "detail": "Quem estuda acha que falta pronome = sem sujeito ou indeterminado.",
+          "correct": "Simples explícito = um núcleo visível; elíptico = um núcleo na desinência."
+        },
+        {
+          "label": "Em outra banca…",
+          "detail": "Trocam «Estou» por «Disseram» ou «Choveu» no mesmo formato.",
+          "correct": "Disseram sem referente → indeterminado; Choveu → sem sujeito."
+        }
+      ],
+      "footer_rule": "E: elíptico — EU em ESTOU."
+    }
+  ]
+}

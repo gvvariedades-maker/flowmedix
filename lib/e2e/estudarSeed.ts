@@ -196,11 +196,14 @@ function filterE2eEstudarVitrineGroups(
   const bancas = listQuery?.bancas ?? [];
   const assuntos = listQuery?.assuntos ?? [];
   const q = listQuery?.q?.trim().toLowerCase() ?? '';
+  const disciplina = listQuery?.disciplina ?? null;
 
   return groups.filter((group) => {
     if (bancas.length > 0 && !bancas.includes(group.banca)) return false;
     if (assuntos.length > 0 && !assuntos.includes(group.titulo_aula)) return false;
     if (q && !group.titulo_aula.toLowerCase().includes(q)) return false;
+    if (disciplina === 'portugues') return false;
+    if (disciplina === 'enfermagem') return true;
     return true;
   });
 }
@@ -252,6 +255,24 @@ export function getE2eEstudarVitrinePage(listQuery?: VitrineListQuery): VitrineP
   return {
     groups: allGroups.slice(start, start + perPage),
     facets,
+    disciplinas: [
+      {
+        id: 'enfermagem',
+        label: 'Enfermagem',
+        totalAssuntos: buildE2eEstudarVitrineGroups().length,
+        totalQuestoes: E2E_ESTUDAR_SLUGS.length * buildE2eEstudarVitrineGroups().length,
+        trabalhadas: 0,
+        progressoPct: 0,
+      },
+      {
+        id: 'portugues',
+        label: 'Português',
+        totalAssuntos: 0,
+        totalQuestoes: 0,
+        trabalhadas: 0,
+        progressoPct: 0,
+      },
+    ],
     pagination: {
       page: pageClamped,
       perPage,

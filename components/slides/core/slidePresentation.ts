@@ -259,7 +259,11 @@ function resolveCore(
       layoutVariant === 'iv-interval-swap-trap' ||
       layoutVariant === 'iv-order-invert-trap' ||
       layoutVariant === 'iv-bundle-break-trap' ||
-      layoutVariant === 'pt-crase-trap-arena')
+      layoutVariant === 'pt-crase-trap-arena' ||
+      layoutVariant === 'pt-clitic-trap-arena' ||
+      layoutVariant === 'pt-comma-trap-arena' ||
+      layoutVariant === 'pt-term-trap-arena' ||
+      layoutVariant === 'pt-subject-trap-arena')
       ? 'x_icon'
       : 'numbered');
 

@@ -1,0 +1,29 @@
+{
+  "lote": "curativos-e-manejo-de-feridas-g11",
+  "handcraft_at": "2026-07-16",
+  "slug_count": 8,
+  "branch_mix": [
+    "curativos_generico"
+  ],
+  "status": "handcrafted",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "anchor_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344779828-7",
+  "total": 8,
+  "slugs": [
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344779828-7",
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-3",
+    "furb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-1",
+    "ibgp-enfermagem-curativos-e-manejo-de-feridas-1779340178514-8",
+    "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344759089-7",
+    "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344766321-0",
+    "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269305691-0",
+    "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269305691-2"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-16",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/curativos-e-manejo-de-feridas-g11.json"
+  }
+}

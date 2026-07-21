@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-20T17:20:16.597Z",
+  "lote": "termos-oracao-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-fusam-termos-excepto-adnominal-3460242",
+    "avancasp-sm-arcanjo-termos-transitivo-direto-3709806",
+    "cpcon-olivedos-termos-complemento-nominal-3709441",
+    "cpcon-uepb-nazarezinho-termos-regencia-explicar-3483810",
+    "educa-pb-pedras-fogo-termos-objeto-direto-3576833",
+    "selecon-hemominas-termos-agente-passiva-3416691",
+    "selecon-lrv-termos-agente-passiva-1360962",
+    "selecon-porto-gauchos-termos-missao-3852270"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-fusam-termos-excepto-adnominal-3460242",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-sm-arcanjo-termos-transitivo-direto-3709806",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-olivedos-termos-complemento-nominal-3709441",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-nazarezinho-termos-regencia-explicar-3483810",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-pedras-fogo-termos-objeto-direto-3576833",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-hemominas-termos-agente-passiva-3416691",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-lrv-termos-agente-passiva-1360962",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-porto-gauchos-termos-missao-3852270",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

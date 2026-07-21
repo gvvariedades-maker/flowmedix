@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-16T03:08:45.986Z",
+  "lote": "curativos-e-manejo-de-feridas-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-7",
+    "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779344773456-2",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-2",
+    "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-5",
+    "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344773456-6",
+    "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344779828-8",
+    "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779344773456-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344773456-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344779828-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

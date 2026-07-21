@@ -2,9 +2,12 @@ import {
   buildDerivedQuestionHeaderLine,
   buildQuestionExamDetailLine,
   buildQuestionHeaderChips,
+  buildQuestionProvenanceLine,
+  buildQuestionProvenanceParts,
   DEFAULT_CARGO_HEADER,
   inferCargoHeaderFromProva,
   normalizeCargoHeader,
+  QUESTION_PROVENANCE_SEP,
 } from '@/lib/questionHeader';
 
 describe('questionHeader — cargo Técnico de Enfermagem', () => {
@@ -68,5 +71,41 @@ describe('questionHeader — cargo Técnico de Enfermagem', () => {
       subtopico: 'Verificação de Sinais Vitais',
     });
     expect(detail).toBe('Técnico de Enfermagem (Pref Pitangueiras)');
+  });
+
+  it('buildQuestionProvenanceParts ordena banca, ano, cargo e órgão', () => {
+    expect(
+      buildQuestionProvenanceParts({
+        banca: 'VUNESP',
+        orgao: 'Pref. Osasco',
+        ano: '2025',
+        cargo_header: 'TÉCNICO',
+        topico: 'Língua Portuguesa',
+        subtopico: 'Crase',
+      }),
+    ).toEqual(['VUNESP', '2025', 'Técnico de Enfermagem', 'Pref. Osasco']);
+  });
+
+  it('buildQuestionProvenanceLine junta partes com separador', () => {
+    const line = buildQuestionProvenanceLine({
+      banca: 'FEPESE',
+      orgao: 'Pref Concórdia/SAMU',
+      ano: '2024',
+      prova: 'Tec Enf (Pref Concórdia/SAMU)',
+      topico: 'Enfermagem',
+      subtopico: 'Processo de Enfermagem',
+    });
+    expect(line).toBe(
+      ['FEPESE', '2024', 'Técnico de Enfermagem', 'Pref Concórdia/SAMU'].join(QUESTION_PROVENANCE_SEP),
+    );
+  });
+
+  it('buildQuestionProvenanceLine respeita header_line literal', () => {
+    const line = buildQuestionProvenanceLine({
+      banca: 'VUNESP',
+      header_line: 'Prova especial 2024',
+      topico: 'Língua Portuguesa',
+    });
+    expect(line).toBe('Prova especial 2024');
   });
 });

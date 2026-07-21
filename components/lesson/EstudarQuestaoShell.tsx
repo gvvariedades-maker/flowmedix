@@ -102,7 +102,7 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
                 aria-label="Carregando questão"
                 className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-background/40 backdrop-blur-[1px]"
               >
-                <Loader2 className="h-8 w-8 animate-spin text-[#166534]" aria-hidden />
+                <Loader2 className="h-8 w-8 animate-spin text-[var(--color-brand)]" aria-hidden />
               </div>
             ) : null}
           </div>

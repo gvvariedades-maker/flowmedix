@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-19T07:23:58.838Z",
+  "lote": "lingua-portuguesa-g06",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-crase-facultativo-evidencias-3951800",
+    "caderno-pt-crase-penha-escrever-caneta",
+    "cebraspe-verissimo-crase-vf-itens-3739266",
+    "epice-crase-adultizacao-regencia-3951857",
+    "epice-crase-facultativo-pestana-3951877"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-crase-facultativo-evidencias-3951800",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "caderno-pt-crase-penha-escrever-caneta",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cebraspe-verissimo-crase-vf-itens-3739266",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "epice-crase-adultizacao-regencia-3951857",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "epice-crase-facultativo-pestana-3951877",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

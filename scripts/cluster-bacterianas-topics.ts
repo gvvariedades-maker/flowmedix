@@ -11,6 +11,10 @@ loadEnvConfig(process.cwd());
 
 import { classifyFamily, type FamilyId, type QuestionOption } from '@/lib/catalogMigration/classifyFamily';
 import { parseArg } from '@/lib/catalogMigration/cliArgs';
+import {
+  resolveClusterDecision,
+  strongBranchThreshold,
+} from '@/lib/catalogMigration/clusterReportContract';
 import { loteQuestionsDir } from '@/lib/catalogMigration/paths';
 import {
   inferPedagogicalBranch,
@@ -148,6 +152,7 @@ function main() {
   }
 
   const total = rows.length;
+  const strongThreshold = strongBranchThreshold(total);
   const clusterSummaries = [...clusterMap.entries()]
     .map(([cluster, stats]) => {
       const pct = Math.round((stats.count / total) * 1000) / 10;
@@ -162,15 +167,7 @@ function main() {
         dominant_branch: dominantBranch,
         branch_counts: stats.branches,
         sample_slugs: stats.slugs.slice(0, 4),
-        decision: hasGolden
-          ? 'coberto'
-          : stats.count >= Math.ceil(total * 0.1)
-            ? 'novo_ramo'
-            : stats.count >= 5
-              ? 'novo_ramo'
-              : stats.count >= 3
-                ? 'absorver'
-                : 'cauda_longa',
+        decision: resolveClusterDecision({ hasGolden, count: stats.count, total }),
         l3_package:
           dominantBranch === 'bacterianas_agente_etiologico'
             ? 'etiology-kingdom-rail · etiology-letter-spectrum · etiology-elimination-tap · etiology-intruder-chips'
@@ -195,7 +192,9 @@ function main() {
     subtopico: SUBTOPICO,
     lote,
     total,
+    strong_threshold: strongThreshold,
     branch_totals: branchTotals,
+    goldens_needed: clusterSummaries.filter((c) => c.decision === 'novo_ramo' && !c.has_golden).length,
     inedito_packages_needed: clusterSummaries.filter(
       (c) => c.decision === 'novo_ramo' && !c.has_golden,
     ).length,

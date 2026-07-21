@@ -1,0 +1,49 @@
+{
+  "lote": "lingua-portuguesa-g07",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-19",
+  "subtopico": "Pronomes e colocação pronominal",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_pronomes_colocacao",
+  "cluster": "Colocação Pronominal — lote 1/9 (PDF Colocação Pronominal · 8/31)",
+  "total": 8,
+  "status": "applied",
+  "handcraft_at": "2026-07-19",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "8/8 strict PASS",
+    "apply_dry_run": "8/8 would insert"
+  },
+  "source": "artifacts/lingua-portuguesa-colocacao-extracted-g07.json + PDF caderno PT",
+  "apply_requires": "--allow-insert",
+  "anchor_slug": "questao-premium-vunesp-portugues-colocacao-trilho",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/colocacaoPronominal.ts",
+  "slugs": [
+    "avancasp-estiva-gerbi-colocacao-faca-favor-3835994",
+    "avancasp-potim-colocacao-apresentar-lhe-3839370",
+    "aocp-unirio-colocacao-multitarefa-3841117",
+    "avancasp-nova-odessa-colocacao-ce-3962471",
+    "vunesp-sorocaba-colocacao-charles-tira-3999721",
+    "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
+    "cpcon-itabaiana-colocacao-se-proclise-4014453",
+    "vunesp-presidente-prudente-colocacao-feira-3336128"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=lingua-portuguesa-g07 --strict",
+  "workflow": [
+    "1. npx tsx scripts/handcraft-lingua-portuguesa-g07.ts",
+    "2. npm run audit:questao-readiness -- --lote=lingua-portuguesa-g07 --strict-v2-pedagogy",
+    "3. npm run validate:goldens -- --lote=lingua-portuguesa-g07 --strict",
+    "4. npm run catalog:apply-lote -- --lote=lingua-portuguesa-g07 --dry-run --allow-insert",
+    "5. apply com --allow-insert só com pedido explícito"
+  ],
+  "note": "Primeiro lote Colocação — 31 questões «Colocação Pronominal» no PDF; g07 pega as 8 primeiras por ordem de caderno (tec 3835994…3336128). Âncora 3999766 incluída para apply catálogo.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-20",
+    "reviewer": "handcraft-agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/lingua-portuguesa-g07.json"
+  }
+}

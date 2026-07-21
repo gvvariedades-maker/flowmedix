@@ -6,6 +6,10 @@
  *   npm run audit:l3-mold-gap -- --lote=saude-adolescente-completo
  *   npm run audit:l3-mold-gap -- --from-supabase
  *   npm run audit:l3-mold-gap -- --from-supabase --subtopico=Adolescente
+ *
+ * Saídas:
+ *   artifacts/l3-mold-gap-audit.json + .md (última execução — global)
+ *   artifacts/l3-mold-gap-audit-<pacote_prefix>.json + .md (quando --subtopico resolve registry)
  */
 import { loadEnvConfig } from '@next/env';
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -14,6 +18,7 @@ import { resolve } from 'node:path';
 loadEnvConfig(process.cwd());
 
 import { hasFlag, parseArg } from '@/lib/catalogMigration/cliArgs';
+import { findPacoteBySubtopico, loadHandcraftRegistry } from '@/lib/catalogMigration/handcraftRegistry';
 import { buildL3MoldGapReport, printL3MoldGapSummary } from '@/lib/slides/l3MoldGapAudit';
 
 async function main() {
@@ -29,14 +34,37 @@ async function main() {
 
   const artifactsDir = resolve(process.cwd(), 'artifacts');
   mkdirSync(artifactsDir, { recursive: true });
+
+  const md = renderMarkdownSummary(report);
+
   const outJson = resolve(artifactsDir, 'l3-mold-gap-audit.json');
   writeFileSync(outJson, JSON.stringify(report, null, 2), 'utf8');
   console.log(`\n[audit:l3-mold-gap] relatório=${outJson}`);
 
-  const md = renderMarkdownSummary(report);
   const outMd = resolve(artifactsDir, 'l3-mold-gap-audit.md');
   writeFileSync(outMd, md, 'utf8');
   console.log(`[audit:l3-mold-gap] resumo=${outMd}`);
+
+  if (subtopico) {
+    const registry = loadHandcraftRegistry();
+    const hit = findPacoteBySubtopico(registry, subtopico);
+    const pacotePrefix = hit?.pacote.pacote_prefix ?? slugifyPacotePrefix(subtopico);
+    const scopedJson = resolve(artifactsDir, `l3-mold-gap-audit-${pacotePrefix}.json`);
+    const scopedMd = resolve(artifactsDir, `l3-mold-gap-audit-${pacotePrefix}.md`);
+    writeFileSync(scopedJson, JSON.stringify(report, null, 2), 'utf8');
+    writeFileSync(scopedMd, md, 'utf8');
+    console.log(`[audit:l3-mold-gap] escopo subtópico=${scopedJson}`);
+  }
+}
+
+function slugifyPacotePrefix(subtopico: string): string {
+  return subtopico
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 80);
 }
 
 function renderMarkdownSummary(report: Awaited<ReturnType<typeof buildL3MoldGapReport>>): string {
@@ -58,6 +86,7 @@ function renderMarkdownSummary(report: Awaited<ReturnType<typeof buildL3MoldGapR
     `| ok_generico | ${s.by_decision.ok_generico} |`,
     `| ramo_novo | ${s.by_decision.ramo_novo} |`,
     `| molde_inedito | ${s.by_decision.molde_inedito} |`,
+    `| molde_redesign | ${s.by_decision.molde_redesign} |`,
     `| Pacotes inéditos únicos | ${s.inedito_packages_proposed} |`,
     `| Slugs com mismatch L3 | ${s.slug_mismatch_total} |`,
     '',

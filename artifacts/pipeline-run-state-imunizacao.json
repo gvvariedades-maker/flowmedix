@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "subtopico": "Imunização",
+  "pacote_prefix": "imunizacao",
+  "mode": "full",
+  "total_slugs": 575,
+  "handcraft_applied": 575,
+  "production_status": "production_ready",
+  "next_unit": {
+    "type": "done",
+    "id": "production_ready",
+    "detail": "Pacote já production_ready — use audit:subtopico-health se pós-venda"
+  },
+  "completed_units": [],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-07-21T06:03:53.935Z",
+  "notes": null
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-21T04:57:57.966Z",
+  "lote": "classes-de-palavras-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-ace-classes-substantivos-sao-palavras-que-design-3353964",
+    "avancasp-acs-classes-15-07-2026-19-33-1-88-3-4-5-6-dispon-3839425",
+    "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+    "avancasp-acs-classes-sao-palavras-que-designam-os-seres-r-3352961",
+    "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
+    "avancasp-mon-classes-schulz-charles-m-snoopy-jornal-da-ta-3739268",
+    "avancasp-tla-classes-quando-o-verde-dos-teus-olhosse-espa-3726050",
+    "cpcon-uepb-a-classes-utilize-o-texto-05-para-responder-a-3599763"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-ace-classes-substantivos-sao-palavras-que-design-3353964",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-15-07-2026-19-33-1-88-3-4-5-6-dispon-3839425",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-sao-palavras-que-designam-os-seres-r-3352961",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-mon-classes-schulz-charles-m-snoopy-jornal-da-ta-3739268",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-tla-classes-quando-o-verde-dos-teus-olhosse-espa-3726050",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-classes-utilize-o-texto-05-para-responder-a-3599763",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

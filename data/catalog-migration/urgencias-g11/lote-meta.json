@@ -11,5 +11,11 @@
   "anchors_used": [
     "examples/questao-premium-admtec-urgencias-fratura-exposta-imobilizacao.json"
   ],
-  "notes": "g11 EXCETO — crise hipertensiva INCORRETA · Manchester INCORRETA · convulsão INCORRETA (segurar) · convulsão EXCETO (objeto na boca) · TCE sinais EXCETO (logorreia) · síndrome compartimental EXCETO (pulso) · ABCDE mnemônico EXCETO · AVC hemorrágico EXCETO (trombos/êmbolos)"
+  "notes": "g11 EXCETO — crise hipertensiva INCORRETA · Manchester INCORRETA · convulsão INCORRETA (segurar) · convulsão EXCETO (objeto na boca) · TCE sinais EXCETO (logorreia) · síndrome compartimental EXCETO (pulso) · ABCDE mnemônico EXCETO · AVC hemorrágico EXCETO (trombos/êmbolos)",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }

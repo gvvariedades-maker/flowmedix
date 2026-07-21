@@ -1,0 +1,76 @@
+{
+  "lote": "oracoes-coordenadas-e-subordinadas-g02",
+  "generated_at": "2026-07-21T01:13:57.013Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "apice-ap-ei-oracoes-fonte-acesso-em-06-mar-2026-no-trech-4037436",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-gcm-oracoes-nao-ha-nada-na-escrita-tudo-o-que-vo-4001118",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-01-para-responder-a-que-4014452",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-oracoes-leia-o-texto-i-para-responder-a-ques-3912828",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ace-oracoes-considere-o-texto-a-seguir-para-resp-3820016",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-acs-oracoes-considere-o-texto-a-seguir-para-resp-3990840",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-athh-oracoes-quando-eu-deixei-de-acreditar-em-mim-3416687",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-fisc-oracoes-inteligencia-artificial-consegue-dec-3352887",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

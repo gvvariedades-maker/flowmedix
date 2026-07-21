@@ -1,5 +1,6 @@
 import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import type { VitrineStatusFilter } from '@/lib/vitrine/filterGroups';
+import { parseVitrineDisciplina, type VitrineDisciplinaId } from '@/lib/vitrine/disciplina';
 import { VitrineQuerySchema } from '@/lib/validations';
 
 export type VitrineViewMode = 'grid' | 'compact';
@@ -15,6 +16,8 @@ export type VitrineListQuery = {
   status: VitrineStatusFilter;
   /** Vista da lista — `?view=compact|grid`; default persiste em localStorage no client. */
   view: VitrineViewMode;
+  /** Disciplina — `?disciplina=enfermagem|portugues`. */
+  disciplina: VitrineDisciplinaId | null;
 };
 
 const DEFAULT_LIST_QUERY: VitrineListQuery = {
@@ -23,6 +26,7 @@ const DEFAULT_LIST_QUERY: VitrineListQuery = {
   assuntos: [],
   status: 'all',
   view: 'grid',
+  disciplina: null,
 };
 
 function readSingleSearchParam(
@@ -91,13 +95,14 @@ export function parseVitrineListQuery(
     q: parsed.data.q,
     status: parseVitrineStatus(readSingleSearchParam(params, 'status')),
     view: parseVitrineView(readSingleSearchParam(params, 'view')),
+    disciplina: parseVitrineDisciplina(readSingleSearchParam(params, 'disciplina')),
   };
 }
 
 /** Chave SWR/API — só filtros que disparam refetch (status/view são client-side). */
 export type VitrineFetchQuery = Pick<
   VitrineListQuery,
-  'page' | 'bancas' | 'assuntos' | 'q'
+  'page' | 'bancas' | 'assuntos' | 'q' | 'disciplina'
 >;
 
 export function vitrineListQueryKey(query: VitrineFetchQuery): string {
@@ -106,6 +111,7 @@ export function vitrineListQueryKey(query: VitrineFetchQuery): string {
     bancas: [...query.bancas].sort(),
     assuntos: [...query.assuntos].sort(),
     q: query.q?.trim() || '',
+    disciplina: query.disciplina ?? '',
   });
 }
 

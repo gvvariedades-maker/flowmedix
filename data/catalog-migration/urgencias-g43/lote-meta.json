@@ -12,5 +12,11 @@
   "readiness": "8/8",
   "readiness_strict_v2": "8/8",
   "preflight_artifact": "artifacts/catalog-preflight-urgencias-g43.json",
-  "notes": "g43 — 14º lote cauda generico · 8/8 READY strict-v2 · Glasgow · C/E coluna generico · prontuário hipoglicemia · desidratação IV choque · LJ ×3 · meningite LCR"
+  "notes": "g43 — 14º lote cauda generico · 8/8 READY strict-v2 · Glasgow · C/E coluna generico · prontuário hipoglicemia · desidratação IV choque · LJ ×3 · meningite LCR",
+  "anchor_second_review": {
+    "status": "pass",
+    "reviewed_at": "2026-07-19",
+    "reviewer": "agent",
+    "notes": "L6 batch pass — qualidade vendável"
+  }
 }
