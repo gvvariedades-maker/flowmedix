@@ -451,12 +451,14 @@ export default function VitrineClient({
         bancas: bancasSelecionadas,
         assuntos: assuntosSelecionados,
         q: debouncedSearch || undefined,
+        disciplina,
       });
       const nextKey = vitrineListQueryKey({
         page: pagina,
         bancas: bancasSelecionadas,
         assuntos: valid,
         q: debouncedSearch || undefined,
+        disciplina,
       });
       setAssuntosSelecionados(valid);
       if (prevKey !== nextKey) {
@@ -464,7 +466,7 @@ export default function VitrineClient({
         setPagina(1);
       }
     }
-  }, [assuntos, assuntosSelecionados, bancasSelecionadas, debouncedSearch, pagina]);
+  }, [assuntos, assuntosSelecionados, bancasSelecionadas, debouncedSearch, disciplina, pagina]);
 
   searchParamsRef.current = searchParams;
 

@@ -327,7 +327,7 @@ export function evaluateTaxonomyGate(input: EvaluateTaxonomyGateInput): Taxonomy
         promoteRequiresInfer = true;
         reasons.push('Modo B — handcraft provisório no catch-all permitido.');
         reasons.push('Antes de --promote: rodar infer-subtopico / Classify para destinos canônicos.');
-        if (s.total_scanned === 0 && (!manifest || manifest.manifest_slugs === 0)) {
+        if (input.inventory.total_scanned === 0 && (!manifest || manifest.manifest_slugs === 0)) {
           reasons.push('Bucket vazio e sem manifest — não distingue pacote inexistente de reclassificação.');
         }
         if (registryTaxonomy?.notes) reasons.push(registryTaxonomy.notes);
@@ -335,7 +335,7 @@ export function evaluateTaxonomyGate(input: EvaluateTaxonomyGateInput): Taxonomy
         gate = 'pass';
         reasons.push('Modo A — taxonomia fechada no catch-all (Classify concluído).');
         if (registryTaxonomy?.notes) reasons.push(registryTaxonomy.notes);
-      } else if (s.total_scanned === 0 && manifest && manifest.manifest_slugs === 0) {
+      } else if (input.inventory.total_scanned === 0 && manifest && manifest.manifest_slugs === 0) {
         gate = 'block';
         handcraftAllowed = false;
         reasons.push('Bucket catch-all vazio e pacote sem slugs no manifest.');

@@ -216,7 +216,7 @@ export function computeNextUnit(
 
   const needL3 =
     mode === 'full' || mode === 'l3_bespoke' || mode === 'ship';
-  if (needL3 && mode !== 'handcraft' && mode !== 'ship' && !hasL3BriefIndex(prefix)) {
+  if (needL3 && mode !== 'ship' && !hasL3BriefIndex(prefix)) {
     return {
       unit: {
         type: 'l3_map',

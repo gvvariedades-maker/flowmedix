@@ -1,10 +1,11 @@
 import { createHash } from 'crypto';
+import type { VitrineDisciplinaId } from '@/lib/vitrine/disciplina';
 
 export type VitrinePageCacheFilters = {
   bancas?: string[];
   assuntos?: string[];
   q?: string;
-  disciplina?: string;
+  disciplina?: VitrineDisciplinaId;
 };
 
 export type VitrineFacetsCacheFilters = {

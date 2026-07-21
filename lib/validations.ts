@@ -207,9 +207,9 @@ export const QuestaoFigureSchema = z.object({
           return false;
         }
       },
-      () => ({
+      {
         message: `URL da figura deve ser HTTPS no Supabase Storage (${allowedFigureHosts().join(', ') || 'configure NEXT_PUBLIC_SUPABASE_URL'})`,
-      }),
+      },
     ),
   alt: z.string().min(8).max(300),
   caption: z.string().max(200).optional(),
