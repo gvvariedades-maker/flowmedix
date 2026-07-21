@@ -548,6 +548,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   }
 
   const instruction = stripLeadingQuestionEnumeration(questionData?.question_data?.instruction ?? '');
+  const textFragment = questionData?.question_data?.text_fragment?.trim() ?? '';
   const hasPending = sessionData.questoes.some((q) => !q.respondida);
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
   const isProvaAtiva = sessionData.session.modo === 'prova';
