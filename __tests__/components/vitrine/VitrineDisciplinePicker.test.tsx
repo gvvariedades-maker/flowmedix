@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import VitrineDisciplinePicker from '@/components/vitrine/VitrineDisciplinePicker';
 import type { VitrineDisciplinaSummary } from '@/lib/vitrine/disciplina';
 
@@ -51,8 +51,46 @@ describe('VitrineDisciplinePicker', () => {
     expect(screen.getByTestId('vitrine-discipline-breadcrumb')).toBeInTheDocument();
     expect(screen.getByText('Enfermagem')).toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: /Disciplinas/i }));
+    const back = screen.getByRole('button', { name: /voltar às disciplinas/i });
+    expect(back).toHaveAttribute('aria-label', 'Voltar às disciplinas');
+    fireEvent.click(back);
     expect(onSelect).toHaveBeenCalledWith(null);
+  });
+
+  it('move foco para o breadcrumb ao entrar no drill-down', async () => {
+    const { rerender } = render(
+      <VitrineDisciplinePicker summaries={summaries} selected={null} onSelect={jest.fn()} />,
+    );
+
+    rerender(
+      <VitrineDisciplinePicker
+        summaries={summaries}
+        selected="portugues"
+        onSelect={jest.fn()}
+      />,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: /voltar às disciplinas/i })).toHaveFocus();
+    });
+  });
+
+  it('move foco para o título Disciplinas ao voltar ao hub', async () => {
+    const { rerender } = render(
+      <VitrineDisciplinePicker
+        summaries={summaries}
+        selected="enfermagem"
+        onSelect={jest.fn()}
+      />,
+    );
+
+    rerender(
+      <VitrineDisciplinePicker summaries={summaries} selected={null} onSelect={jest.fn()} />,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByRole('heading', { name: 'Disciplinas' })).toHaveFocus();
+    });
   });
 
   it('não renderiza com uma só disciplina visível', () => {
