@@ -2,7 +2,7 @@ import { scoreConfidence } from '@/lib/ai/confidenceScore';
 import { runFactCheck } from '@/lib/ai/factCheck';
 import { buildSystemPrompt, buildUserPrompt } from '@/lib/ai/promptBuilder';
 import { extractSlidesFromModelJson } from '@/lib/ai/responseSchema';
-import { getGuidelineForSubtopico } from '@/lib/ai/retrieval';
+import { getGuidelineForSubtopico as getGuidelineFromRetrieval } from '@/lib/ai/retrieval';
 import { DEFAULT_GEMINI_SLIDES_MODEL, getGeminiSlidesModelId } from '@/lib/ai/geminiClient';
 import { PNI_INTERVALOS_2025 } from '@/lib/guidelines/pni';
 import { getGuidelineForSubtopico } from '@/lib/guidelines';

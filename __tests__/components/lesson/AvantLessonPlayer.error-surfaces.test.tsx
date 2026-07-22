@@ -7,6 +7,7 @@ import {
   stripSlidesForCoreLayer,
 } from '@/lib/estudar/questaoLayers';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
+import { fetchInputUrl } from '@/__tests__/helpers/fetchInputUrl';
 
 const mockFetchWithAuth = fetchWithAuth as jest.MockedFunction<typeof fetchWithAuth>;
 
@@ -166,7 +167,8 @@ describe('AvantLessonPlayer error surfaces', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    mockFetchWithAuth.mockImplementation(async (url: string, init?: RequestInit) => {
+    mockFetchWithAuth.mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = fetchInputUrl(input);
       if (typeof url === 'string' && url.includes('/api/freemium/status')) {
         return { ok: true, json: async () => ({}) } as Awaited<ReturnType<typeof fetchWithAuth>>;
       }
@@ -182,7 +184,8 @@ describe('AvantLessonPlayer error surfaces', () => {
   });
 
   it('exibe aviso quando freemium/status falha', async () => {
-    mockFetchWithAuth.mockImplementation(async (url: string) => {
+    mockFetchWithAuth.mockImplementation(async (input: RequestInfo | URL) => {
+      const url = fetchInputUrl(input);
       if (typeof url === 'string' && url.includes('/api/freemium/status')) {
         return { ok: false, status: 500 } as Awaited<ReturnType<typeof fetchWithAuth>>;
       }
@@ -197,7 +200,8 @@ describe('AvantLessonPlayer error surfaces', () => {
   });
 
   it('mantém Confirmar e exibe link à vitrine em 403 de tentativa', async () => {
-    mockFetchWithAuth.mockImplementation(async (url: string, init?: RequestInit) => {
+    mockFetchWithAuth.mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = fetchInputUrl(input);
       if (typeof url === 'string' && url.includes('/api/freemium/status')) {
         return { ok: true, json: async () => ({}) } as Awaited<ReturnType<typeof fetchWithAuth>>;
       }
@@ -228,7 +232,8 @@ describe('AvantLessonPlayer error surfaces', () => {
   });
 
   it('distingue 401 e 403 ao carregar NeuroSlides', async () => {
-    mockFetchWithAuth.mockImplementation(async (url: string, init?: RequestInit) => {
+    mockFetchWithAuth.mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = fetchInputUrl(input);
       if (typeof url === 'string' && url.includes('/api/freemium/status')) {
         return { ok: true, json: async () => ({}) } as Awaited<ReturnType<typeof fetchWithAuth>>;
       }
@@ -255,7 +260,8 @@ describe('AvantLessonPlayer error surfaces', () => {
   });
 
   it('exibe vitrine em 403 ao carregar NeuroSlides', async () => {
-    mockFetchWithAuth.mockImplementation(async (url: string, init?: RequestInit) => {
+    mockFetchWithAuth.mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = fetchInputUrl(input);
       if (typeof url === 'string' && url.includes('/api/freemium/status')) {
         return { ok: true, json: async () => ({}) } as Awaited<ReturnType<typeof fetchWithAuth>>;
       }

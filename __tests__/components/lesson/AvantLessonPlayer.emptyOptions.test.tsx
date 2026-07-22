@@ -108,6 +108,7 @@ function renderPlayer(
     navigateEstudar: jest.fn(),
     prefetchEstudar: jest.fn(),
     prefetchPayload: jest.fn(),
+    refetchRoutePayload: jest.fn().mockResolvedValue('ok'),
     dismissToVitrine,
     isDismissingToVitrine: false,
     estudarRoute: null,

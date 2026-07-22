@@ -68,7 +68,7 @@ const conteudoJson = {
       { id: 'B', text: 'Opção B', is_correct: true },
     ],
   },
-  reverse_study_slides: [{ type: 'golden_rule', content: 'Regra de ouro' }],
+  reverse_study_slides: [{ type: 'golden_rule' as const, content: 'Regra de ouro' }],
 };
 
 function mockSupabaseModuloRow() {

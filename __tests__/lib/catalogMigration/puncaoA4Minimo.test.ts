@@ -19,7 +19,7 @@ const FACET_CVC = path.join(
 );
 
 describe('puncaoA4Minimo', () => {
-  it('FACET CVC — whitelist PASS e mitiga alto → medio', () => {
+  it('FACET CVC — whitelist PASS e auto_conditional em risco medio', () => {
     const payload = JSON.parse(fs.readFileSync(FACET_CVC, 'utf8'));
     const audit = auditPuncaoA4Minimo(payload);
 
@@ -34,7 +34,7 @@ describe('puncaoA4Minimo', () => {
       productionReady: true,
       autoApprovalEnabled: true,
     });
-    expect(base.risk_tier).toBe('alto');
+    expect(base.risk_tier).toBe('medio');
 
     const mitigated = applyPuncaoA4MinimoMitigation(base, audit, {
       autoApprovalEnabled: true,

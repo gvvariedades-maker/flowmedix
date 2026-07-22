@@ -70,7 +70,7 @@ describe('auditPremiumQuestao — contrato de molde bespoke (Vias)', () => {
   it('golden_rule sem rows é bloqueado', () => {
     const q = viasBase();
     q.reverse_study_slides[1] = { type: 'golden_rule', content: 'só título' } as never;
-    const errs = premiumGateErrors(q);
+    const errs = premiumGateErrors(q as Parameters<typeof premiumGateErrors>[0]);
     expect(errs.some((e) => e.code === 'molde_golden_rule_sem_rows')).toBe(true);
   });
 
@@ -81,7 +81,7 @@ describe('auditPremiumQuestao — contrato de molde bespoke (Vias)', () => {
       content: 'x',
       items: [{ label: 'A', detail: 'y' }],
     } as never;
-    const errs = premiumGateErrors(q);
+    const errs = premiumGateErrors(q as Parameters<typeof premiumGateErrors>[0]);
     expect(errs.some((e) => e.code === 'molde_danger_zone_sem_correct')).toBe(true);
   });
 
@@ -91,7 +91,7 @@ describe('auditPremiumQuestao — contrato de molde bespoke (Vias)', () => {
       type: 'concept_map',
       items: [{ label: 'A' }],
     } as never;
-    const errs = premiumGateErrors(q);
+    const errs = premiumGateErrors(q as Parameters<typeof premiumGateErrors>[0]);
     expect(errs.some((e) => e.code === 'molde_concept_map_sem_items')).toBe(true);
   });
 
@@ -99,7 +99,7 @@ describe('auditPremiumQuestao — contrato de molde bespoke (Vias)', () => {
     const q = viasBase();
     q.reverse_study_slides[2] = { type: 'logic_flow', steps: ['1', '2', '3'] } as never;
     const all = auditPremiumQuestao(q);
-    const errs = premiumGateErrors(q);
+    const errs = premiumGateErrors(q as Parameters<typeof premiumGateErrors>[0]);
     expect(all.some((e) => e.code === 'molde_logic_flow_sem_tap' && e.severity === 'warn')).toBe(true);
     expect(errs.some((e) => e.code.startsWith('molde_logic_flow'))).toBe(false);
   });
@@ -178,7 +178,7 @@ describe('auditPremiumQuestao — gate L3 write blockers', () => {
         topico: 'Enfermagem',
         subtopico: farmacoSubtopico,
         content_standard: 'golden-v1',
-        family: 'protocolo',
+        family: 'protocolo' as const,
         ...(withBranch ? { pedagogical_branch: 'farmaco_clinico_protocolo' } : {}),
       },
       question_data: {
@@ -220,16 +220,15 @@ describe('auditPremiumQuestao — gate L3 write blockers', () => {
   }
 
   it('golden omeprazol com pedagogical_branch correto → 0 errors L3', () => {
-    const errs = premiumGateErrors(omeprazolGolden(true));
+    const errs = premiumGateErrors(omeprazolGolden(true) as Parameters<typeof premiumGateErrors>[0]);
     expect(errs.filter((e) => e.code.startsWith('mold_l3_'))).toHaveLength(0);
   });
 
   it('golden-v1 farmaco VF com slides clínicos sem branch → mold_l3_unresolved_bespoke', () => {
-    const q = omeprazolGolden(false);
-    q.meta.family = 'vf';
+    const q = { ...omeprazolGolden(false), meta: { ...omeprazolGolden(false).meta, family: 'vf' as const } };
     q.question_data.instruction =
       'I - Farmacocinética é ADME. II - Farmacodinâmica é efeito no organismo. III - Meia-vida elimina 100%. Assinale a correta.';
-    const errs = premiumGateErrors(q);
+    const errs = premiumGateErrors(q as Parameters<typeof premiumGateErrors>[0]);
     expect(errs.some((e) => e.code === 'mold_l3_unresolved_bespoke')).toBe(true);
   });
 
@@ -278,7 +277,7 @@ describe('auditPremiumQuestao — gate L3 write blockers', () => {
         },
       ],
     };
-    const errs = premiumGateErrors(q);
+    const errs = premiumGateErrors(q as Parameters<typeof premiumGateErrors>[0]);
     expect(
       errs.some(
         (e) =>

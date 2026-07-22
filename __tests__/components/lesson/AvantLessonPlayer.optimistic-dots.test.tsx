@@ -9,6 +9,7 @@ import {
   type QuestaoNavigationContextValue,
 } from '@/components/lesson/questao-navigation-context';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
+import { fetchInputUrl } from '@/__tests__/helpers/fetchInputUrl';
 
 const mockRefresh = jest.fn();
 const mockFetchWithAuth = fetchWithAuth as jest.MockedFunction<typeof fetchWithAuth>;
@@ -164,12 +165,15 @@ function PlayerWithNavHarness({
   const navValue = useMemo<QuestaoNavigationContextValue>(
     () => ({
       displayPayload,
-      setDisplayPayload,
+      setDisplayPayload: (payload) => {
+        if (payload !== null) setDisplayPayload(payload);
+      },
       cachePayload,
       getCachedPayload: jest.fn(),
       navigateEstudar: jest.fn(),
       prefetchEstudar: jest.fn(),
       prefetchPayload: jest.fn(),
+      refetchRoutePayload: jest.fn().mockResolvedValue('ok'),
       dismissToVitrine: jest.fn(),
       isDismissingToVitrine: false,
       estudarRoute: null,
@@ -212,7 +216,8 @@ describe('AvantLessonPlayer optimistic dots', () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    mockFetchWithAuth.mockImplementation(async (url: string, init?: RequestInit) => {
+    mockFetchWithAuth.mockImplementation(async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = fetchInputUrl(input);
       if (typeof url === 'string' && url.includes('/api/freemium/status')) {
         return { ok: true, json: async () => ({}) } as Awaited<ReturnType<typeof fetchWithAuth>>;
       }

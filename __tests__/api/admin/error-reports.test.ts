@@ -120,7 +120,7 @@ describe('GET /api/admin/error-reports', () => {
     expect(body.groups[0].modulo_slug).toBe('questao-a');
     expect(body.groups[0].count).toBe(2);
     expect(getBuilder.limit).toHaveBeenCalledWith(5000);
-    expect(getBuilder.range).toBeUndefined();
+    expect('range' in getBuilder).toBe(false);
   });
 
   it('lista reports com filtros e paginação', async () => {

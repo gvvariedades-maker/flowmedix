@@ -7,7 +7,13 @@ const historicoRow = {
   created_at: '2026-06-01T12:00:00.000Z',
 };
 
-const mockHistoricoChain = {
+const mockHistoricoChain: {
+  select: jest.Mock;
+  eq: jest.Mock;
+  order: jest.Mock;
+  limit: jest.Mock;
+  maybeSingle: jest.Mock;
+} = {
   select: jest.fn(() => mockHistoricoChain),
   eq: jest.fn(() => mockHistoricoChain),
   order: jest.fn(() => mockHistoricoChain),

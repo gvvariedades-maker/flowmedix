@@ -21,6 +21,9 @@ describe('loadSimuladoHistory', () => {
         status: 'todos',
         page: 1,
         pageSize: 20,
+        banca: null,
+        topico: null,
+        subtopico: null,
       }),
     ).rejects.toEqual(expect.objectContaining({ message: 'connection refused' }));
   });
@@ -71,6 +74,8 @@ describe('loadSimuladoHistory', () => {
         page: 1,
         pageSize: 20,
         banca: 'FGV',
+        topico: null,
+        subtopico: null,
       }),
     ).rejects.toEqual(expect.objectContaining({ message: 'dims query failed' }));
   });

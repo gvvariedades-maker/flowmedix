@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "subtopico": "Verbos — tempos, modos e vozes",
+  "pacote_prefix": "verbos-tempos-modos-e-vozes",
+  "mode": "full",
+  "total_slugs": 45,
+  "handcraft_applied": 0,
+  "production_status": "none",
+  "next_unit": {
+    "type": "handcraft_lote",
+    "id": "verbos-tempos-modos-e-vozes-g01",
+    "detail": "Continuar lote verbos-tempos-modos-e-vozes-g01 (status=planned)",
+    "lote": "verbos-tempos-modos-e-vozes-g01"
+  },
+  "completed_units": [],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-07-21T07:52:07.678Z",
+  "notes": null
+}

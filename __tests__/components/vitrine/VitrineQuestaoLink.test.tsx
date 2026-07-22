@@ -66,6 +66,10 @@ describe('VitrineQuestaoLink', () => {
       navigateEstudar,
       prefetchEstudar,
       prefetchPayload: jest.fn(),
+      refetchRoutePayload: jest.fn().mockResolvedValue('ok'),
+      dismissToVitrine: jest.fn(),
+      isDismissingToVitrine: false,
+      estudarRoute: null,
     });
   });
 

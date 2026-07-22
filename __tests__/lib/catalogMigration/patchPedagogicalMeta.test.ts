@@ -19,7 +19,7 @@ function omeprazolClinicalPayload() {
       topico: 'Enfermagem',
       subtopico: farmacoSubtopico,
       content_standard: 'golden-v1',
-      family: 'protocolo',
+      family: 'protocolo' as const,
     },
     question_data: {
       instruction:
@@ -75,12 +75,12 @@ describe('patchPedagogicalMeta', () => {
 
   it('omeprazol EV → farmaco_clinico_protocolo + family protocolo', () => {
     const payload = omeprazolClinicalPayload();
-    const result = patchPedagogicalMeta(payload, { slug: 'idecan-omeprazol' });
+    const result = patchPedagogicalMeta(payload as Parameters<typeof patchPedagogicalMeta>[0], { slug: 'idecan-omeprazol' });
 
     expect(result.changed).toBe(true);
     expect(result.branchAfter).toBe('farmaco_clinico_protocolo');
     expect(result.familyAfter).toBe('protocolo');
-    expect(payload.meta.pedagogical_branch).toBe('farmaco_clinico_protocolo');
+    expect((payload.meta as { pedagogical_branch?: string }).pedagogical_branch).toBe('farmaco_clinico_protocolo');
   });
 
   it('perioperatória SRPA → perioperatorio_pos_operatorio', () => {
@@ -124,11 +124,11 @@ describe('patchPedagogicalMeta', () => {
       ],
     };
 
-    const result = patchPedagogicalMeta(payload);
+    const result = patchPedagogicalMeta(payload as Parameters<typeof patchPedagogicalMeta>[0]);
 
     expect(result.changed).toBe(true);
     expect(result.branchAfter).toBe('perioperatorio_pos_operatorio');
-    expect(payload.meta.pedagogical_branch).toBe('perioperatorio_pos_operatorio');
+    expect((payload.meta as { pedagogical_branch?: string }).pedagogical_branch).toBe('perioperatorio_pos_operatorio');
   });
 
   it('puberdade adolescente → adolescente_desenvolvimento, não etica_sigilo', () => {

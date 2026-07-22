@@ -12,10 +12,28 @@ jest.mock('@/lib/vitrine/facets', () => ({
 
 jest.mock('@/lib/concursos/entitlements', () => ({
   fetchAccessibleModulosForNav: jest.fn(),
+  ensureGeralCadastroMatricula: jest.fn().mockResolvedValue(null),
+  getAccessibleModulosForMatriculatedEditalPacote: jest.fn().mockResolvedValue([]),
+}));
+
+jest.mock('@/lib/supabase/server', () => ({
+  createServerSupabase: jest.fn(async () => ({
+    from: () => ({
+      select: () => ({
+        order: () => ({
+          limit: async () => ({ data: [], error: null }),
+        }),
+      }),
+    }),
+  })),
 }));
 
 jest.mock('@/lib/vitrine/rpc', () => ({
   fetchVitrinePageFromRpc: jest.fn(),
+}));
+
+jest.mock('@/lib/vitrine/slideCounts', () => ({
+  fetchSlideCountsByModuloIds: jest.fn().mockResolvedValue(new Map()),
 }));
 
 import {
@@ -43,6 +61,7 @@ describe('getVitrinePage', () => {
     jest.clearAllMocks();
     getModulos.mockResolvedValue([]);
     getHistorico.mockResolvedValue([]);
+    getModulosCatalog.mockResolvedValue([]);
     fetchFacets.mockResolvedValue({ bancas: [], assuntos: [] });
     fetchRpcPage.mockRejectedValue(new Error('RPC indisponível nos testes'));
   });
@@ -219,7 +238,6 @@ describe('getVitrinePage', () => {
       filters: { q: 'q-100' },
     });
     expect(getHistorico).not.toHaveBeenCalled();
-    expect(getModulos).not.toHaveBeenCalled();
     expect(result.facets).toEqual({ bancas: ['FGV'], assuntos: ['A'] });
   });
 

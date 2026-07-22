@@ -33,6 +33,10 @@ describe('redeFrioFactcheck', () => {
         pedagogical_branch: 'imunizacao_cadeia_frio',
         sources: [
           {
+            id: 'test-source',
+            issuer: 'PNI',
+            title: 'Cadeia de frio',
+            year: 2025,
             tier: 'A',
             covers: ['cadeia de frio', '2 °C a 8 °C'],
           },

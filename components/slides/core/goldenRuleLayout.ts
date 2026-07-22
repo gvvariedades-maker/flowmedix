@@ -88,7 +88,7 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
  * - `layout_variant: "reference_table"` força o layout mesmo sem rows (fallback para content).
  */
 export function resolveGoldenRuleLayoutVariant(
-  slide: { rows?: GoldenRuleRowLike[] } | undefined,
+  slide: { rows?: GoldenRuleRowLike[]; content?: string } | undefined,
   explicitVariant?: string,
   fallbackVariant?: string,
   ctx?: LayoutRotationContext,

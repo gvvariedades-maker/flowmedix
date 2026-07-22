@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Bloqueia commit com lint/typecheck (staged) ou arquitetura quebrados.
+# test/build ficam no CI (check:ship), não no commit.
+npx lint-staged
+npm run check:architecture

@@ -131,7 +131,8 @@
         "B: conferência dupla em alto risco → protocolo de segurança → eliminar.",
         "D: suspender e comunicar se prescrição ilegível ou dose duvidosa → eliminar.",
         "C: registrar no prontuário ANTES de administrar → inverte o Certo 6 → esta é a INCORRETA.",
-        "Confirmar letra C: documentação é após a administração, não antes."
+        "Confirmar letra C: documentação é após a administração, não antes.",
+        "Fixação: Certo 6 — registrar depois de administrar, nunca antecipar no prontuário."
       ],
       "footer_rule": "Estratégia INCORRETA: validar cada conduta correta antes de marcar a falsa"
     },
@@ -169,6 +170,11 @@
           "label": "Pegadinha — documentação antecipada",
           "detail": "Espelha o item Pegadinha documentação do concept_map — registrar antes inverte o Certo 6.",
           "correct": "Documentação certa: anotar após administrar, não antecipar no prontuário."
+        },
+        {
+          "label": "Transferência — registro antes",
+          "detail": "Em outra banca: “anotar no prontuário e só então medicar”.",
+          "correct": "Mesma incorreta: registro legal é após a dose administrada."
         }
       ],
       "footer_rule": "Transferência: distratores são condutas corretas — só o gabarito inverte documentação × administração"

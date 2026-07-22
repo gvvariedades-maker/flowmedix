@@ -212,6 +212,11 @@
           "label": "Retirar agulha imediatamente",
           "detail": "Achar que 10 segundos é detalhe dispensável após a picada.",
           "correct": "Aguardar ~10 s com agulha no tecido — gabarito E desta questão."
+        },
+        {
+          "label": "Transferência — NPH × regular",
+          "detail": "Em outra banca: troca frasco leitoso × cristalino ou massageia o local.",
+          "correct": "Homogeneizar só NPH; não massagear; conferência dupla sempre."
         }
       ],
       "footer_rule": "Transferência: toda alternativa que massageia, troca NPH×regular ou dispensa dupla checagem está errada"

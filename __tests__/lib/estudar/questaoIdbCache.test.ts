@@ -28,7 +28,7 @@ function installFakeIndexedDb() {
       configurable: true,
       set(fn: (ev: Event) => void) {
         req._onsuccess = fn;
-        queueMicrotask(() => fn?.({ target: req } as Event));
+        queueMicrotask(() => fn?.({ target: req } as unknown as Event));
       },
       get() {
         return req._onsuccess;
@@ -52,7 +52,7 @@ function installFakeIndexedDb() {
       records.clear();
       return makeRequest(undefined);
     },
-  } as IDBObjectStore;
+  } as unknown as IDBObjectStore;
 
   const db = {
     objectStoreNames: { contains: () => true },
@@ -60,7 +60,7 @@ function installFakeIndexedDb() {
     transaction: () => {
       const tx = {
         objectStore: () => objectStore,
-      } as IDBTransaction & { _oncomplete?: (ev: Event) => void };
+      } as unknown as IDBTransaction & { _oncomplete?: (ev: Event) => void };
       Object.defineProperty(tx, 'oncomplete', {
         configurable: true,
         set(fn: (ev: Event) => void) {
@@ -85,7 +85,7 @@ function installFakeIndexedDb() {
           configurable: true,
           set(fn: (ev: Event) => void) {
             req._onsuccess = fn;
-            queueMicrotask(() => fn?.({ target: req } as Event));
+            queueMicrotask(() => fn?.({ target: req } as unknown as Event));
           },
           get() {
             return req._onsuccess;

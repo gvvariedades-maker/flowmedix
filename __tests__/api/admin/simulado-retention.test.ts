@@ -29,9 +29,13 @@ jest.mock('@/lib/logger', () => ({
 function makeRequest(
   init: RequestInit & { url?: string } = {},
 ): NextRequest {
+  const { url, signal, ...requestInit } = init;
   return new NextRequest(
-    init.url ?? 'http://localhost/api/admin/manutencao/simulado-retention',
-    init,
+    url ?? 'http://localhost/api/admin/manutencao/simulado-retention',
+    {
+      ...requestInit,
+      ...(signal != null ? { signal } : {}),
+    },
   );
 }
 

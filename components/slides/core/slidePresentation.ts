@@ -74,6 +74,8 @@ function familySlideKey(slideType: string | undefined): FamilySlideType | null {
 type SlideInput = {
   type?: string;
   layout_variant?: string;
+  content?: string;
+  footer_rule?: string;
   items?: unknown[];
   concepts?: unknown[];
   steps?: unknown[];

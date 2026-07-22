@@ -50,10 +50,10 @@ describe('pipelinePlaybook', () => {
     expect(brief).toContain('audit:subtopico-inventory');
   });
 
-  it('buildPipelineBrief Imunização em andamento sugere fase1', () => {
+  it('buildPipelineBrief Imunização production_ready sugere fase3', () => {
     const brief = buildPipelineBrief('Imunização');
-    expect(brief).toContain('Fase 1');
-    expect(brief).toContain('Handcraft golden-v1');
+    expect(brief).toContain('fase3');
+    expect(brief).toContain('audit:subtopico-health');
   });
 });
 

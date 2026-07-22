@@ -1,4 +1,5 @@
 const mockGetSession = jest.fn();
+import { setNodeEnv } from '@/__tests__/helpers/setNodeEnv';
 
 jest.mock('@/lib/supabase/client', () => ({
   supabase: {
@@ -27,7 +28,7 @@ describe('fetchWithAuth', () => {
   });
 
   it('ignora bypass E2E em produção mesmo com NEXT_PUBLIC_E2E_DASHBOARD_BYPASS', async () => {
-    process.env.NODE_ENV = 'production';
+    setNodeEnv('production');
     process.env.NEXT_PUBLIC_E2E_DASHBOARD_BYPASS = 'true';
 
     const { fetchWithAuth } = await import('@/lib/api/fetch-with-auth');
@@ -45,7 +46,7 @@ describe('fetchWithAuth', () => {
   });
 
   it('usa bypass E2E sem Bearer fora de produção', async () => {
-    process.env.NODE_ENV = 'test';
+    setNodeEnv('test');
     process.env.NEXT_PUBLIC_E2E_DASHBOARD_BYPASS = 'true';
 
     const { fetchWithAuth } = await import('@/lib/api/fetch-with-auth');
@@ -61,7 +62,7 @@ describe('fetchWithAuth', () => {
   });
 
   it('envia Bearer quando bypass E2E está desligado', async () => {
-    process.env.NODE_ENV = 'test';
+    setNodeEnv('test');
     delete process.env.NEXT_PUBLIC_E2E_DASHBOARD_BYPASS;
 
     const { fetchWithAuth } = await import('@/lib/api/fetch-with-auth');

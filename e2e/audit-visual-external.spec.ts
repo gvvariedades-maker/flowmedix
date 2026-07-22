@@ -173,7 +173,7 @@ test.describe('Auditoria visual — Gabarita Enfermagem (logado)', () => {
     await ensureGabaritaSession(page);
     await page.setViewportSize({ width: 1440, height: 900 });
 
-    const seedPaths = GABARITA_LOGGED_ROUTES.map((r) => r.path);
+    const seedPaths: string[] = GABARITA_LOGGED_ROUTES.map((r) => r.path);
     const inventories: GabaritaPageInventory[] = [];
 
     for (const routePath of seedPaths) {

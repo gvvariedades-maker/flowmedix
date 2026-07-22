@@ -7,7 +7,28 @@
     "subtopico": "Saúde da Criança",
     "content_standard": "golden-v1",
     "family": "vf",
-    "pedagogical_branch": "crianca_desenvolvimento"
+    "pedagogical_branch": "crianca_desenvolvimento",
+    "content_review": {
+      "reviewed_at": "2026-07-22",
+      "reviewer": "baseline-fix",
+      "guideline_snapshot": "MS — marcos do desenvolvimento e rastreio TEA (M-CHAT)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-desenvolvimento-infantil",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Caderneta da Criança — marcos e rastreio",
+        "year": 2022,
+        "covers": [
+          "6 meses",
+          "sente sem apoio",
+          "M-CHAT",
+          "estrabismo"
+        ]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre desenvolvimento infantil, analise as afirmativas.\n\nI - Aos 6 meses, espera-se que a criança sente sem apoio.\nII - O M-CHAT é instrumento de rastreio para Transtorno do Espectro Autista.\nIII - Estrabismo detectado após 6 meses não requer encaminhamento.\n\nÉ CORRETO o que se afirma em:",

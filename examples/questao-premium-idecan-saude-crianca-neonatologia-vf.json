@@ -7,7 +7,28 @@
     "subtopico": "Saúde da Criança",
     "content_standard": "golden-v1",
     "family": "vf",
-    "pedagogical_branch": "crianca_neonatologia"
+    "pedagogical_branch": "crianca_neonatologia",
+    "content_review": {
+      "reviewed_at": "2026-07-22",
+      "reviewer": "baseline-fix",
+      "guideline_snapshot": "MS — cuidados ao recém-nascido (banho, icterícia, glicemia)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-cuidados-rn",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Atenção ao recém-nascido — banho, icterícia e glicemia",
+        "year": 2022,
+        "covers": [
+          "banho do RN",
+          "icterícia fisiológica",
+          "24 horas",
+          "glicemia"
+        ]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre cuidados ao recém-nascido, analise as afirmativas.\n\nI - O banho do RN deve ser adiado até estabilização da temperatura e vínculo mãe-bebê.\nII - Icterícia fisiológica costuma surgir após 24 horas de vida.\nIII - Glicemia de rotina é obrigatória para todo RN a termo sem fator de risco.\n\nÉ CORRETO o que se afirma em:",

@@ -4,6 +4,7 @@
 import { NextRequest } from 'next/server';
 
 import { GET, POST } from '@/app/api/cache/revalidate/route';
+import { setNodeEnv } from '@/__tests__/helpers/setNodeEnv';
 
 const mockInvalidateModulosCache = jest.fn();
 const mockInvalidateQuestoesCache = jest.fn();
@@ -47,13 +48,13 @@ describe('POST /api/cache/revalidate', () => {
     jest.clearAllMocks();
     process.env.SUPABASE_WEBHOOK_SECRET = 'secret-test-cache-revalidate-32';
     delete process.env.WEBHOOK_SECRET;
-    process.env.NODE_ENV = 'test';
+    setNodeEnv('test');
   });
 
   afterAll(() => {
     process.env.SUPABASE_WEBHOOK_SECRET = originalSupabaseWebhookSecret;
     process.env.WEBHOOK_SECRET = originalWebhookSecret;
-    process.env.NODE_ENV = originalNodeEnv;
+    setNodeEnv(originalNodeEnv ?? 'test');
   });
 
   function makeRequest(body: object, auth = 'Bearer secret-test-cache-revalidate-32') {
@@ -122,7 +123,7 @@ describe('POST /api/cache/revalidate', () => {
   });
 
   it('retorna 401 em produção sem secret configurado', async () => {
-    process.env.NODE_ENV = 'production';
+    setNodeEnv('production');
     delete process.env.SUPABASE_WEBHOOK_SECRET;
     delete process.env.WEBHOOK_SECRET;
 

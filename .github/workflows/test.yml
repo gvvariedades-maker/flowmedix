@@ -25,6 +25,8 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     outputs:
+      ship: ${{ steps.filter.outputs.ship }}
+      e2e: ${{ steps.filter.outputs.e2e }}
       perf: ${{ steps.filter.outputs.perf }}
     steps:
       - uses: actions/checkout@v6
@@ -32,6 +34,27 @@ jobs:
         id: filter
         with:
           filters: |
+            # typecheck + check:architecture (ship gates)
+            ship:
+              - 'app/**'
+              - 'components/**'
+              - 'lib/**'
+              - 'proxy.ts'
+              - 'scripts/check-architecture-patterns.ts'
+              - 'package.json'
+              - 'package-lock.json'
+              - 'tsconfig*.json'
+              - '.github/workflows/test.yml'
+            # Playwright — app/player surfaces + e2e harness
+            e2e:
+              - 'app/**'
+              - 'components/**'
+              - 'lib/**'
+              - 'e2e/**'
+              - 'playwright.config.*'
+              - 'package.json'
+              - 'package-lock.json'
+              - '.github/workflows/test.yml'
             perf:
               - 'lib/cache/**'
               - 'lib/vitrine/**'
@@ -96,7 +119,10 @@ jobs:
           files: ./coverage/lcov.info
           fail_ci_if_error: false
 
-  architecture-check:
+  # Ship gates: always on push; on PR only when app/lib/components/tsconfig change
+  typecheck:
+    needs: changes
+    if: github.event_name == 'push' || needs.changes.outputs.ship == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -110,10 +136,31 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Supabase/cache architecture patterns
+      - name: Typecheck
+        run: npm run typecheck
+
+  architecture-check:
+    needs: changes
+    if: github.event_name == 'push' || needs.changes.outputs.ship == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Architecture patterns
         run: npm run check:architecture
 
   test-e2e:
+    needs: changes
+    if: github.event_name == 'push' || needs.changes.outputs.e2e == 'true'
     runs-on: ubuntu-latest
     env:
       CI: true

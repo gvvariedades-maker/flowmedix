@@ -49,6 +49,15 @@ export type PedagogicalBranchPlaybook = {
   bespoke_target?: string;
   /** Path do brief Fase 3b, se existir */
   brief?: string;
+  /** Âncoras por estilo (ex.: vf, lacunas) — playbook PT e pacotes com múltiplos goldens */
+  anchor_styles?: Record<
+    string,
+    {
+      golden_reference?: string;
+      anchor_slug?: string;
+      catalog_slug?: string;
+    }
+  >;
   visual_gallery?: BranchVisualGallery;
 };
 

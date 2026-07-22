@@ -136,7 +136,7 @@ describe('resolveWeeklyFocoPrincipal', () => {
     expect(
       resolveWeeklyFocoPrincipal(
         [],
-        [{ topico: 'Farmacologia', subtopico: 'Doses', total: 10, acertos: 2, percentual: 20 }],
+        [{ topico: 'Farmacologia', subtopico: 'Doses', total: 10, acertos: 2, erros: 8, percentual: 20 }],
         { topicos_afinidade: [], topicos_dificuldade: ['Imunização'], bancas_foco: [] },
       ),
     ).toBe('Doses');

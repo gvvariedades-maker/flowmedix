@@ -15,7 +15,7 @@ describe('useCadernoOnboarding helpers', () => {
     activation: EMPTY_NOTEBOOK_ACTIVATION,
     isAdmin: false,
     isPro: false,
-    proSource: null as const,
+    proSource: null,
     welcomeOpen: false,
     questaoModalOpen: false,
     estudarQuestaoImmersive: false,

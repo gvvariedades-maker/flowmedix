@@ -7,7 +7,30 @@
     "subtopico": "Saúde da Criança",
     "content_standard": "golden-v1",
     "family": "vf",
-    "pedagogical_branch": "crianca_desidratacao"
+    "pedagogical_branch": "crianca_desidratacao",
+    "content_review": {
+      "reviewed_at": "2026-07-22",
+      "reviewer": "baseline-fix",
+      "guideline_snapshot": "MS — manejo da diarreia e planos A/B/C de hidratação",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-diarreia-crianca",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manejo da diarreia e desidratação na criança — planos A/B/C",
+        "year": 2022,
+        "covers": [
+          "plano A",
+          "plano B",
+          "plano C",
+          "TRO",
+          "50–100 mL/kg",
+          "4h"
+        ]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre desidratação na diarreia aguda infantil, analise as afirmativas.\n\nI - Plano A é indicado para desidratação leve, com maior oferta de líquidos em casa.\nII - Plano B utiliza Terapia de Reidratação Oral sob supervisão.\nIII - Plano C é reservado para desidratação leve com boa aceitação oral.\n\nÉ CORRETO o que se afirma em:",

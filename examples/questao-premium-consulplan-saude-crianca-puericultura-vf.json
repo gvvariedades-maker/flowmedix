@@ -7,7 +7,28 @@
     "subtopico": "Saúde da Criança",
     "content_standard": "golden-v1",
     "family": "vf",
-    "pedagogical_branch": "crianca_aps_puericultura"
+    "pedagogical_branch": "crianca_aps_puericultura",
+    "content_review": {
+      "reviewed_at": "2026-07-22",
+      "reviewer": "baseline-fix",
+      "guideline_snapshot": "MS — Caderneta da Criança e puericultura na APS",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-caderneta-crianca",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Caderneta da Criança — visitas e calendário",
+        "year": 2022,
+        "covers": [
+          "visita domiciliar",
+          "5º dia",
+          "caderneta",
+          "sinais de alerta"
+        ]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre puericultura na Atenção Básica, analise as afirmativas.\n\nI - A primeira visita domiciliar ao recém-nascido deve ocorrer até o 5º dia de vida.\nII - A caderneta da criança orienta o calendário de consultas e vacinas.\nIII - Sinais de alerta não precisam ser abordados na consulta de rotina.\n\nÉ CORRETO o que se afirma em:",

@@ -17,6 +17,13 @@ for (const [key, value] of Object.entries(jestEnvDefaults)) {
   }
 }
 
+// @types/node marks NODE_ENV readonly; tests override it for prod/dev branches.
+Object.defineProperty(process.env, 'NODE_ENV', {
+  value: process.env.NODE_ENV ?? 'test',
+  writable: true,
+  configurable: true,
+});
+
 // Polyfill TextEncoder/TextDecoder para testes que importam next/cache
 const { TextEncoder, TextDecoder } = require('util');
 global.TextEncoder = TextEncoder;

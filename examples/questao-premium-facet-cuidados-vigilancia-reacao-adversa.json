@@ -9,7 +9,7 @@
     "subtopico": "Cuidados na Administração de Medicamentos",
     "family": "conceito",
     "content_standard": "golden-v1",
-    "pedagogical_branch": "cam_generico",
+    "pedagogical_branch": "cam_certos_vf_caso",
     "content_review": {
       "reviewed_at": "2026-07-10",
       "guideline_snapshot": "Resposta certa · vigilância de reações adversas · COFEN",
@@ -187,6 +187,11 @@
           "label": "Pegadinha — uso habitual",
           "detail": "Espelha o concept_map: rotina da unidade não dispensa vigilância pós-dose.",
           "correct": "Observar e documentar reações mesmo quando o medicamento é habitual."
+        },
+        {
+          "label": "Transferência — dispensar vigilância",
+          "detail": "Em outra banca: “medicamento de uso contínuo dispensa observação”.",
+          "correct": "Mesma armadilha: observar e registrar sempre após administrar."
         }
       ],
       "footer_rule": "Transferência: toda alternativa que dispensa observar ou documentar está errada"

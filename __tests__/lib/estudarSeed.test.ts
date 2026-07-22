@@ -23,6 +23,7 @@ describe('estudarSeed E2E', () => {
       assuntos: [],
       status: 'all',
       view: 'grid',
+      disciplina: null,
     });
     expect(page1.groups).toHaveLength(12);
     expect(page1.groups[0]?.firstSlug).toBe(E2E_ESTUDAR_SLUG_1);
@@ -37,6 +38,7 @@ describe('estudarSeed E2E', () => {
       assuntos: [],
       status: 'all',
       view: 'grid',
+      disciplina: null,
     });
     expect(page2.groups).toHaveLength(1);
     expect(page2.pagination.page).toBe(2);
@@ -92,7 +94,7 @@ describe('estudarSeed E2E', () => {
     const q1 = buildE2eEstudarQuestaoPayload(E2E_ESTUDAR_SLUG_1, {}, 'full');
     expect(q1.status).toBe('ok');
     if (q1.status !== 'ok') return;
-    expect(q1.payload.questoesDoAssunto.find((q) => q.slug === E2E_ESTUDAR_SLUG_1)?.estudada).toBe(
+    expect(q1.payload.questoesDoAssunto?.find((q) => q.slug === E2E_ESTUDAR_SLUG_1)?.estudada).toBe(
       true,
     );
   });

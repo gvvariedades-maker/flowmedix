@@ -121,6 +121,8 @@ const REQUIRED_SLIDE_TYPES = [
 
 type QuestaoPayload = {
   meta?: {
+    banca?: string;
+    topico?: string;
     subtopico?: string;
     family?: FamilyId;
     pedagogical_branch?: string;

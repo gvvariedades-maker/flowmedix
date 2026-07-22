@@ -36,7 +36,7 @@ describe('l3MoldGapCatalog', () => {
     expect(r.decision).toBe('molde_inedito');
   });
 
-  it('Segurança do Paciente identificação → ok_existente', () => {
+  it('Segurança do Paciente identificação → molde_redesign (bespoke implementado)', () => {
     const r = resolveClusterIdeal(
       'Segurança do Paciente',
       'Identificação do paciente',
@@ -45,11 +45,11 @@ describe('l3MoldGapCatalog', () => {
       'bridge · minimal · cards · list',
     );
     expect(r.branch_id).toBe('sp_identificacao');
-    expect(r.decision).toBe('ok_existente');
+    expect(r.decision).toBe('molde_redesign');
     expect(r.branch_implemented).toBe(true);
   });
 
-  it('Segurança do Paciente quedas com volume → ok_generico', () => {
+  it('Segurança do Paciente quedas com volume → molde_inedito', () => {
     const r = resolveClusterIdeal(
       'Segurança do Paciente',
       'Prevenção de quedas',
@@ -58,10 +58,10 @@ describe('l3MoldGapCatalog', () => {
       'bridge · minimal',
     );
     expect(r.branch_id).toBe('sp_prevencao_quedas');
-    expect(r.decision).toBe('ok_generico');
+    expect(r.decision).toBe('molde_inedito');
   });
 
-  it('Segurança do Paciente eventos adversos → ok_generico', () => {
+  it('Segurança do Paciente eventos adversos → molde_inedito', () => {
     const r = resolveClusterIdeal(
       'Segurança do Paciente',
       'Eventos adversos e incidentes',
@@ -70,10 +70,10 @@ describe('l3MoldGapCatalog', () => {
       'bridge · minimal',
     );
     expect(r.branch_id).toBe('sp_eventos_adversos');
-    expect(r.decision).toBe('ok_generico');
+    expect(r.decision).toBe('molde_inedito');
   });
 
-  it('Perioperatória pré-op com volume → ok_generico (não molde_inedito)', () => {
+  it('Perioperatória pré-op com volume → molde_inedito (bespoke implementado)', () => {
     const r = resolveClusterIdeal(
       'Assistência Perioperatória (Inclui SRPA)',
       'Pré-operatório / preparo',
@@ -83,10 +83,10 @@ describe('l3MoldGapCatalog', () => {
     );
     expect(r.branch_id).toBe('perioperatorio_pre_operatorio');
     expect(r.branch_implemented).toBe(true);
-    expect(r.decision).toBe('ok_generico');
+    expect(r.decision).toBe('molde_inedito');
   });
 
-  it('Perioperatória pós-op/SRPA → ok_generico', () => {
+  it('Perioperatória pós-op/SRPA → molde_inedito', () => {
     const r = resolveClusterIdeal(
       'Assistência Perioperatória (Inclui SRPA)',
       'Pós-operatório / cuidados',
@@ -95,10 +95,10 @@ describe('l3MoldGapCatalog', () => {
       'bridge · minimal',
     );
     expect(r.branch_id).toBe('perioperatorio_pos_operatorio');
-    expect(r.decision).toBe('ok_generico');
+    expect(r.decision).toBe('molde_inedito');
   });
 
-  it('Perioperatória protocolo → ok_generico', () => {
+  it('Perioperatória protocolo → molde_inedito', () => {
     const r = resolveClusterIdeal(
       'Assistência Perioperatória (Inclui SRPA)',
       'Protocolo / sequência',
@@ -107,7 +107,7 @@ describe('l3MoldGapCatalog', () => {
       'bridge · minimal',
     );
     expect(r.branch_id).toBe('perioperatorio_protocolo');
-    expect(r.decision).toBe('ok_generico');
+    expect(r.decision).toBe('molde_inedito');
   });
 
   it('Urgências RCP adulto com volume → molde_redesign', () => {

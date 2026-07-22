@@ -2,6 +2,7 @@ import { act, render, waitFor } from '@testing-library/react';
 import { QuestaoNavigationProvider } from '@/components/lesson/QuestaoNavigationProvider';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';
+import { fetchInputUrl } from '@/__tests__/helpers/fetchInputUrl';
 
 const mockPush = jest.fn();
 const mockReplace = jest.fn();
@@ -126,7 +127,7 @@ function DismissProbe() {
 function DisplayPayloadProbe({
   onModuloSlug,
 }: {
-  onModuloSlug: (slug: string | undefined) => void;
+  onModuloSlug: (slug: string | null | undefined) => void;
 }) {
   const nav = useQuestaoNavigation();
   onModuloSlug(nav.displayPayload?.moduloSlug);
@@ -142,7 +143,8 @@ describe('QuestaoNavigationProvider', () => {
     jest.clearAllMocks();
     mockUsePathname.mockReturnValue('/estudar');
     window.history.replaceState(window.history.state, '', '/estudar');
-    mockFetchWithAuth.mockImplementation(async (url: string) => {
+    mockFetchWithAuth.mockImplementation(async (input: RequestInfo | URL) => {
+      const url = fetchInputUrl(input);
       const isB = String(url).includes('slug=questao-b');
       return {
         ok: true,

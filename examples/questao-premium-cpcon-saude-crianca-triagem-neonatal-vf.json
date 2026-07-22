@@ -8,7 +8,28 @@
     "subtopico": "Saúde da Criança",
     "content_standard": "golden-v1",
     "family": "vf",
-    "pedagogical_branch": "crianca_triagem_neonatal"
+    "pedagogical_branch": "crianca_triagem_neonatal",
+    "content_review": {
+      "reviewed_at": "2026-07-22",
+      "reviewer": "baseline-fix",
+      "guideline_snapshot": "MS — Programa Nacional de Triagem Neonatal (pezinho, coraçãozinho)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-triagem-neonatal",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Triagem neonatal — pezinho e oximetria",
+        "year": 2022,
+        "covers": [
+          "teste do pezinho",
+          "3º ao 5º dia",
+          "coraçãozinho",
+          "oximetria"
+        ]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre triagem neonatal, analise as afirmativas.\n\nI - O teste do pezinho deve ser coletado preferencialmente entre o 3º e o 5º dia de vida.\nII - O teste do coraçãozinho (oximetria) é realizado antes da alta hospitalar.\nIII - A triagem do pezinho pode ser adiada para o primeiro ano de vida sem prejuízo.\n\nÉ CORRETO o que se afirma em:",

@@ -116,7 +116,8 @@
         "C: FR contínua — bloqueio pode ascender → correta.",
         "E: retenção urinária pelo bloqueio simpático → correta.",
         "D: administração imediata de analgésico oral — jejum, náusea/vômito, bloqueio ativo e prescrição definem via e momento; VO sem critério é inadequado → falsa.",
-        "Gabarito: letra D."
+        "Gabarito: letra D.",
+        "Fixação: na SRPA, avaliar (neuro, FR, diurese, escala de dor) antes de medicar VO."
       ],
       "footer_rule": "IMEDIATO + VO sem critério → desconfie"
     },
@@ -186,6 +187,11 @@
           "label": "D — dor = VO na hora",
           "detail": "Operou = tem que dar comprimido já.",
           "correct": "VO imediato sem critério (jejum, náusea/vômito, bloqueio, prescrição) é o EXCETO."
+        },
+        {
+          "label": "Transferência — VO sem critério",
+          "detail": "Em outra banca: “analgésico oral ao despertar” sem escala/prescrição.",
+          "correct": "Mesma exceção: na SRPA, avaliar antes de medicar VO."
         }
       ],
       "footer_rule": "Outras bancas: VO ao despertar sem critério → mesma exceção"

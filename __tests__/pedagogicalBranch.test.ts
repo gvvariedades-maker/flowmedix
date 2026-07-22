@@ -77,14 +77,16 @@ describe('pedagogicalBranch — Saúde Mental', () => {
   it('infere mental_raps_legis para RAPS', () => {
     const instruction = 'Componentes da RAPS e Reforma Psiquiátrica conforme Portaria 3.088/2011.';
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('mental_raps_legis');
-    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'mental_raps_legis')).toBe('vertical');
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'mental_raps_legis')).toBe(
+      'mental-raps-classify-tap',
+    );
   });
 
-  it('infere mental_crise_caps e usa sae-decision-tap', () => {
+  it('infere mental_crise_caps e usa mental-crisis-decision-tap', () => {
     const instruction = 'Manejo da crise e agitação psicomotora no CAPS com contenção quando indicada.';
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('mental_crise_caps');
     expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'mental_crise_caps')).toBe(
-      'sae-decision-tap',
+      'mental-crisis-decision-tap',
     );
   });
 });
@@ -634,7 +636,7 @@ describe('pedagogicalBranch — Segurança do Paciente', () => {
       'A identificação segura do paciente deve utilizar pelo menos dois identificadores independentes antes de medicações.';
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('sp_identificacao');
     expect(getLayoutVariantForBranch(subtopico, 'golden_rule', 'sp_identificacao')).toBe(
-      'reference_table',
+      'sp-nsp-reference-board',
     );
   });
 
@@ -666,7 +668,7 @@ describe('pedagogicalBranch — Assistência Perioperatória', () => {
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('perioperatorio_pre_operatorio');
     expect(
       getLayoutVariantForBranch(subtopico, 'golden_rule', 'perioperatorio_pre_operatorio'),
-    ).toBe('reference_table');
+    ).toBe('peri-preop-prep-board');
   });
 
   it('infere perioperatorio_pos_operatorio para SRPA e Aldrete', () => {

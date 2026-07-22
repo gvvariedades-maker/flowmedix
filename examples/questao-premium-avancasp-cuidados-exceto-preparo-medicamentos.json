@@ -140,7 +140,8 @@
         "D: não misturar medicamentos sem prescrição → evita incompatibilidade → eliminar.",
         "E: seguir protocolo de diluição → institucional → eliminar.",
         "A: administrar VO com solução fisiológica → conduta incorreta — SF não é veículo VO de rotina.",
-        "Confirmar letra A: única afirmativa falsa no preparo."
+        "Confirmar letra A: única afirmativa falsa no preparo.",
+        "Fixação: SF é diluente parenteral — não veículo de comprimido/xarope VO."
       ],
       "footer_rule": "Estratégia EXCETO: validar cada conduta correta antes de marcar a exceção"
     },
@@ -175,9 +176,14 @@
           "correct": "E é correta — seguir protocolo de diluição da instituição."
         },
         {
-          "label": "VO com solução fisiológica",
-          "detail": "Confundir diluente parenteral (SF 0,9%) com veículo de comprimido/xarope VO.",
+          "label": "Letra A — VO com solução fisiológica",
+          "detail": "Confundir diluente parenteral (SF) com veículo de comprimido/xarope VO.",
           "correct": "A é o EXCETO: via oral não usa SF como administrador de rotina."
+        },
+        {
+          "label": "Transferência — diluente × via",
+          "detail": "Em outra banca: “diluir comprimido em SF” ou “xarope em soro”.",
+          "correct": "Mesma pegadinha: SF não é veículo VO de rotina."
         }
       ],
       "footer_rule": "Transferência: toda alternativa que descreve boa prática de preparo é distrator — só A inverte VO × SF"

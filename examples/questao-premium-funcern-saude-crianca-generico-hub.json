@@ -7,7 +7,27 @@
     "subtopico": "Saúde da Criança",
     "content_standard": "golden-v1",
     "family": "conceito",
-    "pedagogical_branch": "crianca_generico"
+    "pedagogical_branch": "crianca_generico",
+    "content_review": {
+      "reviewed_at": "2026-07-22",
+      "reviewer": "baseline-fix",
+      "guideline_snapshot": "ECA / MS — acompanhamento da criança hospitalizada",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "eca-acompanhante",
+        "tier": "A",
+        "issuer": "Brasil",
+        "title": "ECA — direito a acompanhante na internação",
+        "year": 1990,
+        "covers": [
+          "acompanhante",
+          "criança hospitalizada",
+          "direito"
+        ]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Assinale a alternativa correta sobre cuidados gerais à criança em ambiente hospitalar.",

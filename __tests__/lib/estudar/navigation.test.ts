@@ -182,14 +182,14 @@ describe('lib/estudar/navigation', () => {
     });
 
     it('sem query retorna só slug', () => {
-      expect(buildEstudarCacheKey('/estudar/solo', '')).toBe('solo');
+      expect(buildEstudarCacheKey('/estudar/solo', new URLSearchParams())).toBe('solo');
     });
   });
 
   describe('buildEstudarCacheKeyFromSlugComQuery', () => {
     it('equivale a pathname + search parseados', () => {
       expect(buildEstudarCacheKeyFromSlugComQuery('x?from=plano')).toBe(
-        buildEstudarCacheKey('/estudar/x', 'from=plano'),
+        buildEstudarCacheKey('/estudar/x', new URLSearchParams('from=plano')),
       );
     });
   });

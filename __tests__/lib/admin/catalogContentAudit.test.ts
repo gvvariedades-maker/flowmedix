@@ -11,7 +11,9 @@ const fourSlides = [
   { type: 'danger_zone', content: 'X', items: [{ label: 'e', detail: 'd', correct: 'ok' }] },
 ];
 
-function makeModulosQuery(rows: { modulo_slug: string; conteudo_json: unknown }[]) {
+function makeModulosQuery(
+  rows: { modulo_slug: string; conteudo_json: unknown; titulo_aula?: string; banca?: string }[],
+) {
   let offset = 0;
   return {
     order: () => ({

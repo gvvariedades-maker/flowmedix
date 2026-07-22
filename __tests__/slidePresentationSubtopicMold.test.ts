@@ -1,6 +1,7 @@
 import {
   enrichPresentationContext,
   resolveSlidePresentation,
+  type SlidePresentationContext,
 } from '@/components/slides/core/slidePresentation';
 
 describe('slidePresentation — molde por subtópico', () => {
@@ -1503,7 +1504,7 @@ describe('slidePresentation — molde por subtópico', () => {
   });
 
   it('Cuidados na Administração: cam_certos_vf_caso usa pacote bespoke 4/4', () => {
-    const branchCtx = {
+    const branchCtx: SlidePresentationContext = {
       questionSlug: 'fepese-cam-1',
       familyId: 'vf' as const,
       pedagogicalBranch: 'cam_certos_vf_caso',
@@ -1553,7 +1554,7 @@ describe('slidePresentation — molde por subtópico', () => {
   });
 
   it('Cuidados na Administração: cam_alto_risco usa pacote bespoke 4/4', () => {
-    const branchCtx = {
+    const branchCtx: SlidePresentationContext = {
       questionSlug: 'fepese-cam-insulina-1',
       familyId: 'conceito' as const,
       pedagogicalBranch: 'cam_alto_risco',
@@ -1603,7 +1604,7 @@ describe('slidePresentation — molde por subtópico', () => {
   });
 
   it('Cuidados na Administração: cam_exceto_conduta usa pacote bespoke 4/4', () => {
-    const branchCtx = {
+    const branchCtx: SlidePresentationContext = {
       questionSlug: 'avancasp-cam-exceto-preparo-1',
       familyId: 'certo_errado' as const,
       pedagogicalBranch: 'cam_exceto_conduta',
@@ -1659,7 +1660,7 @@ describe('slidePresentation — molde por subtópico', () => {
   });
 
   it('Punção Venosa: puncao_flebite usa pacote bespoke 4/4', () => {
-    const branchCtx = {
+    const branchCtx: SlidePresentationContext = {
       questionSlug: 'avancasp-puncao-infiltracao-flebite-1',
       familyId: 'conceito' as const,
       pedagogicalBranch: 'puncao_flebite',
@@ -1715,7 +1716,7 @@ describe('slidePresentation — molde por subtópico', () => {
   });
 
   it('Cuidados na Administração: cam_documentacao usa pacote bespoke 4/4', () => {
-    const branchCtx = {
+    const branchCtx: SlidePresentationContext = {
       questionSlug: 'avancasp-cam-documentacao-1',
       familyId: 'vf' as const,
       pedagogicalBranch: 'cam_documentacao',
@@ -1771,7 +1772,7 @@ describe('slidePresentation — molde por subtópico', () => {
   });
 
   it('Vias de Administração: via_tecnica_admin usa molde genérico (banner + cards + compare)', () => {
-    const branchCtx = {
+    const branchCtx: SlidePresentationContext = {
       questionSlug: 'cpcon-vias-im-1',
       familyId: 'vf' as const,
       pedagogicalBranch: 'via_tecnica_admin',
@@ -2129,7 +2130,7 @@ describe('slidePresentation — molde por subtópico', () => {
   });
 
   it('Punção Venosa: puncao_ipcs_cvc usa pacote bundle 4/4', () => {
-    const branchCtx = {
+    const branchCtx: SlidePresentationContext = {
       questionSlug: 'adm-tec-puncao-ipcs-1',
       familyId: 'protocolo' as const,
       pedagogicalBranch: 'puncao_ipcs_cvc',
@@ -3330,8 +3331,8 @@ describe('slidePresentation — molde por subtópico', () => {
         meta: { subtopico },
         content: 'O QUE A VÍRGULA ISOLA?',
         rows: [
-          { label: 'Pergunta-chave', value: 'A vírgula isola vocativo/aposto — ou corta sujeito|verbo?', emphasis: 'highlight' },
-          { label: 'Não pode', value: 'Sujeito|verbo: Eu farei — nunca Eu, farei.', emphasis: 'alert' },
+          { label: 'Pergunta-chave', value: 'A vírgula isola vocativo/aposto — ou corta sujeito|verbo?', emphasis: 'highlight' as const },
+          { label: 'Não pode', value: 'Sujeito|verbo: Eu farei — nunca Eu, farei.', emphasis: 'alert' as const },
         ],
       };
       const ctx = enrichPresentationContext(
@@ -3456,8 +3457,8 @@ describe('slidePresentation — molde por subtópico', () => {
         meta: { subtopico },
         content: 'PERGUNTA → CARGO (×2)',
         rows: [
-          { label: 'Modifica verbo?', value: 'Adjunto adverbial', emphasis: 'success' },
-          { label: 'Enquanto / quando', value: 'Locução adverbial de tempo', emphasis: 'success' },
+          { label: 'Modifica verbo?', value: 'Adjunto adverbial', emphasis: 'success' as const },
+          { label: 'Enquanto / quando', value: 'Locução adverbial de tempo', emphasis: 'success' as const },
         ],
       };
       const ctx = enrichPresentationContext(
