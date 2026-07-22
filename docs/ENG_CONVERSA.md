@@ -24,6 +24,8 @@ Ou anexe este arquivo (`@docs/ENG_CONVERSA.md`) — equivalente a escrever o tri
 
 Rule: [`.cursor/rules/eng-feature.mdc`](../.cursor/rules/eng-feature.mdc) · Guardrails: [`.cursor/rules/avant-engineering.mdc`](../.cursor/rules/avant-engineering.mdc) · Índice: [`AGENTS.md`](../AGENTS.md)
 
+Cópias versionadas no Git (se a rule local sumir após clone, copiar para `.cursor/rules/`): [`docs/cursor/eng-feature.mdc`](cursor/eng-feature.mdc) · [`docs/cursor/avant-engineering.mdc`](cursor/avant-engineering.mdc)
+
 ---
 
 ## Variantes do trigger

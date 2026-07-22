@@ -1,0 +1,154 @@
+---
+description: >-
+  Ativa o runbook de engenharia quando o usuário enviar Feature:, Bug:, API: ou
+  Refactor:, ou anexar docs/ENG_CONVERSA.md. Escopo fechado + golden examples +
+  gate Done = npm run check:ship.
+alwaysApply: false
+---
+
+# Engenharia — conversa nova (Feature / Bug / API / Refactor)
+
+> **Cópia versionada no Git.** Operacional: copiar para [`.cursor/rules/eng-feature.mdc`](../../.cursor/rules/eng-feature.mdc) se faltar no clone.
+>
+> **Princípio:** efetividade de engenharia = escopo fechado (trigger) + padrão local copiável (golden) + gate determinístico que **bloqueia** (`check:ship`) + humano só no risco. Espelha o modelo de conteúdo (`audit:questao-readiness --strict`), sem misturar com handcraft/pipeline.
+
+Quando a mensagem começar com **`Feature:`**, **`Bug:`**, **`API:`** ou **`Refactor:`** (ou anexar [`ENG_CONVERSA.md`](../ENG_CONVERSA.md)), executar **sem pedir modo**.
+
+Guardrails permanentes: [`avant-engineering.mdc`](avant-engineering.mdc) · [`CLAUDE.md`](../../CLAUDE.md) §2–§7 e §10.
+
+## 1. Resolver trigger
+
+| Trigger | Uso | Exemplo |
+|---------|-----|---------|
+| `Feature:` | Comportamento novo observável | `Feature: badge de progresso na vitrine` |
+| `Bug:` | Comportamento incorreto com repro | `Bug: histórico não atualiza após tentativa` |
+| `API:` | Route Handler / contrato HTTP | `API: POST /api/aluno/marcar-favorito` |
+| `Refactor:` | Mudança interna sem mudar comportamento | `Refactor: extrair helper de paginação da vitrine` |
+
+**Parser mental do escopo (obrigatório antes de codar):**
+
+1. **1 resultado observável** — uma frase do tipo “quando X, o usuário vê/recebe Y”.
+2. **Arquivos permitidos** — listar caminhos concretos (ou globs estreitos) que podem mudar.
+3. **Não tocar** — listar áreas explicitamente fora (ex.: `lib/cache.ts`, `proxy.ts`, lotes handcraft, migrations).
+4. **Critério Done** — comando(s) que devem PASS (sempre inclui `npm run check:ship`).
+
+Se o usuário não listar arquivos permitidos / “não tocar”, **inferir do pedido e declarar no início da resposta** antes de editar. Se o pedido misturar conteúdo de catálogo (handcraft, slides, `production_ready`) com código de app → **parar e pedir conversa separada**.
+
+### Fora de escopo desta rule (redirecionar)
+
+| Tema | Trigger / rule |
+|------|----------------|
+| Handcraft / lotes gNN / goldens de questão | `Handcraft:` · `handcraft-golden-v1.mdc` |
+| Pipeline completo / qualidade vendável | `Pipeline completo:` / `Qualidade vendável:` |
+| Moldes L3 / NeuroSlides conteúdo | `Mapeamento L3:` · skills de brief |
+| Polish visual de vitrine/player (só craft UI) | `Visual:` / `Polish vitrine` · `avant-ui-visual.mdc` |
+| Taxonomia / classify | `Classify:` · `taxonomy-classify.mdc` |
+
+**Proibido na mesma conversa:** `Handcraft:`, `Pipeline completo:`, `Qualidade vendável:`, `Mapeamento L3:`, apply de lotes, ou editar `examples/questao-premium-*.json` / manifests de catálogo — salvo se o usuário **explicitamente** pedir só um fix de app que referencia esses paths sem alterar conteúdo pedagógico.
+
+## 2. Contrato de escopo (preencher mentalmente)
+
+```text
+Resultado observável: <1 frase>
+Arquivos permitidos:   <paths>
+Não tocar:             <paths / áreas>
+Done:                  npm run check:ship  (+ build/e2e se tocou UI crítica)
+Zona de risco:         verde | vermelha (ver §5)
+```
+
+- Diff **mínimo e coeso** — sem refatorar arquivos não relacionados.
+- Não inventar stack (Next 16 App Router, React 19, Tailwind 4, Supabase, Zod).
+- Commit / push / PR / `--apply` de catálogo **somente** com pedido explícito do usuário.
+
+## 3. Golden examples (copiar, não inventar)
+
+Antes de escrever código novo, abrir o exemplo da família e **replicar o padrão**:
+
+| Família | Arquivo | Quando |
+|---------|---------|--------|
+| Route Handler admin | [`examples/eng/api-route-admin.example.ts`](../../examples/eng/api-route-admin.example.ts) | `API:` admin / service role |
+| RSC + cache | [`examples/eng/rsc-page-cached.example.tsx`](../../examples/eng/rsc-page-cached.example.tsx) | página Server Component com catálogo/questão/histórico |
+| Client + auth fetch | [`examples/eng/client-component-fetch.example.tsx`](../../examples/eng/client-component-fetch.example.tsx) | `'use client'` chamando `/api` |
+| Função de cache | [`examples/eng/cache-fn.example.ts`](../../examples/eng/cache-fn.example.ts) | nova leitura em `lib/cache.ts` (zona vermelha — ver §5) |
+
+Se o exemplo ainda não existir no repo, usar o trecho canônico em [`CLAUDE.md`](../../CLAUDE.md) §2 (RSC + cache + sessão) e a fonte de verdade da área (§4).
+
+## 4. Fonte de verdade por área
+
+| Área | Onde copiar / o que respeitar |
+|------|-------------------------------|
+| Cache catálogo/questão/histórico | [`lib/cache.ts`](../../lib/cache.ts) — nunca Supabase direto em RSC para esses dados |
+| Sessão em RSC | `getServerSession()` em [`lib/supabase/server-auth`](../../lib/supabase/server-auth.ts) |
+| Auth na borda | [`proxy.ts`](../../proxy.ts) — único lugar para `getUser()` / refresh em request |
+| Browser Supabase | **único** singleton [`lib/supabase/client.ts`](../../lib/supabase/client.ts) |
+| API admin | `requireAdminApi()` + body Zod |
+| API aluno (client) | `fetchWithAuth` |
+| Env | [`lib/env.ts`](../../lib/env.ts) + `npm run validate:env` — sem `process.env.X` solto |
+| Logging | [`lib/logger.ts`](../../lib/logger.ts) — sem `console.log` / `console.error` em `app/` / `components/` / `lib/` |
+| Validação de questão | [`lib/validations.ts`](../../lib/validations.ts) / write spec existente |
+| RLS | políticas Supabase = fonte de verdade; nunca “segurança só no client” |
+
+Invariantes cobertos por gate: `npm run check:architecture` (ver [`scripts/check-architecture-patterns.ts`](../../scripts/check-architecture-patterns.ts)).
+
+Reincidência do **mesmo** anti-padrão **2×** → novo check nesse script + linha no changelog de [`ENG_CONVERSA.md`](../ENG_CONVERSA.md) (§ Loop de melhoria contínua) — não só mais um parágrafo em doc.
+
+## 5. Matriz de risco (humano só no vermelho)
+
+| Zona | Exemplos | Agente |
+|------|----------|--------|
+| **Verde** (fecha com gates) | UI no design system, bug com teste, CRUD simples, copy, endpoint Zod atrás de auth existente | Implementar → `check:ship` → declarar Done |
+| **Vermelha** (revisão humana obrigatória) | `proxy.ts` / sessão, `lib/cache.ts`, RLS/policies, Stripe/webhooks, migrations Supabase, service role em superfície nova | Implementar com diff mínimo, rodar gates, **não declarar “seguro para prod”** sem o usuário revisar; em PR usar Bugbot + Security Review ([`PROMPT_META_AUDITORIA_AVANT.md`](../PROMPT_META_AUDITORIA_AVANT.md) §7) |
+
+Zona vermelha **não** impede o agente de codar — impede declarar pronto para produção sem flag explícita ao usuário.
+
+## 6. Fluxo de execução
+
+1. Declarar contrato de escopo (§2).
+2. Ler padrões adjacentes + golden da família (§3–§4).
+3. Implementar só nos arquivos permitidos.
+4. Teste: só onde o projeto já testa fluxo equivalente (Jest em `__tests__/`, Playwright em `e2e/`) — sem suíte em massa por padrão.
+5. **Gate Done (obrigatório):**
+
+```bash
+npm run check:ship
+```
+
+Equivale a: `validate:env` && `typecheck` && `check:architecture` && `lint` && `test`.
+
+6. **Extras condicionais** (não substituem `check:ship`):
+   - Tocou `app/` ou `components/` de forma ampla / player / slides de UI → considerar `npm run build` e Playwright relevante.
+   - PR de zona vermelha → Bugbot + Security Review (meta-auditoria §7).
+
+## 7. Critério Done
+
+| Critério | Obrigatório |
+|----------|-------------|
+| Contrato de escopo respeitado (1 resultado, só arquivos permitidos) | sim |
+| `npm run check:ship` **PASS** | **sim — sem PASS não declarar pronto** |
+| Sem mistura com handcraft/pipeline | sim |
+| Zona vermelha: usuário avisado que precisa revisão humana | se aplicável |
+| Commit / push | só se o usuário pedir |
+
+**Nunca** declarar “pronto”, “shipped” ou “feito” com `check:ship` falhando ou sem tê-lo rodado nesta conversa após as mudanças.
+
+## 8. Proibido
+
+- Inventar segundo `createBrowserClient` ou `process.env` fora de `lib/env.ts`
+- Query Supabase direta em RSC para módulos/questão/histórico (bypass de `lib/cache.ts`)
+- `getUser()` / refresh de token em RSC fora de `proxy.ts`
+- `SUPABASE_SERVICE_ROLE_KEY` / `createServerSupabase` em código de client bundle
+- `console.log` / `console.error` em `app/`, `components/`, `lib/` (usar `logger`)
+- Refator amplo “de limpeza” fora do escopo
+- Commit, push, PR ou apply de catálogo sem pedido explícito
+- Misturar triggers de conteúdo (`Handcraft:`, `Pipeline completo:`, etc.) nesta conversa
+
+## 9. Encerramento
+
+Reportar em poucas linhas:
+
+1. Resultado observável entregue
+2. Arquivos tocados (lista curta)
+3. Saída de `npm run check:ship` (PASS / falha + comando que quebrou)
+4. Se zona vermelha: o que o humano deve revisar
+
+Runbook expandido: [`ENG_CONVERSA.md`](../ENG_CONVERSA.md). Índice de triggers: [`AGENTS.md`](../../AGENTS.md).

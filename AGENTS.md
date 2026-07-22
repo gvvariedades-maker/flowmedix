@@ -8,11 +8,11 @@ Uma tela: **tarefa → o que escrever no chat → rule / doc**. Onboarding longo
 
 | Tarefa | Trigger | Rule / doc |
 |--------|---------|------------|
-| Feature observável no app | `Feature: <resultado>` | [`.cursor/rules/eng-feature.mdc`](.cursor/rules/eng-feature.mdc) · [`docs/ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) |
+| Feature observável no app | `Feature: <resultado>` | [`.cursor/rules/eng-feature.mdc`](.cursor/rules/eng-feature.mdc) · [`docs/ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) · cópia [`docs/cursor/eng-feature.mdc`](docs/cursor/eng-feature.mdc) |
 | Bug com repro | `Bug: <sintoma>` | idem |
 | Route Handler / contrato HTTP | `API: <método + path>` | idem · golden [`examples/eng/`](examples/eng/) |
 | Refactor sem mudar comportamento | `Refactor: <escopo>` | idem |
-| Guardrails permanentes (sempre) | — | [`.cursor/rules/avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc) |
+| Guardrails permanentes (sempre) | — | [`.cursor/rules/avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc) · cópia [`docs/cursor/avant-engineering.mdc`](docs/cursor/avant-engineering.mdc) |
 | Done / ship-gate | `npm run check:ship` | `validate:env` + `typecheck` + `check:architecture` + `lint` + `test` |
 | Review de PR (zona amarela/vermelha) | Bugbot + Security Review | [`docs/PROMPT_META_AUDITORIA_AVANT.md`](docs/PROMPT_META_AUDITORIA_AVANT.md) §7 |
 
@@ -86,6 +86,6 @@ npm run build               # quando tocou app/ UI crítica (além do ship)
 | Amarela (API nova, player/vitrine) | Agente + humano amostra PR |
 | Vermelha (`proxy.ts`, `lib/cache.ts`, RLS, Stripe, migrations) | Humano aprova antes de ship |
 
-Detalhe: [`docs/ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) · matriz em [`avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc).
+Detalhe: [`docs/ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) · matriz em [`avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc) · cópia [`docs/cursor/avant-engineering.mdc`](docs/cursor/avant-engineering.mdc).
 
 **Loop:** mesmo anti-padrão **2×** → novo gate em `scripts/check-architecture-patterns.ts` + registro no changelog de [`ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) (§ Loop de melhoria contínua).

@@ -1,0 +1,73 @@
+---
+description: Engenharia AVANT — stack, Supabase/RLS, env, RSC, segurança e entrega focada
+alwaysApply: true
+---
+
+# AVANT — Engenharia (complemento ao repo)
+
+> **Cópia versionada no Git.** Operacional: copiar para [`.cursor/rules/avant-engineering.mdc`](../../.cursor/rules/avant-engineering.mdc) se faltar no clone.
+
+## Stack e convenções (não inventar outra)
+
+- Next.js App Router (Next 16), React 19, TypeScript strict, Tailwind 4.
+- Variáveis de ambiente: respeitar `npm run validate:env` / scripts existentes; não introduzir env sem validação (Zod no padrão do projeto).
+- Auth/dados: Supabase — RLS e políticas são fonte de verdade; nunca “segurança só no client”.
+
+## Fonte de verdade por área
+
+Antes de inventar helper/padrão novo, copiar o arquivo canônico da área:
+
+| Área | Fonte canônica | Não fazer |
+|------|----------------|-----------|
+| Cache (catálogo/questão/histórico em RSC) | [`lib/cache.ts`](../../lib/cache.ts) | Query Supabase direta no RSC |
+| Sessão em RSC | [`lib/supabase/server-auth.ts`](../../lib/supabase/server-auth.ts) (`getServerSession`) | `getUser()` / refresh de token no Node além de [`proxy.ts`](../../proxy.ts) |
+| Auth na borda | [`proxy.ts`](../../proxy.ts) | Middleware legado / segundo refresh |
+| Browser Supabase | [`lib/supabase/client.ts`](../../lib/supabase/client.ts) | Segundo `createBrowserClient` |
+| Service role / bypass RLS | `createServerSupabase()` em [`lib/supabase/server.ts`](../../lib/supabase/server.ts) | Service role no client bundle |
+| API admin | `requireAdminApi()` em [`lib/admin/requireAdmin.ts`](../../lib/admin/requireAdmin.ts) | Confiar só em flag no client |
+| Validação API / questão | Zod em [`lib/validations.ts`](../../lib/validations.ts) (+ schemas do arquivo da rota) | Body sem parse |
+| Fetch autenticado no client | [`lib/api/fetch-with-auth.ts`](../../lib/api/fetch-with-auth.ts) | `fetch` solto sem Bearer |
+| Env | [`lib/env.ts`](../../lib/env.ts) + `npm run validate:env` | `process.env.X` novo fora do Zod |
+| Logging | [`lib/logger.ts`](../../lib/logger.ts) | `console.log` / `console.error` em `app/` / `components/` / `lib/` |
+| Pagamentos / webhooks | `app/api/pagamentos/**` + Stripe do repo | Inventar fluxo paralelo |
+
+Onboarding detalhado: [`CLAUDE.md`](../../CLAUDE.md) §2–§7 e §10. Trigger de escopo: `Feature:` / `Bug:` / `API:` / `Refactor:` — rule [`eng-feature.mdc`](eng-feature.mdc) · runbook [`ENG_CONVERSA.md`](../ENG_CONVERSA.md).
+
+## Matriz de risco (auto-aprovação de engenharia)
+
+Espelho do ADR de conteúdo [`DECISAO_AUTO_APROVACAO_RISCO.md`](../DECISAO_AUTO_APROVACAO_RISCO.md): o agente fecha sozinho na zona verde com gates; na zona vermelha implementa, mas **não declara ship** sem revisão humana explícita.
+
+| Zona | Exemplos | Quem fecha |
+|------|----------|------------|
+| **Verde** — agente fecha com gates | UI no design system existente; bug com teste; CRUD simples com Zod; copy/UX polish; ajuste local em componente já coberto | Agente + `check:ship` / typecheck / arch / lint / test relevantes |
+| **Amarela** — agente implementa; humano amostra | Nova rota API com auth padrão; mudança em player/vitrine com Playwright existente; refactor limitado com testes verdes | Agente entrega; humano confere diff/PR |
+| **Vermelha** — revisão humana obrigatória | [`proxy.ts`](../../proxy.ts) / sessão; [`lib/cache.ts`](../../lib/cache.ts); RLS/policies Supabase; Stripe/webhooks; migrations; `SUPABASE_SERVICE_ROLE_KEY` / `lib/env.ts` sensível | Humano aprova antes de merge/ship |
+
+Handoff de PR em zona amarela/vermelha: Bugbot + Security Review — [`PROMPT_META_AUDITORIA_AVANT.md`](../PROMPT_META_AUDITORIA_AVANT.md) §7.
+
+## Antes de mudanças amplas (silencioso, sem narrar passo a passo)
+
+- Ler arquivos/padrões adjacentes; reutilizar helpers e componentes existentes.
+- Preferir Server Components e dados no servidor quando não houver necessidade de estado/DOM no client.
+- Para UI: manter padrão visual (Radix, utilitários já usados); mudança mínima e coesa.
+
+## Segurança e dados
+
+- Validar entradas/saídas de API e payloads com Zod (ou o que o arquivo já usar).
+- Sanitizar/escapar conteúdo que vá para HTML quando aplicável; cookies/sessão conforme padrão Next + Supabase do repo.
+
+## Entrega
+
+- Diff focado: sem refatorar arquivos não relacionados.
+- Após alterar fluxo crítico: considerar teste (Jest/Playwright) só onde o projeto já testa algo equivalente — não exigir suíte nova por padrão.
+- Zona vermelha: sinalizar no handoff (“revisão humana necessária”) e não tratar como Done só com gates verdes.
+
+## Loop de melhoria (reincidência → gate)
+
+Quando o agente (ou um PR) violar o **mesmo** anti-padrão **2×**, a correção vira **gate** em [`scripts/check-architecture-patterns.ts`](../../scripts/check-architecture-patterns.ts) — não só parágrafo em doc. Procedimento + changelog: [`ENG_CONVERSA.md`](../ENG_CONVERSA.md) § Loop de melhoria contínua.
+
+## Comandos opcionais no chat
+
+- `/ARCH_REVIEW`: comparar 2–3 abordagens (trade-offs) antes de codar.
+- `/VIBE_CHECK`: auditoria rápida (acoplamento, performance óbvia, consistência de UX) sem reescrever o app inteiro.
+- `/SHIP_IT`: checklist curto (tipos, lint mental, env, impacto em build) para fechar a feature.

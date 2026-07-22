@@ -811,6 +811,8 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 - [`docs/cursor/quality-vendavel.mdc`](docs/cursor/quality-vendavel.mdc) — cópia versionada da rule vendável
 - [`docs/cursor/pipeline-completo.mdc`](docs/cursor/pipeline-completo.mdc) — cópia versionada pipeline completo
 - [`docs/cursor/handcraft-conversa.mdc`](docs/cursor/handcraft-conversa.mdc) — cópia versionada handcraft Fase 1
+- [`docs/cursor/avant-engineering.mdc`](docs/cursor/avant-engineering.mdc) — cópia versionada guardrails de engenharia (alwaysApply)
+- [`docs/cursor/eng-feature.mdc`](docs/cursor/eng-feature.mdc) — cópia versionada `Feature:` / `Bug:` / `API:` / `Refactor:`
 - [`docs/PROMPT_PARIDADE_ADOLESCENTE.md`](docs/PROMPT_PARIDADE_ADOLESCENTE.md) · [`docs/cursor/paridade-adolescente.mdc`](docs/cursor/paridade-adolescente.mdc) — paridade pedagógica proporcional
 
 ### Outros
