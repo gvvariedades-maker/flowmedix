@@ -17,6 +17,8 @@ export type VitrineDisciplinePickerProps = {
   summaries: VitrineDisciplinaSummary[];
   selected: VitrineDisciplinaId | null;
   onSelect: (id: VitrineDisciplinaId | null) => void;
+  /** Hover/focus — aquece a lista da disciplina antes do clique. */
+  onPrefetch?: (id: VitrineDisciplinaId) => void;
 };
 
 /**
@@ -31,6 +33,7 @@ export function VitrineDisciplinePicker({
   summaries,
   selected,
   onSelect,
+  onPrefetch,
 }: VitrineDisciplinePickerProps) {
   const breadcrumbRef = useRef<HTMLButtonElement>(null);
   const hubHeadingRef = useRef<HTMLHeadingElement>(null);
@@ -110,6 +113,7 @@ export function VitrineDisciplinePicker({
             selected={false}
             prominent
             onSelect={(id) => onSelect(id)}
+            onPrefetch={onPrefetch}
           />
         ))}
       </div>

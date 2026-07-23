@@ -56,6 +56,12 @@ describe('VitrineClient paginação', () => {
     expect(source).not.toContain('vitrineResponseMatchesListKey');
   });
 
+  it('pré-carrega listas de disciplina no hub e no clique', () => {
+    expect(source).toContain('prefetchVitrineList');
+    expect(source).toContain('hubPrefetchKey');
+    expect(source).toContain('onPrefetch={prefetchDisciplinaList}');
+  });
+
   it('foca o título da página ao alternar hub ↔ assuntos', () => {
     expect(source).toContain('pageTitleRef');
     expect(source).toContain('prevHubModeRef');

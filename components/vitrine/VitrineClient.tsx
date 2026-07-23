@@ -62,7 +62,7 @@ import { multiFilterResumo } from '@/lib/questao-filter/multiFilterResumo';
 import { scrollDashboardMainToTop } from '@/lib/layout/dashboardMainScroll';
 import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { useVitrineVisiblePrefetch } from '@/hooks/useVitrineVisiblePrefetch';
-import { useVitrineListSwr } from '@/hooks/useVitrineListSwr';
+import { prefetchVitrineList, useVitrineListSwr } from '@/hooks/useVitrineListSwr';
 import { buildVitrineEstudarQuery } from '@/lib/vitrine/estudarQuery';
 import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 
@@ -552,12 +552,44 @@ export default function VitrineClient({
     setStatusFilter(next);
   }, []);
 
-  const handleDisciplinaChange = useCallback((next: VitrineDisciplinaId | null) => {
-    paginaViaFiltroRef.current = true;
-    setDisciplina(next);
-    setPagina(1);
-    setExpandedPanelSlug(null);
-  }, []);
+  const buildDisciplinaListQuery = useCallback(
+    (next: VitrineDisciplinaId | null): VitrineListQuery => ({
+      page: 1,
+      bancas: bancasSelecionadas,
+      assuntos: assuntosSelecionados,
+      q: debouncedSearch || undefined,
+      status: statusFilter,
+      view: viewMode,
+      disciplina: next,
+    }),
+    [
+      bancasSelecionadas,
+      assuntosSelecionados,
+      debouncedSearch,
+      statusFilter,
+      viewMode,
+    ],
+  );
+
+  const prefetchDisciplinaList = useCallback(
+    (next: VitrineDisciplinaId) => {
+      void prefetchVitrineList(buildDisciplinaListQuery(next), retryNonce);
+    },
+    [buildDisciplinaListQuery, retryNonce],
+  );
+
+  const handleDisciplinaChange = useCallback(
+    (next: VitrineDisciplinaId | null) => {
+      if (next) {
+        void prefetchVitrineList(buildDisciplinaListQuery(next), retryNonce);
+      }
+      paginaViaFiltroRef.current = true;
+      setDisciplina(next);
+      setPagina(1);
+      setExpandedPanelSlug(null);
+    },
+    [buildDisciplinaListQuery, retryNonce],
+  );
 
   const handleViewModeChange = useCallback((next: VitrineViewMode) => {
     setViewMode(next);
@@ -607,6 +639,22 @@ export default function VitrineClient({
   const disciplinaSummaries = vitrinePageData?.disciplinas ?? [];
   const hubMode = isVitrineDisciplineHubMode(disciplinaSummaries, disciplina);
   const showSubjectCatalog = !hubMode;
+  const hubPrefetchKey = useMemo(() => {
+    if (!hubMode) return '';
+    return disciplinasVisiveisNoPicker(disciplinaSummaries)
+      .filter((s) => s.totalAssuntos > 0)
+      .map((s) => s.id)
+      .join(',');
+  }, [hubMode, disciplinaSummaries]);
+
+  /** No hub, aquece Enfermagem/Português enquanto o aluno escolhe o card. */
+  useEffect(() => {
+    if (!hubPrefetchKey) return;
+    for (const id of hubPrefetchKey.split(',')) {
+      if (id !== 'enfermagem' && id !== 'portugues') continue;
+      void prefetchVitrineList(buildDisciplinaListQuery(id), retryNonce);
+    }
+  }, [hubPrefetchKey, buildDisciplinaListQuery, retryNonce]);
   const pageSectionTitle = hubMode
     ? 'Vitrine de disciplinas'
     : disciplina
@@ -819,6 +867,7 @@ export default function VitrineClient({
               summaries={disciplinaSummaries}
               selected={disciplina}
               onSelect={handleDisciplinaChange}
+              onPrefetch={prefetchDisciplinaList}
             />
           ) : null}
           {hubMode && (showDiagnosticoCard || showWeeklyMissionCard || showResumeCard) ? (

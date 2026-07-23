@@ -83,3 +83,10 @@ describe('vitrine listQueryKey anti-flash (disciplina)', () => {
     expect(hubKey).not.toBe(ptKey);
   });
 });
+
+describe('prefetchVitrineList export', () => {
+  it('exporta prefetchVitrineList do hook module', async () => {
+    const mod = await import('@/hooks/useVitrineListSwr');
+    expect(typeof mod.prefetchVitrineList).toBe('function');
+  });
+});

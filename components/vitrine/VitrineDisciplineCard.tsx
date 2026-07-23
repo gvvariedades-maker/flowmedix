@@ -17,6 +17,8 @@ export type VitrineDisciplineCardProps = {
   onSelect: (id: VitrineDisciplinaId) => void;
   /** Hub: mais altura/presença na dobra. */
   prominent?: boolean;
+  /** Pointer/focus — prefetch da lista filtrada da disciplina. */
+  onPrefetch?: (id: VitrineDisciplinaId) => void;
 };
 
 export function VitrineDisciplineCard({
@@ -24,9 +26,15 @@ export function VitrineDisciplineCard({
   selected,
   onSelect,
   prominent = false,
+  onPrefetch,
 }: VitrineDisciplineCardProps) {
   const meta = getVitrineDisciplinaMeta(summary.id);
   const ctaLabel = resolveDisciplinaCtaLabel(summary);
+
+  const warmCache = () => {
+    if (summary.totalAssuntos === 0) return;
+    onPrefetch?.(summary.id);
+  };
 
   return (
     <button
@@ -35,6 +43,8 @@ export function VitrineDisciplineCard({
       aria-pressed={selected}
       disabled={summary.totalAssuntos === 0}
       onClick={() => onSelect(summary.id)}
+      onPointerEnter={warmCache}
+      onFocus={warmCache}
       className={cn(
         'group flex w-full flex-col text-left transition-all',
         'rounded-2xl border bg-white shadow-sm',

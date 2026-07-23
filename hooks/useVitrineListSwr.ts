@@ -1,6 +1,6 @@
 'use client';
 
-import useSWR from 'swr';
+import useSWR, { preload } from 'swr';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import {
   vitrineListQueryKey,
@@ -20,6 +20,10 @@ export type UseVitrineListSwrOptions = {
 export type VitrinePageWithQueryKey = VitrinePageResponse & {
   listQueryKey: string;
 };
+
+function buildVitrineSwrKey(query: VitrineListQuery, retryNonce = 0): string {
+  return `${vitrineListQueryKey(query)}#${retryNonce}`;
+}
 
 async function fetchVitrinePage(query: VitrineListQuery): Promise<VitrinePageWithQueryKey> {
   const params = new URLSearchParams();
@@ -46,11 +50,23 @@ function withListQueryKey(
 }
 
 /**
+ * Aquece o cache SWR da lista (hub → disciplina) para o clique não esperar o skeleton.
+ * Deduplica com o fetcher do hook via mesma chave `listKey#retryNonce`.
+ */
+export function prefetchVitrineList(
+  query: VitrineListQuery,
+  retryNonce = 0,
+): Promise<VitrinePageWithQueryKey> {
+  return preload(buildVitrineSwrKey(query, retryNonce), () => fetchVitrinePage(query));
+}
+
+/**
  * Lista paginada da vitrine com SWR (`keepPreviousData`): mantém grupos anteriores
  * enquanto filtro/página atualiza; `isValidating` indica “Atualizando…”.
  *
  * `dataMatchesQuery` é false enquanto o payload ainda é da chave anterior
  * (ex.: flash Enfermagem → Português) — a UI deve mostrar skeleton, não cards stale.
+ * Prefetch no hub (`prefetchVitrineList`) evita o skeleton no clique.
  */
 export function useVitrineListSwr(
   query: VitrineListQuery,
@@ -58,7 +74,7 @@ export function useVitrineListSwr(
 ) {
   const listKey = vitrineListQueryKey(query);
   const retryNonce = options.retryNonce ?? 0;
-  const swrKey = `${listKey}#${retryNonce}`;
+  const swrKey = buildVitrineSwrKey(query, retryNonce);
 
   const ssrMatches =
     Boolean(options.fallbackData) &&
