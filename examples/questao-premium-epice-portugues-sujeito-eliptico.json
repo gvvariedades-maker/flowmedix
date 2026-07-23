@@ -179,12 +179,12 @@
           "correct": "Simples explícito = um núcleo visível; elíptico = um núcleo na desinência."
         },
         {
-          "label": "Em outra banca…",
-          "detail": "Trocam «Estou» por «Disseram» ou «Choveu» no mesmo formato.",
-          "correct": "Disseram sem referente → indeterminado; Choveu → sem sujeito."
+          "label": "Transferência",
+          "detail": "Classifique: «Choveu no plantão da emergência.»",
+          "correct": "Sem sujeito (fenômeno da natureza). Diferente de «Disseram» sem referente (= indeterminado) e de «Estou» (= elíptico)."
         }
       ],
-      "footer_rule": "E: elíptico — EU em ESTOU."
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique antes de ver a resposta."
     }
   ]
 }

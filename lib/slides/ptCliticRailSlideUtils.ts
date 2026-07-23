@@ -40,6 +40,22 @@ export interface PtCliticChip {
   tone: 'sky' | 'rose' | 'emerald' | 'slate' | 'amber';
 }
 
+export type PtCliticPosition = 'proclise' | 'mesoclise' | 'enclise';
+
+export interface PtCliticPositionOption {
+  letter: string;
+  example: string;
+  position: PtCliticPosition;
+}
+
+export interface PtCliticPositionBoardModel {
+  modelExample: string;
+  modelPosition: PtCliticPosition;
+  options: PtCliticPositionOption[];
+  answerLetter: string;
+  transferRule?: string;
+}
+
 const NORMALIZE_RE = /[\u0300-\u036f]/g;
 
 function normalize(text: string): string {
@@ -47,6 +63,72 @@ function normalize(text: string): string {
     .toLowerCase()
     .normalize('NFD')
     .replace(NORMALIZE_RE, '');
+}
+
+function stationToPosition(station: PtCliticRailStation): PtCliticPosition | null {
+  if (station === 'proclise' || station === 'mesoclise' || station === 'enclise') {
+    return station;
+  }
+  return null;
+}
+
+function firstQuotedText(text: string): string | null {
+  const match = text.match(/[«“"]([^»”"]+)[»”"]/);
+  return match?.[1]?.trim() || null;
+}
+
+/**
+ * Detecta questões de correspondência espacial (antes / dentro / depois) e
+ * converte os steps handcraft em um board comparativo. Retorna `null` para
+ * questões normativas (atrativo, infinitivo/particípio etc.), preservando o
+ * trilho legado.
+ */
+export function buildPtCliticPositionBoard(
+  steps: string[],
+): PtCliticPositionBoardModel | null {
+  if (steps.length < 4) return null;
+
+  const joined = normalize(steps.join(' '));
+  const isPositionMatch =
+    /antes, dentro ou depois do verbo|mesma posicao|reproduz.*posicao/.test(joined);
+  if (!isPositionMatch) return null;
+
+  const modelExample = firstQuotedText(steps[0] ?? '');
+  const modelPositionStep = steps.find(
+    (step, index) =>
+      index > 0 &&
+      !extractStepLetter(step) &&
+      /modelo pedido|modelo e|posicao do modelo/.test(normalize(step)),
+  );
+  const modelPosition = modelPositionStep
+    ? stationToPosition(inferRailStation(modelPositionStep))
+    : null;
+
+  const options = steps.flatMap<PtCliticPositionOption>((step) => {
+    const letter = extractStepLetter(step);
+    if (!letter) return [];
+    const example = firstQuotedText(step);
+    const position = stationToPosition(inferRailStation(step));
+    if (!example || !position) return [];
+    return [{ letter, example, position }];
+  });
+
+  const gabaritoStep = steps.find((step) => inferStepRole(step) === 'gabarito');
+  const answerLetter =
+    gabaritoStep?.match(/\bgabarito\s+([A-E])\b/i)?.[1]?.toUpperCase() ?? null;
+  const transferRule = steps.find((step) => inferStepRole(step) === 'transferencia');
+
+  if (!modelExample || !modelPosition || !answerLetter || options.length < 2) {
+    return null;
+  }
+
+  return {
+    modelExample,
+    modelPosition,
+    options,
+    answerLetter,
+    transferRule,
+  };
 }
 
 /** Infere a estação do trilho pelo texto (label + detail). */
@@ -84,7 +166,9 @@ export function inferRailStation(text: string): PtCliticRailStation {
 
 /** Extrai letra A–E do começo de um step ou label. */
 export function extractStepLetter(text: string): string | null {
-  const match = text.trim().match(/^([A-E])\s*[:.\-–—]/i);
+  const match = text
+    .trim()
+    .match(/^([A-E])(?:\s*[:.\-–—]|\s+(?=[«“"]))/i);
   return match ? match[1].toUpperCase() : null;
 }
 

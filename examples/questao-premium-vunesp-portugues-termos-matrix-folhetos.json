@@ -226,12 +226,12 @@
           "correct": "Modifica a situação de «foi», não o núcleo de «taxa»."
         },
         {
-          "label": "Em outra banca…",
-          "detail": "Podem trocar folhetos por UBS ou plantão.",
-          "correct": "Mesma matriz: T1 circunstância · T2 tempo (enquanto/quando)."
+          "label": "Transferência",
+          "detail": "Classifique: «No plantão, o técnico aferiu a PA enquanto o médico chegava.»",
+          "correct": "«No plantão» = circunstância (adjunto adverbial); «enquanto…» = tempo — mesma matriz T1/T2."
         }
       ],
-      "footer_rule": "E sobrou: adv. deslocado + loc. adverbial de tempo."
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique antes de ver a resposta."
     }
   ]
 }

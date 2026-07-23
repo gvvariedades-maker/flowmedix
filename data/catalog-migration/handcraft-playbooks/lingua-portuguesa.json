@@ -115,7 +115,7 @@
         ],
         "captures_dir": "artifacts/questao-review/questao-premium-vunesp-portugues-crase-funil",
         "secondary_captures_dir": "artifacts/questao-review/questao-premium-vunesp-portugues-crase-lacunas-ioga",
-        "note": "READY 2026-07-19: âncoras eliminação (Q506) + lacunas (ioga tec 3840787); moldes pt-crase-funnel 4/4."
+        "note": "READY 2026-07-19: âncoras eliminação (Q506) + lacunas (ioga tec 3840787); moldes pt-crase-funnel 4/4. Estudo ativo: board Sem à·Com à + transfer quiz (ver playbook estudo_ativo)."
       }
     },
     {
@@ -126,14 +126,20 @@
       "bespoke_target": "pt-clitic-rail",
       "brief": "artifacts/l3-brief-lingua-portuguesa-pt_pronomes_colocacao.md",
       "anchors": [
-        "examples/questao-premium-vunesp-portugues-colocacao-trilho.json"
+        "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+        "examples/questao-premium-avancasp-portugues-colocacao-posicao-piloto.json"
       ],
       "anchor_styles": {
         "eliminacao": {
           "golden_reference": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
           "anchor_slug": "questao-premium-vunesp-portugues-colocacao-trilho",
           "catalog_slug": "vunesp-sorocaba-colocacao-alcool-reescrita-3999766",
-          "note": "Âncora golden READY 2026-07-19 — Q178 caderno · tec 3999766 · VUNESP TEnf Sorocaba 2026 · gab. A · Elias M09 TE-simples"
+          "note": "Âncora golden READY — Q178 · tec 3999766 · VUNESP Sorocaba · gab. A · Elias M09 + Transferência Classifique/quiz (2026-07-23)"
+        },
+        "posicao": {
+          "golden_reference": "examples/questao-premium-avancasp-portugues-colocacao-posicao-piloto.json",
+          "anchor_slug": "questao-premium-avancasp-portugues-colocacao-posicao-piloto",
+          "note": "Âncora estilo posição — board Antes·Dentro·Depois + transfer quiz (estudo ativo 2026-07-23)"
         }
       },
       "visual_gallery": {
@@ -145,7 +151,7 @@
           "pt-clitic-rail-tap-flow",
           "pt-clitic-trap-arena"
         ],
-        "note": "READY 2026-07-19: âncora trilho (tec 3999766) + moldes pt-clitic-rail 4/4 wired."
+        "note": "READY: âncoras eliminação (trilho) + posição (board) com Transferência Classifique; moldes pt-clitic-rail 4/4."
       }
     },
     {
@@ -347,6 +353,40 @@
     "catalog:apply-lote --apply sem pedido explícito",
     "publicar referência TecConcursos no JSON"
   ],
+  "estudo_ativo": {
+    "doc": "Contrato TE-simples + quiz de transferência — player infere do JSON (lib/slides/transferQuiz.ts). Sem schema novo.",
+    "invariants": [
+      "meta.pedagogical_branch do ramo (ex. pt_crase, pt_pronomes_colocacao)",
+      "logic_flow: reveal_mode tap + steps com letras A–E + Gabarito X + último Em similares:",
+      "danger_zone: 1 item/letra errada com correct único + 1 item Transferência",
+      "Transferência: detail com Classifique: «frase nova»; correct classificável (não «Mesmo funil:…» genérico)",
+      "Linguagem TE-simples: posição/função antes do jargão (Antes/Dentro/Depois; Sem à/Com à)"
+    ],
+    "transfer_correct_by_branch": {
+      "pt_crase": {
+        "anchor": "examples/questao-premium-vunesp-portugues-crase-funil.json",
+        "secondary_anchor": "examples/questao-premium-vunesp-portugues-crase-lacunas-ioga.json",
+        "correct_prefix": ["Sem crase:", "Com à:", "Com a:"],
+        "example_correct": "Sem crase: Paris sem artigo — só a. Diferente de à Serra (com artigo).",
+        "quiz_ui": "Com à | Sem à"
+      },
+      "pt_pronomes_colocacao": {
+        "anchor": "examples/questao-premium-vunesp-portugues-colocacao-trilho.json",
+        "secondary_anchor": "examples/questao-premium-avancasp-portugues-colocacao-posicao-piloto.json",
+        "correct_tokens": ["próclise", "ênclise", "mesóclise", "antes do verbo", "depois do verbo", "dentro da forma"],
+        "example_correct": "Mesóclise: «lhe» aparece dentro da forma futura «dir-ei».",
+        "quiz_ui": "Antes do verbo | Dentro da forma | Depois do verbo"
+      }
+    },
+    "worker_checklist": [
+      "ESTUDO ATIVO (PT): âncora do ramo → logic_flow letra a letra + Em similares",
+      "danger_zone: item Transferência com Classifique: «…» (não «Em outra banca…» genérico)",
+      "pt_crase: correct inicia com Sem crase: ou Com à: (ativa quiz)",
+      "pt_pronomes_colocacao: correct com próclise/ênclise/mesóclise ou antes/depois/dentro",
+      "Não entregue transferência só com «Mesmo funil/trilho:…» — sem quiz no player",
+      "Gate: audit:questao-readiness --strict-v2-pedagogy → [READY]"
+    ]
+  },
   "validation": {
     "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
     "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",

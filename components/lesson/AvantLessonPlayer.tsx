@@ -30,6 +30,11 @@ import {
 } from '@/lib/estudar/questaoLayers';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
 import NeuroSlide from '@/components/slides/NeuroSlide';
+import {
+  ReverseStudyCompletionGateProvider,
+} from '@/components/lesson/ReverseStudyCompletionGate';
+import { MarcarEstudoConcluidoButton } from '@/components/lesson/MarcarEstudoConcluidoButton';
+import { getReverseStudyGateRequirements } from '@/lib/slides/transferQuiz';
 import { resolveQuestionFamilyId } from '@/components/slides/core/questionFamily';
 import {
   ReadableTextZoomProvider,
@@ -1123,6 +1128,10 @@ export default function AvantLessonPlayer({
   const slideMotion = getSlideVariants(slideKind, prefersReducedMotion);
   const currentSlideMicrotipKey = getReverseStudySlideMicrotipKey(currentSlide?.type ?? currentSlide?.layout_type);
   const totalSlides = slidesArray.length;
+  const reverseStudyGateKeys = useMemo(
+    () => getReverseStudyGateRequirements(slidesArray),
+    [slidesArray],
+  );
   const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
   
   // Gera hash único e robusto da questão para tema visual único
@@ -2026,6 +2035,7 @@ export default function AvantLessonPlayer({
             }
           >
             {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
+            <ReverseStudyCompletionGateProvider requiredKeys={reverseStudyGateKeys}>
             <EstudoReversoSlideZoomProvider key={slideAtual} slideKey={slideAtual}>
             <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-x-auto overflow-y-hidden">
               
@@ -2276,35 +2286,19 @@ export default function AvantLessonPlayer({
                       )}
                     </div>
                   ) : (
-                    <motion.div layout className="flex flex-col items-end gap-2 order-2 sm:order-none max-w-[min(100%,280px)] sm:max-w-none">
-                    <button
-                      type="button"
+                    <MarcarEstudoConcluidoButton
                       onClick={marcarEstudoConcluido}
                       disabled={marcandoConclusao}
-                      className="btn-editorial-primary group flex min-h-[44px] w-full max-w-[min(100%,280px)] items-center gap-2 rounded-full px-3 py-2.5 text-[9px] font-black uppercase tracking-wide transition-all disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-xs sm:tracking-widest"
-                    >
-                      <BadgeCheck size={16} className="shrink-0" />
-                      <span className="text-left leading-tight">
-                        {marcandoConclusao ? 'Salvando...' : (
-                          <>
-                            <span className="sm:hidden">Marcar estudado</span>
-                            <span className="hidden sm:inline">Marcar como Estudado</span>
-                          </>
-                        )}
-                      </span>
-                    </button>
-                    {conclusaoErro ? (
-                      <p role="alert" className="max-w-[280px] text-right text-[10px] leading-snug text-rose-600 sm:text-xs">
-                        {conclusaoErro}
-                      </p>
-                    ) : null}
-                    </motion.div>
+                      loading={marcandoConclusao}
+                      error={conclusaoErro}
+                    />
                   )}
                 </div>
               </div>
 
             </div>
             </EstudoReversoSlideZoomProvider>
+            </ReverseStudyCompletionGateProvider>
           </motion.div>
         )}
       </AnimatePresence>

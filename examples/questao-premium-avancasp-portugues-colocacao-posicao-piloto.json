@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "Técnico de Enfermagem",
+    "orgao": "Estudo ativo — posição",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Pronomes e colocação pronominal",
+    "pedagogical_branch": "pt_pronomes_colocacao",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-23",
+      "reviewer": "agent:elias-m09-posicao-estudo-ativo",
+      "guideline_snapshot": "Posição do átono (antes/dentro/depois) + atrativos; Transferência Classifique + quiz · Bechara / Cunha & Cintra · Elias M09",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-colocacao-pronominal",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra)",
+        "title": "Colocação pronominal — próclise / ênclise / mesóclise",
+        "year": 2024,
+        "covers": [
+          "posição do átono",
+          "atrativos",
+          "mesóclise no futuro"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "No trecho «O médico levou-me ao consultório», o pronome está em ênclise. Assinale a alternativa em que a colocação pronominal reproduz a mesma posição do modelo.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Acender-se-ão as luzes do centro cirúrgico.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Deitou-se porque não estava bem.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "O plantão que nos trouxe ao setor.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Não se salvaram os prontuários molhados.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Jamais me esquecerei daquele plantão.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Onde o pronome aparece?",
+      "chip_label": "Trilho pró · ên · meso",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pronomes e colocação pronominal"
+      },
+      "items": [
+        {
+          "label": "O que a banca testa",
+          "detail": "Reconhecer a posição do pronome: antes, dentro ou depois do verbo.",
+          "icon": "ScanSearch"
+        },
+        {
+          "label": "Próclise",
+          "detail": "Pronome antes do verbo: não se salvaram; jamais me esquecerei.",
+          "icon": "ArrowLeft"
+        },
+        {
+          "label": "Ênclise",
+          "detail": "Pronome depois do verbo: levou-me; deitou-se; entregaram-nos.",
+          "icon": "ArrowRight"
+        },
+        {
+          "label": "Mesóclise",
+          "detail": "No futuro formal, o pronome pode entrar na forma verbal: acender-se-ão.",
+          "icon": "Split"
+        },
+        {
+          "label": "Pegadinha-âncora",
+          "detail": "Não basta ver hífen: compare a posição do pronome na forma verbal.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Primeiro localize o verbo; depois veja onde o átono ficou."
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Resolva pela posição",
+      "chip_label": "Um toque = um corte",
+      "reveal_mode": "tap",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pronomes e colocação pronominal"
+      },
+      "steps": [
+        "Antes de tocar: em «levou-me», o pronome está antes, dentro ou depois do verbo?",
+        "Depois do verbo: o modelo pedido é ênclise.",
+        "A «Acender-se-ão»: pronome no meio do futuro → mesóclise. Elimine.",
+        "B «Deitou-se»: deitou + se; pronome depois do verbo → ênclise.",
+        "O «porque» vem depois; não atrai o pronome do verbo anterior.",
+        "C «Que nos trouxe»: o relativo «que» puxa «nos» → próclise. Elimine.",
+        "D «Não se salvaram»: a negação puxa «se» → próclise. Elimine.",
+        "E «Jamais me esquecerei»: «jamais» atrai → próclise. Elimine.",
+        "Gabarito B: «Deitou-se porque não estava bem.»",
+        "Em similares: ache a mesma posição do modelo; não classifique só pelo hífen."
+      ],
+      "footer_rule": "Ache a mesma posição do modelo. Não classifique só pelo hífen."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Regra de bolso",
+      "chip_label": "Decore isto",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pronomes e colocação pronominal"
+      },
+      "content": "Primeiro localize o verbo; depois veja onde o pronome ficou.",
+      "rows": [
+        {
+          "label": "Antes do verbo",
+          "value": "Próclise: não me chamou; quem lhe contou; jamais se atrasou.",
+          "badge": "info"
+        },
+        {
+          "label": "Dentro do futuro",
+          "value": "Mesóclise: entregar-me-á; acender-se-ão.",
+          "badge": "warn"
+        },
+        {
+          "label": "Depois do verbo",
+          "value": "Ênclise: chamou-me; deitou-se; entregaram-nos.",
+          "badge": "ok"
+        },
+        {
+          "label": "Atalho seguro",
+          "value": "Compare a posição. Não classifique apenas pela presença do hífen.",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Pronome logo após o verbo = ênclise."
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Pegadinhas e transferência",
+      "chip_label": "Armadilhas",
+      "bullet_style": "x_icon",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Pronomes e colocação pronominal"
+      },
+      "content": "Veja por que cada forma parecida não reproduz a posição do modelo.",
+      "items": [
+        {
+          "label": "A — Acender-se-ão",
+          "detail": "Parece ênclise por causa do hífen.",
+          "correct": "O pronome está dentro da forma futura; portanto, é mesóclise."
+        },
+        {
+          "label": "C — Que nos trouxe",
+          "detail": "O pronome fica perto do verbo e pode enganar.",
+          "correct": "O relativo «que» vem antes e atrai «nos»; portanto, há próclise."
+        },
+        {
+          "label": "D — Não se salvaram",
+          "detail": "O «se» aparece colado ao verbo na leitura.",
+          "correct": "A palavra negativa «não» atrai o pronome para antes do verbo."
+        },
+        {
+          "label": "E — Jamais me esquecerei",
+          "detail": "O verbo está no futuro, mas isso não basta para mesóclise.",
+          "correct": "«Jamais» é atrativo e mantém «me» antes do verbo: próclise."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Classifique: «Entregaram-me o prontuário no plantão.»",
+          "correct": "Ênclise: «me» aparece depois do verbo «entregaram»."
+        }
+      ],
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique antes de ver a resposta."
+    }
+  ]
+}

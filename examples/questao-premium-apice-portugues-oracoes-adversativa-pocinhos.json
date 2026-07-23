@@ -195,12 +195,12 @@
           "correct": "Aqui é aditivo (dois fatos paralelos) — sem contraste lealdade × deslealdade."
         },
         {
-          "label": "Em outra banca…",
-          "detail": "Podem usar «mas» explícito.",
-          "correct": "Mesmo trilho: oposição clara entre orações independentes."
+          "label": "Transferência",
+          "detail": "Classifique: «Estudei o protocolo, mas errei a dose.»",
+          "correct": "Adversativa coordenada: oposição clara (estudo × erro) entre orações independentes."
         }
       ],
-      "footer_rule": "Leia o sentido do conectivo — não rotule pelo formato."
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique antes de ver a resposta."
     }
   ]
 }

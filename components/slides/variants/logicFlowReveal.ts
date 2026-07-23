@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
+import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
 
 export type LogicFlowRevealMode = 'auto' | 'tap';
 
@@ -13,6 +14,7 @@ export function useLogicFlowReveal(
   revealMode: LogicFlowRevealMode = 'auto',
 ) {
   const prefersReducedMotion = useReducedMotion();
+  const { satisfy } = useReverseStudyCompletionGate();
   const [revealedSteps, setRevealedSteps] = useState<number[]>([]);
 
   const effectiveMode: LogicFlowRevealMode =
@@ -62,6 +64,10 @@ export function useLogicFlowReveal(
   const currentPasso = revealedSteps.length;
   const activeStepIndex =
     revealedSteps.length > 0 ? revealedSteps[revealedSteps.length - 1]! : 0;
+
+  useEffect(() => {
+    if (isComplete) satisfy('logic_flow_complete');
+  }, [isComplete, satisfy]);
 
   return {
     revealedSteps,

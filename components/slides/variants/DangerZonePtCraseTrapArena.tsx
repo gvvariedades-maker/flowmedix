@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, type KeyboardEvent } from 'react';
+import { useCallback, useEffect, useState, type KeyboardEvent } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Check, Filter, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
@@ -13,6 +13,12 @@ import {
   stageChips,
   type PtCraseChip,
 } from '@/lib/slides/ptCraseSlideUtils';
+import {
+  inferCraseQuizAnswer,
+  isTransferDangerItem,
+} from '@/lib/slides/transferQuiz';
+import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
+import { TransferCraseQuiz } from './TransferCraseQuiz';
 
 const CHIP_STYLES: Record<PtCraseChip['tone'], string> = {
   amber: 'bg-amber-100/90 text-amber-900 ring-amber-300/50',
@@ -144,6 +150,65 @@ function TrapCard({
   );
 }
 
+function TransferTrapCard({
+  index,
+  item,
+  onReveal,
+  onQuizAnswered,
+  prefersReducedMotion,
+}: {
+  index: number;
+  item: DangerZoneItem;
+  onReveal: () => void;
+  onQuizAnswered: () => void;
+  prefersReducedMotion: boolean | null;
+}) {
+  const label = item.label || item.title || 'Transferência';
+  const trapText = item.detail || item.description || '';
+  const correctText = typeof item.correct === 'string' ? item.correct.trim() : '';
+  const quizAnswer = inferCraseQuizAnswer(correctText);
+  const [quizDone, setQuizDone] = useState(false);
+
+  if (!quizAnswer) {
+    return (
+      <TrapCard
+        index={index}
+        item={item}
+        isRevealed={quizDone}
+        onReveal={() => {
+          setQuizDone(true);
+          onReveal();
+          onQuizAnswered();
+        }}
+        prefersReducedMotion={prefersReducedMotion}
+      />
+    );
+  }
+
+  return (
+    <motion.div
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: prefersReducedMotion ? 0 : index * 0.06 }}
+      className="w-full overflow-hidden rounded-[1.25rem] border border-amber-300/80 bg-gradient-to-br from-white via-amber-50/40 to-white p-4 shadow-sm"
+    >
+      <p className="mb-3 font-mono text-[10px] font-bold uppercase tracking-wide text-amber-800">
+        {label} · aplicação
+      </p>
+      <TransferCraseQuiz
+        promptDetail={trapText}
+        expected={quizAnswer}
+        revealedExplanation={quizDone ? correctText : undefined}
+        onAnswered={() => {
+          setQuizDone(true);
+          onReveal();
+          onQuizAnswered();
+        }}
+      />
+    </motion.div>
+  );
+}
+
 interface DangerZonePtCraseTrapArenaProps {
   content: string;
   items: DangerZoneItem[];
@@ -160,17 +225,31 @@ export function DangerZonePtCraseTrapArena({
   compareRevealMode = 'tap',
 }: DangerZonePtCraseTrapArenaProps) {
   const prefersReducedMotion = useReducedMotion();
-  const { revealItem, isItemRevealed, isTapMode } = useDangerZoneCompareReveal(
+  const { revealItem, isItemRevealed } = useDangerZoneCompareReveal(
     items.length,
     compareRevealMode,
   );
+  const { satisfy } = useReverseStudyCompletionGate();
 
-  const handleReveal = useCallback(
+  const allRevealed = items.every((_, index) => isItemRevealed(index));
+
+  useEffect(() => {
+    if (allRevealed) {
+      satisfy('danger_zone_all_revealed');
+    }
+  }, [allRevealed, satisfy]);
+
+  const reveal = useCallback(
     (index: number) => {
-      if (isTapMode) revealItem(index);
+      revealItem(index);
     },
-    [isTapMode, revealItem],
+    [revealItem],
   );
+
+  const handleQuizAnswered = useCallback(() => {
+    satisfy('transfer_quiz');
+    satisfy('transfer_revealed');
+  }, [satisfy]);
 
   return (
     <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-4">
@@ -187,16 +266,32 @@ export function DangerZonePtCraseTrapArena({
         ) : null}
 
         <div className="flex flex-col gap-3">
-          {items.map((item, index) => (
-            <TrapCard
-              key={index}
-              index={index}
-              item={item}
-              isRevealed={isItemRevealed(index)}
-              onReveal={() => handleReveal(index)}
-              prefersReducedMotion={prefersReducedMotion}
-            />
-          ))}
+          {items.map((item, index) => {
+            const label = item.label || item.title || '';
+            const detail = item.detail || item.description || '';
+            if (isTransferDangerItem(label, detail)) {
+              return (
+                <TransferTrapCard
+                  key={index}
+                  index={index}
+                  item={item}
+                  onReveal={() => reveal(index)}
+                  onQuizAnswered={handleQuizAnswered}
+                  prefersReducedMotion={prefersReducedMotion}
+                />
+              );
+            }
+            return (
+              <TrapCard
+                key={index}
+                index={index}
+                item={item}
+                isRevealed={isItemRevealed(index)}
+                onReveal={() => reveal(index)}
+                prefersReducedMotion={prefersReducedMotion}
+              />
+            );
+          })}
         </div>
 
         {footerRule ? (

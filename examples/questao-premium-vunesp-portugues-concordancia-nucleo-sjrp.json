@@ -223,12 +223,12 @@
           "correct": "«…que os mais velhos procurem contar…»."
         },
         {
-          "label": "Transferência — sujeito posposto",
-          "detail": "Em outra banca, o núcleo pode vir depois de «Faz-se», «Vendem-se», «Registram-se».",
-          "correct": "Sempre localize o núcleo lógico antes de julgar número do verbo."
+          "label": "Transferência",
+          "detail": "Classifique: «Faz-se necessário novos protocolos no setor.»",
+          "correct": "Núcleo lógico = «protocolos» (plural) → «Fazem-se necessários…». Ache o núcleo antes do número do verbo."
         }
       ],
-      "footer_rule": "Só B mantém núcleo e verbo alinhados."
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique antes de ver a resposta."
     }
   ]
 }

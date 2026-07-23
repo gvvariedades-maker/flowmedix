@@ -223,9 +223,9 @@
           "correct": "Plural: às ferramentas ou a ferramentas — nunca à."
         },
         {
-          "label": "Em outra banca…",
-          "detail": "Podem trocar Serra por à noite, às 8h ou a Paris.",
-          "correct": "Mesmo funil: à noite ≠ a Paris ≠ à Serra (com artigo)."
+          "label": "Transferência",
+          "detail": "Classifique: «Os turistas foram a Paris.»",
+          "correct": "Sem crase: Paris sem artigo — só a. Diferente de à Serra (com artigo)."
         }
       ],
       "footer_rule": "C sobrou: dirigir-se à Serra — a+a + teste ao."

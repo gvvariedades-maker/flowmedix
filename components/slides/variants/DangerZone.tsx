@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { AlertTriangle, CheckCircle2, ShieldAlert, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
@@ -9,6 +9,16 @@ import { dangerZoneHasCompareItems } from '../core/dangerZoneLayout';
 import { getCompareBackFaceLabel } from '@/lib/slides/goldenRuleTypography';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
+import {
+  inferCliticQuizAnswer,
+  inferCraseQuizAnswer,
+  isTransferDangerItem,
+  type CliticQuizChoice,
+  type CraseQuizChoice,
+} from '@/lib/slides/transferQuiz';
+import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
+import { TransferCliticQuiz } from './TransferCliticQuiz';
+import { TransferCraseQuiz } from './TransferCraseQuiz';
 import { DangerZoneTrapReveal } from './DangerZoneTrapReveal';
 import { DangerZoneCalendarMismatch } from './DangerZoneCalendarMismatch';
 import { DangerZoneTemperatureMismatch } from './DangerZoneTemperatureMismatch';
@@ -156,6 +166,9 @@ function CompareItemPanel({
   isTapMode,
   isRevealed,
   onReveal,
+  transferQuizAnswer,
+  craseQuizAnswer,
+  onTransferQuizAnswered,
 }: {
   index: number;
   label: string;
@@ -166,9 +179,54 @@ function CompareItemPanel({
   isTapMode: boolean;
   isRevealed: boolean;
   onReveal: () => void;
+  transferQuizAnswer?: CliticQuizChoice | null;
+  craseQuizAnswer?: CraseQuizChoice | null;
+  onTransferQuizAnswered?: () => void;
 }) {
   const backFaceLabel = getCompareBackFaceLabel(label, correctText);
-  const showCorrect = !isTapMode || isRevealed;
+  const [quizDone, setQuizDone] = useState(false);
+  const showQuiz = Boolean(transferQuizAnswer || craseQuizAnswer);
+  const showCorrect = showQuiz
+    ? quizDone
+    : !isTapMode || isRevealed;
+
+  if (showQuiz && transferQuizAnswer) {
+    return (
+      <div className="overflow-hidden rounded-xl border border-amber-200 bg-white shadow-sm">
+        <div className="border-l-4 border-l-amber-500 bg-gradient-to-br from-amber-50 to-white p-4">
+          <TransferCliticQuiz
+            promptDetail={trapText || label}
+            expected={transferQuizAnswer}
+            revealedExplanation={quizDone ? correctText : undefined}
+            onAnswered={() => {
+              setQuizDone(true);
+              onReveal();
+              onTransferQuizAnswered?.();
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (showQuiz && craseQuizAnswer) {
+    return (
+      <div className="overflow-hidden rounded-xl border border-amber-200 bg-white shadow-sm">
+        <div className="border-l-4 border-l-amber-500 bg-gradient-to-br from-amber-50 to-white p-4">
+          <TransferCraseQuiz
+            promptDetail={trapText || label}
+            expected={craseQuizAnswer}
+            revealedExplanation={quizDone ? correctText : undefined}
+            onAnswered={() => {
+              setQuizDone(true);
+              onReveal();
+              onTransferQuizAnswered?.();
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
@@ -230,6 +288,7 @@ function DangerZoneCompare({
     items.length,
     compareRevealMode,
   );
+  const { satisfy } = useReverseStudyCompletionGate();
   const [revealedIndices, setRevealedIndices] = useState<Set<number>>(() => new Set());
 
   const handleReveal = useCallback(
@@ -251,6 +310,10 @@ function DangerZoneCompare({
     : items.length;
   const allRevealed = revealedCount >= items.length;
 
+  useEffect(() => {
+    if (allRevealed) satisfy('danger_zone_all_revealed');
+  }, [allRevealed, satisfy]);
+
   return (
     <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-6 md:p-6 md:pb-8">
       {content ? (
@@ -267,6 +330,10 @@ function DangerZoneCompare({
           const correctText = typeof item.correct === 'string' ? item.correct.trim() : '';
           const label = item.label || item.title || `Ponto ${index + 1}`;
           const isRevealed = !isTapMode || revealedIndices.has(index);
+          const isTransfer = isTransferDangerItem(label, trapText);
+          const transferQuizAnswer = isTransfer ? inferCliticQuizAnswer(correctText) : null;
+          const craseQuizAnswer =
+            isTransfer && !transferQuizAnswer ? inferCraseQuizAnswer(correctText) : null;
 
           return (
             <motion.div
@@ -285,6 +352,12 @@ function DangerZoneCompare({
                 isTapMode={isTapMode}
                 isRevealed={isRevealed}
                 onReveal={() => handleReveal(index)}
+                transferQuizAnswer={transferQuizAnswer}
+                craseQuizAnswer={craseQuizAnswer}
+                onTransferQuizAnswered={() => {
+                  satisfy('transfer_quiz');
+                  satisfy('transfer_revealed');
+                }}
               />
             </motion.div>
           );

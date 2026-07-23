@@ -7,7 +7,7 @@
 | production_status | none |
 | next_unit | `handcraft_lote:verbos-tempos-modos-e-vozes-g01` |
 | blockers | — |
-| updated_at | 2026-07-21T07:52:07.678Z |
+| updated_at | 2026-07-23T20:02:08.700Z |
 ## Próxima conversa / SDK (copiar)
 ```text
 Continuar pipeline: Verbos — tempos, modos e vozes

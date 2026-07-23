@@ -111,6 +111,10 @@ Exit codes:
 
 Não cole o runbook inteiro em cada run SDK.
 
+### Estudo ativo (PT / playbooks com `estudo_ativo`)
+
+Se o playbook do pacote tiver `estudo_ativo.worker_checklist` (ex. Língua Portuguesa), o prompt de `handcraft_lote` **injeta** o checklist automaticamente — transferência classificável (`Sem crase:` / próclise…) para o quiz no player. Ver `lib/catalogMigration/pipelineWorkerPrompt.ts` + playbook `lingua-portuguesa.json`.
+
 ---
 
 ## Fluxo recomendado (200 slugs)

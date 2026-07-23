@@ -135,14 +135,12 @@ export function GoldenRulePtCraseFunnelBoard({
             <Filter className="h-3 w-3" aria-hidden />
             Funil de bolso
           </span>
-          {content ? (
-            <h2 className="font-display text-lg font-black leading-tight text-slate-900 md:text-xl">
-              {content}
-            </h2>
-          ) : null}
+          <h2 className="font-display text-lg font-black leading-tight text-slate-900 md:text-xl">
+            {content ?? 'Tem a + a?'}
+          </h2>
           <p className="flex items-center gap-1.5 font-body text-xs font-medium text-slate-600">
             <Hand className="h-3.5 w-3.5 shrink-0 text-amber-700" aria-hidden />
-            Toque cada estágio do funil
+            Toque cada regra — Sem à ou Com à
           </p>
         </div>
 

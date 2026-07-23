@@ -168,6 +168,19 @@ Negação (`não`, `nunca`), relativos (`que`, `quem`), indefinidos (`ninguém`,
 
 **Não** copiar todas as entries em todo slug. **Não** usar guideline como texto genérico no `danger_zone`.
 
+### Estudo ativo (SDK / handcraft novo)
+
+Contrato no playbook: `estudo_ativo` em `data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json`.
+
+| Ramo | Transferência `correct` (ativa quiz no player) |
+|------|-----------------------------------------------|
+| `pt_crase` | Prefixo `Sem crase:` ou `Com à:` + frase nova em `detail` |
+| `pt_pronomes_colocacao` | Tokens próclise/ênclise/mesóclise **ou** antes/depois/dentro do verbo |
+
+Âncoras: crase funil · colocação posição piloto. Player: `lib/slides/transferQuiz.ts` (sem schema novo).
+
+**Proibido na transferência:** só `Mesmo funil:…` / `Mesmo trilho:…` sem classificação — o gate de toque existe, o **quiz** não.
+
 ### Exemplo `meta.sources` (interno)
 
 ```json

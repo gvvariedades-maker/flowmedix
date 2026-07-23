@@ -1,4 +1,5 @@
 import {
+  buildPtCliticPositionBoard,
   inferRailStation,
   inferRowBoardBadge,
   inferStepRole,
@@ -27,6 +28,49 @@ describe('ptCliticRailSlideUtils — inferStepRole', () => {
     expect(
       inferStepRole('Em similares: há atrativo? → pró. Sem? → ên. Particípio? sem ênclise.'),
     ).toBe('transferencia');
+  });
+});
+
+describe('ptCliticRailSlideUtils — position board', () => {
+  const positionSteps = [
+    'Antes de tocar: em «levou-me», o pronome está antes, dentro ou depois do verbo?',
+    'Depois do verbo: o modelo pedido é ênclise.',
+    'A «Acender-se-ão»: pronome no meio do futuro → mesóclise. Elimine.',
+    'B «Deitou-se»: deitou + se; pronome depois do verbo → ênclise.',
+    'O «porque» vem depois; não atrai o pronome do verbo anterior.',
+    'C «Que nos trouxe»: o relativo «que» puxa «nos» → próclise. Elimine.',
+    'D «Não se salvaram»: a negação puxa «se» → próclise. Elimine.',
+    'E «Jamais me esquecerei»: «jamais» atrai → próclise. Elimine.',
+    'Gabarito B: «Deitou-se porque não estava bem.»',
+    'Em similares: ache a mesma posição do modelo; não classifique só pelo hífen.',
+  ];
+
+  it('monta as três posições e o gabarito sem hardcode da questão', () => {
+    const board = buildPtCliticPositionBoard(positionSteps);
+
+    expect(board).toMatchObject({
+      modelExample: 'levou-me',
+      modelPosition: 'enclise',
+      answerLetter: 'B',
+    });
+    expect(board?.options).toEqual([
+      { letter: 'A', example: 'Acender-se-ão', position: 'mesoclise' },
+      { letter: 'B', example: 'Deitou-se', position: 'enclise' },
+      { letter: 'C', example: 'Que nos trouxe', position: 'proclise' },
+      { letter: 'D', example: 'Não se salvaram', position: 'proclise' },
+      { letter: 'E', example: 'Jamais me esquecerei', position: 'proclise' },
+    ]);
+  });
+
+  it('preserva o trilho em questões normativas sem matching espacial', () => {
+    expect(
+      buildPtCliticPositionBoard([
+        'Comando: só uma reescrita coloca o átono no lugar certo.',
+        'B: «Já bebia-se» — Já atrai → precisa próclise.',
+        'Gabarito A — única que embarca.',
+        'Em similares: há atrativo? → pró.',
+      ]),
+    ).toBeNull();
   });
 });
 

@@ -54,7 +54,7 @@
   "question_data": {
     "instruction": "Para responder à questão, leia o texto que segue.\n\nLeia o trecho da tirinha: «5 pães franceses? Muito formal. 5 pão francês? Oxe, e eu num sei português não, é?» Observe que o humor depende, em parte, da pontuação. Sobre o uso dos sinais, analise as afirmativas:\n\nI - O ponto de interrogação expressa a dúvida do personagem quanto à forma correta.\nII - O ponto final em «Muito formal.» sugere conclusão e julgamento do falante.\nIII - A vírgula antes de «Oxe» marca pausa expressiva da oralidade regional.\n\nÉ CORRETO o que se afirma em:",
     "figure_policy": "transcribed",
-    "text_fragment": "5 pães franceses? Muito formal. 5 pão francês? Oxe, e eu num sei português não, é?",
+    "text_fragment": "5 pães franceses? Muito formal. 5 pão francês? Oxe, eu num sei português não, é?",
     "options": [
       {
         "id": "A",
@@ -216,12 +216,12 @@
           "correct": "I e II têm leituras corretas independentes."
         },
         {
-          "label": "Em outra banca…",
-          "detail": "Podem trocar tirinha por charge ou meme.",
-          "correct": "Mesmo método: função de cada sinal no texto dado."
+          "label": "Transferência",
+          "detail": "Classifique: «— Você vem? — Vou, sim.»",
+          "correct": "Travessão marca falas; a vírgula isola o advérbio «sim» — função no texto, não «decorar sinal»."
         }
       ],
-      "footer_rule": "D passa: I, II e III no contexto da fala."
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique antes de ver a resposta."
     }
   ]
 }

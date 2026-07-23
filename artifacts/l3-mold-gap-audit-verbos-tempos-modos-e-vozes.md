@@ -1,6 +1,6 @@
 # Auditoria L3 — gap de moldes
 
-Gerado em: 2026-07-21T07:51:57.012Z
+Gerado em: 2026-07-23T20:01:54.019Z
 
 ## Resumo
 

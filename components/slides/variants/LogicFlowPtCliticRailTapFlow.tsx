@@ -1,12 +1,13 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Waypoints } from 'lucide-react';
 import { resolveLucideIcon } from '../core/lucideIcon';
 import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import {
+  buildPtCliticPositionBoard,
   extractStepLetter,
   inferRailStation,
   inferStepRole,
@@ -14,6 +15,8 @@ import {
   type PtCliticRailStation,
   type PtCliticStepRole,
 } from '@/lib/slides/ptCliticRailSlideUtils';
+import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
+import { LogicFlowPtCliticPositionBoard } from './LogicFlowPtCliticPositionBoard';
 
 const CARD_PALETTES: Record<
   PtCliticStepRole,
@@ -90,7 +93,12 @@ export function LogicFlowPtCliticRailTapFlow({
   footerRule,
 }: LogicFlowPtCliticRailTapFlowProps) {
   const reduceMotion = useReducedMotion();
+  const { satisfy } = useReverseStudyCompletionGate();
   const normalizedSteps = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
+  const positionBoardModel = useMemo(
+    () => buildPtCliticPositionBoard(normalizedSteps),
+    [normalizedSteps],
+  );
   const [passed, setPassed] = useState<number[]>([]);
   const [animating, setAnimating] = useState(false);
 
@@ -98,6 +106,12 @@ export function LogicFlowPtCliticRailTapFlow({
     () => normalizedSteps.map((_, i) => i).filter((i) => !passed.includes(i)),
     [normalizedSteps, passed],
   );
+
+  useEffect(() => {
+    if (normalizedSteps.length > 0 && remaining.length === 0) {
+      satisfy('logic_flow_complete');
+    }
+  }, [normalizedSteps.length, remaining.length, satisfy]);
 
   const topIndex = remaining[0] ?? -1;
   const passCard = useCallback(() => {
@@ -112,6 +126,16 @@ export function LogicFlowPtCliticRailTapFlow({
       <div className="flex min-h-full items-center justify-center p-6">
         <p className="font-body text-slate-400">Nenhum passo definido</p>
       </div>
+    );
+  }
+
+  if (positionBoardModel) {
+    return (
+      <LogicFlowPtCliticPositionBoard
+        model={positionBoardModel}
+        theme={theme}
+        footerRule={footerRule}
+      />
     );
   }
 

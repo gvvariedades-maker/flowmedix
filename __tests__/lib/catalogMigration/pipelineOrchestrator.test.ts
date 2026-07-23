@@ -112,6 +112,31 @@ describe('pipelineWorkerPrompt', () => {
     expect(prompt).toContain('strict-v2-pedagogy');
     expect(prompt).toContain('NÃO --apply');
     expect(prompt).toContain('SOMENTE esta unidade');
-    expect(prompt.length).toBeLessThan(3500);
+    expect(prompt).toContain('ESTUDO ATIVO');
+    expect(prompt.length).toBeLessThan(4500);
+  });
+
+  it('handcraft_lote PT injeta checklist estudo_ativo do playbook', () => {
+    const state = PipelineRunStateSchema.parse({
+      version: 1,
+      subtopico: 'Língua Portuguesa',
+      pacote_prefix: 'lingua-portuguesa',
+      mode: 'handcraft',
+      total_slugs: 671,
+      handcraft_applied: 40,
+      next_unit: {
+        type: 'handcraft_lote',
+        id: 'lingua-portuguesa-g07',
+        lote: 'lingua-portuguesa-g07',
+      },
+      completed_units: [],
+      blockers: [],
+      updated_at: new Date().toISOString(),
+    });
+    const prompt = buildWorkerPrompt(state, state.next_unit!, { autoApply: false });
+    expect(prompt).toContain('ESTUDO ATIVO (playbook.estudo_ativo)');
+    expect(prompt).toContain('Sem crase:');
+    expect(prompt).toContain('pt_pronomes_colocacao');
+    expect(prompt).toContain('NÃO --apply');
   });
 });

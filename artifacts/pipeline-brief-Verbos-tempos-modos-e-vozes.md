@@ -28,36 +28,36 @@ Você é o melhor professor de concursos para **Técnicos de Enfermagem**:
 
 ## Pacote (registry)
 
-_Sem pacote no registry → Fase 0 (export + criar entrada)._
+| Campo | Valor |
+|-------|-------|
+| pacote_prefix | `verbos-tempos-modos-e-vozes` |
+| status | pending (0/45 slugs) |
+| production_status | none |
+| lote_pattern | `verbos-tempos-modos-e-vozes-g{NN}` |
+| anchor_glob | `examples/questao-premium-*-portugues-verbos-*.json` |
 
-## Fase atual detectada: **fase0**
+## Fase atual detectada: **fase1**
 
-### Fase 0 — Pré-voo (executar antes do 1º lote)
+### Fase 1 — Handcraft golden-v1
+
+Pré-requisito: `audit:golden-anchor-gate` pass|warn + `handcraft_allowed=true` (não g01 com gate=block).
+
+Por slug: export → family + branch + 4 slides v2 → readiness strict-v2 → lote.
 
 ```bash
-npm run audit:subtopico-inventory -- --subtopico="Verbos — tempos, modos e vozes"
-# Se drift: conversa Classify: Verbos — tempos, modos e vozes
-# Subtópico novo: conversa Mapeamento L3: Verbos — tempos, modos e vozes
-npm run catalog:export-lote -- --lote=<pacote>-completo --subtopico="Verbos — tempos, modos e vozes" --limit=10000
-# Criar entrada em handcraft-registry.json se ausente
-# npm run cluster:<pacote> (se existir)
 npm run audit:golden-anchor-gate -- --subtopico="Verbos — tempos, modos e vozes"
-# Se gate=block: Criar âncoras: Verbos — tempos, modos e vozes (skill avant-golden-anchor-bootstrap)
-npm run anchor:brief -- --subtopico="Verbos — tempos, modos e vozes"
+# Export (se ainda não feito):
+npm run catalog:export-lote -- --lote=verbos-tempos-modos-e-vozes-completo --subtopico="Verbos — tempos, modos e vozes" --limit=10000
+# Handcraft → data/catalog-migration/verbos-tempos-modos-e-vozes-g01/questions/<slug>.json
+npm run audit:questao-readiness -- --file=data/catalog-migration/verbos-tempos-modos-e-vozes-g01/questions/<slug>.json --strict-v2-pedagogy
+npm run validate:goldens -- --lote=verbos-tempos-modos-e-vozes-g01 --strict
+npm run audit:questao-readiness -- --lote=verbos-tempos-modos-e-vozes-g01 --strict-v2-pedagogy
+npm run catalog:apply-lote -- --lote=verbos-tempos-modos-e-vozes-g01 --dry-run
+# apply SOMENTE se usuário escrever: pode aplicar
+npm run catalog:apply-lote -- --lote=verbos-tempos-modos-e-vozes-g01 --apply
 ```
 
-**Fase 0.5:** agente na frente cria `examples/questao-premium-*.json` por ramo `novo_ramo` até gate pass.
-
-Depois: retomar com Fase 1 handcraft.
-
-## Pré-voo recomendado
-
-| Passo | Trigger / comando |
-|-------|-------------------|
-| Taxonomia | `Classify: Verbos — tempos, modos e vozes` (se inventário com drift) |
-| L3 | `Mapeamento L3: Verbos — tempos, modos e vozes` (subtópico novo ou sem cluster) |
-| Brief handcraft | `npm run handcraft:brief -- --subtopico="Verbos — tempos, modos e vozes"` |
-| Status programa | `npm run catalog:program-status` |
+**Gate:** `handcraft_applied === total_slugs`, `status: applied`.
 
 ## Leitura obrigatória
 

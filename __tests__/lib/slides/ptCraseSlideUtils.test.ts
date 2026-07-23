@@ -1,4 +1,5 @@
 import {
+  buildPtCraseFunnelBoard,
   inferRowBoardBadge,
   inferFunnelStage,
   inferStepRole,
@@ -28,6 +29,29 @@ describe('ptCraseSlideUtils — inferStepRole (passa/barrada)', () => {
     expect(inferStepRole('D: «comum à todos» — todos não aceita artigo a → sem crase.')).toBe(
       'eliminar_letra',
     );
+  });
+});
+
+describe('ptCraseSlideUtils — buildPtCraseFunnelBoard (TE-simples)', () => {
+  const steps = [
+    'Comando: só uma frase usa à do jeito certo. As outras caem no funil.',
+    'A: «à estudar» — estudar é verbo → use só a → sem crase.',
+    'B: «abordam à versatilidade» — o verbo pede o quê? (versatilidade). Não é a+a → sem crase.',
+    'D: «comum à todos» — todos não aceita artigo a → sem crase.',
+    'E: «à ferramentas» — à é singular; ferramentas é plural → errou o número.',
+    'C: dirigir-se pede a + a Serra → a+a. Teste: ao Monte → à Serra. Passa.',
+    'Gabarito C — única com a + artigo da Serra da Capivara.',
+    'Em similares: verbo pede a? masculino/verbo/pronome? a+a? Só então use à.',
+  ];
+
+  it('monta board Sem à / Com à a partir dos steps da âncora', () => {
+    const model = buildPtCraseFunnelBoard(steps);
+    expect(model).not.toBeNull();
+    expect(model!.answerLetter).toBe('C');
+    expect(model!.keyHasFusion).toBe(true);
+    expect(model!.options.some((o) => o.letter === 'A' && o.bucket === 'sem_crase')).toBe(true);
+    expect(model!.options.some((o) => o.letter === 'C' && o.bucket === 'com_crase')).toBe(true);
+    expect(model!.keyExample.toLowerCase()).toMatch(/serra|à/);
   });
 });
 

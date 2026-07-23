@@ -1,12 +1,13 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Filter } from 'lucide-react';
 import { resolveLucideIcon } from '../core/lucideIcon';
 import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import {
+  buildPtCraseFunnelBoard,
   extractStepLetter,
   inferFunnelStage,
   inferStepRole,
@@ -14,6 +15,8 @@ import {
   type PtCraseFunnelStage,
   type PtCraseStepRole,
 } from '@/lib/slides/ptCraseSlideUtils';
+import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
+import { LogicFlowPtCraseFunnelBoard } from './LogicFlowPtCraseFunnelBoard';
 
 const CARD_PALETTES: Record<
   PtCraseStepRole,
@@ -90,7 +93,12 @@ export function LogicFlowPtCraseFunnelTapFlow({
   footerRule,
 }: LogicFlowPtCraseFunnelTapFlowProps) {
   const reduceMotion = useReducedMotion();
+  const { satisfy } = useReverseStudyCompletionGate();
   const normalizedSteps = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
+  const funnelBoardModel = useMemo(
+    () => buildPtCraseFunnelBoard(normalizedSteps),
+    [normalizedSteps],
+  );
   const [passed, setPassed] = useState<number[]>([]);
   const [animating, setAnimating] = useState(false);
 
@@ -98,6 +106,12 @@ export function LogicFlowPtCraseFunnelTapFlow({
     () => normalizedSteps.map((_, i) => i).filter((i) => !passed.includes(i)),
     [normalizedSteps, passed],
   );
+
+  useEffect(() => {
+    if (!funnelBoardModel && normalizedSteps.length > 0 && remaining.length === 0) {
+      satisfy('logic_flow_complete');
+    }
+  }, [funnelBoardModel, normalizedSteps.length, remaining.length, satisfy]);
 
   const topIndex = remaining[0] ?? -1;
   const passCard = useCallback(() => {
@@ -112,6 +126,16 @@ export function LogicFlowPtCraseFunnelTapFlow({
       <div className="flex min-h-full items-center justify-center p-6">
         <p className="font-body text-slate-400">Nenhum passo definido</p>
       </div>
+    );
+  }
+
+  if (funnelBoardModel) {
+    return (
+      <LogicFlowPtCraseFunnelBoard
+        model={funnelBoardModel}
+        theme={theme}
+        footerRule={footerRule}
+      />
     );
   }
 
@@ -131,7 +155,7 @@ export function LogicFlowPtCraseFunnelTapFlow({
             Funil ativo
           </span>
           <h2 className="mt-2 font-display text-2xl font-black leading-tight text-slate-900">
-            Masc. → Verbo → <span className="text-amber-700">a + a</span>
+            Sem à → <span className="text-amber-700">a + a</span>
           </h2>
         </div>
         <div className="text-right">
@@ -166,11 +190,9 @@ export function LogicFlowPtCraseFunnelTapFlow({
               <span className="text-5xl" aria-hidden>
                 ✓
               </span>
-              <p className="font-body text-lg font-extrabold text-slate-900">
-                Funil concluído!
-              </p>
+              <p className="font-body text-lg font-extrabold text-slate-900">Funil concluído!</p>
               <p className="font-body text-base text-slate-500">
-                Em similares: o verbo pede a? masculino/verbo? tem a+a? Só então use à.
+                Em similares: o verbo pede a? tem a+a? Só então use à.
               </p>
             </div>
           ) : (
@@ -209,9 +231,13 @@ export function LogicFlowPtCraseFunnelTapFlow({
                   <div className="mb-4 flex items-start justify-between">
                     <span className="font-mono text-sm font-extrabold uppercase tracking-widest opacity-50">
                       {String(stepIndex + 1).padStart(2, '0')}
-                      {letter ? <span className={`ml-2 ${palette.accent}`}>· Letra {letter}</span> : null}
+                      {letter ? (
+                        <span className={`ml-2 ${palette.accent}`}>· Letra {letter}</span>
+                      ) : null}
                     </span>
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${palette.ico}`}>
+                    <div
+                      className={`flex h-14 w-14 items-center justify-center rounded-2xl ${palette.ico}`}
+                    >
                       <Icon className="h-7 w-7 text-slate-700" aria-hidden />
                     </div>
                   </div>
@@ -226,7 +252,9 @@ export function LogicFlowPtCraseFunnelTapFlow({
                     <div className="flex-1" />
                   )}
                   <div className="mt-auto flex items-center justify-between border-t border-black/5 pt-4">
-                    <span className={`rounded-full px-3 py-1 font-mono text-[10px] font-bold uppercase ${palette.tag}`}>
+                    <span
+                      className={`rounded-full px-3 py-1 font-mono text-[10px] font-bold uppercase ${palette.tag}`}
+                    >
                       {stageBadge(stage)}
                     </span>
                     {isTop ? (

@@ -11,9 +11,9 @@
     "content_standard": "golden-v1",
     "family": "conceito",
     "content_review": {
-      "reviewed_at": "2026-07-19",
+      "reviewed_at": "2026-07-23",
       "reviewer": "agent:elias-m09-te-simples-nota10",
-      "guideline_snapshot": "M09 Elias TE-simples — pergunta «Há fator de próclise?» → trilho pró/ên/meso + infinitivo × particípio (Bechara / Cunha & Cintra; pt-colocacao-pronominal)",
+      "guideline_snapshot": "M09 Elias TE-simples — pergunta «Há fator de próclise?» → trilho pró/ên/meso + infinitivo × particípio; Transferência com Classifique + quiz (Bechara / Cunha & Cintra; pt-colocacao-pronominal)",
       "exam_vs_current": "none"
     },
     "sources": [
@@ -217,12 +217,12 @@
           "correct": "Particípio não enclisa → tem-se dedicado."
         },
         {
-          "label": "Em outra banca…",
-          "detail": "Podem cobrar mesóclise (dir-lhe-ei) ou Me diga no início.",
-          "correct": "Mesmo trilho: atrativo? futuro sem atrativo = meso; início = ên."
+          "label": "Transferência",
+          "detail": "Classifique: «Dir-lhe-ei o resultado amanhã.»",
+          "correct": "Mesóclise: «lhe» aparece dentro da forma futura «dir-ei»."
         }
       ],
-      "footer_rule": "A sobrou: a manifestar-se — infinitivo no trilho."
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique antes de ver a resposta."
     }
   ]
 }

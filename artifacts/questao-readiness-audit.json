@@ -5,12 +5,12 @@
   "scanned": 1,
   "results": [
     {
-      "slug": "vunesp-sertaozinho-crase-lacunas-armandinho-3352615",
-      "subtopico": "Crase",
-      "ready_100": false,
+      "slug": "questao-premium-cpcon-portugues-pontuacao-tirinha-vf",
+      "subtopico": "Pontuação",
+      "ready_100": true,
       "tier_pass": {
         "A1": true,
-        "A2": false,
+        "A2": true,
         "A2.5": true,
         "A2b": true,
         "A3": true,
@@ -26,19 +26,13 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: D).",
           "severity": "warn"
         },
         {
           "tier": "A2",
-          "code": "l2_family_mismatch",
-          "message": "meta.family=\"conceito\" diverge do funil (inferido: legis)",
-          "severity": "error"
-        },
-        {
-          "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -54,9 +48,9 @@
           "severity": "info"
         }
       ],
-      "family": "conceito",
-      "pedagogical_branch": "pt_crase",
-      "inferred_branch": "pt_crase",
+      "family": "vf",
+      "pedagogical_branch": "pt_pontuacao",
+      "inferred_branch": "pt_pontuacao",
       "risk": {
         "risk_tier": "medio",
         "approval_mode": "auto_conditional",

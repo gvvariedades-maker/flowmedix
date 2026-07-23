@@ -2,6 +2,8 @@
  * Prompts curtos por unidade — evitar anexar o pipeline completo em cada run SDK.
  * @see docs/PIPELINE_ORCHESTRATOR.md
  */
+import { readFileSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
 import type { PipelineRunState, PipelineUnit } from '@/lib/catalogMigration/pipelineRunState';
 
 export type WorkerPromptOptions = {
@@ -10,6 +12,28 @@ export type WorkerPromptOptions = {
   /** Inclui Playwright visual-mold no ship. */
   includeVisualMolds?: boolean;
 };
+
+type PlaybookEstudoAtivo = {
+  worker_checklist?: string[];
+};
+
+function loadEstudoAtivoChecklist(pacotePrefix: string): string[] {
+  const path = join(
+    process.cwd(),
+    'data/catalog-migration/handcraft-playbooks',
+    `${pacotePrefix}.json`,
+  );
+  if (!existsSync(path)) return [];
+  try {
+    const raw = JSON.parse(readFileSync(path, 'utf8')) as {
+      estudo_ativo?: PlaybookEstudoAtivo;
+    };
+    const list = raw.estudo_ativo?.worker_checklist;
+    return Array.isArray(list) ? list.filter((s) => typeof s === 'string' && s.trim()) : [];
+  } catch {
+    return [];
+  }
+}
 
 export function buildWorkerPrompt(
   state: PipelineRunState,
@@ -71,12 +95,27 @@ export function buildWorkerPrompt(
 
     case 'handcraft_lote': {
       const lote = unit.lote ?? unit.id;
+      const estudoChecklist = loadEstudoAtivoChecklist(state.pacote_prefix);
+      const estudoBlock =
+        estudoChecklist.length > 0
+          ? [
+              '',
+              'ESTUDO ATIVO (playbook.estudo_ativo) — obrigatório em conteúdo novo:',
+              ...estudoChecklist.map((line) => `- ${line}`),
+            ]
+          : [
+              '',
+              'ESTUDO ATIVO (mínimo): danger_zone com Transferência + correct classificável;',
+              'logic_flow reveal_mode tap + Em similares: no último step. Ver playbook se existir estudo_ativo.',
+            ];
+
       return [
         ...common,
         `Handcraft golden-v1 — lote ${lote} somente.`,
         `Playbook (se existir): ${playbookRef}`,
         'Skills: @.cursor/skills/avant-golden-anchor-handcraft/SKILL.md @.cursor/skills/avant-json-template/SKILL.md @.cursor/skills/professor-para-concurso/SKILL.md',
         'Contrato slides v2: concept_map → logic_flow (reveal_mode tap) → golden_rule → danger_zone.',
+        ...estudoBlock,
         'Gates obrigatórios ao fechar o lote:',
         `  npm run audit:questao-readiness -- --lote=${lote} --strict-v2-pedagogy`,
         `  npm run validate:goldens -- --lote=${lote} --strict`,

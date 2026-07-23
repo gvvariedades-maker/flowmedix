@@ -215,12 +215,12 @@
           "correct": "Vocativo isolado; trilho você irá intacto."
         },
         {
-          "label": "Em outra banca…",
-          "detail": "Podem trocar Rita por aposto ou oração intercalada.",
-          "correct": "Mesmo teste: o que isola? sujeito|verbo livre?"
+          "label": "Transferência",
+          "detail": "Classifique: «João, o técnico, chegou cedo.»",
+          "correct": "Aposto isolado por vírgulas; sujeito|verbo livres (João chegou)."
         }
       ],
-      "footer_rule": "B sobrou: Rita, = vocativo; você irá = trilho livre."
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique antes de ver a resposta."
     }
   ]
 }

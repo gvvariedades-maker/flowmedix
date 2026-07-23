@@ -149,6 +149,114 @@ export function stageBadge(stage: PtCraseFunnelStage): string {
   }
 }
 
+/** Bucket TE-simples do board (sem jargão T1/T2/T3 na UI). */
+export type PtCraseBucket = 'sem_crase' | 'com_crase';
+
+export interface PtCraseFunnelOption {
+  letter: string;
+  example: string;
+  bucket: PtCraseBucket;
+  stage: PtCraseFunnelStage;
+}
+
+export interface PtCraseFunnelBoardModel {
+  /** Trecho com à correta (do step que passa). */
+  keyExample: string;
+  /** Resposta esperada no Passo 1 («tem a + a?»). */
+  keyHasFusion: boolean;
+  options: PtCraseFunnelOption[];
+  answerLetter: string;
+  transferRule?: string;
+}
+
+function firstQuotedText(text: string): string | null {
+  const match = text.match(/[«“"]([^»”"]+)[»”"]/);
+  return match?.[1]?.trim() || null;
+}
+
+/** Extrai trecho curto para o board (aspas → à/às → início do step). */
+function extractCraseExample(step: string): string | null {
+  const quoted = firstQuotedText(step);
+  if (quoted) return quoted;
+
+  const withArticle = step.match(
+    /\b(?:[\p{L}-]+\s+)?(?:à|às)\s+[\p{L}]+(?:\s+(?:da|de|do|das|dos)\s+[\p{L}]+)*/u,
+  );
+  if (withArticle?.[0]) return withArticle[0].trim();
+
+  const rest = step.replace(/^[A-E]\s*[:.\-–—]\s*/i, '').trim();
+  if (!rest) return null;
+  const head = rest.split(/\s*[—–→]|\.\s/)[0]?.trim() ?? rest;
+  return head.length > 64 ? `${head.slice(0, 61)}…` : head;
+}
+
+function roleToBucket(role: PtCraseStepRole): PtCraseBucket | null {
+  if (role === 'validar_letra') return 'com_crase';
+  if (role === 'eliminar_letra') return 'sem_crase';
+  return null;
+}
+
+/**
+ * Detecta funil letra-a-letra e monta board comparativo Sem à · Com à.
+ * Retorna null se faltar estrutura (fallback no tap-flow legado).
+ */
+export function buildPtCraseFunnelBoard(steps: string[]): PtCraseFunnelBoardModel | null {
+  if (steps.length < 4) return null;
+
+  const options = steps.flatMap<PtCraseFunnelOption>((step) => {
+    const letter = extractStepLetter(step);
+    if (!letter) return [];
+    const role = inferStepRole(step);
+    const bucket = roleToBucket(role);
+    if (!bucket) return [];
+    const example = extractCraseExample(step);
+    if (!example) return [];
+    return [
+      {
+        letter,
+        example,
+        bucket,
+        stage: inferFunnelStage(step),
+      },
+    ];
+  });
+
+  const gabaritoStep = steps.find((step) => inferStepRole(step) === 'gabarito');
+  const answerLetter =
+    gabaritoStep?.match(/\bgabarito\s+([A-E])\b/i)?.[1]?.toUpperCase() ??
+    options.find((o) => o.bucket === 'com_crase')?.letter ??
+    null;
+
+  const passStep =
+    steps.find(
+      (step) =>
+        extractStepLetter(step) === answerLetter && inferStepRole(step) === 'validar_letra',
+    ) ??
+    steps.find((step) => extractStepLetter(step) === answerLetter);
+
+  const keyExample =
+    (passStep ? extractCraseExample(passStep) : null) ??
+    options.find((o) => o.letter === answerLetter)?.example ??
+    null;
+
+  const transferRule = steps.find((step) => inferStepRole(step) === 'transferencia');
+
+  if (!answerLetter || !keyExample || options.length < 2) {
+    return null;
+  }
+
+  const hasPass = options.some((o) => o.bucket === 'com_crase' && o.letter === answerLetter);
+  if (!hasPass) return null;
+
+  return {
+    keyExample,
+    keyHasFusion: true,
+    options,
+    answerLetter,
+    transferRule,
+  };
+}
+
 /**
  * Badge do painel golden (P0): "barra" só quando o exemplo é sem crase;
  * "valida à" / "passa" no estágio que confirma à; "portátil" no teste ao.
