@@ -42,6 +42,8 @@ Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cache
 
 ## UI / visual
 
+**Onboarding designer:** [`docs/DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) (App UI vs NeuroSlides).
+
 | Tarefa | Trigger | Rule / skill |
 |--------|---------|--------------|
 | Polish vitrine / player / dashboard | `Visual:` · `Polish vitrine` · `Polish player` · `craft UI` | [`.cursor/rules/avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md) |

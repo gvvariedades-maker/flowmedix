@@ -3,7 +3,7 @@
 Complemento de [`SKILL.md`](SKILL.md). Use ao polishar **vitrine** (`/estudar`) ou **player** (`AvantLessonPlayer`).  
 Objetivo: área logada com disciplina de produto (Stripe/Linear/Vercel) **sem** apagar o diferencial cyber do reverso.
 
-**Rule operacional:** [`.cursor/rules/avant-ui-visual.mdc`](../../../.cursor/rules/avant-ui-visual.mdc) (triggers + checklist §6) · cópia: [`docs/cursor/avant-ui-visual.mdc`](../../../docs/cursor/avant-ui-visual.mdc).
+**Onboarding designer:** [`docs/DESIGNER_FRONT_AVANT.md`](../../DESIGNER_FRONT_AVANT.md) · **Rule operacional:** [`.cursor/rules/avant-ui-visual.mdc`](../../../.cursor/rules/avant-ui-visual.mdc) (triggers + checklist §6) · cópia: [`docs/cursor/avant-ui-visual.mdc`](../../../docs/cursor/avant-ui-visual.mdc).
 
 ## Ordem de polish
 

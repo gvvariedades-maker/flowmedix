@@ -11,7 +11,8 @@ alwaysApply: false
 
 > **Cópia versionada** — espelhar em [`.cursor/rules/avant-ui-visual.mdc`](../../.cursor/rules/avant-ui-visual.mdc).  
 > **Skill canônica:** [`docs/skills/avant-ui-visual/SKILL.md`](../skills/avant-ui-visual/SKILL.md)  
-> **Reference craft:** [`docs/skills/avant-ui-visual/reference-microsaas-craft.md`](../skills/avant-ui-visual/reference-microsaas-craft.md)
+> **Reference craft:** [`docs/skills/avant-ui-visual/reference-microsaas-craft.md`](../skills/avant-ui-visual/reference-microsaas-craft.md)  
+> **Onboarding designer:** [`docs/DESIGNER_FRONT_AVANT.md`](../DESIGNER_FRONT_AVANT.md)
 
 Quando a mensagem contiver **`Visual:`**, **`Polish vitrine`**, **`Polish player`**, **`micro-SaaS`**, **`craft UI`**, ou pedido explícito de melhoria visual do app, executar **sem pedir modo**:
 

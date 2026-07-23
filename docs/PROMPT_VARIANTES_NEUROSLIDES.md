@@ -19,6 +19,7 @@
 
 **Quando usar este prompt**
 
+- **Onboarding designer:** trilho NeuroSlides em [`DESIGNER_FRONT_AVANT.md`](DESIGNER_FRONT_AVANT.md)
 - **Fase 3b obrigatória** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) — todo ramo forte (`molde_redesign` ou `molde_inedito`). Limiar e checklist: [`RAMO_FORTE_QUICK_REF.md`](RAMO_FORTE_QUICK_REF.md).
 - Orquestração Cursor: skill [`brief-enfermagem`](../.cursor/skills/brief-enfermagem/SKILL.md) (TE) ou [`brief-lingua-portuguesa`](../.cursor/skills/brief-lingua-portuguesa/SKILL.md) (PT) — gates/inputs; **este doc** continua sendo o corpo do brief
 - Antes de implementar React ([`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) §3) para qualquer pacote bespoke 4/4

@@ -16,6 +16,8 @@ Skill de **inteligência visual por ramo**: eleva o *como se vê* a decisão da 
 
 **Frase norte:** inspiração de retenção, não template de cópia. Visual sem gesto = decoração.
 
+**Onboarding designer (hub):** [`docs/DESIGNER_FRONT_AVANT.md`](../../DESIGNER_FRONT_AVANT.md) — Trilho B (NeuroSlides).
+
 **Não** substitui:
 - `avant-golden-anchor-handcraft` / `professor-*` — **o que** ensinar
 - `brief-enfermagem` / `brief-lingua-portuguesa` — brief 4/4 / decisão L3

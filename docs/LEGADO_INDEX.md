@@ -81,7 +81,7 @@ Documentos de “✅ implementado em data X” — úteis para arqueologia, não
 | [`COMPARATIVO_MOCKUP_SLIDES_VS_AVANT.md`](COMPARATIVO_MOCKUP_SLIDES_VS_AVANT.md) | Análise mockup × produto |
 | [`ISSUES_PARIDADE_MOCKUP_SLIDES.md`](ISSUES_PARIDADE_MOCKUP_SLIDES.md) | Issues sugeridas a partir do comparativo |
 
-**Direção visual atual:** [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) · skill `.cursor/skills/avant-ui-visual/`
+**Direção visual atual:** [`DESIGNER_FRONT_AVANT.md`](DESIGNER_FRONT_AVANT.md) (hub) · [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) · skill `.cursor/skills/avant-ui-visual/`
 
 ---
 

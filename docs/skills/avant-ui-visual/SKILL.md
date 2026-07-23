@@ -13,7 +13,8 @@ description: >-
 # AVANT UI Visual — Cyber Clinical + Editorial v2
 
 > **Rule operacional (triggers):** [`.cursor/rules/avant-ui-visual.mdc`](../../../.cursor/rules/avant-ui-visual.mdc) — ativa com `Visual:`, `Polish vitrine`, `Polish player`, `micro-SaaS`, `craft UI`. Cópia versionada: [`docs/cursor/avant-ui-visual.mdc`](../../../docs/cursor/avant-ui-visual.mdc).  
-> **Esta skill** = conhecimento detalhado; a **rule** = quando executar + checklist ship.
+> **Esta skill** = conhecimento detalhado; a **rule** = quando executar + checklist ship.  
+> **Onboarding humano (hub):** [`docs/DESIGNER_FRONT_AVANT.md`](../../DESIGNER_FRONT_AVANT.md) — App UI vs NeuroSlides; ordem de leitura.
 
 Skill derivada da VEGA, **só com o que melhora o front do app**. Stack obrigatória: Next 16, React 19, TypeScript, Tailwind 4, Radix/shadcn, Framer Motion quando já houver motion no arquivo.
 
@@ -177,6 +178,7 @@ Se outra skill trouxer tokens `--bg`, `--brand`, `--t1`: mapear com a tabela em 
 
 | Arquivo | Conteúdo |
 |---------|----------|
+| [`docs/DESIGNER_FRONT_AVANT.md`](../../DESIGNER_FRONT_AVANT.md) | Hub onboarding designer front |
 | [`.cursor/rules/avant-ui-visual.mdc`](../../../.cursor/rules/avant-ui-visual.mdc) | Rule operacional — triggers, checklist ship, anti-padrões |
 | [`docs/cursor/avant-ui-visual.mdc`](../../../docs/cursor/avant-ui-visual.mdc) | Cópia versionada da rule |
 | [`reference-microsaas-craft.md`](reference-microsaas-craft.md) | Checklist vitrine + player, estados, anti-padrões craft |
