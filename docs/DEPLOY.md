@@ -1,8 +1,9 @@
 # Guia de deploy — AVANT
 
-**Última atualização:** 2026-03-31
+**Última atualização:** 2026-07-23
 
-Este guia é o ponto de entrada operacional: checklist, Vercel, variáveis e verificação pós-deploy. Para o inventário técnico (o que já existe no código vs. melhorias opcionais), use [`AUDITORIA_DEPLOY.md`](./AUDITORIA_DEPLOY.md).
+Este guia é o ponto de entrada operacional: checklist, Vercel, variáveis e verificação pós-deploy. Para o inventário técnico (o que já existe no código vs. melhorias opcionais), use [`AUDITORIA_DEPLOY.md`](./AUDITORIA_DEPLOY.md).  
+**Hub segurança eng:** [`SECURITY_ENG_AVANT.md`](./SECURITY_ENG_AVANT.md) (Trilho B — ops / produção). Barra: [`SECURITY_SCORECARD.md`](./SECURITY_SCORECARD.md) · IR: [`SECURITY_INCIDENT_RUNBOOK.md`](./SECURITY_INCIDENT_RUNBOOK.md).
 
 ---
 
@@ -11,7 +12,7 @@ Este guia é o ponto de entrada operacional: checklist, Vercel, variáveis e ver
 1. **Build de produção verde** — `npm run build` passa com as mesmas variáveis que o ambiente de produção usará (ou equivalentes).
 2. **Dados e auth** — Supabase com migrações aplicadas, RLS revisado para o que for exposto ao cliente.
 3. **Smoke test** — login, rota principal do aluno e uma API crítica respondendo após o deploy.
-4. **Observabilidade mínima** — health check, logs no painel do host; Sentry/analytics são opcionais.
+4. **Observabilidade mínima** — health check + logs no host; **Sentry em Production = scorecard #8** (PASS humano; não bloqueia build local sem DSN).
 
 Performance (LCP, INP, CLS) depende de medir em produção (Vercel Analytics, Web Vitals, ou ferramentas similares), não só de Lighthouse local.
 
@@ -26,8 +27,10 @@ Performance (LCP, INP, CLS) depende de medir em produção (Vercel Analytics, We
 | `NEXT_PUBLIC_SUPABASE_URL` | Production, Preview | Sim |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Production, Preview | Sim |
 | `SUPABASE_SERVICE_ROLE_KEY` | Production | **Obrigatória** (cache, webhooks, RLS bypass server-side) |
-| `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | Production | Recomendado (rate limit distribuído; sem isso, fallback in-memory + warn) |
-| `ADMIN_EMAIL` | Production | **Obrigatório** (`ADMIN_EMAIL` ou `ADMIN_EMAILS`). Preview na Vercel **não** bloqueia o build se ausente (`VERCEL_ENV=preview`); recomenda-se definir em Preview (todas as branches) para testar admin. |
+| `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | Production | **Scorecard #7** — rate limit distribuído; sem isso, fallback in-memory + warn (`validate:env`). Aceita alias `KV_REST_API_*` (Vercel Marketplace). |
+| `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN` | Production | **Scorecard #8** — observabilidade. Ausente → warn + `/api/client-error`; **não** falha build. Preferir `SENTRY_DSN` no server; público só se necessário no browser. |
+| `SENTRY_AUTH_TOKEN` / `SENTRY_ORG` / `SENTRY_PROJECT` | CI (build) | Opcional — upload de source maps; sem isso stack traces minificados. |
+| `ADMIN_EMAIL` | Production | **Obrigatório** (`ADMIN_EMAIL` ou `ADMIN_EMAILS`). Preview na Vercel **não** bloqueia o build se ausente (`VERCEL_ENV=preview`); recomenda-se definir em Preview (todas as branches) para testar admin. **Scorecard #11:** MFA nessas contas (Supabase Auth). |
 | `GOOGLE_API_KEY` | Production | Opcional (recursos de IA) |
 | `SUPABASE_WEBHOOK_SECRET` | Production | Webhooks Supabase (cache + auth); ver [Webhooks Supabase](#webhooks-supabase) |
 | `WEBHOOK_SECRET` | Production | Legado — fallback em `/api/cache/revalidate`; preferir `SUPABASE_WEBHOOK_SECRET` |
@@ -65,6 +68,8 @@ Consulte `supabase/migrations/README.md` se existir.
 ### 4. Painel Supabase (produção)
 
 - **Authentication → URL configuration:** Site URL e redirect URLs alinhados ao domínio real (Vercel preview vs. produção).
+- **Authentication → MFA:** TOTP nas contas `ADMIN_EMAIL` / `ADMIN_EMAILS` (scorecard #11 — [Ops produção](#ops-produção-scorecard-pass-humano)).
+- **Database → Backups:** confirmar plano + anotar RTO/RPO no [`SECURITY_INCIDENT_RUNBOOK.md`](./SECURITY_INCIDENT_RUNBOOK.md).
 - **RLS:** políticas revisadas para tabelas usadas pelo app.
 - **Webhooks:** configurar antes de remover o envio client-side de boas-vindas (ver abaixo).
 
@@ -85,7 +90,56 @@ Signup com sessão imediata continua usando `POST /api/auth/welcome-email` (requ
 
 Detalhes e SQL de cache: [`WEBHOOK_SETUP.md`](./WEBHOOK_SETUP.md).
 
-**Checklist Vercel Production:** sem variáveis `E2E_*` nem `NEXT_PUBLIC_E2E_DASHBOARD_BYPASS`; Upstash Redis conectado (Marketplace) ou aceitar warn de rate limit in-memory; `npm run smoke:rls` após `db:push` com migration RLS de `modulos_estudo`.
+**Checklist Vercel Production:** sem variáveis `E2E_*` nem `NEXT_PUBLIC_E2E_DASHBOARD_BYPASS`; Upstash + Sentry conforme [Ops produção](#ops-produção-scorecard-pass-humano); `npm run smoke:rls` após `db:push` com migration RLS de `modulos_estudo`.
+
+---
+
+## Ops produção (scorecard PASS humano)
+
+Itens **#7 Upstash**, **#8 Sentry**, **#11 MFA admin**, **backup**, **#12 paper drill**, **#13 pentest** — executáveis por humano; **não** falham `npm run build` / clone se DSN ou Upstash ausentes. Barra e coluna “Feito em”: [`SECURITY_SCORECARD.md`](./SECURITY_SCORECARD.md) § Checklist ops (produção). Rituais: [`SECURITY_RITUAIS.md`](./SECURITY_RITUAIS.md). Inventário técnico: [`AUDITORIA_DEPLOY.md`](./AUDITORIA_DEPLOY.md).
+
+### 1. Sentry (scorecard #8)
+
+1. Criar projeto no [Sentry](https://sentry.io) (Next.js).
+2. Vercel → Settings → Environment Variables → **Production**:
+   - `SENTRY_DSN` (server; preferido) e/ou `NEXT_PUBLIC_SENTRY_DSN` (client se precisar).
+3. Opcional no CI/build: `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT` (source maps).
+4. Redeploy Production. Confirmar: `validate:env` sem “Sentry desativado”; gerar erro de teste e ver no painel.
+5. Código já wired: `instrumentation.ts` / `instrumentation-client.ts`, `sentry.server.config.ts`, `sentry.edge.config.ts`.
+
+Marcar #8 PASS no scorecard com data (screenshot env list **sem** valor do DSN).
+
+### 2. Upstash / rate limit (scorecard #7)
+
+1. Vercel Marketplace → Upstash Redis (ou KV) no projeto, **ou** colar `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` em Production.
+2. Redeploy. `validate:env` sem warn “Upstash incompleto”.
+3. Smoke: 11º `POST /api/pagamentos/criar-sessao` no mesmo IP/min → **429** (matriz pós-deploy abaixo).
+
+Marcar #7 PASS no scorecard.
+
+### 3. Admin MFA (scorecard #11 — parte ops)
+
+1. Confirmar `ADMIN_EMAIL` / `ADMIN_EMAILS` em Production.
+2. Supabase Dashboard → **Authentication** → MFA / fatores: ativar TOTP para **cada** e-mail admin (App Authenticator).
+3. Login admin em `/admin` exige segundo fator.
+
+Parte código (`requireAdminApi`) já coberta por testes/CI; MFA no provedor é evidência humana → #11 PASS quando ambos ok.
+
+### 4. Backup Supabase (suporte a IR)
+
+1. Dashboard → **Settings → Database / Backups**: confirmar backups automáticos do plano.
+2. Anotar RTO/RPO e quem restaura em [`SECURITY_INCIDENT_RUNBOOK.md`](./SECURITY_INCIDENT_RUNBOOK.md) § Backup.
+3. Mensal: olhada rápida junto com [`SUPABASE_MAINTENANCE.md`](./SUPABASE_MAINTENANCE.md).
+
+### 5. Paper drill (scorecard #12)
+
+1. Escolher cenário (ex.: leak hipotético de `STRIPE_WEBHOOK_SECRET`).
+2. Percorrer checklist de [`SECURITY_INCIDENT_RUNBOOK.md`](./SECURITY_INCIDENT_RUNBOOK.md) **sem** rotacionar secrets reais (ou rotacionar só em staging).
+3. Preencher tabela § Paper drill + marcar #12 PASS no scorecard.
+
+### 6. Rituais contínuos + pentest (scorecard #13)
+
+Cadência mensal (1 domínio + `smoke:rls`), trimestral (threat model) e pentest focado: [`SECURITY_RITUAIS.md`](./SECURITY_RITUAIS.md). #13 PASS só após remediação P0/P1 — não falha build local.
 
 ---
 
@@ -105,12 +159,52 @@ A Vercel fornece HTTPS. Após apontar domínio customizado, atualize `NEXT_PUBLI
 
 ## CI/CD (GitHub Actions)
 
-O workflow em `.github/workflows/test.yml` inclui:
+O workflow em [`.github/workflows/test.yml`](../.github/workflows/test.yml) inclui:
 
-1. **Job `build`** — `npm ci` + `npm run build` (mesmo fluxo da Vercel: `validate:env` + `next build`). Usa variáveis **placeholder** para Supabase, suficientes para passar `lib/env.ts` sem apontar para um projeto real.
-2. **Jobs de teste** — unitários (Jest) e E2E (Playwright).
+| Job | O que faz | Quando bloqueia |
+|-----|-----------|-----------------|
+| `build` | `npm ci` + `npm run build` (placeholders Supabase) | Sempre |
+| `test-unit` | Jest (inclui `__tests__/security/` — IDOR / admin 403 / contrato anon RLS) | Sempre |
+| `typecheck` / `architecture-check` | Ship gates | Push sempre; PR se paths `ship` |
+| `security-audit` | `npm audit --omit=dev --audit-level=high` | Sempre (só high/critical) |
+| `smoke-rls` | `npm run smoke:rls` (anon: módulos, histórico, **matrículas**; service vs sellable) | Só se secrets `SMOKE_*` existirem; senão **skip + aviso** |
+| `test-e2e` / `perf-smoke` | Playwright / perf | Condicional por paths |
 
-**Opcional:** se quiser que o CI use o mesmo projeto Supabase da Vercel (por exemplo para detectar falhas só em dados reais), altere o job `build` no workflow e injete `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY` via [secrets do repositório](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+Dependabot: [`.github/dependabot.yml`](../.github/dependabot.yml) — npm semanal (agrupa patch/minor) + github-actions mensal.
+
+### CI secrets (`smoke-rls`)
+
+Configure em **GitHub → Settings → Secrets and variables → Actions** (staging ou prod de leitura; nunca commit):
+
+| Secret | Mapeado no job para | Uso |
+|--------|---------------------|-----|
+| `SMOKE_SUPABASE_URL` | `NEXT_PUBLIC_SUPABASE_URL` | URL do projeto Supabase alvo do smoke |
+| `SMOKE_SUPABASE_ANON_KEY` | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Anon key (RLS anon) |
+| `SMOKE_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_SERVICE_ROLE_KEY` | Comparação service vs anon |
+
+Sem os três secrets, o job `smoke-rls` emite warning e **não falha** o workflow (clone/fork sem secrets continua verde). Com secrets, falha se o smoke detectar leak RLS.
+
+SQL companion (opcional, SQL Editor): [`supabase/scripts/rls_performance_smoke.sql`](../supabase/scripts/rls_performance_smoke.sql).
+
+### Branch protection (`main`) — checklist ops
+
+Em **Settings → Branches → Branch protection rule** para `main` (e `develop` se aplicável):
+
+- [ ] Require a pull request before merging
+- [ ] Require status checks to pass: **`architecture-check`**, **`security-audit`**
+- [ ] Incluir **`smoke-rls`** na lista obrigatória **somente depois** de configurar os secrets `SMOKE_*` (senão PRs ficam bloqueados em skip não-obrigatório — o job passa com warning, mas preferir exigir só quando o smoke de fato roda)
+- [ ] Preferir também `build` + `test-unit` se a equipe aceitar o tempo de CI
+
+Marcar evidência no [`SECURITY_SCORECARD.md`](./SECURITY_SCORECARD.md) (itens 1, 2, 9).
+
+### Secret scanning + push protection — checklist ops
+
+Em **Settings → Code security and analysis** (ou Security):
+
+- [ ] Secret scanning — Enabled
+- [ ] Push protection — Enabled
+
+Não é arquivo de código; evidência no scorecard (notas de promoção).
 
 ---
 
@@ -149,9 +243,12 @@ curl -sS "https://SEU-DOMINIO.vercel.app/api/health"
 
 - **Logs:** Vercel → Deployments → deployment → Logs.
 - **Health:** monitorar `/api/health` (UptimeRobot, cron, etc.) se fizer sentido.
-- **Sentry / analytics:** opcionais; ver `AUDITORIA_DEPLOY.md`.
+- **Sentry:** scorecard #8 — ver [Ops produção](#ops-produção-scorecard-pass-humano); inventário em [`AUDITORIA_DEPLOY.md`](./AUDITORIA_DEPLOY.md).
+- **Analytics / Web Vitals:** opcionais (produto), não fazem parte do scorecard de segurança.
 
 **Rollback:** Vercel → Deployments → deployment anterior estável → **Promote to Production**.
+
+**Incidente:** [`SECURITY_INCIDENT_RUNBOOK.md`](./SECURITY_INCIDENT_RUNBOOK.md) · barra: [`SECURITY_SCORECARD.md`](./SECURITY_SCORECARD.md).
 
 ---
 
@@ -168,7 +265,11 @@ curl -sS "https://SEU-DOMINIO.vercel.app/api/health"
 
 ## Documentação relacionada
 
-- [`AUDITORIA_DEPLOY.md`](./AUDITORIA_DEPLOY.md) — inventário técnico e melhorias opcionais.
+- [`AUDITORIA_DEPLOY.md`](./AUDITORIA_DEPLOY.md) — inventário técnico e lacunas.
+- [`SECURITY_SCORECARD.md`](./SECURITY_SCORECARD.md) — barra PASS/FAIL (incl. ops produção + #13 pentest).
+- [`SECURITY_RITUAIS.md`](./SECURITY_RITUAIS.md) — mensal / trimestral / pentest focado.
+- [`SECURITY_INCIDENT_RUNBOOK.md`](./SECURITY_INCIDENT_RUNBOOK.md) — IR + paper drill + RTO/RPO.
+- [`SECURITY_ENG_AVANT.md`](./SECURITY_ENG_AVANT.md) — hub Trilho B (ops).
 - [`.env.example`](../.env.example) — lista de variáveis com comentários.
 
 ---

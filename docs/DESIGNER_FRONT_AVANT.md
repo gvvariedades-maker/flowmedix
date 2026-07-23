@@ -2,7 +2,8 @@
 
 Leitura estimada: **~5 minutos**. Hub de descoberta — **não** duplica tokens nem checklists.
 
-> **Frase-guia:** duas skins, dois trilhos. Tokens vivem no código; este arquivo só aponta.
+> **Frase-guia:** duas skins, dois trilhos. Tokens vivem no código; este arquivo só aponta.  
+> **Segurança de app/infra:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) (hub separado).
 
 ---
 
@@ -12,7 +13,7 @@ Leitura estimada: **~5 minutos**. Hub de descoberta — **não** duplica tokens 
 |------------------------|--------|---------------|
 | Vitrine `/estudar`, player (enunciado), dashboard, login, shell | **A — App UI** | [Ordem A](#trilho-a--app-ui) |
 | NeuroSlides / estudo reverso (gesto, moldes, brief 4/4) | **B — NeuroSlides** | [Ordem B](#trilho-b--neuroslides) |
-| Comportamento + código (bug, API, feature) | Engenharia | [`AGENTS.md`](../AGENTS.md) · `Feature:` / `Bug:` — **não** polish visual |
+| Comportamento + código (bug, API, feature) | Engenharia | [`AGENTS.md`](../AGENTS.md) · [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) · `Feature:` / `Bug:` — **não** polish visual |
 
 **Não misturar:** polish de vitrine ≠ design de molde de slide. Skills e triggers são distintos.
 

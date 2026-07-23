@@ -97,7 +97,7 @@ Reincidência do **mesmo** anti-padrão **2×** → novo check nesse script + li
 | Zona | Exemplos | Agente |
 |------|----------|--------|
 | **Verde** (fecha com gates) | UI no design system, bug com teste, CRUD simples, copy, endpoint Zod atrás de auth existente | Implementar → `check:ship` → declarar Done |
-| **Vermelha** (revisão humana obrigatória) | `proxy.ts` / sessão, `lib/cache.ts`, RLS/policies, Stripe/webhooks, migrations Supabase, service role em superfície nova | Implementar com diff mínimo, rodar gates, **não declarar “seguro para prod”** sem o usuário revisar; em PR usar Bugbot + Security Review ([`PROMPT_META_AUDITORIA_AVANT.md`](../PROMPT_META_AUDITORIA_AVANT.md) §7) |
+| **Vermelha** (revisão humana obrigatória) | `proxy.ts` / sessão, `lib/cache.ts`, RLS/policies, Stripe/webhooks, migrations Supabase, service role em superfície nova | Implementar com diff mínimo, rodar gates, **não declarar “seguro para prod”** sem o usuário revisar; em PR usar Bugbot + Security Review ([`SECURITY_ENG_AVANT.md`](../SECURITY_ENG_AVANT.md) · [`PROMPT_META_AUDITORIA_AVANT.md`](../PROMPT_META_AUDITORIA_AVANT.md) §7) |
 
 Zona vermelha **não** impede o agente de codar — impede declarar pronto para produção sem flag explícita ao usuário.
 

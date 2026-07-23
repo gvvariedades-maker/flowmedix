@@ -26,7 +26,8 @@ Rule: [`.cursor/rules/eng-feature.mdc`](../.cursor/rules/eng-feature.mdc) · Gua
 
 Cópias versionadas no Git (se a rule local sumir após clone, copiar para `.cursor/rules/`): [`docs/cursor/eng-feature.mdc`](cursor/eng-feature.mdc) · [`docs/cursor/avant-engineering.mdc`](cursor/avant-engineering.mdc)
 
-Auditoria **por risco** (o que o gate não cobre): [`ENG_AUDITORIA_POR_RISCO.md`](ENG_AUDITORIA_POR_RISCO.md) — não auditar “toda a estrutura” no dia a dia.
+Auditoria **por risco** (o que o gate não cobre): [`ENG_AUDITORIA_POR_RISCO.md`](ENG_AUDITORIA_POR_RISCO.md) — não auditar “toda a estrutura” no dia a dia.  
+**Hub segurança:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) · [`SECURITY_SCORECARD.md`](SECURITY_SCORECARD.md) · rituais [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md).
 
 ---
 

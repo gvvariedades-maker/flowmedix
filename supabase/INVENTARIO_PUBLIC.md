@@ -1,6 +1,6 @@
 # Inventário — schema `public` (AVANT)
 
-Última atualização: **2026-06-04** (baseline em [`docs/SUPABASE_MAINTENANCE.md`](../docs/SUPABASE_MAINTENANCE.md)).
+Última atualização: **2026-07-23** (ledger Stripe `stripe_webhook_events`; baseline em [`docs/SUPABASE_MAINTENANCE.md`](../docs/SUPABASE_MAINTENANCE.md)).
 
 Projeto Supabase: **`ozgouenqrofnvgrlgfwd`**.
 
@@ -13,6 +13,7 @@ Projeto Supabase: **`ozgouenqrofnvgrlgfwd`**.
 | `study_notebooks` / `study_notebook_items` | Cadernos do aluno |
 | `concursos` / `concurso_modulos` / `concurso_matriculas` | Catálogo, vínculos, entitlements |
 | `concurso_purchases` | Checkout Stripe + webhook |
+| `stripe_webhook_events` | Idempotência webhook Stripe por `event.id` (service role) |
 | `lp_templates` / `lp_pages` | Landings de concurso |
 | `email_templates` | CMS de e-mails (admin, service role) |
 | `invite_links` / `invite_redemptions` | Convites Pro temporário (service role) |
@@ -33,6 +34,7 @@ Bloqueio para `anon`/`authenticated`; acesso via `createServerSupabase()` (servi
 | `email_templates` | `email_templates_service_all` (FOR ALL TO service_role) |
 | `invite_links` | `invite_links_service_all` |
 | `invite_redemptions` | `invite_redemptions_service_all` |
+| `stripe_webhook_events` | `stripe_webhook_events_service_all` (`20260723120000`) |
 
 ## Tabelas legadas (não existem no banco)
 
@@ -90,5 +92,6 @@ Assinaturas com `p_bancas` / `p_assuntos` (`text[]`): migration `20260529143147_
 | `20260604150000` | Revoke trigger wrapper simulado + RLS service_role em `email_templates` / `invite_*` |
 | `20260529143147` | Multi banca/assunto nas RPCs vitrine/simulado |
 | `20260530055807` | `avant_catalog_stats` |
+| `20260723120000` | `stripe_webhook_events` — ledger `event.id` (service_role only) |
 
 Drift de versões local ↔ remoto: ver baseline em [`docs/SUPABASE_MAINTENANCE.md`](../docs/SUPABASE_MAINTENANCE.md).

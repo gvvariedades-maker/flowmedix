@@ -4,7 +4,7 @@ Runbook repetível para deploy, smoke e revisão mensal. Baseline de produção 
 
 **Projeto:** `ozgouenqrofnvgrlgfwd` (ref da URL `https://ozgouenqrofnvgrlgfwd.supabase.co`)
 
-**Docs relacionados:** [`supabase/INVENTARIO_PUBLIC.md`](../supabase/INVENTARIO_PUBLIC.md), [`SUPABASE_MAX_ROWS.md`](./SUPABASE_MAX_ROWS.md), [`SCALE_HEALTH.md`](./SCALE_HEALTH.md), [`WEBHOOK_SETUP.md`](./WEBHOOK_SETUP.md), [`SISTEMA_CACHE.md`](./SISTEMA_CACHE.md)
+**Docs relacionados:** [`SECURITY_ENG_AVANT.md`](./SECURITY_ENG_AVANT.md) (hub segurança), [`SECURITY_SCORECARD.md`](./SECURITY_SCORECARD.md) (ops #7–#13), [`SECURITY_RITUAIS.md`](./SECURITY_RITUAIS.md) (mensal domínio + trimestral threat + pentest), [`DEPLOY.md`](./DEPLOY.md) § Ops produção, [`SECURITY_INCIDENT_RUNBOOK.md`](./SECURITY_INCIDENT_RUNBOOK.md) (backup RTO/RPO), [`supabase/INVENTARIO_PUBLIC.md`](../supabase/INVENTARIO_PUBLIC.md), [`SUPABASE_MAX_ROWS.md`](./SUPABASE_MAX_ROWS.md), [`SCALE_HEALTH.md`](./SCALE_HEALTH.md), [`WEBHOOK_SETUP.md`](./WEBHOOK_SETUP.md), [`SISTEMA_CACHE.md`](./SISTEMA_CACHE.md)
 
 ---
 
@@ -41,7 +41,10 @@ Admin (sessão): `GET /api/admin/scale-health` — mesmo payload que `npm run sc
 4. **Cache:** teste manual — alterar um módulo no Laboratório e ver vitrine atualizar (webhook) ou em até ~5–15 min (TTL cache).
 5. **Crons Vercel** (`vercel.json`): matrículas `0 3 * * *` → `/api/admin/manutencao/expirar-matriculas`; retenção simulado `0 4 1 * *` → `/api/admin/manutencao/simulado-retention` com `Authorization: Bearer ${CRON_SECRET}`.
 6. **Auth Dashboard:** conferir [Leaked password protection](#auth-leaked-password-protection) (ação manual no Dashboard).
-7. **Índices “unused” (INFO):** não remover antes de ~30 dias de carga real em produção.
+7. **Admin MFA:** contas em `ADMIN_EMAIL` / `ADMIN_EMAILS` com TOTP ativo (scorecard #11 — [`DEPLOY.md`](DEPLOY.md) § Ops produção).
+8. **Backups:** confirmar backups do plano + RTO/RPO no [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) § Backup.
+9. **Índices “unused” (INFO):** não remover antes de ~30 dias de carga real em produção.
+10. **Segurança (paralelo):** 1 domínio de [`ENG_AUDITORIA_POR_RISCO.md`](ENG_AUDITORIA_POR_RISCO.md) + `npm run smoke:rls` — log em [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md) (não duplicar checklist aqui).
 
 ---
 
@@ -61,6 +64,7 @@ Executar **tudo** do checklist mensal acima, mais:
 | 8 | Retenção simulado | `GET /api/admin/manutencao/simulado-retention` + cron Vercel | 200 com `CRON_SECRET` |
 | 9 | Inventário RPC | Revisar [`supabase/INVENTARIO_PUBLIC.md`](../supabase/INVENTARIO_PUBLIC.md) | RPCs novas documentadas |
 | 10 | Baseline | Atualizar seção [Baseline](#baseline--snapshot-2026-06-04) abaixo | migrations count, advisors, row counts |
+| 11 | Threat model (segurança) | Revisar 4 fluxos em [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md) | Log em [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md) |
 
 **Tipos:** `types/database.ts` é hand-curated para o app; o drift de schema usa snapshot gerado (`types/database.supabase.snapshot.ts`). MCP Supabase `generate_typescript_types` é equivalente ao `supabase gen types typescript --linked`.
 

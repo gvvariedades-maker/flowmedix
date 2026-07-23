@@ -1,6 +1,7 @@
 # Checklist de PR para Migrations (Supabase)
 
-Use este checklist em todo PR que adiciona ou altera migrations.
+Use este checklist em todo PR que adiciona ou altera migrations.  
+**Hub segurança eng:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) (Trilho A — migrations).
 
 ## 1) Naming e estrutura
 
@@ -40,6 +41,23 @@ Use este checklist em todo PR que adiciona ou altera migrations.
 
 - [ ] Documento técnico atualizado (ex.: `docs/SCALE_HEALTH.md`, `docs/SUPABASE_MAX_ROWS.md`)
 - [ ] Notas de operação/rollback registradas no PR
+- [ ] Se tabela nova: entrada em [`supabase/INVENTARIO_PUBLIC.md`](../supabase/INVENTARIO_PUBLIC.md)
+
+### Evidência — `stripe_webhook_events` (2026-07-23)
+
+| Item | Status |
+|------|--------|
+| Migration | `supabase/migrations/20260723120000_stripe_webhook_events.sql` |
+| RLS | ENABLE + policy `stripe_webhook_events_service_all` (TO service_role); REVOKE anon/authenticated |
+| Handler | `lib/stripe/webhookRouteHandler.ts` + `lib/stripe/webhookEventLedger.ts` (claim `processing` → dispatch → `processed`; release em falha retriável; `in_flight` → 503) |
+| Testes | `__tests__/pagamentos/webhook.test.ts`, `__tests__/pagamentos/webhookEventLedger.test.ts` |
+| Inventário | `supabase/INVENTARIO_PUBLIC.md` |
+| `db:push` / staging | **Revisão humana obrigatória** (zona vermelha) antes de aplicar remoto |
+| `check:db-types --update` | Após `db:push` em staging/remoto linkado |
+
+**Ops — claim stuck:** se `status=processing` órfão (release falhou), Stripe recebe 503 em retries até timeout; remediar com `DELETE FROM public.stripe_webhook_events WHERE event_id = 'evt_…';` (service role / SQL Editor) e reenviar evento no Stripe Dashboard.
+
+**Rollback:** `DROP TABLE IF EXISTS public.stripe_webhook_events;` (handler volta a depender só de idempotência state-based em `concurso_purchases` / upserts Pro).
 
 ## Comandos rápidos
 

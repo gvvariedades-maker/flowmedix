@@ -14,7 +14,7 @@ Uma tela: **tarefa → o que escrever no chat → rule / doc**. Onboarding longo
 | Refactor sem mudar comportamento | `Refactor: <escopo>` | idem |
 | Guardrails permanentes (sempre) | — | [`.cursor/rules/avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc) · cópia [`docs/cursor/avant-engineering.mdc`](docs/cursor/avant-engineering.mdc) |
 | Done / ship-gate | `npm run check:ship` | `validate:env` + `typecheck` + `check:architecture` + `lint` + `test` |
-| Review de PR (zona amarela/vermelha) | Bugbot + Security Review | [`docs/PROMPT_META_AUDITORIA_AVANT.md`](docs/PROMPT_META_AUDITORIA_AVANT.md) §7 |
+| Review de PR (zona amarela/vermelha) | Bugbot + Security Review | [`docs/SECURITY_ENG_AVANT.md`](docs/SECURITY_ENG_AVANT.md) · [`docs/PROMPT_META_AUDITORIA_AVANT.md`](docs/PROMPT_META_AUDITORIA_AVANT.md) §7 |
 
 Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cached.example.tsx` · `client-component-fetch.example.tsx` · `cache-fn.example.ts`.
 
@@ -82,6 +82,8 @@ npm run build               # quando tocou app/ UI crítica (além do ship)
 
 ## Zona de risco (engenharia)
 
+**Onboarding segurança:** [`docs/SECURITY_ENG_AVANT.md`](docs/SECURITY_ENG_AVANT.md) (código/PR · ops · Além do gate). Barra: [`docs/SECURITY_SCORECARD.md`](docs/SECURITY_SCORECARD.md).
+
 | Zona | Fecha quem |
 |------|------------|
 | Verde (UI DS, bug+teste, CRUD Zod) | Agente + `check:ship` |
@@ -90,6 +92,6 @@ npm run build               # quando tocou app/ UI crítica (além do ship)
 
 Detalhe: [`docs/ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) · matriz em [`avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc) · cópia [`docs/cursor/avant-engineering.mdc`](docs/cursor/avant-engineering.mdc).
 
-Auditoria humana por domínio (auth / cache / RLS / Stripe / player): [`docs/ENG_AUDITORIA_POR_RISCO.md`](docs/ENG_AUDITORIA_POR_RISCO.md).
+Além do gate — por domínio (auth / cache / RLS / Stripe / player): [`docs/ENG_AUDITORIA_POR_RISCO.md`](docs/ENG_AUDITORIA_POR_RISCO.md) · IR: [`docs/SECURITY_INCIDENT_RUNBOOK.md`](docs/SECURITY_INCIDENT_RUNBOOK.md) · rituais + pentest: [`docs/SECURITY_RITUAIS.md`](docs/SECURITY_RITUAIS.md).
 
 **Loop:** mesmo anti-padrão **2×** → novo gate em `scripts/check-architecture-patterns.ts` + registro no changelog de [`ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) (§ Loop de melhoria contínua).

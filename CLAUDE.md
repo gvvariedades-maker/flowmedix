@@ -710,6 +710,8 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 
 ## 10. O que NUNCA fazer
 
+**Onboarding segurança (hub):** [`docs/SECURITY_ENG_AVANT.md`](docs/SECURITY_ENG_AVANT.md) — trilhos código/PR · ops · Além do gate. Barra: [`docs/SECURITY_SCORECARD.md`](docs/SECURITY_SCORECARD.md).
+
 ### Código e infra
 
 - ✗ `console.log` / `console.error` solto em produção → use `logger` de [`lib/logger.ts`](lib/logger.ts)
@@ -773,6 +775,12 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`SISTEMA_CACHE.md`](docs/SISTEMA_CACHE.md) | Cache aprofundado (cuidado com APIs obsoletas) |
 | [`SISTEMA_TEMAS_UNICOS.md`](docs/SISTEMA_TEMAS_UNICOS.md) | Temas por slide |
 | [`DEPLOY.md`](docs/DEPLOY.md) / [`DEPLOY_CHECKLIST.md`](DEPLOY_CHECKLIST.md) | Deploy |
+| [`SECURITY_ENG_AVANT.md`](docs/SECURITY_ENG_AVANT.md) | Hub onboarding segurança eng — código/PR · ops · Além do gate |
+| [`SECURITY_SCORECARD.md`](docs/SECURITY_SCORECARD.md) | Barra PASS/FAIL (13 itens CI/código/ops; #13 pentest) |
+| [`SECURITY_THREAT_MODEL.md`](docs/SECURITY_THREAT_MODEL.md) | STRIDE leve — login, admin, checkout, webhooks |
+| [`SECURITY_INCIDENT_RUNBOOK.md`](docs/SECURITY_INCIDENT_RUNBOOK.md) | IR 1 página — rotacionar secrets, smoke RLS, paper drill |
+| [`SECURITY_RITUAIS.md`](docs/SECURITY_RITUAIS.md) | Mensal domínio + trimestral threat + pentest focado |
+| [`ENG_AUDITORIA_POR_RISCO.md`](docs/ENG_AUDITORIA_POR_RISCO.md) | Checklist humano auth/cache/RLS/Stripe (o que o gate não pega) |
 | [`TESTES_QUICK_START.md`](docs/TESTES_QUICK_START.md) | Jest e Playwright |
 | [`ZOOM_MOBILE_POLICY.md`](docs/ZOOM_MOBILE_POLICY.md) | Pinch vs toolbar A+/A− no mobile (Modelos A/B/E) |
 | [`DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) | Hub onboarding designer front — App UI vs NeuroSlides |

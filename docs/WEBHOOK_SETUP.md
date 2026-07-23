@@ -1,5 +1,7 @@
 # Configuração de Webhook do Supabase (cache + Auth)
 
+**Hub segurança eng:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) (Trilho B — ops).
+
 ## Visão geral
 
 O AVANT invalida cache de duas formas:

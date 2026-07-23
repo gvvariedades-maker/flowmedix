@@ -43,7 +43,7 @@ Espelho do ADR de conteúdo [`DECISAO_AUTO_APROVACAO_RISCO.md`](../DECISAO_AUTO_
 | **Amarela** — agente implementa; humano amostra | Nova rota API com auth padrão; mudança em player/vitrine com Playwright existente; refactor limitado com testes verdes | Agente entrega; humano confere diff/PR |
 | **Vermelha** — revisão humana obrigatória | [`proxy.ts`](../../proxy.ts) / sessão; [`lib/cache.ts`](../../lib/cache.ts); RLS/policies Supabase; Stripe/webhooks; migrations; `SUPABASE_SERVICE_ROLE_KEY` / `lib/env.ts` sensível | Humano aprova antes de merge/ship |
 
-Handoff de PR em zona amarela/vermelha: Bugbot + Security Review — [`PROMPT_META_AUDITORIA_AVANT.md`](../PROMPT_META_AUDITORIA_AVANT.md) §7.
+Handoff de PR em zona amarela/vermelha: Bugbot + Security Review — [`SECURITY_ENG_AVANT.md`](../SECURITY_ENG_AVANT.md) · [`PROMPT_META_AUDITORIA_AVANT.md`](../PROMPT_META_AUDITORIA_AVANT.md) §7.
 
 ## Antes de mudanças amplas (silencioso, sem narrar passo a passo)
 

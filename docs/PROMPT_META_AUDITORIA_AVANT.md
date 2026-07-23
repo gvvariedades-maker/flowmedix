@@ -226,7 +226,8 @@ Modelo apply: apply:imunizacao-ready-batch (se existir e PASS preflight)
 
 ## 7. Prompt engenharia (Bugbot + Security)
 
-Checklist local por domínio (gate vs humano): [`ENG_AUDITORIA_POR_RISCO.md`](ENG_AUDITORIA_POR_RISCO.md).
+**Hub onboarding segurança:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) (Trilho C — Além do gate).  
+Checklist local por domínio (gate vs humano): [`ENG_AUDITORIA_POR_RISCO.md`](ENG_AUDITORIA_POR_RISCO.md). Barra: [`SECURITY_SCORECARD.md`](SECURITY_SCORECARD.md).
 
 Rodar **a cada PR** ou antes de deploy — **não** misturar com handcraft.
 

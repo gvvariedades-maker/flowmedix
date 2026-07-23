@@ -158,6 +158,68 @@ jobs:
       - name: Architecture patterns
         run: npm run check:architecture
 
+  # Supply chain — falha só em high/critical (omit=dev). Promover a moderate após clean estável.
+  # Scorecard #9 · docs/SECURITY_SCORECARD.md · docs/DEPLOY.md § CI/CD
+  security-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: npm audit (high/critical)
+        run: npm audit --omit=dev --audit-level=high
+
+  # RLS smoke contra projeto real — só com secrets SMOKE_*; senão skip + aviso (não bloqueia clone).
+  # Secrets: SMOKE_SUPABASE_URL, SMOKE_SUPABASE_ANON_KEY, SMOKE_SUPABASE_SERVICE_ROLE_KEY
+  # Scorecard #2 · docs/DEPLOY.md § CI secrets
+  smoke-rls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check smoke secrets
+        id: secrets
+        env:
+          SMOKE_URL: ${{ secrets.SMOKE_SUPABASE_URL }}
+          SMOKE_ANON: ${{ secrets.SMOKE_SUPABASE_ANON_KEY }}
+          SMOKE_SERVICE: ${{ secrets.SMOKE_SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -n "$SMOKE_URL" ] && [ -n "$SMOKE_ANON" ] && [ -n "$SMOKE_SERVICE" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::smoke-rls skipped — configure repository secrets SMOKE_SUPABASE_URL, SMOKE_SUPABASE_ANON_KEY, SMOKE_SUPABASE_SERVICE_ROLE_KEY (see docs/DEPLOY.md § CI secrets)"
+          fi
+
+      - name: Checkout
+        if: steps.secrets.outputs.configured == 'true'
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        if: steps.secrets.outputs.configured == 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.secrets.outputs.configured == 'true'
+        run: npm ci
+
+      - name: Run smoke:rls
+        if: steps.secrets.outputs.configured == 'true'
+        run: npm run smoke:rls
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SMOKE_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SMOKE_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SMOKE_SUPABASE_SERVICE_ROLE_KEY }}
+
   test-e2e:
     needs: changes
     if: github.event_name == 'push' || needs.changes.outputs.e2e == 'true'

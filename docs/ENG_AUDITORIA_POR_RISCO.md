@@ -1,5 +1,7 @@
 # Auditoria por risco (engenharia)
 
+> **Hub onboarding:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) — Trilho **C — Além do gate** (código/PR · ops · o que o gate não pega).  
+> **Barra:** [`SECURITY_SCORECARD.md`](SECURITY_SCORECARD.md) · Threat: [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md) · IR: [`SECURITY_INCIDENT_RUNBOOK.md`](SECURITY_INCIDENT_RUNBOOK.md) · Rituais: [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md)  
 > **Não** auditar “toda a estrutura” após rules/gates. Auditar o que os gates **não** bloqueiam.  
 > Gates: `npm run check:architecture` · Done: `npm run check:ship` · PR zona amarela/vermelha: [`PROMPT_META_AUDITORIA_AVANT.md`](PROMPT_META_AUDITORIA_AVANT.md) §7.
 
@@ -41,9 +43,9 @@ Rodar **por domínio** (1–2 h), não “repo inteiro”. Marcar ✅ / ⚠️ /
 
 ### Stripe / webhooks (zona vermelha)
 
-- [ ] Webhook verifica assinatura; idempotência / replay
+- [ ] Webhook verifica assinatura (`constructEvent`); idempotência / replay via `stripe_webhook_events` (`event.id`) + state-based fulfill
 - [ ] Fluxo em `app/api/pagamentos/**` — sem inventar segundo trilho
-- [ ] Migrations / policies novas: revisão humana antes de merge
+- [ ] Migrations / policies novas: revisão humana antes de merge (`db:push` da ledger Stripe = zona vermelha)
 
 ### Player / vitrine (zona amarela — amostra)
 
@@ -59,6 +61,9 @@ Rodar **por domínio** (1–2 h), não “repo inteiro”. Marcar ✅ / ⚠️ /
 | Done de `Feature:`/`Bug:` | `npm run check:ship` |
 | PR zona amarela/vermelha | Bugbot + Security Review (§7 meta-auditoria) |
 | Incidente / área quente | Só o domínio acima (auth **ou** cache **ou** Stripe…) |
+| **Mensal** (ritual) | **1 domínio** desta §2 + `npm run smoke:rls` remoto — log em [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md) |
+| **Trimestral** (ritual) | Revisar 4 fluxos em [`SECURITY_THREAT_MODEL.md`](SECURITY_THREAT_MODEL.md) |
+| Pentest (scorecard #13) | Escopo auth/admin/Stripe/RLS — [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md) § Pentest |
 | Clone novo | Copiar `docs/cursor/*.mdc` → `.cursor/rules/` se faltar |
 | Mesmo anti-padrão **2×** | Novo gate em `check-architecture-patterns.ts` + linha no changelog de [`ENG_CONVERSA.md`](ENG_CONVERSA.md) |
 
@@ -68,4 +73,4 @@ Rodar **por domínio** (1–2 h), não “repo inteiro”. Marcar ✅ / ⚠️ /
 - Polish só UI → `Visual:` / skill `avant-ui-visual`
 - Varredura “toda a estrutura” sem gatilho → **não** recomendado
 
-Índice: [`AGENTS.md`](../AGENTS.md) · Runbook eng: [`ENG_CONVERSA.md`](ENG_CONVERSA.md) · Rules: [`docs/cursor/avant-engineering.mdc`](cursor/avant-engineering.mdc)
+Índice: [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) · [`SECURITY_SCORECARD.md`](SECURITY_SCORECARD.md) · [`SECURITY_RITUAIS.md`](SECURITY_RITUAIS.md) · [`AGENTS.md`](../AGENTS.md) · Runbook eng: [`ENG_CONVERSA.md`](ENG_CONVERSA.md) · Rules: [`docs/cursor/avant-engineering.mdc`](cursor/avant-engineering.mdc)

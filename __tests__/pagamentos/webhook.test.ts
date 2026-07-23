@@ -12,6 +12,11 @@ import {
 } from '@/lib/stripe/webhookRouteHandler';
 import { dispatchStripeWebhookEvent } from '@/lib/stripe/webhookDispatcher';
 import { constructWebhookEvent } from '@/lib/stripe/client';
+import {
+  claimStripeWebhookEvent,
+  releaseStripeWebhookEventClaim,
+  markStripeWebhookEventProcessed,
+} from '@/lib/stripe/webhookEventLedger';
 import { getStripeServerConfig } from '@/lib/env';
 import { createServerSupabase } from '@/lib/supabase/server';
 
@@ -21,6 +26,13 @@ jest.mock('@/lib/stripe/webhookDispatcher', () => ({
 
 jest.mock('@/lib/stripe/client', () => ({
   constructWebhookEvent: jest.fn(),
+}));
+
+jest.mock('@/lib/stripe/webhookEventLedger', () => ({
+  claimStripeWebhookEvent: jest.fn(),
+  releaseStripeWebhookEventClaim: jest.fn(),
+  markStripeWebhookEventProcessed: jest.fn(),
+  hashStripeWebhookPayload: jest.fn().mockReturnValue('hash_test'),
 }));
 
 jest.mock('@/lib/env', () => ({
@@ -52,6 +64,15 @@ const mockDispatchStripeWebhookEvent = dispatchStripeWebhookEvent as jest.Mocked
 >;
 const mockConstructWebhookEvent = constructWebhookEvent as jest.MockedFunction<
   typeof constructWebhookEvent
+>;
+const mockClaimStripeWebhookEvent = claimStripeWebhookEvent as jest.MockedFunction<
+  typeof claimStripeWebhookEvent
+>;
+const mockReleaseStripeWebhookEventClaim = releaseStripeWebhookEventClaim as jest.MockedFunction<
+  typeof releaseStripeWebhookEventClaim
+>;
+const mockMarkStripeWebhookEventProcessed = markStripeWebhookEventProcessed as jest.MockedFunction<
+  typeof markStripeWebhookEventProcessed
 >;
 const mockGetStripeServerConfig = getStripeServerConfig as jest.MockedFunction<
   typeof getStripeServerConfig
@@ -296,6 +317,7 @@ describe('isRetriableWebhookFailure', () => {
 describe('handleStripeWebhookRequest', () => {
   const supabase = {} as SupabaseClient;
   const stripeEvent = {
+    id: 'evt_test_123',
     type: 'checkout.session.completed',
     data: { object: { id: 'cs_test_123' } },
   } as unknown as Stripe.Event;
@@ -308,6 +330,9 @@ describe('handleStripeWebhookRequest', () => {
     });
     mockConstructWebhookEvent.mockReturnValue(stripeEvent);
     mockCreateServerSupabase.mockResolvedValue(supabase);
+    mockClaimStripeWebhookEvent.mockResolvedValue('claimed');
+    mockReleaseStripeWebhookEventClaim.mockResolvedValue(undefined);
+    mockMarkStripeWebhookEventProcessed.mockResolvedValue(undefined);
   });
 
   function makeWebhookRequest(body = '{}') {
@@ -320,6 +345,51 @@ describe('handleStripeWebhookRequest', () => {
       },
     });
   }
+
+  it('retorna 400 quando assinatura Stripe é inválida', async () => {
+    mockConstructWebhookEvent.mockImplementation(() => {
+      throw new Error('bad sig');
+    });
+
+    const response = await handleStripeWebhookRequest(makeWebhookRequest());
+
+    expect(response.status).toBe(400);
+    expect(await response.json()).toEqual({ error: 'Assinatura inválida.' });
+    expect(mockClaimStripeWebhookEvent).not.toHaveBeenCalled();
+    expect(mockDispatchStripeWebhookEvent).not.toHaveBeenCalled();
+  });
+
+  it('retorna 200 already_processed e não dispatch quando event.id já foi processado', async () => {
+    mockClaimStripeWebhookEvent.mockResolvedValue('already_processed');
+
+    const response = await handleStripeWebhookRequest(makeWebhookRequest());
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({
+      received: true,
+      handled: true,
+      already_processed: true,
+    });
+    expect(mockClaimStripeWebhookEvent).toHaveBeenCalledWith(supabase, stripeEvent, {
+      payloadHash: 'hash_test',
+    });
+    expect(mockDispatchStripeWebhookEvent).not.toHaveBeenCalled();
+    expect(mockReleaseStripeWebhookEventClaim).not.toHaveBeenCalled();
+    expect(mockMarkStripeWebhookEventProcessed).not.toHaveBeenCalled();
+  });
+
+  it('retorna 503 quando outro worker ainda processa o mesmo event.id', async () => {
+    mockClaimStripeWebhookEvent.mockResolvedValue('in_flight');
+
+    const response = await handleStripeWebhookRequest(makeWebhookRequest());
+
+    expect(response.status).toBe(503);
+    expect(await response.json()).toEqual({
+      error: 'Evento em processamento.',
+      reason: 'webhook_in_flight',
+    });
+    expect(mockDispatchStripeWebhookEvent).not.toHaveBeenCalled();
+  });
 
   it('retorna 500 quando falha é retriável (purchase_not_found)', async () => {
     mockDispatchStripeWebhookEvent.mockResolvedValue({
@@ -334,6 +404,7 @@ describe('handleStripeWebhookRequest', () => {
       error: 'Falha temporária ao processar webhook.',
       reason: 'purchase_not_found',
     });
+    expect(mockReleaseStripeWebhookEventClaim).toHaveBeenCalledWith(supabase, 'evt_test_123');
   });
 
   it('retorna 500 quando falha guest é retriável (missing_customer_email)', async () => {
@@ -349,6 +420,7 @@ describe('handleStripeWebhookRequest', () => {
       error: 'Falha temporária ao processar webhook.',
       reason: 'missing_customer_email',
     });
+    expect(mockReleaseStripeWebhookEventClaim).toHaveBeenCalledWith(supabase, 'evt_test_123');
   });
 
   it('retorna 200 quando evento é genuinamente ignorado', async () => {
@@ -365,6 +437,8 @@ describe('handleStripeWebhookRequest', () => {
       handled: false,
       reason: 'ignored_event_payment_intent.succeeded',
     });
+    expect(mockReleaseStripeWebhookEventClaim).not.toHaveBeenCalled();
+    expect(mockMarkStripeWebhookEventProcessed).toHaveBeenCalledWith(supabase, 'evt_test_123');
   });
 
   it('retorna 200 quando checkout guest já pago (handled true)', async () => {
@@ -381,5 +455,19 @@ describe('handleStripeWebhookRequest', () => {
       received: true,
       handled: true,
     });
+    expect(mockClaimStripeWebhookEvent).toHaveBeenCalled();
+    expect(mockDispatchStripeWebhookEvent).toHaveBeenCalledWith(supabase, stripeEvent);
+    expect(mockMarkStripeWebhookEventProcessed).toHaveBeenCalledWith(supabase, 'evt_test_123');
+    expect(mockReleaseStripeWebhookEventClaim).not.toHaveBeenCalled();
+  });
+
+  it('libera claim e retorna 500 quando dispatch lança erro', async () => {
+    mockDispatchStripeWebhookEvent.mockRejectedValue(new Error('boom'));
+
+    const response = await handleStripeWebhookRequest(makeWebhookRequest());
+
+    expect(response.status).toBe(500);
+    expect(await response.json()).toEqual({ error: 'Erro ao processar webhook.' });
+    expect(mockReleaseStripeWebhookEventClaim).toHaveBeenCalledWith(supabase, 'evt_test_123');
   });
 });

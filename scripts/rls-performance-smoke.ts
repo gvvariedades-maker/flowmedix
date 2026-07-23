@@ -7,11 +7,15 @@
  *
  * Requer NEXT_PUBLIC_SUPABASE_URL + NEXT_PUBLIC_SUPABASE_ANON_KEY (+ service role para comparação).
  * SQL estático (policies/índices): supabase/scripts/rls_performance_smoke.sql no SQL Editor.
+ *
+ * Contratos anon (modulos / historico / matrículas): lib/security/rlsAnonExpectations.ts
+ * (espelhados em __tests__/security/).
  */
 
 import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
 import { createServerSupabase } from '../lib/supabase/server';
+import { evaluateAnonProtectedTableCount } from '../lib/security/rlsAnonExpectations';
 
 loadEnvConfig(process.cwd());
 
@@ -63,44 +67,56 @@ async function main() {
     .from('modulos_estudo')
     .select('id', { count: 'exact', head: true });
 
-  if (modulosErr) {
-    checks.push({
+  checks.push(
+    evaluateAnonProtectedTableCount({
       name: 'anon_modulos_estudo_vazio',
-      ok: true,
-      detail: `acesso bloqueado (${modulosErr.message}) — esperado sem matrícula`,
-    });
-  } else {
-    checks.push({
-      name: 'anon_modulos_estudo_vazio',
-      ok: (modulosAnonCount ?? 0) === 0,
-      detail:
-        (modulosAnonCount ?? 0) === 0
-          ? '0 linhas sem login — OK (conteúdo protegido)'
-          : `${modulosAnonCount} módulo(s) expostos a anon — falha de RLS`,
-    });
-  }
+      count: modulosAnonCount,
+      errorMessage: modulosErr?.message,
+      emptyDetail: '0 linhas sem login — OK (conteúdo protegido)',
+    }),
+  );
 
   // Anon: historico deve ficar vazio (sem JWT de usuário)
   const { count: historicoAnonCount, error: historicoErr } = await anon
     .from('historico_questoes')
     .select('id', { count: 'exact', head: true });
 
-  if (historicoErr) {
-    checks.push({
+  checks.push(
+    evaluateAnonProtectedTableCount({
       name: 'anon_historico_vazio',
-      ok: true,
-      detail: `acesso bloqueado (${historicoErr.message}) — esperado sem sessão`,
-    });
-  } else {
-    checks.push({
-      name: 'anon_historico_vazio',
-      ok: (historicoAnonCount ?? 0) === 0,
-      detail:
-        (historicoAnonCount ?? 0) === 0
-          ? '0 linhas sem login — OK'
-          : `${historicoAnonCount} linhas expostas a anon — falha de RLS`,
-    });
-  }
+      count: historicoAnonCount,
+      errorMessage: historicoErr?.message,
+      emptyDetail: '0 linhas sem login — OK',
+    }),
+  );
+
+  // Anon: matrículas de outros usuários não vazam (policy user_id = auth.uid())
+  const { count: matriculasAnonCount, error: matriculasAnonErr } = await anon
+    .from('concurso_matriculas')
+    .select('id', { count: 'exact', head: true });
+
+  checks.push(
+    evaluateAnonProtectedTableCount({
+      name: 'anon_matriculas_vazio',
+      count: matriculasAnonCount,
+      errorMessage: matriculasAnonErr?.message,
+      emptyDetail: '0 linhas sem login — OK (matrículas protegidas)',
+    }),
+  );
+
+  // Anon: ledger Stripe service-only (após migration 20260723120000)
+  const { count: stripeEventsAnonCount, error: stripeEventsAnonErr } = await anon
+    .from('stripe_webhook_events')
+    .select('event_id', { count: 'exact', head: true });
+
+  checks.push(
+    evaluateAnonProtectedTableCount({
+      name: 'anon_stripe_webhook_events_vazio',
+      count: stripeEventsAnonCount,
+      errorMessage: stripeEventsAnonErr?.message,
+      emptyDetail: '0 linhas sem login — OK (ledger Stripe service_role only)',
+    }),
+  );
 
   // Service role: contagem vendável ≥ anon (sanidade)
   try {
