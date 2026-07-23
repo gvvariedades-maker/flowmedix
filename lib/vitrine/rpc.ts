@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
+import type { VitrineDisciplinaId } from '@/lib/vitrine/disciplina';
 import type { VitrineFacets, VitrinePageResponse } from '@/lib/vitrine/types';
 
 export const VITRINE_PAGE_RPC = 'get_vitrine_page' as const;
@@ -34,6 +35,15 @@ const VitrineFacetsRpcSchema = z.object({
   assuntos: z.array(z.string()),
 });
 
+const VitrineDisciplinaSummaryRpcSchema = z.object({
+  id: z.enum(['enfermagem', 'portugues']),
+  label: z.string(),
+  totalAssuntos: z.number(),
+  totalQuestoes: z.number(),
+  trabalhadas: z.number(),
+  progressoPct: z.number(),
+});
+
 const VitrinePageRpcSchema = z.object({
   groups: z.array(VitrineGrupoSchema),
   pagination: z.object({
@@ -45,16 +55,20 @@ const VitrinePageRpcSchema = z.object({
   totalModulosFiltrados: z.number(),
   /** Embutido na RPC Fase 2; opcional para rollout com migration pendente. */
   facets: VitrineFacetsRpcSchema.optional(),
+  /** Embutido com p_disciplina; opcional para rollout com migration pendente. */
+  disciplinas: z.array(VitrineDisciplinaSummaryRpcSchema).optional(),
 });
 
-export type VitrinePageRpcResult = Omit<VitrinePageResponse, 'facets'> & {
+export type VitrinePageRpcResult = Omit<VitrinePageResponse, 'facets' | 'disciplinas'> & {
   facets?: VitrineFacets;
+  disciplinas?: VitrinePageResponse['disciplinas'];
 };
 
 export type VitrineRpcFilters = {
   bancas?: string[];
   assuntos?: string[];
   q?: string;
+  disciplina?: VitrineDisciplinaId;
 };
 
 export type FetchVitrinePageRpcParams = {
@@ -72,6 +86,7 @@ function rpcBancaAssuntoParams(filters: VitrineRpcFilters = {}) {
     p_bancas: bancas.length ? bancas : null,
     p_assuntos: assuntos.length ? assuntos : null,
     p_q: filters.q?.trim() || null,
+    p_disciplina: filters.disciplina ?? null,
   };
 }
 

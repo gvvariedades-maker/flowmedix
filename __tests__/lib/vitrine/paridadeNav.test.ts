@@ -265,6 +265,73 @@ describe('paridade vitrine vs player', () => {
     expect(getModulos).not.toHaveBeenCalled();
     expect(vitrineSlugs).toEqual(expected);
   });
+
+  it('com filters.disciplina chama RPC (não early JS) e propaga disciplinas do payload', async () => {
+    const disciplinas = [
+      {
+        id: 'enfermagem' as const,
+        label: 'Enfermagem',
+        totalAssuntos: 3,
+        totalQuestoes: 5,
+        trabalhadas: 1,
+        progressoPct: 20,
+      },
+      {
+        id: 'portugues' as const,
+        label: 'Português',
+        totalAssuntos: 1,
+        totalQuestoes: 2,
+        trabalhadas: 0,
+        progressoPct: 0,
+      },
+    ];
+    fetchRpcPage.mockResolvedValue({
+      groups: [
+        {
+          titulo_aula: 'Crase',
+          modulo_nome: 'Língua Portuguesa',
+          banca: 'FGV',
+          questoes: [
+            {
+              slug: 'pt-crase-1',
+              numero: 1,
+              status: 'nao_estudada',
+              avant_codigo: 900,
+              created_at: '2024-01-01T00:00:00Z',
+            },
+          ],
+          acertos: 0,
+          erros: 0,
+          totalResolvidas: 0,
+          totalQuestoes: 1,
+          totalNeuroSlides: 4,
+          trabalhadas: 0,
+          percentual: 0,
+          firstSlug: 'pt-crase-1',
+        },
+      ],
+      pagination: { page: 1, perPage: 12, totalGroups: 1, totalPages: 1 },
+      totalModulosFiltrados: 1,
+      facets: { bancas: ['FGV'], assuntos: ['Crase'] },
+      disciplinas,
+    });
+
+    const result = await getVitrinePage({
+      userId: 'user-disciplina',
+      page: 1,
+      filters: { disciplina: 'portugues' },
+    });
+
+    expect(fetchRpcPage).toHaveBeenCalledWith({
+      userId: 'user-disciplina',
+      page: 1,
+      filters: { disciplina: 'portugues' },
+    });
+    expect(getModulos).not.toHaveBeenCalled();
+    expect(getHistorico).not.toHaveBeenCalled();
+    expect(result.disciplinas).toEqual(disciplinas);
+    expect(slugsFromGroups(result.groups)).toEqual(['pt-crase-1']);
+  });
 });
 
 describe('paginação vitrine', () => {

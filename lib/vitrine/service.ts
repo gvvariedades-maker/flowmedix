@@ -15,7 +15,6 @@ import { buildVitrineGroups } from '@/lib/vitrine/buildGroups';
 import { buildVitrineFacets, getVitrineFacets } from '@/lib/vitrine/facets';
 import { VITRINE_ASSUNTOS_POR_PAGINA } from '@/lib/vitrine/constants';
 import { fetchVitrinePageFromRpc } from '@/lib/vitrine/rpc';
-import { fetchSlideCountsByModuloIds } from '@/lib/vitrine/slideCounts';
 import {
   buildDisciplinaSummaries,
   parseVitrineDisciplina,
@@ -85,62 +84,6 @@ function paginateGroups<T>(items: T[], page: number, perPage: number): { slice: 
     slice: items.slice(start, start + perPage),
     totalPages,
   };
-}
-
-/**
- * Contagens por disciplina sem historico (caminho RPC).
- * Progresso fica 0 até o pipeline JS (filtro disciplina / fallback).
- */
-async function buildDisciplinaSummariesLite(
-  userId: string,
-  filters: VitrineListFilters,
-  isAdmin: boolean,
-) {
-  const modulosRaw = filterModulosByVitrineQualityGate(
-    await loadModulosForVitrine(userId, { ...filters, disciplina: undefined }, isAdmin),
-    { isAdmin },
-  );
-  const placeholders = modulosRaw.map((m) => ({
-    ...m,
-    estudoReversoConcluido: false,
-    stats: { acertos: 0, total: 0, percentual: 0, priorityScore: 0 },
-  }));
-  const filtered = filterModulosLikeVitrine(placeholders, {
-    bancas: filters.bancas,
-    assuntos: filters.assuntos,
-    q: filters.q,
-  });
-  const byAssunto = new Map<
-    string,
-    { modulo_nome: string; totalQuestoes: number }
-  >();
-  for (const m of filtered) {
-    const key = m.titulo_aula || 'Sem subtópico';
-    const prev = byAssunto.get(key);
-    if (prev) {
-      prev.totalQuestoes += 1;
-    } else {
-      byAssunto.set(key, {
-        modulo_nome: m.modulo_nome || 'Geral',
-        totalQuestoes: 1,
-      });
-    }
-  }
-  const groups = [...byAssunto.entries()].map(([titulo_aula, info]) => ({
-    titulo_aula,
-    modulo_nome: info.modulo_nome,
-    banca: '',
-    questoes: [],
-    acertos: 0,
-    erros: 0,
-    totalResolvidas: 0,
-    totalQuestoes: info.totalQuestoes,
-    totalNeuroSlides: 0,
-    trabalhadas: 0,
-    percentual: 0,
-    firstSlug: titulo_aula,
-  }));
-  return buildDisciplinaSummaries(groups);
 }
 
 async function loadModulosForVitrine(
@@ -215,18 +158,13 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
 
   const slugsForStats = filteredForSummaries.map((m) => m.modulo_slug);
   const modulosForStats = filteredForSummaries;
-  const [historico, slideCounts] = await Promise.all([
-    getHistoricoQuestoesForSlugsCached(userId, slugsForStats),
-    fetchSlideCountsByModuloIds(modulosForStats.map((m) => m.id)),
-  ]);
+  /** Fallback de emergência: não baixar conteudo_json em massa — totalNeuroSlides fica 0 (RPC já conta no SQL). */
+  const historico = await getHistoricoQuestoesForSlugsCached(userId, slugsForStats);
 
   const withStatsAll = attachHistoricoStats(
     modulosForStats.map(({ estudoReversoConcluido: _e, stats: _s, ...m }) => m),
     historico,
-  ).map((modulo) => ({
-    ...modulo,
-    slide_count: slideCounts.get(modulo.id) ?? 0,
-  }));
+  );
 
   const allGroups = buildVitrineGroups(withStatsAll).map((group) => ({
     ...group,
@@ -286,26 +224,6 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
 
   logger.warn('getVitrinePage called', { userId, page, isAdmin, filters: normalizedFilters });
 
-  /** Filtro por disciplina ainda não existe na RPC — pipeline JS. */
-  if (filters.disciplina) {
-    const jsStartAt = Date.now();
-    const jsPage = await getVitrinePageViaJs(params);
-    logApiStrategy({
-      event: 'vitrine_page',
-      strategy: 'js',
-      durationMs: Date.now() - jsStartAt,
-      context: {
-        userId,
-        page,
-        filters: normalizedFilters,
-        rowCount: jsPage.totalModulosFiltrados,
-        isAdmin,
-        reason: 'disciplina_filter',
-      },
-    });
-    return applyVitrineQualityGateToPage(jsPage, { isAdmin });
-  }
-
   try {
     const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
     const durationMs = Date.now() - startAt;
@@ -337,8 +255,6 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
       { isAdmin },
     );
 
-    const disciplinas = await buildDisciplinaSummariesLite(userId, filters, isAdmin);
-
     logApiStrategy({
       event: 'vitrine_page',
       strategy: 'rpc',
@@ -366,7 +282,7 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
       {
         ...rpcPage,
         facets,
-        disciplinas,
+        ...(rpcPage.disciplinas ? { disciplinas: rpcPage.disciplinas } : {}),
       },
       { isAdmin },
     );

@@ -79,6 +79,7 @@ describe('fetchVitrinePageFromRpc', () => {
       p_bancas: null,
       p_assuntos: null,
       p_q: 'denso',
+      p_disciplina: null,
     });
     expect(result.groups).toHaveLength(1);
     expect(result.groups[0].questoes).toHaveLength(2);
@@ -111,6 +112,60 @@ describe('fetchVitrinePageFromRpc', () => {
     });
 
     expect(result.facets).toBeUndefined();
+    expect(result.disciplinas).toBeUndefined();
+  });
+
+  it('passa p_disciplina e aceita disciplinas[] da RPC', async () => {
+    const disciplinas = [
+      {
+        id: 'enfermagem' as const,
+        label: 'Enfermagem',
+        totalAssuntos: 10,
+        totalQuestoes: 100,
+        trabalhadas: 20,
+        progressoPct: 20,
+      },
+      {
+        id: 'portugues' as const,
+        label: 'Português',
+        totalAssuntos: 2,
+        totalQuestoes: 16,
+        trabalhadas: 0,
+        progressoPct: 0,
+      },
+    ];
+    const rpcMock = jest.fn().mockResolvedValue({
+      data: {
+        groups: [],
+        pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
+        totalModulosFiltrados: 0,
+        facets: { bancas: [], assuntos: [] },
+        disciplinas,
+      },
+      error: null,
+    });
+
+    createServerSupabaseMock.mockResolvedValue({
+      rpc: rpcMock,
+    });
+
+    const result = await fetchVitrinePageFromRpc({
+      userId: 'user-1',
+      page: 1,
+      filters: { disciplina: 'portugues' },
+    });
+
+    expect(rpcMock).toHaveBeenCalledWith('get_vitrine_page', {
+      p_user_id: 'user-1',
+      p_page: 1,
+      p_banca: null,
+      p_assunto: null,
+      p_bancas: null,
+      p_assuntos: null,
+      p_q: null,
+      p_disciplina: 'portugues',
+    });
+    expect(result.disciplinas).toEqual(disciplinas);
   });
 
   it('lança erro quando payload RPC não respeita schema esperado', async () => {

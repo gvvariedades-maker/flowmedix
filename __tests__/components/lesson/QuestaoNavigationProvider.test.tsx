@@ -232,7 +232,7 @@ describe('QuestaoNavigationProvider', () => {
     expect(mockPush).not.toHaveBeenCalled();
   });
 
-  it('navega com payload e usa view transition wrapper no push', async () => {
+  it('navega com payload layers=core e usa view transition wrapper no push', async () => {
     const { getByRole } = render(
       <QuestaoNavigationProvider>
         <Probe />
@@ -247,6 +247,27 @@ describe('QuestaoNavigationProvider', () => {
       expect(mockPush).toHaveBeenCalledWith('/estudar/questao-a');
       expect(mockFetchWithAuth).toHaveBeenCalledTimes(1);
     });
+    const fetchUrl = fetchInputUrl(mockFetchWithAuth.mock.calls[0][0] as RequestInfo | URL);
+    expect(String(fetchUrl)).toContain('layers=core');
+    expect(String(fetchUrl)).not.toContain('layers=full');
+  });
+
+  it('sincroniza payload da rota com layers=core (não full)', async () => {
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    window.history.replaceState(window.history.state, '', '/estudar/questao-a');
+
+    render(
+      <QuestaoNavigationProvider>
+        <DisplayPayloadProbe onModuloSlug={() => {}} />
+      </QuestaoNavigationProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockFetchWithAuth).toHaveBeenCalled();
+    });
+    const fetchUrl = fetchInputUrl(mockFetchWithAuth.mock.calls[0][0] as RequestInfo | URL);
+    expect(String(fetchUrl)).toContain('layers=core');
+    expect(String(fetchUrl)).not.toContain('layers=full');
   });
 
   it('troca de slug in-player via history (sem router.replace, evita RSC)', async () => {

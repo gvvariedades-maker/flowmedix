@@ -458,7 +458,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     const slugComQuery = `${slug}${window.location.search}`;
 
     void (async () => {
-      const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'full' });
+      const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'core' });
       if (result.kind === 'ok') {
         routePayloadSyncKeyRef.current = cacheKey;
         setDisplayPayload(result.payload);
@@ -550,7 +550,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     let cancelled = false;
 
     void (async () => {
-      const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'full' });
+      const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'core' });
       if (cancelled) return;
 
       if (result.kind === 'ok') {
@@ -654,7 +654,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
           let payload = peekValidCachedPayload(cacheKey);
           if (!payload) {
             recordNavigateCacheResult(cacheKey, false);
-            const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'full' });
+            const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'core' });
             if (result.kind === 'forbidden') {
               notifySemAcesso();
               return false;

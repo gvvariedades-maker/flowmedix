@@ -45,6 +45,7 @@ import {
 import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import { getVitrineFacets } from '@/lib/vitrine/facets';
 import { fetchVitrinePageFromRpc } from '@/lib/vitrine/rpc';
+import { fetchSlideCountsByModuloIds } from '@/lib/vitrine/slideCounts';
 import { getVitrinePage } from '@/lib/vitrine/service';
 import { SCALE_LIMITS } from '@/lib/scale/constants';
 
@@ -55,6 +56,7 @@ const fetchNavModulos = fetchAccessibleModulosForNav as jest.Mock;
 const fetchRpcPage = fetchVitrinePageFromRpc as jest.Mock;
 const fetchFacets = getVitrineFacets as jest.Mock;
 const getModulosCatalog = getModulosEstudoCached as jest.Mock;
+const fetchSlideCounts = fetchSlideCountsByModuloIds as jest.Mock;
 
 describe('getVitrinePage', () => {
   beforeEach(() => {
@@ -333,5 +335,95 @@ describe('getVitrinePage', () => {
       filters: {},
     });
     expect(getModulosCatalog).not.toHaveBeenCalled();
+  });
+
+  it('com filters.disciplina chama RPC (não early-return JS) e usa disciplinas do payload', async () => {
+    const disciplinas = [
+      {
+        id: 'enfermagem' as const,
+        label: 'Enfermagem',
+        totalAssuntos: 10,
+        totalQuestoes: 100,
+        trabalhadas: 20,
+        progressoPct: 20,
+      },
+      {
+        id: 'portugues' as const,
+        label: 'Português',
+        totalAssuntos: 2,
+        totalQuestoes: 16,
+        trabalhadas: 0,
+        progressoPct: 0,
+      },
+    ];
+    fetchRpcPage.mockResolvedValue({
+      groups: [
+        {
+          titulo_aula: 'Crase',
+          modulo_nome: 'Língua Portuguesa',
+          banca: 'FGV',
+          questoes: [
+            {
+              slug: 'pt-1',
+              numero: 1,
+              status: 'nao_estudada',
+              avant_codigo: 1,
+              created_at: '2024-01-01',
+            },
+          ],
+          acertos: 0,
+          erros: 0,
+          totalResolvidas: 0,
+          totalQuestoes: 1,
+          totalNeuroSlides: 4,
+          trabalhadas: 0,
+          percentual: 0,
+          firstSlug: 'pt-1',
+        },
+      ],
+      pagination: { page: 1, perPage: 12, totalGroups: 1, totalPages: 1 },
+      totalModulosFiltrados: 1,
+      facets: { bancas: ['FGV'], assuntos: ['Crase'] },
+      disciplinas,
+    });
+
+    const result = await getVitrinePage({
+      userId: 'user-1',
+      page: 1,
+      filters: { disciplina: 'portugues' },
+    });
+
+    expect(fetchRpcPage).toHaveBeenCalledWith({
+      userId: 'user-1',
+      page: 1,
+      filters: { disciplina: 'portugues' },
+    });
+    expect(getModulos).not.toHaveBeenCalled();
+    expect(getHistorico).not.toHaveBeenCalled();
+    expect(fetchSlideCounts).not.toHaveBeenCalled();
+    expect(result.disciplinas).toEqual(disciplinas);
+    expect(result.groups).toHaveLength(1);
+    expect(result.groups[0].modulo_nome).toBe('Língua Portuguesa');
+  });
+
+  it('fallback JS não chama fetchSlideCountsByModuloIds (totalNeuroSlides=0)', async () => {
+    getModulos.mockResolvedValue([
+      {
+        id: '1',
+        modulo_slug: 'slug-a',
+        modulo_nome: 'T',
+        titulo_aula: 'Assunto 1',
+        banca: 'FGV',
+        created_at: '2024-01-01',
+        avant_codigo: 1,
+      },
+    ]);
+
+    const result = await getVitrinePage({ userId: 'user-1', page: 1 });
+
+    expect(fetchRpcPage).toHaveBeenCalled();
+    expect(fetchSlideCounts).not.toHaveBeenCalled();
+    expect(result.groups).toHaveLength(1);
+    expect(result.groups[0].totalNeuroSlides).toBe(0);
   });
 });
