@@ -49,10 +49,15 @@ import {
 } from '@/lib/estudar/navigationTelemetry';
 import { fetchAndSyncEstudarL0Meta } from '@/lib/estudar/questaoL0Client';
 import {
+  deleteQuestaoFromIdb,
   getQuestaoFromIdb,
   hydrateQuestaoLruFromIdb,
   setQuestaoInIdb,
 } from '@/lib/estudar/questaoIdbCache';
+import {
+  buildPayloadCacheKey,
+  payloadMatchesCacheKey,
+} from '@/lib/estudar/payloadRouteMatch';
 import { runEstudarViewTransition } from '@/lib/estudar/viewTransition';
 import { useEstudarStaleRecovery } from '@/components/lesson/useEstudarStaleRecovery';
 import { useToast } from '@/lib/toast-context';
@@ -95,6 +100,10 @@ class LruCache<T> {
 
   peek(key: string): T | undefined {
     return this.map.get(key);
+  }
+
+  delete(key: string): void {
+    this.map.delete(key);
   }
 
   set(key: string, value: T): void {
@@ -163,35 +172,87 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     }
   }, [pathname, searchParams, estudarRoute]);
 
-  const cachePayload = useCallback((key: string, payload: EstudarQuestaoPayload) => {
-    cacheRef.current.set(key, payload);
-    void setQuestaoInIdb(key, payload);
+  const invalidateCacheKey = useCallback((key: string) => {
+    cacheRef.current.delete(key);
+    void deleteQuestaoFromIdb(key);
   }, []);
 
-  const getCachedPayload = useCallback((key: string) => {
-    return cacheRef.current.get(key);
-  }, []);
+  const cachePayload = useCallback(
+    (key: string, payload: EstudarQuestaoPayload) => {
+      const coherentKey = payloadMatchesCacheKey(payload, key)
+        ? key
+        : buildPayloadCacheKey(payload);
+      if (!coherentKey || !payloadMatchesCacheKey(payload, coherentKey)) {
+        invalidateCacheKey(key);
+        return;
+      }
+      if (coherentKey !== key) {
+        invalidateCacheKey(key);
+      }
+      cacheRef.current.set(coherentKey, payload);
+      void setQuestaoInIdb(coherentKey, payload);
+    },
+    [invalidateCacheKey],
+  );
+
+  const peekValidCachedPayload = useCallback(
+    (key: string): EstudarQuestaoPayload | null => {
+      const cached = cacheRef.current.peek(key);
+      if (!cached) return null;
+      if (!payloadMatchesCacheKey(cached, key)) {
+        invalidateCacheKey(key);
+        return null;
+      }
+      return cached;
+    },
+    [invalidateCacheKey],
+  );
+
+  const getCachedPayload = useCallback(
+    (key: string) => {
+      const cached = cacheRef.current.get(key);
+      if (!cached) return undefined;
+      if (!payloadMatchesCacheKey(cached, key)) {
+        invalidateCacheKey(key);
+        return undefined;
+      }
+      return cached;
+    },
+    [invalidateCacheKey],
+  );
 
   useEffect(() => {
     void (async () => {
       await fetchAndSyncEstudarL0Meta();
       const count = await hydrateQuestaoLruFromIdb((key, payload) => {
+        if (!payloadMatchesCacheKey(payload, key)) {
+          void deleteQuestaoFromIdb(key);
+          return;
+        }
         cacheRef.current.set(key, payload);
       });
       if (count > 0) recordIdbHydrate(count);
     })();
   }, []);
 
-  const readPayloadFromIdb = useCallback(async (cacheKey: string) => {
-    const fromIdb = await getQuestaoFromIdb(cacheKey);
-    if (fromIdb) {
-      cacheRef.current.set(cacheKey, fromIdb);
-      recordIdbHit(cacheKey);
-      return fromIdb;
-    }
-    recordIdbMiss(cacheKey);
-    return null;
-  }, []);
+  const readPayloadFromIdb = useCallback(
+    async (cacheKey: string) => {
+      const fromIdb = await getQuestaoFromIdb(cacheKey);
+      if (fromIdb) {
+        if (!payloadMatchesCacheKey(fromIdb, cacheKey)) {
+          invalidateCacheKey(cacheKey);
+          recordIdbMiss(cacheKey);
+          return null;
+        }
+        cacheRef.current.set(cacheKey, fromIdb);
+        recordIdbHit(cacheKey);
+        return fromIdb;
+      }
+      recordIdbMiss(cacheKey);
+      return null;
+    },
+    [invalidateCacheKey],
+  );
 
   const fetchPayloadIntoCache = useCallback(
     (
@@ -207,7 +268,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       }
 
       if (!skipCache) {
-        const cached = cacheRef.current.peek(cacheKey);
+        const cached = peekValidCachedPayload(cacheKey);
         if (cached) {
           recordPrefetchSkipped(cacheKey, 'cached');
           return Promise.resolve({ kind: 'ok', payload: cached });
@@ -263,6 +324,20 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             return { kind: 'error' };
           }
           const payload = (await res.json()) as EstudarQuestaoPayload;
+          if (!payloadMatchesCacheKey(payload, cacheKey)) {
+            logger.warn('Payload da API divergiu da chave de cache (ignorado)', {
+              cacheKey,
+              moduloSlug: payload.moduloSlug,
+              vitrineQuerySuffix: payload.vitrineQuerySuffix ?? '',
+            });
+            invalidateCacheKey(cacheKey);
+            recordPrefetchEnd(cacheKey, {
+              ok: false,
+              durationMs,
+              reason: 'payload_cache_key_mismatch',
+            });
+            return { kind: 'error' };
+          }
           cacheRef.current.set(cacheKey, payload);
           void setQuestaoInIdb(cacheKey, payload);
           recordPrefetchEnd(cacheKey, { ok: true, durationMs, status: res.status });
@@ -286,7 +361,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       inFlightRef.current.set(inFlightKey, promise);
       return promise;
     },
-    [readPayloadFromIdb],
+    [readPayloadFromIdb, peekValidCachedPayload, invalidateCacheKey],
   );
 
   const clearDismissFallbackTimer = useCallback(() => {
@@ -373,7 +448,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     );
     if (routePayloadSyncKeyRef.current === cacheKey) return;
 
-    const cached = cacheRef.current.peek(cacheKey);
+    const cached = peekValidCachedPayload(cacheKey);
     if (cached) {
       routePayloadSyncKeyRef.current = cacheKey;
       setDisplayPayload(cached);
@@ -407,6 +482,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     notifyFalhaCarregar,
     dismissToVitrine,
     router,
+    peekValidCachedPayload,
   ]);
 
   useEffect(() => {
@@ -463,7 +539,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     );
     if (routePayloadSyncKeyRef.current === cacheKey) return;
 
-    const cached = cacheRef.current.peek(cacheKey);
+    const cached = peekValidCachedPayload(cacheKey);
     if (cached) {
       routePayloadSyncKeyRef.current = cacheKey;
       setDisplayPayload(cached);
@@ -505,6 +581,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     notifySemAcesso,
     notifyFalhaCarregar,
     dismissToVitrine,
+    peekValidCachedPayload,
   ]);
 
   const prefetchPayload = useCallback(
@@ -574,7 +651,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             return false;
           }
 
-          let payload = cacheRef.current.peek(cacheKey) ?? null;
+          let payload = peekValidCachedPayload(cacheKey);
           if (!payload) {
             recordNavigateCacheResult(cacheKey, false);
             const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'full' });
@@ -631,7 +708,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
         }
       })();
     },
-    [router, pathname, fetchPayloadIntoCache, prefetchRoute, notifySemAcesso, notifyFalhaCarregar],
+    [router, pathname, fetchPayloadIntoCache, prefetchRoute, notifySemAcesso, notifyFalhaCarregar, peekValidCachedPayload],
   );
 
   const value = useMemo<QuestaoNavigationContextValue>(

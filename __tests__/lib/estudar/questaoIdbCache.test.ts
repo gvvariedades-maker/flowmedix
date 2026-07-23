@@ -141,7 +141,10 @@ describe('questaoIdbCache', () => {
 
   it('deleteQuestaoFromIdbBySlug remove chave exata e variantes com query', async () => {
     await setQuestaoInIdb('questao-a', samplePayload);
-    await setQuestaoInIdb('questao-a|page=2', samplePayload);
+    await setQuestaoInIdb('questao-a|page=2', {
+      ...samplePayload,
+      vitrineQuerySuffix: '?page=2',
+    });
     await setQuestaoInIdb('questao-b', { ...samplePayload, moduloSlug: 'questao-b' });
 
     await deleteQuestaoFromIdbBySlug('questao-a');
@@ -149,6 +152,38 @@ describe('questaoIdbCache', () => {
     expect(await getQuestaoFromIdb('questao-a')).toBeNull();
     expect(await getQuestaoFromIdb('questao-a|page=2')).toBeNull();
     expect(await getQuestaoFromIdb('questao-b')).not.toBeNull();
+  });
+
+  it('não grava nem lê payload cuja chave diverge do vitrineQuerySuffix', async () => {
+    await setQuestaoInIdb('questao-a|disciplina=portugues', samplePayload);
+    expect(await getQuestaoFromIdb('questao-a|disciplina=portugues')).toBeNull();
+
+    await setQuestaoInIdb('questao-a|disciplina=portugues', {
+      ...samplePayload,
+      vitrineQuerySuffix: '?disciplina=portugues',
+    });
+    expect(await getQuestaoFromIdb('questao-a|disciplina=portugues')).not.toBeNull();
+  });
+
+  it('hydrate descarta entradas incoerentes (chave vs suffix)', async () => {
+    const records = installFakeIndexedDb();
+    const now = Date.now();
+    records.set('questao-a|disciplina=portugues', {
+      key: 'questao-a|disciplina=portugues',
+      payload: samplePayload,
+      cachedAt: now,
+      expiresAt: now + 60_000,
+      lastAccessAt: now,
+    });
+
+    const map = new Map<string, EstudarQuestaoPayload>();
+    const count = await hydrateQuestaoLruFromIdb((key, payload) => {
+      map.set(key, payload);
+    });
+
+    expect(count).toBe(0);
+    expect(map.size).toBe(0);
+    expect(records.has('questao-a|disciplina=portugues')).toBe(false);
   });
 
   it('clearAllQuestaoIdb remove todas as entradas', async () => {

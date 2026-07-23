@@ -413,6 +413,25 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     expect(result.payload.proximaSlug).toBe('questao-proxima?banca=FGV&page=3');
   });
 
+  it('preserva disciplina no vitrineQuerySuffix (evita player congelado / SINCRONIZANDO)', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    const supabase = mockSupabaseModuloRow();
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: SLUG,
+      userId: USER_ID,
+      supabase: supabase as never,
+      searchParams: { disciplina: 'portugues' },
+    });
+
+    expect(result.status).toBe('ok');
+    if (result.status !== 'ok') return;
+
+    expect(result.payload.vitrineQuerySuffix).toBe('?disciplina=portugues');
+    expect(result.payload.anteriorSlug).toBe('questao-anterior?disciplina=portugues');
+    expect(result.payload.proximaSlug).toBe('questao-proxima?disciplina=portugues');
+  });
+
   it('preserva query de caderno em vitrineQuerySuffix (evita player congelado)', async () => {
     const cadernoId = '550e8400-e29b-41d4-a716-446655440099';
     mockUserHasModuloAccess.mockResolvedValue(true);

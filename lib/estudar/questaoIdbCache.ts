@@ -11,6 +11,7 @@ import {
   ESTUDAR_L0_TTL_MS,
   isEstudarIdbL0Enabled,
 } from '@/lib/estudar/estudarL0Config';
+import { payloadMatchesCacheKey } from '@/lib/estudar/payloadRouteMatch';
 
 export type QuestaoIdbEntry = {
   key: string;
@@ -103,6 +104,10 @@ export async function getQuestaoFromIdb(key: string): Promise<EstudarQuestaoPayl
         if (entry) store.delete(key);
         return null;
       }
+      if (!payloadMatchesCacheKey(entry.payload, key)) {
+        store.delete(key);
+        return null;
+      }
       entry.lastAccessAt = Date.now();
       store.put(entry);
       return entry.payload;
@@ -117,6 +122,7 @@ export async function setQuestaoInIdb(
   payload: EstudarQuestaoPayload,
 ): Promise<void> {
   if (!isEstudarIdbL0Enabled() || !isQuestaoIdbAvailable()) return;
+  if (!payloadMatchesCacheKey(payload, key)) return;
 
   const now = Date.now();
   const entry: QuestaoIdbEntry = {
@@ -191,19 +197,34 @@ export async function hydrateQuestaoLruFromIdb(
   if (!isEstudarIdbL0Enabled() || !isQuestaoIdbAvailable()) return 0;
 
   try {
-    const entries = await withStore('readonly', async (store) =>
-      idbRequest<QuestaoIdbEntry[]>(store.getAll()),
-    );
-    const now = Date.now();
-    const valid = entries
-      .filter((entry) => entry.expiresAt > now)
+    const entries = await withStore('readwrite', async (store) => {
+      const all = await idbRequest<QuestaoIdbEntry[]>(store.getAll());
+      const now = Date.now();
+      const valid: QuestaoIdbEntry[] = [];
+
+      for (const entry of all) {
+        if (entry.expiresAt <= now) {
+          store.delete(entry.key);
+          continue;
+        }
+        if (!payloadMatchesCacheKey(entry.payload, entry.key)) {
+          store.delete(entry.key);
+          continue;
+        }
+        valid.push(entry);
+      }
+
+      return valid;
+    });
+
+    const selected = entries
       .sort((a, b) => b.lastAccessAt - a.lastAccessAt)
       .slice(0, maxEntries);
 
-    for (const entry of valid) {
+    for (const entry of selected) {
       setEntry(entry.key, entry.payload);
     }
-    return valid.length;
+    return selected.length;
   } catch {
     return 0;
   }

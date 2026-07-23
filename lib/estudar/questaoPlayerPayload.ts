@@ -27,10 +27,16 @@ import {
   stripQuestionAnswersForClient,
 } from '@/lib/estudar/questionPayload';
 import type { EstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
-import { parseEstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
+import {
+  buildEstudarContextQuerySuffix,
+  parseEstudarSearchParams,
+} from '@/lib/estudar/parseEstudarSearchParams';
 
 export type { EstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
-export { parseEstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
+export {
+  buildEstudarContextQuerySuffix,
+  parseEstudarSearchParams,
+} from '@/lib/estudar/parseEstudarSearchParams';
 
 export type EstudarQuestaoBuildResult =
   | { status: 'ok'; payload: AvantLessonPlayerProps }
@@ -106,6 +112,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     isAdmin = false,
     layers = ESTUDAR_QUESTAO_LAYERS_DEFAULT,
   } = input;
+  const parsedSearch = parseEstudarSearchParams(searchParams);
   const {
     fromPlano,
     fromCaderno,
@@ -113,8 +120,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     vitrineBancas,
     vitrineAssuntos,
     vitrineQ,
-    vitrinePage,
-  } = parseEstudarSearchParams(searchParams);
+  } = parsedSearch;
 
   let atual: ModuloAtualRow | null = null;
   let supabase: SupabaseClient | null = null;
@@ -289,19 +295,8 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
       ? { atual: indexAtual + 1, total: lista.length }
       : undefined;
 
-  const vitrineParams = new URLSearchParams();
-  vitrineBancas.forEach((b) => vitrineParams.append('banca', b));
-  vitrineAssuntos.forEach((a) => vitrineParams.append('assunto', a));
-  if (vitrineQ) vitrineParams.set('q', vitrineQ);
-  if (vitrinePage > 1) vitrineParams.set('page', String(vitrinePage));
-  const vitrineQueryString = vitrineParams.toString();
-  const vitrineQuerySuffix = vitrineQueryString ? `?${vitrineQueryString}` : '';
-
-  const suffix = fromPlano
-    ? '?from=plano'
-    : fromCaderno && cadernoId
-      ? `?from=caderno&caderno_id=${encodeURIComponent(cadernoId)}`
-      : vitrineQuerySuffix;
+  /** Mesma query que a vitrine (inclui `disciplina`) — evita payloadStale / SINCRONIZANDO. */
+  const suffix = buildEstudarContextQuerySuffix(parsedSearch);
 
   const anteriorSlugFinal = anteriorSlug ? `${anteriorSlug}${suffix}` : null;
   const proximaSlugFinal = proximaSlug ? `${proximaSlug}${suffix}` : null;

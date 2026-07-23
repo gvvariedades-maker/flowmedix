@@ -14,6 +14,18 @@ export function buildPayloadCacheKey(payload: PayloadRouteFields): string {
   );
 }
 
+/**
+ * `true` quando a entrada de cache é coerente com a chave.
+ * Evita SINCRONIZANDO: chave com `disciplina` + payload sem `vitrineQuerySuffix`.
+ */
+export function payloadMatchesCacheKey(
+  payload: PayloadRouteFields | null | undefined,
+  cacheKey: string,
+): boolean {
+  if (!payload?.moduloSlug || !cacheKey) return false;
+  return buildPayloadCacheKey(payload) === cacheKey;
+}
+
 /** `true` quando o payload exibido corresponde à rota efetiva (pathname + query). */
 export function estudarPayloadMatchesRoute(
   payload: PayloadRouteFields | null | undefined,

@@ -5,6 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';
 import { buildEstudarCacheKey, parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
+import { buildPayloadCacheKey, payloadMatchesCacheKey } from '@/lib/estudar/payloadRouteMatch';
 import { recordHydratorSync } from '@/lib/estudar/navigationTelemetry';
 import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
@@ -13,11 +14,11 @@ export type EstudarQuestaoHydratorProps = AvantLessonPlayerProps;
 
 export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProps) {
   const pathname = usePathname();
-const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
   const { cachePayload, setDisplayPayload, displayPayload, estudarRoute, isDismissingToVitrine } =
     useQuestaoNavigation();
 
-  const cacheKey = buildEstudarCacheKey(pathname, searchParams);
+  const routeCacheKey = buildEstudarCacheKey(pathname, searchParams);
 
   const dados = useMemo(
     () =>
@@ -32,8 +33,16 @@ const searchParams = useSearchParams();
 
   useLayoutEffect(() => {
     const payload = playerProps as EstudarQuestaoPayload;
-    cachePayload(cacheKey, payload);
-    recordHydratorSync(cacheKey, props.moduloSlug ?? undefined);
+    const payloadKey = buildPayloadCacheKey(payload);
+
+    // Só associa à chave da URL se o suffix do payload casar (evita veneno IDB/LRU).
+    if (payloadKey && payloadMatchesCacheKey(payload, routeCacheKey)) {
+      cachePayload(routeCacheKey, payload);
+      recordHydratorSync(routeCacheKey, props.moduloSlug ?? undefined);
+    } else if (payloadKey) {
+      cachePayload(payloadKey, payload);
+      recordHydratorSync(payloadKey, props.moduloSlug ?? undefined);
+    }
 
     if (isDismissingToVitrine) return;
 
@@ -46,7 +55,7 @@ const searchParams = useSearchParams();
 
     setDisplayPayload(payload);
   }, [
-    cacheKey,
+    routeCacheKey,
     cachePayload,
     setDisplayPayload,
     playerProps,
