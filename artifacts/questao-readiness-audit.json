@@ -5,8 +5,8 @@
   "scanned": 1,
   "results": [
     {
-      "slug": "questao-premium-cpcon-portugues-pontuacao-tirinha-vf",
-      "subtopico": "Pontuação",
+      "slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+      "subtopico": "Verbos — tempos, modos e vozes",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -48,9 +48,8 @@
           "severity": "info"
         }
       ],
-      "family": "vf",
-      "pedagogical_branch": "pt_pontuacao",
-      "inferred_branch": "pt_pontuacao",
+      "family": "conceito",
+      "pedagogical_branch": "pt_verbos",
       "risk": {
         "risk_tier": "medio",
         "approval_mode": "auto_conditional",

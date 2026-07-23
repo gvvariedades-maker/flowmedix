@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Ag Adm (Pref SJRP)",
+    "orgao": "Pref. São José do Rio Preto",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Verbos — tempos, modos e vozes",
+    "pedagogical_branch": "pt_verbos",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-23",
+      "reviewer": "agent:elias-m14-te-simples-bootstrap",
+      "guideline_snapshot": "M14 Elias TE-simples — pergunta «Qual tempo/modo? Anterior, simultânea ou posterior?» · linha do tempo verbal (pt-verbos-concursos)",
+      "exam_vs_current": "none",
+      "catalog_slug": "vunesp-ag-ad-verbos-leia-o-texto-a-seguir-para-responder-3789241"
+    },
+    "sources": [
+      {
+        "id": "pt-verbos-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Bechara / Cunha & Cintra) — referência de concurso",
+        "title": "Verbos — tempo, modo, voz e correlação temporal",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "mais-que-perfeito",
+          "mais-que-perfeito composto",
+          "pretérito perfeito",
+          "pretérito imperfeito",
+          "correlação temporal",
+          "locução verbal",
+          "pergunta-teste tempo/modo"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3789241",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT — tec 3789241 (VUNESP Ag Adm Pref. SJRP 2026)",
+        "year": 2026,
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito D",
+          "tinha escutado",
+          "escutara"
+        ]
+      }
+    ],
+    "efficacy_contract": {
+      "a4_reviewer": "agent:elias-m14-te-simples-bootstrap",
+      "a4_reviewed_at": "2026-07-23"
+    }
+  },
+  "question_data": {
+    "instruction": "Em “… as coisas que sabia tinha escutado entre os oito e os doze anos de idade”, a expressão destacada equivale a:",
+    "options": [
+      {
+        "id": "A",
+        "text": "escutaria.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "escutava.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "escuta.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "escutara.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "escutou.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Linha do tempo verbal",
+      "chip_label": "M14 — tempos",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Verbos — tempos, modos e vozes"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "Qual tempo? A ação é anterior, simultânea ou posterior a outra?",
+          "icon": "Clock"
+        },
+        {
+          "label": "Composto",
+          "detail": "«tinha + particípio» = mais-que-perfeito composto (auxiliar no imperfeito).",
+          "icon": "Layers"
+        },
+        {
+          "label": "Simples",
+          "detail": "«escutara» = mais-que-perfeito simples — mesmo valor de anterioridade.",
+          "icon": "Replace"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Trocar por perfeito («escutou») ou imperfeito («escutava») e perder a anterioridade.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Anterior no passado → mais-que-perfeito (simples ou composto)."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Tempo → equivalência → letra",
+      "chip_label": "Um toque = um corte",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Verbos — tempos, modos e vozes"
+      },
+      "steps": [
+        "Comando: equivalência da expressão «tinha escutado» — achar o tempo na linha.",
+        "«tinha escutado» = auxiliar + particípio → mais-que-perfeito composto (ação anterior a outra passada).",
+        "A «escutaria»: futuro do pretérito — posterioridade hipotética — eliminar.",
+        "B «escutava»: imperfeito — fundo/habitual, não marca anterioridade composta — eliminar.",
+        "C «escuta»: presente — fora da linha do passado — eliminar.",
+        "D «escutara»: mais-que-perfeito simples = mesmo valor de «tinha escutado».",
+        "E «escutou»: pretérito perfeito — pontual, sem «já antes» — eliminar.",
+        "Gabarito D — composto ↔ simples do mais-que-perfeito.",
+        "Em similares: pergunte se a ação é anterior a outra passada antes de marcar."
+      ],
+      "footer_rule": "Composto e simples do mesmo tempo são equivalentes."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore de bolso",
+      "chip_label": "Tempos da prova",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Verbos — tempos, modos e vozes"
+      },
+      "content": "LINHA DO TEMPO — QUANDO",
+      "rows": [
+        {
+          "label": "Pergunta-teste",
+          "value": "Qual tempo/modo? Anterior, simultânea ou posterior?",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Mais-que-perfeito",
+          "value": "Ação anterior a outra passada — «escutara» / «tinha escutado».",
+          "emphasis": "success"
+        },
+        {
+          "label": "Perfeito",
+          "value": "Ação concluída pontual — «escutou».",
+          "emphasis": "default"
+        },
+        {
+          "label": "Imperfeito",
+          "value": "Fundo, hábito ou curso no passado — «escutava».",
+          "emphasis": "default"
+        },
+        {
+          "label": "Futuro do pretérito",
+          "value": "Posterioridade vista do passado — «escutaria».",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Nesta questão",
+          "value": "«tinha escutado» ≡ «escutara» (D)."
+        }
+      ],
+      "footer_rule": "Tempo = quando · Modo = atitude · Voz = ativo/paciente."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Pegadinhas desta prova",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Verbos — tempos, modos e vozes"
+      },
+      "content": "Cada letra erra por deslocar o ponto na linha do tempo.",
+      "items": [
+        {
+          "label": "A — futuro do pretérito",
+          "detail": "«Escutaria» sugere hipótese/posterioridade, não anterioridade.",
+          "correct": "Futuro do pretérito = «faria/escutaria» — depois, não antes."
+        },
+        {
+          "label": "B — imperfeito",
+          "detail": "«Escutava» cola no fundo habitual, sem o «já tinha».",
+          "correct": "Imperfeito = curso/hábito; mais-que-perfeito = anterior a outra passada."
+        },
+        {
+          "label": "C — presente",
+          "detail": "«Escuta» sai da linha do passado do trecho.",
+          "correct": "Presente = agora/habitual atemporal — não equivale a «tinha escutado»."
+        },
+        {
+          "label": "E — pretérito perfeito",
+          "detail": "«Escutou» marca fato pontual, sem anterioridade explícita.",
+          "correct": "Perfeito = concluído; mais-que-perfeito = anterior a outro passado."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Classifique: «Quando cheguei, o plantão já tinha começado.»",
+          "correct": "Mais-que-perfeito composto (= começara) — ação anterior a «cheguei»."
+        }
+      ],
+      "footer_rule": "Toque cada pegadinha; na transferência, classifique o tempo antes da letra."
+    }
+  ]
+}

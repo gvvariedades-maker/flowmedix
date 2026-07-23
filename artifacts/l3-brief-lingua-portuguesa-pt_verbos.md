@@ -79,4 +79,5 @@ Cada `items[].correct` explica **por que a alternativa seria certa** se o gabari
 
 - **React bespoke:** dispensado (`ok_generico`)
 - **Handcraft:** `verbos-tempos-modos-e-vozes-g01` … `g06`
-- **Âncora:** opcional — criar `examples/questao-premium-*-portugues-verbos-*.json` se gate exigir estilo
+- **Âncora:** `examples/questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json` ([READY] 2026-07-23 · tec 3789241 · gab. D · mais-que-perfeito composto↔simples)
+- **Run-state:** `artifacts/pipeline-run-state-verbos-tempos-modos-e-vozes.json` → next=`handcraft_lote:g01`

@@ -73,6 +73,22 @@ describe('classifyFamily', () => {
     ).toBe('calc');
   });
 
+  it('não confunde «equivale a» (PT verbos) com família calc', () => {
+    const instruction =
+      'Em “… as coisas que sabia tinha escutado…”, a expressão destacada equivale a:';
+    expect(
+      classifyFamily(instruction, 'Verbos — tempos, modos e vozes', opts(['A', 'B', 'C', 'D', 'E']), ''),
+    ).toBe('conceito');
+  });
+
+  it('mantém calc em equivalência de dose/gotas', () => {
+    const instruction =
+      'Calcule a equivalência em gotas (gts) para a dose prescrita em mL.';
+    expect(
+      classifyFamily(instruction, 'Cálculo de Administração de Medicamentos e Infusões', opts(['A', 'B']), ''),
+    ).toBe('calc');
+  });
+
   it('classifica calc antes de protocolo quando pede conta em contexto de urgência', () => {
     const instruction =
       'Na urgência, calcule quantos mL de soro devem ser administrados conforme a prescrição.';

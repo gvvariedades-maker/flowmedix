@@ -316,7 +316,19 @@
       "when": "Tempos, modos, vozes, locução verbal, correlação",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "ok_generico",
-      "anchors": []
+      "ok_generico_3_3": "45 slugs; morphological + rows + tap + compare; linha do tempo verbal (M14)",
+      "brief": "artifacts/l3-brief-lingua-portuguesa-pt_verbos.md",
+      "anchors": [
+        "examples/questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json"
+      ],
+      "anchor_styles": {
+        "eliminacao": {
+          "golden_reference": "examples/questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json",
+          "anchor_slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+          "catalog_slug": "vunesp-ag-ad-verbos-leia-o-texto-a-seguir-para-responder-3789241",
+          "note": "Âncora bootstrap 2026-07-23 — tec 3789241 · VUNESP Ag Adm SJRP 2026 · gab. D · mais-que-perfeito composto↔simples"
+        }
+      }
     },
     {
       "id": "pt_sinonimos_polissemia",

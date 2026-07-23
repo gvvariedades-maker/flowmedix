@@ -1489,7 +1489,7 @@
         "closed_at": "2026-07-21",
         "source": "cluster:lingua-portuguesa"
       },
-      "note": "Card Verbos — 45 slugs PDF cluster B—Morfologia (Conjugação 35 + Locução 3 + Variadas 3 + Correlação 2 + Vozes 2). Ramo pt_verbos ok_generico. Bootstrap pipeline paridade 2026-07-21.",
+      "note": "Card Verbos — 45 slugs PDF cluster B—Morfologia (Conjugação 35 + Locução 3 + Variadas 3 + Correlação 2 + Vozes 2). Ramo pt_verbos ok_generico. Bootstrap 2026-07-23: brief L3 + âncora READY mais-que-perfeito SJRP + run-state → g01.",
       "production_status": "none",
       "quality": {
         "layers": {

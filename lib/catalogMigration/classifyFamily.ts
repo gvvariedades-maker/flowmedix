@@ -88,7 +88,7 @@ export function isLegisFamily(instruction: string): boolean {
 export function isCalcFamily(instruction: string): boolean {
   const blob = instruction.toLowerCase();
   return (
-    /calcul|gts|gotas|comprimido|equiv|dilui|regra de três|microgotas|quantos?\s+ml|quantas?\s+gotas/i.test(
+    /calcul|gts|gotas|comprimido|equival[eê]ncia|dilui|regra de três|microgotas|quantos?\s+ml|quantas?\s+gotas/i.test(
       blob,
     ) ||
     (/infus/i.test(blob) &&
