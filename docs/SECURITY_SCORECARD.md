@@ -10,10 +10,10 @@ Atualizar status com evidência (link CI, commit, screenshot ops, data do paper 
 | # | Item | Dono | Evidência | Status |
 |---|------|------|-----------|--------|
 | 1 | **Arquitetura** — `check:architecture` + `check:ship` verdes | CI / código | Local 2026-07-23: `check:ship` PASS; job `architecture-check` em [`test.yml`](../.github/workflows/test.yml) | **PASS** |
-| 2 | **RLS smoke** — `npm run smoke:rls` (+ SQL companion) | CI condicional / ops | Script + check anon `stripe_webhook_events`; job `smoke-rls` (skip sem `SMOKE_*`). **Ops:** configurar secrets para CI efetivo | **PASS** código · ⚠ secrets CI |
+| 2 | **RLS smoke** — `npm run smoke:rls` (+ SQL companion) | CI condicional / ops | 2026-07-23: `smoke:rls` PASS remoto (incl. `stripe_webhook_events`); job `smoke-rls` (secrets CI opcional) | **PASS** |
 | 3 | **Secrets / env Zod** — `validate:env`; sem secret em `NEXT_PUBLIC_*` | CI / código | `validate:env` no ship; gates `no-service-role-in-client` / `no-new-env-without-zod` | **PASS** |
 | 4 | **Headers / CSP** — `next.config.js` alinhado a auditoria | código / ops | [`AUDITORIA_DEPLOY.md`](AUDITORIA_DEPLOY.md) — headers implementados; sem lacuna P0 aberta no inventário | **PASS** |
-| 5 | **Stripe** — assinatura webhook + idempotência por `event.id` | código | `constructEvent` + [`webhookEventLedger.ts`](../lib/stripe/webhookEventLedger.ts) + migration `20260723120000` + testes. Security Review 0 findings. **`db:push` staging/prod pendente (zona vermelha)** | **PASS** código · ⚠ migration |
+| 5 | **Stripe** — assinatura webhook + idempotência por `event.id` | código | `constructEvent` + ledger + migration `20260723120000` aplicada 2026-07-23 (`db:push --include-all`) + `smoke:rls` PASS (`anon_stripe_webhook_events_vazio`) | **PASS** |
 | 6 | **IDOR mínimo** — histórico / matrícula cross-user | código / CI | `__tests__/security/` (`historico-idor`, `admin-forbid-aluno`, `anon-rls-contract`) no `check:ship` | **PASS** |
 | 7 | **Rate limit distribuído em prod** — Upstash configurado | ops | `UPSTASH_REDIS_REST_*` na Vercel Production ([`DEPLOY.md`](DEPLOY.md)) | ☐ FAIL (ops) |
 | 8 | **Sentry ativo em prod** — DSN | ops | `SENTRY_DSN` / `NEXT_PUBLIC_SENTRY_DSN` na Vercel Production | ☐ FAIL (ops) |
@@ -29,8 +29,8 @@ Atualizar status com evidência (link CI, commit, screenshot ops, data do paper 
 |-------|-----------|
 | `check:ship` | PASS |
 | Security Review Stripe ledger | 0 findings |
+| `db:push` + `smoke:rls` | PASS 2026-07-23 (projeto linkado) |
 | Scorecard #1–6, #10, parte #11 | PASS código |
-| #5 migration `db:push` | Pendente humano |
 | #9 `npm audit --audit-level=high` | FAIL até upgrade deps |
 | #7/#8/#11 MFA/#12/#13 + GitHub protection | Ops humano |
 
@@ -81,7 +81,6 @@ Passo a passo em [`DEPLOY.md`](DEPLOY.md) § [Ops produção (scorecard)](DEPLOY
 
 | Scorecard # | Gap | Dono | Meta |
 |-------------|-----|------|------|
-| #5 | `db:push` migration `stripe_webhook_events` (staging → prod) | eng + humano | [`MIGRATIONS_PR_CHECKLIST.md`](MIGRATIONS_PR_CHECKLIST.md) |
 | #9 | Limpar `npm audit` high (`next`/`sharp`/`ws`/…) | eng | Dependabot / upgrade controlado |
 | #7 | Upstash Redis em Vercel Production | ops | [`DEPLOY.md`](DEPLOY.md) § Ops 2 |
 | #8 | `SENTRY_DSN` (e opcional source maps CI) em Production | ops | [`DEPLOY.md`](DEPLOY.md) § Ops 1 |
