@@ -45,6 +45,17 @@ describe('VitrineClient paginação', () => {
     expect(source).toContain('max-w-none');
   });
 
+  it('não renderiza cards enquanto keepPreviousData é de outra disciplina/filtro', () => {
+    expect(source).toContain('dataMatchesQuery: listDataMatchesQuery');
+    expect(source).toContain(
+      'listDataMatchesQuery ? (vitrinePageData?.groups ?? []) : []',
+    );
+    expect(source).toContain(
+      '!listDataMatchesQuery || (vitrineLoading && gruposPagina.length === 0)',
+    );
+    expect(source).not.toContain('vitrineResponseMatchesListKey');
+  });
+
   it('foca o título da página ao alternar hub ↔ assuntos', () => {
     expect(source).toContain('pageTitleRef');
     expect(source).toContain('prevHubModeRef');

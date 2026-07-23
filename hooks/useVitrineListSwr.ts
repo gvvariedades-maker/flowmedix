@@ -16,7 +16,12 @@ export type UseVitrineListSwrOptions = {
   retryNonce?: number;
 };
 
-async function fetchVitrinePage(query: VitrineListQuery): Promise<VitrinePageResponse> {
+/** Resposta SWR com a chave da query que produziu os dados (anti-flash keepPreviousData). */
+export type VitrinePageWithQueryKey = VitrinePageResponse & {
+  listQueryKey: string;
+};
+
+async function fetchVitrinePage(query: VitrineListQuery): Promise<VitrinePageWithQueryKey> {
   const params = new URLSearchParams();
   params.set('page', String(query.page));
   query.bancas.forEach((b) => params.append('bancas', b));
@@ -29,12 +34,23 @@ async function fetchVitrinePage(query: VitrineListQuery): Promise<VitrinePageRes
     const body = (await res.json().catch(() => ({}))) as { error?: string };
     throw new Error(body.error ?? `Erro ${res.status}`);
   }
-  return (await res.json()) as VitrinePageResponse;
+  const data = (await res.json()) as VitrinePageResponse;
+  return { ...data, listQueryKey: vitrineListQueryKey(query) };
+}
+
+function withListQueryKey(
+  data: VitrinePageResponse,
+  listKey: string,
+): VitrinePageWithQueryKey {
+  return { ...data, listQueryKey: listKey };
 }
 
 /**
  * Lista paginada da vitrine com SWR (`keepPreviousData`): mantém grupos anteriores
  * enquanto filtro/página atualiza; `isValidating` indica “Atualizando…”.
+ *
+ * `dataMatchesQuery` é false enquanto o payload ainda é da chave anterior
+ * (ex.: flash Enfermagem → Português) — a UI deve mostrar skeleton, não cards stale.
  */
 export function useVitrineListSwr(
   query: VitrineListQuery,
@@ -54,7 +70,10 @@ export function useVitrineListSwr(
     () => fetchVitrinePage(query),
     {
       keepPreviousData: true,
-      fallbackData: ssrMatches ? options.fallbackData ?? undefined : undefined,
+      fallbackData:
+        ssrMatches && options.fallbackData
+          ? withListQueryKey(options.fallbackData, listKey)
+          : undefined,
       revalidateOnMount: !ssrMatches,
       revalidateOnFocus: false,
       revalidateOnReconnect: true,
@@ -62,8 +81,11 @@ export function useVitrineListSwr(
     },
   );
 
+  const dataMatchesQuery = data != null && data.listQueryKey === listKey;
+
   return {
     data: data ?? null,
+    dataMatchesQuery,
     error: error instanceof Error ? error.message : error ? String(error) : null,
     isLoading: isLoading && !data,
     isValidating,

@@ -35,17 +35,21 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { slug, layers, from, caderno_id, bancas, assuntos, q, page } = parsed.data;
+    const { slug, layers, from, caderno_id, bancas, assuntos, q, page, disciplina } =
+      parsed.data;
+
+    const estudarSearchParams = {
+      from,
+      caderno_id,
+      banca: bancas,
+      assunto: assuntos,
+      q,
+      ...(page != null && page > 1 ? { page: String(page) } : {}),
+      ...(disciplina ? { disciplina } : {}),
+    };
 
     if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS') && isE2eEstudarSlug(slug)) {
-      const result = buildE2eEstudarQuestaoPayload(slug, {
-        from,
-        caderno_id,
-        banca: bancas,
-        assunto: assuntos,
-        q,
-        ...(page != null && page > 1 ? { page: String(page) } : {}),
-      }, layers);
+      const result = buildE2eEstudarQuestaoPayload(slug, estudarSearchParams, layers);
       recordPerformance(endpoint, method, Date.now() - requestStartedAt, result.status === 'ok');
       if (result.status === 'not_found') {
         return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
@@ -70,6 +74,7 @@ export async function GET(request: NextRequest) {
       q: q || undefined,
       from: from || undefined,
       caderno_id: caderno_id || undefined,
+      disciplina: disciplina || undefined,
     };
     const buildStartedAt = Date.now();
     const result = await buildEstudarQuestaoPlayerPayload({
@@ -77,14 +82,7 @@ export async function GET(request: NextRequest) {
       layers,
       userId: auth.user.id,
       isAdmin: isAdminSessionEmail(auth.user.email ?? null),
-      searchParams: {
-        from,
-        caderno_id,
-        banca: bancas,
-        assunto: assuntos,
-        q,
-        ...(page != null && page > 1 ? { page: String(page) } : {}),
-      },
+      searchParams: estudarSearchParams,
       supabase: auth.supabase,
     });
     logEstudarNavApiBuild({

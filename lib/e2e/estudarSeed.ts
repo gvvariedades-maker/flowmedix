@@ -9,7 +9,10 @@ import {
   stripSlidesForCoreLayer,
   type EstudarQuestaoLayers,
 } from '@/lib/estudar/questaoLayers';
-import { parseEstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
+import {
+  buildEstudarContextQuerySuffix,
+  parseEstudarSearchParams,
+} from '@/lib/estudar/parseEstudarSearchParams';
 import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
 import type { VitrineFacets, VitrinePageResponse } from '@/lib/vitrine/types';
 import type { VitrineListQuery } from '@/lib/vitrine/parseListQuery';
@@ -118,28 +121,7 @@ const E2E_LESSONS: Record<(typeof E2E_ESTUDAR_SLUGS)[number], LessonData> = {
 function buildVitrineQuerySuffix(
   searchParams: Record<string, string | string[] | undefined> = {},
 ): string {
-  const {
-    vitrineBancas,
-    vitrineAssuntos,
-    vitrineQ,
-    vitrinePage,
-    fromPlano,
-    fromCaderno,
-    cadernoId,
-  } = parseEstudarSearchParams(searchParams);
-
-  if (fromPlano) return '?from=plano';
-  if (fromCaderno && cadernoId) {
-    return `?from=caderno&caderno_id=${encodeURIComponent(cadernoId)}`;
-  }
-
-  const p = new URLSearchParams();
-  vitrineBancas.forEach((b) => p.append('banca', b));
-  vitrineAssuntos.forEach((a) => p.append('assunto', a));
-  if (vitrineQ) p.set('q', vitrineQ);
-  if (vitrinePage > 1) p.set('page', String(vitrinePage));
-  const s = p.toString();
-  return s ? `?${s}` : '';
+  return buildEstudarContextQuerySuffix(parseEstudarSearchParams(searchParams));
 }
 
 /** Assuntos extras para paginação E2E (page 1 = 12, page 2 = 13º). */

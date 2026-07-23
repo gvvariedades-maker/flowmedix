@@ -103,22 +103,6 @@ function stringArraysEqual(a: string[], b: string[]): boolean {
   return a.every((value, index) => value === b[index]);
 }
 
-/** Evita aplicar paginação de cache SWR (keepPreviousData) de outra página/filtro. */
-function vitrineResponseMatchesListKey(
-  data: VitrinePageResponse,
-  requested: VitrineListQuery,
-): boolean {
-  return (
-    vitrineListQueryKey({
-      page: data.pagination.page,
-      bancas: requested.bancas,
-      assuntos: requested.assuntos,
-      q: requested.q,
-      disciplina: requested.disciplina,
-    }) === vitrineListQueryKey(requested)
-  );
-}
-
 /** Query de filtros na barra de endereço (preserva cidade, concurso, etc.). */
 function buildVitrineLocationSearch(
   searchParams: { forEach: (cb: (value: string, key: string) => void) => void },
@@ -278,6 +262,7 @@ export default function VitrineClient({
 
   const {
     data: vitrinePageData,
+    dataMatchesQuery: listDataMatchesQuery,
     error: vitrineFetchError,
     isLoading: vitrineLoading,
     isValidating: vitrineValidating,
@@ -287,9 +272,13 @@ export default function VitrineClient({
     retryNonce,
   });
 
+  /**
+   * Com keepPreviousData, SWR ainda devolve a página anterior ao trocar disciplina/filtro.
+   * Só usa groups/paginação quando a chave bate — senão flash de Enfermagem em Português.
+   */
   const gruposPagina = useMemo(
-    () => vitrinePageData?.groups ?? [],
-    [vitrinePageData?.groups],
+    () => (listDataMatchesQuery ? (vitrinePageData?.groups ?? []) : []),
+    [listDataMatchesQuery, vitrinePageData?.groups],
   );
   const gruposFiltrados = useMemo(
     () => filterVitrineGroupsByStatus(gruposPagina, statusFilter),
@@ -303,24 +292,31 @@ export default function VitrineClient({
     }),
     [gruposPagina],
   );
-  const totalAssuntos = vitrinePageData?.pagination.totalGroups ?? 0;
-  const totalPaginas = vitrinePageData?.pagination.totalPages ?? 1;
+  const totalAssuntos = listDataMatchesQuery
+    ? (vitrinePageData?.pagination.totalGroups ?? 0)
+    : 0;
+  const totalPaginas = listDataMatchesQuery
+    ? (vitrinePageData?.pagination.totalPages ?? 1)
+    : 1;
   totalPaginasRef.current = totalPaginas;
-  const paginaEfetiva = vitrinePageData?.pagination.page ?? pagina;
+  const paginaEfetiva =
+    listDataMatchesQuery && vitrinePageData ? vitrinePageData.pagination.page : pagina;
   const perPage = vitrinePageData?.pagination.perPage ?? 12;
   const fetchError = vitrineFetchError ?? (retryNonce === 0 ? initialPayloadError : null);
-  const loading = vitrineLoading && gruposPagina.length === 0;
-  const isRefreshing = vitrineValidating && gruposPagina.length > 0;
+  const loading =
+    !listDataMatchesQuery || (vitrineLoading && gruposPagina.length === 0);
+  const isRefreshing =
+    listDataMatchesQuery && vitrineValidating && gruposPagina.length > 0;
 
   useEffect(() => {
-    if (!vitrinePageData || !vitrineResponseMatchesListKey(vitrinePageData, vitrineListQuery)) {
+    if (!vitrinePageData || !listDataMatchesQuery) {
       return;
     }
     const pageFromApi = vitrinePageData.pagination.page;
     if (pageFromApi !== pagina) {
       setPagina(pageFromApi);
     }
-  }, [vitrinePageData, vitrineListQuery, pagina]);
+  }, [vitrinePageData, listDataMatchesQuery, pagina]);
 
   /**
    * URL → estado antes do paint e antes dos useEffects que gravam na URL / buscam dados.
@@ -632,9 +628,6 @@ export default function VitrineClient({
   }, [hubMode, disciplinaSummaries]);
 
   const listBusy = loading || isRefreshing;
-  const listDataMatchesQuery =
-    vitrinePageData != null &&
-    vitrineResponseMatchesListKey(vitrinePageData, vitrineListQuery);
   /** Bloqueia Anterior/Próxima enquanto SWR exibe página/filtro anterior (keepPreviousData). */
   const paginationBusy = listBusy || !listDataMatchesQuery;
 

@@ -139,6 +139,25 @@ describe('GET /api/estudar/questao', () => {
     );
   });
 
+  it('repassa disciplina ao builder (evita toast ao ir para próxima em Português)', async () => {
+    mockBuildEstudarQuestaoPlayerPayload.mockResolvedValue({
+      status: 'ok',
+      payload: {
+        ...payloadOk,
+        vitrineQuerySuffix: '?disciplina=portugues',
+        proximaSlug: 'proxima-questao?disciplina=portugues',
+      },
+    });
+
+    await GET(makeRequest({ slug: SLUG, disciplina: 'portugues' }));
+
+    expect(mockBuildEstudarQuestaoPlayerPayload).toHaveBeenCalledWith(
+      expect.objectContaining({
+        searchParams: expect.objectContaining({ disciplina: 'portugues' }),
+      }),
+    );
+  });
+
   it('retorna 200 com payload do player e Cache-Control private', async () => {
     mockBuildEstudarQuestaoPlayerPayload.mockResolvedValue({
       status: 'ok',

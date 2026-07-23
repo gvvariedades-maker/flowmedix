@@ -943,6 +943,8 @@ export const EstudarQuestaoQuerySchema = z
     page: z.coerce.number().int().min(1).max(500).optional(),
     ...vitrineBancaAssuntoQueryBase,
     q: z.string().trim().max(200).optional(),
+    /** Hub TE/PT — obrigatório no suffix (evita toast payload_cache_key_mismatch). */
+    disciplina: z.enum(['enfermagem', 'portugues']).optional(),
   })
   .transform(mergeBancaAssuntoFields);
 
