@@ -51,6 +51,7 @@ import VitrineDisciplinePicker from '@/components/vitrine/VitrineDisciplinePicke
 import type { VitrineResumeHint } from '@/lib/vitrine/resume';
 import {
   guessDisciplinaFromTituloAula,
+  disciplinasVisiveisNoPicker,
   isVitrineDisciplineHubMode,
   parseVitrineDisciplina,
   type VitrineDisciplinaId,
@@ -237,6 +238,9 @@ export default function VitrineClient({
   const [retryNonce, setRetryNonce] = useState(0);
   const vitrineListaRef = useRef<HTMLDivElement>(null);
   const vitrinePaginationInlineRef = useRef<HTMLElement>(null);
+  const pageTitleRef = useRef<HTMLHeadingElement>(null);
+  /** Evita focar o h1 no mount; só ao alternar hub ↔ assuntos. */
+  const prevHubModeRef = useRef<boolean | null>(null);
   const totalPaginasRef = useRef(1);
   /** Persiste entre soft-nav; zera ao abrir questão para não voltar com card aberto. */
   const [expandedPanelSlug, setExpandedPanelSlug] = useState<string | null>(null);
@@ -613,6 +617,20 @@ export default function VitrineClient({
       ? 'Assuntos'
       : 'Vitrine de questões';
 
+  /** Landmark: ao mudar a descrição (hub ↔ assuntos), move o foco para o h1. */
+  useEffect(() => {
+    const canHub = disciplinasVisiveisNoPicker(disciplinaSummaries).length > 1;
+    if (!canHub) {
+      prevHubModeRef.current = null;
+      return;
+    }
+
+    const prev = prevHubModeRef.current;
+    prevHubModeRef.current = hubMode;
+    if (prev === null || prev === hubMode) return;
+    pageTitleRef.current?.focus();
+  }, [hubMode, disciplinaSummaries]);
+
   const listBusy = loading || isRefreshing;
   const listDataMatchesQuery =
     vitrinePageData != null &&
@@ -800,6 +818,7 @@ export default function VitrineClient({
           <VitrinePageHeader
             title={pageSectionTitle}
             description={pageSectionDescription || null}
+            titleRef={pageTitleRef}
           />
           {children ? <div className={hubMode ? 'mb-0' : 'mb-4 md:mb-6'}>{children}</div> : null}
           {disciplinaSummaries.length > 0 ? (

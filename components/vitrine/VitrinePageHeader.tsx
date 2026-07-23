@@ -1,13 +1,20 @@
-﻿import Link from 'next/link';
+﻿import type { Ref } from 'react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { vitrineBrand } from '@/lib/vitrine/vitrineBrand';
 
 type VitrinePageHeaderProps = {
   title: string;
   description?: string | null;
+  /** Permite foco programático ao mudar hub ↔ assuntos. */
+  titleRef?: Ref<HTMLHeadingElement>;
 };
 
-export default function VitrinePageHeader({ title, description }: VitrinePageHeaderProps) {
+export default function VitrinePageHeader({
+  title,
+  description,
+  titleRef,
+}: VitrinePageHeaderProps) {
   return (
     <section aria-labelledby="vitrine-page-title">
       <div className="flex items-stretch gap-3">
@@ -28,8 +35,10 @@ export default function VitrinePageHeader({ title, description }: VitrinePageHea
             </Link>
           </div>
           <h1
+            ref={titleRef}
             id="vitrine-page-title"
-            className="text-editorial-title text-2xl font-bold sm:text-3xl"
+            tabIndex={-1}
+            className="text-editorial-title text-2xl font-bold outline-none focus-visible:ring-2 focus-visible:ring-[#0cc93a]/40 focus-visible:ring-offset-2 sm:text-3xl"
           >
             {title}
           </h1>

@@ -44,4 +44,12 @@ describe('VitrineClient paginação', () => {
     expect(source).toContain("Vitrine de disciplinas");
     expect(source).toContain('max-w-none');
   });
+
+  it('foca o título da página ao alternar hub ↔ assuntos', () => {
+    expect(source).toContain('pageTitleRef');
+    expect(source).toContain('prevHubModeRef');
+    expect(source).toContain('titleRef={pageTitleRef}');
+    expect(source).toMatch(/pageTitleRef\.current\?\.focus\(\)/);
+    expect(source).toMatch(/prevHubModeRef\.current\s*=\s*hubMode/);
+  });
 });

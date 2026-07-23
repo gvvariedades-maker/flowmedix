@@ -1,3 +1,4 @@
+import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import VitrinePageHeader from '@/components/vitrine/VitrinePageHeader';
 
@@ -28,5 +29,18 @@ describe('VitrinePageHeader', () => {
 
     const section = container.querySelector('section[aria-labelledby="vitrine-page-title"]');
     expect(section).toBeInTheDocument();
+  });
+
+  it('h1 é focável via tabIndex=-1 e titleRef', () => {
+    const titleRef = createRef<HTMLHeadingElement>();
+    render(<VitrinePageHeader title="Assuntos" titleRef={titleRef} />);
+
+    const heading = screen.getByRole('heading', { level: 1 });
+    expect(heading).toHaveAttribute('tabIndex', '-1');
+    expect(heading).toHaveClass('outline-none');
+    expect(titleRef.current).toBe(heading);
+
+    titleRef.current?.focus();
+    expect(heading).toHaveFocus();
   });
 });
