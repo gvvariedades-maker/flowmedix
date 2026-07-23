@@ -88,4 +88,6 @@ npm run build               # quando tocou app/ UI crítica (além do ship)
 
 Detalhe: [`docs/ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) · matriz em [`avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc) · cópia [`docs/cursor/avant-engineering.mdc`](docs/cursor/avant-engineering.mdc).
 
+Auditoria humana por domínio (auth / cache / RLS / Stripe / player): [`docs/ENG_AUDITORIA_POR_RISCO.md`](docs/ENG_AUDITORIA_POR_RISCO.md).
+
 **Loop:** mesmo anti-padrão **2×** → novo gate em `scripts/check-architecture-patterns.ts` + registro no changelog de [`ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) (§ Loop de melhoria contínua).
