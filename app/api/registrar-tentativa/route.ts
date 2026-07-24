@@ -4,6 +4,11 @@ import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { resolveE2eEstudarAttempt } from '@/lib/e2e/estudarSeed';
 import { isE2eEstudarSlug } from '@/lib/e2e/constants';
+import {
+  extractEvidenceClientBody,
+  ingestEvidenceRouteHook,
+} from '@/lib/evidence/ingestEvidenceRouteHook';
+import type { EvidenceSupabaseClientLike } from '@/lib/evidence/supabasePersistence';
 import { resolveQuestionAttempt } from '@/lib/estudar/questionPayload';
 import {
   assertCanAnswerQuestion,
@@ -183,10 +188,25 @@ export async function POST(request: NextRequest) {
     revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
     revalidateTag(`user-${user.id}`, CACHE_REVALIDATE_IMMEDIATE);
 
+    const evidence = await ingestEvidenceRouteHook({
+      supabase: supabase as unknown as EvidenceSupabaseClientLike,
+      route: 'registrar_tentativa',
+      user_id: user.id,
+      user_email: user.email,
+      question_id: modulo_slug,
+      selected_alternative: opcao_id,
+      correct: acertou,
+      conteudo_json: modulo.conteudo_json,
+      client_body: extractEvidenceClientBody(body as Record<string, unknown>),
+      e2e_instrumentation: false,
+      log_route_label: 'registrar-tentativa',
+    });
+
     return NextResponse.json({
       success: true,
       acertou,
       opcao_correta_id: opcaoCorretaId,
+      ...(evidence !== undefined ? { evidence } : {}),
     });
   } catch (error) {
     logger.error('Unexpected error in registrar-tentativa', error);
