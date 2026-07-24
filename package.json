@@ -2,6 +2,9 @@
   "name": "avant",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
   "scripts": {
     "dev": "next dev",
     "dev:webpack": "next dev --webpack",
