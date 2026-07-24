@@ -10,21 +10,22 @@ export const WRITE_SPEC_TEST_SLIDES = [
     ],
   },
   {
-    type: 'golden_rule' as const,
-    content: 'Regra específica desta questão de teste — não genérica.',
+    type: 'logic_flow' as const,
+    steps: ['Ler enunciado e alternativas', 'Confrontar com protocolo', 'Marcar gabarito B'],
+    reveal_mode: 'tap' as const,
   },
   {
-    type: 'logic_flow' as const,
-    steps: ['Ler enunciado e alternativas', 'Confrontar com protocolo', 'Marcar gabarito'],
+    type: 'golden_rule' as const,
+    content: 'Regra específica desta questão de teste — não genérica.',
   },
   {
     type: 'danger_zone' as const,
     content: 'Pegadinhas desta questão',
     items: [
       {
-        label: 'Alternativa sedutora',
-        detail: 'Por que parece certa',
-        correct: 'Por que está errada',
+        label: 'A',
+        detail: 'Por que a alternativa A parece certa',
+        correct: 'Gabarito B: a opção A não atende o protocolo cobrado.',
       },
     ],
   },

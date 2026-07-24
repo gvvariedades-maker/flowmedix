@@ -114,7 +114,7 @@ test.describe('Auditoria visual — AVANT Editorial v2 desktop', () => {
     await snap(page, 'T6-feedback-desktop.png');
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
-    await expect(page.getByRole('button', { name: /Fechar estudo reverso/i })).toBeVisible({
+    await expect(page.getByRole('button', { name: /Sair do estudo reverso/i })).toBeVisible({
       timeout: 30_000,
     });
     await snap(page, 'T9-neuroslides-desktop.png');
@@ -152,7 +152,7 @@ test.describe('Auditoria visual — AVANT Editorial v2 mobile', () => {
     await snap(page, 'T6-feedback-mobile.png');
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
-    await expect(page.getByRole('button', { name: /Fechar estudo reverso/i })).toBeVisible({
+    await expect(page.getByRole('button', { name: /Sair do estudo reverso/i })).toBeVisible({
       timeout: 30_000,
     });
     await snap(page, 'T9-neuroslides-mobile.png');
