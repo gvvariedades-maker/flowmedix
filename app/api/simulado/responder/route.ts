@@ -281,6 +281,22 @@ export async function POST(request: NextRequest) {
     revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
     revalidateTag(`user-${auth.user.id}`, CACHE_REVALIDATE_IMMEDIATE);
 
+    const evidence = await ingestEvidenceRouteHook({
+      supabase: supabase as unknown as EvidenceSupabaseClientLike,
+      route: 'simulado_responder',
+      user_id: auth.user.id,
+      user_email: auth.user.email,
+      question_id: modulo_slug,
+      selected_alternative: opcao_id,
+      correct: acertou,
+      conteudo_json: modulo.conteudo_json,
+      client_body: extractEvidenceClientBody(body as Record<string, unknown>),
+      session_id: session.id,
+      session_kind: resolveSimuladoSessionKind(session.filtros),
+      e2e_instrumentation: false,
+      log_route_label: 'simulado-responder',
+    });
+
     const { data: progressRows, error: progressError } = await supabase
       .from('simulado_respostas')
       .select(RESPOSTA_PROGRESS_SELECT)
@@ -345,22 +361,6 @@ export async function POST(request: NextRequest) {
     const questao_atualizada = buildSimuladoQuestaoRespondida(answeredRow, {
       sessionMode,
       sessionStatus,
-    });
-
-    const evidence = await ingestEvidenceRouteHook({
-      supabase: supabase as unknown as EvidenceSupabaseClientLike,
-      route: 'simulado_responder',
-      user_id: auth.user.id,
-      user_email: auth.user.email,
-      question_id: modulo_slug,
-      selected_alternative: opcao_id,
-      correct: acertou,
-      conteudo_json: modulo.conteudo_json,
-      client_body: extractEvidenceClientBody(body as Record<string, unknown>),
-      session_id: session.id,
-      session_kind: resolveSimuladoSessionKind(session.filtros),
-      e2e_instrumentation: false,
-      log_route_label: 'simulado-responder',
     });
 
     return NextResponse.json({

@@ -131,6 +131,7 @@ function buildRespostaProgressRows() {
 function buildSuccessMocks(options?: {
   filtros?: Record<string, unknown>;
   historicoPersistError?: boolean;
+  progressReloadError?: boolean;
 }) {
   const sessionMaybeSingle = jest.fn().mockResolvedValue({
     data: {
@@ -176,8 +177,8 @@ function buildSuccessMocks(options?: {
   const respostaCountSelect = jest.fn().mockReturnValue({ eq: respostaCountEqSession });
 
   const progressOrder = jest.fn().mockResolvedValue({
-    data: buildRespostaProgressRows(),
-    error: null,
+    data: options?.progressReloadError ? null : buildRespostaProgressRows(),
+    error: options?.progressReloadError ? { message: 'progress fail' } : null,
   });
   const progressEqUser = jest.fn().mockReturnValue({ order: progressOrder });
   const progressEqSession = jest.fn().mockReturnValue({ eq: progressEqUser });
@@ -781,6 +782,24 @@ describe('POST /api/simulado/responder', () => {
 
       expect(order.indexOf('simulado_respostas')).toBeLessThan(order.indexOf('historico'));
       expect(order.indexOf('historico')).toBeLessThan(order.indexOf('evidence'));
+    });
+
+    it('ingest Evidence após HQ mesmo quando progress reload retorna 500', async () => {
+      mockIsEvidenceV1InstrumentationEnabled.mockReturnValue(true);
+      buildSuccessMocks({ progressReloadError: true });
+      mockIngestAttemptEvent.mockResolvedValue({ status: 'created', attempt_id: ATTEMPT_ID });
+
+      const response = await POST(
+        makeRequest({
+          session_id: SESSION_ID,
+          modulo_slug: 'questao-slug',
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+        }),
+      );
+
+      expect(response.status).toBe(500);
+      expect(mockIngestAttemptEvent).toHaveBeenCalledTimes(1);
     });
 
     it('diagnóstico → session_kind diagnostico no ingest', async () => {
