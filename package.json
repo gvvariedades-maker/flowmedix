@@ -535,6 +535,8 @@
   },
   "devDependencies": {
     "@cursor/sdk": "^1.0.24",
+    "@emnapi/core": "1.11.2",
+    "@emnapi/runtime": "1.11.2",
     "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4.3.3",
     "@testing-library/jest-dom": "^6.9.1",
