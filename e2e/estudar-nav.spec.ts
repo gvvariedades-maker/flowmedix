@@ -220,7 +220,7 @@ test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
     await confirmarRespostaEGabarito(page);
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
-    await expect(page.getByRole('button', { name: /Fechar estudo reverso/i })).toBeVisible({
+    await expect(page.getByRole('button', { name: /Sair do estudo reverso/i })).toBeVisible({
       timeout: 15_000,
     });
 
@@ -233,7 +233,7 @@ test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
     await page.getByRole('button', { name: /Marcar (como )?[Ee]studado/i }).click();
     await expect(page.getByText('Estudo concluído')).toBeVisible({ timeout: 15_000 });
 
-    await page.getByRole('button', { name: /Fechar estudo reverso/i }).click();
+    await page.getByRole('button', { name: /Sair do estudo reverso/i }).click();
     await expect(page.getByRole('button', { name: /Questão 1.*estudo reverso concluído/i })).toBeVisible({
       timeout: 15_000,
     });
@@ -483,7 +483,7 @@ test.describe('Estudar — immersive inline mobile (rota #5)', () => {
     await confirmarRespostaEGabarito(page);
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
-    const fecharEr = page.getByRole('button', { name: /Fechar estudo reverso/i });
+    const fecharEr = page.getByRole('button', { name: /Sair do estudo reverso/i });
     await expect(fecharEr).toBeVisible({ timeout: 15_000 });
 
     await expect
