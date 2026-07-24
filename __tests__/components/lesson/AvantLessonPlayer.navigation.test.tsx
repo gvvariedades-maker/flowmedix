@@ -16,6 +16,7 @@ const mockFetchWithAuth = fetchWithAuth as jest.MockedFunction<typeof fetchWithA
 jest.mock('next/navigation', () => ({
   useRouter: () => ({ push: mockPush, replace: jest.fn(), prefetch: jest.fn() }),
   usePathname: () => '/estudar/questao-a',
+  useSelectedLayoutSegment: () => null,
 }));
 
 jest.mock('@/lib/layout/useDashboardDesktop', () => ({
