@@ -3,10 +3,16 @@ import { revalidateTag } from 'next/cache';
 import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { resolveQuestionAttempt } from '@/lib/estudar/questionPayload';
 import {
+  extractEvidenceClientBody,
+  ingestEvidenceRouteHook,
+} from '@/lib/evidence/ingestEvidenceRouteHook';
+import type { EvidenceSupabaseClientLike } from '@/lib/evidence/supabasePersistence';
+import {
   buildSimuladoQuestaoRespondida,
   computeSimuladoResumo,
   type SimuladoRespostaProgressRow,
 } from '@/lib/simulado/sessionProgress';
+import { resolveSimuladoSessionKind } from '@/lib/simulado/sessionKind';
 import {
   assertCanAnswerSimuladoQuestion,
   countSimuladoQuestoesHojeForUser,
@@ -341,6 +347,22 @@ export async function POST(request: NextRequest) {
       sessionStatus,
     });
 
+    const evidence = await ingestEvidenceRouteHook({
+      supabase: supabase as unknown as EvidenceSupabaseClientLike,
+      route: 'simulado_responder',
+      user_id: auth.user.id,
+      user_email: auth.user.email,
+      question_id: modulo_slug,
+      selected_alternative: opcao_id,
+      correct: acertou,
+      conteudo_json: modulo.conteudo_json,
+      client_body: extractEvidenceClientBody(body as Record<string, unknown>),
+      session_id: session.id,
+      session_kind: resolveSimuladoSessionKind(session.filtros),
+      e2e_instrumentation: false,
+      log_route_label: 'simulado-responder',
+    });
+
     return NextResponse.json({
       success: true,
       acertou: sessionMode === 'treino' ? acertou : null,
@@ -348,6 +370,7 @@ export async function POST(request: NextRequest) {
       session_status: sessionStatus,
       questao_atualizada,
       resumo,
+      ...(evidence !== undefined ? { evidence } : {}),
     });
   } catch (error) {
     logger.error('Erro inesperado em POST /api/simulado/responder', error);
