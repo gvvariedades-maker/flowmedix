@@ -106,6 +106,8 @@ const ENV_KEYS_FROM_SCHEMA = new Set<string>([
   'SENTRY_PROJECT',
   'CURSOR_API_KEY',
   'CURSOR_ORCHESTRATOR_MODEL',
+  'EE_V1_INSTRUMENTATION',
+  'EE_V1_INTERNAL_EMAILS',
 ]);
 
 type Violation = { file: string; rule: string; detail: string };
