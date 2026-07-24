@@ -559,6 +559,9 @@
     "typescript": "^5"
   },
   "overrides": {
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.3",
+    "next": {
+      "postcss": "8.5.18"
+    }
   }
 }
