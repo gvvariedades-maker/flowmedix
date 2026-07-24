@@ -5,16 +5,10 @@ import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalo
 import NovoCadernoClient, { type NovoCadernoContext } from '@/components/dashboard/cadernos/NovoCadernoClient';
 import { getServerSession } from '@/lib/supabase/server-auth';
 
-export default async function NovoCadernoPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ wizard?: string }>;
-}) {
+export default async function NovoCadernoPage() {
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
-  const { wizard: wizardParam } = await searchParams;
-  const wizard = wizardParam === '1';
   const isAdmin = isAdminSessionEmail(session.user.email ?? null);
 
   const [matriculatedConcursos, modulos] = await Promise.all([
@@ -25,7 +19,7 @@ export default async function NovoCadernoPage({
   const editalRow = matriculatedConcursos.find((concurso) => concurso.tipo === 'edital');
 
   const context: NovoCadernoContext = {
-    wizard,
+    wizard: true,
     edital: editalRow
       ? {
           nome: editalRow.nome,
@@ -40,8 +34,10 @@ export default async function NovoCadernoPage({
       titulo_aula: m.titulo_aula,
       modulo_nome: m.modulo_nome,
       banca: m.banca,
+      avant_codigo: m.avant_codigo ?? null,
     })),
   };
 
+  // Sempre wizard de 3 etapas (dados → seleção → revisão). `?wizard=1` permanece compatível.
   return <NovoCadernoClient context={context} />;
 }

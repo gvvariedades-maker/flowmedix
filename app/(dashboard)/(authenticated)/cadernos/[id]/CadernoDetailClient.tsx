@@ -441,7 +441,11 @@ export default function CadernoDetailClient({
   }, [bancasDisponiveis, editalBanca]);
 
   useEffect(() => {
-    if (setupMode !== 'done' || items.length === 0 || setupToastShownRef.current) return;
+    if (setupMode !== 'done') {
+      setSetupBannerVisible(false);
+      return;
+    }
+    if (items.length === 0 || setupToastShownRef.current) return;
     setupToastShownRef.current = true;
     addToast('Caderno pronto! Comece o estudo reverso quando quiser.', 'success');
     router.replace(`/cadernos/${caderno.id}`, { scroll: false });
