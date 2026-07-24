@@ -1,0 +1,76 @@
+{
+  "lote": "verbos-tempos-modos-e-vozes-g03",
+  "generated_at": "2026-07-23T22:51:44.380Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-ana-verbos-leia-o-texto-a-seguir-para-responder-3460031",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-verbos-leia-o-texto-i-para-responder-a-ques-3651721",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-verbos-leia-o-texto-i-para-responder-a-ques-3654541",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fgv-tec-ebse-verbos-assinale-a-frase-que-nao-mostra-uma-3385119",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ibfc-tec-enf-verbos-analise-o-texto-e-responda-a-questao-3450762",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-acs-verbos-leia-o-texto-a-seguir-para-responder-3586919",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-athh-verbos-quando-eu-deixei-de-acreditar-em-mim-3416674",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ade-g-verbos-leia-a-tira-para-responder-a-questao-3607391",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

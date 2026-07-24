@@ -1,0 +1,76 @@
+{
+  "lote": "denotacao-conotacao-g04",
+  "generated_at": "2026-07-24T05:29:33.131Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-acr-denotacao-uma-lata-existe-para-conter-algomas-3727506",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-ag-denotacao-preso-a-cancoes-entregue-a-paixoesqu-3727032",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-fon-denotacao-uma-lata-existe-para-conter-algomas-3665290",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-of-denotacao-as-vezes-a-vida-bate-com-um-tijolo-n-3725107",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-tla-denotacao-assinale-a-alternativa-cujo-trecho-s-3726045",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-aga-denotacao-leia-o-texto-para-responder-a-questa-3661903",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "facet-moto-p-denotacao-a-publicidade-contemporanea-apropria-3670228",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "quadrix-aux-denotacao-texto-base-para-questao-abaixo-a-imu-3721172",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

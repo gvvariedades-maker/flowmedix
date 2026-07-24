@@ -1,0 +1,25 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g04",
+  "subtopico": "Sinônimos, antônimos e polissemia",
+  "status": "handcrafted",
+  "anchor_slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+  "golden_reference": "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+  "slugs": [
+    "avancasp-aux-sinonimos-ate-breve-ha-temperamentos-urbanos-p-3375891",
+    "avancasp-ag-sinonimos-tome-como-exemplo-o-seguinte-context-3457305",
+    "avancasp-acd-sinonimos-leia-o-texto-a-seguir-para-responder-3554843",
+    "vunesp-ro-sa-sinonimos-leia-o-texto-a-seguir-para-responder-3558409",
+    "apice-ace-pr-sinonimos-leia-o-texto-a-seguir-e-responda-da-3558948",
+    "educa-pb-ate-sinonimos-texto-ii-governo-federal-lanca-campa-3576912",
+    "vunesp-ag-pr-sinonimos-leia-a-tira-a-seguir-para-responder-3583294",
+    "vunesp-ag-pr-sinonimos-leia-o-texto-a-seguir-para-responder-3583379"
+  ],
+  "note": "g04 handcraft 8/8 [READY] strict-v2 — Queiroz elementar, obtuso, Armandinho danos, neurology antonyms, Sabino pitoresco, misoginia EXCETO, Calvin nem, aporte/onerosos",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-24",
+    "reviewer": "handcraft-quality-gate",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinonimos-antonimos-e-polissemia-g04.json"
+  }
+}

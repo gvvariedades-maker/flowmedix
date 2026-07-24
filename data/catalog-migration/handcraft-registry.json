@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-21",
+  "updated_at": "2026-07-24",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -1475,9 +1475,9 @@
       "l3_brief_index": "artifacts/l3-brief-lingua-portuguesa-pt_verbos.md",
       "lote_pattern": "verbos-tempos-modos-e-vozes-g{NN}",
       "lote_size": 8,
-      "status": "pending",
+      "status": "applied",
       "total_slugs": 45,
-      "handcraft_applied": 0,
+      "handcraft_applied": 45,
       "anchor_glob": "examples/questao-premium-*-portugues-verbos-*.json",
       "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
       "disciplina": "Conhecimentos Básicos",
@@ -1489,17 +1489,27 @@
         "closed_at": "2026-07-21",
         "source": "cluster:lingua-portuguesa"
       },
-      "note": "Card Verbos — 45 slugs PDF cluster B—Morfologia (Conjugação 35 + Locução 3 + Variadas 3 + Correlação 2 + Vozes 2). Ramo pt_verbos ok_generico. Bootstrap 2026-07-23: brief L3 + âncora READY mais-que-perfeito SJRP + run-state → g01.",
-      "production_status": "none",
+      "note": "Card Verbos — 45/45 VENDÁVEL 2026-07-23. applied + Supabase g01–g06. production_ready L1–L6 PASS. Monitoramento: audit:subtopico-health.",
+      "production_status": "production_ready",
       "quality": {
         "layers": {
-          "L1": false,
-          "L2": false,
-          "L2b": false,
-          "L3": false,
-          "L4": false,
-          "L5": false,
-          "L6": false
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "technical_ready_at": "2026-07-23",
+        "production_ready_at": "2026-07-23",
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-23T23:01:34.842Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
         }
       }
     },
@@ -1544,6 +1554,108 @@
         "continuous": {
           "enabled": true,
           "last_audit_at": "2026-07-21T01:16:13.447Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Sinônimos, antônimos e polissemia": {
+      "pacote_prefix": "sinonimos-antonimos-e-polissemia",
+      "manifest": "data/catalog-migration/sinonimos-antonimos-e-polissemia-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-sinonimos-antonimos-e-polissemia-INDEX.md",
+      "lote_pattern": "sinonimos-antonimos-e-polissemia-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 63,
+      "handcraft_applied": 63,
+      "anchor_glob": "examples/questao-premium-*-portugues-sinonimos-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "guideline": "lib/guidelines/linguaPortuguesa/sinonimosPolissemia.ts",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Sinônimos, antônimos e polissemia",
+      "pedagogical_branch": "pt_sinonimos_polissemia",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-07-23",
+        "source": "cluster:lingua-portuguesa",
+        "audit_artifact": "artifacts/taxonomy-gate-sinonimos-antonimos-e-polissemia.json",
+        "notes": "Card E — Vocabulário · 63 slugs (55 sinônimos + 6 polissemia + 2 homônimos/parônimos) · split_candidate monitorado"
+      },
+      "note": "Programa IDE 2026-07-24 — apply g01–g08 63/63 OK. status=applied. Próximo: Fase 2 qualidade vendável (--promote).",
+      "production_status": "production_ready",
+      "quality": {
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "technical_ready_at": "2026-07-24",
+        "production_ready_at": "2026-07-24",
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-24T07:08:25.645Z",
+          "last_audit_pass": true,
+          "health_streak_days": 0,
+          "last_blocked_at": null,
+          "last_blocked_reason": null
+        }
+      }
+    },
+    "Denotação, conotação e figuras de linguagem": {
+      "pacote_prefix": "denotacao-conotacao",
+      "manifest": "data/catalog-migration/denotacao-conotacao-completo/manifest.json",
+      "readme": "data/sources/lingua-portuguesa/README.md",
+      "classificacao_doc": "docs/LINGUA_PORTUGUESA_CLASSIFICACAO.md",
+      "guideline_doc": "docs/LINGUA_PORTUGUESA_GUIDELINES.md",
+      "cluster_report": "artifacts/lingua-portuguesa-topic-cluster-report.json",
+      "l3_brief_index": "artifacts/l3-brief-denotacao-conotacao-INDEX.md",
+      "lote_pattern": "denotacao-conotacao-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 33,
+      "handcraft_applied": 33,
+      "anchor_glob": "examples/questao-premium-*-portugues-denotacao-*.json",
+      "handcraft_playbook": "data/catalog-migration/handcraft-playbooks/lingua-portuguesa.json",
+      "guideline": "lib/guidelines/linguaPortuguesa/denotacaoConotacao.ts",
+      "disciplina": "Conhecimentos Básicos",
+      "modulo_nome": "Língua Portuguesa",
+      "titulo_aula_card": "Denotação, conotação e figuras de linguagem",
+      "pedagogical_branch": "pt_denotacao_conotacao",
+      "taxonomy": {
+        "status": "closed",
+        "closed_at": "2026-07-23",
+        "source": "cluster:lingua-portuguesa",
+        "audit_artifact": "artifacts/taxonomy-gate-denotacao-conotacao.json",
+        "notes": "Card E — Vocabulário · 33 slugs PDF cluster Denotação e Conotação · ok"
+      },
+      "note": "Programa IDE 2026-07-24 — 33/33 applied + production_ready (g01–g05). Âncoras: texto/metáfora (3789297) + tirinha «drogas» (3554834). Monitoramento: audit:subtopico-health.",
+      "production_status": "production_ready",
+      "quality": {
+        "layers": {
+          "L1": true,
+          "L2": true,
+          "L2b": true,
+          "L3": true,
+          "L4": true,
+          "L5": true,
+          "L6": true
+        },
+        "technical_ready_at": "2026-07-24",
+        "production_ready_at": "2026-07-24",
+        "continuous": {
+          "enabled": true,
+          "last_audit_at": "2026-07-24T05:45:30.690Z",
           "last_audit_pass": true,
           "health_streak_days": 0,
           "last_blocked_at": null,

@@ -117,7 +117,7 @@
           "icon": "AlertTriangle"
         }
       ],
-      "footer_rule": "Anterior no passado → mais-que-perfeito (simples ou composto)."
+      "footer_rule": "Mais-que-perfeito composto usa «tinha + particípio»."
     },
     {
       "type": "logic_flow",
@@ -140,7 +140,7 @@
         "Gabarito D — composto ↔ simples do mais-que-perfeito.",
         "Em similares: pergunte se a ação é anterior a outra passada antes de marcar."
       ],
-      "footer_rule": "Composto e simples do mesmo tempo são equivalentes."
+      "footer_rule": "Gabarito D — composto ↔ simples do mais-que-perfeito."
     },
     {
       "type": "golden_rule",

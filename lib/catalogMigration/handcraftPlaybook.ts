@@ -75,6 +75,8 @@ export type HandcraftPlaybook = {
   version?: number;
   subtopico?: string;
   pacote_prefix?: string;
+  /** Ex.: "Conhecimentos Básicos" (PT) — ajuda worker/IDE a escolher skills */
+  disciplina?: string;
   scope_default?: string;
   anchor_glob?: string;
   guideline?: string;
@@ -91,6 +93,15 @@ export type HandcraftPlaybook = {
   roi_priorities?: { priority: string; action: string; why: string }[];
   clinical_depth_v3_registry?: string;
   golden_anchors_registry?: string;
+  /** Skills Cursor para handcraft / brief — preferidas pelo worker prompt */
+  skills?: string[];
+  /** Contrato TE-simples + transferência (ex. Língua Portuguesa) */
+  estudo_ativo?: {
+    doc?: string;
+    invariants?: string[];
+    transfer_correct_by_branch?: Record<string, unknown>;
+    worker_checklist?: string[];
+  };
 };
 
 export type PlaybookCommandContext = {

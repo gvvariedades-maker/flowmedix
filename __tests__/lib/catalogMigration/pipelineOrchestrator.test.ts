@@ -139,4 +139,48 @@ describe('pipelineWorkerPrompt', () => {
     expect(prompt).toContain('pt_pronomes_colocacao');
     expect(prompt).toContain('NÃO --apply');
   });
+
+  it('handcraft_lote card PT (Verbos) resolve playbook lingua-portuguesa + Elias', () => {
+    const state = PipelineRunStateSchema.parse({
+      version: 1,
+      subtopico: 'Verbos — tempos, modos e vozes',
+      pacote_prefix: 'verbos-tempos-modos-e-vozes',
+      mode: 'handcraft',
+      total_slugs: 45,
+      handcraft_applied: 8,
+      next_unit: {
+        type: 'handcraft_lote',
+        id: 'verbos-tempos-modos-e-vozes-g02',
+        lote: 'verbos-tempos-modos-e-vozes-g02',
+      },
+      completed_units: [],
+      blockers: [],
+      updated_at: new Date().toISOString(),
+    });
+    const prompt = buildWorkerPrompt(state, state.next_unit!, { autoApply: false });
+    expect(prompt).toContain('lingua-portuguesa.json');
+    expect(prompt).toContain('ESTUDO ATIVO (playbook.estudo_ativo)');
+    expect(prompt).toContain('pt_verbos');
+    expect(prompt).toMatch(/professor-elias-santana-metodo|professor-lingua-portuguesa-concurso/);
+    expect(prompt).not.toContain('professor-para-concurso');
+    expect(prompt).toContain('Continuar programa:');
+  });
+
+  it('l3_map PT usa brief-lingua-portuguesa', () => {
+    const state = PipelineRunStateSchema.parse({
+      version: 1,
+      subtopico: 'Verbos — tempos, modos e vozes',
+      pacote_prefix: 'verbos-tempos-modos-e-vozes',
+      mode: 'full',
+      total_slugs: 45,
+      handcraft_applied: 0,
+      next_unit: { type: 'l3_map', id: 'l3_map' },
+      completed_units: [],
+      blockers: [],
+      updated_at: new Date().toISOString(),
+    });
+    const prompt = buildWorkerPrompt(state, state.next_unit!, { autoApply: false });
+    expect(prompt).toContain('brief-lingua-portuguesa');
+    expect(prompt).not.toContain('brief-enfermagem');
+  });
 });

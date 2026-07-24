@@ -1,0 +1,76 @@
+{
+  "lote": "verbos-tempos-modos-e-vozes-g01",
+  "generated_at": "2026-07-23T22:51:34.728Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-acs-verbos-assinale-a-alternativa-em-que-a-form-3839413",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-aoe-verbos-assinale-a-alternativa-que-apresenta-3886651",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-aoe-verbos-leia-o-texto-a-seguir-para-responder-3886648",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-tec-verbos-quando-voce-peco-que-a-atividade-e-q-3835991",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-verbos-leia-o-texto-ii-para-responder-a-que-3912873",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ag-verbos-leia-o-texto-a-seguir-e-responda-a-q-3913860",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-acs-verbos-considere-o-texto-a-seguir-para-resp-3990829",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-ad-verbos-leia-o-texto-a-seguir-para-responder-3789241",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

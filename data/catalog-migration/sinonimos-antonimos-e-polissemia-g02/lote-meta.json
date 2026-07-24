@@ -1,0 +1,25 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g02",
+  "subtopico": "Sinônimos, antônimos e polissemia",
+  "status": "handcrafted",
+  "anchor_slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+  "golden_reference": "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+  "slugs": [
+    "instituto-ao-sinonimos-o-texto-a-seguir-refere-se-a-questao-3841144",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3912840",
+    "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913852",
+    "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913867",
+    "avancasp-afa-sinonimos-considere-o-texto-a-seguir-para-resp-3962439",
+    "avancasp-esc-sinonimos-considere-o-texto-a-seguir-para-resp-3963895",
+    "vunesp-tenf-sinonimos-leia-a-tira-a-seguir-para-responder-3999723",
+    "avancasp-gcm-sinonimos-leia-o-texto-a-seguir-para-responder-4001113"
+  ],
+  "note": "g02 handcraft 8/8 [READY] strict-v2 — multitarefa, cometa 3I/Atlas VF, Bandeira Consoada, tira Charles inescrutável",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-24",
+    "reviewer": "handcraft-quality-gate",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinonimos-antonimos-e-polissemia-g02.json"
+  }
+}

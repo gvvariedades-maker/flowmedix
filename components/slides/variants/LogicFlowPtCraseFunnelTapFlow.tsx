@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Filter } from 'lucide-react';
 import { resolveLucideIcon } from '../core/lucideIcon';
@@ -15,7 +15,6 @@ import {
   type PtCraseFunnelStage,
   type PtCraseStepRole,
 } from '@/lib/slides/ptCraseSlideUtils';
-import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
 import { LogicFlowPtCraseFunnelBoard } from './LogicFlowPtCraseFunnelBoard';
 
 const CARD_PALETTES: Record<
@@ -93,7 +92,6 @@ export function LogicFlowPtCraseFunnelTapFlow({
   footerRule,
 }: LogicFlowPtCraseFunnelTapFlowProps) {
   const reduceMotion = useReducedMotion();
-  const { satisfy } = useReverseStudyCompletionGate();
   const normalizedSteps = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
   const funnelBoardModel = useMemo(
     () => buildPtCraseFunnelBoard(normalizedSteps),
@@ -106,12 +104,6 @@ export function LogicFlowPtCraseFunnelTapFlow({
     () => normalizedSteps.map((_, i) => i).filter((i) => !passed.includes(i)),
     [normalizedSteps, passed],
   );
-
-  useEffect(() => {
-    if (!funnelBoardModel && normalizedSteps.length > 0 && remaining.length === 0) {
-      satisfy('logic_flow_complete');
-    }
-  }, [funnelBoardModel, normalizedSteps.length, remaining.length, satisfy]);
 
   const topIndex = remaining[0] ?? -1;
   const passCard = useCallback(() => {

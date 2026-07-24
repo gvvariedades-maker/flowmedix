@@ -4,6 +4,8 @@ Orquestra handcraft / L3 / ship **uma unidade por run**, com estado no disco. Ev
 
 **Não substitui** [`PIPELINE_COMPLETO_CONVERSA.md`](PIPELINE_COMPLETO_CONVERSA.md) nem [`PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md`](PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md): o prompt **grande** continua no bootstrap (L3 / paridade). Cada worker usa prompt **curto**.
 
+**Programa IDE sem SDK (capítulos + handoff):** [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](PROMPT_PROGRAMA_COMPLETO_IDE.md) · DoD [`PROGRAMA_COMPLETO_IDE_DOD.md`](PROGRAMA_COMPLETO_IDE_DOD.md)
+
 **Programa unificado (paridade + L3 bespoke + SDK):** [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md)
 
 ---
@@ -113,7 +115,9 @@ Não cole o runbook inteiro em cada run SDK.
 
 ### Estudo ativo (PT / playbooks com `estudo_ativo`)
 
-Se o playbook do pacote tiver `estudo_ativo.worker_checklist` (ex. Língua Portuguesa), o prompt de `handcraft_lote` **injeta** o checklist automaticamente — transferência classificável (`Sem crase:` / próclise…) para o quiz no player. Ver `lib/catalogMigration/pipelineWorkerPrompt.ts` + playbook `lingua-portuguesa.json`.
+Se o playbook do pacote tiver `estudo_ativo.worker_checklist` (ex. Língua Portuguesa), o prompt de `handcraft_lote` **injeta** o checklist automaticamente — transferência classificável (`Sem crase:` / próclise…) para o quiz no player. O path do playbook vem de `handcraft_playbook` no registry (cards PT como Verbos compartilham `lingua-portuguesa.json`). Ver `lib/catalogMigration/pipelineWorkerPrompt.ts`.
+
+Skills: TE → `professor-para-concurso`; PT → Elias / `professor-lingua-portuguesa-concurso` (ou `playbook.skills[]`).
 
 ---
 

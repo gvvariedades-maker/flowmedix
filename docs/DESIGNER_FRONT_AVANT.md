@@ -2,7 +2,7 @@
 
 Leitura estimada: **~5 minutos**. Hub de descoberta — **não** duplica tokens nem checklists.
 
-> **Frase-guia:** duas skins, dois trilhos. Tokens vivem no código; este arquivo só aponta.  
+> **Frase-guia:** duas skins, três trilhos. Tokens vivem no código; este arquivo só aponta.  
 > **Segurança de app/infra:** [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) (hub separado).
 
 ---
@@ -13,9 +13,10 @@ Leitura estimada: **~5 minutos**. Hub de descoberta — **não** duplica tokens 
 |------------------------|--------|---------------|
 | Vitrine `/estudar`, player (enunciado), dashboard, login, shell | **A — App UI** | [Ordem A](#trilho-a--app-ui) |
 | NeuroSlides / estudo reverso (gesto, moldes, brief 4/4) | **B — NeuroSlides** | [Ordem B](#trilho-b--neuroslides) |
+| Landing `/` ou LP de concurso `/lp/*` (copy + conversão + design) | **C — Landing / LP** | [Ordem C](#trilho-c--landing--lp) |
 | Comportamento + código (bug, API, feature) | Engenharia | [`AGENTS.md`](../AGENTS.md) · [`SECURITY_ENG_AVANT.md`](SECURITY_ENG_AVANT.md) · `Feature:` / `Bug:` — **não** polish visual |
 
-**Não misturar:** polish de vitrine ≠ design de molde de slide. Skills e triggers são distintos.
+**Não misturar:** polish de vitrine ≠ design de molde de slide ≠ CRO de LP. Skills e triggers são distintos.
 
 ---
 
@@ -30,7 +31,8 @@ Leitura estimada: **~5 minutos**. Hub de descoberta — **não** duplica tokens 
 5. Screenshots: `auditoria-visual-v2/screenshots/avant-editorial-v2/` (+ `*-BACKLOG.md` se houver)  
 6. Código: [`app/globals.css`](../app/globals.css) — **fonte de verdade dos tokens**
 
-**Complementos pontuais:** [`ZOOM_MOBILE_POLICY.md`](ZOOM_MOBILE_POLICY.md) · landing (só shell): [`auditoria-visual-v2/LANDING-AVANT-v3.md`](auditoria-visual-v2/LANDING-AVANT-v3.md) · resumo rápido: [`CLAUDE.md`](../CLAUDE.md) §3
+**Complementos pontuais:** [`ZOOM_MOBILE_POLICY.md`](ZOOM_MOBILE_POLICY.md) · resumo rápido: [`CLAUDE.md`](../CLAUDE.md) §3  
+**Landing com CRO:** use o [Trilho C](#trilho-c--landing--lp) — não só polish de tokens.
 
 **No Cursor:** `Visual:` · `Polish vitrine` · `Polish player` · `craft UI`  
 Rule: [`.cursor/rules/avant-ui-visual.mdc`](../.cursor/rules/avant-ui-visual.mdc) · cópia: [`cursor/avant-ui-visual.mdc`](cursor/avant-ui-visual.mdc)
@@ -52,6 +54,23 @@ Rule: [`.cursor/rules/avant-ui-visual.mdc`](../.cursor/rules/avant-ui-visual.mdc
 
 ---
 
+## Trilho C — Landing / LP
+
+**Ordem de leitura:**
+
+1. [`LP_CONVERSA.md`](LP_CONVERSA.md) — runbook operacional (`LP: home` / `LP: <path>` / `LP: polish visual`)  
+2. [`LP_RESEARCH_CAPABILITY_MAP.md`](LP_RESEARCH_CAPABILITY_MAP.md) — C1–C16 (Gardner, Wiebe, LIFT, Emotional Targeting…)  
+3. Brief histórico home: [`auditoria-visual-v2/LANDING-AVANT-v3.md`](auditoria-visual-v2/LANDING-AVANT-v3.md)  
+4. Código: `lib/marketing/landingCopy.ts` · `components/landing/*` · `LPConcurso` · CMS `/admin/landings`  
+5. Golden concurso: `components/lp/campina/LPCampinaV2.tsx`  
+6. Tokens: Visual Direction v3 + `globals.css` (não duplicar paleta na LP)
+
+**No Cursor:** `LP: home` · `LP: campina-grande` · `LP: polish visual`  
+Rule: [`.cursor/rules/lp-conversa.mdc`](../.cursor/rules/lp-conversa.mdc) · cópia: [`cursor/lp-conversa.mdc`](cursor/lp-conversa.mdc)  
+**Não** use só `Visual:` quando o pedido for conversão/copy — `Visual:` = shell; `LP:` = CRO + design.
+
+---
+
 ## Hierarquia de autoridade (anti-drift)
 
 | Camada | Canônico | Papel |
@@ -59,6 +78,8 @@ Rule: [`.cursor/rules/avant-ui-visual.mdc`](../.cursor/rules/avant-ui-visual.mdc
 | Direção / paleta | `AVANT-VISUAL-DIRECTION-v3.md` | O que é AVANT visualmente |
 | Escopo editorial | `D2-avant-editorial-v2.md` | Telas, WCAG, screenshots |
 | Craft app | `avant-ui-visual` + `reference-microsaas-craft` | Como polishar vitrine/player |
+| Landing / LP (CRO) | `LP_CONVERSA.md` | Copy + anatomia + ship de `/` e `/lp/*` |
+| Pesquisa LP | `LP_RESEARCH_CAPABILITY_MAP.md` | Por que C1–C16 |
 | Brief slides | `PROMPT_VARIANTES_NEUROSLIDES.md` | Metáfora 4/4 antes do React |
 | Retenção visual | `avant-neuroslides-visual` | Gesto ≠ decoração |
 | Implementação molde | `VARIANT_MOLDS.md` | Wiring React (pedido explícito) |
@@ -95,6 +116,7 @@ Detalhe: Visual Direction v3 + skill `avant-ui-visual`.
 | Persona | Abre só |
 |---------|---------|
 | Designer de produto (vitrine/player) | Este hub → Visual Direction → `reference-microsaas-craft` → screenshots |
+| Designer / growth de LP | Este hub → Trilho C → `LP_CONVERSA.md` |
 | Designer de slides | Este hub → `PROMPT_VARIANTES` → `avant-neuroslides-visual` |
 | Dev implementando polish | Este hub → skill + `Visual:` → componente adjacente |
 
@@ -120,3 +142,5 @@ Detalhe: Visual Direction v3 + skill `avant-ui-visual`.
 | Player | `components/lesson/AvantLessonPlayer.tsx` |
 | Slides | `components/slides/core/NeuroSlide.tsx` + `themeGenerator.ts` |
 | Zoom mobile | `components/accessibility/ReadableTextZoom.tsx` · [`ZOOM_MOBILE_POLICY.md`](ZOOM_MOBILE_POLICY.md) |
+| Landing home | `components/landing/*` · `lib/marketing/landingCopy.ts` · [`LP_CONVERSA.md`](LP_CONVERSA.md) |
+| LP concurso | `app/lp/[path]` · `LPConcurso` · `/admin/landings` · [`LP_CONVERSA.md`](LP_CONVERSA.md) |

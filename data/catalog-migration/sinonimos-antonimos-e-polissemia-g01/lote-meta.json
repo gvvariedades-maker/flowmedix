@@ -1,0 +1,25 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g01",
+  "subtopico": "Sinônimos, antônimos e polissemia",
+  "status": "handcrafted",
+  "anchor_slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+  "golden_reference": "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+  "slugs": [
+    "vunesp-ag-ad-sinonimos-leia-o-texto-a-seguir-para-responder-3789292",
+    "avancasp-tec-sinonimos-leia-o-texto-a-seguir-para-responder-3835988",
+    "avancasp-tec-sinonimos-o-livro-e-o-risco-que-voce-corre-e-e-3835990",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3836462",
+    "avancasp-acs-sinonimos-leia-o-texto-a-seguir-para-responder-3839361",
+    "avancasp-aae-sinonimos-leia-o-texto-a-seguir-para-responder-3839707",
+    "avancasp-acr-sinonimos-leia-o-texto-a-seguir-para-responder-3839851",
+    "instituto-ao-sinonimos-leia-o-texto-a-seguir-para-responder-3840872"
+  ],
+  "note": "Handcraft golden-v1 g01 — 8/8 [READY] strict-v2 · 2026-07-23",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-24",
+    "reviewer": "handcraft-quality-gate",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinonimos-antonimos-e-polissemia-g01.json"
+  }
+}

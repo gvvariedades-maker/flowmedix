@@ -1,0 +1,76 @@
+{
+  "lote": "verbos-tempos-modos-e-vozes-g05",
+  "generated_at": "2026-07-23T22:51:55.934Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "apice-ag-adm-verbos-leia-a-charge-abaixo-e-responda-a-qu-3793471",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-aee-verbos-nao-se-estabelece-no-emprego-das-for-3374820",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ace-verbos-considere-o-texto-a-seguir-para-resp-3820024",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fcc-tec-verbos-considere-o-texto-abaixo-para-respon-3908381",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-ao-verbos-leia-o-texto-a-seguir-para-responder-3840829",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-ao-verbos-o-texto-a-seguir-refere-se-a-questao-3841123",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "quadrix-aux-verbos-texto-para-a-questao-imagine-um-time-3738674",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-afar-verbos-leia-o-texto-a-seguir-apaixonados-po-3770517",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

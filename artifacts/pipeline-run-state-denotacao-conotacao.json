@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "subtopico": "Denotação, conotação e figuras de linguagem",
+  "pacote_prefix": "denotacao-conotacao",
+  "mode": "full",
+  "total_slugs": 33,
+  "handcraft_applied": 32,
+  "production_status": "none",
+  "next_unit": {
+    "type": "handcraft_lote",
+    "id": "denotacao-conotacao-g05",
+    "detail": "Handcraft lote denotacao-conotacao-g05 (slug 33/33)",
+    "lote": "denotacao-conotacao-g05"
+  },
+  "completed_units": [
+    "l3_map:briefs",
+    "handcraft_lote:denotacao-conotacao-g01",
+    "handcraft_lote:denotacao-conotacao-g02",
+    "handcraft_lote:denotacao-conotacao-g03",
+    "handcraft_lote:denotacao-conotacao-g04"
+  ],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-07-24T05:08:53.178Z",
+  "notes": null
+}

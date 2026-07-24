@@ -1,0 +1,19 @@
+{
+  "lote": "denotacao-conotacao-g05",
+  "subtopico": "Denotação, conotação e figuras de linguagem",
+  "status": "applied",
+  "applied_at": "2026-07-24",
+  "anchor_slug": "questao-premium-vunesp-portugues-denotacao-literal-figurado",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-denotacao-literal-figurado.json",
+  "slugs": [
+    "vunesp-acs-p-denotacao-leia-o-texto-a-seguir-para-responder-3844966"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-24",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/denotacao-conotacao-g05.json"
+  },
+  "note": "Handcraft golden-v1 g05 — 1/1 READY · apply 2026-07-24"
+}

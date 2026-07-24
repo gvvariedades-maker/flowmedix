@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T06:56:05.481Z",
+  "lote": "sinonimos-antonimos-e-polissemia-g06",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-acr-sinonimos-leia-o-texto-a-seguir-para-responder-3727505",
+    "avancasp-ag-sinonimos-disponivel-em-relacao-ao-cartaz-acim-3727038",
+    "avancasp-ag-sinonimos-leia-o-texto-a-seguir-para-responder-3709795",
+    "avancasp-of-sinonimos-e-flutuou-no-ar-como-se-fosse-um-pas-3725102",
+    "cebraspe-ces-sinonimos-texto-cg1a1a-relacao-entre-sustentab-3698157",
+    "cebraspe-ces-sinonimos-texto-cg2a1imagino-que-a-escrita-nas-3705106",
+    "cebraspe-ces-sinonimos-texto-cg2a1imagino-que-a-escrita-nas-3705120",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3709442"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-acr-sinonimos-leia-o-texto-a-seguir-para-responder-3727505",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ag-sinonimos-disponivel-em-relacao-ao-cartaz-acim-3727038",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ag-sinonimos-leia-o-texto-a-seguir-para-responder-3709795",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-of-sinonimos-e-flutuou-no-ar-como-se-fosse-um-pas-3725102",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cebraspe-ces-sinonimos-texto-cg1a1a-relacao-entre-sustentab-3698157",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cebraspe-ces-sinonimos-texto-cg2a1imagino-que-a-escrita-nas-3705106",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cebraspe-ces-sinonimos-texto-cg2a1imagino-que-a-escrita-nas-3705120",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3709442",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

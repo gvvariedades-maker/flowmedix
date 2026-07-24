@@ -1,0 +1,76 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g05",
+  "generated_at": "2026-07-24T06:59:51.866Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-fon-sinonimos-leia-o-texto-a-seguir-para-responder-3665282",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3651720",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3654539",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-acs-sinonimos-leia-o-texto-a-seguir-para-responder-3586810",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-ass-sinonimos-leia-o-texto-a-seguir-a-fruta-que-aj-3692804",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-acs-p-sinonimos-leia-o-texto-a-seguir-para-responder-3607115",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ade-g-sinonimos-leia-o-texto-para-responder-a-questa-3607399",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-pr-sinonimos-leia-o-texto-a-seguir-para-responder-3583390",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

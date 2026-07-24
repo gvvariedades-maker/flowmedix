@@ -1,0 +1,20 @@
+{
+  "lote": "denotacao-conotacao-g05",
+  "generated_at": "2026-07-24T05:29:39.716Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 1,
+  "passed": 1,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "vunesp-acs-p-denotacao-leia-o-texto-a-seguir-para-responder-3844966",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

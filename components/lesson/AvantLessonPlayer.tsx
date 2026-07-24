@@ -30,11 +30,7 @@ import {
 } from '@/lib/estudar/questaoLayers';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
 import NeuroSlide from '@/components/slides/NeuroSlide';
-import {
-  ReverseStudyCompletionGateProvider,
-} from '@/components/lesson/ReverseStudyCompletionGate';
 import { MarcarEstudoConcluidoButton } from '@/components/lesson/MarcarEstudoConcluidoButton';
-import { getReverseStudyGateRequirements } from '@/lib/slides/transferQuiz';
 import { resolveQuestionFamilyId } from '@/components/slides/core/questionFamily';
 import {
   ReadableTextZoomProvider,
@@ -88,6 +84,8 @@ import {
   ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE,
 } from '@/lib/layout/mobileBottomNav';
 import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmersive';
+import { questaoPlayerShellRootClass } from '@/lib/lesson/questaoPlayerShellClass';
+import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
 import { EstudoReversoHost } from '@/components/lesson/EstudoReversoFullscreenPortal';
 import { supabase } from '@/lib/supabase/client';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
@@ -204,6 +202,15 @@ export default function AvantLessonPlayer({
   
   const router = useRouter();
   const estudarQuestaoImmersive = useEstudarQuestaoImmersive();
+  const estudarModalActive = useEstudarModalActive();
+  const questaoPlayerShellClass = questaoPlayerShellRootClass(
+    mode === 'live' || previewImmersive ? 'player-live' : 'player-card',
+    {
+      immersive: estudarQuestaoImmersive,
+      modalActive: estudarModalActive,
+      previewImmersive,
+    },
+  );
   const questaoNav = useQuestaoNavigationOptional();
   const [isNavigating, setIsNavigating] = useState(false);
   const [staleElapsedMs, setStaleElapsedMs] = useState(0);
@@ -709,7 +716,7 @@ export default function AvantLessonPlayer({
     questionUnavailableUi = (
       <div
         data-testid="lesson-empty-question-error"
-        className="card-elevated-lg flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden font-sans shadow-none md:rounded-[2.5rem]"
+        className={questaoPlayerShellClass}
       >
         <div className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-12 text-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-full border border-rose-200 bg-rose-50">
@@ -1128,10 +1135,6 @@ export default function AvantLessonPlayer({
   const slideMotion = getSlideVariants(slideKind, prefersReducedMotion);
   const currentSlideMicrotipKey = getReverseStudySlideMicrotipKey(currentSlide?.type ?? currentSlide?.layout_type);
   const totalSlides = slidesArray.length;
-  const reverseStudyGateKeys = useMemo(
-    () => getReverseStudyGateRequirements(slidesArray),
-    [slidesArray],
-  );
   const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
   
   // Gera hash único e robusto da questão para tema visual único
@@ -1678,15 +1681,7 @@ export default function AvantLessonPlayer({
 
   return (
     <>
-    <div
-      className={cn(
-        'relative flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden bg-white font-sans',
-        mode === 'live' || previewImmersive
-          ? 'border-0 shadow-none'
-          : 'card-elevated-lg border border-slate-200 shadow-lg md:rounded-[2.5rem]',
-        estudarQuestaoImmersive && mode === 'live' && 'max-md:min-h-[100dvh]',
-      )}
-    >
+    <div className={questaoPlayerShellClass}>
       
       {/* BARRA DE PROGRESSO — posição na lista (não etapas do fluxo) */}
       <div
@@ -2035,7 +2030,6 @@ export default function AvantLessonPlayer({
             }
           >
             {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
-            <ReverseStudyCompletionGateProvider requiredKeys={reverseStudyGateKeys}>
             <EstudoReversoSlideZoomProvider key={slideAtual} slideKey={slideAtual}>
             <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-x-auto overflow-y-hidden">
               
@@ -2078,15 +2072,12 @@ export default function AvantLessonPlayer({
                     ref={fecharEstudoRef}
                     type="button"
                     onClick={sairEstudoReverso}
-                    className={
-                      isPreviewMode
-                        ? 'btn-editorial-outline flex min-h-[40px] shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[10px] font-black uppercase tracking-widest'
-                        : 'flex h-11 min-h-[44px] w-11 min-w-[44px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-colors hover:bg-slate-50'
-                    }
-                    aria-label="Fechar estudo reverso"
+                    className="btn-editorial-outline flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full px-2.5 py-2 text-[10px] font-black uppercase tracking-widest sm:px-3"
+                    aria-label="Sair do estudo reverso"
                   >
-                    <X size={18} className="shrink-0 text-slate-700" />
-                    {isPreviewMode ? <span>Sair</span> : null}
+                    <X size={16} className="shrink-0 text-slate-700 sm:hidden" aria-hidden />
+                    <span className="sm:hidden">Sair</span>
+                    <span className="hidden sm:inline">Voltar à questão</span>
                   </button>
                 </div>
               </div>
@@ -2286,19 +2277,28 @@ export default function AvantLessonPlayer({
                       )}
                     </div>
                   ) : (
-                    <MarcarEstudoConcluidoButton
-                      onClick={marcarEstudoConcluido}
-                      disabled={marcandoConclusao}
-                      loading={marcandoConclusao}
-                      error={conclusaoErro}
-                    />
+                    <div className="order-2 flex flex-col items-end gap-1 sm:order-none">
+                      <MarcarEstudoConcluidoButton
+                        onClick={marcarEstudoConcluido}
+                        disabled={marcandoConclusao}
+                        loading={marcandoConclusao}
+                        error={conclusaoErro}
+                      />
+                      <button
+                        type="button"
+                        onClick={sairEstudoReverso}
+                        disabled={marcandoConclusao}
+                        className="link-editorial-secondary min-h-[44px] px-2 text-[10px] font-semibold uppercase tracking-wide underline-offset-2 hover:underline disabled:cursor-not-allowed disabled:opacity-50 sm:text-xs"
+                      >
+                        Sair sem concluir
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>
 
             </div>
             </EstudoReversoSlideZoomProvider>
-            </ReverseStudyCompletionGateProvider>
           </motion.div>
         )}
       </AnimatePresence>

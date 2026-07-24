@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "subtopico": "Sinônimos, antônimos e polissemia",
+  "pacote_prefix": "sinonimos-antonimos-e-polissemia",
+  "mode": "full",
+  "total_slugs": 63,
+  "handcraft_applied": 63,
+  "production_status": "none",
+  "next_unit": {
+    "type": "quality_phase",
+    "id": "qualidade-vendavel",
+    "detail": "Fase 2 — Qualidade vendavel: Sinônimos, antônimos e polissemia",
+    "lote": null
+  },
+  "completed_units": [
+    "bootstrap:registry",
+    "l3_map:briefs",
+    "handcraft_lote:sinonimos-antonimos-e-polissemia-g01",
+    "handcraft_lote:sinonimos-antonimos-e-polissemia-g02",
+    "handcraft_lote:sinonimos-antonimos-e-polissemia-g03",
+    "handcraft_lote:sinonimos-antonimos-e-polissemia-g04",
+    "apply:g01-g04",
+    "handcraft_lote:sinonimos-antonimos-e-polissemia-g05",
+    "handcraft_lote:sinonimos-antonimos-e-polissemia-g06",
+    "handcraft_lote:sinonimos-antonimos-e-polissemia-g07",
+    "handcraft_lote:sinonimos-antonimos-e-polissemia-g08",
+    "apply:g05-g08"
+  ],
+  "blockers": [],
+  "last_agent_id": null,
+  "last_run_id": null,
+  "last_exit": null,
+  "last_error": null,
+  "updated_at": "2026-07-24T06:56:59.999Z",
+  "notes": "apply g05-g08: 31/31 OK — pacote 63/63 applied no DB"
+}

@@ -6,7 +6,7 @@ import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 
 const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonPlayer'), {
   ssr: false,
-  loading: () => <EstudarQuestaoSkeleton />,
+  loading: () => <EstudarQuestaoSkeleton mobileFullBleed />,
 });
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import { useEstudarPayloadStale } from '@/components/lesson/useEstudarPayloadStale';
@@ -138,20 +138,20 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
           <div
             ref={panelRef}
             className={cn(
-              'relative z-10 mt-auto flex min-h-0 max-h-full flex-1 flex-col pt-safe',
-              'rounded-t-[2rem] border border-slate-200 bg-background shadow-2xl',
+              'relative z-10 mt-auto flex min-h-0 max-h-full flex-1 flex-col overflow-hidden pt-safe',
+              'rounded-t-[2rem] border border-slate-200 bg-white shadow-2xl',
               '[view-transition-name:estudar-questao-root]',
             )}
           >
             <div
               className={cn(
-                'flex min-h-0 flex-1 flex-col overflow-hidden px-3 pt-3',
+                'flex min-h-0 flex-1 flex-col overflow-hidden',
                 payloadStale && 'pointer-events-none opacity-90',
               )}
               aria-busy={payloadStale || undefined}
             >
               {showModalLoading ? (
-                <EstudarQuestaoSkeleton />
+                <EstudarQuestaoSkeleton mobileFullBleed />
               ) : (
                 <AvantLessonPlayer
                   key={displayPayload!.moduloSlug ?? 'estudar-lesson-player-modal'}

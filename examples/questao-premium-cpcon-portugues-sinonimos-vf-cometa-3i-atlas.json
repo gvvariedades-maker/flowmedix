@@ -1,0 +1,188 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "ACS (Pref Cuité)",
+    "orgao": "Pref. Cuité",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Sinônimos, antônimos e polissemia",
+    "pedagogical_branch": "pt_sinonimos_polissemia",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "content_review": {
+      "reviewed_at": "2026-07-24",
+      "reviewer": "agent:elias-te-simples-sinonimos-ancora-04",
+      "guideline_snapshot": "VF I–IV + texto jornalístico — pergunta-teste «Sinônimos coesionam sem mudar referente?» (PT_SINONIMOS_POLISSEMIA)",
+      "exam_vs_current": "none",
+      "catalog_slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3912840"
+    },
+    "sources": [
+      {
+        "id": "pt-sinonimos-polissemia-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Cunha & Cintra) — referência de concurso",
+        "title": "Sinônimos, antônimos e polissemia",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "sinonímia",
+          "coesão lexical",
+          "retomada",
+          "VF I/II/III/IV",
+          "pergunta-teste"
+        ]
+      },
+      {
+        "id": "r7-cometa-3i-atlas-2025",
+        "tier": "A",
+        "issuer": "R7 Internacional",
+        "title": "Viajante espacial: por que cometa 3I/Atlas continua a intrigar? (06 nov. 2025)",
+        "year": 2025,
+        "covers": ["jornalismo científico", "cometa", "objeto celeste", "corpo celeste"]
+      },
+      {
+        "id": "portugues-caderno-tec-3912840",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT — tec 3912840 (CPCON UEPB ACS Pref Cuité 2026 · VF sinonímia cometa)",
+        "year": 2026,
+        "covers": ["enunciado", "alternativas", "gabarito B", "VF sinonímia lexical"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Leia o Texto I para responder à questão.\n\nNo Texto I, observe as assertivas sobre o uso de sinônimos.\n\nI — O uso de sinônimos como cometa, objeto celeste e corpo contribui para a coesão lexical, evitando repetições excessivas.\nII — A sinonímia colabora com a compreensão do texto, pois permite retomar ideias já apresentadas de forma variada, sem alterar o sentido principal.\nIII — O emprego de sinônimos prejudica a objetividade de textos de divulgação científica, que deveriam repetir sempre a mesma palavra para não gerar ambiguidades.\nIV — A presença de sinônimos ocorre apenas em textos literários, sendo inadequada em textos jornalísticos e científicos.\n\nÉ CORRETO o que se afirma em:",
+    "text_fragment": "Texto I — Viajante espacial: por que cometa 3I/Atlas continua a intrigar? (R7 Internacional, 06 nov. 2025 — adaptado)\n\nDesde julho, o cometa 3I/Atlas despertou curiosidade entre astrônomos. Detectado no Chile, o corpo celeste destacou-se por características diferentes das de um cometa comum, sugerindo formação em outro sistema estelar. Com velocidade e trajetória que indicam que não está preso à gravidade do Sol, o 3I/Atlas é apenas o terceiro objeto interestelar já confirmado pela ciência.\n\nInstrumentos detectaram aceleração inesperada; o cometa mudou de cor e aumentou o brilho. Astrônomos estimam que seja bilhões de anos mais antigo que o Sistema Solar. A Nasa garantiu que não representa ameaça à Terra.",
+    "figure_policy": "transcribed",
+    "options": [
+      { "id": "A", "text": "III e IV, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "I, apenas.", "is_correct": false },
+      { "id": "D", "text": "II e IV, apenas.", "is_correct": false },
+      { "id": "E", "text": "I, II, III e IV.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Sinônimos no Texto I",
+      "chip_label": "VF + jornalismo",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "items": [
+        {
+          "label": "Texto I",
+          "detail": "Notícia R7 — cometa 3I/Atlas, jornalismo científico.",
+          "icon": "Newspaper"
+        },
+        {
+          "label": "Retomada lexical",
+          "detail": "Cometa, objeto celeste, corpo — mesma referência, palavras variadas.",
+          "icon": "Orbit"
+        },
+        {
+          "label": "I — coesão",
+          "detail": "Sinônimos evitam repetição sem trocar o referente.",
+          "icon": "Link"
+        },
+        {
+          "label": "II — compreensão",
+          "detail": "Variedade lexical ajuda a ler sem mudar o sentido.",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "III — pegadinha",
+          "detail": "Generaliza «sempre repetir» em divulgação científica.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "IV — pegadinha",
+          "detail": "Restringe sinônimos «só à literatura».",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Julgue I–IV no contexto da notícia antes de combinar."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "I → II → III → IV",
+      "chip_label": "Pipeline VF",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "steps": [
+        "Texto I: cometa 3I/Atlas — retomadas cometa / corpo celeste / objeto.",
+        "I: sinônimos coesionam e evitam repetição excessiva → VERDADEIRA.",
+        "II: retomada variada sem alterar sentido principal → VERDADEIRA.",
+        "III: divulgação científica não exige repetir sempre a mesma palavra → FALSA.",
+        "IV: jornalismo usa sinônimos — não é exclusividade literária → FALSA.",
+        "Combinações: A salva III e IV (falsas); C descarta II; D inclui IV falsa; E inclui III e IV.",
+        "Gabarito B — I e II, apenas.",
+        "Em similares: em VF de sinonímia, prove no texto se a retomada mantém o mesmo referente."
+      ],
+      "footer_rule": "B = só I e II verdadeiras."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Trilho VF — sinonímia",
+      "chip_label": "Decore isto",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "content": "VF — SINÔNIMOS NO TEXTO",
+      "rows": [
+        { "label": "I", "value": "VERDADEIRA — coesão lexical (anti-repetição)." },
+        { "label": "II", "value": "VERDADEIRA — retomada sem mudar sentido." },
+        { "label": "III", "value": "FALSA — sinônimos não impedem objetividade." },
+        { "label": "IV", "value": "FALSA — jornalismo admite sinonímia." },
+        { "label": "Nesta questão", "value": "B — I e II." }
+      ],
+      "footer_rule": "Texto científico-jornalístico usa sinônimos para coesão."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Combinações armadilha",
+      "chip_label": "Compare",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "content": "Itens falsos que parecem plausíveis",
+      "items": [
+        {
+          "label": "A — III e IV",
+          "detail": "Ambas negam prática normal do jornalismo científico.",
+          "correct": "Sinônimo no contexto: cometa/corpo celeste/objeto coesionam o Texto I — III e IV são falsas."
+        },
+        {
+          "label": "C — só I",
+          "detail": "Descarta II, que também é verdadeira.",
+          "correct": "Sinônimo no contexto: II também vale — retomada variada sem mudar sentido."
+        },
+        {
+          "label": "D — II e IV",
+          "detail": "IV é falsa — sinônimos não são só de literatura.",
+          "correct": "Sinônimo no contexto: a notícia R7 usa sinonímia — IV não se sustenta."
+        },
+        {
+          "label": "E — todas",
+          "detail": "III e IV são falsas — não dá para marcar tudo.",
+          "correct": "Sinônimo no contexto: generalizar «só literatura» ou «sempre repetir» cai em III/IV."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Classifique: «O asteroide… o corpo celeste… o visitante interestelar» numa notícia.",
+          "correct": "Sinônimo no contexto: coesão lexical — mesma referência, palavras variadas."
+        }
+      ],
+      "footer_rule": "B: I + II verdadeiras."
+    }
+  ]
+}

@@ -1,11 +1,23 @@
-﻿/**
+﻿import { questaoPlayerShellRootClass } from '@/lib/lesson/questaoPlayerShellClass';
+
+type EstudarQuestaoSkeletonProps = {
+  /** Imersivo inline ou sheet @modal — sem radius no mobile (evita vazar fundo cinza). */
+  mobileFullBleed?: boolean;
+};
+
+/**
  * Placeholder visual alinhado ao `AvantLessonPlayer` (card editorial claro).
  * Dimensões estáveis para reduzir CLS ao hidratar a questão.
  */
-export default function EstudarQuestaoSkeleton() {
+export default function EstudarQuestaoSkeleton({
+  mobileFullBleed = false,
+}: EstudarQuestaoSkeletonProps) {
   return (
     <div
-      className="card-elevated-lg flex min-h-0 w-full flex-1 flex-col overflow-hidden font-sans shadow-none max-md:min-h-[min(72vh,640px)] md:rounded-[2.5rem]"
+      className={questaoPlayerShellRootClass('skeleton', {
+        immersive: mobileFullBleed,
+        modalActive: mobileFullBleed,
+      })}
       role="status"
       aria-busy="true"
       aria-label="Carregando questão"

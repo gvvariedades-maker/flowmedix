@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-23T22:44:34.964Z",
+  "lote": "verbos-tempos-modos-e-vozes-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-ace-verbos-leia-o-texto-a-seguir-para-responder-3662932",
+    "avancasp-of-verbos-assinale-a-alternativa-cujo-enunciad-3725104",
+    "consulplan-a-verbos-leia-o-texto-e-responda-a-questao-ab-3694741",
+    "consulplan-a-verbos-leia-o-texto-para-responder-a-questa-3694424",
+    "cpcon-uepb-a-verbos-leia-o-texto-iv-para-responder-a-que-3709452",
+    "educa-pb-acd-verbos-leia-o-texto-a-seguir-e-responda-a-q-3746597",
+    "selecon-ag-f-verbos-leia-o-texto-a-seguir-ses-distribui-3754252",
+    "selecon-ass-verbos-leia-o-texto-a-seguir-a-fruta-que-aj-3692789"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-ace-verbos-leia-o-texto-a-seguir-para-responder-3662932",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-of-verbos-assinale-a-alternativa-cujo-enunciad-3725104",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "consulplan-a-verbos-leia-o-texto-e-responda-a-questao-ab-3694741",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "consulplan-a-verbos-leia-o-texto-para-responder-a-questa-3694424",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-verbos-leia-o-texto-iv-para-responder-a-que-3709452",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-acd-verbos-leia-o-texto-a-seguir-e-responda-a-q-3746597",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-ag-f-verbos-leia-o-texto-a-seguir-ses-distribui-3754252",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-ass-verbos-leia-o-texto-a-seguir-a-fruta-que-aj-3692789",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

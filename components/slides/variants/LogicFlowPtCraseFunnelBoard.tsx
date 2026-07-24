@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   Ban,
@@ -17,7 +17,6 @@ import {
   type PtCraseFunnelBoardModel,
   type PtCraseFunnelOption,
 } from '@/lib/slides/ptCraseSlideUtils';
-import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
 
 const BUCKET_META: Record<
   PtCraseBucket,
@@ -234,7 +233,6 @@ export function LogicFlowPtCraseFunnelBoard({
   footerRule?: string;
 }) {
   const reduceMotion = useReducedMotion();
-  const { satisfy } = useReverseStudyCompletionGate();
   const [fusionChoice, setFusionChoice] = useState<boolean | null>(null);
   const [optionChoice, setOptionChoice] = useState<string | null>(null);
 
@@ -256,10 +254,6 @@ export function LogicFlowPtCraseFunnelBoard({
     if (fromFooter) return fromFooter;
     return DEFAULT_POCKET_RULE;
   }, [footerRule, model.transferRule]);
-
-  useEffect(() => {
-    if (optionChoice) satisfy('logic_flow_complete');
-  }, [optionChoice, satisfy]);
 
   const chooseFusion = useCallback((hasFusion: boolean) => {
     setFusionChoice(hasFusion);

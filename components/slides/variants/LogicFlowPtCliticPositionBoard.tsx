@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -19,7 +19,6 @@ import {
   type PtCliticPositionBoardModel,
   type PtCliticPositionOption,
 } from '@/lib/slides/ptCliticRailSlideUtils';
-import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
 
 const POSITION_META: Record<
   PtCliticPosition,
@@ -313,7 +312,6 @@ export function LogicFlowPtCliticPositionBoard({
   footerRule?: string;
 }) {
   const reduceMotion = useReducedMotion();
-  const { satisfy } = useReverseStudyCompletionGate();
   const [modelChoice, setModelChoice] = useState<PtCliticPosition | null>(null);
   const [optionChoice, setOptionChoice] = useState<string | null>(null);
 
@@ -342,10 +340,6 @@ export function LogicFlowPtCliticPositionBoard({
     }
     return DEFAULT_POCKET_RULE;
   }, [footerRule, model.transferRule]);
-
-  useEffect(() => {
-    if (optionChoice) satisfy('logic_flow_complete');
-  }, [optionChoice, satisfy]);
 
   const chooseModel = useCallback((position: PtCliticPosition) => {
     setModelChoice(position);

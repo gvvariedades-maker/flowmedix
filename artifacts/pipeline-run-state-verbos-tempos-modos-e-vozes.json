@@ -4,20 +4,24 @@
   "pacote_prefix": "verbos-tempos-modos-e-vozes",
   "mode": "full",
   "total_slugs": 45,
-  "handcraft_applied": 0,
-  "production_status": "none",
-  "next_unit": {
-    "type": "handcraft_lote",
-    "id": "verbos-tempos-modos-e-vozes-g01",
-    "detail": "Continuar lote verbos-tempos-modos-e-vozes-g01 (status=planned)",
-    "lote": "verbos-tempos-modos-e-vozes-g01"
-  },
-  "completed_units": [],
+  "handcraft_applied": 45,
+  "production_status": "production_ready",
+  "next_unit": null,
+  "completed_units": [
+    "handcraft_lote:verbos-tempos-modos-e-vozes-g01",
+    "handcraft_lote:verbos-tempos-modos-e-vozes-g02",
+    "handcraft_lote:verbos-tempos-modos-e-vozes-g03",
+    "handcraft_lote:verbos-tempos-modos-e-vozes-g04",
+    "handcraft_lote:verbos-tempos-modos-e-vozes-g05",
+    "handcraft_lote:verbos-tempos-modos-e-vozes-g06",
+    "apply_supabase:g01-g06",
+    "ship:promote"
+  ],
   "blockers": [],
   "last_agent_id": null,
   "last_run_id": null,
-  "last_exit": null,
+  "last_exit": 0,
   "last_error": null,
-  "updated_at": "2026-07-23T20:09:04.240Z",
-  "notes": "Bootstrap IDE 2026-07-23: L3 ok_generico (brief pt_verbos + retenção 4/4), âncora READY mais-que-perfeito SJRP, gate=pass, mold-gap sem bespoke pendente. next=handcraft_lote g01 — STOP chat; workers SDK."
+  "updated_at": "2026-07-23T23:00:00.000Z",
+  "notes": "IDE DONE 2026-07-23: 45/45 applied + production_ready (L1–L6 PASS). Card vendável na vitrine."
 }

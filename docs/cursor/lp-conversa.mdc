@@ -1,0 +1,41 @@
+---
+description: Ativa o runbook de LP alto impacto quando o usuário enviar "LP:" (home / path / polish visual), ou anexar docs/LP_CONVERSA.md
+alwaysApply: false
+---
+
+# LP de alto impacto — conversa nova
+
+Quando a mensagem começar com **`LP:`** (ou anexar `docs/LP_CONVERSA.md`), executar **sem pedir modo**:
+
+## 1. Resolver trigger
+
+| Trigger | Ação |
+|---------|------|
+| `LP: home` | Variante A — landing `/` |
+| `LP: <path>` | Variante B — `/lp/<path>` (CMS + `LPConcurso` / Campina) |
+| `LP: polish visual` | Só shell/tokens; **não** reescrever CRO |
+
+Runbook completo: [`docs/LP_CONVERSA.md`](../LP_CONVERSA.md)  
+Pesquisa / C1–C16: [`docs/LP_RESEARCH_CAPABILITY_MAP.md`](../LP_RESEARCH_CAPABILITY_MAP.md)
+
+## 2. Ordem obrigatória
+
+1. **Fase 0** — brief 15 min (persona, job, VoC, CTA, ansiedades) — exceto polish visual puro  
+2. Anatomia da variante (home vs concurso)  
+3. Copy: PAS + self-image TE; home → `lib/marketing/landingCopy.ts`; concurso → schema CMS  
+4. Design de conversão (1 CTA, contraste brand, demo try-before-buy)  
+5. Auditoria **LIFT** (6 fatores)  
+6. Ship checklist — **publicar** LP só com pedido explícito do usuário  
+
+## 3. Proibido
+
+- Copy de enfermeiro / nível superior para TE  
+- Escassez falsa; mais de um CTA primário por viewport  
+- Inventar paleta fora Editorial/Cyber AVANT  
+- Misturar handcraft / moldes NeuroSlides nesta conversa  
+
+## 4. Entrega
+
+`[BRIEF]` · `[DECISÃO]` · `[DIFF]` · `[LIFT]` · `[SHIP]` — ver runbook.
+
+**Não confundir:** `Visual:` = polish app sem CRO; `LP:` = design + conversão da landing/LP.

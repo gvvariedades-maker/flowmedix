@@ -800,6 +800,24 @@
       "slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
       "lote": "oracoes-coordenadas-e-subordinadas-anchors",
       "json_path": "examples/questao-premium-apice-portugues-oracoes-adversativa-pocinhos.json"
+    },
+    "pt_verbos": {
+      "pedagogical_branch": "pt_verbos",
+      "slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+      "lote": "verbos-tempos-modos-e-vozes-anchors",
+      "json_path": "examples/questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json"
+    },
+    "pt_denotacao_conotacao": {
+      "pedagogical_branch": "pt_denotacao_conotacao",
+      "slug": "questao-premium-vunesp-portugues-denotacao-literal-figurado",
+      "lote": "denotacao-conotacao-anchors",
+      "json_path": "examples/questao-premium-vunesp-portugues-denotacao-literal-figurado.json"
+    },
+    "pt_sinonimos_polissemia": {
+      "pedagogical_branch": "pt_sinonimos_polissemia",
+      "slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+      "lote": "sinonimos-antonimos-e-polissemia-anchors",
+      "json_path": "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json"
     }
   }
 }

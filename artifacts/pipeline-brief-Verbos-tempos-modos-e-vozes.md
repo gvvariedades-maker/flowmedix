@@ -31,7 +31,7 @@ Você é o melhor professor de concursos para **Técnicos de Enfermagem**:
 | Campo | Valor |
 |-------|-------|
 | pacote_prefix | `verbos-tempos-modos-e-vozes` |
-| status | pending (0/45 slugs) |
+| status | pending (16/45 slugs) |
 | production_status | none |
 | lote_pattern | `verbos-tempos-modos-e-vozes-g{NN}` |
 | anchor_glob | `examples/questao-premium-*-portugues-verbos-*.json` |

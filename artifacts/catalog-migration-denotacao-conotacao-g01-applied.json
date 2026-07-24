@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T05:19:54.666Z",
+  "lote": "denotacao-conotacao-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-aoe-denotacao-assinale-a-alternativa-em-que-a-muda-3886650",
+    "avancasp-aoe-denotacao-o-bom-leitor-deixa-suas-armas-na-ent-3886652",
+    "avancasp-esc-denotacao-assinale-a-alternativa-em-que-a-pala-3826734",
+    "avancasp-tec-denotacao-15-07-2026-19-38-29-98-263-264-assin-3835992",
+    "cpcon-uepb-a-denotacao-leia-o-texto-i-para-responder-a-ques-3836440",
+    "fcc-tec-denotacao-considere-o-texto-abaixo-para-respon-3908391",
+    "vunesp-ag-ad-denotacao-leia-o-texto-a-seguir-para-responder-3789297",
+    "vunesp-ag-cs-denotacao-leia-o-trecho-a-seguir-da-cronica-de-3799250"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-aoe-denotacao-assinale-a-alternativa-em-que-a-muda-3886650",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-aoe-denotacao-o-bom-leitor-deixa-suas-armas-na-ent-3886652",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-esc-denotacao-assinale-a-alternativa-em-que-a-pala-3826734",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-tec-denotacao-15-07-2026-19-38-29-98-263-264-assin-3835992",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-denotacao-leia-o-texto-i-para-responder-a-ques-3836440",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fcc-tec-denotacao-considere-o-texto-abaixo-para-respon-3908391",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-ad-denotacao-leia-o-texto-a-seguir-para-responder-3789297",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-cs-denotacao-leia-o-trecho-a-seguir-da-cronica-de-3799250",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

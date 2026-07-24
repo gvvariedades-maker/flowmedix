@@ -1,7 +1,25 @@
 {
   "lote": "verbos-tempos-modos-e-vozes-g06",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-21",
+  "handcraft_at": "2026-07-23",
   "subtopico": "Verbos — tempos, modos e vozes",
-  "status": "planned",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_verbos",
+  "cluster": "Verbos — tempos, modos e vozes — lote 6/6",
+  "total": 5,
+  "status": "applied",
+  "anchor_slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/verbos.ts",
+  "gates": {
+    "questao_readiness": "5/5 READY strict-v2-pedagogy",
+    "validate_goldens": "5/5 strict",
+    "catalog_preflight": "5/5 strict-v2-pedagogy",
+    "apply_dry_run": "5/5 skipped (allow-insert pendente)"
+  },
+  "apply_requires": "--allow-insert",
   "slugs": [
     "instituto-ao-verbos-o-texto-a-seguir-refere-se-a-questao-3841168",
     "apice-ap-ei-verbos-15-07-2026-19-33-26-88-60-61-62-63-d-4037450",
@@ -9,5 +27,13 @@
     "fgv-ag-pref-verbos-todas-as-frases-a-seguir-estao-na-vo-3430169",
     "fgv-ag-st-pr-verbos-texto-i-a-escrita-a-nossa-civilizaca-3432846"
   ],
-  "note": "Fase 0 pipeline Verbos — tempos, modos e vozes 2026-07-21"
+  "handcraft_script": "scripts/handcraft-verbos-tempos-modos-e-vozes-g06.ts",
+  "note": "Lote 6/6 pt_verbos M14 — handcraft golden-v1 2026-07-23. Infinitivo nominal, morfologia vou/fazer/dever, copulativo Ser, voz ativa EXCETO, voz passiva é influenciado.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-23",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/verbos-tempos-modos-e-vozes-g06.json"
+  }
 }

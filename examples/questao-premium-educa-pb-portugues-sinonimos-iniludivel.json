@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "banca": "EDUCA PB",
+    "prova": "Ag Adm (Pref Cajazeiras)",
+    "orgao": "Pref. Cajazeiras",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Sinônimos, antônimos e polissemia",
+    "pedagogical_branch": "pt_sinonimos_polissemia",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "content_review": {
+      "reviewed_at": "2026-07-24",
+      "reviewer": "agent:elias-te-simples-sinonimos-ancora-03",
+      "guideline_snapshot": "Prefixo in- + pergunta-teste «O in- nega ou confirma?» — armadilha enganável × incontornável (PT_SINONIMOS_POLISSEMIA)",
+      "exam_vs_current": "none",
+      "catalog_slug": "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913867"
+    },
+    "sources": [
+      {
+        "id": "pt-sinonimos-polissemia-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Cunha & Cintra) — referência de concurso",
+        "title": "Sinônimos, antônimos e polissemia",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": ["sinonímia", "antonímia", "prefixo", "pergunta-teste"]
+      },
+      {
+        "id": "bandeira-consoada-1945",
+        "tier": "A",
+        "issuer": "Manuel Bandeira",
+        "title": "Consoada (1945; ed. de referência)",
+        "year": 1990,
+        "covers": ["poesia modernista", "iniludível", "Indesejada das gentes"]
+      },
+      {
+        "id": "portugues-caderno-tec-3913867",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT — tec 3913867 (EDUCA PB Ag Adm Pref Cajazeiras 2026 · iniludível)",
+        "year": 2026,
+        "covers": ["enunciado", "alternativas", "gabarito B", "prefixo in-"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Leia o texto a seguir e responda à questão.\n\nLeia o trecho do poema Consoada, de Manuel Bandeira:\n\n«Talvez sorria, ou diga: — Alô, iniludível!»\n\nAssinale o sinônimo adequado para o termo «iniludível»:",
+    "text_fragment": "<p><strong>Consoada</strong> — Manuel Bandeira (trecho)</p><p>Quando a Indesejada das gentes chegar<br/>(Não sei se dura ou caroável),<br/>talvez eu tenha medo.<br/>Talvez sorria, ou diga:<br/>— Alô, <strong>iniludível</strong>!<br/>O meu dia foi bom, pode a noite descer.</p>",
+    "figure_policy": "transcribed",
+    "options": [
+      { "id": "A", "text": "Enganável.", "is_correct": false },
+      { "id": "B", "text": "Incontornável.", "is_correct": true },
+      { "id": "C", "text": "Duvidoso.", "is_correct": false },
+      { "id": "D", "text": "Incerto.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Prefixo in-",
+      "chip_label": "Pergunta-teste",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "O in- nega «iludível» — o que sobra?",
+          "icon": "Eye"
+        },
+        {
+          "label": "Iniludível",
+          "detail": "Que não se pode iludir, evitar ou ignorar.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Indesejada",
+          "detail": "Eufemismo bandeiriano para a morte.",
+          "icon": "Skull"
+        },
+        {
+          "label": "Alô",
+          "detail": "Saudação irônica — morte é certa.",
+          "icon": "MessageCircle"
+        },
+        {
+          "label": "Incontornável",
+          "detail": "Impossível contornar — gabarito B.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Ler in- como se fosse «enganável».",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "In- + iludível = não se escapa."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Trecho → prefixo → letras",
+      "chip_label": "Um toque = um corte",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "steps": [
+        "Consoada: poeta aguarda a «Indesejada das gentes» (morte).",
+        "Verso: «Alô, iniludível!» — não dá para fingir que ela não virá.",
+        "Formação: in- (negação) + iludível — inevitável.",
+        "A «Enganável»: quem se deixa enganar — inverte o prefixo — eliminar.",
+        "B «Incontornável»: não há como evitar/contornar — manter.",
+        "C «Duvidoso» e D «Incerto»: contradizem certeza do poema — eliminar.",
+        "Gabarito B.",
+        "Em similares: in- nega a base — não troque por antônimo da base."
+      ],
+      "footer_rule": "Enganável ≠ iniludível."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore de bolso",
+      "chip_label": "Tabela portátil",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "content": "IN- NEGA A BASE",
+      "rows": [
+        { "label": "Iniludível", "value": "Não se pode iludir/evitar." },
+        { "label": "Iludível", "value": "Base: que se pode iludir." },
+        { "label": "Sinônimo", "value": "Incontornável, inevitável." },
+        { "label": "Armadilha", "value": "Enganável — oposto, não sinônimo." },
+        { "label": "Nesta questão", "value": "B — Incontornável." }
+      ],
+      "footer_rule": "Prefixo antes do dicionário solto."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Compare",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "content": "Leituras invertidas do in-",
+      "items": [
+        {
+          "label": "A — Enganável",
+          "detail": "Parece próximo de «iludir», mas inverte o sentido.",
+          "correct": "Antônimo no contexto: enganável é quem cai em ilusão — iniludível é inevitável."
+        },
+        {
+          "label": "C — Duvidoso",
+          "detail": "Morte no poema não é incerta.",
+          "correct": "Sinônimo no contexto: «duvidoso» não cobre inevitabilidade de «iniludível»."
+        },
+        {
+          "label": "D — Incerto",
+          "detail": "Opõe-se à certeza do verso.",
+          "correct": "Antônimo no contexto: incerto contradiz «não se pode iludir»."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Classifique: «O prazo final é iniludível.»",
+          "correct": "Sinônimo no contexto: «incontornável» — não dá para ignorar ou adiar."
+        }
+      ],
+      "footer_rule": "B sobrou: incontornável."
+    }
+  ]
+}

@@ -178,5 +178,5 @@ Após vitrine + player. Reutilizar tokens editoriais (`--color-brand`, `.card-el
 |------|------|
 | Moldes NeuroSlides / metáfora visual | `avant-neuroslides-visual` |
 | Conteúdo JSON / golden | `avant-json-template` |
-| Estrutura + copy + CRO da LP | [`docs/auditoria-visual-v2/LANDING-AVANT-v3.md`](../../auditoria-visual-v2/LANDING-AVANT-v3.md) |
+| Estrutura + copy + CRO da LP | [`docs/LP_CONVERSA.md`](../../LP_CONVERSA.md) · pesquisa [`LP_RESEARCH_CAPABILITY_MAP.md`](../../LP_RESEARCH_CAPABILITY_MAP.md) |
 | Ebook HTML offline | `ebook-enfermagem-premium` |

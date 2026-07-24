@@ -55,11 +55,19 @@ describe('useEstudarModalActive', () => {
     expect(result.current).toBe(false);
   });
 
-  it('retorna false na vitrine (/estudar) mesmo com segmento modal preso', () => {
+  it('retorna false na vitrine (/estudar) sem overlay nem slug na URL', () => {
     process.env.NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE = '1';
     mockUsePathname.mockReturnValue('/estudar');
     const { result } = renderHook(() => useEstudarModalActive());
     expect(result.current).toBe(false);
+  });
+
+  it('retorna true na vitrine quando o overlay modal está aberto (bridge)', () => {
+    process.env.NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE = '1';
+    mockUsePathname.mockReturnValue('/estudar');
+    setEstudarModalOverlayOpen(true);
+    const { result } = renderHook(() => useEstudarModalActive());
+    expect(result.current).toBe(true);
   });
 
   it('retorna true via bridge quando segmento modal não alcança o shell ancestral', () => {

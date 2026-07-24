@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-24T05:22:10.377Z",
+  "lote": "denotacao-conotacao-g05",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-acs-p-denotacao-leia-o-texto-a-seguir-para-responder-3844966"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-acs-p-denotacao-leia-o-texto-a-seguir-para-responder-3844966",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

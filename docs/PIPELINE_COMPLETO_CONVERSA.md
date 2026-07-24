@@ -31,6 +31,7 @@ Pipeline completo: Enfermagem em Central de Material e Esterilização (CME)
 | `Paridade Adolescente: <subtópico>` | Paridade pedagógica proporcional (L2+L3+A4 substantivo+L6) — [`PROMPT_PARIDADE_ADOLESCENTE.md`](PROMPT_PARIDADE_ADOLESCENTE.md) |
 | `Pipeline + paridade Adolescente: <subtópico>` | Pipeline completo + paridade na mesma conversa |
 | `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: <subtópico>` | Bootstrap IDE + workers SDK — [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
+| `Programa completo IDE: <subtópico>` | Capítulos no Agent até nota-10 **sem SDK** — [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](PROMPT_PROGRAMA_COMPLETO_IDE.md) |
 | `Pipeline completo: Língua Portuguesa — Crase (âncora Q506)` | Âncora golden-v1 Q506 + Elias M11 TE-simples; **parar antes de `--apply`** — [`PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md`](PROMPT_PIPELINE_ANCORA_PT_CRASE_Q506.md) |
 
 Pré-requisito de taxonomia (obrigatório antes da Fase 1):

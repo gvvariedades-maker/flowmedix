@@ -1,0 +1,76 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g02",
+  "generated_at": "2026-07-24T06:59:39.804Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-afa-sinonimos-considere-o-texto-a-seguir-para-resp-3962439",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-esc-sinonimos-considere-o-texto-a-seguir-para-resp-3963895",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-gcm-sinonimos-leia-o-texto-a-seguir-para-responder-4001113",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3912840",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913852",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913867",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-ao-sinonimos-o-texto-a-seguir-refere-se-a-questao-3841144",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-tenf-sinonimos-leia-a-tira-a-seguir-para-responder-3999723",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

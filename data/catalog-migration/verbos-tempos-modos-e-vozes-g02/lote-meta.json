@@ -1,7 +1,25 @@
 {
   "lote": "verbos-tempos-modos-e-vozes-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-21",
+  "handcraft_at": "2026-07-23",
   "subtopico": "Verbos — tempos, modos e vozes",
-  "status": "planned",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_verbos",
+  "cluster": "Verbos — tempos, modos e vozes — lote 2/6",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/verbos.ts",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "8/8 strict",
+    "catalog_preflight": "8/8 strict-v2-pedagogy",
+    "apply_dry_run": "8/8 skipped (allow-insert pendente)"
+  },
+  "apply_requires": "--allow-insert",
   "slugs": [
     "avancasp-gcm-verbos-cazo-novo-filme-disponivel-em-na-fal-4001122",
     "avancasp-acs-verbos-nao-posso-compreender-que-a-literatu-4003501",
@@ -12,5 +30,13 @@
     "vunesp-an-op-verbos-assinale-a-alternativa-em-que-a-form-3354410",
     "avancasp-aee-verbos-o-que-e-angustia-um-rapaz-fez-me-ess-3374802"
   ],
-  "note": "Fase 0 pipeline Verbos — tempos, modos e vozes 2026-07-21"
+  "handcraft_script": "scripts/handcraft-verbos-tempos-modos-e-vozes-g02.ts",
+  "note": "Lote 2/6 pt_verbos M14 — handcraft golden-v1 2026-07-23. Tempos/modos/vozes + passiva + pessoa verbal.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-23",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/verbos-tempos-modos-e-vozes-g02.json"
+  }
 }

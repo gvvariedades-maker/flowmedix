@@ -36,6 +36,12 @@ import {
   PT_TERMOS_BESPOKE_BRANCHES,
   PT_CONCORDANCIA_BRANCHES,
   PT_CONCORDANCIA_BESPOKE_BRANCHES,
+  PT_VERBOS_BRANCHES,
+  PT_VERBOS_BESPOKE_BRANCHES,
+  PT_DENOTACAO_BRANCHES,
+  PT_DENOTACAO_BESPOKE_BRANCHES,
+  PT_SINONIMOS_BRANCHES,
+  PT_SINONIMOS_BESPOKE_BRANCHES,
   PT_ORACOES_BRANCHES,
   PT_ORACOES_BESPOKE_BRANCHES,
   FARMACO_BRANCHES,
@@ -451,6 +457,186 @@ test.describe('Concordância verbal e nominal — moldes L3', () => {
     expect(fs.existsSync(outPath)).toBe(true);
     const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
     expect(summary.pacote_prefix).toBe('concordancia-verbal-e-nominal');
+  });
+});
+
+test.describe('Verbos — tempos, modos e vozes — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression PT Verbos — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!browserName.includes('chromium') && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PT_VERBOS_BRANCHES) {
+    test(`PT Verbos ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PT Verbos ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('PT Verbos pt_verbos — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'pt_verbos';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Verbos — tempos, modos e vozes — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'verbos-tempos-modos-e-vozes',
+      branches: [...PT_VERBOS_BRANCHES],
+      pass: true,
+      detail: `Playwright L3 PT Verbos — ${PT_VERBOS_BRANCHES.length} branch ok_generico (linha do tempo verbal 4/4); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('verbos-tempos-modos-e-vozes');
+  });
+});
+
+test.describe('Denotação, conotação e figuras de linguagem — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression PT Denotação — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!browserName.includes('chromium') && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PT_DENOTACAO_BRANCHES) {
+    test(`PT Denotação ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PT Denotação ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('PT Denotação pt_denotacao_conotacao — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'pt_denotacao_conotacao';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Denotação, conotação e figuras de linguagem — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'denotacao-conotacao',
+      branches: [...PT_DENOTACAO_BRANCHES],
+      pass: true,
+      detail: `Playwright L3 PT Denotação — ${PT_DENOTACAO_BRANCHES.length} branch ok_generico (lente literal × figurado 4/4); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('denotacao-conotacao');
+  });
+});
+
+test.describe('Sinônimos, antônimos e polissemia — moldes L3', () => {
+  test.describe.configure({ mode: 'serial', timeout: 180_000 });
+
+  test.beforeAll(() => {
+    if (process.env.CI) {
+      test.skip(true, 'Visual mold regression PT Sinônimos — nightly/manual only');
+    }
+  });
+
+  test.beforeEach(async ({ page, browserName }) => {
+    if (!browserName.includes('chromium') && process.env.VISUAL_MOLD_ALL_BROWSERS !== 'true') {
+      test.skip();
+    }
+    await page.addInitScript(onboardingDismissScript);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    fs.mkdirSync(OUT_DIR, { recursive: true });
+  });
+
+  const anchors = loadVisualAnchors();
+
+  for (const branch of PT_SINONIMOS_BRANCHES) {
+    test(`PT Sinônimos ${branch} — desktop 4 slides`, async ({ page }) => {
+      await page.setViewportSize(DESKTOP_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'desktop');
+    });
+
+    test(`PT Sinônimos ${branch} — mobile 375px 4 slides`, async ({ page }) => {
+      await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+      await gotoBranch(page, branch);
+      await expectSlidePanels(page);
+      await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375');
+    });
+  }
+
+  test('PT Sinônimos pt_sinonimos_polissemia — 375px legível (DoD brief)', async ({ page }) => {
+    const branch = 'pt_sinonimos_polissemia';
+    const anchor = anchors[branch];
+    const footerRules = loadAnchorFooterRules(anchor.json_path);
+
+    await page.setViewportSize(MOBILE_NARROW_VIEWPORT);
+    await gotoBranch(page, branch);
+    await assertSlidePanelsLegibleAt375(page, footerRules);
+    await screenshotSlidePanels(page, branch, OUT_DIR, 'mobile-375-dod');
+  });
+
+  test('Sinônimos, antônimos e polissemia — grava summary.json (audit:subtopico-quality L3)', () => {
+    const outPath = writeVisualMoldSummary({
+      pacotePrefix: 'sinonimos-antonimos-e-polissemia',
+      branches: [...PT_SINONIMOS_BRANCHES],
+      pass: true,
+      detail: `Playwright L3 PT Sinônimos — ${PT_SINONIMOS_BRANCHES.length} branch ok_generico (vocabulário contexto 4/4); PNGs em artifacts/visual-mold-regression/`,
+    });
+    expect(fs.existsSync(outPath)).toBe(true);
+    const summary = JSON.parse(fs.readFileSync(outPath, 'utf8')) as { pacote_prefix: string };
+    expect(summary.pacote_prefix).toBe('sinonimos-antonimos-e-polissemia');
   });
 });
 

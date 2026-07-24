@@ -328,6 +328,17 @@
           "catalog_slug": "vunesp-ag-ad-verbos-leia-o-texto-a-seguir-para-responder-3789241",
           "note": "Âncora bootstrap 2026-07-23 — tec 3789241 · VUNESP Ag Adm SJRP 2026 · gab. D · mais-que-perfeito composto↔simples"
         }
+      },
+      "visual_gallery": {
+        "status": "pilot",
+        "anchor_slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+        "layouts": [
+          "morphological",
+          "reference_table",
+          "tap",
+          "compare"
+        ],
+        "note": "ok_generico 3/3 — linha do tempo verbal (M14); captura opcional via capture:questao-review"
       }
     },
     {
@@ -335,14 +346,63 @@
       "when": "Sinônimos, antônimos, polissemia, homônimos, parônimos",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "ok_generico",
-      "anchors": []
+      "anchors": [
+        "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+        "examples/questao-premium-educa-pb-portugues-sinonimos-consoada-descer.json",
+        "examples/questao-premium-educa-pb-portugues-sinonimos-iniludivel.json",
+        "examples/questao-premium-cpcon-portugues-sinonimos-vf-cometa-3i-atlas.json"
+      ],
+      "anchor_styles": {
+        "polissemia_classificacao": {
+          "golden_reference": "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+          "anchor_slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+          "catalog_slug": "apice-acs-pr-sinonimos-analise-as-palavras-destacadas-nas-f-3951883",
+          "note": "Âncora 01 — polissemia «refletiu» (espelho × meditar) · Ápice ACS Boa Vista 2025 tec 3951883"
+        },
+        "sinonimo_contexto": {
+          "golden_reference": "examples/questao-premium-educa-pb-portugues-sinonimos-consoada-descer.json",
+          "anchor_slug": "questao-premium-educa-pb-portugues-sinonimos-consoada-descer",
+          "catalog_slug": "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913852",
+          "note": "Âncora 02 — sinônimo no contexto «descer» (noite) ≈ cair · Bandeira Consoada · EDUCA PB 2026 tec 3913852"
+        },
+        "prefixo_in_negacao": {
+          "golden_reference": "examples/questao-premium-educa-pb-portugues-sinonimos-iniludivel.json",
+          "anchor_slug": "questao-premium-educa-pb-portugues-sinonimos-iniludivel",
+          "catalog_slug": "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913867",
+          "note": "Âncora 03 — prefixo in- «iniludível» ≈ incontornável · Bandeira Consoada · EDUCA PB 2026 tec 3913867"
+        },
+        "vf_sinonimia_lexical": {
+          "golden_reference": "examples/questao-premium-cpcon-portugues-sinonimos-vf-cometa-3i-atlas.json",
+          "anchor_slug": "questao-premium-cpcon-portugues-sinonimos-vf-cometa-3i-atlas",
+          "catalog_slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3912840",
+          "note": "Âncora 04 — VF I–IV sinonímia lexical · cometa 3I/Atlas R7 · CPCON UEPB ACS Pref Cuité 2026 tec 3912840"
+        }
+      }
     },
     {
       "id": "pt_denotacao_conotacao",
       "when": "Denotação, conotação, figuras de linguagem",
       "mold": "morphological · reference_table · tap · compare",
       "l3_decision": "ok_generico",
-      "anchors": []
+      "l3_brief": "artifacts/l3-brief-denotacao-conotacao-pt_denotacao_conotacao.md",
+      "anchors": [
+        "examples/questao-premium-vunesp-portugues-denotacao-literal-figurado.json",
+        "examples/questao-premium-avancasp-portugues-denotacao-tirinha-drogas.json"
+      ],
+      "anchor_styles": {
+        "texto_metafora": {
+          "golden_reference": "examples/questao-premium-vunesp-portugues-denotacao-literal-figurado.json",
+          "anchor_slug": "questao-premium-vunesp-portugues-denotacao-literal-figurado",
+          "catalog_slug": "vunesp-ag-ad-denotacao-leia-o-texto-a-seguir-para-responder-3789297",
+          "note": "Âncora 01 — texto/metáfora «jaz em ruínas» · VUNESP Ag Adm Pref SJRP 2026 tec 3789297"
+        },
+        "tirinha_polissemia": {
+          "golden_reference": "examples/questao-premium-avancasp-portugues-denotacao-tirinha-drogas.json",
+          "anchor_slug": "questao-premium-avancasp-portugues-denotacao-tirinha-drogas",
+          "catalog_slug": "avancasp-acd-denotacao-leia-o-texto-a-seguir-para-responder-3554834",
+          "note": "Âncora 02 — tirinha Armandinho «drogas» (1º denotativo → último conotativo) · AVANÇASP ACD Pref Vinhedo 2025 tec 3554834 · usar em slugs de tira/tirinha (ex. 3345640, 3572890)"
+        }
+      }
     },
     {
       "id": "pt_vocabulo_que_se",
@@ -388,6 +448,39 @@
         "correct_tokens": ["próclise", "ênclise", "mesóclise", "antes do verbo", "depois do verbo", "dentro da forma"],
         "example_correct": "Mesóclise: «lhe» aparece dentro da forma futura «dir-ei».",
         "quiz_ui": "Antes do verbo | Dentro da forma | Depois do verbo"
+      },
+      "pt_verbos": {
+        "anchor": "examples/questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json",
+        "correct_tokens": [
+          "mais-que-perfeito",
+          "perfeito",
+          "imperfeito",
+          "futuro do pretérito",
+          "presente",
+          "locução",
+          "voz passiva",
+          "anterior",
+          "simultânea",
+          "posterior"
+        ],
+        "example_correct": "Mais-que-perfeito composto (= começara) — ação anterior a «cheguei».",
+        "quiz_ui": "tap Transferência (Classifique tempo/modo) — quiz UI dedicado opcional"
+      },
+      "pt_denotacao_conotacao": {
+        "anchor": "examples/questao-premium-vunesp-portugues-denotacao-literal-figurado.json",
+        "secondary_anchor": "examples/questao-premium-avancasp-portugues-denotacao-tirinha-drogas.json",
+        "correct_prefix": ["Sentido literal:", "Sentido figurado:", "Metáfora", "Comparação", "Metonímia", "Ironia"],
+        "example_correct": "Sentido figurado: «jaz em ruínas» = foi abandonada — não enterrada ao pé da letra.",
+        "quiz_ui": "Literal | Figurado"
+      },
+      "pt_sinonimos_polissemia": {
+        "anchor": "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+        "secondary_anchor": "examples/questao-premium-educa-pb-portugues-sinonimos-consoada-descer.json",
+        "tertiary_anchor": "examples/questao-premium-educa-pb-portugues-sinonimos-iniludivel.json",
+        "quaternary_anchor": "examples/questao-premium-cpcon-portugues-sinonimos-vf-cometa-3i-atlas.json",
+        "correct_prefix": ["Sinônimo no contexto:", "Antônimo no contexto:", "Polissemia:", "Parônimo:"],
+        "example_correct": "Sinônimo no contexto: «cair» mantém a noite chegando no verso de Bandeira.",
+        "quiz_ui": "Sinônimo | Antônimo | Polissemia"
       }
     },
     "worker_checklist": [
@@ -395,6 +488,9 @@
       "danger_zone: item Transferência com Classifique: «…» (não «Em outra banca…» genérico)",
       "pt_crase: correct inicia com Sem crase: ou Com à: (ativa quiz)",
       "pt_pronomes_colocacao: correct com próclise/ênclise/mesóclise ou antes/depois/dentro",
+      "pt_verbos: Transferência com Classifique: «…» + correct nomeando tempo/modo/voz (não só «Mesma linha do tempo:…»)",
+      "pt_denotacao_conotacao: correct inicia com Sentido literal: ou Sentido figurado: (ativa quiz Literal | Figurado)",
+      "pt_sinonimos_polissemia: correct inicia com Sinônimo no contexto: / Antônimo no contexto: / Polissemia: / Parônimo:",
       "Não entregue transferência só com «Mesmo funil/trilho:…» — sem quiz no player",
       "Gate: audit:questao-readiness --strict-v2-pedagogy → [READY]"
     ]

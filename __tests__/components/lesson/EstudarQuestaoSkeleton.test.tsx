@@ -16,4 +16,10 @@ describe('EstudarQuestaoSkeleton', () => {
       .querySelectorAll('.rounded-xl.border');
     expect(options).toHaveLength(4);
   });
+
+  it('remove radius no mobile quando mobileFullBleed', () => {
+    render(<EstudarQuestaoSkeleton mobileFullBleed />);
+    const root = screen.getByTestId('estudar-questao-skeleton');
+    expect(root.className).toContain('max-md:rounded-none');
+  });
 });

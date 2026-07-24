@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "ACD (Pref Vinhedo)",
+    "orgao": "Pref. Vinhedo",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Denotação, conotação e figuras de linguagem",
+    "pedagogical_branch": "pt_denotacao_conotacao",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "content_review": {
+      "reviewed_at": "2026-07-24",
+      "reviewer": "agent:elias-te-simples-denotacao-ancora-tirinha",
+      "guideline_snapshot": "Pergunta-teste «Literal ou figurado?» na tirinha — 1º quadro engana (denotativo) · último revela conotação (PT_DENOTACAO_CONOTACAO · lente por quadrinho)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-denotacao-conotacao-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Cunha & Cintra) — referência de concurso",
+        "title": "Denotação, conotação e figuras de linguagem",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "denotação",
+          "conotação",
+          "sentido literal",
+          "sentido figurado",
+          "polissemia",
+          "tirinha",
+          "pergunta-teste"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3554834",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT — tec 3554834 (AVANÇASP ACD Pref. Vinhedo 2025 · Armandinho «drogas»)",
+        "year": 2025,
+        "covers": ["enunciado", "alternativas", "gabarito D", "tirinha", "polissemia drogas"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A palavra «drogas», na tirinha, parece apresentar sentido próprio (denotativo) na leitura do primeiro quadrinho. No entanto, quando o leitor chega ao último quadrinho, percebe que o termo estava sendo usado em sentido figurado (conotativo). Assinale a alternativa correta a respeito de ambos os sentidos da palavra na tirinha:",
+    "figure_policy": "transcribed",
+    "text_fragment": "<p><strong>Tirinha Armandinho</strong> (Alexandre Beck) — leitura em dois tempos:</p><p><em>1º quadrinho:</em> a palavra «drogas» soa como produto alucinógeno / dependência química (sentido próprio aparente).</p><p><em>Último quadrinho:</em> o contexto revela que «drogas» era metáfora — algo que atrai, apaixona e intoxica o espírito (sentido figurado / conotativo).</p><p>Humor = troca de lente entre o primeiro e o último quadro.</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sentido próprio: conjunto dos diversos elementos estruturados. Sentido figurado: elemento que entra numa composição, num preparado ou numa mistura.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Sentido próprio: qualquer ato, produto ou objeto de pouco valor, insignificante. Sentido figurado: bebida ou comida de má qualidade e que pode fazer mal.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Sentido próprio: unidade ou item componente de um todo linguístico. Sentido figurado: qualquer uma das quatro substâncias (água, ar, terra e fogo) consideradas na ciência antiga.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Sentido próprio: qualquer produto alucinógeno que leve à dependência química. Sentido figurado: algo que atraia, apaixone, intoxique o espírito.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Sentido próprio: caráter do que é sólido, firme; força, robustez, vigor. Sentido figurado: qualquer espécie de matéria.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Tirinha: duas lentes",
+      "chip_label": "Quadrinho × efeito",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Denotação, conotação e figuras de linguagem"
+      },
+      "items": [
+        {
+          "label": "1º quadrinho",
+          "detail": "«Drogas» parece denotativo — alucinógeno, dependência química.",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Último quadrinho",
+          "detail": "Contexto vira a chave — atração / paixão / intoxicação do espírito.",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "Pergunta-teste",
+          "detail": "Literal no 1º? Figurado no último? Qual par de sentidos a banca pede?",
+          "icon": "Eye"
+        },
+        {
+          "label": "Polissemia",
+          "detail": "Mesma palavra, duas leituras — humor da tirinha Armandinho.",
+          "icon": "Layers"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Marcar glossário genérico (elementos, matéria) sem o par drogas.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Na tirinha: leia o arco 1º → último antes de abrir o dicionário."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "1º quadro → último → letras",
+      "chip_label": "Um toque = um corte",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Denotação, conotação e figuras de linguagem"
+      },
+      "steps": [
+        "Comando: ambos os sentidos de «drogas» na tirinha — próprio no 1º + figurado no último.",
+        "Próprio esperado: produto alucinógeno / dependência química (leitura inicial).",
+        "Figurado esperado: algo que atrai, apaixona, intoxica o espírito (revelação final).",
+        "A: «elementos / mistura» — glossário de composição, não «drogas» — eliminar.",
+        "B: «objeto de pouco valor / bebida ruim» — sentidos errados — eliminar.",
+        "C: «item linguístico / água-ar-terra-fogo» — outro campo semântico — eliminar.",
+        "E: «sólido-firme / espécie de matéria» — não casa com alucinógeno nem espírito — eliminar.",
+        "D: próprio = alucinógeno/dependência; figurado = intoxique o espírito — casa com o arco da tirinha.",
+        "Gabarito D.",
+        "Em similares: em tirinha, teste a palavra no 1º quadro e de novo no último — a banca cobra o par."
+      ],
+      "footer_rule": "Tap = mudar de lente entre quadrinhos."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore de bolso",
+      "chip_label": "Tabela portátil",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Denotação, conotação e figuras de linguagem"
+      },
+      "content": "TIRINHA — DUAS LENTES",
+      "rows": [
+        {
+          "label": "Denotação",
+          "value": "1º quadro — sentido de dicionário (alucinógeno)."
+        },
+        {
+          "label": "Conotação",
+          "value": "Último quadro — carga afetiva (espírito intoxicado)."
+        },
+        {
+          "label": "Método",
+          "value": "Ler arco completo antes de escolher o par de glossas."
+        },
+        {
+          "label": "Pegadinha",
+          "value": "Definições genéricas que não citam «drogas»."
+        },
+        {
+          "label": "Nesta questão",
+          "value": "D — alucinógeno + intoxique o espírito."
+        }
+      ],
+      "footer_rule": "Humor da tirinha = troca de lente, não troca de palavra."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Glossários que não são «drogas»",
+      "chip_label": "Compare",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Denotação, conotação e figuras de linguagem"
+      },
+      "content": "Cada letra erra o par denotativo × conotativo",
+      "items": [
+        {
+          "label": "A — elementos / mistura",
+          "detail": "Define composição química genérica, não a palavra da tirinha.",
+          "correct": "Sentido literal de «drogas» na tirinha = alucinógeno — não «elementos estruturados»."
+        },
+        {
+          "label": "B — pouco valor / bebida ruim",
+          "detail": "Troca o campo semântico (insignificância / comida).",
+          "correct": "Sentido figurado na tirinha = intoxicar o espírito — não bebida de má qualidade."
+        },
+        {
+          "label": "C — item linguístico / 4 elementos",
+          "detail": "Confunde morfologia / ciência antiga com «drogas».",
+          "correct": "Par certo: dependência química × paixão que intoxica — não água-ar-terra-fogo."
+        },
+        {
+          "label": "E — sólido / matéria",
+          "detail": "Fala de firmeza e matéria — sem o arco da tirinha.",
+          "correct": "Sentido literal: alucinógeno; figurado: apaixone o espírito — não «espécie de matéria»."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Classifique: na tirinha, «Ele é viciado em séries» (último quadro).",
+          "correct": "Sentido figurado: «viciado» transfere dependência química → hábito que prende — não droga ilícita."
+        }
+      ],
+      "footer_rule": "D sobrou: alucinógeno + espírito intoxicado."
+    }
+  ]
+}

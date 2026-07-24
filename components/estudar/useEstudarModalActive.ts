@@ -22,8 +22,8 @@ export function useEstudarModalActive(): boolean {
   const modalSegment = useSelectedLayoutSegment('modal');
 
   if (!isEstudarModalRouteEnabled() || isDesktop) return false;
-  if (parseEstudarSlugFromPathname(pathname) === null) return false;
-  // DashboardShell fica acima do slot @modal — bridge preenchido por EstudarQuestaoModalRoute.
+  // Overlay na vitrine: pathname pode ser /estudar sem slug — bridge é fonte de verdade.
   if (overlayOpen) return true;
+  if (parseEstudarSlugFromPathname(pathname) === null) return false;
   return modalSegment != null;
 }

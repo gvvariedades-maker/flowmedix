@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-23T22:44:54.018Z",
+  "lote": "verbos-tempos-modos-e-vozes-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-ag-adm-verbos-leia-a-charge-abaixo-e-responda-a-qu-3793471",
+    "avancasp-aee-verbos-nao-se-estabelece-no-emprego-das-for-3374820",
+    "educa-pb-ace-verbos-considere-o-texto-a-seguir-para-resp-3820024",
+    "fcc-tec-verbos-considere-o-texto-abaixo-para-respon-3908381",
+    "instituto-ao-verbos-leia-o-texto-a-seguir-para-responder-3840829",
+    "instituto-ao-verbos-o-texto-a-seguir-refere-se-a-questao-3841123",
+    "quadrix-aux-verbos-texto-para-a-questao-imagine-um-time-3738674",
+    "selecon-afar-verbos-leia-o-texto-a-seguir-apaixonados-po-3770517"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-ag-adm-verbos-leia-a-charge-abaixo-e-responda-a-qu-3793471",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-aee-verbos-nao-se-estabelece-no-emprego-das-for-3374820",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ace-verbos-considere-o-texto-a-seguir-para-resp-3820024",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fcc-tec-verbos-considere-o-texto-abaixo-para-respon-3908381",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-verbos-leia-o-texto-a-seguir-para-responder-3840829",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-verbos-o-texto-a-seguir-refere-se-a-questao-3841123",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "quadrix-aux-verbos-texto-para-a-questao-imagine-um-time-3738674",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-afar-verbos-leia-o-texto-a-seguir-apaixonados-po-3770517",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

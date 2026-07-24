@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-23T22:45:15.412Z",
+  "lote": "verbos-tempos-modos-e-vozes-g06",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-ap-ei-verbos-15-07-2026-19-33-26-88-60-61-62-63-d-4037450",
+    "facet-acs-pr-verbos-assinale-a-alternativa-que-contem-um-3358535",
+    "fgv-ag-pref-verbos-todas-as-frases-a-seguir-estao-na-vo-3430169",
+    "fgv-ag-st-pr-verbos-texto-i-a-escrita-a-nossa-civilizaca-3432846",
+    "instituto-ao-verbos-o-texto-a-seguir-refere-se-a-questao-3841168"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-ap-ei-verbos-15-07-2026-19-33-26-88-60-61-62-63-d-4037450",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "facet-acs-pr-verbos-assinale-a-alternativa-que-contem-um-3358535",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fgv-ag-pref-verbos-todas-as-frases-a-seguir-estao-na-vo-3430169",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fgv-ag-st-pr-verbos-texto-i-a-escrita-a-nossa-civilizaca-3432846",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-verbos-o-texto-a-seguir-refere-se-a-questao-3841168",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

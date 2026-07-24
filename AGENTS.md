@@ -25,6 +25,7 @@ Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cache
 | Tarefa | Trigger | Rule / doc |
 |--------|---------|------------|
 | Subtópico novo ou lotes até vendável | `Pipeline completo: <Subtópico canônico>` | [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) · [`docs/PIPELINE_COMPLETO_CONVERSA.md`](docs/PIPELINE_COMPLETO_CONVERSA.md) |
+| Zero → nota-10 no IDE (sem SDK) | `Programa completo IDE: <Subtópico>` · `Continuar programa:` | [`.cursor/rules/programa-completo-ide.mdc`](.cursor/rules/programa-completo-ide.mdc) · [`docs/PROMPT_PROGRAMA_COMPLETO_IDE.md`](docs/PROMPT_PROGRAMA_COMPLETO_IDE.md) · DoD [`docs/PROGRAMA_COMPLETO_IDE_DOD.md`](docs/PROGRAMA_COMPLETO_IDE_DOD.md) |
 | Só handcraft (parar em `applied`) | `Pipeline completo: …` + `Só handcraft` **ou** `Handcraft: <Subtópico>` | [`.cursor/rules/handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) · [`docs/HANDCRAFT_CONVERSA.md`](docs/HANDCRAFT_CONVERSA.md) |
 | Uma questão (slug) | `Handcraft: <Subtópico>` + `Slug: …` | idem |
 | Só qualidade (já `applied` 100%) | `Qualidade vendável: <Subtópico>` | [`.cursor/rules/quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) · [`docs/QUALITY_VENDAVEL_CONVERSA.md`](docs/QUALITY_VENDAVEL_CONVERSA.md) |
@@ -40,16 +41,17 @@ Goldens copiáveis: `examples/eng/api-route-admin.example.ts` · `rsc-page-cache
 
 ---
 
-## UI / visual
+## UI / visual / LP
 
-**Onboarding designer:** [`docs/DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) (App UI vs NeuroSlides).
+**Onboarding designer:** [`docs/DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) (App UI vs NeuroSlides vs Landing/LP).
 
 | Tarefa | Trigger | Rule / skill |
 |--------|---------|--------------|
 | Polish vitrine / player / dashboard | `Visual:` · `Polish vitrine` · `Polish player` · `craft UI` | [`.cursor/rules/avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md) |
 | Design visual de NeuroSlides (molde/retenção) | `Design visual:` · `Molde visual:` | [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](.cursor/skills/avant-neuroslides-visual/SKILL.md) |
+| LP alto impacto (copy + design + conversão) | `LP: home` · `LP: <path>` · `LP: polish visual` | [`.cursor/rules/lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc) · [`docs/LP_CONVERSA.md`](docs/LP_CONVERSA.md) · pesquisa [`docs/LP_RESEARCH_CAPABILITY_MAP.md`](docs/LP_RESEARCH_CAPABILITY_MAP.md) |
 
-Para **feature/bug de app** (comportamento + código), use `Feature:` / `Bug:` — não o trigger de handcraft. Para **só aparência** no design system existente, use `Visual:` / `Polish …`.
+Para **feature/bug de app** (comportamento + código), use `Feature:` / `Bug:` — não o trigger de handcraft. Para **só aparência** no design system existente, use `Visual:` / `Polish …`. Para **landing/LP com CRO**, use `LP:` — não `Visual:`.
 
 ---
 

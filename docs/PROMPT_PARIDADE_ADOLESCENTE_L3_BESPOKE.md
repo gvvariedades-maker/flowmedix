@@ -23,7 +23,8 @@ L3 bespoke: <Subtópico canônico>          → só Fase 0b (implementação Rea
 Mapeamento L3: <Subtópico canônico>        → conversa 1 (decisões + briefs 4/4)
 ```
 
-> **Programa completo com orquestrador:** [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md)
+> **Programa completo com orquestrador:** [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md)  
+> **Programa IDE sem SDK:** [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](PROMPT_PROGRAMA_COMPLETO_IDE.md)
 
 Substitua pelo nome **exato** de `CLAUDE.md` §9.
 

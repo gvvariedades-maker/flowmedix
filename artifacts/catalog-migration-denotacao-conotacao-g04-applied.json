@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T05:21:42.916Z",
+  "lote": "denotacao-conotacao-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-acr-denotacao-uma-lata-existe-para-conter-algomas-3727506",
+    "avancasp-ag-denotacao-preso-a-cancoes-entregue-a-paixoesqu-3727032",
+    "avancasp-fon-denotacao-uma-lata-existe-para-conter-algomas-3665290",
+    "avancasp-of-denotacao-as-vezes-a-vida-bate-com-um-tijolo-n-3725107",
+    "avancasp-tla-denotacao-assinale-a-alternativa-cujo-trecho-s-3726045",
+    "educa-pb-aga-denotacao-leia-o-texto-para-responder-a-questa-3661903",
+    "facet-moto-p-denotacao-a-publicidade-contemporanea-apropria-3670228",
+    "quadrix-aux-denotacao-texto-base-para-questao-abaixo-a-imu-3721172"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-acr-denotacao-uma-lata-existe-para-conter-algomas-3727506",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ag-denotacao-preso-a-cancoes-entregue-a-paixoesqu-3727032",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-fon-denotacao-uma-lata-existe-para-conter-algomas-3665290",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-of-denotacao-as-vezes-a-vida-bate-com-um-tijolo-n-3725107",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-tla-denotacao-assinale-a-alternativa-cujo-trecho-s-3726045",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-aga-denotacao-leia-o-texto-para-responder-a-questa-3661903",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "facet-moto-p-denotacao-a-publicidade-contemporanea-apropria-3670228",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "quadrix-aux-denotacao-texto-base-para-questao-abaixo-a-imu-3721172",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

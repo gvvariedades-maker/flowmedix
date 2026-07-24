@@ -1,29 +1,31 @@
 {
-  "generated_at": "2026-07-21T01:23:49.235Z",
+  "generated_at": "2026-07-24T07:08:24.053Z",
   "subtopicos_ready": 1,
   "subtopicos_pass": 1,
   "subtopicos_fail": 0,
   "items": [
     {
-      "subtopico": "Orações coordenadas e subordinadas",
+      "subtopico": "Sinônimos, antônimos e polissemia",
       "registry_status": "applied",
-      "total_slugs": 38,
-      "handcraft_applied": 38,
-      "manifest_slugs": 38,
-      "supabase_found": 38,
-      "golden_v1": 38,
-      "four_slides": 38,
-      "premium_gate_ok": 38,
-      "local_json_count": 38,
+      "total_slugs": 63,
+      "handcraft_applied": 63,
+      "manifest_slugs": 63,
+      "supabase_found": 63,
+      "golden_v1": 63,
+      "four_slides": 63,
+      "premium_gate_ok": 63,
+      "local_json_count": 63,
       "slug_issues": [],
       "pilot_sample": [
-        "apice-ace-pr-oracoes-sabendo-que-o-periodo-composto-por-c-3558979",
-        "apice-acs-pr-oracoes-15-07-2026-19-38-80-98-369-370-apos-3951882"
+        "apice-ace-pr-sinonimos-leia-o-texto-a-seguir-e-responda-da-3558948",
+        "apice-acs-pr-sinonimos-15-07-2026-19-38-27-98-257-258-259-o-3951867",
+        "apice-acs-pr-sinonimos-analise-as-palavras-destacadas-nas-f-3951883",
+        "apice-ag-adm-sinonimos-leia-o-poema-abaixo-e-responda-a-que-3793485"
       ],
-      "pilot_min": 2,
+      "pilot_min": 4,
       "dod_pass": true,
       "dod_notes": [
-        "Piloto humano sugerido: revisar 2 slug(s) no player (≥5%)"
+        "Piloto humano sugerido: revisar 4 slug(s) no player (≥5%)"
       ]
     }
   ]

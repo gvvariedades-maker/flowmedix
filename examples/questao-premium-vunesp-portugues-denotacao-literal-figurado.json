@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Ag Adm (Pref SJRP)",
+    "orgao": "Pref. São José do Rio Preto",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Denotação, conotação e figuras de linguagem",
+    "pedagogical_branch": "pt_denotacao_conotacao",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "content_review": {
+      "reviewed_at": "2026-07-23",
+      "reviewer": "agent:elias-te-simples-denotacao-ancora",
+      "guideline_snapshot": "Pergunta-teste «Literal ou figurado?» — lente dicionário × efeito no texto (PT_DENOTACAO_CONOTACAO)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-denotacao-conotacao-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Cunha & Cintra) — referência de concurso",
+        "title": "Denotação, conotação e figuras de linguagem",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "denotação",
+          "conotação",
+          "sentido literal",
+          "sentido figurado",
+          "metáfora",
+          "pergunta-teste"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3789297",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT — tec 3789297 (VUNESP Ag Adm Pref. SJRP 2026 · Lévi-Strauss)",
+        "year": 2026,
+        "covers": ["enunciado", "alternativas", "gabarito A", "jaz em ruínas"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Em «Hoje, essa reconstrução simples e grandiosa da história humana jaz em ruínas.» (2º parágrafo), a expressão destacada apresenta",
+    "text_fragment": "Acreditou-se por muito tempo que, deixando-se de lado a Revolução Industrial, a produção de bens de consumo nunca aumentou de forma tão rápida e robusta quanto por obra da invenção da agricultura. […] Essas eram as visões que prevaleciam até recentemente. Hoje, essa reconstrução simples e grandiosa da história humana jaz em ruínas. Pesquisas entre os povos sem agricultura demonstram que a maior parte deles leva uma vida confortável. (Claude Lévi-Strauss. Somos todos canibais, 2022. Adaptado)",
+    "options": [
+      {
+        "id": "A",
+        "text": "sentido figurado e significa “foi abandonada”.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "sentido próprio e significa “foi adotada”.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "sentido próprio e significa “foi enterrada”.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "sentido figurado e significa “foi reconhecida”.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "sentido figurado e significa “foi comprovada”.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Lente literal × figurado",
+      "chip_label": "Pergunta-teste",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Denotação, conotação e figuras de linguagem"
+      },
+      "items": [
+        {
+          "label": "Denotação",
+          "detail": "Dicionário: ruína = escombros, destroço físico.",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Conotação",
+          "detail": "Efeito no texto: valor, emoção, imagem transferida.",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "Contexto do trecho",
+          "detail": "Revolução Industrial, agricultura e reconstrução da história — não é prédio.",
+          "icon": "Eye"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Literalizar metáfora — achar que «ruínas» é prédio caído.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Literalizar metáfora — ruínas não é prédio."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Duas camadas → letras",
+      "chip_label": "Um toque = um corte",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Denotação, conotação e figuras de linguagem"
+      },
+      "steps": [
+        "Contexto: acreditou-se na tese agrícola; o consumo de bens aumentou o debate — até cair em «ruínas».",
+        "Trecho: após Revolução Industrial e agricultura, a «reconstrução» histórica «jaz em ruínas» — não prédio.",
+        "Dicionário: ruína = destroço material. No texto: teoria desmoronou.",
+        "Figurado: transferência de sentido — abandonada, em desuso.",
+        "B e C: «próprio» + enterrada/adotada — literalizam demais — eliminar.",
+        "D e E: figurado, mas sentido errado (reconhecida/comprovada) — eliminar.",
+        "A: figurado + «foi abandonada» — alinha com o contexto do parágrafo.",
+        "Gabarito A.",
+        "Em similares: pergunte «no dicionário» vs «no efeito do autor»."
+      ],
+      "footer_rule": "Gabarito A."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore de bolso",
+      "chip_label": "Tabela portátil",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Denotação, conotação e figuras de linguagem"
+      },
+      "content": "LITERAL × FIGURADO",
+      "rows": [
+        {
+          "label": "Denotação",
+          "value": "Sentido de dicionário — neutro, objetivo."
+        },
+        {
+          "label": "Conotação",
+          "value": "Carga emotiva ou social — autor + contexto."
+        },
+        {
+          "label": "Metáfora",
+          "value": "Substituição sem «como» — ruínas = abandono."
+        },
+        {
+          "label": "Pegadinha",
+          "value": "Marcar «próprio» onde há imagem transferida."
+        },
+        {
+          "label": "Nesta questão",
+          "value": "A: figurado — teoria «jaz em ruínas» = foi abandonada."
+        }
+      ],
+      "footer_rule": "Sentido de dicionário"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Compare",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Denotação, conotação e figuras de linguagem"
+      },
+      "content": "Cada letra erra a lente ou o efeito",
+      "items": [
+        {
+          "label": "B — próprio + adotada",
+          "detail": "Trata a metáfora como adoção literal da teoria.",
+          "correct": "Sentido figurado: a teoria não foi «adotada» — caiu em desuso."
+        },
+        {
+          "label": "C — próprio + enterrada",
+          "detail": "Literaliza «ruínas» como sepultamento físico.",
+          "correct": "Sentido figurado: não é enterro — é abandono da reconstrução."
+        },
+        {
+          "label": "D — figurado + reconhecida",
+          "detail": "Acerta o tipo, erra o efeito (contexto nega validação).",
+          "correct": "Figurado sim, mas significa desacreditar — não reconhecer."
+        },
+        {
+          "label": "E — figurado + comprovada",
+          "detail": "Inverte o tom: o texto derruba a teoria.",
+          "correct": "Figurado sim, mas efeito = abandono — não comprovação."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Classifique: «O tempo voa quando estamos felizes.»",
+          "correct": "Sentido figurado: «voar» transfere rapidez — tempo não tem asas."
+        }
+      ],
+      "footer_rule": "Transferência"
+    }
+  ]
+}

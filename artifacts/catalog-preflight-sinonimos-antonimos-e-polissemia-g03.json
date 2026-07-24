@@ -1,0 +1,76 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g03",
+  "generated_at": "2026-07-24T06:59:43.403Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "apice-ap-ei-sinonimos-inteligencia-artificial-e-a-transfor-4037426",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-acs-sinonimos-leia-a-tirinha-a-seguir-para-respond-3352958",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-acs-sinonimos-leia-o-texto-a-seguir-para-responder-4003498",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-acs-sinonimos-leia-o-texto-a-seguir-populacao-bras-1360970",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-as-sinonimos-leia-o-texto-a-seguir-para-responder-3345649",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-pr-sinonimos-leia-a-tira-para-responder-a-questao-3352583",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-pr-sinonimos-leia-o-texto-para-responder-a-questa-3352587",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-an-op-sinonimos-leia-o-texto-para-responder-a-questa-3354409",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

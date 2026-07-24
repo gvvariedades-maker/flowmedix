@@ -42,6 +42,21 @@ export const PT_CONCORDANCIA_BESPOKE_BRANCHES = ['pt_concordancia'] as const;
 
 export const PT_CONCORDANCIA_BRANCHES = ['pt_concordancia', 'pt_concordancia_generico'] as const;
 
+/** Ramos Língua Portuguesa — Verbos (ok_generico · linha do tempo verbal). */
+export const PT_VERBOS_BESPOKE_BRANCHES = [] as const;
+
+export const PT_VERBOS_BRANCHES = ['pt_verbos'] as const;
+
+/** Ramos Língua Portuguesa — Denotação/conotação (ok_generico · lente literal × figurado). */
+export const PT_DENOTACAO_BESPOKE_BRANCHES = [] as const;
+
+export const PT_DENOTACAO_BRANCHES = ['pt_denotacao_conotacao'] as const;
+
+/** Ramos Língua Portuguesa — Sinônimos, antônimos e polissemia (ok_generico). */
+export const PT_SINONIMOS_BESPOKE_BRANCHES = [] as const;
+
+export const PT_SINONIMOS_BRANCHES = ['pt_sinonimos_polissemia'] as const;
+
 /** Ramos Língua Portuguesa — Orações coord./subord. (pt-period-rail bespoke + genérico). */
 export const PT_ORACOES_BESPOKE_BRANCHES = ['pt_oracoes_subordinadas'] as const;
 

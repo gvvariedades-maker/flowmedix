@@ -1,0 +1,25 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g07",
+  "subtopico": "Sinônimos, antônimos e polissemia",
+  "status": "handcrafted",
+  "anchor_slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+  "golden_reference": "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+  "slugs": [
+    "avancasp-aco-sinonimos-leia-o-texto-a-seguir-para-responder-3738879",
+    "avancasp-mon-sinonimos-leia-o-texto-a-seguir-para-responder-3739261",
+    "educa-pb-acd-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3746595",
+    "apice-ag-adm-sinonimos-leia-o-poema-abaixo-e-responda-a-que-3793485",
+    "educa-pb-ace-sinonimos-considere-o-texto-a-seguir-para-resp-3820027",
+    "vunesp-acs-p-sinonimos-leia-o-texto-a-seguir-para-responder-3844988",
+    "apice-acs-pr-sinonimos-15-07-2026-19-38-27-98-257-258-259-o-3951867",
+    "fgv-ass-ts-p-sinonimos-assinale-a-afirmativa-que-apresenta-3587479"
+  ],
+  "note": "g07 handcraft 8/8 [READY] strict-v2 — asquerosa, crepita, afaga, langorosas/olores, conscientes charge, utilizar regência, vacância STF, parônimos FGV",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-24",
+    "reviewer": "handcraft-quality-gate",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinonimos-antonimos-e-polissemia-g07.json"
+  }
+}

@@ -8,6 +8,7 @@ Use em **conversa nova** (Agent mode) para fechar um subtópico com:
 - **Orquestrador** multi-unidade (`pipeline:next-unit` / `pipeline:orchestrate --sdk`)
 
 > **Sem orquestrador (chat único, pacote pequeno):** [`PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md`](PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md)  
+> **IDE capítulos até nota-10 (sem SDK):** [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](PROMPT_PROGRAMA_COMPLETO_IDE.md)  
 > **Só SDK / workers:** [`PIPELINE_ORCHESTRATOR.md`](PIPELINE_ORCHESTRATOR.md) · setup: [`PIPELINE_SDK_SETUP.md`](PIPELINE_SDK_SETUP.md)  
 > **Pipeline base:** [`PIPELINE_COMPLETO_CONVERSA.md`](PIPELINE_COMPLETO_CONVERSA.md)
 
@@ -26,7 +27,8 @@ Variantes:
 | Trigger | Uso |
 |---------|-----|
 | `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: <subtópico>` | Bootstrap IDE + programa SDK (este doc) |
-| `Continuar pipeline: <subtópico>` | Worker manual (1 unidade) — [`pipeline-orchestrator.mdc`](../.cursor/rules/pipeline-orchestrator.mdc) |
+| `Programa completo IDE: <subtópico>` | Capítulos no Agent Cursor **sem SDK** — [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](PROMPT_PROGRAMA_COMPLETO_IDE.md) |
+| `Continuar pipeline: <subtópico>` / `Continuar programa: <subtópico>` | Worker manual (1 unidade) — [`pipeline-orchestrator.mdc`](../.cursor/rules/pipeline-orchestrator.mdc) / [`programa-completo-ide.mdc`](../.cursor/rules/programa-completo-ide.mdc) |
 | `Pipeline + paridade Adolescente + L3 bespoke: <subtópico>` | Sem orquestrador — [`PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md`](PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md) |
 
 Substitua pelo nome **exato** de `CLAUDE.md` §9.
@@ -194,6 +196,8 @@ Pacote **≥81 slugs:** **sempre** `--max-units=1`.
 
 | Doc | Papel |
 |-----|--------|
+| [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](PROMPT_PROGRAMA_COMPLETO_IDE.md) | Capítulos IDE até nota-10 **sem SDK** |
+| [`PROGRAMA_COMPLETO_IDE_DOD.md`](PROGRAMA_COMPLETO_IDE_DOD.md) | Aceite por capítulo + ship |
 | [`PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md`](PROMPT_PARIDADE_ADOLESCENTE_L3_BESPOKE.md) | Checklist paridade + L3 sem orquestrador |
 | [`PIPELINE_ORCHESTRATOR.md`](PIPELINE_ORCHESTRATOR.md) | Unidades, budget, CLI |
 | [`PIPELINE_SDK_SETUP.md`](PIPELINE_SDK_SETUP.md) | `CURSOR_API_KEY`, `pipeline:sdk-check` |

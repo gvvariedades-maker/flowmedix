@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T05:12:47.448Z",
+  "lote": "sinonimos-antonimos-e-polissemia-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-aae-sinonimos-leia-o-texto-a-seguir-para-responder-3839707",
+    "avancasp-acr-sinonimos-leia-o-texto-a-seguir-para-responder-3839851",
+    "avancasp-acs-sinonimos-leia-o-texto-a-seguir-para-responder-3839361",
+    "avancasp-tec-sinonimos-leia-o-texto-a-seguir-para-responder-3835988",
+    "avancasp-tec-sinonimos-o-livro-e-o-risco-que-voce-corre-e-e-3835990",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3836462",
+    "instituto-ao-sinonimos-leia-o-texto-a-seguir-para-responder-3840872",
+    "vunesp-ag-ad-sinonimos-leia-o-texto-a-seguir-para-responder-3789292"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-aae-sinonimos-leia-o-texto-a-seguir-para-responder-3839707",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acr-sinonimos-leia-o-texto-a-seguir-para-responder-3839851",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acs-sinonimos-leia-o-texto-a-seguir-para-responder-3839361",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-tec-sinonimos-leia-o-texto-a-seguir-para-responder-3835988",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-tec-sinonimos-o-livro-e-o-risco-que-voce-corre-e-e-3835990",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3836462",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-sinonimos-leia-o-texto-a-seguir-para-responder-3840872",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-ad-sinonimos-leia-o-texto-a-seguir-para-responder-3789292",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

@@ -1,10 +1,9 @@
 {
-  "generated_at": "2026-07-21T01:23:09.734Z",
-  "pacote_prefix": "oracoes-coordenadas-e-subordinadas",
+  "generated_at": "2026-07-24T07:08:01.963Z",
+  "pacote_prefix": "sinonimos-antonimos-e-polissemia",
   "pass": true,
-  "detail": "Playwright L3 PT Orações — 2 branches (1 núcleo pt-period-rail 4/4); PNGs em artifacts/visual-mold-regression/",
+  "detail": "Playwright L3 PT Sinônimos — 1 branch ok_generico (vocabulário contexto 4/4); PNGs em artifacts/visual-mold-regression/",
   "branches": [
-    "pt_oracoes_subordinadas",
-    "pt_oracoes_subordinadas_generico"
+    "pt_sinonimos_polissemia"
   ]
 }

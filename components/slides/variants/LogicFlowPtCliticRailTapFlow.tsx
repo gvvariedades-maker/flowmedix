@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Waypoints } from 'lucide-react';
 import { resolveLucideIcon } from '../core/lucideIcon';
@@ -15,7 +15,6 @@ import {
   type PtCliticRailStation,
   type PtCliticStepRole,
 } from '@/lib/slides/ptCliticRailSlideUtils';
-import { useReverseStudyCompletionGate } from '@/components/lesson/ReverseStudyCompletionGate';
 import { LogicFlowPtCliticPositionBoard } from './LogicFlowPtCliticPositionBoard';
 
 const CARD_PALETTES: Record<
@@ -93,7 +92,6 @@ export function LogicFlowPtCliticRailTapFlow({
   footerRule,
 }: LogicFlowPtCliticRailTapFlowProps) {
   const reduceMotion = useReducedMotion();
-  const { satisfy } = useReverseStudyCompletionGate();
   const normalizedSteps = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
   const positionBoardModel = useMemo(
     () => buildPtCliticPositionBoard(normalizedSteps),
@@ -106,12 +104,6 @@ export function LogicFlowPtCliticRailTapFlow({
     () => normalizedSteps.map((_, i) => i).filter((i) => !passed.includes(i)),
     [normalizedSteps, passed],
   );
-
-  useEffect(() => {
-    if (normalizedSteps.length > 0 && remaining.length === 0) {
-      satisfy('logic_flow_complete');
-    }
-  }, [normalizedSteps.length, remaining.length, satisfy]);
 
   const topIndex = remaining[0] ?? -1;
   const passCard = useCallback(() => {

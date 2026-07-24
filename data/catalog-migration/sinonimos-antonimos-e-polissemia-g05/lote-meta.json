@@ -1,0 +1,25 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g05",
+  "subtopico": "Sinônimos, antônimos e polissemia",
+  "status": "handcrafted",
+  "anchor_slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+  "golden_reference": "examples/questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+  "slugs": [
+    "vunesp-ag-pr-sinonimos-leia-o-texto-a-seguir-para-responder-3583390",
+    "selecon-acs-sinonimos-leia-o-texto-a-seguir-para-responder-3586810",
+    "vunesp-acs-p-sinonimos-leia-o-texto-a-seguir-para-responder-3607115",
+    "vunesp-ade-g-sinonimos-leia-o-texto-para-responder-a-questa-3607399",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3651720",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3654539",
+    "avancasp-fon-sinonimos-leia-o-texto-a-seguir-para-responder-3665282",
+    "selecon-ass-sinonimos-leia-o-texto-a-seguir-a-fruta-que-aj-3692804"
+  ],
+  "note": "g05 handcraft 8/8 [READY] strict-v2 — Minayo mesmo quando, Oscar conformidade, Munroe potencial, mobilidade desolador, Telles atenuar×2, televizinho, laranja segundo",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-24",
+    "reviewer": "handcraft-quality-gate",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/sinonimos-antonimos-e-polissemia-g05.json"
+  }
+}

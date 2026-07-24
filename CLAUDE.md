@@ -15,15 +15,17 @@ Leitura estimada: **~5 min** (atalho + um perfil) · **~30–40 min** (arquivo i
 | Objetivo | Escreva na conversa |
 |----------|---------------------|
 | Subtópico novo ou continuar lote | `Pipeline completo: <Subtópico canônico>` ou `Handcraft: <Subtópico> gNN` |
+| Zero → nota-10 no IDE (sem SDK) | `Programa completo IDE: <Subtópico>` — [`PROMPT_PROGRAMA_COMPLETO_IDE.md`](docs/PROMPT_PROGRAMA_COMPLETO_IDE.md) · DoD [`PROGRAMA_COMPLETO_IDE_DOD.md`](docs/PROGRAMA_COMPLETO_IDE_DOD.md) |
 | Paridade + L3 bespoke + SDK (programa completo) | `Pipeline + paridade Adolescente + L3 bespoke + orquestrador: SUBTÓPICO: <Subtópico>` — [`PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md`](docs/PROMPT_PIPELINE_PARIDADE_ORQUESTRADOR.md) |
-| Continuar 1 unidade (run-state) | `Continuar pipeline: <Subtópico>` + `@artifacts/pipeline-run-state-*.json` |
+| Continuar 1 unidade (run-state) | `Continuar programa: <Subtópico>` ou `Continuar pipeline: <Subtópico>` + `@artifacts/pipeline-run-state-*.json` |
 | Só qualidade (já applied 100%) | `Qualidade vendável: <Subtópico>` |
 | Moldes antes do 1º lote | `Mapeamento L3: <Subtópico>` |
 | Uma questão quebrada | `Handcraft: <Subtópico>` + linha `Slug: ...` |
 | Polish UI (vitrine, player, dashboard) | `Visual:` · `Polish vitrine` · `Polish player` · `craft UI` |
+| Landing / LP (copy + conversão + design) | `LP: home` · `LP: <path>` · `LP: polish visual` — [`LP_CONVERSA.md`](docs/LP_CONVERSA.md) |
 | Feature de UI / bug no app | Descreva a tela + anexe arquivos; **não** use trigger de handcraft |
 
-**Triggers completos:** [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) · [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) · [`quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) · [`avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc)
+**Triggers completos:** [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) · [`.cursor/rules/programa-completo-ide.mdc`](.cursor/rules/programa-completo-ide.mdc) · [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) · [`handcraft-golden-v1.mdc`](.cursor/rules/handcraft-golden-v1.mdc) · [`quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) · [`avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) · [`lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc)
 
 ## Comandos rápidos
 
@@ -786,7 +788,9 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`DESIGNER_FRONT_AVANT.md`](docs/DESIGNER_FRONT_AVANT.md) | Hub onboarding designer front — App UI vs NeuroSlides |
 | [`auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md`](docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md) | Rebrand editorial — escopo, telhas T1–T11, WCAG |
 | [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) | Direção visual v3 — Clinical Study, paleta híbrida, mapeamento skills |
-| [`auditoria-visual-v2/LANDING-AVANT-v3.md`](docs/auditoria-visual-v2/LANDING-AVANT-v3.md) | Brief landing `/` — síntese Estudei, seções, tokens, Fase 8 |
+| [`auditoria-visual-v2/LANDING-AVANT-v3.md`](docs/auditoria-visual-v2/LANDING-AVANT-v3.md) | Brief histórico landing `/` (síntese Estudei) |
+| [`LP_CONVERSA.md`](docs/LP_CONVERSA.md) | **Runbook LP** — `LP: home` / `LP: <path>` / polish · design + conversão |
+| [`LP_RESEARCH_CAPABILITY_MAP.md`](docs/LP_RESEARCH_CAPABILITY_MAP.md) | Pesquisa 10 especialistas → capacidades C1–C16 |
 
 ### Skills Cursor (projeto)
 
@@ -812,9 +816,11 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 - [`.cursor/rules/quality-vendavel.mdc`](.cursor/rules/quality-vendavel.mdc) — trigger `Qualidade vendável: <subtópico>`
 - [`.cursor/rules/pipeline-completo.mdc`](.cursor/rules/pipeline-completo.mdc) — trigger `Pipeline completo: <subtópico>`
 - [`.cursor/rules/pipeline-paridade-orquestrador.mdc`](.cursor/rules/pipeline-paridade-orquestrador.mdc) — trigger `Pipeline + paridade Adolescente + L3 bespoke + orquestrador:`
+- [`.cursor/rules/programa-completo-ide.mdc`](.cursor/rules/programa-completo-ide.mdc) — trigger `Programa completo IDE:` / `Continuar programa:`
 - [`.cursor/rules/paridade-adolescente.mdc`](.cursor/rules/paridade-adolescente.mdc) — trigger `Paridade Adolescente: <subtópico>`
 - [`.cursor/rules/l3-mapeamento.mdc`](.cursor/rules/l3-mapeamento.mdc) — trigger `Mapeamento L3: <subtópico>`
 - [`.cursor/rules/avant-ui-visual.mdc`](.cursor/rules/avant-ui-visual.mdc) — trigger `Visual:` / `Polish vitrine` / `Polish player` / `craft UI`
+- [`.cursor/rules/lp-conversa.mdc`](.cursor/rules/lp-conversa.mdc) — trigger `LP:` · [`docs/LP_CONVERSA.md`](docs/LP_CONVERSA.md) · cópia [`docs/cursor/lp-conversa.mdc`](docs/cursor/lp-conversa.mdc)
 - [`docs/cursor/l3-mapeamento.mdc`](docs/cursor/l3-mapeamento.mdc) — cópia versionada do mapeamento L3
 - [`docs/cursor/avant-ui-visual.mdc`](docs/cursor/avant-ui-visual.mdc) — cópia versionada da rule UI visual
 - [`docs/cursor/avant-agent-json.mdc`](docs/cursor/avant-agent-json.mdc) — cópia versionada da rule de JSON (copiar para `.cursor/rules/` se faltar no clone)

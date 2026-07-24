@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T05:20:20.281Z",
+  "lote": "denotacao-conotacao-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-gcm-denotacao-assinale-a-alternativa-cuja-palavra-4001115",
+    "cpcon-uepb-a-denotacao-leia-o-texto-i-e-responda-a-questao-4018186",
+    "fgv-ag-pref-denotacao-assinale-a-opcao-que-apresenta-a-fra-3430191",
+    "vunesp-ag-as-denotacao-leia-a-tira-a-seguir-para-responder-3345640",
+    "vunesp-age-p-denotacao-leia-o-texto-para-responder-a-questa-3336079",
+    "vunesp-an-op-denotacao-leia-o-texto-para-responder-a-questa-3354412",
+    "vunesp-aux-s-denotacao-leia-o-texto-para-responder-a-questa-3323729",
+    "vunesp-tenf-denotacao-leia-o-texto-a-seguir-para-responder-3999753"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-gcm-denotacao-assinale-a-alternativa-cuja-palavra-4001115",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-denotacao-leia-o-texto-i-e-responda-a-questao-4018186",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fgv-ag-pref-denotacao-assinale-a-opcao-que-apresenta-a-fra-3430191",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-as-denotacao-leia-a-tira-a-seguir-para-responder-3345640",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-age-p-denotacao-leia-o-texto-para-responder-a-questa-3336079",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-an-op-denotacao-leia-o-texto-para-responder-a-questa-3354412",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-aux-s-denotacao-leia-o-texto-para-responder-a-questa-3323729",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-tenf-denotacao-leia-o-texto-a-seguir-para-responder-3999753",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

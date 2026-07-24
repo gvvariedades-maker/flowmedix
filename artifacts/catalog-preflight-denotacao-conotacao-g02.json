@@ -1,0 +1,76 @@
+{
+  "lote": "denotacao-conotacao-g02",
+  "generated_at": "2026-07-24T05:29:26.293Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-gcm-denotacao-assinale-a-alternativa-cuja-palavra-4001115",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-denotacao-leia-o-texto-i-e-responda-a-questao-4018186",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fgv-ag-pref-denotacao-assinale-a-opcao-que-apresenta-a-fra-3430191",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-ag-as-denotacao-leia-a-tira-a-seguir-para-responder-3345640",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-age-p-denotacao-leia-o-texto-para-responder-a-questa-3336079",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-an-op-denotacao-leia-o-texto-para-responder-a-questa-3354412",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-aux-s-denotacao-leia-o-texto-para-responder-a-questa-3323729",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-tenf-denotacao-leia-o-texto-a-seguir-para-responder-3999753",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

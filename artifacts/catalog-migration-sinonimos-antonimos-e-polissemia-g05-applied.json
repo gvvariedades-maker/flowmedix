@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T06:55:40.962Z",
+  "lote": "sinonimos-antonimos-e-polissemia-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-fon-sinonimos-leia-o-texto-a-seguir-para-responder-3665282",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3651720",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3654539",
+    "selecon-acs-sinonimos-leia-o-texto-a-seguir-para-responder-3586810",
+    "selecon-ass-sinonimos-leia-o-texto-a-seguir-a-fruta-que-aj-3692804",
+    "vunesp-acs-p-sinonimos-leia-o-texto-a-seguir-para-responder-3607115",
+    "vunesp-ade-g-sinonimos-leia-o-texto-para-responder-a-questa-3607399",
+    "vunesp-ag-pr-sinonimos-leia-o-texto-a-seguir-para-responder-3583390"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-fon-sinonimos-leia-o-texto-a-seguir-para-responder-3665282",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3651720",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3654539",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-acs-sinonimos-leia-o-texto-a-seguir-para-responder-3586810",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-ass-sinonimos-leia-o-texto-a-seguir-a-fruta-que-aj-3692804",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-acs-p-sinonimos-leia-o-texto-a-seguir-para-responder-3607115",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ade-g-sinonimos-leia-o-texto-para-responder-a-questa-3607399",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-sinonimos-leia-o-texto-a-seguir-para-responder-3583390",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

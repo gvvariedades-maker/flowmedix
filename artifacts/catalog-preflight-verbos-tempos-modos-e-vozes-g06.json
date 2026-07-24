@@ -1,0 +1,52 @@
+{
+  "lote": "verbos-tempos-modos-e-vozes-g06",
+  "generated_at": "2026-07-23T22:52:01.221Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "apice-ap-ei-verbos-15-07-2026-19-33-26-88-60-61-62-63-d-4037450",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "facet-acs-pr-verbos-assinale-a-alternativa-que-contem-um-3358535",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fgv-ag-pref-verbos-todas-as-frases-a-seguir-estao-na-vo-3430169",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fgv-ag-st-pr-verbos-texto-i-a-escrita-a-nossa-civilizaca-3432846",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-ao-verbos-o-texto-a-seguir-refere-se-a-questao-3841168",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

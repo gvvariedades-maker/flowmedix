@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-23T22:44:12.801Z",
+  "lote": "verbos-tempos-modos-e-vozes-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-ana-verbos-leia-o-texto-a-seguir-para-responder-3460031",
+    "cpcon-uepb-a-verbos-leia-o-texto-i-para-responder-a-ques-3651721",
+    "cpcon-uepb-a-verbos-leia-o-texto-i-para-responder-a-ques-3654541",
+    "fgv-tec-ebse-verbos-assinale-a-frase-que-nao-mostra-uma-3385119",
+    "ibfc-tec-enf-verbos-analise-o-texto-e-responda-a-questao-3450762",
+    "selecon-acs-verbos-leia-o-texto-a-seguir-para-responder-3586919",
+    "selecon-athh-verbos-quando-eu-deixei-de-acreditar-em-mim-3416674",
+    "vunesp-ade-g-verbos-leia-a-tira-para-responder-a-questao-3607391"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-ana-verbos-leia-o-texto-a-seguir-para-responder-3460031",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-verbos-leia-o-texto-i-para-responder-a-ques-3651721",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-verbos-leia-o-texto-i-para-responder-a-ques-3654541",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fgv-tec-ebse-verbos-assinale-a-frase-que-nao-mostra-uma-3385119",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "ibfc-tec-enf-verbos-analise-o-texto-e-responda-a-questao-3450762",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-acs-verbos-leia-o-texto-a-seguir-para-responder-3586919",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-athh-verbos-quando-eu-deixei-de-acreditar-em-mim-3416674",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ade-g-verbos-leia-a-tira-para-responder-a-questao-3607391",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

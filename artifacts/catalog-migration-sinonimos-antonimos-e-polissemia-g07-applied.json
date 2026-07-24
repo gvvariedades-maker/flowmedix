@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T06:56:27.538Z",
+  "lote": "sinonimos-antonimos-e-polissemia-g07",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-acs-pr-sinonimos-15-07-2026-19-38-27-98-257-258-259-o-3951867",
+    "apice-ag-adm-sinonimos-leia-o-poema-abaixo-e-responda-a-que-3793485",
+    "avancasp-aco-sinonimos-leia-o-texto-a-seguir-para-responder-3738879",
+    "avancasp-mon-sinonimos-leia-o-texto-a-seguir-para-responder-3739261",
+    "educa-pb-acd-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3746595",
+    "educa-pb-ace-sinonimos-considere-o-texto-a-seguir-para-resp-3820027",
+    "fgv-ass-ts-p-sinonimos-assinale-a-afirmativa-que-apresenta-3587479",
+    "vunesp-acs-p-sinonimos-leia-o-texto-a-seguir-para-responder-3844988"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-acs-pr-sinonimos-15-07-2026-19-38-27-98-257-258-259-o-3951867",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "apice-ag-adm-sinonimos-leia-o-poema-abaixo-e-responda-a-que-3793485",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-aco-sinonimos-leia-o-texto-a-seguir-para-responder-3738879",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-mon-sinonimos-leia-o-texto-a-seguir-para-responder-3739261",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-acd-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3746595",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ace-sinonimos-considere-o-texto-a-seguir-para-resp-3820027",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "fgv-ass-ts-p-sinonimos-assinale-a-afirmativa-que-apresenta-3587479",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-acs-p-sinonimos-leia-o-texto-a-seguir-para-responder-3844988",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

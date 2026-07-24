@@ -1,7 +1,25 @@
 {
   "lote": "verbos-tempos-modos-e-vozes-g05",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-07-21",
+  "handcraft_at": "2026-07-23",
   "subtopico": "Verbos — tempos, modos e vozes",
-  "status": "planned",
+  "topico": "Língua Portuguesa",
+  "pedagogical_branch": "pt_verbos",
+  "cluster": "Verbos — tempos, modos e vozes — lote 5/6",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json",
+  "guideline": "lib/guidelines/linguaPortuguesa/verbos.ts",
+  "gates": {
+    "questao_readiness": "8/8 READY strict-v2-pedagogy",
+    "validate_goldens": "8/8 strict",
+    "catalog_preflight": "8/8 strict-v2-pedagogy",
+    "apply_dry_run": "8/8 skipped (allow-insert pendente)"
+  },
+  "apply_requires": "--allow-insert",
   "slugs": [
     "selecon-afar-verbos-leia-o-texto-a-seguir-apaixonados-po-3770517",
     "apice-ag-adm-verbos-leia-a-charge-abaixo-e-responda-a-qu-3793471",
@@ -12,5 +30,13 @@
     "instituto-ao-verbos-o-texto-a-seguir-refere-se-a-questao-3841123",
     "quadrix-aux-verbos-texto-para-a-questao-imagine-um-time-3738674"
   ],
-  "note": "Fase 0 pipeline Verbos — tempos, modos e vozes 2026-07-21"
+  "handcraft_script": "scripts/handcraft-verbos-tempos-modos-e-vozes-g05.ts",
+  "note": "Lote 5/6 pt_verbos M14 — handcraft golden-v1 2026-07-23. teria, coloquei, presente Adélia, correlação FCC, EXCETO correlação, locuções estar/gerúndio, vem aumentando.",
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-23",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/verbos-tempos-modos-e-vozes-g05.json"
+  }
 }

@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "banca": "Ápice",
+    "prova": "ACS (Pref Boa Vista)",
+    "orgao": "Pref. Boa Vista (PB)",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Sinônimos, antônimos e polissemia",
+    "pedagogical_branch": "pt_sinonimos_polissemia",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-07-23",
+      "reviewer": "agent:elias-te-simples-sinonimos-ancora",
+      "guideline_snapshot": "Pergunta-teste «Mesmo sentido na frase?» — contexto × dicionário (PT_SINONIMOS_POLISSEMIA)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pt-sinonimos-polissemia-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Cunha & Cintra) — referência de concurso",
+        "title": "Sinônimos, antônimos e polissemia",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "sinonímia",
+          "polissemia",
+          "parônimos",
+          "antonímia",
+          "pergunta-teste",
+          "contexto"
+        ]
+      },
+      {
+        "id": "portugues-caderno-tec-3951883",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT — tec 3951883 (Ápice ACS Pref Boa Vista 2025 · refletiu)",
+        "year": 2025,
+        "covers": ["enunciado", "alternativas", "gabarito B", "polissemia refletiu"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Analise as palavras destacadas nas frases presentes no quadro a seguir.\n\n1 — A imagem dela refletiu bem naquele espelho;\n2 — A filha refletiu muito sobre o conselho da mãe.\n\nApós análise dos termos em destaque nas frases, pode-se afirmar que se tratam de palavras:",
+    "options": [
+      { "id": "A", "text": "antônimas.", "is_correct": false },
+      { "id": "B", "text": "polissêmicas.", "is_correct": true },
+      { "id": "C", "text": "parônimas.", "is_correct": false },
+      { "id": "D", "text": "hipônimos.", "is_correct": false },
+      { "id": "E", "text": "hiperônimos.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Contexto × dicionário",
+      "chip_label": "Pergunta-teste",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "Mesma palavra, sentidos diferentes conforme a frase?",
+          "icon": "Eye"
+        },
+        {
+          "label": "Polissemia",
+          "detail": "Uma forma — vários sentidos: espelho × pensar.",
+          "icon": "Languages"
+        },
+        {
+          "label": "Antônimo",
+          "detail": "Oposição — aqui os sentidos não se opõem.",
+          "icon": "ArrowLeftRight"
+        },
+        {
+          "label": "Parônimo",
+          "detail": "Formas parecidas — aqui é a mesma palavra.",
+          "icon": "Type"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Achar antônimo porque as frases contrastam.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Achar antônimo porque as frases contrastam."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Duas frases → fenômeno",
+      "chip_label": "Um toque = um corte",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "steps": [
+        "Frase 1: «refletiu» no espelho — devolver imagem, espelhar.",
+        "Frase 2: «refletiu» sobre o conselho — pensar, meditar.",
+        "Mesma palavra, núcleo verbal igual — sentidos distintos.",
+        "Antônimas exigiriam oposição — não é o caso — eliminar A.",
+        "Parônimas são formas parecidas (descrição × discrição) — eliminar C.",
+        "Hipônimo/hiperônimo = específico × geral — eliminar D e E.",
+        "Polissemia: um vocábulo, dois sentidos no contexto.",
+        "Gabarito B.",
+        "Em similares: leia as duas frases — se o sentido muda, pense polissemia."
+      ],
+      "footer_rule": "Gabarito B."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore de bolso",
+      "chip_label": "Tabela portátil",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "content": "CONTEXTO ANTES DO DICIONÁRIO",
+      "rows": [
+        { "label": "Sinônimo", "value": "Sentido próximo na frase — contexto decide." },
+        { "label": "Antônimo", "value": "Oposição de sentido — quente/frio." },
+        { "label": "Polissemia", "value": "Mesma forma, sentidos diferentes." },
+        { "label": "Parônimo", "value": "Forma parecida, sentido diferente." },
+        { "label": "Nesta questão", "value": "B — «refletiu» espelha × reflete sobre." }
+      ],
+      "footer_rule": "CONTEXTO ANTES DO DICIONÁRIO"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Compare",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "content": "Cada letra confunde relação semântica",
+      "items": [
+        {
+          "label": "A — antônimas",
+          "detail": "As frases parecem opostas (objeto × ideia).",
+          "correct": "Antônimo exige oposição — os sentidos de «refletiu» não se excluem como antônimos."
+        },
+        {
+          "label": "C — parônimas",
+          "detail": "Confunde polissemia com palavras parecidas na escrita.",
+          "correct": "Parônimo: formas diferentes (ex.: descrição × discrição) — aqui é a mesma palavra."
+        },
+        {
+          "label": "D — hipônimos",
+          "detail": "Pensa em relação parte-todo entre frases.",
+          "correct": "Hipônimo é termo mais específico — não classifica «refletiu» nas duas orações."
+        },
+        {
+          "label": "E — hiperônimos",
+          "detail": "Busca termo mais geral que abranja os dois usos.",
+          "correct": "Hiperônimo = termo amplo — a questão cobra polissemia, não hierarquia."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Classifique: «O banco está cheio; ele foi ao banco sacar dinheiro.»",
+          "correct": "Polissemia: «banco» = assento × instituição financeira — mesma forma, sentidos distintos."
+        }
+      ],
+      "footer_rule": "Cada letra confunde relação semântica"
+    }
+  ]
+}

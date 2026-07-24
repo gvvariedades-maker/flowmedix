@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T05:14:09.281Z",
+  "lote": "sinonimos-antonimos-e-polissemia-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-ace-pr-sinonimos-leia-o-texto-a-seguir-e-responda-da-3558948",
+    "avancasp-acd-sinonimos-leia-o-texto-a-seguir-para-responder-3554843",
+    "avancasp-ag-sinonimos-tome-como-exemplo-o-seguinte-context-3457305",
+    "avancasp-aux-sinonimos-ate-breve-ha-temperamentos-urbanos-p-3375891",
+    "educa-pb-ate-sinonimos-texto-ii-governo-federal-lanca-campa-3576912",
+    "vunesp-ag-pr-sinonimos-leia-a-tira-a-seguir-para-responder-3583294",
+    "vunesp-ag-pr-sinonimos-leia-o-texto-a-seguir-para-responder-3583379",
+    "vunesp-ro-sa-sinonimos-leia-o-texto-a-seguir-para-responder-3558409"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-ace-pr-sinonimos-leia-o-texto-a-seguir-e-responda-da-3558948",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acd-sinonimos-leia-o-texto-a-seguir-para-responder-3554843",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-ag-sinonimos-tome-como-exemplo-o-seguinte-context-3457305",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-aux-sinonimos-ate-breve-ha-temperamentos-urbanos-p-3375891",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ate-sinonimos-texto-ii-governo-federal-lanca-campa-3576912",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-sinonimos-leia-a-tira-a-seguir-para-responder-3583294",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-sinonimos-leia-o-texto-a-seguir-para-responder-3583379",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ro-sa-sinonimos-leia-o-texto-a-seguir-para-responder-3558409",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 // pesar o bundle inicial da vitrine. Client-only (interatividade total).
 const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonPlayer'), {
   ssr: false,
-  loading: () => <EstudarQuestaoSkeleton />,
+  loading: () => <EstudarQuestaoSkeleton mobileFullBleed />,
 });
 import { useEstudarQuestaoShellState } from '@/components/lesson/useEstudarQuestaoShellState';
 import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
@@ -77,7 +77,7 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
             />
           </div>
         ) : showSkeleton ? (
-          <EstudarQuestaoSkeleton />
+          <EstudarQuestaoSkeleton mobileFullBleed={fillViewport} />
         ) : null}
         {!hideVitrineChildren ? (
           <div

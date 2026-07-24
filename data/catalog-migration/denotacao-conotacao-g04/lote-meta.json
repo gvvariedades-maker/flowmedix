@@ -1,0 +1,26 @@
+{
+  "lote": "denotacao-conotacao-g04",
+  "subtopico": "Denotação, conotação e figuras de linguagem",
+  "status": "applied",
+  "applied_at": "2026-07-24",
+  "anchor_slug": "questao-premium-vunesp-portugues-denotacao-literal-figurado",
+  "golden_reference": "examples/questao-premium-vunesp-portugues-denotacao-literal-figurado.json",
+  "slugs": [
+    "educa-pb-aga-denotacao-leia-o-texto-para-responder-a-questa-3661903",
+    "avancasp-fon-denotacao-uma-lata-existe-para-conter-algomas-3665290",
+    "facet-moto-p-denotacao-a-publicidade-contemporanea-apropria-3670228",
+    "quadrix-aux-denotacao-texto-base-para-questao-abaixo-a-imu-3721172",
+    "avancasp-of-denotacao-as-vezes-a-vida-bate-com-um-tijolo-n-3725107",
+    "avancasp-tla-denotacao-assinale-a-alternativa-cujo-trecho-s-3726045",
+    "avancasp-ag-denotacao-preso-a-cancoes-entregue-a-paixoesqu-3727032",
+    "avancasp-acr-denotacao-uma-lata-existe-para-conter-algomas-3727506"
+  ],
+  "anchor_second_review": {
+    "reviewed_at": "2026-07-24",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/denotacao-conotacao-g04.json"
+  },
+  "note": "Handcraft golden-v1 g04 — 8/8 READY · apply 2026-07-24"
+}

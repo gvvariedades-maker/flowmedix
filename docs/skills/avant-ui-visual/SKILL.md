@@ -119,7 +119,7 @@ Componentes: `components/vitrine/*`.
 
 - Tokens: corpo claro + CTA `#8fe020`; único bloco escuro = preview reverso
 - **Não** roxo/teal `#6735BC` / `#00CDA0`; drift `#BEF264` → `--color-brand`
-- Copy/CRO da LP: ver `docs/auditoria-visual-v2/LANDING-AVANT-v3.md` e `lib/landingCopy.ts` (fora de skills)
+- Copy/CRO da LP: ver [`docs/LP_CONVERSA.md`](../../LP_CONVERSA.md) (runbook) · pesquisa [`docs/LP_RESEARCH_CAPABILITY_MAP.md`](../../LP_RESEARCH_CAPABILITY_MAP.md) · brief histórico `docs/auditoria-visual-v2/LANDING-AVANT-v3.md` · copy em `lib/marketing/landingCopy.ts` (fora desta skill)
 
 ## Benchmark (por que AVANT pode ganhar)
 
@@ -182,7 +182,9 @@ Se outra skill trouxer tokens `--bg`, `--brand`, `--t1`: mapear com a tabela em 
 | [`.cursor/rules/avant-ui-visual.mdc`](../../../.cursor/rules/avant-ui-visual.mdc) | Rule operacional — triggers, checklist ship, anti-padrões |
 | [`docs/cursor/avant-ui-visual.mdc`](../../../docs/cursor/avant-ui-visual.mdc) | Cópia versionada da rule |
 | [`reference-microsaas-craft.md`](reference-microsaas-craft.md) | Checklist vitrine + player, estados, anti-padrões craft |
-| `docs/auditoria-visual-v2/LANDING-AVANT-v3.md` | Brief landing `/` (copy/CRO) |
+| `docs/LP_CONVERSA.md` | Runbook LP (`LP:`) — copy + design + conversão |
+| `docs/LP_RESEARCH_CAPABILITY_MAP.md` | Pesquisa especialistas → C1–C16 |
+| `docs/auditoria-visual-v2/LANDING-AVANT-v3.md` | Brief histórico landing `/` |
 | `docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md` | Paleta híbrida, mapeamento skills, sempre/nunca |
 | `CLAUDE.md` §3 Design system | Tokens e classes |
 | `docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md` | Escopo editorial |

@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "banca": "EDUCA PB",
+    "prova": "Ag Adm (Pref Cajazeiras)",
+    "orgao": "Pref. Cajazeiras",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Sinônimos, antônimos e polissemia",
+    "pedagogical_branch": "pt_sinonimos_polissemia",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "content_review": {
+      "reviewed_at": "2026-07-24",
+      "reviewer": "agent:elias-te-simples-sinonimos-ancora-02",
+      "guideline_snapshot": "Pergunta-teste «A troca mantém o sentido do verso?» — contexto poético × dicionário (PT_SINONIMOS_POLISSEMIA)",
+      "exam_vs_current": "none",
+      "catalog_slug": "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913852"
+    },
+    "sources": [
+      {
+        "id": "pt-sinonimos-polissemia-concursos",
+        "tier": "A",
+        "issuer": "Norma culta (Cunha & Cintra) — referência de concurso",
+        "title": "Sinônimos, antônimos e polissemia",
+        "year": 2024,
+        "url": "https://www.academia.org.br/",
+        "covers": [
+          "sinonímia",
+          "polissemia",
+          "contexto",
+          "pergunta-teste",
+          "substituição lexical"
+        ]
+      },
+      {
+        "id": "bandeira-consoada-1945",
+        "tier": "A",
+        "issuer": "Manuel Bandeira",
+        "title": "Consoada (1945; ed. de referência)",
+        "year": 1990,
+        "covers": ["poesia modernista", "versos", "descer (noite)"]
+      },
+      {
+        "id": "portugues-caderno-tec-3913852",
+        "tier": "B",
+        "issuer": "AVANT — caderno interno Língua Portuguesa",
+        "title": "Caderno PT — tec 3913852 (EDUCA PB Ag Adm Pref Cajazeiras 2026 · descer)",
+        "year": 2026,
+        "covers": ["enunciado", "alternativas", "gabarito C", "sinônimo no contexto"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Leia o texto a seguir e responda à questão.\n\nReleia o verso: «O meu dia foi bom, pode a noite descer.»\n\nAssinale a opção que apresenta uma substituição correta da palavra destacada sem alterar o sentido do verso:",
+    "text_fragment": "<p><strong>Consoada</strong> — Manuel Bandeira</p><p>Quando a Indesejada das gentes chegar<br/>(Não sei se dura ou caroável),<br/>talvez eu tenha medo.<br/>Talvez sorria, ou diga:<br/>— Alô, iniludível!<br/>O meu dia foi bom, pode a noite <strong>descer</strong>.<br/>(A noite com os seus sortilégios.)<br/>Encontrará lavrado o campo, a casa limpa,<br/>A mesa posta,<br/>Com cada coisa em seu lugar.</p>",
+    "figure_policy": "transcribed",
+    "options": [
+      { "id": "A", "text": "Amanhecer.", "is_correct": false },
+      { "id": "B", "text": "Despontar.", "is_correct": false },
+      { "id": "C", "text": "Cair.", "is_correct": true },
+      { "id": "D", "text": "Levantar.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Verso em foco",
+      "chip_label": "Pergunta-teste",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "items": [
+        {
+          "label": "Pergunta-teste",
+          "detail": "Substituir «descer» mantém a chegada da noite?",
+          "icon": "Eye"
+        },
+        {
+          "label": "Descer (noite)",
+          "detail": "Anoitecer — a noite se abate sobre o dia.",
+          "icon": "Moon"
+        },
+        {
+          "label": "Polissemia",
+          "detail": "«Descer» também = movimento vertical (literal).",
+          "icon": "Layers"
+        },
+        {
+          "label": "Consoada",
+          "detail": "Bandeira — casa pronta; espera a Indesejada (morte).",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Indesejada",
+          "detail": "Eufemismo para a morte — tom irônico do poema.",
+          "icon": "Skull"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Trocar por verbo de luz crescente (amanhecer/despontar).",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Contexto poético fixa «descer» = anoitecer."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "slide_title": "Verso → troca → letras",
+      "chip_label": "Um toque = um corte",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "steps": [
+        "Poema Consoada: poeta deixa a casa em ordem e convida a noite.",
+        "Verso-alvo: «pode a noite descer» — chegada do escuro, fim do dia.",
+        "Comando: substituição correta sem mudar o sentido.",
+        "A «Amanhecer»: início do dia — inverte o sentido — eliminar.",
+        "B «Despontar»: surgir/aparecer — não é queda da noite — eliminar.",
+        "C «Cair»: noite que cai = anoitece — equivalência poética — manter.",
+        "D «Levantar»: movimento oposto a descer — eliminar.",
+        "Gabarito C.",
+        "Em similares: prove a troca no verso inteiro — não só no dicionário."
+      ],
+      "footer_rule": "Descer (noite) ≈ cair."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore de bolso",
+      "chip_label": "Tabela portátil",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "content": "CONTEXTO ANTES DO DICIONÁRIO",
+      "rows": [
+        { "label": "Sinônimo", "value": "Troca que mantém o sentido na frase." },
+        { "label": "Descer (noite)", "value": "Anoitecer — sentido figurado no verso." },
+        { "label": "Cair", "value": "Sinônimo poético — noite que se abate." },
+        { "label": "Polissemia", "value": "Mesma forma — sentido literal × figurado." },
+        { "label": "Nesta questão", "value": "C — «pode a noite cair»." }
+      ],
+      "footer_rule": "Amanhecer/despontar = luz que nasce, não noite que cai."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "slide_title": "Onde o aluno cai",
+      "chip_label": "Compare",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sinônimos, antônimos e polissemia"
+      },
+      "content": "Verbos de tempo e movimento",
+      "items": [
+        {
+          "label": "A — Amanhecer",
+          "detail": "Parece «tempo do dia», mas é o oposto.",
+          "correct": "Antônimo no contexto: amanhecer traz o dia — o verso pede a chegada da noite."
+        },
+        {
+          "label": "B — Despontar",
+          "detail": "Confunde «aparecer» com «anoitecer».",
+          "correct": "Sinônimo no contexto: «despontar» não substitui «descer» no verso de Bandeira."
+        },
+        {
+          "label": "D — Levantar",
+          "detail": "Movimento ascendente — oposto de descer.",
+          "correct": "Antônimo no contexto: levantar inverte o gesto da noite que se abate."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Classifique: «Deixe a cortina descer devagar.»",
+          "correct": "Polissemia: sentido literal (movimento vertical) — diferente do verso «noite descer»."
+        }
+      ],
+      "footer_rule": "C sobrou: cair = noite que chega."
+    }
+  ]
+}

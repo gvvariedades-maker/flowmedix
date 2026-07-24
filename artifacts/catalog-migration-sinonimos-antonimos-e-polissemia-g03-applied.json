@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T05:13:48.377Z",
+  "lote": "sinonimos-antonimos-e-polissemia-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-ap-ei-sinonimos-inteligencia-artificial-e-a-transfor-4037426",
+    "avancasp-acs-sinonimos-leia-a-tirinha-a-seguir-para-respond-3352958",
+    "avancasp-acs-sinonimos-leia-o-texto-a-seguir-para-responder-4003498",
+    "selecon-acs-sinonimos-leia-o-texto-a-seguir-populacao-bras-1360970",
+    "vunesp-ag-as-sinonimos-leia-o-texto-a-seguir-para-responder-3345649",
+    "vunesp-ag-pr-sinonimos-leia-a-tira-para-responder-a-questao-3352583",
+    "vunesp-ag-pr-sinonimos-leia-o-texto-para-responder-a-questa-3352587",
+    "vunesp-an-op-sinonimos-leia-o-texto-para-responder-a-questa-3354409"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-ap-ei-sinonimos-inteligencia-artificial-e-a-transfor-4037426",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acs-sinonimos-leia-a-tirinha-a-seguir-para-respond-3352958",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acs-sinonimos-leia-o-texto-a-seguir-para-responder-4003498",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-acs-sinonimos-leia-o-texto-a-seguir-populacao-bras-1360970",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-as-sinonimos-leia-o-texto-a-seguir-para-responder-3345649",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-sinonimos-leia-a-tira-para-responder-a-questao-3352583",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-ag-pr-sinonimos-leia-o-texto-para-responder-a-questa-3352587",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-an-op-sinonimos-leia-o-texto-para-responder-a-questa-3354409",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

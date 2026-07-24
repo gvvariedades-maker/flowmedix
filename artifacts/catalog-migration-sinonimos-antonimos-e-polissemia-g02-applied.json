@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-24T05:13:16.352Z",
+  "lote": "sinonimos-antonimos-e-polissemia-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-afa-sinonimos-considere-o-texto-a-seguir-para-resp-3962439",
+    "avancasp-esc-sinonimos-considere-o-texto-a-seguir-para-resp-3963895",
+    "avancasp-gcm-sinonimos-leia-o-texto-a-seguir-para-responder-4001113",
+    "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3912840",
+    "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913852",
+    "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913867",
+    "instituto-ao-sinonimos-o-texto-a-seguir-refere-se-a-questao-3841144",
+    "vunesp-tenf-sinonimos-leia-a-tira-a-seguir-para-responder-3999723"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-afa-sinonimos-considere-o-texto-a-seguir-para-resp-3962439",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-esc-sinonimos-considere-o-texto-a-seguir-para-resp-3963895",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-gcm-sinonimos-leia-o-texto-a-seguir-para-responder-4001113",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-a-sinonimos-leia-o-texto-i-para-responder-a-ques-3912840",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913852",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "educa-pb-ag-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3913867",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "instituto-ao-sinonimos-o-texto-a-seguir-refere-se-a-questao-3841144",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-tenf-sinonimos-leia-a-tira-a-seguir-para-responder-3999723",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

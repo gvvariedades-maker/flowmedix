@@ -1,0 +1,76 @@
+{
+  "lote": "verbos-tempos-modos-e-vozes-g04",
+  "generated_at": "2026-07-23T22:51:49.722Z",
+  "strict": true,
+  "strict_v2_pedagogy": false,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "avancasp-ace-verbos-leia-o-texto-a-seguir-para-responder-3662932",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-of-verbos-assinale-a-alternativa-cujo-enunciad-3725104",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "consulplan-a-verbos-leia-o-texto-e-responda-a-questao-ab-3694741",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "consulplan-a-verbos-leia-o-texto-para-responder-a-questa-3694424",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "cpcon-uepb-a-verbos-leia-o-texto-iv-para-responder-a-que-3709452",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-acd-verbos-leia-o-texto-a-seguir-e-responda-a-q-3746597",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-ag-f-verbos-leia-o-texto-a-seguir-ses-distribui-3754252",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "selecon-ass-verbos-leia-o-texto-a-seguir-a-fruta-que-aj-3692789",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

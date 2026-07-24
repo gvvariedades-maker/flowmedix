@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-07-23T22:43:49.127Z",
+  "lote": "verbos-tempos-modos-e-vozes-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "apice-acs-pr-verbos-considere-o-texto-a-seguir-para-resp-4024894",
+    "avancasp-acs-verbos-15-07-2026-19-33-10-88-30-31-cazo-ib-4003519",
+    "avancasp-acs-verbos-nao-posso-compreender-que-a-literatu-4003501",
+    "avancasp-aee-verbos-o-que-e-angustia-um-rapaz-fez-me-ess-3374802",
+    "avancasp-gcm-verbos-cazo-novo-filme-disponivel-em-na-fal-4001122",
+    "selecon-fisc-verbos-inteligencia-artificial-consegue-dec-3352883",
+    "vunesp-an-op-verbos-assinale-a-alternativa-em-que-a-form-3354410",
+    "vunesp-aux-s-verbos-leia-o-texto-para-responder-a-questa-3323735"
+  ],
+  "results": [
+    {
+      "modulo_slug": "apice-acs-pr-verbos-considere-o-texto-a-seguir-para-resp-4024894",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acs-verbos-15-07-2026-19-33-10-88-30-31-cazo-ib-4003519",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-acs-verbos-nao-posso-compreender-que-a-literatu-4003501",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-aee-verbos-o-que-e-angustia-um-rapaz-fez-me-ess-3374802",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "avancasp-gcm-verbos-cazo-novo-filme-disponivel-em-na-fal-4001122",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "selecon-fisc-verbos-inteligencia-artificial-consegue-dec-3352883",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-an-op-verbos-assinale-a-alternativa-em-que-a-form-3354410",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    },
+    {
+      "modulo_slug": "vunesp-aux-s-verbos-leia-o-texto-para-responder-a-questa-3323735",
+      "status": "ok",
+      "mode": "insert",
+      "detail": "inserida e vinculada ao concurso"
+    }
+  ]
+}

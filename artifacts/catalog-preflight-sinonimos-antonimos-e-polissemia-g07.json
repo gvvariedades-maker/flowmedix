@@ -1,0 +1,76 @@
+{
+  "lote": "sinonimos-antonimos-e-polissemia-g07",
+  "generated_at": "2026-07-24T07:00:00.481Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "apice-acs-pr-sinonimos-15-07-2026-19-38-27-98-257-258-259-o-3951867",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "apice-ag-adm-sinonimos-leia-o-poema-abaixo-e-responda-a-que-3793485",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-aco-sinonimos-leia-o-texto-a-seguir-para-responder-3738879",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "avancasp-mon-sinonimos-leia-o-texto-a-seguir-para-responder-3739261",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-acd-sinonimos-leia-o-texto-a-seguir-e-responda-a-q-3746595",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "educa-pb-ace-sinonimos-considere-o-texto-a-seguir-para-resp-3820027",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fgv-ass-ts-p-sinonimos-assinale-a-afirmativa-que-apresenta-3587479",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "vunesp-acs-p-sinonimos-leia-o-texto-a-seguir-para-responder-3844988",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}
