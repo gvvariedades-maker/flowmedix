@@ -99,14 +99,22 @@ function renderDetail(setupMode: 'none' | 'setup' | 'done', items: NotebookItem[
 }
 
 describe('CadernoDetailClient — modos ?setup=', () => {
+  let replaceStateSpy: jest.SpiedFunction<typeof window.history.replaceState>;
+
   beforeEach(() => {
     replace.mockReset();
     push.mockReset();
     addToast.mockReset();
     lastFilterHighlight = false;
+    window.history.replaceState(window.history.state, '', '/cadernos/nb-test?setup=done');
+    replaceStateSpy = jest.spyOn(window.history, 'replaceState');
   });
 
-  it('setup=done: exibe banner, toast e CTA para estudar; replace limpa o parâmetro', async () => {
+  afterEach(() => {
+    replaceStateSpy.mockRestore();
+  });
+
+  it('setup=done: exibe banner, toast e CTA; limpa query via history.replaceState', async () => {
     renderDetail('done', [notebookItem]);
 
     expect(screen.getByText('Caderno pronto!')).toBeInTheDocument();
@@ -118,13 +126,19 @@ describe('CadernoDetailClient — modos ?setup=', () => {
         'success',
       );
     });
-    expect(replace).toHaveBeenCalledWith('/cadernos/nb-test', { scroll: false });
+    expect(replaceStateSpy).toHaveBeenCalledWith(
+      window.history.state,
+      '',
+      '/cadernos/nb-test',
+    );
+    expect(replace).not.toHaveBeenCalled();
+    expect(window.location.search).toBe('');
   });
 
-  it('após replace (setupMode none): celebração não reaparece', async () => {
+  it('após limpar URL (setupMode none): celebração não reaparece', async () => {
     const { rerender } = renderDetail('done', [notebookItem]);
 
-    await waitFor(() => expect(replace).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(replaceStateSpy).toHaveBeenCalled());
     expect(screen.getByText('Caderno pronto!')).toBeInTheDocument();
 
     addToast.mockClear();

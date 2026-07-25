@@ -24,6 +24,7 @@ import type { CadernoDetail, CadernoSetupMode, ModuloDisponivel, NotebookItem } 
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { requestNotebookActivationRefresh } from '@/lib/cadernos/notebookActivationBridge';
+import { stripCadernoSetupDoneFromBrowserUrl } from '@/lib/cadernos/setupNavigation';
 import {
   buildQuickAddPreset,
   pickWizardBatchModulos,
@@ -412,6 +413,7 @@ export default function CadernoDetailClient({
   const { addToast } = useToast();
   const searchPanelRef = useRef<SearchPanelToggleHandle>(null);
   const setupToastShownRef = useRef(false);
+  const setupUrlCleanedRef = useRef(false);
   const [items, setItems] = useState(caderno.items);
   const [modulos, setModulos] = useState(inicial);
   const [headerPulse, setHeaderPulse] = useState(false);
@@ -445,11 +447,14 @@ export default function CadernoDetailClient({
       setSetupBannerVisible(false);
       return;
     }
+    if (!setupUrlCleanedRef.current) {
+      setupUrlCleanedRef.current = true;
+      stripCadernoSetupDoneFromBrowserUrl(caderno.id);
+    }
     if (items.length === 0 || setupToastShownRef.current) return;
     setupToastShownRef.current = true;
     addToast('Caderno pronto! Comece o estudo reverso quando quiser.', 'success');
-    router.replace(`/cadernos/${caderno.id}`, { scroll: false });
-  }, [addToast, caderno.id, items.length, router, setupMode]);
+  }, [addToast, caderno.id, items.length, setupMode]);
 
   const triggerFirstItemFeedback = useCallback(() => {
     requestNotebookActivationRefresh();
