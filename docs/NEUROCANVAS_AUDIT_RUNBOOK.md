@@ -14,7 +14,7 @@ A suíte Jest em `__tests__/lib/neurocanvas/` é **hermética**:
 - **não lê** `data/catalog-migration` (gitignored);
 - funciona em runner vazio;
 - duração de poucos segundos;
-- suíte hermética; snapshot atual: **14 testes** (8 em `audit.test.ts` + 4 em `portablePath.test.ts` + 2 em `preflightParity.test.ts`);
+- suíte hermética; snapshot atual: **24 testes** (8 em `audit.test.ts` + 4 em `portablePath.test.ts` + 2 em `preflightParity.test.ts` + 10 em `neuroVisualPlanV0.test.ts`);
 - nunca produz falso verde por catálogo ausente — há teste explícito de baseline vazia.
 
 O job `test-unit` do CI executa `npm test`, que **inclui naturalmente** essa suíte (não há job dedicado a `test:neurocanvas`). O atalho abaixo é **somente conveniência local** para rodar só NeuroCanvas:
@@ -92,6 +92,7 @@ npm run refresh:neurocanvas-g02-artifacts
 ## Código de referência
 
 - `lib/neurocanvas/*` — lógica de auditoria
+- `lib/neurocanvas/neuroVisualPlanV0.ts` — Fase 0A (shadow mode, ver `docs/NEUROCANVAS_PHASE_0A.md`)
 - `scripts/audit-neurocanvas-*.ts` — CLIs filesystem
 - `scripts/preflight-neurocanvas-parity.ts` — gate antes da paridade (presença, não completude)
 - `scripts/write-neurocanvas-g02-reconciliation.ts` — G0.2 (SELECT Supabase)
