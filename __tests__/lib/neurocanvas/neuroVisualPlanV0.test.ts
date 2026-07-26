@@ -2,9 +2,11 @@ import { canonicalJson } from '@/lib/neurocanvas/canonicalJson';
 import {
   buildNeuroVisualPlanV0,
   NEUROVISUAL_PLAN_SCHEMA_VERSION,
-  PRESENTATION_PARITY_FIELDS,
 } from '@/lib/neurocanvas/neuroVisualPlanV0';
-import { compareSlideVisualParity } from '@/lib/neurocanvas/neuroVisualPlanParity';
+import {
+  compareSlideVisualParity,
+  diffPresentationParity,
+} from '@/lib/neurocanvas/neuroVisualPlanParity';
 import {
   enrichPresentationContext,
   resolveSlidePresentation,
@@ -73,6 +75,22 @@ describe('neuroVisualPlanV0 (hermético)', () => {
     });
   });
 
+  it('slide_type legado sem type retorna unknown', () => {
+    const plan = buildNeuroVisualPlanV0({
+      slide: { steps: ['A'] },
+      questionHash: SLUG,
+    });
+    expect(plan.slide_type).toBe('unknown');
+  });
+
+  it('slide_type aceita string legada arbitrária do resolver', () => {
+    const plan = buildNeuroVisualPlanV0({
+      slide: { type: 'versus_arena' },
+      questionHash: SLUG,
+    });
+    expect(plan.slide_type).toBe('versus_arena');
+  });
+
   it('mesma entrada produz plano idêntico (determinismo)', () => {
     const input = {
       slide: logicFlowSlide(),
@@ -97,6 +115,30 @@ describe('neuroVisualPlanV0 (hermético)', () => {
     expect(roundTrip.presentation.rows).toEqual(plan.presentation.rows);
   });
 
+  it('includeTheme: true resolve e inclui tema', () => {
+    const slide = goldenRuleSlide();
+    const directTheme = getThemeForSlide(slide, SLUG, 2);
+    const plan = buildNeuroVisualPlanV0({
+      slide,
+      questionHash: SLUG,
+      slideIndex: 2,
+      includeTheme: true,
+    });
+    expect(plan.theme).toBeDefined();
+    expect(canonicalJson(plan.theme)).toBe(canonicalJson(directTheme));
+  });
+
+  it('includeTheme: false omite tema de forma determinística', () => {
+    const plan = buildNeuroVisualPlanV0({
+      slide: goldenRuleSlide(),
+      questionHash: SLUG,
+      slideIndex: 2,
+      includeTheme: false,
+    });
+    expect(plan.theme).toBeUndefined();
+    expect('theme' in plan).toBe(false);
+  });
+
   it('caminho direto e encapsulado são profundamente equivalentes', () => {
     const slide = dangerZoneSlide();
     const mismatch = compareSlideVisualParity({
@@ -111,7 +153,7 @@ describe('neuroVisualPlanV0 (hermético)', () => {
     expect(mismatch).toBeNull();
   });
 
-  it('presentation do plano equivale a resolveSlidePresentation direto', () => {
+  it('presentation do plano equivale a resolveSlidePresentation direto (objeto integral)', () => {
     const slide = conceptMapSlide('Vias de Administração');
     const ctx = enrichPresentationContext(
       { questionSlug: SLUG, slideIndex: 0, familyId: 'vf' },
@@ -131,20 +173,24 @@ describe('neuroVisualPlanV0 (hermético)', () => {
       questionMeta: { subtopico: 'Vias de Administração' },
     });
 
-    for (const field of PRESENTATION_PARITY_FIELDS) {
-      expect(canonicalJson(plan.presentation[field])).toBe(canonicalJson(direct[field]));
-    }
+    expect(canonicalJson(plan.presentation)).toBe(canonicalJson(direct));
+    expect(diffPresentationParity(direct, plan.presentation)).toEqual([]);
   });
 
-  it('theme do plano equivale a getThemeForSlide direto', () => {
-    const slide = goldenRuleSlide();
-    const directTheme = getThemeForSlide(slide, SLUG, 2);
-    const plan = buildNeuroVisualPlanV0({
+  it('campo adicional em um dos lados produz divergência na paridade', () => {
+    const slide = logicFlowSlide();
+    const ctx = enrichPresentationContext({ questionSlug: SLUG, slideIndex: 1 }, undefined, undefined, [
       slide,
-      questionHash: SLUG,
-      slideIndex: 2,
+    ]);
+    const direct = resolveSlidePresentation(slide, ctx);
+    const planPresentation = Object.assign({}, direct, {
+      __future_visual_field__: 'drift-simulado',
     });
-    expect(canonicalJson(plan.theme)).toBe(canonicalJson(directTheme));
+
+    expect(canonicalJson(direct)).not.toBe(canonicalJson(planPresentation));
+    const mismatches = diffPresentationParity(direct, planPresentation);
+    expect(mismatches.length).toBeGreaterThan(0);
+    expect(mismatches.some((m) => m.field === '__future_visual_field__')).toBe(true);
   });
 
   it('caminho bespoke (subtópico com molde) permanece equivalente', () => {

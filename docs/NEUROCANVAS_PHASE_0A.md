@@ -40,10 +40,13 @@ Auditoria G0.2 (`lib/neurocanvas/resolverAudit.ts`) replica o mesmo fluxo de con
 Definido em `lib/neurocanvas/neuroVisualPlanV0.ts`:
 
 ```typescript
+type NeuroVisualPlanSlideType = NonNullable<NeuroVisualPlanSlideInput['type']> | 'unknown';
+
 type NeuroVisualPlanV0 = {
   schema_version: 'neurovisual-plan-v0';
-  slide_type: SlideType | string;
+  slide_type: NeuroVisualPlanSlideType;
   presentation: ResolvedSlidePresentation;
+  /** Omitido somente quando `includeTheme: false`; padrão sempre inclui ThemeColors. */
   theme?: ThemeColors;
 };
 
@@ -83,7 +86,15 @@ type ResolvedSlidePresentation = {
 | **Hermético** | `__tests__/lib/neurocanvas/neuroVisualPlanV0.test.ts` | Fixtures em memória / tmpdir | Sim (`npm test`) |
 | **Paridade pesada** | `npm run audit:neurovisual-plan-v0-parity` | Baseline canônica local (`data/catalog-migration`) | Não |
 
-Paridade pesada: preflight → `buildCanonicalCatalog` → por slide compara `resolveSlidePresentation` + `getThemeForSlide` × `buildNeuroVisualPlanV0`. Exit ≠ 0 se houver divergência.
+Paridade pesada: preflight → `buildCanonicalCatalog` → por slide compara `canonicalJson` integral de `presentation` + `ThemeColors` × `buildNeuroVisualPlanV0`. Campos divergentes no relatório são derivados dinamicamente da união de chaves — qualquer campo futuro em `ResolvedSlidePresentation` entra automaticamente na comparação. Exit ≠ 0 se houver divergência.
+
+## Baseline editorial e gate G0.2
+
+- **676 slugs** permanecem **editorialmente unresolved** (conteúdo divergente sem evidência documentada única).
+- Esses slugs estão **fora da baseline canônica** (`iterateCanonicalQuestions` só percorre `selections`, não `unresolved_slugs`).
+- Paridade Fase 0A cobre **4.975 questões / 19.900 slides** da baseline canônica atual — não o catálogo bruto inteiro.
+- **Fase 0B** e composições visuais permanecem **NOT READY** até resolver o gate editorial dos 676 unresolved.
+- **Próximo passo após merge do PR #48:** resolver o gate editorial G0.2 (dedupe/unresolved) — **não** iniciar Fase 0B automaticamente.
 
 ## Não objetivos (Fase 0A)
 

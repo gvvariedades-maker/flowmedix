@@ -14,16 +14,14 @@ import {
 import { canonicalJson } from '@/lib/neurocanvas/canonicalJson';
 import {
   buildNeuroVisualPlanV0,
-  PRESENTATION_PARITY_FIELDS,
   type NeuroVisualPlanSlideInput,
-  type PresentationParityField,
 } from '@/lib/neurocanvas/neuroVisualPlanV0';
 import { resolveAuditRoots, type NeurocanvasAuditRoots } from '@/lib/neurocanvas/auditRoots';
 import { normalizeReverseStudySlide } from '@/lib/reverseStudySlidesNormalize';
 import { sortReverseStudySlides } from '@/lib/reverseStudySlideOrder';
 
 export type PresentationFieldMismatch = {
-  field: PresentationParityField;
+  field: string;
   direct: unknown;
   plan: unknown;
 };
@@ -63,14 +61,46 @@ type QuestionJson = {
   study_slides?: unknown[];
 };
 
-function comparePresentationFields(
+function presentationFieldKeys(
+  direct: ResolvedSlidePresentation,
+  plan: ResolvedSlidePresentation,
+): string[] {
+  const keys = new Set<string>();
+  for (const key of Object.keys(direct)) {
+    keys.add(key);
+  }
+  for (const key of Object.keys(plan)) {
+    keys.add(key);
+  }
+  return [...keys].sort((a, b) => a.localeCompare(b));
+}
+
+function readPresentationField(
+  presentation: ResolvedSlidePresentation,
+  field: string,
+): unknown {
+  if (!Object.prototype.hasOwnProperty.call(presentation, field)) {
+    return undefined;
+  }
+  return presentation[field as keyof ResolvedSlidePresentation];
+}
+
+/**
+ * Compara apresentações pelo objeto integral (`canonicalJson` completo).
+ * Campos divergentes são derivados dinamicamente da união de chaves.
+ */
+export function diffPresentationParity(
   direct: ResolvedSlidePresentation,
   plan: ResolvedSlidePresentation,
 ): PresentationFieldMismatch[] {
+  if (canonicalJson(direct) === canonicalJson(plan)) {
+    return [];
+  }
+
   const mismatches: PresentationFieldMismatch[] = [];
-  for (const field of PRESENTATION_PARITY_FIELDS) {
-    const directValue = direct[field];
-    const planValue = plan[field];
+  for (const field of presentationFieldKeys(direct, plan)) {
+    const directValue = readPresentationField(direct, field);
+    const planValue = readPresentationField(plan, field);
     if (canonicalJson(directValue) !== canonicalJson(planValue)) {
       mismatches.push({ field, direct: directValue, plan: planValue });
     }
@@ -121,11 +151,11 @@ export function compareSlideVisualParity(input: ResolveSlideParityInput): SlideP
     includeTheme: true,
   });
 
-  const presentationMismatches = comparePresentationFields(directPresentation, plan.presentation);
+  const presentationMismatches = diffPresentationParity(directPresentation, plan.presentation);
 
   const directTheme = getThemeForSlide(input.slide, input.slug, input.slideIndex);
   const themeMismatch =
-    plan.theme && !compareThemes(directTheme, plan.theme)
+    plan.theme !== undefined && !compareThemes(directTheme, plan.theme)
       ? { direct: directTheme, plan: plan.theme }
       : undefined;
 

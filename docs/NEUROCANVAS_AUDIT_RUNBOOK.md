@@ -14,7 +14,7 @@ A suíte Jest em `__tests__/lib/neurocanvas/` é **hermética**:
 - **não lê** `data/catalog-migration` (gitignored);
 - funciona em runner vazio;
 - duração de poucos segundos;
-- suíte hermética; snapshot atual: **24 testes** (8 em `audit.test.ts` + 4 em `portablePath.test.ts` + 2 em `preflightParity.test.ts` + 10 em `neuroVisualPlanV0.test.ts`);
+- suíte hermética; snapshot atual: **28 testes** (8 em `audit.test.ts` + 4 em `portablePath.test.ts` + 2 em `preflightParity.test.ts` + 14 em `neuroVisualPlanV0.test.ts`);
 - nunca produz falso verde por catálogo ausente — há teste explícito de baseline vazia.
 
 O job `test-unit` do CI executa `npm test`, que **inclui naturalmente** essa suíte (não há job dedicado a `test:neurocanvas`). O atalho abaixo é **somente conveniência local** para rodar só NeuroCanvas:

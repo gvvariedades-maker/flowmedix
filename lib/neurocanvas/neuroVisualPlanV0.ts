@@ -6,7 +6,6 @@ import {
   type SlidePresentationContext,
 } from '@/components/slides/core/slidePresentation';
 import type { FamilyId } from '@/components/slides/core/questionFamily';
-import type { SlideType } from '@/types/lesson';
 
 export const NEUROVISUAL_PLAN_SCHEMA_VERSION = 'neurovisual-plan-v0' as const;
 
@@ -15,9 +14,19 @@ export type NeuroVisualPlanSchemaVersion = typeof NEUROVISUAL_PLAN_SCHEMA_VERSIO
 /** Entrada mínima aceita pelos resolvers atuais (slidePresentation). */
 export type NeuroVisualPlanSlideInput = Parameters<typeof resolveSlidePresentation>[0];
 
+/** Tipo capturado do slide de entrada; inclui legado `type?: string` e fallback `'unknown'`. */
+export type NeuroVisualPlanSlideType = NonNullable<NeuroVisualPlanSlideInput['type']> | 'unknown';
+
+/**
+ * Plano visual determinístico (shadow mode).
+ *
+ * `theme` é opcional somente quando `includeTheme: false` em `buildNeuroVisualPlanV0`.
+ * No caminho padrão (`includeTheme` omitido ou `true`), `theme` é sempre preenchido com
+ * o retorno de `getThemeForSlide` — nunca `undefined`.
+ */
 export type NeuroVisualPlanV0 = {
   schema_version: NeuroVisualPlanSchemaVersion;
-  slide_type: SlideType | string;
+  slide_type: NeuroVisualPlanSlideType;
   presentation: ResolvedSlidePresentation;
   theme?: ThemeColors;
 };
@@ -32,11 +41,14 @@ export type BuildNeuroVisualPlanV0Input = {
   questionInstruction?: string;
   questionSlides?: NeuroVisualPlanSlideInput[];
   questionMeta?: { subtopico?: string; pedagogical_branch?: string };
-  /** Quando false, omite theme (somente presentation). Padrão: true. */
+  /**
+   * Quando `false`, omite `theme` do plano (somente `presentation`).
+   * Padrão: `true` — resolve e inclui `ThemeColors` via `getThemeForSlide`.
+   */
   includeTheme?: boolean;
 };
 
-function resolveSlideType(slide: NeuroVisualPlanSlideInput): SlideType | string {
+function resolveSlideType(slide: NeuroVisualPlanSlideInput): NeuroVisualPlanSlideType {
   return slide.type ?? 'unknown';
 }
 
@@ -72,16 +84,3 @@ export function buildNeuroVisualPlanV0(input: BuildNeuroVisualPlanV0Input): Neur
 
   return plan;
 }
-
-/** Campos de apresentação que afetam renderização (ResolvedSlidePresentation). */
-export const PRESENTATION_PARITY_FIELDS = [
-  'layoutVariant',
-  'revealMode',
-  'dangerRevealMode',
-  'bulletStyle',
-  'slideTitle',
-  'rows',
-  'moldFallback',
-] as const satisfies readonly (keyof ResolvedSlidePresentation)[];
-
-export type PresentationParityField = (typeof PRESENTATION_PARITY_FIELDS)[number];
