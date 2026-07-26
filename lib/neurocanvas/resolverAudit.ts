@@ -16,6 +16,7 @@ import {
   type FamilySlideType,
 } from '@/lib/catalogMigration/familyLayoutProfile';
 import { CATALOG_MIGRATION_ROOT } from '@/lib/catalogMigration/paths';
+import { resolveAuditRoots, type NeurocanvasAuditRoots } from '@/lib/neurocanvas/auditRoots';
 import {
   buildCanonicalCatalog,
   iterateCanonicalQuestions,
@@ -309,9 +310,10 @@ export type ResolverAuditOptions = {
   /** Seleção canônica determinística no modo catalog (padrão). */
   canonical?: boolean;
   strict?: boolean;
-};
+} & Partial<NeurocanvasAuditRoots>;
 
 export function buildResolverAuditReport(options: ResolverAuditOptions): ResolverAuditReport {
+  const { catalogRoot, repoRoot } = resolveAuditRoots(options);
   const limitations: string[] = [];
   const rows: SlideResolverRow[] = [];
   let questionsProcessed = 0;
@@ -346,7 +348,7 @@ export function buildResolverAuditReport(options: ResolverAuditOptions): Resolve
     };
 
     if (useCanonical) {
-      catalog = buildCanonicalCatalog({ strict: options.strict });
+      catalog = buildCanonicalCatalog({ strict: options.strict, catalogRoot, repoRoot });
       iterateCanonicalQuestions(processFile, catalog);
     } else {
       const seen = new Set<string>();
@@ -369,7 +371,7 @@ export function buildResolverAuditReport(options: ResolverAuditOptions): Resolve
           }
         }
       };
-      walk(CATALOG_MIGRATION_ROOT);
+      walk(catalogRoot);
       limitations.push('Modo filesystem_first — não determinístico entre OS.');
     }
   }

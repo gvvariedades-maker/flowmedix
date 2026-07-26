@@ -10,6 +10,7 @@ import {
   analyzeCatalogFile,
 } from '@/lib/neurocanvas/canonicalCatalog';
 import { DEDUPE_SCHEMA, type DedupeSchemaSpec } from '@/lib/neurocanvas/dedupeSchema';
+import { resolveAuditRoots, type NeurocanvasAuditRoots } from '@/lib/neurocanvas/auditRoots';
 
 export type DuplicateAnalysisReport = {
   generated_at: string;
@@ -65,10 +66,13 @@ function countImpactFields(groups: SlugDuplicateGroup[]): DuplicateAnalysisRepor
   };
 }
 
-export function buildDuplicateAnalysisReport(): DuplicateAnalysisReport {
-  const paths = walkAllCatalogQuestionPaths();
+export function buildDuplicateAnalysisReport(
+  options?: Partial<NeurocanvasAuditRoots>,
+): DuplicateAnalysisReport {
+  const { catalogRoot } = resolveAuditRoots(options);
+  const paths = walkAllCatalogQuestionPaths(catalogRoot);
   const groups = groupQuestionPathsBySlug(paths);
-  const catalog = buildCanonicalCatalog();
+  const catalog = buildCanonicalCatalog({ catalogRoot });
 
   const duplicateGroups: SlugDuplicateGroup[] = [];
   let filesInDup = 0;

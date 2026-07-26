@@ -26,8 +26,8 @@ function extractLoteNameFromRef(ref: string): string | null {
   return null;
 }
 
-export function loadRegistryCompletoLotes(): Set<string> {
-  const registryPath = resolve(CATALOG_MIGRATION_ROOT, 'handcraft-registry.json');
+export function loadRegistryCompletoLotes(catalogRoot: string = CATALOG_MIGRATION_ROOT): Set<string> {
+  const registryPath = resolve(catalogRoot, 'handcraft-registry.json');
   const lotes = new Set<string>();
   if (!existsSync(registryPath)) return lotes;
 
@@ -55,10 +55,10 @@ function readLoteMetaParent(loteDir: string): string | null {
   }
 }
 
-export function buildSlugAuthorityIndex(): SlugAuthorityIndex {
-  const registry_completo_lotes = loadRegistryCompletoLotes();
+export function buildSlugAuthorityIndex(catalogRoot: string = CATALOG_MIGRATION_ROOT): SlugAuthorityIndex {
+  const registry_completo_lotes = loadRegistryCompletoLotes(catalogRoot);
   const registry_manifest_paths: string[] = [];
-  const registryPath = resolve(CATALOG_MIGRATION_ROOT, 'handcraft-registry.json');
+  const registryPath = resolve(catalogRoot, 'handcraft-registry.json');
   if (existsSync(registryPath)) {
     const registry = JSON.parse(readFileSync(registryPath, 'utf8')) as {
       pacotes?: Record<string, { manifest?: string }>;
@@ -71,14 +71,14 @@ export function buildSlugAuthorityIndex(): SlugAuthorityIndex {
   const lotes = new Map<string, LoteManifestIndex>();
   const slug_to_manifest_lotes = new Map<string, string[]>();
 
-  if (!existsSync(CATALOG_MIGRATION_ROOT)) {
+  if (!existsSync(catalogRoot)) {
     return { registry_completo_lotes, registry_manifest_paths, lotes, slug_to_manifest_lotes };
   }
 
-  for (const ent of readdirSync(CATALOG_MIGRATION_ROOT, { withFileTypes: true })) {
+  for (const ent of readdirSync(catalogRoot, { withFileTypes: true })) {
     if (!ent.isDirectory()) continue;
     const lote = ent.name;
-    const loteDir = join(CATALOG_MIGRATION_ROOT, lote);
+    const loteDir = join(catalogRoot, lote);
     const manifestPath = join(loteDir, 'manifest.json');
     if (!existsSync(manifestPath)) continue;
 

@@ -16,9 +16,9 @@ Exemplos: 20
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\coleta-lote-01\questions\adm-tec-enfermagem-exames-complementares-1779563668619-6.json
-  - D:\AVANT\data\catalog-migration\exames-complementares-lote-01\questions\adm-tec-enfermagem-exames-complementares-1779563668619-6.json
-  - D:\AVANT\data\catalog-migration\taxonomy-agent-pending\questions\adm-tec-enfermagem-exames-complementares-1779563668619-6.json
+  - data/catalog-migration/coleta-lote-01/questions/adm-tec-enfermagem-exames-complementares-1779563668619-6.json
+  - data/catalog-migration/exames-complementares-lote-01/questions/adm-tec-enfermagem-exames-complementares-1779563668619-6.json
+  - data/catalog-migration/taxonomy-agent-pending/questions/adm-tec-enfermagem-exames-complementares-1779563668619-6.json
 
 ## adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3
 
@@ -34,8 +34,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\atencao-basica-saude-da-familia-lote-01\questions\adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3.json
-  - D:\AVANT\data\catalog-migration\infeccoes-sexualmente-transmissiveis-ists-repair-lote-01\questions\adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3.json
+  - data/catalog-migration/atencao-basica-saude-da-familia-lote-01/questions/adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3.json
+  - data/catalog-migration/infeccoes-sexualmente-transmissiveis-ists-repair-lote-01/questions/adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3.json
 
 ## avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3
 
@@ -51,10 +51,10 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\puncao-builder-lote-04\questions\avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json
-  - D:\AVANT\data\catalog-migration\puncao-venosa-e-cuidados-com-cateteres-g02\questions\avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json
-  - D:\AVANT\data\catalog-migration\puncao-venosa-e-cuidados-com-cateteres-lote-01\questions\avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json
-  - D:\AVANT\data\catalog-migration\puncao-venosa-e-cuidados-com-cateteres-repair-lote-04-dispositivo\questions\avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json
+  - data/catalog-migration/puncao-builder-lote-04/questions/avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json
+  - data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g02/questions/avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json
+  - data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-lote-01/questions/avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json
+  - data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-repair-lote-04-dispositivo/questions/avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json
 
 ## agirh-enfermagem-exames-laboratoriais-1779563631609-4
 
@@ -70,8 +70,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\coleta-lote-01\questions\agirh-enfermagem-exames-laboratoriais-1779563631609-4.json
-  - D:\AVANT\data\catalog-migration\exames-laboratoriais-lote-01\questions\agirh-enfermagem-exames-laboratoriais-1779563631609-4.json
+  - data/catalog-migration/coleta-lote-01/questions/agirh-enfermagem-exames-laboratoriais-1779563631609-4.json
+  - data/catalog-migration/exames-laboratoriais-lote-01/questions/agirh-enfermagem-exames-laboratoriais-1779563631609-4.json
 
 ## ameosc-enfermagem-processo-de-enfermagem-1780001673873-0
 
@@ -87,9 +87,9 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\biosseg-itu-scan\questions\ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json
-  - D:\AVANT\data\catalog-migration\infeccoes-biosseguranca-completo\questions\ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json
-  - D:\AVANT\data\catalog-migration\processo-de-enfermagem-lote-02\questions\ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json
+  - data/catalog-migration/biosseg-itu-scan/questions/ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json
+  - data/catalog-migration/infeccoes-biosseguranca-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json
+  - data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json
 
 ## cpcon-uepb-enfermagem-exames-complementares-1779563655698-2
 
@@ -105,8 +105,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\coleta-lote-01\questions\cpcon-uepb-enfermagem-exames-complementares-1779563655698-2.json
-  - D:\AVANT\data\catalog-migration\exames-complementares-lote-01\questions\cpcon-uepb-enfermagem-exames-complementares-1779563655698-2.json
+  - data/catalog-migration/coleta-lote-01/questions/cpcon-uepb-enfermagem-exames-complementares-1779563655698-2.json
+  - data/catalog-migration/exames-complementares-lote-01/questions/cpcon-uepb-enfermagem-exames-complementares-1779563655698-2.json
 
 ## adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7
 
@@ -122,11 +122,11 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\puncao-builder-lote-04\questions\adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
-  - D:\AVANT\data\catalog-migration\puncao-builder-pilot\questions\adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
-  - D:\AVANT\data\catalog-migration\puncao-preview\questions\adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
-  - D:\AVANT\data\catalog-migration\puncao-venosa-e-cuidados-com-cateteres-g06\questions\adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
-  - D:\AVANT\data\catalog-migration\puncao-venosa-e-cuidados-com-cateteres-lote-01\questions\adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
+  - data/catalog-migration/puncao-builder-lote-04/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
+  - data/catalog-migration/puncao-builder-pilot/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
+  - data/catalog-migration/puncao-preview/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
+  - data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g06/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
+  - data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-lote-01/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json
 
 ## fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9
 
@@ -142,11 +142,11 @@ Paths:
 - **Decisão humana:** Escolher qual manifest documentado prevalece ou reconciliar handcraft entre lotes listados.
 
 Paths:
-  - D:\AVANT\data\catalog-migration\promocao-a-saude-e-prevencao-de-agravos-completo\questions\fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-  - D:\AVANT\data\catalog-migration\promocao-a-saude-e-prevencao-de-agravos-g05\questions\fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-  - D:\AVANT\data\catalog-migration\promocao-a-saude-e-prevencao-de-agravos-lote-01\questions\fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-  - D:\AVANT\data\catalog-migration\saude-da-mulher-completo\questions\fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-  - D:\AVANT\data\catalog-migration\saude-da-mulher-g02\questions\fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
+  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
+  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g05/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
+  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-lote-01/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
+  - data/catalog-migration/saude-da-mulher-completo/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
+  - data/catalog-migration/saude-da-mulher-g02/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
 
 ## agirh-enfermagem-nocoes-de-anatomia-1775448514037-0
 
@@ -162,9 +162,9 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\nocoes-de-anatomia-lote-01\questions\agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json
-  - D:\AVANT\data\catalog-migration\sinais-vitais-completo\questions\agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json
-  - D:\AVANT\data\catalog-migration\verificacao-de-sinais-vitais-repair-lote-01\questions\agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json
+  - data/catalog-migration/nocoes-de-anatomia-lote-01/questions/agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json
+  - data/catalog-migration/sinais-vitais-completo/questions/agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json
+  - data/catalog-migration/verificacao-de-sinais-vitais-repair-lote-01/questions/agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json
 
 ## amauc-enfermagem-exames-laboratoriais-1779563631609-2
 
@@ -180,8 +180,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\coleta-lote-01\questions\amauc-enfermagem-exames-laboratoriais-1779563631609-2.json
-  - D:\AVANT\data\catalog-migration\exames-laboratoriais-lote-01\questions\amauc-enfermagem-exames-laboratoriais-1779563631609-2.json
+  - data/catalog-migration/coleta-lote-01/questions/amauc-enfermagem-exames-laboratoriais-1779563631609-2.json
+  - data/catalog-migration/exames-laboratoriais-lote-01/questions/amauc-enfermagem-exames-laboratoriais-1779563631609-2.json
 
 ## ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6
 
@@ -197,10 +197,10 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\curativos-e-manejo-de-feridas-lote-01\questions\ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json
-  - D:\AVANT\data\catalog-migration\curativos-lote-01\questions\ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json
-  - D:\AVANT\data\catalog-migration\curativos-lote-02\questions\ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json
-  - D:\AVANT\data\catalog-migration\curativos-lote-03\questions\ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json
+  - data/catalog-migration/curativos-e-manejo-de-feridas-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json
+  - data/catalog-migration/curativos-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json
+  - data/catalog-migration/curativos-lote-02/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json
+  - data/catalog-migration/curativos-lote-03/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json
 
 ## amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9
 
@@ -216,11 +216,11 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\puncao-builder-lote-04\questions\amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
-  - D:\AVANT\data\catalog-migration\puncao-builder-pilot\questions\amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
-  - D:\AVANT\data\catalog-migration\puncao-venosa-e-cuidados-com-cateteres-g12\questions\amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
-  - D:\AVANT\data\catalog-migration\puncao-venosa-e-cuidados-com-cateteres-lote-01\questions\amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
-  - D:\AVANT\data\catalog-migration\puncao-venosa-e-cuidados-com-cateteres-repair-lote-08-drift\questions\amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
+  - data/catalog-migration/puncao-builder-lote-04/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
+  - data/catalog-migration/puncao-builder-pilot/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
+  - data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g12/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
+  - data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-lote-01/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
+  - data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-repair-lote-08-drift/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json
 
 ## amauc-enfermagem-exames-laboratoriais-1779563631609-3
 
@@ -236,8 +236,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\coleta-lote-01\questions\amauc-enfermagem-exames-laboratoriais-1779563631609-3.json
-  - D:\AVANT\data\catalog-migration\exames-laboratoriais-lote-01\questions\amauc-enfermagem-exames-laboratoriais-1779563631609-3.json
+  - data/catalog-migration/coleta-lote-01/questions/amauc-enfermagem-exames-laboratoriais-1779563631609-3.json
+  - data/catalog-migration/exames-laboratoriais-lote-01/questions/amauc-enfermagem-exames-laboratoriais-1779563631609-3.json
 
 ## amauc-enfermagem-processo-de-enfermagem-1780001440222-5
 
@@ -253,8 +253,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\curativos-e-manejo-de-feridas-completo\questions\amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json
-  - D:\AVANT\data\catalog-migration\processo-de-enfermagem-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json
+  - data/catalog-migration/curativos-e-manejo-de-feridas-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json
+  - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json
 
 ## amauc-enfermagem-processo-de-enfermagem-1780001440222-8
 
@@ -270,8 +270,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\coleta-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json
-  - D:\AVANT\data\catalog-migration\processo-de-enfermagem-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json
+  - data/catalog-migration/coleta-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json
+  - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json
 
 ## amauc-enfermagem-processo-de-enfermagem-1780001440222-9
 
@@ -287,8 +287,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\cuidados-na-administracao-de-medicamentos-repair-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json
-  - D:\AVANT\data\catalog-migration\processo-de-enfermagem-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json
+  - data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json
+  - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json
 
 ## amauc-enfermagem-processo-de-enfermagem-1780001517858-2
 
@@ -304,10 +304,10 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\curativos-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
-  - D:\AVANT\data\catalog-migration\curativos-lote-02\questions\amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
-  - D:\AVANT\data\catalog-migration\curativos-lote-03\questions\amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
-  - D:\AVANT\data\catalog-migration\processo-de-enfermagem-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
+  - data/catalog-migration/curativos-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
+  - data/catalog-migration/curativos-lote-02/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
+  - data/catalog-migration/curativos-lote-03/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
+  - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
 
 ## amauc-enfermagem-processo-de-enfermagem-1780001517858-6
 
@@ -323,8 +323,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\cuidados-na-administracao-de-medicamentos-repair-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001517858-6.json
-  - D:\AVANT\data\catalog-migration\processo-de-enfermagem-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001517858-6.json
+  - data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-6.json
+  - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-6.json
 
 ## amauc-enfermagem-processo-de-enfermagem-1780001517858-7
 
@@ -340,8 +340,8 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\processo-de-enfermagem-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json
-  - D:\AVANT\data\catalog-migration\urgencias-e-emergencias-repair-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json
+  - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json
+  - data/catalog-migration/urgencias-e-emergencias-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json
 
 ## amauc-enfermagem-processo-de-enfermagem-1780002441285-8
 
@@ -357,5 +357,5 @@ Paths:
 - **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - D:\AVANT\data\catalog-migration\infeccoes-sexualmente-transmissiveis-ists-repair-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json
-  - D:\AVANT\data\catalog-migration\processo-de-enfermagem-lote-01\questions\amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json
+  - data/catalog-migration/infeccoes-sexualmente-transmissiveis-ists-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json
+  - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json

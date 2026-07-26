@@ -6,6 +6,7 @@ import {
   buildBlockerAnalysisReport,
   selectStratifiedBlockerSamples,
 } from '@/lib/neurocanvas/blockerAnalysis';
+import { portableizeAuditArtifact } from '@/lib/neurocanvas/portablePath';
 
 function renderClustersMd(report: ReturnType<typeof buildBlockerAnalysisReport>): string {
   const lines = [
@@ -97,20 +98,28 @@ function renderSamplesMd(samples: ReturnType<typeof selectStratifiedBlockerSampl
 }
 
 async function main() {
-  const report = buildBlockerAnalysisReport();
+  const repoRoot = process.cwd();
+  const report = buildBlockerAnalysisReport({ repoRoot });
   const samples = selectStratifiedBlockerSamples(report, 20);
 
-  const dir = resolve(process.cwd(), 'artifacts');
+  const dir = resolve(repoRoot, 'artifacts');
   mkdirSync(dir, { recursive: true });
 
-  writeFileSync(resolve(dir, 'neurocanvas-blocker-clusters.json'), JSON.stringify(report, null, 2), 'utf8');
+  const portableReport = portableizeAuditArtifact(report, repoRoot);
+  const portableSamples = portableizeAuditArtifact({ generated_at: report.generated_at, samples }, repoRoot);
+
+  writeFileSync(resolve(dir, 'neurocanvas-blocker-clusters.json'), JSON.stringify(portableReport, null, 2), 'utf8');
   writeFileSync(resolve(dir, 'neurocanvas-blocker-clusters.md'), renderClustersMd(report), 'utf8');
   writeFileSync(
     resolve(dir, 'neurocanvas-blocker-samples-20.json'),
-    JSON.stringify({ generated_at: report.generated_at, samples }, null, 2),
+    JSON.stringify(portableSamples, null, 2),
     'utf8',
   );
-  writeFileSync(resolve(dir, 'neurocanvas-blocker-samples-20.md'), renderSamplesMd(samples), 'utf8');
+  writeFileSync(
+    resolve(dir, 'neurocanvas-blocker-samples-20.md'),
+    renderSamplesMd(portableSamples.samples),
+    'utf8',
+  );
 
   console.log('[audit:neurocanvas-blockers] clusters:', report.clusters.length);
   console.log('[audit:neurocanvas-blockers] blockers:', report.blockers.length);

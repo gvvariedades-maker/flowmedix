@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join, normalize } from 'node:path';
 
 import { CATALOG_MIGRATION_ROOT } from '@/lib/catalogMigration/paths';
+import { resolveAuditRoots, type NeurocanvasAuditRoots } from '@/lib/neurocanvas/auditRoots';
 import { DEDUPE_SCHEMA, DEDUPE_SCHEMA_VERSION, type DedupeSchemaSpec } from '@/lib/neurocanvas/dedupeSchema';
 import {
   buildSlugAuthorityIndex,
@@ -101,7 +102,7 @@ export function deriveLoteFromPath(filePath: string): string | null {
 
 export { loadRegistryCompletoLotes } from '@/lib/neurocanvas/slugAuthority';
 
-export function walkAllCatalogQuestionPaths(): string[] {
+export function walkAllCatalogQuestionPaths(catalogRoot: string = CATALOG_MIGRATION_ROOT): string[] {
   const out: string[] = [];
 
   const walk = (dir: string): void => {
@@ -120,7 +121,7 @@ export function walkAllCatalogQuestionPaths(): string[] {
     }
   };
 
-  walk(CATALOG_MIGRATION_ROOT);
+  walk(catalogRoot);
   return out.sort((a, b) => a.localeCompare(b));
 }
 
@@ -245,9 +246,12 @@ function reasonFromEvidence(
   return 'identical_content_documented';
 }
 
-export function buildCanonicalCatalog(options?: { strict?: boolean }): CanonicalCatalogResult {
-  const authorityIndex: SlugAuthorityIndex = buildSlugAuthorityIndex();
-  const paths = walkAllCatalogQuestionPaths();
+export function buildCanonicalCatalog(
+  options?: { strict?: boolean } & Partial<NeurocanvasAuditRoots>,
+): CanonicalCatalogResult {
+  const { catalogRoot } = resolveAuditRoots(options);
+  const authorityIndex: SlugAuthorityIndex = buildSlugAuthorityIndex(catalogRoot);
+  const paths = walkAllCatalogQuestionPaths(catalogRoot);
   const groups = groupQuestionPathsBySlug(paths);
 
   const selections = new Map<string, SlugCanonicalSelection>();

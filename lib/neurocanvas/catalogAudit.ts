@@ -10,6 +10,7 @@ import {
 import { normalizeReverseStudySlide } from '@/lib/reverseStudySlidesNormalize';
 import { sortReverseStudySlides } from '@/lib/reverseStudySlideOrder';
 import { CATALOG_MIGRATION_ROOT } from '@/lib/catalogMigration/paths';
+import { resolveAuditRoots, type NeurocanvasAuditRoots } from '@/lib/neurocanvas/auditRoots';
 
 const WRAPPER_KEYS = ['concept_map', 'golden_rule', 'logic_flow', 'danger_zone'] as const;
 
@@ -22,7 +23,7 @@ export type CatalogAuditOptions = {
   canonical?: boolean;
   /** Falhar se houver slug divergente sem regra canônica. */
   strict?: boolean;
-};
+} & Partial<NeurocanvasAuditRoots>;
 
 export type CatalogAuditReport = {
   generated_at: string;
@@ -135,7 +136,11 @@ function loadJson(path: string): unknown {
   return JSON.parse(text);
 }
 
-function collectFilesystemFirstFiles(includeExamples: boolean): {
+function collectFilesystemFirstFiles(
+  includeExamples: boolean,
+  catalogRoot: string,
+  repoRoot: string,
+): {
   files: { slug: string; path: string }[];
   duplicateSkipped: number;
 } {
@@ -144,12 +149,12 @@ function collectFilesystemFirstFiles(includeExamples: boolean): {
   let duplicateSkipped = 0;
   const rawPaths: string[] = [];
 
-  if (existsSync(CATALOG_MIGRATION_ROOT)) {
-    walkQuestionFiles(CATALOG_MIGRATION_ROOT, rawPaths);
+  if (existsSync(catalogRoot)) {
+    walkQuestionFiles(catalogRoot, rawPaths);
   }
 
   if (includeExamples) {
-    const exDir = resolve(process.cwd(), 'examples');
+    const exDir = resolve(repoRoot, 'examples');
     if (existsSync(exDir)) {
       for (const f of readdirSync(exDir)) {
         if (f.endsWith('.json')) rawPaths.push(join(exDir, f));
@@ -171,18 +176,19 @@ function collectFilesystemFirstFiles(includeExamples: boolean): {
 }
 
 export function buildCatalogAuditReport(options: CatalogAuditOptions = {}): CatalogAuditReport {
+  const { catalogRoot, repoRoot } = resolveAuditRoots(options);
   const limitations: string[] = [];
   const useCanonical = options.canonical !== false;
   let canonicalCatalog: CanonicalCatalogResult | undefined;
   let files: { slug: string; path: string }[] = [];
   let duplicateSkipped = 0;
 
-  if (!existsSync(CATALOG_MIGRATION_ROOT)) {
-    limitations.push('data/catalog-migration ausente — só examples/simulado se habilitados.');
+  if (!existsSync(catalogRoot)) {
+    limitations.push('data/catalog-migration ausente — baseline NOT READY sem export local.');
   }
 
-  if (useCanonical && existsSync(CATALOG_MIGRATION_ROOT)) {
-    canonicalCatalog = buildCanonicalCatalog({ strict: options.strict });
+  if (useCanonical && existsSync(catalogRoot)) {
+    canonicalCatalog = buildCanonicalCatalog({ strict: options.strict, catalogRoot, repoRoot });
     duplicateSkipped = canonicalCatalog.duplicate_groups.reduce(
       (sum, g) => sum + g.file_count - 1,
       0,
@@ -191,7 +197,7 @@ export function buildCatalogAuditReport(options: CatalogAuditOptions = {}): Cata
       files.push({ slug, path });
     }, canonicalCatalog);
     if (options.includeExamples) {
-      const exDir = resolve(process.cwd(), 'examples');
+      const exDir = resolve(repoRoot, 'examples');
       if (existsSync(exDir)) {
         for (const f of readdirSync(exDir)) {
           if (!f.endsWith('.json')) continue;
@@ -203,7 +209,7 @@ export function buildCatalogAuditReport(options: CatalogAuditOptions = {}): Cata
       }
     }
   } else {
-    const legacy = collectFilesystemFirstFiles(Boolean(options.includeExamples));
+    const legacy = collectFilesystemFirstFiles(Boolean(options.includeExamples), catalogRoot, repoRoot);
     files = legacy.files;
     duplicateSkipped = legacy.duplicateSkipped;
     limitations.push('Modo filesystem_first — não determinístico entre OS.');
@@ -212,7 +218,7 @@ export function buildCatalogAuditReport(options: CatalogAuditOptions = {}): Cata
   const report: CatalogAuditReport = {
     generated_at: new Date().toISOString(),
     sources: {
-      catalog_migration: existsSync(CATALOG_MIGRATION_ROOT),
+      catalog_migration: existsSync(catalogRoot),
       examples: Boolean(options.includeExamples),
     },
     selection: {
@@ -359,7 +365,7 @@ export function buildCatalogAuditReport(options: CatalogAuditOptions = {}): Cata
   report.slides.slot_stats.steps = fillSlot(stepLens);
   report.slides.slot_stats.rows = fillSlot(rowLens);
 
-  if (!existsSync(CATALOG_MIGRATION_ROOT)) {
+  if (!existsSync(catalogRoot)) {
     limitations.push('Contagens de catálogo podem estar incompletas sem export local.');
   }
 

@@ -11,6 +11,7 @@ import {
   getDocumentedPathsForSlug,
   type SlugAuthorityIndex,
 } from '@/lib/neurocanvas/slugAuthority';
+import { resolveAuditRoots, type NeurocanvasAuditRoots } from '@/lib/neurocanvas/auditRoots';
 
 export type SlugPartitionCategory =
   | 'singleton_disk'
@@ -221,8 +222,12 @@ function humanDecisionForBlocker(detail: Omit<BlockerDetail, 'human_decision'>):
   return 'Revisar divergência e registrar contrato explícito no playbook/registry do pacote.';
 }
 
-export function buildSlugPartition(catalog = buildCanonicalCatalog()): PartitionReport {
-  const groups = groupQuestionPathsBySlug(walkAllCatalogQuestionPaths());
+export function buildSlugPartition(
+  catalog = buildCanonicalCatalog(),
+  catalogRoot?: string,
+): PartitionReport {
+  const roots = resolveAuditRoots({ catalogRoot });
+  const groups = groupQuestionPathsBySlug(walkAllCatalogQuestionPaths(roots.catalogRoot));
   const rows: SlugPartitionRow[] = [];
   const by_category: Record<SlugPartitionCategory, number> = {
     singleton_disk: 0,
@@ -261,7 +266,7 @@ export function buildSlugPartition(catalog = buildCanonicalCatalog()): Partition
 
   return {
     total_disk_slugs: groups.size,
-    total_files: walkAllCatalogQuestionPaths().length,
+    total_files: walkAllCatalogQuestionPaths(roots.catalogRoot).length,
     by_category,
     reconciliation: {
       baseline_selections: catalog.selections.size,
@@ -346,10 +351,13 @@ function buildBlockerDetail(
   };
 }
 
-export function buildBlockerAnalysisReport(): BlockerAnalysisReport {
-  const catalog = buildCanonicalCatalog();
-  const index = buildSlugAuthorityIndex();
-  const partition = buildSlugPartition(catalog);
+export function buildBlockerAnalysisReport(
+  options?: Partial<NeurocanvasAuditRoots>,
+): BlockerAnalysisReport {
+  const { catalogRoot } = resolveAuditRoots(options);
+  const catalog = buildCanonicalCatalog({ catalogRoot });
+  const index = buildSlugAuthorityIndex(catalogRoot);
+  const partition = buildSlugPartition(catalog, catalogRoot);
 
   const unresolvedGroups = catalog.duplicate_groups.filter((g) =>
     catalog.unresolved_slugs.includes(g.slug),
