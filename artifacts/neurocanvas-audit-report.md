@@ -1,9 +1,15 @@
 # Relatório consolidado — Auditoria NeuroCanvas (AVANT NeuroSlides)
 
-**Gerado em:** 2026-07-26T06:59:46.751Z  
-**Branch auditada:** `feat/cadernos-fase-1-wizard`  
-**Commit:** `36d0cd35` (2026-07-24 14:35:36 -0300)  
 **Modo:** read-only — nenhuma implementação NeuroCanvas; nenhuma alteração de comportamento do player.
+
+## Proveniência
+
+- **Publicação do tooling:** PR #46 — `chore/neurocanvas-g02-audit`
+- **Base de publicação:** `main` pós-prerequisite #45
+- **Fonte do catálogo:** snapshot local gitignored (`data/catalog-migration/**/questions/`)
+- **Catálogo versionado pelo Git:** não
+- **Baseline canônica parcial (G0.2):** 4.975 slugs · 676 editorialmente unresolved · `dedupe_schema_version`: 1
+- **Contexto local original (exploração pré-G0.2):** branch `feat/cadernos-fase-1-wizard`, commit `36d0cd35` (2026-07-24) — gerado em 2026-07-26T06:59:46.751Z; métricas **5.651** slugs / **22.604** slides no corpo abaixo **não** são o head do PR nem catálogo rastreado por commit
 
 ---
 
@@ -436,20 +442,20 @@ npm test -- --runInBand __tests__/lib/neurocanvas/audit.test.ts
 
 ### C. Blockers
 
-1. Import wall sem registry/dynamic  
-2. `moldSlotFit` acoplado por variant  
-3. Sem sinais pedagógicos ricos no player para Lens  
-4. 1.709 + 66 slides fora do padrão premium estrutural  
-5. Duplicatas de lote não reconciliadas byte-a-byte  
+1. Import wall sem registry/dynamic
+2. `moldSlotFit` acoplado por variant
+3. Sem sinais pedagógicos ricos no player para Lens
+4. 1.709 + 66 slides fora do padrão premium estrutural
+5. Duplicatas de lote não reconciliadas byte-a-byte
 
 ### D. Perguntas abertas
 
-1. NeuroCanvas substitui variants ou só compõe genéricos?  
-2. VisualDNA por questão, slide ou ramo?  
-3. LearnerLens pode reordenar steps?  
-4. Quem faz bump de `engineVersion`?  
-5. Bespoke vira DSL ou permanece React?  
-6. Conviction UI (EE Fase 2) integra ao Lens?  
+1. NeuroCanvas substitui variants ou só compõe genéricos?
+2. VisualDNA por questão, slide ou ramo?
+3. LearnerLens pode reordenar steps?
+4. Quem faz bump de `engineVersion`?
+5. Bespoke vira DSL ou permanece React?
+6. Conviction UI (EE Fase 2) integra ao Lens?
 
 ---
 

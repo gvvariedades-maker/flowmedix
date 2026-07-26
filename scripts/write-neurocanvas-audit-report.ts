@@ -5,15 +5,6 @@
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { execSync } from 'node:child_process';
-
-function git(cmd: string): string {
-  try {
-    return execSync(cmd, { cwd: process.cwd(), encoding: 'utf8' }).trim();
-  } catch {
-    return 'n/d';
-  }
-}
 
 const catalog = JSON.parse(readFileSync('artifacts/neurocanvas-catalog-audit.json', 'utf8'));
 const resolver = JSON.parse(
@@ -21,16 +12,37 @@ const resolver = JSON.parse(
 );
 const extra = JSON.parse(readFileSync('artifacts/neurocanvas-audit-report-data.json', 'utf8'));
 
-const branch = git('git rev-parse --abbrev-ref HEAD');
-const commit = git('git rev-parse --short HEAD');
-const commitDate = git('git log -1 --format=%ci');
+/** Metadados estáveis — não gravar HEAD do commit em curso (mudaria a cada commit). */
+const PROVENANCE = {
+  publication: 'PR #46 — chore/neurocanvas-g02-audit',
+  publicationBase: 'main pós-prerequisite #45',
+  catalogSource: 'snapshot local gitignored (data/catalog-migration/**/questions/)',
+  catalogInGit: 'não',
+  canonicalBaselineSlugs: 4975,
+  editorialUnresolved: 676,
+  dedupeSchemaVersion: 1,
+  originalLocal: {
+    branch: 'feat/cadernos-fase-1-wizard',
+    commit: '36d0cd35',
+    commitDate: '2026-07-24 14:35:36 -0300',
+    generatedAt: '2026-07-26T06:59:46.751Z',
+    exploratorySlugs: 5651,
+    exploratorySlides: 22604,
+  },
+} as const;
 
 const md = `# Relatório consolidado — Auditoria NeuroCanvas (AVANT NeuroSlides)
 
-**Gerado em:** ${new Date().toISOString()}  
-**Branch auditada:** \`${branch}\`  
-**Commit:** \`${commit}\` (${commitDate})  
 **Modo:** read-only — nenhuma implementação NeuroCanvas; nenhuma alteração de comportamento do player.
+
+## Proveniência
+
+- **Publicação do tooling:** ${PROVENANCE.publication}
+- **Base de publicação:** \`${PROVENANCE.publicationBase}\`
+- **Fonte do catálogo:** ${PROVENANCE.catalogSource}
+- **Catálogo versionado pelo Git:** ${PROVENANCE.catalogInGit}
+- **Baseline canônica parcial (G0.2):** ${PROVENANCE.canonicalBaselineSlugs} slugs · ${PROVENANCE.editorialUnresolved} editorialmente unresolved · \`dedupe_schema_version\`: ${PROVENANCE.dedupeSchemaVersion}
+- **Contexto local original (exploração pré-G0.2):** branch \`${PROVENANCE.originalLocal.branch}\`, commit \`${PROVENANCE.originalLocal.commit}\` (${PROVENANCE.originalLocal.commitDate}) — gerado em ${PROVENANCE.originalLocal.generatedAt}; métricas **${PROVENANCE.originalLocal.exploratorySlugs.toLocaleString('pt-BR')}** slugs / **${PROVENANCE.originalLocal.exploratorySlides.toLocaleString('pt-BR')}** slides no corpo abaixo **não** são o head do PR nem catálogo rastreado por commit
 
 ---
 
@@ -463,20 +475,20 @@ npm test -- --runInBand __tests__/lib/neurocanvas/audit.test.ts
 
 ### C. Blockers
 
-1. Import wall sem registry/dynamic  
-2. \`moldSlotFit\` acoplado por variant  
-3. Sem sinais pedagógicos ricos no player para Lens  
-4. 1.709 + 66 slides fora do padrão premium estrutural  
-5. Duplicatas de lote não reconciliadas byte-a-byte  
+1. Import wall sem registry/dynamic
+2. \`moldSlotFit\` acoplado por variant
+3. Sem sinais pedagógicos ricos no player para Lens
+4. 1.709 + 66 slides fora do padrão premium estrutural
+5. Duplicatas de lote não reconciliadas byte-a-byte
 
 ### D. Perguntas abertas
 
-1. NeuroCanvas substitui variants ou só compõe genéricos?  
-2. VisualDNA por questão, slide ou ramo?  
-3. LearnerLens pode reordenar steps?  
-4. Quem faz bump de \`engineVersion\`?  
-5. Bespoke vira DSL ou permanece React?  
-6. Conviction UI (EE Fase 2) integra ao Lens?  
+1. NeuroCanvas substitui variants ou só compõe genéricos?
+2. VisualDNA por questão, slide ou ramo?
+3. LearnerLens pode reordenar steps?
+4. Quem faz bump de \`engineVersion\`?
+5. Bespoke vira DSL ou permanece React?
+6. Conviction UI (EE Fase 2) integra ao Lens?
 
 ---
 

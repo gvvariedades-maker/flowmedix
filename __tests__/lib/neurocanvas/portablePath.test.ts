@@ -20,6 +20,14 @@ describe('neurocanvas portablePath', () => {
     expect(() => toPortableRepoPath(outside, repoRoot)).toThrow(/escapa do repo/);
   });
 
+  it('resolver catalog-full.md usa UTF-8 em pré-fallback', () => {
+    const buf = readFileSync(
+      join(repoRoot, 'artifacts/neurocanvas-resolver-audit-catalog-full.md'),
+    );
+    expect(buf.includes(Buffer.from([0x70, 0x72, 0xc3, 0xa9, 0x2d, 0x66]))).toBe(true);
+    expect(buf.includes(Buffer.from([0x70, 0x72, 0xe9, 0x2d, 0x66]))).toBe(false);
+  });
+
   it('artifacts neurocanvas rastreados não contêm drive letter nem secrets', () => {
     const artifactDir = join(repoRoot, 'artifacts');
     const tracked = [
