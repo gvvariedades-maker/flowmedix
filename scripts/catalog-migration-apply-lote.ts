@@ -28,6 +28,10 @@ import { runLotePreflight } from '@/lib/catalogMigration/preflightLote';
 import { patchLotePedagogicalBranch } from '@/lib/catalogMigration/patchLotePedagogicalBranch';
 import { requireAnchorReviewPass } from '@/lib/catalogMigration/anchorReview';
 import { loadHandcraftRegistry } from '@/lib/catalogMigration/handcraftRegistry';
+import {
+  assertG04SlugMayEnterProduction,
+  isG04SlugProductionBlocked,
+} from '@/lib/neurocanvas/g04ProductionApprovals';
 
 function resolveRiskContextFromLote(lote: string): {
   riskApprovalGate: boolean;
@@ -134,6 +138,19 @@ async function main() {
       continue;
     }
     items.push({ modulo_slug: slug, payload: validated.data });
+  }
+
+  // Gate G0.4 A4: slugs bloqueados (ex.: EDUCA defeituoso) não podem ir ao Supabase.
+  const blockedInLote = items.filter((it) => isG04SlugProductionBlocked(it.modulo_slug));
+  if (blockedInLote.length > 0) {
+    for (const it of blockedInLote) {
+      console.error(`[catalog:apply-lote] BLOCKED ${it.modulo_slug} — g04 production gate`);
+    }
+    if (apply && !hasFlag('dry-run')) {
+      for (const it of blockedInLote) {
+        assertG04SlugMayEnterProduction(it.modulo_slug);
+      }
+    }
   }
 
   const supabase = await createServerSupabase();

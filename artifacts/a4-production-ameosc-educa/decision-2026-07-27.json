@@ -1,0 +1,228 @@
+{
+  "reviewed_at": "2026-07-27",
+  "gate": "a4_production_ameosc_educa",
+  "scope": {
+    "alters_baseline_g04": false,
+    "resolves_idecan": false,
+    "starts_ui_piloto": false,
+    "writes_supabase": false,
+    "starts_fase_0b": false,
+    "reduces_unresolved_347": false
+  },
+  "summary": {
+    "ameosc": "PROMOTE_PRODUCTION_APPROVED",
+    "educa": "KEEP_BLOCKED"
+  },
+  "cases": [
+    {
+      "case_id": "nc-g03-5a0a557ebdec0f89",
+      "slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
+      "banca": "AMEOSC",
+      "decision": "promote",
+      "production_approved": true,
+      "status": "approved_for_production",
+      "previous_status": "approved_for_materialization_only",
+      "what_was_validated": "Valores de referência de temperatura da coluna da prova + coerência letra/gabarito no caderno Prova 1.",
+      "temperature_column_official": {
+        "febre_4": "38 °C a 39 °C",
+        "estado_febril_3": "37,8 °C a 38 °C",
+        "febricula_2": "37,5 °C a 37,7 °C",
+        "normotermia_1": "36 °C a 37,4 °C",
+        "correct_sequence": "4, 3, 2 e 1"
+      },
+      "caderno_binding": {
+        "cargo": "TÉCNICO EM ENFERMAGEM / TÉCNICO EM ENFERMAGEM DE ESF",
+        "prova": 1,
+        "questao": 4,
+        "gabarito_letra": "D",
+        "option_D_text": "4, 3, 2 e 1",
+        "match": true,
+        "note": "Cadernos 2–4 embaralham número da questão e ordem das letras; a sequência correta 4-3-2-1 permanece coerente com o gabarito do respectivo número em cada matriz."
+      },
+      "cross_check_all_booklets": [
+        {
+          "prova": 1,
+          "qnum": 4,
+          "seq_letter": "D",
+          "gabarito": "D",
+          "match": true
+        },
+        {
+          "prova": 2,
+          "qnum": 3,
+          "seq_letter": "C",
+          "gabarito": "C",
+          "match": true
+        },
+        {
+          "prova": 3,
+          "qnum": 9,
+          "seq_letter": "A",
+          "gabarito": "A",
+          "match": true
+        },
+        {
+          "prova": 4,
+          "qnum": 9,
+          "seq_letter": "B",
+          "gabarito": "B",
+          "match": true
+        }
+      ],
+      "json_fidelity": {
+        "options_match_prova_1": true,
+        "is_correct_D": true,
+        "rows_sv_kind_meta_match_official_column": true,
+        "exam_vs_current": "none"
+      },
+      "evidence": {
+        "gabarito_definitivo": {
+          "title": "AMEOSC Gabarito definitivo 15/09/2025",
+          "url": "https://anexos.cdn.selecao.net.br/uploads/98/concursos/2451/anexos/7fb93fc3-cf32-4306-b084-42f8b606a0e1.pdf",
+          "finding": "TE/ESF Prova 1 Q04 = D",
+          "pages": [
+            3
+          ],
+          "questao": 4,
+          "prova": 1,
+          "cargo": "TÉCNICO EM ENFERMAGEM / TÉCNICO EM ENFERMAGEM DE ESF"
+        },
+        "caderno_prova_1": {
+          "title": "Cadernos de Prova ZIP — matriz TE/ESF Prova 1",
+          "url": "https://anexos.cdn.selecao.net.br/uploads/98/concursos/2451/anexos/74eda0be-3474-4115-8f01-88fb6c4ab627.zip",
+          "file": "25778-TECNICO-DE-ENFERMAGEM-TECNICO-DE-ENFERMAGEM-DE-ESF-1-MATRIZ.pdf",
+          "finding": "Coluna térmica oficial + alternativas A/B/C/D idênticas ao JSON materializado; D = 4, 3, 2 e 1",
+          "pages": [
+            2
+          ],
+          "questao": 4
+        },
+        "local_extracts": [
+          "artifacts/a4-production-ameosc-educa/evidence-ameosc-gabarito-te.txt",
+          "artifacts/a4-production-ameosc-educa/evidence-ameosc-temp-column.txt"
+        ],
+        "clinical_note": "As faixas (febrícula / estado febril / febre / normotermia) são taxonomia da coluna da prova AMEOSC, não a tabela MS/axilar genérica. O A4 valida fidelidade oficial à coluna + gabarito do caderno Prova 1."
+      },
+      "justification": "Os valores térmicos do golden_rule/concept_map são os da coluna oficial da prova (não inventados). No caderno Prova 1 a letra D carrega a sequência correta e coincide com o gabarito definitivo. Aprovação de produção liberada para este slug; não altera unresolved=347 nem autoriza Fase 0B/Supabase/piloto.",
+      "still_blocked": [
+        "package production_ready promote",
+        "supabase apply",
+        "piloto",
+        "fase_0b"
+      ]
+    },
+    {
+      "case_id": "nc-g03-9c3c0a3a66aabf52",
+      "slug": "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0",
+      "banca": "Instituto EDUCA",
+      "decision": "keep_blocked",
+      "production_approved": false,
+      "status": "blocked_defective_item_no_metrics_isolation",
+      "previous_status": "approved_for_materialization_only",
+      "keys": {
+        "bank_official": "D",
+        "technical": "B",
+        "command_stem": "Estão INCORRETOS:",
+        "option_D_text": "Os itens II e IV estão corretos.",
+        "option_B_text": "Os itens II e IV estão errados."
+      },
+      "defect_analysis": {
+        "item_II_claim": "FC adulta em repouso 30–165 bpm",
+        "item_II_clinical": false,
+        "item_IV_claim": "Taquipneia = FR inferior a 12",
+        "item_IV_clinical": false,
+        "technical_reading": "II e IV são clinicamente falsos → alternativa B",
+        "bank_reading": "Edital Normativo 014/2025 (TE) Q34 = D",
+        "why_defective": "Gabarito oficial valida como corretos dois enunciados clinicamente falsos; conflita também com o comando Estão INCORRETOS."
+      },
+      "clinical_anchor_tier_A": {
+        "source": "POP.HC-UFTM-DENF.003 v6",
+        "url": "https://www.gov.br/hubrasil/pt-br/hospitais-universitarios/regiao-sudeste/hc-uftm/documentos/procedimentos-e-rotinas-operacionais-padrao/pops/POP.HCUFTMDENF.003RotinadeRegistrodeSinaisVitaiseControlesversao6.pdf",
+        "fc_adulto": "60–100 bpm",
+        "fr_adulto": "12–20; bradipneico <12; taquipneico >20"
+      },
+      "metrics_contamination_risk": {
+        "if_promote_with_is_correct_D": "Aluno que marca B (leitura clínica correta / alinhada ao comando) é pontuado como erro → contamina mastery, FSRS e métricas de acerto.",
+        "if_flip_is_correct_to_B": "Rompe fidelidade ao gabarito oficial; aluno que marca D (chave da banca) é pontuado como erro → contamina métricas de desempenho em modo prova.",
+        "contract_gap": "Não há campo/contrato versionado (ex.: scoring_eligible=false, exclude_from_mastery, defective_item) que isole o item de mastery/FSRS/métricas do aluno. exam_vs_current documenta o conflito mas não exclui scoring."
+      },
+      "treatment_decision": {
+        "bank_key_preserved_in_content": "D",
+        "technical_key_documented": "B",
+        "exam_vs_current_retained": true,
+        "production": "BLOCKED",
+        "allowed_now": "estudo editorial / materialização local já feita; sem publicação/scoring de aluno",
+        "required_before_promote": [
+          "Contrato de item defeituoso com exclusão explícita de mastery/FSRS/métricas (ou anulação/retirada do pool scored)",
+          "Revisão de produto sobre UX: ensinar B técnico sem marcar D como acerto do aluno, ou vice-versa, sem poluir analytics"
+        ]
+      },
+      "evidence": {
+        "prova": {
+          "url": "https://educapb.com.br/wp-content/uploads/2025/02/Tecnico-em-Enfermagem.docxOKOK.pdf",
+          "finding": "Q34 — II com 30–165 bpm; IV taquipneia <12; comando Estão INCORRETOS; opções A–E com D=II e IV corretos / B=II e IV errados",
+          "pages": [
+            9
+          ],
+          "questao": 34
+        },
+        "gabarito_retificado": {
+          "url": "https://educapb.com.br/wp-content/uploads/2025/04/Edital-Normativo-no-14-2024-Retificacao-do-Gabarito-Oficial.pdf",
+          "finding": "CARGO TÉCNICO EM ENFERMAGEM — Q34 = D (não nula)",
+          "pages": [
+            6
+          ],
+          "questao": 34,
+          "cargo": "TÉCNICO EM ENFERMAGEM"
+        },
+        "local_extracts": [
+          "artifacts/a4-production-ameosc-educa/evidence-educa-q34.txt",
+          "artifacts/a4-production-ameosc-educa/evidence-educa-gabarito-te.txt",
+          "artifacts/a4-production-ameosc-educa/evidence-pop-hc-uftm-fc-fr.txt"
+        ],
+        "clinical_justification": {
+          "source": "POP.HC-UFTM-DENF.003 v6",
+          "pages": [
+            19,
+            20
+          ],
+          "fc_adulto_repouso": "60–100 bpm (item II da prova afirma 30–165 — falso)",
+          "fr_adulto": "eupneico 12–20; bradipneico <12; taquipneico >20 (item IV chama taquipneia de FR <12 — inverte bradipneia)",
+          "command_conflict": "Comando da Q34: Estão INCORRETOS. Alternativa D diz que II e IV estão corretos — incoerente com o stem e com a clínica."
+        }
+      },
+      "justification": "Tratamento dual (banca D × técnico B) permanece documentado, mas promover para produção sem isolamento de métricas contaminaria mastery/FSRS. Manter bloqueado até existir contrato de item defeituoso unscored.",
+      "enforcement": {
+        "production_approved": false,
+        "production_blocked": true,
+        "block_code": "defective_item_no_metrics_isolation",
+        "gate": "lib/neurocanvas/g04ProductionApprovals.ts#assertG04SlugMayEnterProduction"
+      }
+    }
+  ],
+  "explicitly_not_done": [
+    "baseline_g04_counts_unchanged",
+    "idecan",
+    "ui",
+    "piloto",
+    "supabase",
+    "fase_0b",
+    "production_ready_package"
+  ],
+  "enforcement": {
+    "module": "lib/neurocanvas/g04ProductionApprovals.ts",
+    "rule": "assertG04SlugMayEnterProduction(slug) throws for blocked slugs",
+    "wired_into": [
+      "catalog:apply-lote --apply (bloqueia escrita Supabase do slug)",
+      "audit:subtopico-quality --promote (bloqueia promote se pacote contém slug bloqueado)"
+    ],
+    "production_approved_true_only_for": [
+      "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7"
+    ],
+    "production_blocked_slugs": [
+      "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0"
+    ],
+    "not_just_meta": true,
+    "note": "Bloqueio é por slug no gate versionado; exam_vs_current documenta o defeito mas NÃO é o mecanismo de bloqueio."
+  }
+}
