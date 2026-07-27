@@ -32,6 +32,7 @@ export function extractEvidenceClientBody(
   if ('answer_change_count' in body) client.answer_change_count = body.answer_change_count;
   if ('response_time_ms' in body) client.response_time_ms = body.response_time_ms;
   if ('context' in body) client.context = body.context;
+  if ('tab_backgrounded' in body) client.tab_backgrounded = body.tab_backgrounded;
   return client;
 }
 

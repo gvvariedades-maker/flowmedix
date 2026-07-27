@@ -14,6 +14,8 @@ import {
   iniciarSimuladoProva,
   SimuladoApiError,
 } from '@/lib/simulado/client';
+import { usePassiveAttemptTracker } from '@/lib/evidence/usePassiveAttemptTracker';
+import { ConvictionSelector, type ConvictionChoice } from '@/components/evidence/ConvictionSelector';
 import type { SimuladoSessionDetailResponse } from '@/lib/simulado/types';
 import { sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
 import type { LessonData } from '@/types/lesson';
@@ -110,6 +112,39 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const [questionError, setQuestionError] = useState<string | null>(null);
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const {
+    noteSelectionChange,
+    beginConfirm: beginEvidenceConfirm,
+    clearPendingAfterSuccess: clearEvidencePending,
+  } = usePassiveAttemptTracker({
+    questionKey: activeSlug ?? sessionId,
+    enabled: true,
+  });
+
+  const selectOption = useCallback(
+    (opcaoId: string | null) => {
+      if (opcaoId) noteSelectionChange();
+      setSelectedOption(opcaoId);
+    },
+    [noteSelectionChange],
+  );
+
+  // EE-C01 (Lote 8): coorte técnica de convicção — resolvida no servidor.
+  const [convictionUiEnabled, setConvictionUiEnabled] = useState(false);
+  useEffect(() => {
+    let active = true;
+    fetchWithAuth('/api/aluno/evidence-cohort')
+      .then((res) => (res.ok ? (res.json() as Promise<{ conviction_ui?: boolean }>) : null))
+      .then((data) => {
+        if (active && data?.conviction_ui === true) setConvictionUiEnabled(true);
+      })
+      .catch(() => {
+        // Falha de rede: sem UI de convicção; conviction permanece 'unknown' (§1.5).
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
   const [feedback, setFeedback] = useState<FeedbackState>(null);
   const [finalFeedbackPending, setFinalFeedbackPending] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -240,7 +275,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     [questionData?.question_data?.options],
   );
 
-  const handleConfirmAnswer = useCallback(async () => {
+  const handleConfirmAnswer = useCallback(async (conviction?: ConvictionChoice) => {
     if (!activeItem || !activeSlug || !selectedOption || submitting || feedback) return;
 
     const needsNewAnswerSlot = !activeItem.respondida;
@@ -253,13 +288,18 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     setSubmitError(null);
 
     try {
+      // answered_at é calculado aqui — após a escolha de convicção quando a
+      // UI da coorte técnica estiver habilitada (spec §1.5/§1.6).
+      const evidenceFields = beginEvidenceConfirm(conviction ? { conviction } : undefined);
       const result = await answerSimuladoQuestion({
         session_id: sessionId,
         modulo_slug: activeSlug,
         opcao_id: selectedOption,
         tempo_ms: Math.max(0, Date.now() - questionStartedAt),
+        ...(evidenceFields ?? {}),
       });
 
+      clearEvidencePending();
       applyAnswerPatchToSession(result);
 
       if (isTreino && result.acertou !== null && result.opcao_correta_id) {
@@ -319,6 +359,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     sessionId,
     questionStartedAt,
     applyAnswerPatchToSession,
+    beginEvidenceConfirm,
+    clearEvidencePending,
     isTreino,
     options,
     sessionData,
@@ -405,12 +447,12 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         const optionExists = options.some((opt) => opt.id.toUpperCase() === key);
         if (optionExists) {
           event.preventDefault();
-          setSelectedOption(key);
+          selectOption(key);
           setLiveMessage(`Alternativa ${key} selecionada.`);
         }
       }
 
-      if (event.key === 'Enter' && selectedOption && !feedback) {
+      if (event.key === 'Enter' && selectedOption && !feedback && !convictionUiEnabled) {
         event.preventDefault();
         void handleConfirmAnswer();
       }
@@ -418,7 +460,17 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [questionData, loadingQuestion, submitting, options, selectedOption, feedback, handleConfirmAnswer]);
+  }, [
+    questionData,
+    loadingQuestion,
+    submitting,
+    options,
+    selectedOption,
+    feedback,
+    handleConfirmAnswer,
+    selectOption,
+    convictionUiEnabled,
+  ]);
 
   useLayoutEffect(() => {
     if (!selectedOption || feedback) return;
@@ -452,7 +504,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         : (currentIndex - 1 + options.length) % options.length;
     const nextOption = options[nextIndex];
     if (!nextOption) return;
-    setSelectedOption(nextOption.id);
+    selectOption(nextOption.id);
     setLiveMessage(`Alternativa ${nextOption.id} selecionada.`);
   };
 
@@ -745,7 +797,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                       type="button"
                       onClick={() => {
                         if (feedback) return;
-                        setSelectedOption(opt.id);
+                        selectOption(opt.id);
                         setLiveMessage(`Alternativa ${opt.id} selecionada.`);
                       }}
                       className={cn(
@@ -817,24 +869,31 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                 ref={confirmarRespostaRef}
                 className="flex scroll-mt-4 flex-col items-center gap-2 pt-2"
               >
-                <Button
-                  type="button"
-                  disabled={!canConfirm}
-                  onClick={() => void handleConfirmAnswer()}
-                  className="btn-editorial-primary h-12 rounded-full px-8 text-sm font-bold uppercase tracking-wider disabled:opacity-50"
-                >
-                  {submitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                      Confirmando…
-                    </>
-                  ) : (
-                    <>
-                      {confirmLabel}
-                      <ChevronRight className="ml-2 h-4 w-4" aria-hidden />
-                    </>
-                  )}
-                </Button>
+                {convictionUiEnabled && !submitting ? (
+                  <ConvictionSelector
+                    onSelect={(conviction) => void handleConfirmAnswer(conviction)}
+                    disabled={!canConfirm}
+                  />
+                ) : (
+                  <Button
+                    type="button"
+                    disabled={!canConfirm}
+                    onClick={() => void handleConfirmAnswer()}
+                    className="btn-editorial-primary h-12 rounded-full px-8 text-sm font-bold uppercase tracking-wider disabled:opacity-50"
+                  >
+                    {submitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                        Confirmando…
+                      </>
+                    ) : (
+                      <>
+                        {confirmLabel}
+                        <ChevronRight className="ml-2 h-4 w-4" aria-hidden />
+                      </>
+                    )}
+                  </Button>
+                )}
               </div>
             ) : null}
 

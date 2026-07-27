@@ -1027,6 +1027,14 @@ export const SimuladoAnswerSchema = z.object({
   modulo_slug: z.string().trim().min(1).max(200),
   opcao_id: z.string().trim().min(1).max(10),
   tempo_ms: z.coerce.number().int().min(0).max(1000 * 60 * 60 * 6).optional(),
+  // Evidence Engine Lote 7 — opcionais; servidor extrai do body bruto
+  attempt_id: z.string().uuid().optional(),
+  started_at: z.string().optional(),
+  answered_at: z.string().optional(),
+  conviction: z.enum(['chute', 'entre_duas', 'certeza', 'unknown']).optional(),
+  answer_change_count: z.coerce.number().int().min(0).optional(),
+  response_time_ms: z.coerce.number().int().min(0).optional(),
+  tab_backgrounded: z.boolean().optional(),
 });
 
 /** Query params para estimar o tamanho do pool do simulado. */
