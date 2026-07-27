@@ -76,6 +76,23 @@ Para reaplicar correções documentais nos artifacts **sem** reconsultar Supabas
 npm run refresh:neurocanvas-g02-artifacts
 ```
 
+## Gate G0.3A — fila editorial (filesystem)
+
+```bash
+npm run audit:neurocanvas-editorial-queue
+```
+
+**Pré-requisitos:**
+
+- Catálogo local em `data/catalog-migration/` (mesmo que blockers G0.1).
+- Opcional: `artifacts/neurocanvas-live-reconciliation.json` (G0.2) — consumido como evidência operacional; **sem** novo SELECT Supabase.
+- **Não** entra em `npm test` / `test:neurocanvas` (auditoria pesada).
+- Falha se contagens ≠ 676 casos / 301 clusters / 122 official / 6 manifest conflict.
+
+Artifacts: `neurocanvas-editorial-queue.json`, `neurocanvas-editorial-review-pack.json` (+ `.md`).
+
+Autoridade editorial: [`docs/NEUROCANVAS_G03_EDITORIAL_AUTHORITY.md`](NEUROCANVAS_G03_EDITORIAL_AUTHORITY.md).
+
 ## Artifacts principais
 
 | Arquivo | Gerado por |
@@ -88,6 +105,8 @@ npm run refresh:neurocanvas-g02-artifacts
 | `artifacts/neurocanvas-audit-report-data.json` | `generate:neurocanvas-audit-report-data` |
 | `artifacts/neurocanvas-audit-report.md` | `write:neurocanvas-audit-report` |
 | `artifacts/neurocanvas-live-reconciliation.json` | `write:neurocanvas-g02-reconciliation` |
+| `artifacts/neurocanvas-editorial-queue.json` | `audit:neurocanvas-editorial-queue` |
+| `artifacts/neurocanvas-editorial-review-pack.json` | `audit:neurocanvas-editorial-queue` |
 
 ## Código de referência
 

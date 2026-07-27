@@ -1,0 +1,190 @@
+{
+  "generated_at": "fixture",
+  "partition": {
+    "total_disk_slugs": 4,
+    "total_files": 6,
+    "by_category": {
+      "singleton_disk": 0,
+      "duplicate_byte_identical": 0,
+      "duplicate_semantic_identical": 0,
+      "duplicate_divergent_resolved": 0,
+      "duplicate_divergent_unresolved": 4,
+      "duplicate_invalid": 0,
+      "other": 0
+    },
+    "reconciliation": {
+      "baseline_selections": 0,
+      "unresolved_blockers": 4,
+      "invalid_slugs": 0,
+      "sum_equals_disk": true,
+      "note": "fixture"
+    },
+    "divergent_groups": {
+      "total": 4,
+      "resolved": 0,
+      "unresolved": 4,
+      "sum_equals_total": true,
+      "off_by_one_explanation": "fixture"
+    },
+    "rows": []
+  },
+  "blockers": [
+    {
+      "slug": "fixture-s1-meta",
+      "severity": "S1",
+      "file_count": 2,
+      "paths": [
+        "data/catalog-migration/fixture-lote-a/questions/fixture-s1-meta.json",
+        "data/catalog-migration/fixture-lote-b/questions/fixture-s1-meta.json"
+      ],
+      "lotes": ["fixture-lote-a", "fixture-lote-b"],
+      "path_signature": "fixture-lote-a↔fixture-lote-b",
+      "lote_kinds": ["handcraft_gnn"],
+      "pacote": "Fixture",
+      "in_registry_completo": false,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [],
+      "differing_fields": ["meta.subtopico"],
+      "field_kinds": ["pedagogical"],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "unresolved",
+      "safe_summary": "S1 fixture",
+      "human_decision": "fixture",
+      "byte_hashes": ["aa", "bb"],
+      "semantic_hashes": ["s1a", "s1b"]
+    },
+    {
+      "slug": "fixture-s2-slides",
+      "severity": "S2",
+      "file_count": 2,
+      "paths": [
+        "data/catalog-migration/fixture-lote-a/questions/fixture-s2-slides.json",
+        "data/catalog-migration/fixture-lote-b/questions/fixture-s2-slides.json"
+      ],
+      "lotes": ["fixture-lote-a", "fixture-lote-b"],
+      "path_signature": "fixture-lote-a↔fixture-lote-b",
+      "lote_kinds": ["handcraft_gnn"],
+      "pacote": "Fixture",
+      "in_registry_completo": false,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [],
+      "differing_fields": ["reverse_study_slides[2].steps"],
+      "field_kinds": ["pedagogical"],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "unresolved",
+      "safe_summary": "S2 fixture",
+      "human_decision": "fixture",
+      "byte_hashes": ["cc", "dd"],
+      "semantic_hashes": ["s2a", "s2b"]
+    },
+    {
+      "slug": "fixture-s3-gabarito",
+      "severity": "S3",
+      "file_count": 2,
+      "paths": [
+        "data/catalog-migration/fixture-lote-a/questions/fixture-s3-gabarito.json",
+        "data/catalog-migration/fixture-lote-b/questions/fixture-s3-gabarito.json"
+      ],
+      "lotes": ["fixture-lote-a", "fixture-lote-b"],
+      "path_signature": "fixture-lote-a↔fixture-lote-b",
+      "lote_kinds": ["handcraft_gnn"],
+      "pacote": "Fixture",
+      "in_registry_completo": false,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [],
+      "differing_fields": ["question_data.options[0].is_correct"],
+      "field_kinds": ["answer_key"],
+      "has_answer_divergence": true,
+      "schema_valid": true,
+      "resolution_reason": "unresolved",
+      "safe_summary": "S3 fixture",
+      "human_decision": "fixture",
+      "byte_hashes": ["ee", "ff"],
+      "semantic_hashes": ["s3a", "s3b"]
+    },
+    {
+      "slug": "fixture-manifest-conflict",
+      "severity": "S2",
+      "file_count": 2,
+      "paths": [
+        "data/catalog-migration/fixture-registry/questions/fixture-manifest-conflict.json",
+        "data/catalog-migration/fixture-g01/questions/fixture-manifest-conflict.json"
+      ],
+      "lotes": ["fixture-registry", "fixture-g01"],
+      "path_signature": "fixture-registry↔fixture-g01",
+      "lote_kinds": ["completo_registry", "handcraft_gnn"],
+      "pacote": "Fixture",
+      "in_registry_completo": true,
+      "documented_paths_count": 2,
+      "manifest_listed_lotes": ["fixture-registry", "fixture-g01"],
+      "differing_fields": ["reverse_study_slides[1].content"],
+      "field_kinds": ["pedagogical"],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "2 cópias documentadas no mesmo tier com conteúdo divergente",
+      "safe_summary": "manifest conflict fixture",
+      "human_decision": "Escolher qual manifest prevalece",
+      "byte_hashes": ["gg", "hh"],
+      "semantic_hashes": ["mca", "mcb"]
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": "fixture-lote-a↔fixture-lote-b|S1|ev=none",
+      "count": 1,
+      "severity_max": "S1",
+      "severity_distribution": { "S0": 0, "S1": 1, "S2": 0, "S3": 0, "S4": 0 },
+      "path_signature": "fixture-lote-a↔fixture-lote-b",
+      "lote_kind_pattern": "handcraft_gnn",
+      "top_differing_fields": [{ "field": "meta.subtopico", "count": 1 }],
+      "evidence_pattern": "sem_manifest_documentado",
+      "human_decision": "fixture",
+      "slugs_sample": ["fixture-s1-meta"]
+    },
+    {
+      "cluster_id": "fixture-lote-a↔fixture-lote-b|S2|ev=none",
+      "count": 1,
+      "severity_max": "S2",
+      "severity_distribution": { "S0": 0, "S1": 0, "S2": 1, "S3": 0, "S4": 0 },
+      "path_signature": "fixture-lote-a↔fixture-lote-b",
+      "lote_kind_pattern": "handcraft_gnn",
+      "top_differing_fields": [{ "field": "reverse_study_slides[2].steps", "count": 1 }],
+      "evidence_pattern": "sem_manifest_documentado",
+      "human_decision": "fixture",
+      "slugs_sample": ["fixture-s2-slides"]
+    },
+    {
+      "cluster_id": "fixture-lote-a↔fixture-lote-b|S3|ev=none",
+      "count": 1,
+      "severity_max": "S3",
+      "severity_distribution": { "S0": 0, "S1": 0, "S2": 0, "S3": 1, "S4": 0 },
+      "path_signature": "fixture-lote-a↔fixture-lote-b",
+      "lote_kind_pattern": "handcraft_gnn",
+      "top_differing_fields": [{ "field": "question_data.options[0].is_correct", "count": 1 }],
+      "evidence_pattern": "sem_manifest_documentado",
+      "human_decision": "fixture",
+      "slugs_sample": ["fixture-s3-gabarito"]
+    },
+    {
+      "cluster_id": "fixture-registry↔fixture-g01|S2|ev=conflict",
+      "count": 1,
+      "severity_max": "S2",
+      "severity_distribution": { "S0": 0, "S1": 0, "S2": 1, "S3": 0, "S4": 0 },
+      "path_signature": "fixture-registry↔fixture-g01",
+      "lote_kind_pattern": "completo_registry+handcraft_gnn",
+      "top_differing_fields": [{ "field": "reverse_study_slides[1].content", "count": 1 }],
+      "evidence_pattern": "manifests_conflitantes_mesmo_tier",
+      "human_decision": "Escolher qual manifest prevalece",
+      "slugs_sample": ["fixture-manifest-conflict"]
+    }
+  ],
+  "severity_distribution": { "S0": 0, "S1": 1, "S2": 2, "S3": 1, "S4": 0 },
+  "field_frequency": [],
+  "field_combinations": [],
+  "field_buckets": {},
+  "resolution_potential": [],
+  "has_answer_key_divergence": true,
+  "min_contract_decisions_estimate": 4
+}
