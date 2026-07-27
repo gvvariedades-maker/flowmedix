@@ -80,15 +80,19 @@ Criar tabela `editorial_reconciliation` no projeto.
 
 **Recomendação:** **Opção A** para decisões finais; **Opção B** opcional como diário de lote se o time quiser marcar `defer`/`in_review` sem commit de conteúdo.
 
-## Lotes humanos sugeridos (pós-G0.3A)
+## Lotes humanos sugeridos (pós-baseline G0.4)
+
+Contagens atuais da fila (baseline G0.4 — ver [`NEUROCANVAS_G04_BASELINE.md`](NEUROCANVAS_G04_BASELINE.md)):
 
 | Lote | Lane | ~casos | Critério de fechamento |
-|------|------|--------|------------------------|
+|------|------|-------:|------------------------|
 | L1 | manifest_conflict | 6 | Manifest único por slug; hashes alinhados no tier |
-| L2 | official | 122 | Fonte oficial documentada em `meta.sources` / `content_review` |
+| L2 | official | 18 | Fonte oficial documentada em `meta.sources` / `content_review` |
 | L3 | pedagogical | S2 | NeuroSlides alinhados; `audit:questao-readiness` PASS |
 | L4 | metadata | S1 | `meta.subtopico` / `family` / `branch` consistentes |
 | L5 | residual | demais | Clusters grandes por `path_signature` |
+
+> Histórico G0.3A: official ≈ 122 · unresolved = 676. A queda para 347/18 reflete o subgate de materialização G0.4 (#55), não o fechamento editorial.
 
 Reexecutar `npm run audit:neurocanvas-editorial-queue` após cada lote para verificar redução de `unresolved` via `audit:neurocanvas-blockers` — **não** via mutação da fila G0.3A.
 

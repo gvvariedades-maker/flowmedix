@@ -14,7 +14,7 @@ Gate: **G0.3A** · schema v1 · dedupe v1
 | Pedagogical lane | 96 |
 | Metadata lane | 74 |
 
-Lanes são trilhos de revisão sobrepostos: um caso pode aparecer em official + pedagogical + metadata. A fila completa (676) é a união; lanes são filtros para lotes humanos.
+Lanes são trilhos de revisão sobrepostos: um caso pode aparecer em official + pedagogical + metadata. A fila completa (347, baseline G0.4) é a união; lanes são filtros para lotes humanos.
 
 ## Trilhos de revisão
 

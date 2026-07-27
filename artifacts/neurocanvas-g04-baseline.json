@@ -1,0 +1,45 @@
+{
+  "baseline_id": "G0.4",
+  "measured_at": "2026-07-27",
+  "measured_from_commit": "7633118b27ca1c452568a13f50c49554967bf8dc",
+  "catalog_scope": "data/catalog-migration/**/questions/ (local, gitignored) + payloads do aplicador versionado",
+  "total_cases": 347,
+  "cluster_count": 111,
+  "official_lane_count": 18,
+  "manifest_conflict_lane_count": 6,
+  "previous_g03a": {
+    "total_cases": 676,
+    "cluster_count": 301,
+    "official_lane_count": 122,
+    "manifest_conflict_lane_count": 6
+  },
+  "editorial_readiness": "NOT_READY",
+  "phase_0b_ready": false,
+  "production_approvals": {
+    "ameosc": false,
+    "educa": false,
+    "fenix_package_production_status": "none"
+  },
+  "idecan_status": "defer_official_provenance_pending",
+  "unresolved": 347,
+  "rationale": "Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved. Aprovação de produção (A4 AMEOSC/EDUCA) e resolução editorial da fila são gates diferentes: A4 não reduz unresolved; IDECAN reduz no máximo 2 casos.",
+  "next_order": [
+    "A4 de produção AMEOSC/EDUCA (não reduz unresolved; controla aprovação para produção)",
+    "obter e aplicar fontes oficiais dos 2 IDECAN (reduz no máximo 2 unresolved)",
+    "processar demais casos nas lanes official, pedagogical, metadata e residual",
+    "reexecutar auditoria até unresolved = 0",
+    "gerar baseline final de fechamento editorial",
+    "só então reavaliar e autorizar explicitamente a Fase 0B"
+  ],
+  "explicitly_not_authorized": [
+    "UI",
+    "renderer",
+    "piloto",
+    "Supabase apply",
+    "promote production_ready",
+    "Fase 0B"
+  ],
+  "written_at": "2026-07-27T22:10:19.392Z",
+  "source_module": "lib/neurocanvas/editorialQueueBaselineG04.ts",
+  "docs": "docs/NEUROCANVAS_G04_BASELINE.md"
+}

@@ -14,6 +14,7 @@ import {
 import { DEDUPE_SCHEMA_VERSION } from '@/lib/neurocanvas/dedupeSchema';
 import type { LiveReconciliationReport, OperationalStatus } from '@/lib/neurocanvas/liveReconciliation';
 import { toPortableRepoPath, normalizePortableSeparators } from '@/lib/neurocanvas/portablePath';
+import { EDITORIAL_QUEUE_BASELINE_G04 } from '@/lib/neurocanvas/editorialQueueBaselineG04';
 import {
   buildSlugAuthorityIndex,
   getDocumentedPathsForSlug,
@@ -21,6 +22,7 @@ import {
 } from '@/lib/neurocanvas/slugAuthority';
 
 export const EDITORIAL_QUEUE_SCHEMA_VERSION = 1;
+export { EDITORIAL_QUEUE_BASELINE_G04 } from '@/lib/neurocanvas/editorialQueueBaselineG04';
 
 export type EditorialPermittedAction =
   | 'choose_existing_candidate'
@@ -527,8 +529,7 @@ export function buildEditorialQueue(options: BuildEditorialQueueOptions = {}): E
           'S1 — metadados pedagógicos; live match pode ser exibido como evidência operacional apenas.',
       },
     ],
-    lane_overlap_note:
-      'Lanes são trilhos de revisão sobrepostos: um caso pode aparecer em official + pedagogical + metadata. A fila completa (676) é a união; lanes são filtros para lotes humanos.',
+    lane_overlap_note: `Lanes são trilhos de revisão sobrepostos: um caso pode aparecer em official + pedagogical + metadata. A fila completa (${EDITORIAL_QUEUE_BASELINE_G04.total_cases}, baseline ${EDITORIAL_QUEUE_BASELINE_G04.baseline_id}) é a união; lanes são filtros para lotes humanos.`,
     cases,
     clusters: blockerReport.clusters,
     review_pack: {
@@ -548,25 +549,32 @@ export function buildEditorialQueue(options: BuildEditorialQueueOptions = {}): E
 
 export function validateEditorialQueueReport(report: EditorialQueueReport): string[] {
   const errors: string[] = [];
+  const baseline = EDITORIAL_QUEUE_BASELINE_G04;
 
-  if (report.reconciliation.total_cases !== 676) {
-    errors.push(`total_cases=${report.reconciliation.total_cases}, esperado 676`);
+  if (report.reconciliation.total_cases !== baseline.total_cases) {
+    errors.push(
+      `total_cases=${report.reconciliation.total_cases}, esperado ${baseline.total_cases} (baseline ${baseline.baseline_id})`,
+    );
   }
   if (report.reconciliation.unique_slugs !== report.reconciliation.total_cases) {
     errors.push('slugs duplicados na fila');
   }
-  if (report.reconciliation.cluster_count !== 301) {
-    errors.push(`cluster_count=${report.reconciliation.cluster_count}, esperado 301`);
+  if (report.reconciliation.cluster_count !== baseline.cluster_count) {
+    errors.push(
+      `cluster_count=${report.reconciliation.cluster_count}, esperado ${baseline.cluster_count} (baseline ${baseline.baseline_id})`,
+    );
   }
   if (!report.reconciliation.all_pending) {
     errors.push('nem todos os casos estão pending');
   }
-  if (report.reconciliation.official_lane_count !== 122) {
-    errors.push(`official_lane_count=${report.reconciliation.official_lane_count}, esperado 122`);
-  }
-  if (report.reconciliation.manifest_conflict_lane_count !== 6) {
+  if (report.reconciliation.official_lane_count !== baseline.official_lane_count) {
     errors.push(
-      `manifest_conflict_lane_count=${report.reconciliation.manifest_conflict_lane_count}, esperado 6`,
+      `official_lane_count=${report.reconciliation.official_lane_count}, esperado ${baseline.official_lane_count} (baseline ${baseline.baseline_id})`,
+    );
+  }
+  if (report.reconciliation.manifest_conflict_lane_count !== baseline.manifest_conflict_lane_count) {
+    errors.push(
+      `manifest_conflict_lane_count=${report.reconciliation.manifest_conflict_lane_count}, esperado ${baseline.manifest_conflict_lane_count} (baseline ${baseline.baseline_id})`,
     );
   }
 
