@@ -74,4 +74,7 @@ supabase/.temp/
 /artifacts/*dry-run*
 /artifacts/**/*dry-run*
 
+# G0.3A — fila editorial completa (~8 MB); gerar localmente com audit:neurocanvas-editorial-queue
+/artifacts/neurocanvas-editorial-queue.json
+
 .env*

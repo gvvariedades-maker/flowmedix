@@ -9,7 +9,7 @@ Gate **G0.3A** produz uma **fila editorial** (evidência + workflow). Não resol
 | **manifest.slugs[]** + **handcraft-registry.json** | Canônico editorial | **Sim** — fonte de verdade para qual cópia “pertence” ao pacote |
 | **JSON em `data/catalog-migration/*/questions/`** | Conteúdo candidato | Só vira canônico após decisão humana + apply |
 | **Supabase `modulos_estudo`** | Produção operacional | **Não** — evidência de “o que está no ar”, nunca decisão editorial |
-| **Fila G0.3A** (`artifacts/neurocanvas-editorial-queue.json`) | Workflow / triagem | **Não** — overlay auditável; não é segundo source of truth silencioso |
+| **Fila G0.3A** (`artifacts/neurocanvas-editorial-queue.json`, gerada localmente) | Workflow / triagem | **Não** — overlay auditável; não é segundo source of truth silencioso; **não versionada** no Git (~8 MB); reproduzir com `npm run audit:neurocanvas-editorial-queue`; snapshots revisáveis no PR: `neurocanvas-editorial-review-pack.*` + `neurocanvas-editorial-queue.md` |
 
 ## Ações permitidas (fase pending)
 

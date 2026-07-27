@@ -89,9 +89,18 @@ npm run audit:neurocanvas-editorial-queue
 - **Não** entra em `npm test` / `test:neurocanvas` (auditoria pesada).
 - Falha se contagens ≠ 676 casos / 301 clusters / 122 official / 6 manifest conflict.
 
-Artifacts: `neurocanvas-editorial-queue.json`, `neurocanvas-editorial-review-pack.json` (+ `.md`).
+### Artifacts G0.3A — o que versionar vs gerar localmente
 
-Autoridade editorial: [`docs/NEUROCANVAS_G03_EDITORIAL_AUTHORITY.md`](NEUROCANVAS_G03_EDITORIAL_AUTHORITY.md).
+| Arquivo | Versionado no Git | Papel |
+|---------|-------------------|-------|
+| `artifacts/neurocanvas-editorial-queue.json` | **Não** (~8 MB) | Fila completa; gerada localmente pelo comando acima; listada em `.gitignore` |
+| `artifacts/neurocanvas-editorial-review-pack.json` | **Sim** | Snapshot revisável no PR (amostra estratificada + métricas) |
+| `artifacts/neurocanvas-editorial-review-pack.md` | **Sim** | Resumo humano do review pack |
+| `artifacts/neurocanvas-editorial-queue.md` | **Sim** | Métricas compactas da reconciliação (tabela de lanes) |
+
+**Reprodução local:** com catálogo em `data/catalog-migration/`, `npm run audit:neurocanvas-editorial-queue` regenera a fila completa em `artifacts/neurocanvas-editorial-queue.json` (ignorada pelo Git). O Jest usa fixtures em `__tests__/lib/neurocanvas/fixtures/`, não o JSON completo.
+
+**Autoridade editorial:** manifests (`manifest.slugs[]`) e `handcraft-registry.json` continuam canônicos; a fila G0.3A é overlay de workflow/triagem. Ver [`docs/NEUROCANVAS_G03_EDITORIAL_AUTHORITY.md`](NEUROCANVAS_G03_EDITORIAL_AUTHORITY.md).
 
 ## Artifacts principais
 
@@ -104,9 +113,11 @@ Autoridade editorial: [`docs/NEUROCANVAS_G03_EDITORIAL_AUTHORITY.md`](NEUROCANVA
 | `artifacts/neurocanvas-resolver-audit-catalog-full.json` | `audit:resolve-slide-presentation` |
 | `artifacts/neurocanvas-audit-report-data.json` | `generate:neurocanvas-audit-report-data` |
 | `artifacts/neurocanvas-audit-report.md` | `write:neurocanvas-audit-report` |
-| `artifacts/neurocanvas-live-reconciliation.json` | `write:neurocanvas-g02-reconciliation` |
-| `artifacts/neurocanvas-editorial-queue.json` | `audit:neurocanvas-editorial-queue` |
-| `artifacts/neurocanvas-editorial-review-pack.json` | `audit:neurocanvas-editorial-queue` |
+| `artifacts/neurocanvas-live-reconciliation.json` | `write:neurocanvas-g02-reconciliation` (local; não versionado por padrão) |
+| `artifacts/neurocanvas-editorial-queue.json` | `audit:neurocanvas-editorial-queue` (local; **não versionado**) |
+| `artifacts/neurocanvas-editorial-review-pack.json` | `audit:neurocanvas-editorial-queue` (snapshot revisável no PR) |
+| `artifacts/neurocanvas-editorial-review-pack.md` | `audit:neurocanvas-editorial-queue` |
+| `artifacts/neurocanvas-editorial-queue.md` | `audit:neurocanvas-editorial-queue` (métricas compactas) |
 
 ## Código de referência
 
