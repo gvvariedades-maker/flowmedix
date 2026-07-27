@@ -1,0 +1,290 @@
+{
+  "reviewed_at": "2026-07-27",
+  "authorized_materialized": [
+    {
+      "case_id": "nc-g03-5a0a557ebdec0f89",
+      "slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
+      "action": "create_corrected_candidate",
+      "key": "D",
+      "authority": "sinais-vitais-completo"
+    },
+    {
+      "case_id": "nc-g03-9c3c0a3a66aabf52",
+      "slug": "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0",
+      "action": "create_corrected_candidate",
+      "key_bank": "D",
+      "key_technical": "B",
+      "defective": true,
+      "exam_vs_current": "ITEM DEFEITUOSO: gabarito oficial EDUCA Q34=D (II e IV “corretos”); resposta técnica=B (II e IV clinicamente falsos — FC≠30–165; taquipneia≠FR<12).",
+      "authority": "sinais-vitais-completo"
+    },
+    {
+      "case_id": "nc-g03-4cb9405b8309b9bc",
+      "slug": "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+      "action": "create_corrected_candidate",
+      "key": "B",
+      "authority": "nocoes-de-anatomia-lote-01"
+    },
+    {
+      "case_id": "nc-g03-bb9561b352b9c629",
+      "slug": "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6",
+      "action": "create_corrected_candidate",
+      "key": "C",
+      "authority": "imunizacao-completo"
+    }
+  ],
+  "reclassified_no_materialization": [
+    {
+      "case_id": "nc-g03-2a5a44fc12f93928",
+      "slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+      "action": "defer_official_provenance_pending",
+      "note": "Sem promoção/retirada de candidatos. Preservado como deferred no fechamento G0.4.",
+      "autoridade": "0 manifest registry-backed (3 manifests órfãos) — provenance oficial pendente",
+      "ainda_unresolved": true
+    },
+    {
+      "case_id": "nc-g03-6190f08e3ab3ead6",
+      "slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8",
+      "action": "defer_official_provenance_pending",
+      "note": "Sem promoção/retirada de candidatos. Preservado como deferred no fechamento G0.4.",
+      "autoridade": "0 manifest registry-backed (3 manifests órfãos) — provenance oficial pendente",
+      "ainda_unresolved": true
+    }
+  ],
+  "explicitly_not_done": [
+    "baseline_g04",
+    "fase_0b",
+    "ui",
+    "piloto",
+    "supabase_apply",
+    "commit"
+  ],
+  "gates": {
+    "validate_goldens_four": "PASS",
+    "readiness_strict_v2_four": "PASS",
+    "neurocanvas_blockers": {
+      "before": 11,
+      "after": 7,
+      "resolved": [
+        "ameosc",
+        "educa",
+        "fenix",
+        "fgv"
+      ]
+    },
+    "neurocanvas_editorial_queue": {
+      "cases": 7,
+      "validation": "FAIL_expected_full_catalog_totals (worktree subset; operational)",
+      "remaining_slugs": [
+        "decorp",
+        "fumarc",
+        "idecan-7",
+        "idecan-8",
+        "ieses",
+        "vunesp-crase",
+        "vunesp-folhetos"
+      ]
+    },
+    "baseline": "NOT_RUN",
+    "fase_0b": "NOT_RUN",
+    "ui": "NOT_RUN",
+    "piloto": "NOT_RUN"
+  },
+  "closure_validation": {
+    "ran_at": "2026-07-27",
+    "catalog_scope": "catálogo completo (5651 slugs em disco, 14279 arquivos)",
+    "editorial_queue": {
+      "total_cases": 347,
+      "cluster_count": 111,
+      "official_lane_count": 18,
+      "manifest_conflict_lane_count": 6,
+      "validation": "FAIL",
+      "validation_reason": "validateEditorialQueueReport crava a baseline G0.3A (676/301/122/6), congelada no commit 68c48d49. O catálogo que a produziu é gitignored e já avançou (G0.3B). Restam 3 divergências (total_cases, cluster_count, official_lane_count); manifest_conflict_lane_count voltou a 6 após a correção de autoridade. Gate irreprodutível; correção adiada para rodada própria de baseline G0.4.",
+      "antes_da_correcao_de_autoridade": {
+        "total_cases": 349,
+        "cluster_count": 113,
+        "official_lane_count": 19,
+        "manifest_conflict_lane_count": 8
+      }
+    },
+    "materializados_em_escala_completa": {
+      "resolvidos": [
+        "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
+        "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0",
+        "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+        "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6"
+      ],
+      "ainda_unresolved": [
+        "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+        "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8"
+      ]
+    },
+    "autoridade": {
+      "materializados": "autoridade única (1 manifest registry-backed por slug)",
+      "idecan": "0 manifest registry-backed (3 manifests órfãos) — coerente com provenance pendente",
+      "colisoes_registry_backed": {
+        "head": 8,
+        "worktree": 8,
+        "novas": 0
+      },
+      "correcao_aplicada": "Registrar nocoes-de-anatomia-lote-01 criou 2 colisões novas; os 2 slugs foram removidos do manifest de anatomia, preservando as autoridades canônicas (saude-da-mulher-completo e urgencias-e-emergencias-completo). total_slugs 50 → 48. Efeito: blockers 349 → 347 (os 2 slugs eram unresolved pela própria ambiguidade) e manifest_conflict_lane_count 8 → 6."
+    },
+    "readiness_strict_v2": {
+      "ameosc": "READY errors=none · risco alto/human_required",
+      "educa": "READY errors=none · risco alto/human_required · exam_vs_current preservado (D banca vs B técnico)",
+      "fenix": "READY errors=none · risco medio/auto_conditional",
+      "fgv": "READY errors=none · risco medio/auto_conditional · branch imunizacao_vf_intervalos"
+    },
+    "gates": {
+      "test:neurocanvas": "PASS (37/37, 5 suítes)",
+      "typecheck": "PASS",
+      "check:architecture": "PASS",
+      "git diff --check": "clean"
+    },
+    "fenix_production_status_none": "Registro criado apenas para dar autoridade canônica ao slug do Fênix. handcraft_applied=0, camadas L1–L6 false. Promover exigiria handcraft do lote inteiro + Fase 2.",
+    "nao_executado": [
+      "baseline_g04",
+      "fase_0b",
+      "ui",
+      "piloto",
+      "supabase",
+      "commit"
+    ],
+    "metricas": {
+      "nota": "Quatro estados distintos; não somar entre si sem observar o escopo de cada um.",
+      "baseline_g0_3a": {
+        "valor": 676,
+        "clusters": 301,
+        "official_lane": 122,
+        "manifest_conflict_lane": 6,
+        "escopo": "baseline determinística de 2026-07-26 registrada no commit 68c48d49; catálogo daquele momento (gitignored). É o valor cravado em validateEditorialQueueReport."
+      },
+      "pre_correcao": {
+        "valor": 349,
+        "clusters": 113,
+        "official_lane": 19,
+        "manifest_conflict_lane": 8,
+        "escopo": "catálogo completo atual (5651 slugs, 14279 arquivos) já com os 4 candidatos materializados, antes da correção de autoridade da anatomia. A queda de 676 para 349 vem do avanço do G0.3B no catálogo, não desta rodada."
+      },
+      "delta_desta_correcao": {
+        "valor": -2,
+        "escopo": "remoção de fau-unicentro-…-nocoes-de-anatomia-1775447762008-2 e ibfc-…-nocoes-de-anatomia-1775448458316-0 do manifest de anatomia; os dois eram unresolved pela própria ambiguidade de autoridade. Também levou manifest_conflict_lane de 8 para 6 e clusters de 113 para 111."
+      },
+      "final": {
+        "valor": 347,
+        "clusters": 111,
+        "official_lane": 18,
+        "manifest_conflict_lane": 6,
+        "escopo": "estado do worktree ao fim desta rodada."
+      },
+      "premissa_7_unresolved": {
+        "status": "INVALIDADA",
+        "escopo": "medida sobre subset de 28 arquivos de questão no worktree. No catálogo completo restam 19 slugs das bancas adiadas (DECORP/FUMARC/IESES/VUNESP), não 5; os 2 IDECAN seguem deferred."
+      },
+      "constantes_do_gate": "NÃO atualizadas por decisão explícita — adiadas para rodada de baseline G0.4."
+    }
+  },
+  "reproducibility_gate_g04": {
+    "status": "CLOSED",
+    "closed_at": "2026-07-27",
+    "problema": "data/catalog-migration/<lote>/questions/ é gitignored (.gitignore:60). Os quatro candidatos corrigidos existiam apenas no working tree; nenhum artifact continha o payload integral (g04-editorial-decisions não tem question_data nem reverse_study_slides; o review-pack só carrega hashes e diffs dos 20 casos amostrados). Nenhum aplicador existente consome payload — catalog:apply-lote lê questions/ do disco.",
+    "solucao": "Criado um único gerador/aplicador determinístico versionado: scripts/neurocanvas-g04-apply-editorial.ts, com os 4 payloads integrais embutidos, serialização única JSON.stringify(question, null, 2) + newline, modo --verify (catálogo temporário via mkdtemp) e modo --apply (catálogo real). Exposto como npm run neurocanvas:g04-repro.",
+    "comando_reproducao": "npm run neurocanvas:g04-repro",
+    "comando_aplicacao": "npm run neurocanvas:g04-apply-local",
+    "prova": {
+      "escopo": "catálogo temporário criado do zero; nenhuma questão pré-existente",
+      "payloads": 4,
+      "copias_verificadas": 11,
+      "semantic_match": "11/11",
+      "byte_match": "11/11",
+      "cross_check_catalogo_real": "11/11 conferem com o payload versionado"
+    },
+    "hashes_semanticos": {
+      "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7": "2c21cf9cb5c1e290076b935a4216447e0e25990de4e43848ae5b41b272d112ef",
+      "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0": "098fe3a41280911fec8e3961a42f74381fdae2e6a9413bfa31692eba558c8c06",
+      "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6": "4171731266e5715b6b348857c5924030ecd5f9c459b89e52e415a9ae8513ce0c",
+      "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6": "1f0e8dba8ae2e08f3e3623f5c1c5a79c675ca18f56e24f3bd83debd576b28175"
+    },
+    "salvaguardas_apply": [
+      "QuestaoCompletaSchema em todos os payloads antes de qualquer escrita",
+      "exatamente os 4 slides canônicos por payload",
+      "allowlist de 11 paths relativos (AUTHORIZED_RELATIVE_PATHS)",
+      "path resolvido tem de ficar contido na raiz do catálogo",
+      "hash atual precisa ser o anterior esperado, o novo, ou ausência",
+      "terceiro hash aborta a operação inteira, sem escrita parcial",
+      "cópias já no hash novo são puladas (idempotente)",
+      "escrita atômica: arquivo temporário no mesmo diretório + rename",
+      "nunca toca Supabase, manifests, registry ou baseline"
+    ],
+    "testes": {
+      "arquivo": "__tests__/lib/neurocanvas/g04ApplyEditorial.test.ts",
+      "casos": 13,
+      "cobertura": [
+        "catálogo temporário vazio gera as 11 cópias com hashes esperados",
+        "segunda aplicação é idempotente (0 escritos, 11 pulados)",
+        "hash anterior aprovado permite escrita",
+        "hash desconhecido aborta antes de qualquer escrita",
+        "divergência em uma cópia impede a escrita de todas",
+        "path fora da allowlist rejeitado",
+        "path que escapa da raiz do catálogo rejeitado",
+        "payload inválido pelo schema rejeitado sem escrita",
+        "payload com número de slides diferente de quatro rejeitado",
+        "plano e apply em temporário não referenciam nem alteram o catálogo real"
+      ]
+    },
+    "apply_local_idempotente": "executado no catálogo real: 0 escrito(s), 11 pulado(s)."
+  },
+  "a4_human_review": {
+    "registrado_em": "2026-07-27",
+    "status": "approved_for_materialization_only",
+    "production_approved": false,
+    "significado": "A revisão humana ocorreu e autorizou a materialização dos candidatos corrigidos. Não autoriza produção, promote, piloto nem publicação.",
+    "motivo_da_trava": "riskScoring classifica os dois como alto/human_required; auto-aprovação não cobre dose ou conduta clínica.",
+    "itens": [
+      {
+        "case_id": "nc-g03-5a0a557ebdec0f89",
+        "slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
+        "risco": "alto / human_required",
+        "readiness": "READY errors=none (--strict-v2-pedagogy)",
+        "status": "approved_for_materialization_only",
+        "production_approved": false,
+        "revisao_pendente_para_producao": "Conferir os valores de referência de temperatura da coluna da prova (rows com sv_kind: meta) antes de qualquer promoção."
+      },
+      {
+        "case_id": "nc-g03-9c3c0a3a66aabf52",
+        "slug": "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0",
+        "risco": "alto / human_required",
+        "readiness": "READY errors=none (--strict-v2-pedagogy)",
+        "status": "approved_for_materialization_only",
+        "production_approved": false,
+        "revisao_pendente_para_producao": "Ratificar o registro de item defeituoso: gabarito oficial EDUCA Q34=D versus resposta técnica B (FC≠30–165; taquipneia≠FR<12), preservado em meta.content_review.exam_vs_current."
+      }
+    ],
+    "production_status": {
+      "Noções de Anatomia": "none (inalterado)",
+      "Verificação de Sinais Vitais": "inalterado nesta rodada — nenhum promote; pacote segue status applied como em HEAD"
+    },
+    "bloqueado_ate_aprovacao_de_producao": [
+      "promote production_ready",
+      "piloto",
+      "publicação",
+      "apply Supabase"
+    ]
+  },
+  "versionamento": {
+    "versionado": [
+      "scripts/neurocanvas-g04-apply-editorial.ts",
+      "__tests__/lib/neurocanvas/g04ApplyEditorial.test.ts",
+      "artifacts/g04-editorial-decisions-2026-07-27.json",
+      "artifacts/g04-idecan-reclass-note.md",
+      "package.json",
+      "data/catalog-migration/handcraft-registry.json",
+      "manifests afetados",
+      "artifacts compactos regenerados (.md e JSONs pequenos)",
+      ".gitignore"
+    ],
+    "local_nao_versionado": {
+      "artifacts/neurocanvas-blocker-clusters.json": "~2 MB e integralmente reproduzível com audit:neurocanvas-blockers; a versão compacta versionada é neurocanvas-blocker-clusters.md. Ignorado seguindo o precedente de neurocanvas-editorial-queue.json."
+    }
+  }
+}

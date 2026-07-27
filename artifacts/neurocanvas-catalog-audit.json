@@ -1,74 +1,63 @@
 {
-  "generated_at": "2026-07-26T10:01:19.606Z",
+  "generated_at": "2026-07-27T15:12:07.878Z",
   "sources": {
     "catalog_migration": true,
     "examples": false
   },
   "selection": {
     "mode": "canonical",
-    "canonical_blockers": 676,
-    "divergent_slugs": 3435,
-    "content_divergent_slugs": 3435,
-    "unresolved_slugs": 676,
-    "baseline_materially_affected": true,
+    "canonical_blockers": 0,
+    "divergent_slugs": 0,
+    "content_divergent_slugs": 0,
+    "unresolved_slugs": 0,
+    "baseline_materially_affected": false,
     "dedupe_schema_version": 1
   },
   "questions": {
-    "unique_slugs": 4975,
-    "duplicate_files_skipped": 8494,
-    "with_reverse_study_slides": 4975,
+    "unique_slugs": 0,
+    "duplicate_files_skipped": 0,
+    "with_reverse_study_slides": 0,
     "slide_count_not_four": 0,
     "nested_slide_wrappers": 0,
-    "flat_slides": 19900
+    "flat_slides": 0
   },
   "slides": {
-    "total": 19900,
-    "by_type": {
-      "concept_map": 4975,
-      "logic_flow": 4975,
-      "golden_rule": 4975,
-      "danger_zone": 4975
-    },
-    "shape_combos": {
-      "items": 4975,
-      "steps": 4975,
-      "content": 1494,
-      "items+content": 4975,
-      "rows+content": 3481
-    },
+    "total": 0,
+    "by_type": {},
+    "shape_combos": {},
     "slot_stats": {
       "items": {
-        "count": 9950,
-        "median": 4,
-        "p90": 6,
-        "max": 9
+        "count": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
       },
       "steps": {
-        "count": 4975,
-        "median": 8,
-        "p90": 9,
-        "max": 13
+        "count": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
       },
       "rows": {
-        "count": 3481,
-        "median": 4,
-        "p90": 5,
-        "max": 10
+        "count": 0,
+        "median": 0,
+        "p90": 0,
+        "max": 0
       }
     },
     "explicit_layout_variant": 0,
-    "explicit_template": 9,
+    "explicit_template": 0,
     "explicit_theme_id": 0,
-    "danger_with_correct": 4918,
-    "danger_items_without_correct": 57,
-    "logic_flow_tap": 4918,
-    "logic_flow_auto": 57
+    "danger_with_correct": 0,
+    "danger_items_without_correct": 0,
+    "logic_flow_tap": 0,
+    "logic_flow_auto": 0
   },
   "meta": {
-    "subtopico": 4975,
-    "family": 738,
-    "pedagogical_branch": 729,
-    "golden_v1": 683
+    "subtopico": 0,
+    "family": 0,
+    "pedagogical_branch": 0,
+    "golden_v1": 0
   },
   "limitations": []
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-07-24",
+  "updated_at": "2026-07-27",
   "description": "Resolver pacote handcraft golden-v1 pelo nome canônico do subtópico (CLAUDE.md §9). Único trilho de produção — ver docs/DECISAO_TRILHO_A_UNICO.md.",
   "decision_doc": "docs/DECISAO_TRILHO_A_UNICO.md",
   "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
@@ -1812,6 +1812,31 @@
           "health_streak_days": 0,
           "last_blocked_at": null,
           "last_blocked_reason": null
+        }
+      }
+    },
+    "Noções de Anatomia": {
+      "pacote_prefix": "nocoes-de-anatomia",
+      "manifest": "data/catalog-migration/nocoes-de-anatomia-lote-01/manifest.json",
+      "lote_pattern": "nocoes-de-anatomia-lote-{NN}",
+      "lote_size": 50,
+      "status": "in_progress",
+      "total_slugs": 48,
+      "handcraft_applied": 0,
+      "production_status": "none",
+      "notes": "Bootstrap de autoridade G0.4 (Fênix nc-g03-4cb9405b8309b9bc). Sem promote production_ready neste lote. Dois slugs saíram do manifest para evitar colisão de autoridade: fau-unicentro-…-1775447762008-2 (autoridade: saude-da-mulher-completo) e ibfc-…-1775448458316-0 (autoridade: urgencias-e-emergencias-completo).",
+      "quality": {
+        "technical_ready_at": null,
+        "production_ready_at": null,
+        "monitoring_until": null,
+        "layers": {
+          "L1": false,
+          "L2": false,
+          "L2b": false,
+          "L3": false,
+          "L4": false,
+          "L5": false,
+          "L6": false
         }
       }
     }

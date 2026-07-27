@@ -79,6 +79,8 @@
     "write:neurocanvas-g02-reconciliation": "tsx scripts/write-neurocanvas-g02-reconciliation.ts",
     "refresh:neurocanvas-g02-artifacts": "tsx scripts/refresh-neurocanvas-g02-artifacts.ts",
     "audit:neurocanvas-editorial-queue": "tsx scripts/audit-neurocanvas-editorial-queue.ts",
+    "neurocanvas:g04-repro": "tsx scripts/neurocanvas-g04-apply-editorial.ts --verify",
+    "neurocanvas:g04-apply-local": "tsx scripts/neurocanvas-g04-apply-editorial.ts --apply",
     "preflight:neurocanvas-parity": "tsx scripts/preflight-neurocanvas-parity.ts",
     "audit:neurovisual-plan-v0-parity": "tsx scripts/audit-neurovisual-plan-v0-parity.ts",
     "neurocanvas:parity-local": "npm run preflight:neurocanvas-parity && npm run audit:neurocanvas-catalog && npm run audit:neurocanvas-duplicates && npm run audit:neurocanvas-blockers && npm run audit:neurocanvas-baseline-impact && npm run audit:resolve-slide-presentation -- --source=catalog && npm run generate:neurocanvas-audit-report-data && npm run write:neurocanvas-audit-report",
