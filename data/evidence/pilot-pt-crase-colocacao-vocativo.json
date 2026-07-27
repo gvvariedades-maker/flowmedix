@@ -1,0 +1,166 @@
+{
+  "is_inventory_only": true,
+  "pilot_id": "pilot-pt-crase-colocacao-vocativo-v0",
+  "disciplina": "lingua_portuguesa",
+  "skills": [
+    {
+      "skill_id": "portugues.crase.regencia_obrigatoria",
+      "subtopico": "Crase",
+      "cluster": "Regência e crase",
+      "label": "Reconhecer crase obrigatória por regência nominal/verbal",
+      "minimum_inventory_confirmed": false,
+      "misconceptions": [
+        {
+          "code": "crase_confunde_a_preposicao_com_artigo",
+          "description": "Aluno trata o \"a\" de complemento como sempre artigo, ignorando a regência que exige preposição + artigo feminino."
+        },
+        {
+          "code": "crase_generaliza_regra_de_lugar",
+          "description": "Aplica a regra de \"vou a / volto da\" para qualquer verbo de movimento, sem checar regência real do verbo."
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "fict-pt-crase-001-inventario",
+          "is_fictional_slug": true,
+          "question_version": "inventory-placeholder-v0",
+          "primary_skill_id": "portugues.crase.regencia_obrigatoria",
+          "surface_template_id": "pt_crase_certo_errado_a01",
+          "difficulty": 2,
+          "is_mother_candidate": true,
+          "human_review": true,
+          "content_standard_golden_v1": false,
+          "distractor_diagnoses_reviewed": true,
+          "misconception_codes": [
+            "crase_confunde_a_preposicao_com_artigo"
+          ],
+          "evidence_ready": false,
+          "inventory_slot_approved": true
+        },
+        {
+          "question_id": "fict-pt-crase-002-inventario",
+          "is_fictional_slug": true,
+          "question_version": "inventory-placeholder-v0",
+          "primary_skill_id": "portugues.crase.regencia_obrigatoria",
+          "surface_template_id": "pt_crase_multipla_escolha_a02",
+          "difficulty": 3,
+          "is_mother_candidate": false,
+          "human_review": true,
+          "content_standard_golden_v1": false,
+          "distractor_diagnoses_reviewed": true,
+          "misconception_codes": [
+            "crase_generaliza_regra_de_lugar"
+          ],
+          "evidence_ready": false,
+          "inventory_slot_approved": true
+        }
+      ],
+      "taxonomy_human_reviewed": true
+    },
+    {
+      "skill_id": "portugues.colocacao_pronominal.proclise_obrigatoria",
+      "subtopico": "Colocação de Pronomes",
+      "cluster": "Próclise, mesóclise e ênclise",
+      "label": "Identificar próclise obrigatória por palavra atrativa",
+      "minimum_inventory_confirmed": false,
+      "misconceptions": [
+        {
+          "code": "colocacao_ignora_palavra_atrativa",
+          "description": "Não reconhece pronomes/advérbios/conjunções que atraem o pronome oblíquo para antes do verbo."
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "fict-pt-colocacao-001-inventario",
+          "is_fictional_slug": true,
+          "question_version": "inventory-placeholder-v0",
+          "primary_skill_id": "portugues.colocacao_pronominal.proclise_obrigatoria",
+          "surface_template_id": "pt_colocacao_certo_errado_a01",
+          "difficulty": 3,
+          "is_mother_candidate": true,
+          "human_review": true,
+          "content_standard_golden_v1": false,
+          "distractor_diagnoses_reviewed": true,
+          "misconception_codes": [
+            "colocacao_ignora_palavra_atrativa"
+          ],
+          "evidence_ready": false,
+          "inventory_slot_approved": true
+        },
+        {
+          "question_id": "fict-pt-colocacao-002-inventario",
+          "is_fictional_slug": true,
+          "question_version": "inventory-placeholder-v0",
+          "primary_skill_id": "portugues.colocacao_pronominal.proclise_obrigatoria",
+          "surface_template_id": "pt_colocacao_multipla_escolha_a02",
+          "difficulty": 3,
+          "is_mother_candidate": false,
+          "human_review": true,
+          "content_standard_golden_v1": false,
+          "distractor_diagnoses_reviewed": false,
+          "misconception_codes": [],
+          "evidence_ready": false,
+          "inventory_slot_approved": true
+        }
+      ],
+      "taxonomy_human_reviewed": true
+    },
+    {
+      "skill_id": "portugues.pontuacao.vocativo",
+      "subtopico": "Pontuação",
+      "cluster": "Elementos isolados",
+      "label": "Identificar vocativo e sua pontuação (vírgula de isolamento)",
+      "minimum_inventory_confirmed": false,
+      "misconceptions": [
+        {
+          "code": "vocativo_confunde_pausa_oral_com_funcao_sintatica",
+          "description": "Confunde pausa oral com função sintática (ADR §5, exemplo canônico)."
+        }
+      ],
+      "questions": [
+        {
+          "question_id": "fict-pt-vocativo-001-inventario",
+          "is_fictional_slug": true,
+          "question_version": "inventory-placeholder-v0",
+          "primary_skill_id": "portugues.pontuacao.vocativo",
+          "surface_template_id": "pt_pontuacao_certo_errado_a01",
+          "difficulty": 2,
+          "is_mother_candidate": true,
+          "human_review": true,
+          "content_standard_golden_v1": false,
+          "distractor_diagnoses_reviewed": true,
+          "misconception_codes": [
+            "vocativo_confunde_pausa_oral_com_funcao_sintatica"
+          ],
+          "evidence_ready": false,
+          "inventory_slot_approved": true
+        },
+        {
+          "question_id": "fict-pt-vocativo-002-inventario",
+          "is_fictional_slug": true,
+          "question_version": "inventory-placeholder-v0",
+          "primary_skill_id": "portugues.pontuacao.vocativo",
+          "surface_template_id": "pt_pontuacao_multipla_escolha_a02",
+          "difficulty": 2,
+          "is_mother_candidate": false,
+          "human_review": true,
+          "content_standard_golden_v1": false,
+          "distractor_diagnoses_reviewed": true,
+          "misconception_codes": [
+            "vocativo_confunde_pausa_oral_com_funcao_sintatica"
+          ],
+          "evidence_ready": false,
+          "inventory_slot_approved": true
+        }
+      ],
+      "taxonomy_human_reviewed": true
+    }
+  ],
+  "human_inventory_review": {
+    "reviewed_at": "2026-07-27",
+    "reviewed_by": "Product/Eng EE",
+    "status": "approved_inventory_structure",
+    "notes": "Taxonomia e misconceptions aprovadas para piloto. Slugs ainda fictícios (is_fictional_slug=true): evidence_ready permanece false até mapear questões reais do catálogo PT e revisão golden-v1 por slug.",
+    "t1_rct_product_enablement": "blocked_until_real_slugs_evidence_ready"
+  }
+}
