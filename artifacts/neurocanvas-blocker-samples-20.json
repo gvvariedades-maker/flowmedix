@@ -1,33 +1,31 @@
 {
-  "generated_at": "2026-07-26T10:32:03.985Z",
+  "generated_at": "2026-07-27T19:25:04.963Z",
   "samples": [
     {
-      "slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-5",
       "severity": "S1",
       "file_count": 3,
       "paths": [
-        "data/catalog-migration/coleta-lote-01/questions/adm-tec-enfermagem-exames-complementares-1779563668619-6.json",
-        "data/catalog-migration/exames-complementares-lote-01/questions/adm-tec-enfermagem-exames-complementares-1779563668619-6.json",
-        "data/catalog-migration/taxonomy-agent-pending/questions/adm-tec-enfermagem-exames-complementares-1779563668619-6.json"
+        "data/catalog-migration/curativos-e-manejo-de-feridas-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json",
+        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json"
       ],
       "lotes": [
-        "coleta-lote-01",
-        "exames-complementares-lote-01",
-        "taxonomy-agent-pending"
+        "curativos-e-manejo-de-feridas-completo",
+        "processo-de-enfermagem-completo",
+        "processo-de-enfermagem-lote-01"
       ],
-      "path_signature": "coleta-lote-01↔exames-complementares-lote-01+1",
+      "path_signature": "curativos-e-manejo-de-feridas-completo↔processo-de-enfermagem-completo+1",
       "lote_kinds": [
-        "other_lote",
-        "other_lote",
+        "completo_registry",
+        "completo_registry",
         "other_lote"
       ],
-      "pacote": "Procedimentos Diversos",
-      "in_registry_completo": false,
+      "pacote": "Processo de Enfermagem",
+      "in_registry_completo": true,
       "documented_paths_count": 0,
       "manifest_listed_lotes": [
-        "coleta-lote-01",
-        "exames-complementares-lote-01",
-        "taxonomy-agent-pending"
+        "processo-de-enfermagem-lote-01"
       ],
       "differing_fields": [
         "meta.subtopico",
@@ -45,43 +43,102 @@
       "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
       "safe_summary": "Divergência em metadados pedagógicos (subtópico/family/branch).",
       "byte_hashes": [
-        "50d270abf01f211a8a385ce5e10db12f947ec2fed605c7bd0e13f3d84256e707",
-        "0c14a0d8aa9b0c50ee4bd4bf5b3f5e72b1f8dab65b15fb1b2cdfaf1db16165e8",
-        "90ac28b19636ad78925efec234f958a1b345055dcc0e13d5737ab380ba665242"
+        "6ad883d99ca90b9cf91cf2777104f2d1ea516d4728eac9cd3aa0b75750f2de82",
+        "e11a951a81bf34d932758466900065730b67586208795f467af5d0ccde41eb6a"
       ],
       "semantic_hashes": [
-        "8cdc81bb246546bfadcc4d74f4c92d5a0913817b387d1a61d6eae9a8b7b0d463",
-        "3fcaabb39aac570c3f42bb0cba2e907cc4aaf95bf6f29da930adf444400b5fb2",
-        "032b9ce290778c11c8c868fade1a51fcc6effb4c8f9bad0ee27a2bb6714ed22f"
+        "56e9564650f808cbdc168eff927a67f3236fa2fa2ff9248e8d08db6bb6428078",
+        "d7aa77ad842b22e99a6dc169d98dd62c9d06edcda46a019aaf69693824752d92"
       ],
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
     {
-      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-8",
       "severity": "S2",
-      "file_count": 2,
+      "file_count": 3,
       "paths": [
-        "data/catalog-migration/atencao-basica-saude-da-familia-lote-01/questions/adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3.json",
-        "data/catalog-migration/infeccoes-sexualmente-transmissiveis-ists-repair-lote-01/questions/adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3.json"
+        "data/catalog-migration/coleta-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json",
+        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json"
       ],
       "lotes": [
-        "atencao-basica-saude-da-familia-lote-01",
-        "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01"
+        "coleta-lote-01",
+        "processo-de-enfermagem-completo",
+        "processo-de-enfermagem-lote-01"
       ],
-      "path_signature": "atencao-basica-saude-da-familia-lote-01↔infeccoes-sexualmente-transmissiveis-ists-repair-lote-01",
+      "path_signature": "coleta-lote-01↔processo-de-enfermagem-completo+1",
       "lote_kinds": [
         "other_lote",
-        "repair"
+        "completo_registry",
+        "other_lote"
       ],
-      "pacote": "Infecções Sexualmente Transmissíveis (ISTs)",
-      "in_registry_completo": false,
+      "pacote": "Processo de Enfermagem",
+      "in_registry_completo": true,
       "documented_paths_count": 0,
       "manifest_listed_lotes": [
-        "atencao-basica-saude-da-familia-lote-01",
-        "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01"
+        "coleta-lote-01",
+        "processo-de-enfermagem-lote-01"
       ],
       "differing_fields": [
         "meta.subtopico",
+        "reverse_study_slides[0].footer_rule",
+        "reverse_study_slides[0].items.length",
+        "reverse_study_slides[0].meta.subtopico",
+        "reverse_study_slides[1].meta.subtopico",
+        "reverse_study_slides[1].steps[1]",
+        "reverse_study_slides[1].steps[8]",
+        "reverse_study_slides[2].meta.subtopico",
+        "reverse_study_slides[3].content",
+        "reverse_study_slides[3].meta.subtopico"
+      ],
+      "field_kinds": [
+        "pedagogical",
+        "visual_only"
+      ],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "d25f92d06a932842043c866a4adc16b5b86bd0b6b9e4fd9ff81578655993bd61",
+        "3d205ca4eaedbc2921d52b4ff47f3b7def31017b1f6ea857cfdc2e6da246c088"
+      ],
+      "semantic_hashes": [
+        "2f826a4c86f9e522016942c6b1726a9bc9b865a8cd7d97469c9ee98ca3660767",
+        "139dbfb501bf5f4310cf37753e7b89a1c4da0d60342775329475ae7be817d78f"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1",
+      "severity": "S3",
+      "file_count": 3,
+      "paths": [
+        "data/catalog-migration/infeccoes-sexualmente-transmissiveis-ists-repair-lote-01/questions/cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1.json",
+        "data/catalog-migration/saude-da-mulher-completo/questions/cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1.json",
+        "data/catalog-migration/saude-da-mulher-lote-01/questions/cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1.json"
+      ],
+      "lotes": [
+        "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01",
+        "saude-da-mulher-completo",
+        "saude-da-mulher-lote-01"
+      ],
+      "path_signature": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔saude-da-mulher-completo+1",
+      "lote_kinds": [
+        "repair",
+        "completo_registry",
+        "other_lote"
+      ],
+      "pacote": "Saúde da Mulher",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01",
+        "saude-da-mulher-lote-01"
+      ],
+      "differing_fields": [
+        "meta.subtopico",
+        "question_data.instruction",
         "reverse_study_slides[0].chip_label",
         "reverse_study_slides[0].footer_rule",
         "reverse_study_slides[0].items.length",
@@ -97,7 +154,8 @@
         "reverse_study_slides[1].steps[3]",
         "reverse_study_slides[1].steps[4]",
         "reverse_study_slides[1].steps[5]",
-        "reverse_study_slides[1].steps[7]",
+        "reverse_study_slides[1].steps[6]",
+        "reverse_study_slides[1].steps[8]",
         "reverse_study_slides[2].chip_label",
         "reverse_study_slides[2].content",
         "reverse_study_slides[2].footer_rule",
@@ -114,130 +172,48 @@
       ],
       "field_kinds": [
         "pedagogical",
+        "question_content",
         "visual_only"
       ],
       "has_answer_divergence": false,
       "schema_valid": true,
       "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
-      "byte_hashes": [
-        "676274c2c68d8c2017b291e12c8e6daaef40942f368bbae40a290dcf1bf5e22a",
-        "42f9739b0d24593e57157dcf981b76795fb5da9c327a4018376edba2ce1c2642"
-      ],
-      "semantic_hashes": [
-        "f7d8197c555789ebf49740428900bba35ed6d8fb3dc9693da9a3150d804912d3",
-        "20895b098bbb8f98639beda0c03a73103e1f8b5e5c61c2ba1dcd30ee72b665d1"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
-      "severity": "S3",
-      "file_count": 4,
-      "paths": [
-        "data/catalog-migration/puncao-builder-lote-04/questions/avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json",
-        "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g02/questions/avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json",
-        "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-lote-01/questions/avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json",
-        "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-repair-lote-04-dispositivo/questions/avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3.json"
-      ],
-      "lotes": [
-        "puncao-builder-lote-04",
-        "puncao-venosa-e-cuidados-com-cateteres-g02",
-        "puncao-venosa-e-cuidados-com-cateteres-lote-01",
-        "puncao-venosa-e-cuidados-com-cateteres-repair-lote-04-dispositivo"
-      ],
-      "path_signature": "puncao-builder-lote-04↔puncao-venosa-e-cuidados-com-cateteres-g02+2",
-      "lote_kinds": [
-        "other_lote",
-        "handcraft_gnn",
-        "other_lote",
-        "repair"
-      ],
-      "pacote": "Punção Venosa e Cuidados com Cateteres",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "puncao-builder-lote-04",
-        "puncao-venosa-e-cuidados-com-cateteres-g02",
-        "puncao-venosa-e-cuidados-com-cateteres-lote-01",
-        "puncao-venosa-e-cuidados-com-cateteres-repair-lote-04-dispositivo"
-      ],
-      "differing_fields": [
-        "meta.content_standard",
-        "meta.family",
-        "meta.pedagogical_branch",
-        "question_data.instruction",
-        "reverse_study_slides[0].chip_label",
-        "reverse_study_slides[0].footer_rule",
-        "reverse_study_slides[0].items.length",
-        "reverse_study_slides[0].slide_title",
-        "reverse_study_slides[1].footer_rule",
-        "reverse_study_slides[1].slide_title",
-        "reverse_study_slides[1].steps.length",
-        "reverse_study_slides[2].content",
-        "reverse_study_slides[2].footer_rule",
-        "reverse_study_slides[2].rows.length",
-        "reverse_study_slides[2].slide_title",
-        "reverse_study_slides[3].chip_label",
-        "reverse_study_slides[3].content",
-        "reverse_study_slides[3].footer_rule",
-        "reverse_study_slides[3].items[0].correct",
-        "reverse_study_slides[3].items[0].detail",
-        "reverse_study_slides[3].items[1].correct",
-        "reverse_study_slides[3].items[1].detail",
-        "reverse_study_slides[3].items[2].correct",
-        "reverse_study_slides[3].items[2].detail",
-        "reverse_study_slides[3].items[3].correct",
-        "reverse_study_slides[3].items[3].detail",
-        "reverse_study_slides[3].items[3].label",
-        "reverse_study_slides[3].slide_title"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "question_content",
-        "visual_only"
-      ],
-      "has_answer_divergence": true,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
       "safe_summary": "Divergência em enunciado, alternativas ou gabarito entre cópias.",
       "byte_hashes": [
-        "dbe7d77c9aad1fc06735bf5040fc346983898626efff16c4fa12e594aa661481",
-        "8cf23d5476e157999c25d3cdbbce06b9048c98f060651d4a634f03b58062a576",
-        "ffd90f68fe21cea125a0f8de56261d3d28d5728e5d7c6bac00316f024be9525e",
-        "26e89c5118c7c884875707d06650f52da10e79c384349156fe551b7f01688d22"
+        "41416548cb32d5f2cd099113be613ce880409cda5c5d0df3ae05ef99bac926d8",
+        "9f6ec9aeec1458c8b7ce2f1a00ae01302a166098ecf15b5b7d68c202d37f2fdb"
       ],
       "semantic_hashes": [
-        "118a9c654cd9acc8f33e5fcfe05436c026945d24800e643ea4b0db91ea9204ef",
-        "86be67f16a080ae5d863b7b969e8b3fe77186b192a424ee9cd08ead3271e09c1",
-        "5a01fbdb325b63db3233c4b887bd9506638239c3e30a3d77b2dddf6cedcbcc69",
-        "7122ae837d77c1853669750979dff84f3b28772d41f281474a812c596772ca66"
+        "d8ec1b214b889b0b18b0d8e2f8bd8f57e4877451e8c0c10c1dd2dfd4aa285ea5",
+        "09c176524c248d2e6c0e48be19c20d7a95f58ee2a05c374fed004d97e8f3af33"
       ],
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
     {
-      "slug": "agirh-enfermagem-exames-laboratoriais-1779563631609-4",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-6",
       "severity": "S1",
-      "file_count": 2,
+      "file_count": 3,
       "paths": [
-        "data/catalog-migration/coleta-lote-01/questions/agirh-enfermagem-exames-laboratoriais-1779563631609-4.json",
-        "data/catalog-migration/exames-laboratoriais-lote-01/questions/agirh-enfermagem-exames-laboratoriais-1779563631609-4.json"
+        "data/catalog-migration/calculo-de-administracao-de-medicamentos-e-infusoes-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056158507-6.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056158507-6.json",
+        "data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056158507-6.json"
       ],
       "lotes": [
-        "coleta-lote-01",
-        "exames-laboratoriais-lote-01"
+        "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+        "processo-de-enfermagem-completo",
+        "processo-de-enfermagem-lote-02"
       ],
-      "path_signature": "coleta-lote-01↔exames-laboratoriais-lote-01",
+      "path_signature": "calculo-de-administracao-de-medicamentos-e-infusoes-completo↔processo-de-enfermagem-completo+1",
       "lote_kinds": [
-        "other_lote",
+        "completo_registry",
+        "completo_registry",
         "other_lote"
       ],
-      "pacote": "Exames Laboratoriais",
-      "in_registry_completo": false,
+      "pacote": "Processo de Enfermagem",
+      "in_registry_completo": true,
       "documented_paths_count": 0,
       "manifest_listed_lotes": [
-        "coleta-lote-01",
-        "exames-laboratoriais-lote-01"
+        "processo-de-enfermagem-lote-02"
       ],
       "differing_fields": [
         "meta.subtopico",
@@ -255,32 +231,96 @@
       "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
       "safe_summary": "Divergência em metadados pedagógicos (subtópico/family/branch).",
       "byte_hashes": [
-        "3393a9d80273d3f03f2d8e09f137044a9fe600ef4698aa69f6bd13bd03e5ff82",
-        "aa4a9f732661d7cb3921314c85e312f210ad52a9fc05b82ef62f9d291c847f51"
+        "2b44719496db8a22d1e73d528a1ad4ad174f20cc60e1d0385e7c664d2748add5",
+        "2cedae0af32cdbccb0258071ed744d09752a8276017d878511365abfd004252e"
       ],
       "semantic_hashes": [
-        "e9b80a5d8a55eb64b0f296f88d7a508e3e0e3499b9320b8eb48e95b4ca4016de",
-        "ac4636c52d0cc7c251bd5a4e65cb7541b48f79e2243e292bee061fea1c72a40e"
+        "85349bde00437eccfb39aa7fc411ddd24e3f5fc38e1a6ca52624a6be9cc884fe",
+        "ef0a5ec988f13953cf230f7089103ea18432f326ef0bd250b49816a6f58ae80a"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
+      "severity": "S2",
+      "file_count": 3,
+      "paths": [
+        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json",
+        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json"
+      ],
+      "lotes": [
+        "cuidados-na-administracao-de-medicamentos-repair-lote-01",
+        "processo-de-enfermagem-completo",
+        "processo-de-enfermagem-lote-01"
+      ],
+      "path_signature": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1",
+      "lote_kinds": [
+        "repair",
+        "completo_registry",
+        "other_lote"
+      ],
+      "pacote": "Processo de Enfermagem",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "cuidados-na-administracao-de-medicamentos-repair-lote-01",
+        "processo-de-enfermagem-lote-01"
+      ],
+      "differing_fields": [
+        "meta.subtopico",
+        "reverse_study_slides[0].footer_rule",
+        "reverse_study_slides[0].items.length",
+        "reverse_study_slides[0].meta.subtopico",
+        "reverse_study_slides[1].meta.subtopico",
+        "reverse_study_slides[1].steps[1]",
+        "reverse_study_slides[1].steps[8]",
+        "reverse_study_slides[2].content",
+        "reverse_study_slides[2].footer_rule",
+        "reverse_study_slides[2].meta.subtopico",
+        "reverse_study_slides[2].rows",
+        "reverse_study_slides[2].subject",
+        "reverse_study_slides[3].content",
+        "reverse_study_slides[3].meta.subtopico"
+      ],
+      "field_kinds": [
+        "pedagogical",
+        "visual_only"
+      ],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "27295f28b7ac657f16c889754dc7151e1a0431b35ce28883aa76bf4d4bde8e57",
+        "469cf9fcaecb9b841496a4ffa009179c3c653d2154503fcfbdbf4b8cacbd95f7"
+      ],
+      "semantic_hashes": [
+        "f9e6f7cfd7ad0e41db50d11ce4316f45afcfb600b8248e152a13b76bb4ff954c",
+        "a422533a7334e18773d9df6b7ae2650de23e7cb3fb5cdbe1a4a6b0369d90c053"
       ],
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
     {
       "slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
       "severity": "S2",
-      "file_count": 3,
+      "file_count": 4,
       "paths": [
         "data/catalog-migration/biosseg-itu-scan/questions/ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json",
         "data/catalog-migration/infeccoes-biosseguranca-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json",
         "data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1780001673873-0.json"
       ],
       "lotes": [
         "biosseg-itu-scan",
         "infeccoes-biosseguranca-completo",
+        "processo-de-enfermagem-completo",
         "processo-de-enfermagem-lote-02"
       ],
-      "path_signature": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+1",
+      "path_signature": "biosseg-itu-scan↔infeccoes-biosseguranca-completo+2",
       "lote_kinds": [
         "other_lote",
+        "completo_registry",
         "completo_registry",
         "other_lote"
       ],
@@ -308,89 +348,38 @@
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
     {
-      "slug": "cpcon-uepb-enfermagem-exames-complementares-1779563655698-2",
-      "severity": "S1",
-      "file_count": 2,
-      "paths": [
-        "data/catalog-migration/coleta-lote-01/questions/cpcon-uepb-enfermagem-exames-complementares-1779563655698-2.json",
-        "data/catalog-migration/exames-complementares-lote-01/questions/cpcon-uepb-enfermagem-exames-complementares-1779563655698-2.json"
-      ],
-      "lotes": [
-        "coleta-lote-01",
-        "exames-complementares-lote-01"
-      ],
-      "path_signature": "coleta-lote-01↔exames-complementares-lote-01",
-      "lote_kinds": [
-        "other_lote",
-        "other_lote"
-      ],
-      "pacote": "Exames complementares",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "coleta-lote-01",
-        "exames-complementares-lote-01"
-      ],
-      "differing_fields": [
-        "meta.subtopico",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[3].meta.subtopico"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "visual_only"
-      ],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em metadados pedagógicos (subtópico/family/branch).",
-      "byte_hashes": [
-        "a0d0abb8102d7d438e8aaa586260fcd7c766395fa13085bbf9c05094494676f6",
-        "01e0497b2b11b8a939b7d833d11e09ed468d32566ee978651fb026acae5086a9"
-      ],
-      "semantic_hashes": [
-        "dc2eeb97b15054d927f087b90b20541a27fcbf9bf030ed226daa2d9e7b427b92",
-        "a869f9cd3196494edf7e68d338c90672a9e37385bc84a1dc99373f6c00ed3e1b"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-2",
       "severity": "S2",
       "file_count": 5,
       "paths": [
-        "data/catalog-migration/puncao-builder-lote-04/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json",
-        "data/catalog-migration/puncao-builder-pilot/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json",
-        "data/catalog-migration/puncao-preview/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json",
-        "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g06/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json",
-        "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-lote-01/questions/adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7.json"
+        "data/catalog-migration/curativos-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json",
+        "data/catalog-migration/curativos-lote-02/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json",
+        "data/catalog-migration/curativos-lote-03/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json",
+        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json"
       ],
       "lotes": [
-        "puncao-builder-lote-04",
-        "puncao-builder-pilot",
-        "puncao-preview",
-        "puncao-venosa-e-cuidados-com-cateteres-g06",
-        "puncao-venosa-e-cuidados-com-cateteres-lote-01"
+        "curativos-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03",
+        "processo-de-enfermagem-completo",
+        "processo-de-enfermagem-lote-01"
       ],
-      "path_signature": "puncao-builder-lote-04↔puncao-builder-pilot+3",
+      "path_signature": "curativos-lote-01↔curativos-lote-02+3",
       "lote_kinds": [
         "other_lote",
         "other_lote",
         "other_lote",
-        "handcraft_gnn",
+        "completo_registry",
         "other_lote"
       ],
-      "pacote": "Punção Venosa e Cuidados com Cateteres",
-      "in_registry_completo": false,
+      "pacote": "Processo de Enfermagem",
+      "in_registry_completo": true,
       "documented_paths_count": 0,
       "manifest_listed_lotes": [
-        "puncao-builder-lote-04",
-        "puncao-builder-pilot",
-        "puncao-preview",
-        "puncao-venosa-e-cuidados-com-cateteres-g06",
-        "puncao-venosa-e-cuidados-com-cateteres-lote-01"
+        "curativos-lote-02",
+        "curativos-lote-03",
+        "processo-de-enfermagem-lote-01"
       ],
       "differing_fields": [],
       "field_kinds": [],
@@ -399,15 +388,12 @@
       "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
       "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
       "byte_hashes": [
-        "9baf5511634cf84a7ecfbdccdcdd819882e6fcb132cec338f125bc76e64dff1f",
-        "766a4565f23c7f95db548b73f5070708a4a20938c298b2d6da083484c1e50a09",
-        "01156600282b415191cacb7b2fb6c94899388c5fa03c1f9e485503f80e2a37ac",
-        "d794e3f32b5b54f6ee1d1d80fa93288ec8863f0b385cf63a433c39518e8221fa"
+        "87fd8c2a49810e2f854025926f742e3ee9e6aef0e6850778c4a19f475e50a1d3",
+        "088ca0344350cb83cdfac3afd4ebe31085ae34e73b9813201a5104f4fbf8d8e1"
       ],
       "semantic_hashes": [
-        "47613ff83ddeda1a59960dd1648f19bd83744dc38e92b400ec4c86edd6c6dfbc",
-        "9e97328657b2d76eb1ee499bd6b91f4ce321941e0bb55fdd99a0d9162008fc40",
-        "12a09ad5bf850a9e64869ca4db7715509f408eed2098ca8302f7c9564a0da256"
+        "0a7ceb348ca89d7d795ccb9b3bf7ac7a6289b68c0499df84713917ccfc6ef235",
+        "9311b87524dbe0a69bd0ce9cffd8cd51439ca699bef0cbf4029fdc2345487b33"
       ],
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
@@ -514,530 +500,27 @@
       "human_decision": "Escolher qual manifest documentado prevalece ou reconciliar handcraft entre lotes listados."
     },
     {
-      "slug": "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-6",
       "severity": "S2",
       "file_count": 3,
       "paths": [
-        "data/catalog-migration/nocoes-de-anatomia-lote-01/questions/agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json",
-        "data/catalog-migration/sinais-vitais-completo/questions/agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json",
-        "data/catalog-migration/verificacao-de-sinais-vitais-repair-lote-01/questions/agirh-enfermagem-nocoes-de-anatomia-1775448514037-0.json"
-      ],
-      "lotes": [
-        "nocoes-de-anatomia-lote-01",
-        "sinais-vitais-completo",
-        "verificacao-de-sinais-vitais-repair-lote-01"
-      ],
-      "path_signature": "nocoes-de-anatomia-lote-01↔sinais-vitais-completo+1",
-      "lote_kinds": [
-        "other_lote",
-        "completo_registry",
-        "repair"
-      ],
-      "pacote": "Verificação de Sinais Vitais",
-      "in_registry_completo": true,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "nocoes-de-anatomia-lote-01",
-        "verificacao-de-sinais-vitais-repair-lote-01"
-      ],
-      "differing_fields": [
-        "meta.subtopico",
-        "reverse_study_slides[0].chip_label",
-        "reverse_study_slides[0].footer_rule",
-        "reverse_study_slides[0].items.length",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[0].slide_title",
-        "reverse_study_slides[0].subject",
-        "reverse_study_slides[1].footer_rule",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[1].slide_title",
-        "reverse_study_slides[1].steps.length",
-        "reverse_study_slides[2].content",
-        "reverse_study_slides[2].footer_rule",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[2].rows",
-        "reverse_study_slides[2].slide_title",
-        "reverse_study_slides[2].subject",
-        "reverse_study_slides[3].chip_label",
-        "reverse_study_slides[3].content",
-        "reverse_study_slides[3].footer_rule",
-        "reverse_study_slides[3].items.length",
-        "reverse_study_slides[3].meta.subtopico",
-        "reverse_study_slides[3].slide_title"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "visual_only"
-      ],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
-      "byte_hashes": [
-        "05e4c9a4d8786857067fe389e5931671c6adcc57b17db01e070333f0cdb11bfb",
-        "ea1cef527f9ad7bff0cb2cdc7dd2714ff28a1f25cd27a762f0aebdb6a384bbf9",
-        "997cac81f9e46aba457575e38657f352f27c8a5199afc0b6b3ae90468c3934b1"
-      ],
-      "semantic_hashes": [
-        "d5047c6e1046768e362e2f3f89b54264d0c032d34e6168fe7153a02425b8923f",
-        "177dac0df3e774c5e6cb58b5a4a95bafccf0ad4192c38b858e0d1291b284e961"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-2",
-      "severity": "S1",
-      "file_count": 2,
-      "paths": [
-        "data/catalog-migration/coleta-lote-01/questions/amauc-enfermagem-exames-laboratoriais-1779563631609-2.json",
-        "data/catalog-migration/exames-laboratoriais-lote-01/questions/amauc-enfermagem-exames-laboratoriais-1779563631609-2.json"
-      ],
-      "lotes": [
-        "coleta-lote-01",
-        "exames-laboratoriais-lote-01"
-      ],
-      "path_signature": "coleta-lote-01↔exames-laboratoriais-lote-01",
-      "lote_kinds": [
-        "other_lote",
-        "other_lote"
-      ],
-      "pacote": "Exames Laboratoriais",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "coleta-lote-01",
-        "exames-laboratoriais-lote-01"
-      ],
-      "differing_fields": [
-        "meta.subtopico",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[3].meta.subtopico"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "visual_only"
-      ],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em metadados pedagógicos (subtópico/family/branch).",
-      "byte_hashes": [
-        "0e7bb28444040144bc0b0335e4046e59e7519601f218162771321998fe02eafb",
-        "78468351bde0bda09c49f7a91f39b679431d40faf240a0371c6afa2dc82361ed"
-      ],
-      "semantic_hashes": [
-        "15f6749c02465178d16bea0d4bae9fb79c00f4a4deb4dac583503377af6a33bd",
-        "8aaa19f514a534970e4c8b06a8ed3824c6a12e455eb4fe00920da4a03eca732c"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6",
-      "severity": "S2",
-      "file_count": 4,
-      "paths": [
-        "data/catalog-migration/curativos-e-manejo-de-feridas-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json",
-        "data/catalog-migration/curativos-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json",
-        "data/catalog-migration/curativos-lote-02/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json",
-        "data/catalog-migration/curativos-lote-03/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json"
-      ],
-      "lotes": [
-        "curativos-e-manejo-de-feridas-lote-01",
-        "curativos-lote-01",
-        "curativos-lote-02",
-        "curativos-lote-03"
-      ],
-      "path_signature": "curativos-e-manejo-de-feridas-lote-01↔curativos-lote-01+2",
-      "lote_kinds": [
-        "other_lote",
-        "other_lote",
-        "other_lote",
-        "other_lote"
-      ],
-      "pacote": "Curativos e Manejo de Feridas",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "curativos-e-manejo-de-feridas-lote-01",
-        "curativos-lote-02",
-        "curativos-lote-03"
-      ],
-      "differing_fields": [
-        "reverse_study_slides[0].footer_rule",
-        "reverse_study_slides[0].items.length",
-        "reverse_study_slides[0].slide_title",
-        "reverse_study_slides[1].footer_rule",
-        "reverse_study_slides[1].steps[1]",
-        "reverse_study_slides[1].steps[2]",
-        "reverse_study_slides[1].steps[4]",
-        "reverse_study_slides[1].steps[7]",
-        "reverse_study_slides[2].content",
-        "reverse_study_slides[2].footer_rule",
-        "reverse_study_slides[2].rows",
-        "reverse_study_slides[2].slide_title",
-        "reverse_study_slides[2].subject",
-        "reverse_study_slides[3].content",
-        "reverse_study_slides[3].footer_rule",
-        "reverse_study_slides[3].items[0].correct",
-        "reverse_study_slides[3].items[0].label",
-        "reverse_study_slides[3].items[1].correct",
-        "reverse_study_slides[3].items[1].label",
-        "reverse_study_slides[3].items[2].correct",
-        "reverse_study_slides[3].items[2].label",
-        "reverse_study_slides[3].items[3].correct",
-        "reverse_study_slides[3].items[3].detail"
-      ],
-      "field_kinds": [
-        "visual_only",
-        "pedagogical"
-      ],
-      "has_answer_divergence": true,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
-      "byte_hashes": [
-        "a75295b570a845f73e12366a58dc264eac88c40868061324cce3fb4d32dd0f9d",
-        "b7fa241aaf5058bf2add2741cc6717477de27b7f470a38c01278ee7d8329d9f9"
-      ],
-      "semantic_hashes": [
-        "25229d1a4b81abe3034fa589e2f8e13425abfb7f0b6fcb9d569ffaded7df658c",
-        "435450e153519c48773c49ac954468fd8b2ed07130c2a1442143bc1fd0483d88"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
-      "severity": "S2",
-      "file_count": 5,
-      "paths": [
-        "data/catalog-migration/puncao-builder-lote-04/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json",
-        "data/catalog-migration/puncao-builder-pilot/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json",
-        "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-g12/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json",
-        "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-lote-01/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json",
-        "data/catalog-migration/puncao-venosa-e-cuidados-com-cateteres-repair-lote-08-drift/questions/amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9.json"
-      ],
-      "lotes": [
-        "puncao-builder-lote-04",
-        "puncao-builder-pilot",
-        "puncao-venosa-e-cuidados-com-cateteres-g12",
-        "puncao-venosa-e-cuidados-com-cateteres-lote-01",
-        "puncao-venosa-e-cuidados-com-cateteres-repair-lote-08-drift"
-      ],
-      "path_signature": "puncao-builder-lote-04↔puncao-builder-pilot+3",
-      "lote_kinds": [
-        "other_lote",
-        "other_lote",
-        "handcraft_gnn",
-        "other_lote",
-        "repair"
-      ],
-      "pacote": "Punção Venosa e Cuidados com Cateteres",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "puncao-builder-lote-04",
-        "puncao-builder-pilot",
-        "puncao-venosa-e-cuidados-com-cateteres-g12",
-        "puncao-venosa-e-cuidados-com-cateteres-lote-01",
-        "puncao-venosa-e-cuidados-com-cateteres-repair-lote-08-drift"
-      ],
-      "differing_fields": [],
-      "field_kinds": [],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
-      "byte_hashes": [
-        "cc91ec1a7b6db0bea42071e1fa38aa4e111dc64254a5e966eb6e318b7e49d69e",
-        "c1ab4396a2586677a3f0bec7c960d61298f0f0fb6aeab8ba3dfeb22b7f770735",
-        "3a5a646f042e57bb6792f1167210cedcb28027404454ed1db16af8ef083fd70a",
-        "47ec587a4f8dd79798fcca6802ef279220fccd287ca08b0e7463cf0d7f524142"
-      ],
-      "semantic_hashes": [
-        "1c5c95ecb9414aa002789b6e847355438056723ed3ad6582f320ad2c9d330685",
-        "1afcef821ea93cb288088c6a9906b946599e6ae7c4f58985f2eb7924cffbbb57",
-        "0ce04a3bc5af60bf1e6b83d8da90c49b9eb778f9a5df150e7b4ccc37cc3515fb",
-        "75c40456f6525a9dc95b5176344bf7bebd316f80f637f49f9788c4076be23c05"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-3",
-      "severity": "S1",
-      "file_count": 2,
-      "paths": [
-        "data/catalog-migration/coleta-lote-01/questions/amauc-enfermagem-exames-laboratoriais-1779563631609-3.json",
-        "data/catalog-migration/exames-laboratoriais-lote-01/questions/amauc-enfermagem-exames-laboratoriais-1779563631609-3.json"
-      ],
-      "lotes": [
-        "coleta-lote-01",
-        "exames-laboratoriais-lote-01"
-      ],
-      "path_signature": "coleta-lote-01↔exames-laboratoriais-lote-01",
-      "lote_kinds": [
-        "other_lote",
-        "other_lote"
-      ],
-      "pacote": "Exames Laboratoriais",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "coleta-lote-01",
-        "exames-laboratoriais-lote-01"
-      ],
-      "differing_fields": [
-        "meta.subtopico",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[3].meta.subtopico"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "visual_only"
-      ],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em metadados pedagógicos (subtópico/family/branch).",
-      "byte_hashes": [
-        "304ff77e5bedb926ea2c51f3bf734c782d033e235105c99013199d0ea05704f7",
-        "0f615e923a298ac20ec74ddedc869ab62b2ad024cb9ac45ba092f6595c9470c3"
-      ],
-      "semantic_hashes": [
-        "3832c63100556da80485ebff4d681813678a947fa73add3a6bee23f65be8f09f",
-        "727bc65382d9cc9886c55120f433d3bb33d47a589aca7e67011aec656dc4696b"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-5",
-      "severity": "S1",
-      "file_count": 2,
-      "paths": [
-        "data/catalog-migration/curativos-e-manejo-de-feridas-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json",
-        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-5.json"
-      ],
-      "lotes": [
-        "curativos-e-manejo-de-feridas-completo",
-        "processo-de-enfermagem-lote-01"
-      ],
-      "path_signature": "curativos-e-manejo-de-feridas-completo↔processo-de-enfermagem-lote-01",
-      "lote_kinds": [
-        "completo_registry",
-        "other_lote"
-      ],
-      "pacote": "Processo de Enfermagem",
-      "in_registry_completo": true,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "processo-de-enfermagem-lote-01"
-      ],
-      "differing_fields": [
-        "meta.subtopico",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[3].meta.subtopico"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "visual_only"
-      ],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em metadados pedagógicos (subtópico/family/branch).",
-      "byte_hashes": [
-        "6ad883d99ca90b9cf91cf2777104f2d1ea516d4728eac9cd3aa0b75750f2de82",
-        "e11a951a81bf34d932758466900065730b67586208795f467af5d0ccde41eb6a"
-      ],
-      "semantic_hashes": [
-        "56e9564650f808cbdc168eff927a67f3236fa2fa2ff9248e8d08db6bb6428078",
-        "d7aa77ad842b22e99a6dc169d98dd62c9d06edcda46a019aaf69693824752d92"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-8",
-      "severity": "S2",
-      "file_count": 2,
-      "paths": [
-        "data/catalog-migration/coleta-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json",
-        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-8.json"
-      ],
-      "lotes": [
-        "coleta-lote-01",
-        "processo-de-enfermagem-lote-01"
-      ],
-      "path_signature": "coleta-lote-01↔processo-de-enfermagem-lote-01",
-      "lote_kinds": [
-        "other_lote",
-        "other_lote"
-      ],
-      "pacote": "Processo de Enfermagem",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "coleta-lote-01",
-        "processo-de-enfermagem-lote-01"
-      ],
-      "differing_fields": [
-        "meta.subtopico",
-        "reverse_study_slides[0].footer_rule",
-        "reverse_study_slides[0].items.length",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[1].steps[1]",
-        "reverse_study_slides[1].steps[8]",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[3].content",
-        "reverse_study_slides[3].meta.subtopico"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "visual_only"
-      ],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
-      "byte_hashes": [
-        "d25f92d06a932842043c866a4adc16b5b86bd0b6b9e4fd9ff81578655993bd61",
-        "3d205ca4eaedbc2921d52b4ff47f3b7def31017b1f6ea857cfdc2e6da246c088"
-      ],
-      "semantic_hashes": [
-        "2f826a4c86f9e522016942c6b1726a9bc9b865a8cd7d97469c9ee98ca3660767",
-        "139dbfb501bf5f4310cf37753e7b89a1c4da0d60342775329475ae7be817d78f"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
-      "severity": "S2",
-      "file_count": 2,
-      "paths": [
-        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json",
-        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001440222-9.json"
-      ],
-      "lotes": [
-        "cuidados-na-administracao-de-medicamentos-repair-lote-01",
-        "processo-de-enfermagem-lote-01"
-      ],
-      "path_signature": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-lote-01",
-      "lote_kinds": [
-        "repair",
-        "other_lote"
-      ],
-      "pacote": "Processo de Enfermagem",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "cuidados-na-administracao-de-medicamentos-repair-lote-01",
-        "processo-de-enfermagem-lote-01"
-      ],
-      "differing_fields": [
-        "meta.subtopico",
-        "reverse_study_slides[0].footer_rule",
-        "reverse_study_slides[0].items.length",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[1].steps[1]",
-        "reverse_study_slides[1].steps[8]",
-        "reverse_study_slides[2].content",
-        "reverse_study_slides[2].footer_rule",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[2].rows",
-        "reverse_study_slides[2].subject",
-        "reverse_study_slides[3].content",
-        "reverse_study_slides[3].meta.subtopico"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "visual_only"
-      ],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
-      "byte_hashes": [
-        "27295f28b7ac657f16c889754dc7151e1a0431b35ce28883aa76bf4d4bde8e57",
-        "469cf9fcaecb9b841496a4ffa009179c3c653d2154503fcfbdbf4b8cacbd95f7"
-      ],
-      "semantic_hashes": [
-        "f9e6f7cfd7ad0e41db50d11ce4316f45afcfb600b8248e152a13b76bb4ff954c",
-        "a422533a7334e18773d9df6b7ae2650de23e7cb3fb5cdbe1a4a6b0369d90c053"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-2",
-      "severity": "S2",
-      "file_count": 4,
-      "paths": [
-        "data/catalog-migration/curativos-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json",
-        "data/catalog-migration/curativos-lote-02/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json",
-        "data/catalog-migration/curativos-lote-03/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json",
-        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json"
-      ],
-      "lotes": [
-        "curativos-lote-01",
-        "curativos-lote-02",
-        "curativos-lote-03",
-        "processo-de-enfermagem-lote-01"
-      ],
-      "path_signature": "curativos-lote-01↔curativos-lote-02+2",
-      "lote_kinds": [
-        "other_lote",
-        "other_lote",
-        "other_lote",
-        "other_lote"
-      ],
-      "pacote": "Processo de Enfermagem",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "curativos-lote-02",
-        "curativos-lote-03",
-        "processo-de-enfermagem-lote-01"
-      ],
-      "differing_fields": [],
-      "field_kinds": [],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
-      "byte_hashes": [
-        "87fd8c2a49810e2f854025926f742e3ee9e6aef0e6850778c4a19f475e50a1d3",
-        "088ca0344350cb83cdfac3afd4ebe31085ae34e73b9813201a5104f4fbf8d8e1"
-      ],
-      "semantic_hashes": [
-        "0a7ceb348ca89d7d795ccb9b3bf7ac7a6289b68c0499df84713917ccfc6ef235",
-        "9311b87524dbe0a69bd0ce9cffd8cd51439ca699bef0cbf4029fdc2345487b33"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-6",
-      "severity": "S2",
-      "file_count": 2,
-      "paths": [
         "data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-6.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-6.json",
         "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-6.json"
       ],
       "lotes": [
         "cuidados-na-administracao-de-medicamentos-repair-lote-01",
+        "processo-de-enfermagem-completo",
         "processo-de-enfermagem-lote-01"
       ],
-      "path_signature": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-lote-01",
+      "path_signature": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1",
       "lote_kinds": [
         "repair",
+        "completo_registry",
         "other_lote"
       ],
       "pacote": "Processo de Enfermagem",
-      "in_registry_completo": false,
+      "in_registry_completo": true,
       "documented_paths_count": 0,
       "manifest_listed_lotes": [
         "cuidados-na-administracao-de-medicamentos-repair-lote-01",
@@ -1078,99 +561,27 @@
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
     {
-      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-7",
-      "severity": "S2",
-      "file_count": 2,
-      "paths": [
-        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json",
-        "data/catalog-migration/urgencias-e-emergencias-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json"
-      ],
-      "lotes": [
-        "processo-de-enfermagem-lote-01",
-        "urgencias-e-emergencias-repair-lote-01"
-      ],
-      "path_signature": "processo-de-enfermagem-lote-01↔urgencias-e-emergencias-repair-lote-01",
-      "lote_kinds": [
-        "other_lote",
-        "repair"
-      ],
-      "pacote": "Urgências e Emergências",
-      "in_registry_completo": false,
-      "documented_paths_count": 0,
-      "manifest_listed_lotes": [
-        "processo-de-enfermagem-lote-01",
-        "urgencias-e-emergencias-repair-lote-01"
-      ],
-      "differing_fields": [
-        "meta.subtopico",
-        "reverse_study_slides[0].chip_label",
-        "reverse_study_slides[0].footer_rule",
-        "reverse_study_slides[0].items.length",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[0].slide_title",
-        "reverse_study_slides[1].chip_label",
-        "reverse_study_slides[1].footer_rule",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[1].slide_title",
-        "reverse_study_slides[1].steps[0]",
-        "reverse_study_slides[1].steps[1]",
-        "reverse_study_slides[1].steps[2]",
-        "reverse_study_slides[1].steps[3]",
-        "reverse_study_slides[1].steps[4]",
-        "reverse_study_slides[1].steps[5]",
-        "reverse_study_slides[1].steps[6]",
-        "reverse_study_slides[1].steps[8]",
-        "reverse_study_slides[2].chip_label",
-        "reverse_study_slides[2].content",
-        "reverse_study_slides[2].footer_rule",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[2].rows.length",
-        "reverse_study_slides[2].slide_title",
-        "reverse_study_slides[2].subject",
-        "reverse_study_slides[3].chip_label",
-        "reverse_study_slides[3].content",
-        "reverse_study_slides[3].footer_rule",
-        "reverse_study_slides[3].items.length",
-        "reverse_study_slides[3].meta.subtopico",
-        "reverse_study_slides[3].slide_title"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "visual_only"
-      ],
-      "has_answer_divergence": false,
-      "schema_valid": true,
-      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
-      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
-      "byte_hashes": [
-        "79120533717b2fc3416309b79b4bc4914ba55b49932fbb66d73f6ad3876c8be8",
-        "8ef122b9af837c667b05133ee55fd2231b624b9f4202f434c7575b3906e08a3c"
-      ],
-      "semantic_hashes": [
-        "e8c81fbabb83390d63021930d99d7a6663818e18a23c52b2c985b13843a4f98b",
-        "1a155e3bf75797b32961bf8fee5efaaf9f5eb79fe2cc4f27969cf8575124f0fc"
-      ],
-      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
-    },
-    {
       "slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-8",
       "severity": "S2",
-      "file_count": 2,
+      "file_count": 3,
       "paths": [
         "data/catalog-migration/infeccoes-sexualmente-transmissiveis-ists-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json",
         "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json"
       ],
       "lotes": [
         "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01",
+        "processo-de-enfermagem-completo",
         "processo-de-enfermagem-lote-01"
       ],
-      "path_signature": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔processo-de-enfermagem-lote-01",
+      "path_signature": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01↔processo-de-enfermagem-completo+1",
       "lote_kinds": [
         "repair",
+        "completo_registry",
         "other_lote"
       ],
       "pacote": "Processo de Enfermagem",
-      "in_registry_completo": false,
+      "in_registry_completo": true,
       "documented_paths_count": 0,
       "manifest_listed_lotes": [
         "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01",
@@ -1224,6 +635,554 @@
       "semantic_hashes": [
         "a639cd50974e3b5920b6828eb2fa1dde0b495b6bf44692186068c2f38b1fe299",
         "5954a8a90041c32636ea0ddc4287fa53eb6c07033c2f8215a87658fa8a947c99"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+      "severity": "S2",
+      "file_count": 5,
+      "paths": [
+        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json",
+        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g11/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json",
+        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json",
+        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g05/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json",
+        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-lote-01/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json"
+      ],
+      "lotes": [
+        "cuidados-na-administracao-de-medicamentos-completo",
+        "cuidados-na-administracao-de-medicamentos-g11",
+        "promocao-a-saude-e-prevencao-de-agravos-completo",
+        "promocao-a-saude-e-prevencao-de-agravos-g05",
+        "promocao-a-saude-e-prevencao-de-agravos-lote-01"
+      ],
+      "path_signature": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-g11+3",
+      "lote_kinds": [
+        "completo_registry",
+        "handcraft_gnn",
+        "completo_registry",
+        "handcraft_gnn",
+        "other_lote"
+      ],
+      "pacote": "Promoção à Saúde e Prevenção de Agravos",
+      "in_registry_completo": true,
+      "documented_paths_count": 2,
+      "manifest_listed_lotes": [
+        "cuidados-na-administracao-de-medicamentos-completo",
+        "promocao-a-saude-e-prevencao-de-agravos-completo",
+        "cuidados-na-administracao-de-medicamentos-g11",
+        "promocao-a-saude-e-prevencao-de-agravos-g05",
+        "promocao-a-saude-e-prevencao-de-agravos-lote-01"
+      ],
+      "differing_fields": [
+        "meta.banca",
+        "meta.content_standard",
+        "meta.family",
+        "meta.pedagogical_branch",
+        "reverse_study_slides[0].footer_rule",
+        "reverse_study_slides[0].items[0].detail",
+        "reverse_study_slides[0].items[0].icon",
+        "reverse_study_slides[0].items[0].label",
+        "reverse_study_slides[0].items[1].detail",
+        "reverse_study_slides[0].items[1].icon",
+        "reverse_study_slides[0].items[1].label",
+        "reverse_study_slides[0].items[2].detail",
+        "reverse_study_slides[0].items[2].icon",
+        "reverse_study_slides[0].items[2].label",
+        "reverse_study_slides[0].items[3].detail",
+        "reverse_study_slides[0].items[3].icon",
+        "reverse_study_slides[0].items[3].label",
+        "reverse_study_slides[0].slide_title",
+        "reverse_study_slides[1].footer_rule",
+        "reverse_study_slides[1].slide_title",
+        "reverse_study_slides[1].steps.length",
+        "reverse_study_slides[2].content",
+        "reverse_study_slides[2].footer_rule",
+        "reverse_study_slides[2].rows.length",
+        "reverse_study_slides[2].slide_title",
+        "reverse_study_slides[2].subject",
+        "reverse_study_slides[3].content",
+        "reverse_study_slides[3].footer_rule",
+        "reverse_study_slides[3].items[0].correct",
+        "reverse_study_slides[3].items[0].detail",
+        "reverse_study_slides[3].items[1].correct",
+        "reverse_study_slides[3].items[1].detail",
+        "reverse_study_slides[3].items[2].correct",
+        "reverse_study_slides[3].items[2].detail",
+        "reverse_study_slides[3].items[3].correct",
+        "reverse_study_slides[3].items[3].detail",
+        "reverse_study_slides[3].items[3].label",
+        "reverse_study_slides[3].slide_title"
+      ],
+      "field_kinds": [
+        "pedagogical",
+        "visual_only"
+      ],
+      "has_answer_divergence": true,
+      "schema_valid": true,
+      "resolution_reason": "2 cópias documentadas no mesmo tier (registry_completo_manifest) com conteúdo divergente",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "9895af256c7c05af9e10f500df0f00a135c5db308855f8d183c18a7da04f1f77",
+        "1f0a062f92a0201b1009c66e646a738cac41ba4e6023888bfc3b64afb1b4998e",
+        "bb1a4c970f4e9be024358911b0e5d5a737b8a31f605c38039c4a9cf10070baca",
+        "fa8ca74d188ed631a29afbcb618803ce15f85a29c7a63034c9121d2f66a3059d",
+        "3122e77ab88cf3a892aaab3a3f7f8f324f15173aed30c9879cce9923454e7309"
+      ],
+      "semantic_hashes": [
+        "71b8b98864776360f2a9c86e41c34b29ff5d9d6ee526293149cc7513adfd699c",
+        "13b44881f363b78864ba8cad482b4981899a026feb79ae2eaf60751b8d219289",
+        "cee94d63d991b302a79bfea5e601ab90fcc2893924a8f0a760d5232df888d1c8",
+        "3df23a7b6cf3f3cfe92bab1f015e4850e68ab7a1d41c2d32981c88d670a154bd"
+      ],
+      "human_decision": "Escolher qual manifest documentado prevalece ou reconciliar handcraft entre lotes listados."
+    },
+    {
+      "slug": "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
+      "severity": "S2",
+      "file_count": 3,
+      "paths": [
+        "data/catalog-migration/dtrans-mescladas-g01/questions/funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0.json",
+        "data/catalog-migration/dtrans-mescladas-g02/questions/funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0.json",
+        "data/catalog-migration/outras-doencas-e-questoes-mescladas-transmissiveis-lote-01/questions/funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0.json"
+      ],
+      "lotes": [
+        "dtrans-mescladas-g01",
+        "dtrans-mescladas-g02",
+        "outras-doencas-e-questoes-mescladas-transmissiveis-lote-01"
+      ],
+      "path_signature": "dtrans-mescladas-g01↔dtrans-mescladas-g02+1",
+      "lote_kinds": [
+        "handcraft_gnn",
+        "completo_registry",
+        "other_lote"
+      ],
+      "pacote": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "dtrans-mescladas-g01",
+        "outras-doencas-e-questoes-mescladas-transmissiveis-lote-01"
+      ],
+      "differing_fields": [],
+      "field_kinds": [],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "4564085aa54ea43bc66320341f61bf86f2a46af7157bebb73524d20d1d5f2e28",
+        "536ef467bfc790e2f4fe44fd417ce43ff4a63c4a07899adcdf0e89fe2e956691"
+      ],
+      "semantic_hashes": [
+        "ce323e677bba84618ea7f26f93a137b342a95d13ba5bde5e0f54a6bc7d4b432e",
+        "c550889377b0ff25b9981a0ac360a63b09f968a8eea29bdafc872280fd99a226"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-7",
+      "severity": "S2",
+      "file_count": 3,
+      "paths": [
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json",
+        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json",
+        "data/catalog-migration/urgencias-e-emergencias-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-7.json"
+      ],
+      "lotes": [
+        "processo-de-enfermagem-completo",
+        "processo-de-enfermagem-lote-01",
+        "urgencias-e-emergencias-repair-lote-01"
+      ],
+      "path_signature": "processo-de-enfermagem-completo↔processo-de-enfermagem-lote-01+1",
+      "lote_kinds": [
+        "completo_registry",
+        "other_lote",
+        "repair"
+      ],
+      "pacote": "Urgências e Emergências",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "processo-de-enfermagem-lote-01",
+        "urgencias-e-emergencias-repair-lote-01"
+      ],
+      "differing_fields": [],
+      "field_kinds": [],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "79120533717b2fc3416309b79b4bc4914ba55b49932fbb66d73f6ad3876c8be8",
+        "8ef122b9af837c667b05133ee55fd2231b624b9f4202f434c7575b3906e08a3c"
+      ],
+      "semantic_hashes": [
+        "e8c81fbabb83390d63021930d99d7a6663818e18a23c52b2c985b13843a4f98b",
+        "1a155e3bf75797b32961bf8fee5efaaf9f5eb79fe2cc4f27969cf8575124f0fc"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-8",
+      "severity": "S2",
+      "file_count": 3,
+      "paths": [
+        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780006486032-8.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780006486032-8.json",
+        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780006486032-8.json"
+      ],
+      "lotes": [
+        "cuidados-na-administracao-de-medicamentos-repair-lote-01",
+        "processo-de-enfermagem-completo",
+        "processo-de-enfermagem-lote-01"
+      ],
+      "path_signature": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1",
+      "lote_kinds": [
+        "repair",
+        "completo_registry",
+        "other_lote"
+      ],
+      "pacote": "Processo de Enfermagem",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "cuidados-na-administracao-de-medicamentos-repair-lote-01",
+        "processo-de-enfermagem-lote-01"
+      ],
+      "differing_fields": [
+        "meta.subtopico",
+        "reverse_study_slides[0].footer_rule",
+        "reverse_study_slides[0].items.length",
+        "reverse_study_slides[0].meta.subtopico",
+        "reverse_study_slides[1].meta.subtopico",
+        "reverse_study_slides[1].steps[1]",
+        "reverse_study_slides[1].steps[8]",
+        "reverse_study_slides[2].content",
+        "reverse_study_slides[2].footer_rule",
+        "reverse_study_slides[2].meta.subtopico",
+        "reverse_study_slides[2].rows",
+        "reverse_study_slides[2].subject",
+        "reverse_study_slides[3].content",
+        "reverse_study_slides[3].meta.subtopico"
+      ],
+      "field_kinds": [
+        "pedagogical",
+        "visual_only"
+      ],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "0859b59a41e9f4f18253f91d97b643fe0155384fdecf68a54f5db352e2665982",
+        "ddb635fc7dbeab922c8f6bcc7d17b91c8b33c0b72b424769667b92568520f6ea"
+      ],
+      "semantic_hashes": [
+        "3dc3cfcb4fad019f069e42934d7e3730fe915f11ee81082332143584e0840310",
+        "e085c227c47f1e1dcea27920809ca3e65c2aa0d96b2a0b7e17ec356e812b5991"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
+      "severity": "S2",
+      "file_count": 4,
+      "paths": [
+        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/questions/ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3.json",
+        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-lote-01/questions/ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3.json",
+        "data/catalog-migration/vias-de-administracao-completo/questions/ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3.json",
+        "data/catalog-migration/vias-de-administracao-repair-lote-01/questions/ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3.json"
+      ],
+      "lotes": [
+        "cuidados-na-administracao-de-medicamentos-completo",
+        "cuidados-na-administracao-de-medicamentos-lote-01",
+        "vias-de-administracao-completo",
+        "vias-de-administracao-repair-lote-01"
+      ],
+      "path_signature": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-lote-01+2",
+      "lote_kinds": [
+        "completo_registry",
+        "other_lote",
+        "completo_registry",
+        "repair"
+      ],
+      "pacote": "Vias de Administração",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "cuidados-na-administracao-de-medicamentos-lote-01",
+        "vias-de-administracao-repair-lote-01"
+      ],
+      "differing_fields": [],
+      "field_kinds": [],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "a6ae9de3605c1483c02f9fd5f84c3ea4df0471b2c29dd278eb9837aa81864f3c",
+        "554a64d383be9e67799f13b73972f1826b5e74bedde2b3fa55f4c7541dd6f909",
+        "a866b2bb1f7d29bc341786b3c9bc08ccdd50e966064219b09f055576f22aa8e8"
+      ],
+      "semantic_hashes": [
+        "8926bfd54014d5208f75addca59bc1e8cc168f01e97d7ad4f05cca7bb6aabc14",
+        "4940321a12fb999f62f221d1dcf7e712fd19f471506c8a36d5660bc4e2c1070c"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+      "severity": "S2",
+      "file_count": 6,
+      "paths": [
+        "data/catalog-migration/curativos-e-manejo-de-feridas-completo/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6.json",
+        "data/catalog-migration/curativos-e-manejo-de-feridas-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6.json",
+        "data/catalog-migration/curativos-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6.json",
+        "data/catalog-migration/curativos-lote-02/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6.json",
+        "data/catalog-migration/curativos-lote-03/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6.json",
+        "data/catalog-migration/puncao-titulo-cleanup-20/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6.json"
+      ],
+      "lotes": [
+        "curativos-e-manejo-de-feridas-completo",
+        "curativos-e-manejo-de-feridas-lote-01",
+        "curativos-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03",
+        "puncao-titulo-cleanup-20"
+      ],
+      "path_signature": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+4",
+      "lote_kinds": [
+        "completo_registry",
+        "other_lote",
+        "other_lote",
+        "other_lote",
+        "other_lote",
+        "other_lote"
+      ],
+      "pacote": "Punção Venosa e Cuidados com Cateteres",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "curativos-e-manejo-de-feridas-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03",
+        "puncao-titulo-cleanup-20"
+      ],
+      "differing_fields": [],
+      "field_kinds": [],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "c2fb618213621d0230bb0da797c99058702344e2ad177aa7b68f43e11b5d10a0",
+        "3c4ef90d506bcc832d1ae4ec656024d9811377ab9594b0ea50d0ee5e2bea53fe",
+        "8d37b4a162fe5bef56367228ee68032456c9ce67bf631e89d9ed6fa6f0098afd"
+      ],
+      "semantic_hashes": [
+        "f306bb573e7c2aa5820f019af8d7924d064477094aac16b7eda4a554c3a91d75",
+        "2737dd6ed5387023af9c1214b9063ed0e1c7267b6329337bc237b0b70955bc9a",
+        "a01b4488a31205a65e186509b40ce0e9df6513863c607e710365bce4b3f1a562"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6",
+      "severity": "S2",
+      "file_count": 5,
+      "paths": [
+        "data/catalog-migration/curativos-e-manejo-de-feridas-completo/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json",
+        "data/catalog-migration/curativos-e-manejo-de-feridas-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json",
+        "data/catalog-migration/curativos-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json",
+        "data/catalog-migration/curativos-lote-02/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json",
+        "data/catalog-migration/curativos-lote-03/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6.json"
+      ],
+      "lotes": [
+        "curativos-e-manejo-de-feridas-completo",
+        "curativos-e-manejo-de-feridas-lote-01",
+        "curativos-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03"
+      ],
+      "path_signature": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+3",
+      "lote_kinds": [
+        "completo_registry",
+        "other_lote",
+        "other_lote",
+        "other_lote",
+        "other_lote"
+      ],
+      "pacote": "Curativos e Manejo de Feridas",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "curativos-e-manejo-de-feridas-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03"
+      ],
+      "differing_fields": [],
+      "field_kinds": [],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "a75295b570a845f73e12366a58dc264eac88c40868061324cce3fb4d32dd0f9d",
+        "b7fa241aaf5058bf2add2741cc6717477de27b7f470a38c01278ee7d8329d9f9"
+      ],
+      "semantic_hashes": [
+        "25229d1a4b81abe3034fa589e2f8e13425abfb7f0b6fcb9d569ffaded7df658c",
+        "435450e153519c48773c49ac954468fd8b2ed07130c2a1442143bc1fd0483d88"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2",
+      "severity": "S2",
+      "file_count": 4,
+      "paths": [
+        "data/catalog-migration/curativos-e-manejo-de-feridas-completo/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2.json",
+        "data/catalog-migration/curativos-e-manejo-de-feridas-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2.json",
+        "data/catalog-migration/curativos-lote-02/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2.json",
+        "data/catalog-migration/curativos-lote-03/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2.json"
+      ],
+      "lotes": [
+        "curativos-e-manejo-de-feridas-completo",
+        "curativos-e-manejo-de-feridas-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03"
+      ],
+      "path_signature": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+2",
+      "lote_kinds": [
+        "completo_registry",
+        "other_lote",
+        "other_lote",
+        "other_lote"
+      ],
+      "pacote": "Curativos e Manejo de Feridas",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "curativos-e-manejo-de-feridas-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03"
+      ],
+      "differing_fields": [],
+      "field_kinds": [],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "a7b1d3cb7ddbc7154e5050a8cde645773d64c63720c5efe31cdf35fb850a3ecb",
+        "2fbee31328b3569175bbaef0a73bea9fd2a5b9547ceb4dc8aaa34cdd6123fae1"
+      ],
+      "semantic_hashes": [
+        "c462648a5c086c4a94c20445b90bf5ede53297d658cfd377bcdafe344db4dbdf",
+        "eab6d716d01e2f83b7ee4f1fc1a1dd59c020638808a36ed5c90bb24b9fc8fe42"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9",
+      "severity": "S2",
+      "file_count": 4,
+      "paths": [
+        "data/catalog-migration/curativos-e-manejo-de-feridas-completo/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9.json",
+        "data/catalog-migration/curativos-e-manejo-de-feridas-lote-01/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9.json",
+        "data/catalog-migration/curativos-lote-02/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9.json",
+        "data/catalog-migration/curativos-lote-03/questions/ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9.json"
+      ],
+      "lotes": [
+        "curativos-e-manejo-de-feridas-completo",
+        "curativos-e-manejo-de-feridas-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03"
+      ],
+      "path_signature": "curativos-e-manejo-de-feridas-completo↔curativos-e-manejo-de-feridas-lote-01+2",
+      "lote_kinds": [
+        "completo_registry",
+        "other_lote",
+        "other_lote",
+        "other_lote"
+      ],
+      "pacote": "Curativos e Manejo de Feridas",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "curativos-e-manejo-de-feridas-lote-01",
+        "curativos-lote-02",
+        "curativos-lote-03"
+      ],
+      "differing_fields": [],
+      "field_kinds": [],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "999ced78f51c534d6d293d0949eb1ec0bccb2601c7146be82601c02687b03632",
+        "8da783df131016e86d14790731d79f3c1f74f4bfafc6b465f929dcc391fb37c6"
+      ],
+      "semantic_hashes": [
+        "79d118c2c3071a3cfd641ce74b4f6351429392694400373749b9ecd6bdfed846",
+        "64a3836752852375c0c8ab475dd3a723ea73f2f2fe2c3f8ae5685172a42f0de1"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6",
+      "severity": "S1",
+      "file_count": 4,
+      "paths": [
+        "data/catalog-migration/biosseg-itu-scan/questions/ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6.json",
+        "data/catalog-migration/doencas-bacterianas-completo/questions/ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6.json",
+        "data/catalog-migration/doencas-bacterianas-e-fungicas-lote-01/questions/ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6.json",
+        "data/catalog-migration/infeccoes-biosseguranca-completo/questions/ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6.json"
+      ],
+      "lotes": [
+        "biosseg-itu-scan",
+        "doencas-bacterianas-completo",
+        "doencas-bacterianas-e-fungicas-lote-01",
+        "infeccoes-biosseguranca-completo"
+      ],
+      "path_signature": "biosseg-itu-scan↔doencas-bacterianas-completo+2",
+      "lote_kinds": [
+        "other_lote",
+        "completo_registry",
+        "other_lote",
+        "completo_registry"
+      ],
+      "pacote": "Infecções no Contexto da Biossegurança",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "biosseg-itu-scan",
+        "doencas-bacterianas-e-fungicas-lote-01"
+      ],
+      "differing_fields": [
+        "meta.subtopico",
+        "reverse_study_slides[0].meta.subtopico",
+        "reverse_study_slides[1].meta.subtopico",
+        "reverse_study_slides[2].meta.subtopico",
+        "reverse_study_slides[3].meta.subtopico"
+      ],
+      "field_kinds": [
+        "pedagogical",
+        "visual_only"
+      ],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em metadados pedagógicos (subtópico/family/branch).",
+      "byte_hashes": [
+        "0f8e0e425930ebaaa566488e9eac20366a23c0d4ca33f1bf01a62fe083950aa8",
+        "df05e3ddd9e776a6ae06e13084b648a532e95b00f56c6998b201f8c15de9c096"
+      ],
+      "semantic_hashes": [
+        "01c31ad8af7c9e60c437fbd137563a259db621e1bb017bbbf1ce8a512d950527",
+        "f0858c1598fbcbe7fd8e165e5ae8b451e5993d7ece2d67149cf7f15b902ab01c"
       ],
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     }

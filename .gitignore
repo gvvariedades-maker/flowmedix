@@ -77,4 +77,8 @@ supabase/.temp/
 # G0.3A — fila editorial completa (~8 MB); gerar localmente com audit:neurocanvas-editorial-queue
 /artifacts/neurocanvas-editorial-queue.json
 
+# G0.4 — partição por slug (~2 MB); gerar localmente com audit:neurocanvas-blockers
+# A versão compacta versionada é neurocanvas-blocker-clusters.md
+/artifacts/neurocanvas-blocker-clusters.json
+
 .env*
