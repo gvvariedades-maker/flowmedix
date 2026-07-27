@@ -8,7 +8,7 @@
  *
  * Modos:
  *   --verify   materializa em catálogo temporário e confere os hashes semânticos (não escreve no real).
- *   --apply    escreve nas 11 cópias autorizadas do catálogo local.
+ *   --apply    escreve nas 17 cópias autorizadas do catálogo local.
  *   --keep-temp  preserva o diretório temporário do --verify.
  *
  * Salvaguardas do --apply, todas antes de qualquer escrita:
@@ -40,6 +40,8 @@ import { dirname, join, resolve, sep } from 'node:path';
 import { canonicalJson } from '@/lib/neurocanvas/canonicalJson';
 import { normalizeQuestionForComparison } from '@/lib/neurocanvas/canonicalCatalog';
 import { QuestaoCompletaSchema } from '@/lib/validations';
+
+import { G04_IDECAN_PROVENANCE_PAYLOADS } from './neurocanvas-g04-idecan-provenance-payloads';
 
 /** Estado aceito de uma cópia antes da escrita: hash semântico anterior ou ausência do arquivo. */
 export type PriorState = string;
@@ -978,7 +980,8 @@ export const G04_EDITORIAL_PAYLOADS: G04EditorialPayload[] = [
       ],
       "modulo_slug": "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6"
     }
-  }
+  },
+  ...G04_IDECAN_PROVENANCE_PAYLOADS
 ];
 
 /** Únicos paths relativos que o modo --apply aceita escrever. */
@@ -993,7 +996,13 @@ export const AUTHORIZED_RELATIVE_PATHS: readonly string[] = [
   "sinais-vitais-completo/questions/educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0.json",
   "urgencias-e-emergencias-repair-lote-02/questions/fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6.json",
   "verificacao-de-sinais-vitais-repair-lote-01/questions/ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7.json",
-  "verificacao-de-sinais-vitais-repair-lote-01/questions/educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0.json"
+  "verificacao-de-sinais-vitais-repair-lote-01/questions/educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0.json",
+  "coleta-lote-01/questions/idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7.json",
+  "coleta-lote-01/questions/idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8.json",
+  "coleta-de-exames-laboratoriais-repair-lote-01/questions/idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7.json",
+  "coleta-de-exames-laboratoriais-repair-lote-01/questions/idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8.json",
+  "coleta-de-exames-laboratoriais-lote-02/questions/idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7.json",
+  "coleta-de-exames-laboratoriais-lote-02/questions/idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8.json"
 ];
 
 /** Serialização determinística — única forma aceita de escrever estes payloads. */

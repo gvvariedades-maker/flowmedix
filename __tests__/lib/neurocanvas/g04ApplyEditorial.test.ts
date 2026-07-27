@@ -102,9 +102,9 @@ afterEach(() => {
 });
 
 describe('aplicador G0.4 — payloads versionados', () => {
-  it('tem 4 payloads e 11 paths autorizados coerentes entre si', () => {
-    expect(G04_EDITORIAL_PAYLOADS).toHaveLength(4);
-    expect(AUTHORIZED_RELATIVE_PATHS).toHaveLength(11);
+  it('tem 6 payloads e 17 paths autorizados coerentes entre si', () => {
+    expect(G04_EDITORIAL_PAYLOADS).toHaveLength(6);
+    expect(AUTHORIZED_RELATIVE_PATHS).toHaveLength(17);
 
     const derived = G04_EDITORIAL_PAYLOADS.flatMap((p) =>
       p.targets.map((t) => relativeTargetPath(t.lote, p.slug)),
@@ -116,11 +116,11 @@ describe('aplicador G0.4 — payloads versionados', () => {
     expect(validatePayloads()).toEqual([]);
   });
 
-  it('catálogo temporário vazio recebe as 11 cópias com os hashes esperados', () => {
+  it('catálogo temporário vazio recebe as 17 cópias com os hashes esperados', () => {
     const root = makeTempCatalog();
     const result = applyPayloads({ catalogRoot: root });
 
-    expect(result.written).toHaveLength(11);
+    expect(result.written).toHaveLength(17);
     expect(result.skipped).toHaveLength(0);
 
     for (const payload of G04_EDITORIAL_PAYLOADS) {
@@ -139,7 +139,7 @@ describe('aplicador G0.4 — payloads versionados', () => {
     const second = applyPayloads({ catalogRoot: root });
 
     expect(second.written).toHaveLength(0);
-    expect(second.skipped).toHaveLength(11);
+    expect(second.skipped).toHaveLength(17);
     expect(second.plan.every((e) => e.action === 'skip_already_current')).toBe(true);
   });
 });
@@ -280,7 +280,7 @@ describe('aplicador G0.4 — isolamento do catálogo real', () => {
     const root = makeTempCatalog();
     const plan = planApply({ catalogRoot: root });
 
-    expect(plan).toHaveLength(11);
+    expect(plan).toHaveLength(17);
     for (const entry of plan) {
       expect(entry.absolute_path.startsWith(resolve(root))).toBe(true);
       expect(entry.absolute_path.startsWith(REAL_CATALOG)).toBe(false);
