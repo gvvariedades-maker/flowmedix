@@ -49,6 +49,10 @@ import {
   type VisualMoldSummary,
 } from '@/lib/catalogMigration/shipGate';
 import { createServerSupabase } from '@/lib/supabase/server';
+import {
+  assertG04SlugMayEnterProduction,
+  listG04ProductionBlockedSlugs,
+} from '@/lib/neurocanvas/g04ProductionApprovals';
 
 function runHandcraftDod(subtopico: string): LayerResult {
   const result = spawnSync(
@@ -231,6 +235,32 @@ async function main(): Promise<void> {
   writeFileSync(outPath, JSON.stringify(report, null, 2), 'utf8');
 
   if (promote) {
+    // Gate G0.4 A4: pacote com slug bloqueado (EDUCA) não promove production_ready.
+    // Usa manifests versionados (não depende do questions/ gitignored).
+    const blocked = listG04ProductionBlockedSlugs();
+    const lotes = listPacoteLotes(prefix);
+    const blockedPresent = blocked.filter((slug) =>
+      lotes.some((lote) => {
+        const manifestPath = resolve(process.cwd(), 'data/catalog-migration', lote, 'manifest-handcraft.json');
+        const fallback = resolve(process.cwd(), 'data/catalog-migration', lote, 'manifest.json');
+        for (const p of [manifestPath, fallback]) {
+          if (!existsSync(p)) continue;
+          try {
+            const m = JSON.parse(readFileSync(p, 'utf8')) as { slugs?: string[] };
+            if (Array.isArray(m.slugs) && m.slugs.includes(slug)) return true;
+          } catch {
+            /* ignore */
+          }
+        }
+        return existsSync(join(loteQuestionsDir(lote), `${slug}.json`));
+      }),
+    );
+    if (blockedPresent.length > 0) {
+      for (const slug of blockedPresent) {
+        assertG04SlugMayEnterProduction(slug);
+      }
+    }
+
     if (shipGate.ok) {
       applyShipPromote(registry, key, shipReport);
       saveHandcraftRegistry(registry);

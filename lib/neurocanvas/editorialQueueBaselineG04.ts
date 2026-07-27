@@ -5,6 +5,8 @@
  * Esta baseline deixa a auditoria consistente com o catálogo pós-materialização.
  * Ela NÃO fecha o gate editorial completo e NÃO autoriza Fase 0B.
  */
+import { G04_PRODUCTION_APPROVAL_FLAGS } from '@/lib/neurocanvas/g04ProductionApprovals';
+
 export const EDITORIAL_QUEUE_BASELINE_G04 = {
   /** Identificador da baseline de contagens (não confundir com o gate de fila G0.3A). */
   baseline_id: 'G0.4',
@@ -24,17 +26,12 @@ export const EDITORIAL_QUEUE_BASELINE_G04 = {
   },
   editorial_readiness: 'NOT_READY' as const,
   phase_0b_ready: false,
-  production_approvals: {
-    ameosc: true,
-    educa: false,
-    fenix_package_production_status: 'none',
-  },
+  production_approvals: G04_PRODUCTION_APPROVAL_FLAGS,
   idecan_status: 'defer_official_provenance_pending' as const,
   unresolved: 347,
   rationale:
     'Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved. Aprovação de produção e resolução editorial da fila são gates diferentes. A4 parcial 2026-07-27: AMEOSC production_approved=true; EDUCA bloqueado (item defeituoso sem isolamento de métricas). Contagens da baseline permanecem 347/111/18/6. IDECAN reduz no máximo 2 unresolved.',
   next_order: [
-    'fechar A4 EDUCA (defeituoso D×B) com isolamento mastery/FSRS — ou manter bloqueado; não reduz unresolved',
     'obter e aplicar fontes oficiais dos 2 IDECAN (reduz no máximo 2 unresolved)',
     'processar demais casos nas lanes official, pedagogical, metadata e residual',
     'reexecutar auditoria até unresolved = 0',

@@ -60,3 +60,22 @@ Artefato canônico: [`decision-2026-07-27.json`](./decision-2026-07-27.json)
 ## Explicitamente não feito
 
 Baseline G0.4 · IDECAN · UI · piloto · Supabase · Fase 0B · `production_ready` do pacote.
+
+
+## Bloqueio efetivo (não só meta)
+
+- Gate versionado: lib/neurocanvas/g04ProductionApprovals.ts
+- production_approved: true **somente** AMEOSC
+- EDUCA: production_blocked: true → ssertG04SlugMayEnterProduction lança
+- Wiring: catalog:apply-lote --apply e udit:subtopico-quality --promote
+- exam_vs_current documenta o defeito; **não** é o mecanismo de bloqueio
+
+## Citações (páginas / questões)
+
+| Caso | Fonte | Página | Questão |
+|------|-------|-------:|--------:|
+| AMEOSC | Caderno TE/ESF Prova 1 | 2 | Q4 |
+| AMEOSC | Gabarito definitivo 15/09/2025 | 3 | Prova 1 Q4 = D |
+| EDUCA | Prova TE Pedras de Fogo | 9 | Q34 |
+| EDUCA | Edital Normativo 014/2025 | 6 | TE Q34 = D |
+| EDUCA clínica | POP HC-UFTM v6 | 19–20 | FC 60–100; taquipneia >20 |
