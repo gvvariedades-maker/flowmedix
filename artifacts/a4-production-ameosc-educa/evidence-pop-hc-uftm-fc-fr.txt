@@ -1,0 +1,187 @@
+[HIT 60\s*[–\-aà]\s*100]
+s 
+90-140 
+<90 
+>140 
+Pré-escolar 
+80-110 
+<80 
+>110 
+Escolar 
+75-100 
+<75 
+>100 
+Adolescente 
+60-90 
+<60 
+>90 
+Adulto 
+60-100 
+<60 
+>100 
+
+Procedimento. Rotina de Registro de Sinais Vitais e Controles.  
+POP.HC-UFTM-DENF.003 – versão 6                                                                     
+Página 20 de 26 
+ 
+ 
+ 
+ 
+ 
+ANEXO G – Valores de Referência da Frequência Respiratória 
+Idade 
+Eupneico 
+Bradipneico 
+Taquipneico 
+ < 1 ano 
+30 a 60 
+<30 
+>60 
+1 a 3 anos  
+24 a 40 
+<24 
+>40 
+4 a 5 anos 
+22 a 34 
+<22 
+>34 
+6 a 12 anos 
+18 a 30 
+<18 
+>30 
+13 a 18 anos 
+12 a 16 
+<12 
+>16 
+Adulto 
+12 a 20 
+<12 
+>20 
+   Fon
+---
+[HIT [Tt]aquipn]
+  
+Página 20 de 26 
+ 
+ 
+ 
+ 
+ 
+ANEXO G – Valores de Referência da Frequência Respiratória 
+Idade 
+Eupneico 
+Bradipneico 
+Taquipneico 
+ < 1 ano 
+30 a 60 
+<30 
+>60 
+1 a 3 anos  
+24 a 40 
+<24 
+>40 
+4 a 5 anos 
+22 a 34 
+<22 
+>34 
+6 a 12 anos 
+18 a 30 
+<18 
+>30 
+13 a 18 anos 
+12 a 16 
+<12 
+>16 
+Adulto 
+12 a 20 
+<12 
+>20 
+   Fonte: HATLHER, 2018; BRASIL, 2017 
+ 
+ANEXO H - Saturação Periférica de Oxigênio (SpO2) 
+Normal 
+95% a 100%  
+Considerações 
+• Durante a prática de atividade física, é normal que 
+ocorram pequenas quedas nos níveis de oxigênio.  
+• Pessoas com deficiências respiratórias crônicas, como 
+DPOC ou asma, podem 
+---
+[HIT [Bb]radipn]
+               
+Página 20 de 26 
+ 
+ 
+ 
+ 
+ 
+ANEXO G – Valores de Referência da Frequência Respiratória 
+Idade 
+Eupneico 
+Bradipneico 
+Taquipneico 
+ < 1 ano 
+30 a 60 
+<30 
+>60 
+1 a 3 anos  
+24 a 40 
+<24 
+>40 
+4 a 5 anos 
+22 a 34 
+<22 
+>34 
+6 a 12 anos 
+18 a 30 
+<18 
+>30 
+13 a 18 anos 
+12 a 16 
+<12 
+>16 
+Adulto 
+12 a 20 
+<12 
+>20 
+   Fonte: HATLHER, 2018; BRASIL, 2017 
+ 
+ANEXO H - Saturação Periférica de Oxigênio (SpO2) 
+Normal 
+95% a 100%  
+Considerações 
+• Durante a prática de atividade física, é normal que 
+ocorram pequenas quedas nos níveis de oxigênio.  
+• Pessoas com deficiências respiratórias crônicas, como 
+DPOC ou
+---
+[MISS] 12\s*respira
+[HIT Frequ[eê]ncia Card[ií]aca]
+
+Sinais Vitais 
+• 
+Os sinais vitais (SSVV) de rotina a serem verificados são: Temperatura (T), Pulso Arterial 
+(P) e/ou Frequência Cardíaca (FC), Pressão Arterial (PA), Frequência Respiratória (FR), Dor e 
+Saturação de Oxigênio (SpO2). 
+• 
+Os SSVV poderão ser mensurados de forma intermitente com aparelhos digitais ou 
+manuais ou de forma contínua por meio de monitor multiparâmetros, a depender do estado 
+clínico do paciente. 
+• 
+O aprazamento para aferição dos SSVV será de acordo com a estabilidade, criticidade e 
+o risco de deterioração clínico do paciente. Outros aprazamentos específicos ocorrerão à 
+depender da realização de pro
+---
+[HIT Frequ[eê]ncia Respirat]
+ina a serem verificados são: Temperatura (T), Pulso Arterial 
+(P) e/ou Frequência Cardíaca (FC), Pressão Arterial (PA), Frequência Respiratória (FR), Dor e 
+Saturação de Oxigênio (SpO2). 
+• 
+Os SSVV poderão ser mensurados de forma intermitente com aparelhos digitais ou 
+manuais ou de forma contínua por meio de monitor multiparâmetros, a depender do estado 
+clínico do paciente. 
+• 
+O aprazamento para aferição dos SSVV será de acordo com a estabilidade, criticidade e 
+o risco de deterioração clínico do paciente. Outros aprazamentos específicos ocorrerão à 
+depender da realização de procedimentos (exemplos: intra e pós-operatório, hem
+---

@@ -14,10 +14,10 @@ describe('editorialQueueBaselineG04', () => {
     expect(EDITORIAL_QUEUE_BASELINE_G04.unresolved).toBe(347);
   });
 
-  it('não autoriza fechamento editorial nem Fase 0B', () => {
+  it('mantém fila NOT_READY / Fase 0B fechada; AMEOSC A4 ok; EDUCA ainda bloqueado', () => {
     expect(EDITORIAL_QUEUE_BASELINE_G04.editorial_readiness).toBe('NOT_READY');
     expect(EDITORIAL_QUEUE_BASELINE_G04.phase_0b_ready).toBe(false);
-    expect(EDITORIAL_QUEUE_BASELINE_G04.production_approvals.ameosc).toBe(false);
+    expect(EDITORIAL_QUEUE_BASELINE_G04.production_approvals.ameosc).toBe(true);
     expect(EDITORIAL_QUEUE_BASELINE_G04.production_approvals.educa).toBe(false);
     expect(EDITORIAL_QUEUE_BASELINE_G04.idecan_status).toBe(
       'defer_official_provenance_pending',

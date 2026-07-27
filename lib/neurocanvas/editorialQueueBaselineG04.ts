@@ -25,16 +25,16 @@ export const EDITORIAL_QUEUE_BASELINE_G04 = {
   editorial_readiness: 'NOT_READY' as const,
   phase_0b_ready: false,
   production_approvals: {
-    ameosc: false,
+    ameosc: true,
     educa: false,
     fenix_package_production_status: 'none',
   },
   idecan_status: 'defer_official_provenance_pending' as const,
   unresolved: 347,
   rationale:
-    'Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved. Aprovação de produção (A4 AMEOSC/EDUCA) e resolução editorial da fila são gates diferentes: A4 não reduz unresolved; IDECAN reduz no máximo 2 casos.',
+    'Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved. Aprovação de produção e resolução editorial da fila são gates diferentes. A4 parcial 2026-07-27: AMEOSC production_approved=true; EDUCA bloqueado (item defeituoso sem isolamento de métricas). Contagens da baseline permanecem 347/111/18/6. IDECAN reduz no máximo 2 unresolved.',
   next_order: [
-    'A4 de produção AMEOSC/EDUCA (não reduz unresolved; controla aprovação para produção)',
+    'fechar A4 EDUCA (defeituoso D×B) com isolamento mastery/FSRS — ou manter bloqueado; não reduz unresolved',
     'obter e aplicar fontes oficiais dos 2 IDECAN (reduz no máximo 2 unresolved)',
     'processar demais casos nas lanes official, pedagogical, metadata e residual',
     'reexecutar auditoria até unresolved = 0',

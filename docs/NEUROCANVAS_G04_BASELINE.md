@@ -1,4 +1,4 @@
-# NeuroCanvas G0.4 — Baseline da fila editorial (pós-materialização)
+﻿# NeuroCanvas G0.4 — Baseline da fila editorial (pós-materialização)
 
 > **Escopo deste documento:** alinhar as contagens do validador da fila editorial ao estado de `main` limpo após o PR #55.  
 > **Não** fecha o gate editorial completo. **Não** autoriza Fase 0B, UI, renderer, piloto, Supabase nem `production_ready`.
@@ -41,8 +41,8 @@ Código canônico das contagens: [`lib/neurocanvas/editorialQueueBaselineG04.ts`
 
 | Item | Estado |
 |------|--------|
-| AMEOSC | materializado; **sem** aprovação de produção (`production_approved: false`) |
-| EDUCA | materializado; item defeituoso documentado; **sem** aprovação de produção |
+| AMEOSC | materializado; **A4 produção aprovada** (`production_approved: true`) — ver `artifacts/a4-production-ameosc-educa/` |
+| EDUCA | materializado; item defeituoso; **A4 produção bloqueada** (D×B sem isolamento mastery/FSRS) — ver `artifacts/a4-production-ameosc-educa/` |
 | Fênix / Noções de Anatomia | autoridade bootstrapped; `production_status: none` |
 | IDECAN ×2 | `defer_official_provenance_pending` — sem promoção |
 
@@ -50,7 +50,7 @@ Código canônico das contagens: [`lib/neurocanvas/editorialQueueBaselineG04.ts`
 
 Aprovação de produção e resolução editorial da fila são **gates diferentes**. O #56 alinha a medição; ainda não conclui o gate editorial completo.
 
-1. **A4 de produção** AMEOSC/EDUCA — controla aprovação para produção; **não** reduz os 347 unresolved.  
+1. **A4 de produção** AMEOSC/EDUCA — **parcial (2026-07-27):** AMEOSC aprovado; EDUCA bloqueado. Não reduz os 347 unresolved.  
 2. **Fontes oficiais** dos dois IDECAN — aplicar/materializar; reduz **no máximo 2** unresolved.  
 3. **Processar todos os demais casos** ainda presentes nas lanes official, pedagogical, metadata e residual.  
 4. **Reexecutar a auditoria** até `unresolved = 0`.  

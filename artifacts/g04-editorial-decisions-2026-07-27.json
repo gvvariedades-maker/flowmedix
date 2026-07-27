@@ -236,9 +236,9 @@
   },
   "a4_human_review": {
     "registrado_em": "2026-07-27",
-    "status": "approved_for_materialization_only",
+    "status": "partial_production_approval",
     "production_approved": false,
-    "significado": "A revisão humana ocorreu e autorizou a materialização dos candidatos corrigidos. Não autoriza produção, promote, piloto nem publicação.",
+    "significado": "AMEOSC aprovado para produção; EDUCA permanece bloqueado (defeituoso sem isolamento de métricas). Não autoriza Fase 0B, baseline change, IDECAN, UI, piloto ou Supabase.",
     "motivo_da_trava": "riskScoring classifica os dois como alto/human_required; auto-aprovação não cobre dose ou conduta clínica.",
     "itens": [
       {
@@ -246,18 +246,18 @@
         "slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
         "risco": "alto / human_required",
         "readiness": "READY errors=none (--strict-v2-pedagogy)",
-        "status": "approved_for_materialization_only",
-        "production_approved": false,
-        "revisao_pendente_para_producao": "Conferir os valores de referência de temperatura da coluna da prova (rows com sv_kind: meta) antes de qualquer promoção."
+        "status": "approved_for_production",
+        "production_approved": true,
+        "revisao_pendente_para_producao": "Concluída 2026-07-27 — valores térmicos e Prova 1 Q4=D validados (ver decision-2026-07-27.json)."
       },
       {
         "case_id": "nc-g03-9c3c0a3a66aabf52",
         "slug": "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0",
         "risco": "alto / human_required",
         "readiness": "READY errors=none (--strict-v2-pedagogy)",
-        "status": "approved_for_materialization_only",
+        "status": "blocked_defective_item_no_metrics_isolation",
         "production_approved": false,
-        "revisao_pendente_para_producao": "Ratificar o registro de item defeituoso: gabarito oficial EDUCA Q34=D versus resposta técnica B (FC≠30–165; taquipneia≠FR<12), preservado em meta.content_review.exam_vs_current."
+        "revisao_pendente_para_producao": "Bloqueado: item defeituoso D×B sem contrato de exclusão mastery/FSRS/métricas."
       }
     ],
     "production_status": {
@@ -269,7 +269,9 @@
       "piloto",
       "publicação",
       "apply Supabase"
-    ]
+    ],
+    "production_review_at": "2026-07-27",
+    "production_review_artifact": "artifacts/a4-production-ameosc-educa/decision-2026-07-27.json"
   },
   "versionamento": {
     "versionado": [
