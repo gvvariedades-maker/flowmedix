@@ -165,7 +165,9 @@ async function main() {
     for (const e of validationErrors) console.error(`  - ${e}`);
     process.exitCode = 1;
   } else {
-    console.log('[G0.3A] Validação OK: 676 casos, 301 clusters, 122 official, 6 manifest conflict.');
+    console.log(
+      `[G0.3A] Validação OK (baseline G0.4): ${report.reconciliation.total_cases} casos, ${report.reconciliation.cluster_count} clusters, ${report.reconciliation.official_lane_count} official, ${report.reconciliation.manifest_conflict_lane_count} manifest conflict.`,
+    );
   }
 
   const portable = portableizeAuditArtifact(report, repoRoot);

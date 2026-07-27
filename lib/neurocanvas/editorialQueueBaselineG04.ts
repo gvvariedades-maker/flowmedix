@@ -1,0 +1,52 @@
+/**
+ * Baseline da fila editorial NeuroCanvas após o subgate de
+ * reprodutibilidade/materialização G0.4 (PR #55 → main @ 7633118b).
+ *
+ * Esta baseline deixa a auditoria consistente com o catálogo pós-materialização.
+ * Ela NÃO fecha o gate editorial completo e NÃO autoriza Fase 0B.
+ */
+export const EDITORIAL_QUEUE_BASELINE_G04 = {
+  /** Identificador da baseline de contagens (não confundir com o gate de fila G0.3A). */
+  baseline_id: 'G0.4',
+  measured_at: '2026-07-27',
+  measured_from_commit: '7633118b27ca1c452568a13f50c49554967bf8dc',
+  catalog_scope: 'data/catalog-migration/**/questions/ (local, gitignored) + payloads do aplicador versionado',
+  total_cases: 347,
+  cluster_count: 111,
+  official_lane_count: 18,
+  manifest_conflict_lane_count: 6,
+  /** Precedente G0.3A (congelado em 68c48d49) — histórico, não mais o esperado do validador. */
+  previous_g03a: {
+    total_cases: 676,
+    cluster_count: 301,
+    official_lane_count: 122,
+    manifest_conflict_lane_count: 6,
+  },
+  editorial_readiness: 'NOT_READY' as const,
+  phase_0b_ready: false,
+  production_approvals: {
+    ameosc: false,
+    educa: false,
+    fenix_package_production_status: 'none',
+  },
+  idecan_status: 'defer_official_provenance_pending' as const,
+  unresolved: 347,
+  rationale:
+    'Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved — inclusive 2 IDECAN deferred e AMEOSC/EDUCA sem aprovação de produção.',
+  next_order: [
+    'A4 de produção AMEOSC/EDUCA',
+    'fontes oficiais IDECAN',
+    'unresolved = 0',
+    'reavaliar liberação da Fase 0B',
+  ],
+  explicitly_not_authorized: [
+    'UI',
+    'renderer',
+    'piloto',
+    'Supabase apply',
+    'promote production_ready',
+    'Fase 0B',
+  ],
+} as const;
+
+export type EditorialQueueBaselineG04 = typeof EDITORIAL_QUEUE_BASELINE_G04;

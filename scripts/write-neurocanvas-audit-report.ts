@@ -19,7 +19,12 @@ const PROVENANCE = {
   catalogSource: 'snapshot local gitignored (data/catalog-migration/**/questions/)',
   catalogInGit: 'não',
   canonicalBaselineSlugs: 4975,
+  /** Histórico G0.2/G0.3A no relatório consolidado original. Contagem atual: baseline G0.4 = 347. */
   editorialUnresolved: 676,
+  editorialUnresolvedG04: 347,
+  editorialBaselineId: 'G0.4',
+  editorialReadiness: 'NOT_READY',
+  phase0bReady: false,
   dedupeSchemaVersion: 1,
   originalLocal: {
     branch: 'feat/cadernos-fase-1-wizard',
@@ -41,7 +46,7 @@ const md = `# Relatório consolidado — Auditoria NeuroCanvas (AVANT NeuroSlide
 - **Base de publicação:** \`${PROVENANCE.publicationBase}\`
 - **Fonte do catálogo:** ${PROVENANCE.catalogSource}
 - **Catálogo versionado pelo Git:** ${PROVENANCE.catalogInGit}
-- **Baseline canônica parcial (G0.2):** ${PROVENANCE.canonicalBaselineSlugs} slugs · ${PROVENANCE.editorialUnresolved} editorialmente unresolved · \`dedupe_schema_version\`: ${PROVENANCE.dedupeSchemaVersion}
+- **Baseline canônica parcial (G0.2):** ${PROVENANCE.canonicalBaselineSlugs} slugs · ${PROVENANCE.editorialUnresolved} editorialmente unresolved (histórico G0.2/G0.3A) · baseline atual **${PROVENANCE.editorialBaselineId}** = ${PROVENANCE.editorialUnresolvedG04} unresolved · \`editorial_readiness\`: ${PROVENANCE.editorialReadiness} · \`phase_0b_ready\`: ${PROVENANCE.phase0bReady} · \`dedupe_schema_version\`: ${PROVENANCE.dedupeSchemaVersion}
 - **Contexto local original (exploração pré-G0.2):** branch \`${PROVENANCE.originalLocal.branch}\`, commit \`${PROVENANCE.originalLocal.commit}\` (${PROVENANCE.originalLocal.commitDate}) — gerado em ${PROVENANCE.originalLocal.generatedAt}; métricas **${PROVENANCE.originalLocal.exploratorySlugs.toLocaleString('pt-BR')}** slugs / **${PROVENANCE.originalLocal.exploratorySlides.toLocaleString('pt-BR')}** slides no corpo abaixo **não** são o head do PR nem catálogo rastreado por commit
 
 ---

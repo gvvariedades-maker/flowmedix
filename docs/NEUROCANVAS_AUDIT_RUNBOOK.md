@@ -87,7 +87,13 @@ npm run audit:neurocanvas-editorial-queue
 - Catálogo local em `data/catalog-migration/` (mesmo que blockers G0.1).
 - Opcional: `artifacts/neurocanvas-live-reconciliation.json` (G0.2) — consumido como evidência operacional; **sem** novo SELECT Supabase.
 - **Não** entra em `npm test` / `test:neurocanvas` (auditoria pesada).
-- Falha se contagens ≠ 676 casos / 301 clusters / 122 official / 6 manifest conflict.
+- Falha se contagens ≠ **347** casos / **111** clusters / **18** official / **6** manifest conflict
+  (baseline **G0.4** — ver [`docs/NEUROCANVAS_G04_BASELINE.md`](NEUROCANVAS_G04_BASELINE.md) e
+  `lib/neurocanvas/editorialQueueBaselineG04.ts`).
+- Contagens históricas G0.3A (676 / 301 / 122 / 6) ficam documentadas em
+  `EDITORIAL_QUEUE_BASELINE_G04.previous_g03a` — **não** são mais o esperado do validador.
+- A baseline G0.4 deixa a auditoria consistente; mantém `editorial_readiness: NOT_READY` e
+  `phase_0b_ready: false`. Não autoriza Fase 0B.
 
 ### Artifacts G0.3A — o que versionar vs gerar localmente
 
@@ -118,6 +124,7 @@ npm run audit:neurocanvas-editorial-queue
 | `artifacts/neurocanvas-editorial-review-pack.json` | `audit:neurocanvas-editorial-queue` (snapshot revisável no PR) |
 | `artifacts/neurocanvas-editorial-review-pack.md` | `audit:neurocanvas-editorial-queue` |
 | `artifacts/neurocanvas-editorial-queue.md` | `audit:neurocanvas-editorial-queue` (métricas compactas) |
+| `artifacts/neurocanvas-g04-baseline.json` | `write:neurocanvas-g04-baseline` (contagens + `editorial_readiness` / `phase_0b_ready`) |
 
 ## Código de referência
 
