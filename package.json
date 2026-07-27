@@ -230,6 +230,7 @@
     "audit:handcraft-dod": "tsx scripts/audit-handcraft-dod.ts",
     "catalog:preflight": "tsx scripts/catalog-apply-preflight.ts",
     "reconcile:handcraft-manifest": "tsx scripts/reconcile-handcraft-manifest.ts",
+    "reconcile:evidence-events": "tsx scripts/reconcile-evidence-events.ts",
     "audit:slug-alignment": "tsx scripts/audit-slug-alignment.ts",
     "audit:numeric-factcheck": "tsx scripts/audit-numeric-factcheck.ts",
     "audit:content-health": "tsx scripts/audit-content-health.ts",

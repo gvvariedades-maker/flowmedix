@@ -1027,6 +1027,8 @@ export const SimuladoAnswerSchema = z.object({
   modulo_slug: z.string().trim().min(1).max(200),
   opcao_id: z.string().trim().min(1).max(10),
   tempo_ms: z.coerce.number().int().min(0).max(1000 * 60 * 60 * 6).optional(),
+  // Campos EE (attempt_id, conviction, …) NÃO entram no Zod legado:
+  // inválidos soft-skip no ingest; extrair do body bruto (Lote 6/7 D5).
 });
 
 /** Query params para estimar o tamanho do pool do simulado. */
