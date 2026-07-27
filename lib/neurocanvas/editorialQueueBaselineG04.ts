@@ -32,12 +32,14 @@ export const EDITORIAL_QUEUE_BASELINE_G04 = {
   idecan_status: 'defer_official_provenance_pending' as const,
   unresolved: 347,
   rationale:
-    'Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved — inclusive 2 IDECAN deferred e AMEOSC/EDUCA sem aprovação de produção.',
+    'Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved. Aprovação de produção (A4 AMEOSC/EDUCA) e resolução editorial da fila são gates diferentes: A4 não reduz unresolved; IDECAN reduz no máximo 2 casos.',
   next_order: [
-    'A4 de produção AMEOSC/EDUCA',
-    'fontes oficiais IDECAN',
-    'unresolved = 0',
-    'reavaliar liberação da Fase 0B',
+    'A4 de produção AMEOSC/EDUCA (não reduz unresolved; controla aprovação para produção)',
+    'obter e aplicar fontes oficiais dos 2 IDECAN (reduz no máximo 2 unresolved)',
+    'processar demais casos nas lanes official, pedagogical, metadata e residual',
+    'reexecutar auditoria até unresolved = 0',
+    'gerar baseline final de fechamento editorial',
+    'só então reavaliar e autorizar explicitamente a Fase 0B',
   ],
   explicitly_not_authorized: [
     'UI',

@@ -48,10 +48,14 @@ Código canônico das contagens: [`lib/neurocanvas/editorialQueueBaselineG04.ts`
 
 ## Ordem depois desta baseline
 
-1. A4 de produção AMEOSC/EDUCA  
-2. Fontes oficiais IDECAN  
-3. `unresolved = 0`  
-4. Reavaliar liberação da Fase 0B  
+Aprovação de produção e resolução editorial da fila são **gates diferentes**. O #56 alinha a medição; ainda não conclui o gate editorial completo.
+
+1. **A4 de produção** AMEOSC/EDUCA — controla aprovação para produção; **não** reduz os 347 unresolved.  
+2. **Fontes oficiais** dos dois IDECAN — aplicar/materializar; reduz **no máximo 2** unresolved.  
+3. **Processar todos os demais casos** ainda presentes nas lanes official, pedagogical, metadata e residual.  
+4. **Reexecutar a auditoria** até `unresolved = 0`.  
+5. **Gerar baseline final** de fechamento editorial.  
+6. **Só então** reavaliar e autorizar **explicitamente** a Fase 0B. 
 
 ## Explicitamente fora
 
