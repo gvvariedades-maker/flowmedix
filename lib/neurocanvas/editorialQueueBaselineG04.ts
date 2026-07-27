@@ -1,9 +1,8 @@
 /**
- * Baseline da fila editorial NeuroCanvas após o subgate de
- * reprodutibilidade/materialização G0.4 (PR #55 → main @ 7633118b).
+ * Baseline da fila editorial NeuroCanvas após proveniência oficial IDECAN (PR #59).
  *
- * Esta baseline deixa a auditoria consistente com o catálogo pós-materialização.
- * Ela NÃO fecha o gate editorial completo e NÃO autoriza Fase 0B.
+ * Contagens medidas em main limpo @ 11561b7b após neurocanvas:g04-apply-local.
+ * Esta baseline NÃO fecha o gate editorial completo e NÃO autoriza Fase 0B.
  */
 import { G04_PRODUCTION_APPROVAL_FLAGS } from '@/lib/neurocanvas/g04ProductionApprovals';
 
@@ -11,11 +10,11 @@ export const EDITORIAL_QUEUE_BASELINE_G04 = {
   /** Identificador da baseline de contagens (não confundir com o gate de fila G0.3A). */
   baseline_id: 'G0.4',
   measured_at: '2026-07-27',
-  measured_from_commit: '7633118b27ca1c452568a13f50c49554967bf8dc',
+  measured_from_commit: '11561b7bc2d195574d146b2701013a233b613267',
   catalog_scope: 'data/catalog-migration/**/questions/ (local, gitignored) + payloads do aplicador versionado',
-  total_cases: 347,
-  cluster_count: 111,
-  official_lane_count: 18,
+  total_cases: 345,
+  cluster_count: 110,
+  official_lane_count: 16,
   manifest_conflict_lane_count: 6,
   /** Precedente G0.3A (congelado em 68c48d49) — histórico, não mais o esperado do validador. */
   previous_g03a: {
@@ -24,16 +23,24 @@ export const EDITORIAL_QUEUE_BASELINE_G04 = {
     official_lane_count: 122,
     manifest_conflict_lane_count: 6,
   },
+  /** Baseline anterior (pós-#55, pré-IDECAN) — histórico. */
+  previous_g04_pre_idecan: {
+    measured_from_commit: '7633118b27ca1c452568a13f50c49554967bf8dc',
+    total_cases: 347,
+    cluster_count: 111,
+    official_lane_count: 18,
+    manifest_conflict_lane_count: 6,
+    idecan_status: 'defer_official_provenance_pending' as const,
+  },
   editorial_readiness: 'NOT_READY' as const,
   phase_0b_ready: false,
   production_approvals: G04_PRODUCTION_APPROVAL_FLAGS,
-  idecan_status: 'defer_official_provenance_pending' as const,
-  unresolved: 347,
+  idecan_status: 'official_provenance_confirmed' as const,
+  unresolved: 345,
   rationale:
-    'Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved. Aprovação de produção e resolução editorial da fila são gates diferentes. A4 parcial 2026-07-27: AMEOSC production_approved=true; EDUCA bloqueado (item defeituoso sem isolamento de métricas). Contagens da baseline permanecem 347/111/18/6. IDECAN reduz no máximo 2 unresolved.',
+    'Baseline alinhada a main @ 11561b7b após proveniência oficial IDECAN UFBA 2022 (PR #59): 2 slugs coleta materializados com fonte tier A. unresolved 347→345; official lane 18→16. IDECAN encerrado. AMEOSC A4 aprovado; EDUCA bloqueado. Gate editorial geral ainda aberto.',
   next_order: [
-    'obter e aplicar fontes oficiais dos 2 IDECAN (reduz no máximo 2 unresolved)',
-    'processar demais casos nas lanes official, pedagogical, metadata e residual',
+    'processar casos restantes nas lanes official (16), pedagogical, metadata e residual',
     'reexecutar auditoria até unresolved = 0',
     'gerar baseline final de fechamento editorial',
     'só então reavaliar e autorizar explicitamente a Fase 0B',
