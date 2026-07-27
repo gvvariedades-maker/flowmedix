@@ -1,0 +1,14 @@
+{
+  "modulo_slug": "cpcon-exemplo-slug",
+  "instruction": "Assinale a alternativa correta.",
+  "options": [
+    { "id": "C", "text": "Opção C", "is_correct": false },
+    { "id": "A", "text": "Opção A", "is_correct": true },
+    { "id": "B", "text": "Opção B", "is_correct": false }
+  ],
+  "meta_evidence_relevant": {
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": null
+  }
+}
