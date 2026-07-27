@@ -6,23 +6,23 @@ Gate: **G0.3A** · schema v1 · dedupe v1
 
 | Métrica | Valor |
 |---------|------:|
-| Casos (slugs unresolved) | 347 |
-| Clusters | 111 |
+| Casos (slugs unresolved) | 345 |
+| Clusters | 110 |
 | Todos pending | sim |
-| Official lane | 18 |
+| Official lane | 16 |
 | Manifest conflict lane | 6 |
-| Pedagogical lane | 96 |
+| Pedagogical lane | 94 |
 | Metadata lane | 74 |
 
-Lanes são trilhos de revisão sobrepostos: um caso pode aparecer em official + pedagogical + metadata. A fila completa (347, baseline G0.4) é a união; lanes são filtros para lotes humanos.
+Lanes são trilhos de revisão sobrepostos: um caso pode aparecer em official + pedagogical + metadata. A fila completa (345, baseline G0.4) é a união; lanes são filtros para lotes humanos.
 
 ## Trilhos de revisão
 
 | lane | count | descrição |
 |------|------:|-----------|
-| official | 18 | S3 e/ou divergência de gabarito — exige fonte oficial; nenhuma recomendação automática de  |
+| official | 16 | S3 e/ou divergência de gabarito — exige fonte oficial; nenhuma recomendação automática de  |
 | manifest_conflict | 6 | Múltiplos manifests documentados no mesmo tier com conteúdo divergente — decisão humana ob |
-| pedagogical | 96 | S2 (NeuroSlides) — diff de items, steps, rows e content entre candidatos. |
+| pedagogical | 94 | S2 (NeuroSlides) — diff de items, steps, rows e content entre candidatos. |
 | metadata | 74 | S1 — metadados pedagógicos; live match pode ser exibido como evidência operacional apenas. |
 
 ## Autoridade

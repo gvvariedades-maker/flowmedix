@@ -1,17 +1,25 @@
 {
   "baseline_id": "G0.4",
   "measured_at": "2026-07-27",
-  "measured_from_commit": "7633118b27ca1c452568a13f50c49554967bf8dc",
+  "measured_from_commit": "11561b7bc2d195574d146b2701013a233b613267",
   "catalog_scope": "data/catalog-migration/**/questions/ (local, gitignored) + payloads do aplicador versionado",
-  "total_cases": 347,
-  "cluster_count": 111,
-  "official_lane_count": 18,
+  "total_cases": 345,
+  "cluster_count": 110,
+  "official_lane_count": 16,
   "manifest_conflict_lane_count": 6,
   "previous_g03a": {
     "total_cases": 676,
     "cluster_count": 301,
     "official_lane_count": 122,
     "manifest_conflict_lane_count": 6
+  },
+  "previous_g04_pre_idecan": {
+    "measured_from_commit": "7633118b27ca1c452568a13f50c49554967bf8dc",
+    "total_cases": 347,
+    "cluster_count": 111,
+    "official_lane_count": 18,
+    "manifest_conflict_lane_count": 6,
+    "idecan_status": "defer_official_provenance_pending"
   },
   "editorial_readiness": "NOT_READY",
   "phase_0b_ready": false,
@@ -20,12 +28,11 @@
     "educa": false,
     "fenix_package_production_status": "none"
   },
-  "idecan_status": "defer_official_provenance_pending",
-  "unresolved": 347,
-  "rationale": "Baseline alinhada ao resultado de main limpo após materialização G0.4 (4 candidatos) e remoção de 2 colisões de Anatomia. Restam 347 unresolved. Aprovação de produção e resolução editorial da fila são gates diferentes. A4 parcial 2026-07-27: AMEOSC production_approved=true; EDUCA bloqueado (item defeituoso sem isolamento de métricas). Contagens da baseline permanecem 347/111/18/6. IDECAN reduz no máximo 2 unresolved.",
+  "idecan_status": "official_provenance_confirmed",
+  "unresolved": 345,
+  "rationale": "Baseline alinhada a main @ 11561b7b após proveniência oficial IDECAN UFBA 2022 (PR #59): 2 slugs coleta materializados com fonte tier A. unresolved 347→345; official lane 18→16. IDECAN encerrado. AMEOSC A4 aprovado; EDUCA bloqueado. Gate editorial geral ainda aberto.",
   "next_order": [
-    "obter e aplicar fontes oficiais dos 2 IDECAN (reduz no máximo 2 unresolved)",
-    "processar demais casos nas lanes official, pedagogical, metadata e residual",
+    "processar casos restantes nas lanes official (16), pedagogical, metadata e residual",
     "reexecutar auditoria até unresolved = 0",
     "gerar baseline final de fechamento editorial",
     "só então reavaliar e autorizar explicitamente a Fase 0B"
@@ -38,7 +45,7 @@
     "promote production_ready",
     "Fase 0B"
   ],
-  "written_at": "2026-07-27T22:54:01.722Z",
+  "written_at": "2026-07-27T23:43:10.259Z",
   "source_module": "lib/neurocanvas/editorialQueueBaselineG04.ts",
   "docs": "docs/NEUROCANVAS_G04_BASELINE.md"
 }
