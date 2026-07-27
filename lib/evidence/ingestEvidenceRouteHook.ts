@@ -102,6 +102,7 @@ export async function ingestEvidenceRouteHook(
       session_id: input.session_id ?? null,
       session_kind: input.session_kind ?? null,
       e2e_instrumentation: input.e2e_instrumentation ?? false,
+      tab_backgrounded: input.client_body.tab_backgrounded === true,
       now_ms: Date.now(),
       persistence,
     });
