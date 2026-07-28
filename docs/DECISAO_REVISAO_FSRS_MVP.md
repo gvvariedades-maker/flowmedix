@@ -1,7 +1,7 @@
 # Decisão — Revisão espaçada FSRS MVP (pivot de produto)
 
 **Data:** 2026-07-27  
-**Status:** R1 contratos puros — pin `ts-fsrs@5.4.1`; R2/R3 **não** autorizados (sem migration, rotas, UI ou wiring de produto neste lote)
+**Status:** R1 contratos puros **mergeado** (PR #57) — pin `ts-fsrs@5.4.1`; R2/R3 **não** autorizados (sem migration, rotas, UI ou wiring de produto). Spec operacional do R2 existe e **aguarda revisão independente** — ver [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md)
 
 **Escopo:** agendador FSRS mínimo, seguro e reversível, com superfície futura “Revisões de hoje”.  
 **Não inclui neste MVP:** convicção, `measurement_pool`, RCT, `learner_skill_state`, T1, bandit, LLM em runtime, otimização de parâmetros FSRS, domínio por competência.
@@ -15,6 +15,7 @@ Complementa (não substitui):
 - [`PLANO_IMPLEMENTACAO_EVIDENCE_ENGINE_FASE_1.md`](PLANO_IMPLEMENTACAO_EVIDENCE_ENGINE_FASE_1.md)
 - [`EVIDENCE_FASE5_FSRS_RCT2.md`](EVIDENCE_FASE5_FSRS_RCT2.md) — FSRS-like gated no EE (não é este MVP)
 - Plano irmão: [`PLANO_IMPLEMENTACAO_REVISAO_FSRS_MVP.md`](PLANO_IMPLEMENTACAO_REVISAO_FSRS_MVP.md)
+- Runbook operacional do lote R2: [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md) — detalha o schema deste ADR (§9) sem alterar as decisões congeladas
 
 ---
 
@@ -269,6 +270,23 @@ Round-trip sem perda; payload parcial / NaN / Infinity / datas ou states inváli
 - Não tornar `historico_questoes` append-only neste pivot (débito conhecido; FSRS usa logs próprios).
 - **Proibida** coexistência SM-2 + FSRS na **mesma** superfície futura (uma fila ativa por flag).
 
+### 9.5 Detalhamento operacional (spec R2)
+
+O schema acima é **conceitual**. A especificação operacional do lote R2 — DDL completo, RPC transacional, controle de concorrência, RLS e testes — vive em [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md) e **não** altera nenhuma decisão congelada deste ADR.
+
+Pontos em que a spec R2 é a fonte da verdade operacional:
+
+| Tema | Onde |
+|------|------|
+| Atomicidade card + log em **uma** transação / RPC única | Spec R2 §4 |
+| Coluna `revision` e compare-and-swap do card | Spec R2 §3.1.1, §8.3 |
+| `semantic_fingerprint` (replay idêntico × payload divergente) | Spec R2 §7 |
+| Campos denormalizados derivados do `FsrsMvpSerializedCard` | Spec R2 §8 |
+| Outcomes tipados e `writeStatus` (incl. resposta perdida) | Spec R2 §5.4, §9 |
+| Matriz RLS / grants / ciclo de vida (`ON DELETE`) | Spec R2 §11 |
+
+Invariante adicionado por essa spec, coerente com a decisão 14 e com o invariante 9 (§20): **card sem log e log sem card são proibidos** — não existe “débito aceito” de persistência parcial.
+
 ---
 
 ## 10. Idempotência
@@ -426,6 +444,6 @@ Este pivot **não** invalida o ADR do EE: o EE continua sendo o caminho científ
 
 ## 21. Próximo passo
 
-R1 (contratos puros + pin `ts-fsrs@5.4.1`) fecha em PR isolado Draft.  
-**R2** (persistência) e **R3** (integração) permanecem **não autorizados**.  
+R1 (contratos puros + pin `ts-fsrs@5.4.1`) foi **mergeado** em PR isolado (#57).  
+**R2** (persistência) e **R3** (integração) permanecem **não autorizados**. A spec operacional do R2 ([`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md)) aguarda revisão independente; sua existência **não** é autorização para executar o lote.  
 Evidence Engine permanece preservado/desacoplado (docs/código em `origin/main`). Vitrine livre. Proibida coexistência SM-2 + FSRS na mesma superfície futura.

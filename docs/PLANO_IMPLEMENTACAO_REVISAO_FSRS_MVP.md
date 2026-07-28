@@ -1,9 +1,10 @@
 # Plano de implementação — Revisão espaçada FSRS MVP
 
 **Data:** 2026-07-27  
-**Status:** R1 contratos (pré-commit) — R2/R3 **não** autorizados; sem ship automático  
+**Status:** R1 contratos **mergeado** (PR #57) — R2/R3 **não** autorizados; sem ship automático  
 
 **ADR normativo:** [`DECISAO_REVISAO_FSRS_MVP.md`](DECISAO_REVISAO_FSRS_MVP.md) (prevalece em conflito)  
+**Runbook do lote R2:** [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md) — spec operacional; aguarda revisão independente  
 **Ship:** não autorizado por este documento  
 
 **Baseline worktree R1:** `feat/fsrs-mvp-r1-contracts` @ merge-base `origin/main`. Evidence Engine permanece em main; este plano **não** remove nem liga EE.
@@ -16,7 +17,7 @@
 
 | Verificação | Resultado |
 |-------------|-----------|
-| Pin R1 | `ts-fsrs@5.4.1` em `package.json` / lock (já instalado no worktree R1) |
+| Pin R1 | `ts-fsrs@5.4.1` em `package.json` / lock — **instalado em `main`** desde o merge do R1 (PR #57) |
 | Constante auditável | `FSRS_MVP_PACKAGE_VERSION = '5.4.1'` em `lib/fsrs/defaults.ts` (não ler package.json em runtime) |
 | Esta tarefa (R1.1) | **Não** atualizar a versão do pin |
 
@@ -71,7 +72,7 @@ flowchart LR
 | Lote | Entrega | PR policy | Complexidade |
 |------|---------|-----------|--------------|
 | **R1** | Adapter `ts-fsrs`, rating Again/Good, eligibility gate, testes determinísticos | Sem migration, sem runtime de rota | M |
-| **R2** | Tabelas + RLS + unique + idempotência | **Só** migration + tipos/persistence pura; **sem UI** | M |
+| **R2** | Tabelas + **RPC transacional** + RLS + CAS (`revision`) + idempotência | **Só** migration + tipos/persistence server-only; **sem UI** | M |
 | **R3** | Hook server pós-tentativa elegível | Rotas + flag; sem superfície nova | M |
 | **R4** | Fila, seletor, “Revisões de hoje”, limite, beta | UI isolada da migration (já em main via R2) | L |
 | **R5** | Métricas, retenção observada, decisão de params | Observabilidade; sem mudar rating policy | S–M |
@@ -122,9 +123,13 @@ Pacote TypeScript puro em `lib/fsrs/` (isolado de `lib/evidence/` e de `lib/spac
 
 ## 3. Lote R2 — Persistência
 
+> **Spec operacional:** [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md). Esta seção é o resumo de planejamento; em detalhe de implementação, a spec prevalece.
+
 ### 3.1 Objetivo
 
-DDL isolado + camada de persistência server-only.
+DDL isolado + **RPC transacional** + camada de persistência server-only.
+
+**Invariante mestre:** a persistência de uma revisão ocorre em **uma única transação**, dentro de **uma única RPC** (`fsrs_persist_review`). Ou log **e** card são gravados juntos, ou nada é gravado. Card sem log e log sem card são **proibidos** — não há “débito aceito”.
 
 ### 3.2 Migration (arquivo novo único)
 
@@ -132,36 +137,63 @@ Sugestão de nome: `supabase/migrations/YYYYMMDDHHMMSS_spaced_review_fsrs_mvp.sq
 
 | Objeto | Regras |
 |--------|--------|
-| `spaced_review_cards` | Unique `(user_id, review_unit_id)`; índices `(user_id, due_at)` |
-| `spaced_review_logs` | Append-only; **unique** `(attempt_id)`; sem policy de UPDATE/DELETE para `authenticated` |
-| RLS | SELECT/INSERT próprios; UPDATE só em `spaced_review_cards` (não em logs); escrita preferencial via service role nas APIs (padrão EE / `createServerSupabase`) |
-| Grants | Espelhar padrão de `evidence_attempt_events` (authenticated SELECT; writes service_role) |
+| `spaced_review_cards` | Unique `(user_id, review_unit_id)`; coluna `revision bigint NOT NULL CHECK (revision >= 1)` para compare-and-swap; índice `(user_id, due_at)`; `due_at` / `last_review_at` / `stability` / `difficulty` / `reps` / `lapses` **derivados** do `fsrs_state` |
+| `spaced_review_logs` | Append-only; **unique** `(attempt_id)`; `semantic_fingerprint` (SHA-256); `expected_revision` / `resulting_revision`; **nenhuma** policy de UPDATE/DELETE para papel algum |
+| `fsrs_persist_review` | Função **`SECURITY INVOKER`**, `search_path` fixo, sem SQL dinâmico; único caminho de escrita nas duas tabelas; locks transacionais em ordem fixa (`attempt_id` → `user_id × review_unit_id`); **proibido** `EXCEPTION WHEN OTHERS` que converta erro em retorno |
+| Grants | `REVOKE EXECUTE` de `PUBLIC` / `anon` / `authenticated`; `GRANT EXECUTE` **somente** para `service_role` |
+
+#### 3.2.1 Matriz RLS (replicada da spec R2 §11.1; ADR §9.5 referencia a spec)
+
+| Papel | cards SELECT | cards WRITE | logs SELECT | logs WRITE | RPC EXECUTE |
+|-------|:------------:|:-----------:|:-----------:|:----------:|:-----------:|
+| `anon` | não | não | não | não | não |
+| `authenticated` | **somente próprias** | não | **somente próprios** | não | não |
+| `service_role` | sim | `INSERT` / `UPDATE` | sim | `INSERT` | **sim** |
+
+`SELECT` próprio no padrão initplan (`(select auth.uid()) = user_id`). **Nenhum** `INSERT`/`UPDATE`/`DELETE` para `authenticated` — service-role-first. `createServerSupabase()` é o cliente **service role**.
 
 ### 3.3 Código R2
 
 | Módulo | Papel |
 |--------|-------|
-| `lib/fsrs/persistence.ts` | upsert card + insert log idempotente |
-| Tipos DB | Atualizar snapshot/types só se o repo exigir no mesmo PR de migration |
+| `lib/fsrs/persistenceTypes.ts` | Rows, input, união discriminada de outcomes com `writeStatus` |
+| `lib/fsrs/fingerprint.ts` | Canonicalização determinística + SHA-256; **sem** importar `lib/evidence/**` |
+| `lib/fsrs/persistence.ts` | Valida com `deserializeFsrsMvpCard` antes do write e após todo read; mapeia o retorno da RPC |
+| `lib/fsrs/supabasePersistence.ts` | `import 'server-only'`; chama **apenas** `rpc('fsrs_persist_review', …)` |
+| `scripts/check-architecture-patterns.ts` | **Nova regra** — proíbe `.from('spaced_review_*').insert/update/upsert/delete` fora do caminho autorizado; com teste próprio |
+| Tipos DB | `types/database.ts` **a confirmar** (hand-curated; snapshot exige projeto linkado) |
 
 ### 3.4 Fora de R2
 
 - UI, wire em `registrar-tentativa`, feature flag de produto (pode tipar env sem default-on).
+- Retry / recompute após `revision_conflict` → **R3**. Após `persistence_unknown`, R3 define contagem/backoff, mas deve reter e reenviar o payload semântico original idêntico conforme a spec R2 §9.3 — sem reler ou recalcular.
+- Apply de migration em **staging/produção** → autorização separada.
 
 ### 3.5 DoD R2
 
-- [ ] Migration aplica em staging
-- [ ] Teste de idempotência (mesmo `attempt_id` → um log)
+- [ ] Migration aplicada e validada **somente em banco local/CI** durante o PR, incluindo `supabase db reset` local (staging exige autorização separada)
+- [ ] Card + log gravados em **transação única**; nenhum caminho de escrita fora da RPC
+- [ ] `revision` / CAS coberto por **teste concorrente real** (duas tentativas com a mesma `expected_revision` → exatamente uma vence)
+- [ ] Race de criação do primeiro card coberta
+- [ ] Idempotência semântica: mesmo `attempt_id` + mesmo fingerprint → `duplicate_equivalent`; fingerprint diferente → `conflict`, sem escrita
+- [ ] Resposta perdida + retry com o payload semântico original **integral e idêntico** testado: se houve commit → `duplicate_equivalent` com a revisão original; se não chegou ao banco → `created`
+- [ ] Mesmo `attempt_id` com qualquer campo semântico divergente → `conflict`, zero write adicional
+- [ ] Adapter Supabase/PostgREST conservador: sem evidência positiva de rollback ou de pré-dispatch → `persistence_unknown`, inclusive timeout, `AbortError`, socket reset e `{ error }` ambíguo
+- [ ] Coerência dos derivados: `due_at` = `fsrs_state.due`; `last_review_at` = `fsrs_state.lastReview`; `state_before` = estado atual do card
 - [ ] Teste unique `(user_id, review_unit_id)`
-- [ ] **Nenhum** componente React no PR
+- [ ] `npm run smoke:rls` verde com os casos novos da matriz §3.2.1
+- [ ] `npm run check:architecture` verde com a nova regra + teste do gate
+- [ ] **Nenhum** componente React no PR; nenhuma rota; nenhuma migration remota
 
 ### 3.6 Complexidade
 
-**M** — zona vermelha (RLS); revisão humana obrigatória antes de merge.
+**M** — zona vermelha (RLS + RPC); revisão humana + Security Review obrigatórias antes de merge.
 
 ---
 
 ## 4. Lote R3 — Integração
+
+> **R3 NÃO AUTORIZADO.** Esta seção é planejamento. Nenhum item abaixo pode ser implementado antes de o R2 estar mergeado **e** de haver aprovação explícita e separada para o R3.
 
 ### 4.1 Objetivo
 
@@ -317,6 +349,19 @@ PR-R5  feat(fsrs): métricas ops + script retenção
 
 Gates por PR: typecheck + testes do pacote; R2/R3 → Security Review humano (zona vermelha/amarela).
 
+Gates específicos do PR-R2 (detalhe em [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md) §13.4):
+
+| Gate | Obrigatório |
+|------|-------------|
+| Testes R1 (contratos) continuam verdes | sim |
+| Unitários R2 + testes da RPC **real** em banco local | sim |
+| Testes de **concorrência real** (CAS, race do primeiro card, retry idempotente) | sim |
+| Teste do novo gate arquitetural | sim |
+| `npm run typecheck` · `npm run check:architecture` · `npm run smoke:rls` | sim |
+| `security-audit` — **job de CI** (`.github/workflows/test.yml`), não script npm | sim |
+| Bugbot + Security Review + revisão humana (ou exceção formal de mantenedor único) | sim |
+| Zero migration remota · zero deploy · zero R3 | sim |
+
 ---
 
 ## 8. Divergências explícitas (plano × código atual)
@@ -369,6 +414,10 @@ Gates por PR: typecheck + testes do pacote; R2/R3 → Security Review humano (zo
 - [ ] Sem domínio por um acerto
 - [ ] Falha scheduler não bloqueia aluno
 - [ ] Logs append-only
+- [ ] Card e log persistidos em **transação única** — nunca card sem log nem log sem card
+- [ ] Atualização de card **sempre** por compare-and-swap (`revision`); nenhum read-modify-write
+- [ ] Escrita nas tabelas FSRS **somente** pela RPC (gate arquitetural)
+- [ ] Nenhuma afirmação de “não gravou” quando a resposta da RPC se perdeu (`persistence_unknown`)
 - [ ] Migration ≠ PR de UI
 - [ ] EE não apagado; flags EE default off
 
@@ -376,10 +425,11 @@ Gates por PR: typecheck + testes do pacote; R2/R3 → Security Review humano (zo
 
 ## 12. Próximo passo exato
 
-1. **Revisão humana** de:
-   - [`DECISAO_REVISAO_FSRS_MVP.md`](DECISAO_REVISAO_FSRS_MVP.md)
-   - este plano
-2. Aprovação explícita (mensagem tipo: “pode iniciar R1”).
-3. Só então: branch `feat/fsrs-mvp-r1-contracts`, instalar `ts-fsrs`, implementar R1.
+R1 está **mergeado** (PR #57): `ts-fsrs@5.4.1` pinado e `lib/fsrs/**` em `main`. O próximo lote é o **R2**.
 
-**Não iniciar R1 sem essa aprovação.**
+1. **Revisão independente** da spec operacional [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md), junto com este plano e o [ADR](DECISAO_REVISAO_FSRS_MVP.md).
+2. Aprovação explícita do mantenedor (mensagem: “pode iniciar R2”). A existência da spec **não** é autorização.
+3. Só então: branch `feat/fsrs-mvp-r2-persistence` a partir de `main`, implementar migration + RPC + persistence + gate + testes.
+4. PR isolado, sem UI e sem migration remota; **não** iniciar R3 na mesma conversa.
+
+**Não iniciar R2 sem essa aprovação. R3 permanece bloqueado.**
