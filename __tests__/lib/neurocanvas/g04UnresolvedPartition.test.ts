@@ -10,6 +10,8 @@ describe('neurocanvas g04 unresolved partition', () => {
     expect(bancaHintFromSlug('vunesp-enfermagem-promocao-123')).toBe('vunesp');
     expect(bancaHintFromSlug('vunesp-geral-outras-doencas-123')).toBe('vunesp');
   });
+
+  it('classifica buckets mutuamente exclusivos', () => {
     expect(classifyUnresolvedBucket(true, false, 'S3', ['official'])).toBe('official_lane');
     expect(classifyUnresolvedBucket(false, true, 'S2', ['manifest_conflict'])).toBe(
       'manifest_conflict',
