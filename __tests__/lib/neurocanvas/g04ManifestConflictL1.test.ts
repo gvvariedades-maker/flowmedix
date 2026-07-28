@@ -13,13 +13,48 @@ import {
 } from '@/scripts/neurocanvas-g04-manifest-conflict-l1-apply';
 import { serializePayload, semanticHashOf } from '@/scripts/neurocanvas-g04-apply-editorial';
 
-const REAL_CATALOG = resolve(process.cwd(), 'data/catalog-migration');
+const REPO_ROOT = process.cwd();
+const CATALOG_MARKER = join(
+  REPO_ROOT,
+  MANIFEST_CONFLICT_L1_AUTHORIZED_RELATIVE_PATHS[0] ?? '',
+);
+const hasFullCatalog = existsSync(CATALOG_MARKER);
+const itCatalog = hasFullCatalog ? it : it.skip;
+
 let tempRoots: string[] = [];
 
 function makeTempCatalog(): string {
   const root = mkdtempSync(join(tmpdir(), 'manifest-l1-test-'));
   tempRoots.push(root);
   return root;
+}
+
+function syntheticQuestion(): Record<string, unknown> {
+  return {
+    meta: {
+      banca: 'BANCA TESTE',
+      topico: 'Saúde Pública e Epidemiologia',
+      subtopico: 'Promoção à Saúde e Prevenção de Agravos',
+      ano: '2026',
+    },
+    question_data: {
+      instruction: 'Qual alternativa é correta?',
+      options: [
+        { id: 'A', text: 'Opção A', is_correct: false },
+        { id: 'B', text: 'Opção B', is_correct: true },
+      ],
+    },
+    reverse_study_slides: [
+      { type: 'concept_map', items: [{ label: 'Tema', detail: 'Enquadramento' }] },
+      { type: 'logic_flow', steps: ['Passo 1', 'Passo 2'], reveal_mode: 'tap' },
+      { type: 'golden_rule', content: 'Regra de ouro.' },
+      {
+        type: 'danger_zone',
+        content: 'Pegadinhas.',
+        items: [{ label: 'A', detail: 'Errado', correct: 'A não é correta.' }],
+      },
+    ],
+  };
 }
 
 afterAll(() => {
@@ -34,7 +69,7 @@ describe('manifestConflictL1 hardened aplicador', () => {
     expect(MANIFEST_CONFLICT_L1_DECISIONS.length).toBe(6);
   });
 
-  it('valida autoridade real do catálogo (Zod + 4 slides + hash)', () => {
+  itCatalog('valida autoridade real do catálogo (Zod + 4 slides + hash)', () => {
     const errors = validateManifestConflictL1Decisions();
     expect(errors).toEqual([]);
   });
@@ -42,22 +77,15 @@ describe('manifestConflictL1 hardened aplicador', () => {
   it('aborta com hash inesperado em catálogo temporário', () => {
     const root = makeTempCatalog();
     const decision = MANIFEST_CONFLICT_L1_DECISIONS[0];
-    const question = JSON.parse(
-      readFileSync(
-        join(
-          REAL_CATALOG,
-          decision.canonical_lote,
-          'questions',
-          `${decision.slug}.json`,
-        ),
-        'utf8',
-      ),
-    );
+    const question = syntheticQuestion();
 
     for (const target of decision.align_targets) {
       const dir = join(root, target.lote, 'questions');
       mkdirSync(dir, { recursive: true });
-      const tampered = { ...question, meta: { ...question.meta, banca: 'HASH TAMPER' } };
+      const tampered = {
+        ...question,
+        meta: { ...(question.meta as Record<string, unknown>), banca: 'HASH TAMPER' },
+      };
       writeFileSync(join(dir, `${decision.slug}.json`), serializePayload(tampered), 'utf8');
     }
 
@@ -66,7 +94,7 @@ describe('manifestConflictL1 hardened aplicador', () => {
     );
   });
 
-  it('dry-run idempotente no catálogo real (todos skip ou alinhados)', () => {
+  itCatalog('dry-run idempotente no catálogo real (todos skip ou alinhados)', () => {
     const plan = planManifestConflictL1();
     expect(plan.length).toBe(32);
     const writes = plan.filter((p) => p.action === 'write');

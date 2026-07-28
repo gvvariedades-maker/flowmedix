@@ -32,7 +32,7 @@ describe('g04ProductionApprovals', () => {
   });
 
   it('não altera contagens nem Fase 0B', () => {
-    expect(EDITORIAL_QUEUE_BASELINE_G04.unresolved).toBe(345);
+    expect(EDITORIAL_QUEUE_BASELINE_G04.unresolved).toBe(339);
     expect(EDITORIAL_QUEUE_BASELINE_G04.phase_0b_ready).toBe(false);
     expect(EDITORIAL_QUEUE_BASELINE_G04.editorial_readiness).toBe('NOT_READY');
   });

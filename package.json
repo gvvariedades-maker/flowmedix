@@ -83,6 +83,7 @@
     "neurocanvas:g04-apply-local": "tsx scripts/neurocanvas-g04-apply-editorial.ts --apply",
     "neurocanvas:g04-manifest-l1": "tsx scripts/neurocanvas-g04-manifest-conflict-l1-apply.ts --apply",
     "neurocanvas:g04-manifest-l1-dry": "tsx scripts/neurocanvas-g04-manifest-conflict-l1-apply.ts --dry-run",
+    "neurocanvas:g04-unresolved-partition": "tsx scripts/neurocanvas-g04-unresolved-partition.ts",
     "write:neurocanvas-g04-baseline": "tsx scripts/write-neurocanvas-g04-baseline.ts",
     "preflight:neurocanvas-parity": "tsx scripts/preflight-neurocanvas-parity.ts",
     "audit:neurovisual-plan-v0-parity": "tsx scripts/audit-neurovisual-plan-v0-parity.ts",

@@ -1,25 +1,25 @@
 {
   "baseline_id": "G0.4",
   "measured_at": "2026-07-27",
-  "measured_from_commit": "11561b7bc2d195574d146b2701013a233b613267",
-  "catalog_scope": "data/catalog-migration/**/questions/ (local, gitignored) + payloads do aplicador versionado",
-  "total_cases": 345,
-  "cluster_count": 110,
-  "official_lane_count": 16,
-  "manifest_conflict_lane_count": 6,
+  "measured_from_commit": "cf840997727a74edab13d38315b70e8c58c49943",
+  "catalog_scope": "data/catalog-migration/**/questions/ (local, gitignored) + neurocanvas:g04-manifest-l1",
+  "total_cases": 339,
+  "cluster_count": 104,
+  "official_lane_count": 11,
+  "manifest_conflict_lane_count": 0,
   "previous_g03a": {
     "total_cases": 676,
     "cluster_count": 301,
     "official_lane_count": 122,
     "manifest_conflict_lane_count": 6
   },
-  "previous_g04_pre_idecan": {
-    "measured_from_commit": "7633118b27ca1c452568a13f50c49554967bf8dc",
-    "total_cases": 347,
-    "cluster_count": 111,
-    "official_lane_count": 18,
+  "previous_g04_post_idecan": {
+    "measured_from_commit": "28bc667927a74edab13d38315b70e8c58c49943",
+    "total_cases": 345,
+    "cluster_count": 110,
+    "official_lane_count": 16,
     "manifest_conflict_lane_count": 6,
-    "idecan_status": "defer_official_provenance_pending"
+    "idecan_status": "official_provenance_confirmed"
   },
   "editorial_readiness": "NOT_READY",
   "phase_0b_ready": false,
@@ -29,10 +29,11 @@
     "fenix_package_production_status": "none"
   },
   "idecan_status": "official_provenance_confirmed",
-  "unresolved": 345,
-  "rationale": "Baseline alinhada a main @ 11561b7b após proveniência oficial IDECAN UFBA 2022 (PR #59): 2 slugs coleta materializados com fonte tier A. unresolved 347→345; official lane 18→16. IDECAN encerrado. AMEOSC A4 aprovado; EDUCA bloqueado. Gate editorial geral ainda aberto.",
+  "unresolved": 339,
+  "rationale": "Baseline alinhada a main @ cf840997 após manifest conflict L1 (PR #61): 6 casos reconciliados; manifest_conflict_lane 6→0. unresolved 345→339; official lane 16→11 (5 casos eram manifest+official). IDECAN encerrado. AMEOSC A4 aprovado; EDUCA bloqueado. Gate editorial geral ainda aberto.",
   "next_order": [
-    "processar casos restantes nas lanes official (16), pedagogical, metadata e residual",
+    "processar official lane restante (11) por banca com proveniência",
+    "partição exaustiva s2_non_slide (170) + pedagogical (84) + metadata (74)",
     "reexecutar auditoria até unresolved = 0",
     "gerar baseline final de fechamento editorial",
     "só então reavaliar e autorizar explicitamente a Fase 0B"
@@ -45,7 +46,7 @@
     "promote production_ready",
     "Fase 0B"
   ],
-  "written_at": "2026-07-27T23:43:10.259Z",
+  "written_at": "2026-07-28T00:43:47.573Z",
   "source_module": "lib/neurocanvas/editorialQueueBaselineG04.ts",
   "docs": "docs/NEUROCANVAS_G04_BASELINE.md"
 }

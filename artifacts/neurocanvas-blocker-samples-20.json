@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T23:40:54.611Z",
+  "generated_at": "2026-07-28T00:45:41.866Z",
   "samples": [
     {
       "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-5",
@@ -398,108 +398,6 @@
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
     {
-      "slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
-      "severity": "S3",
-      "file_count": 5,
-      "paths": [
-        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json",
-        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g05/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json",
-        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-lote-01/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json",
-        "data/catalog-migration/saude-da-mulher-completo/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json",
-        "data/catalog-migration/saude-da-mulher-g02/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json"
-      ],
-      "lotes": [
-        "promocao-a-saude-e-prevencao-de-agravos-completo",
-        "promocao-a-saude-e-prevencao-de-agravos-g05",
-        "promocao-a-saude-e-prevencao-de-agravos-lote-01",
-        "saude-da-mulher-completo",
-        "saude-da-mulher-g02"
-      ],
-      "path_signature": "promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-g05+3",
-      "lote_kinds": [
-        "completo_registry",
-        "handcraft_gnn",
-        "other_lote",
-        "completo_registry",
-        "handcraft_gnn"
-      ],
-      "pacote": "Saúde da Mulher",
-      "in_registry_completo": true,
-      "documented_paths_count": 2,
-      "manifest_listed_lotes": [
-        "promocao-a-saude-e-prevencao-de-agravos-completo",
-        "saude-da-mulher-completo",
-        "promocao-a-saude-e-prevencao-de-agravos-g05",
-        "promocao-a-saude-e-prevencao-de-agravos-lote-01",
-        "saude-da-mulher-g02"
-      ],
-      "differing_fields": [
-        "meta.pedagogical_branch",
-        "meta.subtopico",
-        "question_data.options[0].text",
-        "question_data.options[1].text",
-        "question_data.options[2].text",
-        "question_data.options[3].text",
-        "question_data.options[4].text",
-        "reverse_study_slides[0].footer_rule",
-        "reverse_study_slides[0].items.length",
-        "reverse_study_slides[0].meta.subtopico",
-        "reverse_study_slides[0].slide_title",
-        "reverse_study_slides[1].footer_rule",
-        "reverse_study_slides[1].meta.subtopico",
-        "reverse_study_slides[1].steps[0]",
-        "reverse_study_slides[1].steps[1]",
-        "reverse_study_slides[1].steps[2]",
-        "reverse_study_slides[1].steps[3]",
-        "reverse_study_slides[1].steps[4]",
-        "reverse_study_slides[1].steps[5]",
-        "reverse_study_slides[1].steps[7]",
-        "reverse_study_slides[2].content",
-        "reverse_study_slides[2].footer_rule",
-        "reverse_study_slides[2].meta.subtopico",
-        "reverse_study_slides[2].rows[0].emphasis",
-        "reverse_study_slides[2].rows[0].label",
-        "reverse_study_slides[2].rows[0].value",
-        "reverse_study_slides[2].rows[1].badge",
-        "reverse_study_slides[2].rows[1].label",
-        "reverse_study_slides[2].rows[1].value",
-        "reverse_study_slides[2].rows[2].badge",
-        "reverse_study_slides[2].rows[2].label",
-        "reverse_study_slides[2].rows[2].value",
-        "reverse_study_slides[2].rows[3].badge",
-        "reverse_study_slides[2].rows[3].label",
-        "reverse_study_slides[2].rows[3].value",
-        "reverse_study_slides[2].slide_title",
-        "reverse_study_slides[3].content",
-        "reverse_study_slides[3].footer_rule",
-        "reverse_study_slides[3].items.length",
-        "reverse_study_slides[3].meta.subtopico"
-      ],
-      "field_kinds": [
-        "pedagogical",
-        "answer_key",
-        "visual_only"
-      ],
-      "has_answer_divergence": true,
-      "schema_valid": true,
-      "resolution_reason": "2 cópias documentadas no mesmo tier (registry_completo_manifest) com conteúdo divergente",
-      "safe_summary": "Divergência em enunciado, alternativas ou gabarito entre cópias.",
-      "byte_hashes": [
-        "b41db5d69046b217dad7f05cfcddf8dfe6ea35360a0c64b9d829799ec8d75335",
-        "42ff66cb24d33ef30c6a8a4cbc8a9f3ca79c1f2113fb0714553065ae6859005e",
-        "6ba0b540290ba2b395ae3265f87e612414c1db0cd40d6dd7e1a521729be98c3a",
-        "cb3b5127408eb3962ba00396ff0ae1c718c823297a10344e9d8b3e321be585c4",
-        "815eaea6ff6ae9e8e8ebe9c904c6f978e90f6d97752f9db5099ba0e1593f0675"
-      ],
-      "semantic_hashes": [
-        "f3a78cb95b52a7a9816fb942ecb52c857be5991274ca7bf5d2c93ca4aafac0e7",
-        "17c1d81fe6463dfa7091b5c92055f93f55fa83e8035904aee3af1cc6291029fc",
-        "b3b8da031f8aaf0ba23b428d054758149485cc5644305a44c81ce83b42729cec",
-        "28630245b6a073d2c3c4e42df1030fc49225710228288b4198db93f3b897e082"
-      ],
-      "human_decision": "Escolher qual manifest documentado prevalece ou reconciliar handcraft entre lotes listados."
-    },
-    {
       "slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-6",
       "severity": "S2",
       "file_count": 3,
@@ -639,80 +537,57 @@
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
     {
-      "slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+      "slug": "fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5",
       "severity": "S2",
-      "file_count": 5,
+      "file_count": 2,
       "paths": [
-        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json",
-        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-g11/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json",
-        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json",
-        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g05/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json",
-        "data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-lote-01/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json"
+        "data/catalog-migration/atencao-basica-saude-da-familia-lote-02/questions/fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5.json",
+        "data/catalog-migration/curativos-lote-04/questions/fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5.json"
       ],
       "lotes": [
-        "cuidados-na-administracao-de-medicamentos-completo",
-        "cuidados-na-administracao-de-medicamentos-g11",
-        "promocao-a-saude-e-prevencao-de-agravos-completo",
-        "promocao-a-saude-e-prevencao-de-agravos-g05",
-        "promocao-a-saude-e-prevencao-de-agravos-lote-01"
+        "atencao-basica-saude-da-familia-lote-02",
+        "curativos-lote-04"
       ],
-      "path_signature": "cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-g11+3",
+      "path_signature": "atencao-basica-saude-da-familia-lote-02↔curativos-lote-04",
       "lote_kinds": [
-        "completo_registry",
-        "handcraft_gnn",
-        "completo_registry",
-        "handcraft_gnn",
+        "other_lote",
         "other_lote"
       ],
-      "pacote": "Promoção à Saúde e Prevenção de Agravos",
-      "in_registry_completo": true,
-      "documented_paths_count": 2,
+      "pacote": "Curativos e Manejo de Feridas",
+      "in_registry_completo": false,
+      "documented_paths_count": 0,
       "manifest_listed_lotes": [
-        "cuidados-na-administracao-de-medicamentos-completo",
-        "promocao-a-saude-e-prevencao-de-agravos-completo",
-        "cuidados-na-administracao-de-medicamentos-g11",
-        "promocao-a-saude-e-prevencao-de-agravos-g05",
-        "promocao-a-saude-e-prevencao-de-agravos-lote-01"
+        "atencao-basica-saude-da-familia-lote-02",
+        "curativos-lote-04"
       ],
       "differing_fields": [
-        "meta.banca",
-        "meta.content_standard",
-        "meta.family",
-        "meta.pedagogical_branch",
+        "meta.subtopico",
         "reverse_study_slides[0].footer_rule",
-        "reverse_study_slides[0].items[0].detail",
-        "reverse_study_slides[0].items[0].icon",
-        "reverse_study_slides[0].items[0].label",
-        "reverse_study_slides[0].items[1].detail",
-        "reverse_study_slides[0].items[1].icon",
-        "reverse_study_slides[0].items[1].label",
-        "reverse_study_slides[0].items[2].detail",
-        "reverse_study_slides[0].items[2].icon",
-        "reverse_study_slides[0].items[2].label",
-        "reverse_study_slides[0].items[3].detail",
-        "reverse_study_slides[0].items[3].icon",
-        "reverse_study_slides[0].items[3].label",
+        "reverse_study_slides[0].items.length",
+        "reverse_study_slides[0].meta.subtopico",
         "reverse_study_slides[0].slide_title",
         "reverse_study_slides[1].footer_rule",
-        "reverse_study_slides[1].slide_title",
-        "reverse_study_slides[1].steps.length",
+        "reverse_study_slides[1].meta.subtopico",
+        "reverse_study_slides[1].steps[1]",
+        "reverse_study_slides[1].steps[2]",
+        "reverse_study_slides[1].steps[7]",
         "reverse_study_slides[2].content",
         "reverse_study_slides[2].footer_rule",
-        "reverse_study_slides[2].rows.length",
+        "reverse_study_slides[2].meta.subtopico",
+        "reverse_study_slides[2].rows",
         "reverse_study_slides[2].slide_title",
         "reverse_study_slides[2].subject",
         "reverse_study_slides[3].content",
         "reverse_study_slides[3].footer_rule",
         "reverse_study_slides[3].items[0].correct",
-        "reverse_study_slides[3].items[0].detail",
+        "reverse_study_slides[3].items[0].label",
         "reverse_study_slides[3].items[1].correct",
-        "reverse_study_slides[3].items[1].detail",
+        "reverse_study_slides[3].items[1].label",
         "reverse_study_slides[3].items[2].correct",
-        "reverse_study_slides[3].items[2].detail",
+        "reverse_study_slides[3].items[2].label",
         "reverse_study_slides[3].items[3].correct",
         "reverse_study_slides[3].items[3].detail",
-        "reverse_study_slides[3].items[3].label",
-        "reverse_study_slides[3].slide_title"
+        "reverse_study_slides[3].meta.subtopico"
       ],
       "field_kinds": [
         "pedagogical",
@@ -720,22 +595,17 @@
       ],
       "has_answer_divergence": true,
       "schema_valid": true,
-      "resolution_reason": "2 cópias documentadas no mesmo tier (registry_completo_manifest) com conteúdo divergente",
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
       "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
       "byte_hashes": [
-        "9895af256c7c05af9e10f500df0f00a135c5db308855f8d183c18a7da04f1f77",
-        "1f0a062f92a0201b1009c66e646a738cac41ba4e6023888bfc3b64afb1b4998e",
-        "bb1a4c970f4e9be024358911b0e5d5a737b8a31f605c38039c4a9cf10070baca",
-        "fa8ca74d188ed631a29afbcb618803ce15f85a29c7a63034c9121d2f66a3059d",
-        "3122e77ab88cf3a892aaab3a3f7f8f324f15173aed30c9879cce9923454e7309"
+        "88200c1f2f45824a46fd694b8027385f5a479c43dc1640cd86d59ec842bf0ef3",
+        "c0299390a6a2262e95e1bd6da35812b0d3c588a2ab8ba772e99b4d5c047578c9"
       ],
       "semantic_hashes": [
-        "71b8b98864776360f2a9c86e41c34b29ff5d9d6ee526293149cc7513adfd699c",
-        "13b44881f363b78864ba8cad482b4981899a026feb79ae2eaf60751b8d219289",
-        "cee94d63d991b302a79bfea5e601ab90fcc2893924a8f0a760d5232df888d1c8",
-        "3df23a7b6cf3f3cfe92bab1f015e4850e68ab7a1d41c2d32981c88d670a154bd"
+        "802a7cd0c3fb30a1aaf5549eb91c68a8b52a95f4f508e97497966b6b7f0f4eef",
+        "362f60cc85ce245f757b9790cbd8882a3bd201a30a69ca150d8c624772518b08"
       ],
-      "human_decision": "Escolher qual manifest documentado prevalece ou reconciliar handcraft entre lotes listados."
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     },
     {
       "slug": "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
@@ -1183,6 +1053,66 @@
       "semantic_hashes": [
         "01c31ad8af7c9e60c437fbd137563a259db621e1bb017bbbf1ce8a512d950527",
         "f0858c1598fbcbe7fd8e165e5ae8b451e5993d7ece2d67149cf7f15b902ab01c"
+      ],
+      "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
+    },
+    {
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-6",
+      "severity": "S2",
+      "file_count": 3,
+      "paths": [
+        "data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056129848-6.json",
+        "data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056129848-6.json",
+        "data/catalog-migration/processo-de-enfermagem-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056129848-6.json"
+      ],
+      "lotes": [
+        "cuidados-na-administracao-de-medicamentos-repair-lote-01",
+        "processo-de-enfermagem-completo",
+        "processo-de-enfermagem-lote-01"
+      ],
+      "path_signature": "cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1",
+      "lote_kinds": [
+        "repair",
+        "completo_registry",
+        "other_lote"
+      ],
+      "pacote": "Processo de Enfermagem",
+      "in_registry_completo": true,
+      "documented_paths_count": 0,
+      "manifest_listed_lotes": [
+        "cuidados-na-administracao-de-medicamentos-repair-lote-01",
+        "processo-de-enfermagem-lote-01"
+      ],
+      "differing_fields": [
+        "meta.subtopico",
+        "reverse_study_slides[0].footer_rule",
+        "reverse_study_slides[0].items.length",
+        "reverse_study_slides[0].meta.subtopico",
+        "reverse_study_slides[1].meta.subtopico",
+        "reverse_study_slides[1].steps[1]",
+        "reverse_study_slides[1].steps[7]",
+        "reverse_study_slides[2].content",
+        "reverse_study_slides[2].footer_rule",
+        "reverse_study_slides[2].meta.subtopico",
+        "reverse_study_slides[2].subject",
+        "reverse_study_slides[3].content",
+        "reverse_study_slides[3].meta.subtopico"
+      ],
+      "field_kinds": [
+        "pedagogical",
+        "visual_only"
+      ],
+      "has_answer_divergence": false,
+      "schema_valid": true,
+      "resolution_reason": "slug sem cópia listada em manifest/registry/contrato documentado",
+      "safe_summary": "Divergência em slots/conteúdo dos NeuroSlides entre cópias.",
+      "byte_hashes": [
+        "8ef301bcdd759d62d9c556183994ae9962894b3c7bb55a9385f4fa2d61e001dc",
+        "2bd2f0f81c73a2cf5e5dd9609bf570ac9c02866bbb9af0e7ca47b87059e1677a"
+      ],
+      "semantic_hashes": [
+        "c419bd27910658575bc590248b8a6694c0a526ae266705ac53598fafc57ca068",
+        "fc442da571ccf5e96cade2e36409d114347af639cac115086dbea1371988fe59"
       ],
       "human_decision": "Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente)."
     }

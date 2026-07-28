@@ -87,7 +87,7 @@ npm run audit:neurocanvas-editorial-queue
 - Catálogo local em `data/catalog-migration/` (mesmo que blockers G0.1).
 - Opcional: `artifacts/neurocanvas-live-reconciliation.json` (G0.2) — consumido como evidência operacional; **sem** novo SELECT Supabase.
 - **Não** entra em `npm test` / `test:neurocanvas` (auditoria pesada).
-- Falha se contagens ≠ **345** casos / **110** clusters / **16** official / **6** manifest conflict
+- Falha se contagens ≠ **339** casos / **104** clusters / **11** official / **0** manifest conflict
   (baseline **G0.4** — ver [`docs/NEUROCANVAS_G04_BASELINE.md`](NEUROCANVAS_G04_BASELINE.md) e
   `lib/neurocanvas/editorialQueueBaselineG04.ts`).
 - Contagens históricas G0.3A (676 / 301 / 122 / 6) ficam documentadas em

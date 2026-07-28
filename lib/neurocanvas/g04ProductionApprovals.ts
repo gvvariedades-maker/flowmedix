@@ -2,7 +2,7 @@
  * Aprovações de produção G0.4 por slug — gate efetivo (não só meta/exam_vs_current).
  *
  * Fonte de verdade para `production_approvals` da baseline G0.4.
- * Contagens unresolved (345) e Fase 0B NÃO são afetadas por este módulo.
+ * Contagens unresolved (339) e Fase 0B NÃO são afetadas por este módulo.
  */
 export const G04_AMEOSC_SLUG =
   'ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7' as const;

@@ -1121,6 +1121,114 @@ Pacote compacto para revisão humana. **Não** contém recomendação de vencedo
 
 ---
 
+## ameosc-enfermagem-processo-de-enfermagem-1776056181857-4
+
+- **case_id:** `nc-g03-ae1b4b5ae5e36872`
+- **cluster:** `cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1|S2|ev=none` (26 slug(s))
+- **severity:** S2
+- **lanes:** pedagogical
+- **live_status:** incomparable
+- **manifest_conflict:** false
+- **official_review_required:** false
+- **editorial_status:** pending
+
+*Live indisponível ou incomparável — decisão editorial depende de manifest/registry e fonte oficial quando aplicável.*
+
+### Candidatos
+
+| path | semantic_sha256 | live_match | documented |
+|------|-----------------|------------|------------|
+| data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json | 40ee09509b52… | não | não |
+| data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json | 360b3ec1c0fd… | não | não |
+| data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json | 360b3ec1c0fd… | não | não |
+
+### Campos divergentes
+
+- meta.subtopico
+- reverse_study_slides[0].footer_rule
+- reverse_study_slides[0].items.length
+- reverse_study_slides[0].meta.subtopico
+- reverse_study_slides[1].meta.subtopico
+- reverse_study_slides[1].steps[1]
+- reverse_study_slides[1].steps[7]
+- reverse_study_slides[2].content
+- reverse_study_slides[2].footer_rule
+- reverse_study_slides[2].meta.subtopico
+- reverse_study_slides[2].subject
+- reverse_study_slides[3].content
+- reverse_study_slides[3].meta.subtopico
+
+### Diff pedagógico (NeuroSlides)
+
+**reverse_study_slides[0].footer_rule** (other)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Exclua por termo-chave antes de confirmar letra C.
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: [IA] Enriquecer concept_map — família Conceito / definição
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: [IA] Enriquecer concept_map — família Conceito / definição
+
+**reverse_study_slides[0].items.length** (items)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: 4
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: 3
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: 3
+
+**reverse_study_slides[0].meta.subtopico** (other)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Cuidados na Administração de Medicamentos
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Processo de Enfermagem
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Processo de Enfermagem
+
+**reverse_study_slides[1].meta.subtopico** (other)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Cuidados na Administração de Medicamentos
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Processo de Enfermagem
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Processo de Enfermagem
+
+**reverse_study_slides[1].steps[1]** (steps)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Fixar o que a banca pede em Cuidados na Administração de Medicamentos.
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Fixar o que a banca pede em Processo de Enfermagem.
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Fixar o que a banca pede em Processo de Enfermagem.
+
+**reverse_study_slides[1].steps[7]** (steps)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Fixação: em Cuidados na Administração de Medicamentos, elimine distratoras pelo texto literal das alternativas.
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Fixação: em Processo de Enfermagem, elimine distratoras pelo texto literal das alternativas.
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Fixação: em Processo de Enfermagem, elimine distratoras pelo texto literal das alternativas.
+
+**reverse_study_slides[2].content** (content)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: FOCO EM PROVA — CUIDADOS NA ADMINISTRAÇÃO DE MEDICAMENTOS: Letra C — Conferir identificação do paciente, horário, med…
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: NUNCA ADMINISTRE MEDICAMENTOS SEM A CONFERÊNCIA RIGOROSA DOS 9 CERTOS E A IDENTIFICAÇÃO CORRETA DO PACIENTE.
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: NUNCA ADMINISTRE MEDICAMENTOS SEM A CONFERÊNCIA RIGOROSA DOS 9 CERTOS E A IDENTIFICAÇÃO CORRETA DO PACIENTE.
+
+**reverse_study_slides[2].footer_rule** (other)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Fixação: Conceito / definição — ver questao-premium-fundatec-meningococica-3meses.json
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: A segurança do paciente é inegociável.
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: A segurança do paciente é inegociável.
+
+**reverse_study_slides[2].meta.subtopico** (other)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Cuidados na Administração de Medicamentos
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Processo de Enfermagem
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Processo de Enfermagem
+
+**reverse_study_slides[2].subject** (other)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: (ausente)
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Enfermagem
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Enfermagem
+
+**reverse_study_slides[3].content** (content)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: PEGADINHAS — CUIDADOS NA ADMINISTRAÇÃO DE MEDICAMENTOS (CONCEITO)
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: PEGADINHAS — PROCESSO DE ENFERMAGEM (CONCEITO)
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: PEGADINHAS — PROCESSO DE ENFERMAGEM (CONCEITO)
+
+**reverse_study_slides[3].meta.subtopico** (other)
+- `data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Cuidados na Administração de Medicamentos
+- `data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Processo de Enfermagem
+- `data/catalog-migration/processo-de-enfermagem-lote-02/questions/ameosc-enfermagem-processo-de-enfermagem-1776056181857-4.json`: Processo de Enfermagem
+
+### Ações permitidas
+
+- choose_existing_candidate
+- official_source_review
+- reject_all_candidates
+- defer
+
+---
+
 ## cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1
 
 - **case_id:** `nc-g03-25206cad1fed2447`
@@ -1240,83 +1348,6 @@ Pacote compacto para revisão humana. **Não** contém recomendação de vencedo
 - reverse_study_slides[3].footer_rule
 - reverse_study_slides[3].items.length
 - reverse_study_slides[3].slide_title
-
-### Ações permitidas
-
-- choose_existing_candidate
-- official_source_review
-- reject_all_candidates
-- defer
-
----
-
-## fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9
-
-- **case_id:** `nc-g03-225887fc3e95248c`
-- **cluster:** `promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-g05+3|S3|ev=conflict` (1 slug(s))
-- **severity:** S3
-- **lanes:** official, manifest_conflict
-- **live_status:** incomparable
-- **manifest_conflict:** true
-- **official_review_required:** true
-- **editorial_status:** pending
-
-> **Alerta fonte oficial:** Divergência de gabarito entre candidatos — exige fonte oficial (prova/guideline). Nenhum candidato deve ser promovido automaticamente.
-
-*Live indisponível ou incomparável — decisão editorial depende de manifest/registry e fonte oficial quando aplicável.*
-
-### Candidatos
-
-| path | semantic_sha256 | live_match | documented |
-|------|-----------------|------------|------------|
-| data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json | f3a78cb95b52… | não | sim |
-| data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g05/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json | 17c1d81fe646… | não | não |
-| data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-lote-01/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json | b3b8da031f8a… | não | não |
-| data/catalog-migration/saude-da-mulher-completo/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json | 28630245b6a0… | não | sim |
-| data/catalog-migration/saude-da-mulher-g02/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json | f3a78cb95b52… | não | não |
-
-### Campos divergentes
-
-- meta.pedagogical_branch
-- meta.subtopico
-- question_data.options[0].text
-- question_data.options[1].text
-- question_data.options[2].text
-- question_data.options[3].text
-- question_data.options[4].text
-- reverse_study_slides[0].footer_rule
-- reverse_study_slides[0].items.length
-- reverse_study_slides[0].meta.subtopico
-- reverse_study_slides[0].slide_title
-- reverse_study_slides[1].footer_rule
-- reverse_study_slides[1].meta.subtopico
-- reverse_study_slides[1].steps[0]
-- reverse_study_slides[1].steps[1]
-- reverse_study_slides[1].steps[2]
-- reverse_study_slides[1].steps[3]
-- reverse_study_slides[1].steps[4]
-- reverse_study_slides[1].steps[5]
-- reverse_study_slides[1].steps[7]
-- reverse_study_slides[2].content
-- reverse_study_slides[2].footer_rule
-- reverse_study_slides[2].meta.subtopico
-- reverse_study_slides[2].rows[0].emphasis
-- reverse_study_slides[2].rows[0].label
-- reverse_study_slides[2].rows[0].value
-- reverse_study_slides[2].rows[1].badge
-- reverse_study_slides[2].rows[1].label
-- reverse_study_slides[2].rows[1].value
-- reverse_study_slides[2].rows[2].badge
-- reverse_study_slides[2].rows[2].label
-- reverse_study_slides[2].rows[2].value
-- reverse_study_slides[2].rows[3].badge
-- reverse_study_slides[2].rows[3].label
-- reverse_study_slides[2].rows[3].value
-- reverse_study_slides[2].slide_title
-- reverse_study_slides[3].content
-- reverse_study_slides[3].footer_rule
-- reverse_study_slides[3].items.length
-- reverse_study_slides[3].meta.subtopico
 
 ### Ações permitidas
 
