@@ -551,6 +551,7 @@
     "swr": "^2.4.2",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
+    "ts-fsrs": "5.4.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {
