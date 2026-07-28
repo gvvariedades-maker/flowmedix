@@ -2,6 +2,9 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 import {
+  MANIFEST_CONFLICT_L1_AUTHORIZED_RELATIVE_PATHS,
+} from '@/scripts/neurocanvas-g04-manifest-conflict-l1-decisions';
+import {
   bancaHintFromSlug,
   classifyUnresolvedBucket,
   buildUnresolvedPartition,
@@ -10,7 +13,7 @@ import { EDITORIAL_QUEUE_BASELINE_G04 } from '@/lib/neurocanvas/editorialQueueBa
 
 const CATALOG_MARKER = join(
   process.cwd(),
-  'data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/manifest.json',
+  MANIFEST_CONFLICT_L1_AUTHORIZED_RELATIVE_PATHS[0] ?? '',
 );
 const hasFullCatalog = existsSync(CATALOG_MARKER);
 const itCatalog = hasFullCatalog ? it : it.skip;

@@ -16,7 +16,7 @@ import { serializePayload, semanticHashOf } from '@/scripts/neurocanvas-g04-appl
 const REPO_ROOT = process.cwd();
 const CATALOG_MARKER = join(
   REPO_ROOT,
-  'data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/manifest.json',
+  MANIFEST_CONFLICT_L1_AUTHORIZED_RELATIVE_PATHS[0] ?? '',
 );
 const hasFullCatalog = existsSync(CATALOG_MARKER);
 const itCatalog = hasFullCatalog ? it : it.skip;
@@ -82,7 +82,10 @@ describe('manifestConflictL1 hardened aplicador', () => {
     for (const target of decision.align_targets) {
       const dir = join(root, target.lote, 'questions');
       mkdirSync(dir, { recursive: true });
-      const tampered = { ...question, meta: { ...question.meta, banca: 'HASH TAMPER' } };
+      const tampered = {
+        ...question,
+        meta: { ...(question.meta as Record<string, unknown>), banca: 'HASH TAMPER' },
+      };
       writeFileSync(join(dir, `${decision.slug}.json`), serializePayload(tampered), 'utf8');
     }
 
