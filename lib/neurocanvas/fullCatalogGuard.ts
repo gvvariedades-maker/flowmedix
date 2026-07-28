@@ -1,6 +1,8 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
+import { logger } from '@/lib/logger';
+
 /**
  * Marcador de catálogo local completo (gitignored).
  * Manter alinhado ao primeiro path de MANIFEST_CONFLICT_L1_AUTHORIZED_RELATIVE_PATHS.
@@ -22,12 +24,8 @@ export function hasFullCatalogMigration(repoRoot: string): boolean {
  */
 export function assertFullCatalogMigration(repoRoot: string, scriptLabel: string): void {
   if (hasFullCatalogMigration(repoRoot)) return;
-  console.error(
-    `[${scriptLabel}] Catálogo local completo ausente (marcador não encontrado).`,
-  );
-  console.error(`  Esperado: data/catalog-migration/${FULL_CATALOG_MIGRATION_MARKER_RELATIVE_PATH}`);
-  console.error(
-    '  Auditoria completa exige catálogo local; em CI use fixtures herméticas nos testes Jest, não este script.',
+  logger.error(
+    `[${scriptLabel}] Catálogo local completo ausente (marcador não encontrado). Esperado: data/catalog-migration/${FULL_CATALOG_MIGRATION_MARKER_RELATIVE_PATH}. Auditoria completa exige catálogo local; em CI use fixtures herméticas nos testes Jest, não este script.`,
   );
   process.exit(1);
 }
