@@ -1,9 +1,19 @@
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
 import {
   bancaHintFromSlug,
   classifyUnresolvedBucket,
   buildUnresolvedPartition,
 } from '@/scripts/neurocanvas-g04-unresolved-partition';
 import { EDITORIAL_QUEUE_BASELINE_G04 } from '@/lib/neurocanvas/editorialQueueBaselineG04';
+
+const CATALOG_MARKER = join(
+  process.cwd(),
+  'data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/manifest.json',
+);
+const hasFullCatalog = existsSync(CATALOG_MARKER);
+const itCatalog = hasFullCatalog ? it : it.skip;
 
 describe('neurocanvas g04 unresolved partition', () => {
   it('extrai banca de slug enfermagem ou geral', () => {
@@ -23,7 +33,7 @@ describe('neurocanvas g04 unresolved partition', () => {
     expect(classifyUnresolvedBucket(false, false, 'S2', [])).toBe('s2_non_slide_residual');
   });
 
-  it('partição exaustiva soma 339 e alinha baseline', () => {
+  itCatalog('partição exaustiva soma 339 e alinha baseline (catálogo local)', () => {
     const p = buildUnresolvedPartition();
     expect(p.partition_complete).toBe(true);
     expect(p.total_unresolved).toBe(339);
