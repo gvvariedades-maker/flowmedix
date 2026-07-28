@@ -131,26 +131,6 @@ Paths:
   - data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
   - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780001517858-2.json
 
-## fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9
-
-- **Severidade:** S3
-- **Pacote:** Saúde da Mulher
-- **Assinatura paths:** promocao-a-saude-e-prevencao-de-agravos-completo↔promocao-a-saude-e-prevencao-de-agravos-g05+3
-- **Lotes:** promocao-a-saude-e-prevencao-de-agravos-completo, promocao-a-saude-e-prevencao-de-agravos-g05, promocao-a-saude-e-prevencao-de-agravos-lote-01, saude-da-mulher-completo, saude-da-mulher-g02
-- **Manifest documentado:** 2 cópia(s)
-- **Hashes semânticos:** 4 distintos
-- **Campos:** meta.pedagogical_branch, meta.subtopico, question_data.options[0].text, question_data.options[1].text, question_data.options[2].text, question_data.options[3].text, question_data.options[4].text, reverse_study_slides[0].footer_rule, reverse_study_slides[0].items.length, reverse_study_slides[0].meta.subtopico
-- **Resumo:** Divergência em enunciado, alternativas ou gabarito entre cópias.
-- **Por que unresolved:** 2 cópias documentadas no mesmo tier (registry_completo_manifest) com conteúdo divergente
-- **Decisão humana:** Escolher qual manifest documentado prevalece ou reconciliar handcraft entre lotes listados.
-
-Paths:
-  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g05/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-lote-01/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-  - data/catalog-migration/saude-da-mulher-completo/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-  - data/catalog-migration/saude-da-mulher-g02/questions/fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9.json
-
 ## amauc-enfermagem-processo-de-enfermagem-1780001517858-6
 
 - **Severidade:** S2
@@ -187,25 +167,22 @@ Paths:
   - data/catalog-migration/processo-de-enfermagem-completo/questions/amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json
   - data/catalog-migration/processo-de-enfermagem-lote-01/questions/amauc-enfermagem-processo-de-enfermagem-1780002441285-8.json
 
-## fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4
+## fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5
 
 - **Severidade:** S2
-- **Pacote:** Promoção à Saúde e Prevenção de Agravos
-- **Assinatura paths:** cuidados-na-administracao-de-medicamentos-completo↔cuidados-na-administracao-de-medicamentos-g11+3
-- **Lotes:** cuidados-na-administracao-de-medicamentos-completo, cuidados-na-administracao-de-medicamentos-g11, promocao-a-saude-e-prevencao-de-agravos-completo, promocao-a-saude-e-prevencao-de-agravos-g05, promocao-a-saude-e-prevencao-de-agravos-lote-01
-- **Manifest documentado:** 2 cópia(s)
-- **Hashes semânticos:** 4 distintos
-- **Campos:** meta.banca, meta.content_standard, meta.family, meta.pedagogical_branch, reverse_study_slides[0].footer_rule, reverse_study_slides[0].items[0].detail, reverse_study_slides[0].items[0].icon, reverse_study_slides[0].items[0].label, reverse_study_slides[0].items[1].detail, reverse_study_slides[0].items[1].icon
+- **Pacote:** Curativos e Manejo de Feridas
+- **Assinatura paths:** atencao-basica-saude-da-familia-lote-02↔curativos-lote-04
+- **Lotes:** atencao-basica-saude-da-familia-lote-02, curativos-lote-04
+- **Manifest documentado:** 0 cópia(s)
+- **Hashes semânticos:** 2 distintos
+- **Campos:** meta.subtopico, reverse_study_slides[0].footer_rule, reverse_study_slides[0].items.length, reverse_study_slides[0].meta.subtopico, reverse_study_slides[0].slide_title, reverse_study_slides[1].footer_rule, reverse_study_slides[1].meta.subtopico, reverse_study_slides[1].steps[1], reverse_study_slides[1].steps[2], reverse_study_slides[1].steps[7]
 - **Resumo:** Divergência em slots/conteúdo dos NeuroSlides entre cópias.
-- **Por que unresolved:** 2 cópias documentadas no mesmo tier (registry_completo_manifest) com conteúdo divergente
-- **Decisão humana:** Escolher qual manifest documentado prevalece ou reconciliar handcraft entre lotes listados.
+- **Por que unresolved:** slug sem cópia listada em manifest/registry/contrato documentado
+- **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
 
 Paths:
-  - data/catalog-migration/cuidados-na-administracao-de-medicamentos-completo/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json
-  - data/catalog-migration/cuidados-na-administracao-de-medicamentos-g11/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json
-  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-completo/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json
-  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-g05/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json
-  - data/catalog-migration/promocao-a-saude-e-prevencao-de-agravos-lote-01/questions/fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4.json
+  - data/catalog-migration/atencao-basica-saude-da-familia-lote-02/questions/fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5.json
+  - data/catalog-migration/curativos-lote-04/questions/fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5.json
 
 ## funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0
 
@@ -377,3 +354,21 @@ Paths:
   - data/catalog-migration/doencas-bacterianas-completo/questions/ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6.json
   - data/catalog-migration/doencas-bacterianas-e-fungicas-lote-01/questions/ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6.json
   - data/catalog-migration/infeccoes-biosseguranca-completo/questions/ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6.json
+
+## ameosc-enfermagem-processo-de-enfermagem-1776056129848-6
+
+- **Severidade:** S2
+- **Pacote:** Processo de Enfermagem
+- **Assinatura paths:** cuidados-na-administracao-de-medicamentos-repair-lote-01↔processo-de-enfermagem-completo+1
+- **Lotes:** cuidados-na-administracao-de-medicamentos-repair-lote-01, processo-de-enfermagem-completo, processo-de-enfermagem-lote-01
+- **Manifest documentado:** 0 cópia(s)
+- **Hashes semânticos:** 2 distintos
+- **Campos:** meta.subtopico, reverse_study_slides[0].footer_rule, reverse_study_slides[0].items.length, reverse_study_slides[0].meta.subtopico, reverse_study_slides[1].meta.subtopico, reverse_study_slides[1].steps[1], reverse_study_slides[1].steps[7], reverse_study_slides[2].content, reverse_study_slides[2].footer_rule, reverse_study_slides[2].meta.subtopico
+- **Resumo:** Divergência em slots/conteúdo dos NeuroSlides entre cópias.
+- **Por que unresolved:** slug sem cópia listada em manifest/registry/contrato documentado
+- **Decisão humana:** Declarar manifest/registry para o slug ou revisar cópias órfãs (sem apagar automaticamente).
+
+Paths:
+  - data/catalog-migration/cuidados-na-administracao-de-medicamentos-repair-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056129848-6.json
+  - data/catalog-migration/processo-de-enfermagem-completo/questions/ameosc-enfermagem-processo-de-enfermagem-1776056129848-6.json
+  - data/catalog-migration/processo-de-enfermagem-lote-01/questions/ameosc-enfermagem-processo-de-enfermagem-1776056129848-6.json
