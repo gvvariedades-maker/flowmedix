@@ -5,8 +5,11 @@
  *
  * Uso:
  *   npx tsx scripts/fsrs-mvp-ops-report.ts
+ *   npx tsx scripts/fsrs-mvp-ops-report.ts --dry-run
+ *   npm run fsrs:ops-report -- --dry-run
  *
- * Requer SUPABASE_SERVICE_ROLE_KEY + NEXT_PUBLIC_SUPABASE_URL.
+ * Live: SUPABASE_SERVICE_ROLE_KEY + NEXT_PUBLIC_SUPABASE_URL.
+ * Dry-run: sem credenciais; contadores zerados; exit 0.
  * Não altera rating policy nem liga default-on.
  */
 
@@ -15,31 +18,50 @@ import { join } from 'node:path';
 import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
 
+import {
+  evaluateFsrsGoNoGo,
+  findFsrsOpsReportPiiLeaks,
+  opsReportArtifactFileName,
+  renderFsrsOpsReportMarkdown,
+  zeroFsrsOpsMetrics,
+  type FsrsOpsMetrics,
+  type FsrsOpsReportMode,
+} from '@/lib/fsrs/opsReport';
+
 loadEnvConfig(process.cwd());
 
-type GoNoGo = {
-  criterion: string;
-  provisional: string;
-  status: 'pass' | 'fail' | 'unknown';
-};
-
-async function main() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
-  if (!url || !key) {
-    console.error('NEXT_PUBLIC_SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY obrigatórias.');
-    process.exit(1);
+function parseArgs(argv: string[]): { dryRun: boolean; outDir: string | null } {
+  let dryRun = false;
+  let outDir: string | null = null;
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i];
+    if (arg === '--dry-run') {
+      dryRun = true;
+      continue;
+    }
+    if (arg === '--out-dir' && argv[i + 1]) {
+      outDir = argv[++i] ?? null;
+      continue;
+    }
+    if (arg?.startsWith('--out-dir=')) {
+      outDir = arg.slice('--out-dir='.length) || null;
+    }
   }
+  return { dryRun, outDir };
+}
 
+async function fetchLiveMetrics(
+  url: string,
+  key: string,
+): Promise<FsrsOpsMetrics> {
   const supabase = createClient(url, key, { auth: { persistSession: false } });
-  const now = new Date();
-  const day = now.toISOString().slice(0, 10).replace(/-/g, '');
+  const nowIso = new Date().toISOString();
 
-  const { count: logCount, error: logErr } = await supabase
+  const { count: logCount } = await supabase
     .from('spaced_review_logs')
     .select('id', { count: 'exact', head: true });
 
-  const { count: cardCount, error: cardErr } = await supabase
+  const { count: cardCount } = await supabase
     .from('spaced_review_cards')
     .select('id', { count: 'exact', head: true });
 
@@ -58,82 +80,94 @@ async function main() {
     .select('id', { count: 'exact', head: true })
     .eq('same_stem_fallback', true);
 
+  const { count: intervalGe7dTotal } = await supabase
+    .from('spaced_review_logs')
+    .select('id', { count: 'exact', head: true })
+    .gte('scheduled_days', 7);
+
+  const { count: intervalGe7dGood } = await supabase
+    .from('spaced_review_logs')
+    .select('id', { count: 'exact', head: true })
+    .gte('scheduled_days', 7)
+    .eq('rating', 'good');
+
+  const { count: dueNow } = await supabase
+    .from('spaced_review_cards')
+    .select('id', { count: 'exact', head: true })
+    .lte('due_at', nowIso);
+
   const totalLogs = logCount ?? 0;
   const goods = goodCount ?? 0;
   const agains = againCount ?? 0;
   const sameStem = sameStemCount ?? 0;
-  const goodRate = totalLogs > 0 ? goods / totalLogs : null;
-  const sameStemRate = totalLogs > 0 ? sameStem / totalLogs : null;
+  const intervalSample = intervalGe7dTotal ?? 0;
+  const intervalGoods = intervalGe7dGood ?? 0;
+  const due = dueNow ?? 0;
+  const cards = cardCount ?? 0;
 
-  const criteria: GoNoGo[] = [
-    {
-      criterion: 'Volume mínimo de logs (≥ 50 reviews elegíveis)',
-      provisional: '≥ 50 spaced_review_logs',
-      status: totalLogs >= 50 ? 'pass' : totalLogs > 0 ? 'fail' : 'unknown',
-    },
-    {
-      criterion: 'Good rate observacional (intervalo ≥ 7d — proxy global neste script)',
-      provisional: 'Good rate ∈ [0.70, 0.95] com n≥50',
-      status:
-        goodRate == null
-          ? 'unknown'
-          : totalLogs >= 50 && goodRate >= 0.7 && goodRate <= 0.95
-            ? 'pass'
-            : 'fail',
-    },
-    {
-      criterion: 'Taxa same_stem_fallback',
-      provisional: '< 40% com n≥50',
-      status:
-        sameStemRate == null
-          ? 'unknown'
-          : totalLogs >= 50 && sameStemRate < 0.4
-            ? 'pass'
-            : totalLogs === 0
-              ? 'unknown'
-              : 'fail',
-    },
-    {
-      criterion: 'Default-on global',
-      provisional: 'Exige decisão humana após critérios acima — fora deste script',
-      status: 'unknown',
-    },
-  ];
+  return {
+    cards,
+    logs: totalLogs,
+    good: goods,
+    again: agains,
+    sameStemFallback: sameStem,
+    // Telemetria de fila (logger) — sem coluna em spaced_review_logs.
+    inventoryMissing: null,
+    goodRateIntervalGe7d:
+      intervalSample > 0 ? intervalGoods / intervalSample : null,
+    intervalGe7dSample: intervalSample,
+    // D+7/D+14 por unidade e lapses/user/day exigem agregação mais rica.
+    accuracyD7: null,
+    accuracyD7Sample: 0,
+    accuracyD14: null,
+    accuracyD14Sample: 0,
+    lapsesPerUserDay: null,
+    dueLoadRatio: null,
+    dueNow: due,
+    sameStemRate: totalLogs > 0 ? sameStem / totalLogs : null,
+    inventoryMissingRate: null,
+  };
+}
 
-  const md = `# FSRS MVP ops — ${now.toISOString()}
+async function main() {
+  const { dryRun, outDir: outDirArg } = parseArgs(process.argv.slice(2));
+  const mode: FsrsOpsReportMode = dryRun ? 'dry-run' : 'live';
+  const now = new Date();
+  const day = now.toISOString().slice(0, 10).replace(/-/g, '');
 
-## Contagens
+  let metrics: FsrsOpsMetrics;
 
-| Métrica | Valor |
-|---------|-------|
-| Cards | ${cardErr ? `erro: ${cardErr.message}` : cardCount ?? 0} |
-| Logs | ${logErr ? `erro: ${logErr.message}` : totalLogs} |
-| rating=good | ${goods} |
-| rating=again | ${agains} |
-| same_stem_fallback | ${sameStem} |
-| Good rate (global) | ${goodRate == null ? 'n/a' : goodRate.toFixed(3)} |
-| same_stem rate | ${sameStemRate == null ? 'n/a' : sameStemRate.toFixed(3)} |
+  if (dryRun) {
+    metrics = zeroFsrsOpsMetrics();
+  } else {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+    if (!url || !key) {
+      console.error(
+        'NEXT_PUBLIC_SUPABASE_URL e SUPABASE_SERVICE_ROLE_KEY obrigatórias (ou use --dry-run).',
+      );
+      process.exit(1);
+    }
+    metrics = await fetchLiveMetrics(url, key);
+  }
 
-## Critérios go/no-go (provisórios)
+  const criteria = evaluateFsrsGoNoGo(metrics);
+  const md = renderFsrsOpsReportMarkdown({
+    generatedAt: now,
+    metrics,
+    mode,
+    criteria,
+  });
 
-| Critério | Barra | Status |
-|----------|-------|--------|
-${criteria.map((c) => `| ${c.criterion} | ${c.provisional} | ${c.status} |`).join('\n')}
+  const leaks = findFsrsOpsReportPiiLeaks(md);
+  if (leaks.length > 0) {
+    console.error(`Ops report PII leak detected: ${leaks.join(', ')}`);
+    process.exit(1);
+  }
 
-## Notas
-
-- Script **read-only**; não altera parâmetros FSRS nem liga \`FSRS_MVP_ENABLED\`.
-- Retenção D+7/D+14 por unidade exige query mais rica — evoluir em lote futuro.
-- Contadores apply/skip/persist_fail/idempotent/persistence_unknown: instrumentar via logger/métricas de app (R3+) e agregar aqui.
-
-## Decisão
-
-**Default-on global:** não recomendado até critérios passarem + revisão humana.
-`;
-
-  const outDir = join(process.cwd(), 'artifacts');
+  const outDir = outDirArg ?? join(process.cwd(), 'artifacts');
   mkdirSync(outDir, { recursive: true });
-  const outPath = join(outDir, `fsrs-mvp-ops-${day}.md`);
+  const outPath = join(outDir, opsReportArtifactFileName(day, mode));
   writeFileSync(outPath, md, 'utf8');
   console.log(`Wrote ${outPath}`);
 }
