@@ -20,6 +20,7 @@ import {
 } from '@/lib/freemium';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { moduloAccessOptionsFromEmail } from '@/lib/concursos/studyAccess';
+import { isUuidV4 } from '@/lib/evidence/parseClientFields';
 import { applyFsrsReview } from '@/lib/fsrs/applyReview';
 import { createSupabaseFsrsPersistence } from '@/lib/fsrs/supabasePersistence';
 import {
@@ -213,10 +214,20 @@ export async function POST(request: NextRequest) {
     if (isFsrsMvpEnabled()) {
       try {
         const rawAttempt = (body as Record<string, unknown>).attempt_id;
-        const attemptId =
-          typeof rawAttempt === 'string' && rawAttempt.trim() !== ''
-            ? rawAttempt.trim()
-            : randomUUID();
+        const trimmedAttempt =
+          typeof rawAttempt === 'string' ? rawAttempt.trim() : '';
+        const hadAttemptId = trimmedAttempt.length > 0;
+        let attemptId: string;
+        if (isUuidV4(trimmedAttempt)) {
+          attemptId = trimmedAttempt;
+        } else {
+          attemptId = randomUUID();
+          logger.info('FSRS MVP: attempt_id missing or invalid; generated server-side', {
+            userId: user.id,
+            modulo_slug,
+            had_attempt_id: hadAttemptId,
+          });
+        }
         const fromScheduledReview =
           (body as Record<string, unknown>).from_revisoes === true ||
           (body as Record<string, unknown>).from_revisoes === '1' ||

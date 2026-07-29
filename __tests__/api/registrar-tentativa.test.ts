@@ -52,8 +52,12 @@ jest.mock('@/lib/supabase/server', () => ({
 }));
 
 const mockIsEvidenceV1InstrumentationEnabled = jest.fn();
+const mockIsFsrsMvpEnabled = jest.fn();
+const mockGetFsrsRequestRetention = jest.fn(() => 0.9);
 jest.mock('@/lib/env', () => ({
   isEvidenceV1InstrumentationEnabled: jest.fn(() => mockIsEvidenceV1InstrumentationEnabled()),
+  isFsrsMvpEnabled: jest.fn(() => mockIsFsrsMvpEnabled()),
+  getFsrsRequestRetention: jest.fn(() => mockGetFsrsRequestRetention()),
 }));
 
 const mockIngestAttemptEvent = jest.fn();
@@ -68,8 +72,20 @@ jest.mock('@/lib/evidence/supabasePersistence', () => ({
   ),
 }));
 
+const mockFsrsPersistReview = jest.fn();
+const mockFsrsLoadCard = jest.fn();
+const mockCreateSupabaseFsrsPersistence = jest.fn((..._args: unknown[]) => ({
+  persistReview: mockFsrsPersistReview,
+  loadCard: mockFsrsLoadCard,
+}));
+jest.mock('@/lib/fsrs/supabasePersistence', () => ({
+  createSupabaseFsrsPersistence: jest.fn((...args: unknown[]) =>
+    mockCreateSupabaseFsrsPersistence(...args),
+  ),
+}));
+
 const USER_ID = '550e8400-e29b-41d4-a716-446655440000';
-const ATTEMPT_ID = '6ba7b810-9dad-11d1-80b4-00c04fd430c8';
+const ATTEMPT_ID = '6ba7b810-9dad-41d1-80b4-00c04fd430c8';
 const SLUG = 'questao-teste-slug';
 
 const conteudoJson = {
@@ -90,8 +106,21 @@ describe('POST /api/registrar-tentativa', () => {
     });
     mockUserHasModuloAccess.mockResolvedValue(true);
     mockIsEvidenceV1InstrumentationEnabled.mockReturnValue(false);
+    mockIsFsrsMvpEnabled.mockReturnValue(false);
+    mockGetFsrsRequestRetention.mockReturnValue(0.9);
     mockCreateSupabaseEvidencePersistence.mockReturnValue({ findAttemptById: jest.fn(), insertAttempt: jest.fn() });
     mockIngestAttemptEvent.mockResolvedValue({ status: 'disabled' });
+    mockFsrsLoadCard.mockResolvedValue({ ok: true, card: null });
+    mockFsrsPersistReview.mockResolvedValue({
+      outcome: 'created',
+      writeStatus: 'committed',
+      attemptId: ATTEMPT_ID,
+      resultingRevision: 1,
+    });
+    mockCreateSupabaseFsrsPersistence.mockReturnValue({
+      persistReview: mockFsrsPersistReview,
+      loadCard: mockFsrsLoadCard,
+    });
   });
 
   function makeRequest(body: object) {
@@ -556,6 +585,214 @@ describe('POST /api/registrar-tentativa', () => {
       expect(mockCreateSupabaseEvidencePersistence).toHaveBeenCalledWith(
         await mockCreateServerSupabase(),
       );
+    });
+  });
+
+  describe('FSRS MVP (R3)', () => {
+    const { logger } = jest.requireMock('@/lib/logger') as {
+      logger: { info: jest.Mock; error: jest.Mock };
+    };
+
+    it('flag off → zero writes FSRS (persistence não inicializada)', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(false);
+      mockModuloFetch();
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          topico: 'Enfermagem',
+          subtopico: 'Imunização',
+        }),
+      );
+
+      expect(response.status).toBe(200);
+      expect(await response.json()).toEqual({
+        success: true,
+        acertou: true,
+        opcao_correta_id: 'B',
+      });
+      expect(mockCreateSupabaseFsrsPersistence).not.toHaveBeenCalled();
+      expect(mockFsrsPersistReview).not.toHaveBeenCalled();
+      expect(mockFsrsLoadCard).not.toHaveBeenCalled();
+    });
+
+    it('elegível → grava via persistReview', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockModuloFetch();
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          topico: 'Enfermagem',
+          subtopico: 'Imunização',
+        }),
+      );
+
+      expect(response.status).toBe(200);
+      expect(await response.json()).toEqual({
+        success: true,
+        acertou: true,
+        opcao_correta_id: 'B',
+      });
+      expect(mockCreateSupabaseFsrsPersistence).toHaveBeenCalledTimes(1);
+      expect(mockFsrsLoadCard).toHaveBeenCalledTimes(1);
+      expect(mockFsrsPersistReview).toHaveBeenCalledTimes(1);
+      expect(mockFsrsPersistReview).toHaveBeenCalledWith(
+        expect.objectContaining({
+          userId: USER_ID,
+          attemptId: ATTEMPT_ID,
+          questionId: SLUG,
+          isCorrect: true,
+        }),
+      );
+    });
+
+    it('inelegível (subtópico ausente) → não grava', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockModuloFetch();
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          topico: 'Enfermagem',
+          // sem subtopico → unit_unresolved
+        }),
+      );
+
+      expect(response.status).toBe(200);
+      expect(await response.json()).toEqual({
+        success: true,
+        acertou: true,
+        opcao_correta_id: 'B',
+      });
+      expect(mockCreateSupabaseFsrsPersistence).toHaveBeenCalledTimes(1);
+      expect(mockFsrsPersistReview).not.toHaveBeenCalled();
+    });
+
+    it('falha do FSRS mantém HTTP 200 com gabarito', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockModuloFetch();
+      mockFsrsLoadCard.mockRejectedValue(new Error('fsrs db down'));
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          topico: 'Enfermagem',
+          subtopico: 'Imunização',
+        }),
+      );
+
+      expect(response.status).toBe(200);
+      expect(await response.json()).toEqual({
+        success: true,
+        acertou: true,
+        opcao_correta_id: 'B',
+      });
+      expect(mockFsrsPersistReview).not.toHaveBeenCalled();
+    });
+
+    it('retry com mesmo attempt_id → segundo outcome duplicate_equivalent (sem segunda criação)', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockModuloFetch();
+      mockFsrsPersistReview
+        .mockResolvedValueOnce({
+          outcome: 'created',
+          writeStatus: 'committed',
+          attemptId: ATTEMPT_ID,
+          resultingRevision: 1,
+        })
+        .mockResolvedValueOnce({
+          outcome: 'duplicate_equivalent',
+          writeStatus: 'none',
+          attemptId: ATTEMPT_ID,
+          resultingRevision: 1,
+        });
+
+      const body = {
+        modulo_slug: SLUG,
+        opcao_id: 'B',
+        attempt_id: ATTEMPT_ID,
+        topico: 'Enfermagem',
+        subtopico: 'Imunização',
+      };
+
+      const first = await POST(makeRequest(body));
+      const second = await POST(makeRequest(body));
+
+      expect(first.status).toBe(200);
+      expect(second.status).toBe(200);
+      expect(mockFsrsPersistReview).toHaveBeenCalledTimes(2);
+      expect(mockFsrsPersistReview.mock.calls[0][0].attemptId).toBe(ATTEMPT_ID);
+      expect(mockFsrsPersistReview.mock.calls[1][0].attemptId).toBe(ATTEMPT_ID);
+      await expect(mockFsrsPersistReview.mock.results[1].value).resolves.toMatchObject({
+        outcome: 'duplicate_equivalent',
+        writeStatus: 'none',
+      });
+    });
+
+    it('attempt_id inválido → gera UUID server-side e registra métrica; ainda HTTP 200', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockModuloFetch();
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: 'not-a-uuid',
+          topico: 'Enfermagem',
+          subtopico: 'Imunização',
+        }),
+      );
+
+      expect(response.status).toBe(200);
+      expect(logger.info).toHaveBeenCalledWith(
+        'FSRS MVP: attempt_id missing or invalid; generated server-side',
+        expect.objectContaining({
+          userId: USER_ID,
+          modulo_slug: SLUG,
+          had_attempt_id: true,
+        }),
+      );
+      expect(mockFsrsPersistReview).toHaveBeenCalledTimes(1);
+      const usedAttemptId = mockFsrsPersistReview.mock.calls[0][0].attemptId as string;
+      expect(usedAttemptId).toMatch(
+        /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
+      );
+      expect(usedAttemptId).not.toBe('not-a-uuid');
+    });
+
+    it('flags EE intocadas quando FSRS está on', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockIsEvidenceV1InstrumentationEnabled.mockReturnValue(false);
+      mockModuloFetch();
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          topico: 'Enfermagem',
+          subtopico: 'Imunização',
+        }),
+      );
+
+      expect(response.status).toBe(200);
+      expect(await response.json()).toEqual({
+        success: true,
+        acertou: true,
+        opcao_correta_id: 'B',
+      });
+      expect(mockCreateSupabaseEvidencePersistence).not.toHaveBeenCalled();
+      expect(mockIngestAttemptEvent).not.toHaveBeenCalled();
+      expect(mockFsrsPersistReview).toHaveBeenCalledTimes(1);
     });
   });
 });

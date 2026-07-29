@@ -204,11 +204,29 @@ jobs:
           # Pin alinhado a package-lock (devDependency supabase)
           version: 2.109.1
 
+      # Histórico completo de migrations não reseta do zero (ex.: campina UPDATE
+      # antes de concursos existir no dump). CI FSRS aplica só a migration R2 em
+      # stack local limpa — sem db push remoto.
+      - name: Disable auto-migrations for FSRS-only local stack
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path('supabase/config.toml')
+          text = path.read_text(encoding='utf-8')
+          needle = '[db.migrations]\n# If disabled, migrations will be skipped during a db push or reset.\nenabled = true'
+          repl = '[db.migrations]\n# If disabled, migrations will be skipped during a db push or reset.\nenabled = false'
+          if needle not in text:
+              raise SystemExit('expected [db.migrations] enabled=true block missing')
+          path.write_text(text.replace(needle, repl, 1), encoding='utf-8')
+          PY
+
       - name: Start Supabase local stack
         run: supabase start
 
-      - name: Reset local database
-        run: supabase db reset --local
+      - name: Apply FSRS MVP migration only
+        run: |
+          eval "$(supabase status -o env)"
+          psql "$DB_URL" -v ON_ERROR_STOP=1 -f supabase/migrations/20260728040000_spaced_review_fsrs_mvp.sql
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
