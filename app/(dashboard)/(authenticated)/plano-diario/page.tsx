@@ -15,8 +15,13 @@ export default async function PlanoDiarioPage() {
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
+  // AVANT Memória ativo → rota canônica `/revisoes-hoje`. O SM-2 abaixo permanece
+  // apenas como caminho legado/rollback, invisível para quem tem a superfície nova.
+  if (shouldUseFsrsTodayQueue(session.user.email)) {
+    redirect('/revisoes-hoje');
+  }
+
   const userId = session.user.id;
-  const showFsrsRevisoesCta = shouldUseFsrsTodayQueue(session.user.email);
 
   // Busca todas as revisões vencidas, ordena por prioridade e limita a 10
   const todasRevisoes = await getTodayReviews(userId);
@@ -28,7 +33,6 @@ export default async function PlanoDiarioPage() {
       revisoes={revisoesDoDia}
       totalPendentes={total}
       limite={LIMITE_DIARIO}
-      showFsrsRevisoesCta={showFsrsRevisoesCta}
     />
   );
 }

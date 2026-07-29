@@ -55,6 +55,51 @@ describe('buildMenuSections', () => {
     expect(plano?.active).toBe(false);
   });
 
+  it('AVANT Memória inativo: mantém Plano diário e não expõe /revisoes-hoje', () => {
+    const sections = buildMenuSections(isPathActive);
+    const organizar = sections.find((s) => s.id === 'organizar');
+    expect(organizar?.items.map((i) => i.href)).toContain('/plano-diario');
+    expect(organizar?.items.map((i) => i.href)).not.toContain('/revisoes-hoje');
+  });
+
+  it('AVANT Memória ativo: troca Plano diário por Revisões de hoje (nunca as duas)', () => {
+    const sections = buildMenuSections(isPathActive, { avantMemoriaAtivo: true });
+    const organizar = sections.find((s) => s.id === 'organizar');
+    expect(organizar?.items.map((i) => i.label)).toEqual([
+      'Simulados',
+      'Revisões de hoje',
+      'Cadernos',
+    ]);
+    const hrefs = sections.flatMap((s) => s.items.map((i) => i.href));
+    expect(hrefs).toContain('/revisoes-hoje');
+    expect(hrefs).not.toContain('/plano-diario');
+  });
+
+  it('marca /revisoes-hoje ativo só com match exato', () => {
+    const isRevisoes = (path: string, exact = false) => {
+      const pathname = '/revisoes-hoje';
+      if (exact) return pathname === path;
+      return pathname === path || pathname.startsWith(`${path}/`);
+    };
+    const sections = buildMenuSections(isRevisoes, { avantMemoriaAtivo: true });
+    const revisoes = sections
+      .find((s) => s.id === 'organizar')
+      ?.items.find((i) => i.href === '/revisoes-hoje');
+    expect(revisoes?.active).toBe(true);
+
+    const isRevisoesSub = (path: string, exact = false) => {
+      const pathname = '/revisoes-hoje/extra';
+      if (exact) return pathname === path;
+      return pathname === path || pathname.startsWith(`${path}/`);
+    };
+    const subSections = buildMenuSections(isRevisoesSub, { avantMemoriaAtivo: true });
+    expect(
+      subSections
+        .find((s) => s.id === 'organizar')
+        ?.items.find((i) => i.href === '/revisoes-hoje')?.active,
+    ).toBe(false);
+  });
+
   it('não marca /ajuda ativo em subrota estudo-reverso', () => {
     const isAjudaSub = (path: string, exact = false) => {
       const pathname = '/ajuda/estudo-reverso';

@@ -8,6 +8,7 @@ import {
   ListChecks,
   Sparkles,
   TrendingUp,
+  Zap,
   type LucideIcon,
 } from 'lucide-react';
 import type { MenuAccentKey } from '@/components/layout/MenuNavIconChip';
@@ -37,6 +38,32 @@ export type DashboardNavSection = {
   id: string;
   label: string;
   items: DashboardNavItem[];
+};
+
+export type BuildMenuSectionsOptions = {
+  /**
+   * AVANT Memória ativo (flag + allowlist, resolvido no servidor).
+   * Ativo → superfície canônica `/revisoes-hoje`; inativo → menu legado.
+   */
+  avantMemoriaAtivo?: boolean;
+};
+
+/** Item legado de revisão (SM-2) — exibido só com AVANT Memória inativo. */
+export const NAV_ITEM_PLANO_DIARIO: DashboardNavItemDef = {
+  label: 'Plano diário',
+  title: 'Plano de estudo diário',
+  href: '/plano-diario',
+  icon: CalendarDays,
+  accent: 'teal',
+};
+
+/** Item canônico do AVANT Memória — substitui o Plano diário quando ativo. */
+export const NAV_ITEM_REVISOES_HOJE: DashboardNavItemDef = {
+  label: 'Revisões de hoje',
+  title: 'Revisões de hoje',
+  href: '/revisoes-hoje',
+  icon: Zap,
+  accent: 'teal',
 };
 
 export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
@@ -105,13 +132,7 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
         icon: ListChecks,
         accent: 'rose',
       },
-      {
-        label: 'Plano diário',
-        title: 'Plano de estudo diário',
-        href: '/plano-diario',
-        icon: CalendarDays,
-        accent: 'teal',
-      },
+      NAV_ITEM_PLANO_DIARIO,
       {
         label: 'Cadernos',
         title: 'Cadernos de estudo',
@@ -128,6 +149,7 @@ function resolveItemActive(href: string, isPathActive: IsPathActiveFn): boolean 
     case '/ajuda':
     case '/ajuda/estudo-reverso':
     case '/plano-diario':
+    case '/revisoes-hoje':
       return isPathActive(href, true);
     case '/progresso':
       return isPathActive('/progresso') || isPathActive('/analytics');
@@ -136,13 +158,35 @@ function resolveItemActive(href: string, isPathActive: IsPathActiveFn): boolean 
   }
 }
 
-export function buildMenuSections(isPathActive: IsPathActiveFn): DashboardNavSection[] {
+/**
+ * Troca o item legado de revisão pela rota canônica quando o AVANT Memória está ativo.
+ * Nunca expõe as duas entradas ao mesmo usuário.
+ */
+function resolveItemDef(
+  item: DashboardNavItemDef,
+  avantMemoriaAtivo: boolean,
+): DashboardNavItemDef {
+  if (avantMemoriaAtivo && item.href === NAV_ITEM_PLANO_DIARIO.href) {
+    return NAV_ITEM_REVISOES_HOJE;
+  }
+  return item;
+}
+
+export function buildMenuSections(
+  isPathActive: IsPathActiveFn,
+  options: BuildMenuSectionsOptions = {},
+): DashboardNavSection[] {
+  const avantMemoriaAtivo = options.avantMemoriaAtivo === true;
+
   return NAV_SECTION_DEFS.map((section) => ({
     id: section.id,
     label: section.label,
-    items: section.items.map((item) => ({
-      ...item,
-      active: resolveItemActive(item.href, isPathActive),
-    })),
+    items: section.items.map((def) => {
+      const item = resolveItemDef(def, avantMemoriaAtivo);
+      return {
+        ...item,
+        active: resolveItemActive(item.href, isPathActive),
+      };
+    }),
   }));
 }

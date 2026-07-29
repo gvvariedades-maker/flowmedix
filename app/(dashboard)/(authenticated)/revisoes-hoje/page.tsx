@@ -5,7 +5,7 @@ import {
   getE2eRevisoesQueueItems,
   parseE2eRevisoesFsrsMode,
 } from '@/lib/e2e/revisoesHojeSeed';
-import { getReviewsToday } from '@/lib/fsrs/reviewsToday';
+import { getReviewsToday, shouldUseFsrsTodayQueue } from '@/lib/fsrs/reviewsToday';
 import type { FsrsReviewQueueItem } from '@/lib/fsrs/queue';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
@@ -31,14 +31,22 @@ export default async function RevisoesHojePage({ searchParams }: RevisoesHojePag
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
+  // Coorte sem AVANT Memória (flag desligada ou fora da allowlist) permanece no
+  // Plano diário legado. Único redirect daqui para o SM-2 — o inverso é feito por
+  // `/plano-diario`, então as duas condições são mutuamente exclusivas (sem loop).
+  if (!shouldUseFsrsTodayQueue(session.user.email)) {
+    redirect('/plano-diario');
+  }
+
   const result = await getReviewsToday({
     userId: session.user.id,
     email: session.user.email,
   });
 
-  // Página exclusiva do beta FSRS — coorte SM-2 permanece no Plano diário.
+  // Fallback SM-2 dentro da coorte ativa = falha no caminho FSRS. Estado degradado
+  // na própria rota canônica: não expõe o SM-2 nem devolve o usuário ao redirect.
   if (result.source !== 'fsrs') {
-    redirect('/plano-diario');
+    return <RevisoesIndisponivel />;
   }
 
   const queue = result.reviews;
@@ -90,6 +98,30 @@ function RevisoesQueue({ queue }: { queue: FsrsReviewQueueItem[] }) {
           </li>
         ))}
       </ul>
+    </DashboardMobilePage>
+  );
+}
+
+function RevisoesIndisponivel() {
+  return (
+    <DashboardMobilePage
+      variant="default"
+      className={cn('bg-background px-4 pt-6', DASHBOARD_PAGE_ROOT)}
+    >
+      <div className="mx-auto max-w-md space-y-6 py-16 text-center">
+        <h1 className="text-2xl font-semibold text-slate-900">
+          Revisões temporariamente indisponíveis
+        </h1>
+        <p className="text-sm text-slate-600">
+          Sua resposta nas questões continua sendo registrada normalmente.
+        </p>
+        <Button asChild className="btn-editorial-primary w-full">
+          <Link href="/estudar" className="inline-flex items-center justify-center gap-2">
+            <BookOpen className="h-4 w-4" aria-hidden />
+            Ir para a Vitrine
+          </Link>
+        </Button>
+      </div>
     </DashboardMobilePage>
   );
 }

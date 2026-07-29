@@ -7,6 +7,7 @@ import {
   getUserPreferencesOnboardingCached,
 } from '@/lib/cache';
 import { getActiveProInfoForUser, isUserPro, type ProSource } from '@/lib/freemium';
+import { shouldUseFsrsTodayQueue } from '@/lib/fsrs/reviewsToday';
 import DashboardShell from './DashboardShell';
 
 function displayNameFromSessionUser(
@@ -51,8 +52,12 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   const isPro = isAdmin || userIsPro;
 
+  // AVANT Memória: fail-closed (flag desligada por padrão) e restrito à allowlist.
+  const avantMemoriaAtivo = shouldUseFsrsTodayQueue(email);
+
   return (
     <DashboardShell
+      avantMemoriaAtivo={avantMemoriaAtivo}
       initialUserEmail={email}
       initialDisplayName={displayNameFromSessionUser(session?.user ?? null)}
       initialIsAdmin={isAdmin}
