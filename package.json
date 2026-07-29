@@ -521,7 +521,8 @@
     "plan:imunizacao-g14": "tsx scripts/plan-imunizacao-g14.ts",
     "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts",
     "backup:assemble": "powershell -ExecutionPolicy Bypass -File scripts/assemble-avant-backup.ps1",
-    "prepare": "husky"
+    "prepare": "husky",
+    "fsrs:ops-report": "tsx scripts/fsrs-mvp-ops-report.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
