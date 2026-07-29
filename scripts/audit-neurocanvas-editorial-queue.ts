@@ -14,6 +14,7 @@ import {
   type ReviewPackCase,
 } from '@/lib/neurocanvas/editorialQueue';
 import type { LiveReconciliationReport } from '@/lib/neurocanvas/liveReconciliation';
+import { assertFullCatalogMigration } from '@/lib/neurocanvas/fullCatalogGuard';
 import { portableizeAuditArtifact, scanPortableArtifactText } from '@/lib/neurocanvas/portablePath';
 
 function loadLiveArtifact(artifactsDir: string, repoRoot: string): LiveReconciliationReport | null {
@@ -146,6 +147,7 @@ function renderCaseSection(c: ReviewPackCase): string[] {
 
 async function main() {
   const repoRoot = process.cwd();
+  assertFullCatalogMigration(repoRoot, 'audit:neurocanvas-editorial-queue');
   const artifactsDir = resolve(repoRoot, 'artifacts');
   mkdirSync(artifactsDir, { recursive: true });
 

@@ -1,0 +1,233 @@
+{
+  "schema": "neurocanvas-official-lane-provenance-proposal-v1",
+  "lane": "official_lane_provenance_repair",
+  "batch_id": "JUNDIAI-QUADRIX-PROVENANCE",
+  "generated_at": "2026-07-28",
+  "status": "proposal_only",
+  "materialization": "forbidden_until_explicit_approval",
+  "related_l2_batch": "VUNESP-SJRP",
+  "related_l2_doc": "docs/NEUROCANVAS_OFFICIAL_LANE_L2_VUNESP_SJRP.md",
+  "baseline_ref": {
+    "baseline_id": "G0.4",
+    "official_lane_count": 11,
+    "note": "Baseline permanece 339/104/11/0 até PR baseline pós-apply (se houver materialização)."
+  },
+  "decision_rule": {
+    "choose_existing_candidate": "Tier A completo + um candidato já correto (meta+conteúdo)",
+    "create_corrected_candidate": "Tier A completo + todos candidatos com meta/slug errados",
+    "defer": "Falta PDF oficial e/ou nº questão e/ou gabarito definitivo"
+  },
+  "cases": [
+    {
+      "case_id": "nc-g03-a88a4eb9efa315db",
+      "current_catalog_slug": "vunesp-sjrp-crase-a-qual",
+      "proposed_canonical_slug": "vunesp-jundiai-crase-tira-qual-3776323",
+      "tec_id": "3776323",
+      "severity": "S2",
+      "attributed_origin_local": {
+        "banca": "VUNESP",
+        "orgao": "Pref. Jundiaí",
+        "cargo": "ACS (Pref Jundiaí)",
+        "ano": "2026",
+        "source": "handcraft-lingua-portuguesa-g02 + Tec caderno q401-600 p.31"
+      },
+      "official_exam_research": {
+        "candidate_portal": {
+          "code": "PMJU2504",
+          "title": "Concurso Público - ACS - Vila Rio Branco | Pref. Jundiaí",
+          "url": "https://www.vunesp.com.br/PMJU2504",
+          "tier": "A",
+          "note": "Portal oficial VUNESP para ACS Jundiaí; seção Provas e Gabaritos existe, mas PDFs não foram recuperados nesta pesquisa (UI dinâmica / área do candidato)."
+        },
+        "found_on_official_prova_pdf": false,
+        "official_question_number": null,
+        "official_page": null,
+        "official_gabarito_letra": null,
+        "official_gabarito_definitivo_url": null,
+        "retificacoes": null,
+        "tier_b_mirror": {
+          "kind": "tec_caderno",
+          "path": "data/sources/lingua-portuguesa/portugues-caderno-2025-2026-q401-600.pdf",
+          "page": 31,
+          "header": "VUNESP - ACS (Pref Jundiaí)/Pref Jundiaí/2026 — Crase",
+          "tec_url": "https://www.tecconcursos.com.br/questoes/3776323",
+          "local_gabarito": "E",
+          "instruction_match": "Assinale a alternativa em que o sinal de crase está corretamente empregado na frase adaptada da tira."
+        },
+        "gaps_blocking_tier_a": [
+          "PDF oficial da prova ACS Jundiaí (PMJU2504 ou certame confirmado) não obtido",
+          "Número da questão na prova oficial não determinado",
+          "Gabarito definitivo oficial (pós-recursos) não obtido"
+        ]
+      },
+      "candidates": [
+        {
+          "path": "data/catalog-migration/lingua-portuguesa-g01/questions/vunesp-sjrp-crase-a-qual.json",
+          "semantic_sha256": "8a01a818c4384bc3001ad4e143c6819a967452a4efeb86427524b9d9bfc3c8fb",
+          "meta_banca": "VUNESP",
+          "meta_orgao": "Pref. SJRP",
+          "assessment": "Meta SJRP incorreta; tier B cita tec 3789364 (lacunas) — fonte errada."
+        },
+        {
+          "path": "data/catalog-migration/lingua-portuguesa-g02/questions/vunesp-sjrp-crase-a-qual.json",
+          "semantic_sha256": "c53bff363d426f9847194ade3689ad59e84fd9c2677c39589e39d3b38775f199",
+          "meta_banca": "VUNESP",
+          "meta_orgao": "Pref. SJRP",
+          "assessment": "Alias de lote; conteúdo = Jundiaí tec 3776323; meta ainda SJRP."
+        },
+        {
+          "path": "data/catalog-migration/lingua-portuguesa-g02/questions/vunesp-jundiai-crase-tira-qual-3776323.json",
+          "semantic_sha256": null,
+          "meta_banca": "VUNESP",
+          "meta_orgao": "Pref. Jundiaí",
+          "assessment": "Cópia canônica de handcraft com meta Jundiaí correta; question_data idêntico ao alias SJRP."
+        }
+      ],
+      "decision": "defer",
+      "decision_rationale": "Tier B Tec confirma VUNESP ACS Pref. Jundiaí 2026 tec 3776323 gab. E, e o slug SJRP é mis-tag. Sem PDF oficial + nº questão + gabarito definitivo, create_corrected_candidate / choose_existing_candidate ficam bloqueados pela regra dura do lote.",
+      "when_tier_a_closes_expected": {
+        "decision": "create_corrected_candidate",
+        "authority_meta": {
+          "banca": "VUNESP",
+          "prova": "ACS (Pref Jundiaí)",
+          "orgao": "Pref. Jundiaí",
+          "ano": "2026"
+        },
+        "preview_authorized_paths": [
+          "lingua-portuguesa-g01/questions/vunesp-sjrp-crase-a-qual.json",
+          "lingua-portuguesa-g02/questions/vunesp-sjrp-crase-a-qual.json",
+          "lingua-portuguesa-g02/questions/vunesp-jundiai-crase-tira-qual-3776323.json"
+        ]
+      }
+    },
+    {
+      "case_id": "nc-g03-bad3482bfe781e3d",
+      "current_catalog_slug": "vunesp-sjrp-termos-folhetos-enquanto-3789304",
+      "proposed_canonical_slug": "quadrix-ses-sp-termos-folhetos-enquanto-3779634",
+      "tec_id": "3779634",
+      "severity": "S2",
+      "attributed_origin_local": {
+        "banca": "QUADRIX",
+        "orgao": "SES SP",
+        "cargo": "Técnico de Enfermagem",
+        "ano": "2026",
+        "source": "handcraft-termos-oracao-g02 + raw-extract TEC=3779634 GAB=E + Tec caderno"
+      },
+      "official_exam_research": {
+        "concurso": {
+          "edital_abertura": "40/2025",
+          "ie": "016/2025",
+          "orgao": "Secretaria de Estado da Saúde de São Paulo (SES-SP)",
+          "banca": "Instituto QUADRIX",
+          "cargo": "Técnico de Enfermagem (cód. 200)",
+          "prova_data": "2026-01-18",
+          "portal": "https://quadrix.org.br/informacoes/13/",
+          "tier": "A"
+        },
+        "gabarito_timeline": {
+          "preliminar": {
+            "edital": "013/2026",
+            "date": "2026-01-20",
+            "mirror_pdf": "https://www.editorasolucao.com.br/blog/wp-content/uploads/2026/01/gabaritos-ses-sp.pdf",
+            "tec_enf_portugues_01_a_10": "01-D 02-C 03-B 04-A 05-E 06-C 07-D 08-E 09-B 10-A",
+            "note": "Letras preliminares oficiais por número; sem mapping nº→enunciado sem caderno oficial."
+          },
+          "recursos": {
+            "edital": "014/2026",
+            "date": "2026-02-10",
+            "portal_listed": true,
+            "content_retrieved": false
+          },
+          "definitivo": {
+            "edital": "015/2026",
+            "date": "2026-02-10",
+            "portal_listed": true,
+            "content_retrieved": false,
+            "note": "Edital listado no portal; PDF do gabarito definitivo não recuperado nesta pesquisa."
+          }
+        },
+        "provas_aplicadas": {
+          "portal_entry": "Provas aplicadas 20/01/2026",
+          "pdf_retrieved": false
+        },
+        "found_on_official_prova_pdf": false,
+        "official_question_number": null,
+        "official_page": null,
+        "official_gabarito_letra": null,
+        "third_party_confirmations": [
+          {
+            "tier": "B",
+            "source": "QConcursos Q3843566",
+            "url": "https://www.qconcursos.com/questoes-de-concursos/questoes/eb1973c8-fa",
+            "attribution": "Quadrix - 2026 - SES - SP - Técnico de Enfermagem",
+            "note": "Confirma enunciado e banca/órgão; não substitui PDF oficial nem nº na prova."
+          },
+          {
+            "tier": "B",
+            "source": "Tec caderno q201-400",
+            "path": "data/sources/lingua-portuguesa/portugues-caderno-2025-2026-q201-400.pdf",
+            "note": "URL tec 3779634 precede bloco QUADRIX + texto câncer/folhetos; gab. impresso E. URL 3789304 após gabarito aponta ao item seguinte (parênteses VUNESP SJRP)."
+          }
+        ],
+        "collision_warning": {
+          "tec_3789304": "Item distinto — vunesp-sjrp-termos-parenteses-acessoria-3789304 (SJRP Q12 oficial gab. E)",
+          "do_not_merge": true
+        },
+        "gaps_blocking_tier_a": [
+          "PDF oficial das provas aplicadas (portal Quadrix) não obtido",
+          "Número da questão de folhetos no caderno oficial Tec Enf não determinado",
+          "Conteúdo do Edital 015/2026 (gabarito definitivo) não obtido — não confirmar se Q# permaneceu E"
+        ]
+      },
+      "candidates": [
+        {
+          "path": "data/catalog-migration/lingua-portuguesa-termos-anchor/questions/vunesp-sjrp-termos-folhetos-enquanto-3789304.json",
+          "semantic_sha256": "3cc2976e67eb4af816ae92f908d3e1c07d49780abaef61f873a26256a4625fdd",
+          "meta_banca": "VUNESP",
+          "meta_orgao": "Pref. São José do Rio Preto",
+          "assessment": "Meta SJRP incorreta; tec no slug = 3789304 (parênteses)."
+        },
+        {
+          "path": "data/catalog-migration/termos-oracao-g02/questions/vunesp-sjrp-termos-folhetos-enquanto-3789304.json",
+          "semantic_sha256": "b6ce181a82f72aaa334e85a9ec2d24669aca0685a7fda09095e84c25c2b2cc52",
+          "meta_banca": "QUADRIX",
+          "meta_orgao": "SES SP",
+          "assessment": "Meta QUADRIX correta; slug/arquivo ainda com mis-tag SJRP/3789304."
+        },
+        {
+          "path": "data/catalog-migration/termos-oracao-g02/questions/quadrix-ses-sp-termos-folhetos-enquanto-3779634.json",
+          "semantic_sha256": null,
+          "meta_banca": "QUADRIX",
+          "meta_orgao": "SES SP",
+          "assessment": "Slug canônico de handcraft; candidato preferencial quando tier A fechar."
+        }
+      ],
+      "decision": "defer",
+      "decision_rationale": "Cadeia oficial incompleta: portal + gabarito preliminar existem, mas faltam PDF da prova aplicada, nº da questão e texto do gabarito definitivo (015/2026). Enquanto isso, defer é obrigatório.",
+      "when_tier_a_closes_expected": {
+        "decision": "choose_existing_candidate_or_create_corrected",
+        "prefer_path": "data/catalog-migration/termos-oracao-g02/questions/quadrix-ses-sp-termos-folhetos-enquanto-3779634.json",
+        "reject_sjrp_authority": true,
+        "preview_authorized_paths": [
+          "lingua-portuguesa-termos-anchor/questions/vunesp-sjrp-termos-folhetos-enquanto-3789304.json",
+          "termos-oracao-g02/questions/vunesp-sjrp-termos-folhetos-enquanto-3789304.json",
+          "termos-oracao-g02/questions/quadrix-ses-sp-termos-folhetos-enquanto-3779634.json"
+        ]
+      }
+    }
+  ],
+  "batch_summary": {
+    "decisions": {
+      "defer": 2,
+      "choose_existing_candidate": 0,
+      "create_corrected_candidate": 0
+    },
+    "materialization_authorized": false,
+    "next_steps": [
+      "Obter PDFs oficiais: PMJU2504 (prova+gabarito definitivo) e Quadrix Provas aplicadas + Edital 015/2026",
+      "Mapear nº questão + letra definitiva para cada enunciado",
+      "Atualizar esta proposta com decisões choose/create",
+      "Somente então solicitar autorização explícita: pode materializar"
+    ]
+  }
+}
