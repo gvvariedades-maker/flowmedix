@@ -20,9 +20,16 @@ import {
 } from '@/lib/freemium';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { moduloAccessOptionsFromEmail } from '@/lib/concursos/studyAccess';
+import { applyFsrsReview } from '@/lib/fsrs/applyReview';
+import { createSupabaseFsrsPersistence } from '@/lib/fsrs/supabasePersistence';
+import {
+  getFsrsRequestRetention,
+  isFsrsMvpEnabled,
+} from '@/lib/env';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
+import { randomUUID } from 'node:crypto';
 
 async function denyModuloAccessResponse(
   supabase: Awaited<ReturnType<typeof createServerSupabase>>,
@@ -201,6 +208,41 @@ export async function POST(request: NextRequest) {
       e2e_instrumentation: false,
       log_route_label: 'registrar-tentativa',
     });
+
+    // FSRS MVP R3 — não bloqueia a tentativa; flag default off
+    if (isFsrsMvpEnabled()) {
+      try {
+        const rawAttempt = (body as Record<string, unknown>).attempt_id;
+        const attemptId =
+          typeof rawAttempt === 'string' && rawAttempt.trim() !== ''
+            ? rawAttempt.trim()
+            : randomUUID();
+        const fromScheduledReview =
+          (body as Record<string, unknown>).from_revisoes === true ||
+          (body as Record<string, unknown>).from_revisoes === '1' ||
+          (body as Record<string, unknown>).from_revisoes === 'true';
+
+        const persistence = createSupabaseFsrsPersistence(
+          supabase as unknown as Parameters<typeof createSupabaseFsrsPersistence>[0],
+        );
+        await applyFsrsReview({
+          userId: user.id,
+          attemptId,
+          questionId: modulo_slug,
+          isCorrect: acertou,
+          discipline: typeof topico === 'string' && topico.trim() ? topico : 'Enfermagem',
+          subtopico: typeof subtopico === 'string' ? subtopico : null,
+          fromScheduledReview: Boolean(fromScheduledReview),
+          requestRetention: getFsrsRequestRetention(),
+          persistence,
+        });
+      } catch (fsrsErr) {
+        logger.error('FSRS MVP boundary failed in registrar-tentativa', fsrsErr, {
+          userId: user.id,
+          modulo_slug,
+        });
+      }
+    }
 
     return NextResponse.json({
       success: true,
