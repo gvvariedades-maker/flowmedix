@@ -1,5 +1,6 @@
 /**
  * Inventário de slugs por review_unit (R4) — fora de page.tsx (gate RSC).
+ * Fonte: coluna `subtopico` e, se vazia, `conteudo_json.meta.subtopico` (ADR).
  */
 
 import { createServerSupabase } from '@/lib/supabase/server';
@@ -10,9 +11,17 @@ export type ModuloInventoryRow = {
   modulo_slug: string;
 };
 
+function mapInventorySlugs(data: unknown): string[] {
+  const rows = (Array.isArray(data) ? data : []) as ModuloInventoryRow[];
+  return rows
+    .map((r) => (typeof r.modulo_slug === 'string' ? r.modulo_slug.trim() : ''))
+    .filter(Boolean);
+}
+
 /**
  * Resolve slugs (`modulo_slug`) do subtópico embutido em `review_unit_id`.
  * Unidades sem sufixo `:subtopico=` → inventário vazio.
+ * Preferência: coluna `subtopico`; fallback ADR: `conteudo_json.meta.subtopico`.
  */
 export async function resolveSubtopicoInventoryFromReviewUnit(
   reviewUnitId: string,
@@ -22,22 +31,37 @@ export async function resolveSubtopicoInventoryFromReviewUnit(
   const subtopico = decodeURIComponent(match[1]);
   try {
     const supabase = await createServerSupabase();
-    const { data, error } = await supabase
+
+    const byColumn = await supabase
       .from('modulos_estudo')
       .select('modulo_slug')
       .eq('subtopico', subtopico)
       .limit(50);
-    if (error) {
+    if (byColumn.error) {
       logger.warn('resolveSubtopicoInventory failed', {
         reviewUnitId,
-        message: error.message,
+        message: byColumn.error.message,
+        source: 'column',
       });
       return [];
     }
-    const rows = (data ?? []) as ModuloInventoryRow[];
-    return rows
-      .map((r) => (typeof r.modulo_slug === 'string' ? r.modulo_slug.trim() : ''))
-      .filter(Boolean);
+    const columnSlugs = mapInventorySlugs(byColumn.data);
+    if (columnSlugs.length > 0) return columnSlugs;
+
+    const byMeta = await supabase
+      .from('modulos_estudo')
+      .select('modulo_slug')
+      .filter('conteudo_json->meta->>subtopico', 'eq', subtopico)
+      .limit(50);
+    if (byMeta.error) {
+      logger.warn('resolveSubtopicoInventory failed', {
+        reviewUnitId,
+        message: byMeta.error.message,
+        source: 'meta',
+      });
+      return [];
+    }
+    return mapInventorySlugs(byMeta.data);
   } catch (err) {
     logger.warn('resolveSubtopicoInventory exception', { reviewUnitId, err });
     return [];

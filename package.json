@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:webpack": "next dev --webpack",
-    "build": "npm run validate:env && next build --webpack",
+    "build": "npm run validate:env && next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -523,7 +523,8 @@
     "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts",
     "backup:assemble": "powershell -ExecutionPolicy Bypass -File scripts/assemble-avant-backup.ps1",
     "prepare": "husky",
-    "fsrs:ops-report": "tsx scripts/fsrs-mvp-ops-report.ts"
+    "fsrs:ops-report": "tsx scripts/fsrs-mvp-ops-report.ts",
+    "fsrs:staging-smoke": "tsx scripts/fsrs-mvp-staging-smoke.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

@@ -6,6 +6,10 @@
 export type FsrsOpsReportMode = 'live' | 'dry-run';
 
 export type FsrsOpsMetrics = {
+  /**
+   * Contagens de negócio (sintéticos excluídos quando identificados).
+   * Usar estas para go/no-go de default-on.
+   */
   cards: number;
   logs: number;
   good: number;
@@ -30,15 +34,37 @@ export type FsrsOpsMetrics = {
   dueNow: number;
   sameStemRate: number | null;
   inventoryMissingRate: number | null;
+  /** Cards/logs brutos (inclui sintéticos). */
+  grossCards: number;
+  grossLogs: number;
+  /** Identificados como smoke/sintético e excluídos das métricas de negócio. */
+  syntheticCards: number;
+  syntheticLogs: number;
+  /** true quando pelo menos um user_id sintético foi filtrado. */
+  syntheticExcluded: boolean;
 };
 
-export type GoNoGoStatus = 'pass' | 'fail' | 'unknown';
+/**
+ * `insufficient_window` = sem janela madura (não é sucesso; bloqueia default-on,
+ * mas não invalida funcionalidade técnica do beta staging).
+ */
+export type GoNoGoStatus =
+  | 'pass'
+  | 'fail'
+  | 'unknown'
+  | 'insufficient_window';
 
 export type GoNoGoCriterion = {
   id: string;
   criterion: string;
   provisional: string;
   status: GoNoGoStatus;
+};
+
+export type FsrsRolloutVerdict = {
+  stagingBeta: 'GO' | 'NO-GO';
+  defaultOn: 'GO' | 'NO-GO';
+  rationale: string[];
 };
 
 /** Contadores zerados para `--dry-run` (sem credenciais). */
@@ -61,6 +87,11 @@ export function zeroFsrsOpsMetrics(): FsrsOpsMetrics {
     dueNow: 0,
     sameStemRate: null,
     inventoryMissingRate: null,
+    grossCards: 0,
+    grossLogs: 0,
+    syntheticCards: 0,
+    syntheticLogs: 0,
+    syntheticExcluded: false,
   };
 }
 
@@ -72,6 +103,19 @@ function rateStatus(
 ): GoNoGoStatus {
   if (rate == null || sample === 0) return 'unknown';
   if (sample < minSample) return 'fail';
+  return pass(rate) ? 'pass' : 'fail';
+}
+
+/** D+7 / D+14: sem janela madura → insufficient_window (nunca “pass” precoce). */
+function retentionWindowStatus(
+  rate: number | null,
+  sample: number,
+  minSample: number,
+  pass: (r: number) => boolean,
+): GoNoGoStatus {
+  if (rate == null || sample === 0 || sample < minSample) {
+    return 'insufficient_window';
+  }
   return pass(rate) ? 'pass' : 'fail';
 }
 
@@ -112,7 +156,7 @@ export function evaluateFsrsGoNoGo(metrics: FsrsOpsMetrics): GoNoGoCriterion[] {
       id: 'accuracy_d7',
       criterion: 'Acerto D+7 (1ª tentativa elegível pós-due ≥ 7d)',
       provisional: '≥ 0.65 com n≥30',
-      status: rateStatus(
+      status: retentionWindowStatus(
         metrics.accuracyD7,
         metrics.accuracyD7Sample,
         30,
@@ -123,7 +167,7 @@ export function evaluateFsrsGoNoGo(metrics: FsrsOpsMetrics): GoNoGoCriterion[] {
       id: 'accuracy_d14',
       criterion: 'Acerto D+14 (1ª tentativa elegível pós-due ≥ 14d)',
       provisional: '≥ 0.55 com n≥20',
-      status: rateStatus(
+      status: retentionWindowStatus(
         metrics.accuracyD14,
         metrics.accuracyD14Sample,
         20,
@@ -181,14 +225,93 @@ function fmtCount(value: number | null): string {
   return value == null ? 'n/a' : String(value);
 }
 
+/**
+ * Veredito de rollout: staging beta pode ser GO com volume baixo;
+ * default-on exige critérios maduros (D+7/D+14 não podem ser insufficient_window).
+ */
+export function evaluateFsrsRolloutVerdict(input: {
+  criteria: GoNoGoCriterion[];
+  smokeOverallPass: boolean;
+  productionFlagsOff: boolean;
+}): FsrsRolloutVerdict {
+  const byId = Object.fromEntries(input.criteria.map((c) => [c.id, c.status]));
+  const d7 = byId.accuracy_d7;
+  const d14 = byId.accuracy_d14;
+  const rationale: string[] = [];
+
+  const windowsBlockDefault =
+    d7 === 'insufficient_window' ||
+    d14 === 'insufficient_window' ||
+    d7 === 'fail' ||
+    d14 === 'fail' ||
+    d7 === 'unknown' ||
+    d14 === 'unknown';
+  const volumeOk = byId.volume === 'pass';
+  const hardFails = input.criteria.filter(
+    (c) =>
+      c.id !== 'default_on' &&
+      c.id !== 'accuracy_d7' &&
+      c.id !== 'accuracy_d14' &&
+      c.status === 'fail',
+  );
+
+  if (!input.smokeOverallPass) {
+    rationale.push('Smoke staging não PASS — bloqueia GO beta.');
+  }
+  if (!input.productionFlagsOff) {
+    rationale.push('Production flags não confirmadas off — bloqueia GO beta.');
+  }
+  if (windowsBlockDefault) {
+    rationale.push(
+      'D+7/D+14 sem janela madura (insufficient_window) ou sem amostra — bloqueia default-on.',
+    );
+  }
+  if (!volumeOk) {
+    rationale.push('Volume de negócio < 50 reviews elegíveis — bloqueia default-on.');
+  }
+  for (const f of hardFails) {
+    rationale.push(`Critério ${f.id}=fail — bloqueia default-on.`);
+  }
+
+  const stagingBeta: 'GO' | 'NO-GO' =
+    input.smokeOverallPass && input.productionFlagsOff ? 'GO' : 'NO-GO';
+
+  const defaultOn: 'GO' | 'NO-GO' =
+    !windowsBlockDefault &&
+    volumeOk &&
+    hardFails.length === 0 &&
+    byId.default_on !== 'fail'
+      ? 'GO'
+      : 'NO-GO';
+
+  if (stagingBeta === 'GO') {
+    rationale.unshift(
+      'FSRS MVP 100% funcional no staging beta (não globalmente em produção).',
+    );
+  }
+  if (defaultOn === 'NO-GO') {
+    rationale.push('Rollback Production: manter FSRS_MVP_ENABLED=false.');
+  }
+
+  return { stagingBeta, defaultOn, rationale };
+}
+
 export function renderFsrsOpsReportMarkdown(input: {
   generatedAt: Date;
   metrics: FsrsOpsMetrics;
   mode: FsrsOpsReportMode;
   criteria?: GoNoGoCriterion[];
+  verdict?: FsrsRolloutVerdict;
 }): string {
   const { generatedAt, metrics, mode } = input;
   const criteria = input.criteria ?? evaluateFsrsGoNoGo(metrics);
+  const verdict =
+    input.verdict ??
+    evaluateFsrsRolloutVerdict({
+      criteria,
+      smokeOverallPass: false,
+      productionFlagsOff: true,
+    });
   const sameStemRate =
     metrics.sameStemRate ??
     (metrics.logs > 0 ? metrics.sameStemFallback / metrics.logs : null);
@@ -202,12 +325,18 @@ export function renderFsrsOpsReportMarkdown(input: {
 
 **Modo:** \`${mode}\`${mode === 'dry-run' ? ' (contadores zerados; sem consulta ao banco)' : ''}
 
-## Contagens
+## Contagens (negócio)
+
+Sintéticos/smoke excluídos quando identificados (\`syntheticExcluded=${metrics.syntheticExcluded}\`).
 
 | Métrica | Valor |
 |---------|-------|
-| Cards | ${metrics.cards} |
-| Logs | ${metrics.logs} |
+| Cards (negócio) | ${metrics.cards} |
+| Logs (negócio) | ${metrics.logs} |
+| Cards brutos | ${metrics.grossCards} |
+| Logs brutos | ${metrics.grossLogs} |
+| Cards sintéticos | ${metrics.syntheticCards} |
+| Logs sintéticos | ${metrics.syntheticLogs} |
 | rating=good | ${metrics.good} |
 | rating=again | ${metrics.again} |
 | same_stem_fallback | ${metrics.sameStemFallback} |
@@ -231,12 +360,20 @@ ${criteria.map((c) => `| ${c.criterion} | ${c.provisional} | ${c.status} |`).joi
 
 - Script **read-only**; não altera parâmetros FSRS nem liga \`FSRS_MVP_ENABLED\`.
 - Artefato sem PII (sem e-mail, nome, CPF; sem user_id listado).
-- Acerto D+7/D+14 por unidade e \`inventory_missing\` agregável exigem query/logger mais ricos — dry-run e live parcial usam n/a até evolução.
+- Dados sintéticos (smoke) são identificáveis e **excluídos** das métricas de negócio.
+- Acerto D+7/D+14 sem janela madura → \`insufficient_window\` (não é sucesso; bloqueia default-on).
 - Contadores apply/skip/persist_fail/idempotent: instrumentar via logger (R3+) e agregar aqui.
 
 ## Decisão
 
-**Default-on global:** não recomendado até critérios passarem + revisão humana.
+| Escopo | Veredito |
+|--------|----------|
+| **Staging beta** | **${verdict.stagingBeta}** |
+| **Default-on global** | **${verdict.defaultOn}** |
+
+${verdict.rationale.map((r) => `- ${r}`).join('\n')}
+
+**Rollback:** \`FSRS_MVP_ENABLED=false\` (Preview staging e/ou Production).
 `;
 }
 

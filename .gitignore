@@ -80,6 +80,8 @@ supabase/.temp/
 /artifacts/fsrs-mvp-ops-*.md
 !/artifacts/fsrs-mvp-ops-template.md
 /artifacts/fsrs-mvp-fase-g-*.md
+/artifacts/fsrs-mvp-staging-smoke-report.md
+/artifacts/fsrs-mvp-staging-smoke-credentials.json
 
 # G0.3A — fila editorial completa (~8 MB); gerar localmente com audit:neurocanvas-editorial-queue
 /artifacts/neurocanvas-editorial-queue.json

@@ -5,7 +5,8 @@ import { resolveSubtopicoInventoryFromReviewUnit } from '@/lib/fsrs/inventory';
 
 const mockLimit = jest.fn();
 const mockEq = jest.fn(() => ({ limit: mockLimit }));
-const mockSelect = jest.fn(() => ({ eq: mockEq }));
+const mockFilter = jest.fn(() => ({ limit: mockLimit }));
+const mockSelect = jest.fn(() => ({ eq: mockEq, filter: mockFilter }));
 const mockFrom = jest.fn(() => ({ select: mockSelect }));
 const mockCreateServerSupabase = jest.fn();
 
@@ -26,7 +27,8 @@ describe('resolveSubtopicoInventoryFromReviewUnit', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockEq.mockReturnValue({ limit: mockLimit });
-    mockSelect.mockReturnValue({ eq: mockEq });
+    mockFilter.mockReturnValue({ limit: mockLimit });
+    mockSelect.mockReturnValue({ eq: mockEq, filter: mockFilter });
     mockFrom.mockReturnValue({ select: mockSelect });
     mockCreateServerSupabase.mockResolvedValue({ from: mockFrom });
   });
@@ -39,8 +41,8 @@ describe('resolveSubtopicoInventoryFromReviewUnit', () => {
     expect(mockCreateServerSupabase).not.toHaveBeenCalled();
   });
 
-  it('consulta modulo_slug e retorna inventário encontrado', async () => {
-    mockLimit.mockResolvedValue({
+  it('consulta modulo_slug na coluna e retorna inventário encontrado', async () => {
+    mockLimit.mockResolvedValueOnce({
       data: [
         { modulo_slug: 'slug-a' },
         { modulo_slug: 'slug-b' },
@@ -57,11 +59,35 @@ describe('resolveSubtopicoInventoryFromReviewUnit', () => {
     expect(mockFrom).toHaveBeenCalledWith('modulos_estudo');
     expect(mockSelect).toHaveBeenCalledWith('modulo_slug');
     expect(mockEq).toHaveBeenCalledWith('subtopico', 'Imunização');
+    expect(mockFilter).not.toHaveBeenCalled();
     expect(slugs).toEqual(['slug-a', 'slug-b']);
   });
 
-  it('retorna [] quando inventário está vazio', async () => {
-    mockLimit.mockResolvedValue({ data: [], error: null });
+  it('faz fallback para meta.subtopico quando a coluna está vazia', async () => {
+    mockLimit
+      .mockResolvedValueOnce({ data: [], error: null })
+      .mockResolvedValueOnce({
+        data: [{ modulo_slug: 'meta-slug-1' }],
+        error: null,
+      });
+
+    const unitId =
+      'fsrs:v1:discipline=enfermagem:subtopico=' +
+      encodeURIComponent('Imunização');
+    const slugs = await resolveSubtopicoInventoryFromReviewUnit(unitId);
+
+    expect(mockFilter).toHaveBeenCalledWith(
+      'conteudo_json->meta->>subtopico',
+      'eq',
+      'Imunização',
+    );
+    expect(slugs).toEqual(['meta-slug-1']);
+  });
+
+  it('retorna [] quando coluna e meta estão vazios', async () => {
+    mockLimit
+      .mockResolvedValueOnce({ data: [], error: null })
+      .mockResolvedValueOnce({ data: [], error: null });
 
     const slugs = await resolveSubtopicoInventoryFromReviewUnit(
       'fsrs:v1:discipline=enfermagem:subtopico=imunizacao',
@@ -69,7 +95,7 @@ describe('resolveSubtopicoInventoryFromReviewUnit', () => {
     expect(slugs).toEqual([]);
   });
 
-  it('retorna [] e loga quando Supabase falha', async () => {
+  it('retorna [] e loga quando Supabase falha na coluna', async () => {
     const { logger } = await import('@/lib/logger');
     mockLimit.mockResolvedValue({
       data: null,
@@ -82,7 +108,10 @@ describe('resolveSubtopicoInventoryFromReviewUnit', () => {
     expect(slugs).toEqual([]);
     expect(logger.warn).toHaveBeenCalledWith(
       'resolveSubtopicoInventory failed',
-      expect.objectContaining({ message: 'column slug does not exist' }),
+      expect.objectContaining({
+        message: 'column slug does not exist',
+        source: 'column',
+      }),
     );
   });
 
