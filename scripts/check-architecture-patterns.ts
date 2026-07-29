@@ -108,6 +108,9 @@ const ENV_KEYS_FROM_SCHEMA = new Set<string>([
   'CURSOR_ORCHESTRATOR_MODEL',
   'EE_V1_INSTRUMENTATION',
   'EE_V1_INTERNAL_EMAILS',
+  'FSRS_MVP_ENABLED',
+  'FSRS_REQUEST_RETENTION',
+  'FSRS_MIN_CLUSTER_INVENTORY',
 ]);
 
 type Violation = { file: string; rule: string; detail: string };

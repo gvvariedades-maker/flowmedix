@@ -118,6 +118,23 @@ function resetDashboardMainScroll() {
   if (mainEl) mainEl.scrollTop = 0;
 }
 
+/** UUID v4 para attempt_id — seguro em browser e Jest/jsdom (sem crypto.randomUUID). */
+function createConfirmAttemptId(): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+  const bytes = new Uint8Array(16);
+  if (typeof crypto !== 'undefined' && typeof crypto.getRandomValues === 'function') {
+    crypto.getRandomValues(bytes);
+  } else {
+    for (let i = 0; i < 16; i++) bytes[i] = Math.floor(Math.random() * 256);
+  }
+  bytes[6] = (bytes[6] & 0x0f) | 0x40;
+  bytes[8] = (bytes[8] & 0x3f) | 0x80;
+  const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
 type SlideMotionProps = {
   initial: Target;
   animate: Target;
@@ -370,6 +387,11 @@ export default function AvantLessonPlayer({
   const slidesLayerFetchRef = useRef(false);
   const slidesPersistFailedRef = useRef(false);
   const tentativaAbortRef = useRef<AbortController | null>(null);
+  /**
+   * attempt_id estável por confirmação — independente do Evidence Engine.
+   * Reutilizado em retry técnico; reciclado só após HTTP 200 com gabarito.
+   */
+  const confirmAttemptIdRef = useRef<string | null>(null);
   const questoesDoAssuntoRef = useRef(questoesDoAssunto);
   questoesDoAssuntoRef.current = questoesDoAssunto;
   const activeDados = dadosComSlides ?? dadosIniciais;
@@ -382,6 +404,10 @@ export default function AvantLessonPlayer({
     questionKey: evidenceQuestionKey,
     enabled: mode !== 'preview',
   });
+
+  useEffect(() => {
+    confirmAttemptIdRef.current = null;
+  }, [evidenceQuestionKey]);
 
   const selectOption = useCallback(
     (opcaoId: string | null) => {
@@ -842,9 +868,27 @@ export default function AvantLessonPlayer({
     const controller = new AbortController();
     tentativaAbortRef.current = controller;
 
+    // attempt_id independente do EE (FSRS idempotência + EE compartilham o mesmo id no wire).
+    // Fallback UUID: Jest/jsdom nem sempre expõe crypto.randomUUID.
+    if (!confirmAttemptIdRef.current) {
+      confirmAttemptIdRef.current = createConfirmAttemptId();
+    }
+    const attemptId = confirmAttemptIdRef.current;
+
     // answered_at é calculado aqui — após a escolha de convicção quando a UI
     // da coorte técnica estiver habilitada (spec §1.5/§1.6).
+    // EE continua dono dos próprios campos; attempt_id do wire é o independente acima.
     const evidenceFields = beginEvidenceConfirm(conviction ? { conviction } : undefined);
+    const evidencePayload = evidenceFields
+      ? {
+          started_at: evidenceFields.started_at,
+          answered_at: evidenceFields.answered_at,
+          conviction: evidenceFields.conviction,
+          answer_change_count: evidenceFields.answer_change_count,
+          response_time_ms: evidenceFields.response_time_ms,
+          tab_backgrounded: evidenceFields.tab_backgrounded,
+        }
+      : {};
 
     try {
       const response = await postWithSessionRetry(
@@ -855,7 +899,8 @@ export default function AvantLessonPlayer({
           banca: activeDados.meta?.banca || 'DESCONHECIDA',
           topico: activeDados.meta?.topico || 'Geral',
           subtopico: activeDados.meta?.subtopico || activeDados.meta?.topico || 'Geral',
-          ...(evidenceFields ?? {}),
+          attempt_id: attemptId,
+          ...evidencePayload,
         },
         controller.signal,
       );
@@ -909,6 +954,7 @@ export default function AvantLessonPlayer({
         return { status: 'error' };
       }
 
+      confirmAttemptIdRef.current = null;
       clearEvidencePending();
       return {
         status: 'ok',
