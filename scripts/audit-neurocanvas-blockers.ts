@@ -6,6 +6,7 @@ import {
   buildBlockerAnalysisReport,
   selectStratifiedBlockerSamples,
 } from '@/lib/neurocanvas/blockerAnalysis';
+import { assertFullCatalogMigration } from '@/lib/neurocanvas/fullCatalogGuard';
 import { portableizeAuditArtifact } from '@/lib/neurocanvas/portablePath';
 
 function renderClustersMd(report: ReturnType<typeof buildBlockerAnalysisReport>): string {
@@ -99,6 +100,7 @@ function renderSamplesMd(samples: ReturnType<typeof selectStratifiedBlockerSampl
 
 async function main() {
   const repoRoot = process.cwd();
+  assertFullCatalogMigration(repoRoot, 'audit:neurocanvas-blockers');
   const report = buildBlockerAnalysisReport({ repoRoot });
   const samples = selectStratifiedBlockerSamples(report, 20);
 

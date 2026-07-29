@@ -1,0 +1,267 @@
+{
+  "schema": "neurocanvas-official-lane-proposal-v1",
+  "lane": "official_lane_l2",
+  "batch_id": "VUNESP-SJRP",
+  "generated_at": "2026-07-27",
+  "status": "proposal_only",
+  "materialization": "forbidden_until_explicit_approval",
+  "baseline_ref": {
+    "baseline_id": "G0.4",
+    "measured_from_commit": "cf840997727a74edab13d38315b70e8c58c49943",
+    "official_lane_count": 11,
+    "cases_in_batch": 2
+  },
+  "official_exam": {
+    "concurso": "Concurso Público nº 01/2025",
+    "orgao": "Prefeitura Municipal de São José do Rio Preto",
+    "banca": "VUNESP",
+    "banca_code": "PMRP2501",
+    "cargo": "Agente Administrativo",
+    "prova_data": "2026-01-18",
+    "gabarito_divulgacao": "2026-01-20",
+    "gabarito_retificacoes": {
+      "recursos_gabarito": "2026-01-21 a 2026-01-22 (2 dias úteis, portal VUNESP)",
+      "resultado_final_previsto": "2026-02-10",
+      "nota": "Sem retificação de gabarito publicada que altere os itens de Português citados abaixo (V1 Q12/Q15) na pesquisa desta proposta."
+    },
+    "estrutura_prova_objetiva": {
+      "total_questoes": 50,
+      "portugues_questoes": 15,
+      "nota": "Português = questões 1–15 nas quatro versões do Agente Administrativo."
+    },
+    "gabarito_agente_administrativo_versao_1_portugues": {
+      "Q12": "E",
+      "Q15": "A",
+      "nota": "Q12 = parênteses (texto Lévi-Strauss calorias). Q15 = lacunas crase (agricultura / coleta / fim)."
+    },
+    "sources": [
+      {
+        "tier": "A",
+        "kind": "portal_banca",
+        "title": "Concurso Público 1/2025 — PMRP2501",
+        "url": "https://www.vunesp.com.br/PMRP2501",
+        "covers": [
+          "edital",
+          "provas e gabaritos",
+          "área do candidato"
+        ]
+      },
+      {
+        "tier": "A",
+        "kind": "portal_orgao",
+        "title": "Gabaritos oficiais — Prefeitura de São José do Rio Preto",
+        "url": "https://www.riopreto.sp.gov.br/noticias/gabaritos-oficiais-de-concursos-e-processo-seletivo-estao-disponiveis",
+        "covers": [
+          "divulgação gabarito 20/01/2026",
+          "4 versões por cargo"
+        ]
+      },
+      {
+        "tier": "A",
+        "kind": "portal_orgao",
+        "title": "Gabarito individual — Área do Candidato VUNESP",
+        "url": "https://www.riopreto.sp.gov.br/noticias/vunesp-libera-gabarito-individual-do-concurso-e-processo-seletivo",
+        "covers": [
+          "gabarito individual",
+          "prazo recursos 22/01/2026"
+        ]
+      },
+      {
+        "tier": "B",
+        "kind": "dom_mirror",
+        "title": "Edital de divulgação do gabarito — DOM DHOJE nº 6669 (20/01/2026)",
+        "url": "https://www.passeidireto.com/arquivo/197279491/gabaritos-concurso-sao-jose",
+        "covers": [
+          "gabarito versões 1–4 Agente Administrativo",
+          "letras por número"
+        ]
+      },
+      {
+        "tier": "B",
+        "kind": "prova_mirror",
+        "title": "Prova objetiva Agente Administrativo — versão 1 (espelho)",
+        "url": "https://www.passeidireto.com/arquivo/197263752/prova-de-agente-administrativo",
+        "covers": [
+          "texto das 50 questões",
+          "confirmação enunciados PT Q12/Q15"
+        ]
+      },
+      {
+        "tier": "B",
+        "kind": "caderno_interno",
+        "title": "AVANT caderno PT 2025–2026 (q201-400 / q401-600)",
+        "url": null,
+        "covers": [
+          "tec 3789304",
+          "tec 3776323",
+          "tec 3789364 — não substitui prova oficial"
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "nc-g03-a88a4eb9efa315db",
+      "slug": "vunesp-sjrp-crase-a-qual",
+      "cluster_id": "lingua-portuguesa-g01×lingua-portuguesa-g02|S2|ev=none",
+      "severity": "S2",
+      "official_review_required": true,
+      "official_mapping": {
+        "found_on_official_prova": false,
+        "official_question_number": null,
+        "official_page": null,
+        "official_gabarito_letra": null,
+        "closest_official_match": {
+          "slug_local": "vunesp-sjrp-crase-lacunas-agricultura-3789364",
+          "official_question_number": 15,
+          "official_gabarito_letra": "A",
+          "official_prova_versao": 1,
+          "nota": "Outra questão de crase na mesma prova SJRP — lacunas, não tira."
+        },
+        "provenance_conflict": {
+          "slug_alias": "lingua-portuguesa-g02/lote-meta.json mapeia vunesp-jundiai-crase-tira-qual-3776323 → vunesp-sjrp-crase-a-qual",
+          "handcraft_origin": "scripts/handcraft-lingua-portuguesa-g02.ts — spec Jundiaí tec 3776323 (tira)",
+          "g01_tier_b_error": "meta.sources cita tec 3789364 (lacunas SJRP Q15), não esta questão"
+        }
+      },
+      "question_data_agreement": {
+        "instruction_identical": true,
+        "options_identical": true,
+        "local_gabarito_letra": "E",
+        "local_gabarito_norma": "«à qual» — prep. a + pronome relativo feminino",
+        "has_answer_key_divergence_in_question_data": false
+      },
+      "blocker_note": "has_answer_divergence=true por diff pedagógico em reverse_study_slides (incl. danger_zone items[].correct), não por alternativas divergentes.",
+      "candidates": [
+        {
+          "path": "data/catalog-migration/lingua-portuguesa-g01/questions/vunesp-sjrp-crase-a-qual.json",
+          "lote": "lingua-portuguesa-g01",
+          "semantic_sha256": "8a01a818c4384bc3001ad4e143c6819a967452a4efeb86427524b9d9bfc3c8fb",
+          "meta_banca": "VUNESP",
+          "meta_prova": "Ag Adm (Pref SJRP)",
+          "meta_orgao": "Pref. SJRP",
+          "tier_b_source": "portugues-caderno-2025-2026-q401-600 — tec 3789364 (caderno; colide com lacunas Q15)",
+          "assessment": "Meta SJRP coerente com slug, mas fonte tier B aponta outra questão oficial; slides distintos de g02."
+        },
+        {
+          "path": "data/catalog-migration/lingua-portuguesa-g02/questions/vunesp-sjrp-crase-a-qual.json",
+          "lote": "lingua-portuguesa-g02",
+          "semantic_sha256": "c53bff363d426f9847194ade3689ad59e84fd9c2677c39589e39d3b38775f199",
+          "meta_banca": "VUNESP",
+          "meta_prova": "Ag Adm (Pref SJRP)",
+          "meta_orgao": "Pref. SJRP",
+          "tier_b_source": "portugues-caderno-tec-3776323 — VUNESP ACS Pref. Jundiaí 2026 (tira)",
+          "assessment": "Conteúdo alinhado ao handcraft Jundiaí; cópia no slug SJRP via alias de lote."
+        }
+      ],
+      "differing_fields_summary": "Slides completos (concept_map, logic_flow, golden_rule, danger_zone) — 40 paths; question_data idêntico.",
+      "proposed_authority": {
+        "tier_a_official": null,
+        "tier_b_best": "caderno tec 3776323 (Jundiaí) — não SJRP oficial",
+        "recommended_canonical_if_provenance_repaired": "vunesp-jundiai-crase-tira-qual-3776323 em lingua-portuguesa-g02; remover mis-tag SJRP"
+      },
+      "decision": "defer",
+      "decision_rationale": "Não há número de questão nem gabarito oficial SJRP para enunciado de tira/crase «à qual». Slug e meta SJRP conflitam com origem Jundiaí (tec 3776323) e com Q15 oficial (lacunas, gab. A). Fechar official lane exige prova oficial que contenha este item ou reclassificação de proveniência — fora do escopo L2 SJRP.",
+      "deferred_follow_up": [
+        "Confirmar prova VUNESP Jundiaí ACS 2026 (tec 3776323) e gabarito oficial da tira",
+        "Abrir lote proveniência PT (mis-tag slug) separado de official_lane SJRP",
+        "Não usar choose_existing_candidate sem mapping tier A"
+      ],
+      "rejected_actions": [
+        "choose_existing_candidate (g01 ou g02) para fechar official_lane SJRP",
+        "create_corrected_candidate só com slides sem corrigir proveniência"
+      ]
+    },
+    {
+      "case_id": "nc-g03-bad3482bfe781e3d",
+      "slug": "vunesp-sjrp-termos-folhetos-enquanto-3789304",
+      "cluster_id": "lingua-portuguesa-termos-anchor×termos-oracao-g02|S2|ev=none",
+      "severity": "S2",
+      "official_review_required": true,
+      "official_mapping": {
+        "found_on_official_prova": false,
+        "official_question_number": null,
+        "official_page": null,
+        "official_gabarito_letra": null,
+        "tec_id_collision": {
+          "tec_in_slug": "3789304",
+          "official_sjrp_q12_same_tec_in_caderno": {
+            "slug_local": "vunesp-sjrp-termos-parenteses-acessoria-3789304",
+            "official_question_number": 12,
+            "official_gabarito_letra": "E",
+            "enunciado_topic": "parênteses — Lévi-Strauss calorias",
+            "nota": "Mesmo tec no caderno interno, questão diferente na prova oficial."
+          }
+        },
+        "dedupe_note": "termos-oracao-g02/lote-meta.json: slug folhetos = âncora piloto dedupe vs quadrix 3779634"
+      },
+      "question_data_agreement": {
+        "instruction_identical": true,
+        "options_identical": true,
+        "local_gabarito_letra": "E",
+        "local_gabarito_norma": "adjunto adverbial deslocado + locução adverbial de tempo",
+        "has_answer_key_divergence_in_question_data": false
+      },
+      "blocker_note": "has_answer_divergence=true; meta.banca diverge (VUNESP vs QUADRIX) e slides danger_zone/steps diferem.",
+      "candidates": [
+        {
+          "path": "data/catalog-migration/lingua-portuguesa-termos-anchor/questions/vunesp-sjrp-termos-folhetos-enquanto-3789304.json",
+          "lote": "lingua-portuguesa-termos-anchor",
+          "semantic_sha256": "3cc2976e67eb4af816ae92f908d3e1c07d49780abaef61f873a26256a4625fdd",
+          "meta_banca": "VUNESP",
+          "meta_prova": "Ag Adm (Pref SJRP)",
+          "meta_orgao": "Pref. São José do Rio Preto",
+          "content_review_catalog_slug": null,
+          "tier_b_source": "portugues-caderno-2025-2026-q201-400 — Q326 / tec 3789304",
+          "assessment": "Meta alinhada ao slug VUNESP SJRP; âncora examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json"
+        },
+        {
+          "path": "data/catalog-migration/termos-oracao-g02/questions/vunesp-sjrp-termos-folhetos-enquanto-3789304.json",
+          "lote": "termos-oracao-g02",
+          "semantic_sha256": "b6ce181a82f72aaa334e85a9ec2d24669aca0685a7fda09095e84c25c2b2cc52",
+          "meta_banca": "QUADRIX",
+          "meta_prova": "Tec Enf (SES SP)",
+          "meta_orgao": "SES SP",
+          "content_review_catalog_slug": "quadrix-ses-sp-termos-folhetos-enquanto-3779634",
+          "tier_b_source": "portugues-caderno-tec-3779634 — QUADRIX Tec Enf SES SP 2026",
+          "assessment": "Handcraft QUADRIX com slug VUNESP SJRP — mis-tag de lote; conteúdo idêntico ao anchor (dedupe)"
+        }
+      ],
+      "differing_fields_summary": "meta.banca + 14 paths em slides (chip_label, steps, danger_zone correct/detail, subject).",
+      "proposed_authority": {
+        "tier_a_official": null,
+        "tier_b_best": "caderno Q326 tec 3789304 — sem página oficial SJRP para folhetos",
+        "conditional_canonical": "lingua-portuguesa-termos-anchor somente após prova oficial SJRP com este enunciado OU reclassificação explícita a QUADRIX 3779634"
+      },
+      "decision": "defer",
+      "decision_rationale": "Enunciado folhetos/Enquanto isso não localizado na prova oficial Ag Admin SJRP V1 (nem nas versões 2–4 na pesquisa por gabarito DOM). Conteúdo duplica QUADRIX SES SP (tec 3779634). tec 3789304 no caderno interno colide com Q12 oficial (parênteses). Sem tier A, official_lane SJRP não pode fechar.",
+      "deferred_follow_up": [
+        "Buscar enunciado em outras cargos PMRP2501 ou provas não espelhadas",
+        "Se prova = QUADRIX: migrar slug a quadrix-ses-sp-termos-folhetos-enquanto-3779634",
+        "Se prova = SJRP: obter PDF oficial com número de questão e página"
+      ],
+      "conditional_if_approved_without_tier_a": {
+        "decision": "choose_existing_candidate",
+        "canonical_path": "data/catalog-migration/lingua-portuguesa-termos-anchor/questions/vunesp-sjrp-termos-folhetos-enquanto-3789304.json",
+        "reject_path": "data/catalog-migration/termos-oracao-g02/questions/vunesp-sjrp-termos-folhetos-enquanto-3789304.json",
+        "warning": "Apenas para dedupe local; não substitui defer de official_lane sem tier A"
+      },
+      "rejected_actions": [
+        "choose_existing_candidate agora para official_lane SJRP",
+        "create_corrected_candidate mantendo meta VUNESP SJRP sem prova oficial"
+      ]
+    }
+  ],
+  "batch_summary": {
+    "decisions": {
+      "defer": 2,
+      "choose_existing_candidate": 0,
+      "create_corrected_candidate": 0
+    },
+    "next_after_approval": [
+      "PR aplicador (se humano aprovar decisão condicional ou proveniência reparada)",
+      "Auditoria real com catálogo local completo",
+      "PR baseline separado (contagens official_lane)"
+    ]
+  }
+}
