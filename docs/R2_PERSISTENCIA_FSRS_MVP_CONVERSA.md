@@ -115,7 +115,7 @@ O R2 deixa banco e API interna prontos para o R3 chamar a persistência — **se
 | Teste do gate | Cobertura da nova regra arquitetural (§6.5) |
 | Testes RPC + concorrência | Arquivo/script separado contra banco **local** (§12.B, §12.C) |
 | Smoke RLS | `scripts/rls-performance-smoke.ts` monta casos **por tabela, hardcoded** — o R2 **deve** adicionar casos explícitos (§11.3) |
-| Tipos DB | `types/database.ts` — **a confirmar** (§13.2); não editar à mão sem confirmar o padrão |
+| Tipos DB | Decisão: **não** versionar neste PR — [`DECISAO_FSRS_R2_DATABASE_TYPES.md`](DECISAO_FSRS_R2_DATABASE_TYPES.md) (§13.2) |
 
 ### 2.2 Fora do R2 (proibido no PR)
 
@@ -1002,24 +1002,23 @@ Os testes B e C **não** cabem no arquivo Jest de unidade: a allowlist (§13.1) 
 | Teste do gate arquitetural (§12.E) | **novo** |
 | Teste/script de RPC + concorrência local (§12.B, §12.C) | **novo** |
 | `scripts/rls-performance-smoke.ts` **ou** smoke FSRS dedicado | existente / **novo** |
-| `types/database.ts` | **a confirmar** — §13.2 |
+| `types/database.ts` | **decisão registrada** — §13.2 / [`DECISAO_FSRS_R2_DATABASE_TYPES.md`](DECISAO_FSRS_R2_DATABASE_TYPES.md) |
 
 Timestamp da migration **posterior** à última migration em `main` no momento do PR. Qualquer arquivo fora da allowlist exige justificativa no PR.
 
-### 13.2 `types/database.ts` — a confirmar
+### 13.2 `types/database.ts` — decisão confirmada (R2)
 
 Situação real do repositório:
 
 - `types/database.ts` é **hand-curated** (declarado em `scripts/check-database-types-drift.ts`);
 - `types/database.supabase.snapshot.ts` é o snapshot **gerado** via `npm run check:db-types -- --update`, que executa `npx supabase gen types typescript --linked` e portanto **exige projeto remoto linkado**.
 
-Consequências:
+**Decisão do PR R2** (ver [`DECISAO_FSRS_R2_DATABASE_TYPES.md`](DECISAO_FSRS_R2_DATABASE_TYPES.md)):
 
-1. **Preferir a geração pelo comando canônico** em vez de edição manual.
-2. **Não editar `types/database.ts` à mão** sem confirmar o padrão com o mantenedor.
-3. Registrar a decisão como **gate do PR**.
-4. Como a geração canônica depende de projeto linkado, e o R2 **não** aplica migration remota (§14), a atualização do snapshot pode não ser possível dentro do PR — nesse caso, documentar explicitamente e **não** forjar o arquivo.
-5. Se a geração produzir **diff amplo** (drift alheio ao FSRS), **separar** em revisão própria antes de incluir.
+1. **Não** editar `types/database.ts` à mão para FSRS.
+2. **Não** forjar / atualizar `types/database.supabase.snapshot.ts` neste PR (migration remota ainda não aplicada).
+3. Gate de CI: `supabase gen types typescript --local` + assert de presença de `spaced_review_cards`, `spaced_review_logs`, `fsrs_persist_review` — **sem** versionar o artefato.
+4. Após apply remoto autorizado: `npm run check:db-types -- --update` em PR separado se o diff for amplo.
 
 ### 13.3 Fora do R2 (proibido no PR)
 
@@ -1080,7 +1079,7 @@ PR-R2  feat(fsrs): migration spaced_review_* + RPC transacional + persistence (s
 ## Banco
 - [ ] Aplicado e validado SOMENTE em banco local/CI
 - [ ] Nenhuma migration remota; staging exige autorização separada
-- [ ] types/database.ts: padrão confirmado (§13.2)
+- [x] types/database.ts: padrão confirmado (§13.2) — ver `DECISAO_FSRS_R2_DATABASE_TYPES.md`
 
 ## Rollback
 - Rollback de código NÃO apaga tabelas nem dados

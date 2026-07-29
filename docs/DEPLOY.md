@@ -168,6 +168,7 @@ O workflow em [`.github/workflows/test.yml`](../.github/workflows/test.yml) incl
 | `typecheck` / `architecture-check` | Ship gates | Push sempre; PR se paths `ship` |
 | `security-audit` | `npm audit --omit=dev --audit-level=high` | Sempre (só high/critical) |
 | `smoke-rls` | `npm run smoke:rls` (anon: módulos, histórico, **matrículas**; service vs sellable) | Só se secrets `SMOKE_*` existirem; senão **skip + aviso** |
+| `fsrs-rpc-integration` | Supabase CLI local (`start` com migrations off) + apply só `20260728040000_spaced_review_fsrs_mvp.sql` + gen types `--local` (assert FSRS) + `scripts/fsrs-mvp-rls-matrix.sql` + Jest `__tests__/lib/fsrs` com `FSRS_RPC_INTEGRATION=1` | Paths `lib/fsrs/**`, `supabase/migrations/**`, `__tests__/lib/fsrs/**` |
 | `test-e2e` / `perf-smoke` | Playwright / perf | Condicional por paths |
 
 Dependabot: [`.github/dependabot.yml`](../.github/dependabot.yml) — npm semanal (agrupa patch/minor) + github-actions mensal.

@@ -1,7 +1,8 @@
 /**
- * FSRS MVP — contratos puros (Lote R1.1).
+ * FSRS MVP — contratos R1 + persistência R2 (server-only adapters).
  *
  * @see docs/DECISAO_REVISAO_FSRS_MVP.md
+ * @see docs/R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md
  * @see lib/fsrs/README.md
  */
 
@@ -64,3 +65,27 @@ export type {
 } from './types';
 
 export { FSRS_ATTEMPT_CONTEXTS } from './types';
+
+export type {
+  FsrsInvalidStateReason,
+  FsrsPersistReviewInput,
+  FsrsPersistReviewResult,
+  FsrsPersistableContext,
+  FsrsReviewPersistence,
+  FsrsWriteStatus,
+  SpacedReviewCardRow,
+  SpacedReviewLogRow,
+} from './persistenceTypes';
+
+export {
+  canonicalizeFingerprintPayload,
+  computeSemanticFingerprint,
+  normalizeReviewedAtIso,
+} from './fingerprint';
+export type { FsrsFingerprintInput } from './fingerprint';
+
+export { createFsrsReviewPersistence } from './persistence';
+export type { FsrsPersistRpcClient } from './persistence';
+
+// createSupabaseFsrsPersistence: importar de `@/lib/fsrs/supabasePersistence`
+// (tem `import 'server-only'` — não reexportar aqui para não contaminar o barrel R1).

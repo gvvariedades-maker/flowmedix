@@ -8,8 +8,20 @@ Contratos **puros** do pivot de revisão espaçada (`docs/DECISAO_REVISAO_FSRS_M
 - **Não** confundir com `lib/evidence/fsrsSkill.ts` (stub FSRS-*like* do Evidence Engine, gated em RCT-1; origem em `origin/main`).
 - **Não** importa `lib/evidence/*`.
 - **Não** substitui `lib/spaced-repetition.ts` (SM-2 legado) neste lote.
-- Sem I/O, rotas, migration, flag de produto ou UI (R1).
-- Este lote **não** autoriza R2 (persistência) nem R3 (integração).
+- R1: contratos puros (sem I/O de produto).
+- R2: persistência server-only (`persistence*`, `fingerprint`, migration + RPC) — **sem** rotas/UI/flag.
+- R3 (integração) permanece **bloqueado** até autorização separada.
+
+## R2 — persistência
+
+- Único caminho de escrita: RPC `fsrs_persist_review` (card + log atômicos).
+- Adapter: `createSupabaseFsrsPersistence` (`import 'server-only'`).
+- Outcomes tipados com `writeStatus`; transporte ambíguo → `persistence_unknown`.
+- Proibido importar `lib/evidence/**`.
+- Spec: `docs/R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`.
+- Testes RPC reais (§12.B/§12.C): `__tests__/lib/fsrs/fsrsMvp.rpc.integration.test.ts` com `FSRS_RPC_INTEGRATION=1`.
+- Matriz RLS (§12.D): `scripts/fsrs-mvp-rls-matrix.sql` (job CI `fsrs-rpc-integration`).
+- Types DB: **não** versionados neste lote — [`docs/DECISAO_FSRS_R2_DATABASE_TYPES.md`](../../docs/DECISAO_FSRS_R2_DATABASE_TYPES.md).
 
 ## Unidade de memória (`review_unit_id`)
 
