@@ -53,6 +53,40 @@ describe('applyFsrsReview', () => {
       outcome: 'created',
       writeStatus: 'committed',
     });
-    expect(persistReview).toHaveBeenCalled();
+    expect(persistReview).toHaveBeenCalledWith(
+      expect.objectContaining({ sameStemFallback: false }),
+    );
+  });
+
+  it('propaga sameStemFallback true em scheduled_review', async () => {
+    const persistReview = jest.fn().mockResolvedValue({
+      outcome: 'created',
+      writeStatus: 'committed',
+      attemptId: 'a1',
+      resultingRevision: 1,
+    });
+    const persistence: FsrsReviewPersistence = {
+      persistReview,
+      loadCard: jest.fn().mockResolvedValue({ ok: true, card: null }),
+    };
+    const res = await applyFsrsReview({
+      userId: '11111111-1111-1111-1111-111111111111',
+      attemptId: '22222222-2222-2222-2222-222222222222',
+      questionId: 'slug',
+      isCorrect: true,
+      discipline: 'Enfermagem',
+      subtopico: 'Imunização',
+      fromScheduledReview: true,
+      sameStemFallback: true,
+      reviewedAt: new Date('2026-07-01T12:00:00.000Z'),
+      persistence,
+    });
+    expect(res.applied).toBe(true);
+    expect(persistReview).toHaveBeenCalledWith(
+      expect.objectContaining({
+        attemptContext: 'scheduled_review',
+        sameStemFallback: true,
+      }),
+    );
   });
 });

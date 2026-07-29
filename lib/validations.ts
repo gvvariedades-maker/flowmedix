@@ -937,7 +937,7 @@ export const EstudarQuestaoQuerySchema = z
   .object({
     slug: z.string().trim().min(1).max(200),
     layers: z.enum(['core', 'full']).default('full'),
-    from: z.enum(['plano', 'caderno']).optional(),
+    from: z.enum(['plano', 'caderno', 'revisoes']).optional(),
     caderno_id: z.string().uuid().optional(),
     context: z.enum(['simulado']).optional(),
     page: z.coerce.number().int().min(1).max(500).optional(),

@@ -22,6 +22,7 @@
     "capture:t3-vitrine": "tsx scripts/capture-t3-vitrine.ts",
     "test:e2e:estudar-nav": "tsx scripts/run-e2e-estudar-nav.ts",
     "test:e2e:estudar-nav:staging": "tsx scripts/run-e2e-estudar-nav.ts --target=staging",
+    "test:e2e:revisoes-hoje": "playwright test e2e/revisoes-hoje.spec.ts --project=chromium --workers=1",
     "test:e2e:visual-molds": "playwright test e2e/visual-mold-regression.spec.ts --project=chromium",
     "validate:env": "tsx scripts/validate-env.ts",
     "db:push": "supabase db push",

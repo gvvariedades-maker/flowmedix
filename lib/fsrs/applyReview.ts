@@ -22,8 +22,10 @@ export type ApplyFsrsReviewInput = {
   /** Disciplina canônica (tópico). */
   discipline: string;
   subtopico: string | null | undefined;
-  /** true quando a sessão é da fila Revisões de hoje. */
+  /** true somente quando o servidor atestou card due (não confiar no client). */
   fromScheduledReview: boolean;
+  /** Telemetria: questão == last_question_id do card (derivado no servidor). */
+  sameStemFallback?: boolean;
   reviewedAt?: Date;
   requestRetention?: number;
   persistence: FsrsReviewPersistence;
@@ -109,7 +111,7 @@ export async function applyFsrsReview(
       expectedRevision: loaded.card?.revision ?? null,
       serializedBefore,
       serializedAfter,
-      sameStemFallback: false,
+      sameStemFallback: input.sameStemFallback === true,
     });
 
     if (

@@ -6,6 +6,8 @@ export interface PlanoDiarioProps {
   revisoes: ReviewItem[];
   totalPendentes: number;
   limite: number;
+  /** Flag FSRS on + e-mail na allowlist — CTA para `/revisoes-hoje`. */
+  showFsrsRevisoesCta?: boolean;
 }
 
 export type { ReviewItem } from '@/lib/spaced-repetition';

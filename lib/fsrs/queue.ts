@@ -122,9 +122,20 @@ export function selectQuestionForUnit(params: {
   };
 }
 
+export type FsrsTodayQueueTelemetry = {
+  same_stem_fallback: number;
+  inventory_missing: number;
+};
+
+export type FsrsTodayQueueBuildResult = {
+  items: FsrsReviewQueueItem[];
+  telemetry: FsrsTodayQueueTelemetry;
+};
+
 /**
  * Monta fila do dia a partir dos cards due + inventário por unidade.
  * `resolveInventory(reviewUnitId)` retorna slugs da unidade (já com entitlement).
+ * Cards sem inventário são skipped e contados em `telemetry.inventory_missing`.
  */
 export async function buildFsrsTodayQueue(params: {
   client: FsrsQueueClient;
@@ -132,7 +143,7 @@ export async function buildFsrsTodayQueue(params: {
   now?: Date;
   limit?: number;
   resolveInventory: (reviewUnitId: string) => Promise<string[]>;
-}): Promise<FsrsReviewQueueItem[]> {
+}): Promise<FsrsTodayQueueBuildResult> {
   const now = params.now ?? new Date();
   const cards = await listDueReviewCards(
     params.client,
@@ -142,6 +153,9 @@ export async function buildFsrsTodayQueue(params: {
   );
 
   const items: FsrsReviewQueueItem[] = [];
+  let sameStemFallback = 0;
+  let inventoryMissing = 0;
+
   for (const card of cards) {
     const inventory = await params.resolveInventory(card.review_unit_id);
     const selected = selectQuestionForUnit({
@@ -149,7 +163,11 @@ export async function buildFsrsTodayQueue(params: {
       lastQuestionId: card.last_question_id,
     });
     if (selected.inventory_missing || !selected.modulo_slug) {
+      inventoryMissing += 1;
       continue;
+    }
+    if (selected.same_stem_fallback) {
+      sameStemFallback += 1;
     }
     items.push({
       modulo_slug: selected.modulo_slug,
@@ -158,7 +176,21 @@ export async function buildFsrsTodayQueue(params: {
       inventory_missing: false,
     });
   }
-  return items;
+
+  const telemetry: FsrsTodayQueueTelemetry = {
+    same_stem_fallback: sameStemFallback,
+    inventory_missing: inventoryMissing,
+  };
+
+  if (inventoryMissing > 0 || sameStemFallback > 0) {
+    logger.info('buildFsrsTodayQueue telemetry', {
+      userId: params.userId,
+      queue_size: items.length,
+      ...telemetry,
+    });
+  }
+
+  return { items, telemetry };
 }
 
 /** Narrow helper — service client usable as queue client. */

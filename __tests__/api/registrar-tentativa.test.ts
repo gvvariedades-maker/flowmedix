@@ -34,12 +34,17 @@ jest.mock('@/lib/concursos/entitlements', () => ({
   userHasModuloAccess: jest.fn((...args: unknown[]) => mockUserHasModuloAccess(...args)),
 }));
 
+const mockAssertCanAnswerQuestion = jest.fn().mockResolvedValue({ allowed: true });
+const mockCountQuestoesHojeForUser = jest.fn().mockResolvedValue(0);
+const mockIsFreemiumUnlimitedEmail = jest.fn().mockReturnValue(true);
+const mockIsUserPro = jest.fn().mockResolvedValue(false);
 jest.mock('@/lib/freemium', () => ({
-  assertCanAnswerQuestion: jest.fn().mockResolvedValue({ allowed: true }),
-  countQuestoesHojeForUser: jest.fn().mockResolvedValue(0),
+  assertCanAnswerQuestion: jest.fn((...args: unknown[]) => mockAssertCanAnswerQuestion(...args)),
+  countQuestoesHojeForUser: jest.fn((...args: unknown[]) => mockCountQuestoesHojeForUser(...args)),
   getFreemiumDayBounds: jest.fn().mockReturnValue({ resetEm: new Date('2026-05-27T03:00:00Z') }),
-  isFreemiumUnlimitedEmail: jest.fn().mockReturnValue(true),
-  isUserPro: jest.fn().mockResolvedValue(false),
+  isFreemiumUnlimitedEmail: jest.fn((...args: unknown[]) => mockIsFreemiumUnlimitedEmail(...args)),
+  isUserPro: jest.fn((...args: unknown[]) => mockIsUserPro(...args)),
+  FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT: 5,
 }));
 
 const mockFrom = jest.fn();
@@ -53,10 +58,12 @@ jest.mock('@/lib/supabase/server', () => ({
 
 const mockIsEvidenceV1InstrumentationEnabled = jest.fn();
 const mockIsFsrsMvpEnabled = jest.fn();
+const mockIsFsrsMvpBetaEmail = jest.fn();
 const mockGetFsrsRequestRetention = jest.fn(() => 0.9);
 jest.mock('@/lib/env', () => ({
   isEvidenceV1InstrumentationEnabled: jest.fn(() => mockIsEvidenceV1InstrumentationEnabled()),
   isFsrsMvpEnabled: jest.fn(() => mockIsFsrsMvpEnabled()),
+  isFsrsMvpBetaEmail: jest.fn((...args: unknown[]) => mockIsFsrsMvpBetaEmail(...args)),
   getFsrsRequestRetention: jest.fn(() => mockGetFsrsRequestRetention()),
 }));
 
@@ -89,6 +96,11 @@ const ATTEMPT_ID = '6ba7b810-9dad-41d1-80b4-00c04fd430c8';
 const SLUG = 'questao-teste-slug';
 
 const conteudoJson = {
+  meta: {
+    banca: 'FGV',
+    topico: 'Enfermagem',
+    subtopico: 'Imunização',
+  },
   question_data: {
     instruction: 'Qual alternativa está correta?',
     options: [
@@ -107,7 +119,12 @@ describe('POST /api/registrar-tentativa', () => {
     mockUserHasModuloAccess.mockResolvedValue(true);
     mockIsEvidenceV1InstrumentationEnabled.mockReturnValue(false);
     mockIsFsrsMvpEnabled.mockReturnValue(false);
+    mockIsFsrsMvpBetaEmail.mockReturnValue(false);
     mockGetFsrsRequestRetention.mockReturnValue(0.9);
+    mockAssertCanAnswerQuestion.mockResolvedValue({ allowed: true });
+    mockCountQuestoesHojeForUser.mockResolvedValue(0);
+    mockIsFreemiumUnlimitedEmail.mockReturnValue(true);
+    mockIsUserPro.mockResolvedValue(false);
     mockCreateSupabaseEvidencePersistence.mockReturnValue({ findAttemptById: jest.fn(), insertAttempt: jest.fn() });
     mockIngestAttemptEvent.mockResolvedValue({ status: 'disabled' });
     mockFsrsLoadCard.mockResolvedValue({ ok: true, card: null });
@@ -134,6 +151,15 @@ describe('POST /api/registrar-tentativa', () => {
   function mockModuloFetch(options?: {
     historicoExistenteId?: string;
     persistError?: boolean;
+    conteudoJson?: typeof conteudoJson | Record<string, unknown>;
+    dueCard?: {
+      review_unit_id: string;
+      review_unit_kind: string;
+      due_at: string;
+      last_question_id: string | null;
+      revision: number;
+    } | null;
+    dueCardError?: { message?: string };
   }) {
     const insert = jest
       .fn()
@@ -143,7 +169,7 @@ describe('POST /api/registrar-tentativa', () => {
       .mockResolvedValue({ error: options?.persistError ? { message: 'db fail' } : null });
     const update = jest.fn().mockReturnValue({ eq: updateEq });
     const moduloMaybeSingle = jest.fn().mockResolvedValue({
-      data: { conteudo_json: conteudoJson },
+      data: { conteudo_json: options?.conteudoJson ?? conteudoJson },
       error: null,
     });
     const historicoMaybeSingle = jest.fn().mockResolvedValue({
@@ -158,15 +184,33 @@ describe('POST /api/registrar-tentativa', () => {
     const historicoSelect = jest.fn().mockReturnValue({ eq: historicoEqUser });
     const moduloSelect = jest.fn().mockReturnValue({ eq: moduloEq });
 
+    const dueMaybeSingle = jest.fn().mockResolvedValue({
+      data: options?.dueCard === undefined ? null : options.dueCard,
+      error: options?.dueCardError ?? null,
+    });
+    const dueEqUnit = jest.fn().mockReturnValue({ maybeSingle: dueMaybeSingle });
+    const dueEqUser = jest.fn().mockReturnValue({ eq: dueEqUnit });
+    const dueSelect = jest.fn().mockReturnValue({ eq: dueEqUser });
+
     mockFrom.mockImplementation((table: string) => {
       if (table === 'modulos_estudo') return { select: moduloSelect, eq: moduloEq };
       if (table === 'historico_questoes') {
         return { select: historicoSelect, insert, update };
       }
+      if (table === 'spaced_review_cards') {
+        return { select: dueSelect };
+      }
       return { select: moduloSelect, eq: moduloEq, insert, update };
     });
 
-    return { insert, update, updateEq, moduloMaybeSingle, historicoMaybeSingle };
+    return {
+      insert,
+      update,
+      updateEq,
+      moduloMaybeSingle,
+      historicoMaybeSingle,
+      dueMaybeSingle,
+    };
   }
 
   describe('fluxo legado', () => {
@@ -280,7 +324,7 @@ describe('POST /api/registrar-tentativa', () => {
       expect(update).toHaveBeenCalledWith(
         expect.objectContaining({
           acertou: false,
-          banca: 'DESCONHECIDA',
+          banca: 'FGV',
           created_at: expect.any(String),
         }),
       );
@@ -651,9 +695,14 @@ describe('POST /api/registrar-tentativa', () => {
       );
     });
 
-    it('inelegível (subtópico ausente) → não grava', async () => {
+    it('inelegível (subtópico ausente no meta canônico) → não grava', async () => {
       mockIsFsrsMvpEnabled.mockReturnValue(true);
-      mockModuloFetch();
+      mockModuloFetch({
+        conteudoJson: {
+          meta: { banca: 'FGV', topico: 'Enfermagem' },
+          question_data: conteudoJson.question_data,
+        },
+      });
 
       const response = await POST(
         makeRequest({
@@ -661,7 +710,7 @@ describe('POST /api/registrar-tentativa', () => {
           opcao_id: 'B',
           attempt_id: ATTEMPT_ID,
           topico: 'Enfermagem',
-          // sem subtopico → unit_unresolved
+          subtopico: 'Imunização', // body forjado — ignorado
         }),
       );
 
@@ -793,6 +842,173 @@ describe('POST /api/registrar-tentativa', () => {
       expect(mockCreateSupabaseEvidencePersistence).not.toHaveBeenCalled();
       expect(mockIngestAttemptEvent).not.toHaveBeenCalled();
       expect(mockFsrsPersistReview).toHaveBeenCalledTimes(1);
+    });
+
+    it('due válido + from_revisoes → isenta freemium e agenda scheduled_review', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockIsFsrsMvpBetaEmail.mockReturnValue(true);
+      mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
+      mockAssertCanAnswerQuestion.mockResolvedValue({
+        allowed: false,
+        resetEm: '2026-05-27T03:00:00.000Z',
+      });
+      mockCountQuestoesHojeForUser.mockResolvedValue(99);
+
+      const { resolveReviewUnitId } = jest.requireActual('@/lib/fsrs/reviewUnit') as typeof import('@/lib/fsrs/reviewUnit');
+      const unit = resolveReviewUnitId({
+        discipline: 'Enfermagem',
+        subtopico: 'Imunização',
+      });
+      if (!unit.ok) throw new Error('unit');
+
+      mockModuloFetch({
+        dueCard: {
+          review_unit_id: unit.reviewUnitId,
+          review_unit_kind: 'subtopico',
+          due_at: '2026-07-01T00:00:00.000Z',
+          last_question_id: 'outro-slug',
+          revision: 2,
+        },
+      });
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          from_revisoes: true,
+        }),
+      );
+
+      expect(response.status).toBe(200);
+      expect(mockAssertCanAnswerQuestion).not.toHaveBeenCalled();
+      expect(mockFsrsPersistReview).toHaveBeenCalledWith(
+        expect.objectContaining({
+          attemptId: ATTEMPT_ID,
+          attemptContext: 'scheduled_review',
+          sameStemFallback: false,
+        }),
+      );
+    });
+
+    it('from_revisoes sem card due → não isenta freemium e não agenda', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockIsFsrsMvpBetaEmail.mockReturnValue(true);
+      mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
+      mockAssertCanAnswerQuestion.mockResolvedValue({
+        allowed: false,
+        resetEm: '2026-05-27T03:00:00.000Z',
+      });
+      mockModuloFetch({ dueCard: null });
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          from_revisoes: true,
+        }),
+      );
+
+      expect(response.status).toBe(403);
+      expect(await response.json()).toMatchObject({
+        limiteAtingido: true,
+        allowed: false,
+      });
+      expect(mockFsrsPersistReview).not.toHaveBeenCalled();
+    });
+
+    it('from_revisoes + mesmo enunciado → same_stem_fallback true no persist', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockIsFsrsMvpBetaEmail.mockReturnValue(true);
+      const { resolveReviewUnitId } = jest.requireActual('@/lib/fsrs/reviewUnit') as typeof import('@/lib/fsrs/reviewUnit');
+      const unit = resolveReviewUnitId({
+        discipline: 'Enfermagem',
+        subtopico: 'Imunização',
+      });
+      if (!unit.ok) throw new Error('unit');
+
+      mockModuloFetch({
+        dueCard: {
+          review_unit_id: unit.reviewUnitId,
+          review_unit_kind: 'subtopico',
+          due_at: '2026-07-01T00:00:00.000Z',
+          last_question_id: SLUG,
+          revision: 1,
+        },
+      });
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          from_revisoes: true,
+        }),
+      );
+
+      expect(response.status).toBe(200);
+      expect(mockFsrsPersistReview).toHaveBeenCalledWith(
+        expect.objectContaining({
+          attemptContext: 'scheduled_review',
+          sameStemFallback: true,
+        }),
+      );
+    });
+
+    it('flag off + from_revisoes → SM-2 (sem FSRS) e freemium normal', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(false);
+      mockIsFsrsMvpBetaEmail.mockReturnValue(true);
+      mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
+      mockAssertCanAnswerQuestion.mockResolvedValue({
+        allowed: false,
+        resetEm: '2026-05-27T03:00:00.000Z',
+      });
+      mockModuloFetch();
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          from_revisoes: true,
+        }),
+      );
+
+      expect(response.status).toBe(403);
+      expect(mockCreateSupabaseFsrsPersistence).not.toHaveBeenCalled();
+      expect(mockAssertCanAnswerQuestion).toHaveBeenCalled();
+    });
+
+    it('from_revisoes forjado sem beta → cold_practice e freemium aplica', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockIsFsrsMvpBetaEmail.mockReturnValue(false);
+      mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
+      mockAssertCanAnswerQuestion.mockResolvedValue({
+        allowed: false,
+        resetEm: '2026-05-27T03:00:00.000Z',
+      });
+      mockModuloFetch({
+        dueCard: {
+          review_unit_id: 'ignored',
+          review_unit_kind: 'subtopico',
+          due_at: '2026-07-01T00:00:00.000Z',
+          last_question_id: null,
+          revision: 1,
+        },
+      });
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          from_revisoes: true,
+        }),
+      );
+
+      expect(response.status).toBe(403);
+      expect(mockFsrsPersistReview).not.toHaveBeenCalled();
     });
   });
 });

@@ -5,6 +5,15 @@
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
 
+/** Row tipada de `modulos_estudo` para inventário de revisão. */
+export type ModuloInventoryRow = {
+  modulo_slug: string;
+};
+
+/**
+ * Resolve slugs (`modulo_slug`) do subtópico embutido em `review_unit_id`.
+ * Unidades sem sufixo `:subtopico=` → inventário vazio.
+ */
 export async function resolveSubtopicoInventoryFromReviewUnit(
   reviewUnitId: string,
 ): Promise<string[]> {
@@ -15,7 +24,7 @@ export async function resolveSubtopicoInventoryFromReviewUnit(
     const supabase = await createServerSupabase();
     const { data, error } = await supabase
       .from('modulos_estudo')
-      .select('slug')
+      .select('modulo_slug')
       .eq('subtopico', subtopico)
       .limit(50);
     if (error) {
@@ -25,8 +34,9 @@ export async function resolveSubtopicoInventoryFromReviewUnit(
       });
       return [];
     }
-    return (data ?? [])
-      .map((r) => (typeof r.slug === 'string' ? r.slug : ''))
+    const rows = (data ?? []) as ModuloInventoryRow[];
+    return rows
+      .map((r) => (typeof r.modulo_slug === 'string' ? r.modulo_slug.trim() : ''))
       .filter(Boolean);
   } catch (err) {
     logger.warn('resolveSubtopicoInventory exception', { reviewUnitId, err });

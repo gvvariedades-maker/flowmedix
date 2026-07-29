@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { shouldUseFsrsTodayQueue } from '@/lib/fsrs/reviewsToday';
 import { getTodayReviews } from '@/lib/spaced-repetition';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import PlanoDiarioClient from './PlanoDiarioClient';
@@ -15,6 +16,7 @@ export default async function PlanoDiarioPage() {
   if (!session?.user) redirect('/login');
 
   const userId = session.user.id;
+  const showFsrsRevisoesCta = shouldUseFsrsTodayQueue(session.user.email);
 
   // Busca todas as revisões vencidas, ordena por prioridade e limita a 10
   const todasRevisoes = await getTodayReviews(userId);
@@ -26,6 +28,7 @@ export default async function PlanoDiarioPage() {
       revisoes={revisoesDoDia}
       totalPendentes={total}
       limite={LIMITE_DIARIO}
+      showFsrsRevisoesCta={showFsrsRevisoesCta}
     />
   );
 }

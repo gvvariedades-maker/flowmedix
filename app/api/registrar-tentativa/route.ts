@@ -22,15 +22,49 @@ import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { moduloAccessOptionsFromEmail } from '@/lib/concursos/studyAccess';
 import { isUuidV4 } from '@/lib/evidence/parseClientFields';
 import { applyFsrsReview } from '@/lib/fsrs/applyReview';
+import {
+  confirmDueScheduledReview,
+  parseFromRevisoesIntention,
+  type ConfirmDueReviewClient,
+} from '@/lib/fsrs/confirmDueReview';
 import { createSupabaseFsrsPersistence } from '@/lib/fsrs/supabasePersistence';
 import {
   getFsrsRequestRetention,
+  isFsrsMvpBetaEmail,
   isFsrsMvpEnabled,
 } from '@/lib/env';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { randomUUID } from 'node:crypto';
+
+type CanonicalQuestionMeta = {
+  banca: string;
+  topico: string;
+  /** null quando ausente no JSON — FSRS exige subtópico não genérico. */
+  subtopico: string | null;
+};
+
+function extractCanonicalQuestionMeta(conteudoJson: unknown): CanonicalQuestionMeta {
+  const meta = (
+    conteudoJson as {
+      meta?: { banca?: string; topico?: string; subtopico?: string };
+    } | null
+  )?.meta;
+
+  const topico =
+    typeof meta?.topico === 'string' && meta.topico.trim() ? meta.topico.trim() : 'Geral';
+  const subtopico =
+    typeof meta?.subtopico === 'string' && meta.subtopico.trim()
+      ? meta.subtopico.trim()
+      : null;
+  const banca =
+    typeof meta?.banca === 'string' && meta.banca.trim()
+      ? meta.banca.trim()
+      : 'DESCONHECIDA';
+
+  return { banca, topico, subtopico };
+}
 
 async function denyModuloAccessResponse(
   supabase: Awaited<ReturnType<typeof createServerSupabase>>,
@@ -110,7 +144,56 @@ export async function POST(request: NextRequest) {
 
     const isReplay = historicoExistente != null;
 
-    if (!isReplay) {
+    // Metadados canônicos + gabarito antes do gate freemium (isenção due exige meta).
+    const { data: modulo, error: moduloError } = await supabase
+      .from('modulos_estudo')
+      .select('conteudo_json')
+      .eq('modulo_slug', modulo_slug)
+      .maybeSingle();
+
+    if (moduloError) {
+      logger.error('Failed to load question for attempt', moduloError, { modulo_slug });
+      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 500 });
+    }
+
+    if (!modulo) {
+      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
+    }
+
+    const canonical = extractCanonicalQuestionMeta(modulo.conteudo_json);
+    const wantsScheduledReview = parseFromRevisoesIntention(
+      body as Record<string, unknown>,
+    );
+
+    let scheduledReviewConfirmed = false;
+    let sameStemFallback = false;
+
+    // Intenção do client não basta: só isenta cota / agenda se card due atestado.
+    if (
+      wantsScheduledReview &&
+      isFsrsMvpEnabled() &&
+      isFsrsMvpBetaEmail(user.email)
+    ) {
+      const due = await confirmDueScheduledReview({
+        client: supabase as unknown as ConfirmDueReviewClient,
+        userId: user.id,
+        questionId: modulo_slug,
+        discipline: canonical.topico,
+        subtopico: canonical.subtopico,
+      });
+      if (due.confirmed) {
+        scheduledReviewConfirmed = true;
+        sameStemFallback = due.sameStemFallback;
+      } else {
+        logger.info('FSRS MVP: from_revisoes sem card due confirmado', {
+          userId: user.id,
+          modulo_slug,
+          reason: due.reason,
+        });
+      }
+    }
+
+    if (!isReplay && !scheduledReviewConfirmed) {
       const gate = await assertCanAnswerQuestion(user.id, user.email);
       if (!gate.allowed) {
         return NextResponse.json(
@@ -134,21 +217,6 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const { data: modulo, error: moduloError } = await supabase
-      .from('modulos_estudo')
-      .select('conteudo_json')
-      .eq('modulo_slug', modulo_slug)
-      .maybeSingle();
-
-    if (moduloError) {
-      logger.error('Failed to load question for attempt', moduloError, { modulo_slug });
-      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 500 });
-    }
-
-    if (!modulo) {
-      return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
-    }
-
     const gabarito = resolveQuestionAttempt(modulo.conteudo_json, opcao_id);
     if (!gabarito) {
       return NextResponse.json({ error: 'Alternativa inválida' }, { status: 400 });
@@ -158,9 +226,12 @@ export async function POST(request: NextRequest) {
 
     const historicoPayload = {
       acertou,
-      banca: banca || 'DESCONHECIDA',
-      topico: topico || 'Geral',
-      subtopico: subtopico || topico || 'Geral',
+      banca: canonical.banca !== 'DESCONHECIDA' ? canonical.banca : banca || 'DESCONHECIDA',
+      topico: canonical.topico !== 'Geral' ? canonical.topico : topico || 'Geral',
+      subtopico:
+        canonical.subtopico && canonical.subtopico !== 'Geral'
+          ? canonical.subtopico
+          : subtopico || topico || 'Geral',
     };
 
     const reviewedAt = new Date().toISOString();
@@ -210,7 +281,7 @@ export async function POST(request: NextRequest) {
       log_route_label: 'registrar-tentativa',
     });
 
-    // FSRS MVP R3 — não bloqueia a tentativa; flag default off
+    // FSRS MVP — não bloqueia a tentativa; flag default off
     if (isFsrsMvpEnabled()) {
       try {
         const rawAttempt = (body as Record<string, unknown>).attempt_id;
@@ -228,10 +299,6 @@ export async function POST(request: NextRequest) {
             had_attempt_id: hadAttemptId,
           });
         }
-        const fromScheduledReview =
-          (body as Record<string, unknown>).from_revisoes === true ||
-          (body as Record<string, unknown>).from_revisoes === '1' ||
-          (body as Record<string, unknown>).from_revisoes === 'true';
 
         const persistence = createSupabaseFsrsPersistence(
           supabase as unknown as Parameters<typeof createSupabaseFsrsPersistence>[0],
@@ -241,9 +308,11 @@ export async function POST(request: NextRequest) {
           attemptId,
           questionId: modulo_slug,
           isCorrect: acertou,
-          discipline: typeof topico === 'string' && topico.trim() ? topico : 'Enfermagem',
-          subtopico: typeof subtopico === 'string' ? subtopico : null,
-          fromScheduledReview: Boolean(fromScheduledReview),
+          discipline:
+            canonical.topico !== 'Geral' ? canonical.topico : 'Enfermagem',
+          subtopico: canonical.subtopico,
+          fromScheduledReview: scheduledReviewConfirmed,
+          sameStemFallback: scheduledReviewConfirmed ? sameStemFallback : false,
           requestRetention: getFsrsRequestRetention(),
           persistence,
         });

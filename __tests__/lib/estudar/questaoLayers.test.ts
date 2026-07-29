@@ -79,13 +79,19 @@ describe('questaoLayers', () => {
     });
   });
 
-  it('buildEstudarSlugComQueryFromPlayerProps monta contexto vitrine/plano/caderno', () => {
+  it('buildEstudarSlugComQueryFromPlayerProps monta contexto vitrine/plano/revisoes/caderno', () => {
     expect(
       buildEstudarSlugComQueryFromPlayerProps({
         moduloSlug: 'q-1',
         fromPlano: true,
       }),
     ).toBe('q-1?from=plano');
+    expect(
+      buildEstudarSlugComQueryFromPlayerProps({
+        moduloSlug: 'q-rev',
+        fromRevisoes: true,
+      }),
+    ).toBe('q-rev?from=revisoes');
     expect(
       buildEstudarSlugComQueryFromPlayerProps({
         moduloSlug: 'q-2',
