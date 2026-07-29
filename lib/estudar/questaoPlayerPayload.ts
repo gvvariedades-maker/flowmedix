@@ -13,6 +13,9 @@ import {
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { isTituloAulaVisibleInVitrine } from '@/lib/catalogMigration/vitrineQualityGate';
 import { getTodayReviews } from '@/lib/spaced-repetition';
+import { buildFsrsTodayQueue, asFsrsQueueClient } from '@/lib/fsrs/queue';
+import { resolveSubtopicoInventoryFromReviewUnit } from '@/lib/fsrs/inventory';
+import { isFsrsMvpEnabled } from '@/lib/env';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
 import {
@@ -115,6 +118,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
   const parsedSearch = parseEstudarSearchParams(searchParams);
   const {
     fromPlano,
+    fromRevisoes,
     fromCaderno,
     cadernoId,
     vitrineBancas,
@@ -186,9 +190,19 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     return supabase;
   };
 
-  if (fromPlano && userId) {
-    const revisoes = await getTodayReviews(userId);
-    lista = revisoes.map((r) => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
+  if ((fromPlano || fromRevisoes) && userId) {
+    if (fromRevisoes && isFsrsMvpEnabled()) {
+      const db = await ensureSupabase();
+      const queue = await buildFsrsTodayQueue({
+        client: asFsrsQueueClient(db as never),
+        userId,
+        resolveInventory: resolveSubtopicoInventoryFromReviewUnit,
+      });
+      lista = queue.map((r) => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
+    } else {
+      const revisoes = await getTodayReviews(userId);
+      lista = revisoes.map((r) => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
+    }
 
     const historico = await historicoForSlugsSafe(
       userId,
@@ -322,6 +336,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     moduloSlug: slug,
     questoesDoAssunto: questoesDoAssuntoParaCliente,
     fromPlano,
+    fromRevisoes,
     fromCaderno: fromCaderno ? cadernoId : undefined,
     listaContexto,
     avantCodigo: avantCodigoAluno,

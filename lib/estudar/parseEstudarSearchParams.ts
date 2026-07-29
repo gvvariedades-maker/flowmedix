@@ -6,6 +6,7 @@ export type EstudarSearchParams = Record<string, string | string[] | undefined>;
 
 export type ParsedEstudarSearchParams = {
   fromPlano: boolean;
+  fromRevisoes: boolean;
   fromCaderno: boolean;
   cadernoId: string | undefined;
   vitrineBancas: string[];
@@ -21,6 +22,7 @@ export function parseEstudarSearchParams(
 ): ParsedEstudarSearchParams {
   const from = searchParams.from as string | undefined;
   const fromPlano = from === 'plano';
+  const fromRevisoes = from === 'revisoes';
   const fromCaderno = from === 'caderno';
   const cadernoId = fromCaderno
     ? typeof searchParams.caderno_id === 'string'
@@ -47,6 +49,7 @@ export function parseEstudarSearchParams(
 
   return {
     fromPlano,
+    fromRevisoes,
     fromCaderno,
     cadernoId,
     vitrineBancas,
@@ -65,6 +68,7 @@ export function buildEstudarContextQuerySuffix(
   parsed: ParsedEstudarSearchParams,
 ): string {
   if (parsed.fromPlano) return '?from=plano';
+  if (parsed.fromRevisoes) return '?from=revisoes';
   if (parsed.fromCaderno && parsed.cadernoId) {
     return `?from=caderno&caderno_id=${encodeURIComponent(parsed.cadernoId)}`;
   }

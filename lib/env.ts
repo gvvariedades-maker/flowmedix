@@ -126,6 +126,8 @@ const EnvSchema = z.object({
   FSRS_REQUEST_RETENTION: z.coerce.number().gt(0).max(1).optional(),
   /** Limiar inventário cluster. Omitido → 3. */
   FSRS_MIN_CLUSTER_INVENTORY: z.coerce.number().int().positive().optional(),
+  /** Allowlist beta FSRS (vírgula). Omitido = ninguém em beta UI. */
+  FSRS_MVP_BETA_EMAILS: z.string().min(1).optional(),
 }).superRefine((data, ctx) => {
   /**
    * Na Vercel, Preview/Development também rodam `next build` com NODE_ENV=production.
@@ -210,6 +212,7 @@ const ENV_KEYS = [
   'FSRS_MVP_ENABLED',
   'FSRS_REQUEST_RETENTION',
   'FSRS_MIN_CLUSTER_INVENTORY',
+  'FSRS_MVP_BETA_EMAILS',
 ] as const;
 
 function readTrimmedEnv(key: string): string | undefined {
@@ -555,6 +558,17 @@ export function getFsrsMinClusterInventory(): number {
   return getEnv().FSRS_MIN_CLUSTER_INVENTORY ?? 3;
 }
 
+/** Allowlist beta UI Revisões de hoje (lowercase). */
+export function getFsrsMvpBetaEmails(): readonly string[] {
+  return parseEvidenceV1InternalEmails(getEnv().FSRS_MVP_BETA_EMAILS);
+}
+
+export function isFsrsMvpBetaEmail(email: string | null | undefined): boolean {
+  if (!email) return false;
+  const list = getFsrsMvpBetaEmails();
+  if (list.length === 0) return false;
+  return list.includes(email.trim().toLowerCase());
+}
 
 /** Allowlist tipada da coorte interna (e-mails lowercase). */
 export function getEvidenceV1InternalEmails(): readonly string[] {
