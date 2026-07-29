@@ -19,6 +19,9 @@ Contratos **puros** do pivot de revisão espaçada (`docs/DECISAO_REVISAO_FSRS_M
 - Outcomes tipados com `writeStatus`; transporte ambíguo → `persistence_unknown`.
 - Proibido importar `lib/evidence/**`.
 - Spec: `docs/R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`.
+- Testes RPC reais (§12.B/§12.C): `__tests__/lib/fsrs/fsrsMvp.rpc.integration.test.ts` com `FSRS_RPC_INTEGRATION=1`.
+- Matriz RLS (§12.D): `scripts/fsrs-mvp-rls-matrix.sql` (job CI `fsrs-rpc-integration`).
+- Types DB: **não** versionados neste lote — [`docs/DECISAO_FSRS_R2_DATABASE_TYPES.md`](../../docs/DECISAO_FSRS_R2_DATABASE_TYPES.md).
 
 ## Unidade de memória (`review_unit_id`)
 

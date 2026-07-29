@@ -28,6 +28,7 @@ jobs:
       ship: ${{ steps.filter.outputs.ship }}
       e2e: ${{ steps.filter.outputs.e2e }}
       perf: ${{ steps.filter.outputs.perf }}
+      fsrs_rpc: ${{ steps.filter.outputs.fsrs_rpc }}
     steps:
       - uses: actions/checkout@v6
       - uses: dorny/paths-filter@v3
@@ -67,6 +68,15 @@ jobs:
               - 'scripts/perf-smoke.ts'
               - 'scripts/capture-perf-baseline.ts'
               - 'docs/perf-smoke-baseline*.json'
+            # FSRS RPC integration — local Supabase + Jest (__tests__/lib/fsrs)
+            fsrs_rpc:
+              - 'lib/fsrs/**'
+              - 'supabase/migrations/**'
+              - 'supabase/config.toml'
+              - '__tests__/lib/fsrs/**'
+              - 'scripts/fsrs-mvp-rls-matrix.sql'
+              - 'docs/DECISAO_FSRS_R2_DATABASE_TYPES.md'
+              - '.github/workflows/test.yml'
 
   build:
     runs-on: ubuntu-latest
@@ -176,6 +186,70 @@ jobs:
 
       - name: npm audit (high/critical)
         run: npm audit --omit=dev --audit-level=high
+
+  # FSRS RPC integration — Supabase CLI local (Docker) + db reset + Jest com FSRS_RPC_INTEGRATION=1.
+  # Não usa secrets remotos; independe de smoke-rls / SMOKE_*.
+  # Spec R2 §12.B/§12.C · docs/R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md
+  fsrs-rpc-integration:
+    needs: changes
+    if: needs.changes.outputs.fsrs_rpc == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          # Pin alinhado a package-lock (devDependency supabase)
+          version: 2.109.1
+
+      - name: Start Supabase local stack
+        run: supabase start
+
+      - name: Reset local database
+        run: supabase db reset --local
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Export local Supabase credentials
+        run: |
+          eval "$(supabase status -o env)"
+          echo "::add-mask::${ANON_KEY}"
+          echo "::add-mask::${SERVICE_ROLE_KEY}"
+          {
+            echo "NEXT_PUBLIC_SUPABASE_URL=${API_URL}"
+            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${ANON_KEY}"
+            echo "SUPABASE_SERVICE_ROLE_KEY=${SERVICE_ROLE_KEY}"
+            echo "SUPABASE_DB_URL=${DB_URL}"
+          } >> "$GITHUB_ENV"
+
+      # §13.2 — não versionar types forjados; só assertar presença FSRS no gen --local
+      # Decisão: docs/DECISAO_FSRS_R2_DATABASE_TYPES.md
+      - name: Assert FSRS symbols in local generated types
+        run: |
+          npx supabase gen types typescript --local > /tmp/fsrs-db-types.ts
+          grep -q spaced_review_cards /tmp/fsrs-db-types.ts
+          grep -q spaced_review_logs /tmp/fsrs-db-types.ts
+          grep -q fsrs_persist_review /tmp/fsrs-db-types.ts
+
+      # §12.D — matriz RLS via SQL (SET LOCAL ROLE; sem assinar JWT)
+      - name: Run FSRS RLS matrix SQL
+        run: |
+          eval "$(supabase status -o env)"
+          psql "$DB_URL" -v ON_ERROR_STOP=1 -f scripts/fsrs-mvp-rls-matrix.sql
+
+      - name: Run FSRS RPC integration tests
+        run: npm test -- __tests__/lib/fsrs
+        env:
+          FSRS_RPC_INTEGRATION: '1'
 
   # RLS smoke contra projeto real — só com secrets SMOKE_*; senão skip + aviso (não bloqueia clone).
   # Secrets: SMOKE_SUPABASE_URL, SMOKE_SUPABASE_ANON_KEY, SMOKE_SUPABASE_SERVICE_ROLE_KEY
