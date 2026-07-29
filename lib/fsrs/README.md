@@ -8,8 +8,17 @@ Contratos **puros** do pivot de revisão espaçada (`docs/DECISAO_REVISAO_FSRS_M
 - **Não** confundir com `lib/evidence/fsrsSkill.ts` (stub FSRS-*like* do Evidence Engine, gated em RCT-1; origem em `origin/main`).
 - **Não** importa `lib/evidence/*`.
 - **Não** substitui `lib/spaced-repetition.ts` (SM-2 legado) neste lote.
-- Sem I/O, rotas, migration, flag de produto ou UI (R1).
-- Este lote **não** autoriza R2 (persistência) nem R3 (integração).
+- R1: contratos puros (sem I/O de produto).
+- R2: persistência server-only (`persistence*`, `fingerprint`, migration + RPC) — **sem** rotas/UI/flag.
+- R3 (integração) permanece **bloqueado** até autorização separada.
+
+## R2 — persistência
+
+- Único caminho de escrita: RPC `fsrs_persist_review` (card + log atômicos).
+- Adapter: `createSupabaseFsrsPersistence` (`import 'server-only'`).
+- Outcomes tipados com `writeStatus`; transporte ambíguo → `persistence_unknown`.
+- Proibido importar `lib/evidence/**`.
+- Spec: `docs/R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`.
 
 ## Unidade de memória (`review_unit_id`)
 

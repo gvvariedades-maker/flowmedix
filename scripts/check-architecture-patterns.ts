@@ -307,6 +307,51 @@ function checkNoNewEnvWithoutZod(files: string[]): Violation[] {
   return violations;
 }
 
+/**
+ * Escrita direta em spaced_review_* proibida — único caminho é rpc('fsrs_persist_review').
+ * Spec R2 §6.5. SELECT permitido; insert/update/upsert/delete bloqueados.
+ */
+export function checkNoDirectFsrsTableWrites(
+  files: string[],
+  readSource: (file: string) => string = (f) => readFileSync(f, 'utf8'),
+): Violation[] {
+  const violations: Violation[] = [];
+  const writeCall = /\.(insert|update|upsert|delete)\s*\(/;
+  const fromTable =
+    /\.from\(\s*['"]spaced_review_(?:cards|logs)['"]\s*\)/;
+
+  for (const file of files) {
+    const rel = relPath(file);
+    if (!isArchScope(rel)) continue;
+    if (isSkippablePath(rel)) continue;
+
+    const src = readSource(file);
+    if (!fromTable.test(src)) continue;
+
+    // Heurística: mesmo arquivo com .from('spaced_review_*') e escrita
+    if (!writeCall.test(src)) continue;
+
+    // Permitir apenas se a escrita não estiver encadeada ao from das tabelas FSRS.
+    // Varre linhas com from(...) e verifica se o mesmo statement encadeia write.
+    const lines = src.split(/\r?\n/);
+    for (let i = 0; i < lines.length; i++) {
+      if (!fromTable.test(lines[i]!)) continue;
+      const window = lines.slice(i, Math.min(lines.length, i + 8)).join('\n');
+      if (writeCall.test(window)) {
+        violations.push({
+          file: rel,
+          rule: 'no-direct-fsrs-table-writes',
+          detail:
+            "Escrita direta em spaced_review_cards/logs proibida — use client.rpc('fsrs_persist_review', …)",
+        });
+        break;
+      }
+    }
+  }
+
+  return violations;
+}
+
 function main(): void {
   const files = walk(ROOT);
   const violations = [
@@ -316,6 +361,7 @@ function main(): void {
     ...checkNoServiceRoleInClient(files),
     ...checkNoGetUserInRsc(files),
     ...checkNoNewEnvWithoutZod(files),
+    ...checkNoDirectFsrsTableWrites(files),
   ];
 
   if (violations.length === 0) {
@@ -331,4 +377,6 @@ function main(): void {
   process.exit(1);
 }
 
-main();
+if (require.main === module) {
+  main();
+}

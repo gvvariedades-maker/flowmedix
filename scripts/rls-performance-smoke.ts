@@ -118,6 +118,33 @@ async function main() {
     }),
   );
 
+  // Anon: FSRS MVP cards/logs (R2) — service-role-first
+  const { count: fsrsCardsAnonCount, error: fsrsCardsAnonErr } = await anon
+    .from('spaced_review_cards')
+    .select('id', { count: 'exact', head: true });
+
+  checks.push(
+    evaluateAnonProtectedTableCount({
+      name: 'anon_spaced_review_cards_vazio',
+      count: fsrsCardsAnonCount,
+      errorMessage: fsrsCardsAnonErr?.message,
+      emptyDetail: '0 linhas sem login — OK (FSRS cards service_role write)',
+    }),
+  );
+
+  const { count: fsrsLogsAnonCount, error: fsrsLogsAnonErr } = await anon
+    .from('spaced_review_logs')
+    .select('id', { count: 'exact', head: true });
+
+  checks.push(
+    evaluateAnonProtectedTableCount({
+      name: 'anon_spaced_review_logs_vazio',
+      count: fsrsLogsAnonCount,
+      errorMessage: fsrsLogsAnonErr?.message,
+      emptyDetail: '0 linhas sem login — OK (FSRS logs append-only / service_role)',
+    }),
+  );
+
   // Service role: contagem vendável ≥ anon (sanidade)
   try {
     const admin = await createServerSupabase();

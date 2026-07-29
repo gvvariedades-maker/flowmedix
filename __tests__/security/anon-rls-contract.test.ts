@@ -43,12 +43,14 @@ describe('evaluateAnonProtectedTableCount (contrato smoke:rls)', () => {
     expect(check.detail).toContain('3 linha(s) expostas a anon');
   });
 
-  it('lista canônica cobre checks de tabela protegida (incl. ledger Stripe)', () => {
+  it('lista canônica cobre checks de tabela protegida (Stripe + FSRS R2)', () => {
     expect(RLS_ANON_PROTECTED_CHECK_NAMES).toEqual([
       'anon_modulos_estudo_vazio',
       'anon_historico_vazio',
       'anon_matriculas_vazio',
       'anon_stripe_webhook_events_vazio',
+      'anon_spaced_review_cards_vazio',
+      'anon_spaced_review_logs_vazio',
     ]);
   });
 });
