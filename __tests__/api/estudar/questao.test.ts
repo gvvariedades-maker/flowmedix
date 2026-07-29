@@ -175,6 +175,7 @@ describe('GET /api/estudar/questao', () => {
       slug: SLUG,
       layers: 'full',
       userId: USER_ID,
+      userEmail: 'aluno@test.com',
       isAdmin: false,
       searchParams: {
         from: undefined,
