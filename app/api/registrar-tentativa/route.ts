@@ -167,6 +167,9 @@ export async function POST(request: NextRequest) {
 
     let scheduledReviewConfirmed = false;
     let sameStemFallback = false;
+    // Mesma disciplina no confirm e no apply (Geral → Enfermagem) para o mesmo review_unit_id.
+    const fsrsDiscipline =
+      canonical.topico !== 'Geral' ? canonical.topico : 'Enfermagem';
 
     // Intenção do client não basta: só isenta cota / agenda se card due atestado.
     if (
@@ -178,7 +181,7 @@ export async function POST(request: NextRequest) {
         client: supabase as unknown as ConfirmDueReviewClient,
         userId: user.id,
         questionId: modulo_slug,
-        discipline: canonical.topico,
+        discipline: fsrsDiscipline,
         subtopico: canonical.subtopico,
       });
       if (due.confirmed) {
@@ -308,8 +311,7 @@ export async function POST(request: NextRequest) {
           attemptId,
           questionId: modulo_slug,
           isCorrect: acertou,
-          discipline:
-            canonical.topico !== 'Geral' ? canonical.topico : 'Enfermagem',
+          discipline: fsrsDiscipline,
           subtopico: canonical.subtopico,
           fromScheduledReview: scheduledReviewConfirmed,
           sameStemFallback: scheduledReviewConfirmed ? sameStemFallback : false,
