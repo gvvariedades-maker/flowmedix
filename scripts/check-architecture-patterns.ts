@@ -111,6 +111,7 @@ const ENV_KEYS_FROM_SCHEMA = new Set<string>([
   'FSRS_MVP_ENABLED',
   'FSRS_REQUEST_RETENTION',
   'FSRS_MIN_CLUSTER_INVENTORY',
+  'FSRS_MVP_BETA_EMAILS',
 ]);
 
 type Violation = { file: string; rule: string; detail: string };
