@@ -64,7 +64,8 @@ test.describe('Revisões de hoje — FSRS MVP (E2E bypass)', () => {
 
     await Promise.all([
       page.waitForURL(REVISOES_SLUG_URL, { timeout: 15_000 }),
-      page.getByRole('link', { name: 'Estudar' }).click(),
+      // Evita strict-mode no mobile: nav lateral também tem link "Estudar".
+      page.locator(`a[href*="/estudar/"][href*="from=revisoes"]`).click(),
     ]);
 
     await expect(page).toHaveURL(REVISOES_SLUG_URL);
