@@ -51,8 +51,6 @@ export const RLS_ANON_PROTECTED_CHECK_NAMES = [
   'anon_historico_vazio',
   'anon_matriculas_vazio',
   'anon_stripe_webhook_events_vazio',
-  'anon_spaced_review_cards_vazio',
-  'anon_spaced_review_logs_vazio',
 ] as const;
 
 export type RlsAnonProtectedCheckName = (typeof RLS_ANON_PROTECTED_CHECK_NAMES)[number];
