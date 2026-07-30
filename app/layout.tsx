@@ -48,7 +48,7 @@ const dmSans = DM_Sans({
 const siteUrl = getSiteUrl();
 const siteName = BRAND_NAME;
 const siteDescription =
-  "Estudo reverso para Técnicos de Enfermagem. Prepare-se para EBSERH, prefeituras e concursos com questões reais, diagnóstico de erro e revisão inteligente.";
+  "Questão real, diagnóstico do erro e NeuroSlides que ensinam exatamente o que você errou. Prepare-se para EBSERH, prefeituras e concursos de Técnico de Enfermagem.";
 
 const siteStructuredData: JsonLdObject[] = [
   {

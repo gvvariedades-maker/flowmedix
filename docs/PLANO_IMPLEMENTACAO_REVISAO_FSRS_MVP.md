@@ -1,5 +1,7 @@
 # Plano de implementação — Revisão espaçada FSRS MVP
 
+> ⚠️ **DESCONTINUADO ANTES DO LANÇAMENTO.** Substituído por [`DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md`](DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md). Este documento permanece só como histórico e não autoriza ativação.
+
 **Data:** 2026-07-27  
 **Status:** R1 contratos **mergeado** (PR #57) — R2/R3 **não** autorizados; sem ship automático  
 

@@ -1,15 +1,15 @@
 'use client';
 
-import { CalendarDays, CheckCircle2, Clock } from 'lucide-react';
-import { LANDING_DEMO_PLAN_ITEMS } from '@/lib/marketing/landingDemoPreview';
+import { CheckCircle2, Circle, TrendingUp } from 'lucide-react';
+import { LANDING_DEMO_PROGRESSO_ITEMS } from '@/lib/marketing/landingDemoPreview';
 import { LandingDemoJourneyChip } from '@/components/marketing/LandingDemoJourneyChip';
 import { cn } from '@/lib/utils';
 
-const DONE_COUNT = LANDING_DEMO_PLAN_ITEMS.filter((item) => item.done).length;
-const TOTAL_COUNT = LANDING_DEMO_PLAN_ITEMS.length;
+const DONE_COUNT = LANDING_DEMO_PROGRESSO_ITEMS.filter((item) => item.done).length;
+const TOTAL_COUNT = LANDING_DEMO_PROGRESSO_ITEMS.length;
 
-/** Preview estático do plano diário — itens ligados à questão demo + missão semanal. */
-export function LandingPlanoDiarioPreview({ className }: { className?: string }) {
+/** Preview estático do progresso — diagnóstico + NeuroSlides ligados à questão demo. */
+export function LandingProgressoPreview({ className }: { className?: string }) {
   return (
     <div
       className={cn('pointer-events-none flex select-none flex-col bg-[#f8fafc]', className)}
@@ -19,15 +19,15 @@ export function LandingPlanoDiarioPreview({ className }: { className?: string })
       <div className="flex-1 p-4">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <CalendarDays className="text-[#3d6b0f]" size={16} aria-hidden />
-          <p className="text-xs font-black text-slate-900">Plano de hoje</p>
+          <TrendingUp className="text-[#3d6b0f]" size={16} aria-hidden />
+          <p className="text-xs font-black text-slate-900">Seu progresso</p>
         </div>
         <span className="rounded-full bg-[#8fe020]/15 px-2 py-0.5 text-[9px] font-bold text-[#3d6b0f]">
           {DONE_COUNT}/{TOTAL_COUNT} feito
         </span>
       </div>
       <ul className="space-y-2">
-        {LANDING_DEMO_PLAN_ITEMS.map((item) => (
+        {LANDING_DEMO_PROGRESSO_ITEMS.map((item) => (
           <li
             key={item.label}
             className={cn(
@@ -38,7 +38,7 @@ export function LandingPlanoDiarioPreview({ className }: { className?: string })
             {item.done ? (
               <CheckCircle2 className="mt-0.5 shrink-0 text-emerald-600" size={14} aria-hidden />
             ) : (
-              <Clock className="mt-0.5 shrink-0 text-slate-400" size={14} aria-hidden />
+              <Circle className="mt-0.5 shrink-0 text-slate-400" size={14} aria-hidden />
             )}
             <span
               className={cn(

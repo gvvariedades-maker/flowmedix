@@ -27,21 +27,21 @@ import {
 export const metadata = {
   title: 'Estudo Reverso: método AVANT enf | Como funciona',
   description:
-    'Entenda o método Estudo Reverso do AVANT enf: ciclo de 4 etapas, fundamentos de neurociência aplicada e passo a passo prático.',
+    'Entenda o método Estudo Reverso do AVANT enf: questão real, diagnóstico do erro e NeuroSlides que ensinam exatamente o que você errou.',
   alternates: {
     canonical: '/ajuda/estudo-reverso',
   },
   openGraph: {
     title: 'Estudo Reverso: método AVANT enf | Como funciona',
     description:
-      'Entenda como o Estudo Reverso transforma questões de concursos em diagnóstico, mapa, regra de ouro e revisão inteligente.',
+      'Entenda como o Estudo Reverso transforma questões de concursos em diagnóstico do erro e NeuroSlides — mapa, regra de ouro, fluxo lógico e zona de perigo.',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Estudo Reverso: método AVANT enf | Como funciona',
     description:
-      'Entenda como o Estudo Reverso transforma questões de concursos em diagnóstico e revisão inteligente.',
+      'Entenda como o Estudo Reverso transforma questões de concursos em diagnóstico do erro e NeuroSlides que ensinam exatamente o que você errou.',
   },
 };
 
