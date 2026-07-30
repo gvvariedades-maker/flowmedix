@@ -109,7 +109,7 @@ Hoje ambos estão inertes porque a flag está off. Mas se a flag fosse ligada, a
 ## 5. Invariantes de desmontagem
 
 1. **Não** usar revert geral do PR #73.
-2. **Preservar** a correção genérica de build/Vercel contida em `ecc83038` — especificamente as mudanças em `next.config.js` (Turbopack + file tracing), `vercel.json`, o script de build em `package.json` e `.gitignore`. Atenção: `ecc83038` **não é um commit puramente de build**. Os outros 8 arquivos dele são FSRS (`lib/fsrs/inventory.ts`, `lib/fsrs/opsReport.ts`, `scripts/fsrs-mvp-ops-report.ts`, `scripts/fsrs-mvp-staging-smoke.ts`, dois testes e dois artifacts). Preservar por *hunk*, nunca preservando o commit inteiro nem revertendo-o inteiro.
+2. **Preservar** a correção genérica de build/Vercel contida em `ecc83038` — somente as mudanças em `next.config.js` (Turbopack + file tracing), `vercel.json` e especificamente o script de build em `package.json`. Os hunks de `.gitignore` introduzidos por `ecc83038` são exclusivos dos artefatos FSRS e devem ser removidos no C3 junto com esses artefatos. Não preservar o commit inteiro; preservar apenas os hunks genéricos de build/tracing. Atenção: `ecc83038` **não é um commit puramente de build**. Os outros arquivos dele são FSRS (`lib/fsrs/inventory.ts`, `lib/fsrs/opsReport.ts`, `scripts/fsrs-mvp-ops-report.ts`, `scripts/fsrs-mvp-staging-smoke.ts`, dois testes, dois artifacts e os hunks de `.gitignore`). Preservar por *hunk*, nunca preservando o commit inteiro nem revertendo-o inteiro.
 3. **Não** apagar `historico_questoes`.
 4. **Não** modificar o comportamento central de registrar tentativa.
 5. **Não** misturar UI/runtime e banco no mesmo PR.
@@ -128,7 +128,7 @@ Hoje ambos estão inertes porque a flag está off. Mas se a flag fosse ligada, a
 | Lote | Objetivo | Estado |
 |------|----------|--------|
 | **C1** | Decisão e encerramento do #74 | **este ADR** |
-| **C2** | Desligamento da superfície (rotas, menu, redirects para `/estudar`) | não iniciado |
+| **C2** | Desligamento da superfície: páginas de revisão (`/revisoes-hoje`, `/plano-diario`), menu e CTAs, redirects diretos para `/estudar`, conteúdo correspondente da Ajuda, e o endpoint `app/api/analytics/reviews/route.ts` (superfície da funcionalidade; importa `lib/fsrs/reviewsToday` e precisa sair **antes** de C3 remover `lib/fsrs/**`, para não quebrar typecheck/build) | não iniciado |
 | **C3** | Remoção do runtime (`lib/fsrs/**`, SM-2, `ts-fsrs`, job de CI, flags) | não iniciado |
 | **C4** | Comunicação e documentação (copy, LP, ADRs históricos) | não iniciado |
 | **C5** | Banco isolado (tabelas, RPC, migration) | não iniciado — exige runbook próprio |
