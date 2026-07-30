@@ -88,7 +88,6 @@ async function main() {
 
       const logged = [
         ['06-meu-desempenho.png', '/progresso'],
-        ['07-plano-diario.png', '/plano-diario'],
         ['08-cadernos.png', '/cadernos'],
         ['09-material.png', '/material'],
       ] as const;

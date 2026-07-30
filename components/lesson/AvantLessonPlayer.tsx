@@ -782,13 +782,7 @@ export default function AvantLessonPlayer({
       }
       resetDashboardMainScroll();
     };
-    const vitrineDestinoLabel = fromRevisoes
-      ? 'revisões de hoje'
-      : fromPlano
-        ? 'plano diário'
-        : fromCaderno
-          ? 'cadernos'
-          : 'vitrine';
+    const vitrineDestinoLabel = fromCaderno ? 'cadernos' : 'vitrine';
 
     questionUnavailableUi = (
       <div
@@ -1455,13 +1449,7 @@ export default function AvantLessonPlayer({
   const renderQuestionLiveHeader = (withZoom: boolean) => {
     if (mode !== 'live') return null;
 
-    const voltarDestino = fromRevisoes
-      ? 'Revisões de hoje'
-      : fromPlano
-        ? 'Plano diário'
-        : fromCaderno
-          ? 'Meus cadernos'
-          : 'Vitrine';
+    const voltarDestino = fromCaderno ? 'Meus cadernos' : 'Vitrine';
 
     return (
       <div
@@ -2091,25 +2079,13 @@ export default function AvantLessonPlayer({
                 <button
                   type="button"
                   aria-label={
-                    fromRevisoes
-                      ? 'Concluir revisões'
-                      : fromPlano
-                        ? 'Concluir Plano'
-                        : fromCaderno
-                          ? 'Concluir Caderno'
-                          : 'Concluir Missão'
+                    fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'
                   }
                   onClick={handleConcluir}
                   className="btn-editorial-primary flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl px-3 font-black uppercase text-[10px] tracking-wide transition-all hover:shadow-md active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   <span className="hidden sm:inline">
-                    {fromRevisoes
-                      ? 'Concluir revisões'
-                      : fromPlano
-                        ? 'Concluir Plano'
-                        : fromCaderno
-                          ? 'Concluir Caderno'
-                          : 'Concluir Missão'}
+                    {fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
                   </span>
                   <Flag size={20} className="shrink-0" aria-hidden />
                 </button>
