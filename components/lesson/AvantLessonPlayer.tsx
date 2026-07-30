@@ -208,9 +208,6 @@ export default function AvantLessonPlayer({
   anteriorSlug,
   moduloSlug,
   questoesDoAssunto,
-  fromPlano = false,
-  fromRevisoes = false,
-  sameStemFallback = false,
   fromCaderno,
   listaContexto,
   avantCodigo,
@@ -630,8 +627,6 @@ export default function AvantLessonPlayer({
 
     const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
       moduloSlug,
-      fromPlano,
-      fromRevisoes,
       fromCaderno,
       vitrineQuerySuffix,
     });
@@ -714,8 +709,6 @@ export default function AvantLessonPlayer({
     etapa,
     mode,
     moduloSlug,
-    fromPlano,
-    fromRevisoes,
     fromCaderno,
     vitrineQuerySuffix,
     activeDados,
@@ -761,17 +754,11 @@ export default function AvantLessonPlayer({
   let questionUnavailableUi: React.ReactNode = null;
 
   if (!activeDados?.question_data?.options?.length) {
-    const vitrineSuffix = fromRevisoes
-      ? '?from=revisoes'
-      : fromPlano
-        ? '?from=plano'
-        : fromCaderno
-          ? `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`
-          : vitrineQuerySuffix || '';
+    const vitrineSuffix = fromCaderno
+      ? `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`
+      : vitrineQuerySuffix || '';
     const handleVoltarVitrine = () => {
       const ctx = {
-        fromPlano,
-        fromRevisoes,
         fromCaderno,
         vitrineQuerySuffix: vitrineSuffix,
       };
@@ -906,7 +893,6 @@ export default function AvantLessonPlayer({
           banca: activeDados.meta?.banca || 'DESCONHECIDA',
           topico: activeDados.meta?.topico || 'Geral',
           subtopico: activeDados.meta?.subtopico || activeDados.meta?.topico || 'Geral',
-          ...(fromRevisoes ? { from_revisoes: true } : {}),
           attempt_id: attemptId,
           ...evidencePayload,
         },
@@ -1020,8 +1006,6 @@ export default function AvantLessonPlayer({
         if (slug) {
           const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
             moduloSlug: slug,
-            fromPlano,
-            fromRevisoes,
             fromCaderno,
             vitrineQuerySuffix,
           });
@@ -1035,8 +1019,6 @@ export default function AvantLessonPlayer({
                   anteriorSlug,
                   moduloSlug: slug,
                   questoesDoAssunto,
-                  fromPlano,
-                  fromRevisoes,
                   fromCaderno,
                   listaContexto,
                   avantCodigo,
@@ -1074,8 +1056,6 @@ export default function AvantLessonPlayer({
         if (questaoNav) {
           const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
             moduloSlug: slug,
-            fromPlano,
-            fromRevisoes,
             fromCaderno,
             vitrineQuerySuffix,
           });
@@ -1089,8 +1069,6 @@ export default function AvantLessonPlayer({
                   anteriorSlug,
                   moduloSlug: slug,
                   questoesDoAssunto,
-                  fromPlano,
-                  fromRevisoes,
                   fromCaderno,
                   listaContexto,
                   avantCodigo,
@@ -1126,15 +1104,11 @@ export default function AvantLessonPlayer({
   // NAVEGAÇÃO
   // ============================================================================
   const buildNavegacaoSuffix = () => {
-    if (fromRevisoes) return '?from=revisoes';
-    if (fromPlano) return '?from=plano';
     if (fromCaderno) return `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`;
     return vitrineQuerySuffix || '';
   };
 
   const vitrineReturnContext = () => ({
-    fromPlano,
-    fromRevisoes,
     fromCaderno,
     vitrineQuerySuffix: buildNavegacaoSuffix(),
   });
@@ -1472,14 +1446,6 @@ export default function AvantLessonPlayer({
           </span>
         </button>
         <div className="ml-auto flex min-w-0 max-w-full flex-wrap items-center justify-end gap-1.5 sm:gap-2">
-          {fromRevisoes && sameStemFallback ? (
-            <span
-              className="shrink-0 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wide text-amber-800 sm:px-3 sm:text-xs"
-              title="Não havia outro enunciado disponível nesta unidade"
-            >
-              Mesmo enunciado
-            </span>
-          ) : null}
           {listaContexto && listaContexto.total > 0 && (
             <span
               className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-bold tabular-nums text-slate-600 sm:px-3 sm:text-sm"

@@ -23,12 +23,10 @@ import {
 } from '@/lib/estudar/questaoLayers';
 import {
   estudarPayloadSearchContextKey,
-  parseEstudarSearchParams,
   type EstudarSearchParams,
 } from '@/lib/estudar/parseEstudarSearchParams';
 import type { EstudarQuestaoBuildResult } from '@/lib/estudar/questaoPlayerPayload';
 import type { NotebookActivationStatus } from '@/lib/cadernos/activation';
-import { isFsrsMvpBetaEmail, isFsrsMvpEnabled } from '@/lib/env';
 import {
   getVitrineFacetsFilterTag,
   getVitrineFacetsFiltersHash,
@@ -376,14 +374,7 @@ export async function getEstudarQuestaoPayloadCached(
   const userKey = input.userId?.trim() || 'anon';
   const layers = input.layers ?? ESTUDAR_QUESTAO_LAYERS_DEFAULT;
   const contextKey = estudarPayloadSearchContextKeyFromParams(input.searchParams);
-  // `?from=revisoes` escolhe SM-2 vs FSRS via e-mail (allowlist); chave precisa distinguir cohort.
-  const fromRevisoes = parseEstudarSearchParams(input.searchParams ?? {}).fromRevisoes;
-  const reviewCohortKey = fromRevisoes
-    ? isFsrsMvpEnabled() && isFsrsMvpBetaEmail(input.userEmail)
-      ? 'fsrs'
-      : 'sm2'
-    : 'na';
-  const cacheKey = `estudar-questao-payload-${input.slug}-${userKey}-${layers}-${contextKey}-${reviewCohortKey}`;
+  const cacheKey = `estudar-questao-payload-${input.slug}-${userKey}-${layers}-${contextKey}`;
 
   return unstable_cache(
     async () => {

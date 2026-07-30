@@ -84,13 +84,11 @@ export async function fetchLessonSlidesLayer(
 export function buildEstudarSlugComQueryFromPlayerProps(
   props: Pick<
     AvantLessonPlayerProps,
-    'moduloSlug' | 'fromPlano' | 'fromRevisoes' | 'fromCaderno' | 'vitrineQuerySuffix'
+    'moduloSlug' | 'fromCaderno' | 'vitrineQuerySuffix'
   >,
 ): string | null {
   const slug = props.moduloSlug?.trim();
   if (!slug) return null;
-  if (props.fromRevisoes) return `${slug}?from=revisoes`;
-  if (props.fromPlano) return `${slug}?from=plano`;
   if (props.fromCaderno) {
     return `${slug}?from=caderno&caderno_id=${encodeURIComponent(props.fromCaderno)}`;
   }

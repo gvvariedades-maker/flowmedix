@@ -77,7 +77,7 @@ function isEstudarVitrineReturnEligible(): boolean {
 export function canDismissEstudarViaHistoryBack(
   ctx: EstudarVitrineReturnContext = {},
 ): boolean {
-  if (ctx.fromPlano || ctx.fromRevisoes || ctx.fromCaderno) return false;
+  if (ctx.fromCaderno) return false;
   if (typeof window === 'undefined') return false;
   if (window.history.length <= 1) return false;
   if (!isBrowserOnEstudarRoute()) return false;
@@ -196,19 +196,12 @@ export function buildEstudarQuestaoApiUrl(
 }
 
 export type EstudarVitrineReturnContext = {
-  fromPlano?: boolean;
-  /** Fila FSRS `/revisoes-hoje` (`?from=revisoes`). */
-  fromRevisoes?: boolean;
   fromCaderno?: string;
   vitrineQuerySuffix?: string;
 };
 
 /** Destino ao fechar questão (modal, botão Vitrine) — preserva filtros da vitrine. */
 export function buildEstudarVitrineHref(ctx: EstudarVitrineReturnContext = {}): string {
-  // C2: superfícies de revisão descontinuadas → Vitrine (não encadear em rotas stub).
-  if (ctx.fromRevisoes || ctx.fromPlano) {
-    return '/estudar';
-  }
   if (ctx.fromCaderno) return '/cadernos';
   const suffix = ctx.vitrineQuerySuffix?.trim() ?? '';
   return `/estudar${suffix}`;

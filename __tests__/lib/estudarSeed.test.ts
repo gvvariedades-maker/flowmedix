@@ -99,18 +99,12 @@ describe('estudarSeed E2E', () => {
     );
   });
 
-  it('from=revisoes: fila FSRS, fromRevisoes e Concluir (sem próxima)', () => {
+  it('from=revisoes (surface descontinuada) cai na navegação normal', () => {
     const q1 = buildE2eEstudarQuestaoPayload(E2E_ESTUDAR_SLUG_1, { from: 'revisoes' }, 'full');
     expect(q1.status).toBe('ok');
     if (q1.status !== 'ok') return;
-    expect(q1.payload.fromRevisoes).toBe(true);
-    expect(q1.payload.vitrineQuerySuffix).toBe('?from=revisoes');
-    expect(q1.payload.proximaSlug).toBeNull();
-    expect(q1.payload.anteriorSlug).toBeNull();
-    expect(q1.payload.listaContexto).toEqual({ atual: 1, total: 1 });
-    expect(q1.payload.questoesDoAssunto).toEqual([
-      { slug: E2E_ESTUDAR_SLUG_1, estudada: false, indice: 1 },
-    ]);
-    expect(q1.payload.sameStemFallback).toBe(false);
+    expect(q1.payload).not.toHaveProperty('fromRevisoes');
+    expect(q1.payload).not.toHaveProperty('sameStemFallback');
+    expect(q1.payload.vitrineQuerySuffix).toBe('');
   });
 });
