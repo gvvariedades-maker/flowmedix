@@ -402,6 +402,19 @@ BEGIN
     RAISE EXCEPTION 'pós-UPDATE: seo ainda com promessa antiga em % path(s) — habilite UPDATE seo ou investigue', seo_old;
   END IF;
 
+  -- Presença da promessa nova (ainda na mesma transação)
+  IF EXISTS (
+    SELECT 1
+    FROM public.lp_pages
+    WHERE path IN ('avant-pro', 'campina-grande', 'goianinha')
+      AND NOT (
+        config::text ILIKE '%diagnóstico do erro%'
+        AND config::text ILIKE '%NeuroSlides%'
+      )
+  ) THEN
+    RAISE EXCEPTION 'pós-UPDATE: promessa nova ausente em config de pelo menos 1 path';
+  END IF;
+
   -- Nenhuma outra landing alterada nesta sessão (sanity: só os 3 paths no escopo)
   SELECT COUNT(*) INTO other_changed
   FROM public.lp_pages
@@ -477,64 +490,90 @@ No fluxo `DO $$`, a exceção **já** desfaz tudo — não há COMMIT parcial.
 **Não** embutir no Git os `config`/`seo` reais de produção.
 Preencher placeholders a partir do export da §1.
 
-```sql
-BEGIN;
+Mesmo padrão do apply (§2.3): **um único** `DO $$` no SQL Editor (transação implícita; `RAISE` = rollback total). Não abrir `BEGIN` numa aba e `COMMIT` noutra.
 
--- Validar escopo
+Substituir cada `<COLAR_…>` pelo JSON **exato** do backup antes de colar. Os placeholders **não** são JSON válido — se esquecer de preencher, o cast `::jsonb` falha e nada é commitado.
+
+```sql
 DO $$
-DECLARE n int; p text;
+DECLARE
+  n int;
+  p text;
 BEGIN
-  SELECT COUNT(*) INTO n FROM public.lp_pages
+  -- Lock + cardinalidade
+  PERFORM 1
+  FROM public.lp_pages
+  WHERE path IN ('avant-pro', 'campina-grande', 'goianinha')
+  ORDER BY path
+  FOR UPDATE;
+
+  SELECT COUNT(*) INTO n
+  FROM public.lp_pages
   WHERE path IN ('avant-pro', 'campina-grande', 'goianinha');
   IF n <> 3 THEN
-    RAISE EXCEPTION 'restore pré: total=% (esperado 3)', n;
+    RAISE EXCEPTION 'restore: esperado total=3, obtido=%', n;
   END IF;
-  FOREACH p IN ARRAY ARRAY['avant-pro', 'campina-grande', 'goianinha'] LOOP
+
+  FOREACH p IN ARRAY ARRAY['avant-pro', 'campina-grande', 'goianinha']
+  LOOP
     SELECT COUNT(*) INTO n FROM public.lp_pages WHERE path = p;
     IF n <> 1 THEN
-      RAISE EXCEPTION 'restore pré: path=% count=%', p, n;
+      RAISE EXCEPTION 'restore: path=% count=% (esperado 1)', p, n;
     END IF;
   END LOOP;
+
+  -- avant-pro
+  UPDATE public.lp_pages
+  SET
+    config = '<COLAR_CONFIG_JSON_DO_BACKUP_AVANT_PRO>'::jsonb,
+    seo = '<COLAR_SEO_JSON_DO_BACKUP_AVANT_PRO>'::jsonb,
+    updated_at = now()
+  WHERE path = 'avant-pro';
+  GET DIAGNOSTICS n = ROW_COUNT;
+  IF n <> 1 THEN
+    RAISE EXCEPTION 'restore avant-pro: row_count=% (esperado 1)', n;
+  END IF;
+
+  -- campina-grande
+  UPDATE public.lp_pages
+  SET
+    config = '<COLAR_CONFIG_JSON_DO_BACKUP_CAMPINA>'::jsonb,
+    seo = '<COLAR_SEO_JSON_DO_BACKUP_CAMPINA>'::jsonb,
+    updated_at = now()
+  WHERE path = 'campina-grande';
+  GET DIAGNOSTICS n = ROW_COUNT;
+  IF n <> 1 THEN
+    RAISE EXCEPTION 'restore campina-grande: row_count=% (esperado 1)', n;
+  END IF;
+
+  -- goianinha
+  UPDATE public.lp_pages
+  SET
+    config = '<COLAR_CONFIG_JSON_DO_BACKUP_GOIANINHA>'::jsonb,
+    seo = '<COLAR_SEO_JSON_DO_BACKUP_GOIANINHA>'::jsonb,
+    updated_at = now()
+  WHERE path = 'goianinha';
+  GET DIAGNOSTICS n = ROW_COUNT;
+  IF n <> 1 THEN
+    RAISE EXCEPTION 'restore goianinha: row_count=% (esperado 1)', n;
+  END IF;
+
+  RAISE NOTICE 'restore C4b OK: 3 linhas restauradas do backup';
 END $$;
+```
 
--- avant-pro — colar config/seo EXATOS do backup
-UPDATE public.lp_pages
-SET
-  config = '<COLAR_CONFIG_JSON_DO_BACKUP_AVANT_PRO>'::jsonb,
-  seo = '<COLAR_SEO_JSON_DO_BACKUP_AVANT_PRO>'::jsonb,
-  updated_at = now()
-WHERE path = 'avant-pro';
--- conferir ROW_COUNT = 1 (via DO + GET DIAGNOSTICS se preferir)
+Verificação imediata (read-only, após sucesso do `DO $$`):
 
-UPDATE public.lp_pages
-SET
-  config = '<COLAR_CONFIG_JSON_DO_BACKUP_CAMPINA>'::jsonb,
-  seo = '<COLAR_SEO_JSON_DO_BACKUP_CAMPINA>'::jsonb,
-  updated_at = now()
-WHERE path = 'campina-grande';
-
-UPDATE public.lp_pages
-SET
-  config = '<COLAR_CONFIG_JSON_DO_BACKUP_GOIANINHA>'::jsonb,
-  seo = '<COLAR_SEO_JSON_DO_BACKUP_GOIANINHA>'::jsonb,
-  updated_at = now()
-WHERE path = 'goianinha';
-
--- SELECT posterior: comparar com backup
-SELECT path, config, seo, updated_at
+```sql
+SELECT path, status, updated_at,
+  left(config::text, 120) AS config_prefix,
+  left(seo::text, 120) AS seo_prefix
 FROM public.lp_pages
 WHERE path IN ('avant-pro', 'campina-grande', 'goianinha')
 ORDER BY path;
-
--- Se row counts e conteúdo OK:
-COMMIT;
--- Se divergência:
--- ROLLBACK;
 ```
 
-Preferível embrulhar os três UPDATEs + `GET DIAGNOSTICS` num `DO $$` de restore, no mesmo padrão da §2.3.
-
----
+Comparar com o arquivo de backup. Se divergir: **não** improvisar — repetir o `DO $$` de restore com os JSONs corretos do backup (ou investigar).
 
 ## 5. Alternativa `/admin/landings` (CMS UI)
 
