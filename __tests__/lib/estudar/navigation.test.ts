@@ -63,10 +63,8 @@ describe('lib/estudar/navigation', () => {
       expect(canDismissEstudarViaHistoryBack({})).toBe(false);
     });
 
-    it('bloqueia quando destino é plano ou caderno', () => {
+    it('bloqueia quando destino é caderno', () => {
       Object.defineProperty(window.history, 'length', { value: 2, configurable: true });
-      expect(canDismissEstudarViaHistoryBack({ fromPlano: true })).toBe(false);
-      expect(canDismissEstudarViaHistoryBack({ fromRevisoes: true })).toBe(false);
       expect(canDismissEstudarViaHistoryBack({ fromCaderno: 'id' })).toBe(false);
     });
 
@@ -125,9 +123,7 @@ describe('lib/estudar/navigation', () => {
       );
     });
 
-    it('redireciona plano/revisões descontinuados para Vitrine; caderno para cadernos', () => {
-      expect(buildEstudarVitrineHref({ fromRevisoes: true })).toBe('/estudar');
-      expect(buildEstudarVitrineHref({ fromPlano: true })).toBe('/estudar');
+    it('redireciona caderno para cadernos', () => {
       expect(buildEstudarVitrineHref({ fromCaderno: 'id-1' })).toBe('/cadernos');
     });
   });

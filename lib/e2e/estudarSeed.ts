@@ -274,13 +274,10 @@ export function buildE2eEstudarQuestaoPayload(
     return { status: 'not_found' };
   }
 
-  const { fromPlano, fromRevisoes, fromCaderno, cadernoId } =
-    parseEstudarSearchParams(searchParams);
+  const { fromCaderno, cadernoId } = parseEstudarSearchParams(searchParams);
 
   const suffix = buildVitrineQuerySuffix(searchParams);
-  const navSlugs = fromRevisoes
-    ? [E2E_ESTUDAR_SLUG_1]
-    : [...E2E_ESTUDAR_SLUGS];
+  const navSlugs: string[] = [...E2E_ESTUDAR_SLUGS];
   const indexAtual = navSlugs.indexOf(slug);
   const anteriorSlug =
     indexAtual > 0 ? `${navSlugs[indexAtual - 1]}${suffix}` : null;
@@ -305,8 +302,6 @@ export function buildE2eEstudarQuestaoPayload(
       estudada: isE2eEstudarConcluido(navSlug),
       indice: index + 1,
     })),
-    fromPlano,
-    fromRevisoes,
     fromCaderno: fromCaderno ? cadernoId : undefined,
     listaContexto: {
       atual: Math.max(1, indexAtual + 1),
@@ -314,7 +309,6 @@ export function buildE2eEstudarQuestaoPayload(
     },
     avantCodigo: 900001 + E2E_ESTUDAR_SLUGS.indexOf(slug as (typeof E2E_ESTUDAR_SLUGS)[number]),
     vitrineQuerySuffix: suffix,
-    ...(fromRevisoes ? { sameStemFallback: false } : {}),
   };
 
   return { status: 'ok', payload };

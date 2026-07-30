@@ -522,9 +522,7 @@
     "plan:imunizacao-g14": "tsx scripts/plan-imunizacao-g14.ts",
     "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts",
     "backup:assemble": "powershell -ExecutionPolicy Bypass -File scripts/assemble-avant-backup.ps1",
-    "prepare": "husky",
-    "fsrs:ops-report": "tsx scripts/fsrs-mvp-ops-report.ts",
-    "fsrs:staging-smoke": "tsx scripts/fsrs-mvp-staging-smoke.ts"
+    "prepare": "husky"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -557,7 +555,6 @@
     "swr": "^2.4.2",
     "tailwind-merge": "^2.2.0",
     "tailwindcss-animate": "^1.0.7",
-    "ts-fsrs": "5.4.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {

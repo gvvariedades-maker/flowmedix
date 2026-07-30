@@ -40,10 +40,10 @@ describe('parseEstudarSearchParams', () => {
     );
   });
 
-  it('from=revisoes tem prioridade no suffix de contexto', () => {
-    expect(buildEstudarContextQuerySuffix(parseEstudarSearchParams({ from: 'revisoes' }))).toBe(
-      '?from=revisoes',
-    );
-    expect(parseEstudarSearchParams({ from: 'revisoes' }).fromRevisoes).toBe(true);
+  it('from=revisoes (surface descontinuada) não altera o suffix de contexto', () => {
+    expect(
+      buildEstudarContextQuerySuffix(parseEstudarSearchParams({ from: 'revisoes' })),
+    ).toBe('');
+    expect(parseEstudarSearchParams({ from: 'revisoes' })).not.toHaveProperty('fromRevisoes');
   });
 });
