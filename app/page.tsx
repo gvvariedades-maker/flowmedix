@@ -24,7 +24,7 @@ const LandingHome = dynamic(() => import('@/components/landing/LandingHomeClient
 
 const homeTitle = `${BRAND_NAME} — Plataforma de Concursos para Técnico em Enfermagem`;
 const homeDescription =
-  `Prepare-se para concursos de Técnico em Enfermagem com Estudo Reverso, NeuroSlides, revisão espaçada e plano diário automático. Questões reais de EBSERH e prefeituras. Comece grátis: ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}.`;
+  `Questão real, diagnóstico do erro e NeuroSlides que ensinam exatamente o que você errou. Prepare-se para concursos de Técnico em Enfermagem com questões reais de EBSERH e prefeituras. Comece grátis: ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}.`;
 
 export const metadata: Metadata = {
   title: homeTitle,

@@ -165,8 +165,8 @@
 
 ### 5.3 Analytics e Recomendações
 - **Dashboard `/analytics`:** Estatísticas, gráfico de progresso, heatmap, padrões de erro, recomendações
-- **Algoritmo de recomendação:** Prioriza áreas fracas (< 70% acerto), questões não tentadas, revisão necessária
-- **Revisão espaçada:** Algoritmo SM-2 para intervalos ótimos de revisão
+- **Algoritmo de recomendação:** Prioriza áreas fracas (< 70% acerto), questões não tentadas
+- **Revisão espaçada (SM-2/FSRS):** descontinuada antes do lançamento — não é feature ativa. Ver [`docs/DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md`](docs/DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md)
 
 ### 5.4 Sistema de Cache
 - **Next.js `unstable_cache`** com estratégias:

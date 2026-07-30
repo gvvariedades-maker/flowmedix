@@ -97,7 +97,7 @@ Ver playbook: [`data/catalog-migration/handcraft-playbooks/puncao-venosa-e-cuida
 
 Funcionalidades principais:
 
-- **Aluno:** vitrine `/estudar`, player `AvantLessonPlayer`, cadernos, plano diário, analytics, material NeuroSlides, freemium/Pro.
+- **Aluno:** vitrine `/estudar`, player `AvantLessonPlayer`, cadernos, analytics, material NeuroSlides, freemium/Pro.
 - **Admin:** Laboratório (JSON de questões), concursos, matrículas, convites, landings, e-mails.
 - **Monetização:** Stripe (concursos e assinatura Pro), convites com resgate por token.
 

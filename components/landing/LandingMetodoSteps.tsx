@@ -2,14 +2,14 @@
 
 import dynamic from 'next/dynamic';
 import type { LucideIcon } from 'lucide-react';
-import { ArrowRight, Brain, CalendarDays, ClipboardCheck, FileQuestion } from 'lucide-react';
+import { ArrowRight, Brain, ClipboardCheck, FileQuestion, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BrandCta, SectionLabel } from '@/components/landing/lp-ui';
 import { LANDING_DEMO_JOURNEY_LABEL } from '@/lib/marketing/landingDemoPreview';
 import { LANDING_METODO } from '@/lib/marketing/landingCopy';
 import { landingFadeUp } from '@/lib/marketing/landingMotion';
 import { LandingGabaritoPreview } from '@/components/marketing/LandingGabaritoPreview';
-import { LandingPlanoDiarioPreview } from '@/components/marketing/LandingPlanoDiarioPreview';
+import { LandingProgressoPreview } from '@/components/marketing/LandingProgressoPreview';
 import { cn } from '@/lib/utils';
 
 const LandingQuestionPreview = dynamic(
@@ -41,7 +41,7 @@ type MetodoStep = {
   title: string;
   text: string;
   icon: LucideIcon;
-  preview: 'question' | 'gabarito' | 'neuroslide' | 'plano';
+  preview: 'question' | 'gabarito' | 'neuroslide' | 'progresso';
 };
 
 const STEPS: MetodoStep[] = [
@@ -68,10 +68,10 @@ const STEPS: MetodoStep[] = [
   },
   {
     n: '04',
-    title: 'Revisão no momento certo',
-    text: 'Plano diário automático com revisão espaçada. Sem planilha. Sem decisão manual de quando revisar.',
-    icon: CalendarDays,
-    preview: 'plano',
+    title: 'Diagnóstico que vira progresso',
+    text: 'Cada erro fica marcado e ligado ao NeuroSlide certo. Você sabe exatamente o que revisar em seguida.',
+    icon: TrendingUp,
+    preview: 'progresso',
   },
 ];
 
@@ -82,7 +82,7 @@ function previewFrameClass(preview: MetodoStep['preview']) {
     case 'neuroslide':
       return 'h-[min(380px,58vw)] sm:h-[360px]';
     case 'gabarito':
-    case 'plano':
+    case 'progresso':
       return 'h-[min(320px,48vw)] sm:h-[300px]';
     default:
       return 'h-[280px]';
@@ -111,10 +111,10 @@ function StepPreview({ step }: { step: MetodoStep }) {
           <LandingNeuroSlideCarousel className="h-full" />
         </div>
       );
-    case 'plano':
+    case 'progresso':
       return (
         <div className={frameClass}>
-          <LandingPlanoDiarioPreview className="h-full overflow-y-auto" />
+          <LandingProgressoPreview className="h-full overflow-y-auto" />
         </div>
       );
     default:
@@ -135,7 +135,7 @@ export function LandingMetodoSteps() {
           <p className="mt-3 max-w-2xl text-base text-slate-600">{LANDING_METODO.sub}</p>
           <p className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#8fe020]/40 bg-[#8fe020]/10 px-4 py-2 text-xs font-bold text-[#3d6b0f]">
             <ArrowRight size={14} aria-hidden />
-            Do enunciado ao plano — {LANDING_DEMO_JOURNEY_LABEL}
+            Do enunciado ao diagnóstico — {LANDING_DEMO_JOURNEY_LABEL}
           </p>
         </div>
 

@@ -1,5 +1,7 @@
 # Decisão — `types/database.ts` no R2 FSRS MVP
 
+> ⚠️ **DESCONTINUADO ANTES DO LANÇAMENTO.** Substituído por [`DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md`](DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md). Este documento permanece só como histórico e não autoriza ativação.
+
 **Status:** confirmada (PR #68 / `feat/fsrs-mvp-r2-persistence`)  
 **Spec:** [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md) §13.2  
 **Data:** 2026-07-28

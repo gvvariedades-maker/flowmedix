@@ -8,7 +8,7 @@ export const LANDING_DEMO_CORRECT_OPTION = question_data.options.find((o) => o.i
 export const LANDING_DEMO_SUBTOPICO =
   meta.subtopico?.trim() || 'Cálculo de Administração de Medicamentos e Infusões';
 
-/** Resumo curto da questão demo para chips e plano diário. */
+/** Resumo curto da questão demo para chips e preview de progresso. */
 export const LANDING_DEMO_QUESTION_SHORT = 'Gluconato diluído — 560 mg';
 
 /** Linha de contexto compartilhada nos 4 passos do método. */
@@ -27,8 +27,8 @@ export const LANDING_DEMO_GABARITO_FEEDBACK =
   (conceptSlide && 'footer_rule' in conceptSlide && conceptSlide.footer_rule) ||
   'A dose infundida é proporcional ao volume administrado na solução final, não só à ampola.';
 
-export const LANDING_DEMO_PLAN_ITEMS = [
-  { label: `Revisar: ${LANDING_DEMO_QUESTION_SHORT}`, done: true },
+export const LANDING_DEMO_PROGRESSO_ITEMS = [
+  { label: `Diagnóstico: ${LANDING_DEMO_QUESTION_SHORT}`, done: true },
   { label: `NeuroSlides: ${LANDING_DEMO_SUBTOPICO}`, done: true },
   { label: 'Missão semanal — 10 questões', done: false },
 ] as const;

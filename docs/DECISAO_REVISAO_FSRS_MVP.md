@@ -1,5 +1,7 @@
 # Decisão — Revisão espaçada FSRS MVP (pivot de produto)
 
+> ⚠️ **DESCONTINUADO ANTES DO LANÇAMENTO.** Substituído por [`DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md`](DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md). Este documento permanece só como histórico e não autoriza ativação.
+
 **Data:** 2026-07-27  
 **Status:** R1 contratos puros **mergeado** (PR #57) — pin `ts-fsrs@5.4.1`; R2/R3 **não** autorizados (sem migration, rotas, UI ou wiring de produto). Spec operacional do R2 existe e **aguarda revisão independente** — ver [`R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md`](R2_PERSISTENCIA_FSRS_MVP_CONVERSA.md)
 
