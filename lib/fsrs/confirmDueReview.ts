@@ -1,6 +1,10 @@
 /**
  * Confirma revisão due no servidor (FSRS MVP R4).
- * `from_revisoes` no client é só intenção — privilégios exigem card due atestado.
+ *
+ * `from_revisoes` no client é só intenção; a confirmação server-side aqui decide a
+ * **classificação** da tentativa (`scheduled_review` ou o fallback correspondente).
+ * Confirmação due não concede bypass de cota: toda tentativa não-replay passa pelo
+ * gate freemium normal em `app/api/registrar-tentativa/route.ts`.
  */
 
 import 'server-only';
@@ -53,8 +57,8 @@ export type ConfirmDueScheduledReviewResult =
     };
 
 /**
- * Intenção do client (`from_revisoes`). Nunca isenta cota nem marca
- * `scheduled_review` sozinha — exige `confirmDueScheduledReview`.
+ * Intenção do client (`from_revisoes`). Não marca `scheduled_review` sozinha —
+ * exige `confirmDueScheduledReview` — e não tem efeito algum sobre a cota.
  */
 export function parseFromRevisoesIntention(body: Record<string, unknown>): boolean {
   const value = body.from_revisoes;

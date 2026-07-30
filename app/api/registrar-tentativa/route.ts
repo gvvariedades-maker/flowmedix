@@ -144,7 +144,7 @@ export async function POST(request: NextRequest) {
 
     const isReplay = historicoExistente != null;
 
-    // Metadados canônicos + gabarito antes do gate freemium (isenção due exige meta).
+    // Metadados canônicos antes do gate: a classificação FSRS da tentativa exige meta.
     const { data: modulo, error: moduloError } = await supabase
       .from('modulos_estudo')
       .select('conteudo_json')
@@ -171,7 +171,8 @@ export async function POST(request: NextRequest) {
     const fsrsDiscipline =
       canonical.topico !== 'Geral' ? canonical.topico : 'Enfermagem';
 
-    // Intenção do client não basta: só isenta cota / agenda se card due atestado.
+    // Intenção do client não basta: só agenda scheduled_review se card due atestado.
+    // A confirmação classifica a tentativa; nunca dispensa a cota (ver gate abaixo).
     if (
       wantsScheduledReview &&
       isFsrsMvpEnabled() &&
@@ -196,7 +197,9 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    if (!isReplay && !scheduledReviewConfirmed) {
+    // Revisão vencida conta na cota do plano gratuito: `scheduledReviewConfirmed`
+    // decide elegibilidade FSRS, não isenção. Só replay escapa (não gera nova questão).
+    if (!isReplay) {
       const gate = await assertCanAnswerQuestion(user.id, user.email);
       if (!gate.allowed) {
         return NextResponse.json(

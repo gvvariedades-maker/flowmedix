@@ -844,7 +844,7 @@ describe('POST /api/registrar-tentativa', () => {
       expect(mockFsrsPersistReview).toHaveBeenCalledTimes(1);
     });
 
-    it('due válido + from_revisoes → isenta freemium e agenda scheduled_review', async () => {
+    it('due válido + from_revisoes com cota esgotada → 403 (revisão conta na cota), sem write e sem FSRS', async () => {
       mockIsFsrsMvpEnabled.mockReturnValue(true);
       mockIsFsrsMvpBetaEmail.mockReturnValue(true);
       mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
@@ -861,7 +861,57 @@ describe('POST /api/registrar-tentativa', () => {
       });
       if (!unit.ok) throw new Error('unit');
 
-      mockModuloFetch({
+      const handles = mockModuloFetch({
+        dueCard: {
+          review_unit_id: unit.reviewUnitId,
+          review_unit_kind: 'subtopico',
+          due_at: '2026-07-01T00:00:00.000Z',
+          last_question_id: 'outro-slug',
+          revision: 2,
+        },
+      });
+
+      const response = await POST(
+        makeRequest({
+          modulo_slug: SLUG,
+          opcao_id: 'B',
+          attempt_id: ATTEMPT_ID,
+          from_revisoes: true,
+        }),
+      );
+
+      expect(response.status).toBe(403);
+      expect(await response.json()).toMatchObject({
+        limiteAtingido: true,
+        allowed: false,
+        resetEm: '2026-05-27T03:00:00.000Z',
+      });
+      // Card due confirmado não pula o gate: a cota é avaliada mesmo assim.
+      expect(mockAssertCanAnswerQuestion).toHaveBeenCalledWith(USER_ID, 'aluno@test.com');
+      expect(handles.dueMaybeSingle).toHaveBeenCalledTimes(1);
+      expect(handles.insert).not.toHaveBeenCalled();
+      expect(handles.update).not.toHaveBeenCalled();
+      expect(mockCreateSupabaseFsrsPersistence).not.toHaveBeenCalled();
+      expect(mockFsrsLoadCard).not.toHaveBeenCalled();
+      expect(mockFsrsPersistReview).not.toHaveBeenCalled();
+    });
+
+    it('due válido + from_revisoes dentro da cota → 200 e agenda scheduled_review', async () => {
+      mockIsFsrsMvpEnabled.mockReturnValue(true);
+      mockIsFsrsMvpBetaEmail.mockReturnValue(true);
+      mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
+      mockAssertCanAnswerQuestion.mockResolvedValue({ allowed: true });
+      mockCountQuestoesHojeForUser.mockResolvedValue(2);
+      mockIsUserPro.mockResolvedValue(false);
+
+      const { resolveReviewUnitId } = jest.requireActual('@/lib/fsrs/reviewUnit') as typeof import('@/lib/fsrs/reviewUnit');
+      const unit = resolveReviewUnitId({
+        discipline: 'Enfermagem',
+        subtopico: 'Imunização',
+      });
+      if (!unit.ok) throw new Error('unit');
+
+      const handles = mockModuloFetch({
         dueCard: {
           review_unit_id: unit.reviewUnitId,
           review_unit_kind: 'subtopico',
@@ -881,7 +931,8 @@ describe('POST /api/registrar-tentativa', () => {
       );
 
       expect(response.status).toBe(200);
-      expect(mockAssertCanAnswerQuestion).not.toHaveBeenCalled();
+      expect(mockAssertCanAnswerQuestion).toHaveBeenCalledWith(USER_ID, 'aluno@test.com');
+      expect(handles.insert).toHaveBeenCalledTimes(1);
       expect(mockFsrsPersistReview).toHaveBeenCalledWith(
         expect.objectContaining({
           attemptId: ATTEMPT_ID,
@@ -891,7 +942,7 @@ describe('POST /api/registrar-tentativa', () => {
       );
     });
 
-    it('from_revisoes sem card due → não isenta freemium e não agenda', async () => {
+    it('from_revisoes sem card due → 403 pela cota e não agenda', async () => {
       mockIsFsrsMvpEnabled.mockReturnValue(true);
       mockIsFsrsMvpBetaEmail.mockReturnValue(true);
       mockIsFreemiumUnlimitedEmail.mockReturnValue(false);
