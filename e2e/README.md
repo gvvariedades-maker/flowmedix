@@ -24,7 +24,7 @@ npm run test:e2e:debug
 - `laboratorio.spec.ts` - Testes do laboratório admin
 - `simulados.spec.ts` - Fluxo aluno (setup → runner → resumo)
 - `estudar-nav.spec.ts` - Vitrine → questão → próxima (query preservada); rota #5 imersiva (`npm run test:e2e:estudar-nav`)
-- `revisoes-hoje.spec.ts` - Fila FSRS beta (`npm run test:e2e:revisoes-hoje`)
+- `revisoes-hoje.spec.ts` - Redirects C2: `/revisoes-hoje` e `/plano-diario` → `/estudar` (`npm run test:e2e:revisoes-hoje`)
 - `estudar-modal.spec.ts` - Modal intercept (`npm run test:e2e:modal`, flag `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1`)
 - `api-validation.spec.ts` - Testes de API
 - `cache.spec.ts` - Testes de cache
@@ -37,7 +37,7 @@ O spec `simulados.spec.ts` usa seed in-memory no servidor (`lib/e2e/simuladoSeed
 
 O spec `estudar-nav.spec.ts` usa seed em `lib/e2e/estudarSeed.ts` (slugs `questao-e2e-estudar-1/2`).
 
-O spec `revisoes-hoje.spec.ts` usa `lib/e2e/revisoesHojeSeed.ts` (`?e2e_fsrs=empty|queue|off`) + payload `?from=revisoes` no player — só sob bypass; nunca em produção.
+O spec `revisoes-hoje.spec.ts` (C2) só valida redirect das rotas descontinuadas para `/estudar`.
 
 ## 🔧 Configuração
 

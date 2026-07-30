@@ -42,7 +42,6 @@ export function isBottomNavMaisActive(pathname: string): boolean {
   if (isBottomNavItemActive(pathname, BOTTOM_NAV_HREFS.progresso)) return false;
   if (isBottomNavItemActive(pathname, BOTTOM_NAV_HREFS.cadernos)) return false;
 
-  if (pathname === '/plano-diario') return true;
   if (pathname === '/ajuda' || pathname.startsWith('/ajuda/')) return true;
   if (isPathPrefixActive(pathname, '/material')) return true;
   if (isPathPrefixActive(pathname, '/conta')) return true;

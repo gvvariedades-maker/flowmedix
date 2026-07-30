@@ -2,7 +2,6 @@ import {
   BarChart3,
   BookMarked,
   BrainCircuit,
-  CalendarDays,
   HelpCircle,
   LayoutDashboard,
   ListChecks,
@@ -106,13 +105,6 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
         accent: 'rose',
       },
       {
-        label: 'Plano diário',
-        title: 'Plano de estudo diário',
-        href: '/plano-diario',
-        icon: CalendarDays,
-        accent: 'teal',
-      },
-      {
         label: 'Cadernos',
         title: 'Cadernos de estudo',
         href: '/cadernos',
@@ -127,7 +119,6 @@ function resolveItemActive(href: string, isPathActive: IsPathActiveFn): boolean 
   switch (href) {
     case '/ajuda':
     case '/ajuda/estudo-reverso':
-    case '/plano-diario':
       return isPathActive(href, true);
     case '/progresso':
       return isPathActive('/progresso') || isPathActive('/analytics');

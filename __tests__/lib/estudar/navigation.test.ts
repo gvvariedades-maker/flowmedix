@@ -125,9 +125,9 @@ describe('lib/estudar/navigation', () => {
       );
     });
 
-    it('redireciona plano, revisões e caderno', () => {
-      expect(buildEstudarVitrineHref({ fromRevisoes: true })).toBe('/revisoes-hoje');
-      expect(buildEstudarVitrineHref({ fromPlano: true })).toBe('/plano-diario');
+    it('redireciona plano/revisões descontinuados para Vitrine; caderno para cadernos', () => {
+      expect(buildEstudarVitrineHref({ fromRevisoes: true })).toBe('/estudar');
+      expect(buildEstudarVitrineHref({ fromPlano: true })).toBe('/estudar');
       expect(buildEstudarVitrineHref({ fromCaderno: 'id-1' })).toBe('/cadernos');
     });
   });

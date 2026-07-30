@@ -60,7 +60,6 @@ describe('isBottomNavItemActive', () => {
 
 describe('isBottomNavMaisActive', () => {
   it('ativa rotas exclusivas do drawer', () => {
-    expect(isBottomNavMaisActive('/plano-diario')).toBe(true);
     expect(isBottomNavMaisActive('/ajuda')).toBe(true);
     expect(isBottomNavMaisActive('/ajuda/estudo-reverso')).toBe(true);
     expect(isBottomNavMaisActive('/material')).toBe(true);

@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
   BookOpen,
-  CalendarDays,
   ChevronRight,
   Flame,
   Shield,
@@ -199,16 +198,7 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
               </CardContent>
             </Card>
           </motion.div>
-        ) : (
-          <div className="flex justify-center pb-2">
-            <Button variant="outline" asChild className="rounded-xl border-border transition-colors duration-150">
-              <Link href="/plano-diario" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground">
-                <CalendarDays className="h-4 w-4" aria-hidden />
-                Ver plano de estudo diário
-              </Link>
-            </Button>
-          </div>
-        )}
+        ) : null}
 
         {podeZerarHistorico && (
           <footer className="border-t border-border pt-8">

@@ -205,8 +205,10 @@ export type EstudarVitrineReturnContext = {
 
 /** Destino ao fechar questão (modal, botão Vitrine) — preserva filtros da vitrine. */
 export function buildEstudarVitrineHref(ctx: EstudarVitrineReturnContext = {}): string {
-  if (ctx.fromRevisoes) return '/revisoes-hoje';
-  if (ctx.fromPlano) return '/plano-diario';
+  // C2: superfícies de revisão descontinuadas → Vitrine (não encadear em rotas stub).
+  if (ctx.fromRevisoes || ctx.fromPlano) {
+    return '/estudar';
+  }
   if (ctx.fromCaderno) return '/cadernos';
   const suffix = ctx.vitrineQuerySuffix?.trim() ?? '';
   return `/estudar${suffix}`;
