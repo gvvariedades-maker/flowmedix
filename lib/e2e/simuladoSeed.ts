@@ -23,7 +23,23 @@ type SessionState = {
   opcao_id: string | null;
 };
 
-const store = new Map<string, SessionState>();
+/**
+ * O seed é escrito pelas rotas `/api/simulado/*` e lido pelo RSC de
+ * `/simulados/[id]`. Bundlers de produção podem instanciar o módulo mais de uma
+ * vez (um grafo por entry), então a âncora precisa ser o processo — não a
+ * instância do módulo.
+ */
+type SimuladoSeedGlobal = typeof globalThis & {
+  __avantE2eSimuladoStore__?: Map<string, SessionState>;
+};
+
+function getStore(): Map<string, SessionState> {
+  const scope = globalThis as SimuladoSeedGlobal;
+  if (!scope.__avantE2eSimuladoStore__) {
+    scope.__avantE2eSimuladoStore__ = new Map<string, SessionState>();
+  }
+  return scope.__avantE2eSimuladoStore__;
+}
 
 function buildSummary(state: SessionState) {
   const respondidas = state.answered ? 1 : 0;
@@ -74,7 +90,7 @@ function buildQuestoes(state: SessionState) {
 }
 
 export function resetE2eSimuladoStore() {
-  store.clear();
+  getStore().clear();
 }
 
 export function createE2eSimuladoSession(
@@ -100,7 +116,7 @@ export function createE2eSimuladoSession(
     answered: false,
     opcao_id: null,
   };
-  store.set(E2E_SIMULADO_SESSION_ID, state);
+  getStore().set(E2E_SIMULADO_SESSION_ID, state);
 
   return {
     success: true as const,
@@ -119,7 +135,7 @@ export function createE2eSimuladoSession(
 }
 
 export function getE2eSimuladoSession(sessionId: string) {
-  const state = store.get(sessionId);
+  const state = getStore().get(sessionId);
   if (!state) return null;
 
   return {
@@ -130,7 +146,7 @@ export function getE2eSimuladoSession(sessionId: string) {
 }
 
 export function iniciarE2eSimuladoProva(sessionId: string) {
-  const state = store.get(sessionId);
+  const state = getStore().get(sessionId);
   if (!state || state.session.modo !== 'prova' || state.session.status !== 'aberto') {
     return null;
   }
@@ -147,7 +163,7 @@ export function answerE2eSimuladoQuestion(
   moduloSlug: string,
   opcaoId: string,
 ) {
-  const state = store.get(sessionId);
+  const state = getStore().get(sessionId);
   if (!state || moduloSlug !== E2E_SIMULADO_SLUG) return null;
 
   const acertou = opcaoId === 'A';
@@ -173,7 +189,7 @@ export function answerE2eSimuladoQuestion(
 }
 
 export function finalizeE2eSimuladoSession(sessionId: string) {
-  const state = store.get(sessionId);
+  const state = getStore().get(sessionId);
   if (!state) return null;
 
   state.session.status = 'concluido';

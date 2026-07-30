@@ -2,47 +2,55 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import {
-  isFsrsMvpBetaEmail,
-  isFsrsMvpEnabled,
-} from '@/lib/env';
-import { resolveSubtopicoInventoryFromReviewUnit } from '@/lib/fsrs/inventory';
-import {
-  asFsrsQueueClient,
-  buildFsrsTodayQueue,
-  FSRS_DAILY_REVIEW_LIMIT,
-} from '@/lib/fsrs/queue';
+  getE2eRevisoesQueueItems,
+  parseE2eRevisoesFsrsMode,
+} from '@/lib/e2e/revisoesHojeSeed';
+import { getReviewsToday } from '@/lib/fsrs/reviewsToday';
+import type { FsrsReviewQueueItem } from '@/lib/fsrs/queue';
 import { getServerSession } from '@/lib/supabase/server-auth';
-import { createServerSupabase } from '@/lib/supabase/server';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export default async function RevisoesHojePage() {
+type RevisoesHojePageProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
+
+export default async function RevisoesHojePage({ searchParams }: RevisoesHojePageProps) {
   if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
-    return <RevisoesEmpty />;
+    const resolved = await searchParams;
+    const mode = parseE2eRevisoesFsrsMode(resolved);
+    // Simula coorte fora da allowlist (redirect SM-2 / Plano diário).
+    if (mode === 'off') redirect('/plano-diario');
+    if (mode === 'empty') return <RevisoesEmpty />;
+    return <RevisoesQueue queue={getE2eRevisoesQueueItems()} />;
   }
 
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
-  if (!isFsrsMvpEnabled() || !isFsrsMvpBetaEmail(session.user.email)) {
+  const result = await getReviewsToday({
+    userId: session.user.id,
+    email: session.user.email,
+  });
+
+  // Página exclusiva do beta FSRS — coorte SM-2 permanece no Plano diário.
+  if (result.source !== 'fsrs') {
     redirect('/plano-diario');
   }
 
-  const supabase = await createServerSupabase();
-  const queue = await buildFsrsTodayQueue({
-    client: asFsrsQueueClient(supabase as never),
-    userId: session.user.id,
-    limit: FSRS_DAILY_REVIEW_LIMIT,
-    resolveInventory: resolveSubtopicoInventoryFromReviewUnit,
-  });
+  const queue = result.reviews;
 
   if (queue.length === 0) {
     return <RevisoesEmpty />;
   }
 
+  return <RevisoesQueue queue={queue} />;
+}
+
+function RevisoesQueue({ queue }: { queue: FsrsReviewQueueItem[] }) {
   return (
     <DashboardMobilePage variant="default" className={cn(DASHBOARD_PAGE_ROOT, 'bg-background')}>
       <header className="border-b border-slate-200 bg-background shadow-sm">

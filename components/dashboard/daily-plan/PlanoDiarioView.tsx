@@ -20,7 +20,7 @@ import { cn } from '@/lib/utils';
 import { PlanoDiarioTopicCard } from './PlanoDiarioTopicCard';
 import type { PlanoDiarioProps } from './types';
 
-function PlanoDiarioEmpty() {
+function PlanoDiarioEmpty({ showFsrsRevisoesCta = false }: { showFsrsRevisoesCta?: boolean }) {
   return (
     <DashboardMobilePage
       variant="default"
@@ -43,6 +43,7 @@ function PlanoDiarioEmpty() {
             espaçada agendará retornos conforme seu desempenho.
           </p>
         </div>
+        {showFsrsRevisoesCta ? <PlanoDiarioFsrsRevisoesCta /> : null}
         <Button asChild className="btn-editorial-primary w-full">
           <Link href="/estudar" className="inline-flex items-center justify-center gap-2">
             <BookOpen className="h-4 w-4" aria-hidden />
@@ -51,6 +52,25 @@ function PlanoDiarioEmpty() {
         </Button>
       </motion.div>
     </DashboardMobilePage>
+  );
+}
+
+function PlanoDiarioFsrsRevisoesCta() {
+  return (
+    <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[rgba(34,197,94,0.35)] bg-[rgba(34,197,94,0.08)] p-4 text-left">
+      <div className="space-y-1">
+        <p className="text-sm font-semibold text-[#166534]">Revisões de hoje</p>
+        <p className="text-xs text-slate-600">
+          Fila FSRS beta com preferência por outro enunciado da mesma unidade.
+        </p>
+      </div>
+      <Button asChild className="btn-editorial-primary shrink-0 rounded-xl">
+        <Link href="/revisoes-hoje" className="inline-flex items-center gap-2">
+          <Zap className="h-4 w-4" aria-hidden />
+          Abrir fila
+        </Link>
+      </Button>
+    </div>
   );
 }
 
@@ -87,7 +107,12 @@ function PlanoDiarioSimuladoCta() {
   );
 }
 
-export default function PlanoDiarioView({ revisoes, totalPendentes, limite }: PlanoDiarioProps) {
+export default function PlanoDiarioView({
+  revisoes,
+  totalPendentes,
+  limite,
+  showFsrsRevisoesCta = false,
+}: PlanoDiarioProps) {
   const hoje = new Date();
   const dataFormatada = hoje.toLocaleDateString('pt-BR', {
     weekday: 'long',
@@ -96,7 +121,7 @@ export default function PlanoDiarioView({ revisoes, totalPendentes, limite }: Pl
   });
 
   if (revisoes.length === 0) {
-    return <PlanoDiarioEmpty />;
+    return <PlanoDiarioEmpty showFsrsRevisoesCta={showFsrsRevisoesCta} />;
   }
 
   return (
@@ -105,6 +130,7 @@ export default function PlanoDiarioView({ revisoes, totalPendentes, limite }: Pl
       limite={limite}
       revisoes={revisoes}
       totalPendentes={totalPendentes}
+      showFsrsRevisoesCta={showFsrsRevisoesCta}
     />
   );
 }
@@ -114,11 +140,13 @@ function PlanoDiarioConteúdo({
   revisoes,
   totalPendentes,
   limite,
+  showFsrsRevisoesCta,
 }: {
   dataFormatada: string;
   revisoes: PlanoDiarioProps['revisoes'];
   totalPendentes: number;
   limite: number;
+  showFsrsRevisoesCta: boolean;
 }) {
   return (
     <DashboardMobilePage variant="default" className={cn(DASHBOARD_PAGE_ROOT, 'bg-background')}>
@@ -164,6 +192,7 @@ function PlanoDiarioConteúdo({
       </header>
 
       <div className="mx-auto max-w-3xl space-y-8 px-4 py-10 md:px-10">
+        {showFsrsRevisoesCta ? <PlanoDiarioFsrsRevisoesCta /> : null}
         <PlanoDiarioInfoAlgoritmo />
         <PlanoDiarioSimuladoCta />
 

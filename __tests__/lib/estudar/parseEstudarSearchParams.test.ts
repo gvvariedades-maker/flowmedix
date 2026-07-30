@@ -39,4 +39,11 @@ describe('parseEstudarSearchParams', () => {
       'disciplina=portugues',
     );
   });
+
+  it('from=revisoes tem prioridade no suffix de contexto', () => {
+    expect(buildEstudarContextQuerySuffix(parseEstudarSearchParams({ from: 'revisoes' }))).toBe(
+      '?from=revisoes',
+    );
+    expect(parseEstudarSearchParams({ from: 'revisoes' }).fromRevisoes).toBe(true);
+  });
 });

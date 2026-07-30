@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  *
- * FSRS MVP R5 — ops report: dry-run, go/no-go, ausência de PII.
+ * FSRS MVP R5 — ops report: dry-run, go/no-go, insufficient_window, ausência de PII.
  */
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -10,6 +10,7 @@ import { spawnSync } from 'node:child_process';
 
 import {
   evaluateFsrsGoNoGo,
+  evaluateFsrsRolloutVerdict,
   findFsrsOpsReportPiiLeaks,
   opsReportArtifactFileName,
   renderFsrsOpsReportMarkdown,
@@ -17,9 +18,13 @@ import {
 } from '@/lib/fsrs/opsReport';
 
 describe('fsrs opsReport (pure)', () => {
-  it('zero metrics → critérios unknown (exceto default_on)', () => {
+  it('zero metrics → D+7/D+14 insufficient_window; demais unknown', () => {
     const criteria = evaluateFsrsGoNoGo(zeroFsrsOpsMetrics());
-    expect(criteria.every((c) => c.status === 'unknown')).toBe(true);
+    const byId = Object.fromEntries(criteria.map((c) => [c.id, c.status]));
+    expect(byId.accuracy_d7).toBe('insufficient_window');
+    expect(byId.accuracy_d14).toBe('insufficient_window');
+    expect(byId.volume).toBe('unknown');
+    expect(byId.default_on).toBe('unknown');
     expect(criteria.map((c) => c.id)).toEqual([
       'volume',
       'retention_good_ge7d',
@@ -33,22 +38,31 @@ describe('fsrs opsReport (pure)', () => {
     ]);
   });
 
-  it('template markdown inclui barras go/no-go do plano', () => {
+  it('template markdown inclui barras go/no-go e sintéticos', () => {
     const md = renderFsrsOpsReportMarkdown({
       generatedAt: new Date('2026-07-28T15:00:00.000Z'),
       metrics: zeroFsrsOpsMetrics(),
       mode: 'dry-run',
+      verdict: {
+        stagingBeta: 'NO-GO',
+        defaultOn: 'NO-GO',
+        rationale: ['dry-run sem smoke'],
+      },
     });
     expect(md).toContain('**Modo:** `dry-run`');
     expect(md).toContain('Retenção Good (intervalo ≥ 7d)');
     expect(md).toContain('Acerto D+7');
     expect(md).toContain('Acerto D+14');
+    expect(md).toContain('insufficient_window');
     expect(md).toContain('Lapses / usuário / dia');
     expect(md).toContain('Carga due');
     expect(md).toContain('same_stem_fallback');
     expect(md).toContain('inventory_missing');
-    expect(md).toMatch(/Cards \| 0/);
-    expect(md).toMatch(/Logs \| 0/);
+    expect(md).toContain('Cards (negócio)');
+    expect(md).toMatch(/Cards \(negócio\) \| 0/);
+    expect(md).toMatch(/Logs \(negócio\) \| 0/);
+    expect(md).toContain('**Staging beta**');
+    expect(md).toContain('**Default-on global**');
     expect(findFsrsOpsReportPiiLeaks(md)).toEqual([]);
   });
 
@@ -92,6 +106,45 @@ describe('fsrs opsReport (pure)', () => {
     expect(byId.inventory_missing).toBe('pass');
     expect(byId.default_on).toBe('unknown');
   });
+
+  it('D+7/D+14 com amostra insuficiente → insufficient_window (não pass)', () => {
+    const criteria = evaluateFsrsGoNoGo({
+      ...zeroFsrsOpsMetrics(),
+      logs: 10,
+      accuracyD7: 0.9,
+      accuracyD7Sample: 5,
+      accuracyD14: 0.8,
+      accuracyD14Sample: 3,
+    });
+    const byId = Object.fromEntries(criteria.map((c) => [c.id, c.status]));
+    expect(byId.accuracy_d7).toBe('insufficient_window');
+    expect(byId.accuracy_d14).toBe('insufficient_window');
+  });
+
+  it('rollout: GO só staging beta; default-on bloqueado por janela', () => {
+    const criteria = evaluateFsrsGoNoGo(zeroFsrsOpsMetrics());
+    const verdict = evaluateFsrsRolloutVerdict({
+      criteria,
+      smokeOverallPass: true,
+      productionFlagsOff: true,
+    });
+    expect(verdict.stagingBeta).toBe('GO');
+    expect(verdict.defaultOn).toBe('NO-GO');
+    expect(verdict.rationale.some((r) => /insufficient_window|janela/.test(r))).toBe(
+      true,
+    );
+  });
+
+  it('rollout: smoke fail → NO-GO beta', () => {
+    const criteria = evaluateFsrsGoNoGo(zeroFsrsOpsMetrics());
+    const verdict = evaluateFsrsRolloutVerdict({
+      criteria,
+      smokeOverallPass: false,
+      productionFlagsOff: true,
+    });
+    expect(verdict.stagingBeta).toBe('NO-GO');
+    expect(verdict.defaultOn).toBe('NO-GO');
+  });
 });
 
 describe('fsrs-mvp-ops-report --dry-run (CLI)', () => {
@@ -133,8 +186,9 @@ describe('fsrs-mvp-ops-report --dry-run (CLI)', () => {
     const file = join(dir, opsReportArtifactFileName(day, 'dry-run'));
     const md = readFileSync(file, 'utf8');
     expect(md).toContain('dry-run');
-    expect(md).toMatch(/\| Cards \| 0 \|/);
-    expect(md).toMatch(/\| Logs \| 0 \|/);
+    expect(md).toMatch(/\| Cards \(negócio\) \| 0 \|/);
+    expect(md).toMatch(/\| Logs \(negócio\) \| 0 \|/);
+    expect(md).toContain('insufficient_window');
     expect(md).toContain('Good rate ∈ [0.70, 0.95]');
     expect(md).toContain('inventory_missing');
     expect(findFsrsOpsReportPiiLeaks(md)).toEqual([]);

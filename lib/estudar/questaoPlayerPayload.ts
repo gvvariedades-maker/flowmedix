@@ -13,9 +13,8 @@ import {
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { isTituloAulaVisibleInVitrine } from '@/lib/catalogMigration/vitrineQualityGate';
 import { getTodayReviews } from '@/lib/spaced-repetition';
-import { buildFsrsTodayQueue, asFsrsQueueClient } from '@/lib/fsrs/queue';
-import { resolveSubtopicoInventoryFromReviewUnit } from '@/lib/fsrs/inventory';
-import { isFsrsMvpEnabled } from '@/lib/env';
+import { asFsrsQueueClient } from '@/lib/fsrs/queue';
+import { getReviewsToday, reviewsTodaySlugs } from '@/lib/fsrs/reviewsToday';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
 import {
@@ -61,6 +60,8 @@ type ModuloAtualRow = {
 export type BuildEstudarQuestaoPlayerPayloadInput = {
   slug: string;
   userId?: string | null;
+  /** E-mail da sessão — necessário para allowlist FSRS beta (`?from=revisoes`). */
+  userEmail?: string | null;
   searchParams?: EstudarSearchParams;
   /** `core` omite NeuroSlides (prefetch); `full` inclui slides (RSC / estudo reverso). */
   layers?: EstudarQuestaoLayers;
@@ -111,6 +112,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
   const {
     slug,
     userId,
+    userEmail,
     searchParams = {},
     isAdmin = false,
     layers = ESTUDAR_QUESTAO_LAYERS_DEFAULT,
@@ -190,15 +192,24 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     return supabase;
   };
 
+  let sameStemFallback = false;
+
   if ((fromPlano || fromRevisoes) && userId) {
-    if (fromRevisoes && isFsrsMvpEnabled()) {
+    if (fromRevisoes) {
       const db = await ensureSupabase();
-      const queue = await buildFsrsTodayQueue({
-        client: asFsrsQueueClient(db as never),
+      const result = await getReviewsToday({
         userId,
-        resolveInventory: resolveSubtopicoInventoryFromReviewUnit,
+        email: userEmail,
+        queueClient: asFsrsQueueClient(db as never),
       });
-      lista = queue.map((r) => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
+      lista = reviewsTodaySlugs(result).map((moduloSlug) => ({
+        id: moduloSlug,
+        modulo_slug: moduloSlug,
+      }));
+      if (result.source === 'fsrs') {
+        sameStemFallback =
+          result.reviews.find((item) => item.modulo_slug === slug)?.same_stem_fallback === true;
+      }
     } else {
       const revisoes = await getTodayReviews(userId);
       lista = revisoes.map((r) => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
@@ -337,6 +348,7 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
     questoesDoAssunto: questoesDoAssuntoParaCliente,
     fromPlano,
     fromRevisoes,
+    sameStemFallback: fromRevisoes ? sameStemFallback : undefined,
     fromCaderno: fromCaderno ? cadernoId : undefined,
     listaContexto,
     avantCodigo: avantCodigoAluno,

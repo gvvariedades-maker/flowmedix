@@ -66,6 +66,7 @@ describe('lib/estudar/navigation', () => {
     it('bloqueia quando destino é plano ou caderno', () => {
       Object.defineProperty(window.history, 'length', { value: 2, configurable: true });
       expect(canDismissEstudarViaHistoryBack({ fromPlano: true })).toBe(false);
+      expect(canDismissEstudarViaHistoryBack({ fromRevisoes: true })).toBe(false);
       expect(canDismissEstudarViaHistoryBack({ fromCaderno: 'id' })).toBe(false);
     });
 
@@ -124,7 +125,8 @@ describe('lib/estudar/navigation', () => {
       );
     });
 
-    it('redireciona plano e caderno', () => {
+    it('redireciona plano, revisões e caderno', () => {
+      expect(buildEstudarVitrineHref({ fromRevisoes: true })).toBe('/revisoes-hoje');
       expect(buildEstudarVitrineHref({ fromPlano: true })).toBe('/plano-diario');
       expect(buildEstudarVitrineHref({ fromCaderno: 'id-1' })).toBe('/cadernos');
     });
