@@ -72,11 +72,6 @@
           "label": "Sinal-chave",
           "detail": "Icterícia + colúria + fezes claras = pensar em obstrução biliar/colestática com a redação da banca.",
           "icon": "ShieldAlert"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra D.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Tríade semiológica clássica: icterícia, colúria e fezes claras"

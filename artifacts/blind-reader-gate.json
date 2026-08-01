@@ -1,0 +1,5734 @@
+{
+  "corpus": "examples",
+  "generated_at": "2026-08-01T04:23:01.004Z",
+  "total": 165,
+  "judged": 164,
+  "blocking": 0,
+  "verdicts": {
+    "fail_leak": 0,
+    "warn_unsupported_hit": 0,
+    "pass_indeterminate": 164,
+    "pass_wrong_letter": 0,
+    "skip_no_gabarito": 0,
+    "skip_no_concept_map": 1
+  },
+  "results": [
+    {
+      "slug": "questao-enfermagem-sae",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 6,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-formacao-palavras-siglas",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-lei-7498-regulamenta",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-morfológica-teste",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-oracao-subordinada-final",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-access-urgencias-rcp-pediatrica-15-2",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-admtec-imunizacao-adolescente-cartao-perdido",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-admtec-oxigenoterapia-dispositivos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "Prioridade na prova: CNA = baixo fluxo · Venturi = FiO₂ fixa · letras B–D trocam essas características.",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-admtec-puncao-venosa-cateteres",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "O texto descreve um conjunto de medidas de prevenção (bundle completo) e afirma que \"uma medida isolada não substitui o pacote\". Não há indicação no texto de qual, entre as medidas listadas, seria a \"mais efetiva\" isoladamente, nem qual alternativa (A-E) corresponderia a essa medida.",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-admtec-saude-mulher-parto-humanizado-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "Fase expulsiva — posição vertical/lateral, não supina fixa (III falsa).\nÁgua morna e movimentação na dilatação — assertiva II.\nTardio um a três min quando viável — assertiva IV.",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-choque-eletrico",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-convulsao-crise",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-fratura-exposta-imobilizacao",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-rcp-30-2-aha2020",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-agirh-imunizacao-incorreta-antibiotico",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-amauc-imunizacao-bcg-dose-a4",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "Conjunto verdadeiro: I=F, II=V, III=F, IV=V, V=V → combinação II, IV e V.",
+      "evidence_literal": false,
+      "surfaces_count": 15,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-amauc-urgencias-cincinnati-avc",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-cme-metodos-incorreta",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "INCORRETA — três alternativas descrevem métodos válidos; uma nega a autoclave.",
+      "evidence_literal": true,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-cuidados-protocolo-ms-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-imunizacao-vf-cadeia-frio",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-processo-de-enfermagem-documentacao",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-rcp-vf-adulto",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-trauma-imobilizacao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-trauma-queimadura",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-triagem-etiquetas",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-cme-manuseio-esteril",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-cuidados-documentacao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-cuidados-exceto-preparo-medicamentos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "Via oral não usa SF como veículo rotineiro — banca mistura preparo injetável com administração VO.",
+      "evidence_literal": true,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-imunizacao-rede-frio-temperatura",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-perioperatoria-pre-operatorio",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-colocacao-posicao-piloto",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-denotacao-tirinha-drogas",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-pontuacao-vocativo-rita",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-puncao-infiltracao-flebite",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "Infiltração\nSolução medicamentosa fora do vaso, no subcutâneo — mecanismo descrito no enunciado.",
+      "evidence_literal": true,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-sv-pa-incorreta-divergente",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "Destaque o aspecto incorreto — quatro alternativas descrevem PA com precisão; uma inverte o conceito de pressão divergente.",
+      "evidence_literal": true,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-avancasp-vias-sublingual-exceto",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "EXCETO sublingual: arsenal limitado — não confunda com rapidez ou facilidade",
+      "evidence_literal": true,
+      "surfaces_count": 15,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cesgranrio-seguranca-paciente-identificacao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cetrede-vias-injetaveis-incorreta",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 15,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cev-saude-crianca-desidratacao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cev-urca-puncao-exceto-med-endovenosa",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "Preferir veias menos proeminentes é o erro — escolha veias calibrosas e acessíveis.",
+      "evidence_literal": true,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-consulpam-urgencias-pcr-pediatrica-conceito",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-consulpam-vias-absorcao-oral",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 15,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-consulplan-perioperatoria-srpa-monitorizacao",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-consulplan-saude-crianca-puericultura-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-consulplan-sondagem-nasogastrica-nex",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-copese-processo-de-enfermagem-etapas-sae",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cotec-cuidados-heparina-alto-risco",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-coleta-amostras-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-cuidados-incorreta-nove-certos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-curativos-lpp-prevencao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-dengue-zoonoses-vetor-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-dt-mescladas-prevencao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-enfermagem-trabalho-nr32-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-feridas-queimaduras-scq-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "I está correta. II está correta.",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-historia-enfermagem-nightingale",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-imunizacao-intervalos-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-ists-risco-transmissao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-poliomielite-pfa-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-portugues-pontuacao-tirinha-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "Sequência\nI + II + III corretas → alternativa com as três.",
+      "evidence_literal": true,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-portugues-sinonimos-vf-cometa-3i-atlas",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-precaucao-contato-higiene-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-processamento-artigos-prelimpeza-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-puncao-troca-equipos-intervalos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-adolescente-gravidez-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-aleitamento-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-desenvolvimento-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-triagem-neonatal-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-mulher-planejamento-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "II, III, IV e V verdadeiras — I (oral) é falsa.",
+      "evidence_literal": true,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-mulher-pre-natal-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-triglicerideos-soro",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-tuberculose-baar-aerossol-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-vias-im-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "Padrão CPCON neste tema: Mistura técnica correta (II, III) com inversão de absorção (I) e inversão de sítio seguro (IV) — teste os dois eixos antes de marcar.",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-virais-sarampo-polio-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-cpcon-visita-domiciliar-acs-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-decorp-imunizacao-triplice-viral-via",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "Subcutânea — vacina atenuada, nunca endovenosa.",
+      "evidence_literal": true,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-consoada-descer",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "Contexto poético fixa «descer» = anoitecer.",
+      "evidence_literal": true,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-iniludivel",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-epice-portugues-sujeito-eliptico",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "Pegadinha-âncora B confunde elíptico (1ª pessoa) com indeterminado (3ª pl.).",
+      "evidence_literal": true,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-facet-cuidados-vigilancia-reacao-adversa",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-facet-puncao-cvc-hub-a4",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-saude-mental-raps",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-engasgo-sinal",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-generico-glasgow-domains",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "Motora",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fcm-dtrans-dengue-grupos-abc",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-anatomia-anterior-ventral",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-anotacao-enfermagem-sae",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 15,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-cuidados-administracao-medicamentos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-cuidados-insulina-alto-risco",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-infeccoes-biosseguranca-iras-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-mobilizacao-posicionamento-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-saude-mental-risco-suicida-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "I=V, II=V, III=F → I e II, apenas.",
+      "evidence_literal": true,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-sv-interpretacao-valores",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fepese-urgencias-choque-hipovolemico",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fgv-respiratorio-peak-flow-zonas-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fgv-saude-mental-tabagismo-pnct",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-funatec-ictericia-obstrucao-biliar",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-funcamp-farmacodinamica-farmacocinetica-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-funcern-saude-crianca-generico-hub",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fundatec-agudas-deterioracao-sinais-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fundatec-meningococica-3meses",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 15,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fundatec-perioperatoria-anestesia-regional-exceto",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-fundatec-saude-mental-agitacao-exceto",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "Segurar objetos isoladamente não é sinal clássico de agitação pré-violência nesta lista.",
+      "evidence_literal": true,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-funpar-puncao-tecnica-periferica",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-furb-perioperatoria-isc-classificacao",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-gama-puncao-scalp-jelco-calibre",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-iacp-cme-autoclave-parametros",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "Nesta prova: 1,5 atm e 20 min de exposição — triplete do gabarito.",
+      "evidence_literal": true,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ibade-saude-mental-caps-acolhimento",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ibgp-agentes-etiologicos-todas-bacterias",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "Letra B cai por esse único item.",
+      "evidence_literal": true,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-calculo-equivalencias-gotas",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-calculo-ml-gotas-microgotas",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-centro-cirurgico-cirurgia-segura-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-cme-areas-esterilizacao-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-cme-indicador-quimico-classe1",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-cme-preparo-presecagem",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-cme-rt-funcao-certo",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-fc-radial-ce",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-feridas-queimaduras-grau-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-fisiologia-homeostase-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-omeprazol-ev-ulcera",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-perioperatoria-aldrete-srpa",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-respiratorio-espacador-inalador-conceito",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-saude-crianca-neonatologia-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-saude-mental-reducao-danos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-srpa-curativo-cpd-ce",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-trauma-cervical-jaw-thrust",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idecan-violencia-atencao-basica",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idib-cme-funcao-iaas",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-idib-umirim-itu-cateter-exceto",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "EXCETO — pinçar na remoção",
+      "evidence_literal": true,
+      "surfaces_count": 15,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-igeduc-saude-mental-tecnico-aps",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-instituto-aocp-saude-mental-esquizofrenia-psicofarmacos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "Pareamento errado A\nDiscinesia tardia ≠ vigilância urinária como foco principal neste par.\nPareamento errado B\nXerostomia = boca seca — não se confunde com orientação primária sobre quedas (ataxia).",
+      "evidence_literal": true,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-lab-respiratorio-cronico-4-moldes",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ms-sarmento-saude-mental-srt-reforma",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-ms-saude-mulher-puerperio-consulta",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "AM exclusivo até 6 meses — não só 3 meses (D falsa).",
+      "evidence_literal": true,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-selecon-urgencias-bt16-esmagamento",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "Soterramento + músculo = BT16",
+      "evidence_literal": true,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-sus-lei-8080-cesgranrio",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 17,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-urgencias-rcp",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-dtrans-raiva-profilaxia",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-colocacao-trilho",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-crase-funil",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-crase-lacunas-ioga",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 13,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-denotacao-literal-figurado",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "D",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-procedimentos-diversos-assepsia-vf",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-respiratorio-crise-asmatica-exceto",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mental-biopsicossocial",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "Genética e neuroquímica influenciam, mas sozinhas não explicam o modelo do MS (A incompleto).",
+      "evidence_literal": true,
+      "surfaces_count": 7,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mental-depressao-epidemiologia",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "não minimizar efeitos sociais (A falsa). Depressão aumenta risco suicida (B falsa); APS detecta, acompanha e articula rede — não só encaminha (E falsa).",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mulher-mamografia",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mulher-papanicolau",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "não aos 40 (A falsa).\nRastreio em assintomáticas — B falsa.",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-premium-vunesp-via-subcutanea",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 15,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-preview-logic-flow-tap",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "A",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 2,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-seguridade-social",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "B",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-tecnico-enfermagem-lei-7498",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "E",
+      "evidencia": "O item II descreve o AUXILIAR (certificado até 1964), não o Técnico. Muitos erram ao marcar II por confusão entre as categorias.",
+      "evidence_literal": true,
+      "surfaces_count": 11,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-teste-pipeline",
+      "verdict": "pass_indeterminate",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": "C",
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 9,
+      "model": "gemini-2.5-flash"
+    },
+    {
+      "slug": "questao-teste-simples",
+      "verdict": "skip_no_concept_map",
+      "blocking": false,
+      "gabarito": "indeterminavel",
+      "correct_letter": null,
+      "evidencia": "",
+      "evidence_literal": false,
+      "surfaces_count": 0
+    }
+  ],
+  "system_prompt": "Você é um leitor cego avaliando material de estudo de concurso.\nVocê NÃO tem acesso ao enunciado da questão, às alternativas nem ao gabarito.\nVocê vê apenas uma tela de estudo (mapa de conceitos).\n\nTarefa: dizer qual letra de alternativa (A–E) é o gabarito da questão original,\nusando exclusivamente o texto fornecido.\n\nRegras:\n1. Só responda uma letra se o próprio texto permitir concluir a letra correta.\n2. Se o texto ensina o conteúdo sem revelar qual alternativa é a certa,\n   responda \"indeterminavel\". Essa é a resposta esperada em material bem feito.\n3. Não deduza a letra por conhecimento clínico próprio: a pergunta é o que ESTE texto entrega.\n4. \"evidencia\" deve ser um trecho copiado do texto, caractere por caractere,\n   sem reescrever nem resumir. Sem trecho literal disponível, responda \"indeterminavel\"\n   com \"evidencia\": \"\".\n\nResponda apenas JSON: {\"gabarito\": \"A\"|\"B\"|\"C\"|\"D\"|\"E\"|\"indeterminavel\", \"evidencia\": \"...\"}",
+  "pedagogical_notes": [
+    {
+      "slug": "questao-enfermagem-sae",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-formacao-palavras-siglas",
+      "grade": "fail",
+      "score": 50,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler",
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ concept_map.items[2].detail: concept_map.items[2].detail cita a letra da alternativa — gabarito só no logic_flow.",
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-lei-7498-regulamenta",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-morfológica-teste",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-oracao-subordinada-final",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-premium-access-urgencias-rcp-pediatrica-15-2",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-admtec-imunizacao-adolescente-cartao-perdido",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[5].value: golden_rule.rows[5].value cita a letra da alternativa — gabarito só no logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-admtec-oxigenoterapia-dispositivos",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-admtec-puncao-venosa-cateteres",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-admtec-saude-mulher-parto-humanizado-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-choque-eletrico",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-convulsao-crise",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-fratura-exposta-imobilizacao",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-rcp-30-2-aha2020",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-agirh-imunizacao-incorreta-antibiotico",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 1,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_polarity_risk"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_polarity_risk @ danger_zone.items[0].correct: danger_zone.items[0]: comando negativo + card que descreve conduta correta — molde renderiza \"ERRO #N\" sobre conteúdo válido."
+      ]
+    },
+    {
+      "slug": "questao-premium-amauc-imunizacao-bcg-dose-a4",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-amauc-urgencias-cincinnati-avc",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-cme-metodos-incorreta",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-cuidados-protocolo-ms-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-imunizacao-vf-cadeia-frio",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-processo-de-enfermagem-documentacao",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-rcp-vf-adulto",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-trauma-imobilizacao-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-trauma-queimadura",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-triagem-etiquetas",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-cme-manuseio-esteril",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-cuidados-documentacao-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-cuidados-exceto-preparo-medicamentos",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-imunizacao-rede-frio-temperatura",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-perioperatoria-pre-operatorio",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-colocacao-posicao-piloto",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-denotacao-tirinha-drogas",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-pontuacao-vocativo-rita",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-puncao-infiltracao-flebite",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-avancasp-sv-pa-incorreta-divergente",
+      "grade": "fail",
+      "score": 0,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 4,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_polarity_risk"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_polarity_risk @ danger_zone.items[0].correct: danger_zone.items[0]: comando negativo + card que descreve conduta correta — molde renderiza \"ERRO #N\" sobre conteúdo válido."
+      ]
+    },
+    {
+      "slug": "questao-premium-avancasp-vias-sublingual-exceto",
+      "grade": "fail",
+      "score": 0,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 5,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 4,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 3
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler",
+        "pedagogy_polarity_risk"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[1].exam_hint: golden_rule.rows[1].exam_hint cita a letra da alternativa — gabarito só no logic_flow.",
+        "[fail] pedagogy_polarity_risk @ danger_zone.items[0].correct: danger_zone.items[0]: comando negativo + card que descreve conduta correta — molde renderiza \"ERRO #N\" sobre conteúdo válido.",
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cesgranrio-seguranca-paciente-identificacao-vf",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cetrede-vias-injetaveis-incorreta",
+      "grade": "fail",
+      "score": 0,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 4,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 2
+      },
+      "blocking_codes": [
+        "pedagogy_polarity_risk"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_polarity_risk @ danger_zone.items[0].correct: danger_zone.items[0]: comando negativo + card que descreve conduta correta — molde renderiza \"ERRO #N\" sobre conteúdo válido.",
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-cev-saude-crianca-desidratacao-vf",
+      "grade": "fail",
+      "score": 50,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler",
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value cita a letra da alternativa — gabarito só no logic_flow.",
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-cev-urca-puncao-exceto-med-endovenosa",
+      "grade": "fail",
+      "score": 0,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 5,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[1].label: golden_rule.rows[1].label cita a letra da alternativa — gabarito só no logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-consulpam-urgencias-pcr-pediatrica-conceito",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-consulpam-vias-absorcao-oral",
+      "grade": "fail",
+      "score": 57,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 3
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[4].exam_hint: golden_rule.rows[4].exam_hint cita a letra da alternativa — gabarito só no logic_flow.",
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-consulplan-perioperatoria-srpa-monitorizacao",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-consulplan-saude-crianca-puericultura-vf",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-consulplan-sondagem-nasogastrica-nex",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 7 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-copese-processo-de-enfermagem-etapas-sae",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cotec-cuidados-heparina-alto-risco",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-coleta-amostras-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-cuidados-incorreta-nove-certos",
+      "grade": "fail",
+      "score": 50,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 2,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_polarity_risk"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_polarity_risk @ danger_zone.items[0].correct: danger_zone.items[0]: comando negativo + card que descreve conduta correta — molde renderiza \"ERRO #N\" sobre conteúdo válido."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-curativos-lpp-prevencao-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-dengue-zoonoses-vetor-vf",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-dt-mescladas-prevencao-vf",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-enfermagem-trabalho-nr32-vf",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-feridas-queimaduras-scq-vf",
+      "grade": "fail",
+      "score": 63,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 2
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[8].value: golden_rule.rows[8].value cita a letra da alternativa — gabarito só no logic_flow.",
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 9 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-historia-enfermagem-nightingale",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[1].value: golden_rule.rows[1].value abre com veredito V/F — julgamento pertence ao logic_flow.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-imunizacao-intervalos-vf",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ danger_zone.items: danger_zone.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-ists-risco-transmissao-vf",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-poliomielite-pfa-vf",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-portugues-pontuacao-tirinha-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-portugues-sinonimos-vf-cometa-3i-atlas",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-precaucao-contato-higiene-vf",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-processamento-artigos-prelimpeza-vf",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-puncao-troca-equipos-intervalos",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-adolescente-gravidez-vf",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-aleitamento-vf",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-desenvolvimento-vf",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-triagem-neonatal-vf",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-mulher-planejamento-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-mulher-pre-natal-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-triglicerideos-soro",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-tuberculose-baar-aerossol-vf",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 7 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-vias-im-vf",
+      "grade": "warn",
+      "score": 88,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 2
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 8 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-cpcon-virais-sarampo-polio-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-cpcon-visita-domiciliar-acs-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-decorp-imunizacao-triplice-viral-via",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[5].value: golden_rule.rows[5].value cita a letra da alternativa — gabarito só no logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-consoada-descer",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-iniludivel",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-epice-portugues-sujeito-eliptico",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-facet-cuidados-vigilancia-reacao-adversa",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-facet-puncao-cvc-hub-a4",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-saude-mental-raps",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-engasgo-sinal",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-generico-glasgow-domains",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fcm-dtrans-dengue-grupos-abc",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fepese-anatomia-anterior-ventral",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fepese-anotacao-enfermagem-sae",
+      "grade": "fail",
+      "score": 57,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 3
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[5].label: golden_rule.rows[5].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-fepese-cuidados-administracao-medicamentos",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 11 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-fepese-cuidados-insulina-alto-risco",
+      "grade": "warn",
+      "score": 88,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 2
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 7 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-fepese-infeccoes-biosseguranca-iras-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fepese-mobilizacao-posicionamento-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fepese-saude-mental-risco-suicida-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fepese-sv-interpretacao-valores",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fepese-urgencias-choque-hipovolemico",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fgv-respiratorio-peak-flow-zonas-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fgv-saude-mental-tabagismo-pnct",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-premium-funatec-ictericia-obstrucao-biliar",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-funcamp-farmacodinamica-farmacocinetica-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-funcern-saude-crianca-generico-hub",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fundatec-agudas-deterioracao-sinais-vf",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-fundatec-meningococica-3meses",
+      "grade": "warn",
+      "score": 82,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 3
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-fundatec-perioperatoria-anestesia-regional-exceto",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-fundatec-saude-mental-agitacao-exceto",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-funpar-puncao-tecnica-periferica",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-furb-perioperatoria-isc-classificacao",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-gama-puncao-scalp-jelco-calibre",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-iacp-cme-autoclave-parametros",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ concept_map.items[1].detail: concept_map.items[1].detail cita a letra da alternativa — gabarito só no logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-ibade-saude-mental-caps-acolhimento",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ibgp-agentes-etiologicos-todas-bacterias",
+      "grade": "fail",
+      "score": 0,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 6,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-calculo-equivalencias-gotas",
+      "grade": "fail",
+      "score": 0,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 4,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[4].label: golden_rule.rows[4].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 10 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-calculo-ml-gotas-microgotas",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-centro-cirurgico-cirurgia-segura-vf",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-cme-areas-esterilizacao-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-cme-indicador-quimico-classe1",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-cme-preparo-presecagem",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-cme-rt-funcao-certo",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=certo_errado): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-fc-radial-ce",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=certo_errado): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-feridas-queimaduras-grau-vf",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[5].value: golden_rule.rows[5].value cita a letra da alternativa — gabarito só no logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-fisiologia-homeostase-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-omeprazol-ev-ulcera",
+      "grade": "fail",
+      "score": 38,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 2,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 2
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[1].exam_hint: golden_rule.rows[1].exam_hint cita a letra da alternativa — gabarito só no logic_flow.",
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 7 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-perioperatoria-aldrete-srpa",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-respiratorio-espacador-inalador-conceito",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-saude-crianca-neonatologia-vf",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_vf_verdict_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_vf_verdict_spoiler @ golden_rule.rows[2].value: golden_rule.rows[2].value abre com veredito V/F — julgamento pertence ao logic_flow.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-saude-mental-reducao-danos",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idecan-srpa-curativo-cpd-ce",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=certo_errado): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-trauma-cervical-jaw-thrust",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-premium-idecan-violencia-atencao-basica",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idib-cme-funcao-iaas",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-idib-umirim-itu-cateter-exceto",
+      "grade": "fail",
+      "score": 0,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 6,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.footer_rule: golden_rule.footer_rule cita a letra da alternativa — gabarito só no logic_flow.",
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-igeduc-saude-mental-tecnico-aps",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-instituto-aocp-saude-mental-esquizofrenia-psicofarmacos",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-lab-respiratorio-cronico-4-moldes",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-ms-sarmento-saude-mental-srt-reforma",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-ms-saude-mulher-puerperio-consulta",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-selecon-urgencias-bt16-esmagamento",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-sus-lei-8080-cesgranrio",
+      "grade": "fail",
+      "score": 57,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 3
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[8].label: golden_rule.rows[8].label cita a letra da alternativa — gabarito só no logic_flow.",
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 8 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-urgencias-rcp",
+      "grade": "fail",
+      "score": 69,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer.",
+        "[warn] pedagogy_danger_orphan @ danger_zone.items: danger_zone (family=vf): nenhum label referencia letra — cards não mapeiam os distratores."
+      ]
+    },
+    {
+      "slug": "questao-premium-vunesp-dtrans-raiva-profilaxia",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-colocacao-trilho",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-crase-funil",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-crase-lacunas-ioga",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-denotacao-literal-figurado",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 7 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-procedimentos-diversos-assepsia-vf",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-respiratorio-crise-asmatica-exceto",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 1,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ golden_rule.rows[4].value: golden_rule.rows[4].value cita a letra da alternativa — gabarito só no logic_flow."
+      ]
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mental-biopsicossocial",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mental-depressao-epidemiologia",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mulher-mamografia",
+      "grade": "warn",
+      "score": 94,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 1
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[warn] pedagogy_density @ golden_rule.rows: golden_rule.rows tem 7 linhas (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mulher-papanicolau",
+      "grade": "pass",
+      "score": 100,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": []
+    },
+    {
+      "slug": "questao-premium-vunesp-via-subcutanea",
+      "grade": "fail",
+      "score": 7,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 3,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 3
+      },
+      "blocking_codes": [
+        "pedagogy_letter_spoiler"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_letter_spoiler @ concept_map.items[3].detail: concept_map.items[3].detail cita a letra da alternativa — gabarito só no logic_flow.",
+        "[warn] pedagogy_density @ concept_map.items: concept_map.items tem 7 itens (máx. recomendado 6) — o aluno não lê tudo."
+      ]
+    },
+    {
+      "slug": "questao-preview-logic-flow-tap",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-seguridade-social",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-tecnico-enfermagem-lei-7498",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": true
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-teste-pipeline",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "pass_indeterminate",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    },
+    {
+      "slug": "questao-teste-simples",
+      "grade": "fail",
+      "score": 75,
+      "signature_counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "blocking_codes": [
+        "pedagogy_logic_missing_gabarito"
+      ],
+      "blind_reader": {
+        "verdict": "skip_no_concept_map",
+        "gabarito": "indeterminavel",
+        "evidence_literal": false
+      },
+      "reasons": [
+        "[fail] pedagogy_logic_missing_gabarito @ logic_flow.steps: logic_flow não localiza o gabarito nos steps — único slide onde a resposta pode aparecer."
+      ]
+    }
+  ],
+  "pedagogical_summary": {
+    "total": 165,
+    "fail": 50,
+    "warn": 19,
+    "pass": 96,
+    "avg_score": 86.6
+  }
+}

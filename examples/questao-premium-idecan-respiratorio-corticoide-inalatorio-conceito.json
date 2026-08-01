@@ -23,7 +23,11 @@
         "title": "Protocolo Clínico e Diretrizes Terapêuticas — Asma",
         "year": 2021,
         "url": "https://www.gov.br/saude/",
-        "covers": ["corticoide inalatório", "broncodilatador de curta ação", "controle da asma"]
+        "covers": [
+          "corticoide inalatório",
+          "broncodilatador de curta ação",
+          "controle da asma"
+        ]
       }
     ]
   },
@@ -80,11 +84,6 @@
           "label": "Broncodilatador SABA",
           "detail": "Resgate na crise ou sintomas — não substitui o controlador.",
           "icon": "Wind"
-        },
-        {
-          "label": "GABARITO — letra B",
-          "detail": "Manter corticoide + técnica inalatória com espaçador quando indicado.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Controlador diário; resgate sob demanda — funções distintas"
@@ -98,11 +97,26 @@
       },
       "content": "ASMA — CONTROLADOR × RESGATE",
       "rows": [
-        { "label": "Corticoide inalatório", "value": "Controlador — uso regular", "badge": "ok" },
-        { "label": "Beta-2 de curta ação", "value": "Resgate na crise ou sintomas", "badge": "ok" },
-        { "label": "Suspender controlador", "value": "Erro — piora inflamação de base", "badge": "warn" },
-        { "label": "Espaçador valvulado", "value": "Melhora deposição pulmonar do spray", "badge": "ok" },
-        { "label": "Gabarito", "value": "Letra B", "emphasis": "success", "badge": "hot" }
+        {
+          "label": "Corticoide inalatório",
+          "value": "Controlador — uso regular",
+          "badge": "ok"
+        },
+        {
+          "label": "Beta-2 de curta ação",
+          "value": "Resgate na crise ou sintomas",
+          "badge": "ok"
+        },
+        {
+          "label": "Suspender controlador",
+          "value": "Erro — piora inflamação de base",
+          "badge": "warn"
+        },
+        {
+          "label": "Espaçador valvulado",
+          "value": "Melhora deposição pulmonar do spray",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "SABA repetido sem controlador = asma mal controlada"
     },

@@ -114,7 +114,7 @@
         },
         {
           "label": "Vantagens reais",
-          "detail": "Não invasiva, fácil de aplicar, absorção rápida, custo operacional geralmente baixo — A, B, D e E são plausíveis.",
+          "detail": "Não invasiva, fácil de aplicar, absorção rápida, custo operacional geralmente baixo.",
           "icon": "CheckCircle"
         },
         {
@@ -150,7 +150,6 @@
         "Testar D: método não invasivo → vantagem real → eliminar.",
         "Testar E: rapidez na absorção → vantagem real (mucosa vascularizada) → eliminar.",
         "Testar C: número elevado de medicamentos disponíveis → FALSO como vantagem — via sublingual tem arsenal farmacológico restrito.",
-        "Confirmar: só C não é vantagem — é limitação da via.",
         "Marcar C.",
         "Fixação: em EXCETO de sublingual, desconfie de afirmativas que exageram a variedade de fármacos."
       ],

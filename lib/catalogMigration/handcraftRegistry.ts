@@ -11,6 +11,8 @@ export type QualityLayers = {
   L1: boolean;
   L2: boolean;
   L2b: boolean;
+  /** F4 — nota pedagógica. Opcional: pacotes promovidos antes do gate não têm o campo. */
+  L2c?: boolean;
   L3: boolean;
   L4: boolean;
   L5: boolean;
@@ -142,7 +144,7 @@ export function defaultQuality(): PacoteQuality {
     technical_ready_at: null,
     production_ready_at: null,
     monitoring_until: null,
-    layers: { L1: false, L2: false, L2b: false, L3: false, L4: false, L5: false, L6: false },
+    layers: { L1: false, L2: false, L2b: false, L2c: false, L3: false, L4: false, L5: false, L6: false },
     continuous: defaultContinuousQuality(),
     slo: {
       open_p0: 0,

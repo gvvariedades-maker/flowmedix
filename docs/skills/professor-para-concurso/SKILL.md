@@ -113,7 +113,7 @@ Antes de publicar, valide **todos** os itens:
 - [ ] Um técnico de ensino médio entende sem googlar?
 - [ ] Há pelo menos uma “pegadinha de banca” nomeada?
 - [ ] Há transferência para questão similar?
-- [ ] Removi redundância e spoiler desnecessário antes do raciocínio?
+- [ ] Removi redundância e spoiler antes do raciocínio — inclusive no `detail` e no `footer_rule`, não só no `label`?
 - [ ] Se algo estiver desatualizado: gabarito da prova + nota de atualização?
 - [ ] **(NeuroSlides)** Todas as letras erradas têm card na `danger_zone` + 1 item de transferência?
 - [ ] **(NeuroSlides)** Textos cabem em card (≤110 chars alvo) sem duas ideias no mesmo step?
@@ -200,6 +200,17 @@ Quando o comentário virar **estudo reverso** (handcraft golden-v1), as 6 camada
 - **`logic_flow`** = camadas 2→3→4 em `steps` com `reveal_mode: "tap"`; elimine cada distrator com motivo **específico** (nunca "está no gabarito"). Último step = frase de transferência (*"Em similares: …"*).
 - **`golden_rule`** = só a camada 5 (decore/mnemônico 100% PT); **nunca** row "Gabarito letra X"; ensina **conduta**, não a letra daquela prova.
 - **`danger_zone`** = camada 6: **1 item por cada letra errada** + **≥1 item de transferência** separado ("Em outra banca trocam X por Y"). Cada `correct` único.
+
+### Anti-spoiler — verificado por gate (F4)
+
+"Sem spoiler" deixou de ser recomendação: a camada **L2c** de `audit:subtopico-quality` barra `production_ready` do pacote quando um slug reprova. Escreva sabendo que dois leitores conferem:
+
+- **Regex** (`detectUnifiedPedagogy`) em `label`, `detail`, `correct`, `footer_rule` e `exam_hint` — não só no `label`. Reprovam: citar a letra (*"C erra ao dizer…"*, *"letra C"*), abrir com veredito (*"FALSA."*, *"VERDADEIRA:"*) e rotular *"Afirmativa II —"* em vez de nomear o conceito.
+- **Leitor cego** (LLM): recebe **só** o `concept_map`, sem enunciado nem alternativas, e tenta apontar o gabarito. Se acerta citando um trecho literal do seu texto, o slide reprova. Pega a paráfrase que a regex não vê.
+
+Teste mental antes de fechar o `concept_map`: *um colega que leia só esta tela consegue marcar a alternativa?* Se sim, o conteúdo pertence ao `logic_flow`.
+
+Vale para `golden_rule` também: enquadramento e decore vêm antes do raciocínio no player.
 
 ### Densidade e eixo mental
 

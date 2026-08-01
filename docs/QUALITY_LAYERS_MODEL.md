@@ -33,6 +33,7 @@ Cada entrada em `handcraft-registry.json` → `pacotes` estende o status legado 
     "L1": false,
     "L2": false,
     "L2b": false,
+    "L2c": false,
     "L3": false,
     "L4": false,
     "L5": false,
@@ -138,6 +139,26 @@ Artefato: `artifacts/numeric-factcheck-audit.json`
 
 Política `exam_vs_current`: se documentado em `content_review`, mismatch vira **warn** (slides ensinam gabarito da prova).
 
+### L2c — Nota pedagógica (anti-spoiler)
+
+Verifica que o material **ensina** em vez de entregar a resposta antes do raciocínio. Dois leitores independentes, agregados em `lib/catalogMigration/pedagogyGate.ts`:
+
+| Sinal | Código | O que barra |
+|-------|--------|-------------|
+| Detector unificado | `detectUnifiedPedagogy` | letra citada, veredito V/F abrindo o texto, polaridade invertida em EXCETO, `logic_flow` sem gabarito |
+| Portão do leitor cego | `runBlindReaderOnQuestion` | acerto do gabarito lendo **só** o `concept_map`, com citação literal (`fail_leak`) |
+
+Severidade vem de `gradePedagogicalNote` (`fail` barra; `warn` não). O detector cobre `label`, `detail`, `correct`, `footer_rule` e `exam_hint` — a versão anterior, por subtópico, lia só `label`.
+
+O leitor cego bloqueia **por evidência**: sem `artifacts/blind-reader-gate.json` a camada segue pelo detector e registra a lacuna no `detail`. Para exigir cobertura total, `--require-blind-reader`.
+
+Comandos: `npm run audit:blind-reader -- --catalog` · `npm run audit:subtopico-quality -- --subtopico="..."`  
+Escape hatch operacional: `--skip-pedagogy` (espelho de `--skip-l3`).
+
+Calibração que autoriza o vínculo (20 âncoras, agreement 1.0, zero falso positivo): `data/catalog-migration/blind-reader-calibration-judgments.json`.
+
+**Fora de `technical_ready`:** L2c barra `production_ready`, não a definição técnica de L1+L2+L2b.
+
 ### L3 — Regressão visual por molde
 
 Snapshots Playwright dos 4 slides por `pedagogical_branch` (desktop + mobile).
@@ -214,6 +235,7 @@ Ordem interna:
 1. `audit:handcraft-dod` (L1)
 2. `audit:slug-alignment --strict` (L2)
 3. `audit:numeric-factcheck` (L2b)
+3b. nota pedagógica — detector unificado + leitor cego (L2c)
 4. `anchor_second_review` em todos os lotes (L6)
 5. L3 — `artifacts/visual-mold-regression/summary.json`
 6. `audit:content-health` (L5)
@@ -230,6 +252,7 @@ Lógica: [`lib/catalogMigration/shipGate.ts`](../lib/catalogMigration/shipGate.t
 Subtópico **vendável** quando `audit:subtopico-quality --promote` com `canPromoteToSell` OK:
 
 - [ ] `technical_ready: true` (L1–L2b)
+- [ ] `pedagogia: pass` (L2c — nenhum slug com nota `fail`)
 - [ ] `anchor_reviews: all_pass` (L6)
 - [ ] `visual_molds: pass` (L3, branches do pacote)
 - [ ] `content_health: pass` (L5 — P0=0, P1≤2, taxa < 2% ou warming)

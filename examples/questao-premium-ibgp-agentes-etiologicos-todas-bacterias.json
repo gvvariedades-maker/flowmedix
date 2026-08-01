@@ -24,17 +24,37 @@
         "title": "Guia de Vigilância Epidemiológica — agentes etiológicos",
         "year": 2022,
         "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/guia-de-vigilancia-epidemiologica",
-        "covers": ["bacterioses", "viroses", "classificação etiológica"]
+        "covers": [
+          "bacterioses",
+          "viroses",
+          "classificação etiológica"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Assinale a alternativa em que TODAS as doenças citadas são causadas por bactérias.",
     "options": [
-      { "id": "A", "text": "Cólera, febre maculosa, difteria, tétano e tuberculose.", "is_correct": true },
-      { "id": "B", "text": "Dengue, febre tifoide, malária e doença de Lyme.", "is_correct": false },
-      { "id": "C", "text": "Coqueluche, hanseníase, varicela, gonorreia e herpes.", "is_correct": false },
-      { "id": "D", "text": "Sífilis, tracoma, raiva humana, resfriado comum e condiloma.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "Cólera, febre maculosa, difteria, tétano e tuberculose.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Dengue, febre tifoide, malária e doença de Lyme.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Coqueluche, hanseníase, varicela, gonorreia e herpes.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Sífilis, tracoma, raiva humana, resfriado comum e condiloma.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
@@ -52,7 +72,7 @@
           "icon": "Target"
         },
         {
-          "label": "Bactérias — gabarito A",
+          "label": "Bactérias.",
           "detail": "Cólera (Vibrio), febre maculosa (Rickettsia), difteria, tétano e TB — todas bacterianas, mesmo com vetor no caso da maculosa.",
           "icon": "Bug"
         },
@@ -88,13 +108,41 @@
       },
       "content": "BACTÉRIA · VÍRUS · PROTOZOÁRIO",
       "rows": [
-        { "label": "Letra A — cólera a TB", "value": "100% bacterianas", "badge": "hot", "emphasis": "success" },
-        { "label": "Letra B — dengue", "value": "Vírus → elimina B", "badge": "warn", "emphasis": "alert" },
-        { "label": "Letra B — malária", "value": "Plasmodium → elimina B", "badge": "warn", "emphasis": "alert" },
-        { "label": "Letra C — varicela/herpes", "value": "Vírus → elimina C", "badge": "warn", "emphasis": "alert" },
-        { "label": "Letra D — raiva/resfriado/HPV", "value": "Vírus → elimina D", "badge": "warn", "emphasis": "alert" },
-        { "label": "Febre maculosa", "value": "Rickettsia = bactéria (fica em A)", "badge": "ok" },
-        { "label": "Gabarito", "value": "Alternativa A", "badge": "hot", "emphasis": "success" }
+        {
+          "label": "Letra A — cólera a TB",
+          "value": "100% bacterianas",
+          "badge": "hot",
+          "emphasis": "success"
+        },
+        {
+          "label": "Letra B — dengue",
+          "value": "Vírus → elimina B",
+          "badge": "warn",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Letra B — malária",
+          "value": "Plasmodium → elimina B",
+          "badge": "warn",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Letra C — varicela/herpes",
+          "value": "Vírus → elimina C",
+          "badge": "warn",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Letra D — raiva/resfriado/HPV",
+          "value": "Vírus → elimina D",
+          "badge": "warn",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Febre maculosa",
+          "value": "Rickettsia = bactéria (fica em A)",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "Vetor carrapato não transforma maculosa em virose"
     },

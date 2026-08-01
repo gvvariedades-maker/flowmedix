@@ -25,7 +25,12 @@
         "title": "Sinônimos, antônimos e polissemia",
         "year": 2024,
         "url": "https://www.academia.org.br/",
-        "covers": ["sinonímia", "antonímia", "prefixo", "pergunta-teste"]
+        "covers": [
+          "sinonímia",
+          "antonímia",
+          "prefixo",
+          "pergunta-teste"
+        ]
       },
       {
         "id": "bandeira-consoada-1945",
@@ -33,7 +38,11 @@
         "issuer": "Manuel Bandeira",
         "title": "Consoada (1945; ed. de referência)",
         "year": 1990,
-        "covers": ["poesia modernista", "iniludível", "Indesejada das gentes"]
+        "covers": [
+          "poesia modernista",
+          "iniludível",
+          "Indesejada das gentes"
+        ]
       },
       {
         "id": "portugues-caderno-tec-3913867",
@@ -41,7 +50,12 @@
         "issuer": "AVANT — caderno interno Língua Portuguesa",
         "title": "Caderno PT — tec 3913867 (EDUCA PB Ag Adm Pref Cajazeiras 2026 · iniludível)",
         "year": 2026,
-        "covers": ["enunciado", "alternativas", "gabarito B", "prefixo in-"]
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito B",
+          "prefixo in-"
+        ]
       }
     ]
   },
@@ -50,10 +64,26 @@
     "text_fragment": "<p><strong>Consoada</strong> — Manuel Bandeira (trecho)</p><p>Quando a Indesejada das gentes chegar<br/>(Não sei se dura ou caroável),<br/>talvez eu tenha medo.<br/>Talvez sorria, ou diga:<br/>— Alô, <strong>iniludível</strong>!<br/>O meu dia foi bom, pode a noite descer.</p>",
     "figure_policy": "transcribed",
     "options": [
-      { "id": "A", "text": "Enganável.", "is_correct": false },
-      { "id": "B", "text": "Incontornável.", "is_correct": true },
-      { "id": "C", "text": "Duvidoso.", "is_correct": false },
-      { "id": "D", "text": "Incerto.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "Enganável.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Incontornável.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Duvidoso.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Incerto.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
@@ -88,7 +118,7 @@
         },
         {
           "label": "Incontornável",
-          "detail": "Impossível contornar — gabarito B.",
+          "detail": "Impossível contornar.",
           "icon": "Shield"
         },
         {
@@ -130,11 +160,26 @@
       },
       "content": "IN- NEGA A BASE",
       "rows": [
-        { "label": "Iniludível", "value": "Não se pode iludir/evitar." },
-        { "label": "Iludível", "value": "Base: que se pode iludir." },
-        { "label": "Sinônimo", "value": "Incontornável, inevitável." },
-        { "label": "Armadilha", "value": "Enganável — oposto, não sinônimo." },
-        { "label": "Nesta questão", "value": "B — Incontornável." }
+        {
+          "label": "Iniludível",
+          "value": "Não se pode iludir/evitar."
+        },
+        {
+          "label": "Iludível",
+          "value": "Base: que se pode iludir."
+        },
+        {
+          "label": "Sinônimo",
+          "value": "Incontornável, inevitável."
+        },
+        {
+          "label": "Armadilha",
+          "value": "Enganável — oposto, não sinônimo."
+        },
+        {
+          "label": "Nesta questão",
+          "value": "B — Incontornável."
+        }
       ],
       "footer_rule": "Prefixo antes do dicionário solto."
     },

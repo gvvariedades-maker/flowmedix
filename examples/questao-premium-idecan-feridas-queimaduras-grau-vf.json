@@ -23,25 +23,53 @@
         "title": "Cuidados com pacientes queimados — classificação e atendimento inicial",
         "year": 2016,
         "url": "https://www.gov.br/saude/",
-        "covers": ["graus de queimadura", "regra dos 9", "resfriamento", "profilaxia antitetânica"]
+        "covers": [
+          "graus de queimadura",
+          "regra dos 9",
+          "resfriamento",
+          "profilaxia antitetânica"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre queimaduras e classificação de profundidade, analise as afirmativas.\n\nI - Queimaduras de primeiro grau acometem apenas a epiderme, com eritema e dor, sem bolhas.\nII - Queimaduras de segundo grau superficial apresentam bolhas e dor intensa, com acometimento da derme papilar.\nIII - Queimaduras de terceiro grau são sempre muito dolorosas porque todas as camadas da pele permanecem íntegras e sensíveis.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "Queimaduras — profundidade na prova",
-      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Feridas e Queimaduras"
+      },
       "items": [
         {
           "label": "1º grau",
@@ -67,11 +95,6 @@
           "label": "Pegadinha da III",
           "detail": "A banca afirma que 3º grau é sempre muito doloroso — falso: destruição nervosa pode reduzir a dor.",
           "icon": "AlertTriangle"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra B: I e II, apenas — III invalida C, D e E.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Profundidade ≠ dor sempre crescente — 3º grau pode ser indolor"
@@ -79,7 +102,10 @@
     {
       "type": "golden_rule",
       "slide_title": "Referência — profundidade e SCQ",
-      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Feridas e Queimaduras"
+      },
       "content": "QUEIMADURA — DECORE PARA A PROVA",
       "rows": [
         {
@@ -121,7 +147,10 @@
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Feridas e Queimaduras"
+      },
       "steps": [
         "Garantir segurança da cena — afastar fonte térmica antes de classificar profundidade.",
         "Resfriar com água corrente morna por 15–20 min (conduta de referência, não gelo direto).",
@@ -139,7 +168,10 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Feridas e Queimaduras"
+      },
       "content": "PEGADINHAS — QUEIMADURAS (LETRAS DESTA PROVA)",
       "items": [
         {

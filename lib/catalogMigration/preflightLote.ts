@@ -6,6 +6,13 @@ import { resolve } from 'node:path';
 
 import { auditQuestaoReadiness } from '@/lib/catalogMigration/auditQuestaoReadiness';
 import { loteQuestionsDir } from '@/lib/catalogMigration/paths';
+import {
+  detectUnifiedPedagogy,
+  emptySignatureCounts,
+  tallySignatures,
+  type PedagogySignatureCounts,
+  type UnifiedPedagogyFinding,
+} from '@/lib/catalogMigration/unifiedPedagogyDetector';
 import { lintGoldenContent } from '@/lib/goldenContentStandard';
 import { QuestaoCompletaSchema } from '@/lib/validations';
 
@@ -16,6 +23,8 @@ export type PreflightSlugResult = {
   golden_ok: boolean;
   readiness_ok: boolean;
   issues: string[];
+  /** Modo report (`--report-pedagogy`): não entra em `ok`. */
+  pedagogy_findings?: UnifiedPedagogyFinding[];
 };
 
 export type PreflightReport = {
@@ -28,13 +37,26 @@ export type PreflightReport = {
   passed: number;
   failed: number;
   slugs: PreflightSlugResult[];
+  /** Contagem das 8 assinaturas do detector unificado — só com `reportPedagogy`. */
+  pedagogy_report?: {
+    slugs_with_findings: number;
+    total_findings: number;
+    counts: PedagogySignatureCounts;
+  };
 };
 
 export function runLotePreflight(
   lote: string,
-  options?: { strict?: boolean; strictV2Pedagogy?: boolean; strictV3Pedagogy?: boolean },
+  options?: {
+    strict?: boolean;
+    strictV2Pedagogy?: boolean;
+    strictV3Pedagogy?: boolean;
+    /** Roda o detector unificado em modo report (não altera `ok` nem exit code). */
+    reportPedagogy?: boolean;
+  },
 ): PreflightReport {
   const strict = options?.strict !== false;
+  const reportPedagogy = options?.reportPedagogy === true;
   const strictV3Pedagogy = options?.strictV3Pedagogy === true;
   const strictV2Pedagogy = strictV3Pedagogy || options?.strictV2Pedagogy === true;
   const questionsDir = loteQuestionsDir(lote);
@@ -51,6 +73,9 @@ export function runLotePreflight(
   }
 
   const slugs: PreflightSlugResult[] = [];
+  const pedagogyCounts = emptySignatureCounts();
+  let slugsWithFindings = 0;
+  let totalFindings = 0;
 
   for (const file of files) {
     const slug = file.replace(/\.json$/, '');
@@ -83,6 +108,14 @@ export function runLotePreflight(
       }
     }
 
+    let pedagogyFindings: UnifiedPedagogyFinding[] | undefined;
+    if (reportPedagogy) {
+      pedagogyFindings = detectUnifiedPedagogy(raw as never);
+      tallySignatures(pedagogyFindings, pedagogyCounts);
+      totalFindings += pedagogyFindings.length;
+      if (pedagogyFindings.length > 0) slugsWithFindings += 1;
+    }
+
     slugs.push({
       slug,
       ok: zodOk && goldenOk && readinessOk,
@@ -90,6 +123,7 @@ export function runLotePreflight(
       golden_ok: goldenOk,
       readiness_ok: readinessOk,
       issues,
+      pedagogy_findings: pedagogyFindings,
     });
   }
 
@@ -104,5 +138,12 @@ export function runLotePreflight(
     passed,
     failed: slugs.length - passed,
     slugs,
+    pedagogy_report: reportPedagogy
+      ? {
+          slugs_with_findings: slugsWithFindings,
+          total_findings: totalFindings,
+          counts: pedagogyCounts,
+        }
+      : undefined,
   };
 }

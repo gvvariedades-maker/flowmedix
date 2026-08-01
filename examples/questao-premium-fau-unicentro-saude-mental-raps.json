@@ -23,7 +23,11 @@
         "title": "Portaria GM/MS nº 3.088/2011 — Rede de Atenção Psicossocial (RAPS)",
         "year": 2011,
         "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt3088_23_12_2011_rep.html",
-        "covers": ["RAPS", "CAPS", "componentes da rede"]
+        "covers": [
+          "RAPS",
+          "CAPS",
+          "componentes da rede"
+        ]
       }
     ]
   },
@@ -86,11 +90,6 @@
           "label": "Pegadinha",
           "detail": "Distratores inventam siglas com 'exclusão', 'contenção' ou 'hospitalização' — oposto ao modelo substitutivo.",
           "icon": "AlertTriangle"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra E — Rede de Atenção Psicossocial (RAPS).",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "RAPS = nome oficial da rede de saúde mental no SUS"
@@ -120,12 +119,6 @@
           "label": "Base normativa",
           "value": "Portaria GM/MS 3.088/2011",
           "badge": "ok"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra E",
-          "emphasis": "success",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Não confunda com siglas inventadas (REPS, RCMs, REHosp)"

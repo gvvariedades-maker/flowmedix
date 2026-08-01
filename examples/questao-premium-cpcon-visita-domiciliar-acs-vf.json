@@ -86,23 +86,19 @@
       "rows": [
         {
           "label": "I",
-          "value": "Verdadeira: a visita permite conhecer contexto, habitação e relações familiares."
+          "value": "A visita permite conhecer contexto, habitação e relações familiares."
         },
         {
           "label": "II",
-          "value": "Falsa: a visita domiciliar exige planejamento prévio."
+          "value": "A visita domiciliar exige planejamento prévio."
         },
         {
           "label": "III",
-          "value": "Verdadeira: o ACS faz o elo entre comunidade e unidade de saúde."
+          "value": "O ACS faz o elo entre comunidade e unidade de saúde."
         },
         {
           "label": "IV",
-          "value": "Falsa: o ACS deve seguir a identificação e o padrão institucional."
-        },
-        {
-          "label": "Gabarito",
-          "value": "I e III apenas."
+          "value": "O ACS deve seguir a identificação e o padrão institucional."
         }
       ],
       "footer_rule": "A visita domiciliar é uma ação organizada, não improvisada."

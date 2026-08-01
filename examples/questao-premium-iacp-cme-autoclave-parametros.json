@@ -22,18 +22,44 @@
         "issuer": "Anvisa",
         "title": "RDC 15/2012 — esterilização por vapor saturado",
         "year": 2012,
-        "covers": ["autoclave", "121 °C", "pressão", "tempo de exposição", "esporos"]
+        "covers": [
+          "autoclave",
+          "121 °C",
+          "pressão",
+          "tempo de exposição",
+          "esporos"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "A esterilização em autoclave utiliza vapor saturado sob pressão para destruir todas as formas de vida microbiana, incluindo esporos bacterianos. Para garantir a eficácia do processo, os parâmetros padrão de temperatura, pressão e tempo de exposição mais utilizados são:",
     "options": [
-      { "id": "A", "text": "121°C, 1 atm, 15 minutos.", "is_correct": false },
-      { "id": "B", "text": "134°C, 2 atm, 3 minutos.", "is_correct": false },
-      { "id": "C", "text": "121°C, 1,5 atm, 20 minutos.", "is_correct": true },
-      { "id": "D", "text": "100°C, 1 atm, 30 minutos.", "is_correct": false },
-      { "id": "E", "text": "134°C, 1 atm, 10 minutos.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "121°C, 1 atm, 15 minutos.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "134°C, 2 atm, 3 minutos.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "121°C, 1,5 atm, 20 minutos.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "100°C, 1 atm, 30 minutos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "134°C, 1 atm, 10 minutos.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
@@ -59,11 +85,6 @@
           "label": "Pressão + tempo",
           "detail": "Nesta prova: 1,5 atm e 20 min de exposição — triplete do gabarito.",
           "icon": "Clock"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra C — 121 °C, 1,5 atm, 20 minutos.",
-          "icon": "Target"
         }
       ],
       "footer_rule": "Autoclave = temperatura + pressão + tempo (não marque só um parâmetro)"
@@ -77,12 +98,32 @@
       },
       "content": "CICLO GRAVIDADE",
       "rows": [
-        { "label": "Agente", "value": "Vapor saturado sob pressão", "badge": "ok" },
-        { "label": "Temperatura", "value": "121 °C", "badge": "hot", "emphasis": "highlight" },
-        { "label": "Pressão", "value": "1,5 atm (esta prova)", "badge": "hot" },
-        { "label": "Tempo", "value": "20 min (esta prova)", "badge": "hot" },
-        { "label": "Pegadinha A", "value": "15 min aparece em outras provas — aqui não é o gabarito", "badge": "warn" },
-        { "label": "Gabarito", "value": "Letra C", "badge": "hot" }
+        {
+          "label": "Agente",
+          "value": "Vapor saturado sob pressão",
+          "badge": "ok"
+        },
+        {
+          "label": "Temperatura",
+          "value": "121 °C",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Pressão",
+          "value": "1,5 atm (esta prova)",
+          "badge": "hot"
+        },
+        {
+          "label": "Tempo",
+          "value": "20 min (esta prova)",
+          "badge": "hot"
+        },
+        {
+          "label": "Pegadinha A",
+          "value": "15 min aparece em outras provas — aqui não é o gabarito",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "Confira os três parâmetros juntos — banca mistura ciclos pré-vácuo e gravidade"
     },

@@ -22,7 +22,11 @@
         "issuer": "COFEN",
         "title": "Resolução COFEN nº 358/2009 — Sistematização da Assistência de Enfermagem",
         "year": 2009,
-        "covers": ["anotação de enfermagem", "registro", "SAE"]
+        "covers": [
+          "anotação de enfermagem",
+          "registro",
+          "SAE"
+        ]
       }
     ]
   },
@@ -73,7 +77,7 @@
         },
         {
           "label": "Privativo do enfermeiro — diagnóstico e evolução",
-          "detail": "Diagnóstico de enfermagem e evolução ou avaliação de enfermagem são privativos do enfermeiro (Lei 7.498/86, Art. 11 · Res. COFEN 358/2009). Núcleo da letra B.",
+          "detail": "Diagnóstico de enfermagem e evolução ou avaliação de enfermagem são privativos do enfermeiro (Lei 7.498/86, Art. 11 · Res. COFEN 358/2009).",
           "icon": "UserCheck"
         },
         {

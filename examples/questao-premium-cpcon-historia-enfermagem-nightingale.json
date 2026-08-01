@@ -23,50 +23,111 @@
         "title": "Código de Ética + marcos históricos da enfermagem",
         "year": 2024,
         "url": "https://www.cofen.gov.br/",
-        "covers": ["Florence Nightingale", "Código de Ética COFEN", "enfermagem brasileira pré-SUS"]
+        "covers": [
+          "Florence Nightingale",
+          "Código de Ética COFEN",
+          "enfermagem brasileira pré-SUS"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre a história da enfermagem, analise as afirmativas.\n\nI - Florence Nightingale é considerada a fundadora da enfermagem moderna por sistematizar cuidados, higiene e observação clínica durante a Guerra da Crimeia.\nII - O Código de Ética dos Profissionais de Enfermagem no Brasil é norma do COFEN e orienta a conduta ética da categoria.\nIII - A enfermagem brasileira surgiu apenas após a criação do Sistema Único de Saúde (SUS), em 1988.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "História da enfermagem — marcos da prova",
-      "meta": { "topico": "Enfermagem", "subtopico": "História da Enfermagem" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "História da Enfermagem"
+      },
       "items": [
-        { "label": "Nightingale", "detail": "Guerra da Crimeia: higiene, ventilação, registro de mortalidade — base da enfermagem científica.", "icon": "Landmark" },
-        { "label": "COFEN", "detail": "Conselho Federal de Enfermagem — fiscaliza exercício profissional e normas éticas no Brasil.", "icon": "Scale" },
-        { "label": "Código de Ética", "detail": "Norma do COFEN que define deveres, direitos e vedações da categoria.", "icon": "BookOpen" },
-        { "label": "Enfermagem no Brasil", "detail": "Raízes anteriores ao SUS — escolas, leis e regulamentação vêm do século XX.", "icon": "History" }
+        {
+          "label": "Nightingale",
+          "detail": "Guerra da Crimeia: higiene, ventilação, registro de mortalidade — base da enfermagem científica.",
+          "icon": "Landmark"
+        },
+        {
+          "label": "COFEN",
+          "detail": "Conselho Federal de Enfermagem — fiscaliza exercício profissional e normas éticas no Brasil.",
+          "icon": "Scale"
+        },
+        {
+          "label": "Código de Ética",
+          "detail": "Norma do COFEN que define deveres, direitos e vedações da categoria.",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Enfermagem no Brasil",
+          "detail": "Raízes anteriores ao SUS — escolas, leis e regulamentação vêm do século XX.",
+          "icon": "History"
+        }
       ],
       "footer_rule": "História na prova = Nightingale + marco regulatório/ético — não confundir com criação do SUS"
     },
     {
       "type": "golden_rule",
       "slide_title": "Referência — história e ética",
-      "meta": { "topico": "Enfermagem", "subtopico": "História da Enfermagem" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "História da Enfermagem"
+      },
       "content": "MARCOS PARA DECORAR",
       "rows": [
-        { "label": "I — Nightingale", "value": "Verdadeira: fundadora da enfermagem moderna", "badge": "ok" },
-        { "label": "II — Código de Ética", "value": "Verdadeira: norma do COFEN", "badge": "ok" },
-        { "label": "III — só após SUS", "value": "Falsa: enfermagem brasileira é anterior a 1988", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas", "emphasis": "highlight", "badge": "hot" }
+        {
+          "label": "I — Nightingale",
+          "value": "Fundadora da enfermagem moderna",
+          "badge": "ok"
+        },
+        {
+          "label": "II — Código de Ética",
+          "value": "Verdadeira: norma do COFEN",
+          "badge": "ok"
+        },
+        {
+          "label": "III — só após SUS",
+          "value": "Enfermagem brasileira é anterior a 1988",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "A banca adora ancorar ética no COFEN e história em Nightingale"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "História da Enfermagem" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "História da Enfermagem"
+      },
       "steps": [
         "Comando V/F: julgar I, II e III separadamente.",
         "I: Nightingale e Crimeia → marco clássico → verdadeira.",
@@ -80,12 +141,27 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "História da Enfermagem" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "História da Enfermagem"
+      },
       "content": "PEGADINHAS — HISTÓRIA DA ENFERMAGEM",
       "items": [
-        { "label": "Marcar III por falar em SUS", "detail": "O SUS é marco do sistema de saúde, não o surgimento da enfermagem.", "correct": "Enfermagem brasileira tem história regulatória anterior a 1988." },
-        { "label": "Confundir COFEN com COREN", "detail": "COFEN normatiza nacionalmente; COREN fiscaliza no estado.", "correct": "Código de Ética é norma do COFEN." },
-        { "label": "Atribuir tudo a Nightingale", "detail": "Ela é fundadora moderna, mas a prova também cobra ética e legislação brasileira.", "correct": "II complementa I no gabarito B." }
+        {
+          "label": "Marcar III por falar em SUS",
+          "detail": "O SUS é marco do sistema de saúde, não o surgimento da enfermagem.",
+          "correct": "Enfermagem brasileira tem história regulatória anterior a 1988."
+        },
+        {
+          "label": "Confundir COFEN com COREN",
+          "detail": "COFEN normatiza nacionalmente; COREN fiscaliza no estado.",
+          "correct": "Código de Ética é norma do COFEN."
+        },
+        {
+          "label": "Atribuir tudo a Nightingale",
+          "detail": "Ela é fundadora moderna, mas a prova também cobra ética e legislação brasileira.",
+          "correct": "II complementa I no gabarito B."
+        }
       ],
       "footer_rule": "História + ética: dois eixos clássicos de banca"
     }

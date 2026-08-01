@@ -11,43 +11,100 @@
   "question_data": {
     "instruction": "Sobre infecção relacionada à assistência à saúde (IRAS) e biossegurança, analise as afirmativas.\n\nI - A cadeia de infecção inclui agente, reservatório, porta de saída, modo de transmissão, porta de entrada e hospedeiro suscetível.\nII - Equipamentos de Proteção Individual (EPI) devem ser selecionados conforme o risco da exposição prevista no procedimento.\nIII - Descartar perfurocortante em lixo comum, desde que a agulha esteja recoberta pela capa protetora, é conduta aceitável em serviços de saúde.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "Cadeia de infecção",
-      "meta": { "topico": "Enfermagem", "subtopico": "Infecções no Contexto da Biossegurança" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções no Contexto da Biossegurança"
+      },
       "items": [
-        { "label": "Agente", "detail": "Microrganismo capaz de causar doença.", "icon": "Bug" },
-        { "label": "Transmissão", "detail": "Contato, gotículas, aerossóis, parenteral, vertical.", "icon": "Share2" },
-        { "label": "EPI", "detail": "Selecionado pelo risco — não é um kit único para tudo.", "icon": "HardHat" },
-        { "label": "Perfurocortante", "detail": "Descarte em coletor rígido e específico — nunca lixo comum.", "icon": "Syringe" }
+        {
+          "label": "Agente",
+          "detail": "Microrganismo capaz de causar doença.",
+          "icon": "Bug"
+        },
+        {
+          "label": "Transmissão",
+          "detail": "Contato, gotículas, aerossóis, parenteral, vertical.",
+          "icon": "Share2"
+        },
+        {
+          "label": "EPI",
+          "detail": "Selecionado pelo risco — não é um kit único para tudo.",
+          "icon": "HardHat"
+        },
+        {
+          "label": "Perfurocortante",
+          "detail": "Descarte em coletor rígido e específico — nunca lixo comum.",
+          "icon": "Syringe"
+        }
       ],
       "footer_rule": "Quebrar um elo da cadeia = prevenir IRAS"
     },
     {
       "type": "golden_rule",
       "slide_title": "Biossegurança — regras",
-      "meta": { "topico": "Enfermagem", "subtopico": "Infecções no Contexto da Biossegurança" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções no Contexto da Biossegurança"
+      },
       "content": "6 ELOS",
       "rows": [
-        { "label": "Cadeia de infecção", "value": "6 componentes — I correta", "badge": "ok" },
-        { "label": "EPI por risco", "value": "Seleção conforme exposição", "badge": "ok" },
-        { "label": "Agulha no lixo comum", "value": "Falso — coletor de perfurocortante", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+        {
+          "label": "Cadeia de infecção",
+          "value": "6 componentes — I correta",
+          "badge": "ok"
+        },
+        {
+          "label": "EPI por risco",
+          "value": "Seleção conforme exposição",
+          "badge": "ok"
+        },
+        {
+          "label": "Agulha no lixo comum",
+          "value": "Coletor de perfurocortante",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "III viola descarte de perfurocortante — nunca aceitável"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Infecções no Contexto da Biossegurança" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções no Contexto da Biossegurança"
+      },
       "steps": [
         "I: componentes da cadeia → verdadeira.",
         "II: EPI conforme risco → verdadeira.",
@@ -60,12 +117,27 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Infecções no Contexto da Biossegurança" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções no Contexto da Biossegurança"
+      },
       "content": "PEGADINHAS — IRAS",
       "items": [
-        { "label": "Recapear e jogar fora", "detail": "Risco de perfuração — descarte em coletor específico.", "correct": "Perfurocortante em recipiente rígido e identificado." },
-        { "label": "EPI único para tudo", "detail": "II exige seleção pelo risco.", "correct": "EPI conforme procedimento e exposição." },
-        { "label": "Ignorar hospedeiro suscetível", "detail": "Cadeia inclui suscetibilidade do paciente.", "correct": "I lista os 6 elos corretamente." }
+        {
+          "label": "Recapear e jogar fora",
+          "detail": "Risco de perfuração — descarte em coletor específico.",
+          "correct": "Perfurocortante em recipiente rígido e identificado."
+        },
+        {
+          "label": "EPI único para tudo",
+          "detail": "II exige seleção pelo risco.",
+          "correct": "EPI conforme procedimento e exposição."
+        },
+        {
+          "label": "Ignorar hospedeiro suscetível",
+          "detail": "Cadeia inclui suscetibilidade do paciente.",
+          "correct": "I lista os 6 elos corretamente."
+        }
       ],
       "footer_rule": "Descarte de agulha é um dos itens mais cobrados em biossegurança"
     }

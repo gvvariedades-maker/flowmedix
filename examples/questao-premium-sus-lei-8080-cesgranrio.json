@@ -23,7 +23,9 @@
         "title": "Lei nº 8.080/1990 — Dispõe sobre as condições para a promoção, proteção e recuperação da saúde",
         "year": 1990,
         "url": "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm",
-        "covers": ["Art. 4º composição do SUS"]
+        "covers": [
+          "Art. 4º composição do SUS"
+        ]
       }
     ]
   },
@@ -88,7 +90,7 @@
         },
         {
           "label": "Administração direta e indireta",
-          "detail": "Direta: ministérios, secretarias. Indireta: autarquias, fundações, empresas públicas. Pegadinha clássica: citar só a administração direta (letra D).",
+          "detail": "Direta: ministérios, secretarias. Indireta: autarquias, fundações, empresas públicas. Pegadinha clássica: citar só a administração direta.",
           "icon": "Building2"
         },
         {

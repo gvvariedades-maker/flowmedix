@@ -125,7 +125,7 @@
         },
         {
           "label": "Volume e dose",
-          "detail": "SC admite volumes pequenos e limitados por sítio — não doses grandes. D erra ao falar em doses grandes + efeito rápido.",
+          "detail": "SC admite volumes pequenos e limitados por sítio — não doses grandes.",
           "icon": "Droplets"
         },
         {
@@ -156,7 +156,6 @@
         "Testar C: alta viscosidade → não é critério clássico de indicação da SC → eliminar.",
         "Testar D: doses grandes + efeito rápido → SC usa volumes pequenos e efeito gradual → eliminar.",
         "Testar E: alta pressão → SC não pressuriza como IV em bomba; técnica é lenta e controlada → eliminar.",
-        "Confirmar: só B descreve corretamente a indicação farmacológica da via subcutânea.",
         "Marcar B.",
         "Fixação: em questões de vias, cruze velocidade desejada com IV/IM/SC antes de olhar volume ou técnica."
       ],

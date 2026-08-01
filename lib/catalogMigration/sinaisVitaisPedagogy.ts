@@ -4,10 +4,21 @@
  * @see data/catalog-migration/sinais-vitais-pedagogy-errors.json
  */
 import { extractNumericClaims } from '@/lib/catalogMigration/numericFactcheck';
+import {
+  ELIMINATION_STEP_RE,
+  EXCETO_COMMAND_RE,
+  GABARITO_CONCEPT_LABEL_RE,
+  GOLDEN_GABARITO_ROW_RE,
+  GOLDEN_VF_VERDICT_RE,
+  ROMAN_JUDGMENT_STEP_RE,
+  findSlide,
+  itemTexts,
+  significantWords,
+  slidesOf,
+  type SlideLike,
+} from '@/lib/catalogMigration/unifiedPedagogyDetector';
 import type { ContentSource, GoldenContentLintIssue } from '@/lib/goldenContentStandard';
 import { SINAIS_VITAIS_ADULTO } from '@/lib/guidelines/sinaisVitais';
-
-type SlideLike = Record<string, unknown>;
 
 /** Códigos que bloqueiam [READY] mesmo sem --strict-v2-pedagogy. */
 export const VITALS_ALWAYS_ERROR_CODES = new Set([
@@ -120,43 +131,6 @@ const PEGADINHA_ITEM_RE =
 const GENERIC_SV_ONLY_RE =
   /^(sinais\s+vitais|verifica[cç][aã]o\s+de\s+sinais|aferi[cç][aã]o\s+é\s+importante|medir\s+press[aã]o)/i;
 
-const GABARITO_CONCEPT_LABEL_RE = /combina[cç][aã]o\s+correta|gabarito\s+letra|^gabarito$/i;
-
-const GOLDEN_VF_VERDICT_RE =
-  /\b(falsa|verdadeira|falso|verdadeiro)\s*:|:\s*(v|f)\b|\b(v|f)\s*—|→\s*letra\s+[a-e]/i;
-
-const GOLDEN_GABARITO_ROW_RE = /gabarito|combina[cç][aã]o\s+correta/i;
-
-const ELIMINATION_STEP_RE =
-  /\beliminar\b|\btestar\s+[a-e]\b|\bjulgar\s+[a-e]\b|\bletra\s+[a-e]\b.*→|^\s*[a-e]\s*[-–—].*\beliminar\b/i;
-
-const ROMAN_JUDGMENT_STEP_RE = /\bjulgar\s+(i|ii|iii|iv)\b|\b(i|ii|iii|iv)\s*[-–—].*→\s*(v|f)\b/i;
-
-function slidesOf(payload: {
-  reverse_study_slides?: SlideLike[];
-  study_slides?: SlideLike[];
-}): SlideLike[] {
-  const s = payload.reverse_study_slides ?? payload.study_slides;
-  return Array.isArray(s) ? s : [];
-}
-
-function findSlide(slides: SlideLike[], type: string): SlideLike | undefined {
-  return slides.find((s) => s.type === type);
-}
-
-function itemTexts(items: unknown): { label: string; detail: string }[] {
-  if (!Array.isArray(items)) return [];
-  return items
-    .filter((i) => i && typeof i === 'object')
-    .map((i) => {
-      const row = i as Record<string, unknown>;
-      return {
-        label: String(row.label ?? ''),
-        detail: String(row.detail ?? ''),
-      };
-    });
-}
-
 function matchErrorPatterns(text: string): Set<string> {
   const found = new Set<string>();
   for (const p of VITALS_ERROR_PATTERNS) {
@@ -210,16 +184,6 @@ export function lintVitalsConceptReproError(
   }
 
   return [];
-}
-
-function significantWords(text: string): string[] {
-  return text
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s]/g, ' ')
-    .split(/\s+/)
-    .filter((w) => w.length >= 5);
 }
 
 /** concept_map: enquadramento da prova + item que nomeia erro reproduzível. */
@@ -573,9 +537,6 @@ export function lintVitalsContentReview(
 
   return issues;
 }
-
-const EXCETO_COMMAND_RE =
-  /\bexceto\b|incorret[oa]\s+afirmar|é\s+incorret[oa]|n[aã]o\s+corresponde\s+(a\s+)?(verdade|realidade)/i;
 
 const DISTRACTOR_CORRECT_RE =
   /afirmativa correta|conduta correta|verdadeir|orienta[cç][aã]o correta|eliminar|n[aã]o [ée] o (exceto|gabarito)|sinal v[aá]lido|n[aã]o [ée] o incorret/i;

@@ -11,43 +11,101 @@
   "question_data": {
     "instruction": "Sobre doenças virais de interesse epidemiológico, analise as afirmativas.\n\nI - O sarampo é doença de notificação compulsória imediata, de alta transmissibilidade, prevenível por vacina.\nII - A influenza sazonal compartilha transmissão principal por gotículas e contato, com vacina anual recomendada para grupos prioritários.\nIII - A poliomielite foi erradicada no Brasil, portanto não há mais necessidade de manter cobertura vacinal contra poliovírus em crianças.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "Vírus — vigilância e vacina",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)"
+      },
       "items": [
-        { "label": "Sarampo", "detail": "Notificação compulsória imediata — surtos exigem bloqueio vacinal.", "icon": "AlertTriangle" },
-        { "label": "Influenza", "detail": "Gotículas/contato — vacina anual para grupos de risco.", "icon": "Wind" },
-        { "label": "Poliomielite", "detail": "Eliminação no país não dispensa vacinação — risco de reintrodução.", "icon": "Syringe" },
-        { "label": "Covid-19", "detail": "Vigilância e medidas de prevenção conforme protocolos vigentes.", "icon": "Biohazard" }
+        {
+          "label": "Sarampo",
+          "detail": "Notificação compulsória imediata — surtos exigem bloqueio vacinal.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Influenza",
+          "detail": "Gotículas/contato — vacina anual para grupos de risco.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Poliomielite",
+          "detail": "Eliminação no país não dispensa vacinação — risco de reintrodução.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Covid-19",
+          "detail": "Vigilância e medidas de prevenção conforme protocolos vigentes.",
+          "icon": "Biohazard"
+        }
       ],
       "footer_rule": "Eliminação ≠ abandonar vacina"
     },
     {
       "type": "golden_rule",
       "slide_title": "Viral — tabela de prova",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)"
+      },
       "content": "NOTIFICA",
       "rows": [
-        { "label": "Sarampo", "value": "Notificação imediata + vacina", "badge": "hot", "emphasis": "highlight" },
-        { "label": "Influenza", "value": "Gotículas + vacina anual prioritária", "badge": "ok" },
-        { "label": "Pólio sem vacinar", "value": "Falso — manter cobertura vacinal", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+        {
+          "label": "Sarampo",
+          "value": "Notificação imediata + vacina",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Influenza",
+          "value": "Gotículas + vacina anual prioritária",
+          "badge": "ok"
+        },
+        {
+          "label": "Pólio sem vacinar",
+          "value": "Manter cobertura vacinal",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "III confunde erradicação/eliminacao com fim da vacinação"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)"
+      },
       "steps": [
         "I: sarampo — notificação e vacina → verdadeira.",
         "II: influenza — transmissão e vacina → verdadeira.",
@@ -60,12 +118,27 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)"
+      },
       "content": "PEGADINHAS — VIRAIS",
       "items": [
-        { "label": "Parar vacina da pólio", "detail": "Risco de reintrodução do vírus.", "correct": "Manter esquema vacinal mesmo após eliminação." },
-        { "label": "Sarampo leve — não notificar", "detail": "I reforça notificação compulsória imediata.", "correct": "Sarampo sempre notifica e bloqueia com vacina." },
-        { "label": "Influenza só por aerossol", "detail": "Gotículas e contato são vias principais cobradas.", "correct": "II descreve transmissão corretamente." }
+        {
+          "label": "Parar vacina da pólio",
+          "detail": "Risco de reintrodução do vírus.",
+          "correct": "Manter esquema vacinal mesmo após eliminação."
+        },
+        {
+          "label": "Sarampo leve — não notificar",
+          "detail": "I reforça notificação compulsória imediata.",
+          "correct": "Sarampo sempre notifica e bloqueia com vacina."
+        },
+        {
+          "label": "Influenza só por aerossol",
+          "detail": "Gotículas e contato são vias principais cobradas.",
+          "correct": "II descreve transmissão corretamente."
+        }
       ],
       "footer_rule": "Em epidemiologia viral: notificar + vacinar"
     }

@@ -24,7 +24,12 @@
         "title": "Manual de Normas e Procedimentos para Vacinação — intervalos entre vacinas",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["grace period 4 dias", "SCR×FA menor 2 anos", "VPC13×VPP23", "oral×injetável"]
+        "covers": [
+          "grace period 4 dias",
+          "SCR×FA menor 2 anos",
+          "VPC13×VPP23",
+          "oral×injetável"
+        ]
       }
     ]
   },
@@ -68,22 +73,22 @@
       },
       "items": [
         {
-          "label": "Afirmativa I — grace period (4 dias)",
-          "detail": "FALSA. Dose aplicada até 4 dias ANTES da idade mínima ou do intervalo mínimo é considerada VÁLIDA no PNI — não registrar erro nem repetir por esse motivo.",
+          "label": "Grace period (4 dias)",
+          "detail": "Dose aplicada até 4 dias ANTES da idade mínima ou do intervalo mínimo é considerada VÁLIDA no PNI — não registrar erro nem repetir por esse motivo.",
           "icon": "Clock"
         },
         {
-          "label": "Afirmativa II — SCR/SCRV × febre amarela",
-          "detail": "VERDADEIRA. Menor de 2 anos, em rotina: tríplice viral ou tetraviral NÃO simultâneo com FA — intervalo mínimo de 30 dias (exceção clássica de prova).",
+          "label": "SCR/SCRV × febre amarela",
+          "detail": "Menor de 2 anos, em rotina: tríplice viral ou tetraviral NÃO simultâneo com FA — intervalo mínimo de 30 dias (exceção clássica de prova).",
           "icon": "Baby"
         },
         {
-          "label": "Afirmativa III — VPC13 e VPP23",
-          "detail": "VERDADEIRA. Não simultâneas; mínimo 8 semanas; VPC13 primeiro. Se VPP23 veio antes, aguardar 1 ano para VPC13 — texto alinhado ao Manual MS.",
+          "label": "VPC13 e VPP23",
+          "detail": "Não simultâneas; mínimo 8 semanas; VPC13 primeiro. Se VPP23 veio antes, aguardar 1 ano para VPC13 — texto alinhado ao Manual MS.",
           "icon": "Shield"
         },
         {
-          "label": "Afirmativa IV — oral × injetável",
+          "label": "Oral × injetável",
           "detail": "Rotavírus/VOP podem ser no mesmo dia ou em qualquer intervalo com vacinas injetáveis — regra do manual.",
           "icon": "Pill"
         },

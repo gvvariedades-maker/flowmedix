@@ -26,7 +26,11 @@
         "issuer": "ANVISA",
         "title": "Bula profissional — omeprazol sódico injetável (diluição e via de administração)",
         "year": 2024,
-        "covers": ["diluição em soro fisiológico ou glicose", "infusão endovenosa", "não administrar em bólus rápido"]
+        "covers": [
+          "diluição em soro fisiológico ou glicose",
+          "infusão endovenosa",
+          "não administrar em bólus rápido"
+        ]
       },
       {
         "id": "potter-perry-ibp",
@@ -34,7 +38,11 @@
         "issuer": "Elsevier / referência técnica de enfermagem",
         "title": "Fundamentos de Enfermagem — IBP e cuidados na administração de medicamentos",
         "year": 2020,
-        "covers": ["inibidor da bomba de prótons", "monitorização clínica", "interações"]
+        "covers": [
+          "inibidor da bomba de prótons",
+          "monitorização clínica",
+          "interações"
+        ]
       }
     ]
   },
@@ -104,7 +112,7 @@
         },
         {
           "label": "Padrão IDECAN",
-          "detail": "Mistura erro de diluição (A), via impossível (C), interação invertida (D) e bólus rápido (E).",
+          "detail": "Banca mistura diluição exótica, via improvisada, interação inventada e bólus rápido — só uma descreve diluição + tempo + monitorização.",
           "icon": "GitCompare"
         }
       ],
@@ -181,7 +189,6 @@
         "Testar D: antiácido de alumínio intensifica omeprazol — ERRADA: banca inverte interação; antiácido não potencializa IBP assim.",
         "Testar E: bólus rápido porque pH estabiliza independente do tempo — ERRADA: infusão controlada; rapidez não é conduta correta.",
         "Eliminar A, C, D e E por erro de técnica, via ou farmacologia.",
-        "Confirmar: só B descreve monitorização e ajuste racional da infusão.",
         "Marcar B.",
         "Fixação: IBP EV → diluir certo, infundir no tempo, monitorar pH/resposta."
       ],

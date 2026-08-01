@@ -39,7 +39,12 @@
         "issuer": "R7 Internacional",
         "title": "Viajante espacial: por que cometa 3I/Atlas continua a intrigar? (06 nov. 2025)",
         "year": 2025,
-        "covers": ["jornalismo científico", "cometa", "objeto celeste", "corpo celeste"]
+        "covers": [
+          "jornalismo científico",
+          "cometa",
+          "objeto celeste",
+          "corpo celeste"
+        ]
       },
       {
         "id": "portugues-caderno-tec-3912840",
@@ -47,7 +52,12 @@
         "issuer": "AVANT — caderno interno Língua Portuguesa",
         "title": "Caderno PT — tec 3912840 (CPCON UEPB ACS Pref Cuité 2026 · VF sinonímia cometa)",
         "year": 2026,
-        "covers": ["enunciado", "alternativas", "gabarito B", "VF sinonímia lexical"]
+        "covers": [
+          "enunciado",
+          "alternativas",
+          "gabarito B",
+          "VF sinonímia lexical"
+        ]
       }
     ]
   },
@@ -56,11 +66,31 @@
     "text_fragment": "Texto I — Viajante espacial: por que cometa 3I/Atlas continua a intrigar? (R7 Internacional, 06 nov. 2025 — adaptado)\n\nDesde julho, o cometa 3I/Atlas despertou curiosidade entre astrônomos. Detectado no Chile, o corpo celeste destacou-se por características diferentes das de um cometa comum, sugerindo formação em outro sistema estelar. Com velocidade e trajetória que indicam que não está preso à gravidade do Sol, o 3I/Atlas é apenas o terceiro objeto interestelar já confirmado pela ciência.\n\nInstrumentos detectaram aceleração inesperada; o cometa mudou de cor e aumentou o brilho. Astrônomos estimam que seja bilhões de anos mais antigo que o Sistema Solar. A Nasa garantiu que não representa ameaça à Terra.",
     "figure_policy": "transcribed",
     "options": [
-      { "id": "A", "text": "III e IV, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "I, apenas.", "is_correct": false },
-      { "id": "D", "text": "II e IV, apenas.", "is_correct": false },
-      { "id": "E", "text": "I, II, III e IV.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "III e IV, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "II e IV, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "I, II, III e IV.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
@@ -137,11 +167,26 @@
       },
       "content": "VF — SINÔNIMOS NO TEXTO",
       "rows": [
-        { "label": "I", "value": "VERDADEIRA — coesão lexical (anti-repetição)." },
-        { "label": "II", "value": "VERDADEIRA — retomada sem mudar sentido." },
-        { "label": "III", "value": "FALSA — sinônimos não impedem objetividade." },
-        { "label": "IV", "value": "FALSA — jornalismo admite sinonímia." },
-        { "label": "Nesta questão", "value": "B — I e II." }
+        {
+          "label": "I",
+          "value": "Coesão lexical (anti-repetição)."
+        },
+        {
+          "label": "II",
+          "value": "Retomada sem mudar sentido."
+        },
+        {
+          "label": "III",
+          "value": "Sinônimos não impedem objetividade."
+        },
+        {
+          "label": "IV",
+          "value": "Jornalismo admite sinonímia."
+        },
+        {
+          "label": "Nesta questão",
+          "value": "B — I e II."
+        }
       ],
       "footer_rule": "Texto científico-jornalístico usa sinônimos para coesão."
     },

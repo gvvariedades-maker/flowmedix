@@ -23,7 +23,12 @@
         "issuer": "COFEN / referência técnica de enfermagem",
         "title": "Vias de administração de medicamentos",
         "year": 2017,
-        "covers": ["absorção IM x SC", "via intravenosa", "via subcutânea", "técnica IM"]
+        "covers": [
+          "absorção IM x SC",
+          "via intravenosa",
+          "via subcutânea",
+          "técnica IM"
+        ]
       },
       {
         "id": "potter-perry-farmacologia",
@@ -31,7 +36,11 @@
         "issuer": "Elsevier / referência técnica de enfermagem",
         "title": "Fundamentos de Enfermagem — Vias injetáveis",
         "year": 2020,
-        "covers": ["suprimento sanguíneo e absorção", "via intratecal", "medicamentos proteicos SC"]
+        "covers": [
+          "suprimento sanguíneo e absorção",
+          "via intratecal",
+          "medicamentos proteicos SC"
+        ]
       }
     ]
   },
@@ -81,7 +90,7 @@
         },
         {
           "label": "Trilho de absorção",
-          "detail": "IV imediata → IM rápida → SC lenta. Suprimento sanguíneo maior acelera a absorção — a banca inverte essa relação na letra A.",
+          "detail": "IV imediata → IM rápida → SC lenta. Suprimento sanguíneo maior acelera a absorção.",
           "icon": "TrendingUp"
         },
         {
@@ -106,7 +115,7 @@
         },
         {
           "label": "Padrão CETREDE neste tema",
-          "detail": "Mistura definição correta de vias (B–E) com inversão de vascularização e tempo de absorção (A).",
+          "detail": "Mistura definições corretas de vias com uma afirmativa que inverte vascularização × tempo de absorção.",
           "icon": "GitCompare"
         }
       ],
@@ -127,7 +136,6 @@
         "Testar D: SC para medicamentos proteicos destruídos no TGI se oral → afirmativa correta → eliminar.",
         "Testar E: IM exige agulha mais longa por atravessar pele e tecido adiposo → afirmativa correta → eliminar.",
         "Testar A: maior suprimento sanguíneo = mais tempo para absorver → FALSO — mais vascularização acelera a absorção.",
-        "Confirmar: só A inverte a relação sangue × velocidade de absorção.",
         "Marcar A.",
         "Fixação: em INCORRETA de vias, valide perfil de absorção antes de aceitar definições que parecem técnicas."
       ],

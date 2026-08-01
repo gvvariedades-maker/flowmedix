@@ -24,7 +24,12 @@
         "title": "RDC 7/2010 — Programa de Controle de Infecção Hospitalar",
         "year": 2010,
         "url": "https://www.gov.br/anvisa/pt-br/assuntos/servicosdesaude/servicos",
-        "covers": ["IRAS", "cateter vesical", "sistema fechado de drenagem", "prevenção de ITU"]
+        "covers": [
+          "IRAS",
+          "cateter vesical",
+          "sistema fechado de drenagem",
+          "prevenção de ITU"
+        ]
       }
     ]
   },
@@ -74,32 +79,32 @@
         },
         {
           "label": "Comando EXCETO",
-          "detail": "EXCETO: quatro alternativas descrevem cuidados da cadeia fechada — uma quebra a barreira (gabarito letra D).",
+          "detail": "EXCETO: quatro alternativas descrevem cuidados da cadeia fechada — uma quebra a barreira.",
           "icon": "AlertTriangle"
         },
         {
           "label": "Higiene do meato",
-          "detail": "Letra A: higiene rotineira do meato urinário — conduta correta de prevenção, não é o EXCETO.",
+          "detail": "Higiene rotineira do meato urinário — conduta correta de prevenção na cadeia fechada.",
           "icon": "Droplets"
         },
         {
           "label": "Sistema fechado",
-          "detail": "Letra C: manter drenagem fechada e estéril — evita entrada de microrganismos no trato urinário.",
+          "detail": "Manter drenagem fechada e estéril — evita entrada de microrganismos no trato urinário.",
           "icon": "Lock"
         },
         {
           "label": "Fluxo desobstruído",
-          "detail": "Letra B: fluxo de urina livre — sem torção do tubo nem obstrução que favoreça refluxo.",
+          "detail": "Fluxo de urina livre — sem torção do tubo nem obstrução que favoreça refluxo.",
           "icon": "Activity"
         },
         {
           "label": "Bolsa abaixo da bexiga",
-          "detail": "Letra E: coletor abaixo do nível da bexiga — gravidade favorece drenagem sem refluxo.",
+          "detail": "Coletor abaixo do nível da bexiga — gravidade favorece drenagem sem refluxo.",
           "icon": "ArrowDown"
         },
         {
           "label": "EXCETO — pinçar na remoção",
-          "detail": "Letra D: fechar o cateter antes de retirar interrompe o sistema fechado e não previne ITU — é a exceção.",
+          "detail": "Fechar o cateter antes de retirar interrompe o sistema fechado e não previne ITU.",
           "icon": "XCircle"
         }
       ],
@@ -145,12 +150,6 @@
           "label": "Letra E",
           "value": "Bolsa coletora abaixo da bexiga — conduta correta",
           "badge": "ok"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra D",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
       "footer_rule": "No EXCETO de ITU: A, B, C e E são cuidados corretos — sobra quem quebra a cadeia fechada"

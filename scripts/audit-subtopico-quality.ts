@@ -6,6 +6,11 @@
  *   npm run audit:subtopico-quality -- --subtopico="Enfermagem em Central de Material e Esterilização (CME)"
  *   npm run audit:subtopico-quality -- --subtopico="Processamento de Artigos e Produtos de Saúde" --promote
  *   npm run audit:subtopico-quality -- --subtopico="..." --promote --skip-l3  # emergência
+ *   npm run audit:subtopico-quality -- --subtopico="..." --require-blind-reader
+ *
+ * L2c (F4): nota pedagógica — detector unificado (`detectUnifiedPedagogy`) em todos os slugs
+ * do pacote, cruzado com o portão do leitor cego lido de `artifacts/blind-reader-gate.json`.
+ * Barra `production_ready`, não `technical_ready`. Escape hatch: `--skip-pedagogy`.
  */
 import { loadEnvConfig } from '@next/env';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, statSync } from 'node:fs';
@@ -38,6 +43,14 @@ import {
   lintNumericFactcheck,
   numericFactcheckHasErrors,
 } from '@/lib/catalogMigration/numericFactcheck';
+import { detectUnifiedPedagogy } from '@/lib/catalogMigration/unifiedPedagogyDetector';
+import {
+  blindReaderCoverage,
+  evaluatePedagogyLayer,
+  loadBlindReaderIndex,
+  type BlindReaderIndex,
+} from '@/lib/catalogMigration/pedagogyGate';
+import { gradePedagogicalNote, type PedagogicalNote } from '@/lib/neurocanvas/pedagogicalNote';
 import {
   buildShipBlockers,
   canPromoteToSell,
@@ -66,21 +79,47 @@ function runHandcraftDod(subtopico: string): LayerResult {
   };
 }
 
-function auditLoteSlugs(lote: string): { scanned: number; alignment_fail: number; numeric_fail: number } {
+type LoteAudit = {
+  scanned: number;
+  alignment_fail: number;
+  numeric_fail: number;
+  pedagogy_fail: number;
+  /** Notas por slug — insumo do L2c; ficam fora do relatório para não inchar o JSON. */
+  notes: PedagogicalNote[];
+};
+
+function auditLoteSlugs(lote: string, blindReader: BlindReaderIndex): LoteAudit {
   const dir = loteQuestionsDir(lote);
-  if (!existsSync(dir)) return { scanned: 0, alignment_fail: 0, numeric_fail: 0 };
+  const empty: LoteAudit = { scanned: 0, alignment_fail: 0, numeric_fail: 0, pedagogy_fail: 0, notes: [] };
+  if (!existsSync(dir)) return empty;
 
   let alignment_fail = 0;
   let numeric_fail = 0;
+  const notes: PedagogicalNote[] = [];
   const files = readdirSync(dir).filter((f) => f.endsWith('.json'));
 
   for (const file of files) {
     const payload = JSON.parse(readFileSync(resolve(dir, file), 'utf8'));
     if (slugAlignmentHasErrors(lintSlugAlignment(payload, { strict: true }))) alignment_fail += 1;
     if (numericFactcheckHasErrors(lintNumericFactcheck(payload))) numeric_fail += 1;
+
+    const slug = file.replace(/\.json$/, '');
+    notes.push(
+      gradePedagogicalNote({
+        slug,
+        findings: detectUnifiedPedagogy(payload),
+        blindReader: blindReader.get(slug),
+      }),
+    );
   }
 
-  return { scanned: files.length, alignment_fail, numeric_fail };
+  return {
+    scanned: files.length,
+    alignment_fail,
+    numeric_fail,
+    pedagogy_fail: notes.filter((n) => n.grade === 'fail').length,
+    notes,
+  };
 }
 
 function listPacoteLotes(pacotePrefix: string): string[] {
@@ -136,6 +175,8 @@ async function main(): Promise<void> {
   const promote = hasFlag('promote');
   const skipDod = hasFlag('skip-dod');
   const skipL3 = hasFlag('skip-l3');
+  const skipPedagogy = hasFlag('skip-pedagogy');
+  const requireBlindReader = hasFlag('require-blind-reader');
 
   const registry = loadHandcraftRegistry();
   const found = findPacoteBySubtopico(registry, subtopico);
@@ -155,7 +196,10 @@ async function main(): Promise<void> {
 
   const L1 = skipDod ? { pass: true, detail: 'skipped' } : runHandcraftDod(subtopico);
 
-  const loteStats = listPacoteLotes(prefix).map((lote) => ({ lote, ...auditLoteSlugs(lote) }));
+  const blindReaderIndex = loadBlindReaderIndex();
+  const loteAudits = listPacoteLotes(prefix).map((lote) => ({ lote, ...auditLoteSlugs(lote, blindReaderIndex) }));
+  // `notes` fica fora do relatório: é insumo do L2c, não linha de placar por lote.
+  const loteStats = loteAudits.map(({ notes: _notes, ...row }) => row);
 
   const alignmentTotal = loteStats.reduce((s, x) => s + x.alignment_fail, 0);
   const numericTotal = loteStats.reduce((s, x) => s + x.numeric_fail, 0);
@@ -173,6 +217,12 @@ async function main(): Promise<void> {
         ? 'numeric factcheck OK'
         : `${numericTotal} slug(s) com numeric fail`,
   };
+
+  const pedagogicalNotes = loteAudits.flatMap((x) => x.notes);
+  const L2c = evaluatePedagogyLayer(pedagogicalNotes, {
+    skip: skipPedagogy,
+    requireBlindReader,
+  });
 
   const L6 = checkAnchorReviews(prefix);
   const L3 = checkL3VisualMold(prefix, loadVisualMoldSummary(), { skipL3 });
@@ -192,7 +242,7 @@ async function main(): Promise<void> {
     detail: health.pass ? 'content health OK' : health.blockers.join('; '),
   };
 
-  const layers = { L1, L2, L2b, L3, L4, L5, L6 };
+  const layers = { L1, L2, L2b, L2c, L3, L4, L5, L6 };
   const technical_ready = isTechnicalReady(layers);
   const blockers = buildShipBlockers(layers, health.pass, health.blockers);
 
@@ -225,6 +275,16 @@ async function main(): Promise<void> {
     },
     layers,
     lote_stats: loteStats,
+    pedagogy: {
+      slugs: pedagogicalNotes.length,
+      fail: pedagogicalNotes.filter((n) => n.grade === 'fail').length,
+      warn: pedagogicalNotes.filter((n) => n.grade === 'warn').length,
+      blind_reader_covered: blindReaderCoverage(pedagogicalNotes),
+      require_blind_reader: requireBlindReader,
+      failing: pedagogicalNotes
+        .filter((n) => n.grade === 'fail')
+        .map((n) => ({ slug: n.slug, reasons: n.reasons })),
+    },
     content_health: health,
     blockers: shipGate.blockers,
   };
@@ -276,7 +336,7 @@ async function main(): Promise<void> {
 
   console.log(`[audit:subtopico-quality] subtopico="${subtopico}"`);
   console.log(`[audit:subtopico-quality] technical_ready=${technical_ready} production_ready=${production_ready}`);
-  for (const layer of ['L1', 'L2', 'L2b', 'L3', 'L5', 'L6'] as const) {
+  for (const layer of ['L1', 'L2', 'L2b', 'L2c', 'L3', 'L5', 'L6'] as const) {
     const res = layers[layer];
     console.log(`  ${layer}: ${res.pass ? 'PASS' : 'FAIL'} — ${res.detail}`);
   }

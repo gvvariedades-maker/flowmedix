@@ -22,7 +22,11 @@
         "issuer": "Ministério da Saúde",
         "title": "Prevenção do suicídio — cuidado em saúde mental na Atenção Primária",
         "year": 2023,
-        "covers": ["acolhimento", "avaliação de risco", "estigma"]
+        "covers": [
+          "acolhimento",
+          "avaliação de risco",
+          "estigma"
+        ]
       },
       {
         "id": "cofen-codigo-etica",
@@ -30,18 +34,41 @@
         "issuer": "COFEN",
         "title": "Código de Ética dos Profissionais de Enfermagem",
         "year": 2018,
-        "covers": ["direitos do usuário", "não restringir sem indicação"]
+        "covers": [
+          "direitos do usuário",
+          "não restringir sem indicação"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre cuidado em saúde mental na atenção básica, analise as afirmativas.\n\nI - O estigma em saúde mental pode reduzir a busca por tratamento e deve ser combatido pela equipe com linguagem respeitosa e acolhimento.\nII - Ideação suicida relatada pelo usuário exige acolhimento, avaliação de risco e encaminhamento conforme protocolo, não minimização do relato.\nIII - Restrição física e isolamento em cela são a primeira linha de cuidado para qualquer paciente com ansiedade leve em unidade básica.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
@@ -49,26 +76,29 @@
       "type": "concept_map",
       "slide_title": "Saúde mental na APS — mapa V/F",
       "chip_label": "V/F",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
       "items": [
         {
           "label": "I — Estigma",
-          "detail": "VERDADEIRA: estigma reduz busca por tratamento — equipe deve acolher com linguagem respeitosa.",
+          "detail": "Estigma reduz busca por tratamento — equipe deve acolher com linguagem respeitosa.",
           "icon": "Heart"
         },
         {
           "label": "II — Ideação suicida",
-          "detail": "VERDADEIRA: acolher, avaliar risco (plano, meio, intenção) e encaminhar — nunca minimizar o relato.",
+          "detail": "Acolher, avaliar risco (plano, meio, intenção) e encaminhar — nunca minimizar o relato.",
           "icon": "AlertTriangle"
         },
         {
           "label": "III — Restrição na ansiedade leve",
-          "detail": "FALSA: restrição física e isolamento não são primeira linha na UBS para ansiedade leve.",
+          "detail": "Restrição física e isolamento não são primeira linha na UBS para ansiedade leve.",
           "icon": "XCircle"
         },
         {
           "label": "Combinação",
-          "detail": "I=V, II=V, III=F → I e II, apenas → letra B.",
+          "detail": "I=V, II=V, III=F → I e II, apenas.",
           "icon": "CheckCircle"
         },
         {
@@ -83,18 +113,28 @@
       "type": "golden_rule",
       "slide_title": "Risco suicida — regra na APS",
       "chip_label": "REGRA DE OURO",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
       "content": "ACOLHER, AVALIAR RISCO, ENCAMINHAR",
       "rows": [
-        { "label": "I — Estigma", "value": "Combater com respeito e acolhimento", "badge": "ok" },
-        { "label": "II — Ideação suicida", "value": "Avaliar risco e encaminhar conforme protocolo", "badge": "ok" },
+        {
+          "label": "I — Estigma",
+          "value": "Combater com respeito e acolhimento",
+          "badge": "ok"
+        },
+        {
+          "label": "II — Ideação suicida",
+          "value": "Avaliar risco e encaminhar conforme protocolo",
+          "badge": "ok"
+        },
         {
           "label": "III — Restrição",
-          "value": "Falsa — não é primeira linha para ansiedade leve na UBS",
+          "value": "Não é primeira linha para ansiedade leve na UBS",
           "emphasis": "alert",
           "badge": "warn"
-        },
-        { "label": "Gabarito", "value": "I e II, apenas → letra B", "emphasis": "success", "badge": "hot" }
+        }
       ],
       "footer_rule": "Perguntar sobre suicídio não induz — permite cuidado"
     },
@@ -102,7 +142,10 @@
       "type": "logic_flow",
       "slide_title": "Como resolver — V/F saúde mental",
       "chip_label": "PASSO A PASSO",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
       "reveal_mode": "tap",
       "steps": [
         "Formato: afirmativas I–III + 'É CORRETO o que se afirma em'.",
@@ -120,7 +163,10 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
       "content": "PEGADINHAS — SAÚDE MENTAL NA APS",
       "items": [
         {

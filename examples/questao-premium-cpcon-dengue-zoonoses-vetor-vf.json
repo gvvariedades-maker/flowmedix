@@ -11,43 +11,101 @@
   "question_data": {
     "instruction": "Sobre dengue e zoonoses de interesse epidemiológico, analise as afirmativas.\n\nI - O vetor da dengue é o mosquito Aedes aegypti, que se reproduz preferencialmente em água parada limpa em recipientes domiciliares.\nII - A dengue é transmitida exclusivamente por via respiratória entre humanos, sem participação de vetor.\nIII - A eliminação de criadouros e a proteção individual contra picadas são medidas fundamentais de controle da dengue.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e III, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "II, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e III, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "II, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "Dengue — vetor e controle",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Parasitárias e Zoonoses" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Parasitárias e Zoonoses"
+      },
       "items": [
-        { "label": "Aedes aegypti", "detail": "Vetor da dengue — água limpa parada em recipientes.", "icon": "Bug" },
-        { "label": "Transmissão", "detail": "Vetorial — mosquito infectado, não via respiratória humana.", "icon": "Wind" },
-        { "label": "Controle ambiental", "detail": "Eliminar criadouros — lixeira tampada, pneus, caixas d'água.", "icon": "Home" },
-        { "label": "Proteção individual", "detail": "Repelente, telas, roupas — reduz picada.", "icon": "Shield" }
+        {
+          "label": "Aedes aegypti",
+          "detail": "Vetor da dengue — água limpa parada em recipientes.",
+          "icon": "Bug"
+        },
+        {
+          "label": "Transmissão",
+          "detail": "Vetorial — mosquito infectado, não via respiratória humana.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Controle ambiental",
+          "detail": "Eliminar criadouros — lixeira tampada, pneus, caixas d'água.",
+          "icon": "Home"
+        },
+        {
+          "label": "Proteção individual",
+          "detail": "Repelente, telas, roupas — reduz picada.",
+          "icon": "Shield"
+        }
       ],
       "footer_rule": "Dengue = Aedes + água parada + controle de criadouros"
     },
     {
       "type": "golden_rule",
       "slide_title": "Dengue — referência",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Parasitárias e Zoonoses" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Parasitárias e Zoonoses"
+      },
       "content": "AEDES",
       "rows": [
-        { "label": "Vetor", "value": "Aedes aegypti", "badge": "hot", "emphasis": "highlight" },
-        { "label": "Criadouro", "value": "Água parada limpa", "badge": "ok" },
-        { "label": "Via respiratória", "value": "Falso — transmissão vetorial", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e III, apenas", "badge": "hot" }
+        {
+          "label": "Vetor",
+          "value": "Aedes aegypti",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Criadouro",
+          "value": "Água parada limpa",
+          "badge": "ok"
+        },
+        {
+          "label": "Via respiratória",
+          "value": "Falso — transmissão vetorial",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "II nega o vetor — pegadinha clássica em zoonoses"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Parasitárias e Zoonoses" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Parasitárias e Zoonoses"
+      },
       "steps": [
         "I: Aedes + água parada → verdadeira.",
         "II: transmissão respiratória sem vetor → falsa.",
@@ -60,12 +118,27 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Parasitárias e Zoonoses" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Parasitárias e Zoonoses"
+      },
       "content": "PEGADINHAS — DENGUE",
       "items": [
-        { "label": "Dengue respiratória", "detail": "II inventa via de transmissão.", "correct": "Transmissão pelo Aedes aegypti infectado." },
-        { "label": "Água suja apenas", "detail": "Aedes prefere água limpa parada.", "correct": "I está correta sobre criadouros." },
-        { "label": "Só medicamento controla", "detail": "Controle ambiental é pilar — III correta.", "correct": "Eliminar criadouros + proteção contra picada." }
+        {
+          "label": "Dengue respiratória",
+          "detail": "II inventa via de transmissão.",
+          "correct": "Transmissão pelo Aedes aegypti infectado."
+        },
+        {
+          "label": "Água suja apenas",
+          "detail": "Aedes prefere água limpa parada.",
+          "correct": "I está correta sobre criadouros."
+        },
+        {
+          "label": "Só medicamento controla",
+          "detail": "Controle ambiental é pilar — III correta.",
+          "correct": "Eliminar criadouros + proteção contra picada."
+        }
       ],
       "footer_rule": "Parasitárias/zoonoses: vetor + prevenção ambiental"
     }

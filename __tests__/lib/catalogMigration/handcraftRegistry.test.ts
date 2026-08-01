@@ -20,6 +20,7 @@ function allPassReport(): ShipAuditReport {
     L5: passLayer('content health OK'),
     L6: passLayer(),
     L2b: passLayer(),
+    L2c: passLayer('pedagogia OK'),
   };
   return {
     technical_ready: true,
@@ -34,6 +35,7 @@ function partialReport(): ShipAuditReport {
     L1: passLayer(),
     L2: passLayer(),
     L2b: passLayer(),
+    L2c: passLayer('pedagogia OK'),
     L3: { pass: false, detail: 'visual mold FAIL' },
     L4: passLayer(),
     L5: passLayer(),
@@ -82,6 +84,7 @@ describe('applyShipPromote', () => {
       L1: true,
       L2: true,
       L2b: true,
+      L2c: true,
       L3: true,
       L4: true,
       L5: true,

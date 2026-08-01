@@ -23,25 +23,53 @@
         "title": "Atendimento inicial ao queimado — estimativa de SCQ e resfriamento",
         "year": 2016,
         "url": "https://www.gov.br/saude/",
-        "covers": ["regra dos 9", "SCQ adulto e criança", "resfriamento com água corrente", "encaminhamento"]
+        "covers": [
+          "regra dos 9",
+          "SCQ adulto e criança",
+          "resfriamento com água corrente",
+          "encaminhamento"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre a regra dos nove na estimativa da superfície corporal queimada (SCQ) e o atendimento inicial, analise as afirmativas.\n\nI - No adulto, cada membro superior (braço completo) corresponde a 9% da SCQ.\nII - Na criança, cabeça e pescoço correspondem a 18% da SCQ.\nIII - O resfriamento imediato da área queimada deve ser feito com gelo aplicado diretamente sobre a pele por, no mínimo, 30 minutos.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "SCQ — regra dos 9 na prova",
-      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Feridas e Queimaduras"
+      },
       "items": [
         {
           "label": "Membro superior — adulto",
@@ -72,11 +100,6 @@
           "label": "Pegadinha da III",
           "detail": "Gelo direto por 30 min é conduta errada — resfriar com água corrente morna 15–20 min.",
           "icon": "Snowflake"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra B: I e II, apenas — III invalida C, D e E.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Adulto: cabeça 9% · Criança: cabeça 18% · Nunca gelo direto"
@@ -84,7 +107,10 @@
     {
       "type": "golden_rule",
       "slide_title": "Regra dos 9 — referência SCQ",
-      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Feridas e Queimaduras"
+      },
       "content": "REGRA DOS 9 — DECORE",
       "rows": [
         {
@@ -142,7 +168,10 @@
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Feridas e Queimaduras"
+      },
       "steps": [
         "Garantir segurança — afastar fonte térmica e proteger equipe antes de estimar SCQ.",
         "Resfriar com água corrente morna por 15–20 min (não gelo, não manteiga, não pomada).",
@@ -163,7 +192,10 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Feridas e Queimaduras"
+      },
       "content": "PEGADINHAS — SCQ E RESFRIAMENTO",
       "items": [
         {
