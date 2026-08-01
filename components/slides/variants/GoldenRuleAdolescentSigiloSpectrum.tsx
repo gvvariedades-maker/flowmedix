@@ -6,6 +6,7 @@ import { Hand, Shield, ShieldAlert, ShieldCheck } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow } from './GoldenRule';
 import {
+  inferSigiloSpectrumHint,
   inferSigiloSpectrumZone,
   sigiloSpectrumLabel,
   type SigiloSpectrumZone,
@@ -18,7 +19,6 @@ const ZONE_META: Record<
     color: string;
     bg: string;
     border: string;
-    hint: string;
     position: string;
   }
 > = {
@@ -27,7 +27,6 @@ const ZONE_META: Record<
     color: 'text-emerald-800',
     bg: 'bg-emerald-100/90',
     border: 'border-emerald-400/80',
-    hint: 'Tema protegido por sigilo — contracepção, orientação sexual, IST.',
     position: 'left-[8%]',
   },
   ponderar: {
@@ -35,7 +34,6 @@ const ZONE_META: Record<
     color: 'text-amber-900',
     bg: 'bg-amber-100/90',
     border: 'border-amber-400/80',
-    hint: 'Avaliar risco grave, violência ou notificação compulsória antes de quebrar.',
     position: 'left-1/2 -translate-x-1/2',
   },
   quebrar: {
@@ -43,7 +41,6 @@ const ZONE_META: Record<
     color: 'text-rose-900',
     bg: 'bg-rose-100/90',
     border: 'border-rose-400/80',
-    hint: 'Pegadinha: sigilo não é zero absoluto nem quebra sem critério.',
     position: 'right-[8%]',
   },
 };
@@ -81,19 +78,35 @@ export function GoldenRuleAdolescentSigiloSpectrum({
   const activeZone = rowZones[selected] ?? 'ponderar';
   const activeMeta = ZONE_META[activeZone];
   const ActiveIcon = activeMeta.icon;
+  const activeHint = activeRow
+    ? inferSigiloSpectrumHint(
+        activeZone,
+        `${activeRow.label} ${activeRow.value}`,
+        activeRow.exam_hint,
+      )
+    : '';
 
   const selectRow = useCallback((index: number) => setSelected(index), []);
 
   if (!activeRow) return null;
+
+  const title =
+    content &&
+    (content.length <= 42 ||
+      /comunica|orienta|linguagem|sigilo|espectro/i.test(content))
+      ? content
+      : content
+        ? 'Espectro ético'
+        : null;
 
   return (
     <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-4 md:p-6">
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-40`} />
 
       <div className="relative z-10 mx-auto flex w-full max-w-lg flex-col gap-4">
-        {content ? (
+        {title ? (
           <p className="text-center font-display text-lg font-black uppercase tracking-wide text-sky-900 md:text-xl">
-            {content.length <= 36 ? content : 'Espectro do sigilo'}
+            {title}
           </p>
         ) : null}
 
@@ -202,7 +215,7 @@ export function GoldenRuleAdolescentSigiloSpectrum({
               {activeRow.value}
             </p>
             <p className="mt-3 rounded-xl border border-white/60 bg-white/50 px-3 py-2 font-body text-sm leading-relaxed text-slate-700">
-              {activeMeta.hint}
+              {activeHint}
             </p>
           </motion.div>
         </AnimatePresence>

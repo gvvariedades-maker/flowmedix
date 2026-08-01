@@ -46,6 +46,13 @@ export function adolescentCurtainLabel(curtain: AdolescentCurtain): string {
 
 export function inferSigiloSpectrumZone(text: string): SigiloSpectrumZone {
   const lower = text.toLowerCase();
+  if (
+    /linguagem\s+(complexa|rebuscad)|rebuscad|jarg[aã]o|termos\s+m[eé]dicos|barreira/.test(
+      lower,
+    )
+  ) {
+    return 'quebrar';
+  }
   if (/sempre quebrar|sem critério|sem criterio|absoluto zero|quebrar sempre|sigilo inexistente/.test(lower)) {
     return 'quebrar';
   }
@@ -55,7 +62,9 @@ export function inferSigiloSpectrumZone(text: string): SigiloSpectrumZone {
   if (/privacidade|escuta|contracep|orientação sexual|orientacao sexual|protegido/.test(lower)) {
     return 'protegido';
   }
-  if (/gabarito|verdadeira|correta/.test(lower)) return 'protegido';
+  if (/gabarito|verdadeira|correta|v[ií]nculo|rede|intersetor|comunidade/.test(lower)) {
+    return 'protegido';
+  }
   if (/falso|falsa|pegadinha|alert/.test(lower)) return 'quebrar';
   return 'ponderar';
 }
@@ -69,6 +78,50 @@ export function sigiloSpectrumLabel(zone: SigiloSpectrumZone): string {
     case 'quebrar':
       return 'Quebrar';
   }
+}
+
+/**
+ * Hint do painel do espectro — contextual à linha (não só à zona).
+ * Preferir `exam_hint` da row quando existir.
+ */
+export function inferSigiloSpectrumHint(
+  zone: SigiloSpectrumZone,
+  rowText: string,
+  examHint?: string,
+): string {
+  const explicit = examHint?.trim();
+  if (explicit) return explicit;
+
+  const lower = rowText.toLowerCase();
+
+  if (/linguagem|rebuscad|jarg[aã]o|termos\s+m[eé]dicos|barreira|complexa/.test(lower)) {
+    return zone === 'quebrar'
+      ? 'Pegadinha: informação completa ≠ jargão — sexualidade e preventivo em linguagem clara.'
+      : 'Orientação sexual e preventivo pedem linguagem acessível, não termos rebuscados.';
+  }
+  if (/rede|intersetor|comunidade|escola|cultura|grupos/.test(lower)) {
+    return 'Promoção intersetorial: escola, cultura e grupos de jovens na rede de cuidado.';
+  }
+  if (/v[ií]nculo|escuta|acolh|sem julgamento/.test(lower)) {
+    return 'Vínculo e escuta sem julgamento sustentam a consulta com o adolescente.';
+  }
+  if (/sigilo|privacidade|consentimento|confidencial/.test(lower)) {
+    if (zone === 'protegido') {
+      return 'Tema protegido por sigilo — contracepção, orientação sexual, IST.';
+    }
+    if (zone === 'ponderar') {
+      return 'Avaliar risco grave, violência ou notificação compulsória antes de quebrar.';
+    }
+    return 'Pegadinha: sigilo não é zero absoluto nem quebra sem critério.';
+  }
+
+  if (zone === 'protegido') {
+    return 'Conduta alinhada ao MS — protege o adolescente no encontro de cuidado.';
+  }
+  if (zone === 'ponderar') {
+    return 'Avaliar risco grave, violência ou notificação compulsória antes de quebrar.';
+  }
+  return 'Pegadinha: a banca troca o limite ético — leia o verbo da afirmativa.';
 }
 
 export function parseAdolescentVfWeaveStep(
