@@ -80,7 +80,7 @@ Fonte: `docs/MOLD_AFFINITY_RESOLVER.md` (pode evoluir).
 
 | `branch_id` | Bespoke (exemplos) | Nota |
 |-------------|-------------------|------|
-| `adolescente_etica_sigilo` | `adolescent-privacy-curtain` · spectrum · vf-weave · consent-gate | bespoke forte |
+| `adolescente_etica_sigilo` | `adolescent-care-pillars-deck` · speak-barrier · `adolescent-exceto-isolate-board` · exceto-compare (v2); v1 curtain/weave/consent = legado | bespoke forte |
 | `adolescente_antropometria` | growth-z-rail · z-band · z-classify · z-threshold | só corpus escore Z |
 | `adolescente_desenvolvimento` | genérico premium | ok_generico típico |
 | `adolescente_saude_mental` | genérico premium | |

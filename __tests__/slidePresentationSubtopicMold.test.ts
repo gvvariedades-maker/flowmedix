@@ -1353,7 +1353,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
   });
 
-  it('Saúde do Adolescente: logic_flow adolescent-exceto-isolate-tap no molde', () => {
+  it('Saúde do Adolescente: logic_flow adolescent-exceto-isolate-board no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'logic_flow',
@@ -1367,8 +1367,7 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-exceto-isolate-tap');
-    expect(result.revealMode).toBe('tap');
+    expect(result.layoutVariant).toBe('adolescent-exceto-isolate-board');
   });
 
   it('Saúde do Adolescente: danger_zone adolescent-exceto-compare com correct no molde', () => {

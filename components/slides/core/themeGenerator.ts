@@ -407,9 +407,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'saúde da criança': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
   'pediatria': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Saúde do Adolescente (v2 ética: pillars · speak-barrier · exceto-isolate · compare) ----
-  'saúde do adolescente': { template: 'sky', conceptMap: 'adolescent-care-pillars-deck', goldenRule: 'adolescent-speak-barrier-board', logicFlow: 'adolescent-exceto-isolate-tap', dangerZone: 'adolescent-exceto-compare' },
-  'adolescente': { template: 'sky', conceptMap: 'adolescent-care-pillars-deck', goldenRule: 'adolescent-speak-barrier-board', logicFlow: 'adolescent-exceto-isolate-tap', dangerZone: 'adolescent-exceto-compare' },
+  // ---- Saúde do Adolescente (v2 ética: pillars · speak-barrier · exceto-board · compare) ----
+  'saúde do adolescente': { template: 'sky', conceptMap: 'adolescent-care-pillars-deck', goldenRule: 'adolescent-speak-barrier-board', logicFlow: 'adolescent-exceto-isolate-board', dangerZone: 'adolescent-exceto-compare' },
+  'adolescente': { template: 'sky', conceptMap: 'adolescent-care-pillars-deck', goldenRule: 'adolescent-speak-barrier-board', logicFlow: 'adolescent-exceto-isolate-board', dangerZone: 'adolescent-exceto-compare' },
 
   // ---- Saúde da Mulher ----
   'saúde da mulher': { template: 'pink', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },

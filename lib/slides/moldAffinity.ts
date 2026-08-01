@@ -131,6 +131,7 @@ const ADOLESCENT_VARIANTS = new Set([
   'adolescent-speak-barrier-board',
   'adolescent-vf-weave-tap',
   'adolescent-exceto-isolate-tap',
+  'adolescent-exceto-isolate-board',
   'adolescent-consent-gate',
   'adolescent-exceto-compare',
 ]);
@@ -627,6 +628,15 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     ],
   },
   'adolescent-exceto-isolate-tap': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
+    positivePatterns: [
+      ...ADOLESCENT_ETHICS_POSITIVE,
+      /incorreta|exceto|linguagem|jarg[aã]o|rebuscad/i,
+    ],
+  },
+  'adolescent-exceto-isolate-board': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,

@@ -46,7 +46,7 @@ Se omitido, o player infere pelo enunciado + slides. **`meta.pedagogical_branch`
 
 | Ramo | Pacote L3 | Status | Brief |
 |------|-----------|--------|-------|
-| `adolescente_etica_sigilo` | `adolescent-privacy-curtain` · `adolescent-sigilo-spectrum` · `adolescent-vf-weave-tap` · `adolescent-consent-gate` | **bespoke** | [`l3-brief-…-etica_sigilo.md`](../artifacts/l3-brief-saude-adolescente-adolescente_etica_sigilo.md) |
+| `adolescente_etica_sigilo` | `adolescent-care-pillars-deck` · `adolescent-speak-barrier-board` · `adolescent-exceto-isolate-board` · `adolescent-exceto-compare` (v2 glanceable; v1 curtain/weave/consent permanece no registry como legado/galeria) | **bespoke** | [`l3-brief-…-etica_sigilo.md`](../artifacts/l3-brief-saude-adolescente-adolescente_etica_sigilo.md) · v2 [`l3-brief-…-etica-sigilo-v2.md`](../artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md) |
 | `adolescente_antropometria` | `adolescent-growth-z-rail` · `adolescent-z-band-board` · `adolescent-z-classify-tap` · `adolescent-z-threshold-trap` | **bespoke** (só corpus escore Z) | [`l3-brief-…-antropometria.md`](../artifacts/l3-brief-saude-adolescente-adolescente_antropometria.md) |
 | `adolescente_desenvolvimento` | `morphological` · `reference_table` · `vertical` · `compare` | genérico premium | [`l3-brief-…-desenvolvimento.md`](../artifacts/l3-brief-saude-adolescente-adolescente_desenvolvimento.md) |
 | `adolescente_saude_mental` | idem | genérico premium | [`l3-brief-…-saude_mental.md`](../artifacts/l3-brief-saude-adolescente-adolescente_saude_mental.md) |

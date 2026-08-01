@@ -52,6 +52,12 @@ describe('pedagogicalBranch', () => {
       'adolescent-care-pillars-deck',
     );
   });
+
+  it('ramo ética usa adolescent-exceto-isolate-board no logic_flow', () => {
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'adolescente_etica_sigilo')).toBe(
+      'adolescent-exceto-isolate-board',
+    );
+  });
 });
 
 describe('pedagogicalBranch — CME', () => {

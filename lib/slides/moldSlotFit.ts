@@ -115,6 +115,7 @@ export function countMoldInteractiveSlots(variant: string, slide: MoldAffinitySl
     case 'adolescent-vf-weave-tap':
       return Array.isArray(slide.steps) ? slide.steps.length : 0;
     case 'adolescent-exceto-isolate-tap':
+    case 'adolescent-exceto-isolate-board':
       return Array.isArray(slide.steps) ? slide.steps.length : 0;
     case 'adolescent-consent-gate':
       return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;

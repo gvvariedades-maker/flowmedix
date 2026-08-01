@@ -174,7 +174,7 @@ const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
   conceptMap: 'adolescent-care-pillars-deck',
   goldenRule: 'adolescent-speak-barrier-board',
-  logicFlow: 'adolescent-exceto-isolate-tap',
+  logicFlow: 'adolescent-exceto-isolate-board',
   dangerZone: 'adolescent-exceto-compare',
 };
 

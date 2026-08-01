@@ -228,6 +228,7 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `pt-clitic-rail-deck` | Língua Portuguesa / Colocação (`pt_pronomes_colocacao`) | Deck trilho pró · ên · meso + atrativo? | `examples/questao-premium-vunesp-portugues-colocacao-trilho.json` |
 | `pt-comma-rail-deck` | Língua Portuguesa / Pontuação (`pt_pontuacao`) | Deck trilho vírgula — o que isola? · S\|V livre | `examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` |
 | `pt-term-matrix-deck` | Língua Portuguesa / Termos (`pt_termos_oracao`) | Deck matriz de cargos — verbo? · nome? · de quê? | `examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json` |
+| `adolescent-care-pillars-deck` | Saúde do Adolescente (`adolescente_etica_sigilo`) | Deck 3 pilares (escuta / barreira / transferência) — glanceable | `artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md` |
 
 ### Danger zone
 
@@ -250,6 +251,7 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `pt-crase-trap-arena` | `pt-crase-funnel-deck` | Arena compare — estágio do funil que barra cada letra | verbo, masculino, todos, ferramentas, automática, letra A–E |
 | `pt-clitic-trap-arena` | `pt-clitic-rail-deck` | Arena compare — estação do trilho que barra cada letra | Já, Quando, particípio, atrativo, ênclise automática, letra A–E |
 | `pt-comma-trap-arena` | `pt-comma-rail-deck` | Arena compare — estação do trilho que barra cada letra | pausa oral, sujeito\|verbo, vocativo, aposto, letra A–E |
+| `adolescent-exceto-compare` | `adolescent-care-pillars-deck` / isolate-board | Compare acolher × afastar (EXCETO) — glanceable | `artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md` |
 
 Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md).
 
@@ -264,6 +266,8 @@ Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPL
 | `pt-crase-funnel-tap-flow` | Língua Portuguesa / Crase (`pt_crase`) | Pipeline tap — um estágio/letra por passo | `questao-premium-vunesp-portugues-crase-funil.json` |
 | `pt-clitic-rail-tap-flow` | Língua Portuguesa / Colocação (`pt_pronomes_colocacao`) | Pipeline tap — atrativo?/letra por passo | `questao-premium-vunesp-portugues-colocacao-trilho.json` |
 | `pt-comma-rail-tap-flow` | Língua Portuguesa / Pontuação (`pt_pontuacao`) | Pipeline tap — isola?/letra por passo | `questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` |
+| `adolescent-exceto-isolate-board` | Saúde do Adolescente (`adolescente_etica_sigilo`) | Board manter × exceção — **0 taps** (canônico v2) | `artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md` |
+| `adolescent-exceto-isolate-tap` | (legado / galeria) | Mesmo gesto em taps — mantido no registry; não é o molde do ramo | — |
 
 ### Golden rule (slide 2)
 
@@ -278,6 +282,7 @@ Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPL
 | `reference_table` | (automático com `rows` quando sem molde) | Tabela rótulo × valor | vários |
 | `pni-calendar-board` | Imunização (`imunizacao_calendario`) | Trilho 0·2·3·4·6·12 + rows | `questao-premium-fundatec-meningococica-3meses.json` |
 | `pni-temperature-rail` | Imunização (`imunizacao_cadeia_frio`) | Trilho 0·2·8·12 + rows | `questao-premium-avancasp-imunizacao-rede-frio-temperatura.json` |
+| `adolescent-speak-barrier-board` | Saúde do Adolescente (`adolescente_etica_sigilo`) | Board falar × barreira / transferência — glanceable | `artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md` |
 | `center` / `banner` / `minimal` / `compact` | demais subtópicos | Tipografia ou faixa | — |
 
 ---
