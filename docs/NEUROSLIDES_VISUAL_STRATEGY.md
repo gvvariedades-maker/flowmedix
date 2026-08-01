@@ -49,7 +49,7 @@ Pasta: [`components/slides/primitives/`](../components/slides/primitives/).
 
 **Export:** `import { BoardChrome, … } from '@/components/slides/primitives'`.
 
-**Regra:** variants novas **compõem** primitives (exceto exceção documentada). Refator piloto: os 4 moldes ética v2 já consomem o kit.
+**Regra:** variants novas **compõem** primitives (exceto exceção documentada). Refator piloto: os 4 moldes ética v2 e o SoftLens (`GoldenRuleSoftLensBoard` + wrappers `*-reference-board`) consomem o kit.
 
 ---
 
@@ -121,7 +121,7 @@ Conteúdo: `steps[]` continua existindo; **board ignora serialização**. Enxuga
 | **2** | Adolescente: violência, saúde mental, desenvolvimento, genérico → `ADOLESCENTE_GLANCEABLE_MOLD` (reuso; sem IDs novos) | entregue |
 | **3** | Imunização EXCETO (`pni-exceto-isolate-board` · `pni-exceto-compare`) + calendário `LabelBodyRow` | entregue |
 | **4** | Urgências XABCDE / RCP; Farmacodinâmica ADME; PT compare/funil | entregue |
-| **5** | SoftLens → `BoardChrome` + `LabelBodyRow` (opcional) | tardio |
+| **5** | SoftLens → `BoardChrome` + `LabelBodyRow` | entregue |
 
 **Não** trocar ~250 variants de uma vez.
 

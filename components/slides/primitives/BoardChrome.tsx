@@ -5,7 +5,7 @@ import type { ThemeColors } from '../core/themeGenerator';
 import { cn } from '@/lib/utils';
 import { BOARD_EYEBROW, BOARD_FOOTER } from './boardTokens';
 
-export type BoardChromeMaxWidth = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
+export type BoardChromeMaxWidth = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '5xl';
 
 const MAX_WIDTH: Record<BoardChromeMaxWidth, string> = {
   sm: 'max-w-sm',
@@ -14,6 +14,7 @@ const MAX_WIDTH: Record<BoardChromeMaxWidth, string> = {
   xl: 'max-w-xl',
   '2xl': 'max-w-2xl',
   '3xl': 'max-w-3xl',
+  '5xl': 'max-w-5xl',
 };
 
 export interface BoardChromeProps {
