@@ -14,6 +14,7 @@ import {
   LabelBodyRow,
   TwoColumnBoard,
   boardEmptyPlaceholder,
+  showBoardAuthoringHints,
   type BoardTone,
 } from '../primitives';
 
@@ -123,7 +124,7 @@ export function GoldenRuleAdolescentSpeakBarrierBoard({
                 />
               </motion.div>
             ))}
-            {barrier.length === 0 ? (
+            {barrier.length === 0 && showBoardAuthoringHints() ? (
               <p className={`${boardEmptyPlaceholder('barrier')} py-4 text-center`}>
                 Marque a row com ênfase alert / “não falar” no JSON para destacar a barreira.
               </p>

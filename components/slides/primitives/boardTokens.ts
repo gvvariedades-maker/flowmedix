@@ -204,6 +204,14 @@ export const BOARD_COLUMN_EYEBROW =
 export const BOARD_FOOTER =
   'rounded-xl border border-sky-200/70 bg-sky-50/80 px-3 py-2.5 text-center font-body text-sm italic text-sky-900/85';
 
+/**
+ * Hints de authoring (placeholders “marque a row…”) — só em development.
+ * Em produção o aluno nunca vê copy de handoff JSON.
+ */
+export function showBoardAuthoringHints(): boolean {
+  return process.env.NODE_ENV === 'development';
+}
+
 /** Placeholder dashed quando a coluna está vazia. */
 export function boardEmptyPlaceholder(tone: BoardTone = 'neutral'): string {
   const t = boardTone(tone);

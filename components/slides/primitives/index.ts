@@ -18,6 +18,7 @@ export {
   BOARD_EYEBROW,
   BOARD_COLUMN_EYEBROW,
   BOARD_FOOTER,
+  showBoardAuthoringHints,
   type BoardTone,
   type BoardToneClasses,
 } from './boardTokens';

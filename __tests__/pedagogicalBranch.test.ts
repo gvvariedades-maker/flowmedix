@@ -33,29 +33,29 @@ describe('pedagogicalBranch', () => {
       'Em relação à violência sexual em crianças e adolescentes, é correto afirmar: notificação compulsória e rede de proteção.';
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('adolescente_violencia_protecao');
     const design = getPresentationDesign(subtopico, 'adolescente_violencia_protecao');
-    expect(design?.conceptMap).toBe('adolescent-care-pillars-deck');
+    expect(design?.conceptMap).toBe('morphological');
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_violencia_protecao')).toBe(
-      'adolescent-care-pillars-deck',
+      'morphological',
     );
   });
 
-  it('ramo desenvolvimento usa pacote glanceable Onda 2 no concept_map', () => {
+  it('ramo desenvolvimento usa layout genérico (≠ pacote ética)', () => {
     const design = getPresentationDesign(subtopico, 'adolescente_desenvolvimento');
-    expect(design?.conceptMap).toBe('adolescent-care-pillars-deck');
+    expect(design?.conceptMap).toBe('morphological');
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_desenvolvimento')).toBe(
-      'adolescent-care-pillars-deck',
+      'morphological',
     );
   });
 
-  it('ramo saúde mental usa isolate-board no logic_flow (Onda 2)', () => {
+  it('ramo saúde mental usa logic_flow vertical (≠ isolate ética)', () => {
     expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'adolescente_saude_mental')).toBe(
-      'adolescent-exceto-isolate-board',
+      'vertical',
     );
   });
 
-  it('ramo genérico usa exceto-compare no danger_zone (Onda 2)', () => {
+  it('ramo genérico usa danger_zone compare (≠ exceto-compare ética)', () => {
     expect(getLayoutVariantForBranch(subtopico, 'danger_zone', 'adolescente_generico')).toBe(
-      'adolescent-exceto-compare',
+      'compare',
     );
   });
 

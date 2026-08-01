@@ -1362,7 +1362,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.dangerRevealMode).toBe('tap');
   });
 
-  it('Saúde do Adolescente: concept_map adolescent-care-pillars-deck no molde', () => {
+  it('Saúde do Adolescente (sem ramo): concept_map genérico morphological', () => {
     const result = resolveSlidePresentation(
       {
         type: 'concept_map',
@@ -1378,47 +1378,53 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-care-pillars-deck');
+    expect(result.layoutVariant).toBe('morphological');
   });
 
-  it('Saúde do Adolescente: golden_rule adolescent-speak-barrier-board com rows no molde', () => {
+  it('Saúde do Adolescente ética: golden_rule speak-barrier com ok + barreira', () => {
     const result = resolveSlidePresentation(
       {
         type: 'golden_rule',
         meta: { subtopico: 'Saúde do Adolescente' },
         content: 'ESCUTA',
         rows: [
-          { label: 'Privacidade', value: 'Consulta com escuta — I correta' },
-          { label: 'Gabarito', value: 'I e II, apenas', emphasis: 'success' },
+          { label: 'Como falar', value: 'Linguagem clara e acessível' },
+          { label: 'Barreira', value: 'Não falar com jargão rebuscado' },
         ],
       },
       {
         questionSlug: 'cpcon-adolescente-1',
         slideIndex: 1,
         familyId: 'vf',
+        pedagogicalBranch: 'adolescente_etica_sigilo',
       },
     );
     expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
   });
 
-  it('Saúde do Adolescente: logic_flow adolescent-exceto-isolate-board no molde', () => {
+  it('Saúde do Adolescente ética: logic_flow isolate-board com keep + exception', () => {
     const result = resolveSlidePresentation(
       {
         type: 'logic_flow',
         meta: { subtopico: 'Saúde do Adolescente' },
-        steps: ['I: privacidade → verdadeira.', 'III: sigilo sem critério → falsa.', 'Letra B.'],
+        steps: [
+          'Manter: privacidade e acolhimento',
+          'Exceção: conduta que afasta o adolescente',
+          'Gabarito letra B',
+        ],
         reveal_mode: 'tap',
       },
       {
         questionSlug: 'cpcon-adolescente-1',
         slideIndex: 2,
         familyId: 'vf',
+        pedagogicalBranch: 'adolescente_etica_sigilo',
       },
     );
     expect(result.layoutVariant).toBe('adolescent-exceto-isolate-board');
   });
 
-  it('Saúde do Adolescente: danger_zone adolescent-exceto-compare com correct no molde', () => {
+  it('Saúde do Adolescente ética: danger_zone adolescent-exceto-compare com correct no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'danger_zone',
@@ -1435,6 +1441,7 @@ describe('slidePresentation — molde por subtópico', () => {
       {
         questionSlug: 'cpcon-adolescente-1',
         familyId: 'vf',
+        pedagogicalBranch: 'adolescente_etica_sigilo',
       },
     );
     expect(result.layoutVariant).toBe('adolescent-exceto-compare');
@@ -2987,7 +2994,7 @@ describe('slidePresentation — molde por subtópico', () => {
       expect(result.layoutVariant).not.toBe('adolescent-consent-gate');
     });
 
-    it('questão de sigilo mantém moldes adolescente', () => {
+    it('questão de sigilo com ok + barreira mantém speak-barrier', () => {
       const result = resolveSlidePresentation(
         {
           type: 'golden_rule',
@@ -2995,7 +3002,7 @@ describe('slidePresentation — molde por subtópico', () => {
           content: 'SIGILO NA ADOLESCÊNCIA',
           rows: [
             { label: 'Privacidade', value: 'Consulta com escuta qualificada — protegido por sigilo' },
-            { label: 'Gabarito', value: 'Letra B', emphasis: 'success' },
+            { label: 'Barreira', value: 'Não falar com jargão rebuscado na consulta' },
           ],
         },
         {
@@ -3008,7 +3015,7 @@ describe('slidePresentation — molde por subtópico', () => {
       expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
     });
 
-    it('puberdade (IGEDUC) → care-pillars-deck glanceable (Onda 2), não privacy-curtain', () => {
+    it('puberdade → morphological genérico (≠ pacote ética)', () => {
       const instruction =
         'Julgue o item subsequente. O período da adolescência é marcado por intensa metamorfose física e psicossocial, sendo comuns as disfunções hormonais nos adolescentes. Por exemplo, considera-se atraso na puberdade em meninas quando não se observa nenhum desenvolvimento das mamas dos 12 aos 13 anos e, nos meninos, quando nenhuma hipertrofia dos testículos é observada até os 13-14 anos de idade.';
 
@@ -3031,10 +3038,11 @@ describe('slidePresentation — molde por subtópico', () => {
         },
       );
       expect(result.layoutVariant).not.toBe('adolescent-privacy-curtain');
-      expect(result.layoutVariant).toBe('adolescent-care-pillars-deck');
+      expect(result.layoutVariant).not.toBe('adolescent-care-pillars-deck');
+      expect(result.layoutVariant).toBe('morphological');
     });
 
-    it('violência/proteção → pacote glanceable Onda 2', () => {
+    it('violência/proteção → reference_table genérico (≠ speak-barrier ética)', () => {
       const result = resolveSlidePresentation(
         {
           type: 'golden_rule',
@@ -3052,10 +3060,10 @@ describe('slidePresentation — molde por subtópico', () => {
           pedagogicalBranch: 'adolescente_violencia_protecao',
         },
       );
-      expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
+      expect(result.layoutVariant).toBe('reference_table');
     });
 
-    it('saúde mental → isolate-board no logic_flow (Onda 2)', () => {
+    it('saúde mental → vertical genérico (≠ isolate ética)', () => {
       const result = resolveSlidePresentation(
         {
           type: 'logic_flow',
@@ -3075,7 +3083,7 @@ describe('slidePresentation — molde por subtópico', () => {
           pedagogicalBranch: 'adolescente_saude_mental',
         },
       );
-      expect(result.layoutVariant).toBe('adolescent-exceto-isolate-board');
+      expect(result.layoutVariant).toBe('vertical');
     });
   });
 

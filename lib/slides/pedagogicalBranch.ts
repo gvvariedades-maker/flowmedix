@@ -179,15 +179,15 @@ const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
 };
 
 /**
- * Pacote glanceable v2 compartilhado (Onda 2) — mesmos layout_variant da ética.
- * Ramos: violência/proteção, saúde mental, desenvolvimento, genérico.
- * Novos IDs só se o gesto espacial divergir (NEUROSLIDES_VISUAL_STRATEGY).
+ * Alias histórico do pacote ética (pillars + speak-barrier + isolate + compare).
+ * Só use em `adolescente_etica_sigilo` — genérico ≠ ética (conteúdo sem barreira/EXCETO
+ * quebrava slots e vazava placeholders no aluno).
  */
 export const ADOLESCENTE_GLANCEABLE_MOLD: SubtopicDesign = ADOLESCENTE_ETHICS_MOLD;
 
 /**
- * Layout genérico legado (pré-Onda 2). Preferir `ADOLESCENTE_GLANCEABLE_MOLD`
- * nos ramos Adolescente não-antropométricos.
+ * Layout padrão dos ramos Adolescente não-éticos / não-antropométricos.
+ * Genérico, desenvolvimento, saúde mental, violência → morphological / reference_table.
  */
 export const ADOLESCENTE_GENERIC_DESIGN: SubtopicDesign = {
   template: 'sky',
@@ -1161,18 +1161,18 @@ export const BRANCH_DESIGN_MAP: Record<string, Partial<Record<PedagogicalBranchI
   'saude do adolescente': {
     adolescente_etica_sigilo: ADOLESCENTE_ETHICS_MOLD,
     adolescente_antropometria: ADOLESCENTE_ANTHROPOMETRY_MOLD,
-    adolescente_desenvolvimento: ADOLESCENTE_GLANCEABLE_MOLD,
-    adolescente_saude_mental: ADOLESCENTE_GLANCEABLE_MOLD,
-    adolescente_violencia_protecao: ADOLESCENTE_GLANCEABLE_MOLD,
-    adolescente_generico: ADOLESCENTE_GLANCEABLE_MOLD,
+    adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
   },
   adolescente: {
     adolescente_etica_sigilo: ADOLESCENTE_ETHICS_MOLD,
     adolescente_antropometria: ADOLESCENTE_ANTHROPOMETRY_MOLD,
-    adolescente_desenvolvimento: ADOLESCENTE_GLANCEABLE_MOLD,
-    adolescente_saude_mental: ADOLESCENTE_GLANCEABLE_MOLD,
-    adolescente_violencia_protecao: ADOLESCENTE_GLANCEABLE_MOLD,
-    adolescente_generico: ADOLESCENTE_GLANCEABLE_MOLD,
+    adolescente_desenvolvimento: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_saude_mental: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_violencia_protecao: ADOLESCENTE_GENERIC_DESIGN,
+    adolescente_generico: ADOLESCENTE_GENERIC_DESIGN,
   },
   'processamento de artigos e produtos de saude': {
     cme_preparo_limpeza: CME_DEFAULT,

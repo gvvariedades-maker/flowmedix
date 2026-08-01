@@ -123,14 +123,8 @@ const ADOLESCENT_ETHICS_BLOCK: RegExp[] = [
   ...ADOLESCENT_DEVELOPMENT_BLOCK,
 ];
 
-/** Ramos que consomem o pacote glanceable v2 (sem novos layout_variant IDs). */
-const ADOLESCENT_GLANCEABLE_BRANCHES = new Set([
-  'adolescente_etica_sigilo',
-  'adolescente_violencia_protecao',
-  'adolescente_saude_mental',
-  'adolescente_desenvolvimento',
-  'adolescente_generico',
-]);
+/** Só ética/sigilo consome o pacote pillars + speak-barrier + isolate + compare. */
+const ADOLESCENT_GLANCEABLE_BRANCHES = new Set(['adolescente_etica_sigilo']);
 
 /** Só sigilo/consulta — moldes v1 (curtain / spectrum / weave / consent-gate). */
 const ADOLESCENT_ETHICS_LEGACY_BRANCHES = new Set(['adolescente_etica_sigilo']);

@@ -13,6 +13,7 @@ import {
   PolarityPanel,
   TwoColumnBoard,
   boardEmptyPlaceholder,
+  showBoardAuthoringHints,
   type BoardTone,
 } from '../primitives';
 
@@ -167,11 +168,11 @@ export function LogicFlowAdolescentExcetoIsolateBoard({
                 delayIndex={nextDelay()}
               />
             ))
-          ) : (
+          ) : showBoardAuthoringHints() ? (
             <p className={boardEmptyPlaceholder('keep')}>
               Descarte as letras que acolhem / protegem.
             </p>
-          )
+          ) : null
         }
         right={
           exception.length > 0 ? (
@@ -183,11 +184,11 @@ export function LogicFlowAdolescentExcetoIsolateBoard({
                 delayIndex={nextDelay()}
               />
             ))
-          ) : (
+          ) : showBoardAuthoringHints() ? (
             <p className={boardEmptyPlaceholder('exception')}>
               A letra que afasta o adolescente fica aqui.
             </p>
-          )
+          ) : null
         }
       />
 

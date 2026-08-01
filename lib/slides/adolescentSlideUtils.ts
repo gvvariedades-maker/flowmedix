@@ -251,10 +251,14 @@ export function parseAdolescentExcetoStep(
   if (/comando|incorreta|exceto/.test(lower) && index === 0) {
     return { kind: 'command', title: 'Comando', text: step };
   }
-  if (/a[–\-–]c|a-c:|condutas certas|descartar/.test(lower)) {
+  if (/^(manter|acolher)\b|a[–\-–]c|a-c:|condutas certas|descartar/.test(lower)) {
     return { kind: 'keep', title: 'Manter', text: step };
   }
-  if (/exce[cç][aã]o|incorreta|jarg[aã]o|rebuscad|complexa/.test(lower) && /d:|letra d|→/.test(lower)) {
+  if (
+    /^exce[cç][aã]o\b/.test(lower) ||
+    (/exce[cç][aã]o|incorreta|jarg[aã]o|rebuscad|complexa|afasta/.test(lower) &&
+      /d:|letra d|→|afasta/.test(lower))
+  ) {
     return { kind: 'exception', title: 'Exceção', text: step };
   }
   if (/marcar letra\s*([a-e])/i.test(step)) {
