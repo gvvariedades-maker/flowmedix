@@ -695,6 +695,54 @@ describe('slidePresentation — molde por subtópico', () => {
     ).toBe('calendar-mismatch');
   });
 
+  it('Imunização EXCETO: pacote Onda 3 isolate-board + compare', () => {
+    const ctx = {
+      questionSlug: 'idecan-imunizacao-exceto-raiva-1',
+      familyId: 'certo_errado' as const,
+      pedagogicalBranch: 'imunizacao_exceto' as const,
+    };
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico: 'Imunização' },
+          reveal_mode: 'tap',
+          steps: [
+            'Comando: INCORRETA — vigilância da raiva',
+            'Manter: caso confirmado = laboratório positivo',
+            'Exceção: caso suspeito só encefalite — definição estreita',
+            'Marcar letra B',
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('pni-exceto-isolate-board');
+
+    expect(
+      resolveSlidePresentation(
+        {
+          type: 'danger_zone',
+          meta: { subtopico: 'Imunização' },
+          content: 'Pegadinhas EXCETO PNI',
+          items: [
+            {
+              label: 'Letra A — critério clínico-epidemiológico',
+              detail: 'Segue o manual',
+              correct: 'Conduta alinhada ao MS — manter',
+            },
+            {
+              label: 'Letra B — exclusividade encefalite',
+              detail: 'Exceção',
+              correct: 'Exceção: definição estreita demais — incorreta',
+            },
+          ],
+        },
+        ctx,
+      ).layoutVariant,
+    ).toBe('pni-exceto-compare');
+  });
+
   it('Saúde da Mulher pré-natal: pacote 4/4 no ramo mulher_prenatal', () => {
     const ctx = {
       questionSlug: 'cpcon-saude-mulher-prenatal-vf',
@@ -2960,7 +3008,7 @@ describe('slidePresentation — molde por subtópico', () => {
       expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
     });
 
-    it('puberdade (IGEDUC) → concept_map genérico, não privacy-curtain', () => {
+    it('puberdade (IGEDUC) → care-pillars-deck glanceable (Onda 2), não privacy-curtain', () => {
       const instruction =
         'Julgue o item subsequente. O período da adolescência é marcado por intensa metamorfose física e psicossocial, sendo comuns as disfunções hormonais nos adolescentes. Por exemplo, considera-se atraso na puberdade em meninas quando não se observa nenhum desenvolvimento das mamas dos 12 aos 13 anos e, nos meninos, quando nenhuma hipertrofia dos testículos é observada até os 13-14 anos de idade.';
 
@@ -2983,7 +3031,51 @@ describe('slidePresentation — molde por subtópico', () => {
         },
       );
       expect(result.layoutVariant).not.toBe('adolescent-privacy-curtain');
-      expect(['bridge', 'grid', 'molecular', 'morphological', 'stack']).toContain(result.layoutVariant);
+      expect(result.layoutVariant).toBe('adolescent-care-pillars-deck');
+    });
+
+    it('violência/proteção → pacote glanceable Onda 2', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'golden_rule',
+          meta: { subtopico },
+          content: 'REDE DE PROTEÇÃO',
+          rows: [
+            { label: 'Acolher', value: 'Acolhimento sem revitimização' },
+            { label: 'Notificar', value: 'Notificação compulsória — SINAN / Conselho Tutelar' },
+          ],
+        },
+        {
+          questionSlug: 'funcern-violencia-protecao-1',
+          slideIndex: 2,
+          familyId: 'protocolo',
+          pedagogicalBranch: 'adolescente_violencia_protecao',
+        },
+      );
+      expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
+    });
+
+    it('saúde mental → isolate-board no logic_flow (Onda 2)', () => {
+      const result = resolveSlidePresentation(
+        {
+          type: 'logic_flow',
+          meta: { subtopico },
+          steps: [
+            'Comando: EXCETO conduta punitiva em anorexia',
+            'Manter: acolhimento e vínculo',
+            'Exceção: restrição alimentar como punição',
+            'Gabarito letra B',
+          ],
+          reveal_mode: 'tap',
+        },
+        {
+          questionSlug: 'fau-saude-mental-1',
+          slideIndex: 1,
+          familyId: 'conceito',
+          pedagogicalBranch: 'adolescente_saude_mental',
+        },
+      );
+      expect(result.layoutVariant).toBe('adolescent-exceto-isolate-board');
     });
   });
 

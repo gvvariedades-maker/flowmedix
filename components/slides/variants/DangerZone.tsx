@@ -8,6 +8,7 @@ import type { DangerZoneBulletStyle } from '../core/dangerZoneLayout';
 import { dangerZoneHasCompareItems } from '../core/dangerZoneLayout';
 import { getCompareBackFaceLabel } from '@/lib/slides/goldenRuleTypography';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
+import type { DangerZoneItemPolarity } from '../core/dangerZonePolarity';
 import { getDangerZoneBespoke } from '../registry/dangerZone';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
 
@@ -28,6 +29,8 @@ interface DangerZoneProps {
   layoutVariant?: string;
   bulletStyle?: DangerZoneBulletStyle;
   compareRevealMode?: LogicFlowRevealMode;
+  /** Polaridade por item derivada do enunciado (comando negativo × gabarito). */
+  itemPolarities?: DangerZoneItemPolarity[];
 }
 
 function TrapBullet({
@@ -258,6 +261,7 @@ export const DangerZone = ({
   layoutVariant = 'list',
   bulletStyle = 'numbered',
   compareRevealMode = 'auto',
+  itemPolarities,
 }: DangerZoneProps) => {
   const explicitVariant = layoutVariant || 'list';
 
@@ -272,6 +276,7 @@ export const DangerZone = ({
         footerRule={footerRule}
         compareRevealMode={compareRevealMode}
         revealMode={compareRevealMode}
+        itemPolarities={itemPolarities}
       />
     );
   }

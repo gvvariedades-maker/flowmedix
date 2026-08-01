@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import NeuroSlide from '@/components/slides/core/NeuroSlide';
 import {
   buildGallerySlide,
+  galleryPolarityContext,
   galleryQuestionMeta,
   type GalleryFixtureKind,
 } from '@/lib/slides/variantGalleryFixtures';
@@ -30,6 +31,7 @@ function FixturePanel({
 }) {
   const slide = buildGallerySlide(slideType, variant, fixture);
   const questionMeta = galleryQuestionMeta();
+  const polarity = galleryPolarityContext(slideType, variant);
   return (
     <section
       data-testid={`variant-gallery-panel-${fixture}`}
@@ -37,12 +39,20 @@ function FixturePanel({
       data-slide-type={slideType}
       data-fixture={fixture}
       className="overflow-y-auto rounded-2xl border border-slate-200 bg-[#010409] shadow-sm"
-      style={{ minHeight: 420, maxHeight: 780 }}
+      style={{ minHeight: 420, maxHeight: variant === 'trap-reveal' ? 1200 : 780 }}
     >
       <div className="border-b border-white/10 px-4 py-2 text-xs text-slate-400">
         {slideType} · {variant} · {fixture}
+        {polarity.questionInstruction ? ' · polaridade F1' : ''}
       </div>
-      <NeuroSlide data={slide} questionMeta={questionMeta} slideIndex={index} standalone />
+      <NeuroSlide
+        data={slide}
+        questionMeta={questionMeta}
+        slideIndex={index}
+        standalone
+        questionInstruction={polarity.questionInstruction}
+        questionOptions={polarity.questionOptions}
+      />
     </section>
   );
 }

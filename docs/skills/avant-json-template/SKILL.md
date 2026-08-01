@@ -433,11 +433,11 @@ Copiar molde: `examples/_TEMPLATE-golden-v1.json`. Metadados `sources` / `conten
 | Ramo | Quando usar | Molde L3 |
 |------|-------------|----------|
 | `adolescente_etica_sigilo` | Sigilo, gravidez, escuta, ética | `adolescent-*` bespoke |
-| `adolescente_antropometria` | Escore Z, IMC, nutrição | genérico |
-| `adolescente_desenvolvimento` | Puberdade, marcos | genérico |
-| `adolescente_saude_mental` | Transtorno alimentar, imagem corporal | genérico |
-| `adolescente_violencia_protecao` | Violência, rede de proteção | genérico |
-| `adolescente_generico` | EXCETO/diretrizes sem metáfora de sigilo | genérico |
+| `adolescente_antropometria` | Escore Z, IMC, nutrição | bespoke Z |
+| `adolescente_desenvolvimento` | Puberdade, marcos | glanceable Onda 2 |
+| `adolescente_saude_mental` | Transtorno alimentar, imagem corporal | glanceable Onda 2 |
+| `adolescente_violencia_protecao` | Violência, rede de proteção | glanceable Onda 2 |
+| `adolescente_generico` | EXCETO/diretrizes sem metáfora de sigilo | glanceable Onda 2 |
 
 **CME**
 

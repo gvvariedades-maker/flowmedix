@@ -65,13 +65,23 @@ export const PT_ORACOES_BRANCHES = [
   'pt_oracoes_subordinadas_generico',
 ] as const;
 
-/** Ramos Saúde do Adolescente (ética bespoke + genéricos por eixo). */
+/** Ramos Saúde do Adolescente (glanceable v2 ética + Onda 2 + antropometria). */
 export const ADOLESCENTE_BRANCHES = [
   'adolescente_etica_sigilo',
   'adolescente_antropometria',
   'adolescente_desenvolvimento',
   'adolescente_saude_mental',
   'adolescente_violencia_protecao',
+  'adolescente_generico',
+] as const;
+
+/** Ramos Adolescente com pacote glanceable / Z bespoke 4/4. */
+export const ADOLESCENTE_BESPOKE_BRANCHES = [
+  'adolescente_etica_sigilo',
+  'adolescente_antropometria',
+  'adolescente_violencia_protecao',
+  'adolescente_saude_mental',
+  'adolescente_desenvolvimento',
   'adolescente_generico',
 ] as const;
 

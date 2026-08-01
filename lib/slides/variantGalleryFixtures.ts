@@ -137,34 +137,58 @@ function dangerDefault(variant: string): GallerySlide {
     variant.includes('reveal') ||
     variant.includes('chips') ||
     variant.includes('gate');
+  /** trap-reveal + comando negativo na galeria: A/C = conduta válida; B = armadilha. */
+  const trapRevealPolarity = variant === 'trap-reveal';
   return {
     type: 'danger_zone',
     layout_variant: variant,
     bullet_style: 'x_icon',
     meta: { ...META },
-    content: 'PEGADINHAS — vias e volumes',
-    items: [
-      {
-        label: 'Letra A — IM com 5 mL no deltoide',
-        detail: 'Parece prático em emergência.',
-        correct: compareLike
-          ? 'Deltoide adulto: volume típico ≤ 2 mL; 5 mL exige outro sítio/via.'
-          : undefined,
-      },
-      {
-        label: 'Letra C — SC com agulha 40×12',
-        detail: 'Confunde com IM.',
-        correct: compareLike
-          ? 'SC usa agulha curta; 40×12 é perfil de IM.'
-          : undefined,
-      },
-      {
-        label: 'Trocar ID por SC',
-        detail: 'Mesmo “intradérmico/ subcutâneo” no enunciado.',
-        correct: compareLike ? 'ID ≈ 0,1 mL; SC até ~1 mL — técnicas distintas.' : undefined,
-      },
-    ],
-    footer_rule: 'Volume e agulha denunciam a via',
+    content: trapRevealPolarity
+      ? 'PEGADINHAS — EXCETO / INCORRETA (polaridade F1)'
+      : 'PEGADINHAS — vias e volumes',
+    items: trapRevealPolarity
+      ? [
+          {
+            label: 'Letra A — deltoide adulto ≤ 2 mL',
+            detail: 'Parece “óbvia demais” no comando negativo.',
+            correct: 'Afirmativa correta: volume típico do deltoide adulto é ≤ 2 mL.',
+          },
+          {
+            label: 'Letra B — IM com 5 mL no deltoide de rotina',
+            detail: 'Parece prático em emergência.',
+            correct: 'Incorreta: 5 mL no deltoide não é conduta padrão — exige outro sítio/via.',
+          },
+          {
+            label: 'Letra C — SC com agulha curta',
+            detail: 'Confunde com IM longa.',
+            correct: 'Afirmativa correta: SC usa agulha curta; 40×12 é perfil de IM.',
+          },
+        ]
+      : [
+          {
+            label: 'Letra A — IM com 5 mL no deltoide',
+            detail: 'Parece prático em emergência.',
+            correct: compareLike
+              ? 'Deltoide adulto: volume típico ≤ 2 mL; 5 mL exige outro sítio/via.'
+              : undefined,
+          },
+          {
+            label: 'Letra C — SC com agulha 40×12',
+            detail: 'Confunde com IM.',
+            correct: compareLike
+              ? 'SC usa agulha curta; 40×12 é perfil de IM.'
+              : undefined,
+          },
+          {
+            label: 'Trocar ID por SC',
+            detail: 'Mesmo “intradérmico/ subcutâneo” no enunciado.',
+            correct: compareLike ? 'ID ≈ 0,1 mL; SC até ~1 mL — técnicas distintas.' : undefined,
+          },
+        ],
+    footer_rule: trapRevealPolarity
+      ? 'EXCETO: check = conduta válida; X = armadilha do gabarito'
+      : 'Volume e agulha denunciam a via',
   };
 }
 
@@ -212,5 +236,29 @@ export function galleryQuestionMeta() {
     subtopico: META.subtopico,
     ano: '2026',
     cargo_header: 'TÉCNICO DE ENFERMAGEM',
+  };
+}
+
+/** Comando negativo + gabarito B — A/C viram `valid_conduct` no trap-reveal (gate visual F1). */
+export const GALLERY_TRAP_REVEAL_NEGATIVE_INSTRUCTION =
+  'Assinale a alternativa INCORRETA sobre vias e volumes de administração.';
+
+export const GALLERY_TRAP_REVEAL_NEGATIVE_OPTIONS = [
+  { id: 'A', text: 'Deltoide adulto: volume típico ≤ 2 mL.', is_correct: false },
+  { id: 'B', text: 'IM com 5 mL no deltoide é conduta padrão.', is_correct: true },
+  { id: 'C', text: 'SC usa agulha curta; 40×12 é perfil de IM.', is_correct: false },
+] as const;
+
+/** Só `trap-reveal` consome polaridade — demais danger molds ficam no histórico “tudo ERRO”. */
+export function galleryPolarityContext(slideType: SlideTypeKey, variant: string): {
+  questionInstruction?: string;
+  questionOptions?: { id: string; text: string; is_correct: boolean }[];
+} {
+  if (slideType !== 'danger_zone' || variant !== 'trap-reveal') {
+    return {};
+  }
+  return {
+    questionInstruction: GALLERY_TRAP_REVEAL_NEGATIVE_INSTRUCTION,
+    questionOptions: GALLERY_TRAP_REVEAL_NEGATIVE_OPTIONS.map((o) => ({ ...o })),
   };
 }

@@ -121,7 +121,7 @@ O subtópico canônico (`meta.subtopico`) é **bucket**; o **ramo** define qual 
 
 **Gate na escrita:** `detectMoldL3Mismatch` em [`premiumGate.ts`](../lib/catalogMigration/premiumGate.ts) — warn em `mold_l3_zero_slots` / `mold_l3_runtime_fallback`; erro bloqueante só em zero slots quando o subtópico exige molde.
 
-**Exemplo:** questão de puberdade em Saúde do Adolescente → ramo `adolescente_desenvolvimento` → `morphological` / `compare`, **não** cortinas de sigilo (0/0 pilares).
+**Exemplo:** questão de puberdade em Saúde do Adolescente → ramo `adolescente_desenvolvimento` → pacote glanceable Onda 2 (`adolescent-care-pillars-deck` / isolate-board / compare), **não** cortinas v1 de sigilo.
 
 ---
 

@@ -82,10 +82,10 @@ Fonte: `docs/MOLD_AFFINITY_RESOLVER.md` (pode evoluir).
 |-------------|-------------------|------|
 | `adolescente_etica_sigilo` | `adolescent-care-pillars-deck` · speak-barrier · `adolescent-exceto-isolate-board` · exceto-compare (v2); v1 curtain/weave/consent = legado | bespoke forte |
 | `adolescente_antropometria` | growth-z-rail · z-band · z-classify · z-threshold | só corpus escore Z |
-| `adolescente_desenvolvimento` | genérico premium | ok_generico típico |
-| `adolescente_saude_mental` | genérico premium | |
-| `adolescente_violencia_protecao` | genérico premium | |
-| `adolescente_generico` | genérico premium | |
+| `adolescente_violencia_protecao` | mesmo glanceable v2 (`ADOLESCENTE_GLANCEABLE_MOLD`) | Onda 2 — acolher×proteger |
+| `adolescente_saude_mental` | idem | Onda 2 — acolher×afastar |
+| `adolescente_desenvolvimento` | idem | Onda 2 — marcos/PillarDeck |
+| `adolescente_generico` | idem | Onda 2 — EXCETO/diretrizes board |
 
 Sempre confirmar no INDEX + playbook/registry antes do Modo B.
 

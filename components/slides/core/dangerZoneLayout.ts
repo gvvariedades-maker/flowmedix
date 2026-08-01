@@ -31,6 +31,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'ist-trap-chips',
   'adolescent-consent-gate',
   'adolescent-exceto-compare',
+  'pni-exceto-compare',
   'adolescent-z-threshold-trap',
   'burn-trap-arena',
   'trabalho-pep-trap-arena',
@@ -124,6 +125,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'biosseg-trap-chips') return 'biosseg-trap-chips';
   if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
   if (explicitVariant === 'adolescent-exceto-compare') return 'adolescent-exceto-compare';
+  if (explicitVariant === 'pni-exceto-compare') return 'pni-exceto-compare';
   if (explicitVariant === 'adolescent-z-threshold-trap') return 'adolescent-z-threshold-trap';
   if (explicitVariant === 'burn-trap-arena') return 'burn-trap-arena';
   if (explicitVariant === 'trabalho-pep-trap-arena') return 'trabalho-pep-trap-arena';
@@ -226,6 +228,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'adolescent-exceto-compare') {
       return 'adolescent-exceto-compare';
+    }
+    if (!explicitVariant && fallbackVariant === 'pni-exceto-compare') {
+      return 'pni-exceto-compare';
     }
     if (!explicitVariant && fallbackVariant === 'adolescent-z-threshold-trap') {
       return 'adolescent-z-threshold-trap';

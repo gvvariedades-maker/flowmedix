@@ -33,17 +33,29 @@ describe('pedagogicalBranch', () => {
       'Em relação à violência sexual em crianças e adolescentes, é correto afirmar: notificação compulsória e rede de proteção.';
     expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('adolescente_violencia_protecao');
     const design = getPresentationDesign(subtopico, 'adolescente_violencia_protecao');
-    expect(design?.conceptMap).toBe('morphological');
+    expect(design?.conceptMap).toBe('adolescent-care-pillars-deck');
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_violencia_protecao')).toBe(
-      'morphological',
+      'adolescent-care-pillars-deck',
     );
   });
 
-  it('ramo desenvolvimento usa layout genérico no concept_map', () => {
+  it('ramo desenvolvimento usa pacote glanceable Onda 2 no concept_map', () => {
     const design = getPresentationDesign(subtopico, 'adolescente_desenvolvimento');
-    expect(design?.conceptMap).toBe('morphological');
+    expect(design?.conceptMap).toBe('adolescent-care-pillars-deck');
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_desenvolvimento')).toBe(
-      'morphological',
+      'adolescent-care-pillars-deck',
+    );
+  });
+
+  it('ramo saúde mental usa isolate-board no logic_flow (Onda 2)', () => {
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'adolescente_saude_mental')).toBe(
+      'adolescent-exceto-isolate-board',
+    );
+  });
+
+  it('ramo genérico usa exceto-compare no danger_zone (Onda 2)', () => {
+    expect(getLayoutVariantForBranch(subtopico, 'danger_zone', 'adolescente_generico')).toBe(
+      'adolescent-exceto-compare',
     );
   });
 
@@ -250,7 +262,8 @@ describe('enrichPresentationContext — meta da questão', () => {
       'imunizacao_exceto',
     );
     const design = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_exceto');
-    expect(design?.dangerZone).toBe('compare');
+    expect(design?.logicFlow).toBe('pni-exceto-isolate-board');
+    expect(design?.dangerZone).toBe('pni-exceto-compare');
   });
 
   it('infere imunizacao_generico para campanha diabetes Portaria 2.048 (não calendário PNI)', () => {

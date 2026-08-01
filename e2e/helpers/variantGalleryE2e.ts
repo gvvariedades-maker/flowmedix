@@ -66,9 +66,17 @@ export async function screenshotGalleryPanels(
   for (const fixture of ['default', 'stress'] as const) {
     const panel = page.getByTestId(`variant-gallery-panel-${fixture}`);
     await panel.scrollIntoViewIfNeeded();
+    // trap-reveal F1: garantir cards (CONDUTA CORRETA / ERRO) visíveis no enquadramento
+    if (key === 'danger_zone__trap-reveal' && fixture === 'default') {
+      await expect(panel.getByText('CONDUTA CORRETA #1')).toBeVisible({ timeout: 15_000 });
+      await expect(panel.getByText('CONDUTA CORRETA #3')).toBeVisible({ timeout: 5_000 });
+      await expect(panel.getByText('ERRO #2')).toBeVisible({ timeout: 5_000 });
+      await panel.getByText('CONDUTA CORRETA #1').scrollIntoViewIfNeeded();
+    }
     await panel.screenshot({
       path: path.join(outDir, `${key}-${viewportLabel}-${fixture}.png`),
       type: 'png',
+      animations: 'disabled',
     });
   }
 }

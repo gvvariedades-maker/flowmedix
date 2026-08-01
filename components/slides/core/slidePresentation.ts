@@ -29,6 +29,7 @@ import {
 } from './dangerZoneLayout';
 import { resolveLogicFlowRevealMode } from './logicFlowRevealMode';
 import { resolveDangerZoneRevealMode } from './dangerZoneRevealMode';
+import type { DangerZoneOptionLike } from './dangerZonePolarity';
 import { resolveSlideTitle } from './slideTitleResolve';
 import { enhanceGoldenRuleRows } from './goldenRuleRowsEnhance';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
@@ -56,8 +57,10 @@ export type SlidePresentationContext = {
   familyId?: FamilyId;
   /** Ramo pedagógico explícito ou inferido (L2.5). */
   pedagogicalBranch?: PedagogicalBranchId;
-  /** Enunciado — usado na inferência de ramo quando necessário. */
+  /** Enunciado — usado na inferência de ramo e na polaridade de danger_zone. */
   instruction?: string;
+  /** Alternativas MCQ — polaridade por item (comando negativo × gabarito). */
+  options?: DangerZoneOptionLike[];
 };
 
 const FAMILY_SLIDE_TYPE_MAP: Record<string, FamilySlideType> = {

@@ -15,6 +15,13 @@ import {
   PNI_MONTH_SLOTS,
   pniMonthLabel,
 } from '@/lib/slides/pniSlideUtils';
+import {
+  BoardChrome,
+  CategoryStrip,
+  CriticalNumber,
+  LabelBodyRow,
+  type BoardTone,
+} from '../primitives';
 
 interface GoldenRulePniCalendarBoardProps {
   content?: string;
@@ -80,7 +87,8 @@ function CalendarRowCard({
   const reduceMotion = useReducedMotion();
   const hot = isCalendarHotRow(row.label, row.value, row.emphasis, row.badge);
   const iconName = inferPniIconName(`${row.label} ${row.value}`);
-    const rowMonths = inferCalendarRowMonths(row.label, row.value);
+  const rowMonths = inferCalendarRowMonths(row.label, row.value);
+  const tone: BoardTone = hot ? 'lime' : 'neutral';
 
   return (
     <motion.button
@@ -90,48 +98,45 @@ function CalendarRowCard({
       transition={{ delay: reduceMotion ? 0 : index * 0.05 }}
       onClick={onToggle}
       aria-expanded={expanded}
-      className={`w-full overflow-hidden rounded-[1.25rem] border text-left shadow-sm transition-all ${
-        hot
-          ? 'border-lime-400/90 border-l-[4px] bg-gradient-to-br from-lime-50/90 via-white to-emerald-50/70 ring-2 ring-lime-300/30'
-          : 'border-slate-200/70 border-l-[4px] border-l-lime-300/70 bg-white/95'
-      }`}
+      className="w-full text-left"
     >
-      <div className="flex flex-col gap-2 p-4">
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${hot ? 'bg-lime-500 text-white' : 'bg-lime-100 text-lime-800'}`}>
-              <SlideLucideIcon name={iconName} size={18} />
-            </div>
-            <p className="font-mono text-[10px] font-bold uppercase tracking-wide text-slate-600">{row.label}</p>
-          </div>
-          {row.badge ? (
-            <span className="shrink-0 rounded-full bg-lime-100 px-2 py-0.5 font-mono text-[9px] font-bold uppercase text-lime-800">
-              {row.badge}
-            </span>
-          ) : null}
-        </div>
-        {rowMonths.length > 0 ? (
-          <div className="flex flex-wrap gap-1">
-            {rowMonths.map((m) => (
+      <LabelBodyRow
+        chip={row.label}
+        tone={tone}
+        className={hot ? 'ring-2 ring-lime-300/40' : undefined}
+        body={
+          <span className="flex flex-col gap-2">
+            <span className="flex items-start gap-2">
               <span
-                key={m}
-                className="rounded-full bg-sky-100 px-2 py-0.5 font-mono text-[9px] font-bold text-sky-900"
+                className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg ${
+                  hot ? 'bg-lime-500 text-white' : 'bg-lime-100 text-lime-800'
+                }`}
               >
-                {pniMonthLabel(m)}
+                <SlideLucideIcon name={iconName} size={14} />
               </span>
-            ))}
-          </div>
-        ) : null}
-        <p className={`font-body text-sm leading-relaxed text-slate-800 ${expanded ? '' : 'line-clamp-2'}`}>
-          {row.value}
-        </p>
-        {!expanded ? (
-          <span className="inline-flex items-center gap-1 self-start rounded-full bg-slate-100 px-2 py-0.5 font-mono text-[9px] font-bold uppercase text-slate-500">
-            <ChevronDown className="h-2.5 w-2.5" aria-hidden />
-            expandir
+              <span className="min-w-0 flex-1">
+                {row.badge ? (
+                  <CategoryStrip label={row.badge} tone="lime" className="mb-1.5 self-start" />
+                ) : null}
+                {rowMonths.length > 0 ? (
+                  <div className="mb-1.5 flex flex-wrap gap-1">
+                    {rowMonths.map((m) => (
+                      <CategoryStrip key={m} label={pniMonthLabel(m)} tone="command" />
+                    ))}
+                  </div>
+                ) : null}
+                <span className={expanded ? '' : 'line-clamp-2'}>{row.value}</span>
+              </span>
+            </span>
+            {!expanded ? (
+              <span className="inline-flex items-center gap-1 self-start font-mono text-[9px] font-bold uppercase text-slate-500">
+                <ChevronDown className="h-2.5 w-2.5" aria-hidden />
+                expandir
+              </span>
+            ) : null}
           </span>
-        ) : null}
-      </div>
+        }
+      />
     </motion.button>
   );
 }
@@ -173,57 +178,54 @@ export function GoldenRulePniCalendarBoard({
   }, []);
 
   const title = content?.trim();
+  const eyebrow =
+    title && title.length <= 72
+      ? title
+      : title
+        ? 'Calendário PNI — referência'
+        : undefined;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-5">
-      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-40`} />
+    <BoardChrome theme={theme} maxWidth="3xl" eyebrow={eyebrow} footerRule={footerRule}>
+      {!catchUpMode && activeMonths.size > 0 ? (
+        <MonthRail
+          activeMonths={activeMonths}
+          selectedMonth={selectedMonth}
+          onSelect={toggleMonth}
+        />
+      ) : null}
 
-      <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col gap-4">
-        {title ? (
-          <motion.p
-            initial={reduceMotion ? false : { opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="rounded-full border border-lime-200/80 bg-white/80 px-4 py-2 text-center font-mono text-[10px] font-bold uppercase tracking-widest text-lime-900 shadow-sm md:text-[11px]"
-          >
-            {title.length <= 72 ? title : 'Calendário PNI — referência'}
-          </motion.p>
-        ) : null}
+      {catchUpMode ? (
+        <CategoryStrip
+          label="Modo catch-up — conduta por faixa etária"
+          tone="command"
+          className="self-center px-3 py-1.5 text-[10px]"
+        />
+      ) : null}
 
-        {!catchUpMode && activeMonths.size > 0 ? (
-          <MonthRail
-            activeMonths={activeMonths}
-            selectedMonth={selectedMonth}
-            onSelect={toggleMonth}
-          />
-        ) : null}
+      <div className="flex flex-col gap-3">
+        {dataRows.map((row, index) => {
+          const rowMonths = inferCalendarRowMonths(row.label, row.value);
+          const dimmed =
+            selectedMonth !== null &&
+            rowMonths.length > 0 &&
+            !rowMonths.includes(selectedMonth);
+          return (
+            <CalendarRowCard
+              key={`${row.label}-${index}`}
+              row={row}
+              index={index}
+              expanded={expandedIndex === index}
+              onToggle={() => toggleExpanded(index)}
+              dimmed={dimmed}
+            />
+          );
+        })}
+      </div>
 
-        {catchUpMode ? (
-          <p className="rounded-xl border border-sky-200/80 bg-sky-50/80 px-3 py-2 text-center font-mono text-[10px] font-bold uppercase tracking-widest text-sky-900">
-            Modo catch-up — conduta por faixa etária
-          </p>
-        ) : null}
-
-        <div className="flex flex-col gap-3">
-          {dataRows.map((row, index) => {
-            const rowMonths = inferCalendarRowMonths(row.label, row.value);
-            const dimmed =
-              selectedMonth !== null &&
-              rowMonths.length > 0 &&
-              !rowMonths.includes(selectedMonth);
-            return (
-              <CalendarRowCard
-                key={`${row.label}-${index}`}
-                row={row}
-                index={index}
-                expanded={expandedIndex === index}
-                onToggle={() => toggleExpanded(index)}
-                dimmed={dimmed}
-              />
-            );
-          })}
-        </div>
-
-        {conclusionRows.map((row, index) => (
+      {conclusionRows.map((row, index) => {
+        const short = row.value.trim().length <= 24;
+        return (
           <motion.div
             key={`conclusion-${index}`}
             initial={reduceMotion ? false : { opacity: 0, scale: 0.98 }}
@@ -233,18 +235,18 @@ export function GoldenRulePniCalendarBoard({
             <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-emerald-700">
               {row.label}
             </p>
-            <p className="mt-1 font-display text-lg font-black text-emerald-900 md:text-xl">{row.value}</p>
+            {short ? (
+              <div className="mt-2 flex justify-center">
+                <CriticalNumber value={row.value} emphasis="ok" />
+              </div>
+            ) : (
+              <p className="mt-1 font-display text-lg font-black text-emerald-900 md:text-xl">
+                {row.value}
+              </p>
+            )}
           </motion.div>
-        ))}
-
-        {footerRule ? (
-          <p
-            className={`rounded-xl border px-4 py-3 text-center font-body text-sm italic leading-relaxed md:text-base ${theme.borderColor} ${theme.iconBg} ${theme.textSecondary}`}
-          >
-            {footerRule}
-          </p>
-        ) : null}
-      </div>
-    </div>
+        );
+      })}
+    </BoardChrome>
   );
 }

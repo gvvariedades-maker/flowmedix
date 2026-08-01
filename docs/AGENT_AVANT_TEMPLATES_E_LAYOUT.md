@@ -94,6 +94,7 @@ O fallback da linha **Imunização** na §6.5 é genérico; com `pedagogical_bra
 | `imunizacao_vf_intervalos` | `pni-rules-deck` | `pni-interval-matrix` | `pni-vf-juggle-tap` | `pni-trap-chips` |
 | `imunizacao_calendario` | `vaccine-timeline` | `pni-calendar-board` | `pni-calendar-elimination-tap` | `calendar-mismatch` |
 | `imunizacao_cadeia_frio` | `cold-chain-hub` | `pni-temperature-rail` | `pni-cold-chain-tap` | `temperature-mismatch` |
+| `imunizacao_exceto` | `morphological` | `reference_table` | `pni-exceto-isolate-board` | `pni-exceto-compare` |
 | `imunizacao_generico` | `morphological` | `reference_table` | `vertical` / tap | `compare` |
 
 Detalhe visual e goldens: [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) · briefs em `artifacts/l3-brief-imunizacao-*.md`.
