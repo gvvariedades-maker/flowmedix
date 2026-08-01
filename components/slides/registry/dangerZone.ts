@@ -305,6 +305,15 @@ const Dyn_adolescent_consent_gate = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_adolescent_exceto_compare = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/DangerZoneAdolescentExcetoCompare') as Promise<Record<string, unknown>>,
+      'DangerZoneAdolescentExcetoCompare',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_adolescent_z_threshold_trap = dynamic(
   () => loadNamedVariant(() => import('../variants/DangerZoneAdolescentZThresholdTrap') as Promise<Record<string, unknown>>, 'DangerZoneAdolescentZThresholdTrap'),
   { ssr: true, loading: () => null },
@@ -419,6 +428,7 @@ export const DANGER_ZONE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'tb-transmission-trap': { Component: Dyn_tb_transmission_trap, requiresItems: true },
   'itu-catheter-trap': { Component: Dyn_itu_catheter_trap, requiresItems: true },
   'adolescent-consent-gate': { Component: Dyn_adolescent_consent_gate, requiresItems: true },
+  'adolescent-exceto-compare': { Component: Dyn_adolescent_exceto_compare, requiresItems: true },
   'adolescent-z-threshold-trap': { Component: Dyn_adolescent_z_threshold_trap, requiresItems: true },
   'vitals-classify-arena': { Component: Dyn_vitals_classify_arena, requiresItems: true },
   'trap-reveal': { Component: Dyn_trap_reveal, requiresItems: true },

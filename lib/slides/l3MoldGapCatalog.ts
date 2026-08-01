@@ -58,7 +58,7 @@ export function packageUsesBespoke(design?: SubtopicDesign): boolean {
   );
 }
 
-const ADOLESCENT_ETHICS = 'adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)';
+const ADOLESCENT_ETHICS = 'adolescent-care-pillars-deck · adolescent-speak-barrier-board · adolescent-exceto-isolate-tap · adolescent-exceto-compare (bespoke v2)';
 const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
 const HISTORIA_BRIDGE = 'bridge · reference_table · vertical · compare (genérico premium)';
 const HISTORIA_GENERIC = 'morphological · reference_table · vertical · compare (genérico premium)';

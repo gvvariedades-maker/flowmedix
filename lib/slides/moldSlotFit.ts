@@ -104,11 +104,21 @@ export function countMoldInteractiveSlots(variant: string, slide: MoldAffinitySl
   switch (variant) {
     case 'adolescent-privacy-curtain':
       return countAdolescentPrivacyCurtainSlots(slide);
+    case 'adolescent-care-pillars-deck':
+      return Array.isArray(slide.items) || Array.isArray(slide.concepts)
+        ? (slide.items?.length ?? slide.concepts?.length ?? 0)
+        : 0;
     case 'adolescent-sigilo-spectrum':
       return countAdolescentSigiloSpectrumSlots(slide);
+    case 'adolescent-speak-barrier-board':
+      return Array.isArray(slide.rows) ? slide.rows.length : 0;
     case 'adolescent-vf-weave-tap':
       return Array.isArray(slide.steps) ? slide.steps.length : 0;
+    case 'adolescent-exceto-isolate-tap':
+      return Array.isArray(slide.steps) ? slide.steps.length : 0;
     case 'adolescent-consent-gate':
+      return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
+    case 'adolescent-exceto-compare':
       return Array.isArray(slide.items) ? slide.items.filter(Boolean).length : 0;
     case 'adolescent-growth-z-rail':
       return countAdolescentGrowthZRailSlots(slide);

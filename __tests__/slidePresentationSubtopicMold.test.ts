@@ -1314,7 +1314,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.dangerRevealMode).toBe('tap');
   });
 
-  it('Saúde do Adolescente: concept_map adolescent-privacy-curtain no molde', () => {
+  it('Saúde do Adolescente: concept_map adolescent-care-pillars-deck no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'concept_map',
@@ -1330,10 +1330,10 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-privacy-curtain');
+    expect(result.layoutVariant).toBe('adolescent-care-pillars-deck');
   });
 
-  it('Saúde do Adolescente: golden_rule adolescent-sigilo-spectrum com rows no molde', () => {
+  it('Saúde do Adolescente: golden_rule adolescent-speak-barrier-board com rows no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'golden_rule',
@@ -1350,10 +1350,10 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-sigilo-spectrum');
+    expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
   });
 
-  it('Saúde do Adolescente: logic_flow adolescent-vf-weave-tap no molde', () => {
+  it('Saúde do Adolescente: logic_flow adolescent-exceto-isolate-tap no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'logic_flow',
@@ -1367,11 +1367,11 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-vf-weave-tap');
+    expect(result.layoutVariant).toBe('adolescent-exceto-isolate-tap');
     expect(result.revealMode).toBe('tap');
   });
 
-  it('Saúde do Adolescente: danger_zone adolescent-consent-gate com correct no molde', () => {
+  it('Saúde do Adolescente: danger_zone adolescent-exceto-compare com correct no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'danger_zone',
@@ -1390,9 +1390,8 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('adolescent-consent-gate');
+    expect(result.layoutVariant).toBe('adolescent-exceto-compare');
     expect(result.bulletStyle).toBe('x_icon');
-    expect(result.dangerRevealMode).toBe('tap');
   });
 
   it('Promoção à Saúde: concept_map sus-art4-orbit no molde', () => {
@@ -2959,7 +2958,7 @@ describe('slidePresentation — molde por subtópico', () => {
           pedagogicalBranch: 'adolescente_etica_sigilo',
         },
       );
-      expect(result.layoutVariant).toBe('adolescent-sigilo-spectrum');
+      expect(result.layoutVariant).toBe('adolescent-speak-barrier-board');
     });
 
     it('puberdade (IGEDUC) → concept_map genérico, não privacy-curtain', () => {

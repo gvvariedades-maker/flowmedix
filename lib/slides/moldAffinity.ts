@@ -126,9 +126,13 @@ const BIOSSEG_ITU_VARIANTS = new Set([
 
 const ADOLESCENT_VARIANTS = new Set([
   'adolescent-privacy-curtain',
+  'adolescent-care-pillars-deck',
   'adolescent-sigilo-spectrum',
+  'adolescent-speak-barrier-board',
   'adolescent-vf-weave-tap',
+  'adolescent-exceto-isolate-tap',
   'adolescent-consent-gate',
+  'adolescent-exceto-compare',
 ]);
 
 const ADOLESCENT_ANTHROPOMETRY_VARIANTS = new Set([
@@ -592,11 +596,26 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
   },
+  'adolescent-care-pillars-deck': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
+    positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+  },
   'adolescent-sigilo-spectrum': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+  },
+  'adolescent-speak-barrier-board': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
+    positivePatterns: [
+      ...ADOLESCENT_ETHICS_POSITIVE,
+      /linguagem|jarg[aã]o|rebuscad|acess[ií]vel|comunica/i,
+    ],
   },
   'adolescent-vf-weave-tap': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
@@ -607,7 +626,22 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
       /afirmativa\s+[IIVX]+|julgar\s+[IIVX]+|\bI\b.*(?:verdadeira|falsa)/i,
     ],
   },
+  'adolescent-exceto-isolate-tap': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
+    positivePatterns: [
+      ...ADOLESCENT_ETHICS_POSITIVE,
+      /incorreta|exceto|linguagem|jarg[aã]o|rebuscad/i,
+    ],
+  },
   'adolescent-consent-gate': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_ETHICS_BLOCK,
+    positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+  },
+  'adolescent-exceto-compare': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,

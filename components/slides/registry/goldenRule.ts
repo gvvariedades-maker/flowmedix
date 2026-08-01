@@ -340,6 +340,15 @@ const Dyn_adolescent_sigilo_spectrum = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_adolescent_speak_barrier_board = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/GoldenRuleAdolescentSpeakBarrierBoard') as Promise<Record<string, unknown>>,
+      'GoldenRuleAdolescentSpeakBarrierBoard',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_adolescent_z_band_board = dynamic(
   () => loadNamedVariant(() => import('../variants/GoldenRuleAdolescentZBandBoard') as Promise<Record<string, unknown>>, 'GoldenRuleAdolescentZBandBoard'),
   { ssr: true, loading: () => null },
@@ -416,6 +425,7 @@ export const GOLDEN_RULE_REGISTRY: Record<string, BespokeVariantEntry> = {
   'tb-precaution-board': { Component: Dyn_tb_precaution_board, requiresRows: true },
   'itu-bundle-letter-board': { Component: Dyn_itu_bundle_letter_board, requiresRows: true },
   'adolescent-sigilo-spectrum': { Component: Dyn_adolescent_sigilo_spectrum, requiresRows: true },
+  'adolescent-speak-barrier-board': { Component: Dyn_adolescent_speak_barrier_board, requiresRows: true },
   'adolescent-z-band-board': { Component: Dyn_adolescent_z_band_board, requiresRows: true },
   'soft-lens-board': { Component: Dyn_soft_lens_board, requiresRows: true },
 };

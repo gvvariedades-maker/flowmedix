@@ -330,6 +330,15 @@ const Dyn_adolescent_vf_weave_tap = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_adolescent_exceto_isolate_tap = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/LogicFlowAdolescentExcetoIsolateTap') as Promise<Record<string, unknown>>,
+      'LogicFlowAdolescentExcetoIsolateTap',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_adolescent_z_classify_tap = dynamic(
   () => loadNamedVariant(() => import('../variants/LogicFlowAdolescentZClassifyTap') as Promise<Record<string, unknown>>, 'LogicFlowAdolescentZClassifyTap'),
   { ssr: true, loading: () => null },
@@ -419,6 +428,7 @@ export const LOGIC_FLOW_REGISTRY: Record<string, BespokeVariantEntry> = {
   'farmaco-vf-juggle-tap': { Component: Dyn_farmaco_vf_juggle_tap },
   'farmaco-protocol-tap-flow': { Component: Dyn_farmaco_protocol_tap_flow },
   'adolescent-vf-weave-tap': { Component: Dyn_adolescent_vf_weave_tap },
+  'adolescent-exceto-isolate-tap': { Component: Dyn_adolescent_exceto_isolate_tap },
   'adolescent-z-classify-tap': { Component: Dyn_adolescent_z_classify_tap },
   'dose-calc-tap': { Component: Dyn_dose_calc_tap },
   'sae-decision-tap': { Component: Dyn_sae_decision_tap },

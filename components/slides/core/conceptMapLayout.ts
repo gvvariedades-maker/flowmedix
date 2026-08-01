@@ -35,6 +35,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'burn-depth-layer-deck',
   'ist-risk-routes-deck',
   'adolescent-privacy-curtain',
+  'adolescent-care-pillars-deck',
   'adolescent-growth-z-rail',
   'nr32-annex-deck',
   'sp-id-verify-deck',

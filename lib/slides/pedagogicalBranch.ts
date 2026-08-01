@@ -172,10 +172,10 @@ export type PedagogicalBranchId =
 
 const ADOLESCENTE_ETHICS_MOLD: SubtopicDesign = {
   template: 'sky',
-  conceptMap: 'adolescent-privacy-curtain',
-  goldenRule: 'adolescent-sigilo-spectrum',
-  logicFlow: 'adolescent-vf-weave-tap',
-  dangerZone: 'adolescent-consent-gate',
+  conceptMap: 'adolescent-care-pillars-deck',
+  goldenRule: 'adolescent-speak-barrier-board',
+  logicFlow: 'adolescent-exceto-isolate-tap',
+  dangerZone: 'adolescent-exceto-compare',
 };
 
 /** Layout genérico dentro do tema adolescente (sem moldes ética/sigilo). */

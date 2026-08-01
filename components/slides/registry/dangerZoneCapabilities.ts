@@ -14,6 +14,7 @@ export type DangerZoneVariantCapabilities = {
 
 export const DANGER_ZONE_VARIANT_CAPABILITIES: Record<string, DangerZoneVariantCapabilities> = {
   'adolescent-consent-gate': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },
+  'adolescent-exceto-compare': { defaultBulletStyle: 'x_icon' },
   'adolescent-z-threshold-trap': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },
   'biosseg-trap-chips': { dangerTapReveal: true },
   'burn-trap-arena': { dangerTapReveal: true, defaultBulletStyle: 'x_icon' },

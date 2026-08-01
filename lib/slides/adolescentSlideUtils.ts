@@ -207,3 +207,80 @@ export function consentGatePathLabel(path: ConsentGatePath): string {
       return 'Orientar';
   }
 }
+
+/** ---- Ética v2 — pilares / EXCETO / barreira de fala ---- */
+
+export type AdolescentCarePillar = 'vinculo' | 'rede' | 'sigilo' | 'linguagem' | 'geral';
+
+export function inferAdolescentCarePillar(text: string): AdolescentCarePillar {
+  const lower = text.toLowerCase();
+  if (/linguagem|jarg[aã]o|rebuscad|acess[ií]vel|comunica|falar claro|termos m[eé]dicos/.test(lower)) {
+    return 'linguagem';
+  }
+  if (/sigilo|privacidade|consentimento|confidencial/.test(lower)) return 'sigilo';
+  if (/rede|intersetor|escola|comunidade|cultura|grupos|promo[cç][aã]o/.test(lower)) return 'rede';
+  if (/v[ií]nculo|escuta|acolh|confian[cç]a|sem julgamento/.test(lower)) return 'vinculo';
+  return 'geral';
+}
+
+export function adolescentCarePillarLabel(pillar: AdolescentCarePillar): string {
+  switch (pillar) {
+    case 'vinculo':
+      return 'Vínculo';
+    case 'rede':
+      return 'Rede';
+    case 'sigilo':
+      return 'Sigilo';
+    case 'linguagem':
+      return 'Fala clara';
+    default:
+      return 'Cuidado';
+  }
+}
+
+export function parseAdolescentExcetoStep(
+  step: string,
+  index: number,
+): {
+  kind: 'command' | 'keep' | 'exception' | 'mark' | 'transfer' | 'step';
+  letter?: string;
+  title: string;
+  text: string;
+} {
+  const lower = step.toLowerCase();
+  if (/comando|incorreta|exceto/.test(lower) && index === 0) {
+    return { kind: 'command', title: 'Comando', text: step };
+  }
+  if (/a[–\-–]c|a-c:|condutas certas|descartar/.test(lower)) {
+    return { kind: 'keep', title: 'Manter', text: step };
+  }
+  if (/exce[cç][aã]o|incorreta|jarg[aã]o|rebuscad|complexa/.test(lower) && /d:|letra d|→/.test(lower)) {
+    return { kind: 'exception', title: 'Exceção', text: step };
+  }
+  if (/marcar letra\s*([a-e])/i.test(step)) {
+    const letter = step.match(/marcar letra\s*([a-e])/i)?.[1]?.toUpperCase();
+    return { kind: 'mark', letter, title: 'Gabarito', text: step };
+  }
+  if (/em similares|fixa[cç][aã]o|transfer/.test(lower)) {
+    return { kind: 'transfer', title: 'Em similares', text: step };
+  }
+  if (/letra\s+([a-e])/i.test(step)) {
+    const letter = step.match(/letra\s+([a-e])/i)?.[1]?.toUpperCase();
+    return { kind: 'mark', letter, title: 'Gabarito', text: step };
+  }
+  return { kind: 'step', title: `Passo ${index + 1}`, text: step };
+}
+
+export type SpeakBarrierSide = 'ok' | 'barrier' | 'rights' | 'neutral';
+
+export function inferSpeakBarrierSide(label: string, value: string): SpeakBarrierSide {
+  const text = `${label} ${value}`.toLowerCase();
+  if (/n[aã]o falar|rebuscad|complexa|jarg[aã]o|barreira|parecer competente|termos m[eé]dicos/.test(text)) {
+    return 'barrier';
+  }
+  if (/como falar|clara|acess[ií]vel|entender/.test(text)) return 'ok';
+  if (/direito|sigilo|privacidade|consentimento/.test(text)) return 'rights';
+  if (/informar|sexualidade|contracep|preventivo|dst|gravidez/.test(text)) return 'ok';
+  return 'neutral';
+}
+

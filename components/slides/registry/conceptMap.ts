@@ -270,6 +270,15 @@ const Dyn_adolescent_privacy_curtain = dynamic(
   { ssr: true, loading: () => null },
 );
 
+const Dyn_adolescent_care_pillars_deck = dynamic(
+  () =>
+    loadNamedVariant(
+      () => import('../variants/ConceptMapAdolescentCarePillarsDeck') as Promise<Record<string, unknown>>,
+      'ConceptMapAdolescentCarePillarsDeck',
+    ),
+  { ssr: true, loading: () => null },
+);
+
 const Dyn_adolescent_growth_z_rail = dynamic(
   () => loadNamedVariant(() => import('../variants/AdolescentGrowthZRailConceptMap') as Promise<Record<string, unknown>>, 'AdolescentGrowthZRailConceptMap'),
   { ssr: true, loading: () => null },
@@ -452,6 +461,7 @@ export const CONCEPT_MAP_REGISTRY: Record<string, BespokeVariantEntry> = {
   'burn-depth-layer-deck': { Component: Dyn_burn_depth_layer_deck },
   'ist-risk-routes-deck': { Component: Dyn_ist_risk_routes_deck },
   'adolescent-privacy-curtain': { Component: Dyn_adolescent_privacy_curtain },
+  'adolescent-care-pillars-deck': { Component: Dyn_adolescent_care_pillars_deck },
   'adolescent-growth-z-rail': { Component: Dyn_adolescent_growth_z_rail },
   'nr32-annex-deck': { Component: Dyn_nr32_annex_deck },
   'sp-id-verify-deck': { Component: Dyn_sp_id_verify_deck },

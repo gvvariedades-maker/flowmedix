@@ -79,6 +79,7 @@
     "repair:pedagogy-gabarito-item": "tsx scripts/repair-pedagogy-gabarito-item.ts",
     "audit:resolve-slide-presentation": "tsx scripts/audit-resolve-slide-presentation.ts",
     "audit:variant-usage": "tsx scripts/audit-variant-usage.ts",
+    "audit:variant-click-scorecard": "tsx scripts/audit-variant-click-scorecard.ts",
     "audit:variant-similarity": "tsx scripts/audit-variant-similarity.ts",
     "test:e2e:variant-gallery": "playwright test e2e/variant-gallery-regression.spec.ts --project=chromium",
     "generate:neurocanvas-pilot-cohort": "tsx scripts/generate-neurocanvas-pilot-cohort.ts",

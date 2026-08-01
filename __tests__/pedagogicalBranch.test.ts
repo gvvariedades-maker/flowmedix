@@ -47,9 +47,9 @@ describe('pedagogicalBranch', () => {
     );
   });
 
-  it('ramo ética usa adolescent-privacy-curtain', () => {
+  it('ramo ética usa adolescent-care-pillars-deck', () => {
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_etica_sigilo')).toBe(
-      'adolescent-privacy-curtain',
+      'adolescent-care-pillars-deck',
     );
   });
 });
