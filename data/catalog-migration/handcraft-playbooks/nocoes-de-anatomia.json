@@ -1,0 +1,91 @@
+{
+  "version": 2,
+  "subtopico": "Noções de Anatomia",
+  "pacote_prefix": "nocoes-de-anatomia",
+  "scope_default": "manifest_handcraft",
+  "manifest_handcraft": "data/catalog-migration/nocoes-de-anatomia-completo/manifest.json",
+  "anchor_glob": "examples/questao-premium-*-anatomia-*.json",
+  "guideline": "lib/guidelines/anatomiaBasica.ts",
+  "handcraft_meta": "data/catalog-migration/nocoes-de-anatomia-completo/handcraft-meta.json",
+  "cluster_report": "artifacts/nocoes-de-anatomia-topic-cluster-report.json",
+  "lote_pattern": "nocoes-de-anatomia-g{NN}",
+  "first_lote": "nocoes-de-anatomia-g01",
+  "slug_selection": "P0 anatomia_terminologia (posição anatômica / sinônimos) → g01+; P1 anatomia_planos; P2 anatomia_cavidades_orgaos; P3 anatomia_sistemas; cauda anatomia_generico; meta.subtopico canônico; [READY] strict-v2; volumes finais após npm run cluster:nocoes-de-anatomia",
+  "clusters": [
+    "Terminologia / posição anatômica (anterior-ventral, medial-lateral, proximal-distal)",
+    "Planos e eixos (sagital, frontal/coronal, transverso)",
+    "Cavidades e localização de órgãos (craniana, torácica, abdominal, pélvica, quadrantes)",
+    "Sistemas e níveis de organização (CV, respiratório, digestório, urinário, nervoso, endócrino, musculoesquelético)",
+    "Certo/errado e EXCETO — cauda longa"
+  ],
+  "pedagogical_branches": [
+    {
+      "id": "anatomia_terminologia",
+      "when": "Sinônimos de posição (anterior/ventral, posterior/dorsal, superior/cranial, inferior/caudal), medial×lateral, proximal×distal",
+      "mold": "anatomia-axis-map · anatomia-pair-board · anatomia-axis-tap · anatomia-pair-trap (genérico premium até brief + volume)",
+      "anchors": ["examples/questao-premium-fepese-anatomia-anterior-ventral.json"],
+      "decision_provisional": "molde_redesign — ramo esperado dominante; confirmar volume no cluster"
+    },
+    {
+      "id": "anatomia_planos",
+      "when": "Planos sagital, frontal/coronal, transverso/horizontal/axial; eixos; seções",
+      "mold": "anatomia-axis-map · anatomia-pair-board · anatomia-axis-tap · anatomia-pair-trap",
+      "anchors": ["examples/questao-premium-fepese-anatomia-anterior-ventral.json"],
+      "decision_provisional": "ok_generico ou molde_redesign se ≥5 slugs / ≥10%"
+    },
+    {
+      "id": "anatomia_cavidades_orgaos",
+      "when": "Cavidades craniana/torácica/abdominal/pélvica; quadrantes; localização de órgãos (fígado QD, baço QE, coração mediastino)",
+      "mold": "anatomia-axis-map · anatomia-pair-board · anatomia-axis-tap · anatomia-pair-trap",
+      "anchors": ["examples/questao-premium-fepese-anatomia-anterior-ventral.json"],
+      "decision_provisional": "ok_generico ou molde_redesign se volume forte"
+    },
+    {
+      "id": "anatomia_sistemas",
+      "when": "Sistemas orgânicos, níveis célula→organismo, órgãos de um sistema",
+      "mold": "anatomia-axis-map · anatomia-pair-board · anatomia-axis-tap · anatomia-pair-trap",
+      "anchors": ["examples/questao-premium-fepese-anatomia-anterior-ventral.json"],
+      "decision_provisional": "ok_generico até cluster"
+    },
+    {
+      "id": "anatomia_generico",
+      "when": "Certo/errado, EXCETO e cauda sem fit nos ramos acima",
+      "mold": "genérico premium (subtópico rose / morphological)",
+      "anchors": ["examples/questao-premium-fepese-anatomia-anterior-ventral.json"],
+      "decision_provisional": "ok_generico"
+    }
+  ],
+  "skills": [
+    ".cursor/skills/avant-classify-family/SKILL.md",
+    ".cursor/skills/avant-golden-anchor-handcraft/SKILL.md",
+    ".cursor/skills/professor-para-concurso/SKILL.md",
+    ".cursor/skills/avant-json-template/SKILL.md",
+    ".cursor/skills/brief-enfermagem/SKILL.md",
+    ".cursor/skills/avant-neuroslides-visual/SKILL.md"
+  ],
+  "after_handcraft": [
+    "npm run enrich:guideline-meta -- --lote=<lote> --guideline=anatomiaBasica --write (se script existir; senão enriquecer meta.guideline_refs manualmente)",
+    "npm run validate:goldens -- --lote=<lote> --strict",
+    "npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=agent"
+  ],
+  "proibido": [
+    "ai:generate",
+    "catalog:upgrade-premium",
+    "catalog:apply-lote --apply sem 'pode aplicar'",
+    "handcraft em massa sem audit:golden-anchor-gate PASS",
+    "criar l3-brief-INDEX sem cluster report real (export questions/)"
+  ],
+  "validation": {
+    "per_slug": "npm run audit:questao-readiness -- --file=<path> --strict-v2-pedagogy",
+    "per_lote_l1": "npm run validate:goldens -- --lote=<lote> --strict && npm run audit:questao-readiness -- --lote=<lote> --strict-v2-pedagogy",
+    "per_lote_l2": "npm run audit:slug-alignment -- --lote=<lote> --strict",
+    "per_lote_l2b": "npm run audit:numeric-factcheck -- --lote=<lote>",
+    "per_lote_l6": "npm run audit:anchor-review -- --lote=<lote> --record-pass --reviewer=agent",
+    "anchors_gate": "npm run audit:golden-anchor-gate -- --subtopico=\"Noções de Anatomia\"",
+    "cluster": "npm run cluster:nocoes-de-anatomia",
+    "taxonomy": "npm run audit:taxonomy-gate -- --subtopico=\"Noções de Anatomia\""
+  }
+}

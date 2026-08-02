@@ -5,8 +5,8 @@
   "scanned": 1,
   "results": [
     {
-      "slug": "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6",
-      "subtopico": "Imunização",
+      "slug": "questao-premium-fepese-anatomia-anterior-ventral",
+      "subtopico": "Noções de Anatomia",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -26,13 +26,13 @@
         {
           "tier": "A2",
           "code": "danger_gabarito_unparseable",
-          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: C).",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: E).",
           "severity": "warn"
         },
         {
           "tier": "A2",
           "code": "l2_gabarito_unparseable",
-          "message": "danger_zone.correct sem letra parseável (gabarito: C) — OK em EXCETO/semântico",
+          "message": "danger_zone.correct sem letra parseável (gabarito: E) — OK em EXCETO/semântico",
           "severity": "warn"
         },
         {
@@ -48,9 +48,8 @@
           "severity": "info"
         }
       ],
-      "family": "vf",
-      "pedagogical_branch": "imunizacao_vf_intervalos",
-      "inferred_branch": "imunizacao_vf_intervalos",
+      "family": "conceito",
+      "pedagogical_branch": "anatomia_terminologia",
       "risk": {
         "risk_tier": "medio",
         "approval_mode": "auto_conditional",

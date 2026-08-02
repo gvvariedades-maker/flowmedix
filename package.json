@@ -259,6 +259,7 @@
     "cluster:vias-de-administracao": "tsx scripts/cluster-vias-de-administracao-topics.ts",
     "cluster:respiratorio-cronico": "tsx scripts/cluster-respiratorio-cronico-topics.ts",
     "cluster:sinais-vitais": "tsx scripts/cluster-sinais-vitais-topics.ts",
+    "cluster:nocoes-de-anatomia": "tsx scripts/cluster-nocoes-de-anatomia-topics.ts",
     "cluster:urgencias-e-emergencias": "tsx scripts/cluster-urgencias-e-emergencias-topics.ts",
     "cluster:enfermagem-do-trabalho": "tsx scripts/cluster-enfermagem-do-trabalho-topics.ts",
     "cluster:processo-de-enfermagem": "tsx scripts/cluster-processo-de-enfermagem-topics.ts",

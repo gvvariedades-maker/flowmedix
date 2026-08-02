@@ -1,0 +1,19 @@
+{
+  "subtopico": "Noções de Anatomia",
+  "pacote_prefix": "nocoes-de-anatomia",
+  "status": "bootstrap",
+  "total_slugs": 48,
+  "handcraft_applied": 0,
+  "authority": "g04_fenix_nc-g03-4cb9405b8309b9bc",
+  "guideline": "lib/guidelines/anatomiaBasica.ts",
+  "playbook": "data/catalog-migration/handcraft-playbooks/nocoes-de-anatomia.json",
+  "anchor": "examples/questao-premium-fepese-anatomia-anterior-ventral.json",
+  "lote_size": 8,
+  "lote_pattern": "nocoes-de-anatomia-g{NN}",
+  "notes": [
+    "Cap 0 bootstrap (2026-08-02): DNA + âncora v2 + pacote completo.",
+    "Próximo: export questions/ com Supabase → cluster → L3 Fase 3b → g01.",
+    "Não promover production_ready neste lote de autoridade G0.4 sem handcraft golden-v1 100%."
+  ],
+  "updated_at": "2026-08-02T17:10:00.000Z"
+}

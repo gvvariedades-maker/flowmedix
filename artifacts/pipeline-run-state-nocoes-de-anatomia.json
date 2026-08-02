@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "subtopico": "Noções de Anatomia",
+  "pacote_prefix": "nocoes-de-anatomia",
+  "mode": "full",
+  "total_slugs": 48,
+  "handcraft_applied": 0,
+  "production_status": "none",
+  "next_unit": {
+    "type": "l3_map",
+    "id": "briefs",
+    "detail": "Falta artifacts/l3-brief-nocoes-de-anatomia-INDEX.md — Mapeamento L3 Fase 3b"
+  },
+  "completed_units": [
+    "bootstrap:dna-2026-08-02"
+  ],
+  "blockers": [],
+  "last_agent_id": "bc-8e64bd5e-c138-4215-8d81-c58ca82a98ea",
+  "last_run_id": null,
+  "last_exit": 0,
+  "last_error": null,
+  "updated_at": "2026-08-02T17:08:50.359Z",
+  "notes": "Cap 0 bootstrap DNA entregue. Ambiente Cloud sem SUPABASE_* — export/taxonomy/cluster exigem .env.local ou Environment Cursor com NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY + ANON_KEY. Próximo Cap = l3_map (briefs) após export+cluster."
+}
