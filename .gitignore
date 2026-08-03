@@ -49,6 +49,7 @@ types/.database.supabase.generated.tmp.ts
 .cursor/skills/*
 !.cursor/skills/professor-elias-santana-metodo/
 !.cursor/skills/professor-elias-santana-metodo/**
+!.cursor/environment.json
 
 # Supabase CLI
 supabase/.temp/

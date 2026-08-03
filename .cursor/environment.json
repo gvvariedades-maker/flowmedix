@@ -1,0 +1,5 @@
+{
+  "name": "avant-flowmedix",
+  "install": "npm ci",
+  "terminals": []
+}
