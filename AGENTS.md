@@ -97,3 +97,24 @@ Detalhe: [`docs/ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) · matriz em [`avant-eng
 Além do gate — por domínio (auth / cache / RLS / Stripe / player): [`docs/ENG_AUDITORIA_POR_RISCO.md`](docs/ENG_AUDITORIA_POR_RISCO.md) · IR: [`docs/SECURITY_INCIDENT_RUNBOOK.md`](docs/SECURITY_INCIDENT_RUNBOOK.md) · rituais + pentest: [`docs/SECURITY_RITUAIS.md`](docs/SECURITY_RITUAIS.md).
 
 **Loop:** mesmo anti-padrão **2×** → novo gate em `scripts/check-architecture-patterns.ts` + registro no changelog de [`ENG_CONVERSA.md`](docs/ENG_CONVERSA.md) (§ Loop de melhoria contínua).
+
+---
+
+## Cursor Cloud specific instructions
+
+Contexto durável para agentes rodando no ambiente cloud. Dependências já são instaladas no boot pelo update script (`npm install`). Comandos padrão de lint/test/build/dev estão em `package.json` e em [`CLAUDE.md`](CLAUDE.md) (§ Comandos rápidos); não duplicar aqui.
+
+**Stack em uma linha:** Next.js 16 (App Router) + Supabase (auth + Postgres). Sem segredos de Supabase/Stripe injetados por padrão neste ambiente.
+
+**Precisa de `.env.local` (gitignored) para `build`/`dev`.** `npm run validate:env` (roda no `build`) exige: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_WEBHOOK_SECRET` (≥16 chars), `NEXT_PUBLIC_APP_URL`. `lint`/`test` não precisam (Jest injeta defaults em `jest.setup.js`).
+
+**Backend local (Supabase) para rodar de ponta a ponta** — a CLI `supabase` é devDependency; exige Docker (não vem pré-instalado):
+- Instalar Docker, subir `dockerd` e liberar o socket (`sudo chmod 666 /var/run/docker.sock`) para usar a CLI sem `sudo`.
+- **`npx supabase start` falha aplicando as migrations do zero**: as migrations assumem um schema base pré-existente (ex.: `public.concursos`, `modulos_estudo`) que **não tem CREATE TABLE commitado** (nem em `supabase/schema.sql`, que está desatualizado, nem em `migrations-legacy`). O repo é feito para conectar a um projeto Supabase já existente, não para reconstruir o DB do zero.
+- Workaround para subir a stack (auth + schema `public` vazio): mover `supabase/migrations` para o lado temporariamente, `npx supabase start`, depois **restaurar a pasta** (mantém o repo limpo). Chaves locais são as demo padrão; `NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321`.
+
+**CSP bloqueia auth do browser contra Supabase local.** O `connect-src` da app só permite `https://*.supabase.co`, então login/cadastro pela UI falham (`Failed to fetch`) quando apontando para `http://127.0.0.1:54321`. A auth funciona na camada de API (verificado: `POST /auth/v1/signup` → 200, usuário criado em `auth.users`). Não "consertar" editando a CSP (`next.config.js` é zona vermelha) sem pedido explícito.
+
+**Demo do fluxo core (estudo reverso) sem catálogo semeado:** rode o dev server com `E2E_DASHBOARD_BYPASS=true`. A app serve, via código (`lib/e2e/*`), uma vitrine + questão + 4 NeuroSlides nos slugs `questao-e2e-estudar-1`/`-2` (ex.: `/estudar/questao-e2e-estudar-1`), pulando auth e DB. É o seam oficial de E2E do projeto.
+
+**DB vazio:** algumas queries de freemium/entitlement logam warnings (ex.: "Não foi possível verificar seu plano gratuito") mas degradam sem quebrar a página.
