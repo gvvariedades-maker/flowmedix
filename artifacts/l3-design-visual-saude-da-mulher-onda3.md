@@ -13,3 +13,9 @@
 | generico | texto×texto | SoftLens/compare | ok_generico |
 
 DoD: `docs/NEUROSLIDES_VISUAL_STRATEGY.md` Camada 7.
+
+
+## Fábrica G2 (2026-08-04)
+
+`visual_bar: pass` — 18 variants compõem `primitives/`. Domínio (rails etários/fases) preservado. Evidência Playwright: ver `saude-da-mulher-nota10-report.md` B1.
+

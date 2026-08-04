@@ -31,9 +31,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_prenatal.md",
       "visual_gallery": {
-        "status": "pending",
+        "status": "pilot",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1 (timeout local cpus:1) — re-run grep Saúde da Mulher"
       }
     },
     {
@@ -45,9 +45,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_parto.md",
       "visual_gallery": {
-        "status": "pending",
+        "status": "pilot",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
       }
     },
     {
@@ -59,9 +59,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_papanicolau.md",
       "visual_gallery": {
-        "status": "pending",
+        "status": "pilot",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
       }
     },
     {
@@ -73,9 +73,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_mama.md",
       "visual_gallery": {
-        "status": "pending",
+        "status": "pilot",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
       }
     },
     {
@@ -87,9 +87,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_puerperio.md",
       "visual_gallery": {
-        "status": "pending",
+        "status": "pilot",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
       }
     },
     {
@@ -101,9 +101,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_planejamento.md",
       "visual_gallery": {
-        "status": "pending",
+        "status": "pilot",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Aguardar PNG após Playwright Saúde da Mulher — moldes L3"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
       }
     },
     {

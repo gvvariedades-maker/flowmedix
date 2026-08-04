@@ -1,10 +1,10 @@
 'use client';
 
 import { useCallback, useMemo, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Microscope } from 'lucide-react';
-import type { ThemeColors } from '../core/themeGenerator';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import { SlideLucideIcon } from '../core/SlideLucideIcon';
+import type { ThemeColors } from '../core/themeGenerator';
 import {
   inferScreeningZoneMarker,
   SCREENING_AGE_MARKERS,
@@ -12,6 +12,12 @@ import {
   screeningZoneShort,
   type ScreeningSpectrumZone,
 } from '@/lib/slides/mulherPapanicolauSlideUtils';
+import {
+  BoardChrome,
+  CategoryStrip,
+  LabelBodyRow,
+  type BoardTone,
+} from '../primitives';
 
 export interface ScreeningConcept {
   icon: string;
@@ -19,42 +25,33 @@ export interface ScreeningConcept {
   description: string;
 }
 
-const ZONE_META: Record<
-  ScreeningSpectrumZone,
-  { bar: string; ring: string; panel: string; text: string }
-> = {
+const ZONE_META: Record<ScreeningSpectrumZone, { ring: string; panel: string; text: string }> = {
   hpv: {
-    bar: 'from-violet-400 to-violet-200',
     ring: 'ring-violet-300/60',
     panel: 'from-violet-50/95 via-white to-purple-50/90',
     text: 'text-violet-900',
   },
   pre_screening: {
-    bar: 'from-slate-300 to-slate-200',
     ring: 'ring-slate-300/60',
     panel: 'from-slate-50/95 via-white to-slate-50/90',
     text: 'text-slate-700',
   },
   active_screening: {
-    bar: 'from-pink-500 to-rose-300',
     ring: 'ring-pink-400/70',
     panel: 'from-pink-50/95 via-white to-rose-50/90',
     text: 'text-pink-900',
   },
   trap_40: {
-    bar: 'from-amber-400 to-amber-200',
     ring: 'ring-amber-400/60',
     panel: 'from-amber-50/95 via-white to-orange-50/90',
     text: 'text-amber-900',
   },
   trap_annual: {
-    bar: 'from-orange-400 to-orange-200',
     ring: 'ring-orange-300/60',
     panel: 'from-orange-50/95 via-white to-amber-50/90',
     text: 'text-orange-900',
   },
   symptomatic_only: {
-    bar: 'from-rose-400 to-rose-200',
     ring: 'ring-rose-300/60',
     panel: 'from-rose-50/95 via-white to-red-50/90',
     text: 'text-rose-900',
@@ -76,6 +73,7 @@ interface MulherScreeningSpectrumConceptMapProps {
   footerRule?: string;
 }
 
+/** Régua etária local — escala 18–64 (rastreio colo). */
 function AgeRuler({ highlightAge }: { highlightAge: number | null }) {
   return (
     <div className="relative rounded-xl border border-pink-200/80 bg-white/90 px-3 py-3">
@@ -99,11 +97,14 @@ function AgeRuler({ highlightAge }: { highlightAge: number | null }) {
   );
 }
 
+/** Espectro de rastreio colo — BoardChrome + LabelBodyRow (Fábrica G2). */
 export function MulherScreeningSpectrumConceptMap({
   concepts,
   theme,
   footerRule,
 }: MulherScreeningSpectrumConceptMapProps) {
+  const reduceMotion = useReducedMotion();
+
   const grouped = useMemo(() => {
     const zones: Partial<Record<ScreeningSpectrumZone, ScreeningConcept[]>> = {};
     const extras: ScreeningConcept[] = [];
@@ -150,103 +151,95 @@ export function MulherScreeningSpectrumConceptMap({
   if (concepts.length === 0) return null;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-5">
-      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
+    <BoardChrome
+      theme={theme}
+      eyebrow="Rastreio colo · espectro etário"
+      footerRule={footerRule}
+      footerLabel="Transferência de prova"
+      maxWidth="lg"
+      washOpacity={0.35}
+    >
+      <AgeRuler highlightAge={focusAge} />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-lg flex-col gap-3">
-        <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-pink-200/80 bg-white/90 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-widest text-pink-800 shadow-sm">
-          <Microscope className="h-3 w-3" aria-hidden />
-          Rastreio colo — espectro etário
-        </span>
+      {zonesOnSpectrum.length > 0 ? (
+        <div className="flex flex-wrap gap-2">
+          {zonesOnSpectrum.map((zone) => {
+            const meta = ZONE_META[zone];
+            const isActive = activeZone === zone;
+            return (
+              <button
+                key={zone}
+                type="button"
+                onClick={() => selectZone(zone)}
+                className={`min-h-[44px] rounded-xl border px-3 py-2 transition-all ${
+                  isActive
+                    ? `border-2 bg-white shadow-md ${meta.ring} ring-2`
+                    : 'border-slate-200/90 bg-white/80 shadow-sm'
+                }`}
+              >
+                <span className={`font-mono text-[10px] font-black ${meta.text}`}>
+                  {screeningZoneShort(zone)}
+                </span>
+                <span className="mt-0.5 block text-[8px] font-bold uppercase text-slate-500">
+                  {screeningZoneLabel(zone)}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
 
-        <AgeRuler highlightAge={focusAge} />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeZone}
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={reduceMotion ? undefined : { opacity: 0, y: -6 }}
+          className={`overflow-hidden rounded-[1.5rem] border border-pink-200/70 bg-gradient-to-br ${activeMeta.panel} p-3 shadow-md`}
+        >
+          <div className="flex flex-col gap-3">
+            {activeConcepts.map((concept, index) => {
+              const marker = inferScreeningZoneMarker(concept.title, concept.description);
+              const expanded = expandedIndex === index;
+              const tone: BoardTone = marker.focus ? 'exception' : 'accent';
 
-        {zonesOnSpectrum.length > 0 ? (
-          <div className="flex flex-wrap gap-2">
-            {zonesOnSpectrum.map((zone) => {
-              const meta = ZONE_META[zone];
-              const isActive = activeZone === zone;
               return (
                 <button
-                  key={zone}
+                  key={`${concept.title}-${index}`}
                   type="button"
-                  onClick={() => selectZone(zone)}
-                  className={`min-h-[44px] rounded-xl border px-3 py-2 transition-all ${
-                    isActive
-                      ? `border-2 bg-white shadow-md ${meta.ring} ring-2`
-                      : 'border-slate-200/90 bg-white/80 shadow-sm'
-                  }`}
+                  onClick={() => toggleExpanded(index)}
+                  aria-expanded={expanded}
+                  className="w-full text-left"
                 >
-                  <span className={`font-mono text-[10px] font-black ${meta.text}`}>
-                    {screeningZoneShort(zone)}
-                  </span>
-                  <span className="mt-0.5 block text-[8px] font-bold uppercase text-slate-500">
-                    {screeningZoneLabel(zone)}
-                  </span>
+                  <LabelBodyRow
+                    chip={concept.title}
+                    tone={tone}
+                    body={
+                      <span className="flex flex-col gap-2">
+                        <span className="flex items-center gap-2">
+                          <span
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${theme.iconBg} ${theme.iconText}`}
+                          >
+                            <SlideLucideIcon name={concept.icon} size={16} />
+                          </span>
+                          {marker.focus ? <CategoryStrip label="foco prova" tone="exception" /> : null}
+                        </span>
+                        <span className={expanded ? '' : 'line-clamp-2'}>{concept.description}</span>
+                        {!expanded ? (
+                          <span className="inline-flex items-center gap-1 self-start font-mono text-[9px] font-bold uppercase text-slate-500">
+                            <ChevronDown className="h-2.5 w-2.5" aria-hidden />
+                            expandir
+                          </span>
+                        ) : null}
+                      </span>
+                    }
+                  />
                 </button>
               );
             })}
           </div>
-        ) : null}
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeZone}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            className={`overflow-hidden rounded-[1.5rem] border border-pink-200/70 bg-gradient-to-br ${activeMeta.panel} p-3 shadow-md`}
-          >
-            <div className="flex flex-col gap-2">
-              {activeConcepts.map((concept, index) => {
-                const marker = inferScreeningZoneMarker(concept.title, concept.description);
-                const expanded = expandedIndex === index;
-                return (
-                  <button
-                    key={`${concept.title}-${index}`}
-                    type="button"
-                    onClick={() => toggleExpanded(index)}
-                    aria-expanded={expanded}
-                    className={`w-full rounded-xl border text-left transition-all ${
-                      marker.focus
-                        ? 'border-pink-400/80 bg-white ring-2 ring-pink-300/30'
-                        : 'border-white/80 bg-white/90'
-                    }`}
-                  >
-                    <div className="flex gap-2 p-3">
-                      <div
-                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${theme.iconBg} ${theme.iconText}`}
-                      >
-                        <SlideLucideIcon name={concept.icon} size={18} />
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <h4 className={`font-display text-xs font-extrabold uppercase ${theme.textPrimary}`}>
-                          {concept.title}
-                        </h4>
-                        <p
-                          className={`mt-1 font-body text-sm leading-relaxed ${theme.textSecondary} ${
-                            expanded ? '' : 'line-clamp-2'
-                          }`}
-                        >
-                          {concept.description}
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {footerRule ? (
-          <p
-            className={`rounded-xl border px-4 py-3 text-center font-body text-sm italic ${theme.borderColor} ${theme.iconBg} ${theme.textSecondary}`}
-          >
-            {footerRule}
-          </p>
-        ) : null}
-      </div>
-    </div>
+        </motion.div>
+      </AnimatePresence>
+    </BoardChrome>
   );
 }

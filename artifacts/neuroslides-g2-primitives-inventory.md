@@ -212,3 +212,29 @@ Só criar variant React nova se gesto **novo** ou ≥5 questões.
 
 **P1 cauda SoftStack:** fechada. Próximo ROI P1: IV taps restantes · Urgencias cauda (se ainda fora de shell).
 
+
+---
+
+## Fábrica Mulher (2026-08-04) — 18 boards → Tier A
+
+Concept / golden / danger dos 6 ramos fortes agora importam `primitives/` (BoardChrome + ProtocolRailRow / LabelBodyRow / PolarityPanel / CategoryStrip / CriticalNumber). Domain rails (trimester / age / phase / method) permanecem locais.
+
+| Arquivo | Primitivos |
+|---------|------------|
+| `MulherGestationTimelineConceptMap` | BoardChrome + ProtocolRailRow |
+| `MulherLaborPhaseDeckConceptMap` | BoardChrome + ProtocolRailRow + CategoryStrip |
+| `MulherScreeningSpectrumConceptMap` | BoardChrome + LabelBodyRow |
+| `MulherMammographySpectrumConceptMap` | BoardChrome + LabelBodyRow |
+| `MulherPuerperioTimelineConceptMap` | BoardChrome + ProtocolRailRow |
+| `MulherContraceptionSpectrumConceptMap` | BoardChrome + LabelBodyRow |
+| `GoldenRuleMulherPrenatalBoard` | BoardChrome + LabelBodyRow + CategoryStrip |
+| `GoldenRuleMulherPartoHumanizadoBoard` | BoardChrome + LabelBodyRow + CategoryStrip |
+| `GoldenRuleMulherPapanicolauBoard` | BoardChrome + LabelBodyRow + CategoryStrip |
+| `GoldenRuleMulherMamaBoard` | BoardChrome + LabelBodyRow + CategoryStrip |
+| `GoldenRuleMulherPuerperioBoard` | BoardChrome + LabelBodyRow + CategoryStrip |
+| `GoldenRuleMulherPlanejamentoBoard` | BoardChrome + LabelBodyRow + CategoryStrip |
+| `DangerZoneMulher*TrapArena` (×6) | BoardChrome + PolarityPanel |
+
+logic_tap Mulher (×6) já Tier B desde P1 lote 2 (FocusShell + LetterEliminationRail).
+
+**visual_bar:** pass — ratchet ad-hoc → kit G2. Playwright PNG ainda B1 (timeout local).

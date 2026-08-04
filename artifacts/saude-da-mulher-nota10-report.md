@@ -5,8 +5,8 @@
 | Subtópico | Saúde da Mulher |
 | pacote_prefix | saude-da-mulher |
 | total_slugs | 246 |
-| Programa | Fábrica 20 TE — Onda 3 nota-10 visual |
-| Atualizado em | 2026-08-03 |
+| Programa | Fábrica visual G2 |
+| Atualizado em | 2026-08-04 |
 
 ---
 
@@ -17,30 +17,39 @@
 | applied / total | 100% | 246/246 | ✅ |
 | status registry | applied | applied | ✅ |
 | production_status | production_ready | production_ready | ✅ |
-| Bespoke 4/4 ramos fortes | 6 ramos | 6 moldes 4/4 wired (reuso; sem React novo) | ✅ |
-| ok_generico 3/3 | documentado | `mulher_generico` SoftLens/compare | ✅ |
+| Bespoke 4/4 ramos fortes | 6 ramos | 6 moldes 4/4 wired | ✅ |
+| ok_generico | documentado | `mulher_generico` SoftLens/compare | ✅ |
 | Âncoras | READY | prenatal VF `[READY]` strict-v2 | ✅ |
-| A4-mínimo | N/A Onda 3 | N/A | ✅ |
-| Playwright L3 | PASS ou captures | **BLOCKED** — `/dev/slide-mold-review` timeout local | ❌ |
-| L6 + captures | escala grande | `visual_gallery=pending` até PNG | ⚠️ |
-| Apply Supabase | 100% | já applied (P0 letter Onda 2) | ✅ |
-| Barra conteúdo | verde | production_ready + âncora READY | ✅ |
-| Barra visual | verde | Design visual + INDEX; evidência e2e pendente | ⚠️ |
+| **Primitives G2** | 18 boards/arenas | **18/18** BoardChrome + kit | ✅ |
+| logic_tap shells | 6/6 | FocusShell + LetterEliminationRail (P1 lote 2) | ✅ |
+| Unit smoke | pass | `__tests__/components/slides/mulherG2Primitives.test.tsx` 3/3 | ✅ |
+| Playwright L3 | PASS ou captures | **BLOCKED** — `/dev/slide-mold-review` timeout (cpus:1) | ⚠️ |
+| L6 + captures | visual_gallery | `pending` até PNG | ⚠️ |
+| Barra conteúdo | verde | production_ready | ✅ |
+| **visual_bar** | pass + ratchet | **pass** — ad-hoc → primitives (massa + footer transferência) | ✅ |
 
 ---
 
-## Print → primitivo (Onda 3)
+## Fábrica G2 (2026-08-04) — o que subiu
 
-| branch | Gesto | Primário | Molde (reuso) |
-|--------|-------|----------|---------------|
-| prenatal | Trilho gestacional | ProtocolRailRow / LabelBodyRow | mulher-*-prenatal* |
-| parto | Deck fases PNH | PillarDeck | mulher-labor-* |
-| papanicolau / mama | Espectro etário | CategoryStrip + LabelBodyRow | screening/mammography-* |
-| puerperio | Linha 0–42 | ProtocolRailRow | mulher-puerperio-* |
-| planejamento | Categorias | PillarDeck | contraception-* |
-| generico | Genérico | SoftLens | morph / table / compare |
+| Antes | Depois (ratchet) |
+|-------|------------------|
+| Wash/footer/cards ad-hoc em 18 variants | `BoardChrome` + `ProtocolRailRow` / `LabelBodyRow` / `PolarityPanel` / `CategoryStrip` / `CriticalNumber` |
+| Danger tap sem guard consistente | Reveal só se `!isRevealed` (padrão Crase) |
+| Tier C no inventário | Tier A (import direto de `primitives/`) |
 
-Refs: `artifacts/l3-brief-saude-da-mulher-INDEX.md` · `artifacts/l3-design-visual-saude-da-mulher-onda3.md` · Camada 7 strategy.
+### Por ramo
+
+| branch | concept | golden | danger |
+|--------|---------|--------|--------|
+| prenatal | ProtocolRailRow timeline | LabelBodyRow + TrimesterRail | PolarityPanel + TrimesterRail |
+| parto | ProtocolRailRow + phase chips | LabelBodyRow + PhaseRail | PolarityPanel + SUPINA×VERTICAL |
+| papanicolau | LabelBodyRow + AgeRuler | LabelBodyRow + AgeRulerBar | PolarityPanel + AgeTrapRuler |
+| mama | LabelBodyRow + AgeRuler | LabelBodyRow + AgeRulerBar | PolarityPanel + AgeTrapRuler |
+| puerperio | ProtocolRailRow timeline | LabelBodyRow + PuerperioTimelineRail | PolarityPanel + DayTrapRuler |
+| planejamento | LabelBodyRow + zones | LabelBodyRow + MethodZoneRail | PolarityPanel + MethodZoneRail |
+
+**Sem** React novo / **sem** mudança de `layout_variant` IDs.
 
 ---
 
@@ -48,16 +57,16 @@ Refs: `artifacts/l3-brief-saude-da-mulher-INDEX.md` · `artifacts/l3-design-visu
 
 | ID | Descrição | Próximo passo |
 |----|-----------|---------------|
-| B1 | Playwright L3 timeout em `page.goto(/dev/slide-mold-review?branch=mulher_prenatal)` | Com `npm run dev` saudável: `npx playwright test e2e/visual-mold-regression.spec.ts --grep "Saúde da Mulher" --project=chromium` → PNGs + `visual_gallery=ready` |
-| B2 | Variants Mulher ainda não compõem `primitives/` | P1 refator (sem mudar IDs de layout_variant) |
+| B1 | Playwright L3 timeout em `page.goto(/dev/slide-mold-review?branch=mulher_prenatal)` (dev `cpus:1`) | Com server já warm: `PLAYWRIGHT_SKIP_WEBSERVER=true npx playwright test e2e/visual-mold-regression.spec.ts --grep "Saúde da Mulher" --project=chromium` → PNGs + `visual_gallery=ready` |
 
 ---
 
 ## Fechamento
 
 ```text
-| applied | bespoke 4/4 | ok_generico | A4 | Playwright | L6 | production_ready | conteúdo | visual | blockers |
-| 246/246 | 6/6 reuso | ok | N/A | blocked | pending captures | production_ready | verde | amarelo | B1 e2e / B2 primitives |
+| applied | bespoke 4/4 | primitives G2 | shells | unit | Playwright | visual_bar | production_ready | blockers |
+| 246/246 | 6/6 | 18/18 | 6/6 Focus | 3/3 PASS | blocked B1 | pass | production_ready | B1 e2e captures |
 ```
 
-**Ship nota-10 visual:** parcial — documentação Camada 7 OK; evidência PNG/Playwright = re-run humano/agente com server OK.
+**Ship nota-10 visual (composição):** ✅ G2 primitives + shells + unit.  
+**Ship evidência PNG:** pendente B1 (ambiente local).
