@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-08-04T01:00:35.226Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g28",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

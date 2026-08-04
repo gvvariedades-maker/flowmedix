@@ -71,11 +71,6 @@
           "label": "Pegadinha da III",
           "detail": "A frase mistura perfurocortante e resíduo infectante para induzir descarte errado.",
           "icon": "AlertTriangle"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra D: I e II apenas.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Coleta correta = escolha do sítio + temperatura adequada + segregação de resíduos"
@@ -91,17 +86,17 @@
       "rows": [
         {
           "label": "I — acesso venoso",
-          "value": "Verdadeira: mediana cubital costuma ser preferida à cefálica",
+          "value": "Mediana cubital costuma ser preferida à cefálica",
           "badge": "ok"
         },
         {
           "label": "II — temperatura",
-          "value": "Verdadeira: transporte refrigerado em geral entre 2°C e 8°C",
+          "value": "Transporte refrigerado em geral entre 2°C e 8°C",
           "badge": "hot"
         },
         {
           "label": "III — descarte",
-          "value": "Falsa: perfurocortante exige segregação e recipiente próprio",
+          "value": "Perfurocortante exige segregação e recipiente próprio",
           "emphasis": "alert",
           "badge": "warn"
         },

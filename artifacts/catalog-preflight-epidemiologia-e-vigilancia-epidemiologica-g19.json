@@ -1,0 +1,76 @@
+{
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g19",
+  "generated_at": "2026-08-04T01:09:30.486Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "ieses-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-9",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

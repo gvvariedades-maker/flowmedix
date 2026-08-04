@@ -58,8 +58,7 @@ export function packageUsesBespoke(design?: SubtopicDesign): boolean {
   );
 }
 
-const ADOLESCENT_ETHICS = 'adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate (bespoke)';
-const ADOLESCENT_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
+const ADOLESCENT_ETHICS = 'adolescent-care-pillars-deck · adolescent-speak-barrier-board · adolescent-exceto-isolate-board · adolescent-exceto-compare (bespoke v2)';
 const HISTORIA_BRIDGE = 'bridge · reference_table · vertical · compare (genérico premium)';
 const HISTORIA_GENERIC = 'morphological · reference_table · vertical · compare (genérico premium)';
 const SP_GENERIC = 'morphological · reference_table · vertical · compare (genérico)';
@@ -126,13 +125,13 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'Escore Z / Caderneta — trilho de faixas antropométricas (brief l3 antropometria).',
     },
     {
-      pattern: /viol[eê]ncia sexual|indicadores.*viol/i,
+      pattern: /viol[eê]ncia sexual|indicadores.*viol|rede de prote[cç][aã]o|notifica[cç][aã]o compuls/i,
       branch_id: 'adolescente_violencia_protecao',
       branch_implemented: true,
-      ideal_mold_package: ADOLESCENT_GENERIC,
-      base_decision: 'ok_generico',
+      ideal_mold_package: ADOLESCENT_ETHICS,
+      base_decision: 'ok_existente',
       rationale:
-        'Violência/rede de proteção — layouts genéricos (sem moldes adolescent-* de sigilo em consulta).',
+        'Violência/rede de proteção — Onda 2 reusa pacote glanceable ética (acolher×afastar); sem IDs novos.',
     },
     {
       pattern: /gravidez|pr[eé][\s-]?natal|riscos gestacion/i,
@@ -151,28 +150,38 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       rationale: 'V/F e ética do cuidado — pacote adolescent-*.',
     },
     {
-      pattern: /transtorno alimentar|imagem corporal|anorexia|bulimia/i,
+      pattern: /transtorno alimentar|imagem corporal|anorexia|bulimia|depress[aã]o|ansiedade/i,
       branch_id: 'adolescente_saude_mental',
       branch_implemented: true,
-      ideal_mold_package: ADOLESCENT_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'Saúde mental alimentar — compare + tabela bastam.',
+      ideal_mold_package: ADOLESCENT_ETHICS,
+      base_decision: 'ok_existente',
+      rationale:
+        'Saúde mental adolescente — Onda 2 reusa glanceable (pillars / speak-barrier / isolate / compare).',
+    },
+    {
+      pattern: /puberdade|tanner|menarca|espermarquia|desenvolvimento puberal|metamorfose f[ií]sica/i,
+      branch_id: 'adolescente_desenvolvimento',
+      branch_implemented: true,
+      ideal_mold_package: ADOLESCENT_ETHICS,
+      base_decision: 'ok_existente',
+      rationale:
+        'Desenvolvimento/puberdade — Onda 2 reusa PillarDeck + isolate-board (sem timeline nova).',
     },
     {
       pattern: /diretrizes|exceto|ms adolescente/i,
       branch_id: 'adolescente_generico',
       branch_implemented: true,
-      ideal_mold_package: ADOLESCENT_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'EXCETO/diretrizes — layout genérico premium.',
+      ideal_mold_package: ADOLESCENT_ETHICS,
+      base_decision: 'ok_existente',
+      rationale: 'EXCETO/diretrizes — Onda 2 isolate-board + compare glanceable.',
     },
     {
       pattern: /sa[uú]de bucal|promo[cç][aã]o/i,
       branch_id: 'adolescente_generico',
       branch_implemented: true,
-      ideal_mold_package: ADOLESCENT_GENERIC,
-      base_decision: 'ok_generico',
-      rationale: 'Promoção/bucal — sem metáfora espacial fixa.',
+      ideal_mold_package: ADOLESCENT_ETHICS,
+      base_decision: 'ok_existente',
+      rationale: 'Promoção/bucal — Onda 2 pillars-deck + board (gesto acolher×afastar genérico).',
     },
   ],
   cme: [
@@ -399,7 +408,17 @@ const RULES_BY_SUBTOPIC: Record<string, ClusterRule[]> = {
       branch_implemented: true,
       ideal_mold_package: 'vaccine-timeline · pni-calendar-board · pni-calendar-elimination-tap · calendar-mismatch (bespoke)',
       base_decision: 'molde_redesign',
-      rationale: 'Calendário/esquema — pacote pni-calendar wired.',
+      rationale: 'Calendário/esquema — pacote pni-calendar wired; golden usa LabelBodyRow (Onda 3).',
+    },
+    {
+      pattern: /\bexceto\b|incorret[oa]|alternativa\s+incorreta/i,
+      branch_id: 'imunizacao_exceto',
+      branch_implemented: true,
+      ideal_mold_package:
+        'morphological · reference_table · pni-exceto-isolate-board · pni-exceto-compare (bespoke Onda 3)',
+      base_decision: 'molde_redesign',
+      rationale:
+        'EXCETO/INCORRETA PNI — isolate-board + compare glanceable (tokens lime); gesto portado da ética Adolescente.',
     },
   ],
   'vias de administracao': [
@@ -943,6 +962,7 @@ export function implementedBranchIds(): PedagogicalBranchId[] {
     'adolescente_antropometria',
     'adolescente_desenvolvimento',
     'adolescente_saude_mental',
+    'adolescente_violencia_protecao',
     'adolescente_generico',
     'cme_preparo_limpeza',
     'cme_autoclave_metodos',

@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-08-03T21:44:00.481Z",
+  "onda": "0",
+  "status": "applied_supabase",
+  "authorization": "pode aplicar (condicional dry-run 100% OK / failed=0)",
+  "flags": [
+    "--allow-generic",
+    "--skip-preflight",
+    "--skip-anchor-review",
+    "--skip-risk-approval"
+  ],
+  "g04_skip": {
+    "skipped": [
+      "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0"
+    ],
+    "reason": "g04 production_blocked — sem A4 humano"
+  },
+  "summary": {
+    "ok": 1298,
+    "failed": 0,
+    "lotes": 4
+  },
+  "lotes": [
+    {
+      "lote": "sinais-vitais-completo",
+      "role": "letter+VF",
+      "ok": 526,
+      "failed": 0,
+      "skipped": 0,
+      "total_files": 526,
+      "applied_at": "2026-08-03T21:37:35.112Z",
+      "note": "526 applied; 1 G04 blocked skipped (educa-pb…8599930-0)",
+      "smoke_slugs": [
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-0",
+          "bucket": "vf",
+          "family": ""
+        },
+        {
+          "slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+          "bucket": "protocolo-exceto",
+          "family": "protocolo"
+        },
+        {
+          "slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+          "bucket": "conceito",
+          "family": ""
+        }
+      ]
+    },
+    {
+      "lote": "urgencias-e-emergencias-completo",
+      "role": "letter",
+      "ok": 349,
+      "failed": 0,
+      "skipped": 0,
+      "total_files": 349,
+      "applied_at": "2026-08-03T21:40:56.115Z",
+      "note": null,
+      "smoke_slugs": [
+        {
+          "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+          "bucket": "vf",
+          "family": ""
+        },
+        {
+          "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+          "bucket": "protocolo-exceto",
+          "family": "protocolo"
+        },
+        {
+          "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+          "bucket": "conceito",
+          "family": ""
+        }
+      ]
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "role": "VF onda3",
+      "ok": 188,
+      "failed": 0,
+      "skipped": 0,
+      "total_files": 188,
+      "applied_at": "2026-08-03T21:42:57.572Z",
+      "note": null,
+      "smoke_slugs": [
+        {
+          "slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+          "bucket": "vf",
+          "family": "conceito"
+        },
+        {
+          "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340178514-0",
+          "bucket": "protocolo-exceto",
+          "family": "certo_errado"
+        },
+        {
+          "slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+          "bucket": "conceito",
+          "family": "conceito"
+        }
+      ]
+    },
+    {
+      "lote": "vias-de-administracao-completo",
+      "role": "VF onda3",
+      "ok": 235,
+      "failed": 0,
+      "skipped": 0,
+      "total_files": 235,
+      "applied_at": "2026-08-03T21:43:24.919Z",
+      "note": null,
+      "smoke_slugs": [
+        {
+          "slug": "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+          "bucket": "vf",
+          "family": "vf"
+        },
+        {
+          "slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-9",
+          "bucket": "protocolo-exceto",
+          "family": "certo_errado"
+        },
+        {
+          "slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0",
+          "bucket": "conceito",
+          "family": "conceito"
+        }
+      ]
+    }
+  ]
+}

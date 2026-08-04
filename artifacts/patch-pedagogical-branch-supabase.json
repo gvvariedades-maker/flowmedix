@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-19T12:34:49.096Z",
-  "mode": "dry-run",
-  "scanned": 576,
-  "patched": 4,
-  "skipped": 9,
-  "subtopico_filter": "imunização",
+  "generated_at": "2026-08-03T20:50:30.330Z",
+  "mode": "apply",
+  "scanned": 171,
+  "patched": 0,
+  "skipped": 171,
+  "subtopico_filter": "atenção básica / saúde da família",
   "flags": {
-    "only_premium": false,
-    "only_golden_v1": true,
+    "only_premium": true,
+    "only_golden_v1": false,
     "force_family": false,
     "force_branch": false,
-    "reconcile_branch": true
+    "reconcile_branch": false
   }
 }

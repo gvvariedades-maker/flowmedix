@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-08-04T00:05:54.182Z",
+  "onda": "2-p0-residual",
+  "pacote": "Segurança do Paciente",
+  "lote": "seguranca-do-paciente-completo",
+  "baseline": {
+    "named": 114,
+    "letter_spoiler": 114,
+    "vf": 0
+  },
+  "after": {
+    "named": 0,
+    "letter": 0,
+    "clauseOnly": 0,
+    "vf": 0,
+    "files": 76
+  },
+  "second_pass": {
+    "gabarito_would_change": 0,
+    "trunc_would_change": 0,
+    "vf_would_change": 0
+  },
+  "dry_run": {
+    "ok": 76,
+    "failed": 0,
+    "skipped": 0,
+    "report": "artifacts/catalog-migration-seguranca-do-paciente-completo-dry-run.json"
+  },
+  "apply_status": "applied_supabase",
+  "blockers": [],
+  "fp_classification": [],
+  "apply_cmd": "npm run catalog:apply-lote -- --lote=seguranca-do-paciente-completo --apply --allow-generic --skip-preflight --skip-risk-approval --skip-anchor-review",
+  "next": [
+    "Saúde da Criança"
+  ],
+  "applied": {
+    "ok": 76,
+    "failed": 0,
+    "skipped": 0,
+    "report": "artifacts/catalog-migration-seguranca-do-paciente-completo-applied.json"
+  },
+  "updated_at": "2026-08-04T00:07:56.641Z"
+}

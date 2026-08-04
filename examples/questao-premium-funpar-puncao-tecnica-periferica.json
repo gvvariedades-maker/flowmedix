@@ -119,11 +119,6 @@
           "label": "Bisel",
           "detail": "Bisel voltado para cima (sentido do fluxo venoso) — não para baixo.",
           "icon": "ArrowUp"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra A — garrote 5–15 cm acima do local, fora de articulação.",
-          "icon": "Target"
         }
       ],
       "footer_rule": "Preparo asséptico + garrote correto + ângulo/bisel adequados = punção segura."
@@ -167,12 +162,6 @@
           "value": "Barbear rotineiro; flexionar cotovelo logo após punção na fossa.",
           "emphasis": "alert",
           "badge": "warn"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra A",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
       "footer_rule": "A banca troca ângulo, bisel e posição do garrote — fixe o protocolo ANVISA."

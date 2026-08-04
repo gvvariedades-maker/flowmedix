@@ -1,0 +1,519 @@
+{
+  "generated_at": "2026-08-03T19:33:23.344Z",
+  "scope": "factory-20-te",
+  "results": [
+    {
+      "lote": "atencao-basica-saude-da-familia-completo",
+      "missing": false,
+      "files": 171,
+      "counts": {
+        "pedagogy_letter_spoiler": 296,
+        "pedagogy_vf_verdict_spoiler": 25
+      },
+      "named_letter_pre_answer": 296,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 25,
+      "named_samples": [
+        {
+          "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra D."
+        },
+        {
+          "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+          "slide": "concept_map",
+          "evidence": "Letra D — Estabelecer um plano de visitas contínuas, envolvendo diferentes setores (educação, assistência social e sanea"
+        },
+        {
+          "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra A."
+        },
+        {
+          "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+          "slide": "concept_map",
+          "evidence": "Letra A — I, III e IV, apenas."
+        }
+      ]
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-completo",
+      "missing": false,
+      "files": 218,
+      "counts": {
+        "pedagogy_letter_spoiler": 413
+      },
+      "named_letter_pre_answer": 411,
+      "clause_only_pre_answer": 2,
+      "vf_verdict_findings": 0,
+      "named_samples": [
+        {
+          "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra C."
+        },
+        {
+          "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+          "slide": "concept_map",
+          "evidence": "Letra C — Apenas uma afirmativa está correta."
+        },
+        {
+          "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra C."
+        },
+        {
+          "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+          "slide": "concept_map",
+          "evidence": "Letra C — Apenas uma afirmativa está correta."
+        }
+      ]
+    },
+    {
+      "lote": "nocoes-de-anatomia-completo",
+      "missing": true,
+      "files": 0,
+      "counts": {},
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 0,
+      "named_samples": []
+    },
+    {
+      "lote": "imunizacao-completo",
+      "missing": false,
+      "files": 575,
+      "counts": {
+        "pedagogy_letter_spoiler": 13,
+        "pedagogy_density": 5,
+        "pedagogy_vf_verdict_spoiler": 9
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 13,
+      "vf_verdict_findings": 9,
+      "named_samples": []
+    },
+    {
+      "lote": "sinais-vitais-completo",
+      "missing": false,
+      "files": 527,
+      "counts": {
+        "pedagogy_density": 1,
+        "pedagogy_danger_orphan": 1,
+        "pedagogy_vf_verdict_spoiler": 1
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 1,
+      "named_samples": []
+    },
+    {
+      "lote": "urgencias-e-emergencias-completo",
+      "missing": false,
+      "files": 348,
+      "counts": {
+        "pedagogy_vf_verdict_spoiler": 183,
+        "pedagogy_logic_missing_gabarito": 2,
+        "pedagogy_letter_spoiler": 2
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 183,
+      "named_samples": []
+    },
+    {
+      "lote": "saude-da-mulher-completo",
+      "missing": false,
+      "files": 264,
+      "counts": {
+        "pedagogy_danger_orphan": 8,
+        "pedagogy_logic_missing_gabarito": 1
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 0,
+      "named_samples": []
+    },
+    {
+      "lote": "vias-de-administracao-completo",
+      "missing": false,
+      "files": 235,
+      "counts": {
+        "pedagogy_danger_orphan": 12,
+        "pedagogy_density": 13
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 0,
+      "named_samples": []
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-completo",
+      "missing": false,
+      "files": 134,
+      "counts": {
+        "pedagogy_letter_spoiler": 245,
+        "pedagogy_vf_verdict_spoiler": 20,
+        "pedagogy_density": 1
+      },
+      "named_letter_pre_answer": 245,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 20,
+      "named_samples": [
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-5",
+          "slide": "concept_map",
+          "evidence": "Letra B — I, II e III."
+        },
+        {
+          "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-1",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra D."
+        },
+        {
+          "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-1",
+          "slide": "concept_map",
+          "evidence": "Letra D — Antecipar o horário de um medicamento."
+        },
+        {
+          "slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-7",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra A."
+        }
+      ]
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-completo",
+      "missing": false,
+      "files": 108,
+      "counts": {
+        "pedagogy_polarity_risk": 5,
+        "pedagogy_danger_orphan": 4,
+        "pedagogy_letter_spoiler": 23,
+        "pedagogy_logic_missing_gabarito": 1
+      },
+      "named_letter_pre_answer": 21,
+      "clause_only_pre_answer": 2,
+      "vf_verdict_findings": 0,
+      "named_samples": [
+        {
+          "slug": "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+          "slide": "golden_rule",
+          "evidence": "Só letra C fecha como É CORRETO."
+        },
+        {
+          "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
+          "slide": "golden_rule",
+          "evidence": "Letra D"
+        },
+        {
+          "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
+          "slide": "golden_rule",
+          "evidence": "Letra A"
+        },
+        {
+          "slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
+          "slide": "golden_rule",
+          "evidence": "Letra B/C"
+        }
+      ]
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-completo",
+      "missing": false,
+      "files": 111,
+      "counts": {
+        "pedagogy_letter_spoiler": 190,
+        "pedagogy_danger_orphan": 3,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 1,
+        "pedagogy_vf_verdict_spoiler": 5
+      },
+      "named_letter_pre_answer": 190,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 5,
+      "named_samples": [
+        {
+          "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra B."
+        },
+        {
+          "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+          "slide": "concept_map",
+          "evidence": "Letra B — Promover atividades educativas interativas, incorporando saberes tradicionais aos conhecimentos científicos e "
+        },
+        {
+          "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra C."
+        },
+        {
+          "slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+          "slide": "concept_map",
+          "evidence": "Letra C — Realizar atividades educativas interativas que associem o conhecimento popular à fundamentação científica da f"
+        }
+      ]
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "missing": false,
+      "files": 188,
+      "counts": {
+        "pedagogy_danger_orphan": 6
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 0,
+      "named_samples": []
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+      "missing": false,
+      "files": 155,
+      "counts": {
+        "pedagogy_letter_spoiler": 157,
+        "pedagogy_vf_verdict_spoiler": 4,
+        "pedagogy_density": 7
+      },
+      "named_letter_pre_answer": 157,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 4,
+      "named_samples": [
+        {
+          "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+          "slide": "concept_map",
+          "evidence": "Letra B — 1,5 ml"
+        },
+        {
+          "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+          "slide": "concept_map",
+          "evidence": "Letra B — 90 gotas por minuto."
+        },
+        {
+          "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+          "slide": "concept_map",
+          "evidence": "Letra A — 2,16 mg."
+        },
+        {
+          "slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+          "slide": "concept_map",
+          "evidence": "Letra A — 3,2 mg."
+        }
+      ]
+    },
+    {
+      "lote": "perioperatoria-completo",
+      "missing": false,
+      "files": 69,
+      "counts": {
+        "pedagogy_letter_spoiler": 116,
+        "pedagogy_vf_verdict_spoiler": 4
+      },
+      "named_letter_pre_answer": 116,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 4,
+      "named_samples": [
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+          "slide": "concept_map",
+          "evidence": "Letra A — As proposições I e II estão corretas."
+        },
+        {
+          "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra C."
+        },
+        {
+          "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+          "slide": "concept_map",
+          "evidence": "Letra C — II e III , apenas."
+        },
+        {
+          "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+          "slide": "concept_map",
+          "evidence": "Curativos e feridas — exclua por termo-chave antes de confirmar letra D"
+        }
+      ]
+    },
+    {
+      "lote": "saude-da-crianca-completo",
+      "missing": false,
+      "files": 62,
+      "counts": {
+        "pedagogy_letter_spoiler": 105
+      },
+      "named_letter_pre_answer": 105,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 0,
+      "named_samples": [
+        {
+          "slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra A."
+        },
+        {
+          "slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+          "slide": "concept_map",
+          "evidence": "Letra A — Identificar distúrbios e doenças no recém-nascido, em tempo oportuno, para intervenção adequada, garantindo tr"
+        },
+        {
+          "slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-8",
+          "slide": "concept_map",
+          "evidence": "Letra C — F, F, F."
+        },
+        {
+          "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra D."
+        }
+      ]
+    },
+    {
+      "lote": "seguranca-do-paciente-completo",
+      "missing": false,
+      "files": 76,
+      "counts": {
+        "pedagogy_letter_spoiler": 114
+      },
+      "named_letter_pre_answer": 114,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 0,
+      "named_samples": [
+        {
+          "slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra A."
+        },
+        {
+          "slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+          "slide": "concept_map",
+          "evidence": "Letra A — (1) acessibilidade; (2) obstáculos."
+        },
+        {
+          "slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra C."
+        },
+        {
+          "slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+          "slide": "concept_map",
+          "evidence": "Letra C — Realizar inventários periódicos para controle do estoque."
+        }
+      ]
+    },
+    {
+      "lote": "processo-de-enfermagem-completo",
+      "missing": false,
+      "files": 286,
+      "counts": {
+        "pedagogy_vf_verdict_spoiler": 42,
+        "pedagogy_danger_orphan": 19
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 42,
+      "named_samples": []
+    },
+    {
+      "lote": "saude-mental-completo",
+      "missing": false,
+      "files": 37,
+      "counts": {
+        "pedagogy_letter_spoiler": 5,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_vf_verdict_spoiler": 1,
+        "pedagogy_danger_orphan": 2
+      },
+      "named_letter_pre_answer": 3,
+      "clause_only_pre_answer": 2,
+      "vf_verdict_findings": 1,
+      "named_samples": [
+        {
+          "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
+          "slide": "golden_rule",
+          "evidence": "I + II + III + IV → LETRA A"
+        },
+        {
+          "slug": "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+          "slide": "concept_map",
+          "evidence": "F – V – V – V → letra C."
+        },
+        {
+          "slug": "idib-enfermagem-dependencia-quimica-1778934936220-3",
+          "slide": "concept_map",
+          "evidence": "V – V – F – V → letra A."
+        }
+      ]
+    },
+    {
+      "lote": "cme-completo",
+      "missing": false,
+      "files": 36,
+      "counts": {
+        "pedagogy_letter_spoiler": 7,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_danger_orphan": 4
+      },
+      "named_letter_pre_answer": 6,
+      "clause_only_pre_answer": 1,
+      "vf_verdict_findings": 0,
+      "named_samples": [
+        {
+          "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+          "slide": "concept_map",
+          "evidence": "V, F, F, V → letra D."
+        },
+        {
+          "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-4",
+          "slide": "concept_map",
+          "evidence": "Letra B — Errado"
+        },
+        {
+          "slug": "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+          "slide": "concept_map",
+          "evidence": "Só I é crítico — letra C."
+        },
+        {
+          "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+          "slide": "concept_map",
+          "evidence": "V, F, V, F → letra B."
+        }
+      ]
+    },
+    {
+      "lote": "enfermagem-do-trabalho-completo",
+      "missing": false,
+      "files": 33,
+      "counts": {
+        "pedagogy_letter_spoiler": 29,
+        "pedagogy_danger_orphan": 2
+      },
+      "named_letter_pre_answer": 29,
+      "clause_only_pre_answer": 0,
+      "vf_verdict_findings": 0,
+      "named_samples": [
+        {
+          "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra C."
+        },
+        {
+          "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+          "slide": "concept_map",
+          "evidence": "Letra C — I, II e IV apenas."
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-seguranca-do-paciente-1777102678563-4",
+          "slide": "concept_map",
+          "evidence": "Exclua por termo-chave antes de confirmar letra D."
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-seguranca-do-paciente-1777102678563-4",
+          "slide": "concept_map",
+          "evidence": "Letra D — EPC."
+        }
+      ]
+    }
+  ]
+}

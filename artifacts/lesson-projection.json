@@ -1,0 +1,647 @@
+{
+  "corpus": "Farmacodinâmica e Farmacocinética",
+  "generated_at": "2026-08-01T02:31:33.846Z",
+  "summary": {
+    "total": 13,
+    "strong": 3,
+    "thin": 10,
+    "missing": 0,
+    "avg_transfer": 2.2
+  },
+  "rows": [
+    {
+      "slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "coverage": {
+        "slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 4,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 1,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "IV — Sem 1ª passagem hepática significativa",
+          "from": "golden_rule",
+          "duplicate_of": "IV: entra direto na circulação — sem 1ª passagem GI/hepática → eliminar A."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Assinale a alternativa que completa corretamente a lacuna.",
+        "elimination_kinds": [
+          "setup",
+          "elimination",
+          "elimination",
+          "elimination",
+          "setup",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "B",
+          "D",
+          "C"
+        ],
+        "transfer": [
+          "Oral = enunciado padrão de biodisponibilidade reduzida"
+        ]
+      }
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "coverage": {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 4,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 1,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "GI típico opioide — Constipação/íleo — não diarreia osmótica",
+          "from": "golden_rule",
+          "duplicate_of": "Eliminar C: opioides causam constipação, não diarreia osmótica."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Um paciente em ventilação mecânica invasiva sob analgesia e sedação contínuas iniciou fentanil em infusão contínua para controle de dor e adaptação ao ventilador. Em relação aos efeitos farmacológicos dos opioides potentes e aos eventos adversos graves associados ao seu uso em pacientes críticos, qual complicação deve ser monitorada pelo técnico de enfermagem nesse caso?",
+        "elimination_kinds": [
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "transfer": [
+          "Em opioide UTI: respiração e rigidez torácica são o núcleo da prova"
+        ]
+      }
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "coverage": {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 5,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 1,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Dose sem ajuste — Aumenta risco convulsivo",
+          "from": "golden_rule",
+          "duplicate_of": "Correta: sem ajuste de dose em clearance ↓, risco convulsivo sobe."
+        },
+        {
+          "text": "INCORRETA (E) — Hipotireoidismo leve via metabolismo hepático — falso",
+          "from": "golden_rule",
+          "duplicate_of": "E: hipotireoidismo leve reduz metabolismo hepático → incorreta."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "O meropenem é um antibiótico carbapenêmico amplamente utilizado em infecções graves na UTI. Apesar de sua eficácia, pode estar associado a efeitos adversos neurológicos, incluindo crises convulsivas, especialmente em determinados grupos de pacientes. Assinale a alternativa INCORRETA sobre os fatores que aumentam o risco de convulsões induzidas por meropenem.",
+        "elimination_kinds": [
+          "setup",
+          "elimination",
+          "elimination",
+          "elimination",
+          "elimination",
+          "elimination",
+          "setup",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "transfer": [
+          "Em INCORRETA: A–D são fatores reais; E é a exceção falsa"
+        ]
+      }
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
+      "coverage": {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
+        "grade": "strong",
+        "transfer_count": 2,
+        "has_explicit_fixation": true,
+        "transferable_cards": 4,
+        "reasons": []
+      },
+      "pre_answer_spoilers": 0,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Infusão prolongada — Acúmulo de fármaco e metabólitos — meia-vida efetiva se prolonga.",
+          "from": "concept_map",
+          "duplicate_of": "Acúmulo de fármaco e metabólitos ativos prolonga sedação — meia-vida efetiva não permanece fixa."
+        },
+        {
+          "text": "Metabolismo — Hepático → metabólitos ativos",
+          "from": "golden_rule",
+          "duplicate_of": "Metabolismo hepático com metabólitos — eliminação renal de frações metabolizadas, não do fármaco inalterado."
+        },
+        {
+          "text": "Acúmulo — Infusão dias + metabólitos = sedação residual",
+          "from": "golden_rule",
+          "duplicate_of": "Núcleo farmacológico: acúmulo de benzodiazepínico e metabólitos ativos em infusão prolongada."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Um paciente adulto permanece sob sedação contínua com midazolam em infusão intravenosa por vários dias devido à necessidade de ventilação mecânica prolongada. Após a suspensão do sedativo, observa-se despertar tardio e prolongado, com rebaixamento persistente do nível de consciência, mesmo sem novas doses administradas. Assinale a alternativa que indica a explicação farmacológica para esse fenômeno.",
+        "elimination_kinds": [
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "transfer": [
+          "despertar tardio pós-midazolam = metabólitos ativos acumulados — não “falta de eliminação renal”.",
+          "Despertar tardio = acúmulo farmacocinético — letra B"
+        ]
+      }
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "coverage": {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 3,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 1,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Quetamina — Anestésico geral dissociativo — não local",
+          "from": "golden_rule",
+          "duplicate_of": "A: quetamina — anestésico geral dissociativo, ação central."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Considerando os diferentes tipos de agentes farmacológicos utilizados para promover a perda reversível da sensibilidade em uma área específica do corpo, qual das seguintes substâncias NÃO é classificada como um anestésico local?",
+        "elimination_kinds": [
+          "setup",
+          "setup",
+          "setup",
+          "elimination",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "B",
+          "C",
+          "D"
+        ],
+        "transfer": [
+          "Quetamina dissolve o SNC — não cumpre o critério de área específica"
+        ]
+      }
+    },
+    {
+      "slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "coverage": {
+        "slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 4,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 3,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "II — ação na célula — VERDADEIRA: farmacodinâmica",
+          "from": "golden_rule",
+          "duplicate_of": "II: farmacodinâmica = ação sobre a célula → VERDADEIRA."
+        },
+        {
+          "text": "III — princípio ativo — FALSA: confunde com medicamento",
+          "from": "golden_rule",
+          "duplicate_of": "III: princípio ativo = produto farmacêutico completo → FALSA."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Assinale a alternativa cuja respectiva ordem de julgamento esteja CORRETA:",
+        "elimination_kinds": [
+          "elimination",
+          "elimination",
+          "elimination",
+          "setup",
+          "gabarito",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "B",
+          "D",
+          "C"
+        ],
+        "transfer": [
+          "Absorção ≠ distribuição · princípio ativo ≠ medicamento"
+        ]
+      }
+    },
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "coverage": {
+        "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 4,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 1,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Via — Endovenosa — infusão contínua titulada",
+          "from": "golden_rule",
+          "duplicate_of": "Infusão contínua titulada com monitorização de pH — não bólus rápido isolado."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Em um paciente hospitalizado por úlcera péptica grave, que recebe Omeprazol na forma endovenosa, avalie as condutas farmacológicas e de enfermagem relacionadas à administração correta da medicação e marque a opção adequada.",
+        "elimination_kinds": [
+          "setup",
+          "elimination",
+          "elimination",
+          "elimination",
+          "elimination",
+          "elimination",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "transfer": [
+          "IBP EV: via, diluição e tempo são farmacocinética aplicada à conduta"
+        ]
+      }
+    },
+    {
+      "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "coverage": {
+        "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 4,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 1,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Opioide + BZD — Aumenta depressão respiratória",
+          "from": "golden_rule",
+          "duplicate_of": "C: opioide reduz depressão respiratória — interação é sinérgica depressora → falsa."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Considerando as mais recentes evidências científicas sobre o diazepam, marque a opção correta que descreve adequadamente sua farmacologia.",
+        "elimination_kinds": [
+          "setup",
+          "elimination",
+          "elimination",
+          "elimination",
+          "elimination",
+          "elimination",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "C",
+          "D",
+          "E"
+        ],
+        "transfer": [
+          "Long acting + interação opioide = dupla pegadinha em prova"
+        ]
+      }
+    },
+    {
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "coverage": {
+        "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 4,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 1,
+      "diagnostics": [],
+      "dropped_redundant": [],
+      "prova": {
+        "prediction_prompt": "O fármaco que tem como objetivo melhorar a perfusão miocárdica e/ou reduzir a sua demanda metabólica, podendo ser utilizado nos quadros de angina estável, é",
+        "elimination_kinds": [
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "B",
+          "C",
+          "E"
+        ],
+        "transfer": [
+          "Não confundir antiarrítmico com antianginoso nitrato"
+        ]
+      }
+    },
+    {
+      "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+      "coverage": {
+        "slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 3,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 1,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Sublingual — Não é via para irritantes — distrator B",
+          "from": "golden_rule",
+          "duplicate_of": "B: sublingual para irritantes — incorreta (sublingual contorna TGI, não é para irritante)."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "conhecimentos de fármacos e suas administrações. Sobre o tema, assinale a alternativa CORRETA.",
+        "elimination_kinds": [
+          "setup",
+          "elimination",
+          "elimination",
+          "elimination",
+          "elimination",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "transfer": [
+          "D = única afirmativa ADME oral correta"
+        ]
+      }
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+      "coverage": {
+        "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-1",
+        "grade": "thin",
+        "transfer_count": 1,
+        "has_explicit_fixation": false,
+        "transferable_cards": 3,
+        "reasons": [
+          "só 1 item de transferência.",
+          "sem passo \"Fixação:\" no logic_flow — o que generaliza fica implícito."
+        ]
+      },
+      "pre_answer_spoilers": 0,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Lacuna — Revisão contínua de EA + inspeção de fabricação → farmacovigilância (B).",
+          "from": "concept_map",
+          "duplicate_of": "Lacuna: revisão contínua de efeitos adversos + inspeção de fabricação."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "consiste na revisão contínua dos efeitos adversos do novo medicamento, assim como uma inspeção periódica das instalações de fabricação e dosprodutos.",
+        "elimination_kinds": [
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "C",
+          "D"
+        ],
+        "transfer": [
+          "Vigilância = farmacovigilância, sempre que citar EA pós-uso"
+        ]
+      }
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+      "coverage": {
+        "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+        "grade": "strong",
+        "transfer_count": 8,
+        "has_explicit_fixation": true,
+        "transferable_cards": 7,
+        "reasons": []
+      },
+      "pre_answer_spoilers": 0,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Insulina regular — Rápida humana (Humulin R® e similares)",
+          "from": "golden_rule",
+          "duplicate_of": "Classificar regular: insulina humana — ação rápida (não ultrarrápida nem lenta/NPH)."
+        },
+        {
+          "text": "NPH / glargina / detemir — Intermediária ou lenta — ausentes neste caso",
+          "from": "golden_rule",
+          "duplicate_of": "Regular SC é rápida humana; lenta seria NPH, detemir ou glargina — ausentes na prescrição."
+        },
+        {
+          "text": "Ordem no enunciado — Asparte SC → regular SC (não inverter)",
+          "from": "golden_rule",
+          "duplicate_of": "Testar D: ultrarrápida + rápida na ordem — CORRETA: asparte → regular conforme prescrição."
+        },
+        {
+          "text": "Par desta prova — Ultrarrápida + rápida, na ordem da prescrição",
+          "from": "golden_rule",
+          "duplicate_of": "Testar D: ultrarrápida + rápida na ordem — CORRETA: asparte → regular conforme prescrição."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Conforme o caso clínico hipotético apresentado, as insulinas prescritas são, respectivamente, de ação",
+        "elimination_kinds": [
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          null,
+          null
+        ],
+        "transfer": [
+          "decore pares nome × perfil antes de cair na permuta de ordem.",
+          "Transferência: decore pares e ordem — Quadrix troca lenta × ultrarrápida e inverte sequência",
+          "Asparte = ultrarrápida; início em minutos.",
+          "Regular = rápida; não é basal/NPH.",
+          "Análogos ultrarrápidos: asparte · lispro · glulisina.",
+          "Sem NPH na lista → descarte letras que trazem lenta.",
+          "Leia a lista na ordem — 1ª e 2ª insulina.",
+          "Asparte ultrarrápida · regular rápida — decore o par."
+        ]
+      }
+    },
+    {
+      "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+      "coverage": {
+        "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+        "grade": "strong",
+        "transfer_count": 8,
+        "has_explicit_fixation": true,
+        "transferable_cards": 7,
+        "reasons": []
+      },
+      "pre_answer_spoilers": 0,
+      "diagnostics": [],
+      "dropped_redundant": [
+        {
+          "text": "Insulina regular — Rápida humana (Humulin R® e similares)",
+          "from": "golden_rule",
+          "duplicate_of": "Classificar regular: insulina humana — ação rápida (não ultrarrápida nem lenta/NPH)."
+        },
+        {
+          "text": "NPH / glargina / detemir — Intermediária ou lenta — ausentes neste caso",
+          "from": "golden_rule",
+          "duplicate_of": "Regular SC é rápida humana; lenta seria NPH, detemir ou glargina — ausentes na prescrição."
+        },
+        {
+          "text": "Ordem no enunciado — Asparte SC → regular SC (não inverter)",
+          "from": "golden_rule",
+          "duplicate_of": "Testar D: ultrarrápida + rápida na ordem — CORRETA: asparte → regular conforme prescrição."
+        },
+        {
+          "text": "Par desta prova — Ultrarrápida + rápida, na ordem da prescrição",
+          "from": "golden_rule",
+          "duplicate_of": "Testar D: ultrarrápida + rápida na ordem — CORRETA: asparte → regular conforme prescrição."
+        }
+      ],
+      "prova": {
+        "prediction_prompt": "Conforme o caso clínico hipotético apresentado, as insulinas prescritas são, respectivamente, de ação",
+        "elimination_kinds": [
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "setup",
+          "gabarito"
+        ],
+        "distractor_letters": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          null,
+          null
+        ],
+        "transfer": [
+          "decore pares nome × perfil antes de cair na permuta de ordem.",
+          "Transferência: decore pares e ordem — Quadrix troca lenta × ultrarrápida e inverte sequência",
+          "Asparte = ultrarrápida; início em minutos.",
+          "Regular = rápida; não é basal/NPH.",
+          "Análogos ultrarrápidos: asparte · lispro · glulisina.",
+          "Sem NPH na lista → descarte letras que trazem lenta.",
+          "Leia a lista na ordem — 1ª e 2ª insulina.",
+          "Asparte ultrarrápida · regular rápida — decore o par."
+        ]
+      }
+    }
+  ]
+}

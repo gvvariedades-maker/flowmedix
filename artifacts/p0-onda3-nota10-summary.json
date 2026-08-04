@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-08-03T22:04:02.034Z",
+  "onda": "3-nota10",
+  "model": "Cursor Grok 4.5",
+  "gate": "DoD visual + *-nota10-report.md (sem 2º --promote)",
+  "packages": [
+    {
+      "id": "Saúde da Mulher",
+      "prefix": "saude-da-mulher",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0
+      },
+      "report": "artifacts/saude-da-mulher-nota10-report.md"
+    },
+    {
+      "id": "Processo de Enfermagem",
+      "prefix": "processo-de-enfermagem",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0,
+        "note": "VF 42→0 via repair:pedagogy-rotulos-vf"
+      },
+      "report": "artifacts/processo-de-enfermagem-nota10-report.md"
+    },
+    {
+      "id": "Curativos e Manejo de Feridas",
+      "prefix": "curativos-e-manejo-de-feridas",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0,
+        "note": "VF onda3 disk 0; apply Supabase pendente se ainda não live"
+      },
+      "report": "artifacts/curativos-e-manejo-de-feridas-nota10-report.md"
+    },
+    {
+      "id": "Imunização",
+      "prefix": "imunizacao",
+      "after": {
+        "named": 0,
+        "letter": 13,
+        "vf": 0,
+        "note": "13 letter = FALSE_POSITIVE (hepatite A/B é) — artifacts/p0-onda3-imunizacao-letter-fp.json; VF 9→0"
+      },
+      "report": "artifacts/imunizacao-nota10-report.md"
+    },
+    {
+      "id": "Vias de Administração",
+      "prefix": "vias-de-administracao",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0
+      },
+      "report": "artifacts/vias-de-administracao-nota10-report.md"
+    },
+    {
+      "id": "Punção Venosa e Cuidados com Cateteres",
+      "prefix": "puncao-venosa-e-cuidados-com-cateteres",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0,
+        "note": "named 23→0 (gabarito + hand-fix footers)"
+      },
+      "report": "artifacts/puncao-venosa-e-cuidados-com-cateteres-nota10-report.md"
+    },
+    {
+      "id": "Assistência Perioperatória (Inclui SRPA)",
+      "prefix": "perioperatoria",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0,
+        "note": "named 116→0; VF 4→0"
+      },
+      "report": "artifacts/perioperatoria-nota10-report.md"
+    },
+    {
+      "id": "Enfermagem em Central de Material e Esterilização (CME)",
+      "prefix": "cme",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0,
+        "note": "named 7→0"
+      },
+      "report": "artifacts/cme-nota10-report.md"
+    },
+    {
+      "id": "Saúde Mental",
+      "prefix": "saude-mental",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0,
+        "note": "named 5→0; VF 1→0"
+      },
+      "report": "artifacts/saude-mental-nota10-report.md"
+    },
+    {
+      "id": "Enfermagem do Trabalho",
+      "prefix": "enfermagem-do-trabalho",
+      "after": {
+        "named": 0,
+        "letter": 0,
+        "vf": 0,
+        "note": "named 29→0"
+      },
+      "report": "artifacts/enfermagem-do-trabalho-nota10-report.md"
+    }
+  ],
+  "apply_pending": [
+    "processo-de-enfermagem-completo (VF strip)",
+    "imunizacao-completo (VF strip; letter FP)",
+    "puncao-venosa-e-cuidados-com-cateteres-completo (letter strip)",
+    "perioperatoria-completo (letter+VF)",
+    "cme-completo (letter)",
+    "saude-mental-completo (letter+VF)",
+    "enfermagem-do-trabalho-completo (letter)",
+    "curativos VF apply se ainda pendente (Onda 0)"
+  ],
+  "note": "Sem 2º promote. React L3 (Peri hotspots / CME autoclave / Mental RAPS) só com Implementar molde:."
+}

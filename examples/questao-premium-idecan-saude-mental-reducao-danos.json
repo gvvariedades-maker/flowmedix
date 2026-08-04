@@ -23,7 +23,11 @@
         "title": "Política de Redução de Danos — cuidado a usuários de álcool e outras drogas",
         "year": 2014,
         "url": "https://www.gov.br/saude/pt-br/composicao/svsa/alcohol-e-outras-drogas",
-        "covers": ["redução de danos", "vínculo territorial", "ESF"]
+        "covers": [
+          "redução de danos",
+          "vínculo territorial",
+          "ESF"
+        ]
       },
       {
         "id": "portaria-3088-2011-raps",
@@ -31,7 +35,9 @@
         "issuer": "Ministério da Saúde",
         "title": "Portaria GM/MS nº 3.088/2011 — RAPS",
         "year": 2011,
-        "covers": ["articulação com CAPS e AB"]
+        "covers": [
+          "articulação com CAPS e AB"
+        ]
       }
     ]
   },
@@ -87,18 +93,13 @@
         },
         {
           "label": "ESF + família",
-          "detail": "Monitoramento ambulatorial com Estratégia Saúde da Família, abordagem familiar e vínculos sociais — letra B.",
+          "detail": "Monitoramento ambulatorial com Estratégia Saúde da Família, abordagem familiar e vínculos sociais.",
           "icon": "Users"
         },
         {
           "label": "Pegadinha abstinência",
           "detail": "Abstinência imediata sem motivação (A) contraria redução de danos e afasta o usuário do cuidado.",
           "icon": "AlertTriangle"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra B — cuidado compartilhado com ESF, família e rede psicossocial.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Redução de danos: vínculo territorial antes de exigir abstinência"
@@ -128,12 +129,6 @@
           "label": "Fazer",
           "value": "Articulação com ESF, família e RAPS — acompanhamento longitudinal",
           "emphasis": "highlight",
-          "badge": "hot"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra B",
-          "emphasis": "success",
           "badge": "hot"
         }
       ],

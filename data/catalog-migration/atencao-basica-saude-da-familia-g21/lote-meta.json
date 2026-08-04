@@ -1,0 +1,16 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g21",
+  "status": "applied",
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "slug_count": 8,
+  "applied_at": "2026-08-03T20:49:03.770Z",
+  "applied_report": "artifacts/catalog-migration-atencao-basica-saude-da-familia-g21-applied.json",
+  "anchor_slug": "selecon-enfermagem-atencao-basica-saude-da-familia-1778968207422-2",
+  "anchor_second_review": {
+    "reviewed_at": "2026-08-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/atencao-basica-saude-da-familia-g21.json"
+  }
+}

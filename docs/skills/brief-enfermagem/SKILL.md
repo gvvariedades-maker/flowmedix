@@ -107,7 +107,7 @@ Só se decisão = `molde_redesign` | `molde_inedito` (ou usuário pediu `Brief T
 | Âncora | `examples/questao-premium-…json` **ou** enunciado + gabarito |
 | Erro espacial (1 frase) | Confunde sigilo com “sempre contar aos pais” |
 | Decisão | `molde_redesign` \| `molde_inedito` |
-| `bespoke_target` (se houver) | `adolescent-privacy-curtain` |
+| `bespoke_target` (se houver) | `adolescent-exceto-isolate-board` |
 
 Faltar âncora → pedir. **Não** inventar questão nem gabarito.  
 Nome canônico do subtópico: CLAUDE.md §9 (exato).

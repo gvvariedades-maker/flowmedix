@@ -1,0 +1,156 @@
+{
+  "schema": "blind-reader-human-judgments-v1",
+  "purpose": "F2c manual calibration (~20 anchors). letter_leak = human can read gabarito letter from concept_map alone.",
+  "calibrated_at": "2026-08-01T00:41:50.907Z",
+  "agreement_rate": 1,
+  "confusion": {
+    "TP": 4,
+    "TN": 16,
+    "FP": 0,
+    "FN": 0
+  },
+  "gate_linked_to_production_ready": true,
+  "gate_linked_note": "F4 — camada L2c em audit:subtopico-quality (lib/catalogMigration/pedagogyGate.ts). fail_leak barra production_ready; warn_unsupported_hit não barra.",
+  "items": [
+    {
+      "slug": "questao-formacao-palavras-siglas",
+      "human_letter_leak": false,
+      "human_notes": "Exemplos EUA/TDAH/DDA — letra D em sigla, nao gabarito. Regex spoiler provavelmente FP.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-admtec-imunizacao-adolescente-cartao-perdido",
+      "human_letter_leak": false,
+      "human_notes": "Ensina catch-up PNI sem citar letra. Regex spoiler = FP ou pegou outra superficie.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-admtec-oxigenoterapia-dispositivos",
+      "human_letter_leak": true,
+      "human_notes": "Núcleo da letra A + Gabarito Letra A no concept_map.",
+      "llm_verdict_at_calibration": "fail_leak",
+      "confusion": "TP"
+    },
+    {
+      "slug": "questao-premium-admtec-puncao-venosa-cateteres",
+      "human_letter_leak": true,
+      "human_notes": "Cita letra A e B amarradas as alternativas.",
+      "llm_verdict_at_calibration": "fail_leak",
+      "confusion": "TP"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-rcp-30-2-aha2020",
+      "human_letter_leak": false,
+      "human_notes": "Cita letra A como pegadinha; nao revela gabarito D.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-amauc-imunizacao-bcg-dose-a4",
+      "human_letter_leak": false,
+      "human_notes": "Vereditos V/F por afirmativa (polaridade) mas letra C=combo nao revelada. Spoiler F2a != leak de letra.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-ameosc-cme-metodos-incorreta",
+      "human_letter_leak": true,
+      "human_notes": "Gabarito | Letra D explicito.",
+      "llm_verdict_at_calibration": "fail_leak",
+      "confusion": "TP"
+    },
+    {
+      "slug": "questao-premium-ameosc-imunizacao-vf-cadeia-frio",
+      "human_letter_leak": false,
+      "human_notes": "V/F I–IV sem mapear para letra de alternativa.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-admtec-saude-mulher-parto-humanizado-vf",
+      "human_letter_leak": false,
+      "human_notes": "Enquadramento limpo.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-ameosc-cuidados-protocolo-ms-vf",
+      "human_letter_leak": false,
+      "human_notes": "V/F por item sem letra.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-ameosc-processo-de-enfermagem-documentacao",
+      "human_letter_leak": false,
+      "human_notes": "Enquadramento limpo.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-choque-eletrico",
+      "human_letter_leak": false,
+      "human_notes": "Enquadramento limpo.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-convulsao-crise",
+      "human_letter_leak": false,
+      "human_notes": "Mencao lateral de letra em pegadinha nao entrega gabarito B.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-fratura-exposta-imobilizacao",
+      "human_letter_leak": false,
+      "human_notes": "Enquadramento limpo.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-access-urgencias-rcp-pediatrica-15-2",
+      "human_letter_leak": false,
+      "human_notes": "Ensinamento 15:2 sem gabarito letra.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-consulpam-urgencias-pcr-pediatrica-conceito",
+      "human_letter_leak": false,
+      "human_notes": "Enquadramento limpo.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im",
+      "human_letter_leak": false,
+      "human_notes": "Assercoes I/II sem letra de alternativa.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-denotacao-tirinha-drogas",
+      "human_letter_leak": false,
+      "human_notes": "Enquadramento limpo.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-consoada-descer",
+      "human_letter_leak": false,
+      "human_notes": "Ensina sinonimo sem citar letra C.",
+      "llm_verdict_at_calibration": "pass_indeterminate",
+      "confusion": "TN"
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-iniludivel",
+      "human_letter_leak": true,
+      "human_notes": "detail: Incontornavel — gabarito B. Regex NAO pegou; leitor cego sim.",
+      "llm_verdict_at_calibration": "fail_leak",
+      "confusion": "TP"
+    }
+  ]
+}

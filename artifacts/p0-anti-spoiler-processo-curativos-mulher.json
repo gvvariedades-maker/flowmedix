@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-08-01T23:20:05.177Z",
+  "onda": "P0-2",
+  "objective": "named_letter_pre_answer=0",
+  "status": "done_disk",
+  "apply": "blocked_until_pode_aplicar",
+  "lotes": [
+    "processo-de-enfermagem-completo",
+    "curativos-e-manejo-de-feridas-completo",
+    "saude-da-mulher-completo"
+  ],
+  "baseline": [
+    {
+      "lote": "processo-de-enfermagem-completo",
+      "files": 286,
+      "named": 320,
+      "letter_spoiler": 322
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "files": 188,
+      "named": 955,
+      "letter_spoiler": 955
+    },
+    {
+      "lote": "saude-da-mulher-completo",
+      "files": 264,
+      "named": 494,
+      "letter_spoiler": 496
+    }
+  ],
+  "after": [
+    {
+      "lote": "processo-de-enfermagem-completo",
+      "files": 286,
+      "named": 0,
+      "letter_spoiler": 2,
+      "clause_fp": 2
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "files": 188,
+      "named": 0,
+      "letter_spoiler": 0,
+      "clause_fp": 0
+    },
+    {
+      "lote": "saude-da-mulher-completo",
+      "files": 264,
+      "named": 0,
+      "letter_spoiler": 3,
+      "clause_fp": 3
+    }
+  ],
+  "second_pass": {
+    "gabarito_item_edits": 0,
+    "truncagem_edits": 0
+  },
+  "repairs": {
+    "gabarito_item": {
+      "processo": {
+        "changed": 279,
+        "edits": 320
+      },
+      "curativos": {
+        "changed": 183,
+        "edits": 955
+      },
+      "mulher": {
+        "changed": 231,
+        "edits": 494
+      }
+    },
+    "letter_truncation": {
+      "edits": 0
+    }
+  },
+  "residue_summary": {
+    "named_letter_total": 0,
+    "clause_fp_total": 5,
+    "done": true
+  },
+  "report_md": "artifacts/p0-anti-spoiler-processo-curativos-mulher.md"
+}

@@ -1,70 +1,66 @@
-# BRIEF DE VARIANTES — Saúde do Adolescente / adolescente_violencia_protecao
+﻿# L3 Brief — Saúde do Adolescente / adolescente_violencia_protecao (Onda 2)
 
-**Gerado:** 2026-07-13  
-**Política:** `ok_generico` (2 slugs — 12,5%)  
-**Família:** `protocolo` · `legis` · `certo_errado`  
-**Template:** `sky` (t08)  
-**Âncoras amostra:** `funcern-…9064-1` · `cpcon-uepb-…7068-6`  
-**Pacote atual:** `ADOLESCENTE_GENERIC_DESIGN`
+**Status:** `molde_redesign` → reusa pacote glanceable ética (sem IDs novos)  
+**Metáfora 4/4:** acolher × proteger × notificar × não revitimizar  
+**Erro espacial:** a banca troca **acolhimento + rede** por omissão, punição ou "sigilo absoluto" que impede proteção  
+**Orçamento de clique:** board glanceable (0 taps no logic) + compare aberto  
+**Gerado / atualizado:** 2026-08-01 (Onda 2 — NEUROSLIDES_VISUAL_STRATEGY)
 
----
-
-## 0. Erro pedagógico típico
-
-Violência sexual / indicadores / rede de proteção: confundir **notificação compulsória** com quebra de sigilo arbitrária, ou omitir acolhimento e encaminhamento à rede (Conselho Tutelar, CVV, serviço especializado).
-
-**Decisão L3:** layouts genéricos com `compare` — erro é **fluxo normativo + EXCETO**, não geometria de faixas.
-
-**Nota:** overlap parcial com `adolescente_etica_sigilo` quando o enunciado ancora sigilo; inferência prioriza **violência/indicadores** → este ramo.
+| Campo | Valor |
+|-------|-------|
+| Subtópico canônico | Saúde do Adolescente |
+| `pacote_prefix` | `saude-adolescente` |
+| `branch_id` | `adolescente_violencia_protecao` |
+| Família | `protocolo` · `legis` · `certo_errado` |
+| Decisão L3 | `molde_redesign` (reuso `ADOLESCENTE_GLANCEABLE_MOLD`) |
+| Âncoras amostra | `funcern-*9064-1` · `cpcon-uepb-*7068-6` |
 
 ---
 
-## 1. Pacote atual (implementado)
+## Pacote L3 (4× `layout_variant`) — reuso ética v2
 
-| Slide | Layout | Função semântica |
-|-------|--------|------------------|
-| `concept_map` | `morphological` | Atores da rede (CT, CREAS, saúde, escola) |
-| `golden_rule` | `reference_table` | Prazos, leis, fluxo SINAN / ECA |
-| `logic_flow` | `vertical` + `tap` | Sequência acolher → proteger → notificar |
-| `danger_zone` | `compare` | Pegadinhas de omissão ou notificação errada |
+| # player | `type` | `layout_variant` | Metáfora (1 frase) |
+|---------:|--------|------------------|---------------------|
+| 1 | `concept_map` | `adolescent-care-pillars-deck` | 3 pilares: acolher · proteger · notificar |
+| 2 | `logic_flow` | `adolescent-exceto-isolate-board` | Manter rede × exceção (omissão / revitimização) — **0 taps** |
+| 3 | `golden_rule` | `adolescent-speak-barrier-board` | Falar/acolher × barreira (não culpabilizar / não omitir) |
+| 4 | `danger_zone` | `adolescent-exceto-compare` | Cada letra: conduta correta × pegadinha |
 
-**Propositalmente sem** moldes `adolescent-consent-gate` — volume baixo; genérico compare já ensina distrator × correto.
-
----
-
-## 2. Conteúdo handcraft (L2)
-
-- Enfatizar **acolhimento sem revitimização** no concept_map.
-- `golden_rule.rows`: lei/fluxo em tabela (ECA, SINAN, PNAISN).
-- `logic_flow`: passos que separam “escuta” de “ação obrigatória de proteção”.
-- `danger_zone`: cada item com `correct` distinto (não colar texto do gabarito em todas as letras).
+**Sem** novos React IDs — gesto = mesmo limiar acolher×afastar da ética; conteúdo JSON muda o significado dos slots.
 
 ---
 
-## 3. Bespoke futuro (condicional)
+## Slots / gatilhos
 
-**Trigger:** ≥5 slugs e erro espacial em **ordem do fluxo** (pular etapa na cadeia de proteção).
+```text
+concept_map: acolhimento, rede, Conselho Tutelar, CREAS, SINAN, ECA, sem revitimização
+logic_flow.steps: comando EXCETO → keep (proteger/notificar) → exception (omitir/punir) → gabarito
+golden_rule.rows: lei/fluxo (ECA, SINAN, PNAISN) — chip "acolher" vs "barreira"
+danger_zone.items[].correct: único por distrator — nunca colar gabarito em todas as letras
+```
 
-**Metáfora proposta:** `adolescent-protection-network` — grafo/nós da rede (saúde → CT → judiciário); logic_flow ilumina caminho; danger_zone marca nó errado.
-
-**Até lá:** genérico premium.
+**Par concept ↔ danger:** pilares da rede no slide 1; slide 4 instancia o ator/etapa errada por letra.
 
 ---
 
-## 4. Anti-padrões
+## Anti-padrões
 
 | Proibido | Motivo |
 |----------|--------|
-| Forçar pacote ética `adolescent-*` em todo violência | Só quando corpus = escuta/sigilo consultório |
-| Trilho Z / PNI / outros ramos | `detectSlideTopicDrift` |
+| Moldes v1 curtain/weave/consent neste ramo | Só `adolescente_etica_sigilo` |
+| Trilho Z / PNI | Drift de ramo |
 | Gabarito nos slides 1–2 | Spoiler |
+| 5+ taps no logic | Orçamento EXCETO = board |
 
 ---
 
-## 5. DoD
+## Gate Fase 3b / DoD Onda 2
 
-- [x] Ramo + inferência violência/indicadores
-- [x] 2/2 slugs no cluster
-- [ ] Bespoke rede — aguardar volume ≥5
+- [x] Metáfora única 4/4 (acolher×proteger)
+- [x] 4× `layout_variant` nomeados (reuso ética)
+- [x] Wiring `BRANCH_DESIGN_MAP` → `ADOLESCENTE_GLANCEABLE_MOLD`
+- [x] Affinity: ramo `adolescente_violencia_protecao` + corpus proteção
+- [x] Jest mold / pedagogicalBranch / l3MoldGap
+- [ ] Playwright visual-mold-regression (opcional flagship — sob pedido)
 
-**Status:** genérico premium em produção.
+**Próximo:** handcraft com slots de rede; **não** inventar variant React nova.

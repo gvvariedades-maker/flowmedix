@@ -1,0 +1,306 @@
+[
+  {
+    "file": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5.json",
+    "correct": "B",
+    "instruction": "O uso de produtos químicos pode ser reduzido ou eliminado quando se opta pela remoção dos vetores por meio de manejo integrado, com ênfase no controle\nmecânico e nas ações educativas, o que resulta em benefícios para a saúde do trabalhador, para o meio ambiente e para a população em geral. Indique a opção que\npossui um exemplo CORRETO de ação que pode colaborar com essa eliminação de vetores:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Esgotamento sanitário inadequado.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Controle mecânico dos criadouros: remoção, vedação, limpeza e drenagem.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Limpeza urbana somente quando se fizer necessária.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Aumento populacional e territorial urbano desordenado.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Educação em saúde sem a participação da população na eliminação de criadouros.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Copese Ufpi",
+      "ano": "2022",
+      "orgao": "Pref Oeiras",
+      "prova": "AMS"
+    }
+  },
+  {
+    "file": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6.json",
+    "correct": "E",
+    "instruction": "As medidas de proteção à saúde dos agentes de combate a endemias (ACE) também envolvem a substituição de ações que atuam na origem do perigo.\nPressupõe, por exemplo, a alteração de substâncias químicas e/ou processos por outros menos perigosos. Identifique a opção que apresenta exemplo ADEQUADO de\nsubstituição ou processos menos perigosos:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Uso de produtos mais seletivos, mais tóxicos.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Uso de produtos mais seletivos, com maior impacto ambiental.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Uso de inseticidas de maior volatilidade.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Uso de bolsas laterais ao invés de mochilas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Emprego de sistemas de manejo integrado de vetores.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Copese Ufpi",
+      "ano": "2022",
+      "orgao": "Pref Oeiras",
+      "prova": "AMS"
+    }
+  },
+  {
+    "file": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-6.json",
+    "correct": "C",
+    "instruction": "Endemia, epidemia e pandemia são termos frequentemente utilizados na prática da epidemiologia de campo e na saúde pública. As definições apresentadas nasopções seguintes que se referem à ENDEMIA, são:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Aumento repentino da frequência de casos envolvendo uma doença.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Ocorrência de surtos em um espaço maior, ou seja, frequência de casos maior que o habitual, afetando vários continentes ao mesmo tempo.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Presença contínua de uma enfermidade ou de um agente infeccioso em uma zona geográfica determinada.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Denominação utilizada em situações em que a doença envolve grande número de pessoas e atinge uma larga área geográfica.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Aumento acima do esperado na ocorrência de casos de evento ou de doença em uma área ou entre um grupo específico de pessoas, em determinado período.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Copese Ufpi",
+      "ano": "2022",
+      "orgao": "Pref Oeiras",
+      "prova": "AMS"
+    }
+  },
+  {
+    "file": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-7.json",
+    "correct": "E",
+    "instruction": "A vigilância entomológica é uma atividade baseada em indicadores para detectar a presença, a distribuição geográfica e a densidade de vetores no tempo e noespaço, permitindo estimar os riscos de transmissão de patógenos. Tem como finalidade recomendar e direcionar medidas de prevenção e controle dos riscos biológicos,por meio do manejo integrado de vetores. São objetivos ou atividades da vigilância entomológica das arboviroses:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pesquisa entomológica, com armadilhas estilo ovitrampas ou larvitrampas entrando em desuso.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Pesquisa indispensável em pontos estratégicos em que há baixa concentração de depósitos para a desova da fêmea do Aedes aegypti (ex.: cemitérios,borracharias e ferros-velhos).",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Identificação de distribuição geográfica e da densidade populacional do vetor como algo dispensável para o monitoramento ou identificação das áreas de maiorrisco.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Realização de monitoramento com ovitrampas e/ou pesquisa larvária (ex.: estimativa de índices de infestação predial) para identificação das áreas de maior riscopara a introdução dos helmintos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Cálculo de principais indicadores relacionados à fase de larva (ex.: Índice de Infestação Predial – IIP), à fase de ovo (ex.: Índice de Positividade de Ovo) e à fasede adulto (ex.: Índice de densidade de mosquitos nas residências ou Índice de positividade de armadilhas)",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Copese Ufpi",
+      "ano": "2022",
+      "orgao": "Pref Oeiras",
+      "prova": "AMS"
+    }
+  },
+  {
+    "file": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-8.json",
+    "correct": "A",
+    "instruction": "São objetivos da vigilância epidemiológica da hanseníase:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Detectar e tratar precocemente os casos novos, a fim de interromper a cadeia de transmissão e prevenir as incapacidades físicas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Examinar e orientar contatos de casos novos de hanseníase, se houver notificação de casos graves.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Notificar opcionalmente a doença ocorrida em todo o território nacional, mas investigá-la obrigatoriamente.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A notificação na semana epidemiológica de ocorrência do diagnóstico de hanseníase não precisa ser realizada para todos os casos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A notificação, por meio da ficha de notificação/investigação da hanseníase, deve ser preenchida somente em serviços públicos, sendo os serviços privadosisentos de notificação.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Copese Ufpi",
+      "ano": "2022",
+      "orgao": "Pref Oeiras",
+      "prova": "AMS"
+    }
+  },
+  {
+    "file": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-2.json",
+    "correct": "B",
+    "instruction": "A notificação das doenças deve ser realizada por meio do Sistema de Informação, o qual é alimentado pela notificação e a investigação de casos de doenças eagravos que constam na lista nacional de doenças de notificação compulsória. Nesse sistema, é facultado a estados e municípios incluir outros problemas de saúdeimportantes em sua região. Assinale a alternativa que apresenta o sistema oficial utilizado para notificação compulsória no Brasil.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sistema de Informação de Suspeitas de Notificação (SISN).",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Sistema de Informação de Agravos de Notificação (SINAN).",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Sistema de Informação de Doenças de Notificação Compulsória (SIDNC).",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Sistema de Informação de Doenças de Notificáveis (SIDN).",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Sistema de Informação de Suspeitas Compulsórias (SISC).",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Cotec Fadenor",
+      "ano": "2024",
+      "orgao": "Pref Limeira Oeste",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-2.json",
+    "correct": "A",
+    "instruction": "A notificação das doenças deve ser realizada por meio do Sistema de Informação de Agravos de Notificação (Sinan), que é alimentado pela notificação einvestigação de casos de doenças e agravos que constam da lista nacional de doenças de notificação compulsória, mas é facultado a estados e municípios incluir outrosproblemas de saúde importantes em sua região. Assinale a alternativa em que todas as doenças informadas são de notificação compulsória no Brasil:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tuberculose, caso suspeito de dengue, meningite.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Caso suspeito de dengue, cefaleia, leptospirose.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Leptospirose, hipertensão arterial, varicela.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Varicocele, candidíase vaginal, meningite.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Candidíase vaginal, sarampo e varicocele.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Cotec Fadenor",
+      "ano": "2024",
+      "orgao": "Enfermagem",
+      "prova": "Tec (Pref Virgem da Lapa)"
+    }
+  },
+  {
+    "file": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-3.json",
+    "correct": "E",
+    "instruction": "Ainda sobre notificação, marque a alternativa que contém doenças, agravos ou eventos de saúde pública APENAS de notificação compulsória imediata.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Acidente por animal peçonhento, casos de dengue, doença invasiva por Haemophilus Influenza , doença aguda pelo vírus Zika em gestante, febre amarela, peste,raiva humana, síndrome respiratória aguda grave associada a coronavírus, violência sexual e tentativa de suicídio.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Acidente por animal peçonhento, doença de Chagas crônica, doença invasiva por Haemophilus Influenza, doença aguda pelo vírus Zika em gestante, febreamarela, peste, raiva humana, síndrome respiratória aguda grave associada a coronavírus, violência sexual e tentativa de suicídio.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Acidente por animal peçonhento, doença aguda pelo vírus Zika, doença invasiva por Haemophilus Influenza , doença aguda pelo vírus Zika em gestante, febreamarela, peste, raiva humana, síndrome respiratória aguda grave associada a coronavírus, violência sexual e tentativa de suicídio.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Acidente por animal peçonhento, febre Chikungunya, doença invasiva por Haemophilus Influenza , doença aguda pelo vírus Zika em gestante, Febre Amarela,peste, raiva humana, síndrome respiratória aguda grave associada a coronavírus, violência sexual e tentativa de suicídio.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Acidente por animal peçonhento, doença de Chagas aguda, doença invasiva por Haemophilus Influenza , doença aguda pelo vírus Zika em gestante, febreamarela, peste, raiva humana, síndrome respiratória aguda grave associada a coronavírus, violência sexual e tentativa de suicídio.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Cotec Fadenor",
+      "ano": "2021",
+      "orgao": "Pref SJ da Ponte",
+      "prova": "TEnf (Pref SJ Ponte)"
+    }
+  }
+]

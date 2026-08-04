@@ -1,0 +1,34 @@
+﻿{
+    "wave":  1,
+    "phase":  "F0",
+    "validated_at":  "2026-07-31T16:06:46.4546169Z",
+    "gates":  {
+                  "variant_gallery_e2e":  "pass_26_of_26_limit_12",
+                  "build":  "pass",
+                  "chunk_regression_vs_prior_after":  "pass_stable"
+              },
+    "build_after":  {
+                        "heap_mb":  16384,
+                        "exit_code":  0,
+                        "seconds":  309.4,
+                        "chunk_files":  576,
+                        "chunk_total_mb":  15.75,
+                        "chunks_under_50kb":  536,
+                        "delta_vs_prior_after":  {
+                                                     "files":  0,
+                                                     "mb":  0
+                                                 }
+                    },
+    "build_before":  {
+                         "result":  "incomplete_oom_interrupted",
+                         "attempt_heap_mb":  8192,
+                         "note":  "Pre-wave1 baseline OOM at 8GB; F0 gate uses stable post-wave1 rebuild (16GB) + e2e green."
+                     },
+    "registry_counts":  {
+                            "concept_map":  77,
+                            "golden_rule":  67,
+                            "logic_flow":  68,
+                            "danger_zone":  69,
+                            "declared_total":  297
+                        }
+}

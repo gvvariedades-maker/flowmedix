@@ -23,7 +23,11 @@
         "title": "Lei nº 10.216/2001 — Proteção e direitos das pessoas com transtornos mentais",
         "year": 2001,
         "url": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10216.htm",
-        "covers": ["modelo substitutivo", "direitos do usuário", "internação como exceção"]
+        "covers": [
+          "modelo substitutivo",
+          "direitos do usuário",
+          "internação como exceção"
+        ]
       },
       {
         "id": "portaria-3088-2011-raps",
@@ -32,7 +36,11 @@
         "title": "Portaria GM/MS nº 3.088/2011 — Rede de Atenção Psicossocial (RAPS)",
         "year": 2011,
         "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt3088_23_12_2011_rep.html",
-        "covers": ["SRT", "CAPS", "cuidado territorial"]
+        "covers": [
+          "SRT",
+          "CAPS",
+          "cuidado territorial"
+        ]
       }
     ]
   },
@@ -90,11 +98,6 @@
           "label": "Pegadinha da crise",
           "detail": "SRT não é porta de internação aguda — crise aguda segue fluxo de urgência/CAPS, não moradia como substituto de hospital.",
           "icon": "AlertTriangle"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra C — dispositivo substitutivo, moradia em território, cuidado em liberdade e articulação com a RAPS.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "SRT = moradia terapêutica no território, não internação nem vigilância"
@@ -130,12 +133,6 @@
           "value": "Internação para crise aguda nem vigilância que restringe circulação",
           "emphasis": "alert",
           "badge": "warn"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra C",
-          "emphasis": "success",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Decore: território + liberdade + RAPS — não crise nem isolamento"

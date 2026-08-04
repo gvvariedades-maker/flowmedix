@@ -1,0 +1,273 @@
+[
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-1.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Segundo o Sistema de Informação de Agravos de Notificação (SINAN), os pacientes vítimas de acidentes por animais peçonhentos devem ser notificados quandohouver:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "evidências clínicas de envenenamento, específicas para cada tipo de animal, caso o animal causador do acidente possa ser identificado",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "suspeita de envenenamento, específicas para cada tipo de animal, independentemente do animal causador do acidente ter sido identificado ou não",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "evidências clínicas de envenenamento, específicas para cada tipo de animal, independentemente do animal causador do acidente ter sido identificado ou não",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "suspeita e evidências clínicas de envenenamento, específicas para cada tipo de animal, independentemente do animal causador do acidente ter sido identificadoou não",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: evidências clínicas de envenenamento, específicas para cada tipo de animal, independentemente do animal causador do acidente ter sido identificado ou não"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-2.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Os casos de óbito com suspeita de doença pelo vírus da Zika, de acordo com a lista compulsória de doenças e agravos, devem ser notificados da seguinte forma:",
+    "text_fragment": "<p>\"Sem Especialidade\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "mensalmente (em até 30 dias úteis) para a Secretaria Estadual de Saúde e a Secretaria Municipal de Saúde",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "semanalmente (em até 5 dias úteis) para a Secretaria Estadual de Saúde e a Agência Nacional de Vigilância",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "imediatamente (até 24 horas) para o Ministério da Saúde, a Secretaria Estadual de Saúde e a Secretaria Municipal de Saúde",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "imediatamente (até 36 horas) para o Ministério da Saúde, a Secretaria Estadual de Saúde e a Secretaria Municipal de Saúde",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: imediatamente (até 24 horas) para o Ministério da Saúde, a Secretaria Estadual de Saúde e a Secretaria Municipal de Saúde"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-3.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "A vigilância que deve ser aplicada para o controle das doenças transmissíveis, através da observação sistemática e ativa de casos suspeitos ou confirmados dedoenças transmissíveis e de seus contatos, é chamada de:",
+    "text_fragment": "<p>\"Sem Especialidade\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "vigilância sanitária",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "saúde do trabalhador",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "acreditação hospitalar",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "vigilância epidemiológica",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: vigilância epidemiológica"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-7.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Assinale o conceito epidemiológico que corresponde à medida de eventos existentes em uma população em um determinado período de tempo:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "risco",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "incidência",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "causalidade",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "prevalência",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: prevalência"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-2.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "\"Comportamento das doenças numa população exposta ao adoecimento, cujos índices permitem conhecer que doenças existem habitualmente na área, noperíodo e na população estudada (prevalência), e quais os novos casos das doenças na mesma área, período e população (incidência)\".\nO excerto destacado diz respeito à noção de:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "mortalidade",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "morbidade",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "letalidade",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "vigilância",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "morbimortalidade",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: morbidade"
+    ]
+  },
+  {
+    "file": "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-1.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Segundo\nRouquayrol\ne\nGoldbaum\n(2003), a epidemiologia é definida como a ciência que estuda o processo saúde-doença em coletividades humanas, analisando adistribuição e os fatores determinantes das doenças, os danos à saúde e os eventos associados à saúde coletiva. Portanto, a epidemiologia busca propor medidasespecíficas de:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "provisão, eliminação ou erradicação de doenças, fornecendo informações básicas que sirvam de suporte ao planejamento, à administração e à avaliação dasações de saúde",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "vigilância sanitária, controle ou erradicação de vetores, fornecendo indicadores que sirvam de suporte ao planejamento, à administração e à avaliação das açõesde saúde do trabalhador",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "previsão, monitoramento e eliminação de doenças, fornecendo indicadores que sirvam de suporte ao diagnóstico, à administração e à avaliação das ações deeducação",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "prevenção, controle ou erradicação de doenças, fornecendo indicadores que sirvam de suporte ao planejamento, à administração e à avaliação das ações desaúde",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: prevenção, controle ou erradicação de doenças, fornecendo indicadores que sirvam de suporte ao planejamento, à administração e à avaliação das ações desaúde"
+    ]
+  },
+  {
+    "file": "unesc-enfermagem-atencao-basica-saude-da-familia-1778967504475-0.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Em relação a visita domiciliar e a técnica de pesquisa larvária, marque a alternativa CORRETA:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Com os dados coletados no campo não é possível estimar índices entomológicos.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Na vigilância e controle de vetores, a visita domiciliar, realizada pelo agente e pelo supervisor, é uma atividade fundamental para verificar a presença de criadouros.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "É a inspeção de formas adultas em todos os depósitos do imóvel.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Na visita domiciliar nunca se deve orientar os residentes sobre a eliminação dos mesmos e sobre medidas preventivas, identificação de foco e tratamento.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Nunca se deve utilizar o pesca-larva com o objetivo de coletar uma amostra de larvas e pupas do recipiente.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Na vigilância e controle de vetores, a visita domiciliar, realizada pelo agente e pelo supervisor, é uma atividade fundamental para verificar a presença de criadouros."
+    ]
+  },
+  {
+    "file": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-6.json",
+    "family": "vf",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "A identificação de um caso de tuberculose pulmonar em uma unidade de saúde exige ação imediata. O enfermeiro registra o caso para monitoramento. Acerca danotificação compulsória de tuberculose, marque V para as afirmativas verdadeiras e F para as falsas.\n(__)A notificação compulsória de tuberculose deve ser feita em até 24 horas após a suspeita, usando o SINAN.\n(__)A notificação compulsória de tuberculose pode ser feita apenas após confirmação laboratorial, para evitar falsos positivos.\n(__)A notificação compulsória de tuberculose inclui dados do paciente e do tratamento, garantindo vigilância epidemiológica.\n(__)A notificação compulsória de tuberculose é obrigatória apenas em casos de resistência a medicamentos.\nApós análise, assinale a alternativa que apresenta a sequência correta dos itens acima, de cima para baixo:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, F, V, V.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "V, F, V, F.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "V, V, V, V.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "F, F, V, V.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "V, F, F, F.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: V, F, V, F."
+    ]
+  }
+]

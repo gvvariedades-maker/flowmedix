@@ -1,31 +1,38 @@
 {
-  "generated_at": "2026-07-24T07:08:24.053Z",
+  "generated_at": "2026-08-04T01:30:50.827Z",
   "subtopicos_ready": 1,
   "subtopicos_pass": 1,
   "subtopicos_fail": 0,
   "items": [
     {
-      "subtopico": "Sinônimos, antônimos e polissemia",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
       "registry_status": "applied",
-      "total_slugs": 63,
-      "handcraft_applied": 63,
-      "manifest_slugs": 63,
-      "supabase_found": 63,
-      "golden_v1": 63,
-      "four_slides": 63,
-      "premium_gate_ok": 63,
-      "local_json_count": 63,
+      "total_slugs": 218,
+      "handcraft_applied": 218,
+      "manifest_slugs": 218,
+      "supabase_found": 218,
+      "golden_v1": 218,
+      "four_slides": 218,
+      "premium_gate_ok": 218,
+      "local_json_count": 652,
       "slug_issues": [],
       "pilot_sample": [
-        "apice-ace-pr-sinonimos-leia-o-texto-a-seguir-e-responda-da-3558948",
-        "apice-acs-pr-sinonimos-15-07-2026-19-38-27-98-257-258-259-o-3951867",
-        "apice-acs-pr-sinonimos-analise-as-palavras-destacadas-nas-f-3951883",
-        "apice-ag-adm-sinonimos-leia-o-poema-abaixo-e-responda-a-que-3793485"
+        "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+        "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+        "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+        "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+        "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+        "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-7",
+        "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+        "amauc-enfermagem-processo-de-enfermagem-1780006486032-6",
+        "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+        "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5",
+        "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5"
       ],
-      "pilot_min": 4,
+      "pilot_min": 11,
       "dod_pass": true,
       "dod_notes": [
-        "Piloto humano sugerido: revisar 4 slug(s) no player (≥5%)"
+        "Piloto humano sugerido: revisar 11 slug(s) no player (≥5%)"
       ]
     }
   ]

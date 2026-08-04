@@ -1,0 +1,50 @@
+{
+  "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+  "pacote_prefix": "epidemiologia-e-vigilancia-epidemiologica",
+  "gate": "warn",
+  "handcraft_allowed": true,
+  "cluster_report": "artifacts/epidemiologia-e-vigilancia-epidemiologica-topic-cluster-report.json",
+  "goldens_needed": 0,
+  "missing": [],
+  "covered": [
+    {
+      "cluster": "Notificação compulsória / SINAN / lista nacional",
+      "golden_file": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-notificacao-compulsoria-sinan-lista-naci.json",
+      "path": "examples/questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-notificacao-compulsoria-sinan-lista-naci.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "Epidemiologia — conceito geral",
+      "golden_file": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-epidemiologia-conceito-geral.json",
+      "path": "examples/questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-epidemiologia-conceito-geral.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "Indicadores — incidência, prevalência, mortalidade, letalidade",
+      "golden_file": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-indicadores-incidencia-prevalencia-morta.json",
+      "path": "examples/questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-indicadores-incidencia-prevalencia-morta.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "Vigilância epidemiológica — conceito e ações",
+      "golden_file": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-vigilancia-epidemiologica-conceito-e-aco.json",
+      "path": "examples/questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-vigilancia-epidemiologica-conceito-e-aco.json",
+      "content_standard_ok": true,
+      "issues": []
+    }
+  ],
+  "warnings": [
+    "absorver sem golden própria (Atenção básica (drift?), n=10) — fallback FAMILY_GOLDEN_FILE ok",
+    "absorver sem golden própria (Ocorrência — endemia, epidemia, pandemia, surto, n=10) — fallback FAMILY_GOLDEN_FILE ok",
+    "absorver sem golden própria (Cadeia de transmissão / períodos / histórico natural, n=8) — fallback FAMILY_GOLDEN_FILE ok",
+    "absorver sem golden própria (Imunização (drift?), n=2) — fallback FAMILY_GOLDEN_FILE ok",
+    "absorver sem golden própria (Doenças transmissíveis clínicas (drift?), n=1) — fallback FAMILY_GOLDEN_FILE ok"
+  ],
+  "reasons": [
+    "Âncoras de ramo forte ok; há avisos (absorver / arquivo / content_standard)."
+  ],
+  "artifact": "artifacts/golden-anchor-gate-epidemiologia-e-vigilancia-epidemiologica.json"
+}

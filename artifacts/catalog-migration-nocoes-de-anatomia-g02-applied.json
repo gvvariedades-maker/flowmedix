@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T22:56:28.822Z",
+  "lote": "nocoes-de-anatomia-g02",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-3",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-1",
+    "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+    "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+    "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

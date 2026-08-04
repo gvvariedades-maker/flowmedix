@@ -1,0 +1,16 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g02",
+  "status": "applied",
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "slug_count": 8,
+  "applied_at": "2026-08-02T07:48:31.421Z",
+  "applied_report": "artifacts/catalog-migration-atencao-basica-saude-da-familia-g02-applied.json",
+  "anchor_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+  "anchor_second_review": {
+    "reviewed_at": "2026-08-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/atencao-basica-saude-da-familia-g02.json"
+  }
+}

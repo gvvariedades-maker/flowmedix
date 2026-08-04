@@ -24,18 +24,43 @@
         "title": "Manual de Recomendações para o Controle da Tuberculose no Brasil",
         "year": 2019,
         "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_recomendacoes_controle_tuberculose_brasil_2_ed.pdf",
-        "covers": ["notificação", "BAAR", "aerossóis", "bacilífero"]
+        "covers": [
+          "notificação",
+          "BAAR",
+          "aerossóis",
+          "bacilífero"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre tuberculose e vigilância epidemiológica, analise as afirmativas.\n\nI - A tuberculose é doença de notificação compulsória e exige investigação de contactantes.\nII - O Bacilo Álcool-Ácido Resistente (BAAR) no escarro é exame utilizado na investigação diagnóstica.\nIII - Pacientes com tuberculose pulmonar bacilífera não precisam de precaução de aerossóis, pois a transmissão ocorre apenas por contato direto com pele.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
@@ -48,10 +73,26 @@
         "pedagogical_branch": "bacterianas_tuberculose"
       },
       "items": [
-        { "label": "Notificação", "detail": "Compulsória — vigilância e busca de contactantes.", "icon": "FileWarning" },
-        { "label": "BAAR", "detail": "Pesquisa de bacilo no escarro — exame diagnóstico clássico.", "icon": "Microscope" },
-        { "label": "Transmissão", "detail": "Gotículas/aerossóis — não contato cutâneo.", "icon": "Wind" },
-        { "label": "Precaução", "detail": "Bacilífero: aerossóis + quarto + máscara conforme protocolo.", "icon": "Shield" }
+        {
+          "label": "Notificação",
+          "detail": "Compulsória — vigilância e busca de contactantes.",
+          "icon": "FileWarning"
+        },
+        {
+          "label": "BAAR",
+          "detail": "Pesquisa de bacilo no escarro — exame diagnóstico clássico.",
+          "icon": "Microscope"
+        },
+        {
+          "label": "Transmissão",
+          "detail": "Gotículas/aerossóis — não contato cutâneo.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Precaução",
+          "detail": "Bacilífero: aerossóis + quarto + máscara conforme protocolo.",
+          "icon": "Shield"
+        }
       ],
       "footer_rule": "TB pulmonar bacilífera = aerossóis, não contato de pele"
     },
@@ -65,10 +106,27 @@
       },
       "content": "Vigilância TB",
       "rows": [
-        { "label": "Notificação", "value": "Compulsória + contactantes", "badge": "ok" },
-        { "label": "BAAR", "value": "Escarro — investigação", "badge": "ok" },
-        { "label": "Só contato pele", "value": "Falso — aerossóis/gotículas", "emphasis": "alert", "badge": "warn" },
-        { "label": "Precaução bacilífero", "value": "Aerossóis + quarto adequado", "badge": "ok" }
+        {
+          "label": "Notificação",
+          "value": "Compulsória + contactantes",
+          "badge": "ok"
+        },
+        {
+          "label": "BAAR",
+          "value": "Escarro — investigação",
+          "badge": "ok"
+        },
+        {
+          "label": "Só contato pele",
+          "value": "Aerossóis/gotículas",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Precaução bacilífero",
+          "value": "Aerossóis + quarto adequado",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "III inverte via de transmissão — erro clássico"
     },
@@ -99,9 +157,21 @@
       },
       "content": "PEGADINHAS — TB",
       "items": [
-        { "label": "TB = contato", "detail": "III descreve via errada.", "correct": "Transmissão por gotículas/aerossóis." },
-        { "label": "Não notificar", "detail": "I reforça compulsoriedade.", "correct": "Notificar e investigar contactantes." },
-        { "label": "BAAR em sangue", "detail": "Exame clássico é escarro, não hemocultura de rotina.", "correct": "BAAR no escarro." }
+        {
+          "label": "TB = contato",
+          "detail": "III descreve via errada.",
+          "correct": "Transmissão por gotículas/aerossóis."
+        },
+        {
+          "label": "Não notificar",
+          "detail": "I reforça compulsoriedade.",
+          "correct": "Notificar e investigar contactantes."
+        },
+        {
+          "label": "BAAR em sangue",
+          "detail": "Exame clássico é escarro, não hemocultura de rotina.",
+          "correct": "BAAR no escarro."
+        }
       ],
       "footer_rule": "Bacterianas: vigilância + exame + precaução alinhados"
     }

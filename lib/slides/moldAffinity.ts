@@ -89,7 +89,21 @@ const ADOLESCENT_ETHICS_POSITIVE: RegExp[] = [
   /espa[cç]o do adolescente/i,
 ];
 
-/** Desenvolvimento puberal / fisiologia — não usar moldes de ética adolescente. */
+/**
+ * Corpus positivo do pacote glanceable v2 (ética + Onda 2).
+ * Inclui acolher×afastar (violência/mental), marcos puberais e EXCETO/diretrizes.
+ */
+const ADOLESCENT_GLANCEABLE_POSITIVE: RegExp[] = [
+  ...ADOLESCENT_ETHICS_POSITIVE,
+  /notifica[cç][aã]o compuls[oó]ria|conselho tutelar|rede de prote[cç][aã]o|sinan|creas|\beca\b|pnaisn/i,
+  /viol[eê]ncia|revitimiza|indicadores.*viol/i,
+  /anorexia|bulimia|transtorno alimentar|imagem corporal|depress[aã]o|ansiedade|risco suicida/i,
+  /puberdade|puberal|tanner|menarca|espermarquia|metamorfose f[ií]sica|atraso na puberdade/i,
+  /exceto|incorreta|diretriz|promo[cç][aã]o|sa[uú]de bucal|adolescente/i,
+  /linguagem|jarg[aã]o|rebuscad|acess[ií]vel|comunica|acolher|afastar/i,
+];
+
+/** Desenvolvimento puberal / fisiologia — bloquear moldes legado de sigilo (curtain/weave/consent). */
 const ADOLESCENT_DEVELOPMENT_BLOCK: RegExp[] = [
   /puberdade|puberal|metamorfose f[ií]sica|maturidade sexual/i,
   /horm[oô]nio|disfun[cç][aã]o hormonal|desenvolvimento das mamas|hipertrofia dos test[ií]culo/i,
@@ -97,10 +111,23 @@ const ADOLESCENT_DEVELOPMENT_BLOCK: RegExp[] = [
   /atraso na puberdade|12 aos 13 anos|13-14 anos/i,
 ];
 
+/** Só escore Z / Caderneta — glanceable Onda 2 não compete com trilho antropométrico. */
+const ADOLESCENT_Z_SCORE_ONLY_BLOCK: RegExp[] = [
+  /escore\s*z|score\s*z|\bz\s*[<>≤≥]|desvio[\s-]?padr[aã]o/i,
+  /antropometr|pondero[\s-]?estatur|caderneta do adolescente|curvas?\s*oms/i,
+  /classifica[cç][aã]o nutricional|estatura muito baixa/i,
+];
+
 const ADOLESCENT_ETHICS_BLOCK: RegExp[] = [
   ...NUTRITION_ANTHROPOMETRY_BLOCK,
   ...ADOLESCENT_DEVELOPMENT_BLOCK,
 ];
+
+/** Só ética/sigilo consome o pacote pillars + speak-barrier + isolate + compare. */
+const ADOLESCENT_GLANCEABLE_BRANCHES = new Set(['adolescente_etica_sigilo']);
+
+/** Só sigilo/consulta — moldes v1 (curtain / spectrum / weave / consent-gate). */
+const ADOLESCENT_ETHICS_LEGACY_BRANCHES = new Set(['adolescente_etica_sigilo']);
 
 /** IRAS / ITU / cateter vesical — ramo biosseg_iras_itu_cateter. */
 const BIOSSEG_ITU_POSITIVE: RegExp[] = [
@@ -125,6 +152,28 @@ const BIOSSEG_ITU_VARIANTS = new Set([
 ]);
 
 const ADOLESCENT_VARIANTS = new Set([
+  'adolescent-privacy-curtain',
+  'adolescent-care-pillars-deck',
+  'adolescent-sigilo-spectrum',
+  'adolescent-speak-barrier-board',
+  'adolescent-vf-weave-tap',
+  'adolescent-exceto-isolate-tap',
+  'adolescent-exceto-isolate-board',
+  'adolescent-consent-gate',
+  'adolescent-exceto-compare',
+]);
+
+/** Pacote glanceable v2 — reutilizado na Onda 2 (violência / mental / desenvolvimento / genérico). */
+const ADOLESCENT_GLANCEABLE_VARIANTS = new Set([
+  'adolescent-care-pillars-deck',
+  'adolescent-speak-barrier-board',
+  'adolescent-exceto-isolate-tap',
+  'adolescent-exceto-isolate-board',
+  'adolescent-exceto-compare',
+]);
+
+/** Moldes v1 de sigilo — só `adolescente_etica_sigilo`. */
+const ADOLESCENT_ETHICS_LEGACY_VARIANTS = new Set([
   'adolescent-privacy-curtain',
   'adolescent-sigilo-spectrum',
   'adolescent-vf-weave-tap',
@@ -219,6 +268,11 @@ const PNI_CALENDARIO_VARIANTS = new Set([
   'pni-calendar-board',
   'pni-calendar-elimination-tap',
   'calendar-mismatch',
+]);
+
+const PNI_EXCETO_VARIANTS = new Set([
+  'pni-exceto-isolate-board',
+  'pni-exceto-compare',
 ]);
 
 const PNI_CADEIA_FRIO_VARIANTS = new Set([
@@ -585,18 +639,30 @@ export function collectSlideTextCorpus(slide: MoldAffinitySlide): string {
  * Moldes ausentes → pass (compatibilidade com lotes legados).
  */
 const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
-  // ---- Saúde do Adolescente (ramo ético — bloqueia nutrição/Z) ----
+  // ---- Saúde do Adolescente (glanceable v2 + legado ética) ----
   'adolescent-privacy-curtain': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
   },
+  'adolescent-care-pillars-deck': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
+  },
   'adolescent-sigilo-spectrum': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+  },
+  'adolescent-speak-barrier-board': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
   },
   'adolescent-vf-weave-tap': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
@@ -607,11 +673,29 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
       /afirmativa\s+[IIVX]+|julgar\s+[IIVX]+|\bI\b.*(?:verdadeira|falsa)/i,
     ],
   },
+  'adolescent-exceto-isolate-tap': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
+  },
+  'adolescent-exceto-isolate-board': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
+  },
   'adolescent-consent-gate': {
     homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
     blockFamilies: ['calc'],
     blockPatterns: ADOLESCENT_ETHICS_BLOCK,
     positivePatterns: ADOLESCENT_ETHICS_POSITIVE,
+  },
+  'adolescent-exceto-compare': {
+    homeSubtopicFragments: ['saude do adolescente', 'adolescente'],
+    blockFamilies: ['calc'],
+    blockPatterns: ADOLESCENT_Z_SCORE_ONLY_BLOCK,
+    positivePatterns: ADOLESCENT_GLANCEABLE_POSITIVE,
   },
 
   // ---- Saúde do Adolescente — antropometria / escore Z ----
@@ -711,6 +795,20 @@ const MOLD_AFFINITY_RULES: Record<string, MoldAffinityRule> = {
     homeSubtopicFragments: ['imunizacao', 'vacinacao'],
     blockFamilies: ['protocolo', 'calc', 'legis', 'text_fragment'],
     positivePatterns: [/vacina|imuniz|pni|intervalo/i],
+    minPositive: 1,
+  },
+
+  'pni-exceto-isolate-board': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc'],
+    positivePatterns: [/exceto|incorret[oa]|alternativa.*incorreta|vacina|imuniz|pni|calend/i],
+    minPositive: 1,
+  },
+
+  'pni-exceto-compare': {
+    homeSubtopicFragments: ['imunizacao', 'vacinacao'],
+    blockFamilies: ['calc'],
+    positivePatterns: [/exceto|incorret[oa]|alternativa.*incorreta|vacina|imuniz|pni|calend/i],
     minPositive: 1,
   },
 
@@ -2020,7 +2118,15 @@ export function bespokeMoldHasContentAffinity(
   const onHome = rule ? isOnHomeSubtopic(rule, ctx.subtopico) : false;
 
   if (ADOLESCENT_VARIANTS.has(variant)) {
-    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'adolescente_etica_sigilo') {
+    if (ADOLESCENT_ETHICS_LEGACY_VARIANTS.has(variant)) {
+      if (ctx.pedagogicalBranch && !ADOLESCENT_ETHICS_LEGACY_BRANCHES.has(ctx.pedagogicalBranch)) {
+        return false;
+      }
+    } else if (ADOLESCENT_GLANCEABLE_VARIANTS.has(variant)) {
+      if (ctx.pedagogicalBranch && !ADOLESCENT_GLANCEABLE_BRANCHES.has(ctx.pedagogicalBranch)) {
+        return false;
+      }
+    } else if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'adolescente_etica_sigilo') {
       return false;
     }
     if (!rule?.positivePatterns?.length) return false;
@@ -2133,6 +2239,12 @@ export function bespokeMoldHasContentAffinity(
 
   if (PNI_CALENDARIO_VARIANTS.has(variant)) {
     if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_calendario') {
+      return false;
+    }
+  }
+
+  if (PNI_EXCETO_VARIANTS.has(variant)) {
+    if (ctx.pedagogicalBranch && ctx.pedagogicalBranch !== 'imunizacao_exceto') {
       return false;
     }
   }

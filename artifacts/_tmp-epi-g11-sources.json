@@ -1,0 +1,306 @@
+[
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-3.json",
+    "correct": "A",
+    "instruction": "A respeito das dermatoses ocupacionais, analise as assertivas abaixo, assinalando\nV\n, se verdadeiras, ou\nF\n, se falsas.\n( ) A notificação de dermatoses ocupacionais deve ser realizada somente em casos graves que causem incapacidade para o trabalho.\n( ) As manifestações clínicas das dermatoses ocupacionais se limitam a eritema e edema, sem apresentar complicações secundárias.\n( ) Deve-se notificar as dermatoses ocupacionais sempre que houver suspeita ou confirmação de doença de pele que possa ter sido causada ou agravada porfatores no local de trabalho.\n( ) As dermatoses ocupacionais são sempre determinadas após biópsia da pele.\nA ordem\ncorreta\nde preenchimento dos parênteses, de cima para baixo, é:",
+    "options": [
+      {
+        "id": "A",
+        "text": "F – F – V – F.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "V – F – V – V.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "F – F – V – V.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "V – V – F – V.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "F – V – F – F.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2025",
+      "orgao": "Enfermagem / Saúde do Trabalhador",
+      "prova": "Tec (GHC)"
+    }
+  },
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-0.json",
+    "correct": "B",
+    "instruction": "Um paciente de 30 anos dá entrada no pronto-socorro com diagnóstico médico confirmado de dengue grave, apresentando febre alta, dor abdominal intensa esinais de hemorragia. Durante o acolhimento no serviço de urgência, o técnico de enfermagem deve organizar os cuidados imediatos e garantir a notificação obrigatóriada doença. Considerando os sintomas indicados, o diagnóstico e os critérios de notificação compulsória, o técnico de enfermagem deve:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Notificar dengue e zika.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Notificar apenas dengue.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Não é necessário notificar, pois o médico já confirmou o diagnóstico.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Notificar dengue e gripe sazonal.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Notificar dengue e chikungunya.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2025",
+      "orgao": "Pref Xangri-lá",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-2.json",
+    "correct": "C",
+    "instruction": "A notificação compulsória é a comunicação obrigatória à autoridade de saúde, realizada pelos médicos, profissionais de saúde ou responsáveis pelosestabelecimentos de saúde, públicos ou privados, sobre a ocorrência de suspeita ou confirmação de doença, agravo ou evento de saúde pública, podendo ser imediata ousemanal. São doenças ou agravos de notificação semanal,\nEXCETO\n:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Hanseníase.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Tuberculose.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Raiva humana.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Óbito materno.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Leishmaniose visceral.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2024",
+      "orgao": "Pref Jari",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-3.json",
+    "correct": "D",
+    "instruction": "Sobre a rotina do técnico de enfermagem referente à notificação compulsória de doenças, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reduz-se a uma tarefa burocrática sem relevância prática na assistência ao paciente.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Exige conhecimento aprofundado em estatísticas médicas para ser realizada corretamente.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Capacita o técnico a assumir autonomamente a decisão de notificar casos, sem critérios específicos.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Contribui significativamente para o monitoramento epidemiológico e controle de doenças.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Prioriza a confidencialidade do paciente em detrimento da comunicação efetiva com as autoridades de saúde.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2024",
+      "orgao": "Socorrista",
+      "prova": "TEnf (Pref Criciúma)"
+    }
+  },
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-4.json",
+    "correct": "E",
+    "instruction": "A notificação compulsória de doenças e agravos, realizada por meio do Sistema de Informação de Agravos de Notificação (SINAN), permite que as autoridades desaúde tenham conhecimento da situação de saúde da população, a fim de direcionar as políticas públicas no sentido de ampliar a atenção aos casos que apresentempotencial de disseminação, bem como de mensurar a magnitude, a gravidade e a severidade de determinada doença. São doenças, eventos ou agravos de notificaçãocompulsória, EXCETO:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Tentativa de suicídio.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Violência doméstica.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Esquistossomose.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Intoxicação exógena.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Candidíase sistêmica.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2024",
+      "orgao": "Sem Área",
+      "prova": "TEnf (Pref Criciúma)"
+    }
+  },
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-8.json",
+    "correct": "A",
+    "instruction": "Doenças transmissíveis são manifestações clínicas causadas por bioagentes patogênicos, chamadas doenças infecciosas, em que o agente pode passar de umindivíduo para o outro. Referente aos elos da cadeia de transmissão, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Infectividade e a capacidade de o bioagente causar uma infecção, ou seja, penetrar num organismo e desenvolver ou se multiplicar.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Patogenicidade e a capacidade de levar respostas imunológicas duradouras ou temporárias.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Virulência e a capacidade do microrganismo produzir dor.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "São processos importantes na cadeia epidemiológica a virulência e a imunidade.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Imunogenicidade são organismos vivos capazes de causar uma infecção, ou seja, introduzir um organismo e se multiplicarem e/ou se desenvolverem.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2023",
+      "orgao": "Pref Baln. Pinhal",
+      "prova": "Tec Enf"
+    }
+  },
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-8.json",
+    "correct": "C",
+    "instruction": "São doenças que requerem notificação compulsória,\nEXCETO\n:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Botulismo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Tularemia.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Colelitíase.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Monkeypox.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Marburg.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2024",
+      "orgao": "Pref Carlos Barbosa",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-4.json",
+    "correct": "D",
+    "instruction": "A\nconstitui um processo contínuo e sistemático de coleta, consolidação, análise e disseminação de dados sobre eventos relacionados àsaúde, visando ao planejamento e à implementação de medidas de saúde pública para a proteção da saúde da população, a prevenção e o controle de riscos, agravos edoenças, bem como para a promoção da saúde.\nAssinale a alternativa que preenche\ncorretamente\na lacuna do trecho acima.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vigilância Epidemiológica",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Vigilância Sanitária",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Vigilância Ambiental",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Vigilância em Saúde",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Vigilância em Saúde do Trabalhador",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fundatec",
+      "ano": "2022",
+      "orgao": "Pref Viamão",
+      "prova": "TEnf"
+    }
+  }
+]

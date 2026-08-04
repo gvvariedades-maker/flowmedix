@@ -1,0 +1,283 @@
+[
+  {
+    "file": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-9.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Acerca do uso de larvicidas e inseticidas no controle de endemias, bem como das normas de segurança envolvidas no processo, marque a alternativa CORRETA:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "É sempre indicado o uso de larvicidas no controle de vetores em depósitos de água para consumo humano.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "O uso de inseticidas para o controle do vetor é classificado sempre como controle mecânico.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "O Ministério da Saúde não possui uma rede de monitoramento que avalia o estágio de resistência do Aedes aegypti ao uso de inseticidas.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Não é necessário o uso de luvas durante a aplicação de larvicidas.",
+        "ok": true
+      },
+      {
+        "id": "E",
+        "text": "É essencial o uso da máscara semi-facial durante a aplicação do larvicida.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "D: Não é necessário o uso de luvas durante a aplicação de larvicidas."
+    ]
+  },
+  {
+    "file": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-0.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Em relação aos insetos, é CORRETO afirmar que:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Possuem dois pares de mandíbulas.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Apresentam musculatura formada por fibras musculares lisas.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Possuem o corpo dividido somente em cabeça e tórax.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Apresentam Simetria unilateral.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Possuem apêndices pareados e articulados.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: Possuem apêndices pareados e articulados."
+    ]
+  },
+  {
+    "file": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-1.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Marque a alternativa que apresenta uma doença de notificação compulsória imediata:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Doença de Chagas Crônica.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Esquistossomose.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Hanseníase.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Hantavirose.",
+        "ok": true
+      },
+      {
+        "id": "E",
+        "text": "Febre de Chikungunya.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "D: Hantavirose."
+    ]
+  },
+  {
+    "file": "unesc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-2.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Sobre a vigilância epidemiológica, julgue as alternativas abaixo:\nI.\nEm períodos não epidêmicos a vigilância epidemiológica deve investigar o caso para detectar o local provável de infecção, no caso de suspeita de ser do própriomunicípio, solicitar à equipe de controle vetorial pesquisa de Aedes aegypti na área.\nII.\nA Vigilância epidemiológica municipal deve acompanhar a curva dos casos, a tendência e o perfil da doença, no âmbito do município, desagregando asinformações epidemiológicas por bairro.\nIII.\nNão é responsabilidade da Vigilância epidemiológica estadual consolidar os dados do estado e produzir boletins mensais disponibilizando informações para osmunicípios e o público em geral.\nQual (is) afirmativa (s) está (ão) CORRETA (S)?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apenas, II .",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas, II e III .",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Apenas, I .",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Apenas, I e III .",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Apenas, I e II .",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: Apenas, I e II ."
+    ]
+  },
+  {
+    "file": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-4.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "A definição \"Conjunto de ações que proporciona o conhecimento, a detecção ou prevenção de qualquer mudança nos fatores determinantes e condicionantes dasaúde individual ou coletiva, com a finalidade de recomendar e adotar as medidas de prevenção e controle das doenças ou agravos\", refere-se à",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Vigilância Sanitária.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Vigilância Ambiental.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Vigilância em Saúde.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Vigilância Epidemiológica.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: Vigilância Epidemiológica."
+    ]
+  },
+  {
+    "file": "unifil-enfermagem-processo-de-enfermagem-1780004469060-6.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Sobre a vigilância epidemiológica, analise as assertivas e assinale a alternativa correta.\nI. A vigilância epidemiológica envolve um conjunto de ações que proporciona o conhecimento, a detecção ou prevenção de qualquer mudança nos fatores determinantes e condicionantes de saúde individual ou coletiva, com a finalidade de recomendar e adotar as medidas de prevenção e controle das doenças ou agravos.\nII. A vigilância epidemiológica realiza a prevenção de doenças e agravos transmissíveis à saúde e evita seus fatores de risco, elabora documentos proibitórios sobre a vigilância epidemiológica.\nIII. São funções da vigilância epidemiológica: coleta de dados; processamento de dados coletados; análise e interpretação dos dados processados; recomendação das medidas de prevenção e controle apropriadas; promoção das ações de prevenção e controle indicadas; avaliação da eficácia e efetividade das medidas adotadas; divulgação de informações pertinentes.\nIV. Notificação é a comunicação de uma ocorrência de determinada doença ou agravo à saúde, feita à autoridade sanitária (vigilância epidemiológica) por profissionais de saúde ou qualquer cidadão, para fins de adoção de medidas de intervenção pertinentes.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Todas estão corretas.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas I, II e IV estão corretas.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Apenas I, III e IV estão corretas.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Apenas III e IV estão corretas.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Apenas I, III e IV estão corretas."
+    ]
+  },
+  {
+    "file": "univali-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-0.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Com base na subnotificação de doenças profissionais como um problema grave, assinale a alternativa\nCORRETA\n, que corresponde à principal consequência dasubnotificação para a saúde do trabalhador.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Impede a concessão de benefícios previdenciários aos trabalhadores, como auxílio-doença e aposentadoria por invalidez.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Dificulta o planejamento de ações de prevenção e controle de doenças ocupacionais, pois os dados não refletem a realidade.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Causa o aumento da insalubridade nos ambientes de trabalho, expondo os trabalhadores a maiores riscos à saúde.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Aumenta os custos com tratamentos médicos e hospitalares, já que as doenças não são diagnosticadas precocemente.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Dificulta o planejamento de ações de prevenção e controle de doenças ocupacionais, pois os dados não refletem a realidade."
+    ]
+  },
+  {
+    "file": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-9.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Em relação às doenças de notificação compulsória, é correto afirmar que",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "no âmbito da equipe de saúde, o preenchimento das fichas de notificação é atribuição exclusiva do médico que realizou o diagnóstico ou do enfermeiroresponsável pelo doente.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "nos casos de suspeita de sarampo, o preenchimento da ficha de notificação compulsória e seu registro no Sistema de Informação de Agravos de Notificação –Sinan só deve ser realizado após confirmação laboratorial ou clínica da doença.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "os casos de violência sexual, independentemente da idade da vítima, devem ser notificados à Secretaria Municipal de Saúde (SMS) em até 24 horas.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "os casos suspeitos ou confirmados de hanseníase devem ser notificados às secretarias municipal e estadual de saúde em até 24 horas, devido a sua altatransmissibilidade.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "os serviços privados de saúde estão dispensados de realizar o preenchimento das fichas de notificação de doenças, agravos e eventos de saúde pública, poisessa atividade é de responsabilidade dos serviços de saúde públicos.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: os casos de violência sexual, independentemente da idade da vítima, devem ser notificados à Secretaria Municipal de Saúde (SMS) em até 24 horas."
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "pacote_prefix": "atencao-basica-saude-da-familia",
+  "gate": "warn",
+  "handcraft_allowed": true,
+  "cluster_report": "artifacts/atencao-basica-saude-da-familia-topic-cluster-report.json",
+  "goldens_needed": 0,
+  "missing": [],
+  "covered": [
+    {
+      "cluster": "ACS — atribuições, visita e território",
+      "golden_file": "questao-premium-adm-atencao-basica-saude-da-familia-acs-atribuicoes-visita-e-territorio.json",
+      "path": "examples/questao-premium-adm-atencao-basica-saude-da-familia-acs-atribuicoes-visita-e-territorio.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "Atenção Básica — conceito geral",
+      "golden_file": "questao-premium-amauc-atencao-basica-saude-da-familia-atencao-basica-conceito-geral.json",
+      "path": "examples/questao-premium-amauc-atencao-basica-saude-da-familia-atencao-basica-conceito-geral.json",
+      "content_standard_ok": true,
+      "issues": []
+    },
+    {
+      "cluster": "eSF — composição, carga e modalidades",
+      "golden_file": "questao-premium-ameosc-atencao-basica-saude-da-familia-esf-composicao-carga-e-modalidades.json",
+      "path": "examples/questao-premium-ameosc-atencao-basica-saude-da-familia-esf-composicao-carga-e-modalidades.json",
+      "content_standard_ok": true,
+      "issues": []
+    }
+  ],
+  "warnings": [
+    "absorver sem golden própria (PNAB / princípios e atributos da APS, n=6) — fallback FAMILY_GOLDEN_FILE ok",
+    "absorver sem golden própria (Vigilância / ACE no território, n=6) — fallback FAMILY_GOLDEN_FILE ok",
+    "absorver sem golden própria (Técnico de enfermagem na AB, n=5) — fallback FAMILY_GOLDEN_FILE ok",
+    "absorver sem golden própria (Slug segment fora do pacote (drift?), n=3) — fallback FAMILY_GOLDEN_FILE ok",
+    "absorver sem golden própria (Imunização (drift?), n=1) — fallback FAMILY_GOLDEN_FILE ok"
+  ],
+  "reasons": [
+    "Âncoras de ramo forte ok; há avisos (absorver / arquivo / content_standard)."
+  ],
+  "artifact": "artifacts/golden-anchor-gate-atencao-basica-saude-da-familia.json"
+}

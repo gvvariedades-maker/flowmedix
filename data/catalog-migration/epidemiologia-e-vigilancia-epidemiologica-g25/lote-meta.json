@@ -1,0 +1,16 @@
+{
+    "lote":  "epidemiologia-e-vigilancia-epidemiologica-g25",
+    "slug_count":  8,
+    "anchor_slug":  "selecon-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-1",
+    "applied_at":  "2026-08-04",
+    "subtopico":  "Epidemiologia e Vigilância Epidemiológica",
+    "status":  "applied",
+    "pacote_prefix":  "epidemiologia-e-vigilancia-epidemiologica",
+    "anchor_second_review":  {
+                                 "reviewed_at":  "2026-08-04",
+                                 "reviewer":  "agent",
+                                 "method":  "agent",
+                                 "status":  "pass",
+                                 "artifact":  "artifacts/anchor-review/epidemiologia-e-vigilancia-epidemiologica-g25.json"
+                             }
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T01:30:12.648Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g04",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5",
+    "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6",
+    "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-6",
+    "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-7",
+    "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-8",
+    "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-2",
+    "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-2",
+    "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -14,9 +14,9 @@ Runbook: [`docs/GOLDEN_HANDCRAFT_MODEL.md`](../../../docs/GOLDEN_HANDCRAFT_MODEL
 | Lotes | `saude-adolescente-g01` (8) · `g02` (8) |
 | Âncora VF gravidez | `examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json` |
 | Âncora escore Z | `ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0` |
-| Moldes L3 bespoke | **Ética/sigilo:** `adolescent-privacy-curtain` · `adolescent-sigilo-spectrum` · `adolescent-vf-weave-tap` · `adolescent-consent-gate` |
+| Moldes L3 bespoke | **Ética/sigilo v2 + Onda 2:** `adolescent-care-pillars-deck` · `adolescent-speak-barrier-board` · `adolescent-exceto-isolate-board` · `adolescent-exceto-compare` (v1 curtain/weave/consent = legado/galeria) |
 | Moldes L3 bespoke | **Antropometria Z:** `adolescent-growth-z-rail` · `adolescent-z-band-board` · `adolescent-z-classify-tap` · `adolescent-z-threshold-trap` |
-| Ramos genéricos | `adolescente_desenvolvimento` · `adolescente_saude_mental` · `adolescente_violencia_protecao` · `adolescente_generico` → `morphological` / `reference_table` / `vertical` / `compare` |
+| Ramos Onda 2 (mesmo glanceable) | `adolescente_violencia_protecao` · `adolescente_saude_mental` · `adolescente_desenvolvimento` · `adolescente_generico` → `ADOLESCENTE_GLANCEABLE_MOLD` |
 | Briefs L3 | [`artifacts/l3-brief-saude-adolescente-INDEX.md`](../../../artifacts/l3-brief-saude-adolescente-INDEX.md) |
 | **Não usar** | `ai:generate` · `catalog:upgrade-premium` |
 

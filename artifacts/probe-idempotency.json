@@ -1,0 +1,63 @@
+{
+  "r1": {
+    "changed": true,
+    "edits": [
+      {
+        "kind": "gabarito_item",
+        "action": "rewrite",
+        "path": "golden_rule.rows[4].label",
+        "slide": "golden_rule",
+        "key": "label",
+        "before": "Letra B — gabarito",
+        "after": "Única que descreve o perfil farmacocinético da"
+      }
+    ],
+    "skipped": []
+  },
+  "r2": {
+    "changed": false,
+    "edits": [],
+    "skipped": []
+  },
+  "rows": [
+    {
+      "label": "Intravenosa (IV)",
+      "value": "Imediata — efeito rápido",
+      "badge": "info"
+    },
+    {
+      "label": "Intramuscular (IM)",
+      "value": "Rápida — mais vascularizada que SC",
+      "badge": "info"
+    },
+    {
+      "label": "Subcutânea (SC)",
+      "value": "Lenta e contínua — indicação da questão",
+      "emphasis": "highlight",
+      "badge": "hot"
+    },
+    {
+      "label": "Oral (VO)",
+      "value": "Variável — passa pelo TGI",
+      "badge": "info"
+    },
+    {
+      "label": "Única que descreve o perfil farmacocinético da",
+      "value": "Única que descreve o perfil farmacocinético da SC",
+      "emphasis": "success",
+      "badge": "hot"
+    },
+    {
+      "label": "Volume típico SC",
+      "value": "Pequeno (até ~1–1,5 mL por sítio)"
+    },
+    {
+      "label": "Mnemônico",
+      "value": "SC = Slow & Continuous (lenta e contínua)"
+    },
+    {
+      "label": "Não confundir",
+      "value": "Absorção rápida → IV ou IM, não SC"
+    }
+  ]
+}

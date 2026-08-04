@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "banca": "Adm&Tec",
+    "prova": "ACS (FMS Ág Belas)",
+    "orgao": "FMS Águas Belas",
+    "ano": "2023",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "pedagogical_branch": "epi_generico",
+    "content_review": {
+      "reviewed_at": "2026-08-03",
+      "reviewer": "pipeline-epi",
+      "guideline_snapshot": "SINASC — Declaração de Nascido Vivo (DNV) como instrumento nacional obrigatório; fluxo de preenchimento (profissional de saúde/parteira) x alimentação do sistema (secretarias de saúde)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "manual-dnv-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Instruções para o Preenchimento da Declaração de Nascido Vivo",
+        "year": 2011,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_instrucoes_preenchimento_declaracao_nascido_vivo.pdf",
+        "covers": [
+          "objetivo do SINASC",
+          "DNV como documento estatístico e epidemiológico",
+          "fluxo de preenchimento e alimentação do sistema"
+        ]
+      },
+      {
+        "id": "guia-vigilancia-saude-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Guia de Vigilância em Saúde",
+        "year": 2022,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_2022.pdf",
+        "covers": ["sistemas de informação em saúde", "SINASC no conjunto de sistemas do SUS"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Analise as afirmações a seguir:\nI\n. O Sistema de Informações sobre Nascidos Vivos tem o objetivo de coletar dados sobre os nascimentos ocorridos em todo o território nacional.\nII\n. O documento padrão de uso obrigatório em todo o território nacional e essencial à coleta de dados de nascidos vivos no Brasil é a Certidão de Nascimento.\nIII\n. Os dados dos nascidos vivos são inseridos no Sistema de Informações sobre Nascidos Vivos diretamente pelos profissionais de saúde ou parteirasresponsáveis pelo parto.\nMarque a alternativa CORRETA:",
+    "options": [
+      { "id": "A", "text": "Todas as afirmativas estão corretas.", "is_correct": false },
+      { "id": "B", "text": "Nenhuma afirmativa está correta.", "is_correct": false },
+      { "id": "C", "text": "Apenas uma afirmativa está correta.", "is_correct": true },
+      { "id": "D", "text": "Apenas duas afirmativas estão corretas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "SINASC — documento e fluxo de dados",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "items": [
+        {
+          "label": "Cenário da prova",
+          "detail": "Três afirmativas sobre o SINASC — a banca pede quantas resistem ao teste.",
+          "icon": "Baby"
+        },
+        {
+          "label": "Documento oficial",
+          "detail": "Existe um instrumento nacional padrão para nascidos vivos, distinto do registro emitido em cartório.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Fluxo de alimentação",
+          "detail": "Quem preenche o papel no parto não é, necessariamente, quem insere o dado no sistema estatístico.",
+          "icon": "GitBranch"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "A banca troca o nome do documento oficial e comprime etapas do fluxo em 'inserção direta'.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Documento certo + fluxo certo decidem a questão"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "steps": [
+        "Ler o comando: julgar I, II e III sobre o SINASC e marcar quantas afirmativas estão corretas.",
+        "Fixar o que é o SINASC: sistema de informação do Ministério da Saúde para reunir dados de nascimentos em todo o país.",
+        "Testar I: a finalidade de reunir dados de todos os nascimentos do território é coerente com o objetivo oficial do sistema — mantém-se correta.",
+        "Testar II: o instrumento nacional obrigatório é a DNV, documento estatístico — não a certidão de cartório. Eliminar II.",
+        "Testar III: o profissional preenche a DNV no parto, mas quem alimenta o sistema é a secretaria de saúde.",
+        "Não é lançamento direto do profissional no sistema — eliminar III também.",
+        "Resultado: só a afirmativa I resiste ao teste — apenas uma correta.",
+        "Marcar letra C.",
+        "Em similares: separe sempre 'quem preenche o papel' de 'quem alimenta o sistema oficial'."
+      ],
+      "footer_rule": "DNV preenche; secretaria de saúde alimenta o sistema"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — SINASC",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "content": "SINASC — DOCUMENTO E FLUXO",
+      "rows": [
+        {
+          "label": "Documento oficial",
+          "value": "Declaração de Nascido Vivo (DNV) — instrumento estatístico e epidemiológico nacional.",
+          "badge": "ok"
+        },
+        {
+          "label": "Não confundir",
+          "value": "Certidão de Nascimento é documento civil de cartório — não é a fonte do SINASC.",
+          "badge": "hot"
+        },
+        {
+          "label": "Preenchimento",
+          "value": "Profissional de saúde ou parteira preenche a DNV no momento do nascimento.",
+          "badge": "ok"
+        },
+        {
+          "label": "Alimentação do sistema",
+          "value": "Secretaria de saúde processa a DNV e insere os dados no SINASC — não é lançamento direto do profissional.",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Decore: DNV preenche; secretaria de saúde alimenta o SINASC"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "content": "PEGADINHAS — SINASC (documento e fluxo)",
+      "items": [
+        {
+          "label": "Afirmativa II — troca do documento oficial",
+          "detail": "Substitui a DNV por um termo familiar do dia a dia, a Certidão de Nascimento.",
+          "correct": "O instrumento nacional obrigatório é a DNV — documento estatístico, não o registro civil de cartório."
+        },
+        {
+          "label": "Afirmativa III — fluxo comprimido",
+          "detail": "Sugere que o profissional lança o dado direto no sistema, sem etapa intermediária.",
+          "correct": "O profissional preenche a DNV; a secretaria de saúde é quem insere os dados no SINASC."
+        },
+        {
+          "label": "Alternativa D — 'duas corretas'",
+          "detail": "Tenta somar a afirmativa I com II ou III, como se ambas fossem válidas.",
+          "correct": "Só a afirmativa I resiste ao teste — II e III trocam documento e fluxo."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Em outra prova: troca SINASC/DNV por SIM/Declaração de Óbito com a mesma armadilha de fluxo.",
+          "correct": "Pergunte sempre: quem preenche o documento e quem alimenta o sistema oficial?"
+        }
+      ],
+      "footer_rule": "Nome do documento + etapa do fluxo — confira os dois"
+    }
+  ]
+}

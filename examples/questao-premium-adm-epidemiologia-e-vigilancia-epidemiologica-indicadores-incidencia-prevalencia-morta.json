@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "banca": "Adm&Tec",
+    "prova": "Tec (Pref BM de Deus)",
+    "orgao": "Pref BM de Deus",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+    "content_standard": "golden-v1",
+    "family": "calc",
+    "pedagogical_branch": "epi_indicadores",
+    "content_review": {
+      "reviewed_at": "2026-08-03",
+      "reviewer": "pipeline-epi",
+      "guideline_snapshot": "Indicadores epidemiológicos — mortalidade (óbitos/população em risco), letalidade (óbitos/casos), incidência (casos novos/população exposta) e morbidade",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "guia-vigilancia-saude-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Guia de Vigilância em Saúde",
+        "year": 2022,
+        "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_5ed_2022.pdf",
+        "covers": [
+          "coeficiente de mortalidade",
+          "coeficiente de letalidade",
+          "coeficiente de incidência",
+          "conceito de morbidade"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "'\"(..) é uma medida muito utilizada como indicador de saúde; é calculada pela divisão do número de óbitos pela população em risco \". A que conceitoepidemiológico se refere esse trecho?",
+    "options": [
+      { "id": "A", "text": "Incidência.", "is_correct": false },
+      { "id": "B", "text": "Morbidade.", "is_correct": false },
+      { "id": "C", "text": "Mortalidade.", "is_correct": true },
+      { "id": "D", "text": "Letalidade.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Indicadores — numerador e denominador",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "items": [
+        {
+          "label": "Cenário da prova",
+          "detail": "O enunciado descreve uma fórmula (óbitos ÷ população em risco) e pede o nome do indicador.",
+          "icon": "Calculator"
+        },
+        {
+          "label": "Eixo de leitura",
+          "detail": "Todo indicador epidemiológico é numerador sobre denominador — trocar o denominador troca o conceito.",
+          "icon": "Divide"
+        },
+        {
+          "label": "Confusão clássica",
+          "detail": "'Óbitos sobre população' e 'óbitos sobre doentes' são fórmulas diferentes, com nomes diferentes.",
+          "icon": "GitCompare"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "A banca troca 'população em risco' (denominador amplo) por 'número de casos' (denominador restrito de outro indicador).",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Confira sempre o denominador antes de nomear o indicador"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "steps": [
+        "Ler o comando: identificar o conceito cuja fórmula é óbitos dividido pela população em risco.",
+        "Fixar a lógica: para calcular o indicador certo, olhe sempre o numerador e o denominador antes de nomear.",
+        "Testar incidência: mede casos novos sobre população exposta, não óbitos — descartar.",
+        "Testar morbidade: mede adoecimento (frequência de casos), não morte — descartar.",
+        "Testar letalidade: divide óbitos pelo número de doentes (casos), não pela população total — descartar.",
+        "Confirmar mortalidade: divide óbitos pela população em risco, batendo com a fórmula do enunciado.",
+        "Marcar letra C.",
+        "Em similares: denominador 'população' aponta mortalidade; denominador 'número de casos' aponta letalidade."
+      ],
+      "footer_rule": "Denominador é o que decide o nome do indicador"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — indicadores epidemiológicos",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "content": "INDICADORES — FÓRMULA DECIDE O NOME",
+      "rows": [
+        {
+          "label": "Mortalidade",
+          "value": "Óbitos ÷ população total (em risco) exposta, em um período.",
+          "badge": "ok"
+        },
+        {
+          "label": "Letalidade",
+          "value": "Óbitos ÷ número de casos (doentes) — mede a gravidade da doença.",
+          "badge": "warn"
+        },
+        {
+          "label": "Incidência",
+          "value": "Casos novos ÷ população exposta ao risco.",
+          "badge": "ok"
+        },
+        {
+          "label": "Morbidade",
+          "value": "Frequência de adoecimento numa população — não divide óbitos por nada.",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "Decore: denominador população total = mortalidade; nº de casos = letalidade"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Epidemiologia e Vigilância Epidemiológica" },
+      "content": "PEGADINHAS — mortalidade x letalidade x incidência",
+      "items": [
+        {
+          "label": "Letra A — Incidência",
+          "detail": "Parece plausível porque também usa 'população' no denominador.",
+          "correct": "Incidência mede casos novos, não óbitos — o numerador do enunciado é óbito."
+        },
+        {
+          "label": "Letra B — Morbidade",
+          "detail": "Confunde adoecer com morrer, já que ambos falam em 'frequência de agravo'.",
+          "correct": "Morbidade descreve adoecimento na população, sem dividir óbitos por nada."
+        },
+        {
+          "label": "Letra D — Letalidade",
+          "detail": "É a armadilha mais forte: também divide óbitos, mas pelo denominador errado.",
+          "correct": "Letalidade divide óbitos pelo número de casos (doentes), não pela população em risco."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Em outra prova: descrevem a fórmula da letalidade e pedem para não confundir com mortalidade.",
+          "correct": "Confira sempre o denominador: população total aponta mortalidade; número de casos aponta letalidade."
+        }
+      ],
+      "footer_rule": "Óbito no numerador não garante 'mortalidade' — confira o denominador"
+    }
+  ]
+}

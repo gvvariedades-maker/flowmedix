@@ -23,7 +23,13 @@
         "title": "Manual de Profilaxia da Raiva Humana",
         "year": 2022,
         "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia-de-a-a-z/raiva",
-        "covers": ["vacina IM", "vacina intradérmica", "SAR", "exposição", "roedores urbanos"]
+        "covers": [
+          "vacina IM",
+          "vacina intradérmica",
+          "SAR",
+          "exposição",
+          "roedores urbanos"
+        ]
       }
     ]
   },
@@ -67,13 +73,13 @@
           "icon": "AlertTriangle"
         },
         {
-          "label": "Vacina (gabarito B)",
+          "label": "Vacina.",
           "detail": "MS autoriza via intramuscular (deltoide) ou intradérmica — esquemas de pré ou pós-exposição conforme manual vigente.",
           "icon": "Syringe"
         },
         {
           "label": "SAR",
-          "detail": "Soro antirrábico = imunoglobulina heteróloga (equina) ou humana — não é pool de doadores como na letra A.",
+          "detail": "Soro antirrábico = imunoglobulina heteróloga (equina) ou humana.",
           "icon": "Shield"
         },
         {
@@ -97,11 +103,26 @@
       },
       "content": "VACINA ANTIRRÁBICA: VIA INTRAMUSCULAR OU INTRADÉRMICA (MS)",
       "rows": [
-        { "label": "Via IM", "value": "Deltoide — esquema padrão pós-exposição", "badge": "ok" },
-        { "label": "Via ID", "value": "Alternativa autorizada — economia de dose em campanhas", "badge": "info" },
-        { "label": "SAR", "value": "Imunoglobulina antirrábica (equina ou humana) — exposição grave", "badge": "warn" },
-        { "label": "Roedores urbanos", "value": "Profilaxia em geral NÃO indicada", "badge": "hot" },
-        { "label": "Letra B", "value": "IM ou intradérmica — gabarito", "emphasis": "success", "badge": "hot" }
+        {
+          "label": "Via IM",
+          "value": "Deltoide — esquema padrão pós-exposição",
+          "badge": "ok"
+        },
+        {
+          "label": "Via ID",
+          "value": "Alternativa autorizada — economia de dose em campanhas",
+          "badge": "info"
+        },
+        {
+          "label": "SAR",
+          "value": "Imunoglobulina antirrábica (equina ou humana) — exposição grave",
+          "badge": "warn"
+        },
+        {
+          "label": "Roedores urbanos",
+          "value": "Profilaxia em geral NÃO indicada",
+          "badge": "hot"
+        }
       ],
       "footer_rule": "Lavar ferida imediatamente → classificar exposição → vacina IM/ID"
     },

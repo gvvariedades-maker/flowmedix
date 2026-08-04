@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-04T00:59:06.572Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g20",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-8",
+    "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-5",
+    "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-5",
+    "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-2",
+    "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-0",
+    "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-1",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-3",
+    "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

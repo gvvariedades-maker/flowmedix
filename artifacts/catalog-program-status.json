@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-20T03:48:20.508Z",
+  "generated_at": "2026-08-03T19:32:20.565Z",
   "total_canonicos": 41,
   "counts": {
-    "production_ready": 24,
-    "applied_not_vendavel": 0,
-    "in_progress": 1,
-    "no_package": 16,
+    "production_ready": 25,
+    "applied_not_vendavel": 1,
+    "in_progress": 3,
+    "no_package": 12,
     "legacy_builder": 0
   },
   "rows": [
@@ -26,8 +26,14 @@
       "subtopico": "Noções de Anatomia",
       "onda": "B",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Noções de Anatomia"
+      "in_registry": true,
+      "pacote_prefix": "nocoes-de-anatomia",
+      "total_slugs": 48,
+      "handcraft_applied": 0,
+      "status": "in_progress",
+      "production_status": "none",
+      "pct_handcraft": 0,
+      "next_trigger": "Pipeline completo: Noções de Anatomia"
     },
     {
       "subtopico": "Noções de Fisiologia",
@@ -251,21 +257,27 @@
       "subtopico": "Epidemiologia e Vigilância Epidemiológica",
       "onda": "B",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Epidemiologia e Vigilância Epidemiológica"
+      "in_registry": true,
+      "pacote_prefix": "epidemiologia-e-vigilancia-epidemiologica",
+      "total_slugs": 218,
+      "handcraft_applied": 0,
+      "status": "pending",
+      "production_status": "none",
+      "pct_handcraft": 0,
+      "next_trigger": "Pipeline completo: Epidemiologia e Vigilância Epidemiológica"
     },
     {
       "subtopico": "Promoção à Saúde e Prevenção de Agravos",
-      "onda": "B",
+      "onda": "done",
       "legacy_builder": false,
       "in_registry": true,
       "pacote_prefix": "promocao-a-saude-e-prevencao-de-agravos",
-      "total_slugs": 130,
-      "handcraft_applied": 0,
-      "status": "none",
-      "production_status": "none",
-      "pct_handcraft": 0,
-      "next_trigger": "Pipeline completo: Promoção à Saúde e Prevenção de Agravos"
+      "total_slugs": 100,
+      "handcraft_applied": 100,
+      "status": "applied",
+      "production_status": "production_ready",
+      "pct_handcraft": 100,
+      "next_trigger": "audit:subtopico-health (ou repair com Slug:)"
     },
     {
       "subtopico": "Imunização",
@@ -284,8 +296,14 @@
       "subtopico": "Atenção Básica / Saúde da Família",
       "onda": "B",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Atenção Básica / Saúde da Família"
+      "in_registry": true,
+      "pacote_prefix": "atencao-basica-saude-da-familia",
+      "total_slugs": 171,
+      "handcraft_applied": 96,
+      "status": "in_progress",
+      "production_status": "none",
+      "pct_handcraft": 56.1,
+      "next_trigger": "Pipeline completo: Atenção Básica / Saúde da Família"
     },
     {
       "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
@@ -325,8 +343,14 @@
       "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
       "onda": "B",
       "legacy_builder": false,
-      "in_registry": false,
-      "next_trigger": "Fase 0 → Pipeline completo: Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      "in_registry": true,
+      "pacote_prefix": "dtrans-mescladas",
+      "total_slugs": 16,
+      "handcraft_applied": 16,
+      "status": "applied",
+      "production_status": "none",
+      "pct_handcraft": 100,
+      "next_trigger": "Pipeline completo: Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis + Só qualidade"
     },
     {
       "subtopico": "Questões Mescladas e Outras Doenças Agudas",

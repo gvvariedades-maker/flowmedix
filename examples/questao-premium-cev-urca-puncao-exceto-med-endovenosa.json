@@ -114,28 +114,23 @@
         },
         {
           "label": "Técnica de punção",
-          "detail": "Mão dominante, bisel para cima, introdução delicada e firme no sentido do retorno venoso — conduta correta (letra A).",
+          "detail": "Mão dominante, bisel para cima, introdução delicada e firme no sentido do retorno venoso — conduta correta.",
           "icon": "Syringe"
         },
         {
           "label": "Antissepsia",
-          "detail": "Antissepsia com álcool 70% proximal→distal, aguardar secar; sujidade remove com água e sabão antes — conduta correta no enunciado (letra B).",
+          "detail": "Antissepsia com álcool 70% proximal→distal, aguardar secar; sujidade remove com água e sabão antes — conduta correta no enunciado.",
           "icon": "Droplets"
         },
         {
           "label": "Identificação",
-          "detail": "Rotular acesso com data, horário, dispositivo e profissional — conduta correta (letra C).",
+          "detail": "Rotular acesso com data, horário, dispositivo e profissional — conduta correta.",
           "icon": "Tag"
         },
         {
           "label": "Seleção de veia",
-          "detail": "Preferir veias menos proeminentes é o erro — escolha veias calibrosas e acessíveis (EXCETO letra D).",
+          "detail": "Preferir veias menos proeminentes é o erro — escolha veias calibrosas e acessíveis.",
           "icon": "XCircle"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra D — seleção inadequada de veia (menos proeminentes) é a exceção.",
-          "icon": "Target"
         }
       ],
       "footer_rule": "EXCETO = a única alternativa falsa entre condutas que parecem corretas."
@@ -157,40 +152,34 @@
           "badge": "hot"
         },
         {
-          "label": "Letra A",
+          "label": "Correta: técnica de punção com bisel voltado",
           "value": "Correta: técnica de punção com bisel voltado para cima.",
           "emphasis": "default",
           "badge": "ok"
         },
         {
-          "label": "Letra B",
+          "label": "Correta no enunciado: antissepsia com álcool",
           "value": "Correta no enunciado: antissepsia com álcool 70% antes da punção.",
           "emphasis": "default",
           "badge": "ok"
         },
         {
-          "label": "Letra C",
+          "label": "Correta: identificação do acesso após o",
           "value": "Correta: identificação do acesso após o procedimento.",
           "emphasis": "default",
           "badge": "ok"
         },
         {
-          "label": "Letra D",
+          "label": "EXCETO: preferir veias menos proeminentes",
           "value": "EXCETO: preferir veias menos proeminentes contradiz seleção por veias calibrosas e acessíveis.",
           "emphasis": "alert",
           "badge": "warn"
         },
         {
-          "label": "Letra E",
+          "label": "Correta: cateter novo a cada tentativa de",
           "value": "Correta: cateter novo a cada tentativa de punção.",
           "emphasis": "default",
           "badge": "ok"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra D",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
       "footer_rule": "A banca mistura condutas corretas com uma exceção técnica sutil."

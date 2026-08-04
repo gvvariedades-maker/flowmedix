@@ -22,6 +22,7 @@ function allPassReport(): ShipAuditReport {
     L1: passLayer(),
     L2: passLayer(),
     L2b: passLayer(),
+    L2c: passLayer('pedagogia OK'),
     L3: passLayer('visual mold PASS'),
     L4: passLayer(),
     L5: passLayer('content health OK'),
@@ -89,6 +90,16 @@ describe('canPromoteToSell', () => {
     const result = canPromoteToSell(report);
     expect(result.ok).toBe(false);
     expect(result.blockers.some((b) => b.startsWith('L5:'))).toBe(true);
+  });
+
+  it('FAIL se nota pedagógica reprova (L2c), mesmo com technical_ready', () => {
+    const report = allPassReport();
+    report.layers.L2c = failLayer('2 slug(s) com fail pedagógico: cme-01, cme-02');
+    report.blockers = buildShipBlockers(report.layers, true, []);
+    const result = canPromoteToSell(report);
+    expect(report.technical_ready).toBe(true);
+    expect(result.ok).toBe(false);
+    expect(result.blockers.some((b) => b.startsWith('L2c:'))).toBe(true);
   });
 
   it('FAIL se L3 sem artifact', () => {

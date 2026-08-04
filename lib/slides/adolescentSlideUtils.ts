@@ -46,6 +46,13 @@ export function adolescentCurtainLabel(curtain: AdolescentCurtain): string {
 
 export function inferSigiloSpectrumZone(text: string): SigiloSpectrumZone {
   const lower = text.toLowerCase();
+  if (
+    /linguagem\s+(complexa|rebuscad)|rebuscad|jarg[aã]o|termos\s+m[eé]dicos|barreira/.test(
+      lower,
+    )
+  ) {
+    return 'quebrar';
+  }
   if (/sempre quebrar|sem critério|sem criterio|absoluto zero|quebrar sempre|sigilo inexistente/.test(lower)) {
     return 'quebrar';
   }
@@ -55,7 +62,9 @@ export function inferSigiloSpectrumZone(text: string): SigiloSpectrumZone {
   if (/privacidade|escuta|contracep|orientação sexual|orientacao sexual|protegido/.test(lower)) {
     return 'protegido';
   }
-  if (/gabarito|verdadeira|correta/.test(lower)) return 'protegido';
+  if (/gabarito|verdadeira|correta|v[ií]nculo|rede|intersetor|comunidade/.test(lower)) {
+    return 'protegido';
+  }
   if (/falso|falsa|pegadinha|alert/.test(lower)) return 'quebrar';
   return 'ponderar';
 }
@@ -69,6 +78,50 @@ export function sigiloSpectrumLabel(zone: SigiloSpectrumZone): string {
     case 'quebrar':
       return 'Quebrar';
   }
+}
+
+/**
+ * Hint do painel do espectro — contextual à linha (não só à zona).
+ * Preferir `exam_hint` da row quando existir.
+ */
+export function inferSigiloSpectrumHint(
+  zone: SigiloSpectrumZone,
+  rowText: string,
+  examHint?: string,
+): string {
+  const explicit = examHint?.trim();
+  if (explicit) return explicit;
+
+  const lower = rowText.toLowerCase();
+
+  if (/linguagem|rebuscad|jarg[aã]o|termos\s+m[eé]dicos|barreira|complexa/.test(lower)) {
+    return zone === 'quebrar'
+      ? 'Pegadinha: informação completa ≠ jargão — sexualidade e preventivo em linguagem clara.'
+      : 'Orientação sexual e preventivo pedem linguagem acessível, não termos rebuscados.';
+  }
+  if (/rede|intersetor|comunidade|escola|cultura|grupos/.test(lower)) {
+    return 'Promoção intersetorial: escola, cultura e grupos de jovens na rede de cuidado.';
+  }
+  if (/v[ií]nculo|escuta|acolh|sem julgamento/.test(lower)) {
+    return 'Vínculo e escuta sem julgamento sustentam a consulta com o adolescente.';
+  }
+  if (/sigilo|privacidade|consentimento|confidencial/.test(lower)) {
+    if (zone === 'protegido') {
+      return 'Tema protegido por sigilo — contracepção, orientação sexual, IST.';
+    }
+    if (zone === 'ponderar') {
+      return 'Avaliar risco grave, violência ou notificação compulsória antes de quebrar.';
+    }
+    return 'Pegadinha: sigilo não é zero absoluto nem quebra sem critério.';
+  }
+
+  if (zone === 'protegido') {
+    return 'Conduta alinhada ao MS — protege o adolescente no encontro de cuidado.';
+  }
+  if (zone === 'ponderar') {
+    return 'Avaliar risco grave, violência ou notificação compulsória antes de quebrar.';
+  }
+  return 'Pegadinha: a banca troca o limite ético — leia o verbo da afirmativa.';
 }
 
 export function parseAdolescentVfWeaveStep(
@@ -154,3 +207,84 @@ export function consentGatePathLabel(path: ConsentGatePath): string {
       return 'Orientar';
   }
 }
+
+/** ---- Ética v2 — pilares / EXCETO / barreira de fala ---- */
+
+export type AdolescentCarePillar = 'vinculo' | 'rede' | 'sigilo' | 'linguagem' | 'geral';
+
+export function inferAdolescentCarePillar(text: string): AdolescentCarePillar {
+  const lower = text.toLowerCase();
+  if (/linguagem|jarg[aã]o|rebuscad|acess[ií]vel|comunica|falar claro|termos m[eé]dicos/.test(lower)) {
+    return 'linguagem';
+  }
+  if (/sigilo|privacidade|consentimento|confidencial/.test(lower)) return 'sigilo';
+  if (/rede|intersetor|escola|comunidade|cultura|grupos|promo[cç][aã]o/.test(lower)) return 'rede';
+  if (/v[ií]nculo|escuta|acolh|confian[cç]a|sem julgamento/.test(lower)) return 'vinculo';
+  return 'geral';
+}
+
+export function adolescentCarePillarLabel(pillar: AdolescentCarePillar): string {
+  switch (pillar) {
+    case 'vinculo':
+      return 'Vínculo';
+    case 'rede':
+      return 'Rede';
+    case 'sigilo':
+      return 'Sigilo';
+    case 'linguagem':
+      return 'Fala clara';
+    default:
+      return 'Cuidado';
+  }
+}
+
+export function parseAdolescentExcetoStep(
+  step: string,
+  index: number,
+): {
+  kind: 'command' | 'keep' | 'exception' | 'mark' | 'transfer' | 'step';
+  letter?: string;
+  title: string;
+  text: string;
+} {
+  const lower = step.toLowerCase();
+  if (/comando|incorreta|exceto/.test(lower) && index === 0) {
+    return { kind: 'command', title: 'Comando', text: step };
+  }
+  if (/^(manter|acolher)\b|a[–\-–]c|a-c:|condutas certas|descartar/.test(lower)) {
+    return { kind: 'keep', title: 'Manter', text: step };
+  }
+  if (
+    /^exce[cç][aã]o\b/.test(lower) ||
+    (/exce[cç][aã]o|incorreta|jarg[aã]o|rebuscad|complexa|afasta/.test(lower) &&
+      /d:|letra d|→|afasta/.test(lower))
+  ) {
+    return { kind: 'exception', title: 'Exceção', text: step };
+  }
+  if (/marcar letra\s*([a-e])/i.test(step)) {
+    const letter = step.match(/marcar letra\s*([a-e])/i)?.[1]?.toUpperCase();
+    return { kind: 'mark', letter, title: 'Gabarito', text: step };
+  }
+  if (/em similares|fixa[cç][aã]o|transfer/.test(lower)) {
+    return { kind: 'transfer', title: 'Em similares', text: step };
+  }
+  if (/letra\s+([a-e])/i.test(step)) {
+    const letter = step.match(/letra\s+([a-e])/i)?.[1]?.toUpperCase();
+    return { kind: 'mark', letter, title: 'Gabarito', text: step };
+  }
+  return { kind: 'step', title: `Passo ${index + 1}`, text: step };
+}
+
+export type SpeakBarrierSide = 'ok' | 'barrier' | 'rights' | 'neutral';
+
+export function inferSpeakBarrierSide(label: string, value: string): SpeakBarrierSide {
+  const text = `${label} ${value}`.toLowerCase();
+  if (/n[aã]o falar|rebuscad|complexa|jarg[aã]o|barreira|parecer competente|termos m[eé]dicos/.test(text)) {
+    return 'barrier';
+  }
+  if (/como falar|clara|acess[ií]vel|entender/.test(text)) return 'ok';
+  if (/direito|sigilo|privacidade|consentimento/.test(text)) return 'rights';
+  if (/informar|sexualidade|contracep|preventivo|dst|gravidez/.test(text)) return 'ok';
+  return 'neutral';
+}
+

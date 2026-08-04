@@ -1,0 +1,7 @@
+﻿{
+  "version": 1,
+  "subtopico": "Saúde Mental",
+  "pacote_prefix": "saude-mental",
+  "scope_default": "subtopico_handcraft",
+  "notes": ["Playbook Onda3 2026-08-03. production_ready. RAPS React só com Implementar molde:."]
+}

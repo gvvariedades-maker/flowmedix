@@ -71,11 +71,6 @@
           "label": "Pegadinha da II",
           "detail": "A frase troca seco por úmido — pele úmida favorece maceração e LPP.",
           "icon": "XCircle"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra E: I e III.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Prevenção de LPP = alívio de pressão + pele seca + pH adequado + sem massagem em proeminências"
@@ -91,23 +86,23 @@
       "rows": [
         {
           "label": "I — calcanhar livre",
-          "value": "Verdadeira: redistribuir peso ajuda a prevenir lesão no calcanhar",
+          "value": "Redistribuir peso ajuda a prevenir lesão no calcanhar",
           "badge": "ok"
         },
         {
           "label": "II — pele limpa e úmida",
-          "value": "Falsa: o padrão é pele limpa e seca",
+          "value": "O padrão é pele limpa e seca",
           "emphasis": "alert",
           "badge": "warn"
         },
         {
           "label": "III — evitar pH alcalino",
-          "value": "Verdadeira: produtos alcalinos prejudicam a barreira cutânea",
+          "value": "Produtos alcalinos prejudicam a barreira cutânea",
           "badge": "ok"
         },
         {
           "label": "IV — massagear proeminências",
-          "value": "Falsa: não massagear proeminências ósseas nem áreas hiperemiadas",
+          "value": "Não massagear proeminências ósseas nem áreas hiperemiadas",
           "emphasis": "alert",
           "badge": "warn"
         },

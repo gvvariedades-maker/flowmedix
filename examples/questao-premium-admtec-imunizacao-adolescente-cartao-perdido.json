@@ -28,7 +28,12 @@
         "title": "Calendário Nacional de Vacinação — resgate adolescente/adulto",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["cartão perdido", "sem comprovação", "SCR catch-up", "registro SI-PNI"]
+        "covers": [
+          "cartão perdido",
+          "sem comprovação",
+          "SCR catch-up",
+          "registro SI-PNI"
+        ]
       }
     ]
   },
@@ -126,7 +131,7 @@
         },
         {
           "label": "Conduta desta questão",
-          "value": "Letra C — reiniciar esquema e orientar",
+          "value": "Reiniciar esquema e orientar.",
           "emphasis": "success",
           "badge": "hot"
         }

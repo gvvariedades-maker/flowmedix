@@ -51,7 +51,7 @@
         },
         {
           "label": "Antissepsia",
-          "detail": "Higienização das mãos e antissepsia cutânea antes da inserção — clorexidina alcoólica na concentração correta (não basta citar 0,5% isolado como na letra A).",
+          "detail": "Higienização das mãos e antissepsia cutânea antes da inserção.",
           "icon": "Droplets"
         },
         {
@@ -68,14 +68,9 @@
           "label": "Remoção precoce",
           "detail": "Retirar o CVC assim que não houver mais indicação clínica — permanência desnecessária aumenta risco de IPCS.",
           "icon": "CircleX"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra B — técnica asséptica rigorosa, barreira estéril máxima e remoção do cateter quando indicado.",
-          "icon": "Target"
         }
       ],
-      "footer_rule": "IPCS no CVC = bundle completo — uma medida isolada (letra A) não substitui o pacote."
+      "footer_rule": "IPCS no CVC = bundle completo — uma medida isolada não substitui o pacote."
     },
     {
       "type": "golden_rule",
@@ -116,12 +111,6 @@
           "value": "Retirar o CVC assim que não for mais necessário.",
           "emphasis": "success",
           "badge": "ok"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra B",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Gabarito B resume o bundle: assepsia + barreira máxima + curativo adequado + remoção precoce."

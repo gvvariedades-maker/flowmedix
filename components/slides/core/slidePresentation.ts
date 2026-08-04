@@ -29,12 +29,14 @@ import {
 } from './dangerZoneLayout';
 import { resolveLogicFlowRevealMode } from './logicFlowRevealMode';
 import { resolveDangerZoneRevealMode } from './dangerZoneRevealMode';
+import type { DangerZoneOptionLike } from './dangerZonePolarity';
 import { resolveSlideTitle } from './slideTitleResolve';
 import { enhanceGoldenRuleRows } from './goldenRuleRowsEnhance';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import type { GoldenRuleRow } from '../variants/GoldenRule';
 import type { LogicFlowRevealMode } from '../variants/logicFlowReveal';
 import type { DangerZoneBulletStyle } from './dangerZoneLayout';
+import { dangerZoneVariantDefaultBulletStyle } from '../registry/dangerZoneCapabilities';
 
 export type ResolvedSlidePresentation = {
   layoutVariant: string;
@@ -55,8 +57,10 @@ export type SlidePresentationContext = {
   familyId?: FamilyId;
   /** Ramo pedagógico explícito ou inferido (L2.5). */
   pedagogicalBranch?: PedagogicalBranchId;
-  /** Enunciado — usado na inferência de ramo quando necessário. */
+  /** Enunciado — usado na inferência de ramo e na polaridade de danger_zone. */
   instruction?: string;
+  /** Alternativas MCQ — polaridade por item (comando negativo × gabarito). */
+  options?: DangerZoneOptionLike[];
 };
 
 const FAMILY_SLIDE_TYPE_MAP: Record<string, FamilySlideType> = {
@@ -208,64 +212,7 @@ function resolveCore(
       : 'auto';
   const bulletStyle: DangerZoneBulletStyle =
     slide.bullet_style ??
-    (slideType === 'danger_zone' &&
-    (layoutVariant === 'compare' ||
-      layoutVariant === 'trap-reveal' ||
-      layoutVariant === 'calendar-mismatch' ||
-      layoutVariant === 'temperature-mismatch' ||
-      layoutVariant === 'norm-reveal' ||
-      layoutVariant === 'scope-trap' ||
-      layoutVariant === 'route-trap' ||
-      layoutVariant === 'dose-trap' ||
-      layoutVariant === 'farmaco-trap' ||
-      layoutVariant === 'farmaco-clinico-trap' ||
-      layoutVariant === 'catheter-danger-arena' ||
-      layoutVariant === 'lab-prep-trap' ||
-      layoutVariant === 'lab-specimen-arena' ||
-      layoutVariant === 'dressing-choice-arena' ||
-      layoutVariant === 'vitals-classify-arena' ||
-      layoutVariant === 'pni-trap-chips' ||
-      layoutVariant === 'ist-trap-chips' ||
-      layoutVariant === 'adolescent-consent-gate' ||
-      layoutVariant === 'adolescent-z-threshold-trap' ||
-      layoutVariant === 'burn-trap-arena' ||
-      layoutVariant === 'trabalho-pep-trap-arena' ||
-      layoutVariant === 'respiratorio-spo2-trap-arena' ||
-      layoutVariant === 'mental-raps-trap-arena' ||
-      layoutVariant === 'mental-crisis-coercion-trap' ||
-      layoutVariant === 'urgencias-rcp-trap-arena' ||
-      layoutVariant === 'urgencias-trauma-trap-arena' ||
-      layoutVariant === 'urgencias-stroke-trap-arena' ||
-      layoutVariant === 'urgencias-shock-trap-arena' ||
-      layoutVariant === 'urgencias-choking-trap-arena' ||
-      layoutVariant === 'urgencias-pediatric-trap-arena' ||
-      layoutVariant === 'urgencias-manchester-trap' ||
-      layoutVariant === 'mulher-prenatal-trap-arena' ||
-      layoutVariant === 'mulher-parto-trap-arena' ||
-      layoutVariant === 'mulher-screening-trap-arena' ||
-      layoutVariant === 'mulher-mama-trap-arena' ||
-      layoutVariant === 'crianca-feeding-trap-arena' ||
-      layoutVariant === 'crianca-screening-trap-arena' ||
-      layoutVariant === 'crianca-pediatric-trap-arena' ||
-      layoutVariant === 'crianca-dehydration-trap-arena' ||
-      layoutVariant === 'crianca-puericultura-trap-arena' ||
-      layoutVariant === 'crianca-neonatal-trap-arena' ||
-      layoutVariant === 'crianca-dev-trap-arena' ||
-      layoutVariant === 'cam-certos-trap-arena' ||
-      layoutVariant === 'cam-high-risk-trap-arena' ||
-      layoutVariant === 'cam-exceto-trap-arena' ||
-      layoutVariant === 'cam-documentacao-trap-arena' ||
-      layoutVariant === 'iv-label-swap-trap' ||
-      layoutVariant === 'iv-gauge-mismatch-trap' ||
-      layoutVariant === 'iv-exceto-intruder-trap' ||
-      layoutVariant === 'iv-interval-swap-trap' ||
-      layoutVariant === 'iv-order-invert-trap' ||
-      layoutVariant === 'iv-bundle-break-trap' ||
-      layoutVariant === 'pt-crase-trap-arena' ||
-      layoutVariant === 'pt-clitic-trap-arena' ||
-      layoutVariant === 'pt-comma-trap-arena' ||
-      layoutVariant === 'pt-term-trap-arena' ||
-      layoutVariant === 'pt-subject-trap-arena')
+    (slideType === 'danger_zone' && dangerZoneVariantDefaultBulletStyle(layoutVariant)
       ? 'x_icon'
       : 'numbered');
 

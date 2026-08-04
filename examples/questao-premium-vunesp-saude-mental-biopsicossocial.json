@@ -22,7 +22,11 @@
         "issuer": "Ministério da Saúde",
         "title": "Política de Saúde Mental — determinantes biopsicossociais",
         "year": 2021,
-        "covers": ["modelo biopsicossocial", "estigma", "fatores sociais"]
+        "covers": [
+          "modelo biopsicossocial",
+          "estigma",
+          "fatores sociais"
+        ]
       },
       {
         "id": "oms-saude-mental",
@@ -30,7 +34,10 @@
         "issuer": "Organização Mundial da Saúde",
         "title": "Saúde mental: fortalecer a resposta efetiva",
         "year": 2022,
-        "covers": ["determinantes sociais", "sofrimento psíquico"]
+        "covers": [
+          "determinantes sociais",
+          "sofrimento psíquico"
+        ]
       }
     ]
   },
@@ -88,11 +95,6 @@
           "label": "Psicossocial",
           "detail": "Trabalho, família, estigma e determinantes sociais — eixo da política de saúde mental.",
           "icon": "Users"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra E — interação biopsicossocial (bio + psico + social).",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Saúde mental ≠ só biologia nem culpa individual"
@@ -121,12 +123,6 @@
           "label": "Social",
           "value": "Trabalho, família, estigma, rede de apoio",
           "badge": "ok"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra E — interação entre fatores",
-          "emphasis": "success",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Estigma dificulta recuperação — nunca facilita (D falsa)"

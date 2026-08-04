@@ -1,0 +1,76 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g01",
+  "generated_at": "2026-08-01T23:49:05.375Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

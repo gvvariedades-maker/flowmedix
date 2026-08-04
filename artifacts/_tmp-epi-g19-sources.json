@@ -1,0 +1,258 @@
+[
+  {
+    "file": "ieses-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-4.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "A epidemiologia é de grande importância para a área da saúde. Neste sentido, é importante conhecer as medidas de frequência de doenças para entender suadistribuição e dinâmica na população. Sobre a diferença entre incidência e prevalência, qual das afirmações corretamente define essas medidas?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Incidência refere-se ao número de casos novos de uma doença que ocorrem em uma população específica durante um período de tempo definido, enquantoprevalência é o número total de casos (novos e antigos) de uma doença presentes em uma população em um dado momento.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Incidência e prevalência são sinônimos e podem ser usados de forma intercambiável para descrever a ocorrência de doenças em uma população.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Incidência é uma medida utilizada apenas para condições crônicas, enquanto prevalência é utilizada apenas para condições agudas.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Incidência refere-se ao número total de casos (novos e antigos) de uma doença presentes em uma população em um dado momento, enquanto prevalência é onúmero de casos novos de uma doença que ocorrem em uma população específica durante um período de tempo definido.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Incidência refere-se ao número de casos novos de uma doença que ocorrem em uma população específica durante um período de tempo definido, enquantoprevalência é o número total de casos (novos e antigos) de uma doença presentes em uma população em um dado momento."
+    ]
+  },
+  {
+    "file": "igecap-enfermagem-processo-de-enfermagem-1780004452857-2.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Região de Saúde é:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Unidade isolada.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Agrupamento de municípios limítrofes.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "Divisão econômica.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Rede privada.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Hospital único.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: Agrupamento de municípios limítrofes."
+    ]
+  },
+  {
+    "file": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-7.json",
+    "family": "conceito",
+    "branch": "epi_ocorrencia_agravos",
+    "instruction": "Em um cenário de surto de gastroenterite viral em uma comunidade, o Técnico em Enfermagem tem papel importante no processo de vigilância epidemiológica.\nCom base na conduta adequada do Técnico em Enfermagem, assinale a alternativa CORRETA.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Isolar todos os moradores da comunidade até o término do surto.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas notificar casos graves às autoridades sanitárias, pois casos leves não são relevantes para o controle da doença.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Auxiliar na identificação dos casos suspeitos, coletar dados para a notificação e colaborar com as ações de prevenção e controle.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Prescrever tratamento medicamentoso para os pacientes afetados conforme protocolos clínicos.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Auxiliar na identificação dos casos suspeitos, coletar dados para a notificação e colaborar com as ações de prevenção e controle."
+    ]
+  },
+  {
+    "file": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-6.json",
+    "family": "certo_errado",
+    "branch": "epi_generico",
+    "instruction": "Todo caso suspeito ou confirmado de cólera deverá ser notificado de forma imediata (em até 24 horas) pelo profissional de saúde ou responsável pelo serviçoassistencial que prestar atendimento ao paciente, pelo meio mais rápido disponível.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certo",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Errado",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Certo"
+    ]
+  },
+  {
+    "file": "igeduc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-1.json",
+    "family": "certo_errado",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "Julgue o item a seguir.\nEntende-se por vigilância sanitária um conjunto de ações que proporcionam o conhecimento, a detecção ou prevenção de qualquer mudança nos fatores determinantes econdicionantes de saúde individual ou coletiva, com a finalidade de recomendar e adotar as medidas de prevenção e controle das doenças ou agravos.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certo",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Errado",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "B: Errado"
+    ]
+  },
+  {
+    "file": "inaz-do-para-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-9.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "Quanto aos indicadores de saúde, qual das alternativas abaixo descreve o indicador de Mortalidade?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Número de óbitos por doenças e disponibilidade de leitos hospitalares em uma área geográfica.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Aumento da renda média das famílias em uma comunidade.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Taxa de incidência de casos de diabetes em uma população.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Crescimento populacional acelerado em uma região.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Número de óbitos por doenças cardíacas em uma cidade.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: Número de óbitos por doenças cardíacas em uma cidade."
+    ]
+  },
+  {
+    "file": "instituto-aocp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-0.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Qual das seguintes doenças deve ser notificada às autoridades de saúde dentro do prazo de 24 horas a partir da suspeita inicial do caso ou óbito?",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "HIV.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Doença de Chagas Crônica.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Esquistossomose.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Hanseníase.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Síndrome Respiratória Aguda Grave associada a Coronavírus.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: Síndrome Respiratória Aguda Grave associada a Coronavírus."
+    ]
+  },
+  {
+    "file": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6.json",
+    "family": "protocolo",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Mulher de 18 anos compareceu à UPA com queixa de dor intensa no ombro e hematomas recentes no braço. Durante o atendimento, em ambiente reservado, ela revelou ao profissional de saúde que havia sofrido violência física e sexual do seu parceiro. De forma ética e sigilosa, a equipe preencheu a Ficha de Notificação Individual (FNI), registrando o caso conforme protocolo. O sistema de informação no qual a notificação foi realizada é o(a)",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "SINAN.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "SIAPS.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "SVS.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "SIPNI.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "SISAB.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: SINAN."
+    ]
+  }
+]

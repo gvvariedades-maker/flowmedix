@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "banca": "Amauc",
+    "prova": "Aux Enf (Pref Ipumirim)",
+    "orgao": "Pref Ipumirim",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Atenção Básica / Saúde da Família",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "pedagogical_branch": "ab_generico",
+    "content_review": {
+      "reviewed_at": "2026-08-01",
+      "reviewer": "pipeline-ab",
+      "guideline_snapshot": "PNAB (Portaria GM/MS 2.436/2017) — atributos e funções da Atenção Básica",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pnab-2436-2017",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 2.436/2017 — Política Nacional de Atenção Básica",
+        "year": 2017,
+        "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html",
+        "covers": [
+          "porta de entrada preferencial",
+          "enfoque familiar e comunitário",
+          "promoção e prevenção na AB",
+          "demanda programada e espontânea"
+        ]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A atenção básica constitui componente estratégico da organização do sistema de saúde, orientando-se por princípios como territorialização, vínculo, continuidade do cuidado e responsabilização sanitária. Analise as afirmativas abaixo:\nI - A atenção básica constitui porta de entrada preferencial do sistema de saúde.\nII - A atenção básica atua com enfoque familiar e comunitário.\nIII - A atenção básica restringe-se ao atendimento de demanda espontânea.\nIV - A atenção básica desenvolve ações de prevenção e promoção da saúde.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I e III.", "is_correct": false },
+      { "id": "B", "text": "I, III e IV.", "is_correct": false },
+      { "id": "C", "text": "I, II, III e IV.", "is_correct": false },
+      { "id": "D", "text": "I, II e IV.", "is_correct": true },
+      { "id": "E", "text": "II e III.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Atenção básica — o que a PNAB testa",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "items": [
+        {
+          "label": "Formato da prova",
+          "detail": "Quatro afirmativas (I–IV) sobre o papel da AB; montar o conjunto verdadeiro.",
+          "icon": "ListChecks"
+        },
+        {
+          "label": "Porta preferencial",
+          "detail": "AB é ordenadora / porta de entrada preferencial do sistema — não “único serviço que existe”.",
+          "icon": "Landmark"
+        },
+        {
+          "label": "Família e comunidade",
+          "detail": "Enfoque familiar e comunitário + ações de prevenção e promoção no território.",
+          "icon": "Users"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "Afirmativa que reduz a AB só à demanda espontânea — ignora cuidado programado e longitudinal.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Julgue cada romano antes de montar a letra"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "steps": [
+        "Identificar formato: I–IV + “É CORRETO o que se afirma em”.",
+        "Julgar I: porta de entrada preferencial → coerente com a PNAB → manter.",
+        "Julgar II: enfoque familiar e comunitário → manter.",
+        "Julgar III: “restringe-se” à demanda espontânea → falsa (há programada, busca ativa, grupos).",
+        "Julgar IV: prevenção e promoção → manter.",
+        "Conjunto verdadeiro: I, II e IV.",
+        "Localizar D; eliminar combinações que incluem III (A, B, C, E).",
+        "Marcar D.",
+        "Em similares: desconfie de “restringe-se / apenas / somente” na definição da AB."
+      ],
+      "footer_rule": "I→II→III→IV → conjunto → letra"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Decore — atributos da AB",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "content": "ATENÇÃO BÁSICA — O QUE É / O QUE NÃO É",
+      "rows": [
+        {
+          "label": "É",
+          "value": "Porta preferencial · enfoque familiar/comunitário · prevenção e promoção.",
+          "badge": "ok"
+        },
+        {
+          "label": "Também faz",
+          "value": "Demanda programada, busca ativa, grupos e cuidado longitudinal — não só espontânea.",
+          "badge": "ok"
+        },
+        {
+          "label": "Não é",
+          "value": "Serviço que “só atende quem chega sem hora marcada”.",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Decore: preferencial ≠ exclusiva; espontânea ≠ única porta"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Atenção Básica / Saúde da Família" },
+      "content": "PEGADINHAS — combinações com III falsa",
+      "items": [
+        {
+          "label": "Letra A — I e III",
+          "detail": "Acerta a porta preferencial, mas leva a restrição à espontânea.",
+          "correct": "III é falsa; o conjunto certo não inclui III."
+        },
+        {
+          "label": "Letra B — I, III e IV",
+          "detail": "Mistura prevenção (ok) com a mesma restrição falsa.",
+          "correct": "Qualquer combinação com III cai."
+        },
+        {
+          "label": "Letra C — todas",
+          "detail": "Tentação de marcar “tudo certo” sem julgar III.",
+          "correct": "III invalida o pacote completo."
+        },
+        {
+          "label": "Letra E — II e III",
+          "detail": "Mantém o enfoque familiar, mas de novo carrega III.",
+          "correct": "Falta I/IV e inclui a falsa."
+        },
+        {
+          "label": "Transferência",
+          "detail": "Outra prova: “AB só resolve urgências leves na UBS”.",
+          "correct": "AB ordena cuidado amplo no território — não se resume a espontânea/urgência."
+        }
+      ],
+      "footer_rule": "Ache a romana falsa antes de olhar as letras"
+    }
+  ]
+}

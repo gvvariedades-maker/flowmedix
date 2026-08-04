@@ -23,51 +23,117 @@
         "title": "NR-32 — Segurança e Saúde no Trabalho em Serviços de Saúde",
         "year": 2022,
         "url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/comissao-tripartite-partitaria-permanente/normas-regulamentadoras/norma-regulamentadora-no-32-nr-32",
-        "covers": ["risco biológico", "vacina hepatite B", "EPI", "pós-exposição ocupacional"]
+        "covers": [
+          "risco biológico",
+          "vacina hepatite B",
+          "EPI",
+          "pós-exposição ocupacional"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre enfermagem do trabalho e NR-32, analise as afirmativas.\n\nI - A NR-32 estabelece diretrizes de segurança e saúde para trabalhadores em serviços de saúde, incluindo prevenção de riscos biológicos.\nII - A vacinação do trabalhador da saúde contra hepatite B integra estratégias de prevenção ocupacional quando indicada no calendário.\nIII - Exposição ocupacional a material biológico perfurocortante não exige notificação nem seguimento, bastando lavar o local e retornar ao trabalho.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "Saúde do trabalhador",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem do Trabalho" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem do Trabalho"
+      },
       "items": [
-        { "label": "NR-32", "detail": "Segurança em serviços de saúde — riscos biológicos, químicos, ergonômicos e de acidentes.", "icon": "FileText" },
-        { "label": "Risco biológico", "detail": "Anexo I — material biológico, perfurocortante, fluidos corporais.", "icon": "Biohazard" },
-        { "label": "Vacina hepatite B", "detail": "Prevenção ocupacional recomendada para trabalhadores da saúde.", "icon": "Syringe" },
-        { "label": "Acidente perfurocortante", "detail": "Notificar, avaliar fonte, exames e profilaxia conforme protocolo.", "icon": "AlertTriangle" },
-        { "label": "EPI", "detail": "Fornecido pelo empregador conforme risco da função.", "icon": "HardHat" }
+        {
+          "label": "NR-32",
+          "detail": "Segurança em serviços de saúde — riscos biológicos, químicos, ergonômicos e de acidentes.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Risco biológico",
+          "detail": "Anexo I — material biológico, perfurocortante, fluidos corporais.",
+          "icon": "Biohazard"
+        },
+        {
+          "label": "Vacina hepatite B",
+          "detail": "Prevenção ocupacional recomendada para trabalhadores da saúde.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Acidente perfurocortante",
+          "detail": "Notificar, avaliar fonte, exames e profilaxia conforme protocolo.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "EPI",
+          "detail": "Fornecido pelo empregador conforme risco da função.",
+          "icon": "HardHat"
+        }
       ],
       "footer_rule": "Acidente ocupacional = notificar + seguir protocolo"
     },
     {
       "type": "golden_rule",
       "slide_title": "NR-32 — referência",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem do Trabalho" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem do Trabalho"
+      },
       "content": "NOTIFICAR",
       "rows": [
-        { "label": "NR-32", "value": "Segurança em serviços de saúde", "badge": "ok" },
-        { "label": "Vacina HB", "value": "Prevenção ocupacional", "badge": "ok" },
-        { "label": "Perfuro sem seguimento", "value": "Falso — exige notificação e conduta", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+        {
+          "label": "NR-32",
+          "value": "Segurança em serviços de saúde",
+          "badge": "ok"
+        },
+        {
+          "label": "Vacina HB",
+          "value": "Prevenção ocupacional",
+          "badge": "ok"
+        },
+        {
+          "label": "Perfuro sem seguimento",
+          "value": "Exige notificação e conduta",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "III minimiza acidente biológico — erro grave"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem do Trabalho" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem do Trabalho"
+      },
       "steps": [
         "I: NR-32 e riscos biológicos → verdadeira.",
         "II: vacina hepatite B ocupacional → verdadeira.",
@@ -80,12 +146,27 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem do Trabalho" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem do Trabalho"
+      },
       "content": "PEGADINHAS — TRABALHO",
       "items": [
-        { "label": "Só lavar e voltar", "detail": "III ignora PEP e notificação.", "correct": "Notificar e seguir protocolo de exposição a material biológico." },
-        { "label": "NR-32 só para médicos", "detail": "I abrange trabalhadores em serviços de saúde.", "correct": "Inclui técnico de enfermagem." },
-        { "label": "Vacina opcional sempre", "detail": "II fala quando indicada no calendário ocupacional.", "correct": "Hepatite B é estratégia clássica de prevenção." }
+        {
+          "label": "Só lavar e voltar",
+          "detail": "III ignora PEP e notificação.",
+          "correct": "Notificar e seguir protocolo de exposição a material biológico."
+        },
+        {
+          "label": "NR-32 só para médicos",
+          "detail": "I abrange trabalhadores em serviços de saúde.",
+          "correct": "Inclui técnico de enfermagem."
+        },
+        {
+          "label": "Vacina opcional sempre",
+          "detail": "II fala quando indicada no calendário ocupacional.",
+          "correct": "Hepatite B é estratégia clássica de prevenção."
+        }
       ],
       "footer_rule": "Pós-exposição ocupacional nunca é 'só lavar'"
     }

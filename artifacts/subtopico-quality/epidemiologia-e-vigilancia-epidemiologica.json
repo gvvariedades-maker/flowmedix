@@ -1,0 +1,284 @@
+{
+  "generated_at": "2026-08-04T01:30:56.172Z",
+  "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+  "pacote_prefix": "epidemiologia-e-vigilancia-epidemiologica",
+  "production_status_before": "none",
+  "technical_ready": true,
+  "production_ready": true,
+  "can_sell": true,
+  "continuous_eligible": true,
+  "ship_gate": {
+    "ok": true,
+    "blockers": []
+  },
+  "monitoring": {
+    "deprecated": true,
+    "note": "monitoring_until não é mais gate de venda — ver docs/DECISAO_QUALITY_HIBRIDA.md",
+    "sessions_30d": 104
+  },
+  "layers": {
+    "L1": {
+      "pass": true,
+      "detail": "handcraft-dod PASS"
+    },
+    "L2": {
+      "pass": true,
+      "detail": "alignment OK (218 slugs)"
+    },
+    "L2b": {
+      "pass": true,
+      "detail": "numeric factcheck OK"
+    },
+    "L2c": {
+      "pass": true,
+      "detail": "pedagogia OK (218 slugs; leitor cego 0/218; 3 warn)"
+    },
+    "L3": {
+      "pass": true,
+      "detail": "Playwright L3 Epidemiologia — 6 branches (EPI_GENERIC_DESIGN; desktop + mobile-375); PNGs em artifacts/visual-mold-regression/"
+    },
+    "L4": {
+      "pass": true,
+      "detail": "capture cirúrgico — warn only (não bloqueia ship)"
+    },
+    "L5": {
+      "pass": true,
+      "detail": "content health OK"
+    },
+    "L6": {
+      "pass": true,
+      "detail": "all 28 lotes anchor pass"
+    }
+  },
+  "lote_stats": [
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g01",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g02",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g03",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g04",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g05",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g06",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g07",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g08",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g09",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g10",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g11",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g12",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g13",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g14",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g15",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g16",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g17",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g18",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g19",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g20",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g21",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g22",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g23",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g24",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g25",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g26",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g27",
+      "scanned": 8,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-g28",
+      "scanned": 2,
+      "alignment_fail": 0,
+      "numeric_fail": 0,
+      "pedagogy_fail": 0
+    }
+  ],
+  "pedagogy": {
+    "slugs": 218,
+    "fail": 0,
+    "warn": 3,
+    "blind_reader_covered": 0,
+    "require_blind_reader": false,
+    "failing": []
+  },
+  "content_health": {
+    "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+    "sessions_30d": 104,
+    "open_reports": {
+      "p0": 0,
+      "p1": 0,
+      "p2": 0,
+      "p3": 0,
+      "total": 0
+    },
+    "report_rate_pct": 0,
+    "top_reported_slugs": [],
+    "slo": {
+      "open_p0": 0,
+      "open_p1_max": 2,
+      "report_rate_max_pct": 2,
+      "min_sessions_30d": 100,
+      "sessions_30d": 104,
+      "open_p1": 0,
+      "report_rate_pct": 0
+    },
+    "pass": true,
+    "blockers": []
+  },
+  "blockers": []
+}

@@ -22,50 +22,107 @@
         "issuer": "Anvisa",
         "title": "RDC 15/2012 — CME e segurança do paciente",
         "year": 2012,
-        "covers": ["processamento", "IAAS", "armazenamento", "distribuição"]
+        "covers": [
+          "processamento",
+          "IAAS",
+          "armazenamento",
+          "distribuição"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Considerando o papel crítico da Central de Material e Esterilização (CME) no controle das Infecções Associadas à Assistência à Saúde (IAAS), identifique a alternativa que descreve corretamente uma de suas funções primordiais.",
     "options": [
-      { "id": "A", "text": "A CME tem, como função exclusiva, o fornecimento de produtos esterilizados aos setores assistenciais, sem envolvimento direto no controle de IAAS.", "is_correct": false },
-      { "id": "B", "text": "A CME realiza o processamento, armazenamento e distribuição de materiais esterilizados, visando à prevenção de IAAS.", "is_correct": true },
-      { "id": "C", "text": "A CME é encarregada unicamente do armazenamento de materiais classificados como de alto risco para contaminação.", "is_correct": false },
-      { "id": "D", "text": "A CME é essencial na desinfecção de artigos médico-hospitalares, utilizando agentes químicos líquidos para reduzir a carga microbiana.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "A CME tem, como função exclusiva, o fornecimento de produtos esterilizados aos setores assistenciais, sem envolvimento direto no controle de IAAS.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A CME realiza o processamento, armazenamento e distribuição de materiais esterilizados, visando à prevenção de IAAS.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "A CME é encarregada unicamente do armazenamento de materiais classificados como de alto risco para contaminação.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A CME é essencial na desinfecção de artigos médico-hospitalares, utilizando agentes químicos líquidos para reduzir a carga microbiana.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "CME e prevenção de IAAS",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
       "items": [
-        { "label": "Comando", "detail": "Função primordial da CME no controle de IAAS.", "icon": "Shield" },
-        { "label": "Processamento", "detail": "Limpeza, desinfecção, esterilização e embalagem.", "icon": "RefreshCw" },
-        { "label": "Fluxo estéril", "detail": "Armazenar e distribuir material seguro aos setores.", "icon": "Truck" },
-        { "label": "Gabarito", "detail": "Letra B — processar, armazenar, distribuir visando prevenir IAAS.", "icon": "Target" }
+        {
+          "label": "Comando",
+          "detail": "Função primordial da CME no controle de IAAS.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Processamento",
+          "detail": "Limpeza, desinfecção, esterilização e embalagem.",
+          "icon": "RefreshCw"
+        },
+        {
+          "label": "Fluxo estéril",
+          "detail": "Armazenar e distribuir material seguro aos setores.",
+          "icon": "Truck"
+        }
       ],
       "footer_rule": "CME ≠ só armazém · ≠ só desinfecção"
     },
     {
       "type": "golden_rule",
       "slide_title": "Função da CME",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
       "content": "CME × IAAS",
       "rows": [
-        { "label": "Processar", "value": "Todas as etapas até material estéril", "badge": "hot", "emphasis": "highlight" },
-        { "label": "Armazenar", "value": "Área estéril com validade controlada", "badge": "ok" },
-        { "label": "Distribuir", "value": "Fornecer material seguro à assistência", "badge": "ok" },
-        { "label": "Finalidade", "value": "Prevenção de IAAS", "badge": "hot" },
-        { "label": "Gabarito", "value": "Letra B", "badge": "hot" }
+        {
+          "label": "Processar",
+          "value": "Todas as etapas até material estéril",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Armazenar",
+          "value": "Área estéril com validade controlada",
+          "badge": "ok"
+        },
+        {
+          "label": "Distribuir",
+          "value": "Fornecer material seguro à assistência",
+          "badge": "ok"
+        },
+        {
+          "label": "Finalidade",
+          "value": "Prevenção de IAAS",
+          "badge": "hot"
+        }
       ],
       "footer_rule": "Material contaminado na CME = risco sistêmico de IRAS"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
       "steps": [
         "Comando: função primordial da CME na prevenção de IAAS.",
         "A: só fornecer estéril, sem controle de IAAS → falso.",
@@ -79,7 +136,10 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
       "content": "PEGADINHAS — função da CME",
       "items": [
         {

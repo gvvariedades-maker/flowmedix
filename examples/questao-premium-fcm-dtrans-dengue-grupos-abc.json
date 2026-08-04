@@ -23,17 +23,40 @@
         "title": "Manual de Dengue — classificação de risco e conduta",
         "year": 2024,
         "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/doencas-e-agravos-nao-transmissiveis/doencas-transmissiveis/dengue",
-        "covers": ["grupo A", "grupo B", "grupo C", "grupo D", "sinais de alarme", "prova do laço"]
+        "covers": [
+          "grupo A",
+          "grupo B",
+          "grupo C",
+          "grupo D",
+          "sinais de alarme",
+          "prova do laço"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre o risco e o manejo do paciente com dengue, associe as colunas relacionando corretamente o grupo à sua respectiva classificação.\nGrupos\n(1) A\n(2) B\n(3) C\n(4) D\nClassificações\n( ) Presença de algum sinal de alarme.\n( ) Sinais de choque, desconforto respiratório, hemorragia grave, disfunção grave de órgãos.\n( ) Sangramento de pele, espontâneo ou induzido (prova do laço +), ou condição clínica especial ou risco social ou comorbidades e sem sinal de alarme.\n( ) Sem sangramento espontâneo ou induzido (prova do laço negativa), sem sinais de alarme, sem condição especial, sem risco social e sem comorbidades.\nA sequência correta dessa associação é",
     "options": [
-      { "id": "A", "text": "3, 1, 4, 2.", "is_correct": false },
-      { "id": "B", "text": "4, 1, 3, 2.", "is_correct": false },
-      { "id": "C", "text": "3, 4, 2, 1.", "is_correct": true },
-      { "id": "D", "text": "4, 2, 1, 3.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "3, 1, 4, 2.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "4, 1, 3, 2.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "3, 4, 2, 1.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "4, 2, 1, 3.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
@@ -69,14 +92,9 @@
           "label": "Grupo D",
           "detail": "Dengue grave: choque, desconforto respiratório, hemorragia grave ou disfunção grave de órgãos. Emergência — expansão volêmica imediata.",
           "icon": "HeartPulse"
-        },
-        {
-          "label": "Gabarito FCM",
-          "detail": "Sequência 3-4-2-1: alarme→C; choque/grave→D; laço+/especial sem alarme→B; sem risco→A. Letra C.",
-          "icon": "CheckCircle"
         }
       ],
-      "footer_rule": "Alarme = C · Choque/grave = D · Laço+ sem alarme = B · Sem risco = A"
+      "footer_rule": "Alarme = grupo C · Grave/choque = grupo D · Laço+ sem alarme = grupo B · Sem risco = grupo A"
     },
     {
       "type": "golden_rule",
@@ -87,13 +105,38 @@
       },
       "content": "CLASSIFICAÇÃO DE RISCO — DENGUE (MS)",
       "rows": [
-        { "label": "Grupo A", "value": "Laço − · sem alarme · sem comorbidade/risco especial", "badge": "ok" },
-        { "label": "Grupo B", "value": "Laço + ou sangramento ou condição especial — SEM alarme", "badge": "warn" },
-        { "label": "Grupo C — item 1", "value": "Qualquer sinal de alarme → grupo C", "emphasis": "highlight", "badge": "hot" },
-        { "label": "Grupo D — item 2", "value": "Choque · DR · hemorragia grave · disfunção orgânica", "emphasis": "highlight", "badge": "hot" },
-        { "label": "Associação B — item 3", "value": "Laço + / sangramento pele / especial sem alarme → B", "badge": "warn" },
-        { "label": "Associação A — item 4", "value": "Laço − · sem alarme · sem especial → A", "badge": "ok" },
-        { "label": "Sequência da prova", "value": "3, 4, 2, 1 → letra C", "emphasis": "success", "badge": "hot" }
+        {
+          "label": "Grupo A",
+          "value": "Laço − · sem alarme · sem comorbidade/risco especial",
+          "badge": "ok"
+        },
+        {
+          "label": "Grupo B",
+          "value": "Laço + ou sangramento ou condição especial — SEM alarme",
+          "badge": "warn"
+        },
+        {
+          "label": "Grupo C — item 1",
+          "value": "Qualquer sinal de alarme → grupo C",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Grupo D — item 2",
+          "value": "Choque · DR · hemorragia grave · disfunção orgânica",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Associação B — item 3",
+          "value": "Laço + / sangramento pele / especial sem alarme → B",
+          "badge": "warn"
+        },
+        {
+          "label": "Associação A — item 4",
+          "value": "Laço − · sem alarme · sem especial → A",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "Memorize: C = alarme · D = grave · B = laço+ sem alarme · A = baixo risco"
     },

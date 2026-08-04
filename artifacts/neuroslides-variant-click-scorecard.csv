@@ -1,0 +1,305 @@
+﻿slide_type,layout_variant,source,gesture,click_cost,click_score,tap_reveal_default,branch_count,branches,notes
+concept_map,adolescent-privacy-curtain,bespoke,curtain_gate,high,3,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),cerimônia multi-tap
+concept_map,cold-chain-hub,bespoke,rail,high,3,n/a,1,imunizacao_cadeia_frio,interação multi-camada
+concept_map,crianca-dehydration-spectrum,bespoke,spectrum,high,3,n/a,1,crianca_desidratacao,cerimônia multi-tap
+concept_map,crianca-pediatric-hub,bespoke,orbit_hub,high,3,n/a,1,crianca_generico,interação multi-camada
+concept_map,iv-bundle-orbit,bespoke,orbit_hub,high,3,n/a,1,puncao_ipcs_cvc,interação multi-camada
+concept_map,iv-care-orbit,bespoke,orbit_hub,high,3,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),interação multi-camada
+concept_map,iv-complication-tissue-layers,bespoke,deck,high,3,n/a,1,puncao_flebite,interação multi-camada
+concept_map,iv-exceto-spectrum,bespoke,spectrum,high,3,n/a,1,puncao_exceto,cerimônia multi-tap
+concept_map,mulher-contraception-spectrum,bespoke,spectrum,high,3,n/a,1,mulher_planejamento,cerimônia multi-tap
+concept_map,mulher-mammography-spectrum,bespoke,spectrum,high,3,n/a,1,mulher_mama,cerimônia multi-tap
+concept_map,mulher-screening-spectrum,bespoke,spectrum,high,3,n/a,1,mulher_papanicolau,cerimônia multi-tap
+concept_map,respiratorio-asma-dpoc-duel-deck,bespoke,deck,high,3,n/a,2,respiratorio_dpoc_oxigenio|respiratorio_vf_asma_dpoc,interação multi-camada
+concept_map,sus-art4-orbit,bespoke,orbit_hub,high,3,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),interação multi-camada
+concept_map,urgencias-emergency-hub,bespoke,deck,high,3,n/a,1,urgencias_generico,interação multi-camada
+concept_map,urgencias-manchester-spectrum,bespoke,spectrum,high,3,n/a,1,urgencias_manchester_triagem,cerimônia multi-tap
+danger_zone,adolescent-consent-gate,bespoke,curtain_gate,high,3,yes,0,(não mapeado em BRANCH_DESIGN_MAP),cerimônia multi-tap
+golden_rule,adolescent-sigilo-spectrum,bespoke,spectrum,high,3,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),cerimônia multi-tap
+golden_rule,etiology-letter-spectrum,bespoke,spectrum,high,3,n/a,1,bacterianas_agente_etiologico,cerimônia multi-tap
+golden_rule,iv-bundle-mesh-reveal,bespoke,matrix_board,high,3,n/a,1,puncao_ipcs_cvc,reveal/carousel
+golden_rule,lab-prep-lens-board,bespoke,matrix_board,high,3,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),reveal/carousel
+golden_rule,oxygen-rule-carousel,bespoke,deck,high,3,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),reveal/carousel
+golden_rule,soft-lens-board,bespoke,matrix_board,high,3,n/a,1,calc_dose_equivalencia,reveal/carousel
+logic_flow,adolescent-vf-weave-tap,bespoke,weave_juggle,high,3,yes,0,(não mapeado em BRANCH_DESIGN_MAP),cerimônia multi-tap
+logic_flow,biosseg-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,1,biosseg_generico,cerimônia multi-tap
+logic_flow,cam-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,1,cam_certos_vf_caso,cerimônia multi-tap
+logic_flow,farmaco-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,1,farmaco_pk_pd_vf,cerimônia multi-tap
+logic_flow,ist-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,0,(não mapeado em BRANCH_DESIGN_MAP),cerimônia multi-tap
+logic_flow,peri-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,1,perioperatorio_vf,cerimônia multi-tap
+logic_flow,pni-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,1,imunizacao_vf_intervalos,cerimônia multi-tap
+logic_flow,respiratorio-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,1,respiratorio_vf_asma_dpoc,cerimônia multi-tap
+logic_flow,sp-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,1,sp_identificacao,cerimônia multi-tap
+logic_flow,trabalho-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,2,trabalho_pep_trap|trabalho_vf_nr32,cerimônia multi-tap
+logic_flow,via-vf-juggle-tap,bespoke,weave_juggle,high,3,yes,1,via_vf_absorcao,cerimônia multi-tap
+concept_map,absorption-speed-rail,bespoke,rail,medium,2,n/a,1,via_vf_absorcao,scan + possível micro-tap
+concept_map,adme-journey-rail,bespoke,rail,medium,2,n/a,1,farmaco_pk_pd_vf,scan + possível micro-tap
+concept_map,adolescent-care-pillars-deck,bespoke,deck,medium,2,n/a,1,adolescente_etica_sigilo,scan + possível micro-tap
+concept_map,adolescent-growth-z-rail,bespoke,rail,medium,2,n/a,1,adolescente_antropometria,scan + possível micro-tap
+concept_map,biosseg-precaution-deck,bespoke,deck,medium,2,n/a,1,biosseg_generico,scan + possível micro-tap
+concept_map,burn-depth-layer-deck,bespoke,deck,medium,2,n/a,4,feridas_grande_queimado|feridas_grau_profundidade|feridas_scq_calculo|feridas_scq_regra9,scan + possível micro-tap
+concept_map,cam-certos-deck,bespoke,deck,medium,2,n/a,1,cam_certos_vf_caso,scan + possível micro-tap
+concept_map,cam-documentacao-deck,bespoke,deck,medium,2,n/a,1,cam_documentacao,scan + possível micro-tap
+concept_map,cam-exceto-rail,bespoke,rail,medium,2,n/a,1,cam_exceto_conduta,scan + possível micro-tap
+concept_map,cam-high-risk-duo-deck,bespoke,deck,medium,2,n/a,1,cam_alto_risco,scan + possível micro-tap
+concept_map,crianca-dev-milestones-rail,bespoke,rail,medium,2,n/a,1,crianca_desenvolvimento,scan + possível micro-tap
+concept_map,crianca-feeding-timeline,bespoke,timeline,medium,2,n/a,1,crianca_aleitamento_nutricao,scan + possível micro-tap
+concept_map,crianca-neonatal-deck,bespoke,deck,medium,2,n/a,1,crianca_neonatologia,scan + possível micro-tap
+concept_map,crianca-puericultura-timeline,bespoke,timeline,medium,2,n/a,1,crianca_aps_puericultura,scan + possível micro-tap
+concept_map,crianca-screening-timeline,bespoke,timeline,medium,2,n/a,1,crianca_triagem_neonatal,scan + possível micro-tap
+concept_map,dose-equivalence-rail,bespoke,rail,medium,2,n/a,1,calc_dose_equivalencia,scan + possível micro-tap
+concept_map,etiology-kingdom-rail,bespoke,rail,medium,2,n/a,1,bacterianas_agente_etiologico,scan + possível micro-tap
+concept_map,infusao-ev-station-deck,bespoke,deck,medium,2,n/a,1,farmaco_clinico_protocolo,scan + possível micro-tap
+concept_map,ist-risk-routes-deck,bespoke,deck,medium,2,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),scan + possível micro-tap
+concept_map,itu-closed-system-rail,bespoke,rail,medium,2,n/a,1,biosseg_iras_itu_cateter,scan + possível micro-tap
+concept_map,iv-gauge-matrix,bespoke,matrix_board,medium,2,n/a,1,puncao_dispositivo,scan + possível micro-tap
+concept_map,iv-interval-timeline,bespoke,timeline,medium,2,n/a,1,puncao_tempo,scan + possível micro-tap
+concept_map,iv-puncture-rail,bespoke,rail,medium,2,n/a,1,puncao_periferica_antissepsia,scan + possível micro-tap
+concept_map,mental-crisis-signal-deck,bespoke,deck,medium,2,n/a,1,mental_crise_caps,scan + possível micro-tap
+concept_map,mental-raps-network-rail,bespoke,rail,medium,2,n/a,1,mental_raps_legis,scan + possível micro-tap
+concept_map,morphing-timeline,bespoke,timeline,medium,2,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),scan + possível micro-tap
+concept_map,mulher-gestation-timeline,bespoke,timeline,medium,2,n/a,1,mulher_prenatal,scan + possível micro-tap
+concept_map,mulher-labor-phase-deck,bespoke,deck,medium,2,n/a,1,mulher_parto,scan + possível micro-tap
+concept_map,mulher-puerperio-timeline,bespoke,timeline,medium,2,n/a,1,mulher_puerperio,scan + possível micro-tap
+concept_map,nr32-annex-deck,bespoke,deck,medium,2,n/a,2,trabalho_pep_trap|trabalho_vf_nr32,scan + possível micro-tap
+concept_map,oxygen-protocol-deck,bespoke,deck,medium,2,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),scan + possível micro-tap
+concept_map,peri-preop-phase-deck,bespoke,deck,medium,2,n/a,1,perioperatorio_pre_operatorio,scan + possível micro-tap
+concept_map,peri-protocol-checklist-deck,bespoke,deck,medium,2,n/a,1,perioperatorio_protocolo,scan + possível micro-tap
+concept_map,peri-srpa-monitor-deck,bespoke,deck,medium,2,n/a,1,perioperatorio_pos_operatorio,scan + possível micro-tap
+concept_map,peri-vf-assertions-deck,bespoke,deck,medium,2,n/a,1,perioperatorio_vf,scan + possível micro-tap
+concept_map,pni-rules-deck,bespoke,deck,medium,2,n/a,1,imunizacao_vf_intervalos,scan + possível micro-tap
+concept_map,pt-clitic-rail-deck,bespoke,rail,medium,2,n/a,1,pt_pronomes_colocacao,scan + possível micro-tap
+concept_map,pt-comma-rail-deck,bespoke,rail,medium,2,n/a,1,pt_pontuacao,scan + possível micro-tap
+concept_map,pt-crase-funnel-deck,bespoke,funnel,medium,2,n/a,1,pt_crase,scan + possível micro-tap
+concept_map,pt-subject-focus-deck,bespoke,deck,medium,2,n/a,1,pt_concordancia,scan + possível micro-tap
+concept_map,pt-term-matrix-deck,bespoke,matrix_board,medium,2,n/a,1,pt_termos_oracao,scan + possível micro-tap
+concept_map,sae-responsibility-matrix,bespoke,matrix_board,medium,2,n/a,3,sae_etapas|sae_exceto|sae_generico,scan + possível micro-tap
+concept_map,sp-fall-risk-rail,bespoke,rail,medium,2,n/a,1,sp_prevencao_quedas,scan + possível micro-tap
+concept_map,sp-id-verify-deck,bespoke,deck,medium,2,n/a,1,sp_identificacao,scan + possível micro-tap
+concept_map,sp-incident-taxonomy-deck,bespoke,deck,medium,2,n/a,1,sp_eventos_adversos,scan + possível micro-tap
+concept_map,tb-vigilance-rail,bespoke,rail,medium,2,n/a,1,bacterianas_tuberculose,scan + possível micro-tap
+concept_map,urgencias-choking-signal-deck,bespoke,deck,medium,2,n/a,1,urgencias_engasgo,scan + possível micro-tap
+concept_map,urgencias-exceto-rail,bespoke,rail,medium,2,n/a,1,urgencias_exceto_conduta,scan + possível micro-tap
+concept_map,urgencias-pediatric-rcp-deck,bespoke,deck,medium,2,n/a,1,urgencias_rcp_pediatrico,scan + possível micro-tap
+concept_map,urgencias-protocol-rules-deck,bespoke,deck,medium,2,n/a,4,urgencias_anafilaxia|urgencias_convulsao|urgencias_queimadura|urgencias_vf_protocolo,scan + possível micro-tap
+concept_map,urgencias-shock-types-deck,bespoke,deck,medium,2,n/a,1,urgencias_choque,scan + possível micro-tap
+concept_map,urgencias-stroke-signs-deck,bespoke,deck,medium,2,n/a,1,urgencias_avc_iam,scan + possível micro-tap
+concept_map,urgencias-survival-chain-deck,bespoke,rail,medium,2,n/a,1,urgencias_rcp_sbv,scan + possível micro-tap
+concept_map,urgencias-xabcde-rail,bespoke,rail,medium,2,n/a,1,urgencias_xabcde_trauma,scan + possível micro-tap
+concept_map,vaccine-timeline,bespoke,timeline,medium,2,n/a,1,imunizacao_calendario,scan + possível micro-tap
+concept_map,wound-stage-tissue-deck,bespoke,deck,medium,2,n/a,2,curativos_cobertura_selecao|curativos_lpp,scan + possível micro-tap
+danger_zone,adolescent-exceto-compare,bespoke,compare,medium,2,no,1,adolescente_etica_sigilo,default
+danger_zone,adolescent-z-threshold-trap,bespoke,rail,medium,2,yes,1,adolescente_antropometria,dangerTapReveal
+danger_zone,biosseg-trap-chips,bespoke,arena_trap,medium,2,yes,1,biosseg_generico,dangerTapReveal
+danger_zone,burn-trap-arena,bespoke,arena_trap,medium,2,yes,5,feridas_atendimento_inicial|feridas_grande_queimado|feridas_grau_profundidade|feridas_scq_calculo|feridas_scq_regra9,dangerTapReveal
+danger_zone,calendar-mismatch,bespoke,timeline,medium,2,yes,1,imunizacao_calendario,dangerTapReveal
+danger_zone,cam-certos-trap-arena,bespoke,arena_trap,medium,2,no,1,cam_certos_vf_caso,arena/trap
+danger_zone,cam-documentacao-trap-arena,bespoke,arena_trap,medium,2,no,1,cam_documentacao,arena/trap
+danger_zone,cam-exceto-trap-arena,bespoke,arena_trap,medium,2,no,1,cam_exceto_conduta,arena/trap
+danger_zone,cam-high-risk-trap-arena,bespoke,arena_trap,medium,2,no,1,cam_alto_risco,arena/trap
+danger_zone,catheter-danger-arena,bespoke,arena_trap,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),dangerTapReveal
+danger_zone,compare,generic,compare,medium,2,yes,52,adolescente_desenvolvimento|adolescente_generico|adolescente_saude_mental|adolescente_violencia_protecao|calc_conceito|calc_generico|cam_generico|cme_autoclave_metodos|cme_vf_ce|curativos_bandagem_imobilizacao|curativos_desbridamento|curativos_dreno|curativos_estomia|curativos_exceto_incorreta|curativos_ferida_cirurgica|curativos_generico|curativos_tecnica_assepsia|curativos_termoterapia|farmaco_generico|feridas_cicatrizacao|feridas_classificacao|feridas_curativo_tipo|feridas_generico|historia_comunicacao_etica|historia_generico|historia_humanizacao|historia_nightingale|imunizacao_generico|mental_aps_acolhimento|mental_dependencia_tabagismo|mental_depressao|mental_generico|mulher_generico|perioperatorio_generico|perioperatorio_isc|pt_concordancia_generico|pt_crase_generico|pt_pontuacao_generico|pt_pronomes_colocacao_generico|pt_termos_oracao_generico|puncao_generico|respiratorio_asma_crise|respiratorio_generico|respiratorio_tecnica_inalador|sonda_generico|sp_generico|sp_metas_internacionais|trabalho_ergonomia|trabalho_generico|trabalho_nr15_reference|via_generico|via_tecnica_admin,dangerTapReveal
+danger_zone,crianca-dehydration-trap-arena,bespoke,arena_trap,medium,2,no,1,crianca_desidratacao,arena/trap
+danger_zone,crianca-dev-trap-arena,bespoke,arena_trap,medium,2,no,1,crianca_desenvolvimento,arena/trap
+danger_zone,crianca-feeding-trap-arena,bespoke,arena_trap,medium,2,no,1,crianca_aleitamento_nutricao,arena/trap
+danger_zone,crianca-neonatal-trap-arena,bespoke,arena_trap,medium,2,no,1,crianca_neonatologia,arena/trap
+danger_zone,crianca-pediatric-trap-arena,bespoke,arena_trap,medium,2,no,1,crianca_generico,arena/trap
+danger_zone,crianca-puericultura-trap-arena,bespoke,arena_trap,medium,2,no,1,crianca_aps_puericultura,arena/trap
+danger_zone,crianca-screening-trap-arena,bespoke,arena_trap,medium,2,no,1,crianca_triagem_neonatal,arena/trap
+danger_zone,dose-trap,bespoke,arena_trap,medium,2,yes,1,calc_dose_equivalencia,dangerTapReveal
+danger_zone,dressing-choice-arena,bespoke,arena_trap,medium,2,yes,2,curativos_cobertura_selecao|curativos_lpp,dangerTapReveal
+danger_zone,etiology-intruder-chips,bespoke,arena_trap,medium,2,no,1,bacterianas_agente_etiologico,arena/trap
+danger_zone,farmaco-clinico-trap,bespoke,arena_trap,medium,2,yes,1,farmaco_clinico_protocolo,dangerTapReveal
+danger_zone,farmaco-trap,bespoke,arena_trap,medium,2,yes,1,farmaco_pk_pd_vf,dangerTapReveal
+danger_zone,ist-trap-chips,bespoke,arena_trap,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),dangerTapReveal
+danger_zone,itu-catheter-trap,bespoke,arena_trap,medium,2,yes,1,biosseg_iras_itu_cateter,dangerTapReveal
+danger_zone,iv-bundle-break-trap,bespoke,arena_trap,medium,2,yes,1,puncao_ipcs_cvc,dangerTapReveal
+danger_zone,iv-exceto-intruder-trap,bespoke,arena_trap,medium,2,yes,1,puncao_exceto,dangerTapReveal
+danger_zone,iv-gauge-mismatch-trap,bespoke,arena_trap,medium,2,yes,1,puncao_dispositivo,dangerTapReveal
+danger_zone,iv-interval-swap-trap,bespoke,arena_trap,medium,2,yes,1,puncao_tempo,dangerTapReveal
+danger_zone,iv-label-swap-trap,bespoke,arena_trap,medium,2,yes,1,puncao_flebite,dangerTapReveal
+danger_zone,iv-order-invert-trap,bespoke,arena_trap,medium,2,yes,1,puncao_periferica_antissepsia,dangerTapReveal
+danger_zone,lab-prep-trap,bespoke,arena_trap,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),dangerTapReveal
+danger_zone,lab-specimen-arena,bespoke,arena_trap,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),dangerTapReveal
+danger_zone,mental-crisis-coercion-trap,bespoke,arena_trap,medium,2,yes,1,mental_crise_caps,dangerTapReveal
+danger_zone,mental-raps-trap-arena,bespoke,arena_trap,medium,2,yes,1,mental_raps_legis,dangerTapReveal
+danger_zone,mulher-mama-trap-arena,bespoke,arena_trap,medium,2,no,1,mulher_mama,arena/trap
+danger_zone,mulher-parto-trap-arena,bespoke,arena_trap,medium,2,no,1,mulher_parto,arena/trap
+danger_zone,mulher-planejamento-trap-arena,bespoke,arena_trap,medium,2,no,1,mulher_planejamento,arena/trap
+danger_zone,mulher-prenatal-trap-arena,bespoke,arena_trap,medium,2,no,1,mulher_prenatal,arena/trap
+danger_zone,mulher-puerperio-trap-arena,bespoke,arena_trap,medium,2,no,1,mulher_puerperio,arena/trap
+danger_zone,mulher-screening-trap-arena,bespoke,arena_trap,medium,2,no,1,mulher_papanicolau,arena/trap
+danger_zone,norm-reveal,bespoke,matrix_board,medium,2,yes,4,sae_documentacao|sae_etapas|sae_exceto|sae_generico,dangerTapReveal
+danger_zone,peri-preop-trap-arena,bespoke,arena_trap,medium,2,yes,1,perioperatorio_pre_operatorio,dangerTapReveal
+danger_zone,peri-protocol-trap-arena,bespoke,arena_trap,medium,2,yes,1,perioperatorio_protocolo,dangerTapReveal
+danger_zone,peri-srpa-trap-arena,bespoke,arena_trap,medium,2,yes,1,perioperatorio_pos_operatorio,dangerTapReveal
+danger_zone,peri-vf-trap-chips,bespoke,arena_trap,medium,2,yes,1,perioperatorio_vf,dangerTapReveal
+danger_zone,pni-exceto-compare,bespoke,compare,medium,2,no,1,imunizacao_exceto,default
+danger_zone,pni-trap-chips,bespoke,arena_trap,medium,2,yes,1,imunizacao_vf_intervalos,dangerTapReveal
+danger_zone,pt-clitic-trap-arena,bespoke,arena_trap,medium,2,yes,1,pt_pronomes_colocacao,dangerTapReveal
+danger_zone,pt-comma-trap-arena,bespoke,arena_trap,medium,2,yes,1,pt_pontuacao,dangerTapReveal
+danger_zone,pt-crase-trap-arena,bespoke,arena_trap,medium,2,yes,1,pt_crase,dangerTapReveal
+danger_zone,pt-subject-trap-arena,bespoke,arena_trap,medium,2,yes,1,pt_concordancia,dangerTapReveal
+danger_zone,pt-term-trap-arena,bespoke,arena_trap,medium,2,yes,1,pt_termos_oracao,dangerTapReveal
+danger_zone,respiratorio-spo2-trap-arena,bespoke,arena_trap,medium,2,yes,2,respiratorio_dpoc_oxigenio|respiratorio_vf_asma_dpoc,dangerTapReveal
+danger_zone,route-trap,bespoke,arena_trap,medium,2,yes,1,via_vf_absorcao,dangerTapReveal
+danger_zone,scope-trap,bespoke,arena_trap,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),dangerTapReveal
+danger_zone,sp-safety-trap-arena,bespoke,arena_trap,medium,2,no,3,sp_eventos_adversos|sp_identificacao|sp_prevencao_quedas,arena/trap
+danger_zone,tb-transmission-trap,bespoke,arena_trap,medium,2,no,1,bacterianas_tuberculose,arena/trap
+danger_zone,temperature-mismatch,bespoke,arena_trap,medium,2,yes,1,imunizacao_cadeia_frio,dangerTapReveal
+danger_zone,trabalho-pep-trap-arena,bespoke,arena_trap,medium,2,yes,2,trabalho_pep_trap|trabalho_vf_nr32,dangerTapReveal
+danger_zone,trap-reveal,bespoke,arena_trap,medium,2,yes,2,sonda_instalacao_protocolo|sonda_medicao_nex,dangerTapReveal
+danger_zone,urgencias-choking-trap-arena,bespoke,arena_trap,medium,2,yes,1,urgencias_engasgo,dangerTapReveal
+danger_zone,urgencias-exceto-trap-arena,bespoke,arena_trap,medium,2,no,1,urgencias_exceto_conduta,arena/trap
+danger_zone,urgencias-manchester-trap,bespoke,arena_trap,medium,2,yes,1,urgencias_manchester_triagem,dangerTapReveal
+danger_zone,urgencias-pediatric-trap-arena,bespoke,arena_trap,medium,2,yes,1,urgencias_rcp_pediatrico,dangerTapReveal
+danger_zone,urgencias-protocol-trap-arena,bespoke,arena_trap,medium,2,no,5,urgencias_anafilaxia|urgencias_convulsao|urgencias_generico|urgencias_queimadura|urgencias_vf_protocolo,arena/trap
+danger_zone,urgencias-rcp-trap-arena,bespoke,arena_trap,medium,2,yes,1,urgencias_rcp_sbv,dangerTapReveal
+danger_zone,urgencias-shock-trap-arena,bespoke,arena_trap,medium,2,yes,1,urgencias_choque,dangerTapReveal
+danger_zone,urgencias-stroke-trap-arena,bespoke,arena_trap,medium,2,yes,1,urgencias_avc_iam,dangerTapReveal
+danger_zone,urgencias-trauma-trap-arena,bespoke,arena_trap,medium,2,yes,1,urgencias_xabcde_trauma,dangerTapReveal
+danger_zone,vitals-classify-arena,bespoke,arena_trap,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),dangerTapReveal
+logic_flow,adolescent-exceto-isolate-board,bespoke,matrix_board,medium,2,n/a,1,adolescente_etica_sigilo,default
+logic_flow,adolescent-exceto-isolate-tap,bespoke,other,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),default
+logic_flow,adolescent-z-classify-tap,bespoke,funnel,medium,2,yes,1,adolescente_antropometria,tap sequential (N steps)
+logic_flow,burn-triage-tap-flow,bespoke,funnel,medium,2,yes,1,feridas_atendimento_inicial,tap sequential (N steps)
+logic_flow,cam-alto-risco-elimination-tap,bespoke,funnel,medium,2,yes,1,cam_alto_risco,tap sequential (N steps)
+logic_flow,cam-documentacao-vf-tap,bespoke,funnel,medium,2,yes,1,cam_documentacao,default
+logic_flow,cam-exceto-tap-flow,bespoke,funnel,medium,2,yes,1,cam_exceto_conduta,tap sequential (N steps)
+logic_flow,cards,generic,list_cards,medium,2,n/a,11,bacterianas_generico|cam_generico|cme_generico|cme_preparo_limpeza|cme_processamento_conceito|puncao_generico|respiratorio_asma_crise|respiratorio_dpoc_oxigenio|respiratorio_tecnica_inalador|urgencias_manchester_triagem|via_tecnica_admin,genérico; custo = N steps do JSON
+logic_flow,crianca-dehydration-tap-flow,bespoke,funnel,medium,2,yes,1,crianca_desidratacao,tap sequential (N steps)
+logic_flow,crianca-dev-tap-flow,bespoke,funnel,medium,2,yes,1,crianca_desenvolvimento,tap sequential (N steps)
+logic_flow,crianca-feeding-tap-flow,bespoke,funnel,medium,2,yes,1,crianca_aleitamento_nutricao,tap sequential (N steps)
+logic_flow,crianca-neonatal-tap-flow,bespoke,funnel,medium,2,yes,1,crianca_neonatologia,tap sequential (N steps)
+logic_flow,crianca-pediatric-tap-flow,bespoke,funnel,medium,2,yes,1,crianca_generico,tap sequential (N steps)
+logic_flow,crianca-puericultura-tap-flow,bespoke,funnel,medium,2,yes,1,crianca_aps_puericultura,tap sequential (N steps)
+logic_flow,crianca-screening-tap-flow,bespoke,funnel,medium,2,yes,1,crianca_triagem_neonatal,tap sequential (N steps)
+logic_flow,dose-calc-tap,bespoke,funnel,medium,2,yes,1,calc_dose_equivalencia,tap sequential (N steps)
+logic_flow,etiology-elimination-tap,bespoke,funnel,medium,2,yes,1,bacterianas_agente_etiologico,tap sequential (N steps)
+logic_flow,farmaco-protocol-tap-flow,bespoke,funnel,medium,2,yes,1,farmaco_clinico_protocolo,tap sequential (N steps)
+logic_flow,horizontal,generic,list_cards,medium,2,n/a,2,calc_conceito|calc_generico,genérico; custo = N steps do JSON
+logic_flow,itu-exceto-tap,bespoke,funnel,medium,2,yes,1,biosseg_iras_itu_cateter,default
+logic_flow,iv-bundle-tap-flow,bespoke,funnel,medium,2,yes,1,puncao_ipcs_cvc,tap sequential (N steps)
+logic_flow,iv-care-soft-stack,bespoke,funnel,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),tap sequential (N steps)
+logic_flow,iv-complication-tap-flow,bespoke,funnel,medium,2,yes,1,puncao_flebite,tap sequential (N steps)
+logic_flow,iv-device-tap-flow,bespoke,funnel,medium,2,yes,1,puncao_dispositivo,tap sequential (N steps)
+logic_flow,iv-exceto-tap-flow,bespoke,funnel,medium,2,yes,1,puncao_exceto,tap sequential (N steps)
+logic_flow,iv-interval-tap-flow,bespoke,funnel,medium,2,yes,1,puncao_tempo,tap sequential (N steps)
+logic_flow,iv-puncture-tap-flow,bespoke,funnel,medium,2,yes,1,puncao_periferica_antissepsia,tap sequential (N steps)
+logic_flow,lab-vf-soft-stack,bespoke,funnel,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),tap sequential (N steps)
+logic_flow,mental-crisis-decision-tap,bespoke,funnel,medium,2,yes,1,mental_crise_caps,tap sequential (N steps)
+logic_flow,mental-raps-classify-tap,bespoke,funnel,medium,2,yes,1,mental_raps_legis,tap sequential (N steps)
+logic_flow,mulher-labor-tap-flow,bespoke,funnel,medium,2,yes,1,mulher_parto,tap sequential (N steps)
+logic_flow,mulher-mama-tap-flow,bespoke,funnel,medium,2,yes,1,mulher_mama,tap sequential (N steps)
+logic_flow,mulher-planejamento-tap-flow,bespoke,funnel,medium,2,yes,1,mulher_planejamento,tap sequential (N steps)
+logic_flow,mulher-prenatal-tap-flow,bespoke,funnel,medium,2,yes,1,mulher_prenatal,tap sequential (N steps)
+logic_flow,mulher-puerperio-tap-flow,bespoke,funnel,medium,2,yes,1,mulher_puerperio,tap sequential (N steps)
+logic_flow,mulher-screening-tap-flow,bespoke,funnel,medium,2,yes,1,mulher_papanicolau,tap sequential (N steps)
+logic_flow,oxygen-step-ladder,bespoke,rail,medium,2,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),default
+logic_flow,peri-preop-decision-tap,bespoke,funnel,medium,2,yes,1,perioperatorio_pre_operatorio,tap sequential (N steps)
+logic_flow,peri-protocol-tap-flow,bespoke,funnel,medium,2,yes,1,perioperatorio_protocolo,tap sequential (N steps)
+logic_flow,peri-srpa-decision-tap,bespoke,funnel,medium,2,yes,1,perioperatorio_pos_operatorio,tap sequential (N steps)
+logic_flow,pni-calendar-elimination-tap,bespoke,funnel,medium,2,yes,1,imunizacao_calendario,tap sequential (N steps)
+logic_flow,pni-cold-chain-tap,bespoke,funnel,medium,2,yes,1,imunizacao_cadeia_frio,default
+logic_flow,pni-exceto-isolate-board,bespoke,matrix_board,medium,2,n/a,1,imunizacao_exceto,default
+logic_flow,pt-clitic-rail-tap-flow,bespoke,funnel,medium,2,yes,1,pt_pronomes_colocacao,tap sequential (N steps)
+logic_flow,pt-comma-rail-tap-flow,bespoke,funnel,medium,2,yes,1,pt_pontuacao,tap sequential (N steps)
+logic_flow,pt-crase-funnel-tap-flow,bespoke,funnel,medium,2,yes,1,pt_crase,tap sequential (N steps)
+logic_flow,pt-subject-focus-tap-flow,bespoke,funnel,medium,2,yes,1,pt_concordancia,tap sequential (N steps)
+logic_flow,pt-term-matrix-tap-flow,bespoke,funnel,medium,2,yes,1,pt_termos_oracao,tap sequential (N steps)
+logic_flow,sae-decision-tap,bespoke,funnel,medium,2,yes,4,sae_documentacao|sae_etapas|sae_exceto|sae_generico,tap sequential (N steps)
+logic_flow,sonda-decision-tap,bespoke,funnel,medium,2,yes,2,sonda_instalacao_protocolo|sonda_medicao_nex,tap sequential (N steps)
+logic_flow,sp-protocol-tap-flow,bespoke,funnel,medium,2,yes,2,sp_eventos_adversos|sp_prevencao_quedas,tap sequential (N steps)
+logic_flow,tb-vf-elimination-tap,bespoke,funnel,medium,2,yes,1,bacterianas_tuberculose,tap sequential (N steps)
+logic_flow,urgencias-choking-tap-flow,bespoke,funnel,medium,2,yes,1,urgencias_engasgo,tap sequential (N steps)
+logic_flow,urgencias-exceto-tap-flow,bespoke,funnel,medium,2,yes,1,urgencias_exceto_conduta,tap sequential (N steps)
+logic_flow,urgencias-pediatric-tap-flow,bespoke,funnel,medium,2,yes,1,urgencias_rcp_pediatrico,tap sequential (N steps)
+logic_flow,urgencias-protocol-tap-flow,bespoke,funnel,medium,2,yes,5,urgencias_anafilaxia|urgencias_convulsao|urgencias_generico|urgencias_queimadura|urgencias_vf_protocolo,tap sequential (N steps)
+logic_flow,urgencias-rcp-tap-flow,bespoke,funnel,medium,2,yes,1,urgencias_rcp_sbv,tap sequential (N steps)
+logic_flow,urgencias-shock-tap-flow,bespoke,funnel,medium,2,yes,1,urgencias_choque,tap sequential (N steps)
+logic_flow,urgencias-stroke-elimination-tap,bespoke,funnel,medium,2,yes,1,urgencias_avc_iam,tap sequential (N steps)
+logic_flow,urgencias-xabcde-tap-flow,bespoke,funnel,medium,2,yes,1,urgencias_xabcde_trauma,tap sequential (N steps)
+logic_flow,vertical,generic,list_cards,medium,2,n/a,49,adolescente_desenvolvimento|adolescente_generico|adolescente_saude_mental|adolescente_violencia_protecao|cme_autoclave_metodos|cme_vf_ce|curativos_bandagem_imobilizacao|curativos_desbridamento|curativos_dreno|curativos_estomia|curativos_exceto_incorreta|curativos_generico|curativos_lpp|curativos_tecnica_assepsia|curativos_termoterapia|farmaco_generico|feridas_cicatrizacao|feridas_classificacao|feridas_curativo_tipo|feridas_generico|feridas_grande_queimado|feridas_grau_profundidade|feridas_scq_calculo|feridas_scq_regra9|historia_comunicacao_etica|historia_generico|historia_humanizacao|historia_nightingale|imunizacao_generico|mental_aps_acolhimento|mental_dependencia_tabagismo|mental_depressao|mental_generico|mulher_generico|perioperatorio_generico|perioperatorio_isc|pt_concordancia_generico|pt_crase_generico|pt_pontuacao_generico|pt_pronomes_colocacao_generico|pt_termos_oracao_generico|respiratorio_generico|sonda_generico|sp_generico|sp_metas_internacionais|trabalho_ergonomia|trabalho_generico|trabalho_nr15_reference|via_generico,genérico; custo = N steps do JSON
+logic_flow,vitals-translate-tap,bespoke,funnel,medium,2,yes,0,(não mapeado em BRANCH_DESIGN_MAP),tap sequential (N steps)
+logic_flow,wound-prep-tap-flow,bespoke,funnel,medium,2,yes,2,curativos_cobertura_selecao|curativos_ferida_cirurgica,tap sequential (N steps)
+concept_map,bridge,generic,list_cards,low,1,n/a,7,cam_generico|cme_generico|cme_preparo_limpeza|cme_processamento_conceito|historia_comunicacao_etica|historia_nightingale|puncao_generico,leitura/scan
+concept_map,grid,generic,list_cards,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),leitura/scan
+concept_map,lab-specimen-chain,bespoke,rail,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),leitura/scan
+concept_map,molecular,generic,list_cards,low,1,n/a,1,bacterianas_generico,leitura/scan
+concept_map,morphological,bespoke,list_cards,low,1,n/a,49,adolescente_desenvolvimento|adolescente_generico|adolescente_saude_mental|adolescente_violencia_protecao|calc_conceito|calc_generico|cme_autoclave_metodos|cme_vf_ce|curativos_bandagem_imobilizacao|curativos_desbridamento|curativos_dreno|curativos_estomia|curativos_exceto_incorreta|curativos_generico|curativos_tecnica_assepsia|curativos_termoterapia|farmaco_generico|feridas_atendimento_inicial|feridas_cicatrizacao|feridas_classificacao|feridas_curativo_tipo|feridas_generico|historia_generico|historia_humanizacao|imunizacao_exceto|imunizacao_generico|mental_aps_acolhimento|mental_dependencia_tabagismo|mental_depressao|mental_generico|mulher_generico|perioperatorio_generico|perioperatorio_isc|pt_concordancia_generico|pt_crase_generico|pt_pontuacao_generico|pt_pronomes_colocacao_generico|pt_termos_oracao_generico|respiratorio_asma_crise|respiratorio_generico|respiratorio_tecnica_inalador|sonda_generico|sp_generico|sp_metas_internacionais|trabalho_ergonomia|trabalho_generico|trabalho_nr15_reference|via_generico|via_tecnica_admin,leitura/scan
+concept_map,procedure-protocol,bespoke,deck,low,1,n/a,3,curativos_ferida_cirurgica|sonda_instalacao_protocolo|sonda_medicao_nex,leitura/scan
+concept_map,sae-documentation,bespoke,deck,low,1,n/a,1,sae_documentacao,leitura/scan
+concept_map,stack,generic,list_cards,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),leitura/scan
+concept_map,survival-chain,bespoke,rail,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),leitura/scan
+concept_map,sus-legal-pillars,bespoke,deck,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),leitura/scan
+concept_map,vitals-panel,bespoke,deck,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),leitura/scan
+danger_zone,cards,generic,list_cards,low,1,no,11,bacterianas_generico|cam_generico|cme_generico|cme_preparo_limpeza|cme_processamento_conceito|puncao_generico|respiratorio_asma_crise|respiratorio_dpoc_oxigenio|respiratorio_tecnica_inalador|urgencias_manchester_triagem|via_tecnica_admin,scan sem reveal obrigatório
+danger_zone,compact,generic,list_cards,low,1,no,0,(não mapeado em BRANCH_DESIGN_MAP),scan sem reveal obrigatório
+danger_zone,list,generic,list_cards,low,1,no,4,bacterianas_generico|cme_generico|cme_preparo_limpeza|cme_processamento_conceito,scan sem reveal obrigatório
+golden_rule,adolescent-speak-barrier-board,bespoke,matrix_board,low,1,n/a,1,adolescente_etica_sigilo,tabela/board scanável
+golden_rule,adolescent-z-band-board,bespoke,rail,low,1,n/a,1,adolescente_antropometria,tabela/board scanável
+golden_rule,banner,generic,list_cards,low,1,n/a,2,respiratorio_asma_crise|via_tecnica_admin,leitura
+golden_rule,biosseg-reference-board,bespoke,matrix_board,low,1,n/a,1,biosseg_generico,tabela/board scanável
+golden_rule,burn-rule-nine-board,bespoke,matrix_board,low,1,n/a,3,feridas_grande_queimado|feridas_scq_calculo|feridas_scq_regra9,tabela/board scanável
+golden_rule,cam-documentacao-board,bespoke,matrix_board,low,1,n/a,1,cam_documentacao,tabela/board scanável
+golden_rule,cam-exceto-reference-board,bespoke,matrix_board,low,1,n/a,1,cam_exceto_conduta,tabela/board scanável
+golden_rule,cam-high-risk-protocol-board,bespoke,matrix_board,low,1,n/a,1,cam_alto_risco,tabela/board scanável
+golden_rule,cam-nine-rights-board,bespoke,matrix_board,low,1,n/a,1,cam_certos_vf_caso,tabela/board scanável
+golden_rule,center,generic,list_cards,low,1,n/a,6,cam_generico|curativos_generico|farmaco_generico|feridas_generico|respiratorio_generico|via_generico,leitura
+golden_rule,compact,generic,list_cards,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),leitura
+golden_rule,crianca-dehydration-board,bespoke,matrix_board,low,1,n/a,1,crianca_desidratacao,tabela/board scanável
+golden_rule,crianca-dev-board,bespoke,matrix_board,low,1,n/a,1,crianca_desenvolvimento,tabela/board scanável
+golden_rule,crianca-feeding-board,bespoke,matrix_board,low,1,n/a,1,crianca_aleitamento_nutricao,tabela/board scanável
+golden_rule,crianca-neonatal-board,bespoke,matrix_board,low,1,n/a,1,crianca_neonatologia,tabela/board scanável
+golden_rule,crianca-pediatric-board,bespoke,matrix_board,low,1,n/a,1,crianca_generico,tabela/board scanável
+golden_rule,crianca-puericultura-board,bespoke,matrix_board,low,1,n/a,1,crianca_aps_puericultura,tabela/board scanável
+golden_rule,crianca-screening-board,bespoke,matrix_board,low,1,n/a,1,crianca_triagem_neonatal,tabela/board scanável
+golden_rule,dressing-match-matrix,bespoke,matrix_board,low,1,n/a,1,curativos_cobertura_selecao,tabela/board scanável
+golden_rule,farmaco-clinico-reference-board,bespoke,matrix_board,low,1,n/a,1,farmaco_clinico_protocolo,tabela/board scanável
+golden_rule,ist-reference-board,bespoke,matrix_board,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),tabela/board scanável
+golden_rule,itu-bundle-letter-board,bespoke,matrix_board,low,1,n/a,1,biosseg_iras_itu_cateter,tabela/board scanável
+golden_rule,iv-antisepsis-board,bespoke,matrix_board,low,1,n/a,1,puncao_periferica_antissepsia,tabela/board scanável
+golden_rule,iv-device-reference-board,bespoke,matrix_board,low,1,n/a,1,puncao_dispositivo,tabela/board scanável
+golden_rule,iv-differential-board,bespoke,matrix_board,low,1,n/a,1,puncao_flebite,tabela/board scanável
+golden_rule,iv-exceto-command-board,bespoke,matrix_board,low,1,n/a,1,puncao_exceto,tabela/board scanável
+golden_rule,iv-interval-board,bespoke,matrix_board,low,1,n/a,1,puncao_tempo,tabela/board scanável
+golden_rule,mental-crisis-ladder-board,bespoke,rail,low,1,n/a,1,mental_crise_caps,tabela/board scanável
+golden_rule,mental-raps-tier-board,bespoke,matrix_board,low,1,n/a,1,mental_raps_legis,tabela/board scanável
+golden_rule,minimal,generic,list_cards,low,1,n/a,4,bacterianas_generico|cme_generico|cme_preparo_limpeza|cme_processamento_conceito,leitura
+golden_rule,mulher-mama-board,bespoke,matrix_board,low,1,n/a,1,mulher_mama,tabela/board scanável
+golden_rule,mulher-papanicolau-board,bespoke,matrix_board,low,1,n/a,1,mulher_papanicolau,tabela/board scanável
+golden_rule,mulher-parto-humanizado-board,bespoke,matrix_board,low,1,n/a,1,mulher_parto,tabela/board scanável
+golden_rule,mulher-planejamento-board,bespoke,matrix_board,low,1,n/a,1,mulher_planejamento,tabela/board scanável
+golden_rule,mulher-prenatal-board,bespoke,matrix_board,low,1,n/a,1,mulher_prenatal,tabela/board scanável
+golden_rule,mulher-puerperio-board,bespoke,matrix_board,low,1,n/a,1,mulher_puerperio,tabela/board scanável
+golden_rule,peri-aldrete-board,bespoke,matrix_board,low,1,n/a,1,perioperatorio_pos_operatorio,tabela/board scanável
+golden_rule,peri-preop-prep-board,bespoke,matrix_board,low,1,n/a,1,perioperatorio_pre_operatorio,tabela/board scanável
+golden_rule,peri-protocol-reference-board,bespoke,matrix_board,low,1,n/a,1,perioperatorio_protocolo,tabela/board scanável
+golden_rule,peri-vf-reference-board,bespoke,matrix_board,low,1,n/a,1,perioperatorio_vf,tabela/board scanável
+golden_rule,pk-pd-reference-board,bespoke,matrix_board,low,1,n/a,1,farmaco_pk_pd_vf,tabela/board scanável
+golden_rule,pni-calendar-board,bespoke,timeline,low,1,n/a,1,imunizacao_calendario,tabela/board scanável
+golden_rule,pni-interval-matrix,bespoke,matrix_board,low,1,n/a,1,imunizacao_vf_intervalos,tabela/board scanável
+golden_rule,pni-temperature-rail,bespoke,rail,low,1,n/a,1,imunizacao_cadeia_frio,tabela/board scanável
+golden_rule,pt-clitic-rail-board,bespoke,rail,low,1,n/a,1,pt_pronomes_colocacao,tabela/board scanável
+golden_rule,pt-comma-rail-board,bespoke,rail,low,1,n/a,1,pt_pontuacao,tabela/board scanável
+golden_rule,pt-crase-funnel-board,bespoke,funnel,low,1,n/a,1,pt_crase,tabela/board scanável
+golden_rule,pt-subject-focus-board,bespoke,matrix_board,low,1,n/a,1,pt_concordancia,tabela/board scanável
+golden_rule,pt-term-matrix-board,bespoke,matrix_board,low,1,n/a,1,pt_termos_oracao,tabela/board scanável
+golden_rule,reference_table,generic,matrix_board,low,1,n/a,47,adolescente_desenvolvimento|adolescente_generico|adolescente_saude_mental|adolescente_violencia_protecao|calc_conceito|calc_generico|cme_autoclave_metodos|cme_vf_ce|curativos_bandagem_imobilizacao|curativos_desbridamento|curativos_dreno|curativos_estomia|curativos_exceto_incorreta|curativos_ferida_cirurgica|curativos_lpp|curativos_tecnica_assepsia|curativos_termoterapia|feridas_atendimento_inicial|feridas_cicatrizacao|feridas_classificacao|feridas_curativo_tipo|feridas_grau_profundidade|historia_comunicacao_etica|historia_generico|historia_humanizacao|historia_nightingale|imunizacao_exceto|imunizacao_generico|mental_aps_acolhimento|mental_dependencia_tabagismo|mental_depressao|mental_generico|mulher_generico|perioperatorio_generico|perioperatorio_isc|pt_concordancia_generico|pt_crase_generico|pt_pontuacao_generico|pt_pronomes_colocacao_generico|pt_termos_oracao_generico|puncao_generico|respiratorio_tecnica_inalador|sonda_generico|sp_generico|sp_metas_internacionais|trabalho_ergonomia|trabalho_generico,tabela/board scanável
+golden_rule,respiratorio-spo2-reference-board,bespoke,matrix_board,low,1,n/a,2,respiratorio_dpoc_oxigenio|respiratorio_vf_asma_dpoc,tabela/board scanável
+golden_rule,sae-reference-board,bespoke,matrix_board,low,1,n/a,4,sae_documentacao|sae_etapas|sae_exceto|sae_generico,tabela/board scanável
+golden_rule,sonda-measurement-board,bespoke,matrix_board,low,1,n/a,2,sonda_instalacao_protocolo|sonda_medicao_nex,tabela/board scanável
+golden_rule,sp-nsp-reference-board,bespoke,matrix_board,low,1,n/a,3,sp_eventos_adversos|sp_identificacao|sp_prevencao_quedas,tabela/board scanável
+golden_rule,tb-precaution-board,bespoke,matrix_board,low,1,n/a,1,bacterianas_tuberculose,tabela/board scanável
+golden_rule,trabalho-nr32-reference-board,bespoke,matrix_board,low,1,n/a,3,trabalho_nr15_reference|trabalho_pep_trap|trabalho_vf_nr32,tabela/board scanável
+golden_rule,urgencias-cincinnati-board,bespoke,matrix_board,low,1,n/a,1,urgencias_avc_iam,tabela/board scanável
+golden_rule,urgencias-exceto-reference-board,bespoke,matrix_board,low,1,n/a,1,urgencias_exceto_conduta,tabela/board scanável
+golden_rule,urgencias-heimlich-board,bespoke,matrix_board,low,1,n/a,1,urgencias_engasgo,tabela/board scanável
+golden_rule,urgencias-manchester-board,bespoke,matrix_board,low,1,n/a,1,urgencias_manchester_triagem,tabela/board scanável
+golden_rule,urgencias-pediatric-params-board,bespoke,matrix_board,low,1,n/a,1,urgencias_rcp_pediatrico,tabela/board scanável
+golden_rule,urgencias-protocol-reference-board,bespoke,matrix_board,low,1,n/a,5,urgencias_anafilaxia|urgencias_convulsao|urgencias_generico|urgencias_queimadura|urgencias_vf_protocolo,tabela/board scanável
+golden_rule,urgencias-rcp-params-board,bespoke,matrix_board,low,1,n/a,1,urgencias_rcp_sbv,tabela/board scanável
+golden_rule,urgencias-shock-reference-board,bespoke,matrix_board,low,1,n/a,1,urgencias_choque,tabela/board scanável
+golden_rule,urgencias-trauma-reference-board,bespoke,matrix_board,low,1,n/a,1,urgencias_xabcde_trauma,tabela/board scanável
+golden_rule,via-reference-board,bespoke,matrix_board,low,1,n/a,1,via_vf_absorcao,tabela/board scanável
+golden_rule,vitals-reference-board,bespoke,matrix_board,low,1,n/a,0,(não mapeado em BRANCH_DESIGN_MAP),tabela/board scanável

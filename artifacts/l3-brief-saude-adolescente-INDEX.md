@@ -1,42 +1,33 @@
-# Saúde do Adolescente — índice de briefs L3 (6 ramos)
+﻿# Saúde do Adolescente — Índice de briefs L3 (6 ramos)
 
-**Subtópico:** Saúde do Adolescente · **16 slugs** · `production_ready` · onda nota-10 (2026-07-13)
+**Subtópico:** Saúde do Adolescente · **16 slugs** · `production_ready` · onda nota-10 + **Onda 2 glanceable** (2026-08-01)
 
-Política: cada ramo forte documenta **metáfora visual ↔ erro pedagógico**. Bespoke React só quando o erro é espacial/categorial e o genérico não ancora memória; demais ramos usam pacote semântico genérico premium (`rows`, `correct`, `reveal_mode: tap`).
+Política: pacote glanceable v2 (`ADOLESCENTE_GLANCEABLE_MOLD` = pillars · speak-barrier · isolate-board · exceto-compare) cobre ética **e** os 4 ramos que eram genéricos. Antropometria permanece trilho Z. Moldes v1 (curtain/weave/consent) = legado só em galeria / ética explícita.
 
 | Ramo | Slugs (aprox.) | Pacote L3 | Brief | Implementação |
 |------|----------------|-----------|-------|---------------|
-| `adolescente_etica_sigilo` | 2 | bespoke ética | [etica_sigilo](l3-brief-saude-adolescente-adolescente_etica_sigilo.md) | **React** |
-| `adolescente_antropometria` | 2 (1 com Z) | bespoke Z-score | [antropometria](l3-brief-saude-adolescente-adolescente_antropometria.md) | **React** (Z apenas) |
-| `adolescente_desenvolvimento` | 1 | genérico premium | [desenvolvimento](l3-brief-saude-adolescente-adolescente_desenvolvimento.md) | genérico |
-| `adolescente_saude_mental` | 3 | genérico premium | [saude_mental](l3-brief-saude-adolescente-adolescente_saude_mental.md) | genérico |
-| `adolescente_violencia_protecao` | 2 | genérico premium | [violencia_protecao](l3-brief-saude-adolescente-adolescente_violencia_protecao.md) | genérico |
-| `adolescente_generico` | 6 | genérico premium | [generico](l3-brief-saude-adolescente-adolescente_generico.md) | genérico |
+| `adolescente_etica_sigilo` | 2 | glanceable v2 | [etica_sigilo](l3-brief-saude-adolescente-adolescente_etica_sigilo.md) · [v2](l3-brief-saude-adolescente-etica-sigilo-v2.md) | **React** |
+| `adolescente_antropometria` | 2 (1 com Z) | bespoke Z-score | [antropometria](l3-brief-saude-adolescente-adolescente_antropometria.md) | **React** (Z) |
+| `adolescente_violencia_protecao` | 2 | glanceable v2 (reuso) | [violencia_protecao](l3-brief-saude-adolescente-adolescente_violencia_protecao.md) | **Onda 2** |
+| `adolescente_saude_mental` | 3 | glanceable v2 (reuso) | [saude_mental](l3-brief-saude-adolescente-adolescente_saude_mental.md) | **Onda 2** |
+| `adolescente_desenvolvimento` | 1 | glanceable v2 (reuso) | [desenvolvimento](l3-brief-saude-adolescente-adolescente_desenvolvimento.md) | **Onda 2** |
+| `adolescente_generico` | 6 | glanceable v2 (reuso) | [generico](l3-brief-saude-adolescente-adolescente_generico.md) | **Onda 2** |
 
 ## Código e testes
 
 | Área | Arquivo |
 |------|---------|
-| Ramos + design map | `lib/slides/pedagogicalBranch.ts` |
-| Afinidade + guards | `lib/slides/moldAffinity.ts` |
-| Utils ética/sigilo | `lib/slides/adolescentSlideUtils.ts` |
-| Utils escore Z | `lib/slides/adolescentAntropometriaSlideUtils.ts` |
-| Gap audit / decisões | `lib/slides/l3MoldGapCatalog.ts` |
-| Regressão visual | `e2e/visual-mold-regression.spec.ts` · `artifacts/visual-mold-regression/summary-saude-adolescente.json` |
-| Cluster + volume | `artifacts/saude-adolescente-topic-cluster-report.json` |
-| Relatório nota-10 | `artifacts/saude-adolescente-nota10-report.md` |
+| Ramos + design map | `lib/slides/pedagogicalBranch.ts` (`ADOLESCENTE_GLANCEABLE_MOLD`) |
+| Afinidade + guards | `lib/slides/moldAffinity.ts` (`ADOLESCENT_GLANCEABLE_BRANCHES`) |
+| Gap audit | `lib/slides/l3MoldGapCatalog.ts` |
+| Estratégia | `docs/NEUROSLIDES_VISUAL_STRATEGY.md` Onda 2 |
+| Regressão visual | `e2e/visual-mold-regression.spec.ts` |
 
-## Docs canônicos
-
-- [`docs/MOLD_AFFINITY_RESOLVER.md`](../docs/MOLD_AFFINITY_RESOLVER.md) — resolver v2.1
-- [`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](../docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md) — §6.8.1 ramos
-- [`docs/PROMPT_VARIANTES_NEUROSLIDES.md`](../docs/PROMPT_VARIANTES_NEUROSLIDES.md) — template de brief 4/4
-
-## Trigger de nova implementação
+## Trigger
 
 ```text
-Mapeamento L3: Saúde do Adolescente
-Implementar molde: adolescente_<ramo>
+Design visual: adolescente_<ramo>
+Implementar molde: adolescente_<ramo>   # só se gesto NOVO (não Onda 2)
 ```
 
-Gate de volume sugerido: **≥5 slugs** no sub-cluster **ou** pedido explícito flagship (exceção: antropometria Z com 1 slug na onda nota-10).
+Gate de ID novo: gesto espacial diverge **ou** ≥5 questões com erro que o board não fixa.

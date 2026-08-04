@@ -17,6 +17,8 @@ export type ShipAuditReport = {
     L1: LayerResult;
     L2: LayerResult;
     L2b: LayerResult;
+    /** F4 — nota pedagógica (detector unificado + leitor cego). */
+    L2c: LayerResult;
     L3: LayerResult;
     L4: LayerResult;
     L5: LayerResult;
@@ -46,9 +48,12 @@ export function canPromoteToSell(report: ShipAuditReport): { ok: boolean; blocke
   const blockers = [...report.blockers];
 
   if (!report.technical_ready) {
-    if (!blockers.some((b) => b.startsWith('L1:') || b.startsWith('L2'))) {
+    if (!blockers.some((b) => b.startsWith('L1:') || b.startsWith('L2:') || b.startsWith('L2b:'))) {
       blockers.push('technical_ready: L1+L2+L2b obrigatórios');
     }
+  }
+  if (!report.layers.L2c.pass && !blockers.some((b) => b.startsWith('L2c:'))) {
+    blockers.push(`L2c: ${report.layers.L2c.detail}`);
   }
   if (!report.layers.L6.pass && !blockers.some((b) => b.startsWith('L6:'))) {
     blockers.push(`L6: ${report.layers.L6.detail}`);
@@ -68,6 +73,7 @@ export function layersFromReport(report: ShipAuditReport): QualityLayers {
     L1: report.layers.L1.pass,
     L2: report.layers.L2.pass,
     L2b: report.layers.L2b.pass,
+    L2c: report.layers.L2c.pass,
     L3: report.layers.L3.pass,
     L4: report.layers.L4.pass,
     L5: report.layers.L5.pass,
@@ -84,6 +90,7 @@ export function buildShipBlockers(
   if (!layers.L1.pass) blockers.push(`L1: ${layers.L1.detail}`);
   if (!layers.L2.pass) blockers.push(`L2: ${layers.L2.detail}`);
   if (!layers.L2b.pass) blockers.push(`L2b: ${layers.L2b.detail}`);
+  if (!layers.L2c.pass) blockers.push(`L2c: ${layers.L2c.detail}`);
   if (!layers.L6.pass) blockers.push(`L6: ${layers.L6.detail}`);
   if (!layers.L5.pass) {
     blockers.push(

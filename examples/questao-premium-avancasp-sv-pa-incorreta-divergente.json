@@ -82,22 +82,22 @@
         },
         {
           "label": "Definição de PA",
-          "detail": "Força do sangue contra a parede arterial na sístole/diástole — afirmativa A é conceito correto.",
+          "detail": "Força do sangue contra a parede arterial na sístole/diástole.",
           "icon": "HeartPulse"
         },
         {
           "label": "Sítio de aferição",
-          "detail": "Braço: artéria braquial · perna: artéria pediosa — B e D são locais clássicos de prova.",
+          "detail": "Braço: artéria braquial · perna: artéria pediosa.",
           "icon": "Activity"
         },
         {
           "label": "Pegadinha divergente",
-          "detail": "Pressão divergente = afastamento entre sistólica e diastólica — C erra ao dizer que máxima e mínima se aproximam.",
+          "detail": "Pressão divergente = afastamento entre sistólica e diastólica.",
           "icon": "GitCompare"
         },
         {
           "label": "Material",
-          "detail": "Esfigmomanômetro calibrado + estetoscópio para auscultar Korotkoff — E é conduta correta.",
+          "detail": "Esfigmomanômetro calibrado + estetoscópio para auscultar Korotkoff.",
           "icon": "Stethoscope"
         }
       ],
@@ -117,7 +117,6 @@
         "Testar D: artéria pediosa na perna → sítio válido para PA em membro inferior → eliminar.",
         "Testar E: esfigmomanômetro + estetoscópio → material padrão → eliminar.",
         "Testar C: pressão divergente com máxima e mínima se aproximando → FALSO — divergente significa afastamento (gap largo).",
-        "Confirmar: só C traz aspecto incorreto.",
         "Marcar letra C.",
         "Fixação: divergente = distância grande entre sistólica e diastólica; convergente = aproximação."
       ],

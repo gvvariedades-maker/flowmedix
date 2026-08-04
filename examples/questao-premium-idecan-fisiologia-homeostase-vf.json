@@ -11,44 +11,105 @@
   "question_data": {
     "instruction": "Sobre fisiologia humana e homeostase, analise as afirmativas.\n\nI - A homeostase é a capacidade do organismo de manter o meio interno relativamente estável frente a variações do ambiente.\nII - A temperatura corporal normal média em adulto, medida oral, situa-se aproximadamente entre 36,1 °C e 37,2 °C.\nIII - A taquicardia é definida, em adulto, por frequência cardíaca inferior a 60 batimentos por minuto.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "Homeostase — mapa da prova",
-      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Fisiologia" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia"
+      },
       "items": [
-        { "label": "Homeostase", "detail": "Equilíbrio dinâmico do meio interno — temperatura, glicose, pH, líquidos.", "icon": "Activity" },
-        { "label": "Temperatura oral", "detail": "Adulto: ~36,1 a 37,2 °C — referência para febre e hipotermia.", "icon": "Thermometer" },
-        { "label": "FC normal", "detail": "Adulto em repouso: cerca de 60 a 100 bpm.", "icon": "HeartPulse" },
-        { "label": "Taquicardia", "detail": "FC elevada — acima de 100 bpm em adulto, não abaixo de 60.", "icon": "TrendingUp" }
+        {
+          "label": "Homeostase",
+          "detail": "Equilíbrio dinâmico do meio interno — temperatura, glicose, pH, líquidos.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Temperatura oral",
+          "detail": "Adulto: ~36,1 a 37,2 °C — referência para febre e hipotermia.",
+          "icon": "Thermometer"
+        },
+        {
+          "label": "FC normal",
+          "detail": "Adulto em repouso: cerca de 60 a 100 bpm.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Taquicardia",
+          "detail": "FC elevada — acima de 100 bpm em adulto, não abaixo de 60.",
+          "icon": "TrendingUp"
+        }
       ],
       "footer_rule": "Fisiologia básica: definição + valor de referência + não inverter taqui/bradicardia"
     },
     {
       "type": "golden_rule",
       "slide_title": "Referência — parâmetros adulto",
-      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Fisiologia" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia"
+      },
       "content": "VALORES QUE CAEM",
       "rows": [
-        { "label": "Temperatura oral", "value": "36,1 a 37,2 °C", "badge": "hot", "emphasis": "highlight" },
-        { "label": "FC normal", "value": "60 a 100 bpm", "badge": "ok" },
-        { "label": "Taquicardia", "value": "FC > 100 bpm", "badge": "warn" },
-        { "label": "Bradicardia", "value": "FC < 60 bpm", "badge": "info" },
-        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+        {
+          "label": "Temperatura oral",
+          "value": "36,1 a 37,2 °C",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "FC normal",
+          "value": "60 a 100 bpm",
+          "badge": "ok"
+        },
+        {
+          "label": "Taquicardia",
+          "value": "FC > 100 bpm",
+          "badge": "warn"
+        },
+        {
+          "label": "Bradicardia",
+          "value": "FC < 60 bpm",
+          "badge": "info"
+        }
       ],
       "footer_rule": "III inverte taquicardia com bradicardia — erro clássico"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Fisiologia" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia"
+      },
       "steps": [
         "I: homeostase = estabilidade do meio interno → verdadeira.",
         "II: faixa de temperatura oral citada → verdadeira.",
@@ -61,12 +122,27 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Noções de Fisiologia" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia"
+      },
       "content": "PEGADINHAS — FISIOLOGIA",
       "items": [
-        { "label": "Inverter taqui e bradi", "detail": "A III descreve bradicardia com o nome taquicardia.", "correct": "Taquicardia: FC > 100 bpm em adulto." },
-        { "label": "Usar axilar como oral", "detail": "Cada sítio de medida tem faixa própria — a questão especifica oral.", "correct": "Respeitar o sítio citado no enunciado." },
-        { "label": "Marcar D por decorar números", "detail": "Dois itens certos não autorizam incluir III errada.", "correct": "Gabarito B: I e II apenas." }
+        {
+          "label": "Inverter taqui e bradi",
+          "detail": "A III descreve bradicardia com o nome taquicardia.",
+          "correct": "Taquicardia: FC > 100 bpm em adulto."
+        },
+        {
+          "label": "Usar axilar como oral",
+          "detail": "Cada sítio de medida tem faixa própria — a questão especifica oral.",
+          "correct": "Respeitar o sítio citado no enunciado."
+        },
+        {
+          "label": "Marcar D por decorar números",
+          "detail": "Dois itens certos não autorizam incluir III errada.",
+          "correct": "Gabarito B: I e II apenas."
+        }
       ],
       "footer_rule": "Em fisiologia, definição errada invalida o item mesmo com número plausível"
     }

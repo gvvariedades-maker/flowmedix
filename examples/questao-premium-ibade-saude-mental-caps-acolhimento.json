@@ -22,7 +22,11 @@
         "issuer": "Ministério da Saúde",
         "title": "Cuidado em saúde mental — abordagem humanizada e rede psicossocial",
         "year": 2021,
-        "covers": ["acolhimento", "comunicação terapêutica", "contenção como exceção"]
+        "covers": [
+          "acolhimento",
+          "comunicação terapêutica",
+          "contenção como exceção"
+        ]
       },
       {
         "id": "cofen-codigo-etica",
@@ -30,7 +34,10 @@
         "issuer": "COFEN",
         "title": "Código de Ética dos Profissionais de Enfermagem",
         "year": 2018,
-        "covers": ["direitos do usuário", "não coerção sem indicação"]
+        "covers": [
+          "direitos do usuário",
+          "não coerção sem indicação"
+        ]
       }
     ]
   },
@@ -93,11 +100,6 @@
           "label": "Equipe e família",
           "detail": "Técnico articula com multiprofissional e família — não atua isolado em procedimentos.",
           "icon": "Users"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra B — acolhimento e comunicação terapêutica respeitando a singularidade.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Agitação no CAPS: acolher e escutar antes de conter"
@@ -128,12 +130,6 @@
           "label": "Papel do técnico",
           "value": "Vínculo, orientação e articulação com a equipe",
           "badge": "ok"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra B",
-          "emphasis": "success",
-          "badge": "hot"
         }
       ],
       "footer_rule": "Resistência não é insubordinação — é sinal de sofrimento"

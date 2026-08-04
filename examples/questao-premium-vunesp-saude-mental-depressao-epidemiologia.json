@@ -23,7 +23,11 @@
         "title": "Depressão — fato e figura (prevalência e incapacidade)",
         "year": 2023,
         "url": "https://www.who.int/news-room/fact-sheets/detail/depression",
-        "covers": ["prevalência global", "incapacidade funcional", "2030"]
+        "covers": [
+          "prevalência global",
+          "incapacidade funcional",
+          "2030"
+        ]
       },
       {
         "id": "ms-politica-saude-mental",
@@ -31,7 +35,11 @@
         "issuer": "Ministério da Saúde",
         "title": "Política Nacional de Saúde Mental — atenção comunitária e base em evidências",
         "year": 2021,
-        "covers": ["modelo comunitário", "RAPS", "APS"]
+        "covers": [
+          "modelo comunitário",
+          "RAPS",
+          "APS"
+        ]
       },
       {
         "id": "portaria-3088-2011-raps",
@@ -39,7 +47,10 @@
         "issuer": "Ministério da Saúde",
         "title": "Portaria GM/MS nº 3.088/2011 — Rede de Atenção Psicossocial",
         "year": 2011,
-        "covers": ["articulação APS–CAPS", "cuidado longitudinal"]
+        "covers": [
+          "articulação APS–CAPS",
+          "cuidado longitudinal"
+        ]
       }
     ]
   },
@@ -95,18 +106,13 @@
         },
         {
           "label": "Política comunitária",
-          "detail": "Política Nacional de Saúde Mental: atenção baseada em evidências e comunitária — letra C.",
+          "detail": "Política Nacional de Saúde Mental: atenção baseada em evidências e comunitária.",
           "icon": "Users"
         },
         {
           "label": "Suicídio e APS",
           "detail": "Depressão aumenta risco suicida (B falsa); APS detecta, acompanha e articula rede — não só encaminha (E falsa).",
           "icon": "Heart"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra C — modelo comunitário e baseado em evidências da política brasileira.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Epidemiologia grave + subtratamento → política comunitária, não negação de risco"
@@ -141,12 +147,6 @@
           "label": "Política MS",
           "value": "Modelo de atenção apoiado em evidências e de base comunitária",
           "emphasis": "highlight",
-          "badge": "hot"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra C",
-          "emphasis": "success",
           "badge": "hot"
         }
       ],

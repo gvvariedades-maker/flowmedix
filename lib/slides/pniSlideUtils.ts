@@ -556,3 +556,55 @@ export function inferTemperatureSlots(
   const hasRail = trapMarkers.length > 0 || correctMarkers.length > 0;
   return { trapMarkers, correctMarkers, hasRail };
 }
+
+/** ---- EXCETO glanceable (Onda 3) — mesma gramática de steps do board Adolescente ---- */
+
+export type PniExcetoStepKind = 'command' | 'keep' | 'exception' | 'mark' | 'transfer' | 'step';
+
+export function parsePniExcetoStep(
+  step: string,
+  index: number,
+): {
+  kind: PniExcetoStepKind;
+  letter?: string;
+  title: string;
+  text: string;
+} {
+  const lower = step.toLowerCase();
+  if (/comando|incorreta|exceto/.test(lower) && index === 0) {
+    return { kind: 'command', title: 'Comando', text: step };
+  }
+  if (/a[–\-–]c|a-c:|condutas certas|descartar|manter|esquema certo|calend[aá]rio certo/.test(lower)) {
+    return { kind: 'keep', title: 'Manter', text: step };
+  }
+  if (
+    /exce[cç][aã]o|incorreta|intervalo errad|dose errad|fora do|fora da faixa|congel/.test(lower) &&
+    /d:|letra [a-e]|→|->/.test(lower)
+  ) {
+    return { kind: 'exception', title: 'Exceção', text: step };
+  }
+  if (/exce[cç][aã]o|incorreta|pegadinha/.test(lower) && index > 0) {
+    return { kind: 'exception', title: 'Exceção', text: step };
+  }
+  if (/marcar letra\s*([a-e])/i.test(step)) {
+    const letter = step.match(/marcar letra\s*([a-e])/i)?.[1]?.toUpperCase();
+    return { kind: 'mark', letter, title: 'Gabarito', text: step };
+  }
+  if (/em similares|fixa[cç][aã]o|transfer/.test(lower)) {
+    return { kind: 'transfer', title: 'Em similares', text: step };
+  }
+  if (/letra\s+([a-e])/i.test(step)) {
+    const letter = step.match(/letra\s+([a-e])/i)?.[1]?.toUpperCase();
+    return { kind: 'mark', letter, title: 'Gabarito', text: step };
+  }
+  return { kind: 'step', title: `Passo ${index + 1}`, text: step };
+}
+
+/** Marca item da compare como a EXCETO/INCORRETA (PNI). */
+export function isPniExcetoExceptionItem(label: string, correct: string): boolean {
+  const t = `${label} ${correct}`.toLowerCase();
+  return /exce[cç][aã]o|incorreta|intervalo errad|dose errad|fora do calend|fora da faixa|congel|letra [a-e].*(n[aã]o|errado|falsa)/.test(
+    t,
+  );
+}
+

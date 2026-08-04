@@ -1,0 +1,656 @@
+{
+  "kind": "letter_truncation",
+  "mode": "dry-run",
+  "corpus": "lote:saude-da-crianca-completo",
+  "generated_at": "2026-08-04T00:08:17.367Z",
+  "target_signatures": [
+    "pedagogy_letter_spoiler"
+  ],
+  "scanned": 62,
+  "changed": 0,
+  "edits": 0,
+  "skipped": 0,
+  "idempotent": true,
+  "signatures_before": {
+    "pedagogy_letter_spoiler": 0,
+    "pedagogy_vf_verdict_spoiler": 0,
+    "pedagogy_question_bound_label": 0,
+    "pedagogy_logic_padding": 0,
+    "pedagogy_polarity_risk": 0,
+    "pedagogy_danger_orphan": 0,
+    "pedagogy_logic_missing_gabarito": 0,
+    "pedagogy_density": 0
+  },
+  "signatures_after": {
+    "pedagogy_letter_spoiler": 0,
+    "pedagogy_vf_verdict_spoiler": 0,
+    "pedagogy_question_bound_label": 0,
+    "pedagogy_logic_padding": 0,
+    "pedagogy_polarity_risk": 0,
+    "pedagogy_danger_orphan": 0,
+    "pedagogy_logic_missing_gabarito": 0,
+    "pedagogy_density": 0
+  },
+  "reports": [
+    {
+      "slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\adm-tec-enfermagem-exames-laboratoriais-1779563613404-2.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-8",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\amauc-enfermagem-processo-de-enfermagem-1780004982901-8.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-7",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cotec-fadenor-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-7.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-4",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-8",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-8.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-4",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "fepese-geral-saude-da-crianca-1777104415052-9",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\fepese-geral-saude-da-crianca-1777104415052-9.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\fundatec-enfermagem-processo-de-enfermagem-1780006962671-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-procedimentos-diversos-1778712203076-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712418722-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-4",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712418722-4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712418722-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-6",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712418722-6.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712418722-7",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712418722-7.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-0",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712426701-0.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-1",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712426701-1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-2",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712426701-2.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712426701-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712426701-4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1778712426701-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1780067024707-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1780067024707-4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idecan-enfermagem-saude-da-crianca-1780067024707-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idib-enfermagem-nocoes-de-fisiologia-1778934944659-9.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idib-enfermagem-nocoes-de-fisiologia-1778934965770-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-crianca-1778934936220-7",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idib-enfermagem-saude-da-crianca-1778934936220-7.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "idib-enfermagem-saude-da-crianca-1778934936220-8",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\idib-enfermagem-saude-da-crianca-1778934936220-8.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-8",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-8.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-6",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-6.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "quadrix-enfermagem-saude-da-crianca-1780001362784-6",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\quadrix-enfermagem-saude-da-crianca-1780001362784-6.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "selecon-enfermagem-exames-complementares-1779563668619-4",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\selecon-enfermagem-exames-complementares-1779563668619-4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\unesc-enfermagem-saude-da-crianca-1780001362784-7.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\unifil-enfermagem-vias-de-administracao-1778968956139-6.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\vunesp-enfermagem-exames-laboratoriais-1779563621885-2.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "path": "D:\\AVANT\\data\\catalog-migration\\saude-da-crianca-completo\\questions\\vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    }
+  ]
+}

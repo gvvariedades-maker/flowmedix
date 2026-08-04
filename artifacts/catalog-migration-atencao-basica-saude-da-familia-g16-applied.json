@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T22:48:10.725Z",
+  "lote": "atencao-basica-saude-da-familia-g16",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-9",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-0",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-2",
+    "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-3",
+    "igeduc-enfermagem-processo-de-enfermagem-1780001148264-3",
+    "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+    "igeduc-enfermagem-processo-de-enfermagem-1780009392850-6",
+    "igeduc-enfermagem-processo-de-enfermagem-1780009392850-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780001148264-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

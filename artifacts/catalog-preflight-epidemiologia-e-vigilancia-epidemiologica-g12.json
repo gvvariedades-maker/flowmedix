@@ -1,0 +1,76 @@
+{
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g12",
+  "generated_at": "2026-08-04T01:08:56.436Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "fundep-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-1",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

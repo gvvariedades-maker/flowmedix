@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T22:47:06.050Z",
+  "lote": "atencao-basica-saude-da-familia-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+    "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+    "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+    "ameosc-enfermagem-processo-de-enfermagem-1780008232871-0",
+    "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

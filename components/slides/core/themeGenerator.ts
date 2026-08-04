@@ -407,9 +407,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'saúde da criança': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
   'pediatria': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Saúde do Adolescente (golden: adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate) ----
-  'saúde do adolescente': { template: 'sky', conceptMap: 'adolescent-privacy-curtain', goldenRule: 'adolescent-sigilo-spectrum', logicFlow: 'adolescent-vf-weave-tap', dangerZone: 'adolescent-consent-gate' },
-  'adolescente': { template: 'sky', conceptMap: 'adolescent-privacy-curtain', goldenRule: 'adolescent-sigilo-spectrum', logicFlow: 'adolescent-vf-weave-tap', dangerZone: 'adolescent-consent-gate' },
+  // ---- Saúde do Adolescente (v2 ética: pillars · speak-barrier · exceto-board · compare) ----
+  'saúde do adolescente': { template: 'sky', conceptMap: 'morphological', goldenRule: 'reference_table', logicFlow: 'vertical', dangerZone: 'compare' },
+  'adolescente': { template: 'sky', conceptMap: 'morphological', goldenRule: 'reference_table', logicFlow: 'vertical', dangerZone: 'compare' },
 
   // ---- Saúde da Mulher ----
   'saúde da mulher': { template: 'pink', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },

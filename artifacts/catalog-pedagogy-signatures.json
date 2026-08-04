@@ -1,0 +1,4194 @@
+{
+  "generated_at": "2026-07-31T17:21:57.809Z",
+  "mode": "report",
+  "lotes": 726,
+  "slugs": 14277,
+  "slugs_with_findings": 11717,
+  "total_findings": 42266,
+  "counts": {
+    "pedagogy_letter_spoiler": 28337,
+    "pedagogy_vf_verdict_spoiler": 11477,
+    "pedagogy_question_bound_label": 349,
+    "pedagogy_logic_padding": 109,
+    "pedagogy_polarity_risk": 278,
+    "pedagogy_danger_orphan": 112,
+    "pedagogy_logic_missing_gabarito": 90,
+    "pedagogy_density": 1514
+  },
+  "by_origin": {
+    "pedagogy_letter_spoiler · golden_rule.label": 11497,
+    "pedagogy_letter_spoiler · concept_map.detail": 11146,
+    "pedagogy_vf_verdict_spoiler · golden_rule.value": 10565,
+    "pedagogy_letter_spoiler · concept_map.footer_rule": 3580,
+    "pedagogy_density · concept_map.items": 1278,
+    "pedagogy_letter_spoiler · golden_rule.value": 1204,
+    "pedagogy_vf_verdict_spoiler · concept_map.detail": 878,
+    "pedagogy_letter_spoiler · golden_rule.content": 362,
+    "pedagogy_question_bound_label · concept_map.label": 347,
+    "pedagogy_letter_spoiler · concept_map.label": 332,
+    "pedagogy_polarity_risk · danger_zone.correct": 278,
+    "pedagogy_density · golden_rule.rows": 206,
+    "pedagogy_letter_spoiler · golden_rule.footer_rule": 144,
+    "pedagogy_danger_orphan · danger_zone.—": 112,
+    "pedagogy_logic_padding · logic_flow.step": 109,
+    "pedagogy_logic_missing_gabarito · logic_flow.—": 90,
+    "pedagogy_letter_spoiler · golden_rule.exam_hint": 66,
+    "pedagogy_density · danger_zone.items": 30,
+    "pedagogy_vf_verdict_spoiler · concept_map.label": 30,
+    "pedagogy_vf_verdict_spoiler · golden_rule.label": 4,
+    "pedagogy_letter_spoiler · concept_map.slide_title": 3,
+    "pedagogy_question_bound_label · golden_rule.label": 2,
+    "pedagogy_letter_spoiler · concept_map.correct": 2,
+    "pedagogy_letter_spoiler · golden_rule.slide_title": 1
+  },
+  "samples": {
+    "pedagogy_letter_spoiler · concept_map.detail": [
+      {
+        "slug": "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+        "path": "concept_map.items[3].detail",
+        "evidence": "Letra E — deficits neurológicos leves (sem repercussão funcional significativa), cirurgia de grande porte ou procedimento invasivo nos últimos 14 dias, e punçã…"
+      },
+      {
+        "slug": "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+        "path": "concept_map.items[2].detail",
+        "evidence": "Letra C — Apenas o item III é verdadeiro."
+      },
+      {
+        "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-1",
+        "path": "concept_map.items[2].detail",
+        "evidence": "Letra A — Certo"
+      },
+      {
+        "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
+        "path": "concept_map.items[2].detail",
+        "evidence": "Letra B — Errado"
+      },
+      {
+        "slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-3",
+        "path": "concept_map.items[2].detail",
+        "evidence": "Letra A — Certo"
+      }
+    ],
+    "pedagogy_letter_spoiler · concept_map.footer_rule": [
+      {
+        "slug": "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+        "path": "concept_map.footer_rule",
+        "evidence": "Exclua por termo-chave antes de confirmar letra C."
+      },
+      {
+        "slug": "cetrede-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-1",
+        "path": "concept_map.footer_rule",
+        "evidence": "Exclua por termo-chave antes de confirmar letra E."
+      },
+      {
+        "slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-4",
+        "path": "concept_map.footer_rule",
+        "evidence": "Exclua por termo-chave antes de confirmar letra A."
+      },
+      {
+        "slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+        "path": "concept_map.footer_rule",
+        "evidence": "Exclua por termo-chave antes de confirmar letra B."
+      },
+      {
+        "slug": "consulplan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-1",
+        "path": "concept_map.footer_rule",
+        "evidence": "Exclua por termo-chave antes de confirmar letra A."
+      }
+    ],
+    "pedagogy_vf_verdict_spoiler · golden_rule.value": [
+      {
+        "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+        "path": "golden_rule.rows[0].value",
+        "evidence": "Verdadeira: a visita permite conhecer contexto, habitação e relações familiares."
+      },
+      {
+        "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+        "path": "golden_rule.rows[1].value",
+        "evidence": "Falsa: a visita domiciliar exige planejamento prévio."
+      },
+      {
+        "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+        "path": "golden_rule.rows[2].value",
+        "evidence": "Verdadeira: o ACS faz o elo entre comunidade e unidade de saúde."
+      },
+      {
+        "slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+        "path": "golden_rule.rows[3].value",
+        "evidence": "Falsa: o ACS deve seguir a identificação e o padrão institucional."
+      },
+      {
+        "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+        "path": "golden_rule.rows[0].value",
+        "evidence": "Falsa: 1 comprimido e um quarto, por dose."
+      }
+    ],
+    "pedagogy_letter_spoiler · golden_rule.content": [
+      {
+        "slug": "ieses-enfermagem-instalacao-e-manejo-de-sondas-1777102719125-0",
+        "path": "golden_rule.content",
+        "evidence": "FOCO EM PROVA — INFECÇÕES NO CONTEXTO DA BIOSSEGURANÇA: Letra A — Os itens I e II estão corretos."
+      },
+      {
+        "slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+        "path": "golden_rule.content",
+        "evidence": "FOCO EM PROVA — INFECÇÕES NO CONTEXTO DA BIOSSEGURANÇA: Letra C — V, F, V, V, F."
+      },
+      {
+        "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-9",
+        "path": "golden_rule.content",
+        "evidence": "FOCO EM PROVA — CUIDADOS NA ADMINISTRAÇÃO DE MEDICAMENTOS: Letra B — Garantir a administração adequada da terapia prescrita."
+      },
+      {
+        "slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-1",
+        "path": "golden_rule.content",
+        "evidence": "FOCO EM PROVA — CUIDADOS NA ADMINISTRAÇÃO DE MEDICAMENTOS: Letra A — O balanço hídrico é o procedimento técnico de mensurar e avaliar o resultado dos líquidos …"
+      },
+      {
+        "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-3",
+        "path": "golden_rule.content",
+        "evidence": "Leia o caso clínico completo — resposta: Letra C — I, II e III."
+      }
+    ],
+    "pedagogy_letter_spoiler · golden_rule.value": [
+      {
+        "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-1",
+        "path": "golden_rule.rows[4].value",
+        "evidence": "Letra B — Reconstituir com diluente recomendado em bula e homogeneizar suavemente antes de aspirar."
+      },
+      {
+        "slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-7",
+        "path": "golden_rule.rows[4].value",
+        "evidence": "Letra B — 33 gotas/minuto."
+      },
+      {
+        "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+        "path": "golden_rule.rows[3].value",
+        "evidence": "Letra D"
+      },
+      {
+        "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+        "path": "golden_rule.rows[4].value",
+        "evidence": "Letra C"
+      },
+      {
+        "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+        "path": "golden_rule.rows[3].value",
+        "evidence": "Letra C"
+      }
+    ],
+    "pedagogy_letter_spoiler · golden_rule.label": [
+      {
+        "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+        "path": "golden_rule.rows[0].label",
+        "evidence": "Letra A"
+      },
+      {
+        "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+        "path": "golden_rule.rows[1].label",
+        "evidence": "Letra B"
+      },
+      {
+        "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+        "path": "golden_rule.rows[2].label",
+        "evidence": "Letra C"
+      },
+      {
+        "slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+        "path": "golden_rule.rows[3].label",
+        "evidence": "Letra D"
+      },
+      {
+        "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+        "path": "golden_rule.rows[4].label",
+        "evidence": "Letra B — gabarito"
+      }
+    ],
+    "pedagogy_density · golden_rule.rows": [
+      {
+        "slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-7",
+        "path": "golden_rule.rows"
+      },
+      {
+        "slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+        "path": "golden_rule.rows"
+      },
+      {
+        "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+        "path": "golden_rule.rows"
+      },
+      {
+        "slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3",
+        "path": "golden_rule.rows"
+      },
+      {
+        "slug": "omni-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056330579-1",
+        "path": "golden_rule.rows"
+      }
+    ],
+    "pedagogy_letter_spoiler · golden_rule.footer_rule": [
+      {
+        "slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-2",
+        "path": "golden_rule.footer_rule",
+        "evidence": "Gabarito desta questão: Letra A — V, F, V, V, V."
+      },
+      {
+        "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-3",
+        "path": "golden_rule.footer_rule",
+        "evidence": "Gabarito desta questão: Letra B — Como o ambiente da UPA é dinâmico, a conferência detalhada dos medicamentos deve ser feita privativamente pelo enfermeiro, po…"
+      },
+      {
+        "slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-6",
+        "path": "golden_rule.footer_rule",
+        "evidence": "Gabarito desta questão: Letra C — Verificar a prescrição, confirmar a identidade do paciente, preparar a medicação conforme o protocolo, administrar a dose pre…"
+      },
+      {
+        "slug": "avancasp-of-concordancia-era-uma-hora-e-quarenta-e-um-minutos-3725105",
+        "path": "golden_rule.footer_rule",
+        "evidence": "3 corretas → letra D."
+      },
+      {
+        "slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+        "path": "golden_rule.footer_rule",
+        "evidence": "Gabarito desta questão: Letra C — I apenas."
+      }
+    ],
+    "pedagogy_density · concept_map.items": [
+      {
+        "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+        "path": "concept_map.items"
+      },
+      {
+        "slug": "cotec-fadenor-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-1",
+        "path": "concept_map.items"
+      },
+      {
+        "slug": "fau-unicentro-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-5",
+        "path": "concept_map.items"
+      },
+      {
+        "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-3",
+        "path": "concept_map.items"
+      },
+      {
+        "slug": "fepese-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-5",
+        "path": "concept_map.items"
+      }
+    ],
+    "pedagogy_letter_spoiler · concept_map.label": [
+      {
+        "slug": "quadrix-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-7",
+        "path": "concept_map.items[2].label",
+        "evidence": "Déficit de glicose"
+      },
+      {
+        "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+        "path": "concept_map.items[3].label",
+        "evidence": "Letra D — restrição da celulose."
+      },
+      {
+        "slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+        "path": "concept_map.items[3].label",
+        "evidence": "Letra C."
+      },
+      {
+        "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+        "path": "concept_map.items[3].label",
+        "evidence": "Letra C — cânula para perfusão aramadas."
+      },
+      {
+        "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+        "path": "concept_map.items[3].label",
+        "evidence": "Letra A — as três etapas do reprocessamento."
+      }
+    ],
+    "pedagogy_logic_missing_gabarito · logic_flow.—": [
+      {
+        "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+        "path": "logic_flow.steps"
+      },
+      {
+        "slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+        "path": "logic_flow.steps"
+      },
+      {
+        "slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+        "path": "logic_flow.steps"
+      },
+      {
+        "slug": "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+        "path": "logic_flow.steps"
+      },
+      {
+        "slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+        "path": "logic_flow.steps"
+      }
+    ],
+    "pedagogy_danger_orphan · danger_zone.—": [
+      {
+        "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+        "path": "danger_zone.items"
+      },
+      {
+        "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+        "path": "danger_zone.items"
+      },
+      {
+        "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+        "path": "danger_zone.items"
+      },
+      {
+        "slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
+        "path": "danger_zone.items"
+      },
+      {
+        "slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+        "path": "danger_zone.items"
+      }
+    ],
+    "pedagogy_question_bound_label · concept_map.label": [
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+        "path": "concept_map.items[0].label",
+        "evidence": "Afirmativa I — esterilização"
+      },
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+        "path": "concept_map.items[1].label",
+        "evidence": "Afirmativa II — validade"
+      },
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+        "path": "concept_map.items[2].label",
+        "evidence": "Afirmativa III — técnico na AB"
+      },
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+        "path": "concept_map.items[3].label",
+        "evidence": "Afirmativa IV — limpeza"
+      },
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+        "path": "concept_map.items[0].label",
+        "evidence": "Afirmativa I — esterilização"
+      }
+    ],
+    "pedagogy_vf_verdict_spoiler · concept_map.detail": [
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+        "path": "concept_map.items[0].detail",
+        "evidence": "Verdadeira — esterilização elimina bactérias, vírus, fungos e esporos."
+      },
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+        "path": "concept_map.items[1].detail",
+        "evidence": "Verdadeira — preparo adequado aumenta eficácia do ciclo."
+      },
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+        "path": "concept_map.items[2].detail",
+        "evidence": "Falsa — EPI é obrigatório ao manusear material contaminado."
+      },
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+        "path": "concept_map.items[3].detail",
+        "evidence": "Verdadeira — seguir normas e rotinas institucionais."
+      },
+      {
+        "slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+        "path": "concept_map.items[0].detail",
+        "evidence": "Verdadeira — esterilização elimina bactérias, vírus, fungos e esporos."
+      }
+    ],
+    "pedagogy_density · danger_zone.items": [
+      {
+        "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-4",
+        "path": "danger_zone.items"
+      },
+      {
+        "slug": "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
+        "path": "danger_zone.items"
+      },
+      {
+        "slug": "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+        "path": "danger_zone.items"
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+        "path": "danger_zone.items"
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+        "path": "danger_zone.items"
+      }
+    ],
+    "pedagogy_polarity_risk · danger_zone.correct": [
+      {
+        "slug": "idecan-enfermagem-efeitos-adversos-dos-medicamentos-1780066909125-3",
+        "path": "danger_zone.items[1].correct",
+        "evidence": "Afirmativa correta no espectro moderado — eliminar."
+      },
+      {
+        "slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-5",
+        "path": "danger_zone.items[0].correct",
+        "evidence": "Afirmativa correta sobre calibre e comprimento — eliminar."
+      },
+      {
+        "slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-5",
+        "path": "danger_zone.items[1].correct",
+        "evidence": "Conduta correta — não é a INCORRETA."
+      },
+      {
+        "slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-5",
+        "path": "danger_zone.items[2].correct",
+        "evidence": "Afirmativa correta no contexto do enunciado — eliminar."
+      },
+      {
+        "slug": "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-8",
+        "path": "danger_zone.items[0].correct",
+        "evidence": "Afirmativa correta — não é a incorreta."
+      }
+    ],
+    "pedagogy_vf_verdict_spoiler · concept_map.label": [
+      {
+        "slug": "igeduc-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103471372-5",
+        "path": "concept_map.items[1].label",
+        "evidence": "Verdadeiro no texto"
+      },
+      {
+        "slug": "igeduc-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103471372-5",
+        "path": "concept_map.items[2].label",
+        "evidence": "Falso no texto"
+      },
+      {
+        "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
+        "path": "concept_map.items[1].label",
+        "evidence": "Falsa"
+      },
+      {
+        "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
+        "path": "concept_map.items[1].label",
+        "evidence": "Verdadeira"
+      },
+      {
+        "slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
+        "path": "concept_map.items[1].label",
+        "evidence": "Falsa"
+      }
+    ],
+    "pedagogy_logic_padding · logic_flow.step": [
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+        "path": "logic_flow.steps[8]",
+        "evidence": "Confirmar: só B descreve complicação grave coerente com opioide potente em UTI. | Marcar B."
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+        "path": "logic_flow.steps[8]",
+        "evidence": "Confirmar: só E é a INCORRETA. | Marcar E."
+      },
+      {
+        "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+        "path": "logic_flow.steps[8]",
+        "evidence": "Confirmar: só B descreve farmacologia compatível com evidência. | Marcar B."
+      },
+      {
+        "slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+        "path": "logic_flow.steps[8]",
+        "evidence": "Confirmar: só E completa a lacuna. | Marcar E."
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+        "path": "logic_flow.steps[6]",
+        "evidence": "Confirmar: só A não se classifica como anestésico local. | Marcar A."
+      }
+    ],
+    "pedagogy_letter_spoiler · golden_rule.exam_hint": [
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+        "path": "golden_rule.rows[1].exam_hint",
+        "evidence": "A e B são afirmativas corretas no comando INCORRETA."
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+        "path": "golden_rule.rows[2].exam_hint",
+        "evidence": "A é o intruso — não é local."
+      },
+      {
+        "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+        "path": "golden_rule.rows[1].exam_hint",
+        "evidence": "A erra diluente e temperatura para parecer ação rápida."
+      },
+      {
+        "slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+        "path": "golden_rule.rows[3].exam_hint",
+        "evidence": "B é a única conduta compatível com terapia EV monitorada."
+      },
+      {
+        "slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+        "path": "golden_rule.rows[2].exam_hint",
+        "evidence": "Letra B — idade errada."
+      }
+    ],
+    "pedagogy_question_bound_label · golden_rule.label": [
+      {
+        "slug": "objetiva-concursos-enfermagem-imunizacao-1779564090395-1",
+        "path": "golden_rule.rows[0].label",
+        "evidence": "Afirmativa I — SC"
+      },
+      {
+        "slug": "objetiva-concursos-enfermagem-imunizacao-1779564090395-1",
+        "path": "golden_rule.rows[1].label",
+        "evidence": "Afirmativa II — IM"
+      }
+    ],
+    "pedagogy_vf_verdict_spoiler · golden_rule.label": [
+      {
+        "slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+        "path": "golden_rule.rows[2].label",
+        "evidence": "Falso negativo precoce"
+      },
+      {
+        "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4",
+        "path": "golden_rule.rows[1].label",
+        "evidence": "Falsa Contraindicação"
+      },
+      {
+        "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4",
+        "path": "golden_rule.rows[2].label",
+        "evidence": "Falsa Contraindicação"
+      },
+      {
+        "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4",
+        "path": "golden_rule.rows[3].label",
+        "evidence": "Falsa Contraindicação"
+      }
+    ],
+    "pedagogy_letter_spoiler · golden_rule.slide_title": [
+      {
+        "slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3",
+        "path": "golden_rule.slide_title",
+        "evidence": "Memorize a letra C"
+      }
+    ],
+    "pedagogy_letter_spoiler · concept_map.correct": [
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+        "path": "concept_map.items[1].correct",
+        "evidence": "Débito urinário horário monitorado continuamente, refletindo perfusão e função renal imediata."
+      },
+      {
+        "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+        "path": "concept_map.items[1].correct",
+        "evidence": "Débito urinário horário monitorado continuamente, refletindo perfusão e função renal imediata."
+      }
+    ],
+    "pedagogy_letter_spoiler · concept_map.slide_title": [
+      {
+        "slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+        "path": "concept_map.slide_title",
+        "evidence": "ABCDE — letra D"
+      },
+      {
+        "slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+        "path": "concept_map.slide_title",
+        "evidence": "ABCDE trauma — letra A"
+      },
+      {
+        "slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+        "path": "concept_map.slide_title",
+        "evidence": "XABCDE — letra D"
+      }
+    ]
+  },
+  "per_lote": [
+    {
+      "lote": "acidente-vascular-cerebral-avc-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "assistencia-perioperatoria-inclui-srpa-lote-01",
+      "slugs": 27,
+      "slugs_with_findings": 26,
+      "total_findings": 40
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 94
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 96
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 88
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-lote-04",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 12
+    },
+    {
+      "lote": "auditoria-e-gestao-da-qualidade-enfermagem-lote-01",
+      "slugs": 47,
+      "slugs_with_findings": 47,
+      "total_findings": 89
+    },
+    {
+      "lote": "biosseg-itu-scan",
+      "slugs": 48,
+      "slugs_with_findings": 48,
+      "total_findings": 82
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-completo",
+      "slugs": 155,
+      "slugs_with_findings": 140,
+      "total_findings": 174
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g01",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g02",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g03",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g04",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 9
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g05",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g06",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g07",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 9
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g08",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g09",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 8
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g10",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 11
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g11",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 6
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-g12-repair",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 55
+    },
+    {
+      "lote": "calculo-de-administracao-de-medicamentos-e-infusoes-lote-02",
+      "slugs": 35,
+      "slugs_with_findings": 34,
+      "total_findings": 34
+    },
+    {
+      "lote": "classes-de-palavras-g02",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "classes-de-palavras-g03",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "classes-de-palavras-g04",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "classes-de-palavras-g05",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "classes-de-palavras-g09",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "classes-de-palavras-g11",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "cme-completo",
+      "slugs": 36,
+      "slugs_with_findings": 35,
+      "total_findings": 120
+    },
+    {
+      "lote": "cme-g01",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 28
+    },
+    {
+      "lote": "cme-g02",
+      "slugs": 11,
+      "slugs_with_findings": 10,
+      "total_findings": 34
+    },
+    {
+      "lote": "cme-g03",
+      "slugs": 4,
+      "slugs_with_findings": 4,
+      "total_findings": 14
+    },
+    {
+      "lote": "cme-g04",
+      "slugs": 6,
+      "slugs_with_findings": 5,
+      "total_findings": 11
+    },
+    {
+      "lote": "cme-g05",
+      "slugs": 9,
+      "slugs_with_findings": 9,
+      "total_findings": 32
+    },
+    {
+      "lote": "coleta-de-exames-laboratoriais-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 99
+    },
+    {
+      "lote": "coleta-de-exames-laboratoriais-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 92
+    },
+    {
+      "lote": "coleta-de-exames-laboratoriais-lote-03",
+      "slugs": 17,
+      "slugs_with_findings": 17,
+      "total_findings": 33
+    },
+    {
+      "lote": "coleta-de-exames-laboratoriais-repair-lote-01",
+      "slugs": 7,
+      "slugs_with_findings": 7,
+      "total_findings": 61
+    },
+    {
+      "lote": "coleta-lote-01",
+      "slugs": 140,
+      "slugs_with_findings": 140,
+      "total_findings": 267
+    },
+    {
+      "lote": "concordancia-verbal-e-nominal-g02",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "concordancia-verbal-e-nominal-g04",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "concordancia-verbal-e-nominal-g05",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "cpcon-intervalos-golden",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 16
+    },
+    {
+      "lote": "cuidados-gerais-com-higiene-e-conforto-do-paciente-lote-01",
+      "slugs": 10,
+      "slugs_with_findings": 10,
+      "total_findings": 19
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-completo",
+      "slugs": 134,
+      "slugs_with_findings": 132,
+      "total_findings": 289
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g01",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 9
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g02",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g03",
+      "slugs": 10,
+      "slugs_with_findings": 9,
+      "total_findings": 20
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g04",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 7
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g05",
+      "slugs": 10,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g06",
+      "slugs": 15,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g07",
+      "slugs": 10,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g08",
+      "slugs": 10,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g10",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g13",
+      "slugs": 6,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-g14",
+      "slugs": 6,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 48,
+      "total_findings": 80
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 88
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-lote-03",
+      "slugs": 25,
+      "slugs_with_findings": 25,
+      "total_findings": 41
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-repair-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 186
+    },
+    {
+      "lote": "cuidados-na-administracao-de-medicamentos-repair-lote-02",
+      "slugs": 16,
+      "slugs_with_findings": 16,
+      "total_findings": 45
+    },
+    {
+      "lote": "cuidados-paliativos-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "slugs": 188,
+      "slugs_with_findings": 183,
+      "total_findings": 1705
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-g01",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 6
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-g02",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-g03",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-g06",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-g08",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-g09",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-g10",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 94
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 95
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-lote-03",
+      "slugs": 39,
+      "slugs_with_findings": 39,
+      "total_findings": 76
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-repair-lote-01",
+      "slugs": 12,
+      "slugs_with_findings": 12,
+      "total_findings": 88
+    },
+    {
+      "lote": "curativos-lote-01",
+      "slugs": 11,
+      "slugs_with_findings": 11,
+      "total_findings": 119
+    },
+    {
+      "lote": "curativos-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 592
+    },
+    {
+      "lote": "curativos-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 592
+    },
+    {
+      "lote": "curativos-lote-04",
+      "slugs": 49,
+      "slugs_with_findings": 49,
+      "total_findings": 553
+    },
+    {
+      "lote": "curativos-lote-05",
+      "slugs": 49,
+      "slugs_with_findings": 49,
+      "total_findings": 587
+    },
+    {
+      "lote": "curativos-lote-06",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 561
+    },
+    {
+      "lote": "curativos-piloto-builder-v2",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 17
+    },
+    {
+      "lote": "denotacao-conotacao-g01",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "denotacao-conotacao-g02",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "denotacao-conotacao-g04",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "dependencia-quimica-lote-01",
+      "slugs": 9,
+      "slugs_with_findings": 9,
+      "total_findings": 16
+    },
+    {
+      "lote": "doencas-autoimunes-e-reumatologicas-lote-01",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 4
+    },
+    {
+      "lote": "doencas-bacterianas-completo",
+      "slugs": 42,
+      "slugs_with_findings": 42,
+      "total_findings": 97
+    },
+    {
+      "lote": "doencas-bacterianas-e-fungicas-lote-01",
+      "slugs": 10,
+      "slugs_with_findings": 10,
+      "total_findings": 19
+    },
+    {
+      "lote": "doencas-bacterianas-e-fungicas-lote-02",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "doencas-bacterianas-e-fungicas-lote-03",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 4
+    },
+    {
+      "lote": "doencas-bacterianas-g01",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 8
+    },
+    {
+      "lote": "doencas-bacterianas-g02",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 8
+    },
+    {
+      "lote": "doencas-bacterianas-g03",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "doencas-bacterianas-g04",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "doencas-bacterianas-g05",
+      "slugs": 5,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "doencas-bacterianas-handcraft-g01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 7
+    },
+    {
+      "lote": "doencas-cardiovasculares-metabolicas-icc-etc-lote-01",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "doencas-cardiovasculares-metabolicas-icc-etc-v2-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "doencas-parasitarias-e-zoonoses-lote-01",
+      "slugs": 34,
+      "slugs_with_findings": 34,
+      "total_findings": 64
+    },
+    {
+      "lote": "doencas-renais-e-hematologicas-cronicas-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "doencas-respiratorias-cronicas-asma-dpoc-lote-01",
+      "slugs": 10,
+      "slugs_with_findings": 10,
+      "total_findings": 65
+    },
+    {
+      "lote": "doencas-virais-interesse-epidemiologico-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 90
+    },
+    {
+      "lote": "doencas-virais-interesse-epidemiologico-lote-02",
+      "slugs": 18,
+      "slugs_with_findings": 18,
+      "total_findings": 36
+    },
+    {
+      "lote": "doencas-virais-label-curto-lote-01",
+      "slugs": 13,
+      "slugs_with_findings": 13,
+      "total_findings": 24
+    },
+    {
+      "lote": "dtrans-mescladas-g02",
+      "slugs": 13,
+      "slugs_with_findings": 5,
+      "total_findings": 13
+    },
+    {
+      "lote": "efeitos-adversos-dos-medicamentos-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "enfermagem-do-trabalho-completo",
+      "slugs": 33,
+      "slugs_with_findings": 24,
+      "total_findings": 37
+    },
+    {
+      "lote": "enfermagem-do-trabalho-g01",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 6
+    },
+    {
+      "lote": "enfermagem-do-trabalho-g02",
+      "slugs": 6,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "enfermagem-do-trabalho-g03",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "enfermagem-do-trabalho-g04",
+      "slugs": 9,
+      "slugs_with_findings": 8,
+      "total_findings": 18
+    },
+    {
+      "lote": "enfermagem-do-trabalho-g05",
+      "slugs": 4,
+      "slugs_with_findings": 3,
+      "total_findings": 5
+    },
+    {
+      "lote": "enfermagem-do-trabalho-lote-01",
+      "slugs": 14,
+      "slugs_with_findings": 14,
+      "total_findings": 25
+    },
+    {
+      "lote": "enfermagem-em-central-de-material-e-esterilizacao-cme-lote-01",
+      "slugs": 13,
+      "slugs_with_findings": 13,
+      "total_findings": 19
+    },
+    {
+      "lote": "enfermagem-em-centro-cirurgico-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 90
+    },
+    {
+      "lote": "enfermagem-em-centro-cirurgico-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 89
+    },
+    {
+      "lote": "enfermagem-em-centro-cirurgico-lote-03",
+      "slugs": 39,
+      "slugs_with_findings": 39,
+      "total_findings": 75
+    },
+    {
+      "lote": "enfermagem-em-oncologia-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "enfermagem-em-uti-lote-01",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 95
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 99
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 96
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-04",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 99
+    },
+    {
+      "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-05",
+      "slugs": 16,
+      "slugs_with_findings": 16,
+      "total_findings": 32
+    },
+    {
+      "lote": "exames-complementares-lote-01",
+      "slugs": 42,
+      "slugs_with_findings": 42,
+      "total_findings": 77
+    },
+    {
+      "lote": "exames-laboratoriais-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 89
+    },
+    {
+      "lote": "exames-laboratoriais-lote-02",
+      "slugs": 17,
+      "slugs_with_findings": 17,
+      "total_findings": 32
+    },
+    {
+      "lote": "farmacodinamica-a4-human",
+      "slugs": 3,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "farmacodinamica-cauda-longa-repair",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 9
+    },
+    {
+      "lote": "farmacodinamica-cauda-longa-repair-g02",
+      "slugs": 7,
+      "slugs_with_findings": 7,
+      "total_findings": 14
+    },
+    {
+      "lote": "farmacodinamica-classify-review",
+      "slugs": 25,
+      "slugs_with_findings": 25,
+      "total_findings": 41
+    },
+    {
+      "lote": "farmacodinamica-e-farmacocinetica-completo",
+      "slugs": 13,
+      "slugs_with_findings": 11,
+      "total_findings": 13
+    },
+    {
+      "lote": "farmacodinamica-e-farmacocinetica-g01",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 7
+    },
+    {
+      "lote": "farmacodinamica-e-farmacocinetica-g02",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 6
+    },
+    {
+      "lote": "farmacodinamica-e-farmacocinetica-lote-01",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "farmacodinamica-idecan-omeprazol-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 5
+    },
+    {
+      "lote": "feridas-e-queimaduras-completo",
+      "slugs": 11,
+      "slugs_with_findings": 4,
+      "total_findings": 5
+    },
+    {
+      "lote": "feridas-e-queimaduras-g01",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "feridas-e-queimaduras-lote-01",
+      "slugs": 9,
+      "slugs_with_findings": 9,
+      "total_findings": 14
+    },
+    {
+      "lote": "golden-curativos-ists",
+      "slugs": 5,
+      "slugs_with_findings": 4,
+      "total_findings": 6
+    },
+    {
+      "lote": "historia-da-enfermagem-lote-01",
+      "slugs": 5,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "historia-enfermagem-completo",
+      "slugs": 20,
+      "slugs_with_findings": 20,
+      "total_findings": 31
+    },
+    {
+      "lote": "historia-enfermagem-g01",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 10
+    },
+    {
+      "lote": "historia-enfermagem-g02",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 16
+    },
+    {
+      "lote": "historia-enfermagem-g03",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "historia-enfermagem-g04",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "historia-enfermagem-ref",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "imunizacao-admtec-adolescente-cartao-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-ai-pilot",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "imunizacao-ameosc-cadeia-frio-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 8
+    },
+    {
+      "lote": "imunizacao-builder-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 151
+    },
+    {
+      "lote": "imunizacao-builder-lote-02",
+      "slugs": 49,
+      "slugs_with_findings": 49,
+      "total_findings": 147
+    },
+    {
+      "lote": "imunizacao-builder-piloto-01",
+      "slugs": 10,
+      "slugs_with_findings": 10,
+      "total_findings": 30
+    },
+    {
+      "lote": "imunizacao-completo",
+      "slugs": 575,
+      "slugs_with_findings": 575,
+      "total_findings": 1916
+    },
+    {
+      "lote": "imunizacao-decorp-triplice-viral-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-exceto-piloto-g01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-g01",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 53
+    },
+    {
+      "lote": "imunizacao-g02",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 54
+    },
+    {
+      "lote": "imunizacao-g03",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 73
+    },
+    {
+      "lote": "imunizacao-g04",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 22
+    },
+    {
+      "lote": "imunizacao-g05",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 61
+    },
+    {
+      "lote": "imunizacao-g06",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 14
+    },
+    {
+      "lote": "imunizacao-g07",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 13
+    },
+    {
+      "lote": "imunizacao-g08",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "imunizacao-g10",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 5
+    },
+    {
+      "lote": "imunizacao-g12",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "imunizacao-g13",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 4
+    },
+    {
+      "lote": "imunizacao-g14",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 7
+    },
+    {
+      "lote": "imunizacao-g16",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 16
+    },
+    {
+      "lote": "imunizacao-g19",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 15
+    },
+    {
+      "lote": "imunizacao-g21",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-g22",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "imunizacao-g23",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 8
+    },
+    {
+      "lote": "imunizacao-g24",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "imunizacao-g25",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-g28",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "imunizacao-g29",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 8
+    },
+    {
+      "lote": "imunizacao-g30",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 6
+    },
+    {
+      "lote": "imunizacao-g34",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 15
+    },
+    {
+      "lote": "imunizacao-g35",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 12
+    },
+    {
+      "lote": "imunizacao-g37",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-g38",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "imunizacao-g41",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-g45",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 4
+    },
+    {
+      "lote": "imunizacao-g48",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 4
+    },
+    {
+      "lote": "imunizacao-g50",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-g51",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 21
+    },
+    {
+      "lote": "imunizacao-g52",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "imunizacao-g53",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "imunizacao-g54",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-g56",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 6
+    },
+    {
+      "lote": "imunizacao-g57",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 12
+    },
+    {
+      "lote": "imunizacao-g58",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 4
+    },
+    {
+      "lote": "imunizacao-g59",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 13
+    },
+    {
+      "lote": "imunizacao-g60",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 13
+    },
+    {
+      "lote": "imunizacao-g61",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 19
+    },
+    {
+      "lote": "imunizacao-g62",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 15
+    },
+    {
+      "lote": "imunizacao-g63",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 18
+    },
+    {
+      "lote": "imunizacao-g64",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 15
+    },
+    {
+      "lote": "imunizacao-g65",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 17
+    },
+    {
+      "lote": "imunizacao-g66",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 13
+    },
+    {
+      "lote": "imunizacao-g67",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 16
+    },
+    {
+      "lote": "imunizacao-g68",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "imunizacao-g69",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 13
+    },
+    {
+      "lote": "imunizacao-g70",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 9
+    },
+    {
+      "lote": "imunizacao-g71",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "imunizacao-g72",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 9
+    },
+    {
+      "lote": "imunizacao-g73",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 10
+    },
+    {
+      "lote": "imunizacao-g74",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "imunizacao-g75",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 13
+    },
+    {
+      "lote": "imunizacao-g76",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 24
+    },
+    {
+      "lote": "imunizacao-g78",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "imunizacao-g79",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 4
+    },
+    {
+      "lote": "imunizacao-g80",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 6
+    },
+    {
+      "lote": "imunizacao-g82",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 8
+    },
+    {
+      "lote": "imunizacao-g83",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "imunizacao-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 154
+    },
+    {
+      "lote": "imunizacao-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 155
+    },
+    {
+      "lote": "imunizacao-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 223
+    },
+    {
+      "lote": "imunizacao-lote-04",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 212
+    },
+    {
+      "lote": "imunizacao-lote-05",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 152
+    },
+    {
+      "lote": "imunizacao-lote-06",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 152
+    },
+    {
+      "lote": "imunizacao-lote-07",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 138
+    },
+    {
+      "lote": "imunizacao-lote-08",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 145
+    },
+    {
+      "lote": "imunizacao-lote-09",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 176
+    },
+    {
+      "lote": "imunizacao-lote-10",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 171
+    },
+    {
+      "lote": "imunizacao-lote-11",
+      "slugs": 25,
+      "slugs_with_findings": 25,
+      "total_findings": 75
+    },
+    {
+      "lote": "imunizacao-repair-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 134
+    },
+    {
+      "lote": "imunizacao-repair-lote-02",
+      "slugs": 25,
+      "slugs_with_findings": 25,
+      "total_findings": 68
+    },
+    {
+      "lote": "infeccoes-biosseguranca-completo",
+      "slugs": 48,
+      "slugs_with_findings": 48,
+      "total_findings": 82
+    },
+    {
+      "lote": "infeccoes-biosseguranca-g01",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 50
+    },
+    {
+      "lote": "infeccoes-biosseguranca-g02",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 49
+    },
+    {
+      "lote": "infeccoes-biosseguranca-g03",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 30
+    },
+    {
+      "lote": "infeccoes-biosseguranca-g04",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 4
+    },
+    {
+      "lote": "infeccoes-no-contexto-da-biosseguranca-lote-01",
+      "slugs": 31,
+      "slugs_with_findings": 31,
+      "total_findings": 61
+    },
+    {
+      "lote": "infeccoes-sexualmente-transmissiveis-ists-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 100
+    },
+    {
+      "lote": "infeccoes-sexualmente-transmissiveis-ists-lote-02",
+      "slugs": 21,
+      "slugs_with_findings": 21,
+      "total_findings": 42
+    },
+    {
+      "lote": "infeccoes-sexualmente-transmissiveis-ists-repair-lote-01",
+      "slugs": 12,
+      "slugs_with_findings": 12,
+      "total_findings": 116
+    },
+    {
+      "lote": "instalacao-e-manejo-de-sondas-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 476
+    },
+    {
+      "lote": "instalacao-e-manejo-de-sondas-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 456
+    },
+    {
+      "lote": "instalacao-e-manejo-de-sondas-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 463
+    },
+    {
+      "lote": "instalacao-e-manejo-de-sondas-lote-04",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 55
+    },
+    {
+      "lote": "instalacao-e-manejo-de-sondas-repair-lote-01",
+      "slugs": 13,
+      "slugs_with_findings": 13,
+      "total_findings": 125
+    },
+    {
+      "lote": "layout-pilot-v2",
+      "slugs": 10,
+      "slugs_with_findings": 10,
+      "total_findings": 21
+    },
+    {
+      "lote": "lingua-portuguesa-g04",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "lingua-portuguesa-g05",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "lingua-portuguesa-g10",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "lingua-portuguesa-g11",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "lingua-portuguesa-g16",
+      "slugs": 7,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "lingua-portuguesa-termos-anchor",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "medidas-de-prevencao-e-precaucao-de-contato-lote-01",
+      "slugs": 12,
+      "slugs_with_findings": 12,
+      "total_findings": 23
+    },
+    {
+      "lote": "mobilizacao-e-posicionamento-do-paciente-lote-01",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 12
+    },
+    {
+      "lote": "neoplasias-e-cancer-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "nocoes-de-anatomia-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 35,
+      "total_findings": 43
+    },
+    {
+      "lote": "nocoes-de-anatomia-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 41,
+      "total_findings": 43
+    },
+    {
+      "lote": "nocoes-de-fisiologia-lote-01",
+      "slugs": 49,
+      "slugs_with_findings": 49,
+      "total_findings": 91
+    },
+    {
+      "lote": "nocoes-de-fisiologia-lote-02",
+      "slugs": 49,
+      "slugs_with_findings": 49,
+      "total_findings": 94
+    },
+    {
+      "lote": "nocoes-de-fisiologia-lote-03",
+      "slugs": 12,
+      "slugs_with_findings": 11,
+      "total_findings": 20
+    },
+    {
+      "lote": "nutricao-aplicada-a-enfermagem-lote-01",
+      "slugs": 47,
+      "slugs_with_findings": 46,
+      "total_findings": 87
+    },
+    {
+      "lote": "oracoes-coordenadas-e-subordinadas-g01",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "oracoes-coordenadas-e-subordinadas-g02",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "outras-doencas-e-questoes-mescladas-transmissiveis-lote-01",
+      "slugs": 16,
+      "slugs_with_findings": 16,
+      "total_findings": 31
+    },
+    {
+      "lote": "outras-questoes-mescladas-doencas-cronicas-nao-transmissiveis-lote-01",
+      "slugs": 4,
+      "slugs_with_findings": 4,
+      "total_findings": 7
+    },
+    {
+      "lote": "outros-temas-de-enfermagem-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "oxigeno-preview",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-04",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "perioperatoria-completo",
+      "slugs": 69,
+      "slugs_with_findings": 68,
+      "total_findings": 170
+    },
+    {
+      "lote": "perioperatoria-g01",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 8
+    },
+    {
+      "lote": "perioperatoria-g02",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "perioperatoria-g03",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 5
+    },
+    {
+      "lote": "perioperatoria-g04",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "perioperatoria-g05",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 16
+    },
+    {
+      "lote": "perioperatoria-g06",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "perioperatoria-g07",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "perioperatoria-g08",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "perioperatoria-g09",
+      "slugs": 4,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "pilot-goldens",
+      "slugs": 19,
+      "slugs_with_findings": 12,
+      "total_findings": 54
+    },
+    {
+      "lote": "pontuacao-g03",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "pontuacao-g04",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "procedimentos-diversos-lote-01",
+      "slugs": 14,
+      "slugs_with_findings": 14,
+      "total_findings": 26
+    },
+    {
+      "lote": "procedimentos-label-legado-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "processamento-completo",
+      "slugs": 18,
+      "slugs_with_findings": 11,
+      "total_findings": 18
+    },
+    {
+      "lote": "processamento-de-artigos-e-produtos-de-saude-lote-01",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 4
+    },
+    {
+      "lote": "processamento-g01",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 7
+    },
+    {
+      "lote": "processamento-g02",
+      "slugs": 10,
+      "slugs_with_findings": 7,
+      "total_findings": 11
+    },
+    {
+      "lote": "processo-de-enfermagem-completo",
+      "slugs": 286,
+      "slugs_with_findings": 285,
+      "total_findings": 393
+    },
+    {
+      "lote": "processo-de-enfermagem-g06",
+      "slugs": 12,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 52
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-04",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 53
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-05",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-06",
+      "slugs": 50,
+      "slugs_with_findings": 45,
+      "total_findings": 45
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-07",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 51
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-08",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 51
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-09",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-10",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 52
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-11",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 54
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-12",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 51
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-13",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 51
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-14",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 51
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-15",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-16",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 53
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-17",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 52
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-18",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 54
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-19",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 51
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-20",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-21",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "processo-de-enfermagem-lote-22",
+      "slugs": 15,
+      "slugs_with_findings": 15,
+      "total_findings": 15
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-completo",
+      "slugs": 111,
+      "slugs_with_findings": 102,
+      "total_findings": 213
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g01",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 5
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g02",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g04",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g06",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g08",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g09",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g11",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-g12",
+      "slugs": 13,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 48,
+      "total_findings": 91
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 95
+    },
+    {
+      "lote": "promocao-a-saude-e-prevencao-de-agravos-lote-03",
+      "slugs": 30,
+      "slugs_with_findings": 30,
+      "total_findings": 58
+    },
+    {
+      "lote": "protocolos-e-diretrizes-do-ministerio-da-saude-lote-01",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "puncao-builder-lote-04",
+      "slugs": 110,
+      "slugs_with_findings": 110,
+      "total_findings": 816
+    },
+    {
+      "lote": "puncao-builder-pilot",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 42
+    },
+    {
+      "lote": "puncao-fix-14",
+      "slugs": 14,
+      "slugs_with_findings": 14,
+      "total_findings": 39
+    },
+    {
+      "lote": "puncao-preview",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "puncao-titulo-cleanup-20",
+      "slugs": 19,
+      "slugs_with_findings": 19,
+      "total_findings": 144
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-completo",
+      "slugs": 108,
+      "slugs_with_findings": 32,
+      "total_findings": 49
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g01",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g03",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g05",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g07",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g08",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g09",
+      "slugs": 3,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g10",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g12",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g13",
+      "slugs": 7,
+      "slugs_with_findings": 6,
+      "total_findings": 12
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g14",
+      "slugs": 11,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-g15",
+      "slugs": 10,
+      "slugs_with_findings": 4,
+      "total_findings": 13
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 88
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 91
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-lote-03",
+      "slugs": 10,
+      "slugs_with_findings": 10,
+      "total_findings": 19
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 7
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-02-exceto",
+      "slugs": 12,
+      "slugs_with_findings": 12,
+      "total_findings": 79
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-03-flebite",
+      "slugs": 19,
+      "slugs_with_findings": 19,
+      "total_findings": 115
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-04-dispositivo",
+      "slugs": 11,
+      "slugs_with_findings": 11,
+      "total_findings": 82
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-05-tempo",
+      "slugs": 11,
+      "slugs_with_findings": 11,
+      "total_findings": 91
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-06-periferica",
+      "slugs": 16,
+      "slugs_with_findings": 16,
+      "total_findings": 164
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-07-default",
+      "slugs": 12,
+      "slugs_with_findings": 12,
+      "total_findings": 92
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-08-drift",
+      "slugs": 21,
+      "slugs_with_findings": 21,
+      "total_findings": 181
+    },
+    {
+      "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-09-tail",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 27
+    },
+    {
+      "lote": "questoes-mescladas-e-outras-doencas-agudas-lote-01",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 4
+    },
+    {
+      "lote": "respiratorio-cronico-completo",
+      "slugs": 9,
+      "slugs_with_findings": 8,
+      "total_findings": 16
+    },
+    {
+      "lote": "respiratorio-cronico-g01",
+      "slugs": 9,
+      "slugs_with_findings": 9,
+      "total_findings": 18
+    },
+    {
+      "lote": "respiratorio-cronico-micro-01-goldens",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "respiratorio-cronico-repair-l3-g01",
+      "slugs": 9,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-adolescente-completo",
+      "slugs": 16,
+      "slugs_with_findings": 16,
+      "total_findings": 41
+    },
+    {
+      "lote": "saude-adolescente-g01",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 24
+    },
+    {
+      "lote": "saude-adolescente-g02",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 13
+    },
+    {
+      "lote": "saude-da-crianca-completo",
+      "slugs": 62,
+      "slugs_with_findings": 61,
+      "total_findings": 121
+    },
+    {
+      "lote": "saude-da-crianca-g01",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-crianca-g05",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "saude-da-crianca-lote-01",
+      "slugs": 19,
+      "slugs_with_findings": 19,
+      "total_findings": 36
+    },
+    {
+      "lote": "saude-da-mulher-completo",
+      "slugs": 264,
+      "slugs_with_findings": 261,
+      "total_findings": 546
+    },
+    {
+      "lote": "saude-da-mulher-g01",
+      "slugs": 4,
+      "slugs_with_findings": 3,
+      "total_findings": 4
+    },
+    {
+      "lote": "saude-da-mulher-g03",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-g04",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "saude-da-mulher-g06",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "saude-da-mulher-g07",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "saude-da-mulher-g09",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "saude-da-mulher-g10",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "saude-da-mulher-g11",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "saude-da-mulher-g12",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 8
+    },
+    {
+      "lote": "saude-da-mulher-g14",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-g15",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 4
+    },
+    {
+      "lote": "saude-da-mulher-g16",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-g17",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 4
+    },
+    {
+      "lote": "saude-da-mulher-g18",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 4
+    },
+    {
+      "lote": "saude-da-mulher-g19",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-g20",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 10
+    },
+    {
+      "lote": "saude-da-mulher-g21",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-g22",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-g23",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "saude-da-mulher-g25",
+      "slugs": 14,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-g27",
+      "slugs": 7,
+      "slugs_with_findings": 2,
+      "total_findings": 5
+    },
+    {
+      "lote": "saude-da-mulher-g28",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 5
+    },
+    {
+      "lote": "saude-da-mulher-g30",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-g31",
+      "slugs": 3,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "saude-da-mulher-g32",
+      "slugs": 4,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "saude-da-mulher-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 47,
+      "total_findings": 87
+    },
+    {
+      "lote": "saude-da-mulher-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 97
+    },
+    {
+      "lote": "saude-da-mulher-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 88
+    },
+    {
+      "lote": "saude-da-mulher-lote-04",
+      "slugs": 34,
+      "slugs_with_findings": 34,
+      "total_findings": 66
+    },
+    {
+      "lote": "saude-da-mulher-repair-lote-01",
+      "slugs": 46,
+      "slugs_with_findings": 46,
+      "total_findings": 125
+    },
+    {
+      "lote": "saude-do-adolescente-lote-01",
+      "slugs": 11,
+      "slugs_with_findings": 11,
+      "total_findings": 21
+    },
+    {
+      "lote": "saude-do-homem-lote-01",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 4
+    },
+    {
+      "lote": "saude-do-idoso-lote-01",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 14
+    },
+    {
+      "lote": "saude-mental-completo",
+      "slugs": 37,
+      "slugs_with_findings": 37,
+      "total_findings": 106
+    },
+    {
+      "lote": "saude-mental-lote-01",
+      "slugs": 4,
+      "slugs_with_findings": 4,
+      "total_findings": 8
+    },
+    {
+      "lote": "saude-mental-micro-01-goldens",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 13
+    },
+    {
+      "lote": "saude-mental-micro-01-raps",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 12
+    },
+    {
+      "lote": "saude-mental-micro-02-dependencia",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 22
+    },
+    {
+      "lote": "saude-mental-micro-02-goldens",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 31
+    },
+    {
+      "lote": "saude-mental-micro-03-goldens",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 6
+    },
+    {
+      "lote": "saude-mental-micro-03-reducao-danos",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 5
+    },
+    {
+      "lote": "saude-mental-micro-04-crise",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 14
+    },
+    {
+      "lote": "saude-mental-micro-04-goldens",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 12
+    },
+    {
+      "lote": "saude-mental-micro-05-aps",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 15
+    },
+    {
+      "lote": "saude-mental-micro-05-goldens",
+      "slugs": 5,
+      "slugs_with_findings": 5,
+      "total_findings": 10
+    },
+    {
+      "lote": "saude-mental-micro-06-depressao",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 17
+    },
+    {
+      "lote": "saude-mental-micro-06-goldens",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 14
+    },
+    {
+      "lote": "saude-mental-micro-07-goldens",
+      "slugs": 7,
+      "slugs_with_findings": 7,
+      "total_findings": 20
+    },
+    {
+      "lote": "seguranca-do-paciente-completo",
+      "slugs": 76,
+      "slugs_with_findings": 76,
+      "total_findings": 124
+    },
+    {
+      "lote": "seguranca-do-paciente-g01",
+      "slugs": 7,
+      "slugs_with_findings": 2,
+      "total_findings": 5
+    },
+    {
+      "lote": "seguranca-do-paciente-g02",
+      "slugs": 11,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "seguranca-do-paciente-g03",
+      "slugs": 9,
+      "slugs_with_findings": 3,
+      "total_findings": 9
+    },
+    {
+      "lote": "seguranca-do-paciente-g04",
+      "slugs": 32,
+      "slugs_with_findings": 4,
+      "total_findings": 5
+    },
+    {
+      "lote": "seguranca-do-paciente-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 90
+    },
+    {
+      "lote": "seguranca-do-paciente-lote-02",
+      "slugs": 48,
+      "slugs_with_findings": 48,
+      "total_findings": 85
+    },
+    {
+      "lote": "semiologia-em-enfermagem-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 91
+    },
+    {
+      "lote": "semiologia-em-enfermagem-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 90
+    },
+    {
+      "lote": "semiologia-em-enfermagem-lote-03",
+      "slugs": 23,
+      "slugs_with_findings": 23,
+      "total_findings": 43
+    },
+    {
+      "lote": "sinais-builder-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 42,
+      "total_findings": 400
+    },
+    {
+      "lote": "sinais-builder-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 47,
+      "total_findings": 415
+    },
+    {
+      "lote": "sinais-builder-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 47,
+      "total_findings": 464
+    },
+    {
+      "lote": "sinais-builder-lote-04",
+      "slugs": 50,
+      "slugs_with_findings": 40,
+      "total_findings": 418
+    },
+    {
+      "lote": "sinais-builder-lote-05",
+      "slugs": 50,
+      "slugs_with_findings": 44,
+      "total_findings": 404
+    },
+    {
+      "lote": "sinais-builder-lote-06",
+      "slugs": 50,
+      "slugs_with_findings": 47,
+      "total_findings": 434
+    },
+    {
+      "lote": "sinais-builder-lote-07",
+      "slugs": 50,
+      "slugs_with_findings": 44,
+      "total_findings": 458
+    },
+    {
+      "lote": "sinais-builder-lote-08",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 75
+    },
+    {
+      "lote": "sinais-builder-piloto",
+      "slugs": 5,
+      "slugs_with_findings": 4,
+      "total_findings": 28
+    },
+    {
+      "lote": "sinais-vitais-completo",
+      "slugs": 527,
+      "slugs_with_findings": 494,
+      "total_findings": 3681
+    },
+    {
+      "lote": "sinais-vitais-exceto-piloto-g01",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 9
+    },
+    {
+      "lote": "sinais-vitais-g01",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 16
+    },
+    {
+      "lote": "sinais-vitais-g02",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "sinais-vitais-g03",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "sinais-vitais-g04",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 9
+    },
+    {
+      "lote": "sinais-vitais-g05",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "sinais-vitais-g06",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 6
+    },
+    {
+      "lote": "sinais-vitais-g07",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "sinais-vitais-g08",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 7
+    },
+    {
+      "lote": "sinais-vitais-g09",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "sinais-vitais-g10",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 7
+    },
+    {
+      "lote": "sinais-vitais-g11",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 7
+    },
+    {
+      "lote": "sinais-vitais-g12",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 18
+    },
+    {
+      "lote": "sinais-vitais-g13",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "sinais-vitais-g14",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 19
+    },
+    {
+      "lote": "sinais-vitais-g15",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 18
+    },
+    {
+      "lote": "sinais-vitais-g16",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 24
+    },
+    {
+      "lote": "sinais-vitais-g17",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 21
+    },
+    {
+      "lote": "sinais-vitais-g18",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 15
+    },
+    {
+      "lote": "sinais-vitais-g19",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 25
+    },
+    {
+      "lote": "sinais-vitais-g20",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 28
+    },
+    {
+      "lote": "sinais-vitais-g21",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 12
+    },
+    {
+      "lote": "sinais-vitais-g22",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 20
+    },
+    {
+      "lote": "sinais-vitais-g23",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 16
+    },
+    {
+      "lote": "sinais-vitais-g24",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 23
+    },
+    {
+      "lote": "sinais-vitais-g25",
+      "slugs": 4,
+      "slugs_with_findings": 4,
+      "total_findings": 16
+    },
+    {
+      "lote": "sinais-vitais-g26",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 10
+    },
+    {
+      "lote": "sinais-vitais-g27",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 11
+    },
+    {
+      "lote": "sinais-vitais-g28",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 18
+    },
+    {
+      "lote": "sinais-vitais-g29",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 18
+    },
+    {
+      "lote": "sinais-vitais-g30",
+      "slugs": 7,
+      "slugs_with_findings": 5,
+      "total_findings": 13
+    },
+    {
+      "lote": "sinais-vitais-g31",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 17
+    },
+    {
+      "lote": "sinais-vitais-g32",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 16
+    },
+    {
+      "lote": "sinais-vitais-g33",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 44
+    },
+    {
+      "lote": "sinais-vitais-g34",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 28
+    },
+    {
+      "lote": "sinais-vitais-g35",
+      "slugs": 3,
+      "slugs_with_findings": 3,
+      "total_findings": 16
+    },
+    {
+      "lote": "sinais-vitais-g36",
+      "slugs": 9,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "sinais-vitais-g37",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 12
+    },
+    {
+      "lote": "sinais-vitais-g38",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 12
+    },
+    {
+      "lote": "sinais-vitais-g40",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "sinais-vitais-g41",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 8
+    },
+    {
+      "lote": "sinais-vitais-g42",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 11
+    },
+    {
+      "lote": "sinais-vitais-g43",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 4
+    },
+    {
+      "lote": "sinais-vitais-g44",
+      "slugs": 5,
+      "slugs_with_findings": 4,
+      "total_findings": 10
+    },
+    {
+      "lote": "sinais-vitais-g45",
+      "slugs": 5,
+      "slugs_with_findings": 4,
+      "total_findings": 6
+    },
+    {
+      "lote": "sinais-vitais-g46",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 8
+    },
+    {
+      "lote": "sinais-vitais-g47",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "sinais-vitais-g48",
+      "slugs": 4,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "sinais-vitais-g49",
+      "slugs": 3,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "sinonimos-antonimos-e-polissemia-g01",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "sinonimos-antonimos-e-polissemia-g02",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 7
+    },
+    {
+      "lote": "sinonimos-antonimos-e-polissemia-g03",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "sinonimos-antonimos-e-polissemia-g04",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "sinonimos-antonimos-e-polissemia-g05",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "sinonimos-antonimos-e-polissemia-g06",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 7
+    },
+    {
+      "lote": "sinonimos-antonimos-e-polissemia-g07",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "sinonimos-antonimos-e-polissemia-g08",
+      "slugs": 7,
+      "slugs_with_findings": 2,
+      "total_findings": 6
+    },
+    {
+      "lote": "sondas-lote-01",
+      "slugs": 48,
+      "slugs_with_findings": 48,
+      "total_findings": 480
+    },
+    {
+      "lote": "taxonomy-agent-deep",
+      "slugs": 116,
+      "slugs_with_findings": 116,
+      "total_findings": 201
+    },
+    {
+      "lote": "taxonomy-agent-pending",
+      "slugs": 165,
+      "slugs_with_findings": 165,
+      "total_findings": 294
+    },
+    {
+      "lote": "taxonomy-edge-final",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 8
+    },
+    {
+      "lote": "teorias-em-enfermagem-lote-01",
+      "slugs": 13,
+      "slugs_with_findings": 13,
+      "total_findings": 24
+    },
+    {
+      "lote": "termos-oracao-g03",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "termos-oracao-g04",
+      "slugs": 7,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "urgencias-admtec-rcp-aha2020-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-ameosc-queimadura-vf-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "urgencias-ameosc-vf-imobilizacao-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 4
+    },
+    {
+      "lote": "urgencias-cpcon-anafilaxia-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-e-emergencias-completo",
+      "slugs": 349,
+      "slugs_with_findings": 345,
+      "total_findings": 2055
+    },
+    {
+      "lote": "urgencias-e-emergencias-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 52
+    },
+    {
+      "lote": "urgencias-e-emergencias-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "urgencias-e-emergencias-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 51
+    },
+    {
+      "lote": "urgencias-e-emergencias-lote-04",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "urgencias-e-emergencias-lote-05",
+      "slugs": 23,
+      "slugs_with_findings": 23,
+      "total_findings": 23
+    },
+    {
+      "lote": "urgencias-e-emergencias-repair-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 418
+    },
+    {
+      "lote": "urgencias-e-emergencias-repair-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 442
+    },
+    {
+      "lote": "urgencias-e-emergencias-repair-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 378
+    },
+    {
+      "lote": "urgencias-e-emergencias-repair-lote-04",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 326
+    },
+    {
+      "lote": "urgencias-e-emergencias-repair-lote-05",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 351
+    },
+    {
+      "lote": "urgencias-e-emergencias-repair-lote-06",
+      "slugs": 6,
+      "slugs_with_findings": 6,
+      "total_findings": 57
+    },
+    {
+      "lote": "urgencias-g01",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 11
+    },
+    {
+      "lote": "urgencias-g02",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 5
+    },
+    {
+      "lote": "urgencias-g03",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 5
+    },
+    {
+      "lote": "urgencias-g04",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g05",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "urgencias-g07",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "urgencias-g08",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 8
+    },
+    {
+      "lote": "urgencias-g09",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g11",
+      "slugs": 8,
+      "slugs_with_findings": 7,
+      "total_findings": 16
+    },
+    {
+      "lote": "urgencias-g12",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "urgencias-g15",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "urgencias-g16",
+      "slugs": 6,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g17",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g18",
+      "slugs": 6,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g19",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "urgencias-g24",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g25",
+      "slugs": 2,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "urgencias-g26",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 24
+    },
+    {
+      "lote": "urgencias-g27",
+      "slugs": 7,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g28",
+      "slugs": 4,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g30",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g31",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "urgencias-g32",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "urgencias-g33",
+      "slugs": 7,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g34",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g35",
+      "slugs": 7,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g36",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "urgencias-g38",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 7
+    },
+    {
+      "lote": "urgencias-g39",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 6
+    },
+    {
+      "lote": "urgencias-g40",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 9
+    },
+    {
+      "lote": "urgencias-g41",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 7
+    },
+    {
+      "lote": "urgencias-g43",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g44",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 7
+    },
+    {
+      "lote": "urgencias-g45",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g46",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-g47",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "urgencias-supabase-l3-sync-repair",
+      "slugs": 6,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "verbos-tempos-modos-e-vozes-g05",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 48,
+      "total_findings": 48
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 49
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 49
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-lote-04",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 49
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-lote-05",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 51
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-lote-06",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 50
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-lote-07",
+      "slugs": 50,
+      "slugs_with_findings": 49,
+      "total_findings": 49
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-lote-08",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 8
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-repair-lote-01",
+      "slugs": 45,
+      "slugs_with_findings": 37,
+      "total_findings": 283
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-repair-lote-02",
+      "slugs": 36,
+      "slugs_with_findings": 33,
+      "total_findings": 230
+    },
+    {
+      "lote": "verificacao-de-sinais-vitais-repair-lote-03",
+      "slugs": 12,
+      "slugs_with_findings": 10,
+      "total_findings": 79
+    },
+    {
+      "lote": "vias-de-administracao-completo",
+      "slugs": 235,
+      "slugs_with_findings": 229,
+      "total_findings": 2196
+    },
+    {
+      "lote": "vias-de-administracao-consulpam-repair",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 5
+    },
+    {
+      "lote": "vias-de-administracao-g01",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "vias-de-administracao-g02",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 15
+    },
+    {
+      "lote": "vias-de-administracao-g03",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 12
+    },
+    {
+      "lote": "vias-de-administracao-g04",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "vias-de-administracao-g05",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 18
+    },
+    {
+      "lote": "vias-de-administracao-g06",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 6
+    },
+    {
+      "lote": "vias-de-administracao-g07",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 10
+    },
+    {
+      "lote": "vias-de-administracao-g08",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 9
+    },
+    {
+      "lote": "vias-de-administracao-g09",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 5
+    },
+    {
+      "lote": "vias-de-administracao-g10",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "vias-de-administracao-g11",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "vias-de-administracao-g12",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 18
+    },
+    {
+      "lote": "vias-de-administracao-g13",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "vias-de-administracao-g14",
+      "slugs": 8,
+      "slugs_with_findings": 3,
+      "total_findings": 3
+    },
+    {
+      "lote": "vias-de-administracao-g15",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 2
+    },
+    {
+      "lote": "vias-de-administracao-g16",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 2
+    },
+    {
+      "lote": "vias-de-administracao-g17",
+      "slugs": 8,
+      "slugs_with_findings": 1,
+      "total_findings": 1
+    },
+    {
+      "lote": "vias-de-administracao-g18",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 3
+    },
+    {
+      "lote": "vias-de-administracao-g19",
+      "slugs": 8,
+      "slugs_with_findings": 6,
+      "total_findings": 19
+    },
+    {
+      "lote": "vias-de-administracao-g20",
+      "slugs": 8,
+      "slugs_with_findings": 8,
+      "total_findings": 41
+    },
+    {
+      "lote": "vias-de-administracao-g21",
+      "slugs": 8,
+      "slugs_with_findings": 5,
+      "total_findings": 15
+    },
+    {
+      "lote": "vias-de-administracao-g23",
+      "slugs": 8,
+      "slugs_with_findings": 2,
+      "total_findings": 12
+    },
+    {
+      "lote": "vias-de-administracao-g24",
+      "slugs": 8,
+      "slugs_with_findings": 4,
+      "total_findings": 4
+    },
+    {
+      "lote": "vias-de-administracao-lote-01",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 421
+    },
+    {
+      "lote": "vias-de-administracao-lote-02",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 515
+    },
+    {
+      "lote": "vias-de-administracao-lote-03",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 481
+    },
+    {
+      "lote": "vias-de-administracao-lote-04",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 361
+    },
+    {
+      "lote": "vias-de-administracao-lote-05",
+      "slugs": 50,
+      "slugs_with_findings": 50,
+      "total_findings": 421
+    },
+    {
+      "lote": "vias-de-administracao-lote-06",
+      "slugs": 1,
+      "slugs_with_findings": 1,
+      "total_findings": 9
+    },
+    {
+      "lote": "vias-de-administracao-repair-lote-01",
+      "slugs": 19,
+      "slugs_with_findings": 19,
+      "total_findings": 184
+    },
+    {
+      "lote": "visual-preview-10",
+      "slugs": 10,
+      "slugs_with_findings": 10,
+      "total_findings": 22
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "epi_generico": {
+    "pedagogical_branch": "epi_generico",
+    "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+    "lote": "epidemiologia-e-vigilancia-epidemiologica-g01",
+    "json_path": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-g01/questions/adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2.json"
+  },
+  "epi_vigilancia_acoes": {
+    "pedagogical_branch": "epi_vigilancia_acoes",
+    "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+    "lote": "epidemiologia-e-vigilancia-epidemiologica-g01",
+    "json_path": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-g01/questions/adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3.json"
+  },
+  "epi_notificacao_compulsoria": {
+    "pedagogical_branch": "epi_notificacao_compulsoria",
+    "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+    "lote": "epidemiologia-e-vigilancia-epidemiologica-g01",
+    "json_path": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-g01/questions/adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5.json"
+  },
+  "epi_indicadores": {
+    "pedagogical_branch": "epi_indicadores",
+    "slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+    "lote": "epidemiologia-e-vigilancia-epidemiologica-g01",
+    "json_path": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-g01/questions/adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6.json"
+  },
+  "epi_ocorrencia_agravos": {
+    "pedagogical_branch": "epi_ocorrencia_agravos",
+    "slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+    "lote": "epidemiologia-e-vigilancia-epidemiologica-g01",
+    "json_path": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-g01/questions/amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3.json"
+  },
+  "epi_cadeia_transmissao": {
+    "pedagogical_branch": "epi_cadeia_transmissao",
+    "slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+    "lote": "epidemiologia-e-vigilancia-epidemiologica-g02",
+    "json_path": "data/catalog-migration/epidemiologia-e-vigilancia-epidemiologica-g02/questions/ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6.json"
+  }
+}

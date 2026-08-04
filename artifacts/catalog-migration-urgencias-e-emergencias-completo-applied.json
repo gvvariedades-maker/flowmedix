@@ -1,0 +1,2456 @@
+{
+  "generated_at": "2026-08-03T21:40:56.115Z",
+  "lote": "urgencias-e-emergencias-completo",
+  "mode": "apply",
+  "total_files": 349,
+  "ok": 349,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+    "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+    "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+    "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+    "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+    "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+    "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+    "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+    "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+    "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+    "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+    "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+    "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+    "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+    "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+    "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+    "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+    "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+    "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+    "facet-geral-urgencias-e-emergencias-1777103976379-4",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-9",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+    "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+    "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-0",
+    "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5",
+    "funcern-enfermagem-exames-laboratoriais-1779563631609-6",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+    "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+    "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+    "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-3",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-9",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-0",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-3",
+    "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+    "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+    "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+    "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+    "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+    "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+    "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2",
+    "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+    "ibade-enfermagem-processo-de-enfermagem-1780005137458-2",
+    "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+    "ibam-enfermagem-semiologia-em-enfermagem-1779563495719-1",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+    "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7",
+    "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-8",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+    "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+    "icece-enfermagem-urgencias-e-emergencias-1780001297464-0",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+    "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+    "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+    "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+    "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+    "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+    "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+    "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011879977-1",
+    "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-2",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-4",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-5",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-6",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-2",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-4",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-6",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-7",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-8",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-9",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-0",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-7",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-8",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-0",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+    "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-3",
+    "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-8",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-2",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-6",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-8",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-0",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-2",
+    "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+    "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006962671-9",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+    "instituto-consulpam-enfermagem-semiologia-em-enfermagem-1779563521756-1",
+    "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-0",
+    "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-1",
+    "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-1",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104056718-5",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-5",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-6",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-7",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-8",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-3",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-4",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-5",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-6",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-7",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-8",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-3",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-4",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-5",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6",
+    "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+    "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+    "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+    "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+    "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563531989-5",
+    "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+    "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104048047-9",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104056718-2",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-8",
+    "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-0",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-6",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-7",
+    "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-8",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-7",
+    "ms-sarmento-enfermagem-vias-de-administracao-1778968646731-7",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-3",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+    "quadrix-enfermagem-semiologia-em-enfermagem-1779563537258-8",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-7",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-8",
+    "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+    "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-5",
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-5",
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-6",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-1",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-2",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-3",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-5",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-6",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-1",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-2",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-3",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+    "unesc-enfermagem-urgencias-e-emergencias-1780001220945-6",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+    "unifil-enfermagem-urgencias-e-emergencias-1777104012755-2",
+    "unifil-enfermagem-urgencias-e-emergencias-1777104012755-3",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+    "vunesp-enfermagem-exames-complementares-1779424094915-0",
+    "vunesp-enfermagem-exames-complementares-1779563685104-0",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-8",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-exames-laboratoriais-1779563631609-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-semiologia-em-enfermagem-1779563495719-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-urgencias-e-emergencias-1780001297464-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-semiologia-em-enfermagem-1779563486900-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006962671-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-semiologia-em-enfermagem-1779563521756-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104056718-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563531989-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-urgencias-e-emergencias-1777104077075-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-vias-de-administracao-1778968646731-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-semiologia-em-enfermagem-1779563537258-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1777103988389-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-urgencias-e-emergencias-1780001220945-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-urgencias-e-emergencias-1780001220945-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-urgencias-e-emergencias-1777104012755-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779563685104-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

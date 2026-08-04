@@ -112,7 +112,7 @@
         },
         {
           "label": "Infiltração",
-          "detail": "Solução medicamentosa fora do vaso, no subcutâneo — mecanismo descrito no enunciado (gabarito E).",
+          "detail": "Solução medicamentosa fora do vaso, no subcutâneo — mecanismo descrito no enunciado.",
           "icon": "Droplets"
         },
         {
@@ -129,11 +129,6 @@
           "label": "Esclerose / abscesso",
           "detail": "Esclerose = irritação química crônica da veia; abscesso = coleção purulenta — não batem com o mecanismo imediato do enunciado.",
           "icon": "Shield"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra E — Infiltração: passagem do líquido infundido para o tecido subcutâneo.",
-          "icon": "Target"
         }
       ],
       "footer_rule": "Infiltração = solução fora da veia; flebite = inflamação do trajeto venoso."
@@ -183,12 +178,6 @@
           "value": "Infecção com coleção purulenta — não é a definição imediata de líquido no subcutâneo.",
           "emphasis": "default",
           "badge": "info"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Letra E",
-          "emphasis": "highlight",
-          "badge": "hot"
         }
       ],
       "footer_rule": "A banca confunde infiltração (líquido no subcutâneo) com flebite (inflamação da veia)."

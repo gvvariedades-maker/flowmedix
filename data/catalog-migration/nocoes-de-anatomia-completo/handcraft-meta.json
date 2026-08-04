@@ -1,0 +1,15 @@
+{
+  "subtopico": "Noções de Anatomia",
+  "trilho": "A",
+  "total_slugs": 46,
+  "lote_size": 8,
+  "lote_pattern": "nocoes-de-anatomia-g{NN}",
+  "anchor_glob": "examples/questao-premium-*-anatomia*.json,examples/questao-premium-*-nocoes-de-anatomia*.json",
+  "guideline": "lib/guidelines/anatomiaBasica.ts",
+  "taxonomy": {
+    "status": "open",
+    "closed_at": null,
+    "manifest_slugs": 46
+  },
+  "nota_manifest": "Authority G0.4 filtrada: 46 slugs (2026-08-03)."
+}

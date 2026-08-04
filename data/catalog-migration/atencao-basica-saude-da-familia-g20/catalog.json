@@ -1,0 +1,3507 @@
+{
+  "exported_at": "2026-08-03T20:16:22.442Z",
+  "lote": "atencao-basica-saude-da-familia-g20",
+  "total": 500,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1865
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1904
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-2",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1905
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1906
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1907
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1956
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1957
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1958
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2933
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2937
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2814
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3395
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3396
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3416
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3417
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3314
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3226
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 824
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3687
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3740
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-6",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 4034
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2691
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-9",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2692
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775448586547-3",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 112
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775501962697-2",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 157
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 573
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-0",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 584
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-3",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2712
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2713
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-3",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 217
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 218
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-4",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 234
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-5",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 235
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3533
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3534
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3535
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3536
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3575
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3576
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2345
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1387
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104306781-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1397
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1413
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1497
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 648
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3089
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3092
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3142
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1159
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1160
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1161
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1162
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1163
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2426
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2427
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 428
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-exames-laboratoriais-1779563631609-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3266
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779563975447-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3680
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3870
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3871
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3873
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 95
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1775448586547-2",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 111
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1776056116422-1",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 224
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1776056116422-2",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 225
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-2",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2753
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2755
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3613
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3614
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 1396
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 1345
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2581
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2584
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968768987-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2040
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2042
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3337
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3363
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056265348-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 295
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-3",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 299
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-4",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 300
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-5",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 301
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-0",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1133
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3392
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3510
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3264
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3265
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779563975447-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3677
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564006577-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3718
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564109452-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3866
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4008
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4009
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-6",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 480
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 481
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-instalacao-e-manejo-de-sondas-1777102983353-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 768
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 99
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-6",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 693
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 767
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-8",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2750
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-8",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2777
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4128
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4129
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4130
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4131
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4132
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4133
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4134
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4135
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4136
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4137
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4138
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4139
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4140
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4141
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-8",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4142
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4143
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4255
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4256
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4257
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4258
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4259
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-9",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4260
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4261
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-1",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4262
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4263
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4264
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4265
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4533
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4534
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4535
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4536
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-8",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4537
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4538
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4539
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4540
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4541
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4542
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4543
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4544
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4545
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4673
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4674
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4675
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4676
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-9",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4677
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2895
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2911
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1381
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1382
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1383
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1384
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1346
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-6",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1347
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-seguranca-do-paciente-1779563443877-6",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3053
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3117
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344189558-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2631
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344196733-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2634
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2641
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056348175-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 367
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 397
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 401
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968768987-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2039
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2082
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2083
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2086
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 2087
+    },
+    {
+      "modulo_slug": "amauc-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056274291-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 302
+    },
+    {
+      "modulo_slug": "amauc-geral-doencas-parasitarias-e-zoonoses-1777103604185-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 992
+    },
+    {
+      "modulo_slug": "amauc-geral-doencas-virais-de-interesse-epidemiologico-1777103604185-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 994
+    },
+    {
+      "modulo_slug": "amauc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103604185-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 993
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1820
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1821
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1822
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1863
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1864
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1873
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1874
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1875
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1877
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1878
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1881
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1882
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2935
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2938
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2939
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2949
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-1",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2957
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2958
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2959
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2960
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2961
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-8",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2147
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2154
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2155
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2161
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2166
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340178514-0",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2329
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2344
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2812
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-0",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2813
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-7",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2820
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2821
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344779828-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2828
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2846
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2847
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562699843-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2901
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2940
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3038
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3063
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3127
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3136
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 908
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 909
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1035
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-6",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1036
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-1",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1038
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3235
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3239
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3464
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3521
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3524
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-exames-complementares-1779563679414-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3328
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564006577-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3719
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3821
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3822
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564079834-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3829
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572180830-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3963
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3964
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3965
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3979
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3980
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3981
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-2",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 670
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 463
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-2",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 486
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-3",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 487
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2690
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 15
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 88
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 116
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448599930-2",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 119
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055811481-5",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 174
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-0",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 198
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-1",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 199
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-2",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 200
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2740
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-0",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2742
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 236
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 237
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 256
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-4",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 260
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-5",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 261
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 262
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 263
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-0",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 269
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 271
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 272
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 273
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-5",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 274
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4144
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4145
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4146
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4147
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4148
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-6",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4149
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4150
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-8",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4151
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4152
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001673873-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4153
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4313
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4314
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4315
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4316
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-6",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4317
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4318
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4319
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4320
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-0",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4321
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4322
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4323
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4324
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4325
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4326
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-5",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4603
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4604
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4605
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-8",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4606
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-9",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4607
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4608
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4609
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4610
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4611
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4612
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4613
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4614
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4615
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4616
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4800
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4801
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4802
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4803
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4804
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-8",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4805
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4806
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4807
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4808
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4809
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4810
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4811
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4812
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-2",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5105
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5106
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-4",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5107
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-5",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5108
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5109
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5110
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5111
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5112
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 5114
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2361
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2362
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1401
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104340484-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1432
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104376057-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1450
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-seguranca-do-paciente-1777102936764-1",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 747
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-seguranca-do-paciente-1779563448133-8",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3064
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2259
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2263
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2265
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2266
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2272
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969768866-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2278
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343811344-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2408
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343845367-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2434
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2454
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2455
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2456
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2553
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2554
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2558
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2559
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2560
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2561
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2652
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2653
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2654
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2655
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2657
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2658
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 372
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 373
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 380
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 381
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 386
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 387
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056374837-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 398
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056383154-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 407
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968687469-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2028
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968968468-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2099
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968997293-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2103
+    },
+    {
+      "modulo_slug": "ameosc-geral-doencas-virais-de-interesse-epidemiologico-1777103611576-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 1001
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "AOCP",
+      "avant_codigo": 1842
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AOCP",
+      "avant_codigo": 3603
+    },
+    {
+      "modulo_slug": "aocp-geral-doencas-parasitarias-e-zoonoses-1777103575693-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AOCP",
+      "avant_codigo": 963
+    },
+    {
+      "modulo_slug": "aocp-ses-sc-pontuacao-dois-pontos-3804106",
+      "titulo_aula": "Pontuação",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 5231
+    },
+    {
+      "modulo_slug": "aocp-unirio-colocacao-multitarefa-3841117",
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 5304
+    },
+    {
+      "modulo_slug": "aocp-unirio-pontuacao-enumeracao-3840868",
+      "titulo_aula": "Pontuação",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 5232
+    },
+    {
+      "modulo_slug": "aocp-unirio-termos-travessao-brinquedos-3840834",
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 5321
+    },
+    {
+      "modulo_slug": "apice-ace-pr-classes-leia-o-texto-a-seguir-e-responda-da-3558963",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5517
+    },
+    {
+      "modulo_slug": "apice-ace-pr-concordancia-no-que-diz-respeito-a-concordancia-n-3558981",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5434
+    },
+    {
+      "modulo_slug": "apice-ace-pr-oracoes-sabendo-que-o-periodo-composto-por-c-3558979",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5367
+    },
+    {
+      "modulo_slug": "apice-ace-pr-sinonimos-leia-o-texto-a-seguir-e-responda-da-3558948",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5595
+    },
+    {
+      "modulo_slug": "apice-acs-pr-classes-considere-o-texto-a-seguir-para-resp-4024888",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5360
+    },
+    {
+      "modulo_slug": "apice-acs-pr-concordancia-considere-o-texto-a-seguir-para-resp-4024938",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5411
+    },
+    {
+      "modulo_slug": "apice-acs-pr-oracoes-15-07-2026-19-38-80-98-369-370-apos-3951882",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5414
+    },
+    {
+      "modulo_slug": "apice-acs-pr-oracoes-pestana-2023-p-619-aponta-que-as-ora-3951856",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5509
+    },
+    {
+      "modulo_slug": "apice-acs-pr-sinonimos-15-07-2026-19-38-27-98-257-258-259-o-3951867",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5656
+    },
+    {
+      "modulo_slug": "apice-acs-pr-sinonimos-analise-as-palavras-destacadas-nas-f-3951883",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5664
+    },
+    {
+      "modulo_slug": "apice-acs-pr-verbos-considere-o-texto-a-seguir-para-resp-4024894",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5533
+    },
+    {
+      "modulo_slug": "apice-ag-adm-classes-leia-a-charge-abaixo-e-responda-a-qu-3793476",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5408
+    },
+    {
+      "modulo_slug": "apice-ag-adm-classes-leia-o-poema-abaixo-e-responda-a-que-3793483",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5518
+    },
+    {
+      "modulo_slug": "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793433",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5511
+    },
+    {
+      "modulo_slug": "apice-ag-adm-oracoes-leia-o-texto-abaixo-e-responda-da-qu-3793451",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5373
+    },
+    {
+      "modulo_slug": "apice-ag-adm-sinonimos-leia-o-poema-abaixo-e-responda-a-que-3793485",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5657
+    },
+    {
+      "modulo_slug": "apice-ag-adm-verbos-leia-a-charge-abaixo-e-responda-a-qu-3793471",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5558
+    },
+    {
+      "modulo_slug": "apice-ap-ei-classes-inteligencia-artificial-e-a-transfor-4037406",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5409
+    },
+    {
+      "modulo_slug": "apice-ap-ei-oracoes-fonte-acesso-em-06-mar-2026-no-trech-4037436",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5392
+    },
+    {
+      "modulo_slug": "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037413",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5375
+    },
+    {
+      "modulo_slug": "apice-ap-ei-oracoes-inteligencia-artificial-e-a-transfor-4037421",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5377
+    },
+    {
+      "modulo_slug": "apice-ap-ei-sinonimos-disponivel-em-acesso-em-06-mar-2023-4037448",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5665
+    },
+    {
+      "modulo_slug": "apice-ap-ei-sinonimos-inteligencia-artificial-e-a-transfor-4037423",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5666
+    },
+    {
+      "modulo_slug": "apice-ap-ei-sinonimos-inteligencia-artificial-e-a-transfor-4037426",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5587
+    },
+    {
+      "modulo_slug": "apice-ap-ei-verbos-15-07-2026-19-33-26-88-60-61-62-63-d-4037450",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5566
+    },
+    {
+      "modulo_slug": "apice-bacamarte-termos-vf-virgula-adv-3793442",
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5329
+    },
+    {
+      "modulo_slug": "apice-bacamarte-termos-vocativo-junior-3793473",
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5330
+    },
+    {
+      "modulo_slug": "apice-boa-vista-pb-pontuacao-incorreta-3951884",
+      "titulo_aula": "Pontuação",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5273
+    },
+    {
+      "modulo_slug": "apice-boa-vista-termos-vocativo-gente-3951799",
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5337
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 1823
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 1824
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 1825
+    },
+    {
+      "modulo_slug": "apice-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-8",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 1116
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 3830
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 3831
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 3832
+    },
+    {
+      "modulo_slug": "apice-geral-doencas-parasitarias-e-zoonoses-1777103554284-0",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 947
+    },
+    {
+      "modulo_slug": "apice-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-7",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 940
+    },
+    {
+      "modulo_slug": "apice-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103554284-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 948
+    },
+    {
+      "modulo_slug": "apice-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103554284-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 949
+    },
+    {
+      "modulo_slug": "apice-monteiro-termos-aposto-faculdade-4024905",
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5331
+    },
+    {
+      "modulo_slug": "apice-monteiro-termos-cn-embora-tardio-4024901",
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5338
+    },
+    {
+      "modulo_slug": "apice-monteiro-termos-tardiamente-4024881",
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5322
+    },
+    {
+      "modulo_slug": "apice-pocinhos-termos-vf-pronome-relativo-3558977",
+      "titulo_aula": "Termos da oração",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "ÁPICE",
+      "avant_codigo": 5339
+    },
+    {
+      "modulo_slug": "atame-enfermagem-curativos-e-manejo-de-feridas-1779269228428-3",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 2293
+    },
+    {
+      "modulo_slug": "atame-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-2",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 559
+    },
+    {
+      "modulo_slug": "atame-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-3",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 560
+    },
+    {
+      "modulo_slug": "atame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-2",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 2703
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 1442
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 1443
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 1444
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104382533-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 1453
+    },
+    {
+      "modulo_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 2489
+    },
+    {
+      "modulo_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 2490
+    },
+    {
+      "modulo_slug": "atame-enfermagem-vias-de-administracao-1778968573722-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ATAME",
+      "avant_codigo": 1977
+    },
+    {
+      "modulo_slug": "avancasp-aae-classes-assinale-a-alternativa-em-que-o-voca-3839714",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5410
+    },
+    {
+      "modulo_slug": "avancasp-aae-concordancia-amarelos-singular-3839711",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5365
+    },
+    {
+      "modulo_slug": "avancasp-aae-pref-potim-pontuacao-rita-3839712",
+      "titulo_aula": "Pontuação",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5233
+    },
+    {
+      "modulo_slug": "avancasp-aae-sinonimos-leia-o-texto-a-seguir-para-responder-3839707",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5571
+    },
+    {
+      "modulo_slug": "avancasp-acd-classes-analise-o-termo-destacado-na-frase-e-3554862",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5501
+    },
+    {
+      "modulo_slug": "avancasp-acd-concordancia-em-qual-das-alternativas-abaixo-a-fr-3554865",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5436
+    },
+    {
+      "modulo_slug": "avancasp-acd-denotacao-leia-o-texto-a-seguir-para-responder-3554834",
+      "titulo_aula": "Denotação, conotação e figuras de linguagem",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5619
+    },
+    {
+      "modulo_slug": "avancasp-acd-sinonimos-leia-o-texto-a-seguir-para-responder-3554843",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5596
+    },
+    {
+      "modulo_slug": "avancasp-ace-classes-leia-a-tirinha-a-seguir-para-respond-3353960",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5504
+    },
+    {
+      "modulo_slug": "avancasp-ace-classes-leia-o-texto-a-seguir-para-responder-3662931",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5477
+    },
+    {
+      "modulo_slug": "avancasp-ace-classes-marque-a-alternativa-que-preenche-as-3353967",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5413
+    },
+    {
+      "modulo_slug": "avancasp-ace-classes-nao-podemos-pensar-tanto-nessas-cois-3662937",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5519
+    },
+    {
+      "modulo_slug": "avancasp-ace-classes-substantivos-sao-palavras-que-design-3353964",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5344
+    },
+    {
+      "modulo_slug": "avancasp-ace-concordancia-de-acordo-com-o-gramatico-evanildo-b-3353963",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5412
+    },
+    {
+      "modulo_slug": "avancasp-ace-verbos-leia-o-texto-a-seguir-para-responder-3662932",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5550
+    },
+    {
+      "modulo_slug": "avancasp-aco-classes-se-ando-cheio-me-dilua-se-estou-no-m-3738889",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5478
+    },
+    {
+      "modulo_slug": "avancasp-aco-concordancia-havia-alguma-coisa-errada-com-o-rei-3738890",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5449
+    },
+    {
+      "modulo_slug": "avancasp-aco-sinonimos-leia-o-texto-a-seguir-para-responder-3738879",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5658
+    },
+    {
+      "modulo_slug": "avancasp-acr-classes-as-criancas-devem-ser-acompanhadas-c-3727509",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5479
+    },
+    {
+      "modulo_slug": "avancasp-acr-classes-considere-o-trecho-abaixo-divirto-me-3839861",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5352
+    },
+    {
+      "modulo_slug": "avancasp-acr-classes-era-daltonico-1-e-nao-sabia-chegou-a-3727513",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5523
+    },
+    {
+      "modulo_slug": "avancasp-acr-concordancia-incorreta-passam-3839870",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5368
+    },
+    {
+      "modulo_slug": "avancasp-acr-denotacao-uma-lata-existe-para-conter-algomas-3727506",
+      "titulo_aula": "Denotação, conotação e figuras de linguagem",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5628
+    },
+    {
+      "modulo_slug": "avancasp-acr-sinonimos-leia-o-texto-a-seguir-para-responder-3727505",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5648
+    },
+    {
+      "modulo_slug": "avancasp-acr-sinonimos-leia-o-texto-a-seguir-para-responder-3839851",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5572
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-15-07-2026-19-33-1-88-3-4-5-6-dispon-3839425",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5345
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-assinale-a-alternativa-cuja-palavra-4003512",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5346
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-leia-a-tirinha-a-seguir-para-respond-3352957",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5505
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661683",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5353
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-leia-o-texto-a-seguir-para-responder-3661685",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5384
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-os-adverbios-sao-palavras-que-modifi-3452344",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5385
+    },
+    {
+      "modulo_slug": "avancasp-acs-classes-sao-palavras-que-designam-os-seres-r-3352961",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5347
+    },
+    {
+      "modulo_slug": "avancasp-acs-concordancia-assinale-a-alternativa-que-contem-a-3452381",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5438
+    },
+    {
+      "modulo_slug": "avancasp-acs-concordancia-existem-havia-4003524",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5390
+    },
+    {
+      "modulo_slug": "avancasp-acs-oracoes-leia-o-texto-a-seguir-para-responder-3661687",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5513
+    },
+    {
+      "modulo_slug": "avancasp-acs-sinonimos-leia-a-tirinha-a-seguir-para-respond-3352958",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5588
+    },
+    {
+      "modulo_slug": "avancasp-acs-sinonimos-leia-o-texto-a-seguir-para-responder-3839361",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5573
+    },
+    {
+      "modulo_slug": "avancasp-acs-sinonimos-leia-o-texto-a-seguir-para-responder-4003498",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5589
+    },
+    {
+      "modulo_slug": "avancasp-acs-verbos-15-07-2026-19-33-10-88-30-31-cazo-ib-4003519",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5534
+    },
+    {
+      "modulo_slug": "avancasp-acs-verbos-assinale-a-alternativa-em-que-a-form-3839413",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5525
+    },
+    {
+      "modulo_slug": "avancasp-acs-verbos-nao-posso-compreender-que-a-literatu-4003501",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5535
+    },
+    {
+      "modulo_slug": "avancasp-aee-classes-em-todas-as-construcoes-a-seguir-os-3374812",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5386
+    },
+    {
+      "modulo_slug": "avancasp-aee-classes-o-que-e-angustia-um-rapaz-fez-me-ess-3374787",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5354
+    },
+    {
+      "modulo_slug": "avancasp-aee-verbos-nao-se-estabelece-no-emprego-das-for-3374820",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5559
+    },
+    {
+      "modulo_slug": "avancasp-aee-verbos-o-que-e-angustia-um-rapaz-fez-me-ess-3374802",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5536
+    },
+    {
+      "modulo_slug": "avancasp-afa-classes-assinale-a-alternativa-cujo-termo-de-3962475",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5362
+    },
+    {
+      "modulo_slug": "avancasp-afa-concordancia-mafalda-existem-3962461",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5393
+    },
+    {
+      "modulo_slug": "avancasp-afa-sinonimos-considere-o-texto-a-seguir-para-resp-3962439",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5579
+    },
+    {
+      "modulo_slug": "avancasp-ag-classes-identifique-em-qual-das-sentencas-a-3457304",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5387
+    },
+    {
+      "modulo_slug": "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376854",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5388
+    },
+    {
+      "modulo_slug": "avancasp-ag-classes-leia-o-texto-a-seguir-para-responder-3376862",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5464
+    },
+    {
+      "modulo_slug": "avancasp-ag-classes-leia-o-trecho-a-seguir-um-caquizeiro-3709821",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5348
+    },
+    {
+      "modulo_slug": "avancasp-ag-concordancia-a-sentenca-em-que-as-concordancias-v-3457300",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5440
+    },
+    {
+      "modulo_slug": "avancasp-ag-concordancia-leia-o-texto-a-seguir-para-responder-3709814",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5451
+    },
+    {
+      "modulo_slug": "avancasp-ag-concordancia-mal-iniciara-seu-discurso-o-deputado-3727002",
+      "titulo_aula": "Concordância verbal e nominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5453
+    },
+    {
+      "modulo_slug": "avancasp-ag-denotacao-preso-a-cancoes-entregue-a-paixoesqu-3727032",
+      "titulo_aula": "Denotação, conotação e figuras de linguagem",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5629
+    },
+    {
+      "modulo_slug": "avancasp-ag-sinonimos-disponivel-em-relacao-ao-cartaz-acim-3727038",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5649
+    },
+    {
+      "modulo_slug": "avancasp-ag-sinonimos-leia-o-texto-a-seguir-para-responder-3709795",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5650
+    },
+    {
+      "modulo_slug": "avancasp-ag-sinonimos-tome-como-exemplo-o-seguinte-context-3457305",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5597
+    },
+    {
+      "modulo_slug": "avancasp-amparo-colocacao-enclise-levou-me-3352965",
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5281
+    },
+    {
+      "modulo_slug": "avancasp-amparo-colocacao-proclise-se-3353968",
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5282
+    },
+    {
+      "modulo_slug": "avancasp-amparo-pontuacao-incorreta-3352962",
+      "titulo_aula": "Pontuação",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5240
+    },
+    {
+      "modulo_slug": "avancasp-amparo-pontuacao-incorreta-3353965",
+      "titulo_aula": "Pontuação",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5264
+    },
+    {
+      "modulo_slug": "avancasp-ana-classes-dentre-as-palavras-a-seguir-a-unica-3460039",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5355
+    },
+    {
+      "modulo_slug": "avancasp-ana-oracoes-a-construcao-tao-que-imprime-ao-cont-3460173",
+      "titulo_aula": "Orações coordenadas e subordinadas",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5495
+    },
+    {
+      "modulo_slug": "avancasp-ana-verbos-leia-o-texto-a-seguir-para-responder-3460031",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5541
+    },
+    {
+      "modulo_slug": "avancasp-aoe-denotacao-assinale-a-alternativa-em-que-a-muda-3886650",
+      "titulo_aula": "Denotação, conotação e figuras de linguagem",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5603
+    },
+    {
+      "modulo_slug": "avancasp-aoe-denotacao-o-bom-leitor-deixa-suas-armas-na-ent-3886652",
+      "titulo_aula": "Denotação, conotação e figuras de linguagem",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5604
+    },
+    {
+      "modulo_slug": "avancasp-aoe-verbos-assinale-a-alternativa-que-apresenta-3886651",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5526
+    },
+    {
+      "modulo_slug": "avancasp-aoe-verbos-leia-o-texto-a-seguir-para-responder-3886648",
+      "titulo_aula": "Verbos — tempos, modos e vozes",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5527
+    },
+    {
+      "modulo_slug": "avancasp-aux-classes-ate-breve-ha-temperamentos-urbanos-p-3375895",
+      "titulo_aula": "Classes de palavras",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5506
+    },
+    {
+      "modulo_slug": "avancasp-aux-sinonimos-ate-breve-ha-temperamentos-urbanos-p-3375891",
+      "titulo_aula": "Sinônimos, antônimos e polissemia",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5598
+    },
+    {
+      "modulo_slug": "avancasp-caconde-colocacao-vista-cansada-3457294",
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5289
+    },
+    {
+      "modulo_slug": "avancasp-caieiras-colocacao-angustia-3374794",
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5283
+    },
+    {
+      "modulo_slug": "avancasp-caieiras-colocacao-enclise-norma-3375896",
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5284
+    },
+    {
+      "modulo_slug": "avancasp-cerquilho-colocacao-domingo-3662934",
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5297
+    },
+    {
+      "modulo_slug": "avancasp-cerquilho-colocacao-enclise-vetada-3661739",
+      "titulo_aula": "Pronomes e colocação pronominal",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5298
+    },
+    {
+      "modulo_slug": "avancasp-cerquilho-pontuacao-adjunto-3661696",
+      "titulo_aula": "Pontuação",
+      "modulo_nome": "Língua Portuguesa",
+      "banca": "AVANÇASP",
+      "avant_codigo": 5265
+    }
+  ]
+}

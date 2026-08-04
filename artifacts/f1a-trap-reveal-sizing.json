@@ -1,0 +1,35 @@
+﻿{
+  "todo": "f1-size-mold",
+  "generated_at": "2026-07-31T16:20:00.000Z",
+  "source_audit": "artifacts/variant-usage.json",
+  "command": "npm run audit:variant-usage",
+  "catalog": {
+    "questions_processed": 5309,
+    "slides_resolved": 21236,
+    "source": "catalog_full"
+  },
+  "trap_reveal": {
+    "layout_variant": "trap-reveal",
+    "component": "DangerZoneTrapReveal",
+    "danger_zone_count": 142,
+    "pct_of_all_danger_zone": 2.67,
+    "pct_of_all_slides": 0.67,
+    "rank_among_danger_zone_variants": 7,
+    "all_from_subtopico": "Instalação e Manejo de Sondas",
+    "note": "Urgências mapeia trap-reveal no themeGenerator, mas no catálogo resolve para moldes bespoke (urgencias-*-trap-arena etc.)."
+  },
+  "polarity_scope_hint_for_f1b": {
+    "negative_cmd_exceto_incorreta": 14,
+    "positive_cmd": 128,
+    "note": "Só negative_cmd precisa de chrome invertido (check em conduta válida). Zero conteúdo tocado nesta etapa."
+  },
+  "context_top_danger_zone_variants": [
+    { "variant": "compare", "count": 2107 },
+    { "variant": "vitals-classify-arena", "count": 504 },
+    { "variant": "calendar-mismatch", "count": 440 },
+    { "variant": "norm-reveal", "count": 375 },
+    { "variant": "route-trap", "count": 168 },
+    { "variant": "lab-specimen-arena", "count": 167 },
+    { "variant": "trap-reveal", "count": 142 }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T20:47:42.082Z",
+  "lote": "atencao-basica-saude-da-familia-g14",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-5",
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-6",
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-3",
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-4",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-5",
+    "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3",
+    "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-4",
+    "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

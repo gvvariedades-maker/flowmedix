@@ -1,0 +1,76 @@
+{
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-g22",
+  "generated_at": "2026-08-04T01:09:48.255Z",
+  "strict": true,
+  "strict_v2_pedagogy": true,
+  "strict_v3_pedagogy": false,
+  "total": 8,
+  "passed": 8,
+  "failed": 0,
+  "slugs": [
+    {
+      "slug": "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "legalle-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-0",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "lj-assessoria-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-2",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-4",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "metrocapital-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-5",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-7",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-8",
+      "ok": true,
+      "zod_ok": true,
+      "golden_ok": true,
+      "readiness_ok": true,
+      "issues": []
+    }
+  ]
+}

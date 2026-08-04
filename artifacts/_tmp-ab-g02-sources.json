@@ -1,0 +1,287 @@
+{
+  "amauc-enfermagem-processo-de-enfermagem-1780006486032-7": {
+    "meta": {
+      "ano": "2026",
+      "banca": "Amauc",
+      "orgao": "Pref Ipumirim",
+      "prova": "Aux Enf",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "A atenção básica constitui componente estratégico da organização do sistema de saúde, orientando-se por princípios como territorialização, vínculo, continuidade do cuidado e responsabilização sanitária. Analise as afirmativas abaixo:\nI.A atenção básica constitui porta de entrada preferencial do sistema de saúde.\nII.A atenção básica atua com enfoque familiar e comunitário.\nIII.A atenção básica restringe-se ao atendimento de demanda espontânea.\nIV.A atenção básica desenvolve ações de prevenção e promoção da saúde.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I e III.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I, III e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I, II, III e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e IV.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "II e III.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2": {
+    "meta": {
+      "ano": "2022",
+      "banca": "Ameosc",
+      "orgao": "Pref Bandeirante-SC",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "No modelo de atenção em saúde fundamentado na assistência multiprofissional em saúde da família, são consideradas atividades típicas do Agente Comunitário\nde Saúde, em sua área geográfica de atuação a realização de visitas domiciliares regulares e periódicas para acolhimento e acompanhamento da lactante, nos X meses\nseguintes ao parto. Assinale a alternativa CORRETA que corresponde ao valor de X.",
+    "options": [
+      {
+        "id": "A",
+        "text": "8.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "5.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "2.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "6.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0": {
+    "meta": {
+      "ano": "2022",
+      "banca": "Ameosc",
+      "orgao": "Pref Bandeirante-SC",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "As Equipes de Saúde da Família Ribeirinha deverão prestar atendimento à população por, no mínimo, X dias mensais (carga horária equivalente à 8h/dia) e dois\ndias para atividades de educação permanente, registro da produção e planejamento das ações.",
+    "options": [
+      {
+        "id": "A",
+        "text": "21.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "07.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "14.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "30.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1": {
+    "meta": {
+      "ano": "2022",
+      "banca": "Ameosc",
+      "orgao": "Pref Bandeirante-SC",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Cada equipe de Saúde da Família (eSF) deve ser responsável por, no máximo, 4.000 pessoas, sendo a média recomendada de:",
+    "options": [
+      {
+        "id": "A",
+        "text": "2.000 pessoas",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "3.000 pessoas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "1.000 pessoas",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "8.000 pessoas",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Ameosc",
+      "orgao": "Pref Anchieta (SC)",
+      "prova": "Tec Enf (Anchieta)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Em um atendimento na Unidade Básica de Saúde (UBS), o técnico em enfermagem utiliza o prontuário eletrônico do cidadão (PEC) do e-SUS AB para registrar os\ndados do paciente. Sobre essa ferramenta, é CORRETO afirmar que:",
+    "options": [
+      {
+        "id": "A",
+        "text": "É um software gratuito que registra atendimentos clínicos e procedimentos da Atenção Primária.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Substitui o Cartão Nacional de Saúde e o Cadastro de Pessoas Físicas em todas as funcionalidades do SUS.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Permite apenas o registro de atendimentos médicos, não sendo acessado por outros profissionais da equipe.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "É uma planilha manual usada para controle de insumos na farmácia.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Ameosc",
+      "orgao": "ESF",
+      "prova": "TEnf (Pref São José Cedro)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "O Técnico de Enfermagem desempenha um papel essencial no monitoramento de condições crônicas, como a hipertensão arterial, e na educação em saúde de\npacientes da Estratégia Saúde da Família (ESF). Acerca do tema, marque V para as afirmativas verdadeiras e F para as falsas.\n(__)A utilização de aparelhos digitais domésticos para aferição de pressão arterial é desaconselhada na ESF, devido à possibilidade de imprecisas que\ncomprometem o acompanhamento clínico.\n(__)A coleta dos registros de pressão arterial realizada pelo paciente pode ser usada para auxiliar o enfermeiro e o médico no ajuste de medicamentos ou\nsolicitação de exames complementares.\n(__)Leituras elevadas ou com grande variação devem ser comunicadas imediatamente ao médico ou enfermeiro responsável, garantindo ações rápidas para\nprevenir complicações.\n(__)O Técnico de Enfermagem pode orientar os pacientes sobre a técnica de aferição da pressão arterial, garantindo o posicionamento correto do braço e a\nfrequência ideal das frequências.\nA sequência é correta em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, V, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "F, V, V, V.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "V, F, F, F.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "F, F, V, V.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Ameosc",
+      "orgao": "Pref São José Cedro",
+      "prova": "TEnf",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "O técnico de enfermagem, como membro da equipe de Saúde da Família, desempenha um papel fundamental na articulação do cuidado entre a unidade de saúde\ne o domicílio. Ao realizar uma visita domiciliar, planejada em conjunto com o enfermeiro e o Agente Comunitário de Saúde (ACS), o técnico tem a oportunidade de avaliar\no ambiente, reforçar orientações e executar procedimentos que fortalecem o plano terapêutico e o vínculo com a família. Sobre a atuação do técnico de enfermagem no\nacompanhamento domiciliar, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A notificação da família ao Conselho Tutelar com base em impressões subjetivas sobre a organização do domicílio, sem a comunicação prévia ou discussão do caso com o restante da equipe multiprofissional.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A realização da consulta de enfermagem no domicílio, com a elaboração de novos diagnósticos de enfermagem e a prescrição de cuidados, assumindo a responsabilidade técnica pela família de forma autônoma.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A supervisão direta das atividades do Agente Comunitário de Saúde, delegando a este profissional a responsabilidade pela aplicação de vacinas e pela realização de testes rápidos durante as visitas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A execução de procedimentos técnicos de enfermagem planejados, como a realização de curativos, a verificação de sinais vitais e a administração de medicamentos, registrando todas as informações para subsidiar a avaliação do enfermeiro.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Ameosc",
+      "orgao": "Pref São José Cedro",
+      "prova": "TEnf",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "O monitoramento contínuo das condições de saúde da população adscrita a uma unidade de Atenção Primária é uma das estratégias centrais para a prevenção de\nagravos e a promoção da saúde. Este acompanhamento envolve não apenas o atendimento na unidade, mas também ações proativas de busca ativa e vigilância de\ngrupos prioritários, como gestantes, crianças e portadores de doenças crônicas. Acerca do assunto, marque V para as afirmativas verdadeiras e F para as falsas.\n( )A busca ativa de faltosos é uma importante ferramenta de monitoramento, que consiste na identificação e no contato (telefônico ou por visita domiciliar) com\nusuários que não compareceram a consultas ou exames agendados, visando garantir a continuidade do cuidado.\n( )No acompanhamento de pacientes do programa HIPERDIA (hipertensão e diabetes), o técnico de enfermagem tem autonomia para ajustar as doses dos\nmedicamentos anti-hipertensivos e hipoglicemiantes, conforme os valores aferidos no dia, sem necessidade de consultar o médico ou enfermeiro.\n( )É atribuição do técnico de enfermagem, no âmbito da puericultura, realizar a aferição de dados antropométricos da criança, como peso e estatura, e registrar os\nvalores na caderneta de saúde e no prontuário para a avaliação do crescimento pela equipe.\n( )O monitoramento de gestantes no pré-natal inclui a participação do técnico de enfermagem na verificação de sinais vitais, como a pressão arterial, e na\nrealização de testes rápidos, sob supervisão do enfermeiro, para a detecção de possíveis riscos.\nApós análise, assinale a alternativa que apresenta a sequência correta dos itens acima, de cima para baixo:",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, V, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "F, F, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "V, F, F, F.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "V, F, V, V.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  }
+}

@@ -1,0 +1,1795 @@
+{
+  "kind": "gabarito_item",
+  "mode": "dry-run",
+  "corpus": "examples",
+  "generated_at": "2026-08-04T00:08:40.442Z",
+  "target_signatures": [
+    "pedagogy_letter_spoiler"
+  ],
+  "scanned": 175,
+  "changed": 0,
+  "edits": 0,
+  "skipped": 1,
+  "idempotent": true,
+  "signatures_before": {
+    "pedagogy_letter_spoiler": 2,
+    "pedagogy_vf_verdict_spoiler": 1,
+    "pedagogy_question_bound_label": 0,
+    "pedagogy_logic_padding": 0,
+    "pedagogy_polarity_risk": 15,
+    "pedagogy_danger_orphan": 19,
+    "pedagogy_logic_missing_gabarito": 19,
+    "pedagogy_density": 37
+  },
+  "signatures_after": {
+    "pedagogy_letter_spoiler": 2,
+    "pedagogy_vf_verdict_spoiler": 1,
+    "pedagogy_question_bound_label": 0,
+    "pedagogy_logic_padding": 0,
+    "pedagogy_polarity_risk": 15,
+    "pedagogy_danger_orphan": 19,
+    "pedagogy_logic_missing_gabarito": 19,
+    "pedagogy_density": 37
+  },
+  "reports": [
+    {
+      "slug": "questao-enfermagem-sae",
+      "path": "D:\\AVANT\\examples\\questao-enfermagem-sae.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-formacao-palavras-siglas",
+      "path": "D:\\AVANT\\examples\\questao-formacao-palavras-siglas.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-lei-7498-regulamenta",
+      "path": "D:\\AVANT\\examples\\questao-lei-7498-regulamenta.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-morfológica-teste",
+      "path": "D:\\AVANT\\examples\\questao-morfológica-teste.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-oracao-subordinada-final",
+      "path": "D:\\AVANT\\examples\\questao-oracao-subordinada-final.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-access-urgencias-rcp-pediatrica-15-2",
+      "path": "D:\\AVANT\\examples\\questao-premium-access-urgencias-rcp-pediatrica-15-2.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-adm-atencao-basica-saude-da-familia-acs-atribuicoes-visita-e-territorio",
+      "path": "D:\\AVANT\\examples\\questao-premium-adm-atencao-basica-saude-da-familia-acs-atribuicoes-visita-e-territorio.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-epidemiologia-conceito-geral",
+      "path": "D:\\AVANT\\examples\\questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-epidemiologia-conceito-geral.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-indicadores-incidencia-prevalencia-morta",
+      "path": "D:\\AVANT\\examples\\questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-indicadores-incidencia-prevalencia-morta.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-notificacao-compulsoria-sinan-lista-naci",
+      "path": "D:\\AVANT\\examples\\questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-notificacao-compulsoria-sinan-lista-naci.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-vigilancia-epidemiologica-conceito-e-aco",
+      "path": "D:\\AVANT\\examples\\questao-premium-adm-epidemiologia-e-vigilancia-epidemiologica-vigilancia-epidemiologica-conceito-e-aco.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-admtec-imunizacao-adolescente-cartao-perdido",
+      "path": "D:\\AVANT\\examples\\questao-premium-admtec-imunizacao-adolescente-cartao-perdido.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-admtec-oxigenoterapia-dispositivos",
+      "path": "D:\\AVANT\\examples\\questao-premium-admtec-oxigenoterapia-dispositivos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-admtec-puncao-venosa-cateteres",
+      "path": "D:\\AVANT\\examples\\questao-premium-admtec-puncao-venosa-cateteres.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [
+        {
+          "kind": "gabarito_item",
+          "path": "golden_rule.footer_rule",
+          "slide": "golden_rule",
+          "key": "footer_rule",
+          "text": "Gabarito B resume o bundle: assepsia + barreira máxima + curativo adequado + remoção precoce.",
+          "reason": "remainder_too_short"
+        }
+      ],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-admtec-saude-mulher-parto-humanizado-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-admtec-saude-mulher-parto-humanizado-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-choque-eletrico",
+      "path": "D:\\AVANT\\examples\\questao-premium-admtec-urgencias-choque-eletrico.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-convulsao-crise",
+      "path": "D:\\AVANT\\examples\\questao-premium-admtec-urgencias-convulsao-crise.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-fratura-exposta-imobilizacao",
+      "path": "D:\\AVANT\\examples\\questao-premium-admtec-urgencias-fratura-exposta-imobilizacao.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-admtec-urgencias-rcp-30-2-aha2020",
+      "path": "D:\\AVANT\\examples\\questao-premium-admtec-urgencias-rcp-30-2-aha2020.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-agirh-imunizacao-incorreta-antibiotico",
+      "path": "D:\\AVANT\\examples\\questao-premium-agirh-imunizacao-incorreta-antibiotico.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-amauc-atencao-basica-saude-da-familia-atencao-basica-conceito-geral",
+      "path": "D:\\AVANT\\examples\\questao-premium-amauc-atencao-basica-saude-da-familia-atencao-basica-conceito-geral.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-amauc-imunizacao-bcg-dose-a4",
+      "path": "D:\\AVANT\\examples\\questao-premium-amauc-imunizacao-bcg-dose-a4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-amauc-urgencias-cincinnati-avc",
+      "path": "D:\\AVANT\\examples\\questao-premium-amauc-urgencias-cincinnati-avc.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-atencao-basica-saude-da-familia-esf-composicao-carga-e-modalidades",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-atencao-basica-saude-da-familia-esf-composicao-carga-e-modalidades.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-cme-metodos-incorreta",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-cme-metodos-incorreta.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-cuidados-protocolo-ms-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-cuidados-protocolo-ms-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-imunizacao-vf-cadeia-frio",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-imunizacao-vf-cadeia-frio.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-nocoes-de-anatomia-anat_esqueleto",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-nocoes-de-anatomia-anat_esqueleto.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-ameosc-processo-de-enfermagem-documentacao",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-processo-de-enfermagem-documentacao.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-urgencias-queimadura-vf-primeiros-socorros.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-rcp-vf-adulto",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-urgencias-rcp-vf-adulto.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-trauma-imobilizacao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-urgencias-trauma-imobilizacao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-trauma-queimadura",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-urgencias-trauma-queimadura.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ameosc-urgencias-triagem-etiquetas",
+      "path": "D:\\AVANT\\examples\\questao-premium-ameosc-urgencias-triagem-etiquetas.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-apice-portugues-oracoes-adversativa-pocinhos",
+      "path": "D:\\AVANT\\examples\\questao-premium-apice-portugues-oracoes-adversativa-pocinhos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-apice-portugues-sinonimos-polissemia-refletiu",
+      "path": "D:\\AVANT\\examples\\questao-premium-apice-portugues-sinonimos-polissemia-refletiu.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-cme-manuseio-esteril",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-cme-manuseio-esteril.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-cuidados-documentacao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-cuidados-documentacao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-cuidados-exceto-preparo-medicamentos",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-cuidados-exceto-preparo-medicamentos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-imunizacao-rede-frio-temperatura",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-imunizacao-rede-frio-temperatura.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-nocoes-de-anatomia-anat_generico",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-nocoes-de-anatomia-anat_generico.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-avancasp-perioperatoria-pre-operatorio",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-perioperatoria-pre-operatorio.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-colocacao-posicao-piloto",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-portugues-colocacao-posicao-piloto.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-denotacao-tirinha-drogas",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-portugues-denotacao-tirinha-drogas.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-portugues-pontuacao-vocativo-rita",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-puncao-infiltracao-flebite",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-puncao-infiltracao-flebite.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-avancasp-sv-pa-incorreta-divergente",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-sv-pa-incorreta-divergente.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 4,
+      "findings_after": 4
+    },
+    {
+      "slug": "questao-premium-avancasp-vias-sublingual-exceto",
+      "path": "D:\\AVANT\\examples\\questao-premium-avancasp-vias-sublingual-exceto.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 7,
+      "findings_after": 7
+    },
+    {
+      "slug": "questao-premium-cebraspe-nocoes-de-anatomia-anat_cardiovascular",
+      "path": "D:\\AVANT\\examples\\questao-premium-cebraspe-nocoes-de-anatomia-anat_cardiovascular.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cesgranrio-seguranca-paciente-identificacao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cesgranrio-seguranca-paciente-identificacao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cetrede-vias-injetaveis-incorreta",
+      "path": "D:\\AVANT\\examples\\questao-premium-cetrede-vias-injetaveis-incorreta.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 6,
+      "findings_after": 6
+    },
+    {
+      "slug": "questao-premium-cev-saude-crianca-desidratacao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cev-saude-crianca-desidratacao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-cev-urca-puncao-exceto-med-endovenosa",
+      "path": "D:\\AVANT\\examples\\questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc",
+      "path": "D:\\AVANT\\examples\\questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-consulpam-urgencias-pcr-pediatrica-conceito",
+      "path": "D:\\AVANT\\examples\\questao-premium-consulpam-urgencias-pcr-pediatrica-conceito.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-consulpam-vias-absorcao-oral",
+      "path": "D:\\AVANT\\examples\\questao-premium-consulpam-vias-absorcao-oral.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 3,
+      "findings_after": 3
+    },
+    {
+      "slug": "questao-premium-consulplan-perioperatoria-srpa-monitorizacao",
+      "path": "D:\\AVANT\\examples\\questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-consulplan-saude-crianca-puericultura-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-consulplan-saude-crianca-puericultura-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-consulplan-sondagem-nasogastrica-nex",
+      "path": "D:\\AVANT\\examples\\questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-copese-processo-de-enfermagem-etapas-sae",
+      "path": "D:\\AVANT\\examples\\questao-premium-copese-processo-de-enfermagem-etapas-sae.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cotec-cuidados-heparina-alto-risco",
+      "path": "D:\\AVANT\\examples\\questao-premium-cotec-cuidados-heparina-alto-risco.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-coleta-amostras-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-coleta-amostras-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-cuidados-incorreta-nove-certos",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-cuidados-incorreta-nove-certos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-cpcon-curativos-lpp-prevencao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-dengue-zoonoses-vetor-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-dengue-zoonoses-vetor-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-dt-mescladas-prevencao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-dt-mescladas-prevencao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-enfermagem-trabalho-nr32-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-enfermagem-trabalho-nr32-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-feridas-queimaduras-scq-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-feridas-queimaduras-scq-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-cpcon-historia-enfermagem-nightingale",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-historia-enfermagem-nightingale.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-imunizacao-intervalos-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-imunizacao-intervalos-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-ists-risco-transmissao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-ists-risco-transmissao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-poliomielite-pfa-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-portugues-pontuacao-tirinha-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-portugues-pontuacao-tirinha-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-portugues-sinonimos-vf-cometa-3i-atlas",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-portugues-sinonimos-vf-cometa-3i-atlas.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-precaucao-contato-higiene-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-precaucao-contato-higiene-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-processamento-artigos-prelimpeza-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-processamento-artigos-prelimpeza-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-puncao-troca-equipos-intervalos",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-adolescente-gravidez-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-saude-adolescente-gravidez-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-aleitamento-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-saude-crianca-aleitamento-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-desenvolvimento-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-saude-crianca-desenvolvimento-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-crianca-triagem-neonatal-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-saude-crianca-triagem-neonatal-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-mulher-planejamento-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-saude-mulher-planejamento-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-saude-mulher-pre-natal-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-saude-mulher-pre-natal-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-triglicerideos-soro",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-triglicerideos-soro.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-tuberculose-baar-aerossol-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-tuberculose-baar-aerossol-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-urgencias-anafilaxia-epinefrina-im.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-cpcon-vias-im-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-vias-im-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-cpcon-virais-sarampo-polio-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-virais-sarampo-polio-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-cpcon-visita-domiciliar-acs-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-cpcon-visita-domiciliar-acs-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-decorp-imunizacao-triplice-viral-via",
+      "path": "D:\\AVANT\\examples\\questao-premium-decorp-imunizacao-triplice-viral-via.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-consoada-descer",
+      "path": "D:\\AVANT\\examples\\questao-premium-educa-pb-portugues-sinonimos-consoada-descer.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-educa-pb-portugues-sinonimos-iniludivel",
+      "path": "D:\\AVANT\\examples\\questao-premium-educa-pb-portugues-sinonimos-iniludivel.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-epice-portugues-sujeito-eliptico",
+      "path": "D:\\AVANT\\examples\\questao-premium-epice-portugues-sujeito-eliptico.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-facet-cuidados-vigilancia-reacao-adversa",
+      "path": "D:\\AVANT\\examples\\questao-premium-facet-cuidados-vigilancia-reacao-adversa.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-facet-puncao-cvc-hub-a4",
+      "path": "D:\\AVANT\\examples\\questao-premium-facet-puncao-cvc-hub-a4.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-saude-mental-raps",
+      "path": "D:\\AVANT\\examples\\questao-premium-fau-unicentro-saude-mental-raps.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal",
+      "path": "D:\\AVANT\\examples\\questao-premium-fau-unicentro-urgencias-engasgo-sinal-universal.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-engasgo-sinal",
+      "path": "D:\\AVANT\\examples\\questao-premium-fau-unicentro-urgencias-engasgo-sinal.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fau-unicentro-urgencias-generico-glasgow-domains",
+      "path": "D:\\AVANT\\examples\\questao-premium-fau-unicentro-urgencias-generico-glasgow-domains.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fcm-dtrans-dengue-grupos-abc",
+      "path": "D:\\AVANT\\examples\\questao-premium-fcm-dtrans-dengue-grupos-abc.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fepese-anatomia-anterior-ventral",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-anatomia-anterior-ventral.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-fepese-anotacao-enfermagem-sae",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-anotacao-enfermagem-sae.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 3,
+      "findings_after": 3
+    },
+    {
+      "slug": "questao-premium-fepese-cuidados-administracao-medicamentos",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-cuidados-administracao-medicamentos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-fepese-cuidados-insulina-alto-risco",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-cuidados-insulina-alto-risco.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-fepese-infeccoes-biosseguranca-iras-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-infeccoes-biosseguranca-iras-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fepese-mobilizacao-posicionamento-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-mobilizacao-posicionamento-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fepese-saude-mental-risco-suicida-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-saude-mental-risco-suicida-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fepese-sv-interpretacao-valores",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-sv-interpretacao-valores.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fepese-urgencias-choque-hipovolemico",
+      "path": "D:\\AVANT\\examples\\questao-premium-fepese-urgencias-choque-hipovolemico.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fgv-respiratorio-peak-flow-zonas-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-fgv-respiratorio-peak-flow-zonas-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fgv-saude-mental-tabagismo-pnct",
+      "path": "D:\\AVANT\\examples\\questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-funatec-ictericia-obstrucao-biliar",
+      "path": "D:\\AVANT\\examples\\questao-premium-funatec-ictericia-obstrucao-biliar.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-funcamp-farmacodinamica-farmacocinetica-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-funcamp-farmacodinamica-farmacocinetica-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-funcern-saude-crianca-generico-hub",
+      "path": "D:\\AVANT\\examples\\questao-premium-funcern-saude-crianca-generico-hub.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fundatec-agudas-deterioracao-sinais-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-fundatec-agudas-deterioracao-sinais-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fundatec-meningococica-3meses",
+      "path": "D:\\AVANT\\examples\\questao-premium-fundatec-meningococica-3meses.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 3,
+      "findings_after": 3
+    },
+    {
+      "slug": "questao-premium-fundatec-perioperatoria-anestesia-regional-exceto",
+      "path": "D:\\AVANT\\examples\\questao-premium-fundatec-perioperatoria-anestesia-regional-exceto.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-fundatec-saude-mental-agitacao-exceto",
+      "path": "D:\\AVANT\\examples\\questao-premium-fundatec-saude-mental-agitacao-exceto.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-funpar-puncao-tecnica-periferica",
+      "path": "D:\\AVANT\\examples\\questao-premium-funpar-puncao-tecnica-periferica.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-furb-perioperatoria-isc-classificacao",
+      "path": "D:\\AVANT\\examples\\questao-premium-furb-perioperatoria-isc-classificacao.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-gama-puncao-scalp-jelco-calibre",
+      "path": "D:\\AVANT\\examples\\questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-iacp-cme-autoclave-parametros",
+      "path": "D:\\AVANT\\examples\\questao-premium-iacp-cme-autoclave-parametros.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ibade-saude-mental-caps-acolhimento",
+      "path": "D:\\AVANT\\examples\\questao-premium-ibade-saude-mental-caps-acolhimento.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ibgp-agentes-etiologicos-todas-bacterias",
+      "path": "D:\\AVANT\\examples\\questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-calculo-equivalencias-gotas",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-idecan-calculo-ml-gotas-microgotas",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-calculo-ml-gotas-microgotas.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-centro-cirurgico-cirurgia-segura-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-centro-cirurgico-cirurgia-segura-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-cme-areas-esterilizacao-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-cme-areas-esterilizacao-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-cme-indicador-quimico-classe1",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-cme-indicador-quimico-classe1.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-cme-preparo-presecagem",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-cme-preparo-presecagem.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-cme-rt-funcao-certo",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-cme-rt-funcao-certo.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-idecan-fc-radial-ce",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-fc-radial-ce.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-idecan-feridas-queimaduras-grau-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-feridas-queimaduras-grau-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-fisiologia-homeostase-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-fisiologia-homeostase-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-omeprazol-ev-ulcera",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-omeprazol-ev-ulcera.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-idecan-perioperatoria-aldrete-srpa",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-perioperatoria-aldrete-srpa.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-respiratorio-espacador-inalador-conceito",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-respiratorio-espacador-inalador-conceito.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-saude-crianca-neonatologia-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-saude-crianca-neonatologia-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-idecan-saude-mental-reducao-danos",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-saude-mental-reducao-danos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idecan-srpa-curativo-cpd-ce",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-srpa-curativo-cpd-ce.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-idecan-trauma-cervical-jaw-thrust",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-trauma-cervical-jaw-thrust.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-idecan-violencia-atencao-basica",
+      "path": "D:\\AVANT\\examples\\questao-premium-idecan-violencia-atencao-basica.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idib-cme-funcao-iaas",
+      "path": "D:\\AVANT\\examples\\questao-premium-idib-cme-funcao-iaas.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-idib-umirim-itu-cateter-exceto",
+      "path": "D:\\AVANT\\examples\\questao-premium-idib-umirim-itu-cateter-exceto.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-igeduc-saude-mental-tecnico-aps",
+      "path": "D:\\AVANT\\examples\\questao-premium-igeduc-saude-mental-tecnico-aps.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-instituto-aocp-saude-mental-esquizofrenia-psicofarmacos",
+      "path": "D:\\AVANT\\examples\\questao-premium-instituto-aocp-saude-mental-esquizofrenia-psicofarmacos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-lab-respiratorio-cronico-4-moldes",
+      "path": "D:\\AVANT\\examples\\questao-premium-lab-respiratorio-cronico-4-moldes.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-ms-sarmento-saude-mental-srt-reforma",
+      "path": "D:\\AVANT\\examples\\questao-premium-ms-sarmento-saude-mental-srt-reforma.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-ms-saude-mulher-puerperio-consulta",
+      "path": "D:\\AVANT\\examples\\questao-premium-ms-saude-mulher-puerperio-consulta.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-selecon-urgencias-bt16-esmagamento",
+      "path": "D:\\AVANT\\examples\\questao-premium-selecon-urgencias-bt16-esmagamento.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-sus-lei-8080-cesgranrio",
+      "path": "D:\\AVANT\\examples\\questao-premium-sus-lei-8080-cesgranrio.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 3,
+      "findings_after": 3
+    },
+    {
+      "slug": "questao-premium-urgencias-rcp",
+      "path": "D:\\AVANT\\examples\\questao-premium-urgencias-rcp.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 2,
+      "findings_after": 2
+    },
+    {
+      "slug": "questao-premium-vunesp-dtrans-raiva-profilaxia",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-dtrans-raiva-profilaxia.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-colocacao-trilho",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-portugues-colocacao-trilho.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-concordancia-nucleo-sjrp",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-portugues-concordancia-nucleo-sjrp.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-crase-funil",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-portugues-crase-funil.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-crase-lacunas-ioga",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-portugues-crase-lacunas-ioga.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-denotacao-literal-figurado",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-portugues-denotacao-literal-figurado.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-termos-matrix-folhetos",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-portugues-termos-matrix-folhetos.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-portugues-verbos-mais-que-perfeito-sjrp.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-procedimentos-diversos-assepsia-vf",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-procedimentos-diversos-assepsia-vf.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-respiratorio-crise-asmatica-exceto",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-respiratorio-crise-asmatica-exceto.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mental-biopsicossocial",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-saude-mental-biopsicossocial.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mental-depressao-epidemiologia",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-saude-mental-depressao-epidemiologia.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mulher-mamografia",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-saude-mulher-mamografia.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-premium-vunesp-saude-mulher-papanicolau",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-saude-mulher-papanicolau.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 0,
+      "findings_after": 0
+    },
+    {
+      "slug": "questao-premium-vunesp-via-subcutanea",
+      "path": "D:\\AVANT\\examples\\questao-premium-vunesp-via-subcutanea.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 3,
+      "findings_after": 3
+    },
+    {
+      "slug": "questao-preview-logic-flow-tap",
+      "path": "D:\\AVANT\\examples\\questao-preview-logic-flow-tap.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-seguridade-social",
+      "path": "D:\\AVANT\\examples\\questao-seguridade-social.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-tecnico-enfermagem-lei-7498",
+      "path": "D:\\AVANT\\examples\\questao-tecnico-enfermagem-lei-7498.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-teste-pipeline",
+      "path": "D:\\AVANT\\examples\\questao-teste-pipeline.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    },
+    {
+      "slug": "questao-teste-simples",
+      "path": "D:\\AVANT\\examples\\questao-teste-simples.json",
+      "changed": false,
+      "edits": [],
+      "skipped": [],
+      "idempotent": true,
+      "findings_before": 1,
+      "findings_after": 1
+    }
+  ]
+}

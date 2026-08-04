@@ -22,51 +22,111 @@
         "issuer": "Anvisa",
         "title": "RDC 15/2012 — monitorização de esterilização",
         "year": 2012,
-        "covers": ["indicador químico classe 1", "fita zebrada", "indicador de processo"]
+        "covers": [
+          "indicador químico classe 1",
+          "fita zebrada",
+          "indicador de processo"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Os indicadores químicos são dispositivos usados para validar os processos de esterilização e são divididos em seis categorias. O dispositivo, que pertence à classe 1 dos indicadores químicos, utilizado externamente acoplado às embalagens para indicar se o material foi submetido ou não ao processo de esterilização, corresponde à(ao):",
     "options": [
-      { "id": "A", "text": "Fita zebrada.", "is_correct": true },
-      { "id": "B", "text": "Indicador biológico.", "is_correct": false },
-      { "id": "C", "text": "Integrador químico.", "is_correct": false },
-      { "id": "D", "text": "Teste de Bowie & Dick.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "Fita zebrada.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Indicador biológico.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Integrador químico.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Teste de Bowie & Dick.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "Indicador químico — classe 1",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
       "items": [
-        { "label": "Comando", "detail": "Identificar dispositivo classe 1 — externo à embalagem, indica exposição ao processo.", "icon": "Search" },
-        { "label": "Classe 1", "detail": "Indicador de processo — fita zebrada acoplada por fora.", "icon": "Tag" },
-        { "label": "Função", "detail": "Diferencia material processado de não processado — não confirma esterilidade.", "icon": "Eye" },
-        { "label": "Gabarito", "detail": "Letra A — fita zebrada.", "icon": "Target" }
+        {
+          "label": "Comando",
+          "detail": "Identificar dispositivo classe 1 — externo à embalagem, indica exposição ao processo.",
+          "icon": "Search"
+        },
+        {
+          "label": "Classe 1",
+          "detail": "Indicador de processo — fita zebrada acoplada por fora.",
+          "icon": "Tag"
+        },
+        {
+          "label": "Função",
+          "detail": "Diferencia material processado de não processado — não confirma esterilidade.",
+          "icon": "Eye"
+        }
       ],
       "footer_rule": "Classe 1 = processo exposto? — fita externa"
     },
     {
       "type": "golden_rule",
       "slide_title": "Classes de indicadores químicos",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
       "content": "INDICADORES QUÍMICOS",
       "rows": [
-        { "label": "Classe 1", "value": "Fita zebrada — processo (externo)", "badge": "hot", "emphasis": "highlight" },
-        { "label": "Classe 2", "value": "Bowie-Dick — teste de ar residual", "badge": "ok" },
-        { "label": "Classe 4", "value": "Multi-parâmetro — 2+ variáveis", "badge": "ok" },
-        { "label": "Classe 5", "value": "Integrador — simula resistência microbiana", "badge": "ok" },
-        { "label": "Biológico", "value": "Esporos — eficácia microbicida (não é químico)", "badge": "warn" },
-        { "label": "Gabarito", "value": "Letra A", "badge": "hot" }
+        {
+          "label": "Classe 1",
+          "value": "Fita zebrada — processo (externo)",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Classe 2",
+          "value": "Bowie-Dick — teste de ar residual",
+          "badge": "ok"
+        },
+        {
+          "label": "Classe 4",
+          "value": "Multi-parâmetro — 2+ variáveis",
+          "badge": "ok"
+        },
+        {
+          "label": "Classe 5",
+          "value": "Integrador — simula resistência microbiana",
+          "badge": "ok"
+        },
+        {
+          "label": "Biológico",
+          "value": "Esporos — eficácia microbicida (não é químico)",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "Químico ≠ biológico — classes distintas"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
       "steps": [
         "Comando: classe 1, externo à embalagem, indica se passou pelo processo.",
         "Classe 1 = indicador de processo = fita zebrada.",
@@ -80,7 +140,10 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
       "content": "PEGADINHAS — classes de indicadores",
       "items": [
         {

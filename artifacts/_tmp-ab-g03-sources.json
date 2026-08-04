@@ -1,0 +1,334 @@
+{
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Ameosc",
+      "orgao": "Pref Paraíso (SC) / Enfermagem",
+      "prova": "Tec (Pref Paraíso (SC))",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "A atuação do técnico em enfermagem na atenção básica é fundamental para a promoção da saúde e prevenção de doenças. Esse profissional participa de\ncampanhas, visitas domiciliares e programas de atenção voltados à comunidade, sempre sob supervisão do enfermeiro. Durante uma visita domiciliar em área rural, o\ntécnico observa que uma gestante não realizou o pré-natal, apresenta sinais de anemia e relata dificuldade de acesso à unidade de saúde. Diante dessa situação, qual\ndeve ser a conduta mais adequada do técnico em enfermagem?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Orientar a gestante sobre a importância do pré-natal, reforçar cuidados com alimentação e repouso, comunicar o enfermeiro e colaborar para o agendamento do atendimento o mais breve possível.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Anotar a situação para discutir em reunião futura da equipe, sem necessidade de comunicação imediata.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Informar à gestante que deve procurar atendimento apenas quando sentir sintomas mais graves, evitando deslocamentos desnecessários.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Oferecer suplemento vitamínico disponível e orientar a gestante a seguir o uso até a próxima visita domiciliar.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Ameosc",
+      "orgao": "Pref Tunápolis",
+      "prova": "Tec Enf",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "A visita domiciliar (VD) é uma ferramenta tecnológica fundamental na Estratégia de Saúde da Família (ESF), permitindo conhecer a realidade da família e intervir\nde forma contextualizada. Sobre a prática da VD, registre V, para as afirmativas verdadeiras, e F, para as falsas:\n(__)O técnico de enfermagem pode realizar visitas domiciliares de rotina para acompanhamento de condições de saúde estáveis, como aferição de pressão em\nhipertensos controlados, sob supervisão do enfermeiro.\n(__) Durante a visita domiciliar, o profissional deve manter uma postura estritamente técnica, evitando conversas sobre a dinâmica familiar ou social para não invadir a\nprivacidade do usuário.\n(__) A visita domiciliar deve ser sempre agendada previamente com a família, sendo vedada a sua realização em casos de busca ativa de faltosos ou situações de\nurgência.\n(__) Um dos objetivos da visita domiciliar é identificar vulnerabilidades e riscos no ambiente físico e social que possam interferir no processo saúde-doença da família.\nApós análise, assinale a alternativa que apresenta a sequência correta dos itens acima, de cima para baixo:",
+    "options": [
+      {
+        "id": "A",
+        "text": "F, V, F, V.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "F, F, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "V, F, F, V.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "V, V, F, F.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Ameosc",
+      "orgao": "Enfermagem",
+      "prova": "Técn (Pref Bandeirante-SC)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Em uma Unidade de Saúde da Família de um município, o técnico de enfermagem participa rotineiramente de ações de prevenção, promoção da saúde,\nimunização e vigilância epidemiológica do território. Em determinado período, a equipe identifica baixa adesão à vacinação em adolescentes, aumento de casos de IST,\nregistros incompletos de visitas domiciliares e ausência de retorno de usuários com tuberculose em tratamento supervisionado. Considerando os princípios e diretrizes do\nSUS, a organização da Atenção Primária e as atribuições do técnico de enfermagem na ESF, qual conduta é a adequada à sua atuação no serviço público?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Restringir-se apenas à aplicação de vacinas dentro da sala de imunização, sem participação em busca ativa, sem registro detalhado em prontuário e sem orientação aos usuários, alegando que atividades extramuros e educativas são atribuições exclusivas do enfermeiro e do médico da equipe.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Focar exclusivamente em procedimentos técnicos dentro da unidade (aferição de pressão, curativos, aplicação de injetáveis) e desencorajar a busca ativa e visitas domiciliares, orientando os usuários a procurarem o serviço apenas em situação de sintoma grave, para \"não sobrecarregar\" a equipe de Atenção Básica.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Atuar na busca ativa de usuários faltosos (incluindo adolescentes e pessoas em tratamento de tuberculose), realizar verificação e atualização de cartões de vacina, registrar corretamente as visitas domiciliares, orientar sobre prevenção de IST, adesão ao tratamento e uso de preservativos, identificar situações de risco e comunicar ao enfermeiro e à equipe multiprofissional, integrando educação em saúde, vigilância epidemiológica e promoção da saúde no território, dentro dos limites de sua competência legal.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Realizar, por iniciativa própria, prescrição de antibióticos para IST, ajustar esquemas terapêuticos de tuberculose e declarar alta de tratamento em prontuário quando o paciente relata melhora, entendendo que isso agiliza o atendimento e reduz a sobrecarga dos demais profissionais.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3": {
+    "meta": {
+      "ano": "2025",
+      "banca": "Ameosc",
+      "orgao": "Enfermagem",
+      "prova": "Técn (Pref Bandeirante-SC)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Em uma Unidade de Saúde da Família (USF) de um município, o técnico de enfermagem integra a equipe multiprofissional responsável pela população adscrita.\nDurante um mutirão de busca ativa de pacientes hipertensos e diabéticos faltosos, a equipe identifica usuários com vacinação desatualizada, sinais de descompensação\nclínica e ausência de acompanhamento regular. Analise as afirmativas abaixo sobre o papel do técnico de enfermagem na Atenção Primária à Saúde:\n(__)Participar da busca ativa de usuários faltosos, atualização de cadastro, verificação de sinais vitais, orientação básica em saúde e encaminhamento para\navaliação de enfermagem ou médica quando necessário está de acordo com as atribuições do técnico de enfermagem na Estratégia Saúde da Família.\n(__)Realizar, por conta própria, prescrição de medicamentos anti-hipertensivos e hipoglicemiantes orais para garantir adesão ao tratamento, desde que conheça o\nhistórico do paciente e considere que a unidade está com grande demanda.\n(__)Atuar no acolhimento inicial, escuta qualificada, identificação de situações de risco e registro adequado das informações no prontuário contribui para a\nintegralidade do cuidado e é compatível com o exercício profissional do técnico de enfermagem sob supervisão do enfermeiro.\n(__)Deixar de registrar procedimentos realizados em visitas domiciliares, por considerar que anotações detalhadas são responsabilidade exclusiva do enfermeiro,\nnão compromete a qualidade da assistência nem fere normas do serviço público.\nAssinale a alternativa que apresenta a sequência CORRETA de verdadeiro (V) ou falso (F), na ordem das afirmativas de cima para baixo:",
+    "options": [
+      {
+        "id": "A",
+        "text": "V, V, F, F.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "F, V, V, F.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "V, F, V, F.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "V, F, F, V.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9": {
+    "meta": {
+      "ano": "2026",
+      "banca": "AMEOSC",
+      "orgao": "ESF",
+      "prova": "TEnf (Pref São José Cedro)",
+      "cargo_header": "TÉCNICO",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família",
+      "content_standard": "golden-v1",
+      "family": "vf",
+      "content_review": {
+        "reviewed_at": "2026-07-11",
+        "guideline_snapshot": "9 Certos da medicação · prescrição verbal restrita · fracionamento com sulco · COFEN/MS 2024",
+        "exam_vs_current": "none"
+      },
+      "sources": [
+        {
+          "id": "cofen-seg-med",
+          "tier": "A",
+          "issuer": "COFEN",
+          "title": "Segurança na administração de medicamentos — 9 Certos",
+          "year": 2024,
+          "url": "https://www.cofen.gov.br",
+          "covers": [
+            "nove certos",
+            "prescrição verbal",
+            "fracionamento"
+          ]
+        }
+      ],
+      "pedagogical_branch": "cam_certos_vf_caso"
+    },
+    "instruction": "A segurança do paciente na administração de medicamentos é regida por protocolos que visam a eliminação de erros humanos através da conferência rigorosa de itens fundamentais.\nAnalise as afirmativas a seguir:\nI - A regra dos inclui a verificação do paciente certo, medicamento certo, via certa, hora certa, dose certa, registro certo, orientação certa, forma certa e resposta certa.\nII - Prescrições médicas verbais são amplamente aceitas na rotina da Estratégia Saúde da Família (ESF), devendo ser executadas de imediato e registradas pelo técnico em até vinte e quatro horas.\nIII - O fracionamento de comprimidos sem sulco visível é permitido desde que o Técnico de Enfermagem utilize materiais cortantes estéreis para garantir a precisão da dose administrada no domicílio.\nEstá correto o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "III apenas.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5": {
+    "meta": {
+      "ano": "2026",
+      "banca": "Ameosc",
+      "orgao": "ESF",
+      "prova": "TEnf (Pref São José Cedro)",
+      "cargo_header": "TÉCNICO DE ENFERMAGEM",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família",
+      "content_standard": "golden-v1",
+      "family": "vf",
+      "content_review": {
+        "reviewed_at": "2026-06-23",
+        "reviewer": "handcraft-g05",
+        "guideline_snapshot": "Preparo pré-operatório na atenção básica — ANVISA/MS",
+        "exam_vs_current": "none"
+      },
+      "sources": [
+        {
+          "id": "anvisa-rdc-15-2012",
+          "tier": "A",
+          "issuer": "ANVISA",
+          "title": "RDC nº 15/2012 — Preparo pré-operatório",
+          "year": 2012,
+          "covers": [
+            "tricotomia",
+            "jejum",
+            "clorexidina",
+            "adornos"
+          ]
+        }
+      ],
+      "pedagogical_branch": "perioperatorio_vf"
+    },
+    "instruction": "O preparo pré-operatório realizado na atenção básica visa minimizar riscos e garantir que o paciente chegue ao centro cirúrgico em condições ideais de segurança.\nAcerca do assunto, registre V, para as afirmativas verdadeiras, e F, para as falsas:\n(__)A tricotomia deve ser realizada na unidade de saúde até vinte e quatro horas antes do procedimento, utilizando preferencialmente lâminas de barbear descartáveis comuns.\n(__)O jejum pré-operatório deve ser mantido por, no mínimo, vinte e quatro horas, incluindo água, sendo essa conduta obrigatória para todos os pacientes, independentemente do tipo de cirurgia ou técnica anestésica, como única forma eficaz de prevenir a aspiração pulmonar do conteúdo gástrico.\n(__)A remoção de próteses dentárias, adornos e esmaltes de unha deve ser orientada para facilitar a observação da perfusão periférica e evitar acidentes com bisturi elétrico.\n(__)O banho pré-operatório com solução degermante de clorexidina é contraindicado para cirurgias limpas, sendo substituído apenas por limpeza local com álcool isopropílico.\nApós análise, assinale a alternativa que apresenta a sequência correta dos itens acima, de cima para baixo:",
+    "options": [
+      {
+        "id": "A",
+        "text": "F, F, V, V.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "V, V, F, F.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "F, F, V, F.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "V, F, V, F.",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  },
+  "ameosc-enfermagem-processo-de-enfermagem-1780008232871-0": {
+    "meta": {
+      "ano": "2026",
+      "banca": "Ameosc",
+      "orgao": "Pref Sta Helena (SC)",
+      "prova": "Tec Enf (Pref Sta Helena (SC))",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Em uma Unidade Básica de Saúde (UBS) localizada em área de vulnerabilidade social, o Técnico de Enfermagem participa de uma reunião de planejamento com a equipe multiprofissional (enfermeiro, médico, assistente social e agente comunitário de saúde) para reorganizar as ações de saúde e melhor atender à população adscrita. Durante a discussão, surgem propostas sobre como operacionalizar os princípios do Sistema Único de Saúde (SUS) na prática assistencial diária. A equipe reconhece que a atenção básica é a porta de entrada do sistema de saúde e que a integralidade, a universalidade e a equidade devem guiar todas as ações. O Técnico de Enfermagem, sob supervisão do enfermeiro, deve reconhecer que a afirmação que melhor descreve a aplicação correta dos princípios do SUS na prática assistencial diária é:\nAssinale a alternativa CORRETA.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A universalidade permite que a UBS restrinja atendimentos a pacientes previamente cadastrados; a integralidade autoriza funcionamento isolado, sem articulação com outros serviços; e a equidade garante atendimento igualitário, sem distinção de vulnerabilidade social.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A descentralização transfere responsabilidades aos municípios, permitindo atuação isolada de cada UBS; a universalidade exige comprovação de renda para acesso aos serviços; e a integralidade restringe as ações da UBS apenas à promoção da saúde e prevenção de doenças.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A integralidade permite que a UBS funcione de forma independente, sem referência e contrarreferência; a descentralização autoriza cada município a definir seus próprios princípios de acesso; e a equidade exige atendimento exclusivo às populações de baixa renda.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A universalidade garante acesso a todos os cidadãos, sem restrições de cadastro ou renda; a equidade orienta ações para populações vulneráveis, com base em dados epidemiológicos; e a descentralização exige coordenação entre os níveis de atenção, não a atuação isolada da UBS.",
+        "is_correct": true
+      }
+    ],
+    "has_slides": 4
+  },
+  "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2": {
+    "meta": {
+      "ano": "2022",
+      "banca": "Ápice",
+      "orgao": "Pref Umbuzeiro",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "São atribuições específicas do ACS, EXCETO:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Trabalhar com adscrição de indivíduos e famílias em base geográfica definida e cadastrar todas as pessoas de sua área, mantendo os dados atualizados no sistema de informação da Atenção Básica vigente, utilizando-os de forma sistemática, com apoio da equipe, para a análise da situação de saúde, considerando as características sociais, econômicas, culturais, demográficas e epidemiológicas do território, e priorizando as situações a serem acompanhadas no planejamento local;",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Registrar, para fins de planejamento e acompanhamento das ações de saúde, os dados de nascimentos, óbitos, doenças e outros agravos à saúde, garantido o sigilo ético;",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Participar dos processos de regulação a partir da Atenção Básica para acompanhamento dos usuários para realização de consultas exames;",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Estimular continuamente a organização comunitária;",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Participar da vida da comunidade, principalmente, através das organizações, estimulando a discussão das questões relativas à melhoria de vida da população;",
+        "is_correct": false
+      }
+    ],
+    "has_slides": 4
+  }
+}

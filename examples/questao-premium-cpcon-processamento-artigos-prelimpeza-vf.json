@@ -22,50 +22,112 @@
         "issuer": "Anvisa",
         "title": "RDC 15/2012 — reprocessamento de produtos para saúde",
         "year": 2012,
-        "covers": ["pré-limpeza", "autoclave", "artigo crítico", "esterilização"]
+        "covers": [
+          "pré-limpeza",
+          "autoclave",
+          "artigo crítico",
+          "esterilização"
+        ]
       }
     ]
   },
   "question_data": {
     "instruction": "Sobre o processamento de produtos para saúde, analise as afirmativas.\n\nI - A pré-limpeza deve ser realizada o mais breve possível após o uso, ainda no local de utilização, para evitar secagem do material biológico.\nII - A esterilização por autoclave utiliza vapor sob pressão para destruir microrganismos, incluindo esporos, em artigos termoestáveis.\nIII - Artigos classificados como críticos podem ser reprocessados com apenas desinfecção de baixo nível, sem necessidade de esterilização.\n\nÉ CORRETO o que se afirma em:",
     "options": [
-      { "id": "A", "text": "I, apenas.", "is_correct": false },
-      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
-      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
-      { "id": "D", "text": "I, II e III.", "is_correct": false },
-      { "id": "E", "text": "III, apenas.", "is_correct": false }
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
       "slide_title": "Processamento — etapas",
-      "meta": { "topico": "Enfermagem", "subtopico": "Processamento de Artigos e Produtos de Saúde" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processamento de Artigos e Produtos de Saúde"
+      },
       "items": [
-        { "label": "Pré-limpeza", "detail": "Imediata no ponto de uso — evita biofilme e secagem do sujidade orgânica.", "icon": "Droplets" },
-        { "label": "Limpeza", "detail": "Remoção de sujidade visível e invisível antes da desinfecção/esterilização.", "icon": "Sparkles" },
-        { "label": "Autoclave", "detail": "Vapor sob pressão — método de esterilização para termoestáveis.", "icon": "Flame" },
-        { "label": "Crítico", "detail": "Penetra tecido/vascular — exige esterilização, não só desinfecção baixa.", "icon": "AlertOctagon" }
+        {
+          "label": "Pré-limpeza",
+          "detail": "Imediata no ponto de uso — evita biofilme e secagem do sujidade orgânica.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Limpeza",
+          "detail": "Remoção de sujidade visível e invisível antes da desinfecção/esterilização.",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "Autoclave",
+          "detail": "Vapor sob pressão — método de esterilização para termoestáveis.",
+          "icon": "Flame"
+        },
+        {
+          "label": "Crítico",
+          "detail": "Penetra tecido/vascular — exige esterilização, não só desinfecção baixa.",
+          "icon": "AlertOctagon"
+        }
       ],
       "footer_rule": "Crítico = esterilização · Pré-limpeza = imediata"
     },
     {
       "type": "golden_rule",
       "slide_title": "Classificação de risco",
-      "meta": { "topico": "Enfermagem", "subtopico": "Processamento de Artigos e Produtos de Saúde" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processamento de Artigos e Produtos de Saúde"
+      },
       "content": "CRÍTICO",
       "rows": [
-        { "label": "Pré-limpeza", "value": "Imediata no local de uso", "badge": "ok" },
-        { "label": "Autoclave", "value": "Vapor sob pressão — esporos", "badge": "ok" },
-        { "label": "Crítico + desinf. baixa", "value": "Falso — crítico exige esterilização", "emphasis": "alert", "badge": "warn" },
-        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+        {
+          "label": "Pré-limpeza",
+          "value": "Imediata no local de uso",
+          "badge": "ok"
+        },
+        {
+          "label": "Autoclave",
+          "value": "Vapor sob pressão — esporos",
+          "badge": "ok"
+        },
+        {
+          "label": "Crítico + desinf. baixa",
+          "value": "Crítico exige esterilização",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "III subestima artigo crítico — pegadinha clássica de CME"
     },
     {
       "type": "logic_flow",
       "reveal_mode": "tap",
-      "meta": { "topico": "Enfermagem", "subtopico": "Processamento de Artigos e Produtos de Saúde" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processamento de Artigos e Produtos de Saúde"
+      },
       "steps": [
         "I: pré-limpeza rápida no local → verdadeira.",
         "II: autoclave = vapor sob pressão → verdadeira.",
@@ -78,12 +140,27 @@
     {
       "type": "danger_zone",
       "bullet_style": "x_icon",
-      "meta": { "topico": "Enfermagem", "subtopico": "Processamento de Artigos e Produtos de Saúde" },
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processamento de Artigos e Produtos de Saúde"
+      },
       "content": "PEGADINHAS — PROCESSAMENTO",
       "items": [
-        { "label": "Adiar pré-limpeza", "detail": "Secagem dificulta remoção e compromete etapas seguintes.", "correct": "Pré-limpeza imediata no ponto de uso." },
-        { "label": "Crítico sem esterilizar", "detail": "III é o erro que elimina C e D.", "correct": "Artigo crítico exige esterilização." },
-        { "label": "Confundir desinfecção com esterilização", "detail": "Desinfecção reduz carga; esterilização elimina microrganismos viáveis incluindo esporos.", "correct": "Autoclave = esterilização." }
+        {
+          "label": "Adiar pré-limpeza",
+          "detail": "Secagem dificulta remoção e compromete etapas seguintes.",
+          "correct": "Pré-limpeza imediata no ponto de uso."
+        },
+        {
+          "label": "Crítico sem esterilizar",
+          "detail": "III é o erro que elimina C e D.",
+          "correct": "Artigo crítico exige esterilização."
+        },
+        {
+          "label": "Confundir desinfecção com esterilização",
+          "detail": "Desinfecção reduz carga; esterilização elimina microrganismos viáveis incluindo esporos.",
+          "correct": "Autoclave = esterilização."
+        }
       ],
       "footer_rule": "CME: classificação de risco define o processo final"
     }

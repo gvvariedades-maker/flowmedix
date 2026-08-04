@@ -1,0 +1,288 @@
+{
+  "total": 171,
+  "lote_size": 8,
+  "batches": 22,
+  "plan": [
+    {
+      "lote": "atencao-basica-saude-da-familia-g01",
+      "slugs": [
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+        "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+        "amauc-enfermagem-processo-de-enfermagem-1780005128081-0",
+        "amauc-enfermagem-processo-de-enfermagem-1780005128081-5",
+        "amauc-enfermagem-processo-de-enfermagem-1780006486032-5"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g02",
+      "slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g03",
+      "slugs": [
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+        "ameosc-enfermagem-processo-de-enfermagem-1780002934000-9",
+        "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+        "ameosc-enfermagem-processo-de-enfermagem-1780008232871-0",
+        "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g04",
+      "slugs": [
+        "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+        "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+        "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+        "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+        "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+        "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+        "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6",
+        "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-2"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g05",
+      "slugs": [
+        "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9",
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+        "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g06",
+      "slugs": [
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-5",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-9",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-0",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-5",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-7",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-2",
+        "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-6"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g07",
+      "slugs": [
+        "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-2",
+        "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-3",
+        "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779344779828-1",
+        "facet-enfermagem-atencao-basica-saude-da-familia-1778968028412-8",
+        "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-0",
+        "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-1",
+        "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-2",
+        "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-4"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g08",
+      "slugs": [
+        "fadesp-enfermagem-atencao-basica-saude-da-familia-1778968194611-6",
+        "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-6",
+        "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-7",
+        "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-0",
+        "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-6",
+        "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-7",
+        "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-0",
+        "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-1"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g09",
+      "slugs": [
+        "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-2",
+        "fau-unicentro-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-0",
+        "fcm-enfermagem-atencao-basica-saude-da-familia-1778967504475-1",
+        "fgv-enfermagem-atencao-basica-saude-da-familia-1778968180610-6",
+        "fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5",
+        "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+        "funcern-enfermagem-atencao-basica-saude-da-familia-1778968144588-7",
+        "funcern-enfermagem-atencao-basica-saude-da-familia-1778968156152-0"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g10",
+      "slugs": [
+        "funcern-enfermagem-seguranca-do-paciente-1777102861438-5",
+        "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-0",
+        "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-1",
+        "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-5",
+        "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-6",
+        "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+        "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968221218-2",
+        "fundatec-enfermagem-processo-de-enfermagem-1780006947080-4"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g11",
+      "slugs": [
+        "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+        "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-1",
+        "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-2",
+        "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-5",
+        "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-6",
+        "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-7",
+        "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-8",
+        "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-4"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g12",
+      "slugs": [
+        "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-5",
+        "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-6",
+        "furb-enfermagem-atencao-basica-saude-da-familia-1778968323839-1",
+        "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-3",
+        "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-4",
+        "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-5",
+        "iaupe-enfermagem-atencao-basica-saude-da-familia-1778968239687-3",
+        "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-1"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g13",
+      "slugs": [
+        "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-2",
+        "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-4",
+        "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-5",
+        "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9",
+        "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-0",
+        "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712315153-8",
+        "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+        "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-4"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g14",
+      "slugs": [
+        "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-5",
+        "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-6",
+        "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-3",
+        "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-4",
+        "idib-enfermagem-nocoes-de-fisiologia-1778934957741-5",
+        "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3",
+        "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-4",
+        "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-5"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g15",
+      "slugs": [
+        "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-7",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g16",
+      "slugs": [
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-9",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-0",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-2",
+        "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-3",
+        "igeduc-enfermagem-processo-de-enfermagem-1780001148264-3",
+        "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+        "igeduc-enfermagem-processo-de-enfermagem-1780009392850-6",
+        "igeduc-enfermagem-processo-de-enfermagem-1780009392850-7"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g17",
+      "slugs": [
+        "igeduc-enfermagem-processo-de-enfermagem-1780010559720-0",
+        "igeduc-enfermagem-processo-de-enfermagem-1780010559720-3",
+        "igeduc-enfermagem-processo-de-enfermagem-1780010559720-4",
+        "igeduc-enfermagem-processo-de-enfermagem-1780010559720-5",
+        "igeduc-enfermagem-processo-de-enfermagem-1780010559720-6",
+        "igeduc-enfermagem-processo-de-enfermagem-1780010559720-7",
+        "igeduc-enfermagem-processo-de-enfermagem-1780010559720-8",
+        "igeduc-enfermagem-processo-de-enfermagem-1780010566816-0"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g18",
+      "slugs": [
+        "igeduc-enfermagem-processo-de-enfermagem-1780010566816-3",
+        "igeduc-enfermagem-saude-do-idoso-1780001440222-1",
+        "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-0",
+        "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-1",
+        "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-3",
+        "instituto-access-enfermagem-atencao-basica-saude-da-familia-1778968221218-0",
+        "instituto-access-geral-atencao-basica-saude-da-familia-1778968207422-8",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g19",
+      "slugs": [
+        "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-3",
+        "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-5",
+        "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-7",
+        "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+        "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-2",
+        "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-5",
+        "instituto-verbena-geral-epidemiologia-e-vigilancia-epidemiologica-1777103590498-0",
+        "intec-enfermagem-atencao-basica-saude-da-familia-1778968357339-5"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g20",
+      "slugs": [
+        "itame-enfermagem-atencao-basica-saude-da-familia-1778968263411-1",
+        "ms-sarmento-enfermagem-atencao-basica-saude-da-familia-1778968263411-8",
+        "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+        "objetiva-concursos-enfermagem-atencao-basica-saude-da-familia-1778968207422-6",
+        "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-0",
+        "quadrix-enfermagem-processo-de-enfermagem-1776056181857-7",
+        "reis-e-reis-enfermagem-atencao-basica-saude-da-familia-1778968357339-1",
+        "selecon-enfermagem-atencao-basica-saude-da-familia-1778968125784-2"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g21",
+      "slugs": [
+        "selecon-enfermagem-atencao-basica-saude-da-familia-1778968207422-2",
+        "unesc-enfermagem-atencao-basica-saude-da-familia-1778968357339-7",
+        "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968039063-5",
+        "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968077998-8",
+        "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968094018-0",
+        "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+        "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+        "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0"
+      ]
+    },
+    {
+      "lote": "atencao-basica-saude-da-familia-g22",
+      "slugs": [
+        "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+        "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-0",
+        "vunesp-enfermagem-processo-de-enfermagem-1780001742844-3"
+      ]
+    }
+  ]
+}

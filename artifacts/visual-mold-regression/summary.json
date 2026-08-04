@@ -1,9 +1,12 @@
 {
-  "generated_at": "2026-07-24T07:08:01.963Z",
-  "pacote_prefix": "sinonimos-antonimos-e-polissemia",
+  "generated_at": "2026-08-04T14:53:05.004Z",
+  "pacote_prefix": "saude-da-mulher",
   "pass": true,
-  "detail": "Playwright L3 PT Sinônimos — 1 branch ok_generico (vocabulário contexto 4/4); PNGs em artifacts/visual-mold-regression/",
+  "detail": "Playwright L3 Saúde da Mulher — 4 branches (desktop + mobile-375 + DoD mulher_prenatal); PNGs em artifacts/visual-mold-regression/",
   "branches": [
-    "pt_sinonimos_polissemia"
+    "mulher_prenatal",
+    "mulher_parto",
+    "mulher_papanicolau",
+    "mulher_mama"
   ]
 }

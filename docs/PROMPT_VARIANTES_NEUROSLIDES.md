@@ -14,8 +14,9 @@
 | [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) | Pedagogia e gramática de slots |
 | [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) | Tokens Cyber Clinical + Editorial |
 | [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](../.cursor/skills/avant-neuroslides-visual/SKILL.md) | Barra de retenção pós-brief; anti-cópia; galeria visual |
+| [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) | Primitives + glanceable; **Camada 7** = DoD Fábrica Onda 3 (≠ Strategy Onda 3 Imu EXCETO) |
 
-**Encadeamento (não duplicar papéis):** `brief-enfermagem` / `brief-lingua-portuguesa` orquestram → **este doc** = corpo do brief 4/4 → `avant-neuroslides-visual` calibra gesto/retenção (opcional, recomendado em flagship) → `VARIANT_MOLDS` = React (só com `Implementar molde:`).
+**Encadeamento (não duplicar papéis):** `brief-enfermagem` / `brief-lingua-portuguesa` orquestram → **este doc** = corpo do brief 4/4 → `avant-neuroslides-visual` calibra gesto/retenção (opcional, recomendado em flagship) → `VARIANT_MOLDS` = React (só com `Implementar molde:`). Pacote já vendável (Fábrica Onda 3): reusar moldes/primitives per Camada 7 — React novo só com `Implementar molde:` + gesto novo ou ≥5 questões.
 
 **Quando usar este prompt**
 

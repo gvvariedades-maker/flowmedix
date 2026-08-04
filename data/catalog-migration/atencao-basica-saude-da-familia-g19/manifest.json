@@ -1,0 +1,18 @@
+{
+  "lote": "atencao-basica-saude-da-familia-g19",
+  "exported_at": "2026-08-03T20:14:10.450Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/atencao-basica-saude-da-familia-g19/manifest.json"
+  },
+  "slugs": [
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-3",
+    "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-5",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-7",
+    "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+    "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-2",
+    "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-5",
+    "instituto-verbena-geral-epidemiologia-e-vigilancia-epidemiologica-1777103590498-0",
+    "intec-enfermagem-atencao-basica-saude-da-familia-1778968357339-5"
+  ]
+}

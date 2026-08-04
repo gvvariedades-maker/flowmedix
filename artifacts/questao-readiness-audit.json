@@ -2,11 +2,87 @@
   "strict": true,
   "strict_v2_pedagogy": true,
   "strict_v3_pedagogy": false,
-  "scanned": 1,
+  "scanned": 8,
+  "summary": {
+    "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+    "scanned": 8,
+    "ready_100": 8,
+    "pct_ready": 100,
+    "registry": {
+      "status": "applied",
+      "total_slugs": 218,
+      "handcraft_applied": 218,
+      "complete": true
+    },
+    "tier_failures": {
+      "A1": 0,
+      "A2": 0,
+      "A3": 0
+    },
+    "not_ready": []
+  },
   "results": [
     {
-      "slug": "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6",
-      "subtopico": "Imunização",
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-6",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco medio → auto_conditional [subtopic_immature] — Pacote ainda não está production_ready — confiança limitada.",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "epi_notificacao_compulsoria",
+      "inferred_branch": "epi_notificacao_compulsoria",
+      "risk": {
+        "risk_tier": "medio",
+        "approval_mode": "auto_conditional",
+        "risk_factors": [
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "Pacote ainda não está production_ready — confiança limitada."
+        ]
+      }
+    },
+    {
+      "slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-2",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
       "ready_100": true,
       "tier_pass": {
         "A1": true,
@@ -48,9 +124,389 @@
           "severity": "info"
         }
       ],
-      "family": "vf",
-      "pedagogical_branch": "imunizacao_vf_intervalos",
-      "inferred_branch": "imunizacao_vf_intervalos",
+      "family": "conceito",
+      "pedagogical_branch": "epi_indicadores",
+      "inferred_branch": "epi_indicadores",
+      "risk": {
+        "risk_tier": "medio",
+        "approval_mode": "auto_conditional",
+        "risk_factors": [
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "Pacote ainda não está production_ready — confiança limitada."
+        ]
+      }
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-3",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_correct_option_ref",
+          "message": "Nenhum termo significativo da alternativa correta aparece em concept_map ou golden_rule.",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco medio → auto_conditional [numeric_claim_soft, subtopic_immature] — Claim numérico suave (%, tempo, escore) — amostragem elevada.",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "epi_notificacao_compulsoria",
+      "inferred_branch": "epi_notificacao_compulsoria",
+      "risk": {
+        "risk_tier": "medio",
+        "approval_mode": "auto_conditional",
+        "risk_factors": [
+          "numeric_claim_soft",
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "Claim numérico suave (%, tempo, escore) — amostragem elevada.",
+          "Pacote ainda não está production_ready — confiança limitada."
+        ]
+      }
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-4",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_branch_declared",
+          "message": "meta.pedagogical_branch=\"epi_generico\" ≠ inferido=\"epi_cadeia_transmissao\"",
+          "severity": "warn"
+        },
+        {
+          "tier": "A3",
+          "code": "l3_branch_inference_mismatch",
+          "message": "meta.pedagogical_branch=\"epi_generico\" ≠ inferido=\"epi_cadeia_transmissao\" — rodar catalog:patch-pedagogical-branch --reconcile-branch",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco medio → auto_conditional [subtopic_immature] — Pacote ainda não está production_ready — confiança limitada.",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "epi_generico",
+      "inferred_branch": "epi_cadeia_transmissao",
+      "risk": {
+        "risk_tier": "medio",
+        "approval_mode": "auto_conditional",
+        "risk_factors": [
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "Pacote ainda não está production_ready — confiança limitada."
+        ]
+      }
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-5",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco medio → auto_conditional [subtopic_immature] — Pacote ainda não está production_ready — confiança limitada.",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "epi_generico",
+      "inferred_branch": "epi_generico",
+      "risk": {
+        "risk_tier": "medio",
+        "approval_mode": "auto_conditional",
+        "risk_factors": [
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "Pacote ainda não está production_ready — confiança limitada."
+        ]
+      }
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-1",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: D).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: D) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco medio → auto_conditional [subtopic_immature] — Pacote ainda não está production_ready — confiança limitada.",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "epi_notificacao_compulsoria",
+      "inferred_branch": "epi_notificacao_compulsoria",
+      "risk": {
+        "risk_tier": "medio",
+        "approval_mode": "auto_conditional",
+        "risk_factors": [
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "Pacote ainda não está production_ready — confiança limitada."
+        ]
+      }
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-8",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: B).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: B) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco medio → auto_conditional [subtopic_immature] — Pacote ainda não está production_ready — confiança limitada.",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "epi_notificacao_compulsoria",
+      "inferred_branch": "epi_notificacao_compulsoria",
+      "risk": {
+        "risk_tier": "medio",
+        "approval_mode": "auto_conditional",
+        "risk_factors": [
+          "subtopic_immature"
+        ],
+        "reasons": [
+          "Pacote ainda não está production_ready — confiança limitada."
+        ]
+      }
+    },
+    {
+      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-4",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "ready_100": true,
+      "tier_pass": {
+        "A1": true,
+        "A2": true,
+        "A2.5": true,
+        "A2b": true,
+        "A3": true,
+        "A4": true
+      },
+      "checks": [
+        {
+          "tier": "A1",
+          "code": "l1_schema",
+          "message": "QuestaoCompletaSchema + premiumGate estrutural OK",
+          "severity": "info"
+        },
+        {
+          "tier": "A2",
+          "code": "danger_gabarito_unparseable",
+          "message": "danger_zone.items[].correct sem letra parseável (gabarito esperado: A).",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2",
+          "code": "l2_gabarito_unparseable",
+          "message": "danger_zone.correct sem letra parseável (gabarito: A) — OK em EXCETO/semântico",
+          "severity": "warn"
+        },
+        {
+          "tier": "A2.5",
+          "code": "align_branch_declared",
+          "message": "meta.pedagogical_branch=\"epi_generico\" ≠ inferido=\"epi_indicadores\"",
+          "severity": "warn"
+        },
+        {
+          "tier": "A3",
+          "code": "l3_branch_inference_mismatch",
+          "message": "meta.pedagogical_branch=\"epi_generico\" ≠ inferido=\"epi_indicadores\" — rodar catalog:patch-pedagogical-branch --reconcile-branch",
+          "severity": "warn"
+        },
+        {
+          "tier": "A4",
+          "code": "a4_player_pilot",
+          "message": "Validar manualmente em /estudar/[slug]: enunciado ↔ slides, molde visual, didática",
+          "severity": "info"
+        },
+        {
+          "tier": "A4",
+          "code": "risk_tier",
+          "message": "Risco medio → auto_conditional [subtopic_immature] — Pacote ainda não está production_ready — confiança limitada.",
+          "severity": "info"
+        }
+      ],
+      "family": "conceito",
+      "pedagogical_branch": "epi_generico",
+      "inferred_branch": "epi_indicadores",
       "risk": {
         "risk_tier": "medio",
         "approval_mode": "auto_conditional",

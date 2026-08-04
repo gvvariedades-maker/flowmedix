@@ -4,7 +4,7 @@ Leitura estimada: **~15 minutos**. Guia para criar uma **variante inédita** com
 
 **Público:** devs, agentes de conteúdo, revisores.
 
-**Complementa:** [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) (pedagogia), [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (layouts genéricos), [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (brief de design 4/4 — versão enxuta e completa para agentes).
+**Complementa:** [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) (pedagogia), [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (layouts genéricos), [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) (brief de design 4/4 — versão enxuta e completa para agentes), [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) (primitivos + glanceable + ondas), [`NEUROSLIDES_VISUAL_BAR.md`](NEUROSLIDES_VISUAL_BAR.md) (**piso best-in-market + ratchet** — cada molde ≥ demo G2).
 
 > **Antes da Fase 0 (questão âncora):** rodar **Fase 3b** do [`L3_MAPEAMENTO_CONVERSA.md`](L3_MAPEAMENTO_CONVERSA.md) — brief obrigatório em [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) para cada ramo forte (`molde_redesign` / `molde_inedito`). Cauda longa dispensa.
 
@@ -124,6 +124,25 @@ Decida como o JSON alimenta a UI:
 | Motion | Framer Motion + `useReducedMotion()` |
 | Superfície | Cards claros sobre shell cyber (`ReverseStudyShell`); legibilidade WCAG |
 | Inferência | Função `infer*` isolada e testável no topo do arquivo |
+| **Primitivos** | Compôr [`components/slides/primitives/`](../components/slides/primitives/) (`BoardChrome`, `PolarityPanel`, `TwoColumnBoard`, …) — ver [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) |
+
+#### Primitivos (board kit)
+
+Antes de inventar markup novo de card/coluna/rail, reutilizar o kit:
+
+| Primitivo | Quando |
+|-----------|--------|
+| `BoardChrome` | Shell wash + max-w + eyebrow/title/footer |
+| `PolarityPanel` / `LabelBodyRow` | Painéis keep×exception, chip+corpo |
+| `TwoColumnBoard` / `PillarDeck` | Compare 2 colunas / deck 3–4 pilares |
+| `ProtocolRailRow` / `CriticalNumber` / `AlertCallout` | Protocolo, dose, callout |
+
+Tokens: `boardTokens.ts` (`tone`: ok / barrier / command / transfer / rights…).
+Piloto que já compõe o kit: ética Adolescente v2 (`adolescent-*-deck|board|compare`).
+
+**Onda 4 (flagships):** `urgencias-xabcde-rail` e `adme-journey-rail` compõem `ProtocolRailRow`; tap-flows XABCDE/RCP/farmaco aplicam `applyProtocolTapBudget` (≤3); `pt-crase-funnel-board` / `pt-crase-trap-arena` / buckets do funil usam `PolarityPanel`. Helper: [`lib/slides/protocolTapBudget.ts`](../lib/slides/protocolTapBudget.ts).
+
+**Shells logic_flow (Fase A+B):** [`components/slides/logicFlowShells/`](../components/slides/logicFlowShells/) — `LogicFocusShell` · `LogicRailShell` · `LogicIsolateShell`. `LogicFlowStepLadder` e genéricos em `reveal_mode: tap` usam Focus; protocolos XABCDE/RCP/NSP usam Rail; EXCETO wrappers usam Isolate. IDs de `layout_variant` **não** são apagados. Ver [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) Camada 4.
 
 **Padrão de inferência (recomendado):**
 
@@ -228,6 +247,7 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `pt-clitic-rail-deck` | Língua Portuguesa / Colocação (`pt_pronomes_colocacao`) | Deck trilho pró · ên · meso + atrativo? | `examples/questao-premium-vunesp-portugues-colocacao-trilho.json` |
 | `pt-comma-rail-deck` | Língua Portuguesa / Pontuação (`pt_pontuacao`) | Deck trilho vírgula — o que isola? · S\|V livre | `examples/questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` |
 | `pt-term-matrix-deck` | Língua Portuguesa / Termos (`pt_termos_oracao`) | Deck matriz de cargos — verbo? · nome? · de quê? | `examples/questao-premium-vunesp-portugues-termos-matrix-folhetos.json` |
+| `adolescent-care-pillars-deck` | Saúde do Adolescente (`adolescente_etica_sigilo` + Onda 2: violência / mental / desenvolvimento / genérico) | Deck 3 pilares — glanceable | `artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md` · briefs Onda 2 |
 
 ### Danger zone
 
@@ -247,9 +267,11 @@ Cada subtópico premium pode definir **4 layouts** (um por slide):
 | `peri-srpa-trap-arena` | `peri-srpa-monitor-deck` | Slot SRPA errado × Aldrete/monitor | aldrete, analgesia, EXCETO, letra A–E |
 | `peri-protocol-trap-arena` | `peri-protocol-checklist-deck` | WHO/CDC violado × checklist | sign in, time out, letra A–E |
 | `peri-vf-trap-chips` | `peri-vf-assertions-deck` | Item V/F errado × combinação | I, II, III, verdadeira, falsa |
-| `pt-crase-trap-arena` | `pt-crase-funnel-deck` | Arena compare — estágio do funil que barra cada letra | verbo, masculino, todos, ferramentas, automática, letra A–E |
+| `pt-crase-trap-arena` | `pt-crase-funnel-deck` | Arena compare — `PolarityPanel` trap×funil (Onda 4) | verbo, masculino, todos, ferramentas, automática, letra A–E |
 | `pt-clitic-trap-arena` | `pt-clitic-rail-deck` | Arena compare — estação do trilho que barra cada letra | Já, Quando, particípio, atrativo, ênclise automática, letra A–E |
 | `pt-comma-trap-arena` | `pt-comma-rail-deck` | Arena compare — estação do trilho que barra cada letra | pausa oral, sujeito\|verbo, vocativo, aposto, letra A–E |
+| `adolescent-exceto-compare` | `adolescent-care-pillars-deck` / isolate-board | Compare acolher × afastar (EXCETO) — glanceable; Onda 2 | `artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md` |
+| `pni-exceto-compare` | `pni-exceto-isolate-board` | Compare conduta PNI × exceção — glanceable; Onda 3 | `artifacts/l3-brief-imunizacao-imunizacao_exceto.md` |
 
 Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md).
 
@@ -264,20 +286,24 @@ Layouts genéricos (`compare`, `list`, `cards`) continuam em [`AGENT_AVANT_TEMPL
 | `pt-crase-funnel-tap-flow` | Língua Portuguesa / Crase (`pt_crase`) | Pipeline tap — um estágio/letra por passo | `questao-premium-vunesp-portugues-crase-funil.json` |
 | `pt-clitic-rail-tap-flow` | Língua Portuguesa / Colocação (`pt_pronomes_colocacao`) | Pipeline tap — atrativo?/letra por passo | `questao-premium-vunesp-portugues-colocacao-trilho.json` |
 | `pt-comma-rail-tap-flow` | Língua Portuguesa / Pontuação (`pt_pontuacao`) | Pipeline tap — isola?/letra por passo | `questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` |
+| `adolescent-exceto-isolate-board` | Saúde do Adolescente (ética + Onda 2) | Board manter × exceção — **0 taps** (canônico v2) | `artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md` |
+| `pni-exceto-isolate-board` | Imunização (`imunizacao_exceto`) | Board manter × foge do PNI — **0 taps**; Onda 3 | `artifacts/l3-brief-imunizacao-imunizacao_exceto.md` |
+| `adolescent-exceto-isolate-tap` | (legado / galeria) | Mesmo gesto em taps — mantido no registry; não é o molde do ramo | — |
 
 ### Golden rule (slide 2)
 
 | `layout_variant` | Subtópico(s) | Interação | Golden |
 |------------------|--------------|-----------|--------|
-| `pt-crase-funnel-board` | Língua Portuguesa / Crase (`pt_crase`) | Painel funil MASC → VERBO → A+A + teste ao | `questao-premium-vunesp-portugues-crase-funil.json` |
+| `pt-crase-funnel-board` | Língua Portuguesa / Crase (`pt_crase`) | Painel funil + `PolarityPanel` (Onda 4) | `questao-premium-vunesp-portugues-crase-funil.json` |
 | `pt-clitic-rail-board` | Língua Portuguesa / Colocação (`pt_pronomes_colocacao`) | Painel trilho ATRATIVO? → pró / ên / meso | `questao-premium-vunesp-portugues-colocacao-trilho.json` |
 | `pt-comma-rail-board` | Língua Portuguesa / Pontuação (`pt_pontuacao`) | Painel trilho O QUE ISOLA? → vocativo / S\|V livre | `questao-premium-avancasp-portugues-pontuacao-vocativo-rita.json` |
 | `soft-lens-board` | Cálculo de Administração de Medicamentos e Infusões | Painel de lentes suaves — toque em cada `row` | `questao-premium-idecan-calculo-equivalencias-gotas.json` |
 | `itu-bundle-letter-board` | Infecções no Contexto da Biossegurança (`biosseg_iras_itu_cateter`) | Espectro de letras bundle ok × EXCETO | `questao-premium-idib-umirim-itu-cateter-exceto.json` |
 | `etiology-letter-spectrum` | Doenças Bacterianas e Fúngicas | Espectro letras bacteriana × intruso | `questao-premium-ibgp-agentes-etiologicos-todas-bacterias.json` |
 | `reference_table` | (automático com `rows` quando sem molde) | Tabela rótulo × valor | vários |
-| `pni-calendar-board` | Imunização (`imunizacao_calendario`) | Trilho 0·2·3·4·6·12 + rows | `questao-premium-fundatec-meningococica-3meses.json` |
+| `pni-calendar-board` | Imunização (`imunizacao_calendario`) | Trilho 0·2·3·4·6·12 + `LabelBodyRow` (Onda 3) | `questao-premium-fundatec-meningococica-3meses.json` |
 | `pni-temperature-rail` | Imunização (`imunizacao_cadeia_frio`) | Trilho 0·2·8·12 + rows | `questao-premium-avancasp-imunizacao-rede-frio-temperatura.json` |
+| `adolescent-speak-barrier-board` | Saúde do Adolescente (ética + Onda 2) | Board falar × barreira / transferência — glanceable | `artifacts/l3-brief-saude-adolescente-etica-sigilo-v2.md` |
 | `center` / `banner` / `minimal` / `compact` | demais subtópicos | Tipografia ou faixa | — |
 
 ---

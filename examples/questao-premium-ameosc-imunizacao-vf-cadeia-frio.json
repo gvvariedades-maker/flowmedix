@@ -28,7 +28,12 @@
         "title": "Manual de Normas e Procedimentos para Vacinação — PNI",
         "year": 2025,
         "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
-        "covers": ["BCG intradérmica", "cadeia de frio", "pentavalente", "papel do técnico"]
+        "covers": [
+          "BCG intradérmica",
+          "cadeia de frio",
+          "pentavalente",
+          "papel do técnico"
+        ]
       }
     ]
   },
@@ -67,23 +72,23 @@
       },
       "items": [
         {
-          "label": "Afirmativa I — BCG",
-          "detail": "VERDADEIRA: intradérmica, preferencialmente no deltoide direito.",
+          "label": "BCG",
+          "detail": "Intradérmica, preferencialmente no deltoide direito.",
           "icon": "Syringe"
         },
         {
-          "label": "Afirmativa II — cadeia de frio",
-          "detail": "FALSA: agitar não recupera vacina fora da temperatura — descartar e notificar.",
+          "label": "Cadeia de frio",
+          "detail": "Agitar não recupera vacina fora da temperatura — descartar e notificar.",
           "icon": "Thermometer"
         },
         {
-          "label": "Afirmativa III — pentavalente",
-          "detail": "VERDADEIRA: difteria, tétano, coqueluche, hepatite B e Hib.",
+          "label": "Pentavalente",
+          "detail": "Difteria, tétano, coqueluche, hepatite B e Hib.",
           "icon": "Shield"
         },
         {
-          "label": "Afirmativa IV — papel do técnico",
-          "detail": "FALSA: técnico aplica no calendário PNI — não prescreve vacina extraoficial.",
+          "label": "Papel do técnico",
+          "detail": "Técnico aplica no calendário PNI — não prescreve vacina extraoficial.",
           "icon": "UserX"
         },
         {

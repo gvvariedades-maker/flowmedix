@@ -1,0 +1,11 @@
+{
+  "subtopico": "Noções de Anatomia",
+  "pacote_prefix": "nocoes-de-anatomia",
+  "status": "closed",
+  "closed_at": "2026-08-03",
+  "mismatch_count": 0,
+  "total_scanned": 170,
+  "manifest_slugs": 46,
+  "signed_by": "onda1-anatomia",
+  "notes": "meta vazio patched; authority 46; lote_size 8"
+}

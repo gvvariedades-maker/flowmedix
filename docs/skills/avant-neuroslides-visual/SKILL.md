@@ -28,7 +28,9 @@ Skill de **inteligência visual por ramo**: eleva o *como se vê* a decisão da 
 
 **Complementa:** brief + âncora JSON → esta skill calibra gesto/retenção → React sob pedido.
 
-Refs: [`reference-retencao.md`](reference-retencao.md)
+Refs: [`reference-retencao.md`](reference-retencao.md) · ADR G2 [`docs/DECISAO_NEUROSLIDES_GERACAO_2.md`](../../DECISAO_NEUROSLIDES_GERACAO_2.md) · **barra + ratchet** [`docs/NEUROSLIDES_VISUAL_BAR.md`](../../NEUROSLIDES_VISUAL_BAR.md) · piso [`artifacts/neuroslides-g2-demo.html`](../../../artifacts/neuroslides-g2-demo.html) · roadmap [`docs/NEUROSLIDES_GERACAO_2_ROADMAP.md`](../../NEUROSLIDES_GERACAO_2_ROADMAP.md) · estratégia [`docs/NEUROSLIDES_VISUAL_STRATEGY.md`](../../NEUROSLIDES_VISUAL_STRATEGY.md) · kit [`components/slides/primitives/`](../../../components/slides/primitives/) · catálogo Fábrica [`artifacts/pre-onda3-print-to-primitives-catalog.md`](../../../artifacts/pre-onda3-print-to-primitives-catalog.md)
+
+**Piso visual (2026-08-04):** todo molde novo/redesign ≥ demo G2; cada modelo **só melhora** (`visual_bar: pass` + ratchet). Rule: `.cursor/rules/neuroslides-visual-bar.mdc`.
 
 **Galeria visual (playbook):** ramos com `visual_gallery` indexam capturas do player — abrir antes de Design visual / Implementar molde. Ex. PT: `artifacts/l3-visual-gallery-lingua-portuguesa-index.md` · campo em `pedagogical_branches[].visual_gallery`.
 
@@ -156,6 +158,14 @@ Mobile: alvos ≥44px; 375px legível; `prefers-reduced-motion` = revelar tudo.
 - [ ] React só se usuário pediu `Implementar molde:`
 
 Falha → reescrever design mental; **não** escalar molde.
+
+### Onda 3 Fábrica 20 (pacote já `production_ready`)
+
+Não confundir com **Strategy Onda 3** (Imu EXCETO). Checklist completo: [`docs/NEUROSLIDES_VISUAL_STRATEGY.md`](../../NEUROSLIDES_VISUAL_STRATEGY.md) Camada 7 · catálogo [`artifacts/pre-onda3-print-to-primitives-catalog.md`](../../../artifacts/pre-onda3-print-to-primitives-catalog.md) · `reference-retencao.md` §2c.
+
+| Reusar | `Implementar molde:` |
+|--------|----------------------|
+| Gesto já no kit/mapa do ramo; polish glanceable | Gesto espacial **novo** ou ≥5 questões sem board |
 
 ---
 

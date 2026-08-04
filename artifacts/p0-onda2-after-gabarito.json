@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-08-01T23:17:39.071Z",
+  "phase": "after-gabarito",
+  "results": [
+    {
+      "lote": "processo-de-enfermagem-completo",
+      "missing": false,
+      "files": 286,
+      "counts": {
+        "pedagogy_letter_spoiler": 2,
+        "pedagogy_vf_verdict_spoiler": 42,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 2,
+      "other_fp_pre_answer": 0,
+      "files_with_named": 0,
+      "named_samples": [],
+      "residue": [
+        {
+          "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-4",
+          "slide": "golden_rule",
+          "key": "label",
+          "path": "golden_rule.rows[1].label",
+          "evidence": "Débito Urinário",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-0",
+          "slide": "golden_rule",
+          "key": "label",
+          "path": "golden_rule.rows[1].label",
+          "evidence": "Via Aérea",
+          "kind": "clause_only"
+        }
+      ]
+    },
+    {
+      "lote": "curativos-e-manejo-de-feridas-completo",
+      "missing": false,
+      "files": 188,
+      "counts": {
+        "pedagogy_letter_spoiler": 0,
+        "pedagogy_vf_verdict_spoiler": 302,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 0,
+        "pedagogy_density": 0
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 0,
+      "other_fp_pre_answer": 0,
+      "files_with_named": 0,
+      "named_samples": [],
+      "residue": []
+    },
+    {
+      "lote": "saude-da-mulher-completo",
+      "missing": false,
+      "files": 264,
+      "counts": {
+        "pedagogy_letter_spoiler": 3,
+        "pedagogy_vf_verdict_spoiler": 0,
+        "pedagogy_question_bound_label": 0,
+        "pedagogy_logic_padding": 0,
+        "pedagogy_polarity_risk": 0,
+        "pedagogy_danger_orphan": 0,
+        "pedagogy_logic_missing_gabarito": 1,
+        "pedagogy_density": 0
+      },
+      "named_letter_pre_answer": 0,
+      "clause_only_pre_answer": 3,
+      "other_fp_pre_answer": 0,
+      "files_with_named": 0,
+      "named_samples": [],
+      "residue": [
+        {
+          "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+          "slide": "concept_map",
+          "key": "label",
+          "path": "concept_map.items[0].label",
+          "evidence": "Cérvice",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+          "slide": "golden_rule",
+          "key": "footer_rule",
+          "path": "golden_rule.footer_rule",
+          "evidence": "Cérvice = Colo do Útero.",
+          "kind": "clause_only"
+        },
+        {
+          "slug": "ibade-enfermagem-saude-da-mulher-1777104323066-4",
+          "slide": "concept_map",
+          "key": "detail",
+          "path": "concept_map.items[2].detail",
+          "evidence": "Células intermediárias e profundas: citoplasma azul.",
+          "kind": "clause_only"
+        }
+      ]
+    }
+  ]
+}

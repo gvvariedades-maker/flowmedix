@@ -1,0 +1,299 @@
+[
+  {
+    "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7.json",
+    "file": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7.json",
+    "correct": "E",
+    "instruction": "De acordo com o Ministério da Saúde, \"para incorporar um agravo ou doença à lista de notificação compulsória é necessário considerar alguns aspectos, aexemplo de características que possam apresentar riscos à saúde pública: potencial para surto ou epidemia; doença ou agravo de causa desconhecida; alteração nopadrão clínico-epidemiológico das doenças conhecidas\", em que são considerados os aspectos abaixo descritos, salvo:",
+    "options": [
+      {
+        "id": "A",
+        "text": "magnitude",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "gravidade",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "severidade",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "transcendência",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "invulnerabilidade",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "AVANÇASP",
+      "ano": "2024",
+      "orgao": "Pref Pedreira",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5.json",
+    "file": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5.json",
+    "correct": "E",
+    "instruction": "A Descrição das condições de saúde da população por meio da construção de indicadores de saúde é uma das áreas de atuação da epidemiologia. É exemplo deindicador de saúde:",
+    "options": [
+      {
+        "id": "A",
+        "text": "avaliação do processo saúde-doença.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "avaliação do impacto do saneamento básico.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "investigação de fatores de risco.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "investigação de agentes etiológicos.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "taxa de mortalidade.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "AVANÇASP",
+      "ano": "2022",
+      "orgao": "Trabalho",
+      "prova": "TEnf (Pref Amparo)"
+    }
+  },
+  {
+    "slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8.json",
+    "file": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8.json",
+    "correct": "B",
+    "instruction": "Com base em obras publicadas pelo Ministério da Saúde, assinale a opção correta a respeito da assistência em saúde coletiva.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Em epidemiologia, agravos são condições que surgem em função de desequilíbrios orgânicos não transmitidos, como a hipertensão ou o diabetes.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Morbidade refere-se ao comportamento das doenças em uma população exposta ao adoecimento, estando associada aos índices de prevalência e de incidência.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Endemia é o aumento do número de casos de determinada doença muito acima do esperado e não limitado a uma região.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A vacinação de bloqueio é aquela realizada em toda a população suscetível a adquirir determinada doença no país.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A investigação epidemiológica deve ocorrer a partir da confirmação de um caso de determinada doença, sendo facultativa tal investigação enquanto perdurarmera suspeita.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Cebraspe (Cespe)",
+      "ano": "2025",
+      "orgao": "Técnico em Enfermagem",
+      "prova": "Ass Tec Sau (Pref Boa Vista)"
+    }
+  },
+  {
+    "slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6.json",
+    "file": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6.json",
+    "correct": "A",
+    "instruction": "Em relação à imunização e ao programa nacional de imunizações, julgue o item que se segue.\nSão de notificação compulsória às autoridades sanitárias os casos suspeitos ou confirmados de doenças que possam implicar medidas de isolamento ou quarentena, deacordo com o Regulamento Sanitário Internacional.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certo",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Errado",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Cebraspe (Cespe)",
+      "ano": "2024",
+      "orgao": "Enfermagem / Trabalho",
+      "prova": "Tec (Pref Cach Itapemirim)"
+    }
+  },
+  {
+    "slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6.json",
+    "file": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6.json",
+    "correct": "A",
+    "instruction": "Leia a afirmativa a seguir.\n\"Entende-se por\num conjunto de ações que proporcionam o conhecimento, a detecção ou prevenção de qualquer mudança nos fatoresdeterminantes e condicionantes de saúde individual ou coletiva, com a finalidade de recomendar e adotar as medidas de\ne\ndasdoenças ou agravos.\"\n(Fonte: www.planalto.gov.br – Adaptado)\nMarque a opção que preenche CORRETA e respectivamente as lacunas.",
+    "options": [
+      {
+        "id": "A",
+        "text": "vigilância epidemiológica / prevenção / controle",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "vigilância sanitária / controle / acompanhamento",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "vigilância ambiental / prevenção / controle",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "assistência toxicológica / controle / prevenção",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "saúde do trabalhador e da criança / assistência toxicológica / vigilância epidemiológica",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Cetrede",
+      "ano": "2024",
+      "orgao": "Pref Caucaia",
+      "prova": "Tec Enf"
+    }
+  },
+  {
+    "slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7.json",
+    "file": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7.json",
+    "correct": "E",
+    "instruction": "Em relação à notificação de doenças, casos de cólera devem ser notificados",
+    "options": [
+      {
+        "id": "A",
+        "text": "semanalmente para a Secretaria Municipal de Saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "semanalmente para a Secretaria Estadual de Saúde e para a Secretaria Municipal de Saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "imediatamente, em até 24 horas, para a Secretaria Municipal de Saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "imediatamente, em até 24 horas, para a Secretaria Estadual de Saúde e para a Secretaria Municipal de Saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "imediatamente, em até 24 horas, para o Ministério da Saúde, para a Secretaria Estadual de Saúde e para a Secretaria Municipal de Saúde.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Cetrede",
+      "ano": "2024",
+      "orgao": "Pref Caucaia",
+      "prova": "Tec Enf"
+    }
+  },
+  {
+    "slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4.json",
+    "file": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4.json",
+    "correct": "D",
+    "instruction": "Analise a afirmativa a seguir.\n______________ são eventos de notificação compulsória e importantes no contexto da saúde dos agentes de combate às endemias. Por definição, é considerado caso,todo indivíduo que, tendo sido exposto a substâncias químicas (agrotóxicos, medicamentos, produtos de uso doméstico, cosméticos e higiene pessoal, produtos químicosde uso industrial, drogas, plantas, alimentos e bebidas), apresente sinais e sintomas clínicos de intoxicação e/ou alterações laboratoriais provável ou possivelmentecompatíveis.\nAssinale a alternativa que completa corretamente a lacuna.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Acidentes de alturas",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Intoxicações endógenas",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Cânceres de pele",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Intoxicações exógenas",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Acidentes com animais peçonhentos",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Cetrede",
+      "ano": "2021",
+      "orgao": "Pref Icapuí",
+      "prova": "Ag End"
+    }
+  },
+  {
+    "slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5.json",
+    "file": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5.json",
+    "correct": "B",
+    "instruction": "A operacionalização da vigilância epidemiológica compreende um ciclo de funções específicas e intercomplementares, desenvolvidas de modo contínuo, permitindoconhecer, a cada momento, o comportamento da doença ou o agravo selecionado como alvo das ações, para que as medidas de intervenção pertinentes possam serdesencadeadas com oportunidade e eficácia. São funções da vigilância epidemiológica:",
+    "options": [
+      {
+        "id": "A",
+        "text": "geoprocessamento de dados coletados.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "coleta de dados.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "análise e interpretação dos dados geoprocessados.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "recomendação das medidas prognósticas apropriadas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "a não divulgação de informações pertinentes.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Cetrede",
+      "ano": "2021",
+      "orgao": "Pref Icapuí",
+      "prova": "TEnf"
+    }
+  }
+]

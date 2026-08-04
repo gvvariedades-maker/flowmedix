@@ -8,6 +8,7 @@
  *   npm run catalog:apply-lote -- --lote=pilot-goldens --apply --allow-insert
  *   npm run catalog:apply-lote -- --lote=imunizacao-lote-02 --apply --only-slugs-file=data/catalog-migration/imunizacao-lote-02/sub01-slugs.json
  *   npm run catalog:apply-lote -- --lote=imunizacao-g07 --apply --skip-patch-branch
+ *   npm run catalog:apply-lote -- --lote=vias-de-administracao-completo --apply --skip-risk-approval
  */
 
 import { loadEnvConfig } from '@next/env';
@@ -47,8 +48,9 @@ function resolveRiskContextFromLote(lote: string): {
   const auto = pacote?.auto_approval;
   const productionReady = pacote?.production_status === 'production_ready';
   const autoEnabled = auto?.enabled === true;
+  const skipRiskApproval = hasFlag('skip-risk-approval');
   return {
-    riskApprovalGate: autoEnabled || hasFlag('risk-approval-gate'),
+    riskApprovalGate: !skipRiskApproval && (autoEnabled || hasFlag('risk-approval-gate')),
     riskContext: {
       productionReady,
       autoApprovalEnabled: autoEnabled || hasFlag('risk-approval-gate'),

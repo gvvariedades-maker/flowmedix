@@ -1,0 +1,278 @@
+[
+  {
+    "file": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-6.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Sobre Notificação Compulsória, assinale a alternativa correta.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "A notificação compulsória é obrigatória para os médicos, outros profissionais de saúde, ou responsáveis pelos serviços públicos e privados de saúde, que prestamassistência ao paciente.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "A notificação compulsória é obrigatória para os médicos e enfermeiros, que prestam assistência ao paciente.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "A notificação compulsória imediata deve ser realizada pelo profissional de saúde, ou responsável pelo serviço assistencial que prestar o primeiro atendimento aopaciente, em até 48 (quarenta e oito) horas desse atendimento, pelo meio mais rápido disponível.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Notificação compulsória semanal (NCS) deve ser realizada em até 72 (setenta e duas) horas, a partir do conhecimento da ocorrência de doença, ou agravo.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: A notificação compulsória é obrigatória para os médicos, outros profissionais de saúde, ou responsáveis pelos serviços públicos e privados de saúde, que prestamassistência ao paciente."
+    ]
+  },
+  {
+    "file": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-2.json",
+    "family": "conceito",
+    "branch": "epi_indicadores",
+    "instruction": "Os indicadores de saúde são medidas que contêm informações relevantes sobre determinados atributos, dimensões do estado de saúde e do desempenho dosistema de saúde. São indicadores de morbimortalidade:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Mortalidades materna, infantil e infecções do trato respiratório inferior.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Desnutrição, acidentes de trânsito e anomalias congênitas.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Mortalidade materna e infantil.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Acidentes de trânsito, afogamento e homicídio.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Acidentes de trânsito, afogamento, doenças diarreicas e prematuridade.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Mortalidade materna e infantil."
+    ]
+  },
+  {
+    "file": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-3.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Sobre a notificação compulsória de doenças, analisar os itens abaixo:\nI\n. Para fins de notificação compulsória de importância nacional, considera-se agravo qualquer dano à integridade física ou mental do indivíduo, provocado porcircunstâncias nocivas, tais como acidentes, intoxicações por substâncias químicas, abuso de drogas ou lesões decorrentes de violências interpessoais, comoagressões e maus tratos, e lesão autoprovocada.\nII\n. Só poderá ser realizada diante da confirmação de doença ou agravo.\nIII\n. A notificação imediata deve ser realizada pelo profissional de saúde ou responsável pelo serviço assistencial que prestar o primeiro atendimento ao paciente,em até 72 horas desse atendimento, pelo meio mais rápido disponível.\nEstá(ão) CORRETO(S):",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Somente o item I .",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Somente os itens I e II .",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Somente os itens I e III .",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Somente os itens II e III .",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Todos os itens.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Somente o item I ."
+    ]
+  },
+  {
+    "file": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-4.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Várias medidas podem ser desenvolvidas para o controle de pragas, as quais tanto podem ser usadas em saúde pública quanto na agricultura. Tais ações devem,sempre que possível, ser colocadas em prática, visando à maneira mais racional de controlar algum tipo de praga, na perspectiva de evitar ou minimizar maiores danos.Um dos tipos de controle é o biológico, que pode ser feito com o uso de organismos, como predadores, parasitos e patógenos. Sobre esses organismos, numerar a 2acoluna de acordo com a 1a e, após, assinalar a alternativa que apresenta a sequência CORRETA:\n(1) Predadores.\n(2) Parasitos.\n(3) Patógenos.\n(_) São insetos ou outros animais que eliminam as pragas de forma mais ou menos violenta, sugando-lhes a hemolinfa ou consumindo seus tecidos.\n(_) São organismos, como nematoides e fungos, que vivem às expensas do corpo de outro inseto, alimentando-se de seus tecidos, ocasionando a morte, aomesmo tempo em que completam seu desenvolvimento biológico.\n(_) São microrganismos, entre eles alguns vírus, bactérias, protozoários ou fungos, que agem provocando enfermidades e epizootias entre pragas e vetores.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "1 - 2 - 3.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "3 - 2 - 1.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "2 - 3 - 1.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "2 - 1 - 3.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "3 - 1 - 2.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: 1 - 2 - 3."
+    ]
+  },
+  {
+    "file": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-5.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "De acordo com o Controle de Vetores da Febre Amarela e da Dengue, sobre o combate ao Aedes aegypti, marcar C para as afirmativas Certas, E para as Erradase, após, assinalar a alternativa que apresenta a sequência CORRETA:\n(_) Armadilhas de oviposição são depósitos com água estrategicamente colocados em localidades positivas, com o objetivo de atrair os machos do vetor para a posturados ovos.\n(_) As armadilhas são divididas em ovitrampas e larvitrampas.\n(_) O combate pode ser feito pela aplicação de produtos químicos ou biológicos, através do tratamento focal, do tratamento perifocal e da aspersão aeroespacial deinseticidas em ultrabaixo-volume (UBV).",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "C - C - E.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "E - C - C.",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "C - E - E.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "E - C - E.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "C - E - C.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: E - C - C."
+    ]
+  },
+  {
+    "file": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-1.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Em conformidade com a Portaria de Consolidação no 4/2017, são considerados doenças, agravos e eventos de saúde pública de notificação compulsória:\nI\n. Acidente de moto durante um passeio.\nII\n. Violência sexual.\nIII\n. Óbito por varicela.\nEstão\nCORRETOS\n:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Todos os itens.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Somente os itens I e II .",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Somente os itens I e III .",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Somente os itens II e III .",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "D: Somente os itens II e III ."
+    ]
+  },
+  {
+    "file": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-8.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "Considerando-se a Portaria de Consolidação no 4/2017, sobre a notificação compulsória de doenças, agravos e eventos de saúde pública, numerar a 2a coluna deacordo com a 1a e, após, assinalar a alternativa que apresenta a sequência\nCORRETA\n:\n(\n1\n) Agravo.\n(\n2\n) Doença.\n(\n3\n) Notificação compulsória.\n( ) Comunicação obrigatória à autoridade de saúde, realizada pelos médicos, profissionais de saúde ou responsáveis pelos estabelecimentos de saúde, públicos ouprivados, sobre a ocorrência de suspeita ou confirmação de doença, agravo ou evento de saúde pública, podendo ser imediata ou semanal.\n( ) Qualquer dano à integridade física ou mental do indivíduo, provocado por circunstâncias nocivas, tais como acidentes, intoxicações por substâncias químicas,abuso de drogas ou lesões decorrentes de violências interpessoais, como agressões e maus tratos, e lesão autoprovocada.\n( ) Enfermidade ou estado clínico, independente de origem ou fonte, que represente ou possa representar um dano significativo para os seres humanos.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "1 - 2 - 3 .",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "3 - 1 - 2 .",
+        "ok": true
+      },
+      {
+        "id": "C",
+        "text": "2 - 3 - 1 .",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "2 - 1 - 3 .",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "B: 3 - 1 - 2 ."
+    ]
+  },
+  {
+    "file": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-4.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Assinalar a alternativa que apresenta a medida utilizada para expressar o número de casos novos de uma doença em determinado período.",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Incidência.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Mortalidade proporcional.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Letalidade.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Prevalência.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Incidência."
+    ]
+  }
+]

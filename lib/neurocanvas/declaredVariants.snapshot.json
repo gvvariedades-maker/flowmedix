@@ -1,0 +1,2691 @@
+[
+  {
+    "id": "absorption-speed-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__absorption-speed-rail"
+  },
+  {
+    "id": "adme-journey-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__adme-journey-rail"
+  },
+  {
+    "id": "adolescent-growth-z-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__adolescent-growth-z-rail"
+  },
+  {
+    "id": "adolescent-privacy-curtain",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__adolescent-privacy-curtain"
+  },
+  {
+    "id": "biosseg-precaution-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__biosseg-precaution-deck"
+  },
+  {
+    "id": "bridge",
+    "slideType": "concept_map",
+    "generic": true,
+    "routers": [
+      "ConceptMap.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "concept_map__bridge"
+  },
+  {
+    "id": "burn-depth-layer-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__burn-depth-layer-deck"
+  },
+  {
+    "id": "cam-certos-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__cam-certos-deck"
+  },
+  {
+    "id": "cam-documentacao-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__cam-documentacao-deck"
+  },
+  {
+    "id": "cam-exceto-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__cam-exceto-rail"
+  },
+  {
+    "id": "cam-high-risk-duo-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__cam-high-risk-duo-deck"
+  },
+  {
+    "id": "cold-chain-hub",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__cold-chain-hub"
+  },
+  {
+    "id": "crianca-dehydration-spectrum",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__crianca-dehydration-spectrum"
+  },
+  {
+    "id": "crianca-dev-milestones-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__crianca-dev-milestones-rail"
+  },
+  {
+    "id": "crianca-feeding-timeline",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__crianca-feeding-timeline"
+  },
+  {
+    "id": "crianca-neonatal-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__crianca-neonatal-deck"
+  },
+  {
+    "id": "crianca-pediatric-hub",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__crianca-pediatric-hub"
+  },
+  {
+    "id": "crianca-puericultura-timeline",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__crianca-puericultura-timeline"
+  },
+  {
+    "id": "crianca-screening-timeline",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__crianca-screening-timeline"
+  },
+  {
+    "id": "dose-equivalence-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__dose-equivalence-rail"
+  },
+  {
+    "id": "etiology-kingdom-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__etiology-kingdom-rail"
+  },
+  {
+    "id": "grid",
+    "slideType": "concept_map",
+    "generic": true,
+    "routers": [
+      "ConceptMap.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "concept_map__grid"
+  },
+  {
+    "id": "infusao-ev-station-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__infusao-ev-station-deck"
+  },
+  {
+    "id": "ist-risk-routes-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__ist-risk-routes-deck"
+  },
+  {
+    "id": "itu-closed-system-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__itu-closed-system-rail"
+  },
+  {
+    "id": "iv-bundle-orbit",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__iv-bundle-orbit"
+  },
+  {
+    "id": "iv-care-orbit",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__iv-care-orbit"
+  },
+  {
+    "id": "iv-complication-tissue-layers",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__iv-complication-tissue-layers"
+  },
+  {
+    "id": "iv-exceto-spectrum",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__iv-exceto-spectrum"
+  },
+  {
+    "id": "iv-gauge-matrix",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__iv-gauge-matrix"
+  },
+  {
+    "id": "iv-interval-timeline",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__iv-interval-timeline"
+  },
+  {
+    "id": "iv-puncture-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__iv-puncture-rail"
+  },
+  {
+    "id": "lab-specimen-chain",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__lab-specimen-chain"
+  },
+  {
+    "id": "mental-crisis-signal-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__mental-crisis-signal-deck"
+  },
+  {
+    "id": "mental-raps-network-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__mental-raps-network-rail"
+  },
+  {
+    "id": "molecular",
+    "slideType": "concept_map",
+    "generic": true,
+    "routers": [
+      "ConceptMap.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "concept_map__molecular"
+  },
+  {
+    "id": "morphing-timeline",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__morphing-timeline"
+  },
+  {
+    "id": "morphological",
+    "slideType": "concept_map",
+    "generic": true,
+    "routers": [
+      "conceptMap.ts",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "concept_map__morphological"
+  },
+  {
+    "id": "mulher-contraception-spectrum",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__mulher-contraception-spectrum"
+  },
+  {
+    "id": "mulher-gestation-timeline",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__mulher-gestation-timeline"
+  },
+  {
+    "id": "mulher-labor-phase-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__mulher-labor-phase-deck"
+  },
+  {
+    "id": "mulher-mammography-spectrum",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__mulher-mammography-spectrum"
+  },
+  {
+    "id": "mulher-puerperio-timeline",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__mulher-puerperio-timeline"
+  },
+  {
+    "id": "mulher-screening-spectrum",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__mulher-screening-spectrum"
+  },
+  {
+    "id": "nr32-annex-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__nr32-annex-deck"
+  },
+  {
+    "id": "oxygen-protocol-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__oxygen-protocol-deck"
+  },
+  {
+    "id": "peri-preop-phase-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__peri-preop-phase-deck"
+  },
+  {
+    "id": "peri-protocol-checklist-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__peri-protocol-checklist-deck"
+  },
+  {
+    "id": "peri-srpa-monitor-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__peri-srpa-monitor-deck"
+  },
+  {
+    "id": "peri-vf-assertions-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__peri-vf-assertions-deck"
+  },
+  {
+    "id": "pni-rules-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__pni-rules-deck"
+  },
+  {
+    "id": "procedure-protocol",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__procedure-protocol"
+  },
+  {
+    "id": "pt-clitic-rail-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__pt-clitic-rail-deck"
+  },
+  {
+    "id": "pt-comma-rail-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__pt-comma-rail-deck"
+  },
+  {
+    "id": "pt-crase-funnel-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__pt-crase-funnel-deck"
+  },
+  {
+    "id": "pt-subject-focus-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__pt-subject-focus-deck"
+  },
+  {
+    "id": "pt-term-matrix-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__pt-term-matrix-deck"
+  },
+  {
+    "id": "respiratorio-asma-dpoc-duel-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__respiratorio-asma-dpoc-duel-deck"
+  },
+  {
+    "id": "sae-documentation",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__sae-documentation"
+  },
+  {
+    "id": "sae-responsibility-matrix",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__sae-responsibility-matrix"
+  },
+  {
+    "id": "sp-fall-risk-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__sp-fall-risk-rail"
+  },
+  {
+    "id": "sp-id-verify-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__sp-id-verify-deck"
+  },
+  {
+    "id": "sp-incident-taxonomy-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__sp-incident-taxonomy-deck"
+  },
+  {
+    "id": "stack",
+    "slideType": "concept_map",
+    "generic": true,
+    "routers": [
+      "ConceptMap.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "concept_map__stack"
+  },
+  {
+    "id": "survival-chain",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__survival-chain"
+  },
+  {
+    "id": "sus-art4-orbit",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__sus-art4-orbit"
+  },
+  {
+    "id": "sus-legal-pillars",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__sus-legal-pillars"
+  },
+  {
+    "id": "tb-vigilance-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__tb-vigilance-rail"
+  },
+  {
+    "id": "urgencias-choking-signal-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-choking-signal-deck"
+  },
+  {
+    "id": "urgencias-emergency-hub",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-emergency-hub"
+  },
+  {
+    "id": "urgencias-exceto-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-exceto-rail"
+  },
+  {
+    "id": "urgencias-manchester-spectrum",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-manchester-spectrum"
+  },
+  {
+    "id": "urgencias-pediatric-rcp-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-pediatric-rcp-deck"
+  },
+  {
+    "id": "urgencias-protocol-rules-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-protocol-rules-deck"
+  },
+  {
+    "id": "urgencias-shock-types-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-shock-types-deck"
+  },
+  {
+    "id": "urgencias-stroke-signs-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-stroke-signs-deck"
+  },
+  {
+    "id": "urgencias-survival-chain-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-survival-chain-deck"
+  },
+  {
+    "id": "urgencias-xabcde-rail",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__urgencias-xabcde-rail"
+  },
+  {
+    "id": "vaccine-timeline",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__vaccine-timeline"
+  },
+  {
+    "id": "vitals-panel",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__vitals-panel"
+  },
+  {
+    "id": "wound-stage-tissue-deck",
+    "slideType": "concept_map",
+    "generic": false,
+    "routers": [
+      "conceptMap.ts"
+    ],
+    "key": "concept_map__wound-stage-tissue-deck"
+  },
+  {
+    "id": "adolescent-consent-gate",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__adolescent-consent-gate"
+  },
+  {
+    "id": "adolescent-z-threshold-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__adolescent-z-threshold-trap"
+  },
+  {
+    "id": "biosseg-trap-chips",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__biosseg-trap-chips"
+  },
+  {
+    "id": "burn-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__burn-trap-arena"
+  },
+  {
+    "id": "calendar-mismatch",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__calendar-mismatch"
+  },
+  {
+    "id": "cam-certos-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__cam-certos-trap-arena"
+  },
+  {
+    "id": "cam-documentacao-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__cam-documentacao-trap-arena"
+  },
+  {
+    "id": "cam-exceto-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__cam-exceto-trap-arena"
+  },
+  {
+    "id": "cam-high-risk-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__cam-high-risk-trap-arena"
+  },
+  {
+    "id": "cards",
+    "slideType": "danger_zone",
+    "generic": true,
+    "routers": [
+      "DangerZone.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "danger_zone__cards"
+  },
+  {
+    "id": "catheter-danger-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__catheter-danger-arena"
+  },
+  {
+    "id": "compact",
+    "slideType": "danger_zone",
+    "generic": true,
+    "routers": [
+      "DangerZone.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "danger_zone__compact"
+  },
+  {
+    "id": "compare",
+    "slideType": "danger_zone",
+    "generic": true,
+    "routers": [
+      "DangerZone.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "danger_zone__compare"
+  },
+  {
+    "id": "crianca-dehydration-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__crianca-dehydration-trap-arena"
+  },
+  {
+    "id": "crianca-dev-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__crianca-dev-trap-arena"
+  },
+  {
+    "id": "crianca-feeding-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__crianca-feeding-trap-arena"
+  },
+  {
+    "id": "crianca-neonatal-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__crianca-neonatal-trap-arena"
+  },
+  {
+    "id": "crianca-pediatric-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__crianca-pediatric-trap-arena"
+  },
+  {
+    "id": "crianca-puericultura-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__crianca-puericultura-trap-arena"
+  },
+  {
+    "id": "crianca-screening-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__crianca-screening-trap-arena"
+  },
+  {
+    "id": "dose-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__dose-trap"
+  },
+  {
+    "id": "dressing-choice-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__dressing-choice-arena"
+  },
+  {
+    "id": "etiology-intruder-chips",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__etiology-intruder-chips"
+  },
+  {
+    "id": "farmaco-clinico-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__farmaco-clinico-trap"
+  },
+  {
+    "id": "farmaco-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__farmaco-trap"
+  },
+  {
+    "id": "ist-trap-chips",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__ist-trap-chips"
+  },
+  {
+    "id": "itu-catheter-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__itu-catheter-trap"
+  },
+  {
+    "id": "iv-bundle-break-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__iv-bundle-break-trap"
+  },
+  {
+    "id": "iv-exceto-intruder-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__iv-exceto-intruder-trap"
+  },
+  {
+    "id": "iv-gauge-mismatch-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__iv-gauge-mismatch-trap"
+  },
+  {
+    "id": "iv-interval-swap-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__iv-interval-swap-trap"
+  },
+  {
+    "id": "iv-label-swap-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__iv-label-swap-trap"
+  },
+  {
+    "id": "iv-order-invert-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__iv-order-invert-trap"
+  },
+  {
+    "id": "lab-prep-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__lab-prep-trap"
+  },
+  {
+    "id": "lab-specimen-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__lab-specimen-arena"
+  },
+  {
+    "id": "list",
+    "slideType": "danger_zone",
+    "generic": true,
+    "routers": [
+      "DangerZone.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "danger_zone__list"
+  },
+  {
+    "id": "mental-crisis-coercion-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__mental-crisis-coercion-trap"
+  },
+  {
+    "id": "mental-raps-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__mental-raps-trap-arena"
+  },
+  {
+    "id": "mulher-mama-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__mulher-mama-trap-arena"
+  },
+  {
+    "id": "mulher-parto-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__mulher-parto-trap-arena"
+  },
+  {
+    "id": "mulher-planejamento-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__mulher-planejamento-trap-arena"
+  },
+  {
+    "id": "mulher-prenatal-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__mulher-prenatal-trap-arena"
+  },
+  {
+    "id": "mulher-puerperio-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__mulher-puerperio-trap-arena"
+  },
+  {
+    "id": "mulher-screening-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__mulher-screening-trap-arena"
+  },
+  {
+    "id": "norm-reveal",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__norm-reveal"
+  },
+  {
+    "id": "peri-preop-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__peri-preop-trap-arena"
+  },
+  {
+    "id": "peri-protocol-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__peri-protocol-trap-arena"
+  },
+  {
+    "id": "peri-srpa-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__peri-srpa-trap-arena"
+  },
+  {
+    "id": "peri-vf-trap-chips",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__peri-vf-trap-chips"
+  },
+  {
+    "id": "pni-trap-chips",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__pni-trap-chips"
+  },
+  {
+    "id": "pt-clitic-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__pt-clitic-trap-arena"
+  },
+  {
+    "id": "pt-comma-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__pt-comma-trap-arena"
+  },
+  {
+    "id": "pt-crase-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__pt-crase-trap-arena"
+  },
+  {
+    "id": "pt-subject-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__pt-subject-trap-arena"
+  },
+  {
+    "id": "pt-term-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__pt-term-trap-arena"
+  },
+  {
+    "id": "respiratorio-spo2-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__respiratorio-spo2-trap-arena"
+  },
+  {
+    "id": "route-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__route-trap"
+  },
+  {
+    "id": "scope-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__scope-trap"
+  },
+  {
+    "id": "sp-safety-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__sp-safety-trap-arena"
+  },
+  {
+    "id": "tb-transmission-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__tb-transmission-trap"
+  },
+  {
+    "id": "temperature-mismatch",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__temperature-mismatch"
+  },
+  {
+    "id": "trabalho-pep-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__trabalho-pep-trap-arena"
+  },
+  {
+    "id": "trap-reveal",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__trap-reveal"
+  },
+  {
+    "id": "urgencias-choking-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-choking-trap-arena"
+  },
+  {
+    "id": "urgencias-exceto-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-exceto-trap-arena"
+  },
+  {
+    "id": "urgencias-manchester-trap",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-manchester-trap"
+  },
+  {
+    "id": "urgencias-pediatric-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-pediatric-trap-arena"
+  },
+  {
+    "id": "urgencias-protocol-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-protocol-trap-arena"
+  },
+  {
+    "id": "urgencias-rcp-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-rcp-trap-arena"
+  },
+  {
+    "id": "urgencias-shock-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-shock-trap-arena"
+  },
+  {
+    "id": "urgencias-stroke-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-stroke-trap-arena"
+  },
+  {
+    "id": "urgencias-trauma-trap-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__urgencias-trauma-trap-arena"
+  },
+  {
+    "id": "vitals-classify-arena",
+    "slideType": "danger_zone",
+    "generic": false,
+    "routers": [
+      "dangerZone.ts"
+    ],
+    "key": "danger_zone__vitals-classify-arena"
+  },
+  {
+    "id": "adolescent-sigilo-spectrum",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__adolescent-sigilo-spectrum"
+  },
+  {
+    "id": "adolescent-z-band-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__adolescent-z-band-board"
+  },
+  {
+    "id": "banner",
+    "slideType": "golden_rule",
+    "generic": true,
+    "routers": [
+      "GoldenRule.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "golden_rule__banner"
+  },
+  {
+    "id": "biosseg-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__biosseg-reference-board"
+  },
+  {
+    "id": "burn-rule-nine-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__burn-rule-nine-board"
+  },
+  {
+    "id": "cam-documentacao-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__cam-documentacao-board"
+  },
+  {
+    "id": "cam-exceto-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__cam-exceto-reference-board"
+  },
+  {
+    "id": "cam-high-risk-protocol-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__cam-high-risk-protocol-board"
+  },
+  {
+    "id": "cam-nine-rights-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__cam-nine-rights-board"
+  },
+  {
+    "id": "center",
+    "slideType": "golden_rule",
+    "generic": true,
+    "routers": [
+      "GoldenRule.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "golden_rule__center"
+  },
+  {
+    "id": "compact",
+    "slideType": "golden_rule",
+    "generic": true,
+    "routers": [
+      "GoldenRule.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "golden_rule__compact"
+  },
+  {
+    "id": "crianca-dehydration-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__crianca-dehydration-board"
+  },
+  {
+    "id": "crianca-dev-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__crianca-dev-board"
+  },
+  {
+    "id": "crianca-feeding-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__crianca-feeding-board"
+  },
+  {
+    "id": "crianca-neonatal-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__crianca-neonatal-board"
+  },
+  {
+    "id": "crianca-pediatric-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__crianca-pediatric-board"
+  },
+  {
+    "id": "crianca-puericultura-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__crianca-puericultura-board"
+  },
+  {
+    "id": "crianca-screening-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__crianca-screening-board"
+  },
+  {
+    "id": "dressing-match-matrix",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__dressing-match-matrix"
+  },
+  {
+    "id": "etiology-letter-spectrum",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__etiology-letter-spectrum"
+  },
+  {
+    "id": "farmaco-clinico-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__farmaco-clinico-reference-board"
+  },
+  {
+    "id": "ist-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__ist-reference-board"
+  },
+  {
+    "id": "itu-bundle-letter-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__itu-bundle-letter-board"
+  },
+  {
+    "id": "iv-antisepsis-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__iv-antisepsis-board"
+  },
+  {
+    "id": "iv-bundle-mesh-reveal",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__iv-bundle-mesh-reveal"
+  },
+  {
+    "id": "iv-device-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__iv-device-reference-board"
+  },
+  {
+    "id": "iv-differential-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__iv-differential-board"
+  },
+  {
+    "id": "iv-exceto-command-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__iv-exceto-command-board"
+  },
+  {
+    "id": "iv-interval-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__iv-interval-board"
+  },
+  {
+    "id": "lab-prep-lens-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__lab-prep-lens-board"
+  },
+  {
+    "id": "mental-crisis-ladder-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__mental-crisis-ladder-board"
+  },
+  {
+    "id": "mental-raps-tier-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__mental-raps-tier-board"
+  },
+  {
+    "id": "minimal",
+    "slideType": "golden_rule",
+    "generic": true,
+    "routers": [
+      "GoldenRule.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "golden_rule__minimal"
+  },
+  {
+    "id": "mulher-mama-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__mulher-mama-board"
+  },
+  {
+    "id": "mulher-papanicolau-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__mulher-papanicolau-board"
+  },
+  {
+    "id": "mulher-parto-humanizado-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__mulher-parto-humanizado-board"
+  },
+  {
+    "id": "mulher-planejamento-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__mulher-planejamento-board"
+  },
+  {
+    "id": "mulher-prenatal-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__mulher-prenatal-board"
+  },
+  {
+    "id": "mulher-puerperio-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__mulher-puerperio-board"
+  },
+  {
+    "id": "oxygen-rule-carousel",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__oxygen-rule-carousel"
+  },
+  {
+    "id": "peri-aldrete-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__peri-aldrete-board"
+  },
+  {
+    "id": "peri-preop-prep-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__peri-preop-prep-board"
+  },
+  {
+    "id": "peri-protocol-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__peri-protocol-reference-board"
+  },
+  {
+    "id": "peri-vf-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__peri-vf-reference-board"
+  },
+  {
+    "id": "pk-pd-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pk-pd-reference-board"
+  },
+  {
+    "id": "pni-calendar-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pni-calendar-board"
+  },
+  {
+    "id": "pni-interval-matrix",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pni-interval-matrix"
+  },
+  {
+    "id": "pni-temperature-rail",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pni-temperature-rail"
+  },
+  {
+    "id": "pt-clitic-rail-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pt-clitic-rail-board"
+  },
+  {
+    "id": "pt-comma-rail-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pt-comma-rail-board"
+  },
+  {
+    "id": "pt-crase-funnel-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pt-crase-funnel-board"
+  },
+  {
+    "id": "pt-subject-focus-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pt-subject-focus-board"
+  },
+  {
+    "id": "pt-term-matrix-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__pt-term-matrix-board"
+  },
+  {
+    "id": "reference_table",
+    "slideType": "golden_rule",
+    "generic": true,
+    "routers": [
+      "GoldenRule.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "golden_rule__reference_table"
+  },
+  {
+    "id": "respiratorio-spo2-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__respiratorio-spo2-reference-board"
+  },
+  {
+    "id": "sae-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__sae-reference-board"
+  },
+  {
+    "id": "soft-lens-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__soft-lens-board"
+  },
+  {
+    "id": "sonda-measurement-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__sonda-measurement-board"
+  },
+  {
+    "id": "sp-nsp-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__sp-nsp-reference-board"
+  },
+  {
+    "id": "tb-precaution-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__tb-precaution-board"
+  },
+  {
+    "id": "trabalho-nr32-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__trabalho-nr32-reference-board"
+  },
+  {
+    "id": "urgencias-cincinnati-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-cincinnati-board"
+  },
+  {
+    "id": "urgencias-exceto-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-exceto-reference-board"
+  },
+  {
+    "id": "urgencias-heimlich-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-heimlich-board"
+  },
+  {
+    "id": "urgencias-manchester-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-manchester-board"
+  },
+  {
+    "id": "urgencias-pediatric-params-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-pediatric-params-board"
+  },
+  {
+    "id": "urgencias-protocol-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-protocol-reference-board"
+  },
+  {
+    "id": "urgencias-rcp-params-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-rcp-params-board"
+  },
+  {
+    "id": "urgencias-shock-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-shock-reference-board"
+  },
+  {
+    "id": "urgencias-trauma-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__urgencias-trauma-reference-board"
+  },
+  {
+    "id": "via-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__via-reference-board"
+  },
+  {
+    "id": "vitals-reference-board",
+    "slideType": "golden_rule",
+    "generic": false,
+    "routers": [
+      "goldenRule.ts"
+    ],
+    "key": "golden_rule__vitals-reference-board"
+  },
+  {
+    "id": "adolescent-vf-weave-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__adolescent-vf-weave-tap"
+  },
+  {
+    "id": "adolescent-z-classify-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__adolescent-z-classify-tap"
+  },
+  {
+    "id": "biosseg-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__biosseg-vf-juggle-tap"
+  },
+  {
+    "id": "burn-triage-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__burn-triage-tap-flow"
+  },
+  {
+    "id": "cam-alto-risco-elimination-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__cam-alto-risco-elimination-tap"
+  },
+  {
+    "id": "cam-documentacao-vf-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__cam-documentacao-vf-tap"
+  },
+  {
+    "id": "cam-exceto-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__cam-exceto-tap-flow"
+  },
+  {
+    "id": "cam-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__cam-vf-juggle-tap"
+  },
+  {
+    "id": "cards",
+    "slideType": "logic_flow",
+    "generic": true,
+    "routers": [
+      "LogicFlow.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "logic_flow__cards"
+  },
+  {
+    "id": "crianca-dehydration-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__crianca-dehydration-tap-flow"
+  },
+  {
+    "id": "crianca-dev-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__crianca-dev-tap-flow"
+  },
+  {
+    "id": "crianca-feeding-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__crianca-feeding-tap-flow"
+  },
+  {
+    "id": "crianca-neonatal-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__crianca-neonatal-tap-flow"
+  },
+  {
+    "id": "crianca-pediatric-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__crianca-pediatric-tap-flow"
+  },
+  {
+    "id": "crianca-puericultura-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__crianca-puericultura-tap-flow"
+  },
+  {
+    "id": "crianca-screening-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__crianca-screening-tap-flow"
+  },
+  {
+    "id": "dose-calc-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__dose-calc-tap"
+  },
+  {
+    "id": "etiology-elimination-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__etiology-elimination-tap"
+  },
+  {
+    "id": "farmaco-protocol-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__farmaco-protocol-tap-flow"
+  },
+  {
+    "id": "farmaco-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__farmaco-vf-juggle-tap"
+  },
+  {
+    "id": "horizontal",
+    "slideType": "logic_flow",
+    "generic": true,
+    "routers": [
+      "LogicFlow.tsx",
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "logic_flow__horizontal"
+  },
+  {
+    "id": "ist-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__ist-vf-juggle-tap"
+  },
+  {
+    "id": "itu-exceto-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__itu-exceto-tap"
+  },
+  {
+    "id": "iv-bundle-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__iv-bundle-tap-flow"
+  },
+  {
+    "id": "iv-care-soft-stack",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__iv-care-soft-stack"
+  },
+  {
+    "id": "iv-complication-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__iv-complication-tap-flow"
+  },
+  {
+    "id": "iv-device-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__iv-device-tap-flow"
+  },
+  {
+    "id": "iv-exceto-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__iv-exceto-tap-flow"
+  },
+  {
+    "id": "iv-interval-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__iv-interval-tap-flow"
+  },
+  {
+    "id": "iv-puncture-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__iv-puncture-tap-flow"
+  },
+  {
+    "id": "lab-vf-soft-stack",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__lab-vf-soft-stack"
+  },
+  {
+    "id": "mental-crisis-decision-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__mental-crisis-decision-tap"
+  },
+  {
+    "id": "mental-raps-classify-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__mental-raps-classify-tap"
+  },
+  {
+    "id": "mulher-labor-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__mulher-labor-tap-flow"
+  },
+  {
+    "id": "mulher-mama-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__mulher-mama-tap-flow"
+  },
+  {
+    "id": "mulher-planejamento-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__mulher-planejamento-tap-flow"
+  },
+  {
+    "id": "mulher-prenatal-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__mulher-prenatal-tap-flow"
+  },
+  {
+    "id": "mulher-puerperio-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__mulher-puerperio-tap-flow"
+  },
+  {
+    "id": "mulher-screening-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__mulher-screening-tap-flow"
+  },
+  {
+    "id": "oxygen-step-ladder",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__oxygen-step-ladder"
+  },
+  {
+    "id": "peri-preop-decision-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__peri-preop-decision-tap"
+  },
+  {
+    "id": "peri-protocol-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__peri-protocol-tap-flow"
+  },
+  {
+    "id": "peri-srpa-decision-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__peri-srpa-decision-tap"
+  },
+  {
+    "id": "peri-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__peri-vf-juggle-tap"
+  },
+  {
+    "id": "pni-calendar-elimination-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__pni-calendar-elimination-tap"
+  },
+  {
+    "id": "pni-cold-chain-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__pni-cold-chain-tap"
+  },
+  {
+    "id": "pni-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__pni-vf-juggle-tap"
+  },
+  {
+    "id": "pt-clitic-rail-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__pt-clitic-rail-tap-flow"
+  },
+  {
+    "id": "pt-comma-rail-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__pt-comma-rail-tap-flow"
+  },
+  {
+    "id": "pt-crase-funnel-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__pt-crase-funnel-tap-flow"
+  },
+  {
+    "id": "pt-subject-focus-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__pt-subject-focus-tap-flow"
+  },
+  {
+    "id": "pt-term-matrix-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__pt-term-matrix-tap-flow"
+  },
+  {
+    "id": "respiratorio-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__respiratorio-vf-juggle-tap"
+  },
+  {
+    "id": "sae-decision-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__sae-decision-tap"
+  },
+  {
+    "id": "sonda-decision-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__sonda-decision-tap"
+  },
+  {
+    "id": "sp-protocol-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__sp-protocol-tap-flow"
+  },
+  {
+    "id": "sp-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__sp-vf-juggle-tap"
+  },
+  {
+    "id": "tb-vf-elimination-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__tb-vf-elimination-tap"
+  },
+  {
+    "id": "trabalho-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__trabalho-vf-juggle-tap"
+  },
+  {
+    "id": "urgencias-choking-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__urgencias-choking-tap-flow"
+  },
+  {
+    "id": "urgencias-exceto-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__urgencias-exceto-tap-flow"
+  },
+  {
+    "id": "urgencias-pediatric-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__urgencias-pediatric-tap-flow"
+  },
+  {
+    "id": "urgencias-protocol-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__urgencias-protocol-tap-flow"
+  },
+  {
+    "id": "urgencias-rcp-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__urgencias-rcp-tap-flow"
+  },
+  {
+    "id": "urgencias-shock-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__urgencias-shock-tap-flow"
+  },
+  {
+    "id": "urgencias-stroke-elimination-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__urgencias-stroke-elimination-tap"
+  },
+  {
+    "id": "urgencias-xabcde-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__urgencias-xabcde-tap-flow"
+  },
+  {
+    "id": "vertical",
+    "slideType": "logic_flow",
+    "generic": true,
+    "routers": [
+      "GENERIC_BY_SLIDE_TYPE"
+    ],
+    "key": "logic_flow__vertical"
+  },
+  {
+    "id": "via-vf-juggle-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__via-vf-juggle-tap"
+  },
+  {
+    "id": "vitals-translate-tap",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__vitals-translate-tap"
+  },
+  {
+    "id": "wound-prep-tap-flow",
+    "slideType": "logic_flow",
+    "generic": false,
+    "routers": [
+      "logicFlow.ts"
+    ],
+    "key": "logic_flow__wound-prep-tap-flow"
+  }
+]

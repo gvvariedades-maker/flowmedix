@@ -1,0 +1,288 @@
+[
+  {
+    "file": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-6.json",
+    "family": "conceito",
+    "branch": "epi_vigilancia_acoes",
+    "instruction": "A Política Nacional de Vigilância em Saúde é definida como uma política pública de Estado e função essencial do Sistema Único de Saúde, de caráter universal,transversal e orientadora do modelo de atenção à saúde nos territórios. O conjunto de ações que proporcionam o conhecimento e a detecção de mudanças nos fatores\n4628)\n4629)\n4630)\n4631)\n4632)\ndeterminantes e condicionantes da saúde individual e coletiva, com a finalidade de recomendar e adotar as medidas de prevenção e controle das doenças, transmissíveise não transmissíveis, e agravos à saúde tratam-se da definição de",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "vigilância epidemiológica.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "vigilância em saúde ambiental.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "vigilância sanitária.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "vigilância em saúde do trabalhador e da trabalhadora.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: vigilância epidemiológica."
+    ]
+  },
+  {
+    "file": "instituto-verbena-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-6.json",
+    "family": "conceito",
+    "branch": "epi_notificacao_compulsoria",
+    "instruction": "A ocorrência de uma doença de notificação compulsória imediata, por seu poder de transmissibilidade e gravidade deve, em até 24 horas, ser comunicadaimediatamente às autoridades sanitárias responsáveis pela saúde da população. São exemplos de doença de notificação compulsória:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "tuberculose, hanseníase e tétano acidental.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "hepatite, HIV/Aids e leishimaniose visceral.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "poliomielite, hantavirose e febre amarela.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "sífilis, toxoplasmose e dengue.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: poliomielite, hantavirose e febre amarela."
+    ]
+  },
+  {
+    "file": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-3.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "As definições de epidemias estão ligadas a forma com que a doença ou agravo dissemina-se pela população. Imagine que em uma creche, haja em uma semana,10 casos de monkeypox todos interligados, isso seria definido como um (uma):",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Epidemia lenta.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Endemia.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Prevalência instantânea.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Pandemia.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Surto.",
+        "ok": true
+      }
+    ],
+    "correct": [
+      "E: Surto."
+    ]
+  },
+  {
+    "file": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-4.json",
+    "family": "conceito",
+    "branch": "epi_ocorrencia_agravos",
+    "instruction": "O que confere o estado de Pandemia a uma doença ou agravo, se relaciona a forma com que países fazem controle desse problema de saúde. Com base nessetexto, analise os itens:\nI\n. Uma pandemia ocorre quando a doença incide em mais de 2 continentes.\nII\n. Uma pandemia é limitada a uma grande área geográfica.\nIII\n. Uma pandemia pode ocorrer em diversos países, independente de fatores climáticos em ambientais locais.\nEstá(riam) correta(s):",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, II e III .",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas I e II .",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Apenas I e III .",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Apenas II e III .",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Apenas III .",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Apenas I e III ."
+    ]
+  },
+  {
+    "file": "ivin-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-5.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "A notificação de determinadas doenças é uma forma de contabilizar e estrategiar as medidas de controle, entre os sistemas de informação em saúde, refere-se aesse fato o:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "SIM.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "SINASC.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "SIVEP.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "SINAN.",
+        "ok": true
+      },
+      {
+        "id": "E",
+        "text": "SUS.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "D: SINAN."
+    ]
+  },
+  {
+    "file": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-0.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Diversos tipos de inseticidas estão em uso para programas de controle de vetores. Em relação ao controle dos vetores da dengue, um inseticida fosforado muito\naplicado no Brasil seria o:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deltametrina.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Carbaril.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Temephós.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Cypermetrina.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Carbaril B.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Temephós."
+    ]
+  },
+  {
+    "file": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-1.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Para o controle do Aedes aegypti, os agentes de combate a endemias, devem conhecer as fases evolutivas desse inseto para que possam assim:",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "Desenvolver a melhor estratégia de controle das fases aquáticas ou aladas.",
+        "ok": true
+      },
+      {
+        "id": "B",
+        "text": "Desenvolver estratégias de controle só da fase aquática.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Desenvolver estratégia de controle só da fase alada.",
+        "ok": false
+      },
+      {
+        "id": "D",
+        "text": "Desenvolver estratégia de controle com enfoque só na fase de pupa.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Desenvolver estratégia de controle com enfoque só na fase larval.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "A: Desenvolver a melhor estratégia de controle das fases aquáticas ou aladas."
+    ]
+  },
+  {
+    "file": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-3.json",
+    "family": "conceito",
+    "branch": "epi_generico",
+    "instruction": "Leia o texto e responda a questão.\nOs agentes de endemias da cidade X, estão fazendo um programa de estímulo a redução de casos de dengue nos bairros. Para isso, eles desenvolveram uma cartilha de\neducação em saúde com algumas informações.\nEntre as características de controle do vetor, teríamos:\nI. Um inseto que faz criadouros em coleções de água limpa e parada.\nII. Um inseto que tem hábitos reprodutivos ligados a água com baixo teor de oxigênio e alta concentração de poluentes.\nIII. Um inseto cujo só as fêmeas são transmissoras do vírus aos humanos.\nEstá(riam) correta(s):",
+    "text_fragment": "",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, II e III.",
+        "ok": false
+      },
+      {
+        "id": "B",
+        "text": "Apenas I e II.",
+        "ok": false
+      },
+      {
+        "id": "C",
+        "text": "Apenas I e III.",
+        "ok": true
+      },
+      {
+        "id": "D",
+        "text": "Apenas II e III.",
+        "ok": false
+      },
+      {
+        "id": "E",
+        "text": "Apenas III.",
+        "ok": false
+      }
+    ],
+    "correct": [
+      "C: Apenas I e III."
+    ]
+  }
+]

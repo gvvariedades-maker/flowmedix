@@ -2,7 +2,7 @@
 
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { LogicFlowStepLadder } from './LogicFlowStepLadder';
+import { LogicRailShell } from '../logicFlowShells';
 
 interface LogicFlowUrgenciasXabcdeTapFlowProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -11,11 +11,21 @@ interface LogicFlowUrgenciasXabcdeTapFlowProps {
   footerRule?: string;
 }
 
-/** Trilho tap-flow XABCDE — eliminação de alternativas trauma pré-hospitalar. */
+/** Trilho XABCDE — LogicRailShell + orçamento ≤3 taps. */
 export function LogicFlowUrgenciasXabcdeTapFlow({
   steps,
   theme,
   revealMode = 'tap',
+  footerRule,
 }: LogicFlowUrgenciasXabcdeTapFlowProps) {
-  return <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} accent="xabcde" />;
+  return (
+    <LogicRailShell
+      steps={steps}
+      theme={theme}
+      revealMode={revealMode}
+      footerRule={footerRule}
+      accent="xabcde"
+      eyebrow="Trilho XABCDE"
+    />
+  );
 }

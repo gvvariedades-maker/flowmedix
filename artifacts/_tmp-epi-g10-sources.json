@@ -1,0 +1,276 @@
+[
+  {
+    "file": "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-3.json",
+    "correct": "E",
+    "instruction": "A Vigilância Epidemiológica tem por finalidade promover a detecção e prevenção de doenças e agravos transmissíveis à saúde e seus fatores de risco, bem como aelaboração de estudos e normas para as ações de vigilância.\nNÃO\ncompete à vigilância epidemiológica,\n4595)\n4596)\n4597)\n4598)\n4599)",
+    "options": [
+      {
+        "id": "A",
+        "text": "gerir e apoiar a operacionalização do Programa de Imunizações; contribuindo para o controle, a eliminação e/ou a erradicação de doenças imunopreveníveis,utilizando estratégias básicas de vacinação de rotina e de campanhas anuais, desenvolvidas de forma hierarquizada e descentralizada.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "coordenar a resposta às doenças e aos agravos transmissíveis de notificação compulsória, além dos riscos existentes ou potenciais, com ênfase no planejamento,monitoramento, na avaliação, produção e divulgação de conhecimento/informação para a prevenção e controle das condições de saúde da população, no âmbito dasaúde coletiva, baseados nos princípios e diretrizes do SUS.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "participar de ações de cooperação técnica intra e interinstitucional para a vigilância, prevenção e controle das doenças e agravos transmissíveis, infecçõessexualmente transmissíveis, HIV/Aids e Hepatites Virais e ações de imunização.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "instituir, desenvolver, implementar, capacitar, coordenar e avaliar ações de vigilância epidemiológica e assistenciais, relativas às infecções sexualmentetransmissíveis (IST), HIV/Aids e Hepatites Virais.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "fiscalizar o repasse de recursos financeiros do SUS a nível nacional e estadual, garantindo o pagamento de salários, previdência dos trabalhadores de saúde einvestimento nas ações de vigilância epidemiológica e controle de zoonoses.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "Funcepe",
+      "ano": "2024",
+      "orgao": "Pref Gen. Sampaio",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-4.json",
+    "correct": "A",
+    "instruction": "Assinale a alternativa que apresenta apenas doenças transmissíveis de notificação compulsória.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dengue, febre amarela e malária na região extra-amazônica.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Diabetes melito, cólera e esquistossomose.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Doença coronariana aguda, malária na região amazônica e cólera.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Botulismo, coqueluche e síndrome de Turner.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Doença de Creutzfeldt-Jakob, síndrome de Down e leptospirose.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Funcepe",
+      "ano": "2024",
+      "orgao": "Pref Gen. Sampaio",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-7.json",
+    "correct": "C",
+    "instruction": "De acordo com a Portaria no 1.271, de 6 de junho de 2014, que define a Lista Nacional de Notificação Compulsória de doenças, agravos e eventos de saúdepública nos serviços de saúde públicos e privados em todo o território nacional, tem-se a definição dos tipos de notificação compulsória. Sobre essa definição, é corretoafirmar que a notificação compulsória",
+    "options": [
+      {
+        "id": "A",
+        "text": "semanal é realizada em até 10 dias, a partir do conhecimento da ocorrência de doença ou agravo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "é definida como comunicação optativa à autoridade de saúde, realizada pelos médicos, profissionais de saúde ou responsáveis pelos estabelecimentos de saúde,públicos ou privados, sobre a ocorrência de suspeita ou confirmação de doença, agravo ou evento de saúde pública.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "negativa é a comunicação realizada pelo responsável pelo estabelecimento de saúde à autoridade de saúde, informando que, na semana epidemiológica, não foiidentificado nenhuma doença, agravo ou evento de saúde pública constante da Lista de Notificação Compulsória.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "imediata é notificação compulsória realizada em até 12 horas, a partir do conhecimento da ocorrência de doença, agravo ou evento de saúde pública, pelo meiode comunicação mais rápido disponível.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "FUNCERN",
+      "ano": "2023",
+      "orgao": "Pref Jd do Seridó",
+      "prova": "ACS"
+    }
+  },
+  {
+    "file": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-1.json",
+    "correct": "B",
+    "instruction": "A hanseníase é uma doença infecciosa, crônica, que acomete, principalmente, a pele e os nervos periféricos. É de grande importância para a saúde pública devidoà sua magnitude e ao seu alto poder incapacitante. Uma das atribuições do Agente Comunitário de Endemias no controle da hanseníase é",
+    "options": [
+      {
+        "id": "A",
+        "text": "realizar avaliação dermatoneurológica dos casos suspeitos e diagnosticar precocemente as pessoas com hanseníase.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "encaminhar contatos intradomiciliares para avaliação na unidade de saúde.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "preencher completamente, de forma legível, a ficha individual de notificação para os casos confirmados de hanseníase.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "registrar na Ficha A – cadastramento de famílias – os dados sobre as pessoas com hanseníase no campo específico a cada visita, de forma a mantê-la atualizada.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "FUNCERN",
+      "ano": "2024",
+      "orgao": "Pref Guamaré",
+      "prova": "ACE"
+    }
+  },
+  {
+    "file": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-2.json",
+    "correct": "B",
+    "instruction": "A tuberculose é uma doença infectocontagiosa, milenarmente conhecida, mas ainda considerada um problema de saúde pública a nível mundial. No Brasil, suanotificação compulsória é",
+    "options": [
+      {
+        "id": "A",
+        "text": "imediata.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "semanal.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "quinzenal.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "mensal.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "FUNCERN",
+      "ano": "2024",
+      "orgao": "Enfermagem / Hospital e UPA",
+      "prova": "Tec (Pref Guamaré)"
+    }
+  },
+  {
+    "file": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-3.json",
+    "correct": "D",
+    "instruction": "Uma das atribuições comuns a todos os membros que atuam nas equipes de atenção básica, incluindo o técnico de enfermagem, é realizar a busca ativa enotificar doenças e agravos de notificação compulsória, bem como outras doenças, outros agravos, surtos, acidentes, violências. Essa atribuição está relacionada àvigilância",
+    "options": [
+      {
+        "id": "A",
+        "text": "sanitária.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "ambiental.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "estratégica.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "epidemiológica.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "FUNCERN",
+      "ano": "2024",
+      "orgao": "Enfermagem / Saúde da Família",
+      "prova": "Tec (Pref Guamaré)"
+    }
+  },
+  {
+    "file": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-4.json",
+    "correct": "C",
+    "instruction": "A hanseníase é uma doença infecciosa, contagiosa, de evolução crônica, causada pela\nMycobacterium leprae\n. Está incluída na lista nacional de notificaçãocompulsória de doenças, agravos e eventos de saúde pública, com periodicidade de notificação",
+    "options": [
+      {
+        "id": "A",
+        "text": "mensal.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "quinzenal.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "semanal.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "imediata.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "FUNCERN",
+      "ano": "2024",
+      "orgao": "Enfermagem / Saúde da Família",
+      "prova": "Tec (Pref Guamaré)"
+    }
+  },
+  {
+    "file": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-7.json",
+    "correct": "D",
+    "instruction": "De acordo com o Ministério da Saúde, são doenças que têm notificação compulsória semanal:",
+    "options": [
+      {
+        "id": "A",
+        "text": "tuberculose e leptospirose.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "hanseníase e raiva humana.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "leptospirose e febre amarela.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "tuberculose e esquistossomose.",
+        "is_correct": true
+      }
+    ],
+    "meta": {
+      "banca": "FUNCERN",
+      "ano": "2024",
+      "orgao": "Pref Currais Novos",
+      "prova": "Tec Enf"
+    }
+  }
+]

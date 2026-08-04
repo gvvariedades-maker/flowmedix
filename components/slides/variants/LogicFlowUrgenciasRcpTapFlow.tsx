@@ -1,8 +1,11 @@
 'use client';
 
+import { useMemo } from 'react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { LogicFlowStepLadder } from './LogicFlowStepLadder';
+import { LogicRailShell } from '../logicFlowShells';
+import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
+import { applyProtocolTapBudget } from '@/lib/slides/protocolTapBudget';
 
 interface LogicFlowUrgenciasRcpTapFlowProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -11,11 +14,26 @@ interface LogicFlowUrgenciasRcpTapFlowProps {
   footerRule?: string;
 }
 
-/** Trilho tap-flow SBV adulto — elos rose com revelação passo a passo. */
+/** Trilho SBV adulto — RailShell + ≤3 taps. */
 export function LogicFlowUrgenciasRcpTapFlow({
   steps,
   theme,
   revealMode = 'tap',
+  footerRule,
 }: LogicFlowUrgenciasRcpTapFlowProps) {
-  return <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} accent="urgencias" />;
+  const budgeted = useMemo(
+    () => applyProtocolTapBudget(normalizeLogicFlowSteps(steps)),
+    [steps],
+  );
+  return (
+    <LogicRailShell
+      steps={budgeted}
+      theme={theme}
+      revealMode={revealMode}
+      footerRule={footerRule}
+      accent="urgencias"
+      eyebrow="SBV · compressões"
+      applyTapBudget={false}
+    />
+  );
 }

@@ -84,6 +84,41 @@ Análise de prints de estudo (feed). **Salvos = princípios abaixo.** PNG extern
 
 ---
 
+## 2c. Lote TE enfermagem (ago/2026 — Pré-Onda 3 Fábrica)
+
+Catálogo completo: [`artifacts/pre-onda3-print-to-primitives-catalog.md`](../../../artifacts/pre-onda3-print-to-primitives-catalog.md).  
+Runbook: [`docs/NEUROSLIDES_VISUAL_STRATEGY.md`](../../../docs/NEUROSLIDES_VISUAL_STRATEGY.md) Camadas 2b–2c + **7** (DoD Fábrica).
+
+**Glossário:** *Strategy Onda 3* = Imu EXCETO (já entregue). *Fábrica Onda 3* = nota-10 visual dos 10 pacotes TE.
+
+### Manter (traduzir para primitives — não clonar)
+
+| Família de print | Gesto | Primário AVANT | Slide |
+|------------------|-------|----------------|-------|
+| XABCDE / ADPIE / vigilância 1–N | Trilho | `ProtocolRailRow` / `LogicRailShell` | concept / logic ≤3 |
+| Calendário PNI / Pneumo idade×dose | Chip + corpo | `LabelBodyRow` + `CategoryStrip` | golden_rule |
+| Manchester / risco por cor | Cor = categoria | `CategoryStrip` + `PolarityPanel` | concept / danger |
+| Mapa mental / NIC–NOC / pilares / RAPS lista | Deck / núcleo+lista | `PillarDeck` / `concept_map` ≤7 | concept_map |
+| Protocolo empilhado + Atenção + dose / tabela gravidade | Callout + número + rows | `AlertCallout` + `CriticalNumber` + SoftLens/`rows` | golden_rule |
+| Fluxo RN / zigzag | Funil | `LogicFocusShell` ≤3 ou `LogicIsolateShell` | logic_flow |
+| Sinais vitais grade / multi-card patologia | Deck / rows | `PillarDeck` / `LabelBodyRow` | concept + golden |
+| Glossário onda→nome→def / pontuação PT | Chip + corpo | `LabelBodyRow` | golden_rule |
+
+### Reusar vs `Implementar molde:`
+
+| Situação | Ação |
+|----------|------|
+| Gesto na tabela + molde/primitivo já no ramo | Reusar + Modo A/V |
+| Pacote já `production_ready` — polish glanceable | Captures/galeria; sem React novo |
+| Gesto espacial **novo** ou ≥5 questões sem board | Brief → Design visual → `Implementar molde:` |
+| Pegadinha só textual / cauda | `ok_generico` 3/3 |
+
+### Descartar (mesmo lote)
+
+3D/mascote, ranking comercial com chevron de marketing, poster 10–18 cards, pastel no shell Cyber, 1 variant por print.
+
+---
+
 ## 3. Densidade e mobile
 
 | Regra | Valor |
@@ -144,6 +179,16 @@ Não forçar bespoke por estética. Bespoke quando o erro é **espacial/sequenci
 - [ ] footer / transferência
 - [ ] 375 px OK
 - [ ] Inspiração = princípio, não clone
+
+### 7b. DoD Onda 3 Fábrica (pacote já vendável)
+
+Espelho da Camada 7 em `NEUROSLIDES_VISUAL_STRATEGY.md`:
+
+- [ ] Gesto por ramo forte **ou** ok_generico
+- [ ] Print → primitivo (tabela §2c)
+- [ ] Playwright **ou** captures âncora
+- [ ] `artifacts/<prefix>-nota10-report.md` barra visual verde
+- [ ] React novo só com `Implementar molde:`
 
 ---
 

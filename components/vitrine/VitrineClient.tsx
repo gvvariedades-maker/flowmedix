@@ -636,7 +636,10 @@ export default function VitrineClient({
     return () => window.removeEventListener('avant:open-search', handler);
   }, []);
 
-  const disciplinaSummaries = vitrinePageData?.disciplinas ?? [];
+  const disciplinaSummaries = useMemo(
+    () => vitrinePageData?.disciplinas ?? [],
+    [vitrinePageData?.disciplinas]
+  );
   const hubMode = isVitrineDisciplineHubMode(disciplinaSummaries, disciplina);
   const showSubjectCatalog = !hubMode;
   const hubPrefetchKey = useMemo(() => {

@@ -4,6 +4,10 @@ import { resolve } from 'node:path';
 import { buildCanonicalCatalog } from '@/lib/neurocanvas/canonicalCatalog';
 import type { LiveReconciliationReport } from '@/lib/neurocanvas/liveReconciliation';
 import {
+  loadPhaseResumptionGate,
+  type PhaseResumptionGate,
+} from '@/lib/neurocanvas/phaseResumptionGate';
+import {
   gradeSlideReadiness,
 } from '@/lib/neurocanvas/readiness';
 import { buildResolverAuditReport } from '@/lib/neurocanvas/resolverAudit';
@@ -22,6 +26,8 @@ export type PhaseReadinessReport = {
     phase_0b: { verdict: PhaseVerdict; rationale: string[]; blockers: string[] };
     phase_2: { verdict: PhaseVerdict; rationale: string[]; blockers: string[] };
   };
+  /** F6 — condição de retorno das duas fases estacionadas (proveniência + conteúdo). */
+  resumption: PhaseResumptionGate;
   cohort: {
     pilot_count: number;
     control_count: number;
@@ -95,8 +101,10 @@ function buildGenericCohortStats(
 export function buildPhaseReadinessReport(
   resolverReconciliation: ResolverReconciliationReport,
   liveReport: LiveReconciliationReport,
+  options: { resumption?: PhaseResumptionGate } = {},
 ): PhaseReadinessReport {
   const catalog = buildCanonicalCatalog();
+  const resumption = options.resumption ?? loadPhaseResumptionGate();
   const resolver = buildResolverAuditReport({ mode: 'catalog', canonical: true });
   const unresolved = catalog.unresolved_slugs.length;
   const liveOk = liveReport.live_access.available;
@@ -114,6 +122,7 @@ export function buildPhaseReadinessReport(
   if (catalog.baseline_materially_affected) {
     phase0bBlockers.push('baseline_materially_affected=true — catálogo parcial.');
   }
+  phase0bBlockers.push(...resumption.phase_0b.blockers);
   const phase0bVerdict: PhaseVerdict = phase0bBlockers.length === 0 ? 'READY' : 'NOT READY';
 
   const phase2Blockers: string[] = [];
@@ -122,6 +131,7 @@ export function buildPhaseReadinessReport(
   if (s3Count > 0) phase2Blockers.push(`${s3Count} blockers S3 exigem revisão oficial antes de composições visuais.`);
   const divergent = liveReport.slugs.filter((s) => s.live_match_class === 'live_matches_no_candidate').length;
   if (divergent > 0) phase2Blockers.push(`${divergent} slugs live sem match local.`);
+  phase2Blockers.push(...resumption.phase_2.blockers);
   const phase2Verdict: PhaseVerdict = phase2Blockers.length === 0 ? 'READY' : 'NOT READY';
 
   const cohort = buildGenericCohortStats(catalog, resolver.rows);
@@ -143,6 +153,7 @@ export function buildPhaseReadinessReport(
         rationale: [
           'Cache por questionHash + baseline completa + testes de catálogo.',
           'Depende de fonte canônica reprodutível (manifest/registry).',
+          'F6: só retoma com conteúdo estável (pós-repair) e proveniência decidida — cada reparo muda o hash.',
         ],
         blockers: phase0bBlockers,
       },
@@ -151,10 +162,12 @@ export function buildPhaseReadinessReport(
         rationale: [
           'Novas composições visuais no piloto.',
           'Exclui unresolved, S3 e divergentes até decisão editorial.',
+          'F6: só com o gate pedagógico verde — apresentação melhor não conserta slide 1 que entrega o gabarito.',
         ],
         blockers: phase2Blockers,
       },
     },
+    resumption,
     cohort,
     live_access: liveOk,
     unresolved_blockers: unresolved,
@@ -187,6 +200,15 @@ export function renderPhaseReadinessMarkdown(report: PhaseReadinessReport): stri
     renderPhase('Fase 0A — NeuroVisualPlan wrapper', report.phases.phase_0a),
     renderPhase('Fase 0B — Cache questionHash + baseline', report.phases.phase_0b),
     renderPhase('Fase 2 — Composições visuais piloto', report.phases.phase_2),
+    '',
+    '## Condição de retorno (F6)',
+    '',
+    `Proveniência decidida (F5): **${report.resumption.provenance.present ? `status=${report.resumption.provenance.status ?? 'n/d'}, phase_0b_ready=${report.resumption.provenance.phase_0b_ready}` : 'artefato ausente'}**`,
+    `Conteúdo estável (F2b/F3): **${report.resumption.content.present ? `corpus=${report.resumption.content.corpus ?? 'n/d'}, fail_leak=${report.resumption.content.blocking}, fail pedagógico=${report.resumption.content.pedagogy_fail}` : 'não medido'}**`,
+    '',
+    `Retomar Fase 0B: **${report.resumption.phase_0b.resumable ? 'sim' : 'não'}** · Retomar Fase 2: **${report.resumption.phase_2.resumable ? 'sim' : 'não'}**`,
+    '',
+    'Detalhe completo: `npm run audit:neurocanvas-phase-gate`.',
     '',
     '## Coorte (fixture técnica)',
     '',

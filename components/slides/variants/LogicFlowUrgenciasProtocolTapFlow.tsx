@@ -2,7 +2,7 @@
 
 import type { ThemeColors } from '../core/themeGenerator';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
-import { LogicFlowStepLadder } from './LogicFlowStepLadder';
+import { LogicRailShell } from '../logicFlowShells';
 
 interface LogicFlowUrgenciasProtocolTapFlowProps {
   steps: string[] | Array<{ id?: string; text: string }>;
@@ -15,6 +15,16 @@ export function LogicFlowUrgenciasProtocolTapFlow({
   steps,
   theme,
   revealMode = 'tap',
+  footerRule,
 }: LogicFlowUrgenciasProtocolTapFlowProps) {
-  return <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} accent="urgencias" />;
+  return (
+    <LogicRailShell
+      steps={steps}
+      theme={theme}
+      revealMode={revealMode}
+      footerRule={footerRule}
+      accent="urgencias"
+      eyebrow="Protocolo · urgências"
+    />
+  );
 }

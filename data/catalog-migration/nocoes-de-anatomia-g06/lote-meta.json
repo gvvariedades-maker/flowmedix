@@ -1,0 +1,15 @@
+{
+  "lote": "nocoes-de-anatomia-g06",
+  "status": "applied",
+  "subtopico": "Noções de Anatomia",
+  "slug_count": 6,
+  "applied_at": "2026-08-03",
+  "anchor_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-1",
+  "anchor_second_review": {
+    "reviewed_at": "2026-08-03",
+    "reviewer": "agent",
+    "method": "agent",
+    "status": "pass",
+    "artifact": "artifacts/anchor-review/nocoes-de-anatomia-g06.json"
+  }
+}

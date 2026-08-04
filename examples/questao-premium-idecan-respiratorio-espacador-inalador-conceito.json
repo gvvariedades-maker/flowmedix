@@ -23,7 +23,12 @@
         "title": "Protocolo Clínico e Diretrizes Terapêuticas — Asma",
         "year": 2021,
         "url": "https://www.gov.br/saude/",
-        "covers": ["técnica inalatória", "espaçador valvulado", "broncodilatador inalatório", "monitorização"]
+        "covers": [
+          "técnica inalatória",
+          "espaçador valvulado",
+          "broncodilatador inalatório",
+          "monitorização"
+        ]
       },
       {
         "id": "sbpt-asma-espacador",
@@ -32,7 +37,11 @@
         "title": "Diretrizes Brasileiras de Asma — uso de inalador doseado e espaçador",
         "year": 2020,
         "url": "https://sbpt.org.br/",
-        "covers": ["exalação completa", "apneia inspiratória", "higiene do espaçador"]
+        "covers": [
+          "exalação completa",
+          "apneia inspiratória",
+          "higiene do espaçador"
+        ]
       }
     ]
   },
@@ -94,11 +103,6 @@
           "label": "O₂ suplementar",
           "detail": "Titular e monitorar SpO₂ — broncodilatação não dispensa oximetria.",
           "icon": "Activity"
-        },
-        {
-          "label": "GABARITO — letra E",
-          "detail": "Técnica inalatória com espaçador conforme diretrizes brasileiras de asma.",
-          "icon": "CheckCircle"
         }
       ],
       "footer_rule": "Exalar → jato → apneia ≥10 s; SpO₂ sempre monitorada"
@@ -112,12 +116,31 @@
       },
       "content": "INALADOR COM ESPAÇADOR — TÉCNICA",
       "rows": [
-        { "label": "Sequência", "value": "Exalar → disparar → apneia inspiratória ≥10 s", "badge": "ok" },
-        { "label": "Espaçador", "value": "Melhora deposição do spray doseado", "badge": "ok" },
-        { "label": "Higiene", "value": "Detergente neutro + substituição periódica", "badge": "ok" },
-        { "label": "SpO₂", "value": "Monitorar durante O₂ — não ajuste empírico de FiO₂", "badge": "warn" },
-        { "label": "Nebulização", "value": "Fluxo e técnica conforme protocolo — não fixar 8 L/min sem critério", "badge": "warn" },
-        { "label": "Gabarito", "value": "Letra E", "emphasis": "success", "badge": "hot" }
+        {
+          "label": "Sequência",
+          "value": "Exalar → disparar → apneia inspiratória ≥10 s",
+          "badge": "ok"
+        },
+        {
+          "label": "Espaçador",
+          "value": "Melhora deposição do spray doseado",
+          "badge": "ok"
+        },
+        {
+          "label": "Higiene",
+          "value": "Detergente neutro + substituição periódica",
+          "badge": "ok"
+        },
+        {
+          "label": "SpO₂",
+          "value": "Monitorar durante O₂ — não ajuste empírico de FiO₂",
+          "badge": "warn"
+        },
+        {
+          "label": "Nebulização",
+          "value": "Fluxo e técnica conforme protocolo — não fixar 8 L/min sem critério",
+          "badge": "warn"
+        }
       ],
       "footer_rule": "Técnica inalatória antes de julgar fluxo de O₂ ou nebulização"
     },

@@ -86,14 +86,21 @@ type ResolvedSlidePresentation = {
 | **Hermético** | `__tests__/lib/neurocanvas/neuroVisualPlanV0.test.ts` | Fixtures em memória / tmpdir | Sim (`npm test`) |
 | **Paridade pesada** | `npm run audit:neurovisual-plan-v0-parity` | Baseline canônica local (`data/catalog-migration`) | Não |
 
-Paridade pesada: preflight → `buildCanonicalCatalog` → por slide compara `canonicalJson` integral de `presentation` + `ThemeColors` × `buildNeuroVisualPlanV0`. Campos divergentes no relatório são derivados dinamicamente da união de chaves — qualquer campo futuro em `ResolvedSlidePresentation` entra automaticamente na comparação. Exit ≠ 0 se houver divergência.
+Paridade pesada: preflight → `buildCanonicalCatalog` → por slide compara `canonicalJson` integral de `presentation` + `ThemeColors` × `buildNeuroVisualPlanV0`. Campos divergentes no relatório são derivados dinamicamente da união de chaves — qualquer campo futuro em `ResolvedSlidePresentation` entra automaticamente na comparação.
+
+### Expectativa F1 — polaridade (atualizada)
+
+- `dangerItemPolarities` vive **fora** de `presentation` no `NeuroVisualPlanV0` (1ª consumação real do plano no player / molde `trap-reveal`).
+- Chrome `trap` × `valid_conduct` em comando negativo é **divergência intencional** do histórico “tudo ERRO #N” — reportada em `intentional_polarity` no artifact, **não** conta como mismatch de presentation.
+- Gate rígido (exit ≠ 0): divergências presentation/theme **ou** polaridade plano≠direto (`polarity_path_mismatches`).
+- Existência de itens `valid_conduct` **não** falha o audit — é a dimensão intencional.
 
 ## Baseline editorial e gate G0.2
 
 - **676 slugs** permanecem **editorialmente unresolved** (conteúdo divergente sem evidência documentada única).
 - Esses slugs estão **fora da baseline canônica** (`iterateCanonicalQuestions` só percorre `selections`, não `unresolved_slugs`).
 - Paridade Fase 0A cobre **4.975 questões / 19.900 slides** da baseline canônica atual — não o catálogo bruto inteiro.
-- **Fase 0B** e composições visuais permanecem **NOT READY** até resolver o gate editorial dos 676 unresolved.
+- **Fase 0B** e composições visuais permanecem **NOT READY** até resolver o gate editorial dos 676 unresolved — e, por F6, também até o conteúdo estabilizar (ver [Condição de retorno](#condição-de-retorno-f6)).
 - **Próximo passo após merge do PR #48:** resolver o gate editorial G0.2 (dedupe/unresolved) — **não** iniciar Fase 0B automaticamente.
 
 ## Não objetivos (Fase 0A)
@@ -109,6 +116,26 @@ Paridade pesada: preflight → `buildCanonicalCatalog` → por slide compara `ca
 - Gates verdes: typecheck, architecture-check, testes herméticos.
 - Documentação de campos opcionais futuros (ex.: telemetria `engineVersion`) sem acoplar ao renderer.
 - Plano aprovado para integração opt-in (ainda não autoridade de render).
+
+### Condição de retorno (F6)
+
+A Fase 0B fica **estacionada** — não é retomada por decurso de prazo. Duas condições, verificadas por [`lib/neurocanvas/phaseResumptionGate.ts`](../lib/neurocanvas/phaseResumptionGate.ts) e compostas nos blockers de `phase_0b` / `phase_2` do gate G0.2:
+
+| Condição | Sinal | Artefato |
+|---|---|---|
+| **Conteúdo estável** | `corpus=catalog`, zero `fail_leak` do leitor cego, zero `fail` pedagógico | `artifacts/blind-reader-gate.json` (`npm run audit:blind-reader -- --catalog`) |
+| **Proveniência decidida** | `status=decided`, todas as decisões de `decisions_required` registradas em `decisions_taken`, `phase_0b_ready=true` | `artifacts/neurocanvas-f5-provenance-decision.json` |
+
+Motivo da ordem: o repair de F3 reescreve `detail` e `steps`, e cada edição muda o hash da questão — construir a baseline de cache antes seria pagar duas vezes pela mesma coisa.
+
+A **Fase 2** (composições visuais) usa as mesmas duas condições **menos** `phase_0b_ready`, que é específico do fechamento editorial do cache. Antes do gate pedagógico verde, composição nova é apresentação mais bonita de um slide 1 que entrega o gabarito.
+
+```bash
+npm run audit:neurocanvas-phase-gate            # report (só artefatos; sem catálogo/Supabase/LLM)
+npm run audit:neurocanvas-phase-gate -- --strict  # exit 1 enquanto a Fase 0B estiver estacionada
+```
+
+Artefatos: `artifacts/neurocanvas-phase-gate.{json,md}`. Ausência de artefato **nunca** libera por omissão.
 
 ## Comandos
 

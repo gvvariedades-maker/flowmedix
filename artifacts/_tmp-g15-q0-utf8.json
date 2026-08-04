@@ -1,0 +1,154 @@
+﻿{
+  "meta": {
+    "ano": "2026",
+    "banca": "Igecap",
+    "orgao": "Pref São Dom (PB) / Enfermagem",
+    "prova": "Tec (Pref São Dom (PB))",
+    "cargo_header": "Técnico de enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Atenção Básica / Saúde da Família"
+  },
+  "question_data": {
+    "instruction": "No contexto das ações educativas desenvolvidas pelo técnico de enfermagem na atenção básica, visando à prevenção de doenças infectoparasitárias, especialmente aquelas de transmissão fecal-oral, é considerada conduta correta e eficaz:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Incentivar o consumo de água proveniente de fontes naturais, desde que visualmente límpida.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Orientar a higienização adequada de frutas e verduras com água tratada antes do consumo.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Recomendar o descarte de resíduos domésticos em áreas abertas para evitar acúmulo no domicílio.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Estimular o hábito de caminhar descalço como forma de fortalecimento da imunidade.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Orientar o compartilhamento de objetos de uso pessoal como medida de integração familiar.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "items": [
+        {
+          "label": "Tema da questão",
+          "detail": "Processo de Enfermagem — Conceito / definição",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Gabarito desta prova",
+          "detail": "Letra B — Orientar a higienização adequada de frutas e verduras com água tratada antes do consumo.",
+          "icon": "Target"
+        },
+        {
+          "label": "Critério de prova",
+          "detail": "No contexto das ações educativas desenvolvidas pelo técnico de enfermagem na atenção básica, visando à prevenção de doenças infectoparasitárias, especialmente aquelas de transmissão fecal-oral, é considerada conduta correta e eficaz:",
+          "icon": "Search"
+        }
+      ],
+      "footer_rule": "[IA] Enriquecer concept_map — família Conceito / definição"
+    },
+    {
+      "type": "logic_flow",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "steps": [
+        "Ler o comando: “No contexto das ações educativas desenvolvidas pelo técnico de enfermagem na atenção básica, visando à prevenção de doe…”.",
+        "Fixar o que a banca pede em Processo de Enfermagem.",
+        "Identificar gabarito: letra B — “Orientar a higienização adequada de frutas e verduras com água tratada antes do consumo.”.",
+        "Testar letra A: “Incentivar o consumo de água proveniente de fontes naturais, desde que visualmente límpida.” → eliminar (incorreta).",
+        "Testar letra C: “Recomendar o descarte de resíduos domésticos em áreas abertas para evitar acúmulo no domicílio.” → eliminar (incorreta).",
+        "Testar letra D: “Estimular o hábito de caminhar descalço como forma de fortalecimento da imunidade.” → eliminar (incorreta).",
+        "Testar letra E: “Orientar o compartilhamento de objetos de uso pessoal como medida de integração familiar.” → eliminar (incorreta).",
+        "Marcar letra B.",
+        "Fixação: em Processo de Enfermagem, elimine distratoras pelo texto literal das alternativas."
+      ],
+      "footer_rule": "Estratégia: enunciado → gabarito B → eliminar A/C/D/E",
+      "reveal_mode": "tap"
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "content": "Medidas de Prevenção Fecal-Oral",
+      "rows": [
+        {
+          "label": "Água",
+          "value": "Sempre tratada, filtrada ou fervida"
+        },
+        {
+          "label": "Alimentos",
+          "value": "Higienizados com água potável"
+        },
+        {
+          "label": "Higiene Pessoal",
+          "value": "Lavagem das mãos pós-banheiro"
+        },
+        {
+          "label": "Resíduos",
+          "value": "Coleta e destino sanitário correto"
+        }
+      ],
+      "footer_rule": "Medidas de Prevenção Fecal-Oral"
+    },
+    {
+      "type": "danger_zone",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "content": "PEGADINHAS — PROCESSO DE ENFERMAGEM (CONCEITO)",
+      "items": [
+        {
+          "label": "Letra A — Incentivar o consumo de água proveniente de fontes naturais, desde que visualmente límpida.",
+          "detail": "Incentivar o consumo de água proveniente de fontes naturais, desde que visualmente límpida.",
+          "correct": "Gabarito: letra B — Orientar a higienização adequada de frutas e verduras com água tratada antes do consumo."
+        },
+        {
+          "label": "Letra C — Recomendar o descarte de resíduos domésticos em áreas abertas para evitar acúmulo no domicílio.",
+          "detail": "Recomendar o descarte de resíduos domésticos em áreas abertas para evitar acúmulo no domicílio.",
+          "correct": "Gabarito: letra B — Orientar a higienização adequada de frutas e verduras com água tratada antes do consumo."
+        },
+        {
+          "label": "Letra D — Estimular o hábito de caminhar descalço como forma de fortalecimento da imunidade.",
+          "detail": "Estimular o hábito de caminhar descalço como forma de fortalecimento da imunidade.",
+          "correct": "Gabarito: letra B — Orientar a higienização adequada de frutas e verduras com água tratada antes do consumo."
+        },
+        {
+          "label": "Letra E — Orientar o compartilhamento de objetos de uso pessoal como medida de integração familiar.",
+          "detail": "Orientar o compartilhamento de objetos de uso pessoal como medida de integração familiar.",
+          "correct": "Gabarito: letra B — Orientar a higienização adequada de frutas e verduras com água tratada antes do consumo."
+        },
+        {
+          "label": "Marcar sem testar todas as letras",
+          "detail": "Eliminar distratoras pelo texto literal de cada alternativa antes de confirmar.",
+          "correct": "Conferir gabarito B — “Orientar a higienização adequada de frutas e verduras com água tratada antes do consumo.” — contra o enunciado."
+        }
+      ],
+      "footer_rule": "Compare cada alternativa da prova com o gabarito letra B antes de marcar.",
+      "bullet_style": "x_icon"
+    }
+  ],
+  "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-0"
+}

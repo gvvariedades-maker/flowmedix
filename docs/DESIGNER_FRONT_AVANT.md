@@ -43,13 +43,18 @@ Rule: [`.cursor/rules/avant-ui-visual.mdc`](../.cursor/rules/avant-ui-visual.mdc
 
 **Ordem de leitura:**
 
-1. [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) — brief 4/4 (designer instrucional)  
-2. [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](../.cursor/skills/avant-neuroslides-visual/SKILL.md) — gesto = decisão; anti-cópia  
-3. [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) — layouts genéricos dos 4 slides  
-4. [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — L3 = experiência visual bespoke  
-5. Só ao **implementar React:** [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md)
+1. [`DECISAO_NEUROSLIDES_GERACAO_2.md`](DECISAO_NEUROSLIDES_GERACAO_2.md) — ADR: 4 tipos imutáveis + Visual OS  
+2. [`NEUROSLIDES_VISUAL_BAR.md`](NEUROSLIDES_VISUAL_BAR.md) — **piso best-in-market + ratchet** (cada molde só melhora)  
+3. [`NEUROSLIDES_GERACAO_2_ROADMAP.md`](NEUROSLIDES_GERACAO_2_ROADMAP.md) — fases flagship → Fábrica → cauda  
+4. [`PROMPT_FABRICA_VISUAL_G2.md`](PROMPT_FABRICA_VISUAL_G2.md) — prompt reutilizável (1 pacote / P1 shells)  
+5. [`PROMPT_VARIANTES_NEUROSLIDES.md`](PROMPT_VARIANTES_NEUROSLIDES.md) — brief 4/4 (designer instrucional)  
+6. [`.cursor/skills/avant-neuroslides-visual/SKILL.md`](../.cursor/skills/avant-neuroslides-visual/SKILL.md) — gesto = decisão; anti-cópia  
+7. [`NEUROSLIDES_VISUAL_STRATEGY.md`](NEUROSLIDES_VISUAL_STRATEGY.md) — primitives + glanceable + ondas  
+8. [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) — layouts genéricos dos 4 slides  
+9. [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — L3 = experiência visual bespoke  
+10. Só ao **implementar React:** [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md)
 
-**No Cursor:** `Design visual:` · `Molde visual:` · brief via `Brief TE:` / `Brief PT:`  
+**No Cursor:** `Design visual:` · `Molde visual:` · `Fábrica visual G2:` · `P1 NeuroSlides G2:` · brief via `Brief TE:` / `Brief PT:`  
 **Não** use `Visual:` / `Polish vitrine` para moldes de slide.
 
 ---
@@ -80,8 +85,13 @@ Rule: [`.cursor/rules/lp-conversa.mdc`](../.cursor/rules/lp-conversa.mdc) · có
 | Craft app | `avant-ui-visual` + `reference-microsaas-craft` | Como polishar vitrine/player |
 | Landing / LP (CRO) | `LP_CONVERSA.md` | Copy + anatomia + ship de `/` e `/lp/*` |
 | Pesquisa LP | `LP_RESEARCH_CAPABILITY_MAP.md` | Por que C1–C16 |
+| Geração 2 (produto) | `DECISAO_NEUROSLIDES_GERACAO_2.md` | Cérebro 4 tipos × corpo Visual OS |
+| Barra visual + ratchet | `NEUROSLIDES_VISUAL_BAR.md` | Piso demo G2; cada molde só melhora |
+| Roadmap G2 | `NEUROSLIDES_GERACAO_2_ROADMAP.md` | Flagships → Fábrica → cauda |
+| Prompt Fábrica / P1 | `PROMPT_FABRICA_VISUAL_G2.md` | 1 conversa = 1 pacote (ou lote shells) |
 | Brief slides | `PROMPT_VARIANTES_NEUROSLIDES.md` | Metáfora 4/4 antes do React |
 | Retenção visual | `avant-neuroslides-visual` | Gesto ≠ decoração |
+| Strategy visual | `NEUROSLIDES_VISUAL_STRATEGY.md` | Primitives + ondas |
 | Implementação molde | `VARIANT_MOLDS.md` | Wiring React (pedido explícito) |
 | Tokens no código | `app/globals.css` | **Última palavra** — não inventar paleta paralela |
 

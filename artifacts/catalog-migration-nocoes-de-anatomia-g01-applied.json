@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-08-03T22:56:19.284Z",
+  "lote": "nocoes-de-anatomia-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+    "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+    "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+    "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775331667969-6",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-5",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775331667969-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

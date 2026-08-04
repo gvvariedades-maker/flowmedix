@@ -22,7 +22,12 @@
         "issuer": "Anvisa",
         "title": "RDC 15/2012 — reprocessamento de produtos para saúde",
         "year": 2012,
-        "covers": ["preparo", "pré-secagem", "embalagem", "inspeção de integridade"]
+        "covers": [
+          "preparo",
+          "pré-secagem",
+          "embalagem",
+          "inspeção de integridade"
+        ]
       }
     ]
   },
@@ -79,11 +84,6 @@
           "label": "Pré-secagem",
           "detail": "Umidade residual impede penetração do agente esterilizante no ciclo.",
           "icon": "Droplets"
-        },
-        {
-          "label": "Gabarito",
-          "detail": "Letra B — pré-secar após limpeza antes de embalar.",
-          "icon": "Target"
         }
       ],
       "footer_rule": "Seco e íntegro → só então embalar para esterilizar"
@@ -97,11 +97,27 @@
       },
       "content": "ANTES DA EMBALAGEM",
       "rows": [
-        { "label": "Pré-secagem", "value": "Obrigatória após limpeza — sem umidade", "badge": "hot", "emphasis": "highlight" },
-        { "label": "Articulados", "value": "Testar integridade — não dispensar", "badge": "warn" },
-        { "label": "Carga do pacote", "value": "Compatível com densidade/tamanho — não misturar tudo", "badge": "ok" },
-        { "label": "Rotulagem", "value": "Identificação externa obrigatória", "badge": "ok" },
-        { "label": "Gabarito", "value": "Letra B", "badge": "hot" }
+        {
+          "label": "Pré-secagem",
+          "value": "Obrigatória após limpeza — sem umidade",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Articulados",
+          "value": "Testar integridade — não dispensar",
+          "badge": "warn"
+        },
+        {
+          "label": "Carga do pacote",
+          "value": "Compatível com densidade/tamanho — não misturar tudo",
+          "badge": "ok"
+        },
+        {
+          "label": "Rotulagem",
+          "value": "Identificação externa obrigatória",
+          "badge": "ok"
+        }
       ],
       "footer_rule": "Umidade é inimiga da esterilização eficaz"
     },

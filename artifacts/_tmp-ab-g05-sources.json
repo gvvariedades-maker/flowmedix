@@ -1,0 +1,338 @@
+{
+  "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9": {
+    "meta": {
+      "ano": "2023",
+      "banca": "Coseac Uff",
+      "orgao": "Enfermagem",
+      "prova": "Tec (FEMAR)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "A disúria é um sintoma prevalente no atendimento da demanda espontânea das UBSs e pode ser definida como a sensação de ardência, queimação oudesconforto ao urinar, podendo vir ou não acompanhada de outros sintomas, tais como a polaciúria, que é caracterizada por",
+    "options": [
+      {
+        "id": "A",
+        "text": "perda involuntária de urina, contínua ou intermitente, com ou sem micções preservadas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "aumento na frequência urinária, sem que necessariamente ocorra alteração no volume urinário.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "presença de sangue na urina, que pode ser microscópica, quando só é percebida no exame bioquímico ou macroscópico, quando vista a olho nu.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "ausência total de urina geralmente causada por lesão renal ou pré-renal.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "diminuição da autonomia miccional ou aumento do volume urinário noturno.",
+        "is_correct": false
+      }
+    ],
+    "family": "conceito",
+    "branch": "ab_generico",
+    "modulo_slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9"
+  },
+  "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4": {
+    "meta": {
+      "ano": "2025",
+      "banca": "CPCON UEPB",
+      "orgao": "Pref Pombal",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "No atendimento à população, o processo pelo qual se utilizam critérios clínicos, sociais, econômicos, familiares e outros, com base em diretrizes clínicas, para\nidentificar subgrupos de acordo com a complexidade da condição crônica de saúde, com o objetivo de diferenciar o cuidado clínico e os fluxos que cada usuário deve\nseguir na Rede de Atenção à Saúde para um cuidado integral é denominado de:",
+    "options": [
+      {
+        "id": "A",
+        "text": "estratificação de risco.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "resolutividade.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "ferramentas de gestão da clínica.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "responsabilização sanitária.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "acesso.",
+        "is_correct": false
+      }
+    ],
+    "family": "conceito",
+    "branch": "ab_generico",
+    "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4"
+  },
+  "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5": {
+    "meta": {
+      "ano": "2025",
+      "banca": "CPCON UEPB",
+      "orgao": "Pref Pombal",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "No trabalho da unidade básica de saúde, os profissionais se deparam com famílias com estruturas muito complexas ou em condições de vulnerabilidade social. No\nque diz respeito a alguns instrumentos que facilitam o entendimento da dinâmica familiar na assistência a essas famílias, a figura abaixo é um exemplo de qual desses\ninstrumentos?\nFonte: MANUAL DO AGENTE COMUNITÁRIO DE SAÚDE DA ATENÇÃO PRIMÁRIA À SAÚDE DE BELO HORIZONTE. Belo Horizonte: Diretrizes técnicas para o trabalho, 2019.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Genograma.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Ecomapa.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Mapa inteligente.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Croqui.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Setores censitários.",
+        "is_correct": false
+      }
+    ],
+    "family": "conceito",
+    "branch": "ab_acs_territorio",
+    "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5"
+  },
+  "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1": {
+    "meta": {
+      "ano": "2024",
+      "banca": "CPCON UEPB",
+      "orgao": "Comunitário de Saúde",
+      "prova": "Ag (Pref SJ Piranhas)",
+      "cargo_header": "Técnico de Enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Analise as assertivas a respeito da visita domiciliar realizada pelo Agente Comunitário de Saúde.\nI- A visita domiciliar é um instrumento de intervenção fundamental da estratégia de Saúde da Família que possibilita ao profissional conhecer o contexto de vida do usuário e a constatação das reais condições de habitação, bem como a identificação in loco das relações familiares.\nII- Por se tratar de ação corriqueira do Agente Comunitário de Saúde, não há necessidade de planejamento prévio para a realização da visita domiciliar.\nIII- Os Agentes Comunitários de Saúde constroem o elo entre os usuários e a unidade de saúde por meio da visita domiciliar.\nIV- Na visita domiciliar, o Agente Comunitário de Saúde é livre para usar qualquer tipo de traje que lhe convier.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I e III apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I, II, III e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II e IV apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "II, III e IV apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "I, II e III apenas.",
+        "is_correct": false
+      }
+    ],
+    "family": "vf",
+    "branch": "ab_acs_territorio",
+    "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1"
+  },
+  "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5": {
+    "meta": {
+      "ano": "2023",
+      "banca": "CPCON UEPB",
+      "orgao": "Pref Catolé do Rocha / Enfermagem",
+      "prova": "Tec (Pref Catolé R)",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Levando-se em consideração os Protocolos de Encaminhamento da Atenção Básica para a atenção especializada nas área de Endocrinologia e Ginecologia, é\nINCORRETO afirmar:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Os técnicos de enfermagem precisam estar atentos às pacientes que estão no climatério, apresentando as seguintes condições clínicas: menopausa precoce (antes dos 40 anos) ou persistência de sintomas associados ao climatério após tratamento clínico otimizado por 6 meses, pois estas pacientes necessitam ser encaminhadas ao ginecologista.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Em casos de pacientes portadores de obesidade: o técnico em enfermagem auxilia diretamente na obtenção de algumas informações mínimas e necessárias para fazer um encaminhamento à referência, a saber: sinais e sintomas; IMC; peso em quilogramas; estatura em metros.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Pacientes com diagnóstico ou suspeita de neoplasia ginecológica e pacientes com sangramento uterino anormal (com ou sem mioma) que apresentam anemia (hemoglobina < 10 g/ml) apesar do tratamento clínico otimizado devem ter preferência no encaminhamento ao ginecologista.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Os pacientes portadores de Diabetes Mellitus tipo 2 que fazem uso de hipoglicemiantes orais há mais de 1 ano têm preferência de encaminhamento.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Nos casos de Condiloma acuminado/verrugas virais são consideradas condições clínicas que indicam a necessidade de encaminhamento para dermatologia: pacientes imunossuprimidos com verrugas refratárias ao tratamento por pelo menos um mês ou com progressão rápida no número de lesões, bem como pacientes com condiloma acuminado (verruga viral genital e perianal)/verrugas virais refratárias ao tratamento por pelo menos 3 meses.",
+        "is_correct": false
+      }
+    ],
+    "family": "certo_errado",
+    "branch": "ab_generico",
+    "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5"
+  },
+  "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6": {
+    "meta": {
+      "ano": "2023",
+      "banca": "CPCON UEPB",
+      "orgao": "Pref Dona Inês",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "No exercício de suas atribuições, o Agente Comunitário de Saúde exerce suas atividades de prevenção de doenças e de promoção da saúde, a partir dos\nreferenciais da Educação Popular em Saúde, mediante ações no âmbito:",
+    "options": [
+      {
+        "id": "A",
+        "text": "apenas individuais e coletivas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "apenas domiciliar ou comunitário, uma vez que compete ao médico a abordagem individual ao usuário.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "apenas na comunidade, sob a supervisão do Assistente Social.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "domiciliar ou comunitário, individual ou coletivo.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "de todo o bairro onde se localiza a sua microárea.",
+        "is_correct": false
+      }
+    ],
+    "family": "conceito",
+    "branch": "ab_acs_territorio",
+    "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6"
+  },
+  "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7": {
+    "meta": {
+      "ano": "2023",
+      "banca": "CPCON UEPB",
+      "orgao": "Pref Dona Inês",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "A Avaliação do Risco Familiar é uma ferramenta eficaz no direcionamento das ações do Agente Comunitário de Saúde para as famílias com maiores necessidades.\nFatores de Risco são condições ou aspectos biológicos, psicológicos ou sociais que estão associados, estatisticamente, a maiores probabilidades futuras de mortalidade ou\nmorbidade. Nesse sentido, a separação dos pais, abuso sexual, gravidez precoce, negligência dos pais, baixa renda, filhos com deficiência, doença terminal, ausência de\nplanejamento familiar são fatores de risco do tipo:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Universais.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Sociais.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Pessoais.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Familiares.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Integrais.",
+        "is_correct": false
+      }
+    ],
+    "family": "conceito",
+    "branch": "ab_acs_territorio",
+    "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7"
+  },
+  "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2": {
+    "meta": {
+      "ano": "2022",
+      "banca": "CPCON UEPB",
+      "orgao": "Pref Areia",
+      "prova": "ACS",
+      "cargo_header": "Técnico de enfermagem",
+      "topico": "Enfermagem",
+      "subtopico": "Atenção Básica / Saúde da Família"
+    },
+    "instruction": "Uma das atribuições dos Agentes Comunitários de Saúde é identificar áreas e situações de risco individual e coletivo. As situações de risco são aquelas em queuma pessoa ou grupo de pessoas \"corre perigo\", isto é, tem maior possibilidade ou chance de adoecer ou até mesmo de morrer. Dentre as alternativas abaixo, qual NÃOse constitui como situação de risco que pode ocorrer na população?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pessoas que estão com peso acima da média e vida sedentária, com ou sem uso do tabaco ou do álcool.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Bebês que nascem com menos de dois quilos e meio.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Gestantes que não fazem o pré-natal.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Pessoas em situação de violência.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Bebês cujas mães realizaram o pré-natal.",
+        "is_correct": true
+      }
+    ],
+    "family": "conceito",
+    "branch": "ab_generico",
+    "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2"
+  }
+}

@@ -39,7 +39,7 @@ describe('pedagogicalBranch', () => {
     );
   });
 
-  it('ramo desenvolvimento usa layout genérico no concept_map', () => {
+  it('ramo desenvolvimento usa layout genérico (≠ pacote ética)', () => {
     const design = getPresentationDesign(subtopico, 'adolescente_desenvolvimento');
     expect(design?.conceptMap).toBe('morphological');
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_desenvolvimento')).toBe(
@@ -47,9 +47,27 @@ describe('pedagogicalBranch', () => {
     );
   });
 
-  it('ramo ética usa adolescent-privacy-curtain', () => {
+  it('ramo saúde mental usa logic_flow vertical (≠ isolate ética)', () => {
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'adolescente_saude_mental')).toBe(
+      'vertical',
+    );
+  });
+
+  it('ramo genérico usa danger_zone compare (≠ exceto-compare ética)', () => {
+    expect(getLayoutVariantForBranch(subtopico, 'danger_zone', 'adolescente_generico')).toBe(
+      'compare',
+    );
+  });
+
+  it('ramo ética usa adolescent-care-pillars-deck', () => {
     expect(getLayoutVariantForBranch(subtopico, 'concept_map', 'adolescente_etica_sigilo')).toBe(
-      'adolescent-privacy-curtain',
+      'adolescent-care-pillars-deck',
+    );
+  });
+
+  it('ramo ética usa adolescent-exceto-isolate-board no logic_flow', () => {
+    expect(getLayoutVariantForBranch(subtopico, 'logic_flow', 'adolescente_etica_sigilo')).toBe(
+      'adolescent-exceto-isolate-board',
     );
   });
 });
@@ -244,7 +262,8 @@ describe('enrichPresentationContext — meta da questão', () => {
       'imunizacao_exceto',
     );
     const design = getPresentationDesign(imunizacaoSubtopico, 'imunizacao_exceto');
-    expect(design?.dangerZone).toBe('compare');
+    expect(design?.logicFlow).toBe('pni-exceto-isolate-board');
+    expect(design?.dangerZone).toBe('pni-exceto-compare');
   });
 
   it('infere imunizacao_generico para campanha diabetes Portaria 2.048 (não calendário PNI)', () => {
@@ -822,5 +841,35 @@ describe('inferPedagogicalBranch — História da Enfermagem', () => {
   it('infere historia_generico para cauda teorias administrativas', () => {
     const instruction = 'Sobre as principais teorias administrativas na Enfermagem, assinale a alternativa correta.';
     expect(inferPedagogicalBranch(subtopico, instruction, [], 'conceito')).toBe('historia_generico');
+  });
+});
+
+describe('pedagogicalBranch — Epidemiologia e Vigilância Epidemiológica', () => {
+  const subtopico = 'Epidemiologia e Vigilância Epidemiológica';
+
+  it('infere epi_notificacao_compulsoria da lista imediata', () => {
+    const instruction =
+      'Qual item consta na Lista Nacional de Doenças de Notificação Compulsória Imediata?';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('epi_notificacao_compulsoria');
+    const design = getPresentationDesign(subtopico, 'epi_notificacao_compulsoria');
+    expect(design?.template).toBe('lime');
+  });
+
+  it('infere epi_indicadores de mortalidade/incidência', () => {
+    const instruction =
+      'Indicador calculado pela divisão do número de óbitos pela população em risco refere-se à mortalidade.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('epi_indicadores');
+  });
+
+  it('infere epi_vigilancia_acoes de vigilância epidemiológica', () => {
+    const instruction =
+      'Vigilância epidemiológica e vigilância sanitária são ações distintas no SUS.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('epi_vigilancia_acoes');
+  });
+
+  it('infere epi_ocorrencia_agravos de endemia/epidemia/surto', () => {
+    const instruction =
+      'Endemia, epidemia, pandemia e surto descrevem a ocorrência de agravos.';
+    expect(inferPedagogicalBranch(subtopico, instruction, [])).toBe('epi_ocorrencia_agravos');
   });
 });

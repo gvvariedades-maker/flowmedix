@@ -1,0 +1,306 @@
+[
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-1.json",
+    "correct": "D",
+    "instruction": "Preencha a lacuna com a alternativa correta:\nMuitas doenças são consideradas ______________________, quando acontecem com mais frequência em uma determinada estação do ano.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Verticais.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Horizontais.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Climáticas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Sazonais",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Paliativas.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2025",
+      "orgao": "Pref Toledo (PR)",
+      "prova": "TEnf (Pref Toledo (PR))"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-2.json",
+    "correct": "D",
+    "instruction": "Quando a doença foi totalmente erradicada:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Profilaxia.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Subnotificada.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Afecção.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Cura.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Cianose.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2025",
+      "orgao": "Pref Toledo (PR)",
+      "prova": "TEnf (Pref Toledo (PR))"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-8.json",
+    "correct": "B",
+    "instruction": "Considerando a fase latente de uma doença, assinale a alternativa\ncorreta\n.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Após a infecção é o período em que os sintomas estão mais exacerbados.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "É o período em que a infecção está presente, mas não há sintomas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Nesse período a doença não pode ser transmitida para outras pessoas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Em virtude de um quadro infeccioso, ocorre produção de pequenas quantidades de leite secretado pelas mamas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "É o período puerperal em que ocorre transmissão vertical de doenças infecciosas (da mãe para o filho).",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2025",
+      "orgao": "Pref Porto Barreiro",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-6.json",
+    "correct": "B",
+    "instruction": "Refere-se ao primeiro caso detectado ou documentado de uma doença dentro de um grupo, família ou comunidade; desencadeia a investigação epidemiológica, orastreamento de contatos e as intervenções sanitárias; pode ser identificado fora da zona onde se fez o diagnóstico e é crucial para entender a dinâmica de transmissão epara aplicar medidas de contenção como isolamento, quarentena e/ou vacinação específica:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Paciente Um.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Caso-índice.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Caso P.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Agente Z.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Marco Transmissor.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2025",
+      "orgao": "Pref Três Barras PR",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-9.json",
+    "correct": "A",
+    "instruction": "Sistema de informação em saúde que sentinela alimentação e nutrição:",
+    "options": [
+      {
+        "id": "A",
+        "text": "SISVAN.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "SINAN.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "DNV.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "SISNUTRI.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "NOTIVISA.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2024",
+      "orgao": "Pref Janiópolis",
+      "prova": "TEnf"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-3.json",
+    "correct": "C",
+    "instruction": "SIAB é um sistema idealizado para agregar e processar as informações sobre a população visitada; as quais são recolhidas em fichas de cadastramento e deacompanhamento e analisadas a partir dos relatórios de consolidação dos dados. Assinale a alternativa que apresenta o instrumento de coleta de dados no qual sãoregistradas diariamente as atividades e procedimentos realizados, além de notificações de algumas doenças ou condições que são objeto de acompanhamentosistemático:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ficha A.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Ficha B.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Ficha D.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Ficha SSA.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Ficha R.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2025",
+      "orgao": "Pref Porto Amazona",
+      "prova": "Tec Enf"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-4.json",
+    "correct": "C",
+    "instruction": "Preencha a lacuna com a alternativa correta:\nA taxa de mortalidade é um indicador que mede o número de óbitos em uma população, durante um período de tempo, em um determinado local; é calculada dividindo-se o número total de óbitos\n, multiplicando-se o resultado por uma constante; o resultado é expresso por mil habitantes ou por cem mil habitantes/ano.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pela média da população.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Pela metade da população.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Pelo total da população.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Pelo dobro da população.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Pelo total de indivíduos doentes.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2025",
+      "orgao": "Pref Porto Amazona",
+      "prova": "Tec Enf"
+    }
+  },
+  {
+    "file": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-8.json",
+    "correct": "C",
+    "instruction": "Agente etiológico:",
+    "options": [
+      {
+        "id": "A",
+        "text": "É o organismo que alberga o parasita.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "É fator fundamental para profilaxia de uma patologia.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "É o agente causador ou responsável por uma doença.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "É o princípio ativo das soluções para antissepsia das mãos e pele.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Membro da equipe de Saúde da Família que atua como mediador na área da atenção primária, sendo um dos principais acessos aos programas de saúde,qualidade de vida e prevenção de doenças ao indivíduo e coletividade.",
+        "is_correct": false
+      }
+    ],
+    "meta": {
+      "banca": "Fau Unicentro",
+      "ano": "2023",
+      "orgao": "Pref Laranjeiras Sul",
+      "prova": "TEnf (Laranjeiras S)"
+    }
+  }
+]

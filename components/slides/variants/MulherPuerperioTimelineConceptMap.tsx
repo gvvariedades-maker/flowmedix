@@ -1,11 +1,17 @@
 'use client';
 
-import React, { useCallback, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useCallback, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { SlideLucideIcon } from '../core/SlideLucideIcon';
 import { inferPuerperioMarker } from '@/lib/slides/mulherPuerperioSlideUtils';
+import {
+  BoardChrome,
+  CategoryStrip,
+  ProtocolRailRow,
+  type BoardTone,
+} from '../primitives';
 
 export interface TimelineConcept {
   icon: string;
@@ -16,12 +22,16 @@ export interface TimelineConcept {
 interface MulherPuerperioTimelineConceptMapProps {
   concepts: TimelineConcept[];
   theme: ThemeColors;
+  footerRule?: string;
 }
 
-export const MulherPuerperioTimelineConceptMap = ({
+/** Trilho do puerpério — ProtocolRailRow + BoardChrome (Fábrica G2). */
+export function MulherPuerperioTimelineConceptMap({
   concepts,
   theme,
-}: MulherPuerperioTimelineConceptMapProps) => {
+  footerRule,
+}: MulherPuerperioTimelineConceptMapProps) {
+  const reduceMotion = useReducedMotion();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const toggleExpanded = useCallback((index: number) => {
@@ -31,86 +41,57 @@ export const MulherPuerperioTimelineConceptMap = ({
   if (concepts.length === 0) return null;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-4">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
-
-      <div className="relative z-10 flex flex-col gap-0">
+    <BoardChrome
+      theme={theme}
+      eyebrow="Puerpério · 0–42 dias"
+      footerRule={footerRule}
+      footerLabel="Transferência de prova"
+      maxWidth="2xl"
+      washOpacity={0.35}
+    >
+      <div className="flex flex-col gap-3">
         {concepts.map((concept, index) => {
           const expanded = expandedIndex === index;
           const hasLongText = concept.description.length > 80;
           const marker = inferPuerperioMarker(concept.title, concept.description);
-          const isLast = index === concepts.length - 1;
+          const tone: BoardTone = marker.focus ? 'exception' : 'accent';
 
           return (
-            <div key={index} className="flex gap-3 md:gap-4">
-              <div className="flex w-10 shrink-0 flex-col items-center">
-                <span
-                  className={`flex h-10 w-10 items-center justify-center rounded-full px-1 text-center font-mono text-[9px] font-black tabular-nums leading-tight ${
-                    marker.focus
-                      ? 'bg-pink-200/90 text-pink-900 ring-2 ring-pink-400/50'
-                      : `${theme.iconBg} ${theme.iconText}`
-                  }`}
-                >
-                  {marker.label}
-                </span>
-                {!isLast ? (
-                  <div className="my-1 min-h-[1rem] w-0.5 flex-1 rounded-full bg-pink-300/60" aria-hidden />
-                ) : null}
-              </div>
-
-              <motion.button
-                type="button"
-                initial={{ opacity: 0, x: -8 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.05 * index }}
-                onClick={() => toggleExpanded(index)}
-                aria-expanded={expanded}
-                className={`mb-3 min-w-0 flex-1 overflow-hidden rounded-[1.25rem] border text-left shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${
-                  marker.focus
-                    ? 'border-pink-400/80 border-l-[3px] bg-gradient-to-br from-white via-pink-50/50 to-rose-50/80 ring-2 ring-pink-400/20'
-                    : 'border-slate-200/70 border-l-[3px] border-l-pink-300/70 bg-white/90'
-                }`}
-              >
-                <div className="flex flex-col gap-2 p-4 md:p-4">
-                  <div className="flex items-start justify-between gap-2">
-                    <div
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${theme.iconBg} ${theme.iconText}`}
-                    >
-                      <SlideLucideIcon name={concept.icon} size={18} />
-                    </div>
-                    {marker.focus ? (
-                      <span className="rounded-full bg-pink-100 px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-pink-800">
-                        foco prova
+            <motion.button
+              key={index}
+              type="button"
+              initial={reduceMotion ? false : { opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: reduceMotion ? 0 : 0.05 * index }}
+              onClick={() => toggleExpanded(index)}
+              aria-expanded={expanded}
+              className="w-full text-left"
+            >
+              <ProtocolRailRow
+                badge={marker.label}
+                title={concept.title}
+                tone={tone}
+                active={marker.focus || expanded}
+                detail={
+                  <span className="flex flex-col gap-2">
+                    <span className="flex items-center gap-2">
+                      <SlideLucideIcon name={concept.icon} size={16} className="shrink-0 text-pink-700" />
+                      {marker.focus ? <CategoryStrip label="foco prova" tone="exception" /> : null}
+                    </span>
+                    <span className={expanded ? '' : 'line-clamp-3'}>{concept.description}</span>
+                    {!expanded && hasLongText ? (
+                      <span className="inline-flex items-center gap-1 self-start font-mono text-[9px] font-bold uppercase text-slate-500">
+                        <ChevronDown className="h-2.5 w-2.5" aria-hidden />
+                        expandir
                       </span>
                     ) : null}
-                  </div>
-                  <h4 className={`font-display text-xs font-extrabold uppercase tracking-wide ${theme.textPrimary}`}>
-                    {concept.title}
-                  </h4>
-                  <AnimatePresence mode="wait" initial={false}>
-                    <motion.p
-                      key={expanded ? 'open' : 'closed'}
-                      initial={{ opacity: 0.85 }}
-                      animate={{ opacity: 1 }}
-                      className={`font-body text-sm leading-relaxed ${theme.textSecondary} ${
-                        expanded ? '' : 'line-clamp-3'
-                      }`}
-                    >
-                      {concept.description}
-                    </motion.p>
-                  </AnimatePresence>
-                  {!expanded && hasLongText ? (
-                    <span className="inline-flex items-center gap-1 self-start rounded-full bg-slate-100 px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-slate-500">
-                      <ChevronDown className="h-2.5 w-2.5" aria-hidden />
-                      expandir
-                    </span>
-                  ) : null}
-                </div>
-              </motion.button>
-            </div>
+                  </span>
+                }
+              />
+            </motion.button>
           );
         })}
       </div>
-    </div>
+    </BoardChrome>
   );
-};
+}
