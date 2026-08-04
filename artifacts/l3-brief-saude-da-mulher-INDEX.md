@@ -30,3 +30,12 @@ DoD Camada 7: PASS se Playwright/captures + nota10-report
 ## P1 (fora deste chat)
 
 Variants Mulher ainda **não** importam `components/slides/primitives/` — refator composição (BoardChrome/LabelBodyRow) em onda futura, sem mudar `layout_variant` IDs.
+
+
+## Fechamento Fábrica G2 (2026-08-04)
+
+- 18 boards → primitives Tier A
+- Playwright L3: **10/10** (prenatal/parto/papanicolau/mama)
+- `visual_bar: pass` · `visual_gallery: ready` nos 4 ramos e2e
+- Fix: `next.config.js` cpus:1 só VERCEL/CI
+

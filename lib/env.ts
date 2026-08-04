@@ -122,17 +122,6 @@ const EnvSchema = z.object({
    * Usada por lotes posteriores para is_internal / UI de convicção — sem efeito runtime neste lote.
    */
   EE_V1_INTERNAL_EMAILS: z.string().min(1).optional(),
-  /**
-   * FSRS MVP — master switch (R3). Omitido = off.
-   * @see docs/PLANO_IMPLEMENTACAO_REVISAO_FSRS_MVP.md §4.4
-   */
-  FSRS_MVP_ENABLED: z.enum(['true', 'false', '1', '0']).optional(),
-  /** Retenção FSRS (0–1). Omitido → 0.90 via defaults. */
-  FSRS_REQUEST_RETENTION: z.coerce.number().gt(0).max(1).optional(),
-  /** Limiar inventário cluster. Omitido → 3. */
-  FSRS_MIN_CLUSTER_INVENTORY: z.coerce.number().int().positive().optional(),
-  /** Allowlist beta FSRS (vírgula). Omitido = ninguém em beta UI. */
-  FSRS_MVP_BETA_EMAILS: z.string().min(1).optional(),
 }).superRefine((data, ctx) => {
   /**
    * Na Vercel, Preview/Development também rodam `next build` com NODE_ENV=production.
@@ -214,10 +203,6 @@ const ENV_KEYS = [
   'CURSOR_ORCHESTRATOR_MODEL',
   'EE_V1_INSTRUMENTATION',
   'EE_V1_INTERNAL_EMAILS',
-  'FSRS_MVP_ENABLED',
-  'FSRS_REQUEST_RETENTION',
-  'FSRS_MIN_CLUSTER_INVENTORY',
-  'FSRS_MVP_BETA_EMAILS',
 ] as const;
 
 function readTrimmedEnv(key: string): string | undefined {
@@ -543,36 +528,6 @@ export function parseEvidenceV1InternalEmails(
  */
 export function isEvidenceV1InstrumentationEnabled(): boolean {
   return parseEvidenceV1InstrumentationFlag(getEnv().EE_V1_INSTRUMENTATION);
-}
-
-/**
- * FSRS MVP — master switch.
- * Default false quando omitido.
- */
-export function isFsrsMvpEnabled(): boolean {
-  return parseEvidenceV1InstrumentationFlag(getEnv().FSRS_MVP_ENABLED);
-}
-
-/** Retenção desejada; default 0.90. */
-export function getFsrsRequestRetention(): number {
-  return getEnv().FSRS_REQUEST_RETENTION ?? 0.9;
-}
-
-/** Limiar de inventário para cluster; default 3. */
-export function getFsrsMinClusterInventory(): number {
-  return getEnv().FSRS_MIN_CLUSTER_INVENTORY ?? 3;
-}
-
-/** Allowlist beta UI Revisões de hoje (lowercase). */
-export function getFsrsMvpBetaEmails(): readonly string[] {
-  return parseEvidenceV1InternalEmails(getEnv().FSRS_MVP_BETA_EMAILS);
-}
-
-export function isFsrsMvpBetaEmail(email: string | null | undefined): boolean {
-  if (!email) return false;
-  const list = getFsrsMvpBetaEmails();
-  if (list.length === 0) return false;
-  return list.includes(email.trim().toLowerCase());
 }
 
 /** Allowlist tipada da coorte interna (e-mails lowercase). */

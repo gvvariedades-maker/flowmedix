@@ -28,7 +28,6 @@ import {
   E2E_ESTUDAR_TITULO_AULA_PAGE2,
   isE2eEstudarSlug,
 } from '@/lib/e2e/constants';
-import { getE2eRevisoesQueueSlugs } from '@/lib/e2e/revisoesHojeSeed';
 
 /** Pacote mínimo de 4 NeuroSlides para fluxo E2E de estudo reverso (slug 1). */
 const E2E_REVERSE_STUDY_SLIDES: NonNullable<LessonData['reverse_study_slides']> = [
@@ -275,13 +274,10 @@ export function buildE2eEstudarQuestaoPayload(
     return { status: 'not_found' };
   }
 
-  const { fromPlano, fromRevisoes, fromCaderno, cadernoId } =
-    parseEstudarSearchParams(searchParams);
+  const { fromCaderno, cadernoId } = parseEstudarSearchParams(searchParams);
 
   const suffix = buildVitrineQuerySuffix(searchParams);
-  const navSlugs = fromRevisoes
-    ? getE2eRevisoesQueueSlugs()
-    : [...E2E_ESTUDAR_SLUGS];
+  const navSlugs: string[] = [...E2E_ESTUDAR_SLUGS];
   const indexAtual = navSlugs.indexOf(slug);
   const anteriorSlug =
     indexAtual > 0 ? `${navSlugs[indexAtual - 1]}${suffix}` : null;
@@ -306,8 +302,6 @@ export function buildE2eEstudarQuestaoPayload(
       estudada: isE2eEstudarConcluido(navSlug),
       indice: index + 1,
     })),
-    fromPlano,
-    fromRevisoes,
     fromCaderno: fromCaderno ? cadernoId : undefined,
     listaContexto: {
       atual: Math.max(1, indexAtual + 1),
@@ -315,7 +309,6 @@ export function buildE2eEstudarQuestaoPayload(
     },
     avantCodigo: 900001 + E2E_ESTUDAR_SLUGS.indexOf(slug as (typeof E2E_ESTUDAR_SLUGS)[number]),
     vitrineQuerySuffix: suffix,
-    ...(fromRevisoes ? { sameStemFallback: false } : {}),
   };
 
   return { status: 'ok', payload };

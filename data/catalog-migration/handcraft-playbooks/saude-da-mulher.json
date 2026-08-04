@@ -31,9 +31,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_prenatal.md",
       "visual_gallery": {
-        "status": "pilot",
+        "status": "ready",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1 (timeout local cpus:1) — re-run grep Saúde da Mulher"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A + Playwright 10/10 (desktop/mobile/DoD). PNGs mulher_prenatal-*"
       }
     },
     {
@@ -45,9 +45,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_parto.md",
       "visual_gallery": {
-        "status": "pilot",
+        "status": "ready",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A + Playwright PASS. PNGs mulher_parto-*"
       }
     },
     {
@@ -59,9 +59,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_papanicolau.md",
       "visual_gallery": {
-        "status": "pilot",
+        "status": "ready",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A + Playwright PASS. PNGs mulher_papanicolau-*"
       }
     },
     {
@@ -73,9 +73,9 @@
       ],
       "l3_brief": "artifacts/l3-brief-saude-da-mulher-mulher_mama.md",
       "visual_gallery": {
-        "status": "pilot",
+        "status": "ready",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
+        "note": "Fábrica G2 2026-08-04: primitives Tier A + Playwright PASS. PNGs mulher_mama-*"
       }
     },
     {
@@ -89,7 +89,7 @@
       "visual_gallery": {
         "status": "pilot",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
+        "note": "Fábrica G2: primitives Tier A. Fora do e2e SAUDE_MULHER_BRANCHES (4 ramos fortes) — PNG opcional"
       }
     },
     {
@@ -103,7 +103,7 @@
       "visual_gallery": {
         "status": "pilot",
         "captures_dir": "artifacts/visual-mold-regression",
-        "note": "Fábrica G2 2026-08-04: primitives Tier A. PNG Playwright ainda B1"
+        "note": "Fábrica G2: primitives Tier A. Fora do e2e SAUDE_MULHER_BRANCHES — PNG opcional"
       }
     },
     {

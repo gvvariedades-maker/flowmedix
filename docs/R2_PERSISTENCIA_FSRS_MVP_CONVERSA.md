@@ -1,5 +1,7 @@
 # R2 — Persistência FSRS MVP (especificação operacional)
 
+> ⚠️ **DESCONTINUADO ANTES DO LANÇAMENTO.** Substituído por [`DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md`](DECISAO_DESCONTINUACAO_REVISAO_INTELIGENTE.md). Este documento permanece só como histórico e não autoriza ativação.
+
 **Data:** 2026-07-27  
 **Status:** spec endurecida — **aguarda revisão independente**; R2 **não** autorizado; R3 **bloqueado**
 

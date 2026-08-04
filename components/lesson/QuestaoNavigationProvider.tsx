@@ -72,8 +72,6 @@ function buildVitrineReturnContextFromLocationSearch(): EstudarVitrineReturnCont
   if (typeof window === 'undefined') return {};
   const search = window.location.search;
   const params = new URLSearchParams(search);
-  if (params.get('from') === 'revisoes') return { fromRevisoes: true };
-  if (params.get('from') === 'plano') return { fromPlano: true };
   const cadernoId = params.get('caderno_id');
   if (params.get('from') === 'caderno' && cadernoId) {
     return { fromCaderno: cadernoId };

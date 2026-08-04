@@ -20,28 +20,14 @@ import {
 } from '@/lib/freemium';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { moduloAccessOptionsFromEmail } from '@/lib/concursos/studyAccess';
-import { isUuidV4 } from '@/lib/evidence/parseClientFields';
-import { applyFsrsReview } from '@/lib/fsrs/applyReview';
-import {
-  confirmDueScheduledReview,
-  parseFromRevisoesIntention,
-  type ConfirmDueReviewClient,
-} from '@/lib/fsrs/confirmDueReview';
-import { createSupabaseFsrsPersistence } from '@/lib/fsrs/supabasePersistence';
-import {
-  getFsrsRequestRetention,
-  isFsrsMvpBetaEmail,
-  isFsrsMvpEnabled,
-} from '@/lib/env';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
-import { randomUUID } from 'node:crypto';
 
 type CanonicalQuestionMeta = {
   banca: string;
   topico: string;
-  /** null quando ausente no JSON — FSRS exige subtópico não genérico. */
+  /** null quando ausente no JSON. */
   subtopico: string | null;
 };
 
@@ -144,7 +130,7 @@ export async function POST(request: NextRequest) {
 
     const isReplay = historicoExistente != null;
 
-    // Metadados canônicos + gabarito antes do gate freemium (isenção due exige meta).
+    // Metadados canônicos antes do gate: a classificação FSRS da tentativa exige meta.
     const { data: modulo, error: moduloError } = await supabase
       .from('modulos_estudo')
       .select('conteudo_json')
@@ -161,42 +147,9 @@ export async function POST(request: NextRequest) {
     }
 
     const canonical = extractCanonicalQuestionMeta(modulo.conteudo_json);
-    const wantsScheduledReview = parseFromRevisoesIntention(
-      body as Record<string, unknown>,
-    );
 
-    let scheduledReviewConfirmed = false;
-    let sameStemFallback = false;
-    // Mesma disciplina no confirm e no apply (Geral → Enfermagem) para o mesmo review_unit_id.
-    const fsrsDiscipline =
-      canonical.topico !== 'Geral' ? canonical.topico : 'Enfermagem';
-
-    // Intenção do client não basta: só isenta cota / agenda se card due atestado.
-    if (
-      wantsScheduledReview &&
-      isFsrsMvpEnabled() &&
-      isFsrsMvpBetaEmail(user.email)
-    ) {
-      const due = await confirmDueScheduledReview({
-        client: supabase as unknown as ConfirmDueReviewClient,
-        userId: user.id,
-        questionId: modulo_slug,
-        discipline: fsrsDiscipline,
-        subtopico: canonical.subtopico,
-      });
-      if (due.confirmed) {
-        scheduledReviewConfirmed = true;
-        sameStemFallback = due.sameStemFallback;
-      } else {
-        logger.info('FSRS MVP: from_revisoes sem card due confirmado', {
-          userId: user.id,
-          modulo_slug,
-          reason: due.reason,
-        });
-      }
-    }
-
-    if (!isReplay && !scheduledReviewConfirmed) {
+    // Replay não conta na cota do plano gratuito (não gera nova questão).
+    if (!isReplay) {
       const gate = await assertCanAnswerQuestion(user.id, user.email);
       if (!gate.allowed) {
         return NextResponse.json(
@@ -283,48 +236,6 @@ export async function POST(request: NextRequest) {
       e2e_instrumentation: false,
       log_route_label: 'registrar-tentativa',
     });
-
-    // FSRS MVP — não bloqueia a tentativa; flag default off
-    if (isFsrsMvpEnabled()) {
-      try {
-        const rawAttempt = (body as Record<string, unknown>).attempt_id;
-        const trimmedAttempt =
-          typeof rawAttempt === 'string' ? rawAttempt.trim() : '';
-        const hadAttemptId = trimmedAttempt.length > 0;
-        let attemptId: string;
-        if (isUuidV4(trimmedAttempt)) {
-          attemptId = trimmedAttempt;
-        } else {
-          attemptId = randomUUID();
-          logger.info('FSRS MVP: attempt_id missing or invalid; generated server-side', {
-            userId: user.id,
-            modulo_slug,
-            had_attempt_id: hadAttemptId,
-          });
-        }
-
-        const persistence = createSupabaseFsrsPersistence(
-          supabase as unknown as Parameters<typeof createSupabaseFsrsPersistence>[0],
-        );
-        await applyFsrsReview({
-          userId: user.id,
-          attemptId,
-          questionId: modulo_slug,
-          isCorrect: acertou,
-          discipline: fsrsDiscipline,
-          subtopico: canonical.subtopico,
-          fromScheduledReview: scheduledReviewConfirmed,
-          sameStemFallback: scheduledReviewConfirmed ? sameStemFallback : false,
-          requestRetention: getFsrsRequestRetention(),
-          persistence,
-        });
-      } catch (fsrsErr) {
-        logger.error('FSRS MVP boundary failed in registrar-tentativa', fsrsErr, {
-          userId: user.id,
-          modulo_slug,
-        });
-      }
-    }
 
     return NextResponse.json({
       success: true,

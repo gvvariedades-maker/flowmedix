@@ -92,7 +92,7 @@ describe('DashboardShell mobile drawer', () => {
 
   it('sidebar renderiza por seções sem label global MENU', () => {
     const shell = readFileSync(shellPath, 'utf8');
-    expect(shell).toContain('buildMenuSections(isPathActive, { avantMemoriaAtivo })');
+    expect(shell).toContain('buildMenuSections(isPathActive)');
     expect(shell).toMatch(/menuSections\.map\(\(section/);
     expect(shell).not.toMatch(/>\s*Menu\s*</);
     expect(shell).not.toContain('menuItems');

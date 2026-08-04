@@ -4,9 +4,9 @@ const nextConfig = {
   experimental: {
     // Tree-shaking agressivo de libs com muitos exports — reduz JS no mobile/4G.
     optimizePackageImports: ['lucide-react', 'framer-motion', '@radix-ui/react-tabs'],
-    // Build Vercel = 2 cores / 8 GB: limita os workers de prerender para o pico
-    // de memória caber no container.
-    cpus: 1,
+    // Build Vercel/CI = poucos cores / 8 GB: limita workers de prerender.
+    // Em dev local NÃO forçar 1 — /dev/slide-mold-review demora minutos e quebra Playwright.
+    ...(process.env.VERCEL || process.env.CI ? { cpus: 1 } : {}),
   },
   // As ferramentas internas em `app/dev/*` montam caminhos dinamicamente e faziam o
   // tracing arrastar todo `data/catalog-migration` (65k arquivos) para dentro das

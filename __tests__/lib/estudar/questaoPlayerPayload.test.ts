@@ -17,17 +17,6 @@ jest.mock('@/lib/estudar/questaoNav', () => ({
   getQuestaoNavList: jest.fn(),
 }));
 
-jest.mock('@/lib/spaced-repetition', () => ({
-  getTodayReviews: jest.fn(),
-}));
-
-jest.mock('@/lib/fsrs/reviewsToday', () => ({
-  getReviewsToday: jest.fn(),
-  reviewsTodaySlugs: jest.fn((result: { reviews: Array<{ modulo_slug: string }> }) =>
-    result.reviews.map((r) => r.modulo_slug),
-  ),
-}));
-
 import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import {
   getQuestaoBySlugCached,
@@ -36,8 +25,6 @@ import {
 } from '@/lib/cache';
 import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
-import { getTodayReviews } from '@/lib/spaced-repetition';
-import { getReviewsToday } from '@/lib/fsrs/reviewsToday';
 import {
   buildEstudarQuestaoPlayerPayload,
   patchQuestaoEstudadaInPayload,
@@ -64,8 +51,6 @@ const mockCreateSupabaseServerClient = createSupabaseServerClient as jest.Mocked
   typeof createSupabaseServerClient
 >;
 const mockGetQuestaoNavList = getQuestaoNavList as jest.MockedFunction<typeof getQuestaoNavList>;
-const mockGetTodayReviews = getTodayReviews as jest.MockedFunction<typeof getTodayReviews>;
-const mockGetReviewsToday = getReviewsToday as jest.MockedFunction<typeof getReviewsToday>;
 
 const USER_ID = '550e8400-e29b-41d4-a716-446655440000';
 const SLUG = 'questao-nav-meio';
@@ -241,54 +226,22 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     );
   });
 
-  it('from=revisoes usa getReviewsToday (fonte centralizada FSRS/SM-2)', async () => {
+  it('from=revisoes (surface descontinuada) cai na navegação normal', async () => {
     mockUserHasModuloAccess.mockResolvedValue(true);
-    mockGetReviewsToday.mockResolvedValue({
-      source: 'fsrs',
-      reviews: [
-        {
-          modulo_slug: 'revisao-1',
-          review_unit_id: 'fsrs:v1:discipline=enfermagem:subtopico=rcp',
-          same_stem_fallback: false,
-          inventory_missing: false,
-        },
-        {
-          modulo_slug: SLUG,
-          review_unit_id: 'fsrs:v1:discipline=enfermagem:subtopico=rcp',
-          same_stem_fallback: true,
-          inventory_missing: false,
-        },
-      ],
-      telemetry: { same_stem_fallback: 1, inventory_missing: 0 },
-    });
-    mockEstudadosSetFromHistorico.mockReturnValue(new Set([SLUG]));
     const supabase = mockSupabaseModuloRow();
 
     const result = await buildEstudarQuestaoPlayerPayload({
       slug: SLUG,
       userId: USER_ID,
-      userEmail: 'beta@avant.test',
       supabase: supabase as never,
       searchParams: { from: 'revisoes' },
     });
 
-    expect(mockGetReviewsToday).toHaveBeenCalledWith(
-      expect.objectContaining({
-        userId: USER_ID,
-        email: 'beta@avant.test',
-      }),
-    );
-    expect(mockGetTodayReviews).not.toHaveBeenCalled();
     expect(result.status).toBe('ok');
     if (result.status !== 'ok') return;
-    expect(result.payload.questoesDoAssunto?.map(({ slug, estudada }) => ({ slug, estudada }))).toEqual([
-      { slug: 'revisao-1', estudada: false },
-      { slug: SLUG, estudada: true },
-    ]);
-    expect(result.payload.fromRevisoes).toBe(true);
-    expect(result.payload.sameStemFallback).toBe(true);
-    expect(result.payload.proximaSlug).toBeNull();
-    expect(result.payload.anteriorSlug).toBe('revisao-1?from=revisoes');
+    expect(result.payload).not.toHaveProperty('fromRevisoes');
+    expect(result.payload).not.toHaveProperty('sameStemFallback');
+    expect(mockGetQuestaoNavList).toHaveBeenCalled();
   });
 
   it('primeira questão da lista não define anteriorSlug', async () => {

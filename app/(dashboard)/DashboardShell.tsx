@@ -425,7 +425,6 @@ function DashboardContent({
   isPro,
   proSource,
   proExpiresAt,
-  avantMemoriaAtivo,
 }: {
   children: React.ReactNode;
   initialUserEmail: string | null;
@@ -437,7 +436,6 @@ function DashboardContent({
   isPro: boolean;
   proSource: ProSource;
   proExpiresAt: string | null;
-  avantMemoriaAtivo: boolean;
 }) {
   useEditorialTheme();
 
@@ -669,7 +667,7 @@ function DashboardContent({
 
   const showBackToVitrine = shouldShowBackToVitrine(pathname);
 
-  const menuSections = buildMenuSections(isPathActive, { avantMemoriaAtivo });
+  const menuSections = buildMenuSections(isPathActive);
   const isAdminActive = pathname?.startsWith('/admin') ?? false;
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -851,7 +849,6 @@ export default function DashboardShell({
   isPro = false,
   proSource = null,
   proExpiresAt = null,
-  avantMemoriaAtivo = false,
 }: {
   children: React.ReactNode;
   initialUserEmail: string | null;
@@ -863,8 +860,6 @@ export default function DashboardShell({
   isPro?: boolean;
   proSource?: ProSource;
   proExpiresAt?: string | null;
-  /** AVANT Memória (flag + allowlist) resolvido no servidor. Default fail-closed. */
-  avantMemoriaAtivo?: boolean;
 }) {
   return (
     <ToastProvider>
@@ -879,7 +874,6 @@ export default function DashboardShell({
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}
-          avantMemoriaAtivo={avantMemoriaAtivo}
         >
           {children}
         </DashboardContent>

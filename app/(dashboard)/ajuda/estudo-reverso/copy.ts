@@ -2,7 +2,7 @@ export const HERO = {
   eyebrow: 'Método AVANT enf',
   title: 'Estudo Reverso: aprenda pela questão, não para a questão',
   subtitle:
-    'Uma das formas mais eficientes para concursos: o AVANT enf transforma cada questão em uma aula completa, com diagnóstico, explicação guiada, fixação e revisão.',
+    'Questão real → diagnóstico do erro → NeuroSlides que ensinam exatamente o que você errou. O AVANT enf transforma cada questão em uma aula completa.',
   ctaPrimary: { label: 'Começar meu primeiro Estudo Reverso', href: '/estudar' },
   ctaSecondary: { label: 'Ver tutorial completo', href: '/ajuda' },
 } as const;
@@ -31,8 +31,8 @@ export const PROBLEMA = {
 export const DEFINICAO = {
   titulo: 'O que é Estudo Reverso',
   resumo:
-    'Você começa pela questão, tenta resolver, recebe feedback, entende o conceito exato envolvido e revisa antes de esquecer.',
-  fluxo: ['Questão', 'Tentativa', 'Feedback', 'Conceito', 'Revisão'],
+    'Você começa pela questão, tenta resolver, recebe o diagnóstico do erro e percorre os NeuroSlides que ensinam exatamente o que você errou.',
+  fluxo: ['Questão', 'Tentativa', 'Diagnóstico', 'NeuroSlides'],
 } as const;
 
 export const CICLO = {
@@ -59,9 +59,9 @@ export const CICLO = {
     },
     {
       n: '4',
-      nome: 'Revisar',
-      desc: 'A repetição espaçada traz o conteúdo de volta antes que ele se perca.',
-      noAvant: 'O Plano diário organiza as revisões pendentes para você.',
+      nome: 'Progredir',
+      desc: 'Cada diagnóstico fica registrado, então você sabe exatamente onde ainda erra.',
+      noAvant: 'Seu desempenho por assunto mostra o que já foi fixado e o que precisa de mais NeuroSlides.',
     },
   ],
 } as const;
@@ -82,8 +82,8 @@ export const COMPARATIVO = {
     linhaDoTempo: [
       'Resolve a questão antes de revisar a teoria.',
       'Identifica a lacuna exata pela alternativa errada.',
-      'Estuda o conceito necessário com explicação guiada.',
-      'Revisa no momento certo para consolidar.',
+      'Recebe o diagnóstico do erro na hora.',
+      'Aprende exatamente o que errou com os NeuroSlides.',
     ],
   },
 } as const;
@@ -116,10 +116,10 @@ export const PILARES = {
       fonte: 'Brown, Collins & Duguid (1989)',
     },
     {
-      nome: 'Repetição espaçada',
-      desc: 'Revisar em intervalos planejados ajuda a fixar o conteúdo na memória de longo prazo.',
-      noAvant: 'O Plano diário organiza revisões em intervalos crescentes.',
-      fonte: 'Cepeda et al. (2008)',
+      nome: 'Diagnóstico específico',
+      desc: 'Saber exatamente qual foi o tipo de erro (conceito, interpretação ou pegadinha) direciona o que estudar em seguida.',
+      noAvant: 'Cada NeuroSlide nasce do diagnóstico daquele erro específico.',
+      fonte: 'Shute (2008)',
     },
   ],
 } as const;
@@ -131,7 +131,7 @@ export const PASSO_A_PASSO = {
     'Tente responder a questão antes de ver o gabarito.',
     'Confirme e leia o diagnóstico.',
     'Ative o estudo reverso e percorra os 4 slides.',
-    'Marque como estudado e siga o Plano diário para revisar.',
+    'Acompanhe seu desempenho por assunto na próxima questão.',
   ],
 } as const;
 
@@ -142,7 +142,7 @@ export const FAQ = [
   },
   {
     q: 'Preciso ler teoria antes?',
-    a: 'Não obrigatoriamente. A teoria entra no momento certo, dentro do estudo reverso. Você pode complementar com material externo se quiser aprofundar, mas não precisa esperar "estar pronto" para praticar.',
+    a: 'Não obrigatoriamente. A teoria aparece dentro do próprio estudo reverso, no contexto da questão. Você pode complementar com material externo se quiser aprofundar, mas não precisa esperar "estar pronto" para praticar.',
   },
   {
     q: 'E se eu errar muito no começo?',
@@ -150,21 +150,21 @@ export const FAQ = [
   },
   {
     q: 'Quanto tempo até ver resultado?',
-    a: 'Cada aluno tem ritmo próprio. O que pesquisas em educação mostram é que prática ativa, feedback e revisão espaçada tendem a melhorar a retenção com uso consistente.',
+    a: 'Cada aluno tem ritmo próprio. O que pesquisas em educação mostram é que prática ativa, feedback imediato e diagnóstico específico do erro tendem a melhorar a retenção com uso consistente.',
   },
 ] as const;
 
 export const FONTES = [
   'Brown, J. S., Collins, A., & Duguid, P. (1989). Situated Cognition and the Culture of Learning.',
-  'Cepeda, N. J., Vul, E., Rohrer, D., Wixted, J. T., & Pashler, H. (2008). Spacing effects in learning.',
   'Hattie, J., & Timperley, H. (2007). The Power of Feedback.',
   'Metcalfe, J. (2017). Learning from Errors.',
   'Roediger, H. L., & Karpicke, J. D. (2006). Test-Enhanced Learning.',
+  'Shute, V. J. (2008). Focus on Formative Feedback.',
 ] as const;
 
 export const CTA_FINAL = {
   titulo: 'Pronto para o primeiro Estudo Reverso?',
-  subtitulo: 'Em poucos minutos você diagnostica, entende, fixa e já encaminha sua próxima revisão.',
+  subtitulo: 'Em poucos minutos você diagnostica o erro, entende e fixa com os NeuroSlides.',
   primary: { label: 'Começar agora', href: '/estudar' },
   secondary: { label: 'Voltar ao tutorial', href: '/ajuda' },
 } as const;

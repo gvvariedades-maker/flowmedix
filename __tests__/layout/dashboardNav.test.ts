@@ -20,7 +20,7 @@ describe('buildMenuSections', () => {
 
   it('NAV_SECTION_DEFS expõe title em cada item para tooltip do menu', () => {
     const items = NAV_SECTION_DEFS.flatMap((s) => s.items);
-    expect(items).toHaveLength(9);
+    expect(items).toHaveLength(8);
     for (const item of items) {
       expect(item.title.trim().length).toBeGreaterThan(0);
     }
@@ -29,9 +29,9 @@ describe('buildMenuSections', () => {
     expect(items.find((i) => i.href === '/simulados')?.title).toBe('Simulados');
   });
 
-  it('seção Organizar contém Simulados, Plano diário e Cadernos', () => {
+  it('seção Organizar contém Simulados e Cadernos', () => {
     const organizar = NAV_SECTION_DEFS.find((s) => s.id === 'organizar');
-    expect(organizar?.items.map((i) => i.label)).toEqual(['Simulados', 'Plano diário', 'Cadernos']);
+    expect(organizar?.items.map((i) => i.label)).toEqual(['Simulados', 'Cadernos']);
   });
 
   it('marca /progresso ativo em /analytics', () => {
@@ -40,64 +40,6 @@ describe('buildMenuSections', () => {
       .find((s) => s.id === 'metricas')
       ?.items.find((i) => i.href === '/progresso');
     expect(progresso?.active).toBe(true);
-  });
-
-  it('marca /plano-diario ativo só com match exato', () => {
-    const isPlano = (path: string, exact = false) => {
-      const pathname = '/plano-diario/extra';
-      if (exact) return pathname === path;
-      return pathname === path || pathname.startsWith(`${path}/`);
-    };
-    const sections = buildMenuSections(isPlano);
-    const plano = sections
-      .find((s) => s.id === 'organizar')
-      ?.items.find((i) => i.href === '/plano-diario');
-    expect(plano?.active).toBe(false);
-  });
-
-  it('AVANT Memória inativo: mantém Plano diário e não expõe /revisoes-hoje', () => {
-    const sections = buildMenuSections(isPathActive);
-    const organizar = sections.find((s) => s.id === 'organizar');
-    expect(organizar?.items.map((i) => i.href)).toContain('/plano-diario');
-    expect(organizar?.items.map((i) => i.href)).not.toContain('/revisoes-hoje');
-  });
-
-  it('AVANT Memória ativo: troca Plano diário por Revisões de hoje (nunca as duas)', () => {
-    const sections = buildMenuSections(isPathActive, { avantMemoriaAtivo: true });
-    const organizar = sections.find((s) => s.id === 'organizar');
-    expect(organizar?.items.map((i) => i.label)).toEqual([
-      'Simulados',
-      'Revisões de hoje',
-      'Cadernos',
-    ]);
-    const hrefs = sections.flatMap((s) => s.items.map((i) => i.href));
-    expect(hrefs).toContain('/revisoes-hoje');
-    expect(hrefs).not.toContain('/plano-diario');
-  });
-
-  it('marca /revisoes-hoje ativo só com match exato', () => {
-    const isRevisoes = (path: string, exact = false) => {
-      const pathname = '/revisoes-hoje';
-      if (exact) return pathname === path;
-      return pathname === path || pathname.startsWith(`${path}/`);
-    };
-    const sections = buildMenuSections(isRevisoes, { avantMemoriaAtivo: true });
-    const revisoes = sections
-      .find((s) => s.id === 'organizar')
-      ?.items.find((i) => i.href === '/revisoes-hoje');
-    expect(revisoes?.active).toBe(true);
-
-    const isRevisoesSub = (path: string, exact = false) => {
-      const pathname = '/revisoes-hoje/extra';
-      if (exact) return pathname === path;
-      return pathname === path || pathname.startsWith(`${path}/`);
-    };
-    const subSections = buildMenuSections(isRevisoesSub, { avantMemoriaAtivo: true });
-    expect(
-      subSections
-        .find((s) => s.id === 'organizar')
-        ?.items.find((i) => i.href === '/revisoes-hoje')?.active,
-    ).toBe(false);
   });
 
   it('não marca /ajuda ativo em subrota estudo-reverso', () => {

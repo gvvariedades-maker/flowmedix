@@ -74,14 +74,6 @@ supabase/.temp/
 /artifacts/*dry-run*
 /artifacts/**/*dry-run*
 
-# FSRS MVP — payloads de apply e relatórios live locais (URL/JWT/service role/PII)
-/artifacts/fsrs-apply-query.txt
-/artifacts/fsrs-mvp-apply-payload.json
-/artifacts/fsrs-mvp-ops-*.md
-!/artifacts/fsrs-mvp-ops-template.md
-/artifacts/fsrs-mvp-fase-g-*.md
-/artifacts/fsrs-mvp-staging-smoke-report.md
-/artifacts/fsrs-mvp-staging-smoke-credentials.json
 
 # G0.3A — fila editorial completa (~8 MB); gerar localmente com audit:neurocanvas-editorial-queue
 /artifacts/neurocanvas-editorial-queue.json

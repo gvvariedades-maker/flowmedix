@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import {
   ArrowRight,
   Brain,
-  CalendarDays,
   CheckCircle2,
   ChevronDown,
   CircleAlert,
@@ -20,6 +19,7 @@ import {
   Shield,
   Sparkles,
   Target,
+  TrendingUp,
   Zap,
 } from 'lucide-react';
 import { AvantLogo } from '@/components/brand/AvantLogo';
@@ -89,9 +89,9 @@ const METODO = [
   },
   {
     n: '04',
-    title: 'Revisão no momento certo',
-    text: 'Plano diário e revisão espaçada — sem planilha, sem adivinhar o que revisar.',
-    icon: CalendarDays,
+    title: 'Diagnóstico que vira progresso',
+    text: 'Cada erro fica marcado e ligado ao NeuroSlide certo — sem adivinhar o que revisar.',
+    icon: TrendingUp,
     image: '/images/campina-grande/walk-07.jpg',
   },
 ] as const;
@@ -106,7 +106,6 @@ const BENEFICIOS_PRO = [
   'Questões reais IDECAN e outras bancas para Técnico em Enfermagem',
   'NeuroSlides após cada questão — estudo reverso guiado',
   'Diagnóstico do erro na hora — conceito, detalhe ou pegadinha',
-  'Revisão espaçada automática e plano diário adaptado',
   'Acesso completo — Campina Grande e todos os editais em destaque',
   'Cancela quando quiser — sem contrato de fidelidade',
 ] as const;

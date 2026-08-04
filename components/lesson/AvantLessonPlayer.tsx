@@ -208,9 +208,6 @@ export default function AvantLessonPlayer({
   anteriorSlug,
   moduloSlug,
   questoesDoAssunto,
-  fromPlano = false,
-  fromRevisoes = false,
-  sameStemFallback = false,
   fromCaderno,
   listaContexto,
   avantCodigo,
@@ -630,8 +627,6 @@ export default function AvantLessonPlayer({
 
     const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
       moduloSlug,
-      fromPlano,
-      fromRevisoes,
       fromCaderno,
       vitrineQuerySuffix,
     });
@@ -714,8 +709,6 @@ export default function AvantLessonPlayer({
     etapa,
     mode,
     moduloSlug,
-    fromPlano,
-    fromRevisoes,
     fromCaderno,
     vitrineQuerySuffix,
     activeDados,
@@ -761,17 +754,11 @@ export default function AvantLessonPlayer({
   let questionUnavailableUi: React.ReactNode = null;
 
   if (!activeDados?.question_data?.options?.length) {
-    const vitrineSuffix = fromRevisoes
-      ? '?from=revisoes'
-      : fromPlano
-        ? '?from=plano'
-        : fromCaderno
-          ? `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`
-          : vitrineQuerySuffix || '';
+    const vitrineSuffix = fromCaderno
+      ? `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`
+      : vitrineQuerySuffix || '';
     const handleVoltarVitrine = () => {
       const ctx = {
-        fromPlano,
-        fromRevisoes,
         fromCaderno,
         vitrineQuerySuffix: vitrineSuffix,
       };
@@ -782,13 +769,7 @@ export default function AvantLessonPlayer({
       }
       resetDashboardMainScroll();
     };
-    const vitrineDestinoLabel = fromRevisoes
-      ? 'revisões de hoje'
-      : fromPlano
-        ? 'plano diário'
-        : fromCaderno
-          ? 'cadernos'
-          : 'vitrine';
+    const vitrineDestinoLabel = fromCaderno ? 'cadernos' : 'vitrine';
 
     questionUnavailableUi = (
       <div
@@ -912,7 +893,6 @@ export default function AvantLessonPlayer({
           banca: activeDados.meta?.banca || 'DESCONHECIDA',
           topico: activeDados.meta?.topico || 'Geral',
           subtopico: activeDados.meta?.subtopico || activeDados.meta?.topico || 'Geral',
-          ...(fromRevisoes ? { from_revisoes: true } : {}),
           attempt_id: attemptId,
           ...evidencePayload,
         },
@@ -1026,8 +1006,6 @@ export default function AvantLessonPlayer({
         if (slug) {
           const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
             moduloSlug: slug,
-            fromPlano,
-            fromRevisoes,
             fromCaderno,
             vitrineQuerySuffix,
           });
@@ -1041,8 +1019,6 @@ export default function AvantLessonPlayer({
                   anteriorSlug,
                   moduloSlug: slug,
                   questoesDoAssunto,
-                  fromPlano,
-                  fromRevisoes,
                   fromCaderno,
                   listaContexto,
                   avantCodigo,
@@ -1080,8 +1056,6 @@ export default function AvantLessonPlayer({
         if (questaoNav) {
           const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
             moduloSlug: slug,
-            fromPlano,
-            fromRevisoes,
             fromCaderno,
             vitrineQuerySuffix,
           });
@@ -1095,8 +1069,6 @@ export default function AvantLessonPlayer({
                   anteriorSlug,
                   moduloSlug: slug,
                   questoesDoAssunto,
-                  fromPlano,
-                  fromRevisoes,
                   fromCaderno,
                   listaContexto,
                   avantCodigo,
@@ -1132,15 +1104,11 @@ export default function AvantLessonPlayer({
   // NAVEGAÇÃO
   // ============================================================================
   const buildNavegacaoSuffix = () => {
-    if (fromRevisoes) return '?from=revisoes';
-    if (fromPlano) return '?from=plano';
     if (fromCaderno) return `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`;
     return vitrineQuerySuffix || '';
   };
 
   const vitrineReturnContext = () => ({
-    fromPlano,
-    fromRevisoes,
     fromCaderno,
     vitrineQuerySuffix: buildNavegacaoSuffix(),
   });
@@ -1455,13 +1423,7 @@ export default function AvantLessonPlayer({
   const renderQuestionLiveHeader = (withZoom: boolean) => {
     if (mode !== 'live') return null;
 
-    const voltarDestino = fromRevisoes
-      ? 'Revisões de hoje'
-      : fromPlano
-        ? 'Plano diário'
-        : fromCaderno
-          ? 'Meus cadernos'
-          : 'Vitrine';
+    const voltarDestino = fromCaderno ? 'Meus cadernos' : 'Vitrine';
 
     return (
       <div
@@ -1484,14 +1446,6 @@ export default function AvantLessonPlayer({
           </span>
         </button>
         <div className="ml-auto flex min-w-0 max-w-full flex-wrap items-center justify-end gap-1.5 sm:gap-2">
-          {fromRevisoes && sameStemFallback ? (
-            <span
-              className="shrink-0 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-wide text-amber-800 sm:px-3 sm:text-xs"
-              title="Não havia outro enunciado disponível nesta unidade"
-            >
-              Mesmo enunciado
-            </span>
-          ) : null}
           {listaContexto && listaContexto.total > 0 && (
             <span
               className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-bold tabular-nums text-slate-600 sm:px-3 sm:text-sm"
@@ -2091,25 +2045,13 @@ export default function AvantLessonPlayer({
                 <button
                   type="button"
                   aria-label={
-                    fromRevisoes
-                      ? 'Concluir revisões'
-                      : fromPlano
-                        ? 'Concluir Plano'
-                        : fromCaderno
-                          ? 'Concluir Caderno'
-                          : 'Concluir Missão'
+                    fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'
                   }
                   onClick={handleConcluir}
                   className="btn-editorial-primary flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl px-3 font-black uppercase text-[10px] tracking-wide transition-all hover:shadow-md active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   <span className="hidden sm:inline">
-                    {fromRevisoes
-                      ? 'Concluir revisões'
-                      : fromPlano
-                        ? 'Concluir Plano'
-                        : fromCaderno
-                          ? 'Concluir Caderno'
-                          : 'Concluir Missão'}
+                    {fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
                   </span>
                   <Flag size={20} className="shrink-0" aria-hidden />
                 </button>

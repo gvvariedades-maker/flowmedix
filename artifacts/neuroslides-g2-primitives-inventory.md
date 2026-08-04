@@ -238,3 +238,6 @@ Concept / golden / danger dos 6 ramos fortes agora importam `primitives/` (Board
 logic_tap Mulher (×6) já Tier B desde P1 lote 2 (FocusShell + LetterEliminationRail).
 
 **visual_bar:** pass — ratchet ad-hoc → kit G2. Playwright PNG ainda B1 (timeout local).
+
+**Evidência Mulher (2026-08-04):** Playwright Saúde da Mulher **10/10** após cpus:1 só em VERCEL/CI. PNGs mulher_* em rtifacts/visual-mold-regression/.
+
